@@ -1,0 +1,18 @@
+﻿//HintName: G.IMotionsClient.RequestMotionUpload.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IMotionsClient
+    {
+        /// <summary>
+        /// Generate upload link for motion
+        /// </summary>
+        /// <param name="assetID"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AssetResponse> RequestMotionUploadAsync(
+            global::System.Guid assetID,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -1,0 +1,56 @@
+﻿//HintName: G.Models.FetchDatasetEventsResponse.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class FetchDatasetEventsResponse
+    {
+        /// <summary>
+        /// A list of fetched events
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("events", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.DatasetEvent> Events { get; set; } = default!;
+
+        /// <summary>
+        /// Pagination cursor<br/>
+        /// Pass this string directly as the `cursor` param to your next fetch request to get the next page of results. Not provided if the returned result set is empty.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("cursor")]
+        public string? Cursor { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FetchDatasetEventsResponse" /> class.
+        /// </summary>
+        /// <param name="events">
+        /// A list of fetched events
+        /// </param>
+        /// <param name="cursor">
+        /// Pagination cursor<br/>
+        /// Pass this string directly as the `cursor` param to your next fetch request to get the next page of results. Not provided if the returned result set is empty.
+        /// </param>
+        public FetchDatasetEventsResponse(
+            global::System.Collections.Generic.IList<global::G.DatasetEvent> events,
+            string? cursor)
+        {
+            this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
+            this.Cursor = cursor;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FetchDatasetEventsResponse" /> class.
+        /// </summary>
+        public FetchDatasetEventsResponse()
+        {
+        }
+    }
+}

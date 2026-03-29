@@ -1,0 +1,17 @@
+﻿//HintName: G.ISubpackageApiKeysClient.GetCurrentKey.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface ISubpackageApiKeysClient
+    {
+        /// <summary>
+        /// Get current API key<br/>
+        /// Get information on the API key associated with the current authentication session
+        /// </summary>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.ApiKeysGetCurrentKeyResponse200> GetCurrentKeyAsync(
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

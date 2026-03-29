@@ -46,27 +46,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Connectors2Client Connectors2 { get; }
+        public ConnectorsClient Connectors { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Datasets2Client Datasets2 { get; }
+        public DatasetsClient Datasets { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public EmbedJobs2Client EmbedJobs2 { get; }
+        public EmbedJobsClient EmbedJobs { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Finetuning2Client Finetuning2 { get; }
+        public FinetuningClient Finetuning { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Models2Client Models2 { get; }
+        public ModelsClient Models { get; }
 
         /// <summary>
         /// 

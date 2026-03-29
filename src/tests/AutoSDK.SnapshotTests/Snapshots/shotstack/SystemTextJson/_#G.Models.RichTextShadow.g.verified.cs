@@ -1,0 +1,115 @@
+﻿//HintName: G.Models.RichTextShadow.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Text shadow properties.
+    /// </summary>
+    public sealed partial class RichTextShadow
+    {
+        /// <summary>
+        /// Horizontal offset of the shadow in pixels. Positive values move right, negative left.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 4
+        /// </summary>
+        /// <example>4</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("offsetX")]
+        public double? OffsetX { get; set; }
+
+        /// <summary>
+        /// Vertical offset of the shadow in pixels. Positive values move down, negative up.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 4
+        /// </summary>
+        /// <example>4</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("offsetY")]
+        public double? OffsetY { get; set; }
+
+        /// <summary>
+        /// The blur radius of the shadow in pixels. Must be 0 or greater.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 8
+        /// </summary>
+        /// <example>8</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("blur")]
+        public double? Blur { get; set; }
+
+        /// <summary>
+        /// The shadow color using hexadecimal color notation.<br/>
+        /// Default Value: #000000<br/>
+        /// Example: #000000
+        /// </summary>
+        /// <example>#000000</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("color")]
+        public string? Color { get; set; }
+
+        /// <summary>
+        /// The opacity of the shadow where 1 is opaque and 0 is transparent.<br/>
+        /// Default Value: 0.5F<br/>
+        /// Example: 0.7F
+        /// </summary>
+        /// <example>0.7F</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("opacity")]
+        public double? Opacity { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RichTextShadow" /> class.
+        /// </summary>
+        /// <param name="offsetX">
+        /// Horizontal offset of the shadow in pixels. Positive values move right, negative left.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 4
+        /// </param>
+        /// <param name="offsetY">
+        /// Vertical offset of the shadow in pixels. Positive values move down, negative up.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 4
+        /// </param>
+        /// <param name="blur">
+        /// The blur radius of the shadow in pixels. Must be 0 or greater.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 8
+        /// </param>
+        /// <param name="color">
+        /// The shadow color using hexadecimal color notation.<br/>
+        /// Default Value: #000000<br/>
+        /// Example: #000000
+        /// </param>
+        /// <param name="opacity">
+        /// The opacity of the shadow where 1 is opaque and 0 is transparent.<br/>
+        /// Default Value: 0.5F<br/>
+        /// Example: 0.7F
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public RichTextShadow(
+            double? offsetX,
+            double? offsetY,
+            double? blur,
+            string? color,
+            double? opacity)
+        {
+            this.OffsetX = offsetX;
+            this.OffsetY = offsetY;
+            this.Blur = blur;
+            this.Color = color;
+            this.Opacity = opacity;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RichTextShadow" /> class.
+        /// </summary>
+        public RichTextShadow()
+        {
+        }
+    }
+}

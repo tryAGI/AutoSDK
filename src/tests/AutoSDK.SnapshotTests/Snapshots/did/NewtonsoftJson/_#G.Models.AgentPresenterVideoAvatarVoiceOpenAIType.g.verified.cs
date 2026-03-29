@@ -1,0 +1,48 @@
+﻿//HintName: G.Models.AgentPresenterVideoAvatarVoiceOpenAIType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Runtime.Serialization.DataContract]
+    public enum AgentPresenterVideoAvatarVoiceOpenAIType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="azure-openai")]
+        AzureOpenai,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class AgentPresenterVideoAvatarVoiceOpenAITypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this AgentPresenterVideoAvatarVoiceOpenAIType value)
+        {
+            return value switch
+            {
+                AgentPresenterVideoAvatarVoiceOpenAIType.AzureOpenai => "azure-openai",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static AgentPresenterVideoAvatarVoiceOpenAIType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "azure-openai" => AgentPresenterVideoAvatarVoiceOpenAIType.AzureOpenai,
+                _ => null,
+            };
+        }
+    }
+}

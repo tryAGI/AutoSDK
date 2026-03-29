@@ -1,0 +1,54 @@
+﻿//HintName: G.JsonConverters.ConfiguredRulesPunctuationCornerBracketAndPeriods.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ConfiguredRulesPunctuationCornerBracketAndPeriodsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ConfiguredRulesPunctuationCornerBracketAndPeriods>
+    {
+        /// <inheritdoc />
+        public override global::G.ConfiguredRulesPunctuationCornerBracketAndPeriods Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.ConfiguredRulesPunctuationCornerBracketAndPeriodsExtensions.ToEnum(stringValue) ?? default;
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.ConfiguredRulesPunctuationCornerBracketAndPeriods)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.ConfiguredRulesPunctuationCornerBracketAndPeriods);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.ConfiguredRulesPunctuationCornerBracketAndPeriods value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteStringValue(global::G.ConfiguredRulesPunctuationCornerBracketAndPeriodsExtensions.ToValueString(value));
+        }
+    }
+}

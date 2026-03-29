@@ -1,0 +1,19 @@
+﻿//HintName: G.IDatasetsClient.GetDatasetItemById.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IDatasetsClient
+    {
+        /// <summary>
+        /// Get dataset item by id<br/>
+        /// Get dataset item by id
+        /// </summary>
+        /// <param name="itemId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.DatasetItemPublic> GetDatasetItemByIdAsync(
+            global::System.Guid itemId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

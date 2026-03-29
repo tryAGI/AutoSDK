@@ -1,0 +1,20 @@
+﻿//HintName: G.Models.FluxProExpandInputsPrompt.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The description of the changes you want to make. This text guides the expansion process, allowing you to specify features, styles, or modifications for the expanded areas.<br/>
+    /// Example: ein fantastisches bild
+    /// </summary>
+    public sealed partial class FluxProExpandInputsPrompt
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

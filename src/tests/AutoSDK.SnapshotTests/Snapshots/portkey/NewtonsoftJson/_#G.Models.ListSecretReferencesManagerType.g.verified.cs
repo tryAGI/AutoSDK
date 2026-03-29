@@ -1,0 +1,62 @@
+﻿//HintName: G.Models.ListSecretReferencesManagerType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Runtime.Serialization.DataContract]
+    public enum ListSecretReferencesManagerType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="aws_sm")]
+        AwsSm,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="azure_kv")]
+        AzureKv,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="hashicorp_vault")]
+        HashicorpVault,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ListSecretReferencesManagerTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ListSecretReferencesManagerType value)
+        {
+            return value switch
+            {
+                ListSecretReferencesManagerType.AwsSm => "aws_sm",
+                ListSecretReferencesManagerType.AzureKv => "azure_kv",
+                ListSecretReferencesManagerType.HashicorpVault => "hashicorp_vault",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ListSecretReferencesManagerType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "aws_sm" => ListSecretReferencesManagerType.AwsSm,
+                "azure_kv" => ListSecretReferencesManagerType.AzureKv,
+                "hashicorp_vault" => ListSecretReferencesManagerType.HashicorpVault,
+                _ => null,
+            };
+        }
+    }
+}

@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.CreateExperimentRunRequestBodyError.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Optional error message if the experiment run encountered an error
+    /// </summary>
+    public sealed partial class CreateExperimentRunRequestBodyError
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

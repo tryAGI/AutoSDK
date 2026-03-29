@@ -1,0 +1,70 @@
+﻿//HintName: G.Models.CreateInflectionAICredentialDTO.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class CreateInflectionAICredentialDTO
+    {
+        /// <summary>
+        /// This is the api key for Pi in InflectionAI's console. Get it from here: https://developers.inflection.ai/keys, billing will need to be setup
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateInflectionAICredentialDTOProviderJsonConverter))]
+        public global::G.CreateInflectionAICredentialDTOProvider Provider { get; set; }
+
+        /// <summary>
+        /// This is not returned in the API.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("apiKey")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ApiKey { get; set; }
+
+        /// <summary>
+        /// This is the name of credential. This is just for your reference.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateInflectionAICredentialDTO" /> class.
+        /// </summary>
+        /// <param name="apiKey">
+        /// This is not returned in the API.
+        /// </param>
+        /// <param name="provider">
+        /// This is the api key for Pi in InflectionAI's console. Get it from here: https://developers.inflection.ai/keys, billing will need to be setup
+        /// </param>
+        /// <param name="name">
+        /// This is the name of credential. This is just for your reference.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public CreateInflectionAICredentialDTO(
+            string apiKey,
+            global::G.CreateInflectionAICredentialDTOProvider provider,
+            string? name)
+        {
+            this.Provider = provider;
+            this.ApiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
+            this.Name = name;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateInflectionAICredentialDTO" /> class.
+        /// </summary>
+        public CreateInflectionAICredentialDTO()
+        {
+        }
+    }
+}

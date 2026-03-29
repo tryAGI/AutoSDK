@@ -1,0 +1,242 @@
+﻿//HintName: G.Models.OpenAPIStreamRunFlowResponse.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class OpenAPIStreamRunFlowResponse
+    {
+        /// <summary>
+        /// 批量index，批量中才有值
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("batch_index")]
+        public int? BatchIndex { get; set; }
+
+        /// <summary>
+        /// 调用状态码。0 表示调用成功，其他值表示调用失败，你可以通过 msg 字段判断详细的错误原因。
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("code")]
+        public int? Code { get; set; }
+
+        /// <summary>
+        /// ContentType为Text时的返回
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("content")]
+        public string? Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("debug_url")]
+        public string? DebugUrl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("detail")]
+        public global::G.ResponseDetail? Detail { get; set; }
+
+        /// <summary>
+        /// 错误信息
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("error_code")]
+        public int? ErrorCode { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("error_message")]
+        public string? ErrorMessage { get; set; }
+
+        /// <summary>
+        /// 事件类型:message,done,error
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("event")]
+        public string? Event { get; set; }
+
+        /// <summary>
+        /// 成功时最后一条消息
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("ext")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Ext { get; set; }
+
+        /// <summary>
+        /// 绝对序号
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("interrupt_data")]
+        public global::G.Interrupt? InterruptData { get; set; }
+
+        /// <summary>
+        /// 循环index，循环中才有值
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("loop_index")]
+        public int? LoopIndex { get; set; }
+
+        /// <summary>
+        /// 状态信息。API 调用失败时可通过此字段查看详细错误信息。<br/>
+        /// 状态码为 0 时，msg 默认为空。
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("msg")]
+        public string? Msg { get; set; }
+
+        /// <summary>
+        /// 节点执行uuid
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("node_execute_uuid")]
+        public string? NodeExecuteUuid { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("node_id")]
+        public string? NodeId { get; set; }
+
+        /// <summary>
+        /// 节点是否执行完成
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("node_is_finish")]
+        public bool? NodeIsFinish { get; set; }
+
+        /// <summary>
+        /// 节点信息节点中的序号
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("node_seq_id")]
+        public string? NodeSeqId { get; set; }
+
+        /// <summary>
+        /// 节点名称
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("node_title")]
+        public string? NodeTitle { get; set; }
+
+        /// <summary>
+        /// 子执行id,只有与executeID不一样的时候才赋值（子工作流）
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sub_execute_id")]
+        public string? SubExecuteId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("usage")]
+        public global::G.Usage1? Usage { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenAPIStreamRunFlowResponse" /> class.
+        /// </summary>
+        /// <param name="batchIndex">
+        /// 批量index，批量中才有值
+        /// </param>
+        /// <param name="code">
+        /// 调用状态码。0 表示调用成功，其他值表示调用失败，你可以通过 msg 字段判断详细的错误原因。
+        /// </param>
+        /// <param name="content">
+        /// ContentType为Text时的返回
+        /// </param>
+        /// <param name="debugUrl"></param>
+        /// <param name="detail"></param>
+        /// <param name="errorCode">
+        /// 错误信息
+        /// </param>
+        /// <param name="errorMessage"></param>
+        /// <param name="event">
+        /// 事件类型:message,done,error
+        /// </param>
+        /// <param name="ext">
+        /// 成功时最后一条消息
+        /// </param>
+        /// <param name="id">
+        /// 绝对序号
+        /// </param>
+        /// <param name="interruptData"></param>
+        /// <param name="loopIndex">
+        /// 循环index，循环中才有值
+        /// </param>
+        /// <param name="msg">
+        /// 状态信息。API 调用失败时可通过此字段查看详细错误信息。<br/>
+        /// 状态码为 0 时，msg 默认为空。
+        /// </param>
+        /// <param name="nodeExecuteUuid">
+        /// 节点执行uuid
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="nodeIsFinish">
+        /// 节点是否执行完成
+        /// </param>
+        /// <param name="nodeSeqId">
+        /// 节点信息节点中的序号
+        /// </param>
+        /// <param name="nodeTitle">
+        /// 节点名称
+        /// </param>
+        /// <param name="subExecuteId">
+        /// 子执行id,只有与executeID不一样的时候才赋值（子工作流）
+        /// </param>
+        /// <param name="usage"></param>
+        public OpenAPIStreamRunFlowResponse(
+            int? batchIndex,
+            int? code,
+            string? content,
+            string? debugUrl,
+            global::G.ResponseDetail? detail,
+            int? errorCode,
+            string? errorMessage,
+            string? @event,
+            global::System.Collections.Generic.Dictionary<string, string>? ext,
+            string? id,
+            global::G.Interrupt? interruptData,
+            int? loopIndex,
+            string? msg,
+            string? nodeExecuteUuid,
+            string? nodeId,
+            bool? nodeIsFinish,
+            string? nodeSeqId,
+            string? nodeTitle,
+            string? subExecuteId,
+            global::G.Usage1? usage)
+        {
+            this.BatchIndex = batchIndex;
+            this.Code = code;
+            this.Content = content;
+            this.DebugUrl = debugUrl;
+            this.Detail = detail;
+            this.ErrorCode = errorCode;
+            this.ErrorMessage = errorMessage;
+            this.Event = @event;
+            this.Ext = ext;
+            this.Id = id;
+            this.InterruptData = interruptData;
+            this.LoopIndex = loopIndex;
+            this.Msg = msg;
+            this.NodeExecuteUuid = nodeExecuteUuid;
+            this.NodeId = nodeId;
+            this.NodeIsFinish = nodeIsFinish;
+            this.NodeSeqId = nodeSeqId;
+            this.NodeTitle = nodeTitle;
+            this.SubExecuteId = subExecuteId;
+            this.Usage = usage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenAPIStreamRunFlowResponse" /> class.
+        /// </summary>
+        public OpenAPIStreamRunFlowResponse()
+        {
+        }
+    }
+}

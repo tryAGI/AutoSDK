@@ -1,0 +1,52 @@
+﻿//HintName: G.Models.RunStepObjectLastErrorCode.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// One of `server_error` or `rate_limit_exceeded`.
+    /// </summary>
+    public enum RunStepObjectLastErrorCode
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        RateLimitExceeded,
+        /// <summary>
+        /// 
+        /// </summary>
+        ServerError,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RunStepObjectLastErrorCodeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RunStepObjectLastErrorCode value)
+        {
+            return value switch
+            {
+                RunStepObjectLastErrorCode.RateLimitExceeded => "rate_limit_exceeded",
+                RunStepObjectLastErrorCode.ServerError => "server_error",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RunStepObjectLastErrorCode? ToEnum(string value)
+        {
+            return value switch
+            {
+                "rate_limit_exceeded" => RunStepObjectLastErrorCode.RateLimitExceeded,
+                "server_error" => RunStepObjectLastErrorCode.ServerError,
+                _ => null,
+            };
+        }
+    }
+}

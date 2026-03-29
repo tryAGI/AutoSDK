@@ -1,0 +1,223 @@
+﻿//HintName: G.Models.AssistantOverridesServerMessage.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Runtime.Serialization.DataContract]
+    public enum AssistantOverridesServerMessage
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="assistant.started")]
+        AssistantStarted,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="call.delete.failed")]
+        CallDeleteFailed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="call.deleted")]
+        CallDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="chat.created")]
+        ChatCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="chat.deleted")]
+        ChatDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="conversation-update")]
+        ConversationUpdate,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="end-of-call-report")]
+        EndOfCallReport,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="function-call")]
+        FunctionCall,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="handoff-destination-request")]
+        HandoffDestinationRequest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="hang")]
+        Hang,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="language-change-detected")]
+        LanguageChangeDetected,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="language-changed")]
+        LanguageChanged,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="model-output")]
+        ModelOutput,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="phone-call-control")]
+        PhoneCallControl,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="session.created")]
+        SessionCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="session.deleted")]
+        SessionDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="session.updated")]
+        SessionUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="speech-update")]
+        SpeechUpdate,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="status-update")]
+        StatusUpdate,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="tool-calls")]
+        ToolCalls,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="transcript")]
+        Transcript,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="transcript-final")]
+        TranscriptFinal,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="transfer-destination-request")]
+        TransferDestinationRequest,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="transfer-update")]
+        TransferUpdate,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="user-interrupted")]
+        UserInterrupted,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="voice-input")]
+        VoiceInput,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class AssistantOverridesServerMessageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this AssistantOverridesServerMessage value)
+        {
+            return value switch
+            {
+                AssistantOverridesServerMessage.AssistantStarted => "assistant.started",
+                AssistantOverridesServerMessage.CallDeleteFailed => "call.delete.failed",
+                AssistantOverridesServerMessage.CallDeleted => "call.deleted",
+                AssistantOverridesServerMessage.ChatCreated => "chat.created",
+                AssistantOverridesServerMessage.ChatDeleted => "chat.deleted",
+                AssistantOverridesServerMessage.ConversationUpdate => "conversation-update",
+                AssistantOverridesServerMessage.EndOfCallReport => "end-of-call-report",
+                AssistantOverridesServerMessage.FunctionCall => "function-call",
+                AssistantOverridesServerMessage.HandoffDestinationRequest => "handoff-destination-request",
+                AssistantOverridesServerMessage.Hang => "hang",
+                AssistantOverridesServerMessage.LanguageChangeDetected => "language-change-detected",
+                AssistantOverridesServerMessage.LanguageChanged => "language-changed",
+                AssistantOverridesServerMessage.ModelOutput => "model-output",
+                AssistantOverridesServerMessage.PhoneCallControl => "phone-call-control",
+                AssistantOverridesServerMessage.SessionCreated => "session.created",
+                AssistantOverridesServerMessage.SessionDeleted => "session.deleted",
+                AssistantOverridesServerMessage.SessionUpdated => "session.updated",
+                AssistantOverridesServerMessage.SpeechUpdate => "speech-update",
+                AssistantOverridesServerMessage.StatusUpdate => "status-update",
+                AssistantOverridesServerMessage.ToolCalls => "tool-calls",
+                AssistantOverridesServerMessage.Transcript => "transcript",
+                AssistantOverridesServerMessage.TranscriptFinal => "transcript-final",
+                AssistantOverridesServerMessage.TransferDestinationRequest => "transfer-destination-request",
+                AssistantOverridesServerMessage.TransferUpdate => "transfer-update",
+                AssistantOverridesServerMessage.UserInterrupted => "user-interrupted",
+                AssistantOverridesServerMessage.VoiceInput => "voice-input",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static AssistantOverridesServerMessage? ToEnum(string value)
+        {
+            return value switch
+            {
+                "assistant.started" => AssistantOverridesServerMessage.AssistantStarted,
+                "call.delete.failed" => AssistantOverridesServerMessage.CallDeleteFailed,
+                "call.deleted" => AssistantOverridesServerMessage.CallDeleted,
+                "chat.created" => AssistantOverridesServerMessage.ChatCreated,
+                "chat.deleted" => AssistantOverridesServerMessage.ChatDeleted,
+                "conversation-update" => AssistantOverridesServerMessage.ConversationUpdate,
+                "end-of-call-report" => AssistantOverridesServerMessage.EndOfCallReport,
+                "function-call" => AssistantOverridesServerMessage.FunctionCall,
+                "handoff-destination-request" => AssistantOverridesServerMessage.HandoffDestinationRequest,
+                "hang" => AssistantOverridesServerMessage.Hang,
+                "language-change-detected" => AssistantOverridesServerMessage.LanguageChangeDetected,
+                "language-changed" => AssistantOverridesServerMessage.LanguageChanged,
+                "model-output" => AssistantOverridesServerMessage.ModelOutput,
+                "phone-call-control" => AssistantOverridesServerMessage.PhoneCallControl,
+                "session.created" => AssistantOverridesServerMessage.SessionCreated,
+                "session.deleted" => AssistantOverridesServerMessage.SessionDeleted,
+                "session.updated" => AssistantOverridesServerMessage.SessionUpdated,
+                "speech-update" => AssistantOverridesServerMessage.SpeechUpdate,
+                "status-update" => AssistantOverridesServerMessage.StatusUpdate,
+                "tool-calls" => AssistantOverridesServerMessage.ToolCalls,
+                "transcript" => AssistantOverridesServerMessage.Transcript,
+                "transcript-final" => AssistantOverridesServerMessage.TranscriptFinal,
+                "transfer-destination-request" => AssistantOverridesServerMessage.TransferDestinationRequest,
+                "transfer-update" => AssistantOverridesServerMessage.TransferUpdate,
+                "user-interrupted" => AssistantOverridesServerMessage.UserInterrupted,
+                "voice-input" => AssistantOverridesServerMessage.VoiceInput,
+                _ => null,
+            };
+        }
+    }
+}

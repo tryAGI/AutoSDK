@@ -1,0 +1,77 @@
+﻿//HintName: G.Models.PersonaLayers.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class PersonaLayers
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("perception")]
+        public global::G.PerceptionLayer? Perception { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("stt")]
+        public global::G.SttLayer? Stt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("conversational_flow")]
+        public global::G.ConversationalFlowLayer? ConversationalFlow { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("llm")]
+        public global::G.LlmLayer? Llm { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tts")]
+        public global::G.TtsLayer? Tts { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonaLayers" /> class.
+        /// </summary>
+        /// <param name="perception"></param>
+        /// <param name="stt"></param>
+        /// <param name="conversationalFlow"></param>
+        /// <param name="llm"></param>
+        /// <param name="tts"></param>
+        public PersonaLayers(
+            global::G.PerceptionLayer? perception,
+            global::G.SttLayer? stt,
+            global::G.ConversationalFlowLayer? conversationalFlow,
+            global::G.LlmLayer? llm,
+            global::G.TtsLayer? tts)
+        {
+            this.Perception = perception;
+            this.Stt = stt;
+            this.ConversationalFlow = conversationalFlow;
+            this.Llm = llm;
+            this.Tts = tts;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonaLayers" /> class.
+        /// </summary>
+        public PersonaLayers()
+        {
+        }
+    }
+}

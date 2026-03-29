@@ -1,0 +1,69 @@
+﻿//HintName: G.Models.PartitionName.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class PartitionName
+    {
+        /// <summary>
+        /// The name of the database to which the collection belongs.<br/>
+        /// Setting this to a non-existing database results in a **MilvusException**.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("dbName")]
+        public string? DbName { get; set; }
+
+        /// <summary>
+        /// The name of the target collection.<br/>
+        /// Setting this to a non-existing collection results in a **MilvusException**.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("collectionName", Required = global::Newtonsoft.Json.Required.Always)]
+        public string CollectionName { get; set; } = default!;
+
+        /// <summary>
+        /// The name of the target parition.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("partitionName", Required = global::Newtonsoft.Json.Required.Always)]
+        public string PartitionName1 { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PartitionName" /> class.
+        /// </summary>
+        /// <param name="collectionName">
+        /// The name of the target collection.<br/>
+        /// Setting this to a non-existing collection results in a **MilvusException**.
+        /// </param>
+        /// <param name="partitionName1">
+        /// The name of the target parition.
+        /// </param>
+        /// <param name="dbName">
+        /// The name of the database to which the collection belongs.<br/>
+        /// Setting this to a non-existing database results in a **MilvusException**.
+        /// </param>
+        public PartitionName(
+            string collectionName,
+            string partitionName1,
+            string? dbName)
+        {
+            this.DbName = dbName;
+            this.CollectionName = collectionName ?? throw new global::System.ArgumentNullException(nameof(collectionName));
+            this.PartitionName1 = partitionName1 ?? throw new global::System.ArgumentNullException(nameof(partitionName1));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PartitionName" /> class.
+        /// </summary>
+        public PartitionName()
+        {
+        }
+    }
+}

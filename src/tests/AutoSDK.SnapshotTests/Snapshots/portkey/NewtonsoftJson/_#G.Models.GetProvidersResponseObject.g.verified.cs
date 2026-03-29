@@ -1,0 +1,48 @@
+﻿//HintName: G.Models.GetProvidersResponseObject.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Runtime.Serialization.DataContract]
+    public enum GetProvidersResponseObject
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="list")]
+        List,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class GetProvidersResponseObjectExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this GetProvidersResponseObject value)
+        {
+            return value switch
+            {
+                GetProvidersResponseObject.List => "list",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static GetProvidersResponseObject? ToEnum(string value)
+        {
+            return value switch
+            {
+                "list" => GetProvidersResponseObject.List,
+                _ => null,
+            };
+        }
+    }
+}

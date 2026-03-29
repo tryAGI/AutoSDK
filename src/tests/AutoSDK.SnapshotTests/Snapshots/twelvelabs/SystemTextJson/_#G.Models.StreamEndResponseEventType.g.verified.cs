@@ -1,0 +1,46 @@
+﻿//HintName: G.Models.StreamEndResponseEventType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// This field is always set to `stream_end` for this event.
+    /// </summary>
+    public enum StreamEndResponseEventType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        StreamEnd,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class StreamEndResponseEventTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this StreamEndResponseEventType value)
+        {
+            return value switch
+            {
+                StreamEndResponseEventType.StreamEnd => "stream_end",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static StreamEndResponseEventType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "stream_end" => StreamEndResponseEventType.StreamEnd,
+                _ => null,
+            };
+        }
+    }
+}

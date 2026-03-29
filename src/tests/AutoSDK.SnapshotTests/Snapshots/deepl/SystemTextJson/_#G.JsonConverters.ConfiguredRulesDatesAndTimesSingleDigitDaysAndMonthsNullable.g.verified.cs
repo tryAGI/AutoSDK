@@ -1,0 +1,61 @@
+﻿//HintName: G.JsonConverters.ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonthsNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonthsNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonths?>
+    {
+        /// <inheritdoc />
+        public override global::G.ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonths? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonthsExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonths)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonths?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonths? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonthsExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

@@ -1,0 +1,111 @@
+﻿//HintName: G.Models.CreateGlossaryParameters.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class CreateGlossaryParameters
+    {
+        /// <summary>
+        /// Name to be associated with the glossary.<br/>
+        /// Example: My Glossary
+        /// </summary>
+        /// <example>My Glossary</example>
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// The language in which the source texts in the glossary are specified.<br/>
+        /// Example: en
+        /// </summary>
+        /// <example>en</example>
+        [global::Newtonsoft.Json.JsonProperty("source_lang", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.GlossarySourceLanguage SourceLang { get; set; } = default!;
+
+        /// <summary>
+        /// The language in which the target texts in the glossary are specified.<br/>
+        /// Example: de
+        /// </summary>
+        /// <example>de</example>
+        [global::Newtonsoft.Json.JsonProperty("target_lang", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.GlossaryTargetLanguage TargetLang { get; set; } = default!;
+
+        /// <summary>
+        /// The entries of the glossary. The entries have to be specified in the format provided by the `entries_format` parameter.<br/>
+        /// Example: Hello	Guten Tag
+        /// </summary>
+        /// <example>Hello	Guten Tag</example>
+        [global::Newtonsoft.Json.JsonProperty("entries", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Entries { get; set; } = default!;
+
+        /// <summary>
+        /// The format in which the glossary entries are provided. Formats currently available:<br/>
+        /// - `tsv` (default) - tab-separated values<br/>
+        /// - `csv` - comma-separated values<br/>
+        /// See [Supported Glossary Formats](https://www.deepl.com/docs-api/glossaries/formats) for details about each format.<br/>
+        /// Default Value: tsv<br/>
+        /// Example: tsv
+        /// </summary>
+        /// <default>global::G.CreateGlossaryParametersEntriesFormat.Tsv</default>
+        /// <example>tsv</example>
+        [global::Newtonsoft.Json.JsonProperty("entries_format", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.CreateGlossaryParametersEntriesFormat EntriesFormat { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateGlossaryParameters" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Name to be associated with the glossary.<br/>
+        /// Example: My Glossary
+        /// </param>
+        /// <param name="sourceLang">
+        /// The language in which the source texts in the glossary are specified.<br/>
+        /// Example: en
+        /// </param>
+        /// <param name="targetLang">
+        /// The language in which the target texts in the glossary are specified.<br/>
+        /// Example: de
+        /// </param>
+        /// <param name="entries">
+        /// The entries of the glossary. The entries have to be specified in the format provided by the `entries_format` parameter.<br/>
+        /// Example: Hello	Guten Tag
+        /// </param>
+        /// <param name="entriesFormat">
+        /// The format in which the glossary entries are provided. Formats currently available:<br/>
+        /// - `tsv` (default) - tab-separated values<br/>
+        /// - `csv` - comma-separated values<br/>
+        /// See [Supported Glossary Formats](https://www.deepl.com/docs-api/glossaries/formats) for details about each format.<br/>
+        /// Default Value: tsv<br/>
+        /// Example: tsv
+        /// </param>
+        public CreateGlossaryParameters(
+            string name,
+            global::G.GlossarySourceLanguage sourceLang,
+            global::G.GlossaryTargetLanguage targetLang,
+            string entries,
+            global::G.CreateGlossaryParametersEntriesFormat entriesFormat)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.SourceLang = sourceLang;
+            this.TargetLang = targetLang;
+            this.Entries = entries ?? throw new global::System.ArgumentNullException(nameof(entries));
+            this.EntriesFormat = entriesFormat;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateGlossaryParameters" /> class.
+        /// </summary>
+        public CreateGlossaryParameters()
+        {
+        }
+    }
+}

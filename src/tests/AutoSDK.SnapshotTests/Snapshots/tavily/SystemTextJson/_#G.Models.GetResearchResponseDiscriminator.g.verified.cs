@@ -1,0 +1,45 @@
+﻿//HintName: G.Models.GetResearchResponseDiscriminator.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class GetResearchResponseDiscriminator
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetResearchResponseDiscriminatorStatusJsonConverter))]
+        public global::G.GetResearchResponseDiscriminatorStatus? Status { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetResearchResponseDiscriminator" /> class.
+        /// </summary>
+        /// <param name="status"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public GetResearchResponseDiscriminator(
+            global::G.GetResearchResponseDiscriminatorStatus? status)
+        {
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetResearchResponseDiscriminator" /> class.
+        /// </summary>
+        public GetResearchResponseDiscriminator()
+        {
+        }
+    }
+}

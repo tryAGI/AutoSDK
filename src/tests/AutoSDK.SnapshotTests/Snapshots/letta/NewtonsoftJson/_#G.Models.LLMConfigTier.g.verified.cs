@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.LLMConfigTier.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The cost tier for the model (cloud only).
+    /// </summary>
+    public sealed partial class LLMConfigTier
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

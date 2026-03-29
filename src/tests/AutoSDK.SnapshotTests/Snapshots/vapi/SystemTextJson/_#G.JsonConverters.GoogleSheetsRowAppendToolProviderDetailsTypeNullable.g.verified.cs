@@ -1,0 +1,61 @@
+﻿//HintName: G.JsonConverters.GoogleSheetsRowAppendToolProviderDetailsTypeNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class GoogleSheetsRowAppendToolProviderDetailsTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.GoogleSheetsRowAppendToolProviderDetailsType?>
+    {
+        /// <inheritdoc />
+        public override global::G.GoogleSheetsRowAppendToolProviderDetailsType? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.GoogleSheetsRowAppendToolProviderDetailsTypeExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.GoogleSheetsRowAppendToolProviderDetailsType)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.GoogleSheetsRowAppendToolProviderDetailsType?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.GoogleSheetsRowAppendToolProviderDetailsType? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.GoogleSheetsRowAppendToolProviderDetailsTypeExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

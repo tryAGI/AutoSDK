@@ -1,0 +1,26 @@
+﻿//HintName: G.IPromptsClient.GetPrompts.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IPromptsClient
+    {
+        /// <summary>
+        /// List all prompts<br/>
+        /// Retrieve a paginated list of all prompts in the system. A prompt can have multiple versions.
+        /// </summary>
+        /// <param name="cursor">
+        /// Cursor for pagination (base64-encoded prompt ID)
+        /// </param>
+        /// <param name="limit">
+        /// The max number of prompts to return at a time.<br/>
+        /// Default Value: 100
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.GetPromptsResponseBody> GetPromptsAsync(
+            string? cursor = default,
+            int? limit = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

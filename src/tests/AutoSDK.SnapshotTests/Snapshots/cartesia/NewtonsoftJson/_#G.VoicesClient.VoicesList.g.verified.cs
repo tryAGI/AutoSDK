@@ -1,0 +1,246 @@
+﻿//HintName: G.VoicesClient.VoicesList.g.cs
+
+#nullable enable
+
+namespace G
+{
+    public partial class VoicesClient
+    {
+        partial void PrepareVoicesListArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref global::G.VoicesListCartesiaVersion cartesiaVersion,
+            ref int? limit,
+            ref string? startingAfter,
+            ref string? endingBefore,
+            ref string? q,
+            ref bool? isOwner,
+            ref global::G.GenderPresentation? gender,
+            global::System.Collections.Generic.IList<global::G.VoiceExpandOptions>? expand);
+        partial void PrepareVoicesListRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.VoicesListCartesiaVersion cartesiaVersion,
+            int? limit,
+            string? startingAfter,
+            string? endingBefore,
+            string? q,
+            bool? isOwner,
+            global::G.GenderPresentation? gender,
+            global::System.Collections.Generic.IList<global::G.VoiceExpandOptions>? expand);
+        partial void ProcessVoicesListResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessVoicesListResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// List Voices
+        /// </summary>
+        /// <param name="cartesiaVersion">
+        /// Example: 2025-04-16
+        /// </param>
+        /// <param name="limit"></param>
+        /// <param name="startingAfter"></param>
+        /// <param name="endingBefore"></param>
+        /// <param name="q"></param>
+        /// <param name="isOwner"></param>
+        /// <param name="gender"></param>
+        /// <param name="expand"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.GetVoicesResponse> VoicesListAsync(
+            global::G.VoicesListCartesiaVersion cartesiaVersion,
+            int? limit = default,
+            string? startingAfter = default,
+            string? endingBefore = default,
+            string? q = default,
+            bool? isOwner = default,
+            global::G.GenderPresentation? gender = default,
+            global::System.Collections.Generic.IList<global::G.VoiceExpandOptions>? expand = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            PrepareArguments(
+                client: HttpClient);
+            PrepareVoicesListArguments(
+                httpClient: HttpClient,
+                cartesiaVersion: ref cartesiaVersion,
+                limit: ref limit,
+                startingAfter: ref startingAfter,
+                endingBefore: ref endingBefore,
+                q: ref q,
+                isOwner: ref isOwner,
+                gender: ref gender,
+                expand: expand);
+
+            var cartesiaVersionValue = cartesiaVersion switch
+            {
+                global::G.VoicesListCartesiaVersion.x20240610 => "2024-06-10",
+                global::G.VoicesListCartesiaVersion.x20241113 => "2024-11-13",
+                global::G.VoicesListCartesiaVersion.x20250416 => "2025-04-16",
+                global::G.VoicesListCartesiaVersion.x20251104 => "2025-11-04",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var genderValue = gender switch
+            {
+                global::G.GenderPresentation.Masculine => "masculine",
+                global::G.GenderPresentation.Feminine => "feminine",
+                global::G.GenderPresentation.GenderNeutral => "gender_neutral",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var __pathBuilder = new global::G.PathBuilder(
+                path: "/voices",
+                baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("starting_after", startingAfter)
+                .AddOptionalParameter("ending_before", endingBefore)
+                .AddOptionalParameter("q", q)
+                .AddOptionalParameter("is_owner", isOwner?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("gender", gender?.ToValueString())
+                .AddOptionalParameter("expand[]", expand, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
+                ; 
+            var __path = __pathBuilder.ToString();
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Get,
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in Authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
+
+            __httpRequest.Headers.TryAddWithoutValidation("Cartesia-Version", cartesiaVersion.ToValueString());
+
+
+            PrepareRequest(
+                client: HttpClient,
+                request: __httpRequest);
+            PrepareVoicesListRequest(
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
+                cartesiaVersion: cartesiaVersion,
+                limit: limit,
+                startingAfter: startingAfter,
+                endingBefore: endingBefore,
+                q: q,
+                isOwner: isOwner,
+                gender: gender,
+                expand: expand);
+
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: HttpClient,
+                response: __response);
+            ProcessVoicesListResponse(
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessVoicesListResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::G.GetVoicesResponse.FromJson(__content, JsonSerializerOptions) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::G.GetVoicesResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    string? __content = null;
+                    try
+                    {
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }
+                    catch (global::System.Exception)
+                    {
+                    }
+
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+        }
+    }
+}

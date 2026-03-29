@@ -1,0 +1,91 @@
+﻿//HintName: G.Models.ApplyPatchCallOutputContent.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Apply patch tool output block.
+    /// </summary>
+    public sealed partial class ApplyPatchCallOutputContent
+    {
+        /// <summary>
+        /// Default Value: apply_patch_call_output
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ApplyPatchCallOutputContentTypeJsonConverter))]
+        public global::G.ApplyPatchCallOutputContentType? Type { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("call_id")]
+        public string? CallId { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
+        public string? Output { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        public string? Status { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplyPatchCallOutputContent" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Default Value: apply_patch_call_output
+        /// </param>
+        /// <param name="id">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="callId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="output">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="status">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ApplyPatchCallOutputContent(
+            global::G.ApplyPatchCallOutputContentType? type,
+            string? id,
+            string? callId,
+            string? output,
+            string? status)
+        {
+            this.Type = type;
+            this.Id = id;
+            this.CallId = callId;
+            this.Output = output;
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplyPatchCallOutputContent" /> class.
+        /// </summary>
+        public ApplyPatchCallOutputContent()
+        {
+        }
+    }
+}

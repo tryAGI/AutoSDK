@@ -1,0 +1,20 @@
+﻿//HintName: G.ILlamaExtractClient.DeleteExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdDelete.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface ILlamaExtractClient
+    {
+        /// <summary>
+        /// Delete Extraction Agent
+        /// </summary>
+        /// <param name="extractionAgentId"></param>
+        /// <param name="session"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<string> DeleteExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdDeleteAsync(
+            global::System.Guid extractionAgentId,
+            string? session = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

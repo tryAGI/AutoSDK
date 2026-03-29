@@ -1,0 +1,59 @@
+﻿//HintName: G.Models.UsageCostDetails.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class UsageCostDetails
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("upstream_inference_cost")]
+        public double? UpstreamInferenceCost { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("upstream_inference_input_cost", Required = global::Newtonsoft.Json.Required.Always)]
+        public double UpstreamInferenceInputCost { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("upstream_inference_output_cost", Required = global::Newtonsoft.Json.Required.Always)]
+        public double UpstreamInferenceOutputCost { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsageCostDetails" /> class.
+        /// </summary>
+        /// <param name="upstreamInferenceInputCost"></param>
+        /// <param name="upstreamInferenceOutputCost"></param>
+        /// <param name="upstreamInferenceCost"></param>
+        public UsageCostDetails(
+            double upstreamInferenceInputCost,
+            double upstreamInferenceOutputCost,
+            double? upstreamInferenceCost)
+        {
+            this.UpstreamInferenceCost = upstreamInferenceCost;
+            this.UpstreamInferenceInputCost = upstreamInferenceInputCost;
+            this.UpstreamInferenceOutputCost = upstreamInferenceOutputCost;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsageCostDetails" /> class.
+        /// </summary>
+        public UsageCostDetails()
+        {
+        }
+    }
+}

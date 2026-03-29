@@ -1,0 +1,41 @@
+﻿//HintName: G.Models.AutomationRuleEvaluatorWriteDiscriminator.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class AutomationRuleEvaluatorWriteDiscriminator
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.AutomationRuleEvaluatorWriteDiscriminatorType? Type { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutomationRuleEvaluatorWriteDiscriminator" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        public AutomationRuleEvaluatorWriteDiscriminator(
+            global::G.AutomationRuleEvaluatorWriteDiscriminatorType? type)
+        {
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutomationRuleEvaluatorWriteDiscriminator" /> class.
+        /// </summary>
+        public AutomationRuleEvaluatorWriteDiscriminator()
+        {
+        }
+    }
+}

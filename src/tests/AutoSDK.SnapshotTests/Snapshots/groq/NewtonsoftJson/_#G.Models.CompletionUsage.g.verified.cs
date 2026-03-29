@@ -1,0 +1,131 @@
+﻿//HintName: G.Models.CompletionUsage.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Usage statistics for the completion request.
+    /// </summary>
+    public sealed partial class CompletionUsage
+    {
+        /// <summary>
+        /// Time the requests was spent queued
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("queue_time")]
+        public double? QueueTime { get; set; }
+
+        /// <summary>
+        /// Time spent generating tokens
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("completion_time")]
+        public double? CompletionTime { get; set; }
+
+        /// <summary>
+        /// Number of tokens in the generated completion.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("completion_tokens", Required = global::Newtonsoft.Json.Required.Always)]
+        public int CompletionTokens { get; set; } = default!;
+
+        /// <summary>
+        /// Time spent processing input tokens
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("prompt_time")]
+        public double? PromptTime { get; set; }
+
+        /// <summary>
+        /// Number of tokens in the prompt.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("prompt_tokens", Required = global::Newtonsoft.Json.Required.Always)]
+        public int PromptTokens { get; set; } = default!;
+
+        /// <summary>
+        /// completion time and prompt time combined
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("total_time")]
+        public double? TotalTime { get; set; }
+
+        /// <summary>
+        /// Total number of tokens used in the request (prompt + completion).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("total_tokens", Required = global::Newtonsoft.Json.Required.Always)]
+        public int TotalTokens { get; set; } = default!;
+
+        /// <summary>
+        /// Breakdown of tokens in the prompt.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("prompt_tokens_details")]
+        public global::G.CompletionUsagePromptTokensDetails? PromptTokensDetails { get; set; }
+
+        /// <summary>
+        /// Breakdown of tokens in the completion.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("completion_tokens_details")]
+        public global::G.CompletionUsageCompletionTokensDetails? CompletionTokensDetails { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionUsage" /> class.
+        /// </summary>
+        /// <param name="completionTokens">
+        /// Number of tokens in the generated completion.
+        /// </param>
+        /// <param name="promptTokens">
+        /// Number of tokens in the prompt.
+        /// </param>
+        /// <param name="totalTokens">
+        /// Total number of tokens used in the request (prompt + completion).
+        /// </param>
+        /// <param name="queueTime">
+        /// Time the requests was spent queued
+        /// </param>
+        /// <param name="completionTime">
+        /// Time spent generating tokens
+        /// </param>
+        /// <param name="promptTime">
+        /// Time spent processing input tokens
+        /// </param>
+        /// <param name="totalTime">
+        /// completion time and prompt time combined
+        /// </param>
+        /// <param name="promptTokensDetails">
+        /// Breakdown of tokens in the prompt.
+        /// </param>
+        /// <param name="completionTokensDetails">
+        /// Breakdown of tokens in the completion.
+        /// </param>
+        public CompletionUsage(
+            int completionTokens,
+            int promptTokens,
+            int totalTokens,
+            double? queueTime,
+            double? completionTime,
+            double? promptTime,
+            double? totalTime,
+            global::G.CompletionUsagePromptTokensDetails? promptTokensDetails,
+            global::G.CompletionUsageCompletionTokensDetails? completionTokensDetails)
+        {
+            this.QueueTime = queueTime;
+            this.CompletionTime = completionTime;
+            this.CompletionTokens = completionTokens;
+            this.PromptTime = promptTime;
+            this.PromptTokens = promptTokens;
+            this.TotalTime = totalTime;
+            this.TotalTokens = totalTokens;
+            this.PromptTokensDetails = promptTokensDetails;
+            this.CompletionTokensDetails = completionTokensDetails;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionUsage" /> class.
+        /// </summary>
+        public CompletionUsage()
+        {
+        }
+    }
+}

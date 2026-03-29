@@ -1,0 +1,26 @@
+﻿//HintName: G.IDeprecatedVectorStoresClient.DeprecatedDeleteSearchRule.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IDeprecatedVectorStoresClient
+    {
+        /// <summary>
+        /// [DEPRECATED] Delete a search rule<br/>
+        /// DEPRECATED: Use DELETE /stores/{store_identifier}/rules/{rule_id} instead
+        /// </summary>
+        /// <param name="vectorStoreIdentifier">
+        /// The ID or name of the vector store
+        /// </param>
+        /// <param name="ruleId">
+        /// The ID of the search rule to delete
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleDeleted> DeprecatedDeleteSearchRuleAsync(
+            global::G.AnyOf<string, global::System.Guid?> vectorStoreIdentifier,
+            global::System.Guid ruleId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

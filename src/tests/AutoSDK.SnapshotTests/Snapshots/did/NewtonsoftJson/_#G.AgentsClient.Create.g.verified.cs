@@ -1,0 +1,306 @@
+﻿//HintName: G.AgentsClient.Create.g.cs
+
+#nullable enable
+
+namespace G
+{
+    public partial class AgentsClient
+    {
+        partial void PrepareCreateArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string? xApiKeyExternal,
+            global::G.CreateRequest2 request);
+        partial void PrepareCreateRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? xApiKeyExternal,
+            global::G.CreateRequest2 request);
+        partial void ProcessCreateResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessCreateResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// Create an Agent<br/>
+        /// Creates a new Agent.
+        /// </summary>
+        /// <param name="xApiKeyExternal"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AllOf<global::G.CreateResponseVariant1, global::G.CreateResponseVariant2>> CreateAsync(
+
+            global::G.CreateRequest2 request,
+            string? xApiKeyExternal = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
+            PrepareArguments(
+                client: HttpClient);
+            PrepareCreateArguments(
+                httpClient: HttpClient,
+                xApiKeyExternal: ref xApiKeyExternal,
+                request: request);
+
+            var __pathBuilder = new global::G.PathBuilder(
+                path: "/agents",
+                baseUri: HttpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Post,
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in Authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
+
+            if (xApiKeyExternal != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("x-api-key-external", xApiKeyExternal.ToString());
+            }
+
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            __httpRequest.Content = __httpRequestContent;
+
+            PrepareRequest(
+                client: HttpClient,
+                request: __httpRequest);
+            PrepareCreateRequest(
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
+                xApiKeyExternal: xApiKeyExternal,
+                request: request);
+
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: HttpClient,
+                response: __response);
+            ProcessCreateResponse(
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            // AuthorizationError
+            if ((int)__response.StatusCode == 401)
+            {
+                string? __content_401 = null;
+                global::System.Exception? __exception_401 = null;
+                global::G.CreateResponse7? __value_401 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_401 = global::G.CreateResponse7.FromJson(__content_401, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_401 = global::G.CreateResponse7.FromJson(__content_401, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_401 = __ex;
+                }
+
+                throw new global::G.ApiException<global::G.CreateResponse7>(
+                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_401,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_401,
+                    ResponseObject = __value_401,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessCreateResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::G.AllOf<global::G.CreateResponseVariant1, global::G.CreateResponseVariant2>.FromJson(__content, JsonSerializerOptions) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::G.AllOf<global::G.CreateResponseVariant1, global::G.CreateResponseVariant2>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    string? __content = null;
+                    try
+                    {
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }
+                    catch (global::System.Exception)
+                    {
+                    }
+
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+        }
+        /// <summary>
+        /// Create an Agent<br/>
+        /// Creates a new Agent.
+        /// </summary>
+        /// <param name="xApiKeyExternal"></param>
+        /// <param name="previewName">
+        /// Agent name
+        /// </param>
+        /// <param name="previewDescription">
+        /// Description of the agent
+        /// </param>
+        /// <param name="presenter">
+        /// Defines the Agent’s avatar, including its visual appearance and voice.
+        /// </param>
+        /// <param name="llm">
+        /// Configuration for the Large Language Model used by the Agent to generate responses.<br/>
+        /// D-ID and Google providers are only supported with Expressive Avatar presenters.
+        /// </param>
+        /// <param name="knowledge">
+        /// Knowledge Base used by the Agent to retrieve answers (RAG).<br/>
+        /// Use the ID returned by the Create Knowledge endpoint.
+        /// </param>
+        /// <param name="starterMessage">
+        /// List of suggested questions shown to the user at the start of the chat.
+        /// </param>
+        /// <param name="greetings">
+        /// Greeting messages used when the chat starts.<br/>
+        /// One greeting is selected at random.
+        /// </param>
+        /// <param name="userData"></param>
+        /// <param name="embed">
+        /// Enables the Agent for use with the SDK or website embedding via D-ID Studio.
+        /// </param>
+        /// <param name="triggers">
+        /// Event-based trigger configuration for the Agent.
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AllOf<global::G.CreateResponseVariant1, global::G.CreateResponseVariant2>> CreateAsync(
+            global::G.AnyOf<global::G.CreateRequestPresenterPhotoAvatar, global::G.CreateRequestPresenterVideoAvatar, global::G.CreateRequestPresenterExpressiveAvatar> presenter,
+            string? xApiKeyExternal = default,
+            string? previewName = default,
+            string? previewDescription = default,
+            global::G.AnyOf<global::G.CreateRequestLlmVariant1, global::G.CreateRequestLlmVariant2, global::G.CreateRequestLlmVariant3, global::G.CreateRequestLlmVariant4, global::G.CreateRequestLlmVariant5, global::G.CreateRequestLlmVariant6>? llm = default,
+            global::G.CreateRequestKnowledge? knowledge = default,
+            global::System.Collections.Generic.IList<string>? starterMessage = default,
+            global::System.Collections.Generic.IList<string>? greetings = default,
+            string? userData = default,
+            bool? embed = default,
+            global::G.CreateRequestTriggers? triggers = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::G.CreateRequest2
+            {
+                PreviewName = previewName,
+                PreviewDescription = previewDescription,
+                Presenter = presenter,
+                Llm = llm,
+                Knowledge = knowledge,
+                StarterMessage = starterMessage,
+                Greetings = greetings,
+                UserData = userData,
+                Embed = embed,
+                Triggers = triggers,
+            };
+
+            return await CreateAsync(
+                xApiKeyExternal: xApiKeyExternal,
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+    }
+}

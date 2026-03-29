@@ -50,7 +50,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AudioIsolation2Client AudioIsolation2 => new AudioIsolation2Client(HttpClient, authorizations: Authorizations)
+        public AudioIsolationClient AudioIsolation => new AudioIsolationClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -59,7 +59,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AudioNative2Client AudioNative2 => new AudioNative2Client(HttpClient, authorizations: Authorizations)
+        public AudioNativeClient AudioNative => new AudioNativeClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -95,7 +95,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ForcedAlignment2Client ForcedAlignment2 => new ForcedAlignment2Client(HttpClient, authorizations: Authorizations)
+        public ForcedAlignmentClient ForcedAlignment => new ForcedAlignmentClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -185,7 +185,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SpeechToSpeech2Client SpeechToSpeech2 => new SpeechToSpeech2Client(HttpClient, authorizations: Authorizations)
+        public SpeechToSpeechClient SpeechToSpeech => new SpeechToSpeechClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -221,7 +221,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToDialogue2Client TextToDialogue2 => new TextToDialogue2Client(HttpClient, authorizations: Authorizations)
+        public TextToDialogueClient TextToDialogue => new TextToDialogueClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -239,7 +239,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToSpeech2Client TextToSpeech2 => new TextToSpeech2Client(HttpClient, authorizations: Authorizations)
+        public TextToSpeechClient TextToSpeech => new TextToSpeechClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

@@ -1,0 +1,133 @@
+﻿//HintName: G.Models.CreateStreamRequest2.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class CreateStreamRequest2
+    {
+        /// <summary>
+        /// URL to a photo you wish to animate in the stream
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("source_url", Required = global::Newtonsoft.Json.Required.Always)]
+        public string SourceUrl { get; set; } = default!;
+
+        /// <summary>
+        /// the face to animate - otherwise detects the dominant face
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("face")]
+        public global::G.CreateStreamRequestFace? Face { get; set; }
+
+        /// <summary>
+        /// Advanced configuration options.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("config")]
+        public global::G.CreateStreamRequestConfig? Config { get; set; }
+
+        /// <summary>
+        /// Defines the video codec to be used in the stream.<br/>
+        /// When set to on: VP8 will be used.<br/>
+        /// When set to off: H264 will be used<br/>
+        /// When set to auto the codec will be selected according to the browser.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("compatibility_mode")]
+        public global::G.CreateStreamRequestCompatibilityMode2? CompatibilityMode { get; set; }
+
+        /// <summary>
+        /// Whether to stream wamrup video on the connection.<br/>
+        /// If set to true, will stream a warmup video when connection is established.<br/>
+        /// At the end of the warmup video, a message containing "stream/ready" will be sent on the data channel.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("stream_warmup")]
+        public bool? StreamWarmup { get; set; }
+
+        /// <summary>
+        /// Maximum duration (in seconds) between messages before session times out.<br/>
+        /// Can only be used with proper permissions<br/>
+        /// Example: 180
+        /// </summary>
+        /// <example>180</example>
+        [global::Newtonsoft.Json.JsonProperty("session_timeout")]
+        public double? SessionTimeout { get; set; }
+
+        /// <summary>
+        /// The output resolution sets the maximum height or width of the streamed video.<br/>
+        /// The aspect ratio is preserved from the source image.<br/>
+        /// When resolution is not configured, it defaults to the agent output resolution.<br/>
+        /// Example: 512
+        /// </summary>
+        /// <example>512</example>
+        [global::Newtonsoft.Json.JsonProperty("output_resolution")]
+        public double? OutputResolution { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateStreamRequest2" /> class.
+        /// </summary>
+        /// <param name="sourceUrl">
+        /// URL to a photo you wish to animate in the stream
+        /// </param>
+        /// <param name="face">
+        /// the face to animate - otherwise detects the dominant face
+        /// </param>
+        /// <param name="config">
+        /// Advanced configuration options.
+        /// </param>
+        /// <param name="compatibilityMode">
+        /// Defines the video codec to be used in the stream.<br/>
+        /// When set to on: VP8 will be used.<br/>
+        /// When set to off: H264 will be used<br/>
+        /// When set to auto the codec will be selected according to the browser.
+        /// </param>
+        /// <param name="streamWarmup">
+        /// Whether to stream wamrup video on the connection.<br/>
+        /// If set to true, will stream a warmup video when connection is established.<br/>
+        /// At the end of the warmup video, a message containing "stream/ready" will be sent on the data channel.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="sessionTimeout">
+        /// Maximum duration (in seconds) between messages before session times out.<br/>
+        /// Can only be used with proper permissions<br/>
+        /// Example: 180
+        /// </param>
+        /// <param name="outputResolution">
+        /// The output resolution sets the maximum height or width of the streamed video.<br/>
+        /// The aspect ratio is preserved from the source image.<br/>
+        /// When resolution is not configured, it defaults to the agent output resolution.<br/>
+        /// Example: 512
+        /// </param>
+        public CreateStreamRequest2(
+            string sourceUrl,
+            global::G.CreateStreamRequestFace? face,
+            global::G.CreateStreamRequestConfig? config,
+            global::G.CreateStreamRequestCompatibilityMode2? compatibilityMode,
+            bool? streamWarmup,
+            double? sessionTimeout,
+            double? outputResolution)
+        {
+            this.SourceUrl = sourceUrl ?? throw new global::System.ArgumentNullException(nameof(sourceUrl));
+            this.Face = face;
+            this.Config = config;
+            this.CompatibilityMode = compatibilityMode;
+            this.StreamWarmup = streamWarmup;
+            this.SessionTimeout = sessionTimeout;
+            this.OutputResolution = outputResolution;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateStreamRequest2" /> class.
+        /// </summary>
+        public CreateStreamRequest2()
+        {
+        }
+    }
+}

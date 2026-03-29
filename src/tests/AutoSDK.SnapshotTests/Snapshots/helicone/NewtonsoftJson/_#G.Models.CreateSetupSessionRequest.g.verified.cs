@@ -1,0 +1,41 @@
+﻿//HintName: G.Models.CreateSetupSessionRequest.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class CreateSetupSessionRequest
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("returnUrl")]
+        public string? ReturnUrl { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateSetupSessionRequest" /> class.
+        /// </summary>
+        /// <param name="returnUrl"></param>
+        public CreateSetupSessionRequest(
+            string? returnUrl)
+        {
+            this.ReturnUrl = returnUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateSetupSessionRequest" /> class.
+        /// </summary>
+        public CreateSetupSessionRequest()
+        {
+        }
+    }
+}

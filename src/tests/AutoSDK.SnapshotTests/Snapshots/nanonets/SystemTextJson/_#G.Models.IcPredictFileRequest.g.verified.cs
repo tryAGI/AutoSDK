@@ -1,0 +1,85 @@
+﻿//HintName: G.Models.IcPredictFileRequest.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class IcPredictFileRequest
+    {
+        /// <summary>
+        /// The ID of the model on which the operation is to be performed.<br/>
+        /// It can be found in the model settings.<br/>
+        /// &lt;br /&gt;<br/>
+        /// **Eg**: `0a0aa000-0000-0a0-aa00-000a0000000a`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("modelId")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ModelId { get; set; }
+
+        /// <summary>
+        /// The file to be uploaded.<br/>
+        /// &lt;br /&gt;<br/>
+        /// **Format**: PNG, JPEG or PDF
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required byte[] File { get; set; }
+
+        /// <summary>
+        /// The file to be uploaded.<br/>
+        /// &lt;br /&gt;<br/>
+        /// **Format**: PNG, JPEG or PDF
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Filename { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IcPredictFileRequest" /> class.
+        /// </summary>
+        /// <param name="modelId">
+        /// The ID of the model on which the operation is to be performed.<br/>
+        /// It can be found in the model settings.<br/>
+        /// &lt;br /&gt;<br/>
+        /// **Eg**: `0a0aa000-0000-0a0-aa00-000a0000000a`
+        /// </param>
+        /// <param name="file">
+        /// The file to be uploaded.<br/>
+        /// &lt;br /&gt;<br/>
+        /// **Format**: PNG, JPEG or PDF
+        /// </param>
+        /// <param name="filename">
+        /// The file to be uploaded.<br/>
+        /// &lt;br /&gt;<br/>
+        /// **Format**: PNG, JPEG or PDF
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public IcPredictFileRequest(
+            string modelId,
+            byte[] file,
+            string filename)
+        {
+            this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
+            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IcPredictFileRequest" /> class.
+        /// </summary>
+        public IcPredictFileRequest()
+        {
+        }
+    }
+}

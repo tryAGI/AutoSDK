@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LeMUR2Client LeMUR2 { get; }
+        public LemurClient Lemur { get; }
 
         /// <summary>
         /// 

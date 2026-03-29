@@ -1,0 +1,68 @@
+﻿//HintName: G.Models.CollectionSnapshotTelemetry.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class CollectionSnapshotTelemetry
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("running_snapshots")]
+        public int? RunningSnapshots { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("running_snapshot_recovery")]
+        public int? RunningSnapshotRecovery { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("total_snapshot_creations")]
+        public int? TotalSnapshotCreations { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CollectionSnapshotTelemetry" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="runningSnapshots"></param>
+        /// <param name="runningSnapshotRecovery"></param>
+        /// <param name="totalSnapshotCreations"></param>
+        public CollectionSnapshotTelemetry(
+            string id,
+            int? runningSnapshots,
+            int? runningSnapshotRecovery,
+            int? totalSnapshotCreations)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.RunningSnapshots = runningSnapshots;
+            this.RunningSnapshotRecovery = runningSnapshotRecovery;
+            this.TotalSnapshotCreations = totalSnapshotCreations;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CollectionSnapshotTelemetry" /> class.
+        /// </summary>
+        public CollectionSnapshotTelemetry()
+        {
+        }
+    }
+}

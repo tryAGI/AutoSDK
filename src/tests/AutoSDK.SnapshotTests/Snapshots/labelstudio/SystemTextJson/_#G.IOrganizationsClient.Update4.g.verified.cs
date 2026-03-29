@@ -1,0 +1,54 @@
+﻿//HintName: G.IOrganizationsClient.Update4.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IOrganizationsClient
+    {
+        /// <summary>
+        /// ✨ Update organization permission override<br/>
+        /// &lt;Card href="https://humansignal.com/goenterprise"&gt;<br/>
+        ///         &lt;img style="pointer-events: none; margin-left: 0px; margin-right: 0px;" src="https://docs.humansignal.com/images/badge.svg" alt="Label Studio Enterprise badge"/&gt;<br/>
+        ///         &lt;p style="margin-top: 10px; font-size: 14px;"&gt;<br/>
+        ///             This endpoint is not available in Label Studio Community Edition. [Learn more about Label Studio Enterprise](https://humansignal.com/goenterprise)<br/>
+        ///         &lt;/p&gt;<br/>
+        ///     &lt;/Card&gt;<br/>
+        /// Partially update the organization-level permission override for a given permission key.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="permission"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.OrganizationPermission> Update4Async(
+            int id,
+            string permission,
+
+            global::G.PatchedOrganizationPermissionRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// ✨ Update organization permission override<br/>
+        /// &lt;Card href="https://humansignal.com/goenterprise"&gt;<br/>
+        ///         &lt;img style="pointer-events: none; margin-left: 0px; margin-right: 0px;" src="https://docs.humansignal.com/images/badge.svg" alt="Label Studio Enterprise badge"/&gt;<br/>
+        ///         &lt;p style="margin-top: 10px; font-size: 14px;"&gt;<br/>
+        ///             This endpoint is not available in Label Studio Community Edition. [Learn more about Label Studio Enterprise](https://humansignal.com/goenterprise)<br/>
+        ///         &lt;/p&gt;<br/>
+        ///     &lt;/Card&gt;<br/>
+        /// Partially update the organization-level permission override for a given permission key.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="permission"></param>
+        /// <param name="requestPermission"></param>
+        /// <param name="roles">
+        /// Organization roles
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::G.OrganizationPermission> Update4Async(
+            int id,
+            string permission,
+            string? requestPermission = default,
+            global::System.Collections.Generic.IList<global::G.Role9e7Enum>? roles = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -1,0 +1,523 @@
+﻿//HintName: G.ScoresClient.ScoresGetMany.g.cs
+
+#nullable enable
+
+namespace G
+{
+    public partial class ScoresClient
+    {
+        partial void PrepareScoresGetManyArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int? page,
+            ref int? limit,
+            ref string? userId,
+            ref string? name,
+            ref global::System.DateTime? fromTimestamp,
+            ref global::System.DateTime? toTimestamp,
+            global::System.Collections.Generic.IList<string>? environment,
+            ref global::G.ScoreSource? source,
+            ref string? @operator,
+            ref double? value,
+            ref string? scoreIds,
+            ref string? configId,
+            ref string? sessionId,
+            ref string? datasetRunId,
+            ref string? traceId,
+            ref string? observationId,
+            ref string? queueId,
+            ref global::G.ScoreDataType? dataType,
+            global::System.Collections.Generic.IList<string>? traceTags,
+            ref string? fields,
+            ref string? filter);
+        partial void PrepareScoresGetManyRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? page,
+            int? limit,
+            string? userId,
+            string? name,
+            global::System.DateTime? fromTimestamp,
+            global::System.DateTime? toTimestamp,
+            global::System.Collections.Generic.IList<string>? environment,
+            global::G.ScoreSource? source,
+            string? @operator,
+            double? value,
+            string? scoreIds,
+            string? configId,
+            string? sessionId,
+            string? datasetRunId,
+            string? traceId,
+            string? observationId,
+            string? queueId,
+            global::G.ScoreDataType? dataType,
+            global::System.Collections.Generic.IList<string>? traceTags,
+            string? fields,
+            string? filter);
+        partial void ProcessScoresGetManyResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessScoresGetManyResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// Get a list of scores (supports both trace and session scores)
+        /// </summary>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <param name="userId"></param>
+        /// <param name="name"></param>
+        /// <param name="fromTimestamp"></param>
+        /// <param name="toTimestamp"></param>
+        /// <param name="environment"></param>
+        /// <param name="source"></param>
+        /// <param name="operator"></param>
+        /// <param name="value"></param>
+        /// <param name="scoreIds"></param>
+        /// <param name="configId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="datasetRunId"></param>
+        /// <param name="traceId"></param>
+        /// <param name="observationId"></param>
+        /// <param name="queueId"></param>
+        /// <param name="dataType"></param>
+        /// <param name="traceTags"></param>
+        /// <param name="fields"></param>
+        /// <param name="filter"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.GetScoresResponse> ScoresGetManyAsync(
+            int? page = default,
+            int? limit = default,
+            string? userId = default,
+            string? name = default,
+            global::System.DateTime? fromTimestamp = default,
+            global::System.DateTime? toTimestamp = default,
+            global::System.Collections.Generic.IList<string>? environment = default,
+            global::G.ScoreSource? source = default,
+            string? @operator = default,
+            double? value = default,
+            string? scoreIds = default,
+            string? configId = default,
+            string? sessionId = default,
+            string? datasetRunId = default,
+            string? traceId = default,
+            string? observationId = default,
+            string? queueId = default,
+            global::G.ScoreDataType? dataType = default,
+            global::System.Collections.Generic.IList<string>? traceTags = default,
+            string? fields = default,
+            string? filter = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            PrepareArguments(
+                client: HttpClient);
+            PrepareScoresGetManyArguments(
+                httpClient: HttpClient,
+                page: ref page,
+                limit: ref limit,
+                userId: ref userId,
+                name: ref name,
+                fromTimestamp: ref fromTimestamp,
+                toTimestamp: ref toTimestamp,
+                environment: environment,
+                source: ref source,
+                @operator: ref @operator,
+                value: ref value,
+                scoreIds: ref scoreIds,
+                configId: ref configId,
+                sessionId: ref sessionId,
+                datasetRunId: ref datasetRunId,
+                traceId: ref traceId,
+                observationId: ref observationId,
+                queueId: ref queueId,
+                dataType: ref dataType,
+                traceTags: traceTags,
+                fields: ref fields,
+                filter: ref filter);
+
+            var sourceValue = source switch
+            {
+                global::G.ScoreSource.Annotation => "ANNOTATION",
+                global::G.ScoreSource.Api => "API",
+                global::G.ScoreSource.Eval => "EVAL",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var dataTypeValue = dataType switch
+            {
+                global::G.ScoreDataType.Numeric => "NUMERIC",
+                global::G.ScoreDataType.Boolean => "BOOLEAN",
+                global::G.ScoreDataType.Categorical => "CATEGORICAL",
+                global::G.ScoreDataType.Correction => "CORRECTION",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var __pathBuilder = new global::G.PathBuilder(
+                path: "/api/public/v2/scores",
+                baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("userId", userId)
+                .AddOptionalParameter("name", name)
+                .AddOptionalParameter("fromTimestamp", fromTimestamp?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("toTimestamp", toTimestamp?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("environment", environment, delimiter: ",", explode: true)
+                .AddOptionalParameter("source", source?.ToValueString())
+                .AddOptionalParameter("operator", @operator)
+                .AddOptionalParameter("value", value?.ToString())
+                .AddOptionalParameter("scoreIds", scoreIds)
+                .AddOptionalParameter("configId", configId)
+                .AddOptionalParameter("sessionId", sessionId)
+                .AddOptionalParameter("datasetRunId", datasetRunId)
+                .AddOptionalParameter("traceId", traceId)
+                .AddOptionalParameter("observationId", observationId)
+                .AddOptionalParameter("queueId", queueId)
+                .AddOptionalParameter("dataType", dataType?.ToValueString())
+                .AddOptionalParameter("traceTags", traceTags, delimiter: ",", explode: true)
+                .AddOptionalParameter("fields", fields)
+                .AddOptionalParameter("filter", filter) 
+                ; 
+            var __path = __pathBuilder.ToString();
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Get,
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in Authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
+
+            PrepareRequest(
+                client: HttpClient,
+                request: __httpRequest);
+            PrepareScoresGetManyRequest(
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
+                page: page,
+                limit: limit,
+                userId: userId,
+                name: name,
+                fromTimestamp: fromTimestamp,
+                toTimestamp: toTimestamp,
+                environment: environment,
+                source: source,
+                @operator: @operator,
+                value: value,
+                scoreIds: scoreIds,
+                configId: configId,
+                sessionId: sessionId,
+                datasetRunId: datasetRunId,
+                traceId: traceId,
+                observationId: observationId,
+                queueId: queueId,
+                dataType: dataType,
+                traceTags: traceTags,
+                fields: fields,
+                filter: filter);
+
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: HttpClient,
+                response: __response);
+            ProcessScoresGetManyResponse(
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            // 
+            if ((int)__response.StatusCode == 400)
+            {
+                string? __content_400 = null;
+                global::System.Exception? __exception_400 = null;
+                string? __value_400 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_400 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_400, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_400 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_400, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_400 = __ex;
+                }
+
+                throw new global::G.ApiException<string>(
+                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_400,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_400,
+                    ResponseObject = __value_400,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // 
+            if ((int)__response.StatusCode == 401)
+            {
+                string? __content_401 = null;
+                global::System.Exception? __exception_401 = null;
+                string? __value_401 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_401 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_401, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_401 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_401, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_401 = __ex;
+                }
+
+                throw new global::G.ApiException<string>(
+                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_401,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_401,
+                    ResponseObject = __value_401,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // 
+            if ((int)__response.StatusCode == 403)
+            {
+                string? __content_403 = null;
+                global::System.Exception? __exception_403 = null;
+                string? __value_403 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_403 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_403, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_403 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_403, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_403 = __ex;
+                }
+
+                throw new global::G.ApiException<string>(
+                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_403,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_403,
+                    ResponseObject = __value_403,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // 
+            if ((int)__response.StatusCode == 404)
+            {
+                string? __content_404 = null;
+                global::System.Exception? __exception_404 = null;
+                string? __value_404 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_404 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_404, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_404 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_404, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_404 = __ex;
+                }
+
+                throw new global::G.ApiException<string>(
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_404,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_404,
+                    ResponseObject = __value_404,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // 
+            if ((int)__response.StatusCode == 405)
+            {
+                string? __content_405 = null;
+                global::System.Exception? __exception_405 = null;
+                string? __value_405 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_405 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __value_405 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_405, JsonSerializerOptions);
+                    }
+                    else
+                    {
+                        __content_405 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        __value_405 = global::Newtonsoft.Json.JsonConvert.DeserializeObject<string?>(__content_405, JsonSerializerOptions);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_405 = __ex;
+                }
+
+                throw new global::G.ApiException<string>(
+                    message: __content_405 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_405,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_405,
+                    ResponseObject = __value_405,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessScoresGetManyResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::G.GetScoresResponse.FromJson(__content, JsonSerializerOptions) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::G.GetScoresResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    string? __content = null;
+                    try
+                    {
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }
+                    catch (global::System.Exception)
+                    {
+                    }
+
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+        }
+    }
+}

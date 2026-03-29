@@ -1,0 +1,22 @@
+﻿//HintName: G.IBucketsClient.BucketList.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IBucketsClient
+    {
+        /// <summary>
+        /// list<br/>
+        /// List all buckets within your GroundX account<br/>
+        /// Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="nextToken"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.BucketListResponse> BucketListAsync(
+            int? n = default,
+            string? nextToken = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

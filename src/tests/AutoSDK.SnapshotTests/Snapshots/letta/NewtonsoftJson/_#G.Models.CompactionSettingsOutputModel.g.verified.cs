@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.CompactionSettingsOutputModel.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Model handle to use for sliding_window/all summarization (format: provider/model-name). If None, uses lightweight provider-specific defaults.
+    /// </summary>
+    public sealed partial class CompactionSettingsOutputModel
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

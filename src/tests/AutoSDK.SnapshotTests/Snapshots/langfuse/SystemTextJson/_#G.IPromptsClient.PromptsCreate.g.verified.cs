@@ -1,0 +1,26 @@
+﻿//HintName: G.IPromptsClient.PromptsCreate.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IPromptsClient
+    {
+        /// <summary>
+        /// Create a new version for the prompt with the given `name`
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.Prompt> PromptsCreateAsync(
+
+            global::G.CreatePromptRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a new version for the prompt with the given `name`
+        /// </summary>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::G.Prompt> PromptsCreateAsync(
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

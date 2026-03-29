@@ -1,0 +1,22 @@
+﻿//HintName: G.IMeshesClient.ListMeshes.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IMeshesClient
+    {
+        /// <summary>
+        /// List all meshes
+        /// </summary>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="page"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AssetListResponse> ListMeshesAsync(
+            int? limit = default,
+            int? page = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

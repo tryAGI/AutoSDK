@@ -49,12 +49,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AudioIsolation2Client AudioIsolation2 { get; }
+        public AudioIsolationClient AudioIsolation { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public AudioNative2Client AudioNative2 { get; }
+        public AudioNativeClient AudioNative { get; }
 
         /// <summary>
         /// 
@@ -74,7 +74,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ForcedAlignment2Client ForcedAlignment2 { get; }
+        public ForcedAlignmentClient ForcedAlignment { get; }
 
         /// <summary>
         /// 
@@ -124,7 +124,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SpeechToSpeech2Client SpeechToSpeech2 { get; }
+        public SpeechToSpeechClient SpeechToSpeech { get; }
 
         /// <summary>
         /// Transcribe your audio files with detailed speaker annotations and precise timestamps using our cutting-edge model.
@@ -144,7 +144,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToDialogue2Client TextToDialogue2 { get; }
+        public TextToDialogueClient TextToDialogue { get; }
 
         /// <summary>
         /// 
@@ -154,7 +154,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToSpeech2Client TextToSpeech2 { get; }
+        public TextToSpeechClient TextToSpeech { get; }
 
         /// <summary>
         /// 

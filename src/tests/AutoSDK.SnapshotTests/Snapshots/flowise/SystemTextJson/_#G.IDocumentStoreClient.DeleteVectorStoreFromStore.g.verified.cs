@@ -1,0 +1,19 @@
+﻿//HintName: G.IDocumentStoreClient.DeleteVectorStoreFromStore.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IDocumentStoreClient
+    {
+        /// <summary>
+        /// Delete data from vector store<br/>
+        /// Only data that were upserted with Record Manager will be deleted from vector store
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task DeleteVectorStoreFromStoreAsync(
+            string id,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

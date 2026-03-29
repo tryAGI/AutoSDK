@@ -1,0 +1,19 @@
+﻿//HintName: G.IImportClient.Get.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IImportClient
+    {
+        /// <summary>
+        /// Get file upload<br/>
+        /// Retrieve details about a specific uploaded file.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.FileUpload> GetAsync(
+            int id,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

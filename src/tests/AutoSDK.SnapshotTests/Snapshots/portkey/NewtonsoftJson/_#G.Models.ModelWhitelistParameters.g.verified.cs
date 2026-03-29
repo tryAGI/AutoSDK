@@ -1,0 +1,43 @@
+﻿//HintName: G.Models.ModelWhitelistParameters.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class ModelWhitelistParameters
+    {
+        /// <summary>
+        /// List of allowed models
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("models", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<string> Models { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelWhitelistParameters" /> class.
+        /// </summary>
+        /// <param name="models">
+        /// List of allowed models
+        /// </param>
+        public ModelWhitelistParameters(
+            global::System.Collections.Generic.IList<string> models)
+        {
+            this.Models = models ?? throw new global::System.ArgumentNullException(nameof(models));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelWhitelistParameters" /> class.
+        /// </summary>
+        public ModelWhitelistParameters()
+        {
+        }
+    }
+}

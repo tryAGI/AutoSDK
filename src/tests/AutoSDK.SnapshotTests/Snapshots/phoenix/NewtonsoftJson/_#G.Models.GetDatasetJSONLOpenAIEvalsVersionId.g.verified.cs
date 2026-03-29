@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.GetDatasetJSONLOpenAIEvalsVersionId.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The ID of the dataset version (if omitted, returns data from the latest version)
+    /// </summary>
+    public sealed partial class GetDatasetJSONLOpenAIEvalsVersionId
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

@@ -1,0 +1,76 @@
+﻿//HintName: G.Models.BaseMessagesResultStopReason.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum BaseMessagesResultStopReason
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        EndTurn,
+        /// <summary>
+        /// 
+        /// </summary>
+        MaxTokens,
+        /// <summary>
+        /// 
+        /// </summary>
+        PauseTurn,
+        /// <summary>
+        /// 
+        /// </summary>
+        Refusal,
+        /// <summary>
+        /// 
+        /// </summary>
+        StopSequence,
+        /// <summary>
+        /// 
+        /// </summary>
+        ToolUse,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class BaseMessagesResultStopReasonExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this BaseMessagesResultStopReason value)
+        {
+            return value switch
+            {
+                BaseMessagesResultStopReason.EndTurn => "end_turn",
+                BaseMessagesResultStopReason.MaxTokens => "max_tokens",
+                BaseMessagesResultStopReason.PauseTurn => "pause_turn",
+                BaseMessagesResultStopReason.Refusal => "refusal",
+                BaseMessagesResultStopReason.StopSequence => "stop_sequence",
+                BaseMessagesResultStopReason.ToolUse => "tool_use",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static BaseMessagesResultStopReason? ToEnum(string value)
+        {
+            return value switch
+            {
+                "end_turn" => BaseMessagesResultStopReason.EndTurn,
+                "max_tokens" => BaseMessagesResultStopReason.MaxTokens,
+                "pause_turn" => BaseMessagesResultStopReason.PauseTurn,
+                "refusal" => BaseMessagesResultStopReason.Refusal,
+                "stop_sequence" => BaseMessagesResultStopReason.StopSequence,
+                "tool_use" => BaseMessagesResultStopReason.ToolUse,
+                _ => null,
+            };
+        }
+    }
+}

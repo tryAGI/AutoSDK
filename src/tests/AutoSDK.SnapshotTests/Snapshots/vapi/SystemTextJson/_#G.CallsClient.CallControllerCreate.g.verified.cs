@@ -1,0 +1,315 @@
+﻿//HintName: G.CallsClient.CallControllerCreate.g.cs
+
+#nullable enable
+
+namespace G
+{
+    public partial class CallsClient
+    {
+        partial void PrepareCallControllerCreateArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::G.CreateCallDTO request);
+        partial void PrepareCallControllerCreateRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::G.CreateCallDTO request);
+        partial void ProcessCallControllerCreateResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessCallControllerCreateResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// Create Call
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.Call, global::G.CallBatchResponse>> CallControllerCreateAsync(
+
+            global::G.CreateCallDTO request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
+            PrepareArguments(
+                client: HttpClient);
+            PrepareCallControllerCreateArguments(
+                httpClient: HttpClient,
+                request: request);
+
+            var __pathBuilder = new global::G.PathBuilder(
+                path: "/call",
+                baseUri: HttpClient.BaseAddress); 
+            var __path = __pathBuilder.ToString();
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Post,
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in Authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            __httpRequest.Content = __httpRequestContent;
+
+            PrepareRequest(
+                client: HttpClient,
+                request: __httpRequest);
+            PrepareCallControllerCreateRequest(
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
+                request: request);
+
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: HttpClient,
+                response: __response);
+            ProcessCallControllerCreateResponse(
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessCallControllerCreateResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::G.OneOf<global::G.Call, global::G.CallBatchResponse>.FromJson(__content, JsonSerializerOptions) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        await global::G.OneOf<global::G.Call, global::G.CallBatchResponse>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    string? __content = null;
+                    try
+                    {
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }
+                    catch (global::System.Exception)
+                    {
+                    }
+
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+        }
+        /// <summary>
+        /// Create Call
+        /// </summary>
+        /// <param name="customers">
+        /// This is used to issue batch calls to multiple customers.<br/>
+        /// Only relevant for `outboundPhoneCall`. To call a single customer, use `customer` instead.
+        /// </param>
+        /// <param name="name">
+        /// This is the name of the call. This is just for your own reference.
+        /// </param>
+        /// <param name="schedulePlan">
+        /// This is the schedule plan of the call.
+        /// </param>
+        /// <param name="transport">
+        /// This is the transport of the call.
+        /// </param>
+        /// <param name="assistantId">
+        /// This is the assistant ID that will be used for the call. To use a transient assistant, use `assistant` instead.<br/>
+        /// To start a call with:<br/>
+        /// - Assistant, use `assistantId` or `assistant`<br/>
+        /// - Squad, use `squadId` or `squad`<br/>
+        /// - Workflow, use `workflowId` or `workflow`
+        /// </param>
+        /// <param name="assistant">
+        /// This is the assistant that will be used for the call. To use an existing assistant, use `assistantId` instead.<br/>
+        /// To start a call with:<br/>
+        /// - Assistant, use `assistant`<br/>
+        /// - Squad, use `squad`<br/>
+        /// - Workflow, use `workflow`
+        /// </param>
+        /// <param name="assistantOverrides">
+        /// These are the overrides for the `assistant` or `assistantId`'s settings and template variables.
+        /// </param>
+        /// <param name="squadId">
+        /// This is the squad that will be used for the call. To use a transient squad, use `squad` instead.<br/>
+        /// To start a call with:<br/>
+        /// - Assistant, use `assistant` or `assistantId`<br/>
+        /// - Squad, use `squad` or `squadId`<br/>
+        /// - Workflow, use `workflow` or `workflowId`
+        /// </param>
+        /// <param name="squad">
+        /// This is a squad that will be used for the call. To use an existing squad, use `squadId` instead.<br/>
+        /// To start a call with:<br/>
+        /// - Assistant, use `assistant` or `assistantId`<br/>
+        /// - Squad, use `squad` or `squadId`<br/>
+        /// - Workflow, use `workflow` or `workflowId`
+        /// </param>
+        /// <param name="squadOverrides">
+        /// These are the overrides for the `squad` or `squadId`'s member settings and template variables.<br/>
+        /// This will apply to all members of the squad.
+        /// </param>
+        /// <param name="workflowId">
+        /// This is the workflow that will be used for the call. To use a transient workflow, use `workflow` instead.<br/>
+        /// To start a call with:<br/>
+        /// - Assistant, use `assistant` or `assistantId`<br/>
+        /// - Squad, use `squad` or `squadId`<br/>
+        /// - Workflow, use `workflow` or `workflowId`
+        /// </param>
+        /// <param name="workflow">
+        /// This is a workflow that will be used for the call. To use an existing workflow, use `workflowId` instead.<br/>
+        /// To start a call with:<br/>
+        /// - Assistant, use `assistant` or `assistantId`<br/>
+        /// - Squad, use `squad` or `squadId`<br/>
+        /// - Workflow, use `workflow` or `workflowId`
+        /// </param>
+        /// <param name="workflowOverrides">
+        /// These are the overrides for the `workflow` or `workflowId`'s settings and template variables.
+        /// </param>
+        /// <param name="phoneNumberId">
+        /// This is the phone number that will be used for the call. To use a transient number, use `phoneNumber` instead.<br/>
+        /// Only relevant for `outboundPhoneCall` and `inboundPhoneCall` type.
+        /// </param>
+        /// <param name="phoneNumber">
+        /// This is the phone number that will be used for the call. To use an existing number, use `phoneNumberId` instead.<br/>
+        /// Only relevant for `outboundPhoneCall` and `inboundPhoneCall` type.
+        /// </param>
+        /// <param name="customerId">
+        /// This is the customer that will be called. To call a transient customer , use `customer` instead.<br/>
+        /// Only relevant for `outboundPhoneCall` and `inboundPhoneCall` type.
+        /// </param>
+        /// <param name="customer">
+        /// This is the customer that will be called. To call an existing customer, use `customerId` instead.<br/>
+        /// Only relevant for `outboundPhoneCall` and `inboundPhoneCall` type.
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.Call, global::G.CallBatchResponse>> CallControllerCreateAsync(
+            global::System.Collections.Generic.IList<global::G.CreateCustomerDTO>? customers = default,
+            string? name = default,
+            global::G.SchedulePlan? schedulePlan = default,
+            object? transport = default,
+            string? assistantId = default,
+            global::G.CreateAssistantDTO? assistant = default,
+            global::G.AssistantOverrides? assistantOverrides = default,
+            string? squadId = default,
+            global::G.CreateSquadDTO? squad = default,
+            global::G.AssistantOverrides? squadOverrides = default,
+            string? workflowId = default,
+            global::G.CreateWorkflowDTO? workflow = default,
+            global::G.WorkflowOverrides? workflowOverrides = default,
+            string? phoneNumberId = default,
+            global::G.ImportTwilioPhoneNumberDTO? phoneNumber = default,
+            string? customerId = default,
+            global::G.CreateCustomerDTO? customer = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::G.CreateCallDTO
+            {
+                Customers = customers,
+                Name = name,
+                SchedulePlan = schedulePlan,
+                Transport = transport,
+                AssistantId = assistantId,
+                Assistant = assistant,
+                AssistantOverrides = assistantOverrides,
+                SquadId = squadId,
+                Squad = squad,
+                SquadOverrides = squadOverrides,
+                WorkflowId = workflowId,
+                Workflow = workflow,
+                WorkflowOverrides = workflowOverrides,
+                PhoneNumberId = phoneNumberId,
+                PhoneNumber = phoneNumber,
+                CustomerId = customerId,
+                Customer = customer,
+            };
+
+            return await CallControllerCreateAsync(
+                request: __request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+    }
+}

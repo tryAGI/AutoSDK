@@ -1,0 +1,62 @@
+﻿//HintName: G.Models.PostToolRouterSessionBySessionIdExecuteMetaRequest.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class PostToolRouterSessionBySessionIdExecuteMetaRequest
+    {
+        /// <summary>
+        /// The unique slug identifier of the meta tool to execute<br/>
+        /// Example: COMPOSIO_MANAGE_CONNECTIONS
+        /// </summary>
+        /// <example>COMPOSIO_MANAGE_CONNECTIONS</example>
+        [global::Newtonsoft.Json.JsonProperty("slug", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.PostToolRouterSessionBySessionIdExecuteMetaRequestSlug Slug { get; set; } = default!;
+
+        /// <summary>
+        /// The arguments required by the meta tool<br/>
+        /// Default Value: {}<br/>
+        /// Example: {"toolkits":["github"],"reinitiate_all":false}
+        /// </summary>
+        /// <example>{"toolkits":["github"],"reinitiate_all":false}</example>
+        [global::Newtonsoft.Json.JsonProperty("arguments")]
+        public global::System.Collections.Generic.Dictionary<string, object?>? Arguments { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostToolRouterSessionBySessionIdExecuteMetaRequest" /> class.
+        /// </summary>
+        /// <param name="slug">
+        /// The unique slug identifier of the meta tool to execute<br/>
+        /// Example: COMPOSIO_MANAGE_CONNECTIONS
+        /// </param>
+        /// <param name="arguments">
+        /// The arguments required by the meta tool<br/>
+        /// Default Value: {}<br/>
+        /// Example: {"toolkits":["github"],"reinitiate_all":false}
+        /// </param>
+        public PostToolRouterSessionBySessionIdExecuteMetaRequest(
+            global::G.PostToolRouterSessionBySessionIdExecuteMetaRequestSlug slug,
+            global::System.Collections.Generic.Dictionary<string, object?>? arguments)
+        {
+            this.Slug = slug;
+            this.Arguments = arguments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostToolRouterSessionBySessionIdExecuteMetaRequest" /> class.
+        /// </summary>
+        public PostToolRouterSessionBySessionIdExecuteMetaRequest()
+        {
+        }
+    }
+}

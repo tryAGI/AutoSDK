@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.LlamaParseWebhookConfigurationWebhookUrl.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// HTTPS URL to receive webhook POST requests. Must be publicly accessible
+    /// </summary>
+    public sealed partial class LlamaParseWebhookConfigurationWebhookUrl
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

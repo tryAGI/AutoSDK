@@ -1,0 +1,90 @@
+﻿//HintName: G.Models.OpenAIFunction.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class OpenAIFunction
+    {
+        /// <summary>
+        /// This is a boolean that controls whether to enable strict schema adherence when generating the function call. If set to true, the model will follow the exact schema defined in the parameters field. Only a subset of JSON Schema is supported when strict is true. Learn more about Structured Outputs in the [OpenAI guide](https://openai.com/index/introducing-structured-outputs-in-the-api/).<br/>
+        /// @default false<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
+
+        /// <summary>
+        /// This is the the name of the function to be called.<br/>
+        /// Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// This is the description of what the function does, used by the AI to choose when and how to call the function.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// These are the parameters the functions accepts, described as a JSON Schema object.<br/>
+        /// See the [OpenAI guide](https://platform.openai.com/docs/guides/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema) for documentation about the format.<br/>
+        /// Omitting parameters defines a function with an empty parameter list.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
+        public global::G.OpenAIFunctionParameters? Parameters { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenAIFunction" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// This is the the name of the function to be called.<br/>
+        /// Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.
+        /// </param>
+        /// <param name="strict">
+        /// This is a boolean that controls whether to enable strict schema adherence when generating the function call. If set to true, the model will follow the exact schema defined in the parameters field. Only a subset of JSON Schema is supported when strict is true. Learn more about Structured Outputs in the [OpenAI guide](https://openai.com/index/introducing-structured-outputs-in-the-api/).<br/>
+        /// @default false<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="description">
+        /// This is the description of what the function does, used by the AI to choose when and how to call the function.
+        /// </param>
+        /// <param name="parameters">
+        /// These are the parameters the functions accepts, described as a JSON Schema object.<br/>
+        /// See the [OpenAI guide](https://platform.openai.com/docs/guides/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema) for documentation about the format.<br/>
+        /// Omitting parameters defines a function with an empty parameter list.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public OpenAIFunction(
+            string name,
+            bool? strict,
+            string? description,
+            global::G.OpenAIFunctionParameters? parameters)
+        {
+            this.Strict = strict;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
+            this.Parameters = parameters;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenAIFunction" /> class.
+        /// </summary>
+        public OpenAIFunction()
+        {
+        }
+    }
+}

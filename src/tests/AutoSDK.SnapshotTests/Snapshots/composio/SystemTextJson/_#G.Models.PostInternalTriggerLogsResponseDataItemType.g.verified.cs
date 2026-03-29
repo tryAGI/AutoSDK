@@ -1,0 +1,53 @@
+﻿//HintName: G.Models.PostInternalTriggerLogsResponseDataItemType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Log entity type (trigger or action)<br/>
+    /// Example: trigger
+    /// </summary>
+    public enum PostInternalTriggerLogsResponseDataItemType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Action,
+        /// <summary>
+        /// 
+        /// </summary>
+        Trigger,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PostInternalTriggerLogsResponseDataItemTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PostInternalTriggerLogsResponseDataItemType value)
+        {
+            return value switch
+            {
+                PostInternalTriggerLogsResponseDataItemType.Action => "action",
+                PostInternalTriggerLogsResponseDataItemType.Trigger => "trigger",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PostInternalTriggerLogsResponseDataItemType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "action" => PostInternalTriggerLogsResponseDataItemType.Action,
+                "trigger" => PostInternalTriggerLogsResponseDataItemType.Trigger,
+                _ => null,
+            };
+        }
+    }
+}

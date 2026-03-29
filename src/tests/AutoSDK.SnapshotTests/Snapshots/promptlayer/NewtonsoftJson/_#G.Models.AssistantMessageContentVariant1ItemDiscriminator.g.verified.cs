@@ -1,0 +1,41 @@
+﻿//HintName: G.Models.AssistantMessageContentVariant1ItemDiscriminator.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class AssistantMessageContentVariant1ItemDiscriminator
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.AssistantMessageContentVariant1ItemDiscriminatorType? Type { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantMessageContentVariant1ItemDiscriminator" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        public AssistantMessageContentVariant1ItemDiscriminator(
+            global::G.AssistantMessageContentVariant1ItemDiscriminatorType? type)
+        {
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantMessageContentVariant1ItemDiscriminator" /> class.
+        /// </summary>
+        public AssistantMessageContentVariant1ItemDiscriminator()
+        {
+        }
+    }
+}

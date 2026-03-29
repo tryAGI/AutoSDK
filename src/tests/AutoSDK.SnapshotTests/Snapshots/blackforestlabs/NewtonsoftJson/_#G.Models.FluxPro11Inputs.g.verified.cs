@@ -1,0 +1,161 @@
+﻿//HintName: G.Models.FluxPro11Inputs.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class FluxPro11Inputs
+    {
+        /// <summary>
+        /// Text prompt for image generation.<br/>
+        /// Example: ein fantastisches bild
+        /// </summary>
+        /// <example>ein fantastisches bild</example>
+        [global::Newtonsoft.Json.JsonProperty("prompt")]
+        public string? Prompt { get; set; }
+
+        /// <summary>
+        /// Optional base64 encoded image to use with Flux Redux.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("image_prompt")]
+        public string? ImagePrompt { get; set; }
+
+        /// <summary>
+        /// Width of the generated image in pixels. Must be a multiple of 32.<br/>
+        /// Default Value: 1024
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("width")]
+        public int? Width { get; set; }
+
+        /// <summary>
+        /// Height of the generated image in pixels. Must be a multiple of 32.<br/>
+        /// Default Value: 768
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("height")]
+        public int? Height { get; set; }
+
+        /// <summary>
+        /// Whether to perform upsampling on the prompt. If active, automatically modifies the prompt for more creative generation.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("prompt_upsampling")]
+        public bool? PromptUpsampling { get; set; }
+
+        /// <summary>
+        /// Optional seed for reproducibility.<br/>
+        /// Example: 42
+        /// </summary>
+        /// <example>42</example>
+        [global::Newtonsoft.Json.JsonProperty("seed")]
+        public int? Seed { get; set; }
+
+        /// <summary>
+        /// Tolerance level for input and output moderation. Between 0 and 6, 0 being most strict, 6 being least strict.<br/>
+        /// Default Value: 2<br/>
+        /// Example: 2
+        /// </summary>
+        /// <example>2</example>
+        [global::Newtonsoft.Json.JsonProperty("safety_tolerance")]
+        public int? SafetyTolerance { get; set; }
+
+        /// <summary>
+        /// Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.<br/>
+        /// Default Value: jpeg
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("output_format")]
+        public global::G.OutputFormat? OutputFormat { get; set; }
+
+        /// <summary>
+        /// URL to receive webhook notifications
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("webhook_url")]
+        public string? WebhookUrl { get; set; }
+
+        /// <summary>
+        /// Optional secret for webhook signature verification
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("webhook_secret")]
+        public string? WebhookSecret { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FluxPro11Inputs" /> class.
+        /// </summary>
+        /// <param name="prompt">
+        /// Text prompt for image generation.<br/>
+        /// Example: ein fantastisches bild
+        /// </param>
+        /// <param name="imagePrompt">
+        /// Optional base64 encoded image to use with Flux Redux.
+        /// </param>
+        /// <param name="width">
+        /// Width of the generated image in pixels. Must be a multiple of 32.<br/>
+        /// Default Value: 1024
+        /// </param>
+        /// <param name="height">
+        /// Height of the generated image in pixels. Must be a multiple of 32.<br/>
+        /// Default Value: 768
+        /// </param>
+        /// <param name="promptUpsampling">
+        /// Whether to perform upsampling on the prompt. If active, automatically modifies the prompt for more creative generation.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="seed">
+        /// Optional seed for reproducibility.<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="safetyTolerance">
+        /// Tolerance level for input and output moderation. Between 0 and 6, 0 being most strict, 6 being least strict.<br/>
+        /// Default Value: 2<br/>
+        /// Example: 2
+        /// </param>
+        /// <param name="outputFormat">
+        /// Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.<br/>
+        /// Default Value: jpeg
+        /// </param>
+        /// <param name="webhookUrl">
+        /// URL to receive webhook notifications
+        /// </param>
+        /// <param name="webhookSecret">
+        /// Optional secret for webhook signature verification
+        /// </param>
+        public FluxPro11Inputs(
+            string? prompt,
+            string? imagePrompt,
+            int? width,
+            int? height,
+            bool? promptUpsampling,
+            int? seed,
+            int? safetyTolerance,
+            global::G.OutputFormat? outputFormat,
+            string? webhookUrl,
+            string? webhookSecret)
+        {
+            this.Prompt = prompt;
+            this.ImagePrompt = imagePrompt;
+            this.Width = width;
+            this.Height = height;
+            this.PromptUpsampling = promptUpsampling;
+            this.Seed = seed;
+            this.SafetyTolerance = safetyTolerance;
+            this.OutputFormat = outputFormat;
+            this.WebhookUrl = webhookUrl;
+            this.WebhookSecret = webhookSecret;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FluxPro11Inputs" /> class.
+        /// </summary>
+        public FluxPro11Inputs()
+        {
+        }
+    }
+}

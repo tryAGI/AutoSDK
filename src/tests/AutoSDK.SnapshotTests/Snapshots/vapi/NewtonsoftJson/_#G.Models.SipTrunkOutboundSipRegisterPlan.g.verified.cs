@@ -1,0 +1,59 @@
+﻿//HintName: G.Models.SipTrunkOutboundSipRegisterPlan.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class SipTrunkOutboundSipRegisterPlan
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("domain")]
+        public string? Domain { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("username")]
+        public string? Username { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("realm")]
+        public string? Realm { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SipTrunkOutboundSipRegisterPlan" /> class.
+        /// </summary>
+        /// <param name="domain"></param>
+        /// <param name="username"></param>
+        /// <param name="realm"></param>
+        public SipTrunkOutboundSipRegisterPlan(
+            string? domain,
+            string? username,
+            string? realm)
+        {
+            this.Domain = domain;
+            this.Username = username;
+            this.Realm = realm;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SipTrunkOutboundSipRegisterPlan" /> class.
+        /// </summary>
+        public SipTrunkOutboundSipRegisterPlan()
+        {
+        }
+    }
+}

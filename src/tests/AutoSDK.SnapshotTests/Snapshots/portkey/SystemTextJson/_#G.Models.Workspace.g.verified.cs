@@ -1,0 +1,134 @@
+﻿//HintName: G.Models.Workspace.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class Workspace
+    {
+        /// <summary>
+        /// Example: ws-test-a-174eb1
+        /// </summary>
+        /// <example>ws-test-a-174eb1</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// Example: ws-test-a-174eb1
+        /// </summary>
+        /// <example>ws-test-a-174eb1</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("slug")]
+        public string? Slug { get; set; }
+
+        /// <summary>
+        /// Example: New Workspace
+        /// </summary>
+        /// <example>New Workspace</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        /// <example>openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// Example: 2024-07-30 13:27:29+00:00
+        /// </summary>
+        /// <example>2024-07-30 13:27:29+00:00</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// Example: 2024-07-30 13:27:29+00:00
+        /// </summary>
+        /// <example>2024-07-30 13:27:29+00:00</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_updated_at")]
+        public global::System.DateTime? LastUpdatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("defaults")]
+        public global::G.WorkspaceDefaults? Defaults { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage_limits")]
+        public global::System.Collections.Generic.IList<global::G.UsageLimits>? UsageLimits { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rate_limits")]
+        public global::System.Collections.Generic.IList<global::G.RateLimits>? RateLimits { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Workspace" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: ws-test-a-174eb1
+        /// </param>
+        /// <param name="slug">
+        /// Example: ws-test-a-174eb1
+        /// </param>
+        /// <param name="name">
+        /// Example: New Workspace
+        /// </param>
+        /// <param name="description">
+        /// Example: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2024-07-30 13:27:29+00:00
+        /// </param>
+        /// <param name="lastUpdatedAt">
+        /// Example: 2024-07-30 13:27:29+00:00
+        /// </param>
+        /// <param name="defaults"></param>
+        /// <param name="usageLimits"></param>
+        /// <param name="rateLimits"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public Workspace(
+            string? id,
+            string? slug,
+            string? name,
+            string? description,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? lastUpdatedAt,
+            global::G.WorkspaceDefaults? defaults,
+            global::System.Collections.Generic.IList<global::G.UsageLimits>? usageLimits,
+            global::System.Collections.Generic.IList<global::G.RateLimits>? rateLimits)
+        {
+            this.Id = id;
+            this.Slug = slug;
+            this.Name = name;
+            this.Description = description;
+            this.CreatedAt = createdAt;
+            this.LastUpdatedAt = lastUpdatedAt;
+            this.Defaults = defaults;
+            this.UsageLimits = usageLimits;
+            this.RateLimits = rateLimits;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Workspace" /> class.
+        /// </summary>
+        public Workspace()
+        {
+        }
+    }
+}

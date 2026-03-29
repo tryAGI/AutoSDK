@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.RetrieveResultsRetrievalLatency.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The end-to-end latency for retrieval and reranking.
+    /// </summary>
+    public sealed partial class RetrieveResultsRetrievalLatency
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

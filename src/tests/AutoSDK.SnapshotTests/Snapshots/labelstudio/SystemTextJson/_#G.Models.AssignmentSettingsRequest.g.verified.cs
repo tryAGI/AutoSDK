@@ -1,0 +1,60 @@
+﻿//HintName: G.Models.AssignmentSettingsRequest.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class AssignmentSettingsRequest
+    {
+        /// <summary>
+        /// Automatic / Manual<br/>
+        /// * `auto_distribution` - Label Stream distributes tasks automatically to annotators<br/>
+        /// * `assigned_only` - Label Stream shows tasks only to assigned users
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("label_stream_task_distribution")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LabelStreamTaskDistributionEnumJsonConverter))]
+        public global::G.LabelStreamTaskDistributionEnum? LabelStreamTaskDistribution { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("project")]
+        public int? Project { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssignmentSettingsRequest" /> class.
+        /// </summary>
+        /// <param name="labelStreamTaskDistribution">
+        /// Automatic / Manual<br/>
+        /// * `auto_distribution` - Label Stream distributes tasks automatically to annotators<br/>
+        /// * `assigned_only` - Label Stream shows tasks only to assigned users
+        /// </param>
+        /// <param name="project"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public AssignmentSettingsRequest(
+            global::G.LabelStreamTaskDistributionEnum? labelStreamTaskDistribution,
+            int? project)
+        {
+            this.LabelStreamTaskDistribution = labelStreamTaskDistribution;
+            this.Project = project;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssignmentSettingsRequest" /> class.
+        /// </summary>
+        public AssignmentSettingsRequest()
+        {
+        }
+    }
+}

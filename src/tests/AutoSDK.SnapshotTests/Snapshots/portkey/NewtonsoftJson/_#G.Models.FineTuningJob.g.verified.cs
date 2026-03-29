@@ -1,0 +1,219 @@
+﻿//HintName: G.Models.FineTuningJob.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The `fine_tuning.job` object represents a fine-tuning job that has been created through the API.
+    /// </summary>
+    public sealed partial class FineTuningJob
+    {
+        /// <summary>
+        /// The object identifier, which can be referenced in the API endpoints.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) for when the fine-tuning job was created.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+
+        /// <summary>
+        /// For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("error")]
+        public global::G.FineTuningJobError? Error { get; set; }
+
+        /// <summary>
+        /// The name of the fine-tuned model that is being created. The value will be null if the fine-tuning job is still running.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("fine_tuned_model")]
+        public string? FineTunedModel { get; set; }
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) for when the fine-tuning job was finished. The value will be null if the fine-tuning job is still running.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("finished_at")]
+        public global::System.DateTimeOffset? FinishedAt { get; set; }
+
+        /// <summary>
+        /// The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](https://platform.openai.com/docs/guides/fine-tuning) for more details.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("hyperparameters", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FineTuningJobHyperparameters Hyperparameters { get; set; } = default!;
+
+        /// <summary>
+        /// The base model that is being fine-tuned.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Model { get; set; } = default!;
+
+        /// <summary>
+        /// The object type, which is always "fine_tuning.job".
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.FineTuningJobObject Object { get; set; }
+
+        /// <summary>
+        /// The organization that owns the fine-tuning job.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("organization_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string OrganizationId { get; set; } = default!;
+
+        /// <summary>
+        /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("result_files", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<string> ResultFiles { get; set; } = default!;
+
+        /// <summary>
+        /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FineTuningJobStatus Status { get; set; } = default!;
+
+        /// <summary>
+        /// The total number of billable tokens processed by this fine-tuning job. The value will be null if the fine-tuning job is still running.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("trained_tokens")]
+        public int? TrainedTokens { get; set; }
+
+        /// <summary>
+        /// The file ID used for training. You can retrieve the training data with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("training_file", Required = global::Newtonsoft.Json.Required.Always)]
+        public string TrainingFile { get; set; } = default!;
+
+        /// <summary>
+        /// The file ID used for validation. You can retrieve the validation results with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("validation_file")]
+        public string? ValidationFile { get; set; }
+
+        /// <summary>
+        /// A list of integrations to enable for this fine-tuning job.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("integrations")]
+        public global::System.Collections.Generic.IList<global::G.FineTuningIntegration>? Integrations { get; set; }
+
+        /// <summary>
+        /// The seed used for the fine-tuning job.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("seed", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Seed { get; set; } = default!;
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) for when the fine-tuning job is estimated to finish. The value will be null if the fine-tuning job is not running.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("estimated_finish")]
+        public global::System.DateTimeOffset? EstimatedFinish { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningJob" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The object identifier, which can be referenced in the API endpoints.
+        /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the fine-tuning job was created.
+        /// </param>
+        /// <param name="hyperparameters">
+        /// The hyperparameters used for the fine-tuning job. See the [fine-tuning guide](https://platform.openai.com/docs/guides/fine-tuning) for more details.
+        /// </param>
+        /// <param name="model">
+        /// The base model that is being fine-tuned.
+        /// </param>
+        /// <param name="organizationId">
+        /// The organization that owns the fine-tuning job.
+        /// </param>
+        /// <param name="resultFiles">
+        /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
+        /// </param>
+        /// <param name="status">
+        /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
+        /// </param>
+        /// <param name="trainingFile">
+        /// The file ID used for training. You can retrieve the training data with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
+        /// </param>
+        /// <param name="seed">
+        /// The seed used for the fine-tuning job.
+        /// </param>
+        /// <param name="error">
+        /// For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
+        /// </param>
+        /// <param name="fineTunedModel">
+        /// The name of the fine-tuned model that is being created. The value will be null if the fine-tuning job is still running.
+        /// </param>
+        /// <param name="finishedAt">
+        /// The Unix timestamp (in seconds) for when the fine-tuning job was finished. The value will be null if the fine-tuning job is still running.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "fine_tuning.job".
+        /// </param>
+        /// <param name="trainedTokens">
+        /// The total number of billable tokens processed by this fine-tuning job. The value will be null if the fine-tuning job is still running.
+        /// </param>
+        /// <param name="validationFile">
+        /// The file ID used for validation. You can retrieve the validation results with the [Files API](https://platform.openai.com/docs/api-reference/files/retrieve-contents).
+        /// </param>
+        /// <param name="integrations">
+        /// A list of integrations to enable for this fine-tuning job.
+        /// </param>
+        /// <param name="estimatedFinish">
+        /// The Unix timestamp (in seconds) for when the fine-tuning job is estimated to finish. The value will be null if the fine-tuning job is not running.
+        /// </param>
+        public FineTuningJob(
+            string id,
+            global::System.DateTimeOffset createdAt,
+            global::G.FineTuningJobHyperparameters hyperparameters,
+            string model,
+            string organizationId,
+            global::System.Collections.Generic.IList<string> resultFiles,
+            global::G.FineTuningJobStatus status,
+            string trainingFile,
+            int seed,
+            global::G.FineTuningJobError? error,
+            string? fineTunedModel,
+            global::System.DateTimeOffset? finishedAt,
+            global::G.FineTuningJobObject @object,
+            int? trainedTokens,
+            string? validationFile,
+            global::System.Collections.Generic.IList<global::G.FineTuningIntegration>? integrations,
+            global::System.DateTimeOffset? estimatedFinish)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.Error = error;
+            this.FineTunedModel = fineTunedModel;
+            this.FinishedAt = finishedAt;
+            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Object = @object;
+            this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
+            this.ResultFiles = resultFiles ?? throw new global::System.ArgumentNullException(nameof(resultFiles));
+            this.Status = status;
+            this.TrainedTokens = trainedTokens;
+            this.TrainingFile = trainingFile ?? throw new global::System.ArgumentNullException(nameof(trainingFile));
+            this.ValidationFile = validationFile;
+            this.Integrations = integrations;
+            this.Seed = seed;
+            this.EstimatedFinish = estimatedFinish;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningJob" /> class.
+        /// </summary>
+        public FineTuningJob()
+        {
+        }
+    }
+}

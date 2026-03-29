@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.BatchParseJobConfigInputS3Region.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The region for the input S3 bucket.
+    /// </summary>
+    public sealed partial class BatchParseJobConfigInputS3Region
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

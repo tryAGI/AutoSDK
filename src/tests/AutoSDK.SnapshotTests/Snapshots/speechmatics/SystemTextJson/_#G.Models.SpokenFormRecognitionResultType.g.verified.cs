@@ -1,0 +1,52 @@
+﻿//HintName: G.Models.SpokenFormRecognitionResultType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// What kind of object this is. See #/Definitions/RecognitionResult for definitions of the enums.
+    /// </summary>
+    public enum SpokenFormRecognitionResultType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Punctuation,
+        /// <summary>
+        /// 
+        /// </summary>
+        Word,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class SpokenFormRecognitionResultTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this SpokenFormRecognitionResultType value)
+        {
+            return value switch
+            {
+                SpokenFormRecognitionResultType.Punctuation => "punctuation",
+                SpokenFormRecognitionResultType.Word => "word",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static SpokenFormRecognitionResultType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "punctuation" => SpokenFormRecognitionResultType.Punctuation,
+                "word" => SpokenFormRecognitionResultType.Word,
+                _ => null,
+            };
+        }
+    }
+}

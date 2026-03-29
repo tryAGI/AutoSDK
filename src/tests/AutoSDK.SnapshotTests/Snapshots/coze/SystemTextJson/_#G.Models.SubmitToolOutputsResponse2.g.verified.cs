@@ -1,0 +1,54 @@
+﻿//HintName: G.Models.SubmitToolOutputsResponse2.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class SubmitToolOutputsResponse2
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        public global::G.ChatV3MessageDetail? Data { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("event")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SubmitToolOutputsResponseEventJsonConverter))]
+        public global::G.SubmitToolOutputsResponseEvent? Event { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SubmitToolOutputsResponse2" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="event"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public SubmitToolOutputsResponse2(
+            global::G.ChatV3MessageDetail? data,
+            global::G.SubmitToolOutputsResponseEvent? @event)
+        {
+            this.Data = data;
+            this.Event = @event;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SubmitToolOutputsResponse2" /> class.
+        /// </summary>
+        public SubmitToolOutputsResponse2()
+        {
+        }
+    }
+}

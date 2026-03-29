@@ -1,0 +1,67 @@
+﻿//HintName: G.Models.MessagesRequestPluginsItems0.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class MessagesRequestPluginsItems0
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessagesRequestPluginsItemsOneOf0IdJsonConverter))]
+        public global::G.MessagesRequestPluginsItemsOneOf0Id Id { get; set; }
+
+        /// <summary>
+        /// Set to false to disable the auto-router plugin for this request. Defaults to true.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
+        public bool? Enabled { get; set; }
+
+        /// <summary>
+        /// List of model patterns to filter which models the auto-router can route between. Supports wildcards (e.g., "anthropic/*" matches all Anthropic models). When not specified, uses the default supported models list.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_models")]
+        public global::System.Collections.Generic.IList<string>? AllowedModels { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessagesRequestPluginsItems0" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="enabled">
+        /// Set to false to disable the auto-router plugin for this request. Defaults to true.
+        /// </param>
+        /// <param name="allowedModels">
+        /// List of model patterns to filter which models the auto-router can route between. Supports wildcards (e.g., "anthropic/*" matches all Anthropic models). When not specified, uses the default supported models list.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public MessagesRequestPluginsItems0(
+            global::G.MessagesRequestPluginsItemsOneOf0Id id,
+            bool? enabled,
+            global::System.Collections.Generic.IList<string>? allowedModels)
+        {
+            this.Id = id;
+            this.Enabled = enabled;
+            this.AllowedModels = allowedModels;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessagesRequestPluginsItems0" /> class.
+        /// </summary>
+        public MessagesRequestPluginsItems0()
+        {
+        }
+    }
+}

@@ -1,0 +1,43 @@
+﻿//HintName: G.Models.VideoUrl.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Model for video URL validation.
+    /// </summary>
+    public sealed partial class VideoUrl
+    {
+        /// <summary>
+        /// The video URL. Can be either a URL or a Data URI.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Url { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VideoUrl" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// The video URL. Can be either a URL or a Data URI.
+        /// </param>
+        public VideoUrl(
+            string url)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VideoUrl" /> class.
+        /// </summary>
+        public VideoUrl()
+        {
+        }
+    }
+}

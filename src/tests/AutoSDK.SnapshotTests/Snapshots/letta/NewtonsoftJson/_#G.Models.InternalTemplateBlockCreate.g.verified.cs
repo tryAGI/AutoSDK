@@ -1,0 +1,216 @@
+﻿//HintName: G.Models.InternalTemplateBlockCreate.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Used for Letta Cloud
+    /// </summary>
+    public sealed partial class InternalTemplateBlockCreate
+    {
+        /// <summary>
+        /// Value of the block.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Value { get; set; } = default!;
+
+        /// <summary>
+        /// Character limit of the block.<br/>
+        /// Default Value: 100000
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("limit")]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// The associated project id.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("project_id")]
+        public string? ProjectId { get; set; }
+
+        /// <summary>
+        /// Name of the block if it is a template.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("template_name")]
+        public string? TemplateName { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("is_template")]
+        public bool? IsTemplate { get; set; }
+
+        /// <summary>
+        /// The id of the template.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("template_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string TemplateId { get; set; } = default!;
+
+        /// <summary>
+        /// The id of the base template.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("base_template_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string BaseTemplateId { get; set; } = default!;
+
+        /// <summary>
+        /// The id of the deployment.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("deployment_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string DeploymentId { get; set; } = default!;
+
+        /// <summary>
+        /// The id of the entity within the template.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("entity_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string EntityId { get; set; } = default!;
+
+        /// <summary>
+        /// Preserve the block on template migration.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("preserve_on_migration")]
+        public bool? PreserveOnMigration { get; set; }
+
+        /// <summary>
+        /// Label of the block.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("label", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Label { get; set; } = default!;
+
+        /// <summary>
+        /// Whether the agent has read-only access to the block.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("read_only")]
+        public bool? ReadOnly { get; set; }
+
+        /// <summary>
+        /// Description of the block.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// Metadata of the block.<br/>
+        /// Default Value: {}
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("metadata")]
+        public object? Metadata { get; set; }
+
+        /// <summary>
+        /// If set to True, the block will be hidden.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("hidden")]
+        public bool? Hidden { get; set; }
+
+        /// <summary>
+        /// The tags to associate with the block.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tags")]
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InternalTemplateBlockCreate" /> class.
+        /// </summary>
+        /// <param name="value">
+        /// Value of the block.
+        /// </param>
+        /// <param name="templateId">
+        /// The id of the template.
+        /// </param>
+        /// <param name="baseTemplateId">
+        /// The id of the base template.
+        /// </param>
+        /// <param name="deploymentId">
+        /// The id of the deployment.
+        /// </param>
+        /// <param name="entityId">
+        /// The id of the entity within the template.
+        /// </param>
+        /// <param name="label">
+        /// Label of the block.
+        /// </param>
+        /// <param name="limit">
+        /// Character limit of the block.<br/>
+        /// Default Value: 100000
+        /// </param>
+        /// <param name="projectId">
+        /// The associated project id.
+        /// </param>
+        /// <param name="templateName">
+        /// Name of the block if it is a template.
+        /// </param>
+        /// <param name="isTemplate">
+        /// Default Value: false
+        /// </param>
+        /// <param name="preserveOnMigration">
+        /// Preserve the block on template migration.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="readOnly">
+        /// Whether the agent has read-only access to the block.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="description">
+        /// Description of the block.
+        /// </param>
+        /// <param name="metadata">
+        /// Metadata of the block.<br/>
+        /// Default Value: {}
+        /// </param>
+        /// <param name="hidden">
+        /// If set to True, the block will be hidden.
+        /// </param>
+        /// <param name="tags">
+        /// The tags to associate with the block.
+        /// </param>
+        public InternalTemplateBlockCreate(
+            string value,
+            string templateId,
+            string baseTemplateId,
+            string deploymentId,
+            string entityId,
+            string label,
+            int? limit,
+            string? projectId,
+            string? templateName,
+            bool? isTemplate,
+            bool? preserveOnMigration,
+            bool? readOnly,
+            string? description,
+            object? metadata,
+            bool? hidden,
+            global::System.Collections.Generic.IList<string>? tags)
+        {
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Limit = limit;
+            this.ProjectId = projectId;
+            this.TemplateName = templateName;
+            this.IsTemplate = isTemplate;
+            this.TemplateId = templateId ?? throw new global::System.ArgumentNullException(nameof(templateId));
+            this.BaseTemplateId = baseTemplateId ?? throw new global::System.ArgumentNullException(nameof(baseTemplateId));
+            this.DeploymentId = deploymentId ?? throw new global::System.ArgumentNullException(nameof(deploymentId));
+            this.EntityId = entityId ?? throw new global::System.ArgumentNullException(nameof(entityId));
+            this.PreserveOnMigration = preserveOnMigration;
+            this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
+            this.ReadOnly = readOnly;
+            this.Description = description;
+            this.Metadata = metadata;
+            this.Hidden = hidden;
+            this.Tags = tags;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InternalTemplateBlockCreate" /> class.
+        /// </summary>
+        public InternalTemplateBlockCreate()
+        {
+        }
+    }
+}

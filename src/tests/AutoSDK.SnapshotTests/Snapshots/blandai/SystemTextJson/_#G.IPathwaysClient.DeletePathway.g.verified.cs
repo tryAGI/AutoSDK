@@ -1,0 +1,19 @@
+﻿//HintName: G.IPathwaysClient.DeletePathway.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IPathwaysClient
+    {
+        /// <summary>
+        /// Delete Pathway<br/>
+        /// Permanently delete a conversational pathway.
+        /// </summary>
+        /// <param name="pathwayId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.StatusResponse> DeletePathwayAsync(
+            string pathwayId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

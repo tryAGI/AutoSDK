@@ -1,0 +1,71 @@
+﻿//HintName: G.Models.PostToolRouterSessionBySessionIdExecuteMetaResponse.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class PostToolRouterSessionBySessionIdExecuteMetaResponse
+    {
+        /// <summary>
+        /// The data returned by the tool execution<br/>
+        /// Example: {"message":"Hello, World!","status":"success"}
+        /// </summary>
+        /// <example>{"message":"Hello, World!","status":"success"}</example>
+        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.Dictionary<string, object?> Data { get; set; } = default!;
+
+        /// <summary>
+        /// Error message if the execution failed, null otherwise
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("error")]
+        public string? Error { get; set; }
+
+        /// <summary>
+        /// Unique identifier for the execution log<br/>
+        /// Example: log_abc123xyz
+        /// </summary>
+        /// <example>log_abc123xyz</example>
+        [global::Newtonsoft.Json.JsonProperty("log_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string LogId { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostToolRouterSessionBySessionIdExecuteMetaResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The data returned by the tool execution<br/>
+        /// Example: {"message":"Hello, World!","status":"success"}
+        /// </param>
+        /// <param name="logId">
+        /// Unique identifier for the execution log<br/>
+        /// Example: log_abc123xyz
+        /// </param>
+        /// <param name="error">
+        /// Error message if the execution failed, null otherwise
+        /// </param>
+        public PostToolRouterSessionBySessionIdExecuteMetaResponse(
+            global::System.Collections.Generic.Dictionary<string, object?> data,
+            string logId,
+            string? error)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Error = error;
+            this.LogId = logId ?? throw new global::System.ArgumentNullException(nameof(logId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostToolRouterSessionBySessionIdExecuteMetaResponse" /> class.
+        /// </summary>
+        public PostToolRouterSessionBySessionIdExecuteMetaResponse()
+        {
+        }
+    }
+}

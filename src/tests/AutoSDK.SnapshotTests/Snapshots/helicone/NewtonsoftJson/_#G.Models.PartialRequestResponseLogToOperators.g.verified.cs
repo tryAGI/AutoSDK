@@ -1,0 +1,153 @@
+﻿//HintName: G.Models.PartialRequestResponseLogToOperators.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Make all properties in T optional
+    /// </summary>
+    public sealed partial class PartialRequestResponseLogToOperators
+    {
+        /// <summary>
+        /// Make all properties in T optional
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("latency")]
+        public global::G.PartialNumberOperators? Latency { get; set; }
+
+        /// <summary>
+        /// Make all properties in T optional
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("status")]
+        public global::G.PartialNumberOperators? Status { get; set; }
+
+        /// <summary>
+        /// Make all properties in T optional
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("request_created_at")]
+        public global::G.PartialTimestampOperatorsTyped? RequestCreatedAt { get; set; }
+
+        /// <summary>
+        /// Make all properties in T optional
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("response_created_at")]
+        public global::G.PartialTimestampOperatorsTyped? ResponseCreatedAt { get; set; }
+
+        /// <summary>
+        /// Make all properties in T optional
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("auth_hash")]
+        public global::G.PartialTextOperators? AuthHash { get; set; }
+
+        /// <summary>
+        /// Make all properties in T optional
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("model")]
+        public global::G.PartialTextOperators? Model { get; set; }
+
+        /// <summary>
+        /// Make all properties in T optional
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("user_id")]
+        public global::G.PartialTextOperators? UserId { get; set; }
+
+        /// <summary>
+        /// Make all properties in T optional
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("organization_id")]
+        public global::G.PartialTextOperators? OrganizationId { get; set; }
+
+        /// <summary>
+        /// Make all properties in T optional
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("node_id")]
+        public global::G.PartialTextOperators? NodeId { get; set; }
+
+        /// <summary>
+        /// Make all properties in T optional
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("job_id")]
+        public global::G.PartialTextOperators? JobId { get; set; }
+
+        /// <summary>
+        /// Make all properties in T optional
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("threat")]
+        public global::G.PartialBooleanOperators? Threat { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PartialRequestResponseLogToOperators" /> class.
+        /// </summary>
+        /// <param name="latency">
+        /// Make all properties in T optional
+        /// </param>
+        /// <param name="status">
+        /// Make all properties in T optional
+        /// </param>
+        /// <param name="requestCreatedAt">
+        /// Make all properties in T optional
+        /// </param>
+        /// <param name="responseCreatedAt">
+        /// Make all properties in T optional
+        /// </param>
+        /// <param name="authHash">
+        /// Make all properties in T optional
+        /// </param>
+        /// <param name="model">
+        /// Make all properties in T optional
+        /// </param>
+        /// <param name="userId">
+        /// Make all properties in T optional
+        /// </param>
+        /// <param name="organizationId">
+        /// Make all properties in T optional
+        /// </param>
+        /// <param name="nodeId">
+        /// Make all properties in T optional
+        /// </param>
+        /// <param name="jobId">
+        /// Make all properties in T optional
+        /// </param>
+        /// <param name="threat">
+        /// Make all properties in T optional
+        /// </param>
+        public PartialRequestResponseLogToOperators(
+            global::G.PartialNumberOperators? latency,
+            global::G.PartialNumberOperators? status,
+            global::G.PartialTimestampOperatorsTyped? requestCreatedAt,
+            global::G.PartialTimestampOperatorsTyped? responseCreatedAt,
+            global::G.PartialTextOperators? authHash,
+            global::G.PartialTextOperators? model,
+            global::G.PartialTextOperators? userId,
+            global::G.PartialTextOperators? organizationId,
+            global::G.PartialTextOperators? nodeId,
+            global::G.PartialTextOperators? jobId,
+            global::G.PartialBooleanOperators? threat)
+        {
+            this.Latency = latency;
+            this.Status = status;
+            this.RequestCreatedAt = requestCreatedAt;
+            this.ResponseCreatedAt = responseCreatedAt;
+            this.AuthHash = authHash;
+            this.Model = model;
+            this.UserId = userId;
+            this.OrganizationId = organizationId;
+            this.NodeId = nodeId;
+            this.JobId = jobId;
+            this.Threat = threat;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PartialRequestResponseLogToOperators" /> class.
+        /// </summary>
+        public PartialRequestResponseLogToOperators()
+        {
+        }
+    }
+}

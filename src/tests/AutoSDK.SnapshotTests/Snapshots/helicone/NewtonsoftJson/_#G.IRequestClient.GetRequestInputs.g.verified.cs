@@ -1,0 +1,18 @@
+﻿//HintName: G.IRequestClient.GetRequestInputs.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IRequestClient
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="requestId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.ResultInputsRecordStringAnyPromptIdStringVersionIdStringEnvironmentStringOrNullOrNullString> GetRequestInputsAsync(
+            string requestId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

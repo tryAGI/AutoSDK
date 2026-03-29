@@ -1,0 +1,20 @@
+﻿//HintName: G.IApi.ListAssetsPublicAssetsGet.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IApi
+    {
+        /// <summary>
+        /// List Assets
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="ids"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Asset>> ListAssetsPublicAssetsGetAsync(
+            global::G.AssetType type,
+            string? ids = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

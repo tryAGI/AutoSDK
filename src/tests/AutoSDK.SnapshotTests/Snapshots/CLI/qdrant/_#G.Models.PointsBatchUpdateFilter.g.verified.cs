@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.PointsBatchUpdateFilter.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Filter to apply when updating existing points. Only points matching this filter will be updated. Points that don't match will keep their current state. New points will be inserted regardless of the filter.
+    /// </summary>
+    public sealed partial class PointsBatchUpdateFilter
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

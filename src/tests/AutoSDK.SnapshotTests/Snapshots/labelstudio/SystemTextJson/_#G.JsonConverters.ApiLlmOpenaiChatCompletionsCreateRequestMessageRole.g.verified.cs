@@ -1,0 +1,54 @@
+﻿//HintName: G.JsonConverters.ApiLlmOpenaiChatCompletionsCreateRequestMessageRole.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ApiLlmOpenaiChatCompletionsCreateRequestMessageRoleJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ApiLlmOpenaiChatCompletionsCreateRequestMessageRole>
+    {
+        /// <inheritdoc />
+        public override global::G.ApiLlmOpenaiChatCompletionsCreateRequestMessageRole Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.ApiLlmOpenaiChatCompletionsCreateRequestMessageRoleExtensions.ToEnum(stringValue) ?? default;
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.ApiLlmOpenaiChatCompletionsCreateRequestMessageRole)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.ApiLlmOpenaiChatCompletionsCreateRequestMessageRole);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.ApiLlmOpenaiChatCompletionsCreateRequestMessageRole value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteStringValue(global::G.ApiLlmOpenaiChatCompletionsCreateRequestMessageRoleExtensions.ToValueString(value));
+        }
+    }
+}

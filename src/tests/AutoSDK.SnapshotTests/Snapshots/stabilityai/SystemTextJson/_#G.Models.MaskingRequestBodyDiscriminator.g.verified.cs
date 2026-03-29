@@ -1,0 +1,45 @@
+﻿//HintName: G.Models.MaskingRequestBodyDiscriminator.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class MaskingRequestBodyDiscriminator
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mask_source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MaskingRequestBodyDiscriminatorMaskSourceJsonConverter))]
+        public global::G.MaskingRequestBodyDiscriminatorMaskSource? MaskSource { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MaskingRequestBodyDiscriminator" /> class.
+        /// </summary>
+        /// <param name="maskSource"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public MaskingRequestBodyDiscriminator(
+            global::G.MaskingRequestBodyDiscriminatorMaskSource? maskSource)
+        {
+            this.MaskSource = maskSource;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MaskingRequestBodyDiscriminator" /> class.
+        /// </summary>
+        public MaskingRequestBodyDiscriminator()
+        {
+        }
+    }
+}

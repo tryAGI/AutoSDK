@@ -1,0 +1,47 @@
+﻿//HintName: G.Models.StreamOptions.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Additional options for streaming.
+    /// </summary>
+    public sealed partial class StreamOptions
+    {
+        /// <summary>
+        /// Indicate whether to include usage information.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_usage")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool IncludeUsage { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamOptions" /> class.
+        /// </summary>
+        /// <param name="includeUsage">
+        /// Indicate whether to include usage information.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public StreamOptions(
+            bool includeUsage)
+        {
+            this.IncludeUsage = includeUsage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamOptions" /> class.
+        /// </summary>
+        public StreamOptions()
+        {
+        }
+    }
+}

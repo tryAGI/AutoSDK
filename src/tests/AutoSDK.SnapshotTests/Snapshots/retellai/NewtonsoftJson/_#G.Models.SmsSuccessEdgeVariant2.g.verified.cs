@@ -1,0 +1,41 @@
+﻿//HintName: G.Models.SmsSuccessEdgeVariant2.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class SmsSuccessEdgeVariant2
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("transition_condition", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.SmsSuccessEdgeVariant2TransitionCondition TransitionCondition { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SmsSuccessEdgeVariant2" /> class.
+        /// </summary>
+        /// <param name="transitionCondition"></param>
+        public SmsSuccessEdgeVariant2(
+            global::G.SmsSuccessEdgeVariant2TransitionCondition transitionCondition)
+        {
+            this.TransitionCondition = transitionCondition ?? throw new global::System.ArgumentNullException(nameof(transitionCondition));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SmsSuccessEdgeVariant2" /> class.
+        /// </summary>
+        public SmsSuccessEdgeVariant2()
+        {
+        }
+    }
+}

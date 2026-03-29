@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.GenerationStatusResponseStreamingUrl.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// URL to stream the asset.
+    /// </summary>
+    public sealed partial class GenerationStatusResponseStreamingUrl
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

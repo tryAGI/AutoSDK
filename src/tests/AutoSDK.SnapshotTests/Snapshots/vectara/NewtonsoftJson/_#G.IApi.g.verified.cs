@@ -58,22 +58,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AgentSchedules2Client AgentSchedules2 { get; }
+        public AgentSchedulesClient AgentSchedules { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public AgentSessions2Client AgentSessions2 { get; }
+        public AgentSessionsClient AgentSessions { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Agents2Client Agents2 { get; }
+        public AgentsClient Agents { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ApiKeys2Client ApiKeys2 { get; }
+        public ApiKeysClient ApiKeys { get; }
 
         /// <summary>
         /// 
@@ -88,17 +88,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Corpora2Client Corpora2 { get; }
+        public CorporaClient Corpora { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Documents2Client Documents2 { get; }
+        public DocumentsClient Documents { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Encoders2Client Encoders2 { get; }
+        public EncodersClient Encoders { get; }
 
         /// <summary>
         /// 
@@ -108,22 +108,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GenerationPresets2Client GenerationPresets2 { get; }
+        public GenerationPresetsClient GenerationPresets { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public HallucinationCorrectors2Client HallucinationCorrectors2 { get; }
+        public HallucinationCorrectorsClient HallucinationCorrectors { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Instructions2Client Instructions2 { get; }
+        public InstructionsClient Instructions { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Jobs2Client Jobs2 { get; }
+        public JobsClient Jobs { get; }
 
         /// <summary>
         /// 
@@ -143,42 +143,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Queries2Client Queries2 { get; }
+        public QueriesClient Queries { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public QueryHistory2Client QueryHistory2 { get; }
+        public QueryHistoryClient QueryHistory { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Rerankers2Client Rerankers2 { get; }
+        public RerankersClient Rerankers { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public TableExtractors2Client TableExtractors2 { get; }
+        public TableExtractorsClient TableExtractors { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolServers2Client ToolServers2 { get; }
+        public ToolServersClient ToolServers { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Tools2Client Tools2 { get; }
+        public ToolsClient Tools { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Upload2Client Upload2 { get; }
+        public UploadClient Upload { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Users2Client Users2 { get; }
+        public UsersClient Users { get; }
 
     }
 }

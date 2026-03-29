@@ -1,0 +1,26 @@
+﻿//HintName: G.IPhoneNumbersClient.PhoneNumberControllerCreate.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IPhoneNumbersClient
+    {
+        /// <summary>
+        /// Create Phone Number
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.PhoneNumberControllerCreateResponse> PhoneNumberControllerCreateAsync(
+
+            global::G.PhoneNumberControllerCreateRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Phone Number
+        /// </summary>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::G.PhoneNumberControllerCreateResponse> PhoneNumberControllerCreateAsync(
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

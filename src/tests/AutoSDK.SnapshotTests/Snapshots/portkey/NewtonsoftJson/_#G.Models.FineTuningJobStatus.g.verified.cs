@@ -1,0 +1,83 @@
+﻿//HintName: G.Models.FineTuningJobStatus.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
+    /// </summary>
+    [global::System.Runtime.Serialization.DataContract]
+    public enum FineTuningJobStatus
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="cancelled")]
+        Cancelled,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="failed")]
+        Failed,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="queued")]
+        Queued,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="running")]
+        Running,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="succeeded")]
+        Succeeded,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="validating_files")]
+        ValidatingFiles,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class FineTuningJobStatusExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this FineTuningJobStatus value)
+        {
+            return value switch
+            {
+                FineTuningJobStatus.Cancelled => "cancelled",
+                FineTuningJobStatus.Failed => "failed",
+                FineTuningJobStatus.Queued => "queued",
+                FineTuningJobStatus.Running => "running",
+                FineTuningJobStatus.Succeeded => "succeeded",
+                FineTuningJobStatus.ValidatingFiles => "validating_files",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static FineTuningJobStatus? ToEnum(string value)
+        {
+            return value switch
+            {
+                "cancelled" => FineTuningJobStatus.Cancelled,
+                "failed" => FineTuningJobStatus.Failed,
+                "queued" => FineTuningJobStatus.Queued,
+                "running" => FineTuningJobStatus.Running,
+                "succeeded" => FineTuningJobStatus.Succeeded,
+                "validating_files" => FineTuningJobStatus.ValidatingFiles,
+                _ => null,
+            };
+        }
+    }
+}

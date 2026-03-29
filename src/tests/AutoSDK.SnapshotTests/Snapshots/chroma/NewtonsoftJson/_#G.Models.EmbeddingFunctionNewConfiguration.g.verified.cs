@@ -1,0 +1,50 @@
+﻿//HintName: G.Models.EmbeddingFunctionNewConfiguration.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class EmbeddingFunctionNewConfiguration
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("config", Required = global::Newtonsoft.Json.Required.Always)]
+        public object Config { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingFunctionNewConfiguration" /> class.
+        /// </summary>
+        /// <param name="config"></param>
+        /// <param name="name"></param>
+        public EmbeddingFunctionNewConfiguration(
+            object config,
+            string name)
+        {
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingFunctionNewConfiguration" /> class.
+        /// </summary>
+        public EmbeddingFunctionNewConfiguration()
+        {
+        }
+    }
+}

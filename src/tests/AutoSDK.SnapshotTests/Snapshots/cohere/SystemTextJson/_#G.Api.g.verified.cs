@@ -245,7 +245,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Connectors2Client Connectors2 => new Connectors2Client(HttpClient, authorizations: Authorizations)
+        public ConnectorsClient Connectors => new ConnectorsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -254,7 +254,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Datasets2Client Datasets2 => new Datasets2Client(HttpClient, authorizations: Authorizations)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -263,7 +263,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public EmbedJobs2Client EmbedJobs2 => new EmbedJobs2Client(HttpClient, authorizations: Authorizations)
+        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -272,7 +272,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Finetuning2Client Finetuning2 => new Finetuning2Client(HttpClient, authorizations: Authorizations)
+        public FinetuningClient Finetuning => new FinetuningClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -281,7 +281,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public Models2Client Models2 => new Models2Client(HttpClient, authorizations: Authorizations)
+        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

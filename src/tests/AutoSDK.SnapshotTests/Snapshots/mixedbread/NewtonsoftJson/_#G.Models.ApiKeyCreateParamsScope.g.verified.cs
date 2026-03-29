@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.ApiKeyCreateParamsScope.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The scope of the API key
+    /// </summary>
+    public sealed partial class ApiKeyCreateParamsScope
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

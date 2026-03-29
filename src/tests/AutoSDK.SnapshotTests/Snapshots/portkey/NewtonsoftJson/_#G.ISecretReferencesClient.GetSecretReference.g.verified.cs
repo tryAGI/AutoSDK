@@ -1,0 +1,18 @@
+﻿//HintName: G.ISecretReferencesClient.GetSecretReference.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface ISecretReferencesClient
+    {
+        /// <summary>
+        /// Get a Secret Reference
+        /// </summary>
+        /// <param name="secretReferenceId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.SecretReferenceDetailResponse> GetSecretReferenceAsync(
+            string secretReferenceId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

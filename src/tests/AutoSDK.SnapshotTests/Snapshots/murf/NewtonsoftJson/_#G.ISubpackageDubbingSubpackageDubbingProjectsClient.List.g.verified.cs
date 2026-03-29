@@ -1,0 +1,20 @@
+﻿//HintName: G.ISubpackageDubbingSubpackageDubbingProjectsClient.List.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface ISubpackageDubbingSubpackageDubbingProjectsClient
+    {
+        /// <summary>
+        /// List
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="next"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.GroupApiProjectResponse> ListAsync(
+            int? limit = default,
+            string? next = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

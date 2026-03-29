@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.LseProjectControlWeights.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Dict of weights for each control tag in metric calculation. Keys are control tag names from the labeling config. At least one tag must have a non-zero overall weight.
+    /// </summary>
+    public sealed partial class LseProjectControlWeights
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

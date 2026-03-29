@@ -50,7 +50,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LeMUR2Client LeMUR2 => new LeMUR2Client(HttpClient, authorizations: Authorizations)
+        public LemurClient Lemur => new LemurClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

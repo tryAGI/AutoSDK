@@ -1,0 +1,44 @@
+﻿//HintName: G.Models.UpdateProjectMemberResponse3.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class UpdateProjectMemberResponse3
+    {
+        /// <summary>
+        /// Example: Organization or project not found
+        /// </summary>
+        /// <example>Organization or project not found</example>
+        [global::Newtonsoft.Json.JsonProperty("message")]
+        public string? Message { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateProjectMemberResponse3" /> class.
+        /// </summary>
+        /// <param name="message">
+        /// Example: Organization or project not found
+        /// </param>
+        public UpdateProjectMemberResponse3(
+            string? message)
+        {
+            this.Message = message;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateProjectMemberResponse3" /> class.
+        /// </summary>
+        public UpdateProjectMemberResponse3()
+        {
+        }
+    }
+}

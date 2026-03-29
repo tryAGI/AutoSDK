@@ -1,0 +1,157 @@
+﻿//HintName: G.Models.GetAnalyticsResponseSummaryItem.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Aggregate performance statistics for the entire date range
+    /// </summary>
+    public sealed partial class GetAnalyticsResponseSummaryItem
+    {
+        /// <summary>
+        /// Endpoint identifier for these statistics
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("endpoint_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string EndpointId { get; set; }
+
+        /// <summary>
+        /// Total number of requests
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("request_count")]
+        public int? RequestCount { get; set; }
+
+        /// <summary>
+        /// Number of successful requests (2xx responses)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("success_count")]
+        public int? SuccessCount { get; set; }
+
+        /// <summary>
+        /// Number of user errors (4xx responses)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_error_count")]
+        public int? UserErrorCount { get; set; }
+
+        /// <summary>
+        /// Number of server errors (5xx responses)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error_count")]
+        public int? ErrorCount { get; set; }
+
+        /// <summary>
+        /// 50th percentile queue/prepare time before execution in seconds
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("p50_prepare_duration")]
+        public double? P50PrepareDuration { get; set; }
+
+        /// <summary>
+        /// 75th percentile queue/prepare time before execution in seconds
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("p75_prepare_duration")]
+        public double? P75PrepareDuration { get; set; }
+
+        /// <summary>
+        /// 90th percentile queue/prepare time before execution in seconds
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("p90_prepare_duration")]
+        public double? P90PrepareDuration { get; set; }
+
+        /// <summary>
+        /// 50th percentile request execution duration in seconds
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("p50_duration")]
+        public double? P50Duration { get; set; }
+
+        /// <summary>
+        /// 75th percentile request execution duration in seconds
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("p75_duration")]
+        public double? P75Duration { get; set; }
+
+        /// <summary>
+        /// 90th percentile request execution duration in seconds
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("p90_duration")]
+        public double? P90Duration { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetAnalyticsResponseSummaryItem" /> class.
+        /// </summary>
+        /// <param name="endpointId">
+        /// Endpoint identifier for these statistics
+        /// </param>
+        /// <param name="requestCount">
+        /// Total number of requests
+        /// </param>
+        /// <param name="successCount">
+        /// Number of successful requests (2xx responses)
+        /// </param>
+        /// <param name="userErrorCount">
+        /// Number of user errors (4xx responses)
+        /// </param>
+        /// <param name="errorCount">
+        /// Number of server errors (5xx responses)
+        /// </param>
+        /// <param name="p50PrepareDuration">
+        /// 50th percentile queue/prepare time before execution in seconds
+        /// </param>
+        /// <param name="p75PrepareDuration">
+        /// 75th percentile queue/prepare time before execution in seconds
+        /// </param>
+        /// <param name="p90PrepareDuration">
+        /// 90th percentile queue/prepare time before execution in seconds
+        /// </param>
+        /// <param name="p50Duration">
+        /// 50th percentile request execution duration in seconds
+        /// </param>
+        /// <param name="p75Duration">
+        /// 75th percentile request execution duration in seconds
+        /// </param>
+        /// <param name="p90Duration">
+        /// 90th percentile request execution duration in seconds
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public GetAnalyticsResponseSummaryItem(
+            string endpointId,
+            int? requestCount,
+            int? successCount,
+            int? userErrorCount,
+            int? errorCount,
+            double? p50PrepareDuration,
+            double? p75PrepareDuration,
+            double? p90PrepareDuration,
+            double? p50Duration,
+            double? p75Duration,
+            double? p90Duration)
+        {
+            this.EndpointId = endpointId ?? throw new global::System.ArgumentNullException(nameof(endpointId));
+            this.RequestCount = requestCount;
+            this.SuccessCount = successCount;
+            this.UserErrorCount = userErrorCount;
+            this.ErrorCount = errorCount;
+            this.P50PrepareDuration = p50PrepareDuration;
+            this.P75PrepareDuration = p75PrepareDuration;
+            this.P90PrepareDuration = p90PrepareDuration;
+            this.P50Duration = p50Duration;
+            this.P75Duration = p75Duration;
+            this.P90Duration = p90Duration;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetAnalyticsResponseSummaryItem" /> class.
+        /// </summary>
+        public GetAnalyticsResponseSummaryItem()
+        {
+        }
+    }
+}

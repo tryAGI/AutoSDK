@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.AutoModeConfigurationEntryFilenameMatchGlobList.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// List of glob patterns to match against filename
+    /// </summary>
+    public sealed partial class AutoModeConfigurationEntryFilenameMatchGlobList
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

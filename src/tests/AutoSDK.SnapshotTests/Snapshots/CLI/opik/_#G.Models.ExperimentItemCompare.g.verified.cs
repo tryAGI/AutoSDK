@@ -1,0 +1,254 @@
+﻿//HintName: G.Models.ExperimentItemCompare.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Included only in responses
+    /// </summary>
+    public sealed partial class ExperimentItemCompare
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public global::System.Guid? Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("experiment_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid ExperimentId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dataset_item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid DatasetItemId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid TraceId { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
+        public global::System.Guid? ProjectId { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.JsonListStringCompareJsonConverter))]
+        public global::G.JsonListStringCompare? Input { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.JsonListStringCompareJsonConverter))]
+        public global::G.JsonListStringCompare? Output { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("feedback_scores")]
+        public global::System.Collections.Generic.IList<global::G.FeedbackScoreCompare>? FeedbackScores { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("comments")]
+        public global::System.Collections.Generic.IList<global::G.CommentCompare>? Comments { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_estimated_cost")]
+        public double? TotalEstimatedCost { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
+        public double? Duration { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        public global::System.Collections.Generic.Dictionary<string, long>? Usage { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_updated_at")]
+        public global::System.DateTime? LastUpdatedAt { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
+        public string? CreatedBy { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_updated_by")]
+        public string? LastUpdatedBy { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trace_visibility_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ExperimentItemCompareTraceVisibilityModeJsonConverter))]
+        public global::G.ExperimentItemCompareTraceVisibilityMode? TraceVisibilityMode { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("assertion_results")]
+        public global::System.Collections.Generic.IList<global::G.AssertionResultCompare>? AssertionResults { get; set; }
+
+        /// <summary>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ExperimentItemCompareStatusJsonConverter))]
+        public global::G.ExperimentItemCompareStatus? Status { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExperimentItemCompare" /> class.
+        /// </summary>
+        /// <param name="experimentId"></param>
+        /// <param name="datasetItemId"></param>
+        /// <param name="traceId"></param>
+        /// <param name="id"></param>
+        /// <param name="projectId">
+        /// Included only in responses
+        /// </param>
+        /// <param name="input">
+        /// Included only in responses
+        /// </param>
+        /// <param name="output">
+        /// Included only in responses
+        /// </param>
+        /// <param name="feedbackScores">
+        /// Included only in responses
+        /// </param>
+        /// <param name="comments">
+        /// Included only in responses
+        /// </param>
+        /// <param name="totalEstimatedCost">
+        /// Included only in responses
+        /// </param>
+        /// <param name="duration">
+        /// Included only in responses
+        /// </param>
+        /// <param name="usage">
+        /// Included only in responses
+        /// </param>
+        /// <param name="createdAt">
+        /// Included only in responses
+        /// </param>
+        /// <param name="lastUpdatedAt">
+        /// Included only in responses
+        /// </param>
+        /// <param name="createdBy">
+        /// Included only in responses
+        /// </param>
+        /// <param name="lastUpdatedBy">
+        /// Included only in responses
+        /// </param>
+        /// <param name="traceVisibilityMode">
+        /// Included only in responses
+        /// </param>
+        /// <param name="description">
+        /// Included only in responses
+        /// </param>
+        /// <param name="assertionResults">
+        /// Included only in responses
+        /// </param>
+        /// <param name="status">
+        /// Included only in responses
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ExperimentItemCompare(
+            global::System.Guid experimentId,
+            global::System.Guid datasetItemId,
+            global::System.Guid traceId,
+            global::System.Guid? id,
+            global::System.Guid? projectId,
+            global::G.JsonListStringCompare? input,
+            global::G.JsonListStringCompare? output,
+            global::System.Collections.Generic.IList<global::G.FeedbackScoreCompare>? feedbackScores,
+            global::System.Collections.Generic.IList<global::G.CommentCompare>? comments,
+            double? totalEstimatedCost,
+            double? duration,
+            global::System.Collections.Generic.Dictionary<string, long>? usage,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? lastUpdatedAt,
+            string? createdBy,
+            string? lastUpdatedBy,
+            global::G.ExperimentItemCompareTraceVisibilityMode? traceVisibilityMode,
+            string? description,
+            global::System.Collections.Generic.IList<global::G.AssertionResultCompare>? assertionResults,
+            global::G.ExperimentItemCompareStatus? status)
+        {
+            this.Id = id;
+            this.ExperimentId = experimentId;
+            this.DatasetItemId = datasetItemId;
+            this.TraceId = traceId;
+            this.ProjectId = projectId;
+            this.Input = input;
+            this.Output = output;
+            this.FeedbackScores = feedbackScores;
+            this.Comments = comments;
+            this.TotalEstimatedCost = totalEstimatedCost;
+            this.Duration = duration;
+            this.Usage = usage;
+            this.CreatedAt = createdAt;
+            this.LastUpdatedAt = lastUpdatedAt;
+            this.CreatedBy = createdBy;
+            this.LastUpdatedBy = lastUpdatedBy;
+            this.TraceVisibilityMode = traceVisibilityMode;
+            this.Description = description;
+            this.AssertionResults = assertionResults;
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExperimentItemCompare" /> class.
+        /// </summary>
+        public ExperimentItemCompare()
+        {
+        }
+    }
+}

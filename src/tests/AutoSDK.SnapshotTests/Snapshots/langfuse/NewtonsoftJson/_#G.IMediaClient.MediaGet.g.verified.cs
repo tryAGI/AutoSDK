@@ -1,0 +1,18 @@
+﻿//HintName: G.IMediaClient.MediaGet.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IMediaClient
+    {
+        /// <summary>
+        /// Get a media record
+        /// </summary>
+        /// <param name="mediaId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.GetMediaResponse> MediaGetAsync(
+            string mediaId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

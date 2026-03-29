@@ -1,0 +1,180 @@
+﻿//HintName: G.Models.ExperimentWrite.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class ExperimentWrite
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public global::System.Guid? Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dataset_name")]
+        public string? DatasetName { get; set; }
+
+        /// <summary>
+        /// Project ID. Takes precedence over project_name when both are provided.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
+        public global::System.Guid? ProjectId { get; set; }
+
+        /// <summary>
+        /// Project name. Creates project if it doesn't exist. Ignored when project_id is provided.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("project_name")]
+        public string? ProjectName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.JsonListStringWriteJsonConverter))]
+        public global::G.JsonListStringWrite? Metadata { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ExperimentWriteTypeJsonConverter))]
+        public global::G.ExperimentWriteType? Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("evaluation_method")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ExperimentWriteEvaluationMethodJsonConverter))]
+        public global::G.ExperimentWriteEvaluationMethod? EvaluationMethod { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("optimization_id")]
+        public global::System.Guid? OptimizationId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ExperimentWriteStatusJsonConverter))]
+        public global::G.ExperimentWriteStatus? Status { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("experiment_scores")]
+        public global::System.Collections.Generic.IList<global::G.ExperimentScoreWrite>? ExperimentScores { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_version")]
+        public global::G.PromptVersionLinkWrite? PromptVersion { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_versions")]
+        public global::System.Collections.Generic.IList<global::G.PromptVersionLinkWrite>? PromptVersions { get; set; }
+
+        /// <summary>
+        /// ID of the dataset version this experiment is linked to. If not provided at creation, experiment will be automatically linked to the latest version.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dataset_version_id")]
+        public global::System.Guid? DatasetVersionId { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExperimentWrite" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="datasetName"></param>
+        /// <param name="projectId">
+        /// Project ID. Takes precedence over project_name when both are provided.
+        /// </param>
+        /// <param name="projectName">
+        /// Project name. Creates project if it doesn't exist. Ignored when project_id is provided.
+        /// </param>
+        /// <param name="name"></param>
+        /// <param name="metadata"></param>
+        /// <param name="tags"></param>
+        /// <param name="type"></param>
+        /// <param name="evaluationMethod"></param>
+        /// <param name="optimizationId"></param>
+        /// <param name="status"></param>
+        /// <param name="experimentScores"></param>
+        /// <param name="promptVersion"></param>
+        /// <param name="promptVersions"></param>
+        /// <param name="datasetVersionId">
+        /// ID of the dataset version this experiment is linked to. If not provided at creation, experiment will be automatically linked to the latest version.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ExperimentWrite(
+            global::System.Guid? id,
+            string? datasetName,
+            global::System.Guid? projectId,
+            string? projectName,
+            string? name,
+            global::G.JsonListStringWrite? metadata,
+            global::System.Collections.Generic.IList<string>? tags,
+            global::G.ExperimentWriteType? type,
+            global::G.ExperimentWriteEvaluationMethod? evaluationMethod,
+            global::System.Guid? optimizationId,
+            global::G.ExperimentWriteStatus? status,
+            global::System.Collections.Generic.IList<global::G.ExperimentScoreWrite>? experimentScores,
+            global::G.PromptVersionLinkWrite? promptVersion,
+            global::System.Collections.Generic.IList<global::G.PromptVersionLinkWrite>? promptVersions,
+            global::System.Guid? datasetVersionId)
+        {
+            this.Id = id;
+            this.DatasetName = datasetName;
+            this.ProjectId = projectId;
+            this.ProjectName = projectName;
+            this.Name = name;
+            this.Metadata = metadata;
+            this.Tags = tags;
+            this.Type = type;
+            this.EvaluationMethod = evaluationMethod;
+            this.OptimizationId = optimizationId;
+            this.Status = status;
+            this.ExperimentScores = experimentScores;
+            this.PromptVersion = promptVersion;
+            this.PromptVersions = promptVersions;
+            this.DatasetVersionId = datasetVersionId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExperimentWrite" /> class.
+        /// </summary>
+        public ExperimentWrite()
+        {
+        }
+    }
+}

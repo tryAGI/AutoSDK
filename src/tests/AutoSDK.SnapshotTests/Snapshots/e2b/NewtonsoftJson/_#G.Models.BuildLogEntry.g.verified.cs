@@ -1,0 +1,76 @@
+﻿//HintName: G.Models.BuildLogEntry.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class BuildLogEntry
+    {
+        /// <summary>
+        /// Timestamp of the log entry
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("timestamp", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTime Timestamp { get; set; } = default!;
+
+        /// <summary>
+        /// Log message content
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Message { get; set; } = default!;
+
+        /// <summary>
+        /// State of the sandbox
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("level", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.LogLevel Level { get; set; } = default!;
+
+        /// <summary>
+        /// Step in the build process related to the log entry
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("step")]
+        public string? Step { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BuildLogEntry" /> class.
+        /// </summary>
+        /// <param name="timestamp">
+        /// Timestamp of the log entry
+        /// </param>
+        /// <param name="message">
+        /// Log message content
+        /// </param>
+        /// <param name="level">
+        /// State of the sandbox
+        /// </param>
+        /// <param name="step">
+        /// Step in the build process related to the log entry
+        /// </param>
+        public BuildLogEntry(
+            global::System.DateTime timestamp,
+            string message,
+            global::G.LogLevel level,
+            string? step)
+        {
+            this.Timestamp = timestamp;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Level = level;
+            this.Step = step;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BuildLogEntry" /> class.
+        /// </summary>
+        public BuildLogEntry()
+        {
+        }
+    }
+}

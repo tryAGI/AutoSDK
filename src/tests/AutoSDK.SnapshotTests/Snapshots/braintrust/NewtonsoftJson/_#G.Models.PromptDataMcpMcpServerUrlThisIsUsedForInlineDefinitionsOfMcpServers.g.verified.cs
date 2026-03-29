@@ -1,0 +1,70 @@
+﻿//HintName: G.Models.PromptDataMcpMcpServerUrlThisIsUsedForInlineDefinitionsOfMcpServers.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class PromptDataMcpMcpServerUrlThisIsUsedForInlineDefinitionsOfMcpServers
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.PromptDataMcpMcpServerUrlThisIsUsedForInlineDefinitionsOfMcpServersType Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Url { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("is_disabled")]
+        public bool? IsDisabled { get; set; }
+
+        /// <summary>
+        /// If omitted, all tools are enabled
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("enabled_tools")]
+        public global::System.Collections.Generic.IList<string>? EnabledTools { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptDataMcpMcpServerUrlThisIsUsedForInlineDefinitionsOfMcpServers" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="type"></param>
+        /// <param name="isDisabled"></param>
+        /// <param name="enabledTools">
+        /// If omitted, all tools are enabled
+        /// </param>
+        public PromptDataMcpMcpServerUrlThisIsUsedForInlineDefinitionsOfMcpServers(
+            string url,
+            global::G.PromptDataMcpMcpServerUrlThisIsUsedForInlineDefinitionsOfMcpServersType type,
+            bool? isDisabled,
+            global::System.Collections.Generic.IList<string>? enabledTools)
+        {
+            this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.IsDisabled = isDisabled;
+            this.EnabledTools = enabledTools;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptDataMcpMcpServerUrlThisIsUsedForInlineDefinitionsOfMcpServers" /> class.
+        /// </summary>
+        public PromptDataMcpMcpServerUrlThisIsUsedForInlineDefinitionsOfMcpServers()
+        {
+        }
+    }
+}

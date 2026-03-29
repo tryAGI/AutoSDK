@@ -1,0 +1,298 @@
+﻿//HintName: G.ChatmessageClient.GetAllChatMessages.g.cs
+
+#nullable enable
+
+namespace G
+{
+    public partial class ChatmessageClient
+    {
+        partial void PrepareGetAllChatMessagesArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string id,
+            ref global::G.GetAllChatMessagesChatType? chatType,
+            ref global::G.GetAllChatMessagesOrder? order,
+            ref string? chatId,
+            ref string? memoryType,
+            ref string? sessionId,
+            ref global::System.DateTime? startDate,
+            ref global::System.DateTime? endDate,
+            ref bool? feedback,
+            ref global::G.GetAllChatMessagesFeedbackType? feedbackType);
+        partial void PrepareGetAllChatMessagesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string id,
+            global::G.GetAllChatMessagesChatType? chatType,
+            global::G.GetAllChatMessagesOrder? order,
+            string? chatId,
+            string? memoryType,
+            string? sessionId,
+            global::System.DateTime? startDate,
+            global::System.DateTime? endDate,
+            bool? feedback,
+            global::G.GetAllChatMessagesFeedbackType? feedbackType);
+        partial void ProcessGetAllChatMessagesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessGetAllChatMessagesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// List all chat messages<br/>
+        /// Retrieve all chat messages for a specific chatflow.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="chatType"></param>
+        /// <param name="order"></param>
+        /// <param name="chatId"></param>
+        /// <param name="memoryType">
+        /// Example: Buffer Memory
+        /// </param>
+        /// <param name="sessionId"></param>
+        /// <param name="startDate">
+        /// Example: 2025-01-01T11:28:36.000Z
+        /// </param>
+        /// <param name="endDate">
+        /// Example: 2025-01-13T11:28:36.000Z
+        /// </param>
+        /// <param name="feedback"></param>
+        /// <param name="feedbackType"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ChatMessage>> GetAllChatMessagesAsync(
+            string id,
+            global::G.GetAllChatMessagesChatType? chatType = default,
+            global::G.GetAllChatMessagesOrder? order = default,
+            string? chatId = default,
+            string? memoryType = default,
+            string? sessionId = default,
+            global::System.DateTime? startDate = default,
+            global::System.DateTime? endDate = default,
+            bool? feedback = default,
+            global::G.GetAllChatMessagesFeedbackType? feedbackType = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            PrepareArguments(
+                client: HttpClient);
+            PrepareGetAllChatMessagesArguments(
+                httpClient: HttpClient,
+                id: ref id,
+                chatType: ref chatType,
+                order: ref order,
+                chatId: ref chatId,
+                memoryType: ref memoryType,
+                sessionId: ref sessionId,
+                startDate: ref startDate,
+                endDate: ref endDate,
+                feedback: ref feedback,
+                feedbackType: ref feedbackType);
+
+            var chatTypeValue = chatType switch
+            {
+                global::G.GetAllChatMessagesChatType.Internal => "INTERNAL",
+                global::G.GetAllChatMessagesChatType.External => "EXTERNAL",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var orderValue = order switch
+            {
+                global::G.GetAllChatMessagesOrder.Asc => "ASC",
+                global::G.GetAllChatMessagesOrder.Desc => "DESC",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var feedbackTypeValue = feedbackType switch
+            {
+                global::G.GetAllChatMessagesFeedbackType.ThumbsUp => "THUMBS_UP",
+                global::G.GetAllChatMessagesFeedbackType.ThumbsDown => "THUMBS_DOWN",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var __pathBuilder = new global::G.PathBuilder(
+                path: $"/chatmessage/{id}",
+                baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("chatType", chatType?.ToValueString())
+                .AddOptionalParameter("order", order?.ToValueString())
+                .AddOptionalParameter("chatId", chatId)
+                .AddOptionalParameter("memoryType", memoryType)
+                .AddOptionalParameter("sessionId", sessionId)
+                .AddOptionalParameter("startDate", startDate?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("endDate", endDate?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                .AddOptionalParameter("feedback", feedback?.ToString().ToLowerInvariant())
+                .AddOptionalParameter("feedbackType", feedbackType?.ToValueString()) 
+                ; 
+            var __path = __pathBuilder.ToString();
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                method: global::System.Net.Http.HttpMethod.Get,
+                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in Authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
+
+            PrepareRequest(
+                client: HttpClient,
+                request: __httpRequest);
+            PrepareGetAllChatMessagesRequest(
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
+                id: id,
+                chatType: chatType,
+                order: order,
+                chatId: chatId,
+                memoryType: memoryType,
+                sessionId: sessionId,
+                startDate: startDate,
+                endDate: endDate,
+                feedback: feedback,
+                feedbackType: feedbackType);
+
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            ProcessResponse(
+                client: HttpClient,
+                response: __response);
+            ProcessGetAllChatMessagesResponse(
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            // 
+            if ((int)__response.StatusCode == 500)
+            {
+                string? __content_500 = null;
+                global::System.Exception? __exception_500 = null;
+                try
+                {
+                    if (ReadResponseAsString)
+                    {
+                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                }
+                catch (global::System.Exception __ex)
+                {
+                    __exception_500 = __ex;
+                }
+
+                throw new global::G.ApiException(
+                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_500,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_500,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessGetAllChatMessagesResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    return
+                        global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.ChatMessage>?>(__content, JsonSerializerOptions) ??
+                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+
+                    using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.ChatMessage>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
+                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                }
+                catch (global::System.Exception __ex)
+                {
+                    string? __content = null;
+                    try
+                    {
+                        __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                            cancellationToken
+#endif
+                        ).ConfigureAwait(false);
+                    }
+                    catch (global::System.Exception)
+                    {
+                    }
+
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+            }
+        }
+    }
+}

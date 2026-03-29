@@ -1,0 +1,20 @@
+﻿//HintName: G.IWorkspacesMembersClient.DeleteAdminWorkspacesByWorkspaceIdUsersByUserId.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IWorkspacesMembersClient
+    {
+        /// <summary>
+        /// Remove workspace member
+        /// </summary>
+        /// <param name="workspaceId"></param>
+        /// <param name="userId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<string> DeleteAdminWorkspacesByWorkspaceIdUsersByUserIdAsync(
+            string workspaceId,
+            string userId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

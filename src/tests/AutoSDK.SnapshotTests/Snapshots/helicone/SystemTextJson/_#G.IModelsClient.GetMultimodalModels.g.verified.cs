@@ -1,0 +1,16 @@
+﻿//HintName: G.IModelsClient.GetMultimodalModels.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IModelsClient
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.OAIModelsResponse> GetMultimodalModelsAsync(
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

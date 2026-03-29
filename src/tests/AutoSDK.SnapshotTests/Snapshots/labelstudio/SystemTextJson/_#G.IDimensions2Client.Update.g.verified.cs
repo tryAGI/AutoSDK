@@ -1,0 +1,84 @@
+﻿//HintName: G.IDimensions2Client.Update.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IDimensions2Client
+    {
+        /// <summary>
+        /// ✨ Update dimension<br/>
+        /// &lt;Card href="https://humansignal.com/goenterprise"&gt;<br/>
+        ///         &lt;img style="pointer-events: none; margin-left: 0px; margin-right: 0px;" src="https://docs.humansignal.com/images/badge.svg" alt="Label Studio Enterprise badge"/&gt;<br/>
+        ///         &lt;p style="margin-top: 10px; font-size: 14px;"&gt;<br/>
+        ///             This endpoint is not available in Label Studio Community Edition. [Learn more about Label Studio Enterprise](https://humansignal.com/goenterprise)<br/>
+        ///         &lt;/p&gt;<br/>
+        ///     &lt;/Card&gt;<br/>
+        /// Update a specific dimension by ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="projectPk"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.Dimension> UpdateAsync(
+            int id,
+            int projectPk,
+
+            global::G.PatchedDimensionRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// ✨ Update dimension<br/>
+        /// &lt;Card href="https://humansignal.com/goenterprise"&gt;<br/>
+        ///         &lt;img style="pointer-events: none; margin-left: 0px; margin-right: 0px;" src="https://docs.humansignal.com/images/badge.svg" alt="Label Studio Enterprise badge"/&gt;<br/>
+        ///         &lt;p style="margin-top: 10px; font-size: 14px;"&gt;<br/>
+        ///             This endpoint is not available in Label Studio Community Edition. [Learn more about Label Studio Enterprise](https://humansignal.com/goenterprise)<br/>
+        ///         &lt;/p&gt;<br/>
+        ///     &lt;/Card&gt;<br/>
+        /// Update a specific dimension by ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="projectPk"></param>
+        /// <param name="description">
+        /// Human-readable description of what this dimension represents
+        /// </param>
+        /// <param name="extractionMethod">
+        /// Method used to extract values from annotation JSON
+        /// </param>
+        /// <param name="extractionMethodParams">
+        /// Parameters specific to the extraction method. See metrics.py for available extraction methods and their parameters.
+        /// </param>
+        /// <param name="isActive">
+        /// Whether this dimension is used in agreement calculations.
+        /// </param>
+        /// <param name="isUserDefined">
+        /// Whether this dimension was manually created by a user. System-generated dimensions have this set to False.
+        /// </param>
+        /// <param name="metricParams">
+        /// Parameters for the metric. See metrics.py for available metrics and their parameters.
+        /// </param>
+        /// <param name="metricType">
+        /// Strategy for comparing dimension values across annotators
+        /// </param>
+        /// <param name="name">
+        /// Unique identifier for this dimension within the project
+        /// </param>
+        /// <param name="order">
+        /// Display order within the project
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::G.Dimension> UpdateAsync(
+            int id,
+            int projectPk,
+            string? description = default,
+            string? extractionMethod = default,
+            object? extractionMethodParams = default,
+            bool? isActive = default,
+            bool? isUserDefined = default,
+            object? metricParams = default,
+            string? metricType = default,
+            string? name = default,
+            int? order = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

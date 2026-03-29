@@ -1,0 +1,65 @@
+﻿//HintName: G.Models.MessageBreakdown.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class MessageBreakdown
+    {
+        /// <summary>
+        /// Index of the message in the input array.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("message_index")]
+        public int? MessageIndex { get; set; }
+
+        /// <summary>
+        /// Whether this specific message was flagged.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("flagged")]
+        public bool? Flagged { get; set; }
+
+        /// <summary>
+        /// Per-category flagging results.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("categories")]
+        public global::G.Categories? Categories { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageBreakdown" /> class.
+        /// </summary>
+        /// <param name="messageIndex">
+        /// Index of the message in the input array.
+        /// </param>
+        /// <param name="flagged">
+        /// Whether this specific message was flagged.
+        /// </param>
+        /// <param name="categories">
+        /// Per-category flagging results.
+        /// </param>
+        public MessageBreakdown(
+            int? messageIndex,
+            bool? flagged,
+            global::G.Categories? categories)
+        {
+            this.MessageIndex = messageIndex;
+            this.Flagged = flagged;
+            this.Categories = categories;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageBreakdown" /> class.
+        /// </summary>
+        public MessageBreakdown()
+        {
+        }
+    }
+}

@@ -1,0 +1,49 @@
+﻿//HintName: G.Models.WebhookLiveEndSessionPayloadEvent.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Default Value: live.end_session<br/>
+    /// Example: live.end_session
+    /// </summary>
+    [global::System.Runtime.Serialization.DataContract]
+    public enum WebhookLiveEndSessionPayloadEvent
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="live.end_session")]
+        LiveEndSession,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookLiveEndSessionPayloadEventExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookLiveEndSessionPayloadEvent value)
+        {
+            return value switch
+            {
+                WebhookLiveEndSessionPayloadEvent.LiveEndSession => "live.end_session",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookLiveEndSessionPayloadEvent? ToEnum(string value)
+        {
+            return value switch
+            {
+                "live.end_session" => WebhookLiveEndSessionPayloadEvent.LiveEndSession,
+                _ => null,
+            };
+        }
+    }
+}

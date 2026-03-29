@@ -1,0 +1,68 @@
+﻿//HintName: G.Models.ResearchEventDtoClassVariant1Variant2OutputVariant1.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class ResearchEventDtoClassVariant1Variant2OutputVariant1
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("outputType")]
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1OutputType OutputType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("costDollars", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1CostDollars CostDollars { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Content { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("parsed")]
+        public object? Parsed { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResearchEventDtoClassVariant1Variant2OutputVariant1" /> class.
+        /// </summary>
+        /// <param name="costDollars"></param>
+        /// <param name="content"></param>
+        /// <param name="outputType"></param>
+        /// <param name="parsed"></param>
+        public ResearchEventDtoClassVariant1Variant2OutputVariant1(
+            global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1CostDollars costDollars,
+            string content,
+            global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1OutputType outputType,
+            object? parsed)
+        {
+            this.OutputType = outputType;
+            this.CostDollars = costDollars ?? throw new global::System.ArgumentNullException(nameof(costDollars));
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Parsed = parsed;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResearchEventDtoClassVariant1Variant2OutputVariant1" /> class.
+        /// </summary>
+        public ResearchEventDtoClassVariant1Variant2OutputVariant1()
+        {
+        }
+    }
+}

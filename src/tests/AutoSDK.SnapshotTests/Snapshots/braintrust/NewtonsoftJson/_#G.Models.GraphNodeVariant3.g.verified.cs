@@ -1,0 +1,65 @@
+﻿//HintName: G.Models.GraphNodeVariant3.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class GraphNodeVariant3
+    {
+        /// <summary>
+        /// The description of the node
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// The position of the node
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("position")]
+        public global::G.GraphNodeVariant3Position? Position { get; set; }
+
+        /// <summary>
+        /// The output of the graph
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.GraphNodeVariant3Type Type { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GraphNodeVariant3" /> class.
+        /// </summary>
+        /// <param name="description">
+        /// The description of the node
+        /// </param>
+        /// <param name="position">
+        /// The position of the node
+        /// </param>
+        /// <param name="type">
+        /// The output of the graph
+        /// </param>
+        public GraphNodeVariant3(
+            string? description,
+            global::G.GraphNodeVariant3Position? position,
+            global::G.GraphNodeVariant3Type type)
+        {
+            this.Description = description;
+            this.Position = position;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GraphNodeVariant3" /> class.
+        /// </summary>
+        public GraphNodeVariant3()
+        {
+        }
+    }
+}

@@ -1,0 +1,20 @@
+﻿//HintName: G.Models.RecommendRequestUsing.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Define which vector to use for recommendation, if not specified - try to use default vector<br/>
+    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    /// </summary>
+    public sealed partial class RecommendRequestUsing
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

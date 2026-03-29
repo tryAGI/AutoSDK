@@ -1,0 +1,19 @@
+﻿//HintName: G.ITracesClient.FindTraceThreadsFeedbackScoreNames.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface ITracesClient
+    {
+        /// <summary>
+        /// Find Trace Threads Feedback Score names<br/>
+        /// Find Trace Threads Feedback Score names
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.FeedbackScoreNamesPublic> FindTraceThreadsFeedbackScoreNamesAsync(
+            global::System.Guid? projectId = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

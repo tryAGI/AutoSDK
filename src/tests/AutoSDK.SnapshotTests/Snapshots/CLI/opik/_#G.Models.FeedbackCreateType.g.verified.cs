@@ -1,0 +1,58 @@
+﻿//HintName: G.Models.FeedbackCreateType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum FeedbackCreateType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Boolean,
+        /// <summary>
+        /// 
+        /// </summary>
+        Categorical,
+        /// <summary>
+        /// 
+        /// </summary>
+        Numerical,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class FeedbackCreateTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this FeedbackCreateType value)
+        {
+            return value switch
+            {
+                FeedbackCreateType.Boolean => "boolean",
+                FeedbackCreateType.Categorical => "categorical",
+                FeedbackCreateType.Numerical => "numerical",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static FeedbackCreateType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "boolean" => FeedbackCreateType.Boolean,
+                "categorical" => FeedbackCreateType.Categorical,
+                "numerical" => FeedbackCreateType.Numerical,
+                _ => null,
+            };
+        }
+    }
+}

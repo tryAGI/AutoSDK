@@ -1,0 +1,19 @@
+﻿//HintName: G.IObjectsClient.TagsListTagsGet.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IObjectsClient
+    {
+        /// <summary>
+        /// Tags List<br/>
+        /// List all tags in a project.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.TagsListRes> TagsListTagsGetAsync(
+            string projectId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

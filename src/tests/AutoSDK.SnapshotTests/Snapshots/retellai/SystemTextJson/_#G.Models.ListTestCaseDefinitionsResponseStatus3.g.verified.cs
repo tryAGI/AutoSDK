@@ -1,0 +1,46 @@
+﻿//HintName: G.Models.ListTestCaseDefinitionsResponseStatus3.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum ListTestCaseDefinitionsResponseStatus3
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Error,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ListTestCaseDefinitionsResponseStatus3Extensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ListTestCaseDefinitionsResponseStatus3 value)
+        {
+            return value switch
+            {
+                ListTestCaseDefinitionsResponseStatus3.Error => "error",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ListTestCaseDefinitionsResponseStatus3? ToEnum(string value)
+        {
+            return value switch
+            {
+                "error" => ListTestCaseDefinitionsResponseStatus3.Error,
+                _ => null,
+            };
+        }
+    }
+}

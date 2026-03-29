@@ -1,0 +1,59 @@
+﻿//HintName: G.Models.HallucinationAnalysis.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class HallucinationAnalysis
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("details", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.UtteranceHallucination> Details { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("hallucination_utterance_count", Required = global::Newtonsoft.Json.Required.Always)]
+        public double HallucinationUtteranceCount { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("total_utterance_count", Required = global::Newtonsoft.Json.Required.Always)]
+        public double TotalUtteranceCount { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HallucinationAnalysis" /> class.
+        /// </summary>
+        /// <param name="details"></param>
+        /// <param name="hallucinationUtteranceCount"></param>
+        /// <param name="totalUtteranceCount"></param>
+        public HallucinationAnalysis(
+            global::System.Collections.Generic.IList<global::G.UtteranceHallucination> details,
+            double hallucinationUtteranceCount,
+            double totalUtteranceCount)
+        {
+            this.Details = details ?? throw new global::System.ArgumentNullException(nameof(details));
+            this.HallucinationUtteranceCount = hallucinationUtteranceCount;
+            this.TotalUtteranceCount = totalUtteranceCount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HallucinationAnalysis" /> class.
+        /// </summary>
+        public HallucinationAnalysis()
+        {
+        }
+    }
+}

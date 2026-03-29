@@ -1,0 +1,21 @@
+﻿//HintName: G.IDataManagerClient.ApiDmActionsFormRetrieve.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IDataManagerClient
+    {
+        /// <summary>
+        /// Get action form<br/>
+        /// Get the form configuration for a specific action.
+        /// </summary>
+        /// <param name="actionId"></param>
+        /// <param name="project"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<string> ApiDmActionsFormRetrieveAsync(
+            string actionId,
+            int project,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -1,0 +1,27 @@
+﻿//HintName: G.IOpsClient.OpDeleteV2EntityProjectOpsObjectIdDelete.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IOpsClient
+    {
+        /// <summary>
+        /// Op Delete<br/>
+        /// Delete an op object. If digests are provided, only those versions are deleted. Otherwise, all versions are deleted.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="project"></param>
+        /// <param name="objectId"></param>
+        /// <param name="digests">
+        /// List of digests to delete. If not provided, all digests for the op will be deleted.
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.OpDeleteRes> OpDeleteV2EntityProjectOpsObjectIdDeleteAsync(
+            string entity,
+            string project,
+            string objectId,
+            global::System.Collections.Generic.IList<string>? digests = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

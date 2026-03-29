@@ -1,0 +1,64 @@
+﻿//HintName: G.Models.GetSpansByProjectType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum GetSpansByProjectType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        General,
+        /// <summary>
+        /// 
+        /// </summary>
+        Guardrail,
+        /// <summary>
+        /// 
+        /// </summary>
+        Llm,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tool,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class GetSpansByProjectTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this GetSpansByProjectType value)
+        {
+            return value switch
+            {
+                GetSpansByProjectType.General => "general",
+                GetSpansByProjectType.Guardrail => "guardrail",
+                GetSpansByProjectType.Llm => "llm",
+                GetSpansByProjectType.Tool => "tool",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static GetSpansByProjectType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "general" => GetSpansByProjectType.General,
+                "guardrail" => GetSpansByProjectType.Guardrail,
+                "llm" => GetSpansByProjectType.Llm,
+                "tool" => GetSpansByProjectType.Tool,
+                _ => null,
+            };
+        }
+    }
+}

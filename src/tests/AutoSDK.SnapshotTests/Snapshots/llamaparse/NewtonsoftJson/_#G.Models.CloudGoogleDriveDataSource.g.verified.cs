@@ -1,0 +1,76 @@
+﻿//HintName: G.Models.CloudGoogleDriveDataSource.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class CloudGoogleDriveDataSource
+    {
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("supports_access_control")]
+        public bool? SupportsAccessControl { get; set; }
+
+        /// <summary>
+        /// The ID of the Google Drive folder to read from.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("folder_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string FolderId { get; set; } = default!;
+
+        /// <summary>
+        /// The service account key JSON to use for authentication.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("service_account_key")]
+        public global::System.Collections.Generic.Dictionary<string, string>? ServiceAccountKey { get; set; }
+
+        /// <summary>
+        /// Default Value: CloudGoogleDriveDataSource
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("class_name")]
+        public string? ClassName { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CloudGoogleDriveDataSource" /> class.
+        /// </summary>
+        /// <param name="folderId">
+        /// The ID of the Google Drive folder to read from.
+        /// </param>
+        /// <param name="supportsAccessControl">
+        /// Default Value: false
+        /// </param>
+        /// <param name="serviceAccountKey">
+        /// The service account key JSON to use for authentication.
+        /// </param>
+        /// <param name="className">
+        /// Default Value: CloudGoogleDriveDataSource
+        /// </param>
+        public CloudGoogleDriveDataSource(
+            string folderId,
+            bool? supportsAccessControl,
+            global::System.Collections.Generic.Dictionary<string, string>? serviceAccountKey,
+            string? className)
+        {
+            this.SupportsAccessControl = supportsAccessControl;
+            this.FolderId = folderId ?? throw new global::System.ArgumentNullException(nameof(folderId));
+            this.ServiceAccountKey = serviceAccountKey;
+            this.ClassName = className;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CloudGoogleDriveDataSource" /> class.
+        /// </summary>
+        public CloudGoogleDriveDataSource()
+        {
+        }
+    }
+}

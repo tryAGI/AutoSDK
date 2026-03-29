@@ -11,6 +11,446 @@ public class CliTests
         await GenerateAsync("elevenlabs.json", expectResponseStream: true);
     }
 
+    // --- New SDK specs ---
+
+    [TestMethod]
+    public async Task Generate_BlackForestLabsSdk()
+    {
+        await GenerateAsync("blackforestlabs.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_BlandAISdk()
+    {
+        await GenerateAsync("blandai.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_BraintrustSdk()
+    {
+        await GenerateAsync("braintrust.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_BraveSearchSdk()
+    {
+        await GenerateAsync("bravesearch.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_BrowserbaseSdk()
+    {
+        await GenerateAsync("browserbase.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_CartesiaSdk()
+    {
+        await GenerateAsync("cartesia.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_ChromaSdk()
+    {
+        await GenerateAsync("chroma.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_ComposioSdk()
+    {
+        await GenerateAsync("composio.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_CozeSdk()
+    {
+        await GenerateAsync("coze.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_CursorAgentsSdk()
+    {
+        await GenerateAsync("cursoragents.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_DeepLSdk()
+    {
+        await GenerateAsync("deepl.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_DescriptSdk()
+    {
+        await GenerateAsync("descript.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_DIdSdk()
+    {
+        await GenerateAsync("did.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_DoclingServeSdk()
+    {
+        await GenerateAsync("doclingserve.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_E2BSdk()
+    {
+        await GenerateAsync("e2b.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_ExaSdk()
+    {
+        await GenerateAsync("exa.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_FalSdk()
+    {
+        await GenerateAsync("fal.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_FirecrawlSdk()
+    {
+        await GenerateAsync("firecrawl.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_FishAudioSdk()
+    {
+        await GenerateAsync("fishaudio.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_FlowiseSdk()
+    {
+        await GenerateAsync("flowise.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_ForemSdk()
+    {
+        await GenerateAsync("forem.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_GladiaSdk()
+    {
+        await GenerateAsync("gladia.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_GoogleGeminiDiscoverySdk()
+    {
+        await GenerateAsync("google-gemini-discovery.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_GroqSdk()
+    {
+        await GenerateAsync("groq.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_GroundXSdk()
+    {
+        await GenerateAsync("groundx.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_GuardrailsSdk()
+    {
+        await GenerateAsync("guardrails.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_HedraSdk()
+    {
+        await GenerateAsync("hedra.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_HeliconeSdk()
+    {
+        await GenerateAsync("helicone.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_HumanloopSdk()
+    {
+        await GenerateAsync("humanloop.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_HumeAISdk()
+    {
+        await GenerateAsync("humeai.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_KlingAISdk()
+    {
+        await GenerateAsync("klingai.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_LabelStudioSdk()
+    {
+        await GenerateAsync("labelstudio.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_LakeraSdk()
+    {
+        await GenerateAsync("lakera.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_LangfuseSdk()
+    {
+        await GenerateAsync("langfuse.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_LettaSdk()
+    {
+        await GenerateAsync("letta.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_LlamaParseSdk()
+    {
+        await GenerateAsync("llamaparse.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_Mem0Sdk()
+    {
+        await GenerateAsync("mem0.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_MeshcapadeSdk()
+    {
+        await GenerateAsync("meshcapade.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_MeshySdk()
+    {
+        await GenerateAsync("meshy.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_MilvusSdk()
+    {
+        await GenerateAsync("milvus.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_MixedbreadSdk()
+    {
+        await GenerateAsync("mixedbread.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_MurfSdk()
+    {
+        await GenerateAsync("murf.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_NanonetsSdk()
+    {
+        await GenerateAsync("nanonets.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_NightfallAISdk()
+    {
+        await GenerateAsync("nightfallai.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_NixtlaSdk()
+    {
+        await GenerateAsync("nixtla.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_OpenRouterSdk()
+    {
+        await GenerateAsync("openrouter.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_OpikSdk()
+    {
+        await GenerateAsync("opik.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_PhoenixSdk()
+    {
+        await GenerateAsync("phoenix.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_PhotoroomSdk()
+    {
+        await GenerateAsync("photoroom.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_PortkeySdk()
+    {
+        await GenerateAsync("portkey.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_PredictionGuardSdk()
+    {
+        await GenerateAsync("predictionguard.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_PromptLayerSdk()
+    {
+        await GenerateAsync("promptlayer.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_QdrantSdk()
+    {
+        await GenerateAsync("qdrant.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_RekaSdk()
+    {
+        await GenerateAsync("reka.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_RetellAISdk()
+    {
+        await GenerateAsync("retellai.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_RevAISdk()
+    {
+        await GenerateAsync("revai.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_RoboflowSdk()
+    {
+        await GenerateAsync("roboflow.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_SarvamAISdk()
+    {
+        await GenerateAsync("sarvamai.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_SerperSdk()
+    {
+        await GenerateAsync("serper.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_ShotstackSdk()
+    {
+        await GenerateAsync("shotstack.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_SpeechmaticsSdk()
+    {
+        await GenerateAsync("speechmatics.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_StabilityAISdk()
+    {
+        await GenerateAsync("stabilityai.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_SynthesiaSdk()
+    {
+        await GenerateAsync("synthesia.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_TavilySdk()
+    {
+        await GenerateAsync("tavily.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_TavusSdk()
+    {
+        await GenerateAsync("tavus.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_TripoSdk()
+    {
+        await GenerateAsync("tripo.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_TurbopufferSdk()
+    {
+        await GenerateAsync("turbopuffer.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_TwelveLabsSdk()
+    {
+        await GenerateAsync("twelvelabs.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_UpstageSdk()
+    {
+        await GenerateAsync("upstage.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_VapiSdk()
+    {
+        await GenerateAsync("vapi.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_VoyageAISdk()
+    {
+        await GenerateAsync("voyageai.yaml", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_WeaveSdk()
+    {
+        await GenerateAsync("weave.json", targetFramework: "net10.0");
+    }
+
+    [TestMethod]
+    public async Task Generate_WriterSdk()
+    {
+        await GenerateAsync("writer.yaml", targetFramework: "net10.0");
+    }
+
     [TestMethod]
     public async Task Generate_WeaviateSdk()
     {

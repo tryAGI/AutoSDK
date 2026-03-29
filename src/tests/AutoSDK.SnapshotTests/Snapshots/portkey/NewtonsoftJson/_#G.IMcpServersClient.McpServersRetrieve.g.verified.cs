@@ -1,0 +1,18 @@
+﻿//HintName: G.IMcpServersClient.McpServersRetrieve.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IMcpServersClient
+    {
+        /// <summary>
+        /// Get MCP Server
+        /// </summary>
+        /// <param name="mcpServerId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.McpServer> McpServersRetrieveAsync(
+            string mcpServerId,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

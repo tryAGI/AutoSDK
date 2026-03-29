@@ -1,0 +1,43 @@
+﻿//HintName: G.Models.AgentCreateDtoTriggersChatEnd.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Configuration triggered when a chat session ends.
+    /// </summary>
+    public sealed partial class AgentCreateDtoTriggersChatEnd
+    {
+        /// <summary>
+        /// Webhooks executed when the event occurs.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("webhooks")]
+        public global::System.Collections.Generic.IList<global::G.AgentCreateDtoTriggersChatEndWebhook>? Webhooks { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AgentCreateDtoTriggersChatEnd" /> class.
+        /// </summary>
+        /// <param name="webhooks">
+        /// Webhooks executed when the event occurs.
+        /// </param>
+        public AgentCreateDtoTriggersChatEnd(
+            global::System.Collections.Generic.IList<global::G.AgentCreateDtoTriggersChatEndWebhook>? webhooks)
+        {
+            this.Webhooks = webhooks;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AgentCreateDtoTriggersChatEnd" /> class.
+        /// </summary>
+        public AgentCreateDtoTriggersChatEnd()
+        {
+        }
+    }
+}

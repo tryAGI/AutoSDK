@@ -1,0 +1,52 @@
+﻿//HintName: G.Models.PostTriggerInstancesBySlugUpsertResponse2.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class PostTriggerInstancesBySlugUpsertResponse2
+    {
+        /// <summary>
+        /// ID of the updated trigger
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("trigger_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string TriggerId { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("deprecated", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.PostTriggerInstancesBySlugUpsertResponseDeprecated2 Deprecated { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostTriggerInstancesBySlugUpsertResponse2" /> class.
+        /// </summary>
+        /// <param name="triggerId">
+        /// ID of the updated trigger
+        /// </param>
+        /// <param name="deprecated"></param>
+        public PostTriggerInstancesBySlugUpsertResponse2(
+            string triggerId,
+            global::G.PostTriggerInstancesBySlugUpsertResponseDeprecated2 deprecated)
+        {
+            this.TriggerId = triggerId ?? throw new global::System.ArgumentNullException(nameof(triggerId));
+            this.Deprecated = deprecated ?? throw new global::System.ArgumentNullException(nameof(deprecated));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostTriggerInstancesBySlugUpsertResponse2" /> class.
+        /// </summary>
+        public PostTriggerInstancesBySlugUpsertResponse2()
+        {
+        }
+    }
+}

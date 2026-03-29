@@ -1,0 +1,46 @@
+﻿//HintName: G.Models.PostToolRouterSessionResponseMcpType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The type of the MCP server. Can be http
+    /// </summary>
+    public enum PostToolRouterSessionResponseMcpType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Http,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PostToolRouterSessionResponseMcpTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PostToolRouterSessionResponseMcpType value)
+        {
+            return value switch
+            {
+                PostToolRouterSessionResponseMcpType.Http => "http",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PostToolRouterSessionResponseMcpType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "http" => PostToolRouterSessionResponseMcpType.Http,
+                _ => null,
+            };
+        }
+    }
+}

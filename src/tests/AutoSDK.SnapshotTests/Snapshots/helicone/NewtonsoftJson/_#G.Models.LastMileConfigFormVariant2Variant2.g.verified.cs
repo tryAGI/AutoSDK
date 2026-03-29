@@ -1,0 +1,50 @@
+﻿//HintName: G.Models.LastMileConfigFormVariant2Variant2.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class LastMileConfigFormVariant2Variant2
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("groundTruth", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.DataEntry GroundTruth { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("_type")]
+        public global::G.LastMileConfigFormVariant2Variant2Type Type { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LastMileConfigFormVariant2Variant2" /> class.
+        /// </summary>
+        /// <param name="groundTruth"></param>
+        /// <param name="type"></param>
+        public LastMileConfigFormVariant2Variant2(
+            global::G.DataEntry groundTruth,
+            global::G.LastMileConfigFormVariant2Variant2Type type)
+        {
+            this.GroundTruth = groundTruth;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LastMileConfigFormVariant2Variant2" /> class.
+        /// </summary>
+        public LastMileConfigFormVariant2Variant2()
+        {
+        }
+    }
+}

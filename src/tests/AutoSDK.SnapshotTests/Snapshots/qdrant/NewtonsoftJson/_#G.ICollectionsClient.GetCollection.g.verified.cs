@@ -1,0 +1,19 @@
+﻿//HintName: G.ICollectionsClient.GetCollection.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface ICollectionsClient
+    {
+        /// <summary>
+        /// Collection info<br/>
+        /// Get detailed information about specified existing collection
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.GetCollectionResponse> GetCollectionAsync(
+            string collectionName,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

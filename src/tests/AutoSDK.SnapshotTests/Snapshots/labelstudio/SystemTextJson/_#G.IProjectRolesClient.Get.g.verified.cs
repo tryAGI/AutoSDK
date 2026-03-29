@@ -1,0 +1,27 @@
+﻿//HintName: G.IProjectRolesClient.Get.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IProjectRolesClient
+    {
+        /// <summary>
+        /// ✨ List project roles<br/>
+        /// &lt;Card href="https://humansignal.com/goenterprise"&gt;<br/>
+        ///         &lt;img style="pointer-events: none; margin-left: 0px; margin-right: 0px;" src="https://docs.humansignal.com/images/badge.svg" alt="Label Studio Enterprise badge"/&gt;<br/>
+        ///         &lt;p style="margin-top: 10px; font-size: 14px;"&gt;<br/>
+        ///             This endpoint is not available in Label Studio Community Edition. [Learn more about Label Studio Enterprise](https://humansignal.com/goenterprise)<br/>
+        ///         &lt;/p&gt;<br/>
+        ///     &lt;/Card&gt;<br/>
+        ///         List users and their project level roles for a given project.<br/>
+        ///         If user is not listed here and is a member of the project then they would behave as assigned role in organization.<br/>
+        ///         
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ProjectRole>> GetAsync(
+            int id,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -1,0 +1,48 @@
+﻿//HintName: G.Models.BaseMessagesResultContentItemsOneOf0CitationsItemsOneOf0Type.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Runtime.Serialization.DataContract]
+    public enum BaseMessagesResultContentItemsOneOf0CitationsItemsOneOf0Type
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="char_location")]
+        CharLocation,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class BaseMessagesResultContentItemsOneOf0CitationsItemsOneOf0TypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this BaseMessagesResultContentItemsOneOf0CitationsItemsOneOf0Type value)
+        {
+            return value switch
+            {
+                BaseMessagesResultContentItemsOneOf0CitationsItemsOneOf0Type.CharLocation => "char_location",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static BaseMessagesResultContentItemsOneOf0CitationsItemsOneOf0Type? ToEnum(string value)
+        {
+            return value switch
+            {
+                "char_location" => BaseMessagesResultContentItemsOneOf0CitationsItemsOneOf0Type.CharLocation,
+                _ => null,
+            };
+        }
+    }
+}

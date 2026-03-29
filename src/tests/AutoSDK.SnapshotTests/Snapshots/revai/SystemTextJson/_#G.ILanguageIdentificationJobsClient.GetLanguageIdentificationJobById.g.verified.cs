@@ -1,0 +1,19 @@
+﻿//HintName: G.ILanguageIdentificationJobsClient.GetLanguageIdentificationJobById.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface ILanguageIdentificationJobsClient
+    {
+        /// <summary>
+        /// Get Language Identification Job By Id<br/>
+        /// Returns information about a language identification job
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.LanguageIdentificationJob> GetLanguageIdentificationJobByIdAsync(
+            string id,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

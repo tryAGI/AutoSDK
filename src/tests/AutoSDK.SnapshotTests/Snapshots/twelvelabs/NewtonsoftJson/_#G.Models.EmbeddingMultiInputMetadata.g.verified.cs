@@ -1,0 +1,41 @@
+﻿//HintName: G.Models.EmbeddingMultiInputMetadata.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Metadata for multi-input embeddings
+    /// </summary>
+    public sealed partial class EmbeddingMultiInputMetadata
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("input_type")]
+        public global::G.EmbeddingMultiInputMetadataInputType InputType { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingMultiInputMetadata" /> class.
+        /// </summary>
+        /// <param name="inputType"></param>
+        public EmbeddingMultiInputMetadata(
+            global::G.EmbeddingMultiInputMetadataInputType inputType)
+        {
+            this.InputType = inputType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingMultiInputMetadata" /> class.
+        /// </summary>
+        public EmbeddingMultiInputMetadata()
+        {
+        }
+    }
+}
