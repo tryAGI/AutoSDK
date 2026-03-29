@@ -14,22 +14,22 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="image/gif")]
-        ImageDividegif,
+        ImageGif,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="image/jpeg")]
-        ImageDividejpeg,
+        ImageJpeg,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="image/png")]
-        ImageDividepng,
+        ImagePng,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="image/webp")]
-        ImageDividewebp,
+        ImageWebp,
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ namespace G
         {
             return value switch
             {
-                BetaBase64ImageSourceMediaType.ImageDividegif => "image/gif",
-                BetaBase64ImageSourceMediaType.ImageDividejpeg => "image/jpeg",
-                BetaBase64ImageSourceMediaType.ImageDividepng => "image/png",
-                BetaBase64ImageSourceMediaType.ImageDividewebp => "image/webp",
+                BetaBase64ImageSourceMediaType.ImageGif => "image/gif",
+                BetaBase64ImageSourceMediaType.ImageJpeg => "image/jpeg",
+                BetaBase64ImageSourceMediaType.ImagePng => "image/png",
+                BetaBase64ImageSourceMediaType.ImageWebp => "image/webp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -58,10 +58,10 @@ namespace G
         {
             return value switch
             {
-                "image/gif" => BetaBase64ImageSourceMediaType.ImageDividegif,
-                "image/jpeg" => BetaBase64ImageSourceMediaType.ImageDividejpeg,
-                "image/png" => BetaBase64ImageSourceMediaType.ImageDividepng,
-                "image/webp" => BetaBase64ImageSourceMediaType.ImageDividewebp,
+                "image/gif" => BetaBase64ImageSourceMediaType.ImageGif,
+                "image/jpeg" => BetaBase64ImageSourceMediaType.ImageJpeg,
+                "image/png" => BetaBase64ImageSourceMediaType.ImagePng,
+                "image/webp" => BetaBase64ImageSourceMediaType.ImageWebp,
                 _ => null,
             };
         }

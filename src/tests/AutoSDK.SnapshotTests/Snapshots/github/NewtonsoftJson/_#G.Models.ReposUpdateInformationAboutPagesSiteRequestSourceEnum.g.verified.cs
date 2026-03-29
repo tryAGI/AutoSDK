@@ -24,7 +24,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="master /docs")]
-        MasterDividedocs,
+        MasterDocs,
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ namespace G
             {
                 ReposUpdateInformationAboutPagesSiteRequestSourceEnum.GhPages => "gh-pages",
                 ReposUpdateInformationAboutPagesSiteRequestSourceEnum.Master => "master",
-                ReposUpdateInformationAboutPagesSiteRequestSourceEnum.MasterDividedocs => "master /docs",
+                ReposUpdateInformationAboutPagesSiteRequestSourceEnum.MasterDocs => "master /docs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,7 +54,7 @@ namespace G
             {
                 "gh-pages" => ReposUpdateInformationAboutPagesSiteRequestSourceEnum.GhPages,
                 "master" => ReposUpdateInformationAboutPagesSiteRequestSourceEnum.Master,
-                "master /docs" => ReposUpdateInformationAboutPagesSiteRequestSourceEnum.MasterDividedocs,
+                "master /docs" => ReposUpdateInformationAboutPagesSiteRequestSourceEnum.MasterDocs,
                 _ => null,
             };
         }

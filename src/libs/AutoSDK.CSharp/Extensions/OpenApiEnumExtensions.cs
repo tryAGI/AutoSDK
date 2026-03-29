@@ -9,7 +9,7 @@ namespace AutoSDK.Extensions;
 public static class OpenApiEnumExtensions
 {
     private static readonly char[] EnumSeparators =
-        ['_', '-', ' ', '.'];
+        ['_', '-', ' ', '.', '/'];
     private static readonly Dictionary<string, string> SymbolicEnumNames =
         new Dictionary<string, string>(StringComparer.Ordinal)
         {
@@ -312,7 +312,6 @@ public static class OpenApiEnumExtensions
                 .Replace("+", "Plus")
                 .Replace("*", "Any")
                 .Replace("[]", "Array")
-                .Replace("/", "Divide")
                 .Replace("'", string.Empty)
                 .Replace(".", string.Empty)
                 .Replace("[", string.Empty)

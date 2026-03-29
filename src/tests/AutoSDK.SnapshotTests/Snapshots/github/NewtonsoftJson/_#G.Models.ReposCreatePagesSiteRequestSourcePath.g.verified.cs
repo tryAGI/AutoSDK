@@ -20,7 +20,7 @@ namespace G
         /// `/`
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="/docs")]
-        Dividedocs,
+        Docs,
     }
 
     /// <summary>
@@ -36,7 +36,7 @@ namespace G
             return value switch
             {
                 ReposCreatePagesSiteRequestSourcePath.Divide => "/",
-                ReposCreatePagesSiteRequestSourcePath.Dividedocs => "/docs",
+                ReposCreatePagesSiteRequestSourcePath.Docs => "/docs",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,7 +48,7 @@ namespace G
             return value switch
             {
                 "/" => ReposCreatePagesSiteRequestSourcePath.Divide,
-                "/docs" => ReposCreatePagesSiteRequestSourcePath.Dividedocs,
+                "/docs" => ReposCreatePagesSiteRequestSourcePath.Docs,
                 _ => null,
             };
         }

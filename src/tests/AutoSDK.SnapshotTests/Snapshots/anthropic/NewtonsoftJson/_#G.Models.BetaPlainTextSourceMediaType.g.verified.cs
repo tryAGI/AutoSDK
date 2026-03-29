@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text/plain")]
-        TextDivideplain,
+        TextPlain,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                BetaPlainTextSourceMediaType.TextDivideplain => "text/plain",
+                BetaPlainTextSourceMediaType.TextPlain => "text/plain",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "text/plain" => BetaPlainTextSourceMediaType.TextDivideplain,
+                "text/plain" => BetaPlainTextSourceMediaType.TextPlain,
                 _ => null,
             };
         }

@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text/event-stream")]
-        TextDivideeventStream,
+        TextEventStream,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                ChatAccepts.TextDivideeventStream => "text/event-stream",
+                ChatAccepts.TextEventStream => "text/event-stream",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "text/event-stream" => ChatAccepts.TextDivideeventStream,
+                "text/event-stream" => ChatAccepts.TextEventStream,
                 _ => null,
             };
         }

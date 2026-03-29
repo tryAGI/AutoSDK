@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="application/pdf")]
-        ApplicationDividepdf,
+        ApplicationPdf,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                Base64PDFSourceMediaType.ApplicationDividepdf => "application/pdf",
+                Base64PDFSourceMediaType.ApplicationPdf => "application/pdf",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "application/pdf" => Base64PDFSourceMediaType.ApplicationDividepdf,
+                "application/pdf" => Base64PDFSourceMediaType.ApplicationPdf,
                 _ => null,
             };
         }

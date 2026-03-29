@@ -84,7 +84,7 @@ namespace G
 
             var acceptsValue = accepts switch
             {
-                global::G.ChatAccepts.TextDivideeventStream => "text/event-stream",
+                global::G.ChatAccepts.TextEventStream => "text/event-stream",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new global::G.PathBuilder(

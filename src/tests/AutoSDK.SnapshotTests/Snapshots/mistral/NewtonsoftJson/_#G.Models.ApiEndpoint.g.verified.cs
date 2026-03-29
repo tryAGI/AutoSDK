@@ -14,27 +14,27 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="/v1/chat/completions")]
-        Dividev1DividechatDividecompletions,
+        V1ChatCompletions,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="/v1/chat/moderations")]
-        Dividev1DividechatDividemoderations,
+        V1ChatModerations,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="/v1/embeddings")]
-        Dividev1Divideembeddings,
+        V1Embeddings,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="/v1/fim/completions")]
-        Dividev1DividefimDividecompletions,
+        V1FimCompletions,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="/v1/moderations")]
-        Dividev1Dividemoderations,
+        V1Moderations,
     }
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace G
         {
             return value switch
             {
-                ApiEndpoint.Dividev1DividechatDividecompletions => "/v1/chat/completions",
-                ApiEndpoint.Dividev1DividechatDividemoderations => "/v1/chat/moderations",
-                ApiEndpoint.Dividev1Divideembeddings => "/v1/embeddings",
-                ApiEndpoint.Dividev1DividefimDividecompletions => "/v1/fim/completions",
-                ApiEndpoint.Dividev1Dividemoderations => "/v1/moderations",
+                ApiEndpoint.V1ChatCompletions => "/v1/chat/completions",
+                ApiEndpoint.V1ChatModerations => "/v1/chat/moderations",
+                ApiEndpoint.V1Embeddings => "/v1/embeddings",
+                ApiEndpoint.V1FimCompletions => "/v1/fim/completions",
+                ApiEndpoint.V1Moderations => "/v1/moderations",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -64,11 +64,11 @@ namespace G
         {
             return value switch
             {
-                "/v1/chat/completions" => ApiEndpoint.Dividev1DividechatDividecompletions,
-                "/v1/chat/moderations" => ApiEndpoint.Dividev1DividechatDividemoderations,
-                "/v1/embeddings" => ApiEndpoint.Dividev1Divideembeddings,
-                "/v1/fim/completions" => ApiEndpoint.Dividev1DividefimDividecompletions,
-                "/v1/moderations" => ApiEndpoint.Dividev1Dividemoderations,
+                "/v1/chat/completions" => ApiEndpoint.V1ChatCompletions,
+                "/v1/chat/moderations" => ApiEndpoint.V1ChatModerations,
+                "/v1/embeddings" => ApiEndpoint.V1Embeddings,
+                "/v1/fim/completions" => ApiEndpoint.V1FimCompletions,
+                "/v1/moderations" => ApiEndpoint.V1Moderations,
                 _ => null,
             };
         }
