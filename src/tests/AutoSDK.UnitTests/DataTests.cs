@@ -140,6 +140,66 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public void ConvenienceOverload_IncludesRequiredNonNullableObjectProperty_FromAllOfRequest()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: portkey-allof-repro
+                              version: 1.0.0
+                            paths:
+                              /prompts/{promptId}/completions:
+                                post:
+                                  operationId: createPromptCompletion
+                                  parameters:
+                                    - in: path
+                                      name: promptId
+                                      required: true
+                                      schema:
+                                        type: string
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      application/json:
+                                        schema:
+                                          allOf:
+                                            - type: object
+                                              required:
+                                                - variables
+                                              properties:
+                                                variables:
+                                                  type: object
+                                                  description: Variables to substitute in the prompt template
+                                                stream:
+                                                  type: boolean
+                                                  default: false
+                                                hyperparameters:
+                                                  oneOf:
+                                                    - type: string
+                                                    - type: integer
+                                  responses:
+                                    '200':
+                                      description: ok
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var generatedModel = string.Join("\n\n", data.Classes.Select(x => Sources.GenerateModel(x)));
+        var generatedMethod = string.Join("\n\n", data.Methods.Select(x => Sources.GenerateEndPoint(x)));
+
+        generatedModel.Should().Contain("public required object Variables { get; set; }");
+        generatedMethod.Should().Contain("object variables");
+        generatedMethod.Should().Contain("Variables = variables,");
+    }
+
+    [TestMethod]
     public void ExcludeDeprecatedOperations_UsesFernAvailability()
     {
         var settings = DefaultSettings with

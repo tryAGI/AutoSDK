@@ -71,9 +71,7 @@ public static class CSharpEndPointFactory
             .Select(x => CSharpEndPointResponseFactory.FromResponse(x, operation, preferredMimeType: preferredMimeType))
             .ToArray();
 
-        foreach (var requestProperty in requestContext?.ResolvedReference?.ClassData?.Properties ??
-                                        requestContext?.ClassData?.Properties ??
-                                        [])
+        foreach (var requestProperty in GetRequestProperties(requestContext))
         {
             if (requestProperty.IsReadOnly)
             {
@@ -213,6 +211,78 @@ public static class CSharpEndPointFactory
 
             suffixes[parameter.Name] = suffix;
             parameters[i] = updated;
+        }
+    }
+
+    private static ImmutableArray<PropertyData> GetRequestProperties(SchemaContext? requestContext)
+    {
+        if (requestContext == null)
+        {
+            return [];
+        }
+
+        var sourceContext = requestContext.ResolvedReference ?? requestContext;
+        if (sourceContext.ClassData?.Properties is { Length: > 0 } properties)
+        {
+            return properties;
+        }
+
+        var source = sourceContext.IsDerivedClass
+            ? sourceContext.DerivedClassContext.Children
+            : !sourceContext.Schema.IsEnum()
+                ? sourceContext.Children
+                : null;
+
+        if (source == null || source.Count == 0)
+        {
+            return [];
+        }
+
+        var discriminatorPropertyName = sourceContext.IsBaseClass
+            ? sourceContext.Schema.Discriminator?.PropertyName
+            : null;
+        var hasDiscriminator = !string.IsNullOrWhiteSpace(discriminatorPropertyName);
+
+        var builder = ImmutableArray.CreateBuilder<PropertyData>(source.Count);
+        var seenNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        CollectRequestProperties(source, builder, seenNames, hasDiscriminator, discriminatorPropertyName);
+
+        return builder.ToImmutable();
+    }
+
+    private static void CollectRequestProperties(
+        IList<SchemaContext> contexts,
+        ImmutableArray<PropertyData>.Builder builder,
+        HashSet<string> seenNames,
+        bool hasDiscriminator,
+        string? discriminatorPropertyName)
+    {
+        for (var i = 0; i < contexts.Count; i++)
+        {
+            var child = contexts[i];
+            if (child is { IsProperty: true, PropertyData: not null })
+            {
+                foreach (var property in child.ComputedProperties)
+                {
+                    if ((!hasDiscriminator || property.Id != discriminatorPropertyName) &&
+                        seenNames.Add(property.Name))
+                    {
+                        builder.Add(property);
+                    }
+                }
+
+                continue;
+            }
+
+            if (child.Children.Count > 0)
+            {
+                CollectRequestProperties(
+                    child.Children,
+                    builder,
+                    seenNames,
+                    hasDiscriminator,
+                    discriminatorPropertyName);
+            }
         }
     }
 
