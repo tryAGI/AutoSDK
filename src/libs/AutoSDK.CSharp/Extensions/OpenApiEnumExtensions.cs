@@ -16,6 +16,8 @@ public static class OpenApiEnumExtensions
             ["="] = "Eq",
             ["=="] = "Eq",
             ["!="] = "Neq",
+            ["&&"] = "And",
+            ["||"] = "Or",
             [">"] = "Gt",
             [">="] = "Gte",
             ["<"] = "Lt",

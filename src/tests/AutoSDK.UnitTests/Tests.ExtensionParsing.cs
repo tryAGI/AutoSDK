@@ -219,6 +219,8 @@ public class ExtensionParsingTests
                                   enum:
                                     - "="
                                     - "!="
+                                    - "&&"
+                                    - "||"
                                     - ">"
                                     - ">="
                                     - "<"
@@ -242,6 +244,8 @@ public class ExtensionParsingTests
         [
             ("=", "Eq"),
             ("!=", "Neq"),
+            ("&&", "And"),
+            ("||", "Or"),
             (">", "Gt"),
             (">=", "Gte"),
             ("<", "Lt"),

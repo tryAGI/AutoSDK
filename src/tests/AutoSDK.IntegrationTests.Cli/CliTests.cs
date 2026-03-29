@@ -369,6 +369,8 @@ components:
       enum:
         - "="
         - "!="
+        - '&&'
+        - '||'
         - ">"
         - ">="
         - "<"
@@ -398,12 +400,16 @@ components:
                 content.Should().Contain("public enum TraceFilterOperator");
                 content.Should().Contain("Eq,");
                 content.Should().Contain("Neq,");
+                content.Should().Contain("And,");
+                content.Should().Contain("Or,");
                 content.Should().Contain("Gte,");
                 content.Should().Contain("Multiply,");
                 content.Should().Contain("Divide,");
 
                 content.Should().Contain("\"=\" => TraceFilterOperator.Eq");
                 content.Should().Contain("\"!=\" => TraceFilterOperator.Neq");
+                content.Should().Contain("\"&&\" => TraceFilterOperator.And");
+                content.Should().Contain("\"||\" => TraceFilterOperator.Or");
                 content.Should().Contain("\">=\" => TraceFilterOperator.Gte");
                 content.Should().Contain("\"*\" => TraceFilterOperator.Multiply");
                 content.Should().Contain("\"/\" => TraceFilterOperator.Divide");
