@@ -165,7 +165,7 @@ public static class ParameterSerializer
 
         return [parameter with
         {
-            Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString()",
+            Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString(){(parameter.IsRequired ? "!" : "")}",
         }];
     }
 }
