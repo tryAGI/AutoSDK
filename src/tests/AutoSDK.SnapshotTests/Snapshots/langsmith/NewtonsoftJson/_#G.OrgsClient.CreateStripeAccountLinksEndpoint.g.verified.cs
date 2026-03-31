@@ -226,6 +226,7 @@ namespace G
             string successPath,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.StripeAccountLinksCreate
             {
                 SuccessPath = successPath,

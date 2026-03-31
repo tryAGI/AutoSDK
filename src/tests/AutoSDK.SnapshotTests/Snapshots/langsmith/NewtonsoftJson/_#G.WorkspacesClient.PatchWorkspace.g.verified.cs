@@ -236,6 +236,7 @@ namespace G
             string displayName,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.WorkspacePatch
             {
                 DisplayName = displayName,

@@ -238,6 +238,7 @@ namespace G
             string cronSchedule,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.FeedsUpdateAllSubscriptionsCronRequest
             {
                 CronSchedule = cronSchedule,

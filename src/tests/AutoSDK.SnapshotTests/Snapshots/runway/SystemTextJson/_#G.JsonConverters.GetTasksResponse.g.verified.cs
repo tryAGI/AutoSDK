@@ -275,37 +275,37 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetTasksResponseVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pending, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pending!, typeInfo);
             }
             else if (value.IsThrottled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetTasksResponseVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Throttled, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Throttled!, typeInfo);
             }
             else if (value.IsCancelled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetTasksResponseVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cancelled, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cancelled!, typeInfo);
             }
             else if (value.IsRunning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetTasksResponseVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Running, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Running!, typeInfo);
             }
             else if (value.IsFailed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetTasksResponseVariant5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Failed, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Failed!, typeInfo);
             }
             else if (value.IsSucceeded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant6?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetTasksResponseVariant6).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Succeeded, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Succeeded!, typeInfo);
             }
         }
     }

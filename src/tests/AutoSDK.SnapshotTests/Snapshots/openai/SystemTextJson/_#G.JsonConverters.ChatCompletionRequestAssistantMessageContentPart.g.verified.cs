@@ -125,13 +125,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestMessageContentPartText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestMessageContentPartText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestMessageContentPartText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextContentPart, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextContentPart!, typeInfo);
             }
             else if (value.IsRefusalContentPart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestMessageContentPartRefusal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestMessageContentPartRefusal?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestMessageContentPartRefusal).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RefusalContentPart, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RefusalContentPart!, typeInfo);
             }
         }
     }

@@ -94,7 +94,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateVoiceDubbingRequestElevenVoiceDubbing), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateVoiceDubbingRequestElevenVoiceDubbing?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateVoiceDubbingRequestElevenVoiceDubbing).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ElevenVoiceDubbing, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ElevenVoiceDubbing!, typeInfo);
             }
         }
     }

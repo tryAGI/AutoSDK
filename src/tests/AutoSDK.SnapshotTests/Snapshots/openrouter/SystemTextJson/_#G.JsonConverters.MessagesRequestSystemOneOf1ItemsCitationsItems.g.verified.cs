@@ -250,31 +250,31 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestSystemOneOf1ItemsCitationsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestSystemOneOf1ItemsCitationsItems0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestSystemOneOf1ItemsCitationsItems0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestSystemOneOf1ItemsCitationsItems0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestSystemOneOf1ItemsCitationsItems0!, typeInfo);
             }
             else if (value.IsMessagesRequestSystemOneOf1ItemsCitationsItems1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestSystemOneOf1ItemsCitationsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestSystemOneOf1ItemsCitationsItems1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestSystemOneOf1ItemsCitationsItems1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestSystemOneOf1ItemsCitationsItems1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestSystemOneOf1ItemsCitationsItems1!, typeInfo);
             }
             else if (value.IsMessagesRequestSystemOneOf1ItemsCitationsItems2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestSystemOneOf1ItemsCitationsItems2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestSystemOneOf1ItemsCitationsItems2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestSystemOneOf1ItemsCitationsItems2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestSystemOneOf1ItemsCitationsItems2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestSystemOneOf1ItemsCitationsItems2!, typeInfo);
             }
             else if (value.IsMessagesRequestSystemOneOf1ItemsCitationsItems3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestSystemOneOf1ItemsCitationsItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestSystemOneOf1ItemsCitationsItems3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestSystemOneOf1ItemsCitationsItems3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestSystemOneOf1ItemsCitationsItems3, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestSystemOneOf1ItemsCitationsItems3!, typeInfo);
             }
             else if (value.IsMessagesRequestSystemOneOf1ItemsCitationsItems4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestSystemOneOf1ItemsCitationsItems4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestSystemOneOf1ItemsCitationsItems4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestSystemOneOf1ItemsCitationsItems4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestSystemOneOf1ItemsCitationsItems4, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestSystemOneOf1ItemsCitationsItems4!, typeInfo);
             }
         }
     }

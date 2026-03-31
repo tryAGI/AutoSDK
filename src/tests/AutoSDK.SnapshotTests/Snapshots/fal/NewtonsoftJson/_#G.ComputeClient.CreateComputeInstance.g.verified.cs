@@ -459,6 +459,7 @@ namespace G
             global::G.CreateComputeInstanceRequestSector? sector = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateComputeInstanceRequest
             {
                 InstanceType = instanceType,

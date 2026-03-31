@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemMessageListResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SystemMessageListResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemMessage!, typeInfo);
             }
             else if (value.IsUserMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserMessageListResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserMessageListResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserMessage!, typeInfo);
             }
             else if (value.IsReasoningMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningMessageListResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningMessageListResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningMessage!, typeInfo);
             }
             else if (value.IsAssistantMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantMessageListResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantMessageListResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantMessage!, typeInfo);
             }
         }
     }

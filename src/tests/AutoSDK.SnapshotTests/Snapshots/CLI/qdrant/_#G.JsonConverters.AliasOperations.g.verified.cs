@@ -157,19 +157,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateAliasOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateAliasOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateAliasOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateOperation!, typeInfo);
             }
             else if (value.IsDeleteOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteAliasOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteAliasOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeleteAliasOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteOperation!, typeInfo);
             }
             else if (value.IsRenameOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RenameAliasOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RenameAliasOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RenameAliasOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RenameOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RenameOperation!, typeInfo);
             }
         }
     }

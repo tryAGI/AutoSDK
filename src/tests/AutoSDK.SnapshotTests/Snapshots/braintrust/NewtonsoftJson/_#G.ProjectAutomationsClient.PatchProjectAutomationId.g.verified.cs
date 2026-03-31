@@ -404,6 +404,7 @@ namespace G
             global::G.AnyOf<global::G.PatchProjectAutomationConfigVariant1, global::G.PatchProjectAutomationConfigVariant2, global::G.PatchProjectAutomationConfigVariant3, global::G.PatchProjectAutomationConfigVariant4, global::G.TopicAutomationConfig, object>? config = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PatchProjectAutomation
             {
                 Name = name,

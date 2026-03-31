@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateMcpToolRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateMcpToolRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateMcpToolRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp!, typeInfo);
             }
             else if (value.IsLambda)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateLambdaToolRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateLambdaToolRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateLambdaToolRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Lambda, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Lambda!, typeInfo);
             }
         }
     }

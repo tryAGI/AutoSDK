@@ -51,7 +51,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaCacheControlEphemeral), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaCacheControlEphemeral?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaCacheControlEphemeral).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ephemeral, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ephemeral!, typeInfo);
             }
         }
     }

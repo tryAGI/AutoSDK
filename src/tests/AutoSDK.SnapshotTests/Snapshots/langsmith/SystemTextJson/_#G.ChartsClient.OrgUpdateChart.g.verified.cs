@@ -268,6 +268,7 @@ namespace G
             global::G.AnyOf<global::G.CustomChartSeriesFilters2, global::G.Missing, object>? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CustomChartUpdate
             {
                 Title = title,

@@ -234,6 +234,7 @@ namespace G
             string mcpServerName,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AnyOf<global::G.LettaSchemasMcpUpdateStdioMCPServer, global::G.LettaSchemasMcpUpdateSSEMCPServer, global::G.LettaSchemasMcpUpdateStreamableHTTPMCPServer>
             {
             };

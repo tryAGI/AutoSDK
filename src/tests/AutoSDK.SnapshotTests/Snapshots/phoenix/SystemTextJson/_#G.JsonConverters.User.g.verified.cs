@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LocalUserData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LocalUserData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LocalUserData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Local, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Local!, typeInfo);
             }
             else if (value.IsOauth2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OAuth2UserData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OAuth2UserData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OAuth2UserData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2!, typeInfo);
             }
             else if (value.IsLdap)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LDAPUserData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LDAPUserData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LDAPUserData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ldap, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ldap!, typeInfo);
             }
         }
     }

@@ -105,43 +105,43 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamSearchResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamSearchResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamSearchResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchResults, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchResults!, typeInfo);
             }
             else if (value.IsGenerationChunk)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamGenerationChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamGenerationChunk?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamGenerationChunk).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GenerationChunk, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GenerationChunk!, typeInfo);
             }
             else if (value.IsGenerationEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamGenerationEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamGenerationEnd?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamGenerationEnd).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GenerationEnd, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GenerationEnd!, typeInfo);
             }
             else if (value.IsEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamResponseEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamResponseEnd?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamResponseEnd).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.End, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.End!, typeInfo);
             }
             else if (value.IsFactualConsistencyScore)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FactualConsistencyScore), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FactualConsistencyScore?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FactualConsistencyScore).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FactualConsistencyScore, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FactualConsistencyScore!, typeInfo);
             }
             else if (value.IsGenerationInfo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerationInfo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerationInfo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerationInfo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GenerationInfo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GenerationInfo!, typeInfo);
             }
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
             }
         }
     }

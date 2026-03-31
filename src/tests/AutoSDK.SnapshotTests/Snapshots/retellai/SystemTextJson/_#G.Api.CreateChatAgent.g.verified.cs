@@ -338,6 +338,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ChatAgentResponse> CreateChatAgentAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AllOf<global::G.ChatAgentRequest, object>
             {
             };

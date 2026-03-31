@@ -318,6 +318,7 @@ namespace G
             string? conversationId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.EnvironmentsSendMessageRequest
             {
                 Messages = messages,

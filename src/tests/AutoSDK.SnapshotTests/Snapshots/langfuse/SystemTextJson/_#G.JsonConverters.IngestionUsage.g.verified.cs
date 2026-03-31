@@ -131,13 +131,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Usage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Usage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Usage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Usage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Usage!, typeInfo);
             }
             else if (value.IsOpenAIUsage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIUsage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIUsage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAIUsage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIUsage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIUsage!, typeInfo);
             }
         }
     }

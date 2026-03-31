@@ -220,6 +220,7 @@ namespace G
             global::G.CreateMcpIntegrationConfigurations? configurations = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateMcpIntegration
             {
                 OrganisationId = organisationId,

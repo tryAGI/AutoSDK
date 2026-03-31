@@ -198,6 +198,7 @@ namespace G
             global::G.PromptQueryParamsTimeFilter timeFilter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PromptQueryParams
             {
                 TimeFilter = timeFilter,

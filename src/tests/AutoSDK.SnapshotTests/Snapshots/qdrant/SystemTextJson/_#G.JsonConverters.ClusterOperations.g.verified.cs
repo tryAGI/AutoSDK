@@ -395,61 +395,61 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MoveShardOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MoveShardOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MoveShardOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MoveShardOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MoveShardOperation!, typeInfo);
             }
             else if (value.IsReplicateShardOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReplicateShardOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReplicateShardOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReplicateShardOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReplicateShardOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReplicateShardOperation!, typeInfo);
             }
             else if (value.IsAbortTransferOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AbortTransferOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AbortTransferOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AbortTransferOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AbortTransferOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AbortTransferOperation!, typeInfo);
             }
             else if (value.IsDropReplicaOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DropReplicaOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DropReplicaOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DropReplicaOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DropReplicaOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DropReplicaOperation!, typeInfo);
             }
             else if (value.IsCreateShardingKeyOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateShardingKeyOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateShardingKeyOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateShardingKeyOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateShardingKeyOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateShardingKeyOperation!, typeInfo);
             }
             else if (value.IsDropShardingKeyOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DropShardingKeyOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DropShardingKeyOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DropShardingKeyOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DropShardingKeyOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DropShardingKeyOperation!, typeInfo);
             }
             else if (value.IsRestartTransferOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RestartTransferOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RestartTransferOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RestartTransferOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RestartTransferOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RestartTransferOperation!, typeInfo);
             }
             else if (value.IsStartReshardingOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StartReshardingOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StartReshardingOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StartReshardingOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StartReshardingOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StartReshardingOperation!, typeInfo);
             }
             else if (value.IsAbortReshardingOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AbortReshardingOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AbortReshardingOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AbortReshardingOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AbortReshardingOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AbortReshardingOperation!, typeInfo);
             }
             else if (value.IsReplicatePointsOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReplicatePointsOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReplicatePointsOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReplicatePointsOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReplicatePointsOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReplicatePointsOperation!, typeInfo);
             }
         }
     }

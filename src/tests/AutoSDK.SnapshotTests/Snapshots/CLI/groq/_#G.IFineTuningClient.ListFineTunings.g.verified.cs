@@ -1,0 +1,16 @@
+﻿//HintName: G.IFineTuningClient.ListFineTunings.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IFineTuningClient
+    {
+        /// <summary>
+        /// Lists all previously created fine tunings. This endpoint is in closed beta. [Contact us](https://groq.com/contact) for more information.
+        /// </summary>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.ListFineTuningsResponse> ListFineTuningsAsync(
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -276,6 +276,7 @@ namespace G
             bool? removeBackgroundNoise = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.BodyAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost
             {
                 Files = files,

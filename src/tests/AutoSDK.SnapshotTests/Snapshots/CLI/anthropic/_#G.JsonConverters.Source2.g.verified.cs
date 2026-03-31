@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaBase64ImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaBase64ImageSource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaBase64ImageSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base64, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base64!, typeInfo);
             }
             else if (value.IsUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaURLImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaURLImageSource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaURLImageSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Url, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Url!, typeInfo);
             }
         }
     }

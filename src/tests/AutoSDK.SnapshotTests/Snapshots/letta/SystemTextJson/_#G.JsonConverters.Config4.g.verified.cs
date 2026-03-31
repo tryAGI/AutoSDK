@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaSchemasMcpServerUpdateStdioMCPServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaSchemasMcpServerUpdateStdioMCPServer?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaSchemasMcpServerUpdateStdioMCPServer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Stdio, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Stdio!, typeInfo);
             }
             else if (value.IsSse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaSchemasMcpServerUpdateSSEMCPServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaSchemasMcpServerUpdateSSEMCPServer?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaSchemasMcpServerUpdateSSEMCPServer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sse, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sse!, typeInfo);
             }
             else if (value.IsStreamableHttp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamableHttp, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamableHttp!, typeInfo);
             }
         }
     }

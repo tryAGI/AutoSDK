@@ -228,6 +228,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.CallBatchStartMode, global::G.CallBatchEndMode>> batch,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CallCreateBatchReq
             {
                 Batch = batch,

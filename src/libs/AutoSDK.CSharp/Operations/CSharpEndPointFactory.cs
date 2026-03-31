@@ -14,6 +14,20 @@ namespace AutoSDK.Generation;
 
 public static class CSharpEndPointFactory
 {
+    private readonly struct RequestPropertySelection
+    {
+        public RequestPropertySelection(
+            ImmutableArray<PropertyData> properties,
+            TypeData requestInitializationType)
+        {
+            Properties = properties;
+            RequestInitializationType = requestInitializationType;
+        }
+
+        public ImmutableArray<PropertyData> Properties { get; }
+        public TypeData RequestInitializationType { get; }
+    }
+
     public static EndPoint CreateEndPoint(
         OperationContext operation,
         string? preferredMimeType = null,
@@ -71,7 +85,9 @@ public static class CSharpEndPointFactory
             .Select(x => CSharpEndPointResponseFactory.FromResponse(x, operation, preferredMimeType: preferredMimeType))
             .ToArray();
 
-        foreach (var requestProperty in GetRequestProperties(requestContext))
+        var requestPropertySelection = GetRequestProperties(requestContext);
+
+        foreach (var requestProperty in requestPropertySelection.Properties)
         {
             if (requestProperty.IsReadOnly)
             {
@@ -175,6 +191,7 @@ public static class CSharpEndPointFactory
             DeprecationMessage: operation.Operation.GetDeprecationMessage(),
             ExperimentalStage: operation.Operation.GetExperimentalStage(),
             RequestType: requestType ?? TypeData.Default,
+            RequestInitializationType: requestPropertySelection.RequestInitializationType,
             ForcedRequestStreamValue: forcedRequestStreamValue,
             StreamTerminator: streamFormat == StreamFormat.ServerSentEvents
                 ? streamTerminator ?? "[DONE]"
@@ -214,23 +231,23 @@ public static class CSharpEndPointFactory
         }
     }
 
-    private static ImmutableArray<PropertyData> GetRequestProperties(SchemaContext? requestContext)
+    private static RequestPropertySelection GetRequestProperties(SchemaContext? requestContext)
     {
         if (requestContext == null)
         {
-            return [];
+            return new([], TypeData.Default);
         }
 
         var sourceContext = requestContext.ResolvedReference ?? requestContext;
         if (sourceContext.ClassData?.Properties is { Length: > 0 } properties)
         {
-            return properties;
+            return new(properties, TypeData.Default);
         }
 
         var directProperties = GetDirectRequestProperties(sourceContext);
         if (directProperties.Length > 0)
         {
-            return directProperties;
+            return new(directProperties, TypeData.Default);
         }
 
         var current = sourceContext;
@@ -239,23 +256,23 @@ public static class CSharpEndPointFactory
             var source = GetPropertySource(current);
             if (source == null || source.Count != 1 || source[0].IsProperty)
             {
-                return [];
+                return new([], TypeData.Default);
             }
 
             current = source[0].ResolvedReference ?? source[0];
             if (current.ClassData?.Properties is { Length: > 0 } unwrappedProperties)
             {
-                return unwrappedProperties;
+                return new(unwrappedProperties, current.TypeData);
             }
 
             directProperties = GetDirectRequestProperties(current);
             if (directProperties.Length > 0)
             {
-                return directProperties;
+                return new(directProperties, current.TypeData);
             }
         }
 
-        return [];
+        return new([], TypeData.Default);
     }
 
     private static ImmutableArray<PropertyData> GetDirectRequestProperties(SchemaContext context)

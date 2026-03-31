@@ -461,6 +461,7 @@ namespace G
             global::G.VoiceFormality? formality = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.GetVoiceStreamingUrlRequest
             {
                 SourceMediaContentType = sourceMediaContentType,

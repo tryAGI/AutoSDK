@@ -268,6 +268,7 @@ namespace G
             string requiredConfiguration,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.SetExtensionRequiredConfigurationBody
             {
                 ExtensionId = extensionId,

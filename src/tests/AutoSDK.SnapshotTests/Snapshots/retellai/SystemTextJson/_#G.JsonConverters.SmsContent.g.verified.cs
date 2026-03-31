@@ -125,13 +125,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SmsContentPredefined), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SmsContentPredefined?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SmsContentPredefined).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Predefined, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Predefined!, typeInfo);
             }
             else if (value.IsInferred)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SmsContentInferred), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SmsContentInferred?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SmsContentInferred).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Inferred, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Inferred!, typeInfo);
             }
         }
     }

@@ -234,6 +234,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? digests = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ObjDeleteReq
             {
                 ProjectId = projectId,

@@ -237,6 +237,7 @@ namespace G
             global::G.SummaryMethod? summaryMethod = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.SummarizeBody
             {
                 Source = source,

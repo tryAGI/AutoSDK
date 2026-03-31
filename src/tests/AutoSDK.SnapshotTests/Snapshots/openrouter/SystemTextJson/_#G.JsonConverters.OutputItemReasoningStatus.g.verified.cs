@@ -193,19 +193,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemReasoningStatus0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemReasoningStatus0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemReasoningStatus0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoningStatus0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoningStatus0!.Value, typeInfo);
             }
             else if (value.IsOutputItemReasoningStatus1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemReasoningStatus1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemReasoningStatus1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemReasoningStatus1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoningStatus1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoningStatus1!.Value, typeInfo);
             }
             else if (value.IsOutputItemReasoningStatus2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemReasoningStatus2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemReasoningStatus2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemReasoningStatus2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoningStatus2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoningStatus2!.Value, typeInfo);
             }
         }
     }

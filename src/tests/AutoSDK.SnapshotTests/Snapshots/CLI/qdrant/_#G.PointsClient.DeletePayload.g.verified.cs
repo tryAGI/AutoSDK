@@ -327,6 +327,7 @@ namespace G
             global::G.ShardKeySelector? shardKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.DeletePayload
             {
                 Keys = keys,

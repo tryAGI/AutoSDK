@@ -404,6 +404,7 @@ namespace G
             global::G.CloneVoiceRequestVoiceProvider voiceProvider,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CloneVoiceRequest
             {
                 Files = files,

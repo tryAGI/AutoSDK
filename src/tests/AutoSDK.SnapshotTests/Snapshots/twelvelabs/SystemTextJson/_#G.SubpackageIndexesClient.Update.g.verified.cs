@@ -235,6 +235,7 @@ namespace G
             string indexName,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpdateRequest
             {
                 IndexName = indexName,

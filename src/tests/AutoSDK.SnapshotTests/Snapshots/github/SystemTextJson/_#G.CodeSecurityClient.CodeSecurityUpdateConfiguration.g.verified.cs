@@ -254,6 +254,7 @@ namespace G
             global::G.CodeSecurityUpdateConfigurationRequestEnforcement? enforcement = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CodeSecurityUpdateConfigurationRequest
             {
                 Name = name,

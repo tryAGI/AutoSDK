@@ -320,6 +320,7 @@ namespace G
             string zip,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpdateUserInfoRequest2
             {
                 UserId = userId,

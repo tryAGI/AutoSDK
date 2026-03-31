@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMParameterEvaluationStrategy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMParameterEvaluationStrategy).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm!, typeInfo);
             }
             else if (value.IsRegex)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RegexParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RegexParameterEvaluationStrategy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RegexParameterEvaluationStrategy).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Regex, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Regex!, typeInfo);
             }
             else if (value.IsExact)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExactParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExactParameterEvaluationStrategy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExactParameterEvaluationStrategy).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Exact, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Exact!, typeInfo);
             }
             else if (value.IsAnything)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchAnythingParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchAnythingParameterEvaluationStrategy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchAnythingParameterEvaluationStrategy).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anything, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anything!, typeInfo);
             }
         }
     }

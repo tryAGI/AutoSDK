@@ -302,6 +302,7 @@ namespace G
             global::G.UserGroup group,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpdateUserGroupRequest
             {
                 Group = group,

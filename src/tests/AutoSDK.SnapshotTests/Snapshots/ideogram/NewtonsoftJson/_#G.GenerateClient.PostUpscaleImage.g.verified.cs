@@ -349,6 +349,7 @@ namespace G
             string imageFilename,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpscaleImageRequest
             {
                 ImageRequest = imageRequest,

@@ -78,7 +78,7 @@ namespace G
                 .AddOptionalParameter("project_name", projectName)
                 .AddOptionalParameter("mime_type", mimeType)
                 .AddRequiredParameter("entity_type", entityType.ToValueString())
-                .AddRequiredParameter("entity_id", entityId.ToString()) 
+                .AddRequiredParameter("entity_id", entityId.ToString()!) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -292,6 +292,7 @@ namespace G
             string? mimeType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new object
             {
             };

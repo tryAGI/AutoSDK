@@ -33,8 +33,7 @@ public static partial class Sources
              endPoint.RequestType.IsBase64 ||
              endPoint.RequestType.IsBinary ||
              endPoint.RequestType.CSharpTypeWithoutNullability is "string");
-        var cliParameters = endPoint.Parameters
-            .Where(x => !(endPoint.ForcedRequestStreamValue is not null && IsRequestStreamParameter(x)))
+        var cliParameters = GetExtensionMethodParameters(endPoint)
             .ToArray();
         var requiredCliParameters = cliParameters
             .Where(x => x.IsRequired)
@@ -155,6 +154,7 @@ namespace {endPoint.Settings.Namespace}
                 : endPoint.EnumerableStream
                     ? "var response = "
                     : "var response = await ")}_client.{(!string.IsNullOrWhiteSpace(endPoint.Tag.SafeName)
+                    && endPoint.Settings.GroupByTags
                     ? $"{endPoint.Tag.SafeName}."
                     : "")}{endPoint.MethodName}(
 {cliParameters.Select((x, i) => @$"

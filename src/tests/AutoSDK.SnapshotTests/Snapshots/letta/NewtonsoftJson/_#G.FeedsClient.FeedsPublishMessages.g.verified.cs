@@ -200,6 +200,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.FeedsPublishMessagesRequestMessage> messages,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.FeedsPublishMessagesRequest
             {
                 Messages = messages,

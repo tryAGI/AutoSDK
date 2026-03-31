@@ -272,6 +272,7 @@ namespace G
             global::G.ParametersVariant1? parameters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ConfigurationUpdateRequest
             {
                 Name = name,

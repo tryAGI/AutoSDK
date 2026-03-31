@@ -290,6 +290,7 @@ namespace G
             string role,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AddProjectMemberRequest
             {
                 Email = email,

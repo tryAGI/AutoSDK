@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InBodyTarget), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InBodyTarget?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InBodyTarget).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Inbody, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Inbody!, typeInfo);
             }
             else if (value.IsZip)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ZipTarget), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ZipTarget?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ZipTarget).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Zip, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Zip!, typeInfo);
             }
             else if (value.IsS3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.S3Target), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.S3Target?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.S3Target).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.S3, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.S3!, typeInfo);
             }
             else if (value.IsPut)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PutTarget), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PutTarget?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PutTarget).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Put, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Put!, typeInfo);
             }
         }
     }

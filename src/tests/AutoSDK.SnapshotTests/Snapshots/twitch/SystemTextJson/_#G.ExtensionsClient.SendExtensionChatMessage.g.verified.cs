@@ -270,6 +270,7 @@ namespace G
             string extensionVersion,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.SendExtensionChatMessageBody
             {
                 Text = text,

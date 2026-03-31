@@ -204,109 +204,109 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessage!.Value, typeInfo);
             }
             else if (value.IsStreamingAgentOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamingAgentOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamingAgentOutput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamingAgentOutput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingAgentOutput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingAgentOutput!, typeInfo);
             }
             else if (value.IsStreamingAgentOutputEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamingAgentOutputEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamingAgentOutputEnd?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamingAgentOutputEnd).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingAgentOutputEnd, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingAgentOutputEnd!, typeInfo);
             }
             else if (value.IsStreamingThinking)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamingThinking), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamingThinking?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamingThinking).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingThinking, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingThinking!, typeInfo);
             }
             else if (value.IsStreamingThinkingEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamingThinkingEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamingThinkingEnd?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamingThinkingEnd).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingThinkingEnd, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingThinkingEnd!, typeInfo);
             }
             else if (value.IsToolInput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolInputEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolInputEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolInputEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolInput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolInput!.Value, typeInfo);
             }
             else if (value.IsToolOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolOutputEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolOutputEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolOutputEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolOutput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolOutput!.Value, typeInfo);
             }
             else if (value.IsStructuredOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StructuredOutputEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StructuredOutputEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StructuredOutputEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StructuredOutput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StructuredOutput!.Value, typeInfo);
             }
             else if (value.IsContextLimitExceeded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContextLimitExceededEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContextLimitExceededEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContextLimitExceededEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContextLimitExceeded, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContextLimitExceeded!.Value, typeInfo);
             }
             else if (value.IsStepTransitionLimitExceeded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StepTransitionLimitExceededEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StepTransitionLimitExceededEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StepTransitionLimitExceededEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StepTransitionLimitExceeded, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StepTransitionLimitExceeded!.Value, typeInfo);
             }
             else if (value.IsSessionInterrupted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SessionInterruptedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SessionInterruptedEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SessionInterruptedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionInterrupted, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionInterrupted!.Value, typeInfo);
             }
             else if (value.IsImageRead)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageReadEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageReadEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageReadEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageRead, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageRead!.Value, typeInfo);
             }
             else if (value.IsStepTransition)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StepTransitionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StepTransitionEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StepTransitionEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StepTransition, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StepTransition!.Value, typeInfo);
             }
             else if (value.IsContextConsumed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContextConsumedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContextConsumedEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContextConsumedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContextConsumed, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContextConsumed!, typeInfo);
             }
             else if (value.IsCompactionStarted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompactionStartedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompactionStartedEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompactionStartedEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompactionStarted, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompactionStarted!.Value, typeInfo);
             }
             else if (value.IsCompaction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompactionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompactionEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompactionEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compaction, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compaction!.Value, typeInfo);
             }
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
             }
             else if (value.IsEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamResponseEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamResponseEnd?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamResponseEnd).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.End, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.End!, typeInfo);
             }
         }
     }

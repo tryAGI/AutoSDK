@@ -137,7 +137,7 @@ namespace G
                 .AddOptionalParameter("day_on_or_after", dayOnOrAfter)
                 .AddOptionalParameter("event_aggregation_type", eventAggregationType)
                 .AddOptionalParameter("event_aggregation_key", eventAggregationKey)
-                .AddRequiredParameter("organization_id", organizationId.ToString()) 
+                .AddRequiredParameter("organization_id", organizationId.ToString()!) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

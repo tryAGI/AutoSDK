@@ -282,6 +282,7 @@ namespace G
             global::G.AuthConnectionLocator? authConnection = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.MCPServerConfigUpdateRequestModel
             {
                 ApprovalPolicy = approvalPolicy,

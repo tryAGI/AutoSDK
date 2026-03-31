@@ -159,79 +159,79 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTStringNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTStringNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTStringNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StringLiteral, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StringLiteral!, typeInfo);
             }
             else if (value.IsNumberLiteral)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTNumberNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTNumberNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTNumberNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NumberLiteral, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NumberLiteral!, typeInfo);
             }
             else if (value.IsBooleanLiteral)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTBooleanNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTBooleanNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTBooleanNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BooleanLiteral, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BooleanLiteral!, typeInfo);
             }
             else if (value.IsLlm)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTLLMNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTLLMNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTLLMNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm!, typeInfo);
             }
             else if (value.IsDynamicVariable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTDynamicVariableNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTDynamicVariableNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTDynamicVariableNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DynamicVariable, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DynamicVariable!, typeInfo);
             }
             else if (value.IsOrOperator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTOrOperatorNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTOrOperatorNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTOrOperatorNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OrOperator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OrOperator!, typeInfo);
             }
             else if (value.IsAndOperator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTAndOperatorNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTAndOperatorNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTAndOperatorNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AndOperator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AndOperator!, typeInfo);
             }
             else if (value.IsEqOperator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTEqualsOperatorNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTEqualsOperatorNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTEqualsOperatorNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EqOperator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EqOperator!, typeInfo);
             }
             else if (value.IsNeqOperator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTNotEqualsOperatorNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTNotEqualsOperatorNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTNotEqualsOperatorNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NeqOperator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NeqOperator!, typeInfo);
             }
             else if (value.IsGtOperator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTGreaterThanOperatorNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTGreaterThanOperatorNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTGreaterThanOperatorNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GtOperator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GtOperator!, typeInfo);
             }
             else if (value.IsLtOperator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTLessThanOperatorNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTLessThanOperatorNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTLessThanOperatorNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LtOperator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LtOperator!, typeInfo);
             }
             else if (value.IsGteOperator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTGreaterThanOrEqualsOperatorNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTGreaterThanOrEqualsOperatorNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTGreaterThanOrEqualsOperatorNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GteOperator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GteOperator!, typeInfo);
             }
             else if (value.IsLteOperator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ASTLessThanOrEqualsOperatorNodeInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ASTLessThanOrEqualsOperatorNodeInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ASTLessThanOrEqualsOperatorNodeInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LteOperator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LteOperator!, typeInfo);
             }
         }
     }

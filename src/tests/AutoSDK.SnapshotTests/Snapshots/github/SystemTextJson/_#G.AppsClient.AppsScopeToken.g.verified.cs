@@ -369,6 +369,7 @@ namespace G
             global::G.AppPermissions? permissions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AppsScopeTokenRequest
             {
                 AccessToken = accessToken,

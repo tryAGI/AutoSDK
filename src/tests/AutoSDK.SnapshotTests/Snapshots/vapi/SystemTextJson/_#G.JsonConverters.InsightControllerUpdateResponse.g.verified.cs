@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BarInsight), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BarInsight?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BarInsight).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bar, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bar!, typeInfo);
             }
             else if (value.IsPie)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PieInsight), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PieInsight?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PieInsight).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pie, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pie!, typeInfo);
             }
             else if (value.IsLine)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LineInsight), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LineInsight?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LineInsight).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Line, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Line!, typeInfo);
             }
             else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextInsight), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextInsight?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextInsight).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
         }
     }

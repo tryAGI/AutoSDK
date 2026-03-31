@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebhookToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebhookToolConfigInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebhookToolConfigInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Webhook, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Webhook!, typeInfo);
             }
             else if (value.IsClient)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClientToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClientToolConfigInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClientToolConfigInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Client, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Client!, typeInfo);
             }
             else if (value.IsSystem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemToolConfigInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SystemToolConfigInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.System, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.System!, typeInfo);
             }
             else if (value.IsMcp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPToolConfigInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPToolConfigInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp!, typeInfo);
             }
         }
     }

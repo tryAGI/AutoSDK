@@ -27,61 +27,61 @@ namespace G
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 ClassifyCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Connectors2CreateCommand>(services);
+                ConnectorsCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Connectors2DeleteCommand>(services);
+                ConnectorsDeleteCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Connectors2GetCommand>(services);
+                ConnectorsGetCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Connectors2ListCommand>(services);
+                ConnectorsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Connectors2OAuthAuthorizeCommand>(services);
+                ConnectorsOAuthAuthorizeCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Connectors2UpdateCommand>(services);
+                ConnectorsUpdateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Datasets2CreateCommand>(services);
+                DatasetsCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Datasets2DeleteCommand>(services);
+                DatasetsDeleteCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Datasets2GetCommand>(services);
+                DatasetsGetCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Datasets2GetUsageCommand>(services);
+                DatasetsGetUsageCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Datasets2ListCommand>(services);
+                DatasetsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 DetokenizeCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 EmbedCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                EmbedJobs2CancelCommand>(services);
+                EmbedJobsCancelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                EmbedJobs2CreateCommand>(services);
+                EmbedJobsCreateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                EmbedJobs2GetCommand>(services);
+                EmbedJobsGetCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                EmbedJobs2ListCommand>(services);
+                EmbedJobsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Finetuning2CreateFinetunedModelCommand>(services);
+                FinetuningCreateFinetunedModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Finetuning2DeleteFinetunedModelCommand>(services);
+                FinetuningDeleteFinetunedModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Finetuning2GetFinetunedModelCommand>(services);
+                FinetuningGetFinetunedModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Finetuning2ListEventsCommand>(services);
+                FinetuningListEventsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Finetuning2ListFinetunedModelsCommand>(services);
+                FinetuningListFinetunedModelsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Finetuning2ListTrainingStepMetricsCommand>(services);
+                FinetuningListTrainingStepMetricsCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Finetuning2UpdateFinetunedModelCommand>(services);
+                FinetuningUpdateFinetunedModelCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 GenerateAsStreamCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 GenerateCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Models2GetCommand>(services);
+                ModelsGetCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Models2ListCommand>(services);
+                ModelsListCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 RerankCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
@@ -99,15 +99,15 @@ namespace G
 
             // Register grouped command services as singletons
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Connectors2GroupCommand>(services);
+                ConnectorGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Datasets2GroupCommand>(services);
+                DatasetGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                EmbedJobs2GroupCommand>(services);
+                EmbedJobGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Finetuning2GroupCommand>(services);
+                FinetuningGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
-                Models2GroupCommand>(services);
+                ModelGroupCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 V2GroupCommand>(services);
 

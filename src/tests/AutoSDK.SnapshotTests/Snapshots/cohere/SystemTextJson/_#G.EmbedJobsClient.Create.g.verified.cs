@@ -701,6 +701,7 @@ namespace G
             global::G.CreateEmbedJobRequestTruncate? truncate = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateEmbedJobRequest
             {
                 Model = model,

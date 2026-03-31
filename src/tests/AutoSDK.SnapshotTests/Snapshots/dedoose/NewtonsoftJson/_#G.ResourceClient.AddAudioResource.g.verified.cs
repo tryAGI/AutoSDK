@@ -310,6 +310,7 @@ namespace G
             string videoUploadURL,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AddAudioResourceRequest
             {
                 ProjectId = projectId,

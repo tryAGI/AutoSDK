@@ -200,6 +200,7 @@ namespace G
             string? modelVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.FitToVideoRequest
             {
                 LockFeet = lockFeet,

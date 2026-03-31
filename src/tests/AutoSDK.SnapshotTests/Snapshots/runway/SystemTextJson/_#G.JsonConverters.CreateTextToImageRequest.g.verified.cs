@@ -170,19 +170,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextToImageRequestGen4ImageTurbo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextToImageRequestGen4ImageTurbo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateTextToImageRequestGen4ImageTurbo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gen4ImageTurbo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gen4ImageTurbo!, typeInfo);
             }
             else if (value.IsGen4Image)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextToImageRequestGen4Image), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextToImageRequestGen4Image?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateTextToImageRequestGen4Image).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gen4Image, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gen4Image!, typeInfo);
             }
             else if (value.IsGemini25Flash)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextToImageRequestGemini25Flash), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextToImageRequestGemini25Flash?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateTextToImageRequestGemini25Flash).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gemini25Flash, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gemini25Flash!, typeInfo);
             }
         }
     }

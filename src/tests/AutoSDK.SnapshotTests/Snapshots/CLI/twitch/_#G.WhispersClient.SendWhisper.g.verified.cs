@@ -381,6 +381,7 @@ namespace G
             string message,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.SendWhisperBody
             {
                 Message = message,

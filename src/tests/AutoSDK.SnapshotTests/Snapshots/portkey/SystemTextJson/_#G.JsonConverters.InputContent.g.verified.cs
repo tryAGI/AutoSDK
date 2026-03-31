@@ -164,19 +164,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextInput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextInput!, typeInfo);
             }
             else if (value.IsImageInput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputImage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputImage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageInput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageInput!, typeInfo);
             }
             else if (value.IsFileInput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputFile?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputFile).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileInput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileInput!, typeInfo);
             }
         }
     }

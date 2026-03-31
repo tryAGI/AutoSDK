@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileSourceRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileSourceRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileSourceRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.File, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.File!, typeInfo);
             }
             else if (value.IsHttp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HttpSourceRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HttpSourceRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HttpSourceRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Http, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Http!, typeInfo);
             }
             else if (value.IsS3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.S3SourceRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.S3SourceRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.S3SourceRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.S3, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.S3!, typeInfo);
             }
         }
     }

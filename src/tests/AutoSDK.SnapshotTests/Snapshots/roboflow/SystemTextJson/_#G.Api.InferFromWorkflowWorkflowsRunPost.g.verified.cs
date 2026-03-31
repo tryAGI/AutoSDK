@@ -240,6 +240,7 @@ namespace G
             bool? isPreview = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.WorkflowSpecificationInferenceRequest
             {
                 ApiKey = apiKey,

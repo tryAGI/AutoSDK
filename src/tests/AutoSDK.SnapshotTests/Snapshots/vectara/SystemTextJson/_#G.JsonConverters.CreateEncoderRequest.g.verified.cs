@@ -51,7 +51,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateOpenAIEncoderRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateOpenAIEncoderRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateOpenAIEncoderRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenaiCompatible, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenaiCompatible!, typeInfo);
             }
         }
     }

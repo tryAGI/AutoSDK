@@ -304,43 +304,43 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FieldCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FieldCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FieldCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Field, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Field!, typeInfo);
             }
             else if (value.IsIsEmpty)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.IsEmptyCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.IsEmptyCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.IsEmptyCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IsEmpty, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IsEmpty!, typeInfo);
             }
             else if (value.IsIsNull)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.IsNullCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.IsNullCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.IsNullCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IsNull, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IsNull!, typeInfo);
             }
             else if (value.IsHasId)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HasIdCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HasIdCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HasIdCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HasId, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HasId!, typeInfo);
             }
             else if (value.IsHasVector)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HasVectorCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HasVectorCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HasVectorCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HasVector, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HasVector!, typeInfo);
             }
             else if (value.IsNested)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NestedCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NestedCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NestedCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Nested, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Nested!, typeInfo);
             }
             else if (value.IsFilter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Filter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Filter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Filter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Filter, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Filter!, typeInfo);
             }
         }
     }

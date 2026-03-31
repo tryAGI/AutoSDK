@@ -389,6 +389,7 @@ namespace G
             global::G.BanUserBodyData data,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.BanUserBody
             {
                 Data = data,

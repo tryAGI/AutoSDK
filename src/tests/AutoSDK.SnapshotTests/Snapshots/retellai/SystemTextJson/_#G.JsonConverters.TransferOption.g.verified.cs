@@ -175,19 +175,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferOptionColdTransfer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferOptionColdTransfer?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferOptionColdTransfer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ColdTransfer, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ColdTransfer!, typeInfo);
             }
             else if (value.IsWarmTransfer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferOptionWarmTransfer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferOptionWarmTransfer?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferOptionWarmTransfer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WarmTransfer, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WarmTransfer!, typeInfo);
             }
             else if (value.IsAgenticWarmTransfer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferOptionAgenticWarmTransfer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferOptionAgenticWarmTransfer?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferOptionAgenticWarmTransfer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgenticWarmTransfer, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgenticWarmTransfer!, typeInfo);
             }
         }
     }

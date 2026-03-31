@@ -260,6 +260,7 @@ namespace G
             string branch,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ReposMergeUpstreamRequest
             {
                 Branch = branch,

@@ -259,6 +259,7 @@ namespace G
             int? seed = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CompletionRequest
             {
                 Prompt = prompt,

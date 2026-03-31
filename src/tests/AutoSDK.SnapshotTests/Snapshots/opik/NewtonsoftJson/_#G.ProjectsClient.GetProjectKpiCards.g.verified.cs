@@ -228,6 +228,7 @@ namespace G
             string? filters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.KpiCardRequest
             {
                 EntityType = entityType,

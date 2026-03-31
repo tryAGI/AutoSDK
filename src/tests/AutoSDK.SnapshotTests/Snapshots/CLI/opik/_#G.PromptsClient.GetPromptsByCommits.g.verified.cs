@@ -176,6 +176,7 @@ namespace G
             global::System.Collections.Generic.IList<string> commits,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PromptVersionCommitsRequestPublic
             {
                 Commits = commits,

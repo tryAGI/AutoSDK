@@ -190,6 +190,7 @@ namespace recraft
             global::recraft.ResponseFormat? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::recraft.ProcessImageRequest
             {
                 Image = image,

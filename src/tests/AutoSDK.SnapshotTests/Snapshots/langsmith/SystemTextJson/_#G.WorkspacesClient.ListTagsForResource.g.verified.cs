@@ -48,7 +48,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("resource_type", resourceType.ToValueString())
-                .AddRequiredParameter("resource_id", resourceId.ToString()) 
+                .AddRequiredParameter("resource_id", resourceId.ToString()!) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

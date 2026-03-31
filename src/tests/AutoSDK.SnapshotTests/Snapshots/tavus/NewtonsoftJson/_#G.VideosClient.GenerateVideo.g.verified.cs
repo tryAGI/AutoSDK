@@ -218,6 +218,7 @@ namespace G
             global::G.VideoProperties? properties = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.GenerateVideoRequest
             {
                 ReplicaId = replicaId,

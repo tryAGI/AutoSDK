@@ -255,6 +255,7 @@ namespace G
             global::G.TrainingAPIInputVisibility? visibility = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.TrainingAPIInput
             {
                 Model = model,

@@ -334,6 +334,7 @@ namespace G
             bool saveAsReoccuring,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.SubmitCurrentAccountPaymentRequest
             {
                 Amount = amount,

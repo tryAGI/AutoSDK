@@ -337,6 +337,7 @@ namespace G
             global::G.OneOf<bool?, global::G.GistsCreateRequestPublic?>? @public = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.GistsCreateRequest
             {
                 Description = description,

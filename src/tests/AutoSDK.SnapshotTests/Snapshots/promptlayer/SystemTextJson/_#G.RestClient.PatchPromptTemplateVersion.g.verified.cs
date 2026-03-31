@@ -348,6 +348,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? releaseLabels = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PatchPromptTemplateVersion
             {
                 Version = version,

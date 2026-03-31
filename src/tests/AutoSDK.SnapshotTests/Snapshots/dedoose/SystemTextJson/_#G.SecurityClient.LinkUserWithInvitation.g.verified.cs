@@ -308,6 +308,7 @@ namespace G
             global::System.Guid invitationId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.LinkUserWithInvitationRequest
             {
                 UserId = userId,

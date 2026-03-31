@@ -69,7 +69,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("workspace_id", workspaceId)
-                .AddRequiredParameter("page_num", pageNum.ToString())
+                .AddRequiredParameter("page_num", pageNum.ToString()!)
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("workflow_mode", workflowMode?.ToValueString())
                 .AddOptionalParameter("app_id", appId)

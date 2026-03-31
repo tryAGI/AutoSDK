@@ -1,0 +1,65 @@
+﻿//HintName: G.Models.UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The access level of the requested voice.<br/>
+    /// Use `external-private` together with the `x-api-key-external` for your own ElevenLabs voices.
+    /// </summary>
+    public enum UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        ExternalPrivate,
+        /// <summary>
+        /// 
+        /// </summary>
+        Premium,
+        /// <summary>
+        /// 
+        /// </summary>
+        Private,
+        /// <summary>
+        /// 
+        /// </summary>
+        Public,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccessExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess value)
+        {
+            return value switch
+            {
+                UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess.ExternalPrivate => "external-private",
+                UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess.Premium => "premium",
+                UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess.Private => "private",
+                UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess.Public => "public",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess? ToEnum(string value)
+        {
+            return value switch
+            {
+                "external-private" => UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess.ExternalPrivate,
+                "premium" => UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess.Premium,
+                "private" => UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess.Private,
+                "public" => UpdateResponseVariant1PresenterVideoAvatarVoiceElevenLabsAccess.Public,
+                _ => null,
+            };
+        }
+    }
+}

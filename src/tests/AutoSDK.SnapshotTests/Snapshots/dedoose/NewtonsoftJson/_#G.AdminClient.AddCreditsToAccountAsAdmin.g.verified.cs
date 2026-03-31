@@ -306,6 +306,7 @@ namespace G
             string reason,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AddCreditsToAccountRequest
             {
                 AccountId = accountId,

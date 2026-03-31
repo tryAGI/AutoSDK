@@ -169,19 +169,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextEmbeddingInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextEmbeddingInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextEmbeddingInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextEmbeddingInput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextEmbeddingInput!, typeInfo);
             }
             else if (value.IsImageEmbeddingInput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageEmbeddingInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageEmbeddingInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageEmbeddingInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageEmbeddingInput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageEmbeddingInput!, typeInfo);
             }
             else if (value.IsMixedEmbeddingInput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MixedEmbeddingInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MixedEmbeddingInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MixedEmbeddingInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MixedEmbeddingInput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MixedEmbeddingInput!, typeInfo);
             }
         }
     }

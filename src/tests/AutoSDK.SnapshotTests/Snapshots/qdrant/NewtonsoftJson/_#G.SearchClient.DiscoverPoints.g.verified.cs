@@ -368,6 +368,7 @@ namespace G
             global::G.LookupLocation? lookupFrom = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.DiscoverRequest
             {
                 ShardKey = shardKey,

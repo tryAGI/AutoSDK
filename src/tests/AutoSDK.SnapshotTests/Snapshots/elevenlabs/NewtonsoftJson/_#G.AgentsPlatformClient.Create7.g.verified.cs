@@ -236,6 +236,7 @@ namespace G
             string type = "new",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PostWorkspaceSecretRequest
             {
                 Type = type,

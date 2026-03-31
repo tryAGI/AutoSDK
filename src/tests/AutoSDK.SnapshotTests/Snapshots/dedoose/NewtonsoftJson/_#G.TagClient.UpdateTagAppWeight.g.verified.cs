@@ -306,6 +306,7 @@ namespace G
             double newWeight,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpdateTagAppWeightRequest
             {
                 CurrentProjectId = currentProjectId,

@@ -259,37 +259,37 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchValue), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchValue?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchValue).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value!, typeInfo);
             }
             else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
             else if (value.IsTextAny)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchTextAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchTextAny?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchTextAny).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextAny, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextAny!, typeInfo);
             }
             else if (value.IsPhrase)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchPhrase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchPhrase?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchPhrase).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phrase, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phrase!, typeInfo);
             }
             else if (value.IsAny)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchAny?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchAny).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any!, typeInfo);
             }
             else if (value.IsExcept)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchExcept), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchExcept?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchExcept).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Except, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Except!, typeInfo);
             }
         }
     }

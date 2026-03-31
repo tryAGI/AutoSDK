@@ -126,13 +126,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComparisonFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComparisonFilter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComparisonFilter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComparisonFilter, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComparisonFilter!, typeInfo);
             }
             else if (value.IsCompoundFilter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompoundFilter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompoundFilter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompoundFilter, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompoundFilter!, typeInfo);
             }
         }
     }

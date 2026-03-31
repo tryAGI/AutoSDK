@@ -60,7 +60,7 @@ namespace G
                 path: "/api/v3/migration/get-nanoid",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("uuid", uuid.ToString())
+                .AddRequiredParameter("uuid", uuid.ToString()!)
                 .AddRequiredParameter("type", type.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();

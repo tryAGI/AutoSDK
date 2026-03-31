@@ -385,6 +385,7 @@ namespace G
             global::System.Collections.Generic.IList<string> selectedTeams,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CopilotCancelCopilotSeatAssignmentForTeamsRequest
             {
                 SelectedTeams = selectedTeams,

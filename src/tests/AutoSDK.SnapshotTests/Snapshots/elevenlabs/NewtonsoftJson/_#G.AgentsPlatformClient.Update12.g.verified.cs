@@ -266,6 +266,7 @@ namespace G
             global::G.BranchProtectionStatus? protectionStatus = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.BodyUpdateAgentBranchV1ConvaiAgentsAgentIdBranchesBranchIdPatch
             {
                 Name = name,

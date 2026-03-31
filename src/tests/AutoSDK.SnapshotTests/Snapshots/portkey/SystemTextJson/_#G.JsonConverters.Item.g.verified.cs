@@ -396,55 +396,55 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message1!, typeInfo);
             }
             else if (value.IsMessage2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message2!, typeInfo);
             }
             else if (value.IsFileSearchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileSearchToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileSearchToolCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileSearchToolCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchCall!, typeInfo);
             }
             else if (value.IsComputerCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerToolCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerToolCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerCall!, typeInfo);
             }
             else if (value.IsComputerCallOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerToolCallOutput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerToolCallOutput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerCallOutput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerCallOutput!, typeInfo);
             }
             else if (value.IsWebSearchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchToolCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebSearchToolCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchCall!, typeInfo);
             }
             else if (value.IsFunctionCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionToolCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionToolCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCall!, typeInfo);
             }
             else if (value.IsFunctionCallOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionToolCallOutput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionToolCallOutput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCallOutput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCallOutput!, typeInfo);
             }
             else if (value.IsReasoning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Reasoning, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Reasoning!, typeInfo);
             }
         }
     }

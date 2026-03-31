@@ -1,0 +1,61 @@
+﻿//HintName: G.JsonConverters.AgentCreateDtoPresenterPhotoAvatarVoiceElevenLabsAccessNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class AgentCreateDtoPresenterPhotoAvatarVoiceElevenLabsAccessNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.AgentCreateDtoPresenterPhotoAvatarVoiceElevenLabsAccess?>
+    {
+        /// <inheritdoc />
+        public override global::G.AgentCreateDtoPresenterPhotoAvatarVoiceElevenLabsAccess? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.AgentCreateDtoPresenterPhotoAvatarVoiceElevenLabsAccessExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.AgentCreateDtoPresenterPhotoAvatarVoiceElevenLabsAccess)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.AgentCreateDtoPresenterPhotoAvatarVoiceElevenLabsAccess?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.AgentCreateDtoPresenterPhotoAvatarVoiceElevenLabsAccess? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.AgentCreateDtoPresenterPhotoAvatarVoiceElevenLabsAccessExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

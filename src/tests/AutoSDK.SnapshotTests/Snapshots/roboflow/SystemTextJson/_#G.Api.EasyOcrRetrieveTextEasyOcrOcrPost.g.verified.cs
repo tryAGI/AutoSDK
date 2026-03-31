@@ -283,6 +283,7 @@ namespace G
             bool? quantize = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.EasyOCRInferenceRequest
             {
                 Id = id,

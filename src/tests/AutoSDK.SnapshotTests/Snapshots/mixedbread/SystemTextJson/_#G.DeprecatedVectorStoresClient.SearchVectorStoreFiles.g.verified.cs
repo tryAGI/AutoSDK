@@ -255,6 +255,7 @@ namespace G
             global::G.VectorStoreFileSearchOptions? searchOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.VectorStoreFileSearchParams
             {
                 Query = query,

@@ -224,6 +224,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GenerateAssetPublicGenerationsPostResponse> GenerateAssetPublicGenerationsPostAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.GenerateAssetPublicGenerationsPostRequest
             {
             };

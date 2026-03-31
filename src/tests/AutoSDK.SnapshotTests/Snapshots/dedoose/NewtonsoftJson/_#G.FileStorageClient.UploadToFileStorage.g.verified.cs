@@ -62,8 +62,8 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("name", name)
-                .AddRequiredParameter("projectId", projectId.ToString())
-                .AddRequiredParameter("uploadType", uploadType.ToString()) 
+                .AddRequiredParameter("projectId", projectId.ToString()!)
+                .AddRequiredParameter("uploadType", uploadType.ToString()!) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

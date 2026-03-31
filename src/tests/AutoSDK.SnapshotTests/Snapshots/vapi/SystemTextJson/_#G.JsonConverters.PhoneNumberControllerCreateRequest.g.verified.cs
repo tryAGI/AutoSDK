@@ -87,31 +87,31 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateByoPhoneNumberDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateByoPhoneNumberDTO?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateByoPhoneNumberDTO).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ByoPhoneNumber, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ByoPhoneNumber!, typeInfo);
             }
             else if (value.IsTwilio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTwilioPhoneNumberDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTwilioPhoneNumberDTO?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateTwilioPhoneNumberDTO).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Twilio, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Twilio!, typeInfo);
             }
             else if (value.IsVonage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateVonagePhoneNumberDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateVonagePhoneNumberDTO?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateVonagePhoneNumberDTO).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Vonage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Vonage!, typeInfo);
             }
             else if (value.IsVapi)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateVapiPhoneNumberDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateVapiPhoneNumberDTO?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateVapiPhoneNumberDTO).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Vapi, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Vapi!, typeInfo);
             }
             else if (value.IsTelnyx)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTelnyxPhoneNumberDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTelnyxPhoneNumberDTO?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateTelnyxPhoneNumberDTO).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Telnyx, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Telnyx!, typeInfo);
             }
         }
     }

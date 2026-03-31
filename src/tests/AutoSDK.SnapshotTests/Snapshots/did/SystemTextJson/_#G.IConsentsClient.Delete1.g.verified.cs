@@ -1,0 +1,18 @@
+﻿//HintName: G.IConsentsClient.Delete1.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IConsentsClient
+    {
+        /// <summary>
+        /// Delete a consent by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task Delete1Async(
+            string id,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

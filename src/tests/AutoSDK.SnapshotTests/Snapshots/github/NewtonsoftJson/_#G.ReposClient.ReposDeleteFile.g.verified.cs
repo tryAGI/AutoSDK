@@ -380,6 +380,7 @@ namespace G
             global::G.ReposDeleteFileRequestAuthor? author = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ReposDeleteFileRequest
             {
                 Message = message,

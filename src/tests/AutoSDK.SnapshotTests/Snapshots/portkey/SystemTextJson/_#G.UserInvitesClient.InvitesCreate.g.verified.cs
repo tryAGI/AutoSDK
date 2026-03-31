@@ -198,6 +198,7 @@ namespace G
             global::G.CreateInviteWorkspaceApiKeyDetails? workspaceApiKeyDetails = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateInvite
             {
                 Email = email,

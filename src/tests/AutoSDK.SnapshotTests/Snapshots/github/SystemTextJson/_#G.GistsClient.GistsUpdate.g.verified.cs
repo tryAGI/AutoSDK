@@ -283,6 +283,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, global::G.GistsUpdateRequestFiles2?>? files = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.GistsUpdateRequest
             {
                 Description = description,

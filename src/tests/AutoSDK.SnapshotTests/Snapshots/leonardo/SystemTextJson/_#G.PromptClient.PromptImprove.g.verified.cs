@@ -194,6 +194,7 @@ namespace G
             string prompt,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PromptImproveRequest
             {
                 Prompt = prompt,

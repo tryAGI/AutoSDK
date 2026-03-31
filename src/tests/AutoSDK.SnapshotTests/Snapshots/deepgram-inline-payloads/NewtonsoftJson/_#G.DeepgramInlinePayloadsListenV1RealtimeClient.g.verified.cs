@@ -98,7 +98,7 @@ namespace G
                 path: uri?.ToString() ?? DefaultBaseUrl);
             __pathBuilder
                 .AddRequiredParameter("model", model.ToValueString())
-                .AddOptionalParameter("channels", channels, selector: static x => x.ToString(), delimiter: ",", explode: true)
+                .AddOptionalParameter("channels", channels, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                 .AddOptionalParameter("encoding", encoding?.ToValueString())
                 .AddOptionalParameter("extra[priority]", extra?.Priority?.ToString())
                 .AddOptionalParameter("extra[tag]", extra?.Tag)

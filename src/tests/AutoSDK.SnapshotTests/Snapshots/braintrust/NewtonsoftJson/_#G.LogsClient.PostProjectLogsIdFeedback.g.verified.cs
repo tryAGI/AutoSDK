@@ -396,6 +396,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.FeedbackProjectLogsItem> feedback,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.FeedbackProjectLogsEventRequest
             {
                 Feedback = feedback,

@@ -125,13 +125,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PointIdsList), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PointIdsList?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PointIdsList).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PointIdsList, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PointIdsList!, typeInfo);
             }
             else if (value.IsFilter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FilterSelector), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FilterSelector?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FilterSelector).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Filter, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Filter!, typeInfo);
             }
         }
     }

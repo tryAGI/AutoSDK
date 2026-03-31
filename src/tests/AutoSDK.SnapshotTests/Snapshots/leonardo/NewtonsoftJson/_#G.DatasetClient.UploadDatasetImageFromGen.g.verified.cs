@@ -202,6 +202,7 @@ namespace G
             string generatedImageId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UploadDatasetImageFromGenRequest
             {
                 GeneratedImageId = generatedImageId,

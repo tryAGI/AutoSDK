@@ -220,6 +220,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? partitionNames = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateVectordbEntitiesQueryRequest
             {
                 DbName = dbName,

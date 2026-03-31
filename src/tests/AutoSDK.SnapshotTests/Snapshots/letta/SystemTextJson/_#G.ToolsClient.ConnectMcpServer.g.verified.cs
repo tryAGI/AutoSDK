@@ -224,6 +224,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<string> ConnectMcpServerAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AnyOf<global::G.StdioServerConfig, global::G.SSEServerConfig, global::G.StreamableHTTPServerConfig>
             {
             };

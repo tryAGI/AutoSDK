@@ -96,37 +96,37 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BearerAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BearerAuth?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BearerAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bearer, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bearer!, typeInfo);
             }
             else if (value.IsHeader)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HeaderAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HeaderAuth?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HeaderAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Header, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Header!, typeInfo);
             }
             else if (value.IsBedrockStaticIam)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BedrockStaticIAMAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BedrockStaticIAMAuth?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BedrockStaticIAMAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BedrockStaticIam, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BedrockStaticIam!, typeInfo);
             }
             else if (value.IsBedrockApiKey)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BedrockApiKeyAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BedrockApiKeyAuth?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BedrockApiKeyAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BedrockApiKey, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BedrockApiKey!, typeInfo);
             }
             else if (value.IsVertexServiceAccount)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VertexServiceAccountAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VertexServiceAccountAuth?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VertexServiceAccountAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VertexServiceAccount, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VertexServiceAccount!, typeInfo);
             }
             else if (value.IsVertexAccessToken)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VertexAccessTokenAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VertexAccessTokenAuth?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VertexAccessTokenAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VertexAccessToken, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VertexAccessToken!, typeInfo);
             }
         }
     }

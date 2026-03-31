@@ -1,0 +1,85 @@
+﻿//HintName: G.Models.UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAI.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAI
+    {
+        /// <summary>
+        /// Voice ID selected from the list of available voices.&lt;/br&gt;Retrieve available options from the GET /voices endpoint.<br/>
+        /// Example: en-US-JennyNeural
+        /// </summary>
+        /// <example>en-US-JennyNeural</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("voice_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string VoiceId { get; set; }
+
+        /// <summary>
+        /// Voice customization options
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("voice_config")]
+        public global::G.UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAIVoiceConfig? VoiceConfig { get; set; }
+
+        /// <summary>
+        /// Voice customization options. To save the language of the selected agent voice<br/>
+        /// Example: English (United States)
+        /// </summary>
+        /// <example>English (United States)</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("language")]
+        public string? Language { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAITypeJsonConverter))]
+        public global::G.UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAIType Type { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAI" /> class.
+        /// </summary>
+        /// <param name="voiceId">
+        /// Voice ID selected from the list of available voices.&lt;/br&gt;Retrieve available options from the GET /voices endpoint.<br/>
+        /// Example: en-US-JennyNeural
+        /// </param>
+        /// <param name="voiceConfig">
+        /// Voice customization options
+        /// </param>
+        /// <param name="language">
+        /// Voice customization options. To save the language of the selected agent voice<br/>
+        /// Example: English (United States)
+        /// </param>
+        /// <param name="type"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAI(
+            string voiceId,
+            global::G.UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAIVoiceConfig? voiceConfig,
+            string? language,
+            global::G.UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAIType type)
+        {
+            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
+            this.VoiceConfig = voiceConfig;
+            this.Language = language;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAI" /> class.
+        /// </summary>
+        public UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAI()
+        {
+        }
+    }
+}

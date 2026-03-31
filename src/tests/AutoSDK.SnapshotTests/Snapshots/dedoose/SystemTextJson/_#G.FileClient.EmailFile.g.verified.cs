@@ -308,6 +308,7 @@ namespace G
             string subject,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.EmailFileRequest
             {
                 FileURI = fileURI,

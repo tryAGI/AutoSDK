@@ -352,6 +352,7 @@ namespace G
             float? scoreThreshold = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.SearchRequest
             {
                 ShardKey = shardKey,

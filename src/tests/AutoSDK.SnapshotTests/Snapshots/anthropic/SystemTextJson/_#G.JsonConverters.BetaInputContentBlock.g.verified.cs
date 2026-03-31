@@ -105,43 +105,43 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestTextBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestTextBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
             else if (value.IsImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestImageBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestImageBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
             }
             else if (value.IsToolUse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestToolUseBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestToolUseBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUse, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUse!, typeInfo);
             }
             else if (value.IsToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestToolResultBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolResult, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolResult!, typeInfo);
             }
             else if (value.IsDocument)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestDocumentBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestDocumentBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestDocumentBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document!, typeInfo);
             }
             else if (value.IsThinking)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestThinkingBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestThinkingBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Thinking, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Thinking!, typeInfo);
             }
             else if (value.IsRedactedThinking)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestRedactedThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestRedactedThinkingBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestRedactedThinkingBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RedactedThinking, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RedactedThinking!, typeInfo);
             }
         }
     }

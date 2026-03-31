@@ -282,37 +282,37 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseInputsOneOf1Items0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseInputsOneOf1Items0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseInputsOneOf1Items0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items0!, typeInfo);
             }
             else if (value.IsBaseInputsOneOf1Items1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseInputsOneOf1Items1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseInputsOneOf1Items1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseInputsOneOf1Items1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items1!, typeInfo);
             }
             else if (value.IsBaseInputsOneOf1Items2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseInputsOneOf1Items2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseInputsOneOf1Items2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseInputsOneOf1Items2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items2!, typeInfo);
             }
             else if (value.IsBaseInputsOneOf1Items3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseInputsOneOf1Items3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseInputsOneOf1Items3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseInputsOneOf1Items3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items3, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1Items3!, typeInfo);
             }
             else if (value.IsOutputItemImageGenerationCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemImageGenerationCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemImageGenerationCall?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemImageGenerationCall).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemImageGenerationCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemImageGenerationCall!, typeInfo);
             }
             else if (value.IsOutputMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessage!, typeInfo);
             }
         }
     }

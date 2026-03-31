@@ -307,6 +307,7 @@ namespace G
             bool? transparentBg = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.Flux2Inputs
             {
                 Prompt = prompt,

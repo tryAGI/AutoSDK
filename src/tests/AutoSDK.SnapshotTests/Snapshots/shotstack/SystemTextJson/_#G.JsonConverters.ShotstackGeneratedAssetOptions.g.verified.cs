@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShotstackTextToSpeechOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShotstackTextToSpeechOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShotstackTextToSpeechOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToSpeech, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToSpeech!, typeInfo);
             }
             else if (value.IsTextToImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShotstackTextToImageOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShotstackTextToImageOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShotstackTextToImageOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToImage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToImage!, typeInfo);
             }
             else if (value.IsTextGenerator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShotstackTextGeneratorOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShotstackTextGeneratorOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShotstackTextGeneratorOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextGenerator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextGenerator!, typeInfo);
             }
             else if (value.IsImageToVideo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShotstackImageToVideoOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShotstackImageToVideoOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShotstackImageToVideoOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageToVideo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageToVideo!, typeInfo);
             }
         }
     }

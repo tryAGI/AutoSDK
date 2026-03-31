@@ -244,6 +244,7 @@ namespace G
             string type = "update",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PatchWorkspaceSecretRequest
             {
                 Type = type,

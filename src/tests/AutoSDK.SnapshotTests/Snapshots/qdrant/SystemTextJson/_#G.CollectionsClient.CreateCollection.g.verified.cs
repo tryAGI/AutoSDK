@@ -348,6 +348,7 @@ namespace G
             global::G.Payload? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateCollection
             {
                 Vectors = vectors,

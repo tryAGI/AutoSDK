@@ -262,6 +262,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? translations = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.SegmentCreatePayload
             {
                 StartTime = startTime,

@@ -1,0 +1,17 @@
+﻿//HintName: G.IModelsClient.ListModels.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IModelsClient
+    {
+        /// <summary>
+        /// List all available [models](https://console.groq.com/docs/models).<br/>
+        /// get all available models
+        /// </summary>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.ListModelsResponse> ListModelsAsync(
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

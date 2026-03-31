@@ -304,6 +304,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChartExportInfo> exportInfo,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.StartExportSingleSeriesChartJobRequest
             {
                 ProjectId = projectId,

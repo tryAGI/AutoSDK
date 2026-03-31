@@ -338,6 +338,7 @@ namespace G
             int? parentTeamId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.TeamsUpdateLegacyRequest
             {
                 Name = name,

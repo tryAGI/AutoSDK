@@ -1,0 +1,58 @@
+﻿//HintName: G.Models.PromptDataTemplateFormat.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum PromptDataTemplateFormat
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Mustache,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
+        /// <summary>
+        /// 
+        /// </summary>
+        Nunjucks,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PromptDataTemplateFormatExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PromptDataTemplateFormat value)
+        {
+            return value switch
+            {
+                PromptDataTemplateFormat.Mustache => "mustache",
+                PromptDataTemplateFormat.None => "none",
+                PromptDataTemplateFormat.Nunjucks => "nunjucks",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PromptDataTemplateFormat? ToEnum(string value)
+        {
+            return value switch
+            {
+                "mustache" => PromptDataTemplateFormat.Mustache,
+                "none" => PromptDataTemplateFormat.None,
+                "nunjucks" => PromptDataTemplateFormat.Nunjucks,
+                _ => null,
+            };
+        }
+    }
+}

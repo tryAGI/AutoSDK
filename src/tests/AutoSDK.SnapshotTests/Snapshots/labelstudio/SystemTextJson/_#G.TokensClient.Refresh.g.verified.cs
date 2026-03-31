@@ -194,6 +194,7 @@ namespace G
             string refresh,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.TokenRefreshRequest
             {
                 Refresh = refresh,

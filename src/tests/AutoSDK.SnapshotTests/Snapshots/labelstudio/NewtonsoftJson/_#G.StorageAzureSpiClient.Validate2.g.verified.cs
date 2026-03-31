@@ -272,6 +272,7 @@ namespace G
             string? userDelegationKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AzureServicePrincipalExportStorageRequest
             {
                 AccountName = accountName,

@@ -159,19 +159,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EasyInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EasyInputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EasyInputMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message!, typeInfo);
             }
             else if (value.IsValue2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Item), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Item> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Item).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
             }
             else if (value.IsItemReference)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ItemReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ItemReferenceParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ItemReferenceParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ItemReference, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ItemReference!, typeInfo);
             }
         }
     }

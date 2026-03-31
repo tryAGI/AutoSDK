@@ -49,7 +49,7 @@ namespace G
                 path: "/workflow-version-execution-results",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("workflow_version_execution_id", workflowVersionExecutionId.ToString())
+                .AddRequiredParameter("workflow_version_execution_id", workflowVersionExecutionId.ToString()!)
                 .AddOptionalParameter("return_all_outputs", returnAllOutputs?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();

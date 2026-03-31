@@ -251,31 +251,31 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateImageToVideoRequestGen4Turbo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateImageToVideoRequestGen4Turbo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateImageToVideoRequestGen4Turbo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gen4Turbo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gen4Turbo!, typeInfo);
             }
             else if (value.IsVeo31)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateImageToVideoRequestVeo31), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateImageToVideoRequestVeo31?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateImageToVideoRequestVeo31).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Veo31, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Veo31!, typeInfo);
             }
             else if (value.IsGen3aTurbo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateImageToVideoRequestGen3aTurbo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateImageToVideoRequestGen3aTurbo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateImageToVideoRequestGen3aTurbo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gen3aTurbo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gen3aTurbo!, typeInfo);
             }
             else if (value.IsVeo31Fast)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateImageToVideoRequestVeo31Fast), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateImageToVideoRequestVeo31Fast?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateImageToVideoRequestVeo31Fast).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Veo31Fast, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Veo31Fast!, typeInfo);
             }
             else if (value.IsVeo3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateImageToVideoRequestVeo3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateImageToVideoRequestVeo3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateImageToVideoRequestVeo3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Veo3, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Veo3!, typeInfo);
             }
         }
     }

@@ -124,13 +124,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AutoChunkingStrategyRequestParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AutoChunkingStrategyRequestParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoChunkingStrategy, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoChunkingStrategy!, typeInfo);
             }
             else if (value.IsStaticChunkingStrategy)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyRequestParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StaticChunkingStrategyRequestParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticChunkingStrategy, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticChunkingStrategy!, typeInfo);
             }
         }
     }

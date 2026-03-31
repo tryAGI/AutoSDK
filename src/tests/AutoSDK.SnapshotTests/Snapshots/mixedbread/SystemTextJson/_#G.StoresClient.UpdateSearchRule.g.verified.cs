@@ -272,6 +272,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.RulesVariant1Item2>? rules = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleUpdateParams
             {
                 Query = query,

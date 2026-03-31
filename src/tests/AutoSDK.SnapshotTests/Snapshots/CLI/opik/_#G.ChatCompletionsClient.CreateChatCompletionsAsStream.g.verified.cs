@@ -223,6 +223,7 @@ namespace G
             global::G.FunctionCall? functionCall = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ChatCompletionRequest
             {
                 Model = model,

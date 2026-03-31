@@ -177,91 +177,91 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VideoAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VideoAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VideoAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Video, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Video!, typeInfo);
             }
             else if (value.IsImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
             }
             else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
             else if (value.IsRichText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RichTextAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RichTextAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RichTextAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RichText, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RichText!, typeInfo);
             }
             else if (value.IsAudio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AudioAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AudioAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AudioAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Audio, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Audio!, typeInfo);
             }
             else if (value.IsLuma)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LumaAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LumaAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LumaAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Luma, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Luma!, typeInfo);
             }
             else if (value.IsCaption)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CaptionAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CaptionAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CaptionAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Caption, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Caption!, typeInfo);
             }
             else if (value.IsRichCaption)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RichCaptionAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RichCaptionAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RichCaptionAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RichCaption, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RichCaption!, typeInfo);
             }
             else if (value.IsHtml)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HtmlAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HtmlAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HtmlAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Html, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Html!, typeInfo);
             }
             else if (value.IsTitle)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TitleAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TitleAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TitleAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Title, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Title!, typeInfo);
             }
             else if (value.IsShape)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShapeAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShapeAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShapeAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shape, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shape!, typeInfo);
             }
             else if (value.IsSvg)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SvgAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SvgAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SvgAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Svg, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Svg!, typeInfo);
             }
             else if (value.IsTextToImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextToImageAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextToImageAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextToImageAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToImage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToImage!, typeInfo);
             }
             else if (value.IsImageToVideo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageToVideoAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageToVideoAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageToVideoAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageToVideo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageToVideo!, typeInfo);
             }
             else if (value.IsTextToSpeech)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextToSpeechAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextToSpeechAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextToSpeechAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToSpeech, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToSpeech!, typeInfo);
             }
         }
     }

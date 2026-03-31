@@ -74,9 +74,9 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("size", size?.ToString())
-                .AddRequiredParameter("project_id", projectId.ToString())
+                .AddRequiredParameter("project_id", projectId.ToString()!)
                 .AddRequiredParameter("entity_type", entityType.ToValueString())
-                .AddRequiredParameter("entity_id", entityId.ToString())
+                .AddRequiredParameter("entity_id", entityId.ToString()!)
                 .AddRequiredParameter("path", path) 
                 ; 
             var __path = __pathBuilder.ToString();

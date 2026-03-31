@@ -195,6 +195,7 @@ namespace G
             int? keepAlive = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.GenerateEmbeddingRequest
             {
                 Model = model,

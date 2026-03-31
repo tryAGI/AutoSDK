@@ -127,13 +127,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseEngineRetellLm), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseEngineRetellLm?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseEngineRetellLm).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Lm, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Lm!, typeInfo);
             }
             else if (value.IsConversationFlow)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseEngineConversationFlow), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseEngineConversationFlow?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseEngineConversationFlow).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationFlow, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationFlow!, typeInfo);
             }
         }
     }

@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImportJobStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImportJobStatus?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImportJobStatus).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImportProjectMedia, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImportProjectMedia!, typeInfo);
             }
             else if (value.IsAgent)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentJobStatus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentJobStatus?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentJobStatus).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Agent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Agent!, typeInfo);
             }
         }
     }

@@ -271,6 +271,7 @@ namespace G
             global::G.TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission? permission = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.TeamsAddOrUpdateRepoPermissionsLegacyRequest
             {
                 Permission = permission,

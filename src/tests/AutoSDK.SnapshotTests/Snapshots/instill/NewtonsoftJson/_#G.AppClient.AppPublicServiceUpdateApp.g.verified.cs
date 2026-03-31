@@ -307,6 +307,7 @@ namespace G
             int? lastAiAssistantAppTopK = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpdateAppBody
             {
                 NewAppId = newAppId,

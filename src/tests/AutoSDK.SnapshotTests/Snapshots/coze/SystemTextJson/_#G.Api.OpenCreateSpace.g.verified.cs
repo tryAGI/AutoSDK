@@ -224,6 +224,7 @@ namespace G
             string? ownerUid = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.OpenCreateSpaceRequest
             {
                 CozeAccountId = cozeAccountId,

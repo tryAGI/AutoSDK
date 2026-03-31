@@ -348,6 +348,7 @@ namespace G
             global::G.OneOf<global::G.PostAuthConfigsRequestAuthConfigVariant1, global::G.PostAuthConfigsRequestAuthConfigVariant2>? authConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PostAuthConfigsRequest
             {
                 Toolkit = toolkit,

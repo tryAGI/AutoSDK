@@ -310,6 +310,7 @@ namespace G
             string encryptedAuthToken,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.Validate2FactorRequest
             {
                 Username = username,

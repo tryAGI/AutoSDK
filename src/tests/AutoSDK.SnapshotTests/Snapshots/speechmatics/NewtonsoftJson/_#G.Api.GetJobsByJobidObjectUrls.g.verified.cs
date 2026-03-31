@@ -53,7 +53,7 @@ namespace G
                 path: $"/jobs/{jobid}/object-urls",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("ttl", ttl.ToString())
+                .AddRequiredParameter("ttl", ttl.ToString()!)
                 .AddRequiredParameter("url_for", urlFor, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();

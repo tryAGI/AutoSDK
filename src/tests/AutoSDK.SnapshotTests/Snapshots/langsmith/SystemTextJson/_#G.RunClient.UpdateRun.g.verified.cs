@@ -260,6 +260,7 @@ namespace G
             global::G.OneOf<string, object>? sessionName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpdateRunRequest
             {
                 TraceId = traceId,

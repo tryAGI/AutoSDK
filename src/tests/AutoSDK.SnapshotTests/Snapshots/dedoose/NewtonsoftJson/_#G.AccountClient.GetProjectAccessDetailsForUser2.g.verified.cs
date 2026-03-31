@@ -43,7 +43,7 @@ namespace G
                 path: "/api/v1/account/getprojectaccessdetailsforuser2",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("userId", userId.ToString()) 
+                .AddRequiredParameter("userId", userId.ToString()!) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

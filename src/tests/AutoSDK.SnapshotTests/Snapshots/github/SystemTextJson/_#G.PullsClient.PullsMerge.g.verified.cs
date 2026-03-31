@@ -406,6 +406,7 @@ namespace G
             global::G.PullsMergeRequestMergeMethod? mergeMethod = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PullsMergeRequest
             {
                 CommitTitle = commitTitle,

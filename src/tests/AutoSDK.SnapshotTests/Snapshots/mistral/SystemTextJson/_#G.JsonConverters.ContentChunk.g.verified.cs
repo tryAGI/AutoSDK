@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextChunk?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextChunk).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
             else if (value.IsImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageURLChunk?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageURLChunk).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl!, typeInfo);
             }
             else if (value.IsDocumentUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DocumentURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DocumentURLChunk?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DocumentURLChunk).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentUrl, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentUrl!, typeInfo);
             }
             else if (value.IsReference)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReferenceChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReferenceChunk?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReferenceChunk).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Reference, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Reference!, typeInfo);
             }
         }
     }

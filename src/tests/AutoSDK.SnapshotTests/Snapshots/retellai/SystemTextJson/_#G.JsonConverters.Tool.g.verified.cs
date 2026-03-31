@@ -583,79 +583,79 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EndCallTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EndCallTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EndCallTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EndCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EndCall!, typeInfo);
             }
             else if (value.IsTransferCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferCallTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferCallTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferCallTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferCall!, typeInfo);
             }
             else if (value.IsCheckAvailabilityCal)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CheckAvailabilityCalTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CheckAvailabilityCalTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CheckAvailabilityCalTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CheckAvailabilityCal, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CheckAvailabilityCal!, typeInfo);
             }
             else if (value.IsBookAppointmentCal)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BookAppointmentCalTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BookAppointmentCalTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BookAppointmentCalTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BookAppointmentCal, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BookAppointmentCal!, typeInfo);
             }
             else if (value.IsAgentSwap)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentSwapTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentSwapTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentSwapTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentSwap, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentSwap!, typeInfo);
             }
             else if (value.IsPressDigit)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PressDigitTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PressDigitTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PressDigitTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PressDigit, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PressDigit!, typeInfo);
             }
             else if (value.IsSendSM)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SendSMSTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SendSMSTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SendSMSTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SendSM, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SendSM!, typeInfo);
             }
             else if (value.IsCustom)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Custom, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Custom!, typeInfo);
             }
             else if (value.IsCode)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Code, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Code!, typeInfo);
             }
             else if (value.IsExtractDynamicVariable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExtractDynamicVariableTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExtractDynamicVariableTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExtractDynamicVariableTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExtractDynamicVariable, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExtractDynamicVariable!, typeInfo);
             }
             else if (value.IsBridgeTransfer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BridgeTransferTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BridgeTransferTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BridgeTransferTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BridgeTransfer, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BridgeTransfer!, typeInfo);
             }
             else if (value.IsCancelTransfer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CancelTransferTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CancelTransferTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CancelTransferTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CancelTransfer, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CancelTransfer!, typeInfo);
             }
             else if (value.IsMCP)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCP, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCP!, typeInfo);
             }
         }
     }

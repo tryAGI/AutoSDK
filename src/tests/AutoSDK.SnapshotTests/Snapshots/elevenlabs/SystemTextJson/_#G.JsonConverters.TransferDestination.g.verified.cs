@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PhoneNumberTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PhoneNumberTransferDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PhoneNumberTransferDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phone, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phone!, typeInfo);
             }
             else if (value.IsSipUri)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SIPUriTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SIPUriTransferDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SIPUriTransferDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipUri, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipUri!, typeInfo);
             }
             else if (value.IsPhoneDynamicVariable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PhoneNumberDynamicVariableTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PhoneNumberDynamicVariableTransferDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PhoneNumberDynamicVariableTransferDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PhoneDynamicVariable, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PhoneDynamicVariable!, typeInfo);
             }
             else if (value.IsSipUriDynamicVariable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SIPUriDynamicVariableTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SIPUriDynamicVariableTransferDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SIPUriDynamicVariableTransferDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipUriDynamicVariable, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipUriDynamicVariable!, typeInfo);
             }
         }
     }

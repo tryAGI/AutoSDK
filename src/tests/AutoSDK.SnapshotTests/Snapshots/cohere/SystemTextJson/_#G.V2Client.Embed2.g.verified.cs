@@ -721,6 +721,7 @@ namespace G
             int? outputDimension = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.V2EmbedRequest
             {
                 Texts = texts,

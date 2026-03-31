@@ -237,6 +237,7 @@ namespace G
             global::G.OneOf<global::G.FullTrainingType, global::G.LoRATrainingType>? trainingType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateFineTunesRequest
             {
                 TrainingFile = trainingFile,

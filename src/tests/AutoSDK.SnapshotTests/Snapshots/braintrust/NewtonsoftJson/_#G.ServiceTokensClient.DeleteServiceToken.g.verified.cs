@@ -384,6 +384,7 @@ namespace G
             global::System.Guid id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.DeleteServiceToken
             {
                 Id = id,

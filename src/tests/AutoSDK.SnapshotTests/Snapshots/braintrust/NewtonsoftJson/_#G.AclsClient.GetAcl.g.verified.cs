@@ -165,7 +165,7 @@ namespace G
                 .AddOptionalParameter("ending_before", endingBefore?.ToString())
                 .AddOptionalParameter("ids", ids?.ToString())
                 .AddRequiredParameter("object_type", objectType.ToValueString())
-                .AddRequiredParameter("object_id", objectId.ToString())
+                .AddRequiredParameter("object_id", objectId.ToString()!)
                 .AddOptionalParameter("user_id", userId?.ToString())
                 .AddOptionalParameter("group_id", groupId?.ToString())
                 .AddOptionalParameter("permission", permission?.ToValueString())

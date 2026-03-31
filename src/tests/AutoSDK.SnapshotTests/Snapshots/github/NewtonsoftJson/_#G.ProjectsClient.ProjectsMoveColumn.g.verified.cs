@@ -332,6 +332,7 @@ namespace G
             string position,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ProjectsMoveColumnRequest
             {
                 Position = position,

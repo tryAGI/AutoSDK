@@ -256,6 +256,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? workflowIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateStructuredOutputDTO
             {
                 Type = type,

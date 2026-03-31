@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OAuth2AuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OAuth2AuthenticationPlan?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OAuth2AuthenticationPlan).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2!, typeInfo);
             }
             else if (value.IsHmac)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HMACAuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HMACAuthenticationPlan?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HMACAuthenticationPlan).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Hmac, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Hmac!, typeInfo);
             }
             else if (value.IsBearer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BearerAuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BearerAuthenticationPlan?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BearerAuthenticationPlan).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bearer, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bearer!, typeInfo);
             }
         }
     }

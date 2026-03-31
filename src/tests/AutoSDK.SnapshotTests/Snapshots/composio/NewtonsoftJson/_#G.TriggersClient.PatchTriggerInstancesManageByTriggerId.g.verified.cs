@@ -470,6 +470,7 @@ namespace G
             global::G.PatchTriggerInstancesManageByTriggerIdRequestStatus status,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PatchTriggerInstancesManageByTriggerIdRequest
             {
                 Status = status,

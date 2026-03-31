@@ -53,8 +53,8 @@ namespace G
                 path: "/v1/session/redirect/optimizations",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("dataset_id", datasetId.ToString())
-                .AddRequiredParameter("optimization_id", optimizationId.ToString())
+                .AddRequiredParameter("dataset_id", datasetId.ToString()!)
+                .AddRequiredParameter("optimization_id", optimizationId.ToString()!)
                 .AddOptionalParameter("workspace_name", workspaceName)
                 .AddRequiredParameter("path", path) 
                 ; 

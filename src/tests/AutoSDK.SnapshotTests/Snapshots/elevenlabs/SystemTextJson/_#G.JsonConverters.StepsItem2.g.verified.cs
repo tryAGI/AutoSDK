@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowToolEdgeStepModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowToolEdgeStepModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowToolEdgeStepModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Edge, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Edge!, typeInfo);
             }
             else if (value.IsNestedTools)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowToolNestedToolsStepModelOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowToolNestedToolsStepModelOutput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowToolNestedToolsStepModelOutput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NestedTools, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NestedTools!, typeInfo);
             }
             else if (value.IsMaxIterationsExceeded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowToolMaxIterationsExceededStepModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowToolMaxIterationsExceededStepModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowToolMaxIterationsExceededStepModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxIterationsExceeded, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxIterationsExceeded!, typeInfo);
             }
         }
     }

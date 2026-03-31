@@ -158,6 +158,63 @@ namespace {endPoint.Settings.Namespace}
         return $"{sourceRequestExpression}.{GetRequestPropertyName(parameter)}";
     }
 
+    private static TypeData? GetTransparentWrappedRequestType(EndPoint endPoint)
+    {
+        var requestParameters = endPoint.Parameters
+            .Where(static x => x.Location == null)
+            .ToArray();
+        var initializationTypeName = endPoint.RequestInitializationType.CSharpTypeWithoutNullability;
+        var requestTypeName = endPoint.RequestType.CSharpTypeWithoutNullability;
+        if (requestParameters.Length == 0 ||
+            endPoint.RequestInitializationType == TypeData.Default ||
+            string.IsNullOrWhiteSpace(initializationTypeName) ||
+            string.Equals(initializationTypeName, requestTypeName, StringComparison.Ordinal))
+        {
+            return null;
+        }
+
+        return endPoint.RequestInitializationType;
+    }
+
+    private static string GenerateRequestAssignments(
+        EndPoint endPoint,
+        Func<MethodParameter, string> valueFactory)
+    {
+        return endPoint.Parameters
+            .Where(x => x.Location == null && (x.IsRequired || !x.IsDeprecated))
+            .Select(x => $@"
+{(x.IsDeprecated ? "#pragma warning disable CS0618 // Type or member is obsolete" : TrimmedLine)}
+                {GetRequestPropertyName(x)} = {valueFactory(x)},
+{(x.IsDeprecated ? "#pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}".TrimEnd())
+            .Inject();
+    }
+
+    private static string GenerateRequestInitialization(
+        EndPoint endPoint,
+        string targetVariableName,
+        Func<MethodParameter, string> valueFactory,
+        bool declareVariable = true)
+    {
+        var targetPrefix = declareVariable ? $"var {targetVariableName}" : targetVariableName;
+        var assignments = GenerateRequestAssignments(endPoint, valueFactory);
+        var wrappedRequestType = GetTransparentWrappedRequestType(endPoint);
+        if (wrappedRequestType is not TypeData nestedRequestType)
+        {
+            return @$"
+            {targetPrefix} = new {endPoint.RequestType.CSharpTypeWithoutNullability}
+            {{
+{assignments}
+            }};";
+        }
+
+        return @$"
+            {targetPrefix} = new {endPoint.RequestType.CSharpTypeWithoutNullability}(
+                new {nestedRequestType.CSharpTypeWithoutNullability}
+                {{
+{assignments}
+                }});";
+    }
+
     private static string GeneratePinnedRequestCopy(EndPoint endPoint, string sourceRequestExpression)
     {
         if (endPoint.ForcedRequestStreamValue is null)
@@ -173,15 +230,17 @@ namespace {endPoint.Settings.Namespace}
             return TrimmedLine;
         }
 
-        return @$"
-            request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
-            {{
-{requestParameters.Select(x => $@"
-{(x.IsDeprecated ? "#pragma warning disable CS0618 // Type or member is obsolete" : TrimmedLine)}
-                {GetRequestPropertyName(x)} = {GetPinnedRequestPropertyValue(endPoint, x, sourceRequestExpression)},
-{(x.IsDeprecated ? "#pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}".TrimEnd()).Inject()}
-            }};
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+        var wrappedRequestType = GetTransparentWrappedRequestType(endPoint);
+        var requestSourceExpression = wrappedRequestType is null
+            ? sourceRequestExpression
+            : $"(({wrappedRequestType.Value.CSharpTypeWithoutNullability}?)({sourceRequestExpression}))!";
+
+        return GenerateRequestInitialization(
+            endPoint,
+            "request",
+            x => GetPinnedRequestPropertyValue(endPoint, x, requestSourceExpression),
+            declareVariable: false)
+            .RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     private static IEnumerable<MethodParameter> GetExtensionMethodParameters(EndPoint endPoint)
@@ -924,13 +983,12 @@ namespace {endPoint.Settings.Namespace}
             ? ";"
             : @$"
         {{
-            var __request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
-            {{
-{endPoint.Parameters.Where(x => x.Location == null && (x.IsRequired || !x.IsDeprecated)).Select(x => $@"
-{(x.IsDeprecated ? "#pragma warning disable CS0618 // Type or member is obsolete" : TrimmedLine)}
-                {GetRequestPropertyName(x)} = {(IsRequestStreamParameter(x) && endPoint.ForcedRequestStreamValue is bool forcedRequestStreamValue ? (forcedRequestStreamValue ? "true" : "false") : x.ParameterName)},
-{(x.IsDeprecated ? "#pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}".TrimEnd()).Inject()}
-            }};
+{GenerateRequestInitialization(
+    endPoint,
+    "__request",
+    x => IsRequestStreamParameter(x) && endPoint.ForcedRequestStreamValue is bool forcedRequestStreamValue
+        ? forcedRequestStreamValue ? "true" : "false"
+        : x.ParameterName)}
 
             {response}{endPoint.MethodName}(
 {endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"

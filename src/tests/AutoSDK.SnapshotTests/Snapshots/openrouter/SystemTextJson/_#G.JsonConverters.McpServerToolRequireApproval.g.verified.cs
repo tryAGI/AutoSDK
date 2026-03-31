@@ -222,31 +222,31 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpServerToolRequireApproval0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpServerToolRequireApproval0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.McpServerToolRequireApproval0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApproval0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApproval0!, typeInfo);
             }
             else if (value.IsMcpServerToolRequireApproval1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpServerToolRequireApproval1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpServerToolRequireApproval1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.McpServerToolRequireApproval1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApproval1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApproval1!.Value, typeInfo);
             }
             else if (value.IsMcpServerToolRequireApproval2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpServerToolRequireApproval2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpServerToolRequireApproval2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.McpServerToolRequireApproval2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApproval2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolRequireApproval2!.Value, typeInfo);
             }
             else if (value.IsValue4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4!, typeInfo);
             }
             else if (value.IsValue5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5!, typeInfo);
             }
         }
     }

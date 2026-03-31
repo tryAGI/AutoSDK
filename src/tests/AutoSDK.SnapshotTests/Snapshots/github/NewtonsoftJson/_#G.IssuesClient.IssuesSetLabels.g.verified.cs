@@ -348,6 +348,7 @@ namespace G
             int issueNumber,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.OneOf<global::G.IssuesSetLabelsRequestVariant1, global::System.Collections.Generic.IList<string>, global::G.IssuesSetLabelsRequestVariant3, global::System.Collections.Generic.IList<global::G.IssuesSetLabelsRequestVariant4Item>, string>
             {
             };

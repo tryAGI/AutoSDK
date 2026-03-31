@@ -235,31 +235,31 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MetadataSendTelemetryRequestEventVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MetadataSendTelemetryRequestEventVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MetadataSendTelemetryRequestEventVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionStart, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionStart!, typeInfo);
             }
             else if (value.IsSessionEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MetadataSendTelemetryRequestEventVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MetadataSendTelemetryRequestEventVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MetadataSendTelemetryRequestEventVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionEnd, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionEnd!, typeInfo);
             }
             else if (value.IsToolUsage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MetadataSendTelemetryRequestEventVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MetadataSendTelemetryRequestEventVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MetadataSendTelemetryRequestEventVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUsage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUsage!, typeInfo);
             }
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MetadataSendTelemetryRequestEventVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MetadataSendTelemetryRequestEventVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MetadataSendTelemetryRequestEventVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
             }
             else if (value.IsUserInput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MetadataSendTelemetryRequestEventVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MetadataSendTelemetryRequestEventVariant5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MetadataSendTelemetryRequestEventVariant5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserInput, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserInput!, typeInfo);
             }
         }
     }

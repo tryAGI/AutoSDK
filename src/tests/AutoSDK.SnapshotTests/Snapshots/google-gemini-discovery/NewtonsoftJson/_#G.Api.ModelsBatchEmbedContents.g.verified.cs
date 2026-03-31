@@ -184,6 +184,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.EmbedContentRequest>? requests = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.BatchEmbedContentsRequest
             {
                 Requests = requests,

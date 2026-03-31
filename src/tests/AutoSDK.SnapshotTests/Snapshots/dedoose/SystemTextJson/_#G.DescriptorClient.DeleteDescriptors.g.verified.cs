@@ -304,6 +304,7 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid> descriptorsIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.DeleteDescriptorsRequest
             {
                 ProjectId = projectId,

@@ -258,6 +258,7 @@ namespace G
             global::G.AnyOf<object, global::G.CloudS3DataSource, global::G.CloudAzStorageBlobDataSource, global::G.CloudGoogleDriveDataSource, global::G.CloudOneDriveDataSource, global::G.CloudSharepointDataSource, global::G.CloudSlackDataSource, global::G.CloudNotionPageDataSource, global::G.CloudConfluenceDataSource, global::G.CloudJiraDataSource, global::G.CloudJiraDataSourceV2, global::G.CloudBoxDataSource, object>? component = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.DataSourceUpdate
             {
                 Name = name,

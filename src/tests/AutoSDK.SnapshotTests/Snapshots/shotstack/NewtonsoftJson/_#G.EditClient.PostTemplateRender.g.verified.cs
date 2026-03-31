@@ -187,6 +187,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.MergeField>? merge = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.TemplateRender
             {
                 Id = id,

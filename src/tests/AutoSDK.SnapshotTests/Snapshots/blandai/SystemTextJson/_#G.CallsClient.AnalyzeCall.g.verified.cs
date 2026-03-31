@@ -206,6 +206,7 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> questions,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AnalyzeCallRequest
             {
                 Goal = goal,

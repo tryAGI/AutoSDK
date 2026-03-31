@@ -342,6 +342,7 @@ namespace G
             string? replyParentMessageId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.SendChatMessageBody
             {
                 BroadcasterId = broadcasterId,

@@ -1,0 +1,19 @@
+﻿//HintName: G.Models.MultiSeriesCrossValidationStepSize.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Step size between each cross validation window. If None it will be equal to the forecasting horizon.
+    /// </summary>
+    public sealed partial class MultiSeriesCrossValidationStepSize
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

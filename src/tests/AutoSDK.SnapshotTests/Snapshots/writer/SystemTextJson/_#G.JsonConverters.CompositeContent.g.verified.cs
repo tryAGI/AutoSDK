@@ -125,13 +125,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextFragment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextFragment?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextFragment).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
             else if (value.IsImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageFragment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageFragment?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageFragment).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
             }
         }
     }

@@ -248,6 +248,7 @@ namespace G
             global::System.Collections.Generic.IList<string> users,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ReposSetUserAccessRestrictionsRequest
             {
                 Users = users,

@@ -1,0 +1,23 @@
+﻿//HintName: G.IApi.ResearchControllerListResearch.g.cs
+#nullable enable
+
+namespace G
+{
+    public partial interface IApi
+    {
+        /// <summary>
+        /// List research requests<br/>
+        /// Get a paginated list of research requests
+        /// </summary>
+        /// <param name="cursor"></param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.ListResearchResponseDto> ResearchControllerListResearchAsync(
+            string? cursor = default,
+            double? limit = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -1,0 +1,46 @@
+﻿//HintName: G.Models.CreateTalkRequestScriptVariant1ProviderGoogleType2.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum CreateTalkRequestScriptVariant1ProviderGoogleType2
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Google,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CreateTalkRequestScriptVariant1ProviderGoogleType2Extensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CreateTalkRequestScriptVariant1ProviderGoogleType2 value)
+        {
+            return value switch
+            {
+                CreateTalkRequestScriptVariant1ProviderGoogleType2.Google => "google",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CreateTalkRequestScriptVariant1ProviderGoogleType2? ToEnum(string value)
+        {
+            return value switch
+            {
+                "google" => CreateTalkRequestScriptVariant1ProviderGoogleType2.Google,
+                _ => null,
+            };
+        }
+    }
+}

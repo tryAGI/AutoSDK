@@ -400,6 +400,7 @@ namespace G
             global::System.Guid objectId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.DeleteView
             {
                 ObjectType = objectType,

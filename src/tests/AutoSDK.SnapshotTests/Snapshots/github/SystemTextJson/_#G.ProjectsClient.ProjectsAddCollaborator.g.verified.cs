@@ -366,6 +366,7 @@ namespace G
             global::G.ProjectsAddCollaboratorRequestPermission? permission = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ProjectsAddCollaboratorRequest
             {
                 Permission = permission,

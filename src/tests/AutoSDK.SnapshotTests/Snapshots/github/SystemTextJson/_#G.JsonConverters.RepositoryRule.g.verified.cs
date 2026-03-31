@@ -785,127 +785,127 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleCreation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleCreation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleCreation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Creation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Creation!, typeInfo);
             }
             else if (value.IsUpdate)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleUpdate?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleUpdate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Update, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Update!, typeInfo);
             }
             else if (value.IsDeletion)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleDeletion), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleDeletion?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleDeletion).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Deletion, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Deletion!, typeInfo);
             }
             else if (value.IsRequiredLinearHistory)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleRequiredLinearHistory), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleRequiredLinearHistory?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleRequiredLinearHistory).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiredLinearHistory, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiredLinearHistory!, typeInfo);
             }
             else if (value.IsMergeQueue)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleMergeQueue), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleMergeQueue?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleMergeQueue).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MergeQueue, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MergeQueue!, typeInfo);
             }
             else if (value.IsRequiredDeployments)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleRequiredDeployments), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleRequiredDeployments?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleRequiredDeployments).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiredDeployments, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiredDeployments!, typeInfo);
             }
             else if (value.IsRequiredSignatures)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleRequiredSignatures), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleRequiredSignatures?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleRequiredSignatures).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiredSignatures, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiredSignatures!, typeInfo);
             }
             else if (value.IsPullRequest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRulePullRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRulePullRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRulePullRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PullRequest, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PullRequest!, typeInfo);
             }
             else if (value.IsRequiredStatusChecks)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleRequiredStatusChecks), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleRequiredStatusChecks?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleRequiredStatusChecks).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiredStatusChecks, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiredStatusChecks!, typeInfo);
             }
             else if (value.IsNonFastForward)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleNonFastForward), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleNonFastForward?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleNonFastForward).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NonFastForward, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NonFastForward!, typeInfo);
             }
             else if (value.IsCommitMessagePattern)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleCommitMessagePattern), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleCommitMessagePattern?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleCommitMessagePattern).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CommitMessagePattern, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CommitMessagePattern!, typeInfo);
             }
             else if (value.IsCommitAuthorEmailPattern)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleCommitAuthorEmailPattern), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleCommitAuthorEmailPattern?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleCommitAuthorEmailPattern).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CommitAuthorEmailPattern, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CommitAuthorEmailPattern!, typeInfo);
             }
             else if (value.IsCommitterEmailPattern)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleCommitterEmailPattern), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleCommitterEmailPattern?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleCommitterEmailPattern).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CommitterEmailPattern, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CommitterEmailPattern!, typeInfo);
             }
             else if (value.IsBranchNamePattern)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleBranchNamePattern), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleBranchNamePattern?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleBranchNamePattern).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BranchNamePattern, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BranchNamePattern!, typeInfo);
             }
             else if (value.IsTagNamePattern)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleTagNamePattern), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleTagNamePattern?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleTagNamePattern).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TagNamePattern, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TagNamePattern!, typeInfo);
             }
             else if (value.IsFilePathRestriction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleFilePathRestriction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleFilePathRestriction?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleFilePathRestriction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FilePathRestriction, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FilePathRestriction!, typeInfo);
             }
             else if (value.IsMaxFilePathLength)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleMaxFilePathLength), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleMaxFilePathLength?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleMaxFilePathLength).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxFilePathLength, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxFilePathLength!, typeInfo);
             }
             else if (value.IsFileExtensionRestriction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleFileExtensionRestriction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleFileExtensionRestriction?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleFileExtensionRestriction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileExtensionRestriction, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileExtensionRestriction!, typeInfo);
             }
             else if (value.IsMaxFileSize)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleMaxFileSize), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleMaxFileSize?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleMaxFileSize).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxFileSize, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxFileSize!, typeInfo);
             }
             else if (value.IsWorkflows)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleWorkflows), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleWorkflows?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleWorkflows).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Workflows, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Workflows!, typeInfo);
             }
             else if (value.IsCodeScanning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleCodeScanning), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleCodeScanning?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RepositoryRuleCodeScanning).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeScanning, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeScanning!, typeInfo);
             }
         }
     }

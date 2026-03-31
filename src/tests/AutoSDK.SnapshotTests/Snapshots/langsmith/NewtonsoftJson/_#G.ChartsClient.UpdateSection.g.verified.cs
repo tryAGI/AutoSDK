@@ -248,6 +248,7 @@ namespace G
             global::G.AnyOf<int?, global::G.Missing>? index = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CustomChartsSectionUpdate
             {
                 Title = title,

@@ -87,31 +87,31 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RoundRobinManagerUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RoundRobinManagerUpdate?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RoundRobinManagerUpdate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RoundRobin, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RoundRobin!, typeInfo);
             }
             else if (value.IsSupervisor)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SupervisorManagerUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SupervisorManagerUpdate?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SupervisorManagerUpdate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Supervisor, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Supervisor!, typeInfo);
             }
             else if (value.IsDynamic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DynamicManagerUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DynamicManagerUpdate?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DynamicManagerUpdate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dynamic, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dynamic!, typeInfo);
             }
             else if (value.IsSleeptime)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SleeptimeManagerUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SleeptimeManagerUpdate?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SleeptimeManagerUpdate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sleeptime, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sleeptime!, typeInfo);
             }
             else if (value.IsVoiceSleeptime)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoiceSleeptimeManagerUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoiceSleeptimeManagerUpdate?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoiceSleeptimeManagerUpdate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoiceSleeptime, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoiceSleeptime!, typeInfo);
             }
         }
     }

@@ -312,6 +312,7 @@ namespace G
             global::System.Guid? lastRecievedGlobalMessageId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.GetChatMessagesRequest
             {
                 UserId = userId,

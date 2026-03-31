@@ -57,7 +57,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("id", id.ToValueString())
-                .AddRequiredParameter("project", project.ToString())
+                .AddRequiredParameter("project", project.ToString()!)
                 .AddOptionalParameter("view", view?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -216,6 +216,7 @@ namespace G
             global::G.OneOf<global::G.ApiDmActionsCreateRequestSelectedItemsAllFalse, global::G.ApiDmActionsCreateRequestSelectedItemsAllTrue>? selectedItems = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ApiDmActionsCreateRequest
             {
                 Filters = filters,

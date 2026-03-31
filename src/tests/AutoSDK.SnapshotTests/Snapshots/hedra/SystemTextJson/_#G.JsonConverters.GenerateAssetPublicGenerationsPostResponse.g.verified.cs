@@ -159,79 +159,79 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateVideoResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateVideoResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateVideoResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Video, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Video!, typeInfo);
             }
             else if (value.IsTextToSpeech)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateTextToSpeechResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateTextToSpeechResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateTextToSpeechResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToSpeech, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToSpeech!, typeInfo);
             }
             else if (value.IsTextToSound)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateTextToSoundResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateTextToSoundResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateTextToSoundResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToSound, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToSound!, typeInfo);
             }
             else if (value.IsImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateImageResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateImageResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateImageResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
             }
             else if (value.IsImageUpscale)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateImageUpscaleResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateImageUpscaleResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateImageUpscaleResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUpscale, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUpscale!, typeInfo);
             }
             else if (value.IsVideoUpscale)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateVideoUpscaleResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateVideoUpscaleResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateVideoUpscaleResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoUpscale, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoUpscale!, typeInfo);
             }
             else if (value.IsAudioIsolation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateIsolatedAudioResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateIsolatedAudioResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateIsolatedAudioResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AudioIsolation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AudioIsolation!, typeInfo);
             }
             else if (value.IsSpeechToSpeech)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateSpeechToSpeechResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateSpeechToSpeechResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateSpeechToSpeechResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechToSpeech, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeechToSpeech!, typeInfo);
             }
             else if (value.IsVoiceClone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateVoiceCloneResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateVoiceCloneResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateVoiceCloneResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoiceClone, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoiceClone!, typeInfo);
             }
             else if (value.IsAudioFromVideo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateAudioFromVideoResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateAudioFromVideoResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateAudioFromVideoResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AudioFromVideo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AudioFromVideo!, typeInfo);
             }
             else if (value.IsVideoWithAudio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateVideoWithAudioResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateVideoWithAudioResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateVideoWithAudioResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoWithAudio, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoWithAudio!, typeInfo);
             }
             else if (value.IsVideoToVideo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateVideoToVideoResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateVideoToVideoResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateVideoToVideoResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoToVideo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoToVideo!, typeInfo);
             }
             else if (value.IsMotionControl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateMotionControlResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateMotionControlResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateMotionControlResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MotionControl, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MotionControl!, typeInfo);
             }
         }
     }

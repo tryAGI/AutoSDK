@@ -1,0 +1,105 @@
+﻿//HintName: G.Models.UpdateResponseVariant1LlmVariant3.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Azure OpenAI External LLM
+    /// </summary>
+    public sealed partial class UpdateResponseVariant1LlmVariant3
+    {
+        /// <summary>
+        /// Defines what the Agent does and how it should behave.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
+        public string? Instructions { get; set; }
+
+        /// <summary>
+        /// How the Agent uses knowledge when generating responses.<br/>
+        /// - RAG-Grounded: Uses only provided knowledge<br/>
+        /// - RAG-Ungrounded: Uses provided knowledge and general model knowledge<br/>
+        /// - Assistant: Uses general model knowledge only
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("template")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UpdateResponseVariant1LlmVariant3TemplateJsonConverter))]
+        public global::G.UpdateResponseVariant1LlmVariant3Template? Template { get; set; }
+
+        /// <summary>
+        /// Advanced configuration for the language model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_customization")]
+        public global::G.UpdateResponseVariant1LlmVariant3PromptCustomization? PromptCustomization { get; set; }
+
+        /// <summary>
+        /// Controls how predictable or creative the Agent’s responses are.<br/>
+        /// Default values by template:<br/>
+        /// RAG-Grounded: 0.1<br/>
+        /// RAG-Ungrounded: 0.5<br/>
+        /// Assistant: 0.5
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
+        public double? Temperature { get; set; }
+
+        /// <summary>
+        /// ID of the stored secret containing the external OpenAI API key
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("secretId")]
+        public string? SecretId { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateResponseVariant1LlmVariant3" /> class.
+        /// </summary>
+        /// <param name="instructions">
+        /// Defines what the Agent does and how it should behave.
+        /// </param>
+        /// <param name="template">
+        /// How the Agent uses knowledge when generating responses.<br/>
+        /// - RAG-Grounded: Uses only provided knowledge<br/>
+        /// - RAG-Ungrounded: Uses provided knowledge and general model knowledge<br/>
+        /// - Assistant: Uses general model knowledge only
+        /// </param>
+        /// <param name="promptCustomization">
+        /// Advanced configuration for the language model.
+        /// </param>
+        /// <param name="temperature">
+        /// Controls how predictable or creative the Agent’s responses are.<br/>
+        /// Default values by template:<br/>
+        /// RAG-Grounded: 0.1<br/>
+        /// RAG-Ungrounded: 0.5<br/>
+        /// Assistant: 0.5
+        /// </param>
+        /// <param name="secretId">
+        /// ID of the stored secret containing the external OpenAI API key
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public UpdateResponseVariant1LlmVariant3(
+            string? instructions,
+            global::G.UpdateResponseVariant1LlmVariant3Template? template,
+            global::G.UpdateResponseVariant1LlmVariant3PromptCustomization? promptCustomization,
+            double? temperature,
+            string? secretId)
+        {
+            this.Instructions = instructions;
+            this.Template = template;
+            this.PromptCustomization = promptCustomization;
+            this.Temperature = temperature;
+            this.SecretId = secretId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateResponseVariant1LlmVariant3" /> class.
+        /// </summary>
+        public UpdateResponseVariant1LlmVariant3()
+        {
+        }
+    }
+}

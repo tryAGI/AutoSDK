@@ -175,6 +175,7 @@ namespace G
             string? planId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.SubscriptionPaymentLinkRequest
             {
                 PlanId = planId,

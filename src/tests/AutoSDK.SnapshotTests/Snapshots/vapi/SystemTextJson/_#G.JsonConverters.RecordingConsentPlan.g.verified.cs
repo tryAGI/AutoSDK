@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RecordingConsentPlanStayOnLine), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RecordingConsentPlanStayOnLine?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RecordingConsentPlanStayOnLine).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StayOnLine, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StayOnLine!, typeInfo);
             }
             else if (value.IsVerbal)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RecordingConsentPlanVerbal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RecordingConsentPlanVerbal?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RecordingConsentPlanVerbal).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Verbal, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Verbal!, typeInfo);
             }
         }
     }

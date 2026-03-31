@@ -349,6 +349,7 @@ namespace G
             global::G.KeypadInputPlan? keypadInputPlan = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateAssistantDTO
             {
                 Transcriber = transcriber,

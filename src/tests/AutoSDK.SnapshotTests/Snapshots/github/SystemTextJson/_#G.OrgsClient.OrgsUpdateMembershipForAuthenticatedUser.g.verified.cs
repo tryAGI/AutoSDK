@@ -300,6 +300,7 @@ namespace G
             global::G.OrgsUpdateMembershipForAuthenticatedUserRequestState state = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.OrgsUpdateMembershipForAuthenticatedUserRequest
             {
                 State = state,

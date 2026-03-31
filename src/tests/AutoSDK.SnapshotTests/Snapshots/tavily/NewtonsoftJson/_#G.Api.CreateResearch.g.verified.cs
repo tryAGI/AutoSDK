@@ -450,6 +450,7 @@ namespace G
             global::G.CreateResearchRequestCitationFormat? citationFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateResearchRequest
             {
                 Input = input,

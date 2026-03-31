@@ -306,6 +306,7 @@ namespace G
             global::System.Guid descriptorId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.DeleteLinkRequest
             {
                 ProjectId = projectId,

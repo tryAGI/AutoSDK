@@ -306,6 +306,7 @@ namespace G
             global::G.Descriptor descriptor,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.DeleteDescriptorRequest
             {
                 Descriptor = descriptor,

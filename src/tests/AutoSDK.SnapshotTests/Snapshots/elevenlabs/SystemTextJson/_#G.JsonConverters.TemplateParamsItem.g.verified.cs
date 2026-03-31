@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateHeaderComponentParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateHeaderComponentParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WhatsAppTemplateHeaderComponentParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Header, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Header!, typeInfo);
             }
             else if (value.IsBody)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateBodyComponentParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateBodyComponentParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WhatsAppTemplateBodyComponentParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Body, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Body!, typeInfo);
             }
             else if (value.IsButton)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateButtonComponentParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateButtonComponentParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WhatsAppTemplateButtonComponentParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Button, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Button!, typeInfo);
             }
         }
     }

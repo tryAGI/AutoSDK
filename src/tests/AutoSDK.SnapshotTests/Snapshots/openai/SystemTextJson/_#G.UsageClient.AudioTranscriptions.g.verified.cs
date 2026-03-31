@@ -89,7 +89,7 @@ namespace G
                 path: "/organization/usage/audio_transcriptions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("start_time", startTime.ToString())
+                .AddRequiredParameter("start_time", startTime.ToString()!)
                 .AddOptionalParameter("end_time", endTime?.ToString())
                 .AddOptionalParameter("bucket_width", bucketWidth?.ToValueString())
                 .AddOptionalParameter("project_ids", projectIds, delimiter: ",", explode: true)

@@ -332,6 +332,7 @@ namespace G
             bool? sendWelcomeEmail = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateUserRequestBody
             {
                 User = user,

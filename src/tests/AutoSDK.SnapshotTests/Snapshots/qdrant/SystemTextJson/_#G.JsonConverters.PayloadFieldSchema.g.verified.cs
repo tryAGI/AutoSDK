@@ -147,13 +147,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PayloadSchemaType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PayloadSchemaType> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PayloadSchemaType).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Type, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Type!.Value, typeInfo);
             }
             else if (value.IsParams)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PayloadSchemaParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PayloadSchemaParams> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PayloadSchemaParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Params, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Params!.Value, typeInfo);
             }
         }
     }

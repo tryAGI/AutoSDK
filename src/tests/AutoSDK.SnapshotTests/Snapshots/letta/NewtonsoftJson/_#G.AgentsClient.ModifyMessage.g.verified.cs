@@ -250,6 +250,7 @@ namespace G
             string messageId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AnyOf<global::G.UpdateSystemMessage, global::G.UpdateUserMessage, global::G.UpdateReasoningMessage, global::G.UpdateAssistantMessage>
             {
             };

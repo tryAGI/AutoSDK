@@ -187,6 +187,7 @@ namespace G
             global::G.ImageStyle style,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateStyleRequest
             {
                 Images = images,

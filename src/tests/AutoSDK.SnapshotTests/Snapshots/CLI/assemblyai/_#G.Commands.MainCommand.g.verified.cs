@@ -8,7 +8,7 @@ namespace G
     {
         public MainCommand(
             FileGroupCommand command0,
-            LeMUR2GroupCommand command1,
+            LemurGroupCommand command1,
             RealtimeGroupCommand command2,
             TranscriptGroupCommand command3)
             : base(

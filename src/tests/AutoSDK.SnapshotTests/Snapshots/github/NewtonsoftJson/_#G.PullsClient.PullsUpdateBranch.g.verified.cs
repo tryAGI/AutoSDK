@@ -280,6 +280,7 @@ namespace G
             string? expectedHeadSha = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PullsUpdateBranchRequest
             {
                 ExpectedHeadSha = expectedHeadSha,

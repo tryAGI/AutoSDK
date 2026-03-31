@@ -164,19 +164,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, int>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, int>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, int>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
             }
             else if (value.IsOpenAICompletionUsageSchema)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAICompletionUsageSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAICompletionUsageSchema?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAICompletionUsageSchema).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAICompletionUsageSchema, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAICompletionUsageSchema!, typeInfo);
             }
             else if (value.IsOpenAIResponseUsageSchema)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIResponseUsageSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIResponseUsageSchema?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAIResponseUsageSchema).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIResponseUsageSchema, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIResponseUsageSchema!, typeInfo);
             }
         }
     }

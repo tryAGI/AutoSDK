@@ -128,13 +128,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateRequestVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateRequestVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TemplatesCreateTemplateRequestVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Agent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Agent!, typeInfo);
             }
             else if (value.IsAgentFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateRequestVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TemplatesCreateTemplateRequestVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentFile, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentFile!, typeInfo);
             }
         }
     }

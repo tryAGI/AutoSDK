@@ -351,6 +351,7 @@ namespace G
             global::System.Collections.Generic.IList<string> accountUrls,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UsersDeleteSocialAccountForAuthenticatedUserRequest
             {
                 AccountUrls = accountUrls,

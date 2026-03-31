@@ -348,6 +348,7 @@ namespace G
             global::G.CreateChargeRequestChainId chainId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateChargeRequest
             {
                 Amount = amount,

@@ -125,13 +125,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptionChunkingStrategyEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptionChunkingStrategyEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptionChunkingStrategyEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
             }
             else if (value.IsValue2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VadConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VadConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VadConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
             }
         }
     }

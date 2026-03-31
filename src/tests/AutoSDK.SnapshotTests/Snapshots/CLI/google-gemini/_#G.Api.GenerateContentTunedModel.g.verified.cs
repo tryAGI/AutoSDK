@@ -200,6 +200,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.SafetySetting>? safetySettings = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.GenerateContentRequest
             {
                 GenerationConfig = generationConfig,

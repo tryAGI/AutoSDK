@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseCharLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseCharLocationCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseCharLocationCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CharLocation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CharLocation!, typeInfo);
             }
             else if (value.IsPageLocation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsePageLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsePageLocationCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsePageLocationCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PageLocation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PageLocation!, typeInfo);
             }
             else if (value.IsContentBlockLocation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseContentBlockLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseContentBlockLocationCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseContentBlockLocationCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentBlockLocation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentBlockLocation!, typeInfo);
             }
         }
     }

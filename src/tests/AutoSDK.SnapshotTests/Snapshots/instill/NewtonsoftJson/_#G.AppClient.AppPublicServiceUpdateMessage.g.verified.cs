@@ -300,6 +300,7 @@ namespace G
             string content,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpdateMessageBody
             {
                 Content = content,

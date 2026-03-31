@@ -331,6 +331,7 @@ namespace G
             global::G.ImageRequest imageRequest,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.GenerateImageRequest
             {
                 ImageRequest = imageRequest,

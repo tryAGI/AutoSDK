@@ -378,6 +378,7 @@ namespace G
             bool? enhanceAudioQuality = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateModelRequest
             {
                 Visibility = visibility,

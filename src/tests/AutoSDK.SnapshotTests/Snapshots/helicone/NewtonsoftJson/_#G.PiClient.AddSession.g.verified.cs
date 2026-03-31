@@ -190,6 +190,7 @@ namespace G
             string sessionUUID,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AddSessionRequest
             {
                 SessionUUID = sessionUUID,

@@ -230,6 +230,7 @@ namespace G
             global::G.Strength? strength = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateModelRequest
             {
                 Name = name,

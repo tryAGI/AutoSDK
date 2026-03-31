@@ -370,55 +370,55 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShotstackDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShotstackDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShotstackDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShotstackDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShotstackDestination!, typeInfo);
             }
             else if (value.IsMuxDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MuxDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MuxDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MuxDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MuxDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MuxDestination!, typeInfo);
             }
             else if (value.IsS3Destination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.S3Destination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.S3Destination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.S3Destination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.S3Destination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.S3Destination!, typeInfo);
             }
             else if (value.IsGoogleCloudStorageDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GoogleCloudStorageDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GoogleCloudStorageDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GoogleCloudStorageDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleCloudStorageDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleCloudStorageDestination!, typeInfo);
             }
             else if (value.IsGoogleDriveDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GoogleDriveDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GoogleDriveDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GoogleDriveDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleDriveDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleDriveDestination!, typeInfo);
             }
             else if (value.IsVimeoDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VimeoDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VimeoDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VimeoDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VimeoDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VimeoDestination!, typeInfo);
             }
             else if (value.IsTiktokDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TiktokDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TiktokDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TiktokDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TiktokDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TiktokDestination!, typeInfo);
             }
             else if (value.IsAkamaiNetStorageDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AkamaiNetStorageDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AkamaiNetStorageDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AkamaiNetStorageDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AkamaiNetStorageDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AkamaiNetStorageDestination!, typeInfo);
             }
             else if (value.IsAzureBlobStorageDestination)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureBlobStorageDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureBlobStorageDestination?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureBlobStorageDestination).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureBlobStorageDestination, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureBlobStorageDestination!, typeInfo);
             }
         }
     }

@@ -82,7 +82,7 @@ namespace G
                 path: "/api/public/v2/folders/entities",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("workspace_id", workspaceId.ToString())
+                .AddRequiredParameter("workspace_id", workspaceId.ToString()!)
                 .AddOptionalParameter("folder_id", folderId?.ToString())
                 .AddOptionalParameter("filter_type", filterType?.ToString())
                 .AddOptionalParameter("search_query", searchQuery)

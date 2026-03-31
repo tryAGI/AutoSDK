@@ -271,6 +271,7 @@ namespace G
             bool? volumeNormalization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.BodyUpdateStudioProjectV1StudioProjectsProjectIdPost
             {
                 Name = name,

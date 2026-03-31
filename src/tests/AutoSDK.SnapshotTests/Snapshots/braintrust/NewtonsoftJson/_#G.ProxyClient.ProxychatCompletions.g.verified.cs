@@ -186,6 +186,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<string> ProxychatCompletionsAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new object
             {
             };

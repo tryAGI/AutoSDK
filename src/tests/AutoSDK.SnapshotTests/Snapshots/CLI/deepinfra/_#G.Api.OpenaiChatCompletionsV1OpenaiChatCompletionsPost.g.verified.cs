@@ -354,6 +354,7 @@ namespace G
             global::G.OpenAIChatCompletionsInReasoningEffort2? reasoningEffort = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.OpenAIChatCompletionsIn
             {
                 Model = model,

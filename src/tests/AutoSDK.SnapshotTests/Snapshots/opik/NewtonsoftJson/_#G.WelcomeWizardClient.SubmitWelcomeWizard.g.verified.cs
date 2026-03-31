@@ -175,6 +175,7 @@ namespace G
             bool? joinBetaProgram = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.WelcomeWizardSubmission
             {
                 Role = role,

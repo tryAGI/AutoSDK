@@ -244,6 +244,7 @@ namespace G
             double? temperature = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateTranslationRequest
             {
                 File = file,

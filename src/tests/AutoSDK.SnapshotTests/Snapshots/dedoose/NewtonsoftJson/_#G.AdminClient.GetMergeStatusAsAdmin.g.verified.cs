@@ -302,6 +302,7 @@ namespace G
             global::System.Guid mergedProjectId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.GetMergeStatusRequest
             {
                 MergedProjectId = mergedProjectId,

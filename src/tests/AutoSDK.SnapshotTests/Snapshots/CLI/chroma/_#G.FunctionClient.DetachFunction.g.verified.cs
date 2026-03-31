@@ -302,6 +302,7 @@ namespace G
             bool? deleteOutput = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.DetachFunctionRequest
             {
                 DeleteOutput = deleteOutput,

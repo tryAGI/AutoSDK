@@ -184,6 +184,7 @@ namespace G
             global::G.GenerateContentBatch? batch = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.BatchGenerateContentRequest
             {
                 Batch = batch,

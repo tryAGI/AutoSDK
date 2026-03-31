@@ -228,6 +228,7 @@ namespace G
             global::System.Collections.Generic.IList<string> refs,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.RefsReadBatchReq
             {
                 Refs = refs,

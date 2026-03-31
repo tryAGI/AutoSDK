@@ -232,6 +232,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.RunsGenerateQueryFeedbackKeys>? feedbackKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.RequestBodyForRunsGenerateQuery
             {
                 Query = query,

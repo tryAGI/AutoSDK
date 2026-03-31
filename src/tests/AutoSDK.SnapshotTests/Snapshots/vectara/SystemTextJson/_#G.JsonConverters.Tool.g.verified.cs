@@ -168,85 +168,85 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DynamicVectaraTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DynamicVectaraTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DynamicVectaraTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DynamicVectara, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DynamicVectara!.Value, typeInfo);
             }
             else if (value.IsMcp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.McpTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp!.Value, typeInfo);
             }
             else if (value.IsCorporaSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CorporaSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CorporaSearchTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CorporaSearchTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CorporaSearch, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CorporaSearch!.Value, typeInfo);
             }
             else if (value.IsWebSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebSearchTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearch, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearch!.Value, typeInfo);
             }
             else if (value.IsWebGet)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebGetTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebGetTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebGetTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebGet, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebGet!.Value, typeInfo);
             }
             else if (value.IsLambda)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LambdaTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LambdaTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LambdaTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Lambda, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Lambda!.Value, typeInfo);
             }
             else if (value.IsStructuredIndexing)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StructuredIndexingTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StructuredIndexingTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StructuredIndexingTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StructuredIndexing, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StructuredIndexing!.Value, typeInfo);
             }
             else if (value.IsSubAgent)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SubAgentTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SubAgentTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SubAgentTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SubAgent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SubAgent!.Value, typeInfo);
             }
             else if (value.IsArtifactCreate)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ArtifactCreateTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ArtifactCreateTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ArtifactCreateTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ArtifactCreate, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ArtifactCreate!.Value, typeInfo);
             }
             else if (value.IsArtifactRead)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ArtifactReadTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ArtifactReadTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ArtifactReadTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ArtifactRead, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ArtifactRead!.Value, typeInfo);
             }
             else if (value.IsArtifactGrep)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ArtifactGrepTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ArtifactGrepTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ArtifactGrepTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ArtifactGrep, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ArtifactGrep!.Value, typeInfo);
             }
             else if (value.IsImageRead)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageReadTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageReadTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageReadTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageRead, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageRead!.Value, typeInfo);
             }
             else if (value.IsDocumentConversion)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DocumentConversionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DocumentConversionTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DocumentConversionTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentConversion, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentConversion!.Value, typeInfo);
             }
             else if (value.IsGetDocumentText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetDocumentTextTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetDocumentTextTool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetDocumentTextTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GetDocumentText, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GetDocumentText!.Value, typeInfo);
             }
         }
     }

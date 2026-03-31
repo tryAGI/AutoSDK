@@ -258,6 +258,7 @@ namespace G
             global::G.Rule rule,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParams
             {
                 Rule = rule,

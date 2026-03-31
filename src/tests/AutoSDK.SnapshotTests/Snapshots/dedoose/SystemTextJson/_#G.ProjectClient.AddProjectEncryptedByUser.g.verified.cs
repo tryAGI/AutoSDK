@@ -312,6 +312,7 @@ namespace G
             string symKeyHash,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AddProjectEncryptedByUserRequest
             {
                 UserId = userId,

@@ -229,6 +229,7 @@ namespace G
             global::G.TeamsAddOrUpdateProjectPermissionsInOrgRequestPermission? permission = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.TeamsAddOrUpdateProjectPermissionsInOrgRequest
             {
                 Permission = permission,

@@ -302,6 +302,7 @@ namespace G
             global::System.Guid jobId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.GetConvertPDF2SwfResultRequest
             {
                 JobId = jobId,

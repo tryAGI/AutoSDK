@@ -123,13 +123,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Event, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Event!, typeInfo);
             }
             else if (value.IsSentinel)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamSentinel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamSentinel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamSentinel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sentinel, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sentinel!, typeInfo);
             }
         }
     }

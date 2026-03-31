@@ -158,6 +158,7 @@ namespace G
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.ResponseStreamEvent> CreateResponseAsStreamAsync(
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateResponse
             {
             };

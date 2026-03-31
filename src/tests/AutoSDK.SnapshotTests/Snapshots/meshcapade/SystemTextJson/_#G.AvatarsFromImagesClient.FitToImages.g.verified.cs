@@ -236,6 +236,7 @@ namespace G
             string? imageMode = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.FitToImagesRequest
             {
                 ImageMode = imageMode,

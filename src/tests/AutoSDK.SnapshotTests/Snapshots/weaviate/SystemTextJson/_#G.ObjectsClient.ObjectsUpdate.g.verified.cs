@@ -435,6 +435,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, object>? additional = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.Object
             {
                 Class = @class,

@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompletionDetailedJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompletionDetailedJobOut?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompletionDetailedJobOut).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion!, typeInfo);
             }
             else if (value.IsClassifier)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClassifierDetailedJobOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClassifierDetailedJobOut?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClassifierDetailedJobOut).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classifier, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Classifier!, typeInfo);
             }
         }
     }

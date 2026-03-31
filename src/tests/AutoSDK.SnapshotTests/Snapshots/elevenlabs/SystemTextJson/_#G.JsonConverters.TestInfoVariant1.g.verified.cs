@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseUnitTestModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseUnitTestModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseUnitTestModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm!, typeInfo);
             }
             else if (value.IsTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolCallUnitTestModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolCallUnitTestModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolCallUnitTestModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
             }
             else if (value.IsSimulation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SimulationTestModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SimulationTestModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SimulationTestModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Simulation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Simulation!, typeInfo);
             }
         }
     }

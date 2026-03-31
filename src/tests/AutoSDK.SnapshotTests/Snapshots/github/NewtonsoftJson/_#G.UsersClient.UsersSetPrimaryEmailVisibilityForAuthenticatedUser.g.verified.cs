@@ -363,6 +363,7 @@ namespace G
             global::G.UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility visibility,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest
             {
                 Visibility = visibility,

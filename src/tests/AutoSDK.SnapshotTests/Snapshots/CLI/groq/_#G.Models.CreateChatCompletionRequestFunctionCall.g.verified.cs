@@ -1,0 +1,58 @@
+﻿//HintName: G.Models.CreateChatCompletionRequestFunctionCall.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// `none` means the model will not call a function and instead generates a message. `auto` means the model can pick between generating a message or calling a function.
+    /// </summary>
+    public enum CreateChatCompletionRequestFunctionCall
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Auto,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
+        /// <summary>
+        /// 
+        /// </summary>
+        Required,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CreateChatCompletionRequestFunctionCallExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CreateChatCompletionRequestFunctionCall value)
+        {
+            return value switch
+            {
+                CreateChatCompletionRequestFunctionCall.Auto => "auto",
+                CreateChatCompletionRequestFunctionCall.None => "none",
+                CreateChatCompletionRequestFunctionCall.Required => "required",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CreateChatCompletionRequestFunctionCall? ToEnum(string value)
+        {
+            return value switch
+            {
+                "auto" => CreateChatCompletionRequestFunctionCall.Auto,
+                "none" => CreateChatCompletionRequestFunctionCall.None,
+                "required" => CreateChatCompletionRequestFunctionCall.Required,
+                _ => null,
+            };
+        }
+    }
+}

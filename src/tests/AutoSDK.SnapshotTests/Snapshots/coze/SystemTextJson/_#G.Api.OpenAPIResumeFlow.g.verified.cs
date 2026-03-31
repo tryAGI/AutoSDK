@@ -206,6 +206,7 @@ namespace G
             string workflowId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.OpenAPIResumeFlowRequest
             {
                 EventId = eventId,

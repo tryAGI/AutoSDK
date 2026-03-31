@@ -162,19 +162,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseEngineRetellLm), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseEngineRetellLm?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseEngineRetellLm).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RetellLm, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RetellLm!, typeInfo);
             }
             else if (value.IsCustomLm)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseEngineCustomLm), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseEngineCustomLm?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseEngineCustomLm).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomLm, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomLm!, typeInfo);
             }
             else if (value.IsConversationFlow)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseEngineConversationFlow), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseEngineConversationFlow?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseEngineConversationFlow).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationFlow, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationFlow!, typeInfo);
             }
         }
     }

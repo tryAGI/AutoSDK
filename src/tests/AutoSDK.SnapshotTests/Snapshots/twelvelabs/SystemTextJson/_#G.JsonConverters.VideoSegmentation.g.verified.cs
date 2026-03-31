@@ -125,13 +125,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VideoSegmentation0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VideoSegmentation0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VideoSegmentation0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoSegmentation0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoSegmentation0!, typeInfo);
             }
             else if (value.IsVideoSegmentation1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VideoSegmentation1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VideoSegmentation1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VideoSegmentation1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoSegmentation1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoSegmentation1!, typeInfo);
             }
         }
     }

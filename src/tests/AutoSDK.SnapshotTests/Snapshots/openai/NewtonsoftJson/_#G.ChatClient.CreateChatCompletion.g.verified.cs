@@ -208,6 +208,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateChatCompletionResponse> CreateChatCompletionAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateChatCompletionRequest
             {
             };

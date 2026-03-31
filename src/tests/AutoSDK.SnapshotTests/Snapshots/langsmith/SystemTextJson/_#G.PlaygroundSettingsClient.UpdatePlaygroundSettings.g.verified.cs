@@ -244,6 +244,7 @@ namespace G
             global::G.PlaygroundSavedOptions? options = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PlaygroundSettingsUpdateRequest
             {
                 Name = name,

@@ -256,6 +256,7 @@ namespace G
             global::G.PromptOptimizationResult? result = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PromptOptimizationJobUpdate
             {
                 Status = status,

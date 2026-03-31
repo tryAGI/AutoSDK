@@ -125,13 +125,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Audio, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Audio!, typeInfo);
             }
             else if (value.IsVideo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Video, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Video!, typeInfo);
             }
         }
     }

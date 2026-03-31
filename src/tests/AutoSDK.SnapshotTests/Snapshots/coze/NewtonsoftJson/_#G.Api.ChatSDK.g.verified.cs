@@ -194,6 +194,7 @@ namespace G
             global::G.ChatSDKRequestAuth? auth = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ChatSDKRequest
             {
                 Auth = auth,

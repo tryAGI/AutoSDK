@@ -193,19 +193,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComparisonOperator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComparisonOperator?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComparisonOperator).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComparisonOperator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComparisonOperator!, typeInfo);
             }
             else if (value.IsLogicalOperator)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LogicalOperator, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LogicalOperator!, typeInfo);
             }
             else if (value.IsValue3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
             }
         }
     }

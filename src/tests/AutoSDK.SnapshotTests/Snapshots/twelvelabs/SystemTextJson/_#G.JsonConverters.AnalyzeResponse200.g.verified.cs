@@ -125,13 +125,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamAnalyzeResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamAnalyzeResponse> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamAnalyzeResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamAnalyzeResponse, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamAnalyzeResponse!.Value, typeInfo);
             }
             else if (value.IsNonStreamAnalyzeResponse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NonStreamAnalyzeResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NonStreamAnalyzeResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NonStreamAnalyzeResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NonStreamAnalyzeResponse, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NonStreamAnalyzeResponse!, typeInfo);
             }
         }
     }

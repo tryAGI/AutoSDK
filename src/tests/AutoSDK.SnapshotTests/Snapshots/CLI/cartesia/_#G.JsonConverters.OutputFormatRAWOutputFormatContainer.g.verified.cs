@@ -1,0 +1,54 @@
+﻿//HintName: G.JsonConverters.OutputFormatRAWOutputFormatContainer.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class OutputFormatRAWOutputFormatContainerJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.OutputFormatRAWOutputFormatContainer>
+    {
+        /// <inheritdoc />
+        public override global::G.OutputFormatRAWOutputFormatContainer Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.OutputFormatRAWOutputFormatContainerExtensions.ToEnum(stringValue) ?? default;
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.OutputFormatRAWOutputFormatContainer)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.OutputFormatRAWOutputFormatContainer);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.OutputFormatRAWOutputFormatContainer value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteStringValue(global::G.OutputFormatRAWOutputFormatContainerExtensions.ToValueString(value));
+        }
+    }
+}

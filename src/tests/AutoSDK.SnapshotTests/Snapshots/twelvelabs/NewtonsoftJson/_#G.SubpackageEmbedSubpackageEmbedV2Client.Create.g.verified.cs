@@ -393,6 +393,7 @@ namespace G
             global::G.MultiInputRequest? multiInput = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateEmbeddingsRequest
             {
                 InputType = inputType,

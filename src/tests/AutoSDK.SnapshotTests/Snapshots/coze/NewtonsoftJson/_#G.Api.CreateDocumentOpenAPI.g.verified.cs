@@ -216,6 +216,7 @@ namespace G
             int formatType,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateDocumentOpenAPIRequest
             {
                 ChunkStrategy = chunkStrategy,

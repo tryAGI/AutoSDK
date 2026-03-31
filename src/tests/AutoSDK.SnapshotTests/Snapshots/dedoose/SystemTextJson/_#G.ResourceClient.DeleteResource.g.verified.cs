@@ -308,6 +308,7 @@ namespace G
             global::G.Resource resource,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.DeleteResourceRequest
             {
                 CurrentProjectId = currentProjectId,

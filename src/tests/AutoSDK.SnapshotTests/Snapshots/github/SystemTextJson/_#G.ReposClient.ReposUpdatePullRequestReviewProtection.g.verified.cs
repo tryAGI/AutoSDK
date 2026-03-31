@@ -267,6 +267,7 @@ namespace G
             global::G.ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances? bypassPullRequestAllowances = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ReposUpdatePullRequestReviewProtectionRequest
             {
                 DismissalRestrictions = dismissalRestrictions,

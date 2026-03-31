@@ -193,19 +193,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputMessagePhase0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputMessagePhase0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputMessagePhase0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessagePhase0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessagePhase0!.Value, typeInfo);
             }
             else if (value.IsOutputMessagePhase1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputMessagePhase1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputMessagePhase1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputMessagePhase1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessagePhase1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessagePhase1!.Value, typeInfo);
             }
             else if (value.IsValue3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
             }
         }
     }

@@ -222,6 +222,7 @@ namespace G
             global::G.VectorStoreSearchRequestRankingOptions? rankingOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.VectorStoreSearchRequest
             {
                 Query = query,

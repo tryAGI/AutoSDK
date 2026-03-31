@@ -240,6 +240,7 @@ namespace G
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateMessageBatchParams
             {
                 Requests = requests,

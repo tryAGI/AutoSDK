@@ -196,6 +196,7 @@ namespace G
             string? toWorkspaceId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.OpenDuplicateDraftEntityRequest
             {
                 EntityId = entityId,

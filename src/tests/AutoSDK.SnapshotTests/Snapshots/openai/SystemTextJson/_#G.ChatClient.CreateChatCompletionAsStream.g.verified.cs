@@ -180,6 +180,7 @@ namespace G
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateChatCompletionStreamResponse> CreateChatCompletionAsStreamAsync(
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateChatCompletionRequest
             {
             };

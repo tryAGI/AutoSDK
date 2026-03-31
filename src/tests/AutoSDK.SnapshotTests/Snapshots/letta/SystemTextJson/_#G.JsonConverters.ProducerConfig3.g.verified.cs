@@ -125,13 +125,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SlackChannelReader, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SlackChannelReader!, typeInfo);
             }
             else if (value.IsCustomWebhook)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomWebhook, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomWebhook!, typeInfo);
             }
         }
     }

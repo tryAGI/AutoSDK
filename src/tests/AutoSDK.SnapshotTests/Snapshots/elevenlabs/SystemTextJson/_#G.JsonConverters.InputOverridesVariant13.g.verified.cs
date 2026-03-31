@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConstantSchemaOverride), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConstantSchemaOverride?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConstantSchemaOverride).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Constant, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Constant!, typeInfo);
             }
             else if (value.IsDynamicVariable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DynamicVariableSchemaOverride), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DynamicVariableSchemaOverride?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DynamicVariableSchemaOverride).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DynamicVariable, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DynamicVariable!, typeInfo);
             }
             else if (value.IsLlm)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMSchemaOverride), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMSchemaOverride?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMSchemaOverride).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm!, typeInfo);
             }
         }
     }

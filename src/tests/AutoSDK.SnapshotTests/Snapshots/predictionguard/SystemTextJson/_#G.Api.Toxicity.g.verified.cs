@@ -270,6 +270,7 @@ namespace G
             string text,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ToxicityRequest
             {
                 Text = text,

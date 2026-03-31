@@ -123,55 +123,55 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaInvalidRequestError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaInvalidRequestError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaInvalidRequestError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InvalidRequestError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InvalidRequestError!, typeInfo);
             }
             else if (value.IsAuthenticationError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaAuthenticationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaAuthenticationError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaAuthenticationError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AuthenticationError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AuthenticationError!, typeInfo);
             }
             else if (value.IsBillingError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaBillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaBillingError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaBillingError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BillingError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BillingError!, typeInfo);
             }
             else if (value.IsPermissionError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaPermissionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaPermissionError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaPermissionError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PermissionError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PermissionError!, typeInfo);
             }
             else if (value.IsNotFoundError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaNotFoundError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaNotFoundError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaNotFoundError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NotFoundError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NotFoundError!, typeInfo);
             }
             else if (value.IsRateLimitError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRateLimitError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRateLimitError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRateLimitError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RateLimitError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RateLimitError!, typeInfo);
             }
             else if (value.IsTimeoutError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaGatewayTimeoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaGatewayTimeoutError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaGatewayTimeoutError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimeoutError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimeoutError!, typeInfo);
             }
             else if (value.IsApiError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaAPIError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaAPIError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaAPIError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiError!, typeInfo);
             }
             else if (value.IsOverloadedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaOverloadedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaOverloadedError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaOverloadedError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OverloadedError, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OverloadedError!, typeInfo);
             }
         }
     }

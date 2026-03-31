@@ -1,0 +1,46 @@
+﻿//HintName: G.Models.ExpressiveAgentPresenterVoiceOpenAIType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum ExpressiveAgentPresenterVoiceOpenAIType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        AzureOpenai,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ExpressiveAgentPresenterVoiceOpenAITypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ExpressiveAgentPresenterVoiceOpenAIType value)
+        {
+            return value switch
+            {
+                ExpressiveAgentPresenterVoiceOpenAIType.AzureOpenai => "azure-openai",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ExpressiveAgentPresenterVoiceOpenAIType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "azure-openai" => ExpressiveAgentPresenterVoiceOpenAIType.AzureOpenai,
+                _ => null,
+            };
+        }
+    }
+}

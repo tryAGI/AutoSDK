@@ -286,6 +286,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ReposUpdateStatusCheckProtectionRequestCheck>? checks = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ReposUpdateStatusCheckProtectionRequest
             {
                 Strict = strict,

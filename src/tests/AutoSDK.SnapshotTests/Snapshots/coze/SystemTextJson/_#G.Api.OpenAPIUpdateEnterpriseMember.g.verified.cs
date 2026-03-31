@@ -208,6 +208,7 @@ namespace G
             global::G.OpenAPIUpdateEnterpriseMemberRequestRole role,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.OpenAPIUpdateEnterpriseMemberRequest
             {
                 Role = role,

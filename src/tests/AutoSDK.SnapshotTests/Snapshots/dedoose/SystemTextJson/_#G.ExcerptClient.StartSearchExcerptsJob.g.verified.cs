@@ -304,6 +304,7 @@ namespace G
             string searchText,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.StartSearchExcerptsJobRequest
             {
                 ProjectId = projectId,

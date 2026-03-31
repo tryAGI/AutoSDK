@@ -200,6 +200,7 @@ namespace G
             global::G.SessionFilterNode? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.SessionNameQueryParams
             {
                 NameContains = nameContains,

@@ -123,13 +123,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ColorPaletteWithPresetName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ColorPaletteWithPresetName?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ColorPaletteWithPresetName).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ColorPaletteWithPresetName, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ColorPaletteWithPresetName!, typeInfo);
             }
             else if (value.IsColorPaletteWithMembers)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ColorPaletteWithMembers), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ColorPaletteWithMembers?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ColorPaletteWithMembers).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ColorPaletteWithMembers, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ColorPaletteWithMembers!, typeInfo);
             }
         }
     }

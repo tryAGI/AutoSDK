@@ -303,6 +303,7 @@ namespace G
             global::G.UpdateUserExtensionsBodyData data,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpdateUserExtensionsBody
             {
                 Data = data,

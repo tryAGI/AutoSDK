@@ -161,19 +161,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatTextConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatTextConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatTextConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatTextConfig, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatTextConfig!, typeInfo);
             }
             else if (value.IsFormatJsonObjectConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatJsonObjectConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatJsonObjectConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatJsonObjectConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonObjectConfig, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonObjectConfig!, typeInfo);
             }
             else if (value.IsFormatJsonSchemaConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatJsonSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatJsonSchemaConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatJsonSchemaConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonSchemaConfig, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonSchemaConfig!, typeInfo);
             }
         }
     }

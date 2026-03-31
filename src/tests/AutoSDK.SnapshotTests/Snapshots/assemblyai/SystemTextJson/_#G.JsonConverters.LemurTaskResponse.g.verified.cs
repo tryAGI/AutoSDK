@@ -101,7 +101,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LemurStringResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LemurStringResponse> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LemurStringResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.String, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.String!.Value, typeInfo);
             }
         }
     }

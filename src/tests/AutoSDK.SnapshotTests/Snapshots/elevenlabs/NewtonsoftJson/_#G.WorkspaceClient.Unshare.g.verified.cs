@@ -254,6 +254,7 @@ namespace G
             string? workspaceApiKeyId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePost
             {
                 ResourceType = resourceType,

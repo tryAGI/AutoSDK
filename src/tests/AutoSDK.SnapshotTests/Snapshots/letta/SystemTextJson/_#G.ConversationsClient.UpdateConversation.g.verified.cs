@@ -252,6 +252,7 @@ namespace G
             global::G.ModelSettingsVariant19? modelSettings = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpdateConversation
             {
                 Summary = summary,

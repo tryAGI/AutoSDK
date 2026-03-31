@@ -312,6 +312,7 @@ namespace G
             string socketId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PostCliRealtimeAuthRequest
             {
                 ChannelName = channelName,

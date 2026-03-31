@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LocalUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LocalUser?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LocalUser).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Local, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Local!, typeInfo);
             }
             else if (value.IsOauth2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OAuth2User), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OAuth2User?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OAuth2User).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2!, typeInfo);
             }
             else if (value.IsLdap)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LDAPUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LDAPUser?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LDAPUser).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ldap, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ldap!, typeInfo);
             }
             else if (value.IsAnonymous)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnonymousUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnonymousUser?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnonymousUser).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anonymous, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anonymous!, typeInfo);
             }
         }
     }

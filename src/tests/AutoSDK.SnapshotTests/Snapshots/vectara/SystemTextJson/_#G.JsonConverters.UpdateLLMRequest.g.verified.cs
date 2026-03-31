@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateOpenAILLMRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateOpenAILLMRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateOpenAILLMRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenaiCompatible, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenaiCompatible!.Value, typeInfo);
             }
             else if (value.IsOpenaiResponses)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateOpenAIResponsesLLMRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateOpenAIResponsesLLMRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateOpenAIResponsesLLMRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenaiResponses, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenaiResponses!.Value, typeInfo);
             }
             else if (value.IsVertexAi)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateVertexAILLMRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateVertexAILLMRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateVertexAILLMRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VertexAi, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VertexAi!, typeInfo);
             }
             else if (value.IsAnthropic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateAnthropicLLMRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateAnthropicLLMRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateAnthropicLLMRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anthropic, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anthropic!, typeInfo);
             }
         }
     }

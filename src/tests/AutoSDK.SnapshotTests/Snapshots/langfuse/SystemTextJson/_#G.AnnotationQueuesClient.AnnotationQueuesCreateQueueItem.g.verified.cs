@@ -392,6 +392,7 @@ namespace G
             global::G.AnnotationQueueStatus? status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateAnnotationQueueItemRequest
             {
                 ObjectId = objectId,

@@ -303,6 +303,7 @@ namespace G
             double? promptStrength = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.VoiceRemixRequestModel
             {
                 VoiceDescription = voiceDescription,

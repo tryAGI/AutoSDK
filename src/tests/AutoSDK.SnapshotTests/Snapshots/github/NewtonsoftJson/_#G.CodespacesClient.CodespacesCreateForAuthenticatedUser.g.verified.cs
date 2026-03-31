@@ -328,6 +328,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Codespace> CodespacesCreateForAuthenticatedUserAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.OneOf<global::G.CodespacesCreateForAuthenticatedUserRequestVariant1, global::G.CodespacesCreateForAuthenticatedUserRequestVariant2>
             {
             };

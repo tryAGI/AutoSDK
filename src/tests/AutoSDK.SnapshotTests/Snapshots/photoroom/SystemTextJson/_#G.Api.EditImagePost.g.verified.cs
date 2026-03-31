@@ -1285,6 +1285,7 @@ namespace G
             string? virtualModelSize = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.EditImagePostRequest
             {
                 BackgroundBlurMode = backgroundBlurMode,

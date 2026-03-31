@@ -204,6 +204,7 @@ namespace G
             global::G.SessionsUpdateRequestStatus status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.SessionsUpdateRequest
             {
                 ProjectId = projectId,

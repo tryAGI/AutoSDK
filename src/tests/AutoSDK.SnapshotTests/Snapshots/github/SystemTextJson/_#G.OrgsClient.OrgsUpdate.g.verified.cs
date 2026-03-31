@@ -372,6 +372,7 @@ namespace G
             string? secretScanningPushProtectionCustomLink = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.OrgsUpdateRequest
             {
                 BillingEmail = billingEmail,

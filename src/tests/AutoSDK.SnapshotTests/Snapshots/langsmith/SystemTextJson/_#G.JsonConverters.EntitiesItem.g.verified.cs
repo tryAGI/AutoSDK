@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TenantShareRunToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TenantShareRunToken?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TenantShareRunToken).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Run, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Run!, typeInfo);
             }
             else if (value.IsDataset)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TenantShareDatasetToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TenantShareDatasetToken?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TenantShareDatasetToken).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dataset, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dataset!, typeInfo);
             }
         }
     }

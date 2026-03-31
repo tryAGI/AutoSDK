@@ -150,73 +150,73 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EndCallToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EndCallToolConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EndCallToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EndCall, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EndCall!, typeInfo);
             }
             else if (value.IsLanguageDetection)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LanguageDetectionToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LanguageDetectionToolConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LanguageDetectionToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LanguageDetection, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LanguageDetection!, typeInfo);
             }
             else if (value.IsTransferToAgent)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToAgentToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToAgentToolConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferToAgentToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToAgent, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToAgent!, typeInfo);
             }
             else if (value.IsTransferToNumber)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToNumberToolConfigOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToNumberToolConfigOutput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferToNumberToolConfigOutput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToNumber, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToNumber!, typeInfo);
             }
             else if (value.IsSkipTurn)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SkipTurnToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SkipTurnToolConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SkipTurnToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SkipTurn, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SkipTurn!, typeInfo);
             }
             else if (value.IsPlayKeypadTouchTone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PlayDTMFToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PlayDTMFToolConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PlayDTMFToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PlayKeypadTouchTone, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PlayKeypadTouchTone!, typeInfo);
             }
             else if (value.IsVoicemailDetection)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoicemailDetectionToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoicemailDetectionToolConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoicemailDetectionToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoicemailDetection, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoicemailDetection!, typeInfo);
             }
             else if (value.IsMemoryEntrySearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntrySearchToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntrySearchToolConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MemoryEntrySearchToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntrySearch, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntrySearch!, typeInfo);
             }
             else if (value.IsMemoryEntryCreate)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntryCreateToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntryCreateToolConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MemoryEntryCreateToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryCreate, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryCreate!, typeInfo);
             }
             else if (value.IsMemoryEntryUpdate)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntryUpdateToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntryUpdateToolConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MemoryEntryUpdateToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryUpdate, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryUpdate!, typeInfo);
             }
             else if (value.IsMemoryEntryDelete)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntryDeleteToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntryDeleteToolConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MemoryEntryDeleteToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryDelete, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryDelete!, typeInfo);
             }
             else if (value.IsAgentPromptChange)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentPromptChangeToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentPromptChangeToolConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentPromptChangeToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentPromptChange, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentPromptChange!, typeInfo);
             }
         }
     }

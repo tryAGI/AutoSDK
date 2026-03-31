@@ -96,37 +96,37 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RephraseSpan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RephraseSpan?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RephraseSpan).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rephrase, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rephrase!, typeInfo);
             }
             else if (value.IsSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SearchSpan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SearchSpan?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SearchSpan).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Search, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Search!, typeInfo);
             }
             else if (value.IsRerank)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RerankSpan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RerankSpan?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RerankSpan).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rerank, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rerank!, typeInfo);
             }
             else if (value.IsGeneration)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerationSpan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerationSpan?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerationSpan).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Generation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Generation!, typeInfo);
             }
             else if (value.IsFcs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FactualConsistencyScoreSpan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FactualConsistencyScoreSpan?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FactualConsistencyScoreSpan).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Fcs, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Fcs!, typeInfo);
             }
             else if (value.IsRewrittenQuery)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RewrittenQuerySpan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RewrittenQuerySpan?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RewrittenQuerySpan).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RewrittenQuery, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RewrittenQuery!, typeInfo);
             }
         }
     }

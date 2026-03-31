@@ -414,6 +414,7 @@ namespace G
             global::G.CreateFunctionFunctionSchema? functionSchema = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateFunction
             {
                 ProjectId = projectId,

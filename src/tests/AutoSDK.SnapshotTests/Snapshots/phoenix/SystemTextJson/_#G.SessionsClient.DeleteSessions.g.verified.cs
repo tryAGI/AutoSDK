@@ -239,6 +239,7 @@ namespace G
             global::System.Collections.Generic.IList<string> sessionIdentifiers,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.DeleteSessionsRequestBody
             {
                 SessionIdentifiers = sessionIdentifiers,

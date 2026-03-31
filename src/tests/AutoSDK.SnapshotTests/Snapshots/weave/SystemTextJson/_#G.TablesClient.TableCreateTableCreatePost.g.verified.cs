@@ -228,6 +228,7 @@ namespace G
             global::G.TableSchemaForInsert table,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.TableCreateReq
             {
                 Table = table,

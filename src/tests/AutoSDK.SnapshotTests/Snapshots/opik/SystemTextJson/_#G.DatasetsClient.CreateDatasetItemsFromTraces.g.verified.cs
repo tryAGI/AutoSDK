@@ -175,6 +175,7 @@ namespace G
             global::G.TraceEnrichmentOptions enrichmentOptions,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateDatasetItemsFromTracesRequest
             {
                 TraceIds = traceIds,

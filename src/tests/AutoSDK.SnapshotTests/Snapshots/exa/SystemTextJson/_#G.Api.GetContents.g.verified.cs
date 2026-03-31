@@ -195,6 +195,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetContentsResponse> GetContentsAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AllOf<global::G.GetContentsRequest2, global::G.ContentsRequest>
             {
             };

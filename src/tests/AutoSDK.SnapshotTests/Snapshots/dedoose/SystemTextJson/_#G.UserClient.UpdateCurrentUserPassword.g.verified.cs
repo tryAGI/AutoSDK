@@ -304,6 +304,7 @@ namespace G
             string encryptedPass,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpdateCurrentUserPasswordRequest
             {
                 UserId = userId,

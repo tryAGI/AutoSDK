@@ -343,6 +343,7 @@ namespace G
             string? errorMessage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.LogRequest
             {
                 Provider = provider,

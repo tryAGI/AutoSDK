@@ -409,6 +409,7 @@ namespace G
             global::G.ChatRequestSafetyMode? safetyMode = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ChatRequest
             {
                 Message = message,

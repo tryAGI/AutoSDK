@@ -397,61 +397,61 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NearestQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NearestQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NearestQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Nearest, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Nearest!, typeInfo);
             }
             else if (value.IsRecommend)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RecommendQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RecommendQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RecommendQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Recommend, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Recommend!, typeInfo);
             }
             else if (value.IsDiscover)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DiscoverQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DiscoverQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DiscoverQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Discover, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Discover!, typeInfo);
             }
             else if (value.IsContext)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContextQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContextQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContextQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Context, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Context!, typeInfo);
             }
             else if (value.IsOrderBy)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OrderByQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OrderByQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OrderByQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OrderBy, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OrderBy!, typeInfo);
             }
             else if (value.IsFusion)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FusionQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FusionQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FusionQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Fusion, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Fusion!, typeInfo);
             }
             else if (value.IsRrf)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RrfQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RrfQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RrfQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rrf, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rrf!, typeInfo);
             }
             else if (value.IsFormula)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormulaQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormulaQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormulaQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Formula, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Formula!, typeInfo);
             }
             else if (value.IsSample)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SampleQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SampleQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SampleQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sample, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sample!, typeInfo);
             }
             else if (value.IsRelevanceFeedback)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RelevanceFeedbackQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RelevanceFeedbackQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RelevanceFeedbackQuery).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RelevanceFeedback, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RelevanceFeedback!, typeInfo);
             }
         }
     }

@@ -177,13 +177,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PullRequest, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PullRequest!, typeInfo);
             }
             else if (value.IsValue2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullRequestWebhookVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullRequestWebhookVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullRequestWebhookVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
             }
         }
     }

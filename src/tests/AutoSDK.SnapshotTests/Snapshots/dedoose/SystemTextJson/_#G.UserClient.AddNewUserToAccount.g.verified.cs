@@ -320,6 +320,7 @@ namespace G
             global::System.Guid? groupId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AddNewUserToAccountRequest2
             {
                 ProjectId = projectId,

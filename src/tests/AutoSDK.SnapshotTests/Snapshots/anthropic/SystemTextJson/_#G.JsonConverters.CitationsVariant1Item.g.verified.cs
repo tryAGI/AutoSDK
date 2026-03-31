@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestCharLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestCharLocationCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestCharLocationCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CharLocation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CharLocation!, typeInfo);
             }
             else if (value.IsPageLocation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestPageLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestPageLocationCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestPageLocationCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PageLocation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PageLocation!, typeInfo);
             }
             else if (value.IsContentBlockLocation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestContentBlockLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestContentBlockLocationCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestContentBlockLocationCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentBlockLocation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentBlockLocation!, typeInfo);
             }
         }
     }

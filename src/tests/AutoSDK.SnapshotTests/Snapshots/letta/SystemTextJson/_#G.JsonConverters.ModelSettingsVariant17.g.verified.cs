@@ -159,79 +159,79 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAIModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openai, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openai!, typeInfo);
             }
             else if (value.IsAnthropic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnthropicModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnthropicModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnthropicModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anthropic, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anthropic!, typeInfo);
             }
             else if (value.IsGoogleAi)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GoogleAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GoogleAIModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GoogleAIModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleAi, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleAi!, typeInfo);
             }
             else if (value.IsGoogleVertex)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GoogleVertexModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GoogleVertexModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GoogleVertexModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleVertex, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleVertex!, typeInfo);
             }
             else if (value.IsAzure)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Azure, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Azure!, typeInfo);
             }
             else if (value.IsXai)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.XAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.XAIModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.XAIModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Xai, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Xai!, typeInfo);
             }
             else if (value.IsZai)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ZAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ZAIModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ZAIModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Zai, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Zai!, typeInfo);
             }
             else if (value.IsGroq)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GroqModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GroqModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GroqModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Groq, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Groq!, typeInfo);
             }
             else if (value.IsDeepseek)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeepseekModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeepseekModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeepseekModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Deepseek, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Deepseek!, typeInfo);
             }
             else if (value.IsTogether)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TogetherModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TogetherModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TogetherModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Together, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Together!, typeInfo);
             }
             else if (value.IsBedrock)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BedrockModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BedrockModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BedrockModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bedrock, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bedrock!, typeInfo);
             }
             else if (value.IsOpenrouter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenRouterModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenRouterModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenRouterModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openrouter, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openrouter!, typeInfo);
             }
             else if (value.IsChatgptOauth)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatGPTOAuthModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatGPTOAuthModelSettings?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatGPTOAuthModelSettings).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatgptOauth, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatgptOauth!, typeInfo);
             }
         }
     }

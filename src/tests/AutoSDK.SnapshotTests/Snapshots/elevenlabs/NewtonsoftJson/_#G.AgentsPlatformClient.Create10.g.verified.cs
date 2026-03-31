@@ -259,6 +259,7 @@ namespace G
             global::G.MCPToolApprovalPolicy? approvalPolicy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.MCPToolAddApprovalRequestModel
             {
                 ToolName = toolName,

@@ -1,0 +1,61 @@
+﻿//HintName: G.JsonConverters.CreateAnimationDtoFaceOverlapNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class CreateAnimationDtoFaceOverlapNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.CreateAnimationDtoFaceOverlap?>
+    {
+        /// <inheritdoc />
+        public override global::G.CreateAnimationDtoFaceOverlap? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.CreateAnimationDtoFaceOverlapExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.CreateAnimationDtoFaceOverlap)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.CreateAnimationDtoFaceOverlap?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.CreateAnimationDtoFaceOverlap? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.CreateAnimationDtoFaceOverlapExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

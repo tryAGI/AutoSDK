@@ -208,6 +208,7 @@ namespace G
             global::G.PdfConversionFormat format,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ParsePdfRequest
             {
                 Format = format,

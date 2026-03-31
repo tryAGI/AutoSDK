@@ -390,6 +390,7 @@ namespace G
             global::G.MembershipRole role,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.MembershipRequest
             {
                 UserId = userId,

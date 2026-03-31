@@ -53,8 +53,8 @@ namespace G
                 path: "/v1/session/redirect/experiments",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("dataset_id", datasetId.ToString())
-                .AddRequiredParameter("experiment_id", experimentId.ToString())
+                .AddRequiredParameter("dataset_id", datasetId.ToString()!)
+                .AddRequiredParameter("experiment_id", experimentId.ToString()!)
                 .AddOptionalParameter("workspace_name", workspaceName)
                 .AddRequiredParameter("path", path) 
                 ; 

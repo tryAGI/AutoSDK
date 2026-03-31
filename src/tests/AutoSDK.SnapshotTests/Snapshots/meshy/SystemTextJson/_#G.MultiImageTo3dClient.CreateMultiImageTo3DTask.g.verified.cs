@@ -382,6 +382,7 @@ namespace G
             global::G.OriginAt? originAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.MultiImageTo3DRequest
             {
                 ImageUrls = imageUrls,

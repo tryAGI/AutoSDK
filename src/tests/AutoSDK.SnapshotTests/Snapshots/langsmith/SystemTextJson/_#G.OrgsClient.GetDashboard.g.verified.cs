@@ -50,7 +50,7 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("type", type.ToValueString())
-                .AddOptionalParameter("color_scheme", colorScheme?.ToString()) 
+                .AddOptionalParameter("color_scheme", colorScheme?.ToString()!) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

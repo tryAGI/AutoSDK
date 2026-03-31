@@ -277,6 +277,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AnnotationQueueWrite> annotationQueues,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AnnotationQueueBatchWrite
             {
                 AnnotationQueues = annotationQueues,

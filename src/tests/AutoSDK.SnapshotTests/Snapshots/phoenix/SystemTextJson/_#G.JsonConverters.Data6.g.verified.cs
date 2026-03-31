@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CategoricalAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CategoricalAnnotationConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CategoricalAnnotationConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Categorical, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Categorical!, typeInfo);
             }
             else if (value.IsContinuous)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContinuousAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContinuousAnnotationConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContinuousAnnotationConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Continuous, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Continuous!, typeInfo);
             }
             else if (value.IsFreeform)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FreeformAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FreeformAnnotationConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FreeformAnnotationConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Freeform, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Freeform!, typeInfo);
             }
         }
     }

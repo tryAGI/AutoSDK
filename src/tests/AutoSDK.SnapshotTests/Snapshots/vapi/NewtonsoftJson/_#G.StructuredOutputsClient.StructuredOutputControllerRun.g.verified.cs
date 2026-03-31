@@ -209,6 +209,7 @@ namespace G
             global::G.CreateStructuredOutputDTO? structuredOutput = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.StructuredOutputRunDTO
             {
                 PreviewEnabled = previewEnabled,

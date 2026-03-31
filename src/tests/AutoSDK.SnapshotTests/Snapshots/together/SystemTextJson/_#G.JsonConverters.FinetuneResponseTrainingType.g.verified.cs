@@ -127,13 +127,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FullTrainingType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FullTrainingType?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FullTrainingType).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Full, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Full!, typeInfo);
             }
             else if (value.IsLora)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LoRATrainingType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LoRATrainingType?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LoRATrainingType).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Lora, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Lora!, typeInfo);
             }
         }
     }

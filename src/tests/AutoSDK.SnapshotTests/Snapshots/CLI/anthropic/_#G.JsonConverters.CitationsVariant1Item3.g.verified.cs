@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestCharLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestCharLocationCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestCharLocationCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CharLocation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CharLocation!, typeInfo);
             }
             else if (value.IsPageLocation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestPageLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestPageLocationCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestPageLocationCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PageLocation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PageLocation!, typeInfo);
             }
             else if (value.IsContentBlockLocation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestContentBlockLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestContentBlockLocationCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestContentBlockLocationCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentBlockLocation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentBlockLocation!, typeInfo);
             }
         }
     }

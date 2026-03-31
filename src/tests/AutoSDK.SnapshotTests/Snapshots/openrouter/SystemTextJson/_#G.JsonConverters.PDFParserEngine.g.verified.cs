@@ -147,13 +147,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PdfParserEngine0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PdfParserEngine0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PdfParserEngine0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PdfParserEngine0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PdfParserEngine0!.Value, typeInfo);
             }
             else if (value.IsPdfParserEngine1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PdfParserEngine1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PdfParserEngine1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PdfParserEngine1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PdfParserEngine1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PdfParserEngine1!.Value, typeInfo);
             }
         }
     }

@@ -382,6 +382,7 @@ namespace G
             global::System.Collections.Generic.IList<string> traceIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.TraceDeleteMultipleRequest
             {
                 TraceIds = traceIds,

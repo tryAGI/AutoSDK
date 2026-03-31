@@ -193,19 +193,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryNameAndRefName, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryNameAndRefName!.Value, typeInfo);
             }
             else if (value.IsRepositoryIdAndRefName)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryIdAndRefName, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryIdAndRefName!.Value, typeInfo);
             }
             else if (value.IsRepositoryPropertyAndRefName)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryPropertyAndRefName, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryPropertyAndRefName!.Value, typeInfo);
             }
         }
     }

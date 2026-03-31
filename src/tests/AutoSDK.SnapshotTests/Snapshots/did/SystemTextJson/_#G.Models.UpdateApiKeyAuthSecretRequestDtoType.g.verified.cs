@@ -1,0 +1,46 @@
+﻿//HintName: G.Models.UpdateApiKeyAuthSecretRequestDtoType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The authentication type.
+    /// </summary>
+    public enum UpdateApiKeyAuthSecretRequestDtoType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        ApiKey,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class UpdateApiKeyAuthSecretRequestDtoTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this UpdateApiKeyAuthSecretRequestDtoType value)
+        {
+            return value switch
+            {
+                UpdateApiKeyAuthSecretRequestDtoType.ApiKey => "api_key",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static UpdateApiKeyAuthSecretRequestDtoType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "api_key" => UpdateApiKeyAuthSecretRequestDtoType.ApiKey,
+                _ => null,
+            };
+        }
+    }
+}

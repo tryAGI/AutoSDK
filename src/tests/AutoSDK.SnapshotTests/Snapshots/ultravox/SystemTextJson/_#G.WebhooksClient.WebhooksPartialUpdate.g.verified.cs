@@ -202,6 +202,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.EventsEnum>? events = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PatchedWebhook
             {
                 Url = url,

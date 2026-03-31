@@ -284,6 +284,7 @@ namespace G
             int? epoch = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CompletionBody
             {
                 Prompt = prompt,

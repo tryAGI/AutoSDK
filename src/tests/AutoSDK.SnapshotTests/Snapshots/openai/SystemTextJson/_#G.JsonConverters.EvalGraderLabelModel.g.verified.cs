@@ -94,7 +94,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderLabelModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderLabelModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderLabelModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LabelModelGrader, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LabelModelGrader!, typeInfo);
             }
         }
     }

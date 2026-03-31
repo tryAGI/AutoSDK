@@ -32,6 +32,7 @@ public record struct EndPoint(
     string DeprecationMessage,
     string ExperimentalStage,
     TypeData RequestType,
+    TypeData RequestInitializationType,
     bool? ForcedRequestStreamValue,
     string StreamTerminator,
     string Remarks

@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowUnconditionalModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowUnconditionalModelInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowUnconditionalModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unconditional, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unconditional!, typeInfo);
             }
             else if (value.IsLlm)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowLLMConditionModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowLLMConditionModelInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowLLMConditionModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm!, typeInfo);
             }
             else if (value.IsResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowResultConditionModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowResultConditionModelInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowResultConditionModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Result, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Result!, typeInfo);
             }
             else if (value.IsExpression)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowExpressionConditionModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowExpressionConditionModelInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowExpressionConditionModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Expression, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Expression!, typeInfo);
             }
         }
     }

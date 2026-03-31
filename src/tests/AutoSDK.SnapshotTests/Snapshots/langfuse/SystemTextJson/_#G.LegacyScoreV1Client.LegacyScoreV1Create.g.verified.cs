@@ -414,6 +414,7 @@ namespace G
             string? configId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.LegacyCreateScoreRequest
             {
                 Id = id,

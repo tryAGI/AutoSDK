@@ -147,13 +147,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelIdsShared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelIdsShared> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelIdsShared).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shared, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shared!.Value, typeInfo);
             }
             else if (value.IsResponses)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelIdsResponses), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelIdsResponses> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelIdsResponses).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Responses, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Responses!.Value, typeInfo);
             }
         }
     }

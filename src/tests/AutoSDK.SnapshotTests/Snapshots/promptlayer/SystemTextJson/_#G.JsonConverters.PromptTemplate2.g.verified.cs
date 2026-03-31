@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompletionPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompletionPrompt?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompletionPrompt).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion!, typeInfo);
             }
             else if (value.IsChat)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatPrompt?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatPrompt).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat!, typeInfo);
             }
         }
     }

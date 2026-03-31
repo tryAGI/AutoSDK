@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardCallSuccessChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardCallSuccessChartModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DashboardCallSuccessChartModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CallSuccess, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CallSuccess!, typeInfo);
             }
             else if (value.IsCriteria)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardCriteriaChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardCriteriaChartModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DashboardCriteriaChartModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Criteria, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Criteria!, typeInfo);
             }
             else if (value.IsDataCollection)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardDataCollectionChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardDataCollectionChartModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DashboardDataCollectionChartModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataCollection, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataCollection!, typeInfo);
             }
         }
     }

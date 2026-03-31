@@ -184,6 +184,7 @@ namespace G
             string? emailAddress = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.TransferOwnershipRequest
             {
                 EmailAddress = emailAddress,

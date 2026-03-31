@@ -360,6 +360,7 @@ namespace G
             global::G.ThinkingConfigParam? thinking = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CountMessageTokensParams
             {
                 ToolChoice = toolChoice,

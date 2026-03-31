@@ -348,6 +348,7 @@ namespace G
             string nanoid,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.OneOf<global::G.PatchAuthConfigsByNanoidRequestVariant1, global::G.PatchAuthConfigsByNanoidRequestVariant2>
             {
             };

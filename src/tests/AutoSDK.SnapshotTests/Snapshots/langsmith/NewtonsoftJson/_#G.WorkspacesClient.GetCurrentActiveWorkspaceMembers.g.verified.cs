@@ -75,8 +75,8 @@ namespace G
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("emails", emails, delimiter: ",", explode: true)
-                .AddOptionalParameter("ls_user_ids", lsUserIds, selector: static x => x.ToString(), delimiter: ",", explode: true)
-                .AddOptionalParameter("user_ids", userIds, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("ls_user_ids", lsUserIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                .AddOptionalParameter("user_ids", userIds, selector: static x => x.ToString()!, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

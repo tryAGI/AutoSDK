@@ -294,6 +294,7 @@ namespace G
             int? sourceDatasetId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateDraftDatasetVersionRequest
             {
                 DatasetGroupId = datasetGroupId,

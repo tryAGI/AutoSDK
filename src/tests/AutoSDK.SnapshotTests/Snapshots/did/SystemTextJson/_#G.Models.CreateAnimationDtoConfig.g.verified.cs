@@ -1,0 +1,104 @@
+﻿//HintName: G.Models.CreateAnimationDtoConfig.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Advanced configuration option
+    /// </summary>
+    public sealed partial class CreateAnimationDtoConfig
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logo")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.CreateAnimationDtoConfigLogo, bool?>))]
+        public global::G.AnyOf<global::G.CreateAnimationDtoConfigLogo, bool?>? Logo { get; set; }
+
+        /// <summary>
+        /// URL to overlay video to add on the animated result<br/>
+        /// Example: https://path.to.directory/movie.mp4
+        /// </summary>
+        /// <example>https://path.to.directory/movie.mp4</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("overlay")]
+        public string? Overlay { get; set; }
+
+        /// <summary>
+        /// mutes the driver sound in the animated video result, defaults to true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mute")]
+        public bool? Mute { get; set; }
+
+        /// <summary>
+        /// stitch back the animated result to the original image
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stitch")]
+        public bool? Stitch { get; set; }
+
+        /// <summary>
+        /// the amount of faces to animate when stitch: true. Defaults to 5
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_animated_faces")]
+        public double? MaxAnimatedFaces { get; set; }
+
+        /// <summary>
+        /// the file format of the animated video result
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("result_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateAnimationDtoConfigResultFormatJsonConverter))]
+        public global::G.CreateAnimationDtoConfigResultFormat? ResultFormat { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAnimationDtoConfig" /> class.
+        /// </summary>
+        /// <param name="logo"></param>
+        /// <param name="overlay">
+        /// URL to overlay video to add on the animated result<br/>
+        /// Example: https://path.to.directory/movie.mp4
+        /// </param>
+        /// <param name="mute">
+        /// mutes the driver sound in the animated video result, defaults to true
+        /// </param>
+        /// <param name="stitch">
+        /// stitch back the animated result to the original image
+        /// </param>
+        /// <param name="maxAnimatedFaces">
+        /// the amount of faces to animate when stitch: true. Defaults to 5
+        /// </param>
+        /// <param name="resultFormat">
+        /// the file format of the animated video result
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public CreateAnimationDtoConfig(
+            global::G.AnyOf<global::G.CreateAnimationDtoConfigLogo, bool?>? logo,
+            string? overlay,
+            bool? mute,
+            bool? stitch,
+            double? maxAnimatedFaces,
+            global::G.CreateAnimationDtoConfigResultFormat? resultFormat)
+        {
+            this.Logo = logo;
+            this.Overlay = overlay;
+            this.Mute = mute;
+            this.Stitch = stitch;
+            this.MaxAnimatedFaces = maxAnimatedFaces;
+            this.ResultFormat = resultFormat;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAnimationDtoConfig" /> class.
+        /// </summary>
+        public CreateAnimationDtoConfig()
+        {
+        }
+    }
+}

@@ -246,6 +246,7 @@ namespace G
             global::G.ProjectUserUpdateRequestRole role,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ProjectUserUpdateRequest
             {
                 Role = role,

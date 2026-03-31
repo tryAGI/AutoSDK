@@ -147,13 +147,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAiResponsesToolChoiceOneOf4Type0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAiResponsesToolChoiceOneOf4Type0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAiResponsesToolChoiceOneOf4Type0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoiceOneOf4Type0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoiceOneOf4Type0!.Value, typeInfo);
             }
             else if (value.IsOpenAiResponsesToolChoiceOneOf4Type1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAiResponsesToolChoiceOneOf4Type1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAiResponsesToolChoiceOneOf4Type1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAiResponsesToolChoiceOneOf4Type1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoiceOneOf4Type1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAiResponsesToolChoiceOneOf4Type1!.Value, typeInfo);
             }
         }
     }

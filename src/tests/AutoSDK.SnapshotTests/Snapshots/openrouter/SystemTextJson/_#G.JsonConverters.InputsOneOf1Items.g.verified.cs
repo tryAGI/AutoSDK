@@ -551,79 +551,79 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningItem, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningItem!, typeInfo);
             }
             else if (value.IsEasyInputMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EasyInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EasyInputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EasyInputMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessage, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessage!, typeInfo);
             }
             else if (value.IsInputMessageItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItem, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItem!, typeInfo);
             }
             else if (value.IsFunctionCallItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionCallItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionCallItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCallItem, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCallItem!, typeInfo);
             }
             else if (value.IsFunctionCallOutputItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionCallOutputItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionCallOutputItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionCallOutputItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCallOutputItem, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCallOutputItem!, typeInfo);
             }
             else if (value.IsInputsOneOf1Items5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputsOneOf1Items5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputsOneOf1Items5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputsOneOf1Items5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1Items5, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1Items5!, typeInfo);
             }
             else if (value.IsInputsOneOf1Items6)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputsOneOf1Items6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputsOneOf1Items6?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputsOneOf1Items6).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1Items6, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1Items6!, typeInfo);
             }
             else if (value.IsOutputFunctionCallItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputFunctionCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputFunctionCallItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputFunctionCallItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputFunctionCallItem, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputFunctionCallItem!, typeInfo);
             }
             else if (value.IsOutputWebSearchCallItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputWebSearchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputWebSearchCallItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputWebSearchCallItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputWebSearchCallItem, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputWebSearchCallItem!, typeInfo);
             }
             else if (value.IsOutputFileSearchCallItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputFileSearchCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputFileSearchCallItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputFileSearchCallItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputFileSearchCallItem, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputFileSearchCallItem!, typeInfo);
             }
             else if (value.IsOutputImageGenerationCallItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputImageGenerationCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputImageGenerationCallItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputImageGenerationCallItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputImageGenerationCallItem, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputImageGenerationCallItem!, typeInfo);
             }
             else if (value.IsOutputDatetimeItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputDatetimeItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputDatetimeItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputDatetimeItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputDatetimeItem, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputDatetimeItem!, typeInfo);
             }
             else if (value.IsOutputServerToolItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputServerToolItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputServerToolItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputServerToolItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputServerToolItem, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputServerToolItem!, typeInfo);
             }
         }
     }

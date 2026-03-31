@@ -276,6 +276,7 @@ namespace G
             global::G.ProducerConfig2 producerConfig,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PipelinesUpdatePipelineProducerConfigRequest
             {
                 ProducerConfig = producerConfig,

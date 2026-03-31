@@ -224,6 +224,7 @@ namespace G
             string roleArn,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AWSAuthCreate
             {
                 RoleArn = roleArn,

@@ -96,7 +96,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateCharacterPerformanceRequestActTwo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateCharacterPerformanceRequestActTwo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateCharacterPerformanceRequestActTwo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ActTwo, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ActTwo!, typeInfo);
             }
         }
     }

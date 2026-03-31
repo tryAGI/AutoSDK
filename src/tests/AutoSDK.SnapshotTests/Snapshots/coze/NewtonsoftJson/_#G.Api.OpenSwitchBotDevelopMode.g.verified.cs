@@ -200,6 +200,7 @@ namespace G
             global::G.OpenSwitchBotDevelopModeRequestCollaborationMode? collaborationMode = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.OpenSwitchBotDevelopModeRequest
             {
                 CollaborationMode = collaborationMode,

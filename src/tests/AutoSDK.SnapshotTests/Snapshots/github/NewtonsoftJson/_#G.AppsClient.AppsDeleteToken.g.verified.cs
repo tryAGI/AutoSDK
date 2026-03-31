@@ -209,6 +209,7 @@ namespace G
             string accessToken,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.AppsDeleteTokenRequest
             {
                 AccessToken = accessToken,

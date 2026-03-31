@@ -326,6 +326,7 @@ namespace G
             global::G.CreateAssetUploadRequestType type = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateAssetUploadRequest
             {
                 Filename = filename,

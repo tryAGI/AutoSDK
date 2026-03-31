@@ -232,6 +232,7 @@ namespace G
             global::G.ChatClassificationRequestInputs input,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.ChatClassificationRequest
             {
                 Model = model,

@@ -425,6 +425,7 @@ namespace G
             double? earlyStopThreshold = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.TTSRequest
             {
                 Text = text,

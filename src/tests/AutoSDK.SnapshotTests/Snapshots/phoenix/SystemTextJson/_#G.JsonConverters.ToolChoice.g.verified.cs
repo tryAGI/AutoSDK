@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptToolChoiceNone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptToolChoiceNone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptToolChoiceNone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.None, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.None!, typeInfo);
             }
             else if (value.IsZeroOrMore)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptToolChoiceZeroOrMore), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptToolChoiceZeroOrMore?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptToolChoiceZeroOrMore).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ZeroOrMore, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ZeroOrMore!, typeInfo);
             }
             else if (value.IsOneOrMore)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptToolChoiceOneOrMore), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptToolChoiceOneOrMore?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptToolChoiceOneOrMore).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OneOrMore, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OneOrMore!, typeInfo);
             }
             else if (value.IsSpecificFunction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptToolChoiceSpecificFunctionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptToolChoiceSpecificFunctionTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptToolChoiceSpecificFunctionTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpecificFunction, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpecificFunction!, typeInfo);
             }
         }
     }

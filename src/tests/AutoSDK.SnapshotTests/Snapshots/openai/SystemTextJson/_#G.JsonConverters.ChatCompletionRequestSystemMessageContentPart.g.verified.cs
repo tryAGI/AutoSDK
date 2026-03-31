@@ -90,7 +90,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestMessageContentPartText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestMessageContentPartText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestMessageContentPartText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextContentPart, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextContentPart!, typeInfo);
             }
         }
     }

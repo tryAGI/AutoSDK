@@ -1,0 +1,52 @@
+﻿//HintName: G.Models.EvalStatusPageTheme.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The theme for the page
+    /// </summary>
+    public enum EvalStatusPageTheme
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Dark,
+        /// <summary>
+        /// 
+        /// </summary>
+        Light,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class EvalStatusPageThemeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this EvalStatusPageTheme value)
+        {
+            return value switch
+            {
+                EvalStatusPageTheme.Dark => "dark",
+                EvalStatusPageTheme.Light => "light",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static EvalStatusPageTheme? ToEnum(string value)
+        {
+            return value switch
+            {
+                "dark" => EvalStatusPageTheme.Dark,
+                "light" => EvalStatusPageTheme.Light,
+                _ => null,
+            };
+        }
+    }
+}

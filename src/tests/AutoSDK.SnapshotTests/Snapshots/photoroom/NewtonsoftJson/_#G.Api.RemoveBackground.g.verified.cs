@@ -383,6 +383,7 @@ namespace G
             global::G.RemoveBackgroundPostParamsDespill? despill = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.RemoveBackgroundPostParams
             {
                 ImageFile = imageFile,

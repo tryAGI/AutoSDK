@@ -244,31 +244,31 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingImageMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingImageMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingImageMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingImageMetadata, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingImageMetadata!, typeInfo);
             }
             else if (value.IsEmbeddingTextImageMetadata)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingTextImageMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingTextImageMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingTextImageMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingTextImageMetadata, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingTextImageMetadata!, typeInfo);
             }
             else if (value.IsEmbeddingAudioMetadata)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingAudioMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingAudioMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingAudioMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingAudioMetadata, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingAudioMetadata!, typeInfo);
             }
             else if (value.IsEmbeddingVideoMetadata)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingVideoMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingVideoMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingVideoMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingVideoMetadata, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingVideoMetadata!, typeInfo);
             }
             else if (value.IsEmbeddingMultiInputMetadata)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingMultiInputMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingMultiInputMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingMultiInputMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingMultiInputMetadata, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingMultiInputMetadata!, typeInfo);
             }
         }
     }

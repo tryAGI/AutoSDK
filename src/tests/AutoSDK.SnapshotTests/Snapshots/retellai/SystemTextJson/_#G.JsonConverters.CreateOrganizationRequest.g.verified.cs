@@ -123,13 +123,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateOrganizationRequestNew), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateOrganizationRequestNew?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateOrganizationRequestNew).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.New, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.New!, typeInfo);
             }
             else if (value.IsOld)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateOrganizationRequestOld), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateOrganizationRequestOld?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateOrganizationRequestOld).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Old, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Old!, typeInfo);
             }
         }
     }

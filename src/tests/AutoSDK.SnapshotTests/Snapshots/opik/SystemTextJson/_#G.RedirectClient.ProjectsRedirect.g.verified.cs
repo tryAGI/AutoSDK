@@ -48,7 +48,7 @@ namespace G
                 path: "/v1/session/redirect/projects",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("trace_id", traceId.ToString())
+                .AddRequiredParameter("trace_id", traceId.ToString()!)
                 .AddOptionalParameter("workspace_name", workspaceName)
                 .AddRequiredParameter("path", path) 
                 ; 

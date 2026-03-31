@@ -241,6 +241,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? addons = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.CreateRequest
             {
                 IndexName = indexName,

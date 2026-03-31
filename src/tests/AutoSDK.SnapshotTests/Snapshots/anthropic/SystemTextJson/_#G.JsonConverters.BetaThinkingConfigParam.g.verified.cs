@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaThinkingConfigEnabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaThinkingConfigEnabled?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaThinkingConfigEnabled).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enabled, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enabled!, typeInfo);
             }
             else if (value.IsDisabled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaThinkingConfigDisabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaThinkingConfigDisabled?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaThinkingConfigDisabled).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled!, typeInfo);
             }
         }
     }

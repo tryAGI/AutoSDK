@@ -57,7 +57,7 @@ namespace G
                 path: "/v1/private/local-runners",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
-                .AddRequiredParameter("project_id", projectId.ToString())
+                .AddRequiredParameter("project_id", projectId.ToString()!)
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("size", size?.ToString()) 
                 ; 

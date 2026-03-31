@@ -228,6 +228,7 @@ namespace G
             global::System.Guid? datasetId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.TriggerRulesRequest
             {
                 RuleIds = ruleIds,

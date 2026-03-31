@@ -158,19 +158,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking0, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking0!, typeInfo);
             }
             else if (value.IsMessagesRequestThinking1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking1!, typeInfo);
             }
             else if (value.IsMessagesRequestThinking2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking2!, typeInfo);
             }
         }
     }

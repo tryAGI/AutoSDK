@@ -301,6 +301,7 @@ namespace G
             int? continueAsNewThreshold = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.BatchJobCreateRequest
             {
                 DirectoryId = directoryId,

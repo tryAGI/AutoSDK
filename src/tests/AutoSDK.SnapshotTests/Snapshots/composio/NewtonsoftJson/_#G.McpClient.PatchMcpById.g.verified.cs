@@ -419,6 +419,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? authConfigIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.PatchMcpByIdRequest
             {
                 Name = name,

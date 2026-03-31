@@ -397,6 +397,7 @@ namespace G
             global::G.UpdateRedemptionStatusBodyStatus status,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.UpdateRedemptionStatusBody
             {
                 Status = status,

@@ -123,13 +123,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Language), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Language> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Language).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Language, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Language!.Value, typeInfo);
             }
             else if (value.IsSet)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StopwordsSet), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StopwordsSet?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StopwordsSet).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Set, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Set!, typeInfo);
             }
         }
     }

@@ -247,6 +247,7 @@ namespace G
             global::G.BodyGenerateCompositionPlanV1MusicPlanPostModelId? modelId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::G.BodyGenerateCompositionPlanV1MusicPlanPost
             {
                 Prompt = prompt,
