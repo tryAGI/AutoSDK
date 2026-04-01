@@ -228,7 +228,6 @@ namespace G
             string setupIntent,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.StripePaymentInformation
             {
                 BillingInfo = billingInfo,

@@ -306,7 +306,6 @@ namespace G
             bool? maintainerCanModify = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PullsUpdateRequest
             {
                 Title = title,

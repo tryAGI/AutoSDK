@@ -270,7 +270,6 @@ namespace G
             bool? archiveSourceBranch = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyMergeABranchIntoATargetBranchV1ConvaiAgentsAgentIdBranchesSourceBranchIdMergePost
             {
                 ArchiveSourceBranch = archiveSourceBranch,

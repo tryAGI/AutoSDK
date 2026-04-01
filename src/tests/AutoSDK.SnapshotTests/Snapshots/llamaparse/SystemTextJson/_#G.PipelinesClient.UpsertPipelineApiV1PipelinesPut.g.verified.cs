@@ -309,7 +309,6 @@ namespace G
             global::System.Guid? managedPipelineId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PipelineCreate
             {
                 EmbeddingConfig = embeddingConfig,

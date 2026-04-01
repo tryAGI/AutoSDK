@@ -338,7 +338,6 @@ namespace G
             global::G.OrderByInterface? orderBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ScrollRequest
             {
                 ShardKey = shardKey,

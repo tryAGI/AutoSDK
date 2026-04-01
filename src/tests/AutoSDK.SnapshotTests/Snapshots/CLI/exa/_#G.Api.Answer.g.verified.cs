@@ -45,7 +45,6 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::G.AnswerRequest
             {
                 Query = request.Query,
@@ -216,7 +215,6 @@ namespace G
             bool? text = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AnswerRequest
             {
                 Query = query,

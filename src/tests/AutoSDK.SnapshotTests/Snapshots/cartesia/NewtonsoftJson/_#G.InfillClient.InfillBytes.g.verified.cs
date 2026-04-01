@@ -308,7 +308,6 @@ namespace G
             global::G.OutputFormat? outputFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.InfillBytesRequest
             {
                 LeftAudio = leftAudio,

@@ -230,7 +230,6 @@ namespace G
             string? negativePrompt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateImagesGenerationsRequest
             {
                 Prompt = prompt,

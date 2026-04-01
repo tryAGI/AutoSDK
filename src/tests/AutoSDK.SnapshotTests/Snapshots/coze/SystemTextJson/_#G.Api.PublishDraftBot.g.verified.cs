@@ -196,7 +196,6 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, string>>? connectors = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PublishDraftBotRequest
             {
                 BotId = botId,

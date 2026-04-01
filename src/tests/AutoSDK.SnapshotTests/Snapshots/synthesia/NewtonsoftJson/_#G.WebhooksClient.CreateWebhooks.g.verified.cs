@@ -274,7 +274,6 @@ namespace G
             string url,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateWebhookRequest
             {
                 Events = events,

@@ -300,7 +300,6 @@ namespace G
             int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AggregateRequest
             {
                 PageSize = pageSize,

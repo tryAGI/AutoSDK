@@ -213,7 +213,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.SystemMessage, global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage, global::G.DeveloperMessage>>? messages = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateSessionDTO
             {
                 Name = name,

@@ -300,7 +300,6 @@ namespace G
             int? workspaceId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MoveFolderEntitiesRequest
             {
                 Entities = entities,

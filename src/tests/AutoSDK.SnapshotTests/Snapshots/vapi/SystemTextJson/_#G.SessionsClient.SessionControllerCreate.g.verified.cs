@@ -245,7 +245,6 @@ namespace G
             global::G.ImportTwilioPhoneNumberDTO? phoneNumber = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateSessionDTO
             {
                 Name = name,

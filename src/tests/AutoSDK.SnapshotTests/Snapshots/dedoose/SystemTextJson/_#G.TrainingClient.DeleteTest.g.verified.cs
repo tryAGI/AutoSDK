@@ -306,7 +306,6 @@ namespace G
             global::G.TrainingTest objTest,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DeleteTestRequest
             {
                 ObjTest = objTest,

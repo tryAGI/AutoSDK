@@ -227,7 +227,6 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, global::G.Manifest>? manifests = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.Snapshot
             {
                 Version = version,

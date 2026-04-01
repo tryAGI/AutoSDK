@@ -297,7 +297,6 @@ namespace G
             global::G.RechargeSettings? rechargeSettings = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PostApiSubscriptionRequest
             {
                 RechargeSettings = rechargeSettings,

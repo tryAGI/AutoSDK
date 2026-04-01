@@ -264,7 +264,6 @@ namespace G
             global::System.Collections.Generic.IList<string> allowedDomains,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateClientKeyRequest
             {
                 AllowedDomains = allowedDomains,

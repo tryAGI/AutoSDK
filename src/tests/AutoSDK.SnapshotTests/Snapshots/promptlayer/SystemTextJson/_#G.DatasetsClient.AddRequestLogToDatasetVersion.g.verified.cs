@@ -294,7 +294,6 @@ namespace G
             int requestLogId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AddRequestLogToDatasetVersionRequest
             {
                 DatasetGroupId = datasetGroupId,

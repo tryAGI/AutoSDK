@@ -349,7 +349,6 @@ namespace G
             global::G.CreateImageEditRequestQuality? quality = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateImageEditRequest
             {
                 Image = image,

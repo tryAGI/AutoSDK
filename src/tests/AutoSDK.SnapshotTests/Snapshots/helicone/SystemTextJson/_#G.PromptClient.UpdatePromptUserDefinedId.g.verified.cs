@@ -198,7 +198,6 @@ namespace G
             string userDefinedId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdatePromptUserDefinedIdRequest
             {
                 UserDefinedId = userDefinedId,

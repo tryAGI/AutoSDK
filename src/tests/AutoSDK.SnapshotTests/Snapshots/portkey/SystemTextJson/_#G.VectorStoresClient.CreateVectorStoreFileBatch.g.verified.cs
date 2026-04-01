@@ -208,7 +208,6 @@ namespace G
             global::G.ChunkingStrategyRequestParam? chunkingStrategy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateVectorStoreFileBatchRequest
             {
                 FileIds = fileIds,

@@ -211,7 +211,6 @@ namespace G
             global::G.BodyTextToDialogueStreamWithTimestampsApplyTextNormalization? applyTextNormalization = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyTextToDialogueStreamWithTimestamps
             {
                 Inputs = inputs,

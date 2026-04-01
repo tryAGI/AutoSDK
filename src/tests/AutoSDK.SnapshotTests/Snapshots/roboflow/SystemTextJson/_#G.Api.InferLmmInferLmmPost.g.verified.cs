@@ -297,7 +297,6 @@ namespace G
             int? maxNewTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.LMMInferenceRequest
             {
                 Id = id,

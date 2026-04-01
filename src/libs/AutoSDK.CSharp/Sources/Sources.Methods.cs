@@ -204,7 +204,7 @@ namespace {endPoint.Settings.Namespace}
             {targetPrefix} = new {endPoint.RequestType.CSharpTypeWithoutNullability}
             {{
 {assignments}
-            }};";
+            }};".TrimStart('\r', '\n');
         }
 
         return @$"
@@ -212,7 +212,7 @@ namespace {endPoint.Settings.Namespace}
                 new {nestedRequestType.CSharpTypeWithoutNullability}
                 {{
 {assignments}
-                }});";
+                }});".TrimStart('\r', '\n');
     }
 
     private static string GeneratePinnedRequestCopy(EndPoint endPoint, string sourceRequestExpression)

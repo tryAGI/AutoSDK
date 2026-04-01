@@ -332,7 +332,6 @@ namespace G
             bool? enableVideoStream = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateRequest4
             {
                 AssetId = assetId,

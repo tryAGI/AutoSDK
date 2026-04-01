@@ -196,7 +196,6 @@ namespace G
             double timeZoneDifference,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DataOverTimeRequest
             {
                 TimeFilter = timeFilter,

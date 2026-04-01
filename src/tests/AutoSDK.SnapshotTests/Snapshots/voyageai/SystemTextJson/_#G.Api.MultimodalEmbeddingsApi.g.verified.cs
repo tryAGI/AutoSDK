@@ -352,7 +352,6 @@ namespace G
             global::G.MultimodalEmbeddingsApiRequestOutputEncoding? outputEncoding = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MultimodalEmbeddingsApiRequest
             {
                 Inputs = inputs,

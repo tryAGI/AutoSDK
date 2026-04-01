@@ -255,7 +255,6 @@ namespace G
             global::G.VectorStoreChunkSearchOptions? searchOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.VectorStoreChunkSearchParams
             {
                 Query = query,

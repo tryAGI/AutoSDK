@@ -201,7 +201,6 @@ namespace G
             string? authorization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateVectordbRolesGrantPrivilegeRequest
             {
                 RoleName = roleName,

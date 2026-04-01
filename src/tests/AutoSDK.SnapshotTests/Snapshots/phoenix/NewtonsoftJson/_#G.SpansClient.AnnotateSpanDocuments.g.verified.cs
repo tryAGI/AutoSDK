@@ -305,7 +305,6 @@ namespace G
             bool? sync = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AnnotateSpanDocumentsRequestBody
             {
                 Data = data,

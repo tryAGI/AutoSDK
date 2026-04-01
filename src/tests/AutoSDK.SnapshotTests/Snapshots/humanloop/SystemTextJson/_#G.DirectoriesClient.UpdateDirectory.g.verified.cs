@@ -200,7 +200,6 @@ namespace G
             string? parentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateDirectoryRequest
             {
                 Path = path,

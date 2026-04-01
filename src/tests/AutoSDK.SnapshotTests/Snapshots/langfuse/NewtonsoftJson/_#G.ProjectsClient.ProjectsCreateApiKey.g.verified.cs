@@ -398,7 +398,6 @@ namespace G
             string? secretKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ProjectsCreateApiKeyRequest
             {
                 Note = note,

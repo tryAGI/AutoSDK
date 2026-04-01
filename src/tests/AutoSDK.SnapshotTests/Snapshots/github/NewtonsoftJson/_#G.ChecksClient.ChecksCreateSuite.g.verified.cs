@@ -200,7 +200,6 @@ namespace G
             string headSha,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ChecksCreateSuiteRequest
             {
                 HeadSha = headSha,

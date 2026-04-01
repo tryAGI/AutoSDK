@@ -254,7 +254,6 @@ namespace G
             global::G.AnyOf<object, global::G.CloudPineconeVectorStore, global::G.CloudPostgresVectorStore, global::G.CloudQdrantVectorStore, global::G.CloudAzureAISearchVectorStore, global::G.CloudMongoDBAtlasVectorSearch, global::G.CloudMilvusVectorStore, global::G.CloudAstraDBVectorStore, object>? component = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DataSinkUpdate
             {
                 Name = name,

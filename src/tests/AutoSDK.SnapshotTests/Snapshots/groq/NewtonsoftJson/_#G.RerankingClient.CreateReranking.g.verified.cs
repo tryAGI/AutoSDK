@@ -214,7 +214,6 @@ namespace G
             string? instruction = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.RerankingRequest
             {
                 Model = model,

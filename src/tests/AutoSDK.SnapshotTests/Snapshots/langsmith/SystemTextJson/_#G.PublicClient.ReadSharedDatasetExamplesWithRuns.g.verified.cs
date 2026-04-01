@@ -242,7 +242,6 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.QueryExampleSchemaWithRuns
             {
                 SessionIds = sessionIds,

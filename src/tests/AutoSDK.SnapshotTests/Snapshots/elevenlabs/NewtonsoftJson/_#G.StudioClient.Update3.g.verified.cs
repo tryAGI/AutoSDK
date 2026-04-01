@@ -262,7 +262,6 @@ namespace G
             global::G.ChapterContentInputModel? content = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPost
             {
                 Name = name,

@@ -260,7 +260,6 @@ namespace G
             string? evaluationRunId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ScoreCreateBody
             {
                 PredictionId = predictionId,

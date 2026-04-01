@@ -227,7 +227,6 @@ namespace G
             string? ttsLanguage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateAgentRequest
             {
                 Name = name,

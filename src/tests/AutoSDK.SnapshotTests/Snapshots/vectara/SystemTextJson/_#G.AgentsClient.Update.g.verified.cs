@@ -410,7 +410,6 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, global::G.UpdateAgentStep>? steps = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateAgentRequest
             {
                 Name = name,

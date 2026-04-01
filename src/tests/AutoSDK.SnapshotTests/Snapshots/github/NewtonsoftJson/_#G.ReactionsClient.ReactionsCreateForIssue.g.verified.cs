@@ -240,7 +240,6 @@ namespace G
             global::G.ReactionsCreateForIssueRequestContent content,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReactionsCreateForIssueRequest
             {
                 Content = content,

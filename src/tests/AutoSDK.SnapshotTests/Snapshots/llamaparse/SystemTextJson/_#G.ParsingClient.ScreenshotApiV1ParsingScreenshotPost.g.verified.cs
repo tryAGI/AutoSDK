@@ -418,7 +418,6 @@ namespace G
             double? jobTimeoutExtraTimePerPageInSeconds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyScreenshotApiV1ParsingScreenshotPost
             {
                 File = file,

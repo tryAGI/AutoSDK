@@ -370,7 +370,6 @@ namespace G
             global::G.OneOf<global::G.ChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice>? toolChoice = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ChatCompletionRequest
             {
                 Model = model,

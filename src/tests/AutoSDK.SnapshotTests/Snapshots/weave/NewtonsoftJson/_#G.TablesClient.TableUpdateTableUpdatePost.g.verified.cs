@@ -232,7 +232,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TableAppendSpec, global::G.TablePopSpec, global::G.TableInsertSpec>> updates,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TableUpdateReq
             {
                 ProjectId = projectId,

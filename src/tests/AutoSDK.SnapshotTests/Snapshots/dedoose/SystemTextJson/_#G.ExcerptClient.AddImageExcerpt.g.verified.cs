@@ -316,7 +316,6 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid> tagIdsToApply,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AddImageExcerptRequest
             {
                 ProjectId = projectId,

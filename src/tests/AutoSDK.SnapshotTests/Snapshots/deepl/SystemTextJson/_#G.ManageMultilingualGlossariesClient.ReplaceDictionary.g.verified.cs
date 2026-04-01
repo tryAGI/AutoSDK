@@ -555,7 +555,6 @@ namespace G
             global::G.GlossaryEntriesFormat? entriesFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MultilingualGlossaryEntries
             {
                 SourceLang = sourceLang,

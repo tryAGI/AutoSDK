@@ -192,7 +192,6 @@ namespace G
             global::G.OneOf<global::G.GraderStringCheck, global::G.GraderTextSimilarity, global::G.GraderPython, global::G.GraderScoreModel, global::G.GraderMulti> grader,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ValidateGraderRequest
             {
                 Grader = grader,

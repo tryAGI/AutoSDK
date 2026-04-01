@@ -276,7 +276,6 @@ namespace G
             bool? featureContributions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ForecastInput
             {
                 Series = series,

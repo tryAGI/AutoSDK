@@ -269,7 +269,6 @@ namespace G
             string? discussionCategoryName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReposUpdateReleaseRequest
             {
                 TagName = tagName,

@@ -280,7 +280,6 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? tags = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateSecretReferenceRequest
             {
                 Name = name,

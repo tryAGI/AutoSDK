@@ -358,7 +358,6 @@ namespace G
             string? requestMetadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ScanFileRequest
             {
                 PolicyUUID = policyUUID,

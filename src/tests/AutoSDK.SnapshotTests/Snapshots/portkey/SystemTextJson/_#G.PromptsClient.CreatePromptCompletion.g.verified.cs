@@ -211,7 +211,6 @@ namespace G
             global::G.OneOf<global::G.CreateChatCompletionRequest, global::G.CreateCompletionRequest>? hyperparameters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreatePromptCompletionRequest2
             {
                 Variables = variables,

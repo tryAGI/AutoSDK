@@ -206,7 +206,6 @@ namespace G
             global::G.UpdateMcpIntegrationTransport? transport = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateMcpIntegration
             {
                 Name = name,

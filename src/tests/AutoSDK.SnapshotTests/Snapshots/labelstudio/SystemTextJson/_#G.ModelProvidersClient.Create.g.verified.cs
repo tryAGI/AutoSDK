@@ -261,7 +261,6 @@ namespace G
             global::G.ScopeEnum? scope = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ModelProviderConnectionRequest
             {
                 ApiKey = apiKey,

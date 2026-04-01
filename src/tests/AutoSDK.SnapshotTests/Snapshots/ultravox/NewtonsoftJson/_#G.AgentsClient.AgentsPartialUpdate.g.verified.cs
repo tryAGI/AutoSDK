@@ -202,7 +202,6 @@ namespace G
             global::G.UltravoxV1CallTemplate? callTemplate = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PatchedAgent
             {
                 Name = name,

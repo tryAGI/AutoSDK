@@ -737,7 +737,6 @@ namespace G
             global::G.OneOf<global::G.ChatRequestServiceTier?, object>? serviceTier = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ChatRequest
             {
                 Provider = provider,

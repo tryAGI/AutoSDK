@@ -338,7 +338,6 @@ namespace G
             global::G.ReadLevel? readLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SearchRequestPayload
             {
                 ReadLevel = readLevel,

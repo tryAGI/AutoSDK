@@ -196,7 +196,6 @@ namespace G
             global::G.DatasetMetadata? meta = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.NewDatasetParams
             {
                 DatasetName = datasetName,

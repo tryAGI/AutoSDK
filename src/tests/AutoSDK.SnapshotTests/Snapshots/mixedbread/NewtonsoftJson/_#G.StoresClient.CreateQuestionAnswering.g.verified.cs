@@ -264,7 +264,6 @@ namespace G
             global::G.QuestionAnsweringOptions? qaOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.StoreQAParams
             {
                 Query = query,

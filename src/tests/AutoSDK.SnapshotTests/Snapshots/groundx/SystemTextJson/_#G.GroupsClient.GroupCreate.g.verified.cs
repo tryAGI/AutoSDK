@@ -235,7 +235,6 @@ namespace G
             string? bucketName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GroupCreateRequest
             {
                 Name = name,

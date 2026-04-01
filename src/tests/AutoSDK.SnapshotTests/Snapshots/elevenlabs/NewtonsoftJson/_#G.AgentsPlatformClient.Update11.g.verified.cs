@@ -240,7 +240,6 @@ namespace G
             bool? enableAudioMessageResponse = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateWhatsAppAccountRequest
             {
                 AssignedAgentId = assignedAgentId,

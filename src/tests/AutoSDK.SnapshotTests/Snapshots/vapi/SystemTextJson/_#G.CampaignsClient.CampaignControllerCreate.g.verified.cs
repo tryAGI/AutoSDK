@@ -221,7 +221,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.CreateCustomerDTO>? customers = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateCampaignDTO
             {
                 Name = name,

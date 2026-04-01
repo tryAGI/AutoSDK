@@ -196,7 +196,6 @@ namespace G
             global::G.ProviderQueryParamsTimeFilter timeFilter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ProviderQueryParams
             {
                 Filter = filter,

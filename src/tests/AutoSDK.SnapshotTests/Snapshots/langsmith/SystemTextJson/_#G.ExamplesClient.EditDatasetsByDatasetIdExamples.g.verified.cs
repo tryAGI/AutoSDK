@@ -423,7 +423,6 @@ namespace G
             string? x_exampleId_Attachment_name_name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PatchDatasetsExamplesRequest
             {
                 x_exampleId_ = x_exampleId_,

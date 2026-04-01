@@ -304,7 +304,6 @@ namespace G
             int maxResults,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GetFilteredProjectsRequest
             {
                 Filter = filter,

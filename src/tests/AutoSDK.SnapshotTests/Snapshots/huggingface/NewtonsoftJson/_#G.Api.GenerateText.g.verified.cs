@@ -189,7 +189,6 @@ namespace G
             global::G.GenerateTextRequestOptions? options = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GenerateTextRequest
             {
                 Inputs = inputs,

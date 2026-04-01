@@ -276,7 +276,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AnyOf<int?, string>>? selectedRepositoryIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest
             {
                 EncryptedValue = encryptedValue,

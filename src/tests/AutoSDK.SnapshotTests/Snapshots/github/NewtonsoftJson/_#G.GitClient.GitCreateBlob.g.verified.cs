@@ -349,7 +349,6 @@ namespace G
             string? encoding = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GitCreateBlobRequest
             {
                 Content = content,

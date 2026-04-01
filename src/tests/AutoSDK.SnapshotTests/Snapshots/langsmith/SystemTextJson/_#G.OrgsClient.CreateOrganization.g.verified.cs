@@ -230,7 +230,6 @@ namespace G
             bool isPersonal,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OrganizationCreate
             {
                 DisplayName = displayName,

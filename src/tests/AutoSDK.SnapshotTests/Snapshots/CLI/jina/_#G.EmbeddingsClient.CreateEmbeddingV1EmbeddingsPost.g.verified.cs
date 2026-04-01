@@ -226,7 +226,6 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ModelEmbeddingOutput> CreateEmbeddingV1EmbeddingsPostAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.EmbeddingInput
             {
             };

@@ -209,7 +209,6 @@ namespace G
             global::G.InsightTimeRangeWithStep? timeRangeOverride = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.InsightRunDTO
             {
                 FormatPlan = formatPlan,

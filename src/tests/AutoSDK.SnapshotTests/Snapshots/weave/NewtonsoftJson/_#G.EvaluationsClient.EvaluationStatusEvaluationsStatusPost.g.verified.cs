@@ -230,7 +230,6 @@ namespace G
             string callId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.EvaluationStatusReq
             {
                 ProjectId = projectId,

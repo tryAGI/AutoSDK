@@ -258,7 +258,6 @@ namespace G
             int? perGroupLimit = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.QueryGroupedExamplesWithRuns
             {
                 SessionIds = sessionIds,

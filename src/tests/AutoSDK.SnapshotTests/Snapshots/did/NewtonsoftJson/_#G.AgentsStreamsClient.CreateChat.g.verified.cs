@@ -237,7 +237,6 @@ namespace G
             bool? persist = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateChatRequest2
             {
                 Persist = persist,

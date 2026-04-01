@@ -272,7 +272,6 @@ namespace G
             global::System.DateTime? toTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TraceSearchStreamRequestPublic
             {
                 ProjectName = projectName,

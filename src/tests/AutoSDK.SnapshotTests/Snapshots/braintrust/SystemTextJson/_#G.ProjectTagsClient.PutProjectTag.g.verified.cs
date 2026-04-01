@@ -396,7 +396,6 @@ namespace G
             string? color = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateProjectTag
             {
                 ProjectId = projectId,

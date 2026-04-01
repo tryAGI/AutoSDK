@@ -306,7 +306,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TranscriptSyncItem> syncItems,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateTranscriptDataRequest
             {
                 Transcript = transcript,

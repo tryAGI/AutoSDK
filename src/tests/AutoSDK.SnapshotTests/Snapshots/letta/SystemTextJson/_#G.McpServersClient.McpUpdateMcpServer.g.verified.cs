@@ -244,7 +244,6 @@ namespace G
             string? serverName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateMCPServerRequest
             {
                 ServerName = serverName,

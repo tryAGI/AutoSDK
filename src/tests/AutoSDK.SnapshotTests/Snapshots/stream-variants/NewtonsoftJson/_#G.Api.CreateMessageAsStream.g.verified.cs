@@ -30,7 +30,6 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::G.MessageRequest
             {
                 Prompt = request.Prompt,
@@ -152,7 +151,6 @@ namespace G
             string prompt,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MessageRequest
             {
                 Prompt = prompt,

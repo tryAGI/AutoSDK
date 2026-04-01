@@ -329,7 +329,6 @@ namespace G
             bool? isGreenscreen = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.Create1Request
             {
                 SourceUrl = sourceUrl,

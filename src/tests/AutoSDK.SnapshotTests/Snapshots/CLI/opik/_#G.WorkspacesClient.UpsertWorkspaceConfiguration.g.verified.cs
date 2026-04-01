@@ -263,7 +263,6 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? colorMap = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.WorkspaceConfiguration
             {
                 TimeoutToMarkThreadAsInactive = timeoutToMarkThreadAsInactive,

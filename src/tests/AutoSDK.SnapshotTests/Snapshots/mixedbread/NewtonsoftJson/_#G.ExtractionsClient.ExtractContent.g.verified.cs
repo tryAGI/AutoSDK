@@ -248,7 +248,6 @@ namespace G
             string? instructions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ExtractContentCreateParams
             {
                 Content = content,

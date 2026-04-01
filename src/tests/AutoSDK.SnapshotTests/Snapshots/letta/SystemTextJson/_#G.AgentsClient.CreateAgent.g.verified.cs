@@ -363,7 +363,6 @@ namespace G
             int? perFileViewWindowCharLimit = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateAgentRequest
             {
                 Name = name,

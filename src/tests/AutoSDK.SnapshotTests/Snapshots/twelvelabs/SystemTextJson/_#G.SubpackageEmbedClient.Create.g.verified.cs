@@ -389,7 +389,6 @@ namespace G
             double? audioStartOffsetSec = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateRequest9
             {
                 ModelName = modelName,

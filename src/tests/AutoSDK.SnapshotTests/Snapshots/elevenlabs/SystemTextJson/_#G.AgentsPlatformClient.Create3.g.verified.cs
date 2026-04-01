@@ -224,7 +224,6 @@ namespace G
             global::G.UserFeedbackScore? feedback = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ConversationFeedbackRequestModel
             {
                 Feedback = feedback,

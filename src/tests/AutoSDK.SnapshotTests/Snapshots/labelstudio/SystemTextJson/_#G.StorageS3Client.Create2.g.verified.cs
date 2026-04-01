@@ -257,7 +257,6 @@ namespace G
             bool? useBlobUrls = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ApiStoragesS3CreateRequest
             {
                 AwsAccessKeyId = awsAccessKeyId,

@@ -256,7 +256,6 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? sessionIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AnnotationQueueCreateSchema
             {
                 Name = name,

@@ -273,7 +273,6 @@ namespace G
             string? baseVoiceId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.VoicesCloneRequest
             {
                 Clip = clip,

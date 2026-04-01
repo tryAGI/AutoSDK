@@ -196,7 +196,6 @@ namespace G
             string stripePaymentMethodId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateAutoTopoffSettingsRequest
             {
                 Enabled = enabled,

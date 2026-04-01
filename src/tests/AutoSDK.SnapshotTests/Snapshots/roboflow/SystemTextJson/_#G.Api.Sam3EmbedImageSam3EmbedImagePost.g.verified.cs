@@ -281,7 +281,6 @@ namespace G
             string? imageId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.Sam2EmbeddingRequest
             {
                 Id = id,

@@ -240,7 +240,6 @@ namespace G
             object jsonSchema,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.JsonSchemaValidateParams
             {
                 JsonSchema = jsonSchema,

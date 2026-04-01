@@ -277,7 +277,6 @@ namespace G
             string? modelId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ClipTextEmbeddingRequest
             {
                 Id = id,

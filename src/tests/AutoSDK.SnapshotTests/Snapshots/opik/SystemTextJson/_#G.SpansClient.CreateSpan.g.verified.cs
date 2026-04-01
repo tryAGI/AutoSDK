@@ -243,7 +243,6 @@ namespace G
             global::G.SpanWriteSource? source = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SpanWrite
             {
                 Id = id,

@@ -245,7 +245,6 @@ namespace G
             global::G.ArticleArticle1? article1 = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.Article
             {
                 Article1 = article1,

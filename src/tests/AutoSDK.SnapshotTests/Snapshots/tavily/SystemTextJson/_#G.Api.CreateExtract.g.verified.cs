@@ -465,7 +465,6 @@ namespace G
             bool? includeUsage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateExtractRequest
             {
                 Urls = urls,

@@ -295,7 +295,6 @@ namespace G
             global::G.OneOf<object, global::G.Schema3>? schema = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateCollectionPayload
             {
                 Configuration = configuration,

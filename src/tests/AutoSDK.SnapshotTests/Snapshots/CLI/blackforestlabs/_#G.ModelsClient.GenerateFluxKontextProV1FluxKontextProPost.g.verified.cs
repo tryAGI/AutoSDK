@@ -280,7 +280,6 @@ namespace G
             int? safetyTolerance = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.FluxKontextProInputs
             {
                 Prompt = prompt,

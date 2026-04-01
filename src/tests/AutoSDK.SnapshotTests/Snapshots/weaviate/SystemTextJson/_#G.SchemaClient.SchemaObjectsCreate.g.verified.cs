@@ -386,7 +386,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Property>? properties = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.Class
             {
                 Class1 = class1,

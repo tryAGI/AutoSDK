@@ -256,7 +256,6 @@ namespace G
             string? deal = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DeepStartApplicationIn
             {
                 Id = id,

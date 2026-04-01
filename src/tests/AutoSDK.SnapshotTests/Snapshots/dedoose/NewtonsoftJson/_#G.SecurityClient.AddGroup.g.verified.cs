@@ -310,7 +310,6 @@ namespace G
             global::System.Guid accessListId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AddGroupRequest
             {
                 ProjectId = projectId,

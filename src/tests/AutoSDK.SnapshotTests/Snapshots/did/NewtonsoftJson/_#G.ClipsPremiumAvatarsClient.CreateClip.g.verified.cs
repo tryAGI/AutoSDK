@@ -437,7 +437,6 @@ namespace G
             string? resultUrl = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateClipRequest2
             {
                 PresenterId = presenterId,

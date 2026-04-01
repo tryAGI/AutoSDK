@@ -206,7 +206,6 @@ namespace G
             string? callbackUrl = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateObjectivesRequest
             {
                 ObjectiveName = objectiveName,

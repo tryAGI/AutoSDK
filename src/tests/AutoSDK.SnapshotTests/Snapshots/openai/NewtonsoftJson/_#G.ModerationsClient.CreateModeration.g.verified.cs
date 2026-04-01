@@ -203,7 +203,6 @@ namespace G
             global::G.AnyOf<string, global::G.CreateModerationRequestModel?>? model = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateModerationRequest
             {
                 Input = input,

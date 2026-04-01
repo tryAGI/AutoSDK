@@ -31,7 +31,6 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::G.ChatCompletionRequest
             {
                 Messages = request.Messages,
@@ -276,7 +275,6 @@ namespace G
             string? safetyModel = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ChatCompletionRequest
             {
                 Messages = messages,

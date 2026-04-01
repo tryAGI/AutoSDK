@@ -308,7 +308,6 @@ namespace G
             string symKeyEncrypted,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.StartExcerptsExportRequest
             {
                 ProjectId = projectId,

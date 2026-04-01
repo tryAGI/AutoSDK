@@ -375,7 +375,6 @@ namespace G
             int? columnId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ProjectsMoveCardRequest
             {
                 Position = position,

@@ -196,7 +196,6 @@ namespace G
             string operationId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CancelOperationRequest
             {
             };

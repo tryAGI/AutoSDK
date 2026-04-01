@@ -321,7 +321,6 @@ namespace G
             global::G.Filter? updateFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateVectors
             {
                 Points = points,

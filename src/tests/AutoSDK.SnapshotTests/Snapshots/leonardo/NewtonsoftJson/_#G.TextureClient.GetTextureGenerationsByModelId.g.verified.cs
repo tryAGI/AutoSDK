@@ -232,7 +232,6 @@ namespace G
             int? requestOffset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GetTextureGenerationsByModelIdRequest
             {
                 Limit = requestLimit,

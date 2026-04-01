@@ -306,7 +306,6 @@ namespace G
             string extension,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.StartGridChartExportJobRequest
             {
                 ProjectId = projectId,

@@ -302,7 +302,6 @@ namespace G
             string relativeFileURL,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GetDesFieldImportDataFromFileRequest
             {
                 RelativeFileURL = relativeFileURL,

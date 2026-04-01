@@ -373,7 +373,6 @@ namespace G
             global::System.Guid? labelId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdatePromptVersionRequest
             {
                 LabelId = labelId,

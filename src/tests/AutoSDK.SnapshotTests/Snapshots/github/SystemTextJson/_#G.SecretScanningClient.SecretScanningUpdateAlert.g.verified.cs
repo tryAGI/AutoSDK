@@ -357,7 +357,6 @@ namespace G
             string? resolutionComment = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SecretScanningUpdateAlertRequest
             {
                 State = state,

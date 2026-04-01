@@ -254,7 +254,6 @@ namespace G
             string runnerName,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.LocalRunnerConnectRequest
             {
                 PairingCode = pairingCode,

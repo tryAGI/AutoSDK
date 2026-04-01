@@ -304,7 +304,6 @@ namespace G
             string rsaEncrptedPass,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SetUserPasswordRequest
             {
                 UserId = userId,

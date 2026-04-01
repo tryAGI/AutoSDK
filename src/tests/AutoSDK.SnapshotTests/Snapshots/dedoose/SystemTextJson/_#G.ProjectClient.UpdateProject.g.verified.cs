@@ -310,7 +310,6 @@ namespace G
             string updatedDescription,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateProjectRequest2
             {
                 ProjectId = projectId,

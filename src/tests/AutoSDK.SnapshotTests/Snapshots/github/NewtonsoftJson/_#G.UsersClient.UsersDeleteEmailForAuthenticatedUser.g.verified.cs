@@ -342,7 +342,6 @@ namespace G
         public async global::System.Threading.Tasks.Task UsersDeleteEmailForAuthenticatedUserAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OneOf<global::G.UsersDeleteEmailForAuthenticatedUserRequest2, global::System.Collections.Generic.IList<string>, string>
             {
             };

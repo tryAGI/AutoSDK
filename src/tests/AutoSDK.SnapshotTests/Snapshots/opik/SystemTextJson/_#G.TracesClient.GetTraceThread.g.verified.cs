@@ -220,7 +220,6 @@ namespace G
             bool? truncate = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TraceThreadIdentifier
             {
                 ProjectName = projectName,

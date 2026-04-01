@@ -307,7 +307,6 @@ namespace G
             global::G.AnyOf<global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnum?, global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnum2>? source = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReposUpdateInformationAboutPagesSiteRequest
             {
                 Cname = cname,

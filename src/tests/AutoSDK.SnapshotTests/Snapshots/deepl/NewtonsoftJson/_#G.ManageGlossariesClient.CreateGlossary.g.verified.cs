@@ -519,7 +519,6 @@ namespace G
             global::G.CreateGlossaryParametersEntriesFormat entriesFormat = global::G.CreateGlossaryParametersEntriesFormat.Tsv,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateGlossaryParameters
             {
                 Name = name,

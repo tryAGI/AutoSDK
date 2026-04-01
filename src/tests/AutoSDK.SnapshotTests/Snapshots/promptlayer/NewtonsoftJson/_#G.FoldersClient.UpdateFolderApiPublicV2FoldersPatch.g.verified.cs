@@ -304,7 +304,6 @@ namespace G
             string name,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateFolderRequest
             {
                 Name = name,

@@ -363,7 +363,6 @@ namespace G
             global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2? fileFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost
             {
                 Audio = audio,

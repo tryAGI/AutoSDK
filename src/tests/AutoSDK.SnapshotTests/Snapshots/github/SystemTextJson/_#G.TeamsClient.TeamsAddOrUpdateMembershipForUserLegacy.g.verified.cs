@@ -315,7 +315,6 @@ namespace G
             global::G.TeamsAddOrUpdateMembershipForUserLegacyRequestRole? role = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TeamsAddOrUpdateMembershipForUserLegacyRequest
             {
                 Role = role,

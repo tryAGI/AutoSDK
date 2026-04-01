@@ -518,7 +518,6 @@ namespace G
             global::G.MessagesRequestSpeed? speed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MessagesRequest
             {
                 Model = model,

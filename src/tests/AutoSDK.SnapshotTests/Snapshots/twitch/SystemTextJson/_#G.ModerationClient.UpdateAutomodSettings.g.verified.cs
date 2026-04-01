@@ -363,7 +363,6 @@ namespace G
             int? swearing = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateAutoModSettingsBody
             {
                 Aggression = aggression,

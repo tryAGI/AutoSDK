@@ -300,7 +300,6 @@ namespace G
             global::System.DateTime? updatedDate = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DocumentStore
             {
                 Id = id,

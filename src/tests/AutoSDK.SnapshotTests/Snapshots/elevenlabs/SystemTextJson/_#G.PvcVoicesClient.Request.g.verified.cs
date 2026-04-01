@@ -275,7 +275,6 @@ namespace G
             string? extraText = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyRequestManualVerificationV1VoicesPvcVoiceIdVerificationPost
             {
                 Files = files,

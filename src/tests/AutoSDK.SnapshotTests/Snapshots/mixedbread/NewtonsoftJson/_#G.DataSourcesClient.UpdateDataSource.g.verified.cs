@@ -248,7 +248,6 @@ namespace G
             global::System.Guid dataSourceId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AnyOf<global::G.NotionDataSourceCreateOrUpdateParams, global::G.LinearDataSourceCreateOrUpdateParams>
             {
             };

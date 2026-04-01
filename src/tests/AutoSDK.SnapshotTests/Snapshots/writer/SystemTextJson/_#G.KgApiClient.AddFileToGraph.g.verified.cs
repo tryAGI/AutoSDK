@@ -208,7 +208,6 @@ namespace G
             string fileId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GraphFileRequest
             {
                 FileId = fileId,

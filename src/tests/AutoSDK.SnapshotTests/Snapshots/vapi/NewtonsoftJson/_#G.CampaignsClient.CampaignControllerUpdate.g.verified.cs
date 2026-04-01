@@ -236,7 +236,6 @@ namespace G
             global::G.UpdateCampaignDTOStatus? status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateCampaignDTO
             {
                 Name = name,

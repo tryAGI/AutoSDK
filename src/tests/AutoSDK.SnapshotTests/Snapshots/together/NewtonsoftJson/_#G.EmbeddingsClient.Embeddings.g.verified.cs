@@ -428,7 +428,6 @@ namespace G
             string model = "togethercomputer/m2-bert-80M-8k-retrieval",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.EmbeddingsRequest
             {
                 Model = model,

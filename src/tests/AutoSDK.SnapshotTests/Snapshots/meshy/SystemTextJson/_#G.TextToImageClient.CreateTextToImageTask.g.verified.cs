@@ -337,7 +337,6 @@ namespace G
             global::G.AspectRatio? aspectRatio = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TextToImageRequest
             {
                 AiModel = aiModel,

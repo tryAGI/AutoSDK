@@ -182,7 +182,6 @@ namespace G
             int promptVersionNumber,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PromptTemplatesLabelsPromptLabelIdPatchRequest
             {
                 PromptVersionNumber = promptVersionNumber,

@@ -696,7 +696,6 @@ namespace G
             global::G.CreateConnectorServiceAuth? serviceAuth = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateConnectorRequest
             {
                 Name = name,

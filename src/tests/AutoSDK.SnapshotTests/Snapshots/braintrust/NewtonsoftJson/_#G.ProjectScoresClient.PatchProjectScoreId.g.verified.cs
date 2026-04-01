@@ -408,7 +408,6 @@ namespace G
             global::G.ProjectScoreConfig? config = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PatchProjectScore
             {
                 Name = name,

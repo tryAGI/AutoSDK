@@ -332,7 +332,6 @@ namespace G
             int? memoryMB = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TemplateBuildRequest
             {
                 Alias = alias,

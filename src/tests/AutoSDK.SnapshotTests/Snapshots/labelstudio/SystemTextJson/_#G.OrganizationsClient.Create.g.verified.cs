@@ -280,7 +280,6 @@ namespace G
             string label,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OrganizationMemberTagRequest
             {
                 Label = label,

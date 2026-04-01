@@ -306,7 +306,6 @@ namespace G
             bool? loadLogitsFromCache = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.Sam2SegmentationRequest
             {
                 Id = id,

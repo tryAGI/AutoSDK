@@ -224,7 +224,6 @@ namespace G
             string versionRef,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DatasetVersionRestorePublic
             {
                 VersionRef = versionRef,

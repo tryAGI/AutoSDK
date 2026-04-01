@@ -261,7 +261,6 @@ namespace G
             global::G.CreateStreamRequestCompatibilityMode? compatibilityMode = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateStreamRequest
             {
                 Fluent = fluent,

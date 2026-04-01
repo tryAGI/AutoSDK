@@ -208,7 +208,6 @@ namespace G
             int? avatarSceneIndex = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ExportRequest
             {
                 Format = format,

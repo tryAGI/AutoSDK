@@ -306,7 +306,6 @@ namespace G
             string memo,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ProcessPaymentRequest
             {
                 AccountId = accountId,

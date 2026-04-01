@@ -198,7 +198,6 @@ namespace G
             global::G.PricingCalculatorRequestServiceParams? serviceParams = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PricingCalculatorRequest
             {
                 Service = service,

@@ -255,7 +255,6 @@ namespace G
             string id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AllOf<global::G.UpdatePresenterAttributesRequestVariant1, global::G.UpdatePresenterAttributesRequestVariant2, global::G.UpdatePresenterAttributesRequestVariant3>
             {
             };

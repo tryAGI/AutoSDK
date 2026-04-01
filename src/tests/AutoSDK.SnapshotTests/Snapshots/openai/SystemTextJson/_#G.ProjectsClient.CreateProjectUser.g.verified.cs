@@ -242,7 +242,6 @@ namespace G
             global::G.ProjectUserCreateRequestRole role,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ProjectUserCreateRequest
             {
                 UserId = userId,

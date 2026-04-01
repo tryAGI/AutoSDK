@@ -240,7 +240,6 @@ namespace G
             global::G.CollectionParams? @params = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateVectordbCollectionsCreateRequest
             {
                 DbName = dbName,

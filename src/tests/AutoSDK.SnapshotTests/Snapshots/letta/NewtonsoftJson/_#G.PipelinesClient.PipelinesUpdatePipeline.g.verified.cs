@@ -240,7 +240,6 @@ namespace G
             bool? disabled = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PipelinesUpdatePipelineRequest
             {
                 Name = name,

@@ -402,7 +402,6 @@ namespace G
             global::G.AllOf<global::G.ProjectSettings, object>? settings = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PatchProject
             {
                 Name = name,

@@ -199,7 +199,6 @@ namespace G
             int? numResults = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SearchWebRequest
             {
                 Query = query,

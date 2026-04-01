@@ -275,7 +275,6 @@ namespace G
             global::G.EndPollBodyStatus status,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.EndPollBody
             {
                 BroadcasterId = broadcasterId,

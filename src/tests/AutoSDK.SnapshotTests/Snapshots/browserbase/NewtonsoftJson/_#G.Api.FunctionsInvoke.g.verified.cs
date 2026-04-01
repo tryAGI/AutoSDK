@@ -202,7 +202,6 @@ namespace G
             global::G.FunctionsInvokeRequestSessionCreateParams? sessionCreateParams = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.FunctionsInvokeRequest
             {
                 Params = @params,

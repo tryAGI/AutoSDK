@@ -202,7 +202,6 @@ namespace G
             int? timeoutHours = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BatchJobIn
             {
                 InputFiles = inputFiles,

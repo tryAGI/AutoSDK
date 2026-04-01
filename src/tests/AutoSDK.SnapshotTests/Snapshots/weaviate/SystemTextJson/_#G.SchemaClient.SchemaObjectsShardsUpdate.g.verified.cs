@@ -395,7 +395,6 @@ namespace G
             string? status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ShardStatus
             {
                 Status = status,

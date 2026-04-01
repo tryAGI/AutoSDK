@@ -232,7 +232,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChartsItem2>? charts = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PatchConvAIDashboardSettingsRequest
             {
                 Charts = charts,

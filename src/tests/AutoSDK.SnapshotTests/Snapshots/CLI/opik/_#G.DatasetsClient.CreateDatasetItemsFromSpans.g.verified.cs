@@ -175,7 +175,6 @@ namespace G
             global::G.SpanEnrichmentOptions enrichmentOptions,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateDatasetItemsFromSpansRequest
             {
                 SpanIds = spanIds,

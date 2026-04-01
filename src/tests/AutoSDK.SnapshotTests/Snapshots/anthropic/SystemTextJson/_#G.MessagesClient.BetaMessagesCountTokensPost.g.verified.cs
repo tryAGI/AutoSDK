@@ -378,7 +378,6 @@ namespace G
             global::G.BetaThinkingConfigParam? thinking = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BetaCountMessageTokensParams
             {
                 ToolChoice = toolChoice,

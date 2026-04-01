@@ -254,7 +254,6 @@ namespace G
             int? updatedBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.LseTaskRequest
             {
                 AllowSkip = allowSkip,

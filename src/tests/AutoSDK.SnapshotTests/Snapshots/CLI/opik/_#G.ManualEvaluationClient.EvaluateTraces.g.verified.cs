@@ -270,7 +270,6 @@ namespace G
             global::G.ManualEvaluationRequestEntityType entityType,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ManualEvaluationRequest
             {
                 ProjectId = projectId,

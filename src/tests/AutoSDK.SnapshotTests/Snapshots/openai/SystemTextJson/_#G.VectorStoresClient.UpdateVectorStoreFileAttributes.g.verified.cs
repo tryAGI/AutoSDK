@@ -220,7 +220,6 @@ namespace G
             global::G.VectorStoreFileAttributes? attributes = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateVectorStoreFileAttributesRequest
             {
                 Attributes = attributes,

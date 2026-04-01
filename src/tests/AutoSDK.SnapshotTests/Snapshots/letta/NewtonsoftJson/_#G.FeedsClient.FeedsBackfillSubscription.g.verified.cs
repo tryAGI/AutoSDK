@@ -248,7 +248,6 @@ namespace G
             double? toSequence = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.FeedsBackfillSubscriptionRequest
             {
                 FromSequence = fromSequence,

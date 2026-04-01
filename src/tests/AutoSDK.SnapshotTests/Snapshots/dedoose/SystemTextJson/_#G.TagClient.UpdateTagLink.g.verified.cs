@@ -306,7 +306,6 @@ namespace G
             global::G.TagLink link,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateTagLinkRequest
             {
                 Link = link,

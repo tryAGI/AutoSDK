@@ -348,7 +348,6 @@ namespace G
             global::G.SearchCommunityVoiceRequestVoiceProvider? voiceProvider = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SearchCommunityVoiceRequest
             {
                 VoiceProvider = voiceProvider,

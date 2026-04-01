@@ -370,7 +370,6 @@ namespace G
             global::G.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? usageLimitType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateAuthKeysCodeRequest
             {
                 CallbackUrl = callbackUrl,

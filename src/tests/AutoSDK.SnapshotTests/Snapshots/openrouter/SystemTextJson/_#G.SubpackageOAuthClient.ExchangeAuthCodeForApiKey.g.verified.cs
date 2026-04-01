@@ -316,7 +316,6 @@ namespace G
             global::G.OneOf<global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? codeChallengeMethod = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ExchangeAuthCodeForApiKeyRequest
             {
                 Code = code,

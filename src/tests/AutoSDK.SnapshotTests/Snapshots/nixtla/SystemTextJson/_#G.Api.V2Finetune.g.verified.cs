@@ -262,7 +262,6 @@ namespace G
             string? finetunedModelId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.FinetuneInput
             {
                 Series = series,

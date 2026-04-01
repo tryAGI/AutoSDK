@@ -260,7 +260,6 @@ namespace G
             double? voiceStyle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyCreateANewSpeakerV1DubbingResourceDubbingIdSpeakerPost
             {
                 SpeakerName = speakerName,

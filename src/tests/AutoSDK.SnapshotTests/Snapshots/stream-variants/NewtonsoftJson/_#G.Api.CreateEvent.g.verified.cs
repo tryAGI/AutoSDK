@@ -35,7 +35,6 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::G.EventRequest
             {
                 Input = request.Input,
@@ -180,7 +179,6 @@ namespace G
             string input,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.EventRequest
             {
                 Input = input,

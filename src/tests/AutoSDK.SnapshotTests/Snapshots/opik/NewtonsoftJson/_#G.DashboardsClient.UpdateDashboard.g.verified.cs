@@ -256,7 +256,6 @@ namespace G
             global::G.JsonNodePublic? config = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DashboardUpdatePublic
             {
                 Name = name,

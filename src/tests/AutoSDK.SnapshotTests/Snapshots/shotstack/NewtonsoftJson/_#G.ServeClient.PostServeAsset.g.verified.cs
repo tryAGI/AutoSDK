@@ -192,7 +192,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Destinations> destinations,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.Transfer
             {
                 Url = url,

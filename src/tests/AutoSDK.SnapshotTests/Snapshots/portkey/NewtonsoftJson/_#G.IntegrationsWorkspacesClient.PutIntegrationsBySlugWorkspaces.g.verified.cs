@@ -213,7 +213,6 @@ namespace G
             string? defaultProviderSlug = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BulkUpdateWorkspacesRequest
             {
                 Workspaces = workspaces,

@@ -360,7 +360,6 @@ namespace G
             double? signedUrlFileExpiryInSeconds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PatchOrgProjectConfigRequest
             {
                 Is2faEnabled = is2faEnabled,

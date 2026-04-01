@@ -277,7 +277,6 @@ namespace G
             global::G.BodyTextToDialogueFullWithTimestampsApplyTextNormalization? applyTextNormalization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyTextToDialogueFullWithTimestamps
             {
                 Inputs = inputs,

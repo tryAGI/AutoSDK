@@ -481,7 +481,6 @@ namespace G
             global::G.TranscribeSpeechRequestInputAudioCodec? inputAudioCodec = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TranscribeSpeechRequest
             {
                 File = file,

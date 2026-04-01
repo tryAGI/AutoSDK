@@ -300,7 +300,6 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ScrapeResponse> ScrapeAndExtractFromUrlAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AllOf<global::G.ScrapeAndExtractFromUrlRequest2, global::G.ScrapeOptions>
             {
             };

@@ -210,7 +210,6 @@ namespace G
             string? state = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReposUpdateReleaseAssetRequest
             {
                 Name = name,

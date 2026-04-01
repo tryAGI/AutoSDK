@@ -376,7 +376,6 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.EstimatePricingResponse> EstimatePricingAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OneOf<global::G.EstimatePricingRequestVariant1, global::G.EstimatePricingRequestVariant2>
             {
             };

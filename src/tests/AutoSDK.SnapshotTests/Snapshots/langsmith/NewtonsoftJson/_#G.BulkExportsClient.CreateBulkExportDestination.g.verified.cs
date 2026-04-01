@@ -238,7 +238,6 @@ namespace G
             global::G.BulkExportDestinationType? destinationType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BulkExportDestinationCreate
             {
                 DestinationType = destinationType,

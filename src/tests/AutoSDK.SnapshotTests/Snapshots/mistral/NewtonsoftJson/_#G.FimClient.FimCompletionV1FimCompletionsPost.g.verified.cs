@@ -36,7 +36,6 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::G.FIMCompletionRequest
             {
                 Model = request.Model,
@@ -282,7 +281,6 @@ namespace G
             int? minTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.FIMCompletionRequest
             {
                 Model = model,

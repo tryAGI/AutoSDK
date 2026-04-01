@@ -200,7 +200,6 @@ namespace G
             global::System.Collections.Generic.IList<string> eventTypes,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SubscribeApiAppEventOpenRequest
             {
                 EventTypes = eventTypes,

@@ -266,7 +266,6 @@ namespace G
             string? feedbackReason = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SubmitFeedbackRequest
             {
                 MemoryId = memoryId,

@@ -283,7 +283,6 @@ namespace G
             bool? force = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GitUpdateRefRequest
             {
                 Sha = sha,

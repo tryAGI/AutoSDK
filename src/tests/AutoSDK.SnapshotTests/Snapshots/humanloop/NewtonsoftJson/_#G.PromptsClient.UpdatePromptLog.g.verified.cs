@@ -264,7 +264,6 @@ namespace G
             string? requestLogId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PromptLogRequest
             {
                 VersionId = versionId,

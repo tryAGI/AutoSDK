@@ -240,7 +240,6 @@ namespace G
             int? newTurnsLimit = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodySimulatesAConversationStreamV1ConvaiAgentsAgentIdSimulateConversationStreamPost
             {
                 SimulationSpecification = simulationSpecification,

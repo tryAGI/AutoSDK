@@ -432,7 +432,6 @@ namespace G
             global::System.Collections.Generic.IList<string>? knowledgeBaseUrls = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.KnowledgeBaseAddSourcesRequest
             {
                 KnowledgeBaseTexts = knowledgeBaseTexts,

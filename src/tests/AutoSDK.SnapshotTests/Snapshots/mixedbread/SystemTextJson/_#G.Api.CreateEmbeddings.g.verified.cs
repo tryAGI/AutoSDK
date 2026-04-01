@@ -262,7 +262,6 @@ namespace G
             global::G.AnyOf<global::G.EncodingFormat3?, global::System.Collections.Generic.IList<global::G.EncodingFormat3>>? encodingFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.EmbeddingCreateParams
             {
                 Model = model,

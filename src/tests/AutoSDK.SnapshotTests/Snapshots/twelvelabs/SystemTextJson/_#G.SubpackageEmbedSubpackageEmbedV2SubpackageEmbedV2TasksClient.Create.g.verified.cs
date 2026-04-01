@@ -335,7 +335,6 @@ namespace G
             global::G.VideoInputRequest? video = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateAsyncEmbeddingRequest
             {
                 InputType = inputType,

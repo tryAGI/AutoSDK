@@ -364,7 +364,6 @@ namespace G
             string? cursor = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PostToolkitsMultiRequest
             {
                 Toolkits = toolkits,

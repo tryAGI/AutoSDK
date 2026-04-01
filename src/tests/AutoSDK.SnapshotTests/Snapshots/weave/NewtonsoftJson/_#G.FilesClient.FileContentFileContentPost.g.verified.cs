@@ -226,7 +226,6 @@ namespace G
             string digest,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.FileContentReadReq
             {
                 ProjectId = projectId,

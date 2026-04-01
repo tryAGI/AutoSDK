@@ -389,7 +389,6 @@ namespace G
             bool? shouldRedemptionsSkipRequestQueue = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateCustomRewardsBody
             {
                 Title = title,

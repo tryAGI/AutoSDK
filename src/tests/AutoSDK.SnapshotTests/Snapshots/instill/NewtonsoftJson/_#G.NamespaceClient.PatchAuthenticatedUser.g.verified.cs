@@ -311,7 +311,6 @@ namespace G
             global::G.OnboardingStatus? onboardingStatus = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AuthenticatedUser
             {
                 Uid = uid,

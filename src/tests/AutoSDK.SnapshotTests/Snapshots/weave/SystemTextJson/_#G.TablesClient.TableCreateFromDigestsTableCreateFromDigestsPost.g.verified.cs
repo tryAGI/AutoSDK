@@ -234,7 +234,6 @@ namespace G
             string? expectedDigest = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TableCreateFromDigestsReq
             {
                 ProjectId = projectId,

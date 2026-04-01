@@ -183,7 +183,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GenerateChatCompletionRequest
             {
                 Model = model,

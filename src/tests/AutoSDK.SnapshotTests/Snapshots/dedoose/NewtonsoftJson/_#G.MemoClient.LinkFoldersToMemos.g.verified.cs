@@ -306,7 +306,6 @@ namespace G
             global::System.Collections.Generic.IList<string> memoIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.LinkFoldersToMemosRequest
             {
                 ProjectId = projectId,

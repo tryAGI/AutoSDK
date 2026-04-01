@@ -263,7 +263,6 @@ namespace G
             global::G.AssistantsApiResponseFormatOption? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateThreadAndRunRequest
             {
                 AssistantId = assistantId,

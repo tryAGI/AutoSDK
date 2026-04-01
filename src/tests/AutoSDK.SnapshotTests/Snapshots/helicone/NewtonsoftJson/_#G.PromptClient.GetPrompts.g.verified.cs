@@ -190,7 +190,6 @@ namespace G
             global::G.PromptsFilterNode filter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PromptsQueryParams
             {
                 Filter = filter,

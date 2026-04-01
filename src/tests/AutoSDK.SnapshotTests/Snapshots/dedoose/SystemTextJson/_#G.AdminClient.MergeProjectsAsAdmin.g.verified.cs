@@ -312,7 +312,6 @@ namespace G
             bool mergeCodes,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MergeProjectsRequest
             {
                 Project1Id = project1Id,

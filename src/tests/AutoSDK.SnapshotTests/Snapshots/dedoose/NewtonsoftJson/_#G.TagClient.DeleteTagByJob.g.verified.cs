@@ -304,7 +304,6 @@ namespace G
             global::G.Tag tag,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DeleteTagByJobRequest
             {
                 CurrentProjectId = currentProjectId,

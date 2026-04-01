@@ -306,7 +306,6 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateChatLogsResponse> CreateChatLogsAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AllOf<global::G.CreateChatLogsRequestVariant1, global::G.CreateChatLogsRequestVariant2>
             {
             };

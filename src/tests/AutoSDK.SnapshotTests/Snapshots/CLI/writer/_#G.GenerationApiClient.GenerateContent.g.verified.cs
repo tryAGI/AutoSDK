@@ -46,7 +46,6 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::G.GenerateApplicationRequest
             {
                 Inputs = request.Inputs,
@@ -212,7 +211,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.GenerateApplicationInput> inputs,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GenerateApplicationRequest
             {
                 Inputs = inputs,

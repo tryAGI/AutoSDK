@@ -255,7 +255,6 @@ namespace G
             string? timezone = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CallStatsReq
             {
                 ProjectId = projectId,

@@ -274,7 +274,6 @@ namespace G
             global::System.Collections.Generic.IList<int> tokens,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DetokenizeRequest
             {
                 Model = model,

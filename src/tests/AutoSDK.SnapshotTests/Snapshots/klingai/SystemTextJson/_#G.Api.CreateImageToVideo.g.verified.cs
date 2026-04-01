@@ -296,7 +296,6 @@ namespace G
             string? externalTaskId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateImageToVideoRequest
             {
                 ModelName = modelName,

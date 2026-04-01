@@ -45,7 +45,6 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::G.ChatRequest
             {
                 Message = request.Message,
@@ -898,7 +897,6 @@ namespace G
             global::G.ChatRequestSafetyMode? safetyMode = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ChatRequest
             {
                 Message = message,

@@ -274,7 +274,6 @@ namespace G
             bool? storeForInpainting = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyStreamComposedMusicV1MusicStreamPost
             {
                 Prompt = prompt,

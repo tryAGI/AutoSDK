@@ -236,7 +236,6 @@ namespace G
             double? refineStrength = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PerformAlchemyUpscaleLCMRequest
             {
                 ImageDataUrl = imageDataUrl,

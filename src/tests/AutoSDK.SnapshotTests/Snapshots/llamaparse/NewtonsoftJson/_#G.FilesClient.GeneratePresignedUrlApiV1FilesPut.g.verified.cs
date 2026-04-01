@@ -302,7 +302,6 @@ namespace G
             global::G.AnyOf<global::G.FileCreateStorageType?, string>? storageType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.FileCreate
             {
                 Name = name,

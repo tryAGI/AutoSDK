@@ -257,7 +257,6 @@ namespace G
             double? hybridSearchAlpha = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.LibraryAnswerRequest
             {
                 Question = question,

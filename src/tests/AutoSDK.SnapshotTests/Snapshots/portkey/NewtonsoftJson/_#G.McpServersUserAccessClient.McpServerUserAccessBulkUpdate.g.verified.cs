@@ -202,7 +202,6 @@ namespace G
             global::G.BulkUpdateMcpServerUserAccessDefaultUserAccess? defaultUserAccess = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BulkUpdateMcpServerUserAccess
             {
                 UserAccess = userAccess,

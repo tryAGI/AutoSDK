@@ -312,7 +312,6 @@ namespace G
             global::System.Guid createByUserId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AddDescriptorSetRequest
             {
                 ProjectId = projectId,

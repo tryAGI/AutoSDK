@@ -202,7 +202,6 @@ namespace G
             bool? notify = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.InferenceBaseRequest
             {
                 Models = models,

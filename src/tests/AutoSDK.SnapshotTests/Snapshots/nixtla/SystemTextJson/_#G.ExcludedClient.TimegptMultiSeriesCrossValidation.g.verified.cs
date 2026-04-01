@@ -280,7 +280,6 @@ namespace G
             global::G.MultiSeriesCrossValidationFinetuneLoss? finetuneLoss = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MultiSeriesCrossValidation
             {
                 Model = model,

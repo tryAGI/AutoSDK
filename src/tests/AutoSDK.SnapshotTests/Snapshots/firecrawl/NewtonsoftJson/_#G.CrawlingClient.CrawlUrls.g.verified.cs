@@ -364,7 +364,6 @@ namespace G
             global::G.ScrapeOptions? scrapeOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CrawlUrlsRequest
             {
                 Url = url,

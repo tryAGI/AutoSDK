@@ -258,7 +258,6 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing, object>? transformations = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DatasetUpdate
             {
                 Name = name,

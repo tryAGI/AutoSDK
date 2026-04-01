@@ -231,7 +231,6 @@ namespace G
             bool? convertToMpeg = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyStreamChapterAudioV1StudioProjectsProjectIdChaptersChapterIdSnapshotsChapterSnapshotIdStreamPost
             {
                 ConvertToMpeg = convertToMpeg,

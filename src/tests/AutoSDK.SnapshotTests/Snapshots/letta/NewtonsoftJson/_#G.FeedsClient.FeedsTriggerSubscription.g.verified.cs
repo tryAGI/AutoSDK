@@ -244,7 +244,6 @@ namespace G
             string subscriptionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new object
             {
             };

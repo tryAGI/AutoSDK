@@ -250,7 +250,6 @@ namespace G
             string? session = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ExtractAgentUpdate
             {
                 DataSchema = dataSchema,

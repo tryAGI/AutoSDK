@@ -224,7 +224,6 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateSecretResponse> CreateSecretAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AnyOf<global::G.AnyOf<global::G.CreateSecretRequestCreateSecretRequest1BasicAuthentication, global::G.CreateSecretRequestCreateSecretRequest1BearerToken, global::G.CreateSecretRequestCreateSecretRequest1ApiKey>?, global::G.AnyOf<global::G.CreateSecretRequestVariant2OpenAIConfiguration, global::G.CreateSecretRequestVariant2Variant2>?>
             {
             };

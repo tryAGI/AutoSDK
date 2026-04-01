@@ -318,7 +318,6 @@ namespace G
             string? userMetadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateRequest3
             {
                 IndexId = indexId,

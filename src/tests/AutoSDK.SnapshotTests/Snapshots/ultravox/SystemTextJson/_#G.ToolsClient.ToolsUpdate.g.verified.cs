@@ -203,7 +203,6 @@ namespace G
             global::G.UltravoxV1BaseToolDefinition definition,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ToolDetail
             {
                 Name = name,

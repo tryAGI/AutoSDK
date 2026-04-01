@@ -43,7 +43,6 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::G.GenerateRequest
             {
                 Prompt = request.Prompt,
@@ -787,7 +786,6 @@ namespace G
             bool? rawPrompting = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GenerateRequest
             {
                 Prompt = prompt,

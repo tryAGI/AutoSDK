@@ -254,7 +254,6 @@ namespace G
             global::G.PromptVersionData version,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreatePromptRequestBody
             {
                 Prompt = prompt,

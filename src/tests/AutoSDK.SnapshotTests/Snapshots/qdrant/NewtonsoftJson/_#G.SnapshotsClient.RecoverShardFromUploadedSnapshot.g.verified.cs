@@ -364,7 +364,6 @@ namespace G
             string? snapshotname = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.RecoverShardFromUploadedSnapshotRequest
             {
                 Snapshot = snapshot,

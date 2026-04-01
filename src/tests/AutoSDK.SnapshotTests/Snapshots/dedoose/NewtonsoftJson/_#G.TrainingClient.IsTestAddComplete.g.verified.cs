@@ -306,7 +306,6 @@ namespace G
             string addTestWorkerId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.IsTestAddCompleteRequest
             {
                 AddTestWorkerId = addTestWorkerId,

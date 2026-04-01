@@ -279,7 +279,6 @@ namespace G
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>> input,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.EmbeddingRequest
             {
                 Model = model,

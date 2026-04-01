@@ -291,7 +291,6 @@ namespace G
             bool? read = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ActivityMarkNotificationsAsReadRequest
             {
                 LastReadAt = lastReadAt,

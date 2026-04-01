@@ -286,7 +286,6 @@ namespace G
             string pipelineId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ValidateNamespacePipelineBody
             {
             };

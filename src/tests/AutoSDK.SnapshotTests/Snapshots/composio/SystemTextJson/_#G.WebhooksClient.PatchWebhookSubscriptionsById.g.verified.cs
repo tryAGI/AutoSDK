@@ -366,7 +366,6 @@ namespace G
             global::G.PatchWebhookSubscriptionsByIdRequestVersion? version = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PatchWebhookSubscriptionsByIdRequest
             {
                 WebhookUrl = webhookUrl,

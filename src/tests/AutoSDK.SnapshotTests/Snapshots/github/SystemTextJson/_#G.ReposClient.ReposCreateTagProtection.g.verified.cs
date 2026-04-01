@@ -278,7 +278,6 @@ namespace G
             string pattern,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReposCreateTagProtectionRequest
             {
                 Pattern = pattern,

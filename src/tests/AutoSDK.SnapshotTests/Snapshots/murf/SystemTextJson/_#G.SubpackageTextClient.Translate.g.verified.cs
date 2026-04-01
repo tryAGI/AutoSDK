@@ -370,7 +370,6 @@ namespace G
             global::System.Collections.Generic.IList<string> texts,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MurfApiTranslationRequest
             {
                 TargetLanguage = targetLanguage,

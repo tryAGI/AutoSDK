@@ -261,7 +261,6 @@ namespace G
             bool? includeTagsAndAliases = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ObjQueryReq
             {
                 ProjectId = projectId,

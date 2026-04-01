@@ -306,7 +306,6 @@ namespace G
             double? confidence = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.YOLOWorldInferenceRequest
             {
                 Id = id,

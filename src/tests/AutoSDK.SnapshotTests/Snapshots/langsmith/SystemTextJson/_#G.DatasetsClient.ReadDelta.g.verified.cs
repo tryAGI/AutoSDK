@@ -254,7 +254,6 @@ namespace G
             global::System.Guid? comparativeExperimentId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.QueryFeedbackDelta
             {
                 BaselineSessionId = baselineSessionId,

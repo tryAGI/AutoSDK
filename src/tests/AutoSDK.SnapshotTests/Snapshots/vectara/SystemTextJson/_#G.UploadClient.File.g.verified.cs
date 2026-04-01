@@ -574,7 +574,6 @@ namespace G
             string? filename = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UploadFileRequest
             {
                 Metadata = metadata,

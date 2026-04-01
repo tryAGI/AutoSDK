@@ -274,7 +274,6 @@ namespace G
             string sha,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GitCreateRefRequest
             {
                 Ref = @ref,

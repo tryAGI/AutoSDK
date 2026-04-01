@@ -217,7 +217,6 @@ namespace G
             global::G.WritingTone? tone = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.RephraseTextRequest
             {
                 Text = text,

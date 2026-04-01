@@ -187,7 +187,6 @@ namespace recraft
             global::recraft.ImageStyle style,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::recraft.CreateStyleRequest
             {
                 Images = images,

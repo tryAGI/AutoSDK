@@ -288,7 +288,6 @@ namespace G
             bool? truncation = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.RerankerApiRequest
             {
                 Query = query,

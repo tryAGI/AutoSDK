@@ -264,7 +264,6 @@ namespace G
             global::G.DeploymentBranchPolicySettings? deploymentBranchPolicy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReposCreateOrUpdateEnvironmentRequest
             {
                 WaitTimer = waitTimer,

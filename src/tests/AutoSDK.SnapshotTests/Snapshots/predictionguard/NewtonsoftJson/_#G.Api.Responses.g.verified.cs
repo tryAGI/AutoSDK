@@ -318,7 +318,6 @@ namespace G
             global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguards? safeguards = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ResponsesRequest
             {
                 Model = model,

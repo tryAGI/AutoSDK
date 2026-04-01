@@ -233,7 +233,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.EntityCollectionsEntityCollectionIdEntitiesBulkPostRequestBodyContentApplicationJsonSchemaEntitiesItems> entities,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateBulkRequest
             {
                 Entities = entities,

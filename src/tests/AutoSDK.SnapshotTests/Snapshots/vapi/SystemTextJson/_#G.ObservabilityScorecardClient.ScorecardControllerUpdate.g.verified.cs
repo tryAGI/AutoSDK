@@ -214,7 +214,6 @@ namespace G
             global::System.Collections.Generic.IList<string>? assistantIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateScorecardDTO
             {
                 Name = name,

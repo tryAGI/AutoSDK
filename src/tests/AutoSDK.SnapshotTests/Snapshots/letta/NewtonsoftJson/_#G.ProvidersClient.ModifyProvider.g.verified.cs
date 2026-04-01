@@ -260,7 +260,6 @@ namespace G
             string? apiVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ProviderUpdate
             {
                 ApiKey = apiKey,

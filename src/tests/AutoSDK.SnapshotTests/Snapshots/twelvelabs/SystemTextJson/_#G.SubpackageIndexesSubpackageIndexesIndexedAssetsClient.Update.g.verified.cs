@@ -264,7 +264,6 @@ namespace G
             global::G.UserMetadata? userMetadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateRequest2
             {
                 UserMetadata = userMetadata,

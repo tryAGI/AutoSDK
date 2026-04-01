@@ -198,7 +198,6 @@ namespace G
             string? sourceAvatarID = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MotionBlendRequest
             {
                 AvatarName = avatarName,

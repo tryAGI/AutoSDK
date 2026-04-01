@@ -323,7 +323,6 @@ namespace G
             bool? exact = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CountRequest
             {
                 ShardKey = shardKey,

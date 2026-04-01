@@ -293,7 +293,6 @@ namespace G
             string? readyCmd = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TemplateBuildStartV2
             {
                 FromImage = fromImage,

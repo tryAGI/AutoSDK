@@ -348,7 +348,6 @@ namespace G
             global::System.Collections.Generic.IList<string> tags,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AssignTemplateTagsRequest
             {
                 Target = target,

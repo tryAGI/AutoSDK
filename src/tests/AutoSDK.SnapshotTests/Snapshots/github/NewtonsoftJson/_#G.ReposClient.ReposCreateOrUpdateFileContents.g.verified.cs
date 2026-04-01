@@ -342,7 +342,6 @@ namespace G
             global::G.ReposCreateOrUpdateFileContentsRequestAuthor? author = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReposCreateOrUpdateFileContentsRequest
             {
                 Message = message,

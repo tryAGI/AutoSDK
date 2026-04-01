@@ -312,7 +312,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Excerpt> excerpts,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateDocumentDataAndExcerptsRequest
             {
                 ProjectId = projectId,

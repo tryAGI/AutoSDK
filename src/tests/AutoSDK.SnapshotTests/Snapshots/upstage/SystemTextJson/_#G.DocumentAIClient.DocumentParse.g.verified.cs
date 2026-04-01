@@ -367,7 +367,6 @@ namespace G
             string? modelParams = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DocumentParseRequest
             {
                 Document = document,

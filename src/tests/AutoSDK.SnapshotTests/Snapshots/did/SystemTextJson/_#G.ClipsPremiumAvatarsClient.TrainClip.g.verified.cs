@@ -250,7 +250,6 @@ namespace G
             global::G.TrainClipRequestConfig? config = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TrainClipRequest
             {
                 SourceUrl = sourceUrl,

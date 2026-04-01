@@ -216,7 +216,6 @@ namespace G
             global::System.Guid samlProviderId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SSOEmailVerificationStatusRequest
             {
                 Email = email,

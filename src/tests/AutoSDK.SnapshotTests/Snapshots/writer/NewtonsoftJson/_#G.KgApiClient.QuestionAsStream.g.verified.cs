@@ -37,7 +37,6 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::G.QuestionRequest
             {
                 GraphIds = request.GraphIds,
@@ -194,7 +193,6 @@ namespace G
             global::G.GraphQueryConfig? queryConfig = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.QuestionRequest
             {
                 GraphIds = graphIds,

@@ -198,7 +198,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.BulkUpdateMcpServerCapabilitiesCapabilitie> capabilities,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BulkUpdateMcpServerCapabilities
             {
                 Capabilities = capabilities,

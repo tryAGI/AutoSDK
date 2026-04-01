@@ -192,7 +192,6 @@ namespace G
             global::G.CreateAPIKeyRequestKeyPermissions? keyPermissions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateAPIKeyRequest
             {
                 KeyPermissions = keyPermissions,

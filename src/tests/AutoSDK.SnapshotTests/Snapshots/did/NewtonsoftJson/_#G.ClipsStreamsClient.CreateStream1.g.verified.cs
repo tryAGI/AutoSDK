@@ -314,7 +314,6 @@ namespace G
             bool? fluent = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateStream1Request
             {
                 PresenterId = presenterId,

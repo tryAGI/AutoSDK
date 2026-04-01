@@ -212,7 +212,6 @@ namespace G
             string labelConfig,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ProjectLabelConfigRequest
             {
                 LabelConfig = labelConfig,

@@ -202,7 +202,6 @@ namespace G
             global::G.PutAdminWorkspacesUsersRequestRole? role = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PutAdminWorkspacesUsersRequest
             {
                 Role = role,

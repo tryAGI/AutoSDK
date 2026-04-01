@@ -308,7 +308,6 @@ namespace G
             bool includeCodeCounts,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.StartExportResourcesJobRequest
             {
                 ProjectId = projectId,

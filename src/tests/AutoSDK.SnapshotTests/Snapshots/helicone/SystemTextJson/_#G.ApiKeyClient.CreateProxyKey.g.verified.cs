@@ -192,7 +192,6 @@ namespace G
             string providerKeyId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateProxyKeyRequest
             {
                 ProxyKeyName = proxyKeyName,

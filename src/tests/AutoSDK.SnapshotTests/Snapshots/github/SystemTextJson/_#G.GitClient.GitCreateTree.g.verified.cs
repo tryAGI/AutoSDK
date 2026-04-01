@@ -355,7 +355,6 @@ namespace G
             string? baseTree = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GitCreateTreeRequest
             {
                 Tree = tree,

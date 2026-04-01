@@ -349,7 +349,6 @@ namespace G
             global::G.Create2RequestBackground? background = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.Create2Request
             {
                 AvatarId = avatarId,

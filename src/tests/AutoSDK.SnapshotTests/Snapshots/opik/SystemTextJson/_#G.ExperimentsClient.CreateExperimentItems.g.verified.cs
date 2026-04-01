@@ -161,7 +161,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ExperimentItem> experimentItems,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ExperimentItemsBatch
             {
                 ExperimentItems = experimentItems,

@@ -399,7 +399,6 @@ namespace G
             double? topP = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateMessageParams
             {
                 Model = model,

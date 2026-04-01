@@ -300,7 +300,6 @@ namespace G
             bool? useDistillations = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.Sam33dObjectsInferenceRequest
             {
                 Id = id,

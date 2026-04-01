@@ -242,7 +242,6 @@ namespace G
             string? promptTemplate = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.FeedsSubscribeAgentRequest
             {
                 AgentId = agentId,

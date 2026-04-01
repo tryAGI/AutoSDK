@@ -411,7 +411,6 @@ namespace G
             global::G.TransliterateRequestSpokenFormNumeralsLanguage? spokenFormNumeralsLanguage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TransliterateRequest
             {
                 Input = input,

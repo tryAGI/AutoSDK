@@ -198,7 +198,6 @@ namespace G
             object? outputSchema = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ResearchCreateRequestDtoClass
             {
                 Model = model,

@@ -192,7 +192,6 @@ namespace G
             global::System.Collections.Generic.IList<string> certificateIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ToggleCertificatesRequest
             {
                 CertificateIds = certificateIds,

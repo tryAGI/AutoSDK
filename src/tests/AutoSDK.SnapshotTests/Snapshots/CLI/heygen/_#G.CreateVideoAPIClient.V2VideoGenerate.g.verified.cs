@@ -199,7 +199,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.V2VideoGenerateRequestVideoInput>? videoInputs = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.V2VideoGenerateRequest
             {
                 AspectRatio = aspectRatio,

@@ -446,7 +446,6 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.LemurSummaryResponse> SummaryAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.LemurSummaryParams
             {
             };

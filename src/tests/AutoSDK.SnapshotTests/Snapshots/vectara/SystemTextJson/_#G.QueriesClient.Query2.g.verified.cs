@@ -369,7 +369,6 @@ namespace G
             bool? intelligentQueryRewriting = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.QueryRequest
             {
                 Query = query,

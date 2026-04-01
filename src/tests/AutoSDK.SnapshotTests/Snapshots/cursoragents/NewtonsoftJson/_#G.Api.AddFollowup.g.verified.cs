@@ -470,7 +470,6 @@ namespace G
             global::G.AddFollowupRequestPrompt prompt,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AddFollowupRequest
             {
                 Prompt = prompt,

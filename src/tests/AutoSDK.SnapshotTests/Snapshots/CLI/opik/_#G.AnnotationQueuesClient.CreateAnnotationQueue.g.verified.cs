@@ -251,7 +251,6 @@ namespace G
             global::System.Collections.Generic.IList<string>? feedbackDefinitionNames = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AnnotationQueueWrite
             {
                 Id = id,

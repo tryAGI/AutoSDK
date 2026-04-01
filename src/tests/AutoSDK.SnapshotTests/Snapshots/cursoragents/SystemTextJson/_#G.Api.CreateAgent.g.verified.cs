@@ -393,7 +393,6 @@ namespace G
             global::G.CreateAgentRequestWebhook? webhook = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateAgentRequest
             {
                 Prompt = prompt,

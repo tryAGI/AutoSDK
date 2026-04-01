@@ -241,7 +241,6 @@ namespace G
             global::G.ProxycredentialsRequestLogging? logging = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ProxycredentialsRequest
             {
                 Model = model,

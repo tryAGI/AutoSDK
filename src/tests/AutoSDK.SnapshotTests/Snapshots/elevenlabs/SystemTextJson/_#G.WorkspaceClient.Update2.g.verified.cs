@@ -244,7 +244,6 @@ namespace G
             global::G.SeatType? workspaceSeatType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyUpdateMemberV1WorkspaceMembersPost
             {
                 Email = email,

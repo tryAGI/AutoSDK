@@ -314,7 +314,6 @@ namespace G
             global::System.Collections.Generic.IList<string>? includeClaimKeys = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ActionsSetCustomOidcSubClaimForRepoRequest
             {
                 UseDefault = useDefault,

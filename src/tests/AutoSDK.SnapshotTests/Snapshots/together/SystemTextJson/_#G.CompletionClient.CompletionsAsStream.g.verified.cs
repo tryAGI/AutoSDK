@@ -31,7 +31,6 @@ namespace G
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-
             request = new global::G.CompletionRequest
             {
                 Prompt = request.Prompt,
@@ -259,7 +258,6 @@ namespace G
             int? seed = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CompletionRequest
             {
                 Prompt = prompt,

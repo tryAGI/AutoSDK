@@ -271,7 +271,6 @@ namespace G
             global::G.MultiSeriesForecastFinetuneLoss? finetuneLoss = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MultiSeriesForecast
             {
                 Model = model,

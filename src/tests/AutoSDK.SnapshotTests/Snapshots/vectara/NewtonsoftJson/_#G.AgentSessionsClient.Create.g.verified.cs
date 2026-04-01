@@ -415,7 +415,6 @@ namespace G
             global::G.CreateAgentSessionRequestFromSession? fromSession = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateAgentSessionRequest
             {
                 Key = key,

@@ -222,7 +222,6 @@ namespace G
             global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? fileFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPost
             {
                 Audio = audio,

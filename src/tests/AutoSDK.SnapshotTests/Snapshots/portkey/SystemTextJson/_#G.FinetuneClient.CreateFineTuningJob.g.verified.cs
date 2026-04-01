@@ -188,7 +188,6 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.FineTuningJob> CreateFineTuningJobAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AnyOf<global::G.OpenAIFinetuneJob, global::G.BedrockFinetuneJob, global::G.PortkeyFinetuneJob>
             {
             };

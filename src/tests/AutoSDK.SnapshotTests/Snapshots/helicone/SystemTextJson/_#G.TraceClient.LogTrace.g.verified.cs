@@ -175,7 +175,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.OTELTraceResourceSpan> resourceSpans,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OTELTrace
             {
                 ResourceSpans = resourceSpans,

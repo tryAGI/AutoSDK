@@ -461,7 +461,6 @@ namespace G
             int? minChunkSize = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.KnowledgeBaseRequest
             {
                 KnowledgeBaseName = knowledgeBaseName,

@@ -270,7 +270,6 @@ namespace G
             global::G.RunStatsGroupBy? groupBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.RunStatsQueryParams
             {
                 Id = id,

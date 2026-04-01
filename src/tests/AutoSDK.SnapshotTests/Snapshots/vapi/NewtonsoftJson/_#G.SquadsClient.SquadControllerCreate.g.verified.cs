@@ -202,7 +202,6 @@ namespace G
             global::G.AssistantOverrides? membersOverrides = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateSquadDTO
             {
                 Name = name,

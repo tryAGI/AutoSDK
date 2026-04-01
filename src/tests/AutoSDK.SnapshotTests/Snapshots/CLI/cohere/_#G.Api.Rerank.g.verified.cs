@@ -694,7 +694,6 @@ namespace G
             int? maxChunksPerDoc = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.RerankRequest
             {
                 Model = model,

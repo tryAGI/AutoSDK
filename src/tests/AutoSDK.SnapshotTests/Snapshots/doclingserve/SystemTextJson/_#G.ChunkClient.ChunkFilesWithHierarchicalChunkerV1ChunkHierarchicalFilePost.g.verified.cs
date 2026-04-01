@@ -676,7 +676,6 @@ namespace G
             bool? chunkingIncludeRawText = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyChunkFilesWithHierarchicalChunkerV1ChunkHierarchicalFilePost
             {
                 Files = files,

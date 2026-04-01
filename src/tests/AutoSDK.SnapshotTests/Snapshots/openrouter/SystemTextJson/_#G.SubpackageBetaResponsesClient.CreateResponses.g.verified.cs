@@ -702,7 +702,6 @@ namespace G
             global::G.ResponsesRequestTrace? trace = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ResponsesRequest
             {
                 Input = input,

@@ -284,7 +284,6 @@ namespace G
             bool? isBroadcast = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateExtensionBitsProductBody
             {
                 Sku = sku,

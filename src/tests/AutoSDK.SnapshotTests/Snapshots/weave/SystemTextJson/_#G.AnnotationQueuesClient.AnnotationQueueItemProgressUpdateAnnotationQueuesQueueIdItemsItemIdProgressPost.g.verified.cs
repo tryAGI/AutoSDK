@@ -250,7 +250,6 @@ namespace G
             string annotationState,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AnnotationQueueItemProgressUpdateBody
             {
                 ProjectId = projectId,

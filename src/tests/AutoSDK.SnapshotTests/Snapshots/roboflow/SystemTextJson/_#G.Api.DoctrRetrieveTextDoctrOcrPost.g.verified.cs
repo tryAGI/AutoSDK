@@ -278,7 +278,6 @@ namespace G
             bool? generateBoundingBoxes = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DoctrOCRInferenceRequest
             {
                 Id = id,

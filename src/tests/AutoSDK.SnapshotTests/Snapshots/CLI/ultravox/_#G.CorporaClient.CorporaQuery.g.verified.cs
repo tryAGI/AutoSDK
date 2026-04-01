@@ -204,7 +204,6 @@ namespace G
             int? maxResults = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UltravoxV1QueryCorpusRequest
             {
                 Query = query,

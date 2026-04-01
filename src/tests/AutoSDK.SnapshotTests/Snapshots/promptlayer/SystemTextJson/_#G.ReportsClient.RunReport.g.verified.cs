@@ -344,7 +344,6 @@ namespace G
             bool? refreshDataset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.RunReportRequest
             {
                 Name = name,

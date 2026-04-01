@@ -286,7 +286,6 @@ namespace G
             global::G.RealtimeSessionCreateRequestClientSecret? clientSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.RealtimeSessionCreateRequest
             {
                 Modalities = modalities,

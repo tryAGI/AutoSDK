@@ -334,7 +334,6 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid> excludedExcerptIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AddDataSetRequest
             {
                 ProjectId = projectId,

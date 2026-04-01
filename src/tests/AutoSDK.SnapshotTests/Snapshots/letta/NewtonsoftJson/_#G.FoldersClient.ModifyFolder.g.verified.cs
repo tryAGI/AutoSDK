@@ -260,7 +260,6 @@ namespace G
             global::G.EmbeddingConfig? embeddingConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SourceUpdate
             {
                 Name = name,

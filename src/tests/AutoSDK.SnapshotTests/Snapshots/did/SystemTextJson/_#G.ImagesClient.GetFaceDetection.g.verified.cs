@@ -344,7 +344,6 @@ namespace G
             bool? shouldSkipDetection = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GetFaceDetectionRequest
             {
                 SourceUrl = sourceUrl,

@@ -171,7 +171,6 @@ namespace G
             string? author = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DeleteFeedbackScore
             {
                 Name = name,

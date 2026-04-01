@@ -220,7 +220,6 @@ namespace G
             string? metricName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MetricParamUpdateRequest
             {
                 AdditionalParams = additionalParams,

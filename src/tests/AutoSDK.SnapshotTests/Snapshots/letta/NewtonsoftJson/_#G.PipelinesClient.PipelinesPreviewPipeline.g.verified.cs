@@ -234,7 +234,6 @@ namespace G
             global::G.ProducerConfig3 producerConfig,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PipelinesPreviewPipelineRequest
             {
                 IntegrationType = integrationType,

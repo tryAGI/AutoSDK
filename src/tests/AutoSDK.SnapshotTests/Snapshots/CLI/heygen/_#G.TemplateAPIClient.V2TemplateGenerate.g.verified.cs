@@ -193,7 +193,6 @@ namespace G
             global::G.V2TemplateGenerateRequestVariables? variables = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.V2TemplateGenerateRequest
             {
                 Caption = caption,

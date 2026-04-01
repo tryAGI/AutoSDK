@@ -328,7 +328,6 @@ namespace G
             string pagesBuildVersion = "GITHUB_SHA",
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReposCreatePagesDeploymentRequest
             {
                 ArtifactId = artifactId,

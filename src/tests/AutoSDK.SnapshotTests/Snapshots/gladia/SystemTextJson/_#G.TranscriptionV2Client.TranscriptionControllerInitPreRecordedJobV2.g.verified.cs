@@ -419,7 +419,6 @@ namespace G
             global::G.LanguageConfig? languageConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.InitTranscriptionRequest
             {
                 CustomVocabulary = customVocabulary,

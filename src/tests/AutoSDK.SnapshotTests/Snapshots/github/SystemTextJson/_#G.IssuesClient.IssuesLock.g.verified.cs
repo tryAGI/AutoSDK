@@ -345,7 +345,6 @@ namespace G
             global::G.IssuesLockRequestLockReason? lockReason = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.IssuesLockRequest
             {
                 LockReason = lockReason,

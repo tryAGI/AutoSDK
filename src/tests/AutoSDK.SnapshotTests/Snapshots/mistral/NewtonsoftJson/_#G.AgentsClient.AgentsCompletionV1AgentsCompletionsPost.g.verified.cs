@@ -282,7 +282,6 @@ namespace G
             bool? parallelToolCalls = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AgentsCompletionRequest
             {
                 MaxTokens = maxTokens,

@@ -246,7 +246,6 @@ namespace G
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyAddMemberToUserGroupV1WorkspaceGroupsGroupIdMembersPost
             {
                 Email = email,

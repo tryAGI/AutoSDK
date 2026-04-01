@@ -314,7 +314,6 @@ namespace G
             int end,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateImageExcerptRegionRequest
             {
                 ProjectId = projectId,

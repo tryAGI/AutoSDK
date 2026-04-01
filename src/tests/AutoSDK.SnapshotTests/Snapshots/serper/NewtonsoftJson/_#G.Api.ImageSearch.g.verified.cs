@@ -202,7 +202,6 @@ namespace G
             bool? autocorrect = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ImageSearchRequest(
                 new global::G.BaseSearchRequest
                 {

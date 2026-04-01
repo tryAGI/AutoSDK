@@ -198,7 +198,6 @@ namespace G
             bool rating,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.FeedbackRequestRequest
             {
                 Rating = rating,

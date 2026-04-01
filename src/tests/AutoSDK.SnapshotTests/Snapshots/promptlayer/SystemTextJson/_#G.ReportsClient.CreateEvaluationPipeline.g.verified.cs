@@ -345,7 +345,6 @@ namespace G
             global::G.CreateEvaluationPipelineRequestScoreConfiguration? scoreConfiguration = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateEvaluationPipelineRequest
             {
                 DatasetGroupId = datasetGroupId,

@@ -294,7 +294,6 @@ namespace G
             string? transactionId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ClassifyV2JobCreateRequest
             {
                 FileId = fileId,

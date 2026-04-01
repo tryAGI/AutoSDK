@@ -238,7 +238,6 @@ namespace G
             global::G.EnvironmentsSendModeChangeRequestMode mode,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.EnvironmentsSendModeChangeRequest
             {
                 Mode = mode,

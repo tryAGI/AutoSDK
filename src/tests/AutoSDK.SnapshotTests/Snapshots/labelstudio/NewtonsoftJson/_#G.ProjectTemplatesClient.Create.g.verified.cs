@@ -238,7 +238,6 @@ namespace G
             object? tags = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ProjectTemplateRequest
             {
                 AssignmentSettings = assignmentSettings,

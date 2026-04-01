@@ -310,7 +310,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TriggerData>? data = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TriggerNamespacePipelineWithStreamBody
             {
                 Inputs = inputs,

@@ -190,7 +190,6 @@ namespace G
             string promptVersionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GetPrompt2025VersionRequest
             {
                 PromptVersionId = promptVersionId,

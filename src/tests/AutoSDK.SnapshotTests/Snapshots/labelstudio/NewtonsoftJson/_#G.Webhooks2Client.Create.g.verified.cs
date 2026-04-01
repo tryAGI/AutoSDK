@@ -216,7 +216,6 @@ namespace G
             bool? sendPayload = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.WebhookRequest
             {
                 Actions = actions,

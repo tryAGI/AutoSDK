@@ -232,7 +232,6 @@ namespace G
             global::System.Collections.Generic.IList<string> permissions,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateRoleRequest
             {
                 DisplayName = displayName,

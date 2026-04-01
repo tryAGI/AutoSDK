@@ -233,7 +233,6 @@ namespace G
             string model,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ApiLlmOpenaiChatCompletionsCreateRequest
             {
                 Messages = messages,

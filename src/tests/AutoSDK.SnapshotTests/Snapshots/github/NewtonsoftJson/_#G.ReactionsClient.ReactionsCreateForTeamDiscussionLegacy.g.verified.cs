@@ -204,7 +204,6 @@ namespace G
             global::G.ReactionsCreateForTeamDiscussionLegacyRequestContent content,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReactionsCreateForTeamDiscussionLegacyRequest
             {
                 Content = content,

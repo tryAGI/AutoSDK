@@ -242,7 +242,6 @@ namespace G
             global::G.TwilioSMSChatTransport? transport = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OpenAIResponsesRequest
             {
                 AssistantId = assistantId,

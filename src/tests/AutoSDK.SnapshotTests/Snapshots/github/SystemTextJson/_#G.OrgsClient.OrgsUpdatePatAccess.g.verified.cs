@@ -333,7 +333,6 @@ namespace G
             global::G.OrgsUpdatePatAccessRequestAction action = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OrgsUpdatePatAccessRequest
             {
                 Action = action,

@@ -334,7 +334,6 @@ namespace G
             bool? saveExistingChanges = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TemplatesUpdateCurrentTemplateFromAgentFileRequest
             {
                 AgentFileJson = agentFileJson,

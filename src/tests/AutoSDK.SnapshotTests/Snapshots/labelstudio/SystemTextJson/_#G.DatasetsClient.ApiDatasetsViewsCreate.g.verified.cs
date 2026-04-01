@@ -216,7 +216,6 @@ namespace G
             int? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DatasetViewRequest
             {
                 Data = data,

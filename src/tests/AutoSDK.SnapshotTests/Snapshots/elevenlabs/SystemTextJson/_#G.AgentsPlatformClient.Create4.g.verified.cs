@@ -228,7 +228,6 @@ namespace G
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AnyOf<global::G.CreateTwilioPhoneNumberRequest, global::G.CreateSIPTrunkPhoneNumberRequestV2>
             {
             };

@@ -297,7 +297,6 @@ namespace G
             global::G.StoreChunkSearchOptions? searchOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.StoreChunkSearchParams
             {
                 Query = query,

@@ -412,7 +412,6 @@ namespace G
             global::System.DateTime? deletedAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateView
             {
                 ObjectType = objectType,

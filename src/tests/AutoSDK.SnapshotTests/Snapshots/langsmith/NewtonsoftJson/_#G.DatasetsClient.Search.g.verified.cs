@@ -248,7 +248,6 @@ namespace G
             string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SearchDatasetRequest
             {
                 Inputs = inputs,

@@ -310,7 +310,6 @@ namespace G
             int pageSize,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GetProjectDescriptorsPagedRequest
             {
                 ProjectId = projectId,

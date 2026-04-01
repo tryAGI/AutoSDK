@@ -191,7 +191,6 @@ namespace G
             global::G.TraceWriteSource? source = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TraceWrite
             {
                 Id = id,

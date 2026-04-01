@@ -304,7 +304,6 @@ namespace G
             global::System.Guid transcriptId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GetTranscriptExportJobIdRequest
             {
                 ProjectId = projectId,

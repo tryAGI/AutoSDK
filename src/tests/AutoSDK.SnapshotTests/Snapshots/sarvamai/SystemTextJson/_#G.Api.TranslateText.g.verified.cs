@@ -416,7 +416,6 @@ namespace G
             global::G.TranslateRequestNumeralsFormat? numeralsFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TranslateRequest
             {
                 Input = input,

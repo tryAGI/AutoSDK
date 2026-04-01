@@ -244,7 +244,6 @@ namespace G
             global::System.Collections.Generic.IList<string>? scorerRefs = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AnnotationQueueUpdateBody
             {
                 ProjectId = projectId,

@@ -262,7 +262,6 @@ namespace G
             string? sourceUrl = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CloneVoiceRequest
             {
                 Name = name,

@@ -246,7 +246,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.PassageCreateRequest> passages,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PassageBatchCreateRequest
             {
                 Passages = passages,

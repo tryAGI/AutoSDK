@@ -308,7 +308,6 @@ namespace G
             long fileSizeBytes,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.InitFileUploadRequest
             {
                 FileSizeBytes = fileSizeBytes,

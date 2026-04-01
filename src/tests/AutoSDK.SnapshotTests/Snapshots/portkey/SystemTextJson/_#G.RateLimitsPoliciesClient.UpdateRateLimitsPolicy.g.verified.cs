@@ -371,7 +371,6 @@ namespace G
             double? value = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateRateLimitsPolicyRequest
             {
                 Name = name,

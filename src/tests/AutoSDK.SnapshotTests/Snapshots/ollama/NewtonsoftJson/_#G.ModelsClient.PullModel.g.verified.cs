@@ -171,7 +171,6 @@ namespace G
             bool? stream = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PullModelRequest
             {
                 Model = model,

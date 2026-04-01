@@ -52,7 +52,6 @@ namespace G
             global::System.CommandLine.ParseResult parseResult,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __requestBodyJson = parseResult.GetRequiredValue(RequestBody);
             var request = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<string>>(__requestBodyJson) ??
                 throw new global::System.InvalidOperationException("Failed to deserialize request body.");

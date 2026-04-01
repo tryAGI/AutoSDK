@@ -230,7 +230,6 @@ namespace G
             global::G.OneOf<global::G.ApiDmActionsCreateRequestSelectedItemsAllFalse, global::G.ApiDmActionsCreateRequestSelectedItemsAllTrue>? selectedItems = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ApiDmActionsCreateRequest
             {
                 Filters = filters,

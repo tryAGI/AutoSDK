@@ -318,7 +318,6 @@ namespace G
             int? timeout = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PointsSelector
             {
             };

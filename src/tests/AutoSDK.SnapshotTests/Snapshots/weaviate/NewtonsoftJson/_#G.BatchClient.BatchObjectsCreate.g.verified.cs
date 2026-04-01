@@ -403,7 +403,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Object>? objects = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BatchObjectsCreateRequest
             {
                 Fields = fields,

@@ -297,7 +297,6 @@ namespace G
             double? nmsIouThreshold = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.Sam3SegmentationRequest
             {
                 Id = id,

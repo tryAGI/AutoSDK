@@ -234,7 +234,6 @@ namespace G
             bool? locked = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PointerCreate
             {
                 PointerOrPipelineId = pointerOrPipelineId,

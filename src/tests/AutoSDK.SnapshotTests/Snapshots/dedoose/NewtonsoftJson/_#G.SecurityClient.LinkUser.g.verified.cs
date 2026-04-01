@@ -306,7 +306,6 @@ namespace G
             global::System.Guid groupId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.LinkUserRequest
             {
                 UserId = userId,

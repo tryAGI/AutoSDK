@@ -267,7 +267,6 @@ namespace G
             string? outputFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyDownloadHistoryItemsV1HistoryDownloadPost
             {
                 HistoryItemIds = historyItemIds,

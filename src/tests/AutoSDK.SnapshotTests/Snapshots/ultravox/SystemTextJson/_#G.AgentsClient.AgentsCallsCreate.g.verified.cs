@@ -240,7 +240,6 @@ namespace G
             object? experimentalSettings = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UltravoxV1StartAgentCallRequest
             {
                 TemplateContext = templateContext,

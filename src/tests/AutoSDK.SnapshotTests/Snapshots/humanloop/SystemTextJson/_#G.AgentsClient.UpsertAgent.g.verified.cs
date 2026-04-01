@@ -216,7 +216,6 @@ namespace G
             int? maxTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AgentRequest
             {
                 Path = path,

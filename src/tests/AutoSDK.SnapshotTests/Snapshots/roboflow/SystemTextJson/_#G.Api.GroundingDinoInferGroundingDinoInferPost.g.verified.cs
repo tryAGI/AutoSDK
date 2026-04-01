@@ -314,7 +314,6 @@ namespace G
             bool? classAgnosticNms = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GroundingDINOInferenceRequest
             {
                 Id = id,

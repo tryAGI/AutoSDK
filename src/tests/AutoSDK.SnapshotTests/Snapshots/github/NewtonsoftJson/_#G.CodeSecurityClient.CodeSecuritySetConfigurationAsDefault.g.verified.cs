@@ -276,7 +276,6 @@ namespace G
             global::G.CodeSecuritySetConfigurationAsDefaultRequestDefaultForNewRepos? defaultForNewRepos = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CodeSecuritySetConfigurationAsDefaultRequest
             {
                 DefaultForNewRepos = defaultForNewRepos,

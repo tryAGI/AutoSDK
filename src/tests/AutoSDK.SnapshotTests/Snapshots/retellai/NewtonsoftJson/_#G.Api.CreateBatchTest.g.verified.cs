@@ -386,7 +386,6 @@ namespace G
             global::G.RetellResponseEngine responseEngine,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateBatchTestRequest
             {
                 TestCaseDefinitionIds = testCaseDefinitionIds,

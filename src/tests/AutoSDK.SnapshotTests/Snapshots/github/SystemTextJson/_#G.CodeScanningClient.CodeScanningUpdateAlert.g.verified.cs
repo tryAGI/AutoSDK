@@ -332,7 +332,6 @@ namespace G
             string? dismissedComment = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CodeScanningUpdateAlertRequest
             {
                 State = state,

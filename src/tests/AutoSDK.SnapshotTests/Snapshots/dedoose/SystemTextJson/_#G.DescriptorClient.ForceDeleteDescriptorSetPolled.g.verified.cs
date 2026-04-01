@@ -304,7 +304,6 @@ namespace G
             global::System.Guid descriptorSetId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ForceDeleteDescriptorSetPolledRequest
             {
                 ProjectIDL = projectIDL,

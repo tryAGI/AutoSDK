@@ -224,7 +224,6 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.SuccessTask> CreateTaskAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OneOf<global::G.CreateTaskRequestVariant1, global::G.CreateTaskRequestVariant2, global::G.CreateTaskRequestVariant3, global::G.CreateTaskRequestVariant4, global::G.CreateTaskRequestVariant5, global::G.CreateTaskRequestVariant6, global::G.CreateTaskRequestVariant7, global::G.CreateTaskRequestVariant8, global::G.CreateTaskRequestVariant9>
             {
             };

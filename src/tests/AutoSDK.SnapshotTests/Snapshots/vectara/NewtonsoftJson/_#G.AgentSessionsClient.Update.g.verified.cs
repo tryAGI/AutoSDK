@@ -385,7 +385,6 @@ namespace G
             long? ttiMinutes = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateAgentSessionRequest
             {
                 Name = name,

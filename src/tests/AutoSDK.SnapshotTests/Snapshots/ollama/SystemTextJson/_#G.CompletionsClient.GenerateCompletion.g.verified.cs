@@ -205,7 +205,6 @@ namespace G
             int? keepAlive = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GenerateCompletionRequest
             {
                 Model = model,

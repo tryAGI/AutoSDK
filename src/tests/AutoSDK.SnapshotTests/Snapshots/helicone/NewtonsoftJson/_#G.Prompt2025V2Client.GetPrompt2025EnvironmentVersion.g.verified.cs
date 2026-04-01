@@ -192,7 +192,6 @@ namespace G
             string promptId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GetPrompt2025EnvironmentVersionRequest2
             {
                 Environment = environment,

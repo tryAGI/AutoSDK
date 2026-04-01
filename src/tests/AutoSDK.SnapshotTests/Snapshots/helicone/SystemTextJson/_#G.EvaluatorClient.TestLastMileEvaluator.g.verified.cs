@@ -192,7 +192,6 @@ namespace G
             global::G.LastMileConfigForm config,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TestLastMileEvaluatorRequest
             {
                 TestInput = testInput,

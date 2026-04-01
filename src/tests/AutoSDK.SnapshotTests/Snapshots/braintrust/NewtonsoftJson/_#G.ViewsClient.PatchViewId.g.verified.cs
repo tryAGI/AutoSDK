@@ -420,7 +420,6 @@ namespace G
             global::System.Guid? userId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PatchView
             {
                 ObjectType = objectType,

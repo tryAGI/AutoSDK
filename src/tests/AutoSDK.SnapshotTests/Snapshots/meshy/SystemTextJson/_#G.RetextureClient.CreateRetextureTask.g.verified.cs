@@ -356,7 +356,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TargetFormat3D>? targetFormats = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.RetextureRequest
             {
                 InputTaskId = inputTaskId,

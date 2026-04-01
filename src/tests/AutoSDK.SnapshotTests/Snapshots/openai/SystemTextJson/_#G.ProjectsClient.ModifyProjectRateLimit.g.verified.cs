@@ -266,7 +266,6 @@ namespace G
             int? batch1DayMaxInputTokens = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ProjectRateLimitUpdateRequest
             {
                 MaxRequestsPer1Minute = maxRequestsPer1Minute,

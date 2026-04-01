@@ -310,7 +310,6 @@ namespace G
             string title,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateFolderTitleRequest
             {
                 ProjectId = projectId,

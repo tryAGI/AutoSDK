@@ -510,7 +510,6 @@ namespace G
             string? inputType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateEmbeddingsRequest
             {
                 Input = input,

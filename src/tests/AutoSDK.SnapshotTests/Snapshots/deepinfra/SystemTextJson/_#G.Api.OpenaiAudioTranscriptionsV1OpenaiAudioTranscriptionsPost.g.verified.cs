@@ -325,7 +325,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1Item>? timestampGranularities = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPost
             {
                 File = file,

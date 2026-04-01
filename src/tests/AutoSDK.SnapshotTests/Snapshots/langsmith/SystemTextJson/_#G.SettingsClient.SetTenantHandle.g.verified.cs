@@ -230,7 +230,6 @@ namespace G
             string tenantHandle,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SetTenantHandleRequest
             {
                 TenantHandle = tenantHandle,

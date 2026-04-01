@@ -275,7 +275,6 @@ namespace G
             global::G.ReposCreateAttestationRequestBundle bundle,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReposCreateAttestationRequest
             {
                 Bundle = bundle,

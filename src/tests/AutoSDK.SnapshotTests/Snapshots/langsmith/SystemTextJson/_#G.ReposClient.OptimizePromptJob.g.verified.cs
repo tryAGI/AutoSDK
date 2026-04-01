@@ -234,7 +234,6 @@ namespace G
             string promptName,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OptimizePromptJobRequest
             {
                 Algorithm = algorithm,

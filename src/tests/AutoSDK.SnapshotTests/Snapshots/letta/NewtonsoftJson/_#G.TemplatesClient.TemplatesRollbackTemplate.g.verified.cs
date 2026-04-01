@@ -324,7 +324,6 @@ namespace G
             string version,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.TemplatesRollbackTemplateRequest
             {
                 Version = version,

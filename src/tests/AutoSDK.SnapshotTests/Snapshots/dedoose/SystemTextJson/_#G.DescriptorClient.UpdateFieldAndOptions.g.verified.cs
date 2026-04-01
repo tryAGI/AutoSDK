@@ -316,7 +316,6 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid> deletedOptionIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateFieldAndOptionsRequest
             {
                 ProjectId = projectId,

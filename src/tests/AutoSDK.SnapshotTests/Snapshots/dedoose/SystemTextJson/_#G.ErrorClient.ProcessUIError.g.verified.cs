@@ -314,7 +314,6 @@ namespace G
             string stacktrace,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ProcessUIErrorRequest
             {
                 ProjectId = projectId,

@@ -312,7 +312,6 @@ namespace G
             global::G.ObjectIdWithPos tag,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.LinkObjectRequest
             {
                 ProjectId = projectId,

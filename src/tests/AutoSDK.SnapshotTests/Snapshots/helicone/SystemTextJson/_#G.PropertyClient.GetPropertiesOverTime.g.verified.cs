@@ -186,7 +186,6 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ResultPropertyStringTotalCostNumberRequestCountNumberCreatedAtTruncStringArrayString> GetPropertiesOverTimeAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AllOf<global::G.DataOverTimeRequest, global::G.GetPropertiesOverTimeRequest2>
             {
             };

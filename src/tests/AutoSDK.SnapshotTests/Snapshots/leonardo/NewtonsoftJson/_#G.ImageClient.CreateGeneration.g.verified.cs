@@ -353,7 +353,6 @@ namespace G
             string? canvasMaskId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateGenerationRequest
             {
                 Alchemy = alchemy,

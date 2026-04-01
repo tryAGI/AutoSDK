@@ -314,7 +314,6 @@ namespace G
             string? sessionId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DeleteStream1Request
             {
                 SessionId = sessionId,

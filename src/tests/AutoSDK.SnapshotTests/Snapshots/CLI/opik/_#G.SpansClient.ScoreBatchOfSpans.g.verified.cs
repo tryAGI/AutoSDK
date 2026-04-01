@@ -161,7 +161,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.FeedbackScoreBatchItem> scores,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.FeedbackScoreBatch
             {
                 Scores = scores,

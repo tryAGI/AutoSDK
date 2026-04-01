@@ -361,7 +361,6 @@ namespace G
             double version,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdatePromptPartialDefaultRequest
             {
                 Version = version,

@@ -268,7 +268,6 @@ namespace G
             bool? enabled = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateApiKeyRequest
             {
                 Enabled = enabled,

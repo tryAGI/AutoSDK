@@ -248,7 +248,6 @@ namespace G
             global::G.AnyOf<global::G.PromptimConfig, global::G.DemoConfig> config,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PromptOptimizationJobCreate
             {
                 Algorithm = algorithm,

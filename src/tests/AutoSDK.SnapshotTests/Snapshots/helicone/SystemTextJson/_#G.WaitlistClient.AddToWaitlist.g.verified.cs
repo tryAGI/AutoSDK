@@ -176,7 +176,6 @@ namespace G
             string email,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AddToWaitlistRequest
             {
                 Feature = feature,

@@ -196,7 +196,6 @@ namespace G
             global::G.CountryMetricsBodyTimeFilter timeFilter,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CountryMetricsBody
             {
                 Filter = filter,

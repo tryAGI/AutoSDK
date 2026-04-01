@@ -283,7 +283,6 @@ namespace G
             global::G.OrgsSetMembershipForUserRequestRole? role = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OrgsSetMembershipForUserRequest
             {
                 Role = role,

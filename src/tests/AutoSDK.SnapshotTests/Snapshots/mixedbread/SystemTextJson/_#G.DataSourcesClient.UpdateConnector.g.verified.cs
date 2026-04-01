@@ -283,7 +283,6 @@ namespace G
             global::G.AnyOf<int?, string, object>? pollingInterval = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DataSourceConnectorUpdateParams
             {
                 Name = name,

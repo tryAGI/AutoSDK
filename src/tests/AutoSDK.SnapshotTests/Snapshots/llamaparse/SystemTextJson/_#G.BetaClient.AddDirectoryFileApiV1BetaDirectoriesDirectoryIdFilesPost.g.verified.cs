@@ -280,7 +280,6 @@ namespace G
             string? displayName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DirectoryFileCreateRequest
             {
                 FileId = fileId,

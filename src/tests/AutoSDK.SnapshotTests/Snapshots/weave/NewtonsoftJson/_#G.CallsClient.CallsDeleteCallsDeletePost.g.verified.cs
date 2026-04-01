@@ -234,7 +234,6 @@ namespace G
             string? wbUserId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CallsDeleteReq
             {
                 ProjectId = projectId,

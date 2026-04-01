@@ -316,7 +316,6 @@ namespace G
             double? weight = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AddExcerptTagApplicationRequest
             {
                 UserId = userId,

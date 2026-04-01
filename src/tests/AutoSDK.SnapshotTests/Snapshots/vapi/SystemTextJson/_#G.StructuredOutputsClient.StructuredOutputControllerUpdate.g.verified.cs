@@ -273,7 +273,6 @@ namespace G
             global::G.JsonSchema? schema = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateStructuredOutputDTO
             {
                 Type = type,

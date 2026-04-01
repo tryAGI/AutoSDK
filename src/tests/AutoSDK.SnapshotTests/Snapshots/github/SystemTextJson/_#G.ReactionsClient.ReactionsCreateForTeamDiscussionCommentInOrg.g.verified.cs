@@ -218,7 +218,6 @@ namespace G
             global::G.ReactionsCreateForTeamDiscussionCommentInOrgRequestContent content,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReactionsCreateForTeamDiscussionCommentInOrgRequest
             {
                 Content = content,

@@ -274,7 +274,6 @@ namespace G
             object? extraBody = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OpenAITextToSpeechIn
             {
                 Model = model,

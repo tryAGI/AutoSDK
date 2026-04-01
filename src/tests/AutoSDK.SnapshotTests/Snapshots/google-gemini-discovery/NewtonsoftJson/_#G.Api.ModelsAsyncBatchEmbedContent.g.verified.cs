@@ -184,7 +184,6 @@ namespace G
             global::G.EmbedContentBatch? batch = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AsyncBatchEmbedContentRequest
             {
                 Batch = batch,

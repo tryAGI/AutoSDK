@@ -226,7 +226,6 @@ namespace G
             global::System.Collections.Generic.IList<int> users,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ApiProjectsTasksAssigneesCreate2Request
             {
                 Type = type,

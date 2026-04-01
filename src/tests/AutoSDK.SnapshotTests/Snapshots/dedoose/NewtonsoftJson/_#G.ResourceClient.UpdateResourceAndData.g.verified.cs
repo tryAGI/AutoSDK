@@ -314,7 +314,6 @@ namespace G
             bool isLocked,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateResourceAndDataRequest
             {
                 ProjectId = projectId,

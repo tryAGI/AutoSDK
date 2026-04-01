@@ -367,7 +367,6 @@ namespace G
             global::G.CallTimeWindow? callTimeWindow = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateBatchCallRequest
             {
                 Name = name,

@@ -234,7 +234,6 @@ namespace G
             string id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AnyOf<global::G.AnyOf<global::G.UpdateSecretRequestUpdateSecretRequest1BasicAuthentication, global::G.UpdateSecretRequestUpdateSecretRequest1BearerToken, global::G.UpdateSecretRequestUpdateSecretRequest1ApiKey>?, global::G.AnyOf<global::G.UpdateSecretRequestVariant2OpenAIConfiguration, global::G.UpdateSecretRequestVariant2Variant2>?>
             {
             };

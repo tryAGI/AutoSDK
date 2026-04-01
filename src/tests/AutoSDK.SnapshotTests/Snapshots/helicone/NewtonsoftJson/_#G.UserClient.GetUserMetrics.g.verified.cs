@@ -200,7 +200,6 @@ namespace G
             global::G.SortLeafUsers? sort = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UserMetricsQueryParams
             {
                 Filter = filter,

@@ -202,7 +202,6 @@ namespace G
             global::G.SplittingStrategy strategy,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ContextAwareTextSplittingRequest
             {
                 Text = text,

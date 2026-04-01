@@ -284,7 +284,6 @@ namespace G
             string conversationId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CreateConversationBody
             {
                 ConversationId = conversationId,

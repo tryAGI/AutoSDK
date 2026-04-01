@@ -308,7 +308,6 @@ namespace G
             string fileURI,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.StartAddImageResourceRequest
             {
                 ProjectId = projectId,

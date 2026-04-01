@@ -237,7 +237,6 @@ namespace G
             global::G.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPostApplyTextNormalization? applyTextNormalization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost
             {
                 Inputs = inputs,

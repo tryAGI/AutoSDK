@@ -279,7 +279,6 @@ namespace G
             global::G.ReRankConfig? rerankConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.CompositeRetrievalParams
             {
                 Mode = mode,

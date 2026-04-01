@@ -266,7 +266,6 @@ namespace G
             string rsaEncryptedPassword,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.LoginRequest
             {
                 Username = username,

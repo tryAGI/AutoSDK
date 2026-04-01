@@ -296,7 +296,6 @@ namespace G
             global::G.SearchAndScrapeRequestScrapeOptions? scrapeOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.SearchAndScrapeRequest
             {
                 Query = query,

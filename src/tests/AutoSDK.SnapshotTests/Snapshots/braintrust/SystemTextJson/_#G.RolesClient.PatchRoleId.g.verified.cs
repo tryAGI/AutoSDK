@@ -416,7 +416,6 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? removeMemberRoles = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.PatchRole
             {
                 Description = description,

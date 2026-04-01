@@ -198,7 +198,6 @@ namespace G
             global::G.UpdateEvaluationStatusRequestStatus? status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.UpdateEvaluationStatusRequest
             {
                 Status = status,

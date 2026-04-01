@@ -237,7 +237,6 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ClassifierTargetIn>? classifierTargets = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.JobIn
             {
                 Model = model,

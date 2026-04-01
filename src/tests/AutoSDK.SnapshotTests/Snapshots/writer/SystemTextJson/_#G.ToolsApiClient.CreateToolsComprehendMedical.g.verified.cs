@@ -202,7 +202,6 @@ namespace G
             global::G.ComprehendMedicalType responseType,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ComprehendMedicalRequest
             {
                 Content = content,

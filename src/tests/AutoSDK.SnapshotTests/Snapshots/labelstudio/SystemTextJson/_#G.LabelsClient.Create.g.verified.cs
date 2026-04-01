@@ -198,7 +198,6 @@ namespace G
             int project,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.LabelLinkRequest
             {
                 FromName = fromName,

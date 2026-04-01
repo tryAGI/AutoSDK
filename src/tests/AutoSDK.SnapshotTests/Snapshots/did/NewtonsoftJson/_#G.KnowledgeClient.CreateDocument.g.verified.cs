@@ -238,7 +238,6 @@ namespace G
             string knowledgeId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AllOf<global::G.CreateDocumentRequestVariant1, global::G.CreateDocumentRequestVariant2>
             {
             };

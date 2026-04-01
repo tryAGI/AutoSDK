@@ -240,7 +240,6 @@ namespace G
             global::G.ReactionsCreateForCommitCommentRequestContent content,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ReactionsCreateForCommitCommentRequest
             {
                 Content = content,

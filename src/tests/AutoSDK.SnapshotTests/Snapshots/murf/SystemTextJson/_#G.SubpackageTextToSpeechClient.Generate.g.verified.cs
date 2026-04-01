@@ -439,7 +439,6 @@ namespace G
             bool? wordDurationsAsOriginalText = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.GenerateSpeechRequest
             {
                 AudioDuration = audioDuration,

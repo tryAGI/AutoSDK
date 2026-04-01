@@ -336,7 +336,6 @@ namespace G
             global::System.Collections.Generic.IList<string> targetLocales,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ApiUpdateProjectRequest
             {
                 TargetLocales = targetLocales,

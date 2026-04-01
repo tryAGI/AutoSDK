@@ -202,7 +202,6 @@ namespace G
             global::System.Collections.Generic.IList<string> userIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.OpenRemoveSpaceMemberRequest
             {
                 UserIds = userIds,

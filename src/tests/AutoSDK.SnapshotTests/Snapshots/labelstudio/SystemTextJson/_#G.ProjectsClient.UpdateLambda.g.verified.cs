@@ -240,7 +240,6 @@ namespace G
             string? role = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.AWSCustomFunctionUpdateRequest
             {
                 Code = code,

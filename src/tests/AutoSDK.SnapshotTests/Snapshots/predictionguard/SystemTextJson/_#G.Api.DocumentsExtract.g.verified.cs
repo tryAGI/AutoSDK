@@ -431,7 +431,6 @@ namespace G
             bool? enableOCR = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.DocumentsExtractRequest
             {
                 File = file,

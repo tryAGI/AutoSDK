@@ -601,7 +601,6 @@ namespace G
             int? steps = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.MaskingRequestBody
             {
                 InitImage = initImage,

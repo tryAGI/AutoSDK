@@ -192,7 +192,6 @@ namespace G
             string sql,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::G.ExecuteSqlRequest
             {
                 Sql = sql,
