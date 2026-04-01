@@ -399,3 +399,8 @@ FodyWeavers.xsd
 /.idea/
 
 **/.DS_Store
+
+# MkDocs local build outputs
+site/
+_site/
+docs/assets/
