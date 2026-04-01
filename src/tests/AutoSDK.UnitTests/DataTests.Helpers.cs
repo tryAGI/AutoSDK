@@ -41,12 +41,13 @@ public partial class DataTests : VerifyBase
         //     Verify(data.Types)
         //         .UseDirectory($"Snapshots/{callerName}/Types")
         //         .UseFileName("_");
+        var schemaStrings = ToSchemaStrings(data.Schemas);
         var schemasTask =
-            Verify(data.Schemas.Select(x => $"{GetMargin(x)}{x.Id}({x.Type})"))
+            Verify(schemaStrings)
                 .UseDirectory($"Snapshots/{resourceName}/Schemas")
                 .UseFileName("_");
         var resolvedSchemasTask =
-            Verify(ToResolvedStrings(data.FilteredSchemas.Where(x => x.Parent == null)))
+            Verify(ToResolvedStrings(data.FilteredSchemas.Where(x => x.Parent == null), data.FilteredSchemas.Count))
                 .UseDirectory($"Snapshots/{resourceName}/ResolvedSchemas")
                 .UseFileName("_");
         
@@ -58,41 +59,91 @@ public partial class DataTests : VerifyBase
         schemasTask = schemasTask.AutoVerify();
         resolvedSchemasTask = resolvedSchemasTask.AutoVerify();
 
-        Console.WriteLine($"Number of schemas: {data.Schemas.Count}");
-        Console.WriteLine($"Total: {data.Times.Total}");
-        Console.WriteLine($"TraversalTree: {data.Times.TraversalTree}");
-        Console.WriteLine($"Naming: {data.Times.Naming}");
-        Console.WriteLine($"ResolveReferences: {data.Times.ResolveReferences}");
-        Console.WriteLine($"Filtering: {data.Times.Filtering}");
-        Console.WriteLine($"ComputeData: {data.Times.ComputeData}");
-        Console.WriteLine($"ComputeDataClasses: {data.Times.ComputeDataClasses}");
-        
         return Task.WhenAll(schemasTask, resolvedSchemasTask); // classesTask, enumsTask, methodsTask, anyOfsTask, typesTask, 
     }
 
-    private static string GetMargin(SchemaContext context)
+    private static List<string> ToSchemaStrings(IReadOnlyList<SchemaContext> schemas)
     {
-        var margin = string.Empty;
+        var result = new List<string>(schemas.Count);
+        var depthCache = new Dictionary<SchemaContext, int>(ReferenceEqualityComparer.Instance);
+        var indentCache = new List<string> { string.Empty };
 
-        while (context.Parent != null)
+        foreach (var context in schemas)
         {
-            margin += "  ";
-            context = context.Parent;
+            var depth = GetDepth(context, depthCache);
+            result.Add($"{GetIndent(depth, indentCache)}{context.Id}({context.Type})");
         }
-        
-        return margin;
+
+        return result;
     }
 
-    private static List<string> ToResolvedStrings(IEnumerable<SchemaContext> contexts, string margin = "")
+    private static int GetDepth(SchemaContext context, Dictionary<SchemaContext, int> depthCache)
     {
-        var result = new List<string>();
+        if (depthCache.TryGetValue(context, out var depth))
+        {
+            return depth;
+        }
+
+        depth = context.Parent is null
+            ? 0
+            : GetDepth(context.Parent, depthCache) + 1;
+        depthCache[context] = depth;
+        return depth;
+    }
+
+    private static List<string> ToResolvedStrings(IEnumerable<SchemaContext> contexts, int capacity)
+    {
+        var result = new List<string>(capacity);
+        var indentCache = new List<string> { string.Empty };
+        AddResolvedStrings(result, contexts, depth: 0, indentCache);
+        return result;
+    }
+
+    private static void AddResolvedStrings(
+        List<string> result,
+        IEnumerable<SchemaContext> contexts,
+        int depth,
+        List<string> indentCache)
+    {
         foreach (var context in contexts)
         {
-            result.Add($"{margin}{context.Id}({context.Type})[{string.Join(", ", context.Tags)}]");
-            
-            result.AddRange(ToResolvedStrings(context.Children, margin + "  "));
+            result.Add($"{GetIndent(depth, indentCache)}{context.Id}({context.Type})[{FormatTags(context.Tags)}]");
+            AddResolvedStrings(result, context.Children, depth + 1, indentCache);
         }
-        
-        return result;
+    }
+
+    private static string GetIndent(int depth, List<string> indentCache)
+    {
+        while (indentCache.Count <= depth)
+        {
+            indentCache.Add(new string(' ', indentCache.Count * 2));
+        }
+
+        return indentCache[depth];
+    }
+
+    private static string FormatTags(IEnumerable<string> tags)
+    {
+        using var enumerator = tags.GetEnumerator();
+        if (!enumerator.MoveNext())
+        {
+            return string.Empty;
+        }
+
+        var first = enumerator.Current;
+        if (!enumerator.MoveNext())
+        {
+            return first;
+        }
+
+        var builder = new System.Text.StringBuilder(first);
+        do
+        {
+            builder.Append(", ");
+            builder.Append(enumerator.Current);
+        }
+        while (enumerator.MoveNext());
+
+        return builder.ToString();
     }
 }

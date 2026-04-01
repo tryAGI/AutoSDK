@@ -28,7 +28,7 @@ public class HttpTests : VerifyBase
     [TestMethod]
     public Task Petstore()
     {
-        var yaml = new H.Resource("petstore.yaml").AsString();
+        var yaml = TestSpecCache.GetText("petstore.yaml");
         var (operations, document) = LoadSpec(yaml);
 
         var files = new List<string>();
@@ -60,7 +60,7 @@ public class HttpTests : VerifyBase
     [TestMethod]
     public Task SpecialCases()
     {
-        var yaml = new H.Resource("special-cases.yaml").AsString();
+        var yaml = TestSpecCache.GetText("special-cases.yaml");
         var (operations, document) = LoadSpec(yaml);
 
         var files = new List<string>();

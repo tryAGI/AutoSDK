@@ -5,8 +5,8 @@ namespace AutoSDK.UnitTests;
 
 /// <summary>
 /// Independent benchmark tests — each can be run standalone via --filter for fast verification.
-/// Example: dotnet test --filter "FullyQualifiedName~BenchmarkTests.Timing_ElevenLabs"
-/// Run all: dotnet test --filter "TestCategory=Benchmark"
+/// Example: dotnet test src/tests/AutoSDK.UnitTests/AutoSDK.UnitTests.csproj -p:RunUnitBenchmarks=true --filter "FullyQualifiedName~BenchmarkTests.Timing_ElevenLabs"
+/// Run all: dotnet test src/tests/AutoSDK.UnitTests/AutoSDK.UnitTests.csproj -p:RunUnitBenchmarks=true --filter "TestCategory=Benchmark"
 ///
 /// Baseline (2026-03-21, net10.0, Apple Silicon):
 ///   ElevenLabs: 587ms / 306MB (11,820 schemas) [was 397MB]
@@ -14,6 +14,7 @@ namespace AutoSDK.UnitTests;
 ///   GitHub:    1497ms / 961MB (42,052 schemas) [was 1086MB]
 /// </summary>
 [TestClass]
+[DoNotParallelize]
 public class BenchmarkTests
 {
     private static Settings BenchmarkSettings => Settings.Default with
@@ -169,7 +170,7 @@ public class BenchmarkTests
     private static AutoSDK.Models.Data PrepareData(string resourceName)
     {
         var settings = BenchmarkSettings;
-        return AutoSDK.Generation.Data.Prepare(((new H.Resource(resourceName).AsString(), settings), GlobalSettings: settings));
+        return AutoSDK.Generation.Data.Prepare(((TestSpecCache.GetText(resourceName), settings), GlobalSettings: settings));
     }
 
     private static void RunTimingBenchmark(string resourceName)

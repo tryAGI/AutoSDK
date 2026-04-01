@@ -8,6 +8,31 @@ namespace AutoSDK.UnitTests;
 [TestClass]
 public class ResponseTypeInferenceTests
 {
+    private static readonly Lazy<AutoSDK.Models.Data> ElevenLabsDefaultData = new(
+        static () => LoadDataFromResource(
+            "elevenlabs.json",
+            DefaultSettings with
+            {
+                IgnoreOpenApiErrors = true,
+            }));
+
+    private static readonly Lazy<AutoSDK.Models.Data> ElevenLabsMethodAndPathData = new(
+        static () => LoadDataFromResource(
+            "elevenlabs.json",
+            DefaultSettings with
+            {
+                IgnoreOpenApiErrors = true,
+                MethodNamingConvention = MethodNamingConvention.MethodAndPath,
+            }));
+
+    private static readonly Lazy<AutoSDK.Models.Data> CohereStreamingData = new(
+        static () => LoadDataFromResource(
+            "cohere.yaml",
+            DefaultSettings with
+            {
+                IgnoreOpenApiErrors = true,
+            }));
+
     private static Settings DefaultSettings => Settings.Default with
     {
         Namespace = "G",
@@ -80,11 +105,7 @@ paths:
     [TestMethod]
     public void RealElevenLabsBufferedBinaryResponses_GenerateByteArrayMethods()
     {
-        var settings = DefaultSettings with
-        {
-            IgnoreOpenApiErrors = true,
-        };
-        var data = AutoSDK.Generation.Data.Prepare(((new H.Resource("elevenlabs.json").AsString(), settings), GlobalSettings: settings));
+        var data = ElevenLabsDefaultData.Value;
         var expectedPaths = new[]
         {
             "\"/v1/audio-isolation\"",
@@ -109,11 +130,7 @@ paths:
     [TestMethod]
     public void RealElevenLabsFernBinaryStreamingResponses_GenerateStreamMethods()
     {
-        var settings = DefaultSettings with
-        {
-            IgnoreOpenApiErrors = true,
-        };
-        var data = AutoSDK.Generation.Data.Prepare(((new H.Resource("elevenlabs.json").AsString(), settings), GlobalSettings: settings));
+        var data = ElevenLabsDefaultData.Value;
         var expectedPaths = new[]
         {
             "\"/v1/audio-isolation/stream\"",
@@ -145,12 +162,7 @@ paths:
     [TestMethod]
     public void RealElevenLabsFernJsonStreamingResponses_GenerateAsyncEnumerableMethods()
     {
-        var settings = DefaultSettings with
-        {
-            IgnoreOpenApiErrors = true,
-            MethodNamingConvention = MethodNamingConvention.MethodAndPath,
-        };
-        var data = AutoSDK.Generation.Data.Prepare(((new H.Resource("elevenlabs.json").AsString(), settings), GlobalSettings: settings));
+        var data = ElevenLabsMethodAndPathData.Value;
         var expectedPaths = new[]
         {
             "$\"/v1/text-to-speech/{voiceId}/stream/with-timestamps\"",
@@ -180,11 +192,7 @@ paths:
     [TestMethod]
     public void RealCohereFernStreamingMetadata_SplitsChatIntoRegularAndNdjsonStreamMethods()
     {
-        var settings = DefaultSettings with
-        {
-            IgnoreOpenApiErrors = true,
-        };
-        var data = LoadDataFromResource("cohere.yaml", settings);
+        var data = CohereStreamingData.Value;
         var chatEndPoints = data.Methods
             .Where(x => string.Equals(x.Path, "\"/v1/chat\"", StringComparison.Ordinal))
             .ToArray();
@@ -212,11 +220,7 @@ paths:
     [TestMethod]
     public void RealCohereFernStreamingMetadata_SplitsChatV2IntoRegularAndSseStreamMethods()
     {
-        var settings = DefaultSettings with
-        {
-            IgnoreOpenApiErrors = true,
-        };
-        var data = LoadDataFromResource("cohere.yaml", settings);
+        var data = CohereStreamingData.Value;
         var chatEndPoints = data.Methods
             .Where(x => string.Equals(x.Path, "\"/v2/chat\"", StringComparison.Ordinal))
             .ToArray();
@@ -448,6 +452,6 @@ paths:
 
     private static AutoSDK.Models.Data LoadDataFromResource(string resourceName, Settings settings)
     {
-        return AutoSDK.Generation.Data.Prepare(((new H.Resource(resourceName).AsString(), settings), GlobalSettings: settings));
+        return AutoSDK.Generation.Data.Prepare(((TestSpecCache.GetText(resourceName), settings), GlobalSettings: settings));
     }
 }

@@ -480,7 +480,7 @@ public partial class DataTests
             ExcludeModels = ["Pet"],
         };
 
-        var data = PreparePetstoreWithExclusions(useLegacyPrepare, new H.Resource("petstore.yaml").AsString(), settings);
+        var data = PreparePetstoreWithExclusions(useLegacyPrepare, TestSpecCache.GetText("petstore.yaml"), settings);
 
         data.Classes.Select(x => x.ClassName).Should().NotContain("Pet");
         data.Classes.Select(x => x.ClassName).Should().Contain("Error");
@@ -501,7 +501,7 @@ public partial class DataTests
             GenerateModels = true,
             ExcludeModels = ["PetStore.Pet"],
         };
-        var yaml = new H.Resource("petstore.yaml").AsString()
+        var yaml = TestSpecCache.GetText("petstore.yaml")
             .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
             .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
 
@@ -552,7 +552,7 @@ public partial class DataTests
             GenerateModels = true,
             NamespaceDelimiter = ".",
         };
-        var yaml = new H.Resource("petstore.yaml").AsString()
+        var yaml = TestSpecCache.GetText("petstore.yaml")
             .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
             .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
 
@@ -581,7 +581,7 @@ public partial class DataTests
             ExcludeModels = ["PetStore.Pet"],
             NamespaceDelimiter = ".",
         };
-        var yaml = new H.Resource("petstore.yaml").AsString()
+        var yaml = TestSpecCache.GetText("petstore.yaml")
             .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
             .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
 
@@ -607,7 +607,7 @@ public partial class DataTests
             NamespaceDelimiter = ".",
             ExcludedModelNamespaceMode = ExcludedModelNamespaceMode.SdkRoot,
         };
-        var yaml = new H.Resource("petstore.yaml").AsString()
+        var yaml = TestSpecCache.GetText("petstore.yaml")
             .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
             .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
 
@@ -1066,7 +1066,7 @@ public partial class DataTests
             UseExtensionNaming = false,
         };
 
-        var data = Data.Prepare(((new H.Resource("vectara.yaml").AsString(), settings), GlobalSettings: settings));
+        var data = Data.Prepare(((TestSpecCache.GetText("vectara.yaml"), settings), GlobalSettings: settings));
         var anyOf = data.AnyOfs.Single(x => x.Name == "CreateInputRequest");
         var endPoint = data.Methods.Single(x => x.MethodName == "CreateAgentInputAsync");
         var generatedEndPoint = Sources.GenerateEndPoint(endPoint);
@@ -1214,7 +1214,7 @@ public partial class DataTests
             },
         };
         return VerifyAsync(
-            data: Data.Prepare(((new H.Resource(resourceName).AsString(), settings), GlobalSettings: settings)),
+            data: Data.Prepare(((TestSpecCache.GetText(resourceName), settings), GlobalSettings: settings)),
             resourceName: Path.GetFileNameWithoutExtension(resourceName));
     }
 
@@ -1227,7 +1227,7 @@ public partial class DataTests
         {
             IgnoreOpenApiErrors = true,
         };
-        var yaml = new H.Resource("cohere.yaml").AsString();
+        var yaml = TestSpecCache.GetText("cohere.yaml");
         var data = useLegacyPrepare
             ? Data.Prepare(((yaml, settings), GlobalSettings: settings))
             : CSharpPipeline.PrepareAndEnrich(((yaml, settings), GlobalSettings: settings));

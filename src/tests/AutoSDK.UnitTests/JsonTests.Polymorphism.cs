@@ -18,8 +18,6 @@ public partial class JsonTests
         };
         var json = @event.ToJson(PolymorphismCohereChatStreamEventContext.Default);
         
-        Console.WriteLine(json);
-
         json.Should().Be("""
                          {
                            "event_type": "stream-start",
