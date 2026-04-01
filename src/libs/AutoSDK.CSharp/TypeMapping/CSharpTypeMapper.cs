@@ -161,7 +161,7 @@ public static class CSharpTypeMapper
         var type = cachedType ?? GetCSharpTypeCore(context, isArray, isAnyOf, isOneOf, isAllOf);
         var isNullable = schema.IsNullable() || schema.IsNullableAnyOf();
         var collapsed = (isAnyOf || isOneOf || isAllOf) && IsCollapsedAnyOfLike(context);
-        var usesGeneratedJsonHelpers = type.StartsWith($"global::{generatedNamespace}.", StringComparison.Ordinal);
+        var usesGeneratedJsonHelpers = ShouldUseGeneratedJsonHelpers(context, type, generatedNamespace);
 
         return (new TypeData(
             CSharpTypeRaw: type,
@@ -210,6 +210,16 @@ public static class CSharpTypeMapper
             UsesGeneratedJsonHelpers = usesGeneratedJsonHelpers,
         })
             .WithCSharpComputedValues();
+    }
+
+    private static bool ShouldUseGeneratedJsonHelpers(SchemaContext context, string type, string generatedNamespace)
+    {
+        if (!type.StartsWith($"global::{generatedNamespace}.", StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        return context.IsClass || context.IsAnyOfLikeStructure;
     }
 
     private static TypeData CreateReferenceTypeData(SchemaContext context)
