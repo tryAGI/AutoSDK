@@ -472,6 +472,8 @@ public class CliTests
                 var v2Interface = await ReadRequiredGeneratedFileAsync(generatedFiles, "Oag.IV2Client.Chat2.g.cs");
                 var v2StreamInterface = await ReadRequiredGeneratedFileAsync(generatedFiles, "Oag.IV2Client.Chat2AsStream.g.cs");
                 var v2StreamClient = await ReadRequiredGeneratedFileAsync(generatedFiles, "Oag.V2Client.Chat2AsStream.g.cs");
+                var finetuningInterface = await ReadRequiredGeneratedFileAsync(generatedFiles, "Oag.IFinetuningClient.UpdateFinetunedModel.g.cs");
+                var finetuningClient = await ReadRequiredGeneratedFileAsync(generatedFiles, "Oag.FinetuningClient.UpdateFinetunedModel.g.cs");
 
                 chatInterface.Should().Contain("Task<global::Oag.NonStreamedChatResponse> ChatAsync(");
                 chatInterface.Should().NotContain("OneOf<global::Oag.NonStreamedChatResponse, global::Oag.StreamedChatResponse");
@@ -488,6 +490,13 @@ public class CliTests
 
                 v2StreamClient.Should().Contain("SseParser");
                 v2StreamClient.Should().Contain("yield return __streamedResponse;");
+
+                generatedFiles.Should().Contain(path => Path.GetFileName(path) == "Oag.Models.FinetuningUpdateFinetunedModelRequest.g.cs");
+                generatedFiles.Should().NotContain(path => Path.GetFileName(path) == "Oag.Models.UpdateFinetunedModelRequest.g.cs");
+                finetuningInterface.Should().Contain("global::Oag.FinetuningUpdateFinetunedModelRequest request");
+                finetuningInterface.Should().NotContain("global::Oag.UpdateFinetunedModelRequest request");
+                finetuningClient.Should().Contain("var __request = new global::Oag.FinetuningUpdateFinetunedModelRequest");
+                finetuningClient.Should().NotContain("var __request = new global::Oag.UpdateFinetunedModelRequest");
             });
     }
 
