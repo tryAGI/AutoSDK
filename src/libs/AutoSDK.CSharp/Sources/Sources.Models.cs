@@ -295,6 +295,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
         {property.DefaultValue?.ClearForXml().ToXmlDocumentationDefault(level: 8)}
         {property.Example?.ToXmlDocumentationExample(level: 8)}
+        {GenerateValidationAttributes(modelData, property)}
         {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
         {jsonSerializer.GenerateConverterAttribute(property.ConverterType)}
         {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}

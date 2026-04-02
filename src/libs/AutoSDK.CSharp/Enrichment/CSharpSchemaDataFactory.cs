@@ -70,6 +70,15 @@ public static class CSharpSchemaDataFactory
                      !string.IsNullOrWhiteSpace(example)
                 ? example.ClearForXml()
                 : null,
+            MinLength: context.Schema.MinLength,
+            MaxLength: context.Schema.MaxLength,
+            MinItems: context.Schema.MinItems,
+            MaxItems: context.Schema.MaxItems,
+            Pattern: context.Schema.Pattern ?? string.Empty,
+            Minimum: context.Schema.Minimum ?? string.Empty,
+            Maximum: context.Schema.Maximum ?? string.Empty,
+            ExclusiveMinimum: context.Schema.ExclusiveMinimum ?? string.Empty,
+            ExclusiveMaximum: context.Schema.ExclusiveMaximum ?? string.Empty,
             Summary: context.Schema.GetSummary(),
             Description: context.Schema.Description ?? string.Empty,
             ConverterType: type.ConverterType,
