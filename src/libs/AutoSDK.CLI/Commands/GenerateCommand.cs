@@ -301,8 +301,6 @@ internal sealed class GenerateCommand : Command
             ? await client.GetStringAsync(new Uri(input)).ConfigureAwait(false)
             : await File.ReadAllTextAsync(input).ConfigureAwait(false);
         
-        Console.WriteLine("Generating...");
-        
         var name = Path.GetFileNameWithoutExtension(input);
         
         if (string.IsNullOrWhiteSpace(settings.Namespace))
@@ -326,6 +324,17 @@ internal sealed class GenerateCommand : Command
         {
             throw new NotSupportedException($"Unsupported language '{language}'. Currently only 'csharp' is supported.");
         }
+
+        var specFormat = SpecFormatDetector.DetectFormat(yaml);
+        if (specFormat == SpecFormat.GrpcProto)
+        {
+            await Console.Error.WriteLineAsync(SpecFormatDetector.GrpcProtoNotSupportedMessage).ConfigureAwait(false);
+            await Console.Error.FlushAsync().ConfigureAwait(false);
+            Environment.Exit(1);
+            return;
+        }
+
+        Console.WriteLine("Generating...");
 
         var data = CSharpPipeline.PrepareAndEnrich(
             ((yaml, settings), GlobalSettings: settings));

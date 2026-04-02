@@ -38,6 +38,7 @@ public static class CorePipeline
                 toClassName,
                 toPropertyName,
                 cancellationToken),
+            SpecFormat.GrpcProto => throw new NotSupportedException(SpecFormatDetector.GrpcProtoNotSupportedMessage),
             _ => PrepareOpenApi(
                 text,
                 settings,
