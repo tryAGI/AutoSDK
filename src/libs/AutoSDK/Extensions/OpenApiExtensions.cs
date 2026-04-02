@@ -852,6 +852,44 @@ info:
         });
     }
 
+    public static string ExpandServerTemplate(
+        this OpenApiServer? server)
+    {
+        var url = server?.Url;
+        if (string.IsNullOrWhiteSpace(url))
+        {
+            return string.Empty;
+        }
+
+        var expanded = url!;
+        var variables = server?.Variables;
+        if (variables == null || variables.Count == 0)
+        {
+            return expanded;
+        }
+
+        foreach (var pair in variables)
+        {
+            var name = pair.Key;
+            var variable = pair.Value;
+            var value = variable?.Default;
+            if (string.IsNullOrWhiteSpace(value) &&
+                variable?.Enum is { Count: > 0 })
+            {
+                value = variable.Enum[0];
+            }
+
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                continue;
+            }
+
+            expanded = expanded.Replace("{" + name + "}", value);
+        }
+
+        return expanded;
+    }
+
     public static void InjectSecuritySchemes(
         this OpenApiDocument openApiDocument,
         Settings settings)

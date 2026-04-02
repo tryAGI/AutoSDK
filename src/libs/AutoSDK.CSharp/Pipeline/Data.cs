@@ -554,7 +554,7 @@ public static class Data
                 ClassName: settings.ClassName.Replace(".", string.Empty),
                 FileNameWithoutExtension: $"{settings.Namespace}.{settings.ClassName.Replace(".", string.Empty)}",
                 InterfaceFileNameWithoutExtension: $"{settings.Namespace}.I{settings.ClassName.Replace(".", string.Empty)}",
-                BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
+                BaseUrl: openApiDocument.Servers!.FirstOrDefault().ExpandServerTemplate(),
                 Clients: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
                     ? [
                         .. resolvedIncludedTags.Select(tag => (PropertyData.Default with
@@ -583,7 +583,7 @@ public static class Data
                         ClassName: CSharpClientNameGenerator.Generate(tag),
                         FileNameWithoutExtension: $"{settings.Namespace}.{CSharpClientNameGenerator.Generate(tag)}",
                         InterfaceFileNameWithoutExtension: $"{settings.Namespace}.I{CSharpClientNameGenerator.Generate(tag)}",
-                        BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
+                        BaseUrl: openApiDocument.Servers!.FirstOrDefault().ExpandServerTemplate(),
                         Clients: [],
                         Summary: (!string.IsNullOrWhiteSpace(tag.DisplayName) ? tag.DisplayName : tag.Description)?.ClearForXml() ?? string.Empty,
                         BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
@@ -902,7 +902,7 @@ public static class Data
                 ClassName: settings.ClassName.Replace(".", string.Empty),
                 FileNameWithoutExtension: $"{settings.Namespace}.{settings.ClassName.Replace(".", string.Empty)}",
                 InterfaceFileNameWithoutExtension: $"{settings.Namespace}.I{settings.ClassName.Replace(".", string.Empty)}",
-                BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
+                BaseUrl: openApiDocument.Servers!.FirstOrDefault().ExpandServerTemplate(),
                 Clients: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
                     ? [
                         .. resolvedIncludedTags.Select(tag => (PropertyData.Default with
@@ -932,7 +932,7 @@ public static class Data
                         ClassName: CSharpClientNameGenerator.Generate(tag),
                         FileNameWithoutExtension: $"{settings.Namespace}.{CSharpClientNameGenerator.Generate(tag)}",
                         InterfaceFileNameWithoutExtension: $"{settings.Namespace}.I{CSharpClientNameGenerator.Generate(tag)}",
-                        BaseUrl: openApiDocument.Servers!.FirstOrDefault()?.Url ?? string.Empty,
+                        BaseUrl: openApiDocument.Servers!.FirstOrDefault().ExpandServerTemplate(),
                         Clients: [],
                         Summary: (!string.IsNullOrWhiteSpace(tag.DisplayName) ? tag.DisplayName : tag.Description)?.ClearForXml() ?? string.Empty,
                         BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,

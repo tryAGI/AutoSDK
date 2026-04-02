@@ -684,6 +684,56 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithServerVariableDefaults_UsesResolvedBaseUrl()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Server Vars
+  version: 1.0.0
+servers:
+  - url: https://{region}.example.com/{version}
+    variables:
+      region:
+        default: us
+        enum: [us, eu]
+      version:
+        default: v1
+paths:
+  /ping:
+    get:
+      operationId: ping
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "server-variables.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "ServerVars",
+            clientClassName: "ServerVarsClient",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("public const string DefaultBaseUrl = \"https://us.example.com/v1\";");
+                content.Should().NotContain("DefaultBaseUrl = \"https://{region}.example.com/{version}\"");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithRequiredNullableAnyOfRequestProperty_Builds()
     {
         const string spec = """

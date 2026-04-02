@@ -170,7 +170,9 @@ public static partial class Sources
 
                 var env = new JsonObject
                 {
-                    ["host"] = server.Url?.TrimEnd('/') ?? "http://localhost",
+                    ["host"] = server.ExpandServerTemplate().TrimEnd('/') is { Length: > 0 } host
+                        ? host
+                        : "http://localhost",
                 };
                 AddAuthVariables(env, securitySchemes);
                 envObj[envName] = env;

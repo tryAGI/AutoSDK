@@ -441,6 +441,84 @@ paths:
     }
 
     [TestMethod]
+    public void EnvFile_ServerVariables_UseDefaults()
+    {
+        const string yaml = """
+openapi: 3.0.3
+info:
+  title: Server Vars
+  version: 1.0.0
+servers:
+  - url: https://{region}.example.com/{version}
+    description: Production
+    variables:
+      region:
+        default: us
+        enum: [us, eu]
+      version:
+        default: v1
+paths:
+  /ping:
+    get:
+      operationId: ping
+      responses:
+        '200':
+          description: OK
+""";
+
+        var (_, document) = LoadSpec(yaml);
+        var servers = (document.Servers ?? []).ToList();
+        var result = Sources.GenerateHttpEnvironmentFile(servers, []);
+
+        result.Should().Contain("\"host\": \"https://us.example.com/v1\"");
+        result.Should().NotContain("{region}");
+        result.Should().NotContain("{version}");
+    }
+
+    [TestMethod]
+    public void Prepare_ServerVariables_UseResolvedDefaultBaseUrl()
+    {
+        const string yaml = """
+openapi: 3.0.3
+info:
+  title: Server Vars
+  version: 1.0.0
+servers:
+  - url: https://{region}.example.com/{version}
+    variables:
+      region:
+        default: us
+        enum: [us, eu]
+      version:
+        default: v1
+paths:
+  /ping:
+    get:
+      operationId: ping
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+""";
+
+        var settings = DefaultSettings with
+        {
+            ClassName = "ServerVarsClient",
+        };
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Clients.Should().ContainSingle();
+        data.Clients[0].BaseUrl.Should().Be("https://us.example.com/v1");
+    }
+
+    [TestMethod]
     public void EnvFile_NoServers_DefaultsToDev()
     {
         var result = Sources.GenerateHttpEnvironmentFile([], []);
