@@ -116,6 +116,13 @@ internal sealed class GenerateCommand : Command
         Description = "Generate CLI for the client",
     };
 
+    private Option<bool> UseSystemNetHttpJson { get; } = new(
+        name: "--use-system-net-http-json")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateMethodsUsingSystemNetHttpJson,
+        Description = "Generate System.Text.Json HTTP method bodies via System.Net.Http.Json helpers where safe.",
+    };
+
     private Option<string[]> SecuritySchemes { get; } = new(
         name: "--security-scheme")
     {
@@ -222,6 +229,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(GenerateModelValidationMethods);
         Options.Add(ComputeDiscriminators);
         Options.Add(GenerateCli);
+        Options.Add(UseSystemNetHttpJson);
         Options.Add(SecuritySchemes);
         Options.Add(BaseUrl);
         Options.Add(OpenApiOverrides);
@@ -284,6 +292,7 @@ internal sealed class GenerateCommand : Command
             GenerateModelValidationMethods = parseResult.GetRequiredValue(GenerateModelValidationMethods),
             IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),
             IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),
+            GenerateMethodsUsingSystemNetHttpJson = parseResult.GetRequiredValue(UseSystemNetHttpJson),
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),

@@ -583,6 +583,135 @@ namespace {endPoint.Settings.Namespace}
                         headers: {GetSuccessResponseHeadersExpression(endPoint)});";
     }
 
+    private static bool IsJsonMediaType(string mediaType)
+    {
+        return !string.IsNullOrWhiteSpace(mediaType) &&
+               mediaType.Contains("json", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool ShouldUseSystemNetHttpJsonForRequest(EndPoint endPoint)
+    {
+        return endPoint.Settings.GenerateMethodsUsingSystemNetHttpJson &&
+               endPoint.Settings.UsesSystemTextJson() &&
+               IsJsonMediaType(endPoint.RequestMediaType) &&
+               !endPoint.IsMultipartFormData &&
+               !endPoint.RequestType.IsBinary &&
+               !endPoint.RequestType.IsBase64;
+    }
+
+    private static bool ShouldUseSystemNetHttpJsonForSuccessResponse(EndPoint endPoint)
+    {
+        return endPoint.Settings.GenerateMethodsUsingSystemNetHttpJson &&
+               endPoint.Settings.UsesSystemTextJson() &&
+               endPoint.ContentType == ContentType.String &&
+               endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" &&
+               IsJsonMediaType(endPoint.SuccessResponse.MimeType) &&
+               !endPoint.SuccessResponse.Type.UsesGeneratedJsonHelpers;
+    }
+
+    private static string GenerateSystemNetHttpJsonRequestData(
+        EndPoint endPoint)
+    {
+        if (endPoint.Settings.HasJsonSerializerContext())
+        {
+            return $@" 
+            var __httpRequestContent = global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.CreateJsonContent(
+                inputValue: request,
+                inputType: request.GetType(),
+                mediaType: ""{endPoint.RequestMediaType}"",
+                jsonSerializerContext: JsonSerializerContext);
+            __httpRequest.Content = __httpRequestContent;
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        return $@" 
+            var __httpRequestContent = global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.CreateJsonContent(
+                inputValue: request,
+                mediaType: ""{endPoint.RequestMediaType}"",
+                jsonSerializerOptions: JsonSerializerOptions);
+            __httpRequest.Content = __httpRequestContent;
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateSystemNetHttpJsonReadCall(
+        EndPoint endPoint)
+    {
+        var type = endPoint.SuccessResponse.Type.CSharpTypeWithNullabilityForValueTypes;
+
+        if (endPoint.Settings.HasJsonSerializerContext())
+        {
+            return $"await global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.ReadFromJsonAsync<{type}>(__response.Content, JsonSerializerContext, cancellationToken).ConfigureAwait(false)";
+        }
+
+        return $"await global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.ReadFromJsonAsync<{type}>(__response.Content, JsonSerializerOptions, cancellationToken).ConfigureAwait(false)";
+    }
+
+    private static string GenerateUnbufferedSuccessResponseHandling(
+        EndPoint endPoint,
+        bool wrapSuccessResponse)
+    {
+        var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
+
+        if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
+        {
+            return GenerateSuccessResponseReturnWithoutBody(endPoint, wrapSuccessResponse);
+        }
+
+        if (endPoint.ContentType == ContentType.String &&
+            endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string")
+        {
+            if (ShouldUseSystemNetHttpJsonForSuccessResponse(endPoint))
+            {
+                var readCall = GenerateSystemNetHttpJsonReadCall(endPoint);
+
+                return wrapSuccessResponse
+                    ? $@"var __value = {readCall} ??
+                        throw new global::System.InvalidOperationException(""Response deserialization failed."");
+                    {GenerateSuccessResponseReturn(endPoint, "__value", wrapSuccessResponse)}"
+                    : $@"return
+                        {readCall} ??
+                        throw new global::System.InvalidOperationException(""Response deserialization failed."");";
+            }
+
+            return wrapSuccessResponse
+                ? $@"using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    var __value = {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                        throw new global::System.InvalidOperationException(""Response deserialization failed."");
+                    {GenerateSuccessResponseReturn(endPoint, "__value", wrapSuccessResponse)}"
+                : $@"using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    return
+                        {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                        throw new global::System.InvalidOperationException(""Response deserialization failed."");";
+        }
+
+        return $@"{endPoint.ContentType switch
+        {
+            ContentType.Stream => "using ",
+            _ => string.Empty,
+        }}var __content = await __response.Content.ReadAs{endPoint.ContentType switch
+        {
+            ContentType.String => "String",
+            ContentType.Stream => "Stream",
+            _ => "ByteArray",
+        }}Async(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
+
+                    {GenerateSuccessResponseReturn(endPoint, "__content", wrapSuccessResponse)}";
+    }
+
     public static string GenerateResponse(
         EndPoint endPoint,
         bool wrapSuccessResponse = false)
@@ -897,34 +1026,7 @@ namespace {endPoint.Settings.Namespace}
                 try
                 {{
                     __response.EnsureSuccessStatusCode();
-
-                    {endPoint.ContentType switch
-                    {
-                        ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" => "using ",
-                        ContentType.Stream => "using ",
-                        _ => string.Empty,
-                    }}var __content = await __response.Content.ReadAs{endPoint.ContentType switch
-            {
-                ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is "string" => "String",
-                ContentType.String => "Stream",
-                ContentType.Stream => "Stream",
-                _ => "ByteArray",
-            }}Async(
-#if NET5_0_OR_GREATER
-                        cancellationToken
-#endif
-                    ).ConfigureAwait(false);
-
-{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
-    ? GenerateSuccessResponseReturnWithoutBody(endPoint, wrapSuccessResponse)
-    : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? wrapSuccessResponse ? $@" 
-                    var __value = {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                        throw new global::System.InvalidOperationException(""Response deserialization failed."");
-                    {GenerateSuccessResponseReturn(endPoint, "__value", wrapSuccessResponse)}" : $@" 
-                    return
-                        {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                        throw new global::System.InvalidOperationException(""Response deserialization failed."");" : $@" 
-                    {GenerateSuccessResponseReturn(endPoint, "__content", wrapSuccessResponse)}")}
+{GenerateUnbufferedSuccessResponseHandling(endPoint, wrapSuccessResponse)}
                 }}
                 catch (global::System.Exception __ex)
                 {{
@@ -1032,6 +1134,11 @@ namespace {endPoint.Settings.Namespace}
             __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(""application/octet-stream"");
             __httpRequest.Content = __httpRequestContent;
  ".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        if (ShouldUseSystemNetHttpJsonForRequest(endPoint))
+        {
+            return GenerateSystemNetHttpJsonRequestData(endPoint);
         }
 
         var requestContent = endPoint.RequestType.IsBase64
