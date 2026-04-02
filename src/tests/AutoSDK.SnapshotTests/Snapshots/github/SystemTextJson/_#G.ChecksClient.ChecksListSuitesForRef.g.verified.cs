@@ -64,6 +64,49 @@ namespace G
             int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ChecksListSuitesForRefAsResponseAsync(
+                owner: owner,
+                repo: repo,
+                @ref: @ref,
+                appId: appId,
+                checkName: checkName,
+                perPage: perPage,
+                page: page,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List check suites for a Git reference<br/>
+        /// Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="ref"></param>
+        /// <param name="appId"></param>
+        /// <param name="checkName"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChecksListSuitesForRefResponse>> ChecksListSuitesForRefAsResponseAsync(
+            string owner,
+            string repo,
+            string @ref,
+            int? appId = default,
+            string? checkName = default,
+            int? perPage = default,
+            int? page = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareChecksListSuitesForRefArguments(
@@ -141,9 +184,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.ChecksListSuitesForRefResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.ChecksListSuitesForRefResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.ChecksListSuitesForRefResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -172,9 +218,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.ChecksListSuitesForRefResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.ChecksListSuitesForRefResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.ChecksListSuitesForRefResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

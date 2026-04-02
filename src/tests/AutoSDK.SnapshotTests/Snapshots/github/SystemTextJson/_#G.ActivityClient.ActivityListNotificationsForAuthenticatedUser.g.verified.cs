@@ -61,6 +61,47 @@ namespace G
             int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ActivityListNotificationsForAuthenticatedUserAsResponseAsync(
+                all: all,
+                participating: participating,
+                since: since,
+                before: before,
+                page: page,
+                perPage: perPage,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List notifications for the authenticated user<br/>
+        /// List all notifications for the current user, sorted by most recently updated.
+        /// </summary>
+        /// <param name="all">
+        /// Default Value: false
+        /// </param>
+        /// <param name="participating">
+        /// Default Value: false
+        /// </param>
+        /// <param name="since"></param>
+        /// <param name="before"></param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 50
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Thread>>> ActivityListNotificationsForAuthenticatedUserAsResponseAsync(
+            bool? all = default,
+            bool? participating = default,
+            global::System.DateTime? since = default,
+            global::System.DateTime? before = default,
+            int? page = default,
+            int? perPage = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareActivityListNotificationsForAuthenticatedUserArguments(
@@ -285,9 +326,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.Thread>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.Thread>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Thread>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -316,9 +360,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.Thread>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.Thread>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Thread>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

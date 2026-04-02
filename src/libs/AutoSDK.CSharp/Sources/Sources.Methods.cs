@@ -86,6 +86,7 @@ namespace {endPoint.Settings.Namespace}
             ref {contentType} content);")}
 
 {GenerateMethod(endPoint)}
+{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, returnResponseWrapper: true) : TrimmedLine)}
 {GenerateExtensionMethod(endPoint)}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
@@ -109,6 +110,7 @@ namespace {endPoint.Settings.Namespace}
     public partial interface I{endPoint.ClassName}
     {{
 {GenerateMethod(endPoint, isInterface: true)}
+{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnResponseWrapper: true) : TrimmedLine)}
 {GenerateExtensionMethod(endPoint, isInterface: true)}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
@@ -250,10 +252,53 @@ namespace {endPoint.Settings.Namespace}
             .Where(x => !(endPoint.ForcedRequestStreamValue is not null && IsRequestStreamParameter(x)));
     }
 
-    public static string GenerateMethod(
-        EndPoint endPoint, bool isInterface = false)
+    private static bool ShouldGenerateResponseWrapperMethod(EndPoint endPoint)
     {
-        var taskType = endPoint.RawStream
+        return endPoint.GenerateResponseWrapper && !endPoint.EnumerableStream;
+    }
+
+    private static string GetResponseWrapperMethodName(EndPoint endPoint)
+    {
+        return $"{endPoint.NotAsyncMethodName}AsResponseAsync";
+    }
+
+    private static string GetSuccessResponseBodyType(EndPoint endPoint)
+    {
+        if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
+        {
+            return string.Empty;
+        }
+
+        return endPoint.RawStream
+            ? "global::System.IO.Stream"
+            : endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability;
+    }
+
+    private static string GetResponseWrapperType(EndPoint endPoint)
+    {
+        var bodyType = GetSuccessResponseBodyType(endPoint);
+        return string.IsNullOrWhiteSpace(bodyType)
+            ? $"global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse"
+            : $"global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse<{bodyType}>";
+    }
+
+    private static string GenerateMethodInvocationArguments(EndPoint endPoint)
+    {
+        return $@"{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
+                {x.ParameterName}: {x.ParameterName},").Inject()}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @"
+                request: request,")}
+{endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
+                {x.ParameterName}: {x.ParameterName},").Inject()}
+                cancellationToken: cancellationToken".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    public static string GenerateMethod(
+        EndPoint endPoint, bool isInterface = false, bool returnResponseWrapper = false)
+    {
+        var taskType = returnResponseWrapper
+            ? $"global::System.Threading.Tasks.Task<{GetResponseWrapperType(endPoint)}>"
+            : endPoint.RawStream
             ? "global::System.Threading.Tasks.Task<global::System.IO.Stream>"
             : endPoint.EnumerableStream
             ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
@@ -262,11 +307,30 @@ namespace {endPoint.Settings.Namespace}
             : string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
                 : $"global::System.Threading.Tasks.Task<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>";
+        var methodName = returnResponseWrapper
+            ? GetResponseWrapperMethodName(endPoint)
+            : endPoint.MethodName;
         var cancellationTokenAttribute = endPoint.EnumerableStream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
         var body = isInterface
             ? ";"
+            : !returnResponseWrapper && ShouldGenerateResponseWrapperMethod(endPoint)
+            ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
+                ? @$"
+        {{
+            await {GetResponseWrapperMethodName(endPoint)}(
+{GenerateMethodInvocationArguments(endPoint)}
+            ).ConfigureAwait(false);
+        }}"
+                : @$"
+        {{
+            var __response = await {GetResponseWrapperMethodName(endPoint)}(
+{GenerateMethodInvocationArguments(endPoint)}
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }}"
             : @$"
         {{
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? TrimmedLine : @" 
@@ -367,7 +431,7 @@ namespace {endPoint.Settings.Namespace}
             Process{endPoint.NotAsyncMethodName}Response(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-{GenerateResponse(endPoint)}
+{GenerateResponse(endPoint, wrapSuccessResponse: returnResponseWrapper)}
 {(endPoint.RawStream ? @"
             }
             catch
@@ -387,7 +451,7 @@ namespace {endPoint.Settings.Namespace}
         /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>{(string.IsNullOrWhiteSpace(endPoint.Remarks) ? "" : $@"
         {endPoint.Remarks.ToXmlDocumentationRemarks(level: 8)}")}
         {GenerateEndPointAttributes(endPoint)}
-        {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
+        {(isInterface ? "" : "public async ")}{taskType} {methodName}(
 {endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @$"
@@ -484,8 +548,44 @@ namespace {endPoint.Settings.Namespace}
         return code.RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
+    private static string GetSuccessResponseHeadersExpression(EndPoint endPoint)
+    {
+        return $"global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse.CreateHeaders(__response)";
+    }
+
+    private static string GenerateSuccessResponseReturn(
+        EndPoint endPoint,
+        string bodyExpression,
+        bool wrapSuccessResponse)
+    {
+        if (!wrapSuccessResponse)
+        {
+            return $"return {bodyExpression};";
+        }
+
+        return $@"return new global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse<{GetSuccessResponseBodyType(endPoint)}>(
+                        statusCode: __response.StatusCode,
+                        headers: {GetSuccessResponseHeadersExpression(endPoint)},
+                        body: {bodyExpression});";
+    }
+
+    private static string GenerateSuccessResponseReturnWithoutBody(
+        EndPoint endPoint,
+        bool wrapSuccessResponse)
+    {
+        if (!wrapSuccessResponse)
+        {
+            return TrimmedLine;
+        }
+
+        return $@"return new global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse(
+                        statusCode: __response.StatusCode,
+                        headers: {GetSuccessResponseHeadersExpression(endPoint)});";
+    }
+
     public static string GenerateResponse(
-        EndPoint endPoint)
+        EndPoint endPoint,
+        bool wrapSuccessResponse = false)
     {
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
 
@@ -696,7 +796,12 @@ namespace {endPoint.Settings.Namespace}
 #endif
                 ).ConfigureAwait(false);
 
-                return new global::{endPoint.GlobalSettings.Namespace}.ResponseStream(__response, __content);
+{(wrapSuccessResponse
+    ? $@"                return new global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse<global::System.IO.Stream>(
+                    statusCode: __response.StatusCode,
+                    headers: {GetSuccessResponseHeadersExpression(endPoint)},
+                    body: new global::{endPoint.GlobalSettings.Namespace}.ResponseStream(__response, __content));"
+    : $"                return new global::{endPoint.GlobalSettings.Namespace}.ResponseStream(__response, __content);")}
             }}
             catch (global::System.Exception __ex)
             {{
@@ -759,12 +864,15 @@ namespace {endPoint.Settings.Namespace}
                     __response.EnsureSuccessStatusCode();
 
 {(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
-    ? TrimmedLine
-    : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? $@" 
+    ? GenerateSuccessResponseReturnWithoutBody(endPoint, wrapSuccessResponse)
+    : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? wrapSuccessResponse ? $@" 
+                    var __value = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                        throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");
+                    {GenerateSuccessResponseReturn(endPoint, "__value", wrapSuccessResponse)}" : $@" 
                     return
                         {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                        throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : @" 
-                    return __content;")}
+                        throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : $@" 
+                    {GenerateSuccessResponseReturn(endPoint, "__content", wrapSuccessResponse)}")}
                 }}
                 catch (global::System.Exception __ex)
                 {{
@@ -808,12 +916,15 @@ namespace {endPoint.Settings.Namespace}
                     ).ConfigureAwait(false);
 
 {(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
-    ? TrimmedLine
-    : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? $@" 
+    ? GenerateSuccessResponseReturnWithoutBody(endPoint, wrapSuccessResponse)
+    : endPoint is { ContentType: ContentType.String, SuccessResponse.Type.CSharpTypeWithoutNullability: not "string" } ? wrapSuccessResponse ? $@" 
+                    var __value = {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                        throw new global::System.InvalidOperationException(""Response deserialization failed."");
+                    {GenerateSuccessResponseReturn(endPoint, "__value", wrapSuccessResponse)}" : $@" 
                     return
                         {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                        throw new global::System.InvalidOperationException(""Response deserialization failed."");" : @" 
-                    return __content;")}
+                        throw new global::System.InvalidOperationException(""Response deserialization failed."");" : $@" 
+                    {GenerateSuccessResponseReturn(endPoint, "__content", wrapSuccessResponse)}")}
                 }}
                 catch (global::System.Exception __ex)
                 {{

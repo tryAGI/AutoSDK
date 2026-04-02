@@ -186,6 +186,9 @@ public static class CSharpPipeline
                     .Concat([Sources.Polyfills(settings, cancellationToken)])
                     .Concat([Sources.Exceptions(settings, cancellationToken)])
                     .Concat([Sources.PathBuilder(settings, cancellationToken)])
+                    .Concat(data.Methods.Any(static x => x.GenerateResponseWrapper && !x.EnumerableStream)
+                        ? [Sources.HttpResponse(settings, cancellationToken)]
+                        : [])
                     .Concat(data.Methods.Any(static x => x.RawStream)
                         ? [Sources.ResponseStream(data.Converters.Settings, cancellationToken)]
                         : [])

@@ -70,6 +70,54 @@ namespace G
             global::G.ActionsGetActionsCacheListDirection? direction = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ActionsGetActionsCacheListAsResponseAsync(
+                owner: owner,
+                repo: repo,
+                perPage: perPage,
+                page: page,
+                @ref: @ref,
+                key: key,
+                sort: sort,
+                direction: direction,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List GitHub Actions caches for a repository<br/>
+        /// Lists the GitHub Actions caches for a repository.<br/>
+        /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="ref"></param>
+        /// <param name="key"></param>
+        /// <param name="sort">
+        /// Default Value: last_accessed_at
+        /// </param>
+        /// <param name="direction">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ActionsCacheList>> ActionsGetActionsCacheListAsResponseAsync(
+            string owner,
+            string repo,
+            int? perPage = default,
+            int? page = default,
+            string? @ref = default,
+            string? key = default,
+            global::G.ActionsGetActionsCacheListSort? sort = default,
+            global::G.ActionsGetActionsCacheListDirection? direction = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareActionsGetActionsCacheListArguments(
@@ -164,9 +212,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.ActionsCacheList.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.ActionsCacheList.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.ActionsCacheList>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -195,9 +246,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.ActionsCacheList.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.ActionsCacheList.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.ActionsCacheList>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

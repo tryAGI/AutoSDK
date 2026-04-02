@@ -54,6 +54,41 @@ namespace G
             int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ReposListPullRequestsAssociatedWithCommitAsResponseAsync(
+                owner: owner,
+                repo: repo,
+                commitSha: commitSha,
+                perPage: perPage,
+                page: page,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List pull requests associated with a commit<br/>
+        /// Lists the merged pull request that introduced the commit to the repository. If the commit is not present in the default branch, will only return open pull requests associated with the commit.<br/>
+        /// To list the open or merged pull requests associated with a branch, you can set the `commit_sha` parameter to the branch name.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="commitSha"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.PullRequestSimple>>> ReposListPullRequestsAssociatedWithCommitAsResponseAsync(
+            string owner,
+            string repo,
+            string commitSha,
+            int? perPage = default,
+            int? page = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareReposListPullRequestsAssociatedWithCommitArguments(
@@ -163,9 +198,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.PullRequestSimple>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.PullRequestSimple>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.PullRequestSimple>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -194,9 +232,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.PullRequestSimple>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.PullRequestSimple>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.PullRequestSimple>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

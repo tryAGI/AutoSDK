@@ -50,6 +50,38 @@ namespace G
             string? outdated = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await AppsListInstallationsAsResponseAsync(
+                perPage: perPage,
+                page: page,
+                since: since,
+                outdated: outdated,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List installations for the authenticated app<br/>
+        /// The permissions the installation has are included under the `permissions` key.<br/>
+        /// You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+        /// </summary>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="since"></param>
+        /// <param name="outdated"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Installation>>> AppsListInstallationsAsResponseAsync(
+            int? perPage = default,
+            int? page = default,
+            global::System.DateTime? since = default,
+            string? outdated = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareAppsListInstallationsArguments(
@@ -121,9 +153,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.Installation>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.Installation>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Installation>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -152,9 +187,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.Installation>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.Installation>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Installation>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

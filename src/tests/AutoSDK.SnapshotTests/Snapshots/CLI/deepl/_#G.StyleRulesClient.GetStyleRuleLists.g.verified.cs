@@ -46,6 +46,35 @@ namespace G
             bool? detailed = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetStyleRuleListsAsResponseAsync(
+                page: page,
+                pageSize: pageSize,
+                detailed: detailed,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Retrieve style rule lists
+        /// </summary>
+        /// <param name="page">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="detailed">
+        /// Default Value: false
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetStyleRuleListsResponse>> GetStyleRuleListsAsResponseAsync(
+            int? page = default,
+            int? pageSize = default,
+            bool? detailed = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetStyleRuleListsArguments(
@@ -295,9 +324,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.GetStyleRuleListsResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.GetStyleRuleListsResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.GetStyleRuleListsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -326,9 +358,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.GetStyleRuleListsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.GetStyleRuleListsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.GetStyleRuleListsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

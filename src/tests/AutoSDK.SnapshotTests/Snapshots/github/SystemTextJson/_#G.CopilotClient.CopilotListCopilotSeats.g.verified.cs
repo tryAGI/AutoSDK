@@ -49,6 +49,38 @@ namespace G
             int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await CopilotListCopilotSeatsAsResponseAsync(
+                org: org,
+                page: page,
+                perPage: perPage,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List all Copilot seat assignments for an organization<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; This endpoint is in beta and is subject to change.<br/>
+        /// Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.<br/>
+        /// Only organization owners can view assigned seats.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 50
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CopilotListCopilotSeatsResponse>> CopilotListCopilotSeatsAsResponseAsync(
+            string org,
+            int? page = default,
+            int? perPage = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareCopilotListCopilotSeatsArguments(
@@ -268,9 +300,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.CopilotListCopilotSeatsResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.CopilotListCopilotSeatsResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.CopilotListCopilotSeatsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -299,9 +334,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.CopilotListCopilotSeatsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.CopilotListCopilotSeatsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.CopilotListCopilotSeatsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

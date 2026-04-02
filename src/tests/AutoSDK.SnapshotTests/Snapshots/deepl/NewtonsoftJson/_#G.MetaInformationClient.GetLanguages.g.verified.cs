@@ -35,6 +35,26 @@ namespace G
             global::G.GetLanguagesType? type = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetLanguagesAsResponseAsync(
+                type: type,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Retrieve Supported Languages<br/>
+        /// Retrieve the list of languages that are currently supported for translation, either as source or target language, respectively.
+        /// </summary>
+        /// <param name="type">
+        /// Default Value: source
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.GetLanguagesResponseItem>>> GetLanguagesAsResponseAsync(
+            global::G.GetLanguagesType? type = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetLanguagesArguments(
@@ -416,9 +436,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.GetLanguagesResponseItem>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.GetLanguagesResponseItem>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.GetLanguagesResponseItem>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -447,9 +470,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.GetLanguagesResponseItem>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
+                    var __value = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.GetLanguagesResponseItem>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.GetLanguagesResponseItem>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

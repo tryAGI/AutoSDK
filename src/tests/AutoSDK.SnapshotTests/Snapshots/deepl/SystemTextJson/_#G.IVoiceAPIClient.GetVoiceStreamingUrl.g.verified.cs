@@ -18,6 +18,16 @@ namespace G
         /// <summary>
         /// Get Streaming URL
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.VoiceStreamingResponse>> GetVoiceStreamingUrlAsResponseAsync(
+
+            global::G.GetVoiceStreamingUrlRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Streaming URL
+        /// </summary>
         /// <param name="sourceMediaContentType">
         /// The audio format for streaming. Specifies container, codec, and encoding parameters.<br/>
         /// Supported formats include PCM (recommended), OPUS (recommended for low bandwidth), FLAC, MP3, and AAC.<br/>

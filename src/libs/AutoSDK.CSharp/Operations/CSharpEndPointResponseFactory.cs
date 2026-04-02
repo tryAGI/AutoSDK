@@ -75,6 +75,7 @@ public static class CSharpEndPointResponseFactory
             Description: response.Response.Description ?? string.Empty,
             MimeType: response.MimeType,
             ContentType: contentType,
-            Type: responseType ?? TypeData.Default);
+            Type: responseType ?? TypeData.Default,
+            HasHeaders: response.Response.Headers?.Count > 0);
     }
 }

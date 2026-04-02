@@ -153,6 +153,11 @@ public static class CSharpEndPointFactory
             ? CSharpClientNameGenerator.Generate(operation.Tag)
             : operation.Settings.ClassName.Replace(".", string.Empty);
         var notAsyncMethodName = endPointId.ToPropertyName();
+        var generateResponseWrapper =
+            responses.Any(x => x.HasHeaders && (x.Is2XX || x.IsDefault)) ||
+            OpenApiExtensions.GetExtensionBooleanValue(
+                operation.Operation.Extensions,
+                "x-autosdk-response-wrapper");
 
         return new EndPoint(
             Id: endPointId,
@@ -196,7 +201,8 @@ public static class CSharpEndPointFactory
             StreamTerminator: streamFormat == StreamFormat.ServerSentEvents
                 ? streamTerminator ?? "[DONE]"
                 : string.Empty,
-            Remarks: GetCodeSamplesRemarks(operation.Operation));
+            Remarks: GetCodeSamplesRemarks(operation.Operation),
+            GenerateResponseWrapper: generateResponseWrapper);
     }
 
     private static void DeduplicateMethodParameterNames(List<MethodParameter> parameters)

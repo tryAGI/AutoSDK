@@ -59,6 +59,45 @@ namespace G
             string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ActionsListWorkflowRunArtifactsAsResponseAsync(
+                owner: owner,
+                repo: repo,
+                runId: runId,
+                perPage: perPage,
+                page: page,
+                name: name,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List workflow run artifacts<br/>
+        /// Lists artifacts for a workflow run.<br/>
+        /// Anyone with read access to the repository can use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="runId"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="name"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ActionsListWorkflowRunArtifactsResponse>> ActionsListWorkflowRunArtifactsAsResponseAsync(
+            string owner,
+            string repo,
+            int runId,
+            int? perPage = default,
+            int? page = default,
+            string? name = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareActionsListWorkflowRunArtifactsArguments(
@@ -133,9 +172,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.ActionsListWorkflowRunArtifactsResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.ActionsListWorkflowRunArtifactsResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.ActionsListWorkflowRunArtifactsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -164,9 +206,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.ActionsListWorkflowRunArtifactsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.ActionsListWorkflowRunArtifactsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.ActionsListWorkflowRunArtifactsResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

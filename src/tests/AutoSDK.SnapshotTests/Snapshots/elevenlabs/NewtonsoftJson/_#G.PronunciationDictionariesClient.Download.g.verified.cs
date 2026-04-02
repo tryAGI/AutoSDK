@@ -47,6 +47,36 @@ namespace G
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await DownloadAsResponseAsync(
+                dictionaryId: dictionaryId,
+                versionId: versionId,
+                xiApiKey: xiApiKey,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get A Pls File With A Pronunciation Dictionary Version Rules<br/>
+        /// Get a PLS file with a pronunciation dictionary version rules
+        /// </summary>
+        /// <param name="dictionaryId">
+        /// The id of the pronunciation dictionary
+        /// </param>
+        /// <param name="versionId">
+        /// The id of the pronunciation dictionary version
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<byte[]>> DownloadAsResponseAsync(
+            string dictionaryId,
+            string versionId,
+            string? xiApiKey = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareDownloadArguments(
@@ -150,7 +180,10 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return new global::G.AutoSDKHttpResponse<byte[]>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -178,7 +211,10 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return new global::G.AutoSDKHttpResponse<byte[]>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {

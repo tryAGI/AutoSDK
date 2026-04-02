@@ -47,6 +47,36 @@ namespace G
             int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ActionsListOrgVariablesAsResponseAsync(
+                org: org,
+                perPage: perPage,
+                page: page,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List organization variables<br/>
+        /// Lists all organization variables.<br/>
+        /// Authenticated users must have collaborator access to a repository to create, update, or read variables.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="perPage">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ActionsListOrgVariablesResponse>> ActionsListOrgVariablesAsResponseAsync(
+            string org,
+            int? perPage = default,
+            int? page = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareActionsListOrgVariablesArguments(
@@ -114,9 +144,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.ActionsListOrgVariablesResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.ActionsListOrgVariablesResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.ActionsListOrgVariablesResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -145,9 +178,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.ActionsListOrgVariablesResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.ActionsListOrgVariablesResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.ActionsListOrgVariablesResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

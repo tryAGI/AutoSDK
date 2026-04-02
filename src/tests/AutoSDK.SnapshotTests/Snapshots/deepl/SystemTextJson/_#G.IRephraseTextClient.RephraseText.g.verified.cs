@@ -18,6 +18,16 @@ namespace G
         /// <summary>
         /// Request text improvement
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RephraseTextResponse>> RephraseTextAsResponseAsync(
+
+            global::G.RephraseTextRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Request text improvement
+        /// </summary>
         /// <param name="text">
         /// Text to be improved. Only UTF-8-encoded plain text is supported. Improvements are returned in the same order as they are requested.
         /// </param>

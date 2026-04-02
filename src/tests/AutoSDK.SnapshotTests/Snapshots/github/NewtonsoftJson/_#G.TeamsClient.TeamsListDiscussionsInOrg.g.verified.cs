@@ -62,6 +62,48 @@ namespace G
             string? pinned = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await TeamsListDiscussionsInOrgAsResponseAsync(
+                org: org,
+                teamSlug: teamSlug,
+                direction: direction,
+                perPage: perPage,
+                page: page,
+                pinned: pinned,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List discussions<br/>
+        /// List all discussions on a team's page.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions`.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="teamSlug"></param>
+        /// <param name="direction">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="pinned"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.TeamDiscussion>>> TeamsListDiscussionsInOrgAsResponseAsync(
+            string org,
+            string teamSlug,
+            global::G.TeamsListDiscussionsInOrgDirection? direction = default,
+            int? perPage = default,
+            int? page = default,
+            string? pinned = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareTeamsListDiscussionsInOrgArguments(
@@ -143,9 +185,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.TeamDiscussion>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.TeamDiscussion>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.TeamDiscussion>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -174,9 +219,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.TeamDiscussion>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
+                    var __value = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.TeamDiscussion>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.TeamDiscussion>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

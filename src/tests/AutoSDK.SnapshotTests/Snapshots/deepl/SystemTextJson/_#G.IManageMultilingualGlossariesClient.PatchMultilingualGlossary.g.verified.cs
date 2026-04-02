@@ -23,6 +23,19 @@ namespace G
         /// Edit glossary details, such as name or a dictionary for a source and target language.
         /// </summary>
         /// <param name="glossaryId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.MultilingualGlossary>> PatchMultilingualGlossaryAsResponseAsync(
+            string glossaryId,
+
+            global::G.PatchMultilingualGlossaryParameters request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Edit glossary details<br/>
+        /// Edit glossary details, such as name or a dictionary for a source and target language.
+        /// </summary>
+        /// <param name="glossaryId"></param>
         /// <param name="name">
         /// A unique ID assigned to a glossary.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7

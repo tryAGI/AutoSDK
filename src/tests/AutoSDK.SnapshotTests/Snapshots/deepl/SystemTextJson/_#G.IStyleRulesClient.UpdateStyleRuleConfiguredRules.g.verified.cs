@@ -21,6 +21,18 @@ namespace G
         /// Update configured rules for a style rule list
         /// </summary>
         /// <param name="styleId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StyleRuleList>> UpdateStyleRuleConfiguredRulesAsResponseAsync(
+            string styleId,
+
+            global::G.ConfiguredRules request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update configured rules for a style rule list
+        /// </summary>
+        /// <param name="styleId"></param>
         /// <param name="datesAndTimes"></param>
         /// <param name="formatting"></param>
         /// <param name="numbers"></param>

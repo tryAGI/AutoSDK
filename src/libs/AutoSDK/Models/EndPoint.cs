@@ -35,7 +35,8 @@ public record struct EndPoint(
     TypeData RequestInitializationType,
     bool? ForcedRequestStreamValue,
     string StreamTerminator,
-    string Remarks
+    string Remarks,
+    bool GenerateResponseWrapper
 )
 {
     public bool Stream => StreamFormat != StreamFormat.None;

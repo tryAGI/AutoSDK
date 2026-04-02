@@ -34,6 +34,27 @@ namespace G
             global::G.GetGlossaryEntriesAccept? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            await GetGlossaryEntriesAsResponseAsync(
+                glossaryId: glossaryId,
+                accept: accept,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Retrieve Glossary Entries<br/>
+        /// List the entries of a single glossary in the format specified by the `Accept` header.
+        /// </summary>
+        /// <param name="glossaryId"></param>
+        /// <param name="accept">
+        /// Default Value: text/tab-separated-values
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> GetGlossaryEntriesAsResponseAsync(
+            string glossaryId,
+            global::G.GetGlossaryEntriesAccept? accept = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetGlossaryEntriesArguments(
@@ -415,6 +436,9 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
+return new global::G.AutoSDKHttpResponse(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response));
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -443,6 +467,9 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
+return new global::G.AutoSDKHttpResponse(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response));
                 }
                 catch (global::System.Exception __ex)
                 {

@@ -14,5 +14,14 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.StyleRuleList> GetStyleRuleListAsync(
             string styleId,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Retrieve a style rule list
+        /// </summary>
+        /// <param name="styleId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StyleRuleList>> GetStyleRuleListAsResponseAsync(
+            string styleId,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

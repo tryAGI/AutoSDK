@@ -51,6 +51,39 @@ namespace G
             int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ActivityListStargazersForRepoAsResponseAsync(
+                owner: owner,
+                repo: repo,
+                perPage: perPage,
+                page: page,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List stargazers<br/>
+        /// Lists the people that have starred the repository.<br/>
+        /// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."<br/>
+        /// - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SimpleUser>, global::System.Collections.Generic.IList<global::G.Stargazer>>>> ActivityListStargazersForRepoAsResponseAsync(
+            string owner,
+            string repo,
+            int? perPage = default,
+            int? page = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareActivityListStargazersForRepoArguments(
@@ -158,9 +191,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SimpleUser>, global::System.Collections.Generic.IList<global::G.Stargazer>>.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SimpleUser>, global::System.Collections.Generic.IList<global::G.Stargazer>>.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SimpleUser>, global::System.Collections.Generic.IList<global::G.Stargazer>>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -189,9 +225,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SimpleUser>, global::System.Collections.Generic.IList<global::G.Stargazer>>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SimpleUser>, global::System.Collections.Generic.IList<global::G.Stargazer>>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SimpleUser>, global::System.Collections.Generic.IList<global::G.Stargazer>>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

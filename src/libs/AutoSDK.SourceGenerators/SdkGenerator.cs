@@ -60,6 +60,12 @@ public class SdkGenerator : IIncrementalGenerator
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         data
+            .SelectAndReportExceptions((x, c) => x.Methods.Any(y => y.GenerateResponseWrapper && !y.EnumerableStream)
+                ? Sources.HttpResponse(x.Converters.Settings, c)
+                : FileWithName.Empty
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        data
             .SelectMany(static (x, _) => x.Methods)
             .SelectAndReportExceptions((x, c) => Sources.Method(x, c)
                 .AsFileWithName(), context, Id)

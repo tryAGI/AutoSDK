@@ -47,6 +47,37 @@ namespace G
             global::G.MigrationsStartImportRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await MigrationsStartImportAsResponseAsync(
+                owner: owner,
+                repo: repo,
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Start an import<br/>
+        /// Start a source import to a GitHub repository using GitHub Importer.<br/>
+        /// Importing into a GitHub repository with GitHub Actions enabled is not supported and will<br/>
+        /// return a status `422 Unprocessable Entity` response.<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Import>> MigrationsStartImportAsResponseAsync(
+            string owner,
+            string repo,
+
+            global::G.MigrationsStartImportRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -232,9 +263,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.Import.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.Import.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.Import>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -263,9 +297,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.Import.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.Import.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.Import>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

@@ -57,6 +57,49 @@ namespace G
         /// Default Value: application/json
         /// </param>
         /// <param name="organization"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// #!/bin/sh<br/>
+        /// set -e<br/>
+        /// if [ -z "$STABILITY_API_KEY" ]; then<br/>
+        ///     echo "STABILITY_API_KEY environment variable is not set"<br/>
+        ///     exit 1<br/>
+        /// fi<br/>
+        /// OUTPUT_FILE=./out/v1_img2img_masking.png<br/>
+        /// BASE_URL=${API_HOST:-https://api.stability.ai}<br/>
+        /// URL="$BASE_URL/v1/generation/stable-inpainting-512-v2-0/image-to-image/masking"<br/>
+        /// curl -f -sS -X POST "$URL" \<br/>
+        ///   -H 'Content-Type: multipart/form-data' \<br/>
+        ///   -H 'Accept: image/png' \<br/>
+        ///   -H "Authorization: Bearer $STABILITY_API_KEY" \<br/>
+        ///   -F 'init_image=@"../init_image.png"' \<br/>
+        ///   -F 'mask_image=@"../mask_image_white.png"' \<br/>
+        ///   -F 'mask_source=MASK_IMAGE_WHITE' \<br/>
+        ///   -F 'text_prompts[0][text]=A large spiral galaxy with a bright central bulge and a ring of stars around it' \<br/>
+        ///   -F 'cfg_scale=7' \<br/>
+        ///   -F 'clip_guidance_preset=FAST_BLUE' \<br/>
+        ///   -F 'samples=1' \<br/>
+        ///   -F 'steps=30' \<br/>
+        ///   -o "$OUTPUT_FILE"
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Image>>> MaskingAsResponseAsync(
+            string engineId,
+
+            global::G.MaskingRequestBody request,
+            global::G.MaskingAccept? accept = default,
+            string? organization = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// image-to-image/masking<br/>
+        /// Selectively modify portions of an image using a mask
+        /// </summary>
+        /// <param name="engineId"></param>
+        /// <param name="accept">
+        /// Default Value: application/json
+        /// </param>
+        /// <param name="organization"></param>
         /// <param name="initImage">
         /// Image used to initialize the diffusion process, in lieu of random noise.<br/>
         /// Example: &lt;image binary&gt;

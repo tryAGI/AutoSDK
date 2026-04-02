@@ -72,6 +72,61 @@ namespace G
             string? organization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await MaskingAsResponseAsync(
+                engineId: engineId,
+
+                request: request,
+                accept: accept,
+                organization: organization,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// image-to-image/masking<br/>
+        /// Selectively modify portions of an image using a mask
+        /// </summary>
+        /// <param name="engineId"></param>
+        /// <param name="accept">
+        /// Default Value: application/json
+        /// </param>
+        /// <param name="organization"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// #!/bin/sh<br/>
+        /// set -e<br/>
+        /// if [ -z "$STABILITY_API_KEY" ]; then<br/>
+        ///     echo "STABILITY_API_KEY environment variable is not set"<br/>
+        ///     exit 1<br/>
+        /// fi<br/>
+        /// OUTPUT_FILE=./out/v1_img2img_masking.png<br/>
+        /// BASE_URL=${API_HOST:-https://api.stability.ai}<br/>
+        /// URL="$BASE_URL/v1/generation/stable-inpainting-512-v2-0/image-to-image/masking"<br/>
+        /// curl -f -sS -X POST "$URL" \<br/>
+        ///   -H 'Content-Type: multipart/form-data' \<br/>
+        ///   -H 'Accept: image/png' \<br/>
+        ///   -H "Authorization: Bearer $STABILITY_API_KEY" \<br/>
+        ///   -F 'init_image=@"../init_image.png"' \<br/>
+        ///   -F 'mask_image=@"../mask_image_white.png"' \<br/>
+        ///   -F 'mask_source=MASK_IMAGE_WHITE' \<br/>
+        ///   -F 'text_prompts[0][text]=A large spiral galaxy with a bright central bulge and a ring of stars around it' \<br/>
+        ///   -F 'cfg_scale=7' \<br/>
+        ///   -F 'clip_guidance_preset=FAST_BLUE' \<br/>
+        ///   -F 'samples=1' \<br/>
+        ///   -F 'steps=30' \<br/>
+        ///   -o "$OUTPUT_FILE"
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Image>>> MaskingAsResponseAsync(
+            string engineId,
+
+            global::G.MaskingRequestBody request,
+            global::G.MaskingAccept? accept = default,
+            string? organization = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -441,9 +496,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.Image>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.Image>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Image>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -472,9 +530,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.Image>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.Image>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Image>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

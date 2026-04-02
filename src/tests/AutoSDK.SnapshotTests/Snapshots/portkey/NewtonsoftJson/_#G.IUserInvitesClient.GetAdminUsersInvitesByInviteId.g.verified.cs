@@ -14,5 +14,14 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Invite> GetAdminUsersInvitesByInviteIdAsync(
             string inviteId,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Invite
+        /// </summary>
+        /// <param name="inviteId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Invite>> GetAdminUsersInvitesByInviteIdAsResponseAsync(
+            string inviteId,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

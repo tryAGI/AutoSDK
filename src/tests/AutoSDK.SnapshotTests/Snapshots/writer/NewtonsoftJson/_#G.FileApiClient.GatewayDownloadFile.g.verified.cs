@@ -37,6 +37,28 @@ namespace G
             string fileId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GatewayDownloadFileAsResponseAsync(
+                fileId: fileId,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Download file<br/>
+        /// Download the binary content of a file. The response will contain the file data in the appropriate MIME type.
+        /// </summary>
+        /// <param name="fileId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// curl --location --request GET https://api.writer.com/v1/files/{file_id}/download \<br/>
+        ///  --header "Authorization: Bearer &lt;token&gt;"
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<byte[]>> GatewayDownloadFileAsResponseAsync(
+            string fileId,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGatewayDownloadFileArguments(
@@ -108,7 +130,10 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return new global::G.AutoSDKHttpResponse<byte[]>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -136,7 +161,10 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return new global::G.AutoSDKHttpResponse<byte[]>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {

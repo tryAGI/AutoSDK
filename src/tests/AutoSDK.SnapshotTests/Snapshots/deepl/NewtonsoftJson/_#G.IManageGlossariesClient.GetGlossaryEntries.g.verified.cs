@@ -19,5 +19,19 @@ namespace G
             string glossaryId,
             global::G.GetGlossaryEntriesAccept? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Retrieve Glossary Entries<br/>
+        /// List the entries of a single glossary in the format specified by the `Accept` header.
+        /// </summary>
+        /// <param name="glossaryId"></param>
+        /// <param name="accept">
+        /// Default Value: text/tab-separated-values
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> GetGlossaryEntriesAsResponseAsync(
+            string glossaryId,
+            global::G.GetGlossaryEntriesAccept? accept = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

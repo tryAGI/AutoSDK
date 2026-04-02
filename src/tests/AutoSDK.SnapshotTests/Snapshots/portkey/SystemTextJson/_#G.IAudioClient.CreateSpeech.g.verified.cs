@@ -18,6 +18,16 @@ namespace G
         /// <summary>
         /// Create Speech
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<byte[]>> CreateSpeechAsResponseAsync(
+
+            global::G.CreateSpeechRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Speech
+        /// </summary>
         /// <param name="model">
         /// One of the available [TTS models](https://platform.openai.com/docs/models/tts): `tts-1` or `tts-1-hd`
         /// </param>

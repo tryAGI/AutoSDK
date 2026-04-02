@@ -48,6 +48,35 @@ namespace G
             string? email = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetAdminUsersAsResponseAsync(
+                xPortkeyApiKey: xPortkeyApiKey,
+                pageSize: pageSize,
+                currentPage: currentPage,
+                role: role,
+                email: email,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get users
+        /// </summary>
+        /// <param name="xPortkeyApiKey"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="currentPage"></param>
+        /// <param name="role"></param>
+        /// <param name="email"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UserList>> GetAdminUsersAsResponseAsync(
+            string? xPortkeyApiKey = default,
+            int? pageSize = default,
+            int? currentPage = default,
+            global::G.GetAdminUsersRole? role = default,
+            string? email = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetAdminUsersArguments(
@@ -150,9 +179,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.UserList.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.UserList.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.UserList>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -181,9 +213,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.UserList.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.UserList.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.UserList>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

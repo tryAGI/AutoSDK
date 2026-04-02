@@ -33,6 +33,25 @@ namespace G
             global::G.CreateSpeechRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await CreateSpeechAsResponseAsync(
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Generates audio from the input text.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<byte[]>> CreateSpeechAsResponseAsync(
+
+            global::G.CreateSpeechRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -112,7 +131,10 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return new global::G.AutoSDKHttpResponse<byte[]>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -140,7 +162,10 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return new global::G.AutoSDKHttpResponse<byte[]>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {

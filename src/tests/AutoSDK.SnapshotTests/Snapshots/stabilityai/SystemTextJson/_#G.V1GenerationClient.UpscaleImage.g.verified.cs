@@ -66,6 +66,55 @@ namespace G
             string? organization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await UpscaleImageAsResponseAsync(
+                engineId: engineId,
+
+                request: request,
+                accept: accept,
+                organization: organization,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// image-to-image/upscale<br/>
+        /// Create a higher resolution version of an input image.<br/>
+        /// This operation outputs an image with a maximum pixel count of **4,194,304**. This is equivalent to dimensions such as `2048x2048` and `4096x1024`.<br/>
+        /// By default, the input image will be upscaled by a factor of 2.  For additional control over the output dimensions, a `width` or `height` parameter may be specified.
+        /// </summary>
+        /// <param name="engineId"></param>
+        /// <param name="accept">
+        /// Default Value: application/json
+        /// </param>
+        /// <param name="organization"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// if [ -z "$STABILITY_API_KEY" ]; then<br/>
+        ///     echo "STABILITY_API_KEY environment variable is not set"<br/>
+        ///     exit 1<br/>
+        /// fi<br/>
+        /// OUTPUT_FILE=./out/v1_upscaled_image.png<br/>
+        /// BASE_URL=${API_HOST:-https://api.stability.ai}<br/>
+        /// URL="$BASE_URL/v1/generation/esrgan-v1-x2plus/image-to-image/upscale"<br/>
+        /// curl -f -sS -X POST "$URL" \<br/>
+        ///   -H 'Content-Type: multipart/form-data' \<br/>
+        ///   -H 'Accept: image/png' \<br/>
+        ///   -H "Authorization: Bearer $STABILITY_API_KEY" \<br/>
+        ///   -F 'image=@"../init_image.png"' \<br/>
+        ///   -F 'width=1024' \<br/>
+        ///   -o "$OUTPUT_FILE"
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Image>>> UpscaleImageAsResponseAsync(
+            string engineId,
+
+            global::G.UpscaleImageRequestBody request,
+            global::G.UpscaleImageAccept? accept = default,
+            string? organization = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -391,9 +440,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.Image>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.Image>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Image>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -422,9 +474,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.Image>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.Image>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Image>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

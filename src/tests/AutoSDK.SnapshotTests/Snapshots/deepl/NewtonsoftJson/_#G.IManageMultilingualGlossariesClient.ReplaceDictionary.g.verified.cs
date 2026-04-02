@@ -21,6 +21,18 @@ namespace G
         /// Replaces or creates a dictionary in the glossary with the specified entries.
         /// </summary>
         /// <param name="glossaryId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.MultilingualGlossaryEntriesInformation>> ReplaceDictionaryAsResponseAsync(
+            string glossaryId,
+
+            global::G.MultilingualGlossaryEntries request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Replaces or creates a dictionary in the glossary with the specified entries.
+        /// </summary>
+        /// <param name="glossaryId"></param>
         /// <param name="sourceLang">
         /// The language in which the source texts in the glossary are specified.<br/>
         /// Example: en

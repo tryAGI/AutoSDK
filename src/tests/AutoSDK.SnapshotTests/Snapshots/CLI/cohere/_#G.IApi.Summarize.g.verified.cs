@@ -29,6 +29,22 @@ namespace G
         /// Generates a summary in English for a given text.
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.SummarizeResponse>> SummarizeAsResponseAsync(
+
+            global::G.SummarizeRequest request,
+            string? xClientName = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Summarize<br/>
+        /// &lt;Warning&gt;<br/>
+        /// This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](https://docs.cohere.com/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// &lt;/Warning&gt;<br/>
+        /// Generates a summary in English for a given text.
+        /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="text">
         /// The text to generate a summary for. Can be up to 100,000 characters long. Currently the only supported language is English.<br/>
         /// Included only in requests

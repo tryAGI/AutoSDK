@@ -26,6 +26,21 @@ namespace G
         /// </summary>
         /// <param name="type"></param>
         /// <param name="subType"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateKeysResponse>> CreateKeysByTypeBySubTypeAsResponseAsync(
+            global::G.CreateKeysType type,
+            global::G.CreateKeysSubType subType,
+
+            global::G.CreateApiKeyObject request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create API Keys<br/>
+        /// Creates a new API key.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="subType"></param>
         /// <param name="name">
         /// Example: Development API Key
         /// </param>

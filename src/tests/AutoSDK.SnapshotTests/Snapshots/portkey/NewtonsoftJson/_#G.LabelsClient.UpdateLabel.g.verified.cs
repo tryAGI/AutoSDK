@@ -38,6 +38,29 @@ namespace G
             global::G.UpdateLabelRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await UpdateLabelAsResponseAsync(
+                labelId: labelId,
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Update a label<br/>
+        /// Updates an existing label
+        /// </summary>
+        /// <param name="labelId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> UpdateLabelAsResponseAsync(
+            global::System.Guid labelId,
+
+            global::G.UpdateLabelRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -293,7 +316,10 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return __content;
+                    return new global::G.AutoSDKHttpResponse<string>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -322,7 +348,10 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return __content;
+                    return new global::G.AutoSDKHttpResponse<string>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __content);
                 }
                 catch (global::System.Exception __ex)
                 {

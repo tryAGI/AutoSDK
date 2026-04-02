@@ -48,6 +48,35 @@ namespace G
             global::G.GetAdminUsersInvitesStatus? status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetAdminUsersInvitesAsResponseAsync(
+                pageSize: pageSize,
+                currentPage: currentPage,
+                role: role,
+                email: email,
+                status: status,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get All Invites
+        /// </summary>
+        /// <param name="pageSize"></param>
+        /// <param name="currentPage"></param>
+        /// <param name="role"></param>
+        /// <param name="email"></param>
+        /// <param name="status"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.InviteList>> GetAdminUsersInvitesAsResponseAsync(
+            int? pageSize = default,
+            int? currentPage = default,
+            global::G.GetAdminUsersInvitesRole? role = default,
+            string? email = default,
+            global::G.GetAdminUsersInvitesStatus? status = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetAdminUsersInvitesArguments(
@@ -152,9 +181,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.InviteList.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.InviteList.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.InviteList>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -183,9 +215,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.InviteList.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.InviteList.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.InviteList>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

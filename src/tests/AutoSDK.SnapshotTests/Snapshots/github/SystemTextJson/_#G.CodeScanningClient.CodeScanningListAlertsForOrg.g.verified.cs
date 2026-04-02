@@ -91,6 +91,72 @@ namespace G
             global::G.CodeScanningAlertSeverity? severity = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await CodeScanningListAlertsForOrgAsResponseAsync(
+                org: org,
+                toolName: toolName,
+                toolGuid: toolGuid,
+                before: before,
+                after: after,
+                page: page,
+                perPage: perPage,
+                direction: direction,
+                state: state,
+                sort: sort,
+                severity: severity,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List code scanning alerts for an organization<br/>
+        /// Lists code scanning alerts for the default branch for all eligible repositories in an organization. Eligible repositories are repositories that are owned by organizations that you own or for which you are a security manager. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
+        /// The authenticated user must be an owner or security manager for the organization to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `security_events` or `repo`s cope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="toolName">
+        /// The name of the tool used to generate the code scanning analysis.
+        /// </param>
+        /// <param name="toolGuid">
+        /// The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
+        /// </param>
+        /// <param name="before"></param>
+        /// <param name="after"></param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="direction">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="state">
+        /// State of a code scanning alert.
+        /// </param>
+        /// <param name="sort">
+        /// Default Value: created
+        /// </param>
+        /// <param name="severity">
+        /// Severity of a code scanning alert.
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.CodeScanningOrganizationAlertItems>>> CodeScanningListAlertsForOrgAsResponseAsync(
+            string org,
+            string? toolName = default,
+            string? toolGuid = default,
+            string? before = default,
+            string? after = default,
+            int? page = default,
+            int? perPage = default,
+            global::G.CodeScanningListAlertsForOrgDirection? direction = default,
+            global::G.CodeScanningAlertStateQuery? state = default,
+            global::G.CodeScanningListAlertsForOrgSort? sort = default,
+            global::G.CodeScanningAlertSeverity? severity = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareCodeScanningListAlertsForOrgArguments(
@@ -258,9 +324,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.CodeScanningOrganizationAlertItems>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.CodeScanningOrganizationAlertItems>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.CodeScanningOrganizationAlertItems>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -289,9 +358,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.CodeScanningOrganizationAlertItems>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.CodeScanningOrganizationAlertItems>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.CodeScanningOrganizationAlertItems>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

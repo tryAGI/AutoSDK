@@ -55,6 +55,42 @@ namespace G
             int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ActionsListSelfHostedRunnersForRepoAsResponseAsync(
+                owner: owner,
+                repo: repo,
+                name: name,
+                perPage: perPage,
+                page: page,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List self-hosted runners for a repository<br/>
+        /// Lists all self-hosted runners configured in a repository.<br/>
+        /// Authenticated users must have admin access to the repository to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ActionsListSelfHostedRunnersForRepoResponse>> ActionsListSelfHostedRunnersForRepoAsResponseAsync(
+            string owner,
+            string repo,
+            string? name = default,
+            int? perPage = default,
+            int? page = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareActionsListSelfHostedRunnersForRepoArguments(
@@ -127,9 +163,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.ActionsListSelfHostedRunnersForRepoResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.ActionsListSelfHostedRunnersForRepoResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.ActionsListSelfHostedRunnersForRepoResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -158,9 +197,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.ActionsListSelfHostedRunnersForRepoResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.ActionsListSelfHostedRunnersForRepoResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.ActionsListSelfHostedRunnersForRepoResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

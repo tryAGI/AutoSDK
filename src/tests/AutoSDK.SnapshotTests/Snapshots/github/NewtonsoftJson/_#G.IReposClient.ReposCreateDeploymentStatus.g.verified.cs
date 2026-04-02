@@ -31,6 +31,24 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="deploymentId"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DeploymentStatus>> ReposCreateDeploymentStatusAsResponseAsync(
+            string owner,
+            string repo,
+            int deploymentId,
+
+            global::G.ReposCreateDeploymentStatusRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a deployment status<br/>
+        /// Users with `push` access can create deployment statuses for a given deployment.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo_deployment` scope to use this endpoint.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="deploymentId"></param>
         /// <param name="state">
         /// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
         /// </param>

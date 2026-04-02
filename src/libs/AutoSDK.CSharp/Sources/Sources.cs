@@ -402,4 +402,13 @@ public static partial class Sources
             Name: $"{settings.Namespace}.ResponseStream.g.cs",
             Text: GenerateResponseStream(settings));
     }
+
+    public static FileWithName HttpResponse(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.AutoSDKHttpResponse.g.cs",
+            Text: GenerateHttpResponse(settings));
+    }
 }

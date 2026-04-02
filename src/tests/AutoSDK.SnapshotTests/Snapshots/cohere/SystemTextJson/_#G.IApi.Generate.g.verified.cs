@@ -29,6 +29,22 @@ namespace G
         /// Generates realistic text conditioned on a given input.
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Generation>> GenerateAsResponseAsync(
+
+            global::G.GenerateRequest request,
+            string? xClientName = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate<br/>
+        /// &lt;Warning&gt;<br/>
+        /// This API is marked as "Legacy" and is no longer maintained. Follow the [migration guide](https://docs.cohere.com/docs/migrating-from-cogenerate-to-cochat) to start using the Chat API.<br/>
+        /// &lt;/Warning&gt;<br/>
+        /// Generates realistic text conditioned on a given input.
+        /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="prompt">
         /// The input text that serves as the starting point for generating the response.<br/>
         /// Note: The prompt will be pre-processed and modified before reaching the model.<br/>

@@ -27,6 +27,21 @@ namespace G
         /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EmbedResponse>> EmbedAsResponseAsync(
+
+            global::G.EmbedRequest request,
+            string? xClientName = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Embed V1 API<br/>
+        /// This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents.<br/>
+        /// Embeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page.<br/>
+        /// If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
+        /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="texts">
         /// An array of strings for the model to embed. Maximum number of texts per call is `96`.<br/>
         /// Included only in requests

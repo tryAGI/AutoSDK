@@ -20,6 +20,17 @@ namespace G
         /// Create retention rule<br/>
         /// Create a new retention rule. Auto-deactivates any existing active rule for the same scope.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RetentionRulePublic>> CreateRetentionRuleAsResponseAsync(
+
+            global::G.RetentionRuleWrite request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create retention rule<br/>
+        /// Create a new retention rule. Auto-deactivates any existing active rule for the same scope.
+        /// </summary>
         /// <param name="projectId"></param>
         /// <param name="organizationLevel">
         /// Set to true to create an organization-level rule<br/>

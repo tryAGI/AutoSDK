@@ -75,6 +75,57 @@ namespace G
             global::G.ReposListActivitiesActivityType? activityType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ReposListActivitiesAsResponseAsync(
+                owner: owner,
+                repo: repo,
+                direction: direction,
+                perPage: perPage,
+                before: before,
+                after: after,
+                @ref: @ref,
+                actor: actor,
+                timePeriod: timePeriod,
+                activityType: activityType,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List repository activities<br/>
+        /// Lists a detailed history of changes to a repository, such as pushes, merges, force pushes, and branch changes, and associates these changes with commits and users.<br/>
+        /// For more information about viewing repository activity,<br/>
+        /// see "[Viewing activity and data for your repository](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository)."
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="direction">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="before"></param>
+        /// <param name="after"></param>
+        /// <param name="ref"></param>
+        /// <param name="actor"></param>
+        /// <param name="timePeriod"></param>
+        /// <param name="activityType"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Activity>>> ReposListActivitiesAsResponseAsync(
+            string owner,
+            string repo,
+            global::G.ReposListActivitiesDirection? direction = default,
+            int? perPage = default,
+            string? before = default,
+            string? after = default,
+            string? @ref = default,
+            string? actor = default,
+            global::G.ReposListActivitiesTimePeriod? timePeriod = default,
+            global::G.ReposListActivitiesActivityType? activityType = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareReposListActivitiesArguments(
@@ -200,9 +251,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.Activity>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.Activity>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Activity>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -231,9 +285,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.Activity>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.Activity>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Activity>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

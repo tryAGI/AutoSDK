@@ -31,6 +31,24 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="sha"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Status>> ReposCreateCommitStatusAsResponseAsync(
+            string owner,
+            string repo,
+            string sha,
+
+            global::G.ReposCreateCommitStatusRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a commit status<br/>
+        /// Users with push access in a repository can create commit statuses for a given SHA.<br/>
+        /// Note: there is a limit of 1000 statuses per `sha` and `context` within a repository. Attempts to create more than 1000 statuses will result in a validation error.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="sha"></param>
         /// <param name="state">
         /// The state of the status.
         /// </param>

@@ -51,6 +51,40 @@ namespace G
             int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await CopilotListCopilotSeatsForEnterpriseAsResponseAsync(
+                enterprise: enterprise,
+                page: page,
+                perPage: perPage,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List all Copilot seat assignments for an enterprise<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; This endpoint is in beta and is subject to change.<br/>
+        /// Lists all active Copilot seats across organizations or enterprise teams for an enterprise with a Copilot Business or Copilot Enterprise subscription.<br/>
+        /// Users with access through multiple organizations or enterprise teams will only be counted toward `total_seats` once.<br/>
+        /// For each organization or enterprise team which grants Copilot access to a user, a seat detail object will appear in the `seats` array.<br/>
+        /// Only enterprise owners and billing managers can view assigned Copilot seats across their child organizations or enterprise teams.<br/>
+        /// Personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
+        /// </summary>
+        /// <param name="enterprise"></param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 50
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CopilotListCopilotSeatsForEnterpriseResponse>> CopilotListCopilotSeatsForEnterpriseAsResponseAsync(
+            string enterprise,
+            int? page = default,
+            int? perPage = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareCopilotListCopilotSeatsForEnterpriseArguments(
@@ -270,9 +304,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.CopilotListCopilotSeatsForEnterpriseResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.CopilotListCopilotSeatsForEnterpriseResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.CopilotListCopilotSeatsForEnterpriseResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -301,9 +338,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.CopilotListCopilotSeatsForEnterpriseResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.CopilotListCopilotSeatsForEnterpriseResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.CopilotListCopilotSeatsForEnterpriseResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

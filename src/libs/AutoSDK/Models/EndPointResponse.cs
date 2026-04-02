@@ -5,7 +5,8 @@ public record struct EndPointResponse(
     string Description,
     string MimeType,
     ContentType ContentType,
-    TypeData Type
+    TypeData Type,
+    bool HasHeaders
 )
 {
     public bool Is1XX => StatusCode.StartsWith("1", StringComparison.OrdinalIgnoreCase);
@@ -23,5 +24,6 @@ public record struct EndPointResponse(
         Description: string.Empty,
         MimeType: string.Empty,
         ContentType: ContentType.String,
-        Type: TypeData.Default);
+        Type: TypeData.Default,
+        HasHeaders: false);
 }

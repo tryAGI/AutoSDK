@@ -20,6 +20,17 @@ namespace G
         /// Create insights view<br/>
         /// Create a new insights view in a workspace
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DashboardPublic>> CreateInsightsViewAsResponseAsync(
+
+            global::G.DashboardWrite request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create insights view<br/>
+        /// Create a new insights view in a workspace
+        /// </summary>
         /// <param name="projectId">
         /// Project ID. Takes precedence over project_name when both are provided.
         /// </param>

@@ -30,6 +30,23 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GitTree>> GitCreateTreeAsResponseAsync(
+            string owner,
+            string repo,
+
+            global::G.GitCreateTreeRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a tree<br/>
+        /// The tree creation API accepts nested entries. If you specify both a tree and a nested path modifying that tree, this endpoint will overwrite the contents of the tree with the new path contents, and create a new tree structure.<br/>
+        /// If you use this endpoint to add, delete, or modify the file contents in a tree, you will need to commit the tree and then update a branch to point to the commit. For more information see "[Create a commit](https://docs.github.com/rest/git/commits#create-a-commit)" and "[Update a reference](https://docs.github.com/rest/git/refs#update-a-reference)."<br/>
+        /// Returns an error if you try to delete a file that does not exist.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="tree">
         /// Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
         /// </param>

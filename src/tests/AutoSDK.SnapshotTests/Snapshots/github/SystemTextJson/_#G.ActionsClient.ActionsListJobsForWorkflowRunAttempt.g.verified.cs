@@ -60,6 +60,46 @@ namespace G
             int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ActionsListJobsForWorkflowRunAttemptAsResponseAsync(
+                owner: owner,
+                repo: repo,
+                runId: runId,
+                attemptNumber: attemptNumber,
+                perPage: perPage,
+                page: page,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List jobs for a workflow run attempt<br/>
+        /// Lists jobs for a specific workflow run attempt. You can use parameters to narrow the list of results. For more information<br/>
+        /// about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).<br/>
+        /// Anyone with read access to the repository can use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint  with a private repository.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="runId"></param>
+        /// <param name="attemptNumber"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ActionsListJobsForWorkflowRunAttemptResponse>> ActionsListJobsForWorkflowRunAttemptAsResponseAsync(
+            string owner,
+            string repo,
+            int runId,
+            int attemptNumber,
+            int? perPage = default,
+            int? page = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareActionsListJobsForWorkflowRunAttemptArguments(
@@ -171,9 +211,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.ActionsListJobsForWorkflowRunAttemptResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.ActionsListJobsForWorkflowRunAttemptResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.ActionsListJobsForWorkflowRunAttemptResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -202,9 +245,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.ActionsListJobsForWorkflowRunAttemptResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.ActionsListJobsForWorkflowRunAttemptResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.ActionsListJobsForWorkflowRunAttemptResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

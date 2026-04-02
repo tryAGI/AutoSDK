@@ -83,6 +83,64 @@ namespace G
             string? validity = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SecretScanningListAlertsForOrgAsResponseAsync(
+                org: org,
+                state: state,
+                secretType: secretType,
+                resolution: resolution,
+                sort: sort,
+                direction: direction,
+                page: page,
+                perPage: perPage,
+                before: before,
+                after: after,
+                validity: validity,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List secret scanning alerts for an organization<br/>
+        /// Lists secret scanning alerts for eligible repositories in an organization, from newest to oldest.<br/>
+        /// The authenticated user must be an administrator or security manager for the organization to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="state"></param>
+        /// <param name="secretType"></param>
+        /// <param name="resolution"></param>
+        /// <param name="sort">
+        /// Default Value: created
+        /// </param>
+        /// <param name="direction">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="before"></param>
+        /// <param name="after"></param>
+        /// <param name="validity"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.OrganizationSecretScanningAlert>>> SecretScanningListAlertsForOrgAsResponseAsync(
+            string org,
+            global::G.SecretScanningListAlertsForOrgState? state = default,
+            string? secretType = default,
+            string? resolution = default,
+            global::G.SecretScanningListAlertsForOrgSort? sort = default,
+            global::G.SecretScanningListAlertsForOrgDirection? direction = default,
+            int? page = default,
+            int? perPage = default,
+            string? before = default,
+            string? after = default,
+            string? validity = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareSecretScanningListAlertsForOrgArguments(
@@ -250,9 +308,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.OrganizationSecretScanningAlert>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.OrganizationSecretScanningAlert>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.OrganizationSecretScanningAlert>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -281,9 +342,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.OrganizationSecretScanningAlert>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.OrganizationSecretScanningAlert>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.OrganizationSecretScanningAlert>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

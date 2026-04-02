@@ -32,6 +32,23 @@ namespace petstore
             int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListPetsAsResponseAsync(
+                limit: limit,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List all pets
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::petstore.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::petstore.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::petstore.Pet>>> ListPetsAsResponseAsync(
+            int? limit = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListPetsArguments(
@@ -132,9 +149,12 @@ namespace petstore
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::petstore.Pet>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::petstore.Pet>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::petstore.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::petstore.Pet>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::petstore.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -163,9 +183,12 @@ namespace petstore
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::petstore.Pet>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::petstore.Pet>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::petstore.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::petstore.Pet>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::petstore.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

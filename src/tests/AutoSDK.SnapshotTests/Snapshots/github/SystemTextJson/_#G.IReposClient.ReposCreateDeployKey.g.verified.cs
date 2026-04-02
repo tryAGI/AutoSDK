@@ -26,6 +26,21 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DeployKey>> ReposCreateDeployKeyAsResponseAsync(
+            string owner,
+            string repo,
+
+            global::G.ReposCreateDeployKeyRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a deploy key<br/>
+        /// You can create a read-only deploy key.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="title">
         /// A name for the key.
         /// </param>

@@ -44,6 +44,36 @@ namespace G
             global::G.TranslateDocumentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await TranslateDocumentAsResponseAsync(
+
+                request: request,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Upload and Translate a Document<br/>
+        /// This call uploads a document and queues it for translation.<br/>
+        /// The call returns once the upload is complete, returning a document ID and key which can be used to<br/>
+        /// [query the translation status](https://www.deepl.com/docs-api/documents/get-document-status)<br/>
+        /// and to [download the translated document](https://www.deepl.com/docs-api/documents/download-document) once translation is complete.<br/>
+        /// Because the request includes a file upload, it must be an HTTP POST request with content type `multipart/form-data`.<br/>
+        /// Please be aware that the uploaded document is automatically removed from the server once the translated document has been downloaded.<br/>
+        /// You have to upload the document again in order to restart the translation.<br/>
+        /// The maximum upload limit for documents is [available here](https://support.deepl.com/hc/articles/360020582359-Document-formats)<br/>
+        /// and may vary based on API plan and document type.<br/>
+        /// You may specify the glossary to use for the document translation using the `glossary_id` parameter.<br/>
+        /// **Important:** This requires the `source_lang` parameter to be set and the language pair of the glossary has to match the language pair of the request.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TranslateDocumentResponse>> TranslateDocumentAsResponseAsync(
+
+            global::G.TranslateDocumentRequest request,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -467,9 +497,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::G.TranslateDocumentResponse.FromJson(__content, JsonSerializerOptions) ??
+                    var __value = global::G.TranslateDocumentResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::G.TranslateDocumentResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -498,9 +531,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::G.TranslateDocumentResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    var __value = await global::G.TranslateDocumentResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::G.TranslateDocumentResponse>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

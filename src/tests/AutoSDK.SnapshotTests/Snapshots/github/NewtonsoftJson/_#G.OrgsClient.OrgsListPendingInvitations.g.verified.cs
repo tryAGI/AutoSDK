@@ -60,6 +60,47 @@ namespace G
             global::G.OrgsListPendingInvitationsInvitationSource? invitationSource = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await OrgsListPendingInvitationsAsResponseAsync(
+                org: org,
+                perPage: perPage,
+                page: page,
+                role: role,
+                invitationSource: invitationSource,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List pending organization invitations<br/>
+        /// The return hash contains a `role` field which refers to the Organization<br/>
+        /// Invitation role and will be one of the following values: `direct_member`, `admin`,<br/>
+        /// `billing_manager`, or `hiring_manager`. If the invitee is not a GitHub<br/>
+        /// member, the `login` field in the return hash will be `null`.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="role">
+        /// Default Value: all
+        /// </param>
+        /// <param name="invitationSource">
+        /// Default Value: all
+        /// </param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.OrganizationInvitation>>> OrgsListPendingInvitationsAsResponseAsync(
+            string org,
+            int? perPage = default,
+            int? page = default,
+            global::G.OrgsListPendingInvitationsRole? role = default,
+            global::G.OrgsListPendingInvitationsInvitationSource? invitationSource = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareOrgsListPendingInvitationsArguments(
@@ -187,9 +228,12 @@ namespace G
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.OrganizationInvitation>?>(__content, JsonSerializerOptions) ??
+                    var __value = global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.OrganizationInvitation>?>(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.OrganizationInvitation>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -218,9 +262,12 @@ namespace G
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.OrganizationInvitation>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
+                    var __value = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.OrganizationInvitation>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.OrganizationInvitation>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {

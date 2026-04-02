@@ -18,6 +18,16 @@ namespace G
         /// <summary>
         /// Create a Glossary
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.MonolingualGlossary>> CreateGlossaryAsResponseAsync(
+
+            global::G.CreateGlossaryParameters request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a Glossary
+        /// </summary>
         /// <param name="name">
         /// Name to be associated with the glossary.<br/>
         /// Example: My Glossary
