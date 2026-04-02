@@ -574,6 +574,69 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithSecuritySchemeOverride_ReplacesAuthAndSuppressesDuplicateParameters()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Auth Override
+  version: 1.0.0
+components:
+  securitySchemes:
+    queryKey:
+      type: apiKey
+      in: query
+      name: api_key
+paths:
+  /chat:
+    get:
+      operationId: getChat
+      security:
+        - queryKey: []
+      parameters:
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+        - in: query
+          name: keep
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "security-override.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "AuthOverride",
+            clientClassName: "AuthOverrideClient",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("AuthenticationHeaderValue(");
+                content.Should().Contain("\"Bearer\"");
+                content.Should().NotContain("ApiKeyInQuery");
+                content.Should().NotContain("string? authorization = default");
+                content.Should().Contain("string? keep = default");
+            },
+            additionalArguments: ["--security-scheme", "Http:Header:Bearer"]);
+    }
+
+    [TestMethod]
     public async Task Generate_WithDuplicateQueryParameterNames_Builds()
     {
         const string spec = """

@@ -14,6 +14,39 @@ namespace AutoSDK.Extensions;
 
 public static class OpenApiExtensions
 {
+    private readonly struct SecurityParameterMatcher : IEquatable<SecurityParameterMatcher>
+    {
+        public SecurityParameterMatcher(
+            ParameterLocation location,
+            string name)
+        {
+            Location = location;
+            Name = name;
+        }
+
+        public ParameterLocation Location { get; }
+        public string Name { get; }
+
+        public bool Equals(SecurityParameterMatcher other)
+        {
+            return Location == other.Location &&
+                   string.Equals(Name, other.Name, StringComparison.OrdinalIgnoreCase);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is SecurityParameterMatcher other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((int)Location * 397) ^ StringComparer.OrdinalIgnoreCase.GetHashCode(Name ?? string.Empty);
+            }
+        }
+    }
+
     public static OpenApiDocument GetOpenApiDocument(
         this string yamlOrJson,
         Settings settings,
@@ -1094,7 +1127,9 @@ info:
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
 
-        openApiDocument.Components!.SecuritySchemes ??= new Dictionary<string, IOpenApiSecurityScheme>();
+        openApiDocument.Components!.SecuritySchemes = new Dictionary<string, IOpenApiSecurityScheme>();
+        openApiDocument.Security = new List<OpenApiSecurityRequirement>();
+        var matchers = new HashSet<SecurityParameterMatcher>();
 
         foreach (var scheme in settings.SecuritySchemes)
         {
@@ -1146,6 +1181,80 @@ info:
             {
                 [schemeRef] = new List<string>(),
             });
+            if (TryCreateSecurityParameterMatcher(schemeType, location, namePart, out var matcher))
+            {
+                matchers.Add(matcher);
+            }
+        }
+
+        var pathItems = openApiDocument.Paths != null
+            ? openApiDocument.Paths.Values.ToList()
+            : new List<IOpenApiPathItem>();
+        foreach (var pathItem in pathItems)
+        {
+            SuppressMatchingSecurityParameters(pathItem.Parameters, matchers);
+
+            foreach (var operation in pathItem.Operations?.Values ?? Enumerable.Empty<OpenApiOperation>())
+            {
+                operation.Security = new List<OpenApiSecurityRequirement>();
+                SuppressMatchingSecurityParameters(operation.Parameters, matchers);
+            }
+        }
+    }
+
+    private static void SuppressMatchingSecurityParameters(
+        IList<IOpenApiParameter>? parameters,
+        ISet<SecurityParameterMatcher> matchers)
+    {
+        if (parameters == null || parameters.Count == 0 || matchers.Count == 0)
+        {
+            return;
+        }
+
+        for (var i = parameters.Count - 1; i >= 0; i--)
+        {
+            var parameter = parameters[i];
+            if (string.IsNullOrWhiteSpace(parameter.Name))
+            {
+                continue;
+            }
+
+            if (parameter.In is not ParameterLocation parameterLocation)
+            {
+                continue;
+            }
+
+            var matcher = new SecurityParameterMatcher(parameterLocation, parameter.Name!);
+            if (matchers.Contains(matcher) ||
+                matchers.Any(x =>
+                    x.Location == parameterLocation &&
+                    string.Equals(x.Name, parameter.Name, StringComparison.OrdinalIgnoreCase)))
+            {
+                parameters.RemoveAt(i);
+            }
+        }
+    }
+
+    private static bool TryCreateSecurityParameterMatcher(
+        SecuritySchemeType schemeType,
+        ParameterLocation location,
+        string name,
+        out SecurityParameterMatcher matcher)
+    {
+        matcher = default;
+
+        switch (schemeType)
+        {
+            case SecuritySchemeType.Http:
+            case SecuritySchemeType.OAuth2:
+            case SecuritySchemeType.OpenIdConnect:
+                matcher = new SecurityParameterMatcher(ParameterLocation.Header, "Authorization");
+                return true;
+            case SecuritySchemeType.ApiKey when !string.IsNullOrWhiteSpace(name):
+                matcher = new SecurityParameterMatcher(location, name);
+                return true;
+            default:
+                return false;
         }
     }
 

@@ -249,4 +249,59 @@ components:
         // Assert
         document.Security.Should().BeEmpty();
     }
+
+    [TestMethod]
+    public void InjectSecuritySchemes_ReplacesOperationSecurity_AndSuppressesMatchingParameters()
+    {
+        var yaml = """
+openapi: 3.0.3
+info:
+  title: Auth Operation Security
+  version: 1.0.0
+components:
+  securitySchemes:
+    queryKey:
+      type: apiKey
+      in: query
+      name: api_key
+paths:
+  /chat:
+    get:
+      operationId: getChat
+      security:
+        - queryKey: []
+      parameters:
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+        - in: query
+          name: keep
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ok
+""";
+
+        var settings = Settings.Default with
+        {
+            SecuritySchemes = new[] { "Http:Header:Bearer" }.ToImmutableArray(),
+        };
+
+        var document = yaml.GetOpenApiDocument(settings);
+        var pathItem = document.Paths["/chat"];
+        pathItem.Should().NotBeNull();
+        pathItem!.Operations.Should().NotBeNull();
+        var operation = pathItem.Operations![System.Net.Http.HttpMethod.Get];
+
+        document.Components!.SecuritySchemes.Should().ContainSingle();
+        document.Security!.Should().ContainSingle();
+        document.Security[0].Keys.Single().Scheme.Should().Be("Bearer");
+
+        operation.Security.Should().NotBeNull();
+        operation.Security!.Should().BeEmpty();
+        operation.Parameters.Should().ContainSingle();
+        operation.Parameters![0].Name.Should().Be("keep");
+    }
 }
