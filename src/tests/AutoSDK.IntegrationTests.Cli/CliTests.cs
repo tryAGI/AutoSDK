@@ -28,53 +28,26 @@ public class CliTests
     [TestMethod]
     public async Task Generate_ProtoInput_ShowsGrpcNotSupportedMessage()
     {
-        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
-        try
-        {
-            Directory.CreateDirectory(tempDirectory);
+        await AssertProtoInputShowsGrpcNotSupportedMessageAsync(
+            "generate",
+            "--namespace", "Demo",
+            "--output", "Generated");
+    }
 
-            var protoPath = Path.Combine(tempDirectory, "greeter.proto");
-            await File.WriteAllTextAsync(
-                protoPath,
-                """
-                syntax = "proto3";
+    [TestMethod]
+    public async Task Cli_ProtoInput_ShowsGrpcNotSupportedMessage()
+    {
+        await AssertProtoInputShowsGrpcNotSupportedMessageAsync(
+            "cli",
+            "--output", "Generated");
+    }
 
-                package demo;
-
-                service Greeter {
-                  rpc SayHello (HelloRequest) returns (HelloReply);
-                }
-
-                message HelloRequest {
-                  string name = 1;
-                }
-
-                message HelloReply {
-                  string message = 1;
-                }
-                """);
-
-            var currentDirectory = Directory.GetCurrentDirectory();
-            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
-
-            var result = await RunDotnetAsync(
-                repositoryDirectory,
-                "run",
-                "--disable-build-servers",
-                "--no-launch-profile",
-                "--project", "src/libs/AutoSDK.CLI",
-                "generate", protoPath,
-                "--namespace", "Demo",
-                "--output", Path.Combine(tempDirectory, "Generated"));
-
-            result.ExitCode.Should().Be(1);
-            result.StandardError.Should().Contain("gRPC .proto inputs are not supported yet.");
-            result.StandardError.Should().NotContain("OpenAPI specification version");
-        }
-        finally
-        {
-            TryDeleteDirectory(tempDirectory);
-        }
+    [TestMethod]
+    public async Task Http_ProtoInput_ShowsGrpcNotSupportedMessage()
+    {
+        await AssertProtoInputShowsGrpcNotSupportedMessageAsync(
+            "http",
+            "--output", "Generated");
     }
 
     [TestMethod]
@@ -2011,6 +1984,64 @@ components:
         finally
         {
             TryDeleteDirectory(tempSpecDirectory);
+        }
+    }
+
+    private static async Task AssertProtoInputShowsGrpcNotSupportedMessageAsync(
+        string commandName,
+        params string[] additionalArguments)
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var protoPath = Path.Combine(tempDirectory, "greeter.proto");
+            await File.WriteAllTextAsync(
+                protoPath,
+                """
+                syntax = "proto3";
+
+                package demo;
+
+                service Greeter {
+                  rpc SayHello (HelloRequest) returns (HelloReply);
+                }
+
+                message HelloRequest {
+                  string name = 1;
+                }
+
+                message HelloReply {
+                  string message = 1;
+                }
+                """);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var arguments = new List<string>
+            {
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                commandName,
+                protoPath,
+            };
+            arguments.AddRange(additionalArguments.Select(argument =>
+                string.Equals(argument, "Generated", StringComparison.Ordinal)
+                    ? Path.Combine(tempDirectory, argument)
+                    : argument));
+
+            var result = await RunDotnetAsync(repositoryDirectory, arguments.ToArray());
+
+            result.ExitCode.Should().Be(1);
+            result.StandardError.Should().Contain("gRPC .proto inputs are not supported yet.");
+            result.StandardError.Should().NotContain("OpenAPI specification version");
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
         }
     }
 

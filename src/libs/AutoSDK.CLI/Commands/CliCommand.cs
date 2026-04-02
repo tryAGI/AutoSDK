@@ -70,6 +70,15 @@ internal sealed class CliCommand : Command
         var yaml = input.StartsWith("http", StringComparison.OrdinalIgnoreCase)
             ? await client.GetStringAsync(new Uri(input)).ConfigureAwait(false)
             : await File.ReadAllTextAsync(input).ConfigureAwait(false);
+
+        var specFormat = SpecFormatDetector.DetectFormat(yaml);
+        if (specFormat == SpecFormat.GrpcProto)
+        {
+            await Console.Error.WriteLineAsync(SpecFormatDetector.GrpcProtoNotSupportedMessage).ConfigureAwait(false);
+            await Console.Error.FlushAsync().ConfigureAwait(false);
+            Environment.Exit(1);
+            return;
+        }
         
         Console.WriteLine("Creating...");
         
