@@ -132,4 +132,25 @@ components:
         Assert.IsTrue(properties.ContainsKey("temperature"));
         Assert.IsTrue(properties.ContainsKey("top_k"));
     }
+
+    [TestMethod]
+    public void RejectsGrpcProtoInputWithConsistentMessage()
+    {
+        var proto = """
+syntax = "proto3";
+
+package demo;
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+""";
+
+        Action action = () => _ = proto.GetOpenApiDocument(Settings.Default);
+
+        action
+            .Should()
+            .Throw<NotSupportedException>()
+            .WithMessage("*gRPC .proto inputs are not supported yet*");
+    }
 }

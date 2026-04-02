@@ -61,6 +61,12 @@ public static class OpenApiExtensions
         CancellationToken cancellationToken = default)
     {
         yamlOrJson = yamlOrJson ?? throw new ArgumentNullException(nameof(yamlOrJson));
+
+        if (SpecFormatDetector.DetectFormat(yamlOrJson) == SpecFormat.GrpcProto)
+        {
+            throw new NotSupportedException(SpecFormatDetector.GrpcProtoNotSupportedMessage);
+        }
+
         yamlOrJson = NormalizeOpenApi31NumericExclusiveBounds(yamlOrJson);
 
         var readerSettings = new OpenApiReaderSettings
