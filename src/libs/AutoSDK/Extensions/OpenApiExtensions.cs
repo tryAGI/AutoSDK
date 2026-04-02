@@ -117,12 +117,113 @@ public static class OpenApiExtensions
         {
             openApiDocument.ApplyOpenApiOverrides(settings);
         }
+        if (settings.UseExtensionNaming)
+        {
+            openApiDocument.ApplyFernRequestNames();
+        }
 
         openApiDocument.SanitizeNumericConstraints();
         openApiDocument.InferLargeIntegerFormats();
         openApiDocument.SanitizeDiscriminators();
 
         return openApiDocument;
+    }
+
+    private static void ApplyFernRequestNames(this OpenApiDocument openApiDocument)
+    {
+        var paths = openApiDocument.Paths;
+        if (paths == null)
+        {
+            return;
+        }
+
+        var componentRequestNames = new Dictionary<string, HashSet<string>>(StringComparer.Ordinal);
+
+        foreach (var path in paths)
+        {
+            var operations = path.Value.Operations;
+            if (operations == null)
+            {
+                continue;
+            }
+
+            foreach (var operation in operations)
+            {
+                if (!TryGetExtensionStringValue(
+                        operation.Value.Extensions,
+                        "x-fern-request-name",
+                        out var requestName) ||
+                    string.IsNullOrWhiteSpace(requestName))
+                {
+                    continue;
+                }
+
+                var requestContent = operation.Value.RequestBody?.Content;
+                if (requestContent == null)
+                {
+                    continue;
+                }
+
+                foreach (var content in requestContent)
+                {
+                    var schema = content.Value.Schema;
+                    if (schema == null ||
+                        TryGetExtensionStringValue(schema.Extensions, "x-fern-type-name", out _))
+                    {
+                        continue;
+                    }
+
+                    var referenceId = schema.GetReferenceId();
+                    if (!string.IsNullOrWhiteSpace(referenceId))
+                    {
+                        var referenceIdValue = referenceId!;
+                        if (!componentRequestNames.TryGetValue(referenceIdValue, out var names))
+                        {
+                            names = new HashSet<string>(StringComparer.Ordinal);
+                            componentRequestNames[referenceIdValue] = names;
+                        }
+
+                        names.Add(requestName);
+                        continue;
+                    }
+
+                    SetExtensionStringValue(schema, "x-fern-type-name", requestName);
+                }
+            }
+        }
+
+        var componentSchemas = openApiDocument.Components?.Schemas;
+        if (componentSchemas == null)
+        {
+            return;
+        }
+
+        foreach (var pair in componentRequestNames)
+        {
+            if (pair.Value.Count != 1 ||
+                !componentSchemas.TryGetValue(pair.Key, out var schema) ||
+                schema == null ||
+                TryGetExtensionStringValue(schema.Extensions, "x-fern-type-name", out _))
+            {
+                continue;
+            }
+
+            SetExtensionStringValue(schema, "x-fern-type-name", pair.Value.First());
+        }
+    }
+
+    private static void SetExtensionStringValue(
+        IOpenApiSchema schema,
+        string name,
+        string value)
+    {
+        if (schema is not OpenApiSchema openApiSchema)
+        {
+            return;
+        }
+
+        openApiSchema.Extensions ??= new Dictionary<string, IOpenApiExtension>(StringComparer.Ordinal);
+        openApiSchema.Extensions[name] = new JsonNodeExtension(JsonValue.Create(value)!);
     }
 
     private static bool TryPromoteOpenApiFragment(

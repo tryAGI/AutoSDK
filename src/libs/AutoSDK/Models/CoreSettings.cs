@@ -9,7 +9,8 @@ public record struct CoreSettings(
     ImmutableArray<string> SecuritySchemes,
     bool ComputeDiscriminators,
     bool AddMissingPathParameters,
-    ImmutableArray<string> OpenApiOverrides)
+    ImmutableArray<string> OpenApiOverrides,
+    bool UseExtensionNaming)
 {
     public static CoreSettings Default => new(
         IgnoreOpenApiErrors: true,
@@ -18,5 +19,6 @@ public record struct CoreSettings(
         SecuritySchemes: ImmutableArray<string>.Empty,
         ComputeDiscriminators: false,
         AddMissingPathParameters: true,
-        OpenApiOverrides: ImmutableArray<string>.Empty);
+        OpenApiOverrides: ImmutableArray<string>.Empty,
+        UseExtensionNaming: true);
 }

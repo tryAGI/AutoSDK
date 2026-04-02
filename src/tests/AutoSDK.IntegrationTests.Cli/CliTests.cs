@@ -983,6 +983,61 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithFernRequestName_UsesRequestModelName()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: FernRequestName
+  version: 1.0.0
+paths:
+  /finetuning/{id}:
+    patch:
+      operationId: updateFinetunedModel
+      x-fern-request-name: FinetuningUpdateFinetunedModelRequest
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateFinetunedModelRequest'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    UpdateFinetunedModelRequest:
+      type: object
+      properties:
+        name:
+          type: string
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "fern-request-name.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "G",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("FinetuningUpdateFinetunedModelRequest");
+                content.Should().NotContain("class UpdateFinetunedModelRequest");
+                content.Should().Contain("global::G.FinetuningUpdateFinetunedModelRequest request");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithRequiredNullableAnyOfRequestProperty_Builds()
     {
         const string spec = """

@@ -11,7 +11,8 @@ public static class SettingsConversions
             SecuritySchemes: settings.SecuritySchemes,
             ComputeDiscriminators: settings.ComputeDiscriminators,
             AddMissingPathParameters: settings.AddMissingPathParameters,
-            OpenApiOverrides: settings.OpenApiOverrides);
+            OpenApiOverrides: settings.OpenApiOverrides,
+            UseExtensionNaming: settings.UseExtensionNaming);
     }
 
     public static EmitterSettings ToEmitterSettings(this Settings settings)

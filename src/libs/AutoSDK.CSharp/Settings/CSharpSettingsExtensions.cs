@@ -112,7 +112,8 @@ public static class CSharpSettingsExtensions
             SecuritySchemes: settings.SecuritySchemes,
             ComputeDiscriminators: settings.ComputeDiscriminators,
             AddMissingPathParameters: settings.AddMissingPathParameters,
-            OpenApiOverrides: settings.OpenApiOverrides);
+            OpenApiOverrides: settings.OpenApiOverrides,
+            UseExtensionNaming: settings.UseExtensionNaming);
     }
 
     public static EmitterSettings ToEmitterSettings(this CSharpSettings settings)

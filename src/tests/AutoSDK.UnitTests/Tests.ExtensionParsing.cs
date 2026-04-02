@@ -811,6 +811,109 @@ public class ExtensionParsingTests
     }
 
     [TestMethod]
+    public void XFernRequestName_UsedForReferencedRequestBody_WhenExtensionNamingEnabled()
+    {
+        const string json = """
+                            {
+                              "openapi": "3.0.1",
+                              "info": { "title": "Test", "version": "1.0.0" },
+                              "paths": {
+                                "/finetuning/{id}": {
+                                  "patch": {
+                                    "operationId": "UpdateFinetunedModel",
+                                    "x-fern-request-name": "FinetuningUpdateFinetunedModelRequest",
+                                    "parameters": [
+                                      {
+                                        "name": "id",
+                                        "in": "path",
+                                        "required": true,
+                                        "schema": { "type": "string" }
+                                      }
+                                    ],
+                                    "requestBody": {
+                                      "required": true,
+                                      "content": {
+                                        "application/json": {
+                                          "schema": {
+                                            "$ref": "#/components/schemas/UpdateFinetunedModelRequest"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "responses": {
+                                      "200": { "description": "OK" }
+                                    }
+                                  }
+                                }
+                              },
+                              "components": {
+                                "schemas": {
+                                  "UpdateFinetunedModelRequest": {
+                                    "type": "object",
+                                    "properties": {
+                                      "name": { "type": "string" }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateSdk = true,
+            UseExtensionNaming = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((json, settings), GlobalSettings: settings));
+
+        data.Classes.Select(x => x.ClassName).Should().Contain("FinetuningUpdateFinetunedModelRequest");
+        data.Classes.Select(x => x.ClassName).Should().NotContain("UpdateFinetunedModelRequest");
+        data.Methods[0].RequestType.CSharpTypeRaw.Should().Contain("FinetuningUpdateFinetunedModelRequest");
+    }
+
+    [TestMethod]
+    public void XFernRequestName_UsedForInlineRequestBody_WhenExtensionNamingEnabled()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths:
+                              /jobs:
+                                post:
+                                  operationId: createJob
+                                  x-fern-request-name: CreateJobParams
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      application/json:
+                                        schema:
+                                          type: object
+                                          properties:
+                                            name:
+                                              type: string
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateSdk = true,
+            UseExtensionNaming = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Classes.Select(x => x.ClassName).Should().Contain("CreateJobParams");
+        data.Methods[0].RequestType.CSharpTypeRaw.Should().Contain("CreateJobParams");
+    }
+
+    [TestMethod]
     public void XFernSdkGroupName_EmptyTagsFilteredFromResolvedTags()
     {
         // When x-fern-sdk-group-name reassigns ALL operations away from their original tag,
