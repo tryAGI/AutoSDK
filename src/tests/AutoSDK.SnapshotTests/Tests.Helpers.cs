@@ -253,7 +253,6 @@ public partial class Tests : VerifyBase
 
 namespace {contextNamespace}
 {{
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::{typesNamespace}.JsonSerializerContextTypes))]
     public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
         public static global::{contextNamespace}.{contextClassName} Default {{ get; }} = new global::{contextNamespace}.{contextClassName}(new global::System.Text.Json.JsonSerializerOptions());
