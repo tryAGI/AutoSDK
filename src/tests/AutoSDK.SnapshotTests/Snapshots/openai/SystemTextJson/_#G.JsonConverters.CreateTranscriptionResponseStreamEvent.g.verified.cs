@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -48,9 +47,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptTextDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptTextDeltaEvent> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptTextDeltaEvent).Name}");
-                        transcriptTextDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        transcriptTextDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TranscriptTextDeltaEvent>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -63,9 +60,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptTextDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptTextDoneEvent> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptTextDoneEvent).Name}");
-                        transcriptTextDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        transcriptTextDone = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TranscriptTextDoneEvent>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -80,9 +75,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptTextDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptTextDeltaEvent> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptTextDeltaEvent).Name}");
-                    transcriptTextDelta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    transcriptTextDelta = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TranscriptTextDeltaEvent>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -93,9 +86,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptTextDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptTextDoneEvent> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptTextDoneEvent).Name}");
-                    transcriptTextDone = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    transcriptTextDone = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TranscriptTextDoneEvent>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -120,20 +111,15 @@ namespace G.JsonConverters
             global::G.CreateTranscriptionResponseStreamEvent value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsTranscriptTextDelta)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptTextDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptTextDeltaEvent?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptTextDeltaEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptTextDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptTextDelta, typeof(global::G.TranscriptTextDeltaEvent), options);
             }
             else if (value.IsTranscriptTextDone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptTextDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptTextDoneEvent?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptTextDoneEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptTextDone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptTextDone, typeof(global::G.TranscriptTextDoneEvent), options);
             }
         }
     }

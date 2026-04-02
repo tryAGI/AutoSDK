@@ -13,49 +13,36 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConfigurationCreateRequestParametersDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConfigurationCreateRequestParametersDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConfigurationCreateRequestParametersDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConfigurationCreateRequestParametersDiscriminator>(ref readerCopy, options);
 
             global::G.SplitV1Parameters? splitV1 = default;
             if (discriminator?.ProductType == global::G.ConfigurationCreateRequestParametersDiscriminatorProductType.SplitV1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SplitV1Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SplitV1Parameters> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SplitV1Parameters)}");
-                splitV1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                splitV1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SplitV1Parameters>(ref reader, options);
             }
             global::G.ExtractV2Parameters? extractV2 = default;
             if (discriminator?.ProductType == global::G.ConfigurationCreateRequestParametersDiscriminatorProductType.ExtractV2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExtractV2Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExtractV2Parameters> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ExtractV2Parameters)}");
-                extractV2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                extractV2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ExtractV2Parameters>(ref reader, options);
             }
             global::G.ClassifyV2Parameters? classifyV2 = default;
             if (discriminator?.ProductType == global::G.ConfigurationCreateRequestParametersDiscriminatorProductType.ClassifyV2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClassifyV2Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClassifyV2Parameters> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ClassifyV2Parameters)}");
-                classifyV2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                classifyV2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ClassifyV2Parameters>(ref reader, options);
             }
             global::G.ParseV2Parameters? parseV2 = default;
             if (discriminator?.ProductType == global::G.ConfigurationCreateRequestParametersDiscriminatorProductType.ParseV2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ParseV2Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ParseV2Parameters> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ParseV2Parameters)}");
-                parseV2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                parseV2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ParseV2Parameters>(ref reader, options);
             }
             global::G.UntypedParameters? unknown = default;
             if (discriminator?.ProductType == global::G.ConfigurationCreateRequestParametersDiscriminatorProductType.Unknown)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UntypedParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UntypedParameters> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UntypedParameters)}");
-                unknown = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                unknown = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UntypedParameters>(ref reader, options);
             }
 
             var __value = new global::G.Parameters(
@@ -80,38 +67,27 @@ namespace G.JsonConverters
             global::G.Parameters value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsSplitV1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SplitV1Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SplitV1Parameters?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SplitV1Parameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SplitV1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SplitV1, typeof(global::G.SplitV1Parameters), options);
             }
             else if (value.IsExtractV2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExtractV2Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExtractV2Parameters?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExtractV2Parameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExtractV2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExtractV2, typeof(global::G.ExtractV2Parameters), options);
             }
             else if (value.IsClassifyV2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClassifyV2Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClassifyV2Parameters?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClassifyV2Parameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClassifyV2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClassifyV2, typeof(global::G.ClassifyV2Parameters), options);
             }
             else if (value.IsParseV2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ParseV2Parameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ParseV2Parameters?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ParseV2Parameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ParseV2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ParseV2, typeof(global::G.ParseV2Parameters), options);
             }
             else if (value.IsUnknown)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UntypedParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UntypedParameters?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UntypedParameters).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unknown!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unknown, typeof(global::G.UntypedParameters), options);
             }
         }
     }

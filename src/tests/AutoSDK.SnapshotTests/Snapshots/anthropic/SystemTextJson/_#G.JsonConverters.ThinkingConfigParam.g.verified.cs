@@ -13,28 +13,21 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ThinkingConfigParamDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ThinkingConfigParamDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ThinkingConfigParamDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ThinkingConfigParamDiscriminator>(ref readerCopy, options);
 
             global::G.ThinkingConfigEnabled? enabled = default;
             if (discriminator?.Type == global::G.ThinkingConfigParamDiscriminatorType.Enabled)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ThinkingConfigEnabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ThinkingConfigEnabled> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ThinkingConfigEnabled)}");
-                enabled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                enabled = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ThinkingConfigEnabled>(ref reader, options);
             }
             global::G.ThinkingConfigDisabled? disabled = default;
             if (discriminator?.Type == global::G.ThinkingConfigParamDiscriminatorType.Disabled)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ThinkingConfigDisabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ThinkingConfigDisabled> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ThinkingConfigDisabled)}");
-                disabled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                disabled = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ThinkingConfigDisabled>(ref reader, options);
             }
 
             var __value = new global::G.ThinkingConfigParam(
@@ -53,20 +46,15 @@ namespace G.JsonConverters
             global::G.ThinkingConfigParam value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsEnabled)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ThinkingConfigEnabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ThinkingConfigEnabled?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ThinkingConfigEnabled).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enabled!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enabled, typeof(global::G.ThinkingConfigEnabled), options);
             }
             else if (value.IsDisabled)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ThinkingConfigDisabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ThinkingConfigDisabled?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ThinkingConfigDisabled).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled, typeof(global::G.ThinkingConfigDisabled), options);
             }
         }
     }

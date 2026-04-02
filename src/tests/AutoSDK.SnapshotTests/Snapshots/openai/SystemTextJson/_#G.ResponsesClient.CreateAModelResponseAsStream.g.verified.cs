@@ -67,7 +67,7 @@ namespace G
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -141,7 +141,7 @@ namespace G
                     yield break;
                 }
 
-                var __streamedResponse = global::G.ResponseStreamEvent.FromJson(__content, JsonSerializerContext) ??
+                var __streamedResponse = global::G.ResponseStreamEvent.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::G.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)

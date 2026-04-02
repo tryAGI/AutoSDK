@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -50,9 +49,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PickFilterLeafUsersViewOrRequestResponseRmt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PickFilterLeafUsersViewOrRequestResponseRmt> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PickFilterLeafUsersViewOrRequestResponseRmt).Name}");
-                        pickLeafUsersViewOrRequestResponseRmt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        pickLeafUsersViewOrRequestResponseRmt = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PickFilterLeafUsersViewOrRequestResponseRmt>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -65,9 +62,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserFilterBranch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserFilterBranch> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserFilterBranch).Name}");
-                        branch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        branch = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserFilterBranch>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -80,9 +75,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserFilterNodeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserFilterNodeEnum> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserFilterNodeEnum).Name}");
-                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserFilterNodeEnum>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -97,9 +90,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PickFilterLeafUsersViewOrRequestResponseRmt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PickFilterLeafUsersViewOrRequestResponseRmt> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PickFilterLeafUsersViewOrRequestResponseRmt).Name}");
-                    pickLeafUsersViewOrRequestResponseRmt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    pickLeafUsersViewOrRequestResponseRmt = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PickFilterLeafUsersViewOrRequestResponseRmt>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -110,9 +101,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserFilterBranch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserFilterBranch> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserFilterBranch).Name}");
-                    branch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    branch = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserFilterBranch>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -123,9 +112,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserFilterNodeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserFilterNodeEnum> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserFilterNodeEnum).Name}");
-                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserFilterNodeEnum>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -152,26 +139,19 @@ namespace G.JsonConverters
             global::G.UserFilterNode value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsPickLeafUsersViewOrRequestResponseRmt)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PickFilterLeafUsersViewOrRequestResponseRmt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PickFilterLeafUsersViewOrRequestResponseRmt?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PickFilterLeafUsersViewOrRequestResponseRmt).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLeafUsersViewOrRequestResponseRmt!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLeafUsersViewOrRequestResponseRmt, typeof(global::G.PickFilterLeafUsersViewOrRequestResponseRmt), options);
             }
             else if (value.IsBranch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserFilterBranch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserFilterBranch?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserFilterBranch).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Branch!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Branch, typeof(global::G.UserFilterBranch), options);
             }
             else if (value.IsEnum)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserFilterNodeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserFilterNodeEnum> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserFilterNodeEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum, typeof(global::G.UserFilterNodeEnum), options);
             }
         }
     }

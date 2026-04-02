@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateFinetunedModelRequest.g.cs
+﻿//HintName: G.Models.FinetuningUpdateFinetunedModelRequest.g.cs
 
 #nullable enable
 
@@ -7,81 +7,78 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class UpdateFinetunedModelRequest
+    public sealed partial class FinetuningUpdateFinetunedModelRequest
     {
         /// <summary>
         /// FinetunedModel name (e.g. `foobar`).
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// User ID of the creator.<br/>
         /// Included only in responses
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("creator_id")]
+        [global::Newtonsoft.Json.JsonProperty("creator_id")]
         public string? CreatorId { get; set; }
 
         /// <summary>
         /// Organization ID.<br/>
         /// Included only in responses
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
+        [global::Newtonsoft.Json.JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
         /// <summary>
         /// FinetunedModel settings such as dataset, hyperparameters...
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Settings Settings { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("settings", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.Settings Settings { get; set; } = default!;
 
         /// <summary>
         /// Current stage in the life-cycle of the fine-tuned model.<br/>
         /// Default Value: STATUS_UNSPECIFIED<br/>
         /// Included only in responses
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StatusJsonConverter))]
+        [global::Newtonsoft.Json.JsonProperty("status")]
         public global::G.Status? Status { get; set; }
 
         /// <summary>
         /// Creation timestamp.<br/>
         /// Included only in responses
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// Latest update timestamp.<br/>
         /// Included only in responses
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
+        [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
 
         /// <summary>
         /// Timestamp for the completed fine-tuning.<br/>
         /// Included only in responses
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
+        [global::Newtonsoft.Json.JsonProperty("completed_at")]
         public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
         /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
         /// Included only in responses
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("last_used")]
+        [global::Newtonsoft.Json.JsonProperty("last_used")]
         public global::System.DateTime? LastUsed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
+        [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateFinetunedModelRequest" /> class.
+        /// Initializes a new instance of the <see cref="FinetuningUpdateFinetunedModelRequest" /> class.
         /// </summary>
         /// <param name="name">
         /// FinetunedModel name (e.g. `foobar`).
@@ -118,10 +115,7 @@ namespace G
         /// Deprecated: Timestamp for the latest request to this fine-tuned model.<br/>
         /// Included only in responses
         /// </param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-#endif
-        public UpdateFinetunedModelRequest(
+        public FinetuningUpdateFinetunedModelRequest(
             string name,
             global::G.Settings settings,
             string? creatorId,
@@ -144,9 +138,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateFinetunedModelRequest" /> class.
+        /// Initializes a new instance of the <see cref="FinetuningUpdateFinetunedModelRequest" /> class.
         /// </summary>
-        public UpdateFinetunedModelRequest()
+        public FinetuningUpdateFinetunedModelRequest()
         {
         }
     }

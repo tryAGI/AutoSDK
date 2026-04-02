@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -50,9 +49,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileSearchServerToolFilters0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileSearchServerToolFilters0> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileSearchServerToolFilters0).Name}");
-                        fileSearchServerToolFilters0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        fileSearchServerToolFilters0 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FileSearchServerToolFilters0>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -65,9 +62,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompoundFilter> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompoundFilter).Name}");
-                        compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CompoundFilter>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -80,9 +75,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        fileSearchServerToolFiltersVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        fileSearchServerToolFiltersVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<object>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -97,9 +90,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileSearchServerToolFilters0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileSearchServerToolFilters0> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileSearchServerToolFilters0).Name}");
-                    fileSearchServerToolFilters0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    fileSearchServerToolFilters0 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FileSearchServerToolFilters0>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -110,9 +101,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompoundFilter> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompoundFilter).Name}");
-                    compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CompoundFilter>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -123,9 +112,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    fileSearchServerToolFiltersVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    fileSearchServerToolFiltersVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<object>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -152,26 +139,19 @@ namespace G.JsonConverters
             global::G.FileSearchServerToolFilters value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsFileSearchServerToolFilters0)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileSearchServerToolFilters0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileSearchServerToolFilters0?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileSearchServerToolFilters0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerToolFilters0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerToolFilters0, typeof(global::G.FileSearchServerToolFilters0), options);
             }
             else if (value.IsCompoundFilter)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompoundFilter?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompoundFilter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompoundFilter!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompoundFilter, typeof(global::G.CompoundFilter), options);
             }
             else if (value.IsFileSearchServerToolFiltersVariant3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerToolFiltersVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerToolFiltersVariant3, typeof(object), options);
             }
         }
     }

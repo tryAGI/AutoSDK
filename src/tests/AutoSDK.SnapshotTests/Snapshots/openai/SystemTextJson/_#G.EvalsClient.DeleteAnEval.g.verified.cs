@@ -96,13 +96,13 @@ namespace G
                     if (ReadResponseAsString)
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_404 = global::G.Error.FromJson(__content_404, JsonSerializerContext);
+                        __value_404 = global::G.Error.FromJson(__content_404, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_404 = global::G.Error.FromJson(__content_404, JsonSerializerContext);
+                        __value_404 = global::G.Error.FromJson(__content_404, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -146,7 +146,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.DeleteEvalResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::G.DeleteEvalResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -177,7 +177,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.DeleteEvalResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::G.DeleteEvalResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

@@ -13,21 +13,16 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LinearDataSourceCreateOrUpdateParamsAuthParamsVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LinearDataSourceCreateOrUpdateParamsAuthParamsVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LinearDataSourceCreateOrUpdateParamsAuthParamsVariant1Discriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LinearDataSourceCreateOrUpdateParamsAuthParamsVariant1Discriminator>(ref readerCopy, options);
 
             global::G.OAuth2CreateOrUpdateParams? oauth2 = default;
             if (discriminator?.Type == global::G.LinearDataSourceCreateOrUpdateParamsAuthParamsVariant1DiscriminatorType.Oauth2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OAuth2CreateOrUpdateParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OAuth2CreateOrUpdateParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OAuth2CreateOrUpdateParams)}");
-                oauth2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                oauth2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.OAuth2CreateOrUpdateParams>(ref reader, options);
             }
 
             var __value = new global::G.AuthParamsVariant12(
@@ -44,14 +39,11 @@ namespace G.JsonConverters
             global::G.AuthParamsVariant12 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsOauth2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OAuth2CreateOrUpdateParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OAuth2CreateOrUpdateParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OAuth2CreateOrUpdateParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2, typeof(global::G.OAuth2CreateOrUpdateParams), options);
             }
         }
     }

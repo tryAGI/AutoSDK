@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -108,9 +107,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemCreate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemCreate> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemCreate).Name}");
-                        conversationItemCreate = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        conversationItemCreate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventConversationItemCreate>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -123,9 +120,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemDelete), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemDelete> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemDelete).Name}");
-                        conversationItemDelete = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        conversationItemDelete = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventConversationItemDelete>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -138,9 +133,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemRetrieve), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemRetrieve> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemRetrieve).Name}");
-                        conversationItemRetrieve = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        conversationItemRetrieve = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventConversationItemRetrieve>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -153,9 +146,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemTruncate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemTruncate> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemTruncate).Name}");
-                        conversationItemTruncate = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        conversationItemTruncate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventConversationItemTruncate>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -168,9 +159,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventInputAudioBufferAppend), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventInputAudioBufferAppend> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventInputAudioBufferAppend).Name}");
-                        inputAudioBufferAppend = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputAudioBufferAppend = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventInputAudioBufferAppend>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -183,9 +172,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventInputAudioBufferClear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventInputAudioBufferClear> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventInputAudioBufferClear).Name}");
-                        inputAudioBufferClear = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputAudioBufferClear = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventInputAudioBufferClear>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -198,9 +185,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventOutputAudioBufferClear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventOutputAudioBufferClear> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventOutputAudioBufferClear).Name}");
-                        outputAudioBufferClear = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        outputAudioBufferClear = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventOutputAudioBufferClear>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -213,9 +198,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventInputAudioBufferCommit), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventInputAudioBufferCommit> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventInputAudioBufferCommit).Name}");
-                        inputAudioBufferCommit = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputAudioBufferCommit = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventInputAudioBufferCommit>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -228,9 +211,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventResponseCancel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventResponseCancel> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventResponseCancel).Name}");
-                        responseCancel = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responseCancel = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventResponseCancel>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -243,9 +224,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventResponseCreate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventResponseCreate> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventResponseCreate).Name}");
-                        responseCreate = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responseCreate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventResponseCreate>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -258,9 +237,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventSessionUpdate> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventSessionUpdate).Name}");
-                        sessionUpdate = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        sessionUpdate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventSessionUpdate>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -273,9 +250,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventTranscriptionSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventTranscriptionSessionUpdate> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventTranscriptionSessionUpdate).Name}");
-                        transcriptionSessionUpdate = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        transcriptionSessionUpdate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventTranscriptionSessionUpdate>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -290,9 +265,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemCreate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemCreate> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemCreate).Name}");
-                    conversationItemCreate = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    conversationItemCreate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventConversationItemCreate>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -303,9 +276,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemDelete), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemDelete> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemDelete).Name}");
-                    conversationItemDelete = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    conversationItemDelete = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventConversationItemDelete>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -316,9 +287,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemRetrieve), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemRetrieve> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemRetrieve).Name}");
-                    conversationItemRetrieve = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    conversationItemRetrieve = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventConversationItemRetrieve>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -329,9 +298,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemTruncate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemTruncate> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemTruncate).Name}");
-                    conversationItemTruncate = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    conversationItemTruncate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventConversationItemTruncate>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -342,9 +309,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventInputAudioBufferAppend), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventInputAudioBufferAppend> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventInputAudioBufferAppend).Name}");
-                    inputAudioBufferAppend = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputAudioBufferAppend = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventInputAudioBufferAppend>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -355,9 +320,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventInputAudioBufferClear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventInputAudioBufferClear> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventInputAudioBufferClear).Name}");
-                    inputAudioBufferClear = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputAudioBufferClear = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventInputAudioBufferClear>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -368,9 +331,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventOutputAudioBufferClear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventOutputAudioBufferClear> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventOutputAudioBufferClear).Name}");
-                    outputAudioBufferClear = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    outputAudioBufferClear = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventOutputAudioBufferClear>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -381,9 +342,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventInputAudioBufferCommit), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventInputAudioBufferCommit> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventInputAudioBufferCommit).Name}");
-                    inputAudioBufferCommit = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputAudioBufferCommit = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventInputAudioBufferCommit>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -394,9 +353,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventResponseCancel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventResponseCancel> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventResponseCancel).Name}");
-                    responseCancel = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responseCancel = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventResponseCancel>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -407,9 +364,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventResponseCreate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventResponseCreate> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventResponseCreate).Name}");
-                    responseCreate = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responseCreate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventResponseCreate>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -420,9 +375,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventSessionUpdate> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventSessionUpdate).Name}");
-                    sessionUpdate = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    sessionUpdate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventSessionUpdate>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -433,9 +386,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventTranscriptionSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventTranscriptionSessionUpdate> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventTranscriptionSessionUpdate).Name}");
-                    transcriptionSessionUpdate = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    transcriptionSessionUpdate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RealtimeClientEventTranscriptionSessionUpdate>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -480,80 +431,55 @@ namespace G.JsonConverters
             global::G.RealtimeClientEvent value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsConversationItemCreate)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemCreate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemCreate?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemCreate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemCreate!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemCreate, typeof(global::G.RealtimeClientEventConversationItemCreate), options);
             }
             else if (value.IsConversationItemDelete)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemDelete), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemDelete?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemDelete).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemDelete!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemDelete, typeof(global::G.RealtimeClientEventConversationItemDelete), options);
             }
             else if (value.IsConversationItemRetrieve)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemRetrieve), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemRetrieve?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemRetrieve).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemRetrieve!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemRetrieve, typeof(global::G.RealtimeClientEventConversationItemRetrieve), options);
             }
             else if (value.IsConversationItemTruncate)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventConversationItemTruncate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventConversationItemTruncate?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventConversationItemTruncate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemTruncate!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemTruncate, typeof(global::G.RealtimeClientEventConversationItemTruncate), options);
             }
             else if (value.IsInputAudioBufferAppend)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventInputAudioBufferAppend), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventInputAudioBufferAppend?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventInputAudioBufferAppend).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferAppend!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferAppend, typeof(global::G.RealtimeClientEventInputAudioBufferAppend), options);
             }
             else if (value.IsInputAudioBufferClear)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventInputAudioBufferClear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventInputAudioBufferClear?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventInputAudioBufferClear).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferClear!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferClear, typeof(global::G.RealtimeClientEventInputAudioBufferClear), options);
             }
             else if (value.IsOutputAudioBufferClear)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventOutputAudioBufferClear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventOutputAudioBufferClear?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventOutputAudioBufferClear).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferClear!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferClear, typeof(global::G.RealtimeClientEventOutputAudioBufferClear), options);
             }
             else if (value.IsInputAudioBufferCommit)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventInputAudioBufferCommit), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventInputAudioBufferCommit?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventInputAudioBufferCommit).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferCommit!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferCommit, typeof(global::G.RealtimeClientEventInputAudioBufferCommit), options);
             }
             else if (value.IsResponseCancel)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventResponseCancel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventResponseCancel?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventResponseCancel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCancel!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCancel, typeof(global::G.RealtimeClientEventResponseCancel), options);
             }
             else if (value.IsResponseCreate)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventResponseCreate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventResponseCreate?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventResponseCreate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCreate!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCreate, typeof(global::G.RealtimeClientEventResponseCreate), options);
             }
             else if (value.IsSessionUpdate)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventSessionUpdate?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventSessionUpdate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdate!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdate, typeof(global::G.RealtimeClientEventSessionUpdate), options);
             }
             else if (value.IsTranscriptionSessionUpdate)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeClientEventTranscriptionSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeClientEventTranscriptionSessionUpdate?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeClientEventTranscriptionSessionUpdate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionSessionUpdate!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionSessionUpdate, typeof(global::G.RealtimeClientEventTranscriptionSessionUpdate), options);
             }
         }
     }

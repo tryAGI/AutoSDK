@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -96,9 +95,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AwsAccessKeyAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AwsAccessKeyAuthConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AwsAccessKeyAuthConfig).Name}");
-                        accessKey = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        accessKey = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AwsAccessKeyAuthConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -111,9 +108,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AwsAssumedRoleAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AwsAssumedRoleAuthConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AwsAssumedRoleAuthConfig).Name}");
-                        assumedRole = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        assumedRole = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AwsAssumedRoleAuthConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -126,9 +121,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AwsServiceRoleAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AwsServiceRoleAuthConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AwsServiceRoleAuthConfig).Name}");
-                        serviceRole = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        serviceRole = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AwsServiceRoleAuthConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -141,9 +134,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureEntraAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureEntraAuthConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureEntraAuthConfig).Name}");
-                        azureEntra = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        azureEntra = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AzureEntraAuthConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -156,9 +147,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureManagedAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureManagedAuthConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureManagedAuthConfig).Name}");
-                        azureManaged = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        azureManaged = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AzureManagedAuthConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -171,9 +160,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureDefaultAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureDefaultAuthConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureDefaultAuthConfig).Name}");
-                        azureDefault = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        azureDefault = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AzureDefaultAuthConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -186,9 +173,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HashicorpTokenAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HashicorpTokenAuthConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HashicorpTokenAuthConfig).Name}");
-                        hashicorpToken = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        hashicorpToken = global::System.Text.Json.JsonSerializer.Deserialize<global::G.HashicorpTokenAuthConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -201,9 +186,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HashicorpAppRoleAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HashicorpAppRoleAuthConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HashicorpAppRoleAuthConfig).Name}");
-                        hashicorpAppRole = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        hashicorpAppRole = global::System.Text.Json.JsonSerializer.Deserialize<global::G.HashicorpAppRoleAuthConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -216,9 +199,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HashicorpKubernetesAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HashicorpKubernetesAuthConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HashicorpKubernetesAuthConfig).Name}");
-                        hashicorpKubernetes = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        hashicorpKubernetes = global::System.Text.Json.JsonSerializer.Deserialize<global::G.HashicorpKubernetesAuthConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -233,9 +214,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AwsAccessKeyAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AwsAccessKeyAuthConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AwsAccessKeyAuthConfig).Name}");
-                    accessKey = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    accessKey = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AwsAccessKeyAuthConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -246,9 +225,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AwsAssumedRoleAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AwsAssumedRoleAuthConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AwsAssumedRoleAuthConfig).Name}");
-                    assumedRole = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    assumedRole = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AwsAssumedRoleAuthConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -259,9 +236,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AwsServiceRoleAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AwsServiceRoleAuthConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AwsServiceRoleAuthConfig).Name}");
-                    serviceRole = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    serviceRole = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AwsServiceRoleAuthConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -272,9 +247,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureEntraAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureEntraAuthConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureEntraAuthConfig).Name}");
-                    azureEntra = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    azureEntra = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AzureEntraAuthConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -285,9 +258,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureManagedAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureManagedAuthConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureManagedAuthConfig).Name}");
-                    azureManaged = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    azureManaged = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AzureManagedAuthConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -298,9 +269,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureDefaultAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureDefaultAuthConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureDefaultAuthConfig).Name}");
-                    azureDefault = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    azureDefault = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AzureDefaultAuthConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -311,9 +280,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HashicorpTokenAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HashicorpTokenAuthConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HashicorpTokenAuthConfig).Name}");
-                    hashicorpToken = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    hashicorpToken = global::System.Text.Json.JsonSerializer.Deserialize<global::G.HashicorpTokenAuthConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -324,9 +291,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HashicorpAppRoleAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HashicorpAppRoleAuthConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HashicorpAppRoleAuthConfig).Name}");
-                    hashicorpAppRole = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    hashicorpAppRole = global::System.Text.Json.JsonSerializer.Deserialize<global::G.HashicorpAppRoleAuthConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -337,9 +302,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HashicorpKubernetesAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HashicorpKubernetesAuthConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HashicorpKubernetesAuthConfig).Name}");
-                    hashicorpKubernetes = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    hashicorpKubernetes = global::System.Text.Json.JsonSerializer.Deserialize<global::G.HashicorpKubernetesAuthConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -378,62 +341,43 @@ namespace G.JsonConverters
             global::G.AuthConfig value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsAccessKey)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AwsAccessKeyAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AwsAccessKeyAuthConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AwsAccessKeyAuthConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AccessKey!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AccessKey, typeof(global::G.AwsAccessKeyAuthConfig), options);
             }
             else if (value.IsAssumedRole)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AwsAssumedRoleAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AwsAssumedRoleAuthConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AwsAssumedRoleAuthConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssumedRole!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssumedRole, typeof(global::G.AwsAssumedRoleAuthConfig), options);
             }
             else if (value.IsServiceRole)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AwsServiceRoleAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AwsServiceRoleAuthConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AwsServiceRoleAuthConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServiceRole!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServiceRole, typeof(global::G.AwsServiceRoleAuthConfig), options);
             }
             else if (value.IsAzureEntra)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureEntraAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureEntraAuthConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureEntraAuthConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureEntra!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureEntra, typeof(global::G.AzureEntraAuthConfig), options);
             }
             else if (value.IsAzureManaged)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureManagedAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureManagedAuthConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureManagedAuthConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureManaged!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureManaged, typeof(global::G.AzureManagedAuthConfig), options);
             }
             else if (value.IsAzureDefault)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureDefaultAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureDefaultAuthConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureDefaultAuthConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureDefault!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AzureDefault, typeof(global::G.AzureDefaultAuthConfig), options);
             }
             else if (value.IsHashicorpToken)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HashicorpTokenAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HashicorpTokenAuthConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HashicorpTokenAuthConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HashicorpToken!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HashicorpToken, typeof(global::G.HashicorpTokenAuthConfig), options);
             }
             else if (value.IsHashicorpAppRole)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HashicorpAppRoleAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HashicorpAppRoleAuthConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HashicorpAppRoleAuthConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HashicorpAppRole!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HashicorpAppRole, typeof(global::G.HashicorpAppRoleAuthConfig), options);
             }
             else if (value.IsHashicorpKubernetes)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HashicorpKubernetesAuthConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HashicorpKubernetesAuthConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HashicorpKubernetesAuthConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HashicorpKubernetes!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HashicorpKubernetes, typeof(global::G.HashicorpKubernetesAuthConfig), options);
             }
         }
     }

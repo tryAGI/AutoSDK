@@ -1469,7 +1469,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateFinetunedModelRequest? Type360 { get; set; }
+        public global::G.FinetuningUpdateFinetunedModelRequest? Type360 { get; set; }
         /// <summary>
         /// 
         /// </summary>

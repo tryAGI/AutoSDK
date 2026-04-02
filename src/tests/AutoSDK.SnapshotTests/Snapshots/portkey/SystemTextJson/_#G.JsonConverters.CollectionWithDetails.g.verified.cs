@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -52,9 +51,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Collection), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Collection> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Collection).Name}");
-                        collection = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        collection = global::System.Text.Json.JsonSerializer.Deserialize<global::G.Collection>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -67,9 +64,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CollectionWithDetailsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CollectionWithDetailsVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CollectionWithDetailsVariant2).Name}");
-                        collectionWithDetailsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        collectionWithDetailsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CollectionWithDetailsVariant2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -84,9 +79,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Collection), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Collection> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Collection).Name}");
-                    collection = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    collection = global::System.Text.Json.JsonSerializer.Deserialize<global::G.Collection>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -97,9 +90,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CollectionWithDetailsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CollectionWithDetailsVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CollectionWithDetailsVariant2).Name}");
-                    collectionWithDetailsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    collectionWithDetailsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CollectionWithDetailsVariant2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -124,20 +115,15 @@ namespace G.JsonConverters
             global::G.CollectionWithDetails value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsCollection)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Collection), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Collection?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Collection).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Collection!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Collection, typeof(global::G.Collection), options);
             }
             else if (value.IsCollectionWithDetailsVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CollectionWithDetailsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CollectionWithDetailsVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CollectionWithDetailsVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CollectionWithDetailsVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CollectionWithDetailsVariant2, typeof(global::G.CollectionWithDetailsVariant2), options);
             }
         }
     }

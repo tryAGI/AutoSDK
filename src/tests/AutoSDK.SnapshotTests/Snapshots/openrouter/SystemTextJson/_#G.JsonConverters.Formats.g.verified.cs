@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -52,9 +51,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatTextConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatTextConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatTextConfig).Name}");
-                        formatTextConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        formatTextConfig = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FormatTextConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -67,9 +64,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatJsonObjectConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatJsonObjectConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatJsonObjectConfig).Name}");
-                        formatJsonObjectConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        formatJsonObjectConfig = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FormatJsonObjectConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -82,9 +77,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatJsonSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatJsonSchemaConfig> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatJsonSchemaConfig).Name}");
-                        formatJsonSchemaConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        formatJsonSchemaConfig = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FormatJsonSchemaConfig>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -99,9 +92,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatTextConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatTextConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatTextConfig).Name}");
-                    formatTextConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    formatTextConfig = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FormatTextConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -112,9 +103,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatJsonObjectConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatJsonObjectConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatJsonObjectConfig).Name}");
-                    formatJsonObjectConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    formatJsonObjectConfig = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FormatJsonObjectConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -125,9 +114,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatJsonSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatJsonSchemaConfig> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatJsonSchemaConfig).Name}");
-                    formatJsonSchemaConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    formatJsonSchemaConfig = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FormatJsonSchemaConfig>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -154,26 +141,19 @@ namespace G.JsonConverters
             global::G.Formats value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsFormatTextConfig)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatTextConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatTextConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatTextConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatTextConfig!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatTextConfig, typeof(global::G.FormatTextConfig), options);
             }
             else if (value.IsFormatJsonObjectConfig)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatJsonObjectConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatJsonObjectConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatJsonObjectConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonObjectConfig!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonObjectConfig, typeof(global::G.FormatJsonObjectConfig), options);
             }
             else if (value.IsFormatJsonSchemaConfig)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatJsonSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatJsonSchemaConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatJsonSchemaConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonSchemaConfig!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FormatJsonSchemaConfig, typeof(global::G.FormatJsonSchemaConfig), options);
             }
         }
     }

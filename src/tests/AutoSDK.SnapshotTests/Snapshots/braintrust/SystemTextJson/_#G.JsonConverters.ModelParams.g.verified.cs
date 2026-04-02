@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -91,9 +90,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsOpenAIModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsOpenAIModelParams> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsOpenAIModelParams).Name}");
-                        openAIModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        openAIModelParams = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelParamsOpenAIModelParams>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -106,9 +103,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsAnthropicModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsAnthropicModelParams> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsAnthropicModelParams).Name}");
-                        anthropicModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        anthropicModelParams = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelParamsAnthropicModelParams>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -121,9 +116,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsGoogleModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsGoogleModelParams> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsGoogleModelParams).Name}");
-                        googleModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        googleModelParams = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelParamsGoogleModelParams>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -136,9 +129,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsWindowAIModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsWindowAIModelParams> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsWindowAIModelParams).Name}");
-                        windowAIModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        windowAIModelParams = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelParamsWindowAIModelParams>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -151,9 +142,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsJsCompletionParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsJsCompletionParams> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsJsCompletionParams).Name}");
-                        jsCompletionParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        jsCompletionParams = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelParamsJsCompletionParams>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -168,9 +157,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsOpenAIModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsOpenAIModelParams> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsOpenAIModelParams).Name}");
-                    openAIModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    openAIModelParams = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelParamsOpenAIModelParams>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -181,9 +168,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsAnthropicModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsAnthropicModelParams> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsAnthropicModelParams).Name}");
-                    anthropicModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    anthropicModelParams = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelParamsAnthropicModelParams>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -194,9 +179,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsGoogleModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsGoogleModelParams> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsGoogleModelParams).Name}");
-                    googleModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    googleModelParams = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelParamsGoogleModelParams>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -207,9 +190,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsWindowAIModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsWindowAIModelParams> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsWindowAIModelParams).Name}");
-                    windowAIModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    windowAIModelParams = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelParamsWindowAIModelParams>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -220,9 +201,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsJsCompletionParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsJsCompletionParams> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsJsCompletionParams).Name}");
-                    jsCompletionParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    jsCompletionParams = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelParamsJsCompletionParams>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -253,38 +232,27 @@ namespace G.JsonConverters
             global::G.ModelParams value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsOpenAIModelParams)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsOpenAIModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsOpenAIModelParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsOpenAIModelParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIModelParams!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIModelParams, typeof(global::G.ModelParamsOpenAIModelParams), options);
             }
             else if (value.IsAnthropicModelParams)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsAnthropicModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsAnthropicModelParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsAnthropicModelParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicModelParams!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicModelParams, typeof(global::G.ModelParamsAnthropicModelParams), options);
             }
             else if (value.IsGoogleModelParams)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsGoogleModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsGoogleModelParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsGoogleModelParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleModelParams!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleModelParams, typeof(global::G.ModelParamsGoogleModelParams), options);
             }
             else if (value.IsWindowAIModelParams)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsWindowAIModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsWindowAIModelParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsWindowAIModelParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WindowAIModelParams!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WindowAIModelParams, typeof(global::G.ModelParamsWindowAIModelParams), options);
             }
             else if (value.IsJsCompletionParams)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsJsCompletionParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsJsCompletionParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsJsCompletionParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JsCompletionParams!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JsCompletionParams, typeof(global::G.ModelParamsJsCompletionParams), options);
             }
         }
     }

@@ -16,7 +16,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateFinetunedModelResponse> UpdateFinetunedModelAsync(
             string id,
 
-            global::G.UpdateFinetunedModelRequest request,
+            global::G.FinetuningUpdateFinetunedModelRequest request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

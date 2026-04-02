@@ -13,231 +13,166 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SMBToolConfigParamsDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SMBToolConfigParamsDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SMBToolConfigParamsDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SMBToolConfigParamsDiscriminator>(ref readerCopy, options);
 
             global::G.SearchClientsParams? searchClients = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.SearchClients)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SearchClientsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SearchClientsParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SearchClientsParams)}");
-                searchClients = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                searchClients = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SearchClientsParams>(ref reader, options);
             }
             global::G.ListClientsParams? listClients = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.ListClients)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListClientsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListClientsParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ListClientsParams)}");
-                listClients = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                listClients = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ListClientsParams>(ref reader, options);
             }
             global::G.GetClientByPhoneParams? getClientByPhone = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.GetClientByPhone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetClientByPhoneParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetClientByPhoneParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetClientByPhoneParams)}");
-                getClientByPhone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                getClientByPhone = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetClientByPhoneParams>(ref reader, options);
             }
             global::G.CreateClientParams? createClient = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.CreateClient)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateClientParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateClientParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateClientParams)}");
-                createClient = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                createClient = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateClientParams>(ref reader, options);
             }
             global::G.UpdateClientParams? updateClient = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.UpdateClient)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateClientParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateClientParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateClientParams)}");
-                updateClient = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                updateClient = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateClientParams>(ref reader, options);
             }
             global::G.DeleteClientParams? deleteClient = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.DeleteClient)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteClientParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteClientParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DeleteClientParams)}");
-                deleteClient = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                deleteClient = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteClientParams>(ref reader, options);
             }
             global::G.ListStaffParams? listStaff = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.ListStaff)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListStaffParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListStaffParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ListStaffParams)}");
-                listStaff = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                listStaff = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ListStaffParams>(ref reader, options);
             }
             global::G.CreateStaffParams? createStaff = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.CreateStaff)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateStaffParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateStaffParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateStaffParams)}");
-                createStaff = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                createStaff = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateStaffParams>(ref reader, options);
             }
             global::G.UpdateStaffParams? updateStaff = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.UpdateStaff)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateStaffParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateStaffParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateStaffParams)}");
-                updateStaff = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                updateStaff = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateStaffParams>(ref reader, options);
             }
             global::G.DeleteStaffParams? deleteStaff = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.DeleteStaff)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteStaffParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteStaffParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DeleteStaffParams)}");
-                deleteStaff = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                deleteStaff = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteStaffParams>(ref reader, options);
             }
             global::G.ListAssetsParams? listAssets = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.ListAssets)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListAssetsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListAssetsParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ListAssetsParams)}");
-                listAssets = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                listAssets = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ListAssetsParams>(ref reader, options);
             }
             global::G.CreateAssetParams? createAsset = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.CreateAsset)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateAssetParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateAssetParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateAssetParams)}");
-                createAsset = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                createAsset = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateAssetParams>(ref reader, options);
             }
             global::G.UpdateAssetParams? updateAsset = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.UpdateAsset)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateAssetParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateAssetParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateAssetParams)}");
-                updateAsset = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                updateAsset = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateAssetParams>(ref reader, options);
             }
             global::G.DeleteAssetParams? deleteAsset = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.DeleteAsset)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteAssetParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteAssetParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DeleteAssetParams)}");
-                deleteAsset = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                deleteAsset = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteAssetParams>(ref reader, options);
             }
             global::G.ListServicesParams? listServices = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.ListServices)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListServicesParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListServicesParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ListServicesParams)}");
-                listServices = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                listServices = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ListServicesParams>(ref reader, options);
             }
             global::G.CreateServiceParams? createService = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.CreateService)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateServiceParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateServiceParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateServiceParams)}");
-                createService = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                createService = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateServiceParams>(ref reader, options);
             }
             global::G.UpdateServiceParams? updateService = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.UpdateService)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateServiceParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateServiceParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateServiceParams)}");
-                updateService = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                updateService = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateServiceParams>(ref reader, options);
             }
             global::G.DeleteServiceParams? deleteService = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.DeleteService)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteServiceParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteServiceParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DeleteServiceParams)}");
-                deleteService = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                deleteService = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteServiceParams>(ref reader, options);
             }
             global::G.ListProductsParams? listProducts = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.ListProducts)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListProductsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListProductsParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ListProductsParams)}");
-                listProducts = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                listProducts = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ListProductsParams>(ref reader, options);
             }
             global::G.CreateProductParams? createProduct = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.CreateProduct)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateProductParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateProductParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateProductParams)}");
-                createProduct = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                createProduct = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateProductParams>(ref reader, options);
             }
             global::G.UpdateProductParams? updateProduct = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.UpdateProduct)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateProductParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateProductParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateProductParams)}");
-                updateProduct = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                updateProduct = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateProductParams>(ref reader, options);
             }
             global::G.DeleteProductParams? deleteProduct = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.DeleteProduct)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteProductParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteProductParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DeleteProductParams)}");
-                deleteProduct = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                deleteProduct = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteProductParams>(ref reader, options);
             }
             global::G.CheckServiceAvailabilityParams? checkServiceAvailability = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.CheckServiceAvailability)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CheckServiceAvailabilityParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CheckServiceAvailabilityParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CheckServiceAvailabilityParams)}");
-                checkServiceAvailability = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                checkServiceAvailability = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CheckServiceAvailabilityParams>(ref reader, options);
             }
             global::G.CreateClientAppointmentParams? createClientAppointment = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.CreateClientAppointment)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateClientAppointmentParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateClientAppointmentParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateClientAppointmentParams)}");
-                createClientAppointment = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                createClientAppointment = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateClientAppointmentParams>(ref reader, options);
             }
             global::G.GetClientAppointmentsParams? getClientAppointments = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.GetClientAppointments)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetClientAppointmentsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetClientAppointmentsParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetClientAppointmentsParams)}");
-                getClientAppointments = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                getClientAppointments = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetClientAppointmentsParams>(ref reader, options);
             }
             global::G.ListCalendarEventsParams? listCalendarEvents = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.ListCalendarEvents)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListCalendarEventsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListCalendarEventsParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ListCalendarEventsParams)}");
-                listCalendarEvents = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                listCalendarEvents = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ListCalendarEventsParams>(ref reader, options);
             }
             global::G.UpdateCalendarEventParams? updateCalendarEvent = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.UpdateCalendarEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateCalendarEventParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateCalendarEventParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateCalendarEventParams)}");
-                updateCalendarEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                updateCalendarEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateCalendarEventParams>(ref reader, options);
             }
             global::G.DeleteCalendarEventParams? deleteCalendarEvent = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.DeleteCalendarEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteCalendarEventParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteCalendarEventParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DeleteCalendarEventParams)}");
-                deleteCalendarEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                deleteCalendarEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteCalendarEventParams>(ref reader, options);
             }
             global::G.ListRentalServicesParams? listRentalServices = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.ListRentalServices)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListRentalServicesParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListRentalServicesParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ListRentalServicesParams)}");
-                listRentalServices = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                listRentalServices = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ListRentalServicesParams>(ref reader, options);
             }
             global::G.CheckRentalAvailabilityParams? checkRentalAvailability = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.CheckRentalAvailability)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CheckRentalAvailabilityParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CheckRentalAvailabilityParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CheckRentalAvailabilityParams)}");
-                checkRentalAvailability = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                checkRentalAvailability = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CheckRentalAvailabilityParams>(ref reader, options);
             }
             global::G.CreateRentalBookingParams? createRentalBooking = default;
             if (discriminator?.SmbToolType == global::G.SMBToolConfigParamsDiscriminatorSmbToolType.CreateRentalBooking)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateRentalBookingParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateRentalBookingParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateRentalBookingParams)}");
-                createRentalBooking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                createRentalBooking = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateRentalBookingParams>(ref reader, options);
             }
 
             var __value = new global::G.Params(
@@ -314,194 +249,131 @@ namespace G.JsonConverters
             global::G.Params value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsSearchClients)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SearchClientsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SearchClientsParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SearchClientsParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchClients!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchClients, typeof(global::G.SearchClientsParams), options);
             }
             else if (value.IsListClients)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListClientsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListClientsParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ListClientsParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListClients!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListClients, typeof(global::G.ListClientsParams), options);
             }
             else if (value.IsGetClientByPhone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetClientByPhoneParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetClientByPhoneParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetClientByPhoneParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GetClientByPhone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GetClientByPhone, typeof(global::G.GetClientByPhoneParams), options);
             }
             else if (value.IsCreateClient)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateClientParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateClientParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateClientParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateClient!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateClient, typeof(global::G.CreateClientParams), options);
             }
             else if (value.IsUpdateClient)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateClientParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateClientParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateClientParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateClient!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateClient, typeof(global::G.UpdateClientParams), options);
             }
             else if (value.IsDeleteClient)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteClientParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteClientParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeleteClientParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteClient!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteClient, typeof(global::G.DeleteClientParams), options);
             }
             else if (value.IsListStaff)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListStaffParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListStaffParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ListStaffParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListStaff!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListStaff, typeof(global::G.ListStaffParams), options);
             }
             else if (value.IsCreateStaff)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateStaffParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateStaffParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateStaffParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateStaff!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateStaff, typeof(global::G.CreateStaffParams), options);
             }
             else if (value.IsUpdateStaff)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateStaffParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateStaffParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateStaffParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateStaff!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateStaff, typeof(global::G.UpdateStaffParams), options);
             }
             else if (value.IsDeleteStaff)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteStaffParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteStaffParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeleteStaffParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteStaff!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteStaff, typeof(global::G.DeleteStaffParams), options);
             }
             else if (value.IsListAssets)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListAssetsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListAssetsParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ListAssetsParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListAssets!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListAssets, typeof(global::G.ListAssetsParams), options);
             }
             else if (value.IsCreateAsset)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateAssetParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateAssetParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateAssetParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateAsset!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateAsset, typeof(global::G.CreateAssetParams), options);
             }
             else if (value.IsUpdateAsset)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateAssetParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateAssetParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateAssetParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateAsset!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateAsset, typeof(global::G.UpdateAssetParams), options);
             }
             else if (value.IsDeleteAsset)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteAssetParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteAssetParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeleteAssetParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteAsset!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteAsset, typeof(global::G.DeleteAssetParams), options);
             }
             else if (value.IsListServices)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListServicesParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListServicesParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ListServicesParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListServices!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListServices, typeof(global::G.ListServicesParams), options);
             }
             else if (value.IsCreateService)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateServiceParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateServiceParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateServiceParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateService!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateService, typeof(global::G.CreateServiceParams), options);
             }
             else if (value.IsUpdateService)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateServiceParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateServiceParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateServiceParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateService!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateService, typeof(global::G.UpdateServiceParams), options);
             }
             else if (value.IsDeleteService)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteServiceParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteServiceParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeleteServiceParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteService!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteService, typeof(global::G.DeleteServiceParams), options);
             }
             else if (value.IsListProducts)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListProductsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListProductsParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ListProductsParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListProducts!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListProducts, typeof(global::G.ListProductsParams), options);
             }
             else if (value.IsCreateProduct)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateProductParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateProductParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateProductParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateProduct!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateProduct, typeof(global::G.CreateProductParams), options);
             }
             else if (value.IsUpdateProduct)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateProductParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateProductParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateProductParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateProduct!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateProduct, typeof(global::G.UpdateProductParams), options);
             }
             else if (value.IsDeleteProduct)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteProductParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteProductParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeleteProductParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteProduct!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteProduct, typeof(global::G.DeleteProductParams), options);
             }
             else if (value.IsCheckServiceAvailability)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CheckServiceAvailabilityParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CheckServiceAvailabilityParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CheckServiceAvailabilityParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CheckServiceAvailability!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CheckServiceAvailability, typeof(global::G.CheckServiceAvailabilityParams), options);
             }
             else if (value.IsCreateClientAppointment)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateClientAppointmentParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateClientAppointmentParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateClientAppointmentParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateClientAppointment!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateClientAppointment, typeof(global::G.CreateClientAppointmentParams), options);
             }
             else if (value.IsGetClientAppointments)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetClientAppointmentsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetClientAppointmentsParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetClientAppointmentsParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GetClientAppointments!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GetClientAppointments, typeof(global::G.GetClientAppointmentsParams), options);
             }
             else if (value.IsListCalendarEvents)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListCalendarEventsParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListCalendarEventsParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ListCalendarEventsParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListCalendarEvents!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListCalendarEvents, typeof(global::G.ListCalendarEventsParams), options);
             }
             else if (value.IsUpdateCalendarEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateCalendarEventParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateCalendarEventParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateCalendarEventParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateCalendarEvent!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateCalendarEvent, typeof(global::G.UpdateCalendarEventParams), options);
             }
             else if (value.IsDeleteCalendarEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteCalendarEventParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteCalendarEventParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeleteCalendarEventParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteCalendarEvent!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteCalendarEvent, typeof(global::G.DeleteCalendarEventParams), options);
             }
             else if (value.IsListRentalServices)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ListRentalServicesParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ListRentalServicesParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ListRentalServicesParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListRentalServices!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListRentalServices, typeof(global::G.ListRentalServicesParams), options);
             }
             else if (value.IsCheckRentalAvailability)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CheckRentalAvailabilityParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CheckRentalAvailabilityParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CheckRentalAvailabilityParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CheckRentalAvailability!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CheckRentalAvailability, typeof(global::G.CheckRentalAvailabilityParams), options);
             }
             else if (value.IsCreateRentalBooking)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateRentalBookingParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateRentalBookingParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateRentalBookingParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateRentalBooking!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateRentalBooking, typeof(global::G.CreateRentalBookingParams), options);
             }
         }
     }

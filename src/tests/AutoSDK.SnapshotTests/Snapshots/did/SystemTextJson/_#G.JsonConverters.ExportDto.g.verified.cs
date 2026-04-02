@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -47,9 +46,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExportDtoVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExportDtoVariant1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExportDtoVariant1).Name}");
-                        exportDtoVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        exportDtoVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ExportDtoVariant1>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -62,9 +59,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExportDtoVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExportDtoVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExportDtoVariant2).Name}");
-                        exportDtoVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        exportDtoVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ExportDtoVariant2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -79,9 +74,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExportDtoVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExportDtoVariant1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExportDtoVariant1).Name}");
-                    exportDtoVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    exportDtoVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ExportDtoVariant1>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -92,9 +85,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExportDtoVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExportDtoVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExportDtoVariant2).Name}");
-                    exportDtoVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    exportDtoVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ExportDtoVariant2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -119,20 +110,15 @@ namespace G.JsonConverters
             global::G.ExportDto value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsExportDtoVariant1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExportDtoVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExportDtoVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExportDtoVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExportDtoVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExportDtoVariant1, typeof(global::G.ExportDtoVariant1), options);
             }
             else if (value.IsExportDtoVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExportDtoVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExportDtoVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExportDtoVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExportDtoVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExportDtoVariant2, typeof(global::G.ExportDtoVariant2), options);
             }
         }
     }

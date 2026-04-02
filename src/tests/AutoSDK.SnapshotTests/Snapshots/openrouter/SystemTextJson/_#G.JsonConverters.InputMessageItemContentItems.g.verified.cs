@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -65,9 +64,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputText> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputText).Name}");
-                        inputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputText = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputText>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -80,9 +77,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemContentItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemContentItems1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemContentItems1).Name}");
-                        inputMessageItemContentItems1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputMessageItemContentItems1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputMessageItemContentItems1>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -95,9 +90,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputFile> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputFile).Name}");
-                        inputFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputFile = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputFile>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -110,9 +103,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputAudio> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputAudio).Name}");
-                        inputAudio = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputAudio = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputAudio>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -125,9 +116,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputVideo> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputVideo).Name}");
-                        inputVideo = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputVideo = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputVideo>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -142,9 +131,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputText> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputText).Name}");
-                    inputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputText = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputText>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -155,9 +142,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemContentItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemContentItems1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemContentItems1).Name}");
-                    inputMessageItemContentItems1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputMessageItemContentItems1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputMessageItemContentItems1>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -168,9 +153,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputFile> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputFile).Name}");
-                    inputFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputFile = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputFile>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -181,9 +164,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputAudio> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputAudio).Name}");
-                    inputAudio = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputAudio = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputAudio>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -194,9 +175,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputVideo> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputVideo).Name}");
-                    inputVideo = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputVideo = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputVideo>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -227,38 +206,27 @@ namespace G.JsonConverters
             global::G.InputMessageItemContentItems value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsInputText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputText?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputText!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputText, typeof(global::G.InputText), options);
             }
             else if (value.IsInputMessageItemContentItems1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemContentItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemContentItems1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemContentItems1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItemContentItems1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItemContentItems1, typeof(global::G.InputMessageItemContentItems1), options);
             }
             else if (value.IsInputFile)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputFile?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputFile).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputFile!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputFile, typeof(global::G.InputFile), options);
             }
             else if (value.IsInputAudio)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputAudio?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputAudio).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudio!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudio, typeof(global::G.InputAudio), options);
             }
             else if (value.IsInputVideo)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputVideo?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputVideo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputVideo!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputVideo, typeof(global::G.InputVideo), options);
             }
         }
     }

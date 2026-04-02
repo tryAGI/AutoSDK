@@ -13,28 +13,21 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MultiModalQueryVariant2Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MultiModalQueryVariant2Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MultiModalQueryVariant2Discriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MultiModalQueryVariant2Discriminator>(ref readerCopy, options);
 
             global::G.ImageUrlInput2? imageUrl = default;
             if (discriminator?.Type == global::G.MultiModalQueryVariant2DiscriminatorType.ImageUrl)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageUrlInput2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageUrlInput2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageUrlInput2)}");
-                imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                imageUrl = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ImageUrlInput2>(ref reader, options);
             }
             global::G.TextInput? text = default;
             if (discriminator?.Type == global::G.MultiModalQueryVariant2DiscriminatorType.Text)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextInput> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextInput)}");
-                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TextInput>(ref reader, options);
             }
 
             var __value = new global::G.MultiModalQueryVariant2(
@@ -53,20 +46,15 @@ namespace G.JsonConverters
             global::G.MultiModalQueryVariant2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsImageUrl)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageUrlInput2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageUrlInput2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageUrlInput2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeof(global::G.ImageUrlInput2), options);
             }
             else if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextInput?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeof(global::G.TextInput), options);
             }
         }
     }

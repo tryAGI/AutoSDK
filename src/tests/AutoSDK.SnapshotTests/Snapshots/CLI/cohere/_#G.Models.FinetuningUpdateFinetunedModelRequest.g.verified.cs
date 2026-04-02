@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateFinetunedModelRequest.g.cs
+﻿//HintName: G.Models.FinetuningUpdateFinetunedModelRequest.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class UpdateFinetunedModelRequest
+    public sealed partial class FinetuningUpdateFinetunedModelRequest
     {
         /// <summary>
         /// FinetunedModel name (e.g. `foobar`).
@@ -81,7 +81,7 @@ namespace G
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateFinetunedModelRequest" /> class.
+        /// Initializes a new instance of the <see cref="FinetuningUpdateFinetunedModelRequest" /> class.
         /// </summary>
         /// <param name="name">
         /// FinetunedModel name (e.g. `foobar`).
@@ -121,7 +121,7 @@ namespace G
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public UpdateFinetunedModelRequest(
+        public FinetuningUpdateFinetunedModelRequest(
             string name,
             global::G.Settings settings,
             string? creatorId,
@@ -144,9 +144,9 @@ namespace G
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateFinetunedModelRequest" /> class.
+        /// Initializes a new instance of the <see cref="FinetuningUpdateFinetunedModelRequest" /> class.
         /// </summary>
-        public UpdateFinetunedModelRequest()
+        public FinetuningUpdateFinetunedModelRequest()
         {
         }
     }

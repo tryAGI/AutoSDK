@@ -73,7 +73,7 @@ namespace G
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -111,13 +111,13 @@ namespace G
                     if (ReadResponseAsString)
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::G.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::G.ErrorResponse.FromJson(__content_400, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_400 = global::G.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                        __value_400 = global::G.ErrorResponse.FromJson(__content_400, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -161,7 +161,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.ProjectServiceAccountCreateResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::G.ProjectServiceAccountCreateResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -192,7 +192,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.ProjectServiceAccountCreateResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::G.ProjectServiceAccountCreateResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

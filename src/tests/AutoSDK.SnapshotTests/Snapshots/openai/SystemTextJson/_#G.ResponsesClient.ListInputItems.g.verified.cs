@@ -147,7 +147,7 @@ namespace G
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::G.ResponseItemList.FromJson(__content, JsonSerializerContext) ??
+                        global::G.ResponseItemList.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -178,7 +178,7 @@ namespace G
                     ).ConfigureAwait(false);
 
                     return
-                        await global::G.ResponseItemList.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::G.ResponseItemList.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

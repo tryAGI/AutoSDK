@@ -13,98 +13,71 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemToolConfigInputParamsDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemToolConfigInputParamsDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SystemToolConfigInputParamsDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SystemToolConfigInputParamsDiscriminator>(ref readerCopy, options);
 
             global::G.EndCallToolConfig? endCall = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.EndCall)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EndCallToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EndCallToolConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.EndCallToolConfig)}");
-                endCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                endCall = global::System.Text.Json.JsonSerializer.Deserialize<global::G.EndCallToolConfig>(ref reader, options);
             }
             global::G.LanguageDetectionToolConfig? languageDetection = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.LanguageDetection)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LanguageDetectionToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LanguageDetectionToolConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LanguageDetectionToolConfig)}");
-                languageDetection = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                languageDetection = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LanguageDetectionToolConfig>(ref reader, options);
             }
             global::G.TransferToAgentToolConfig? transferToAgent = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.TransferToAgent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToAgentToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToAgentToolConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TransferToAgentToolConfig)}");
-                transferToAgent = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                transferToAgent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TransferToAgentToolConfig>(ref reader, options);
             }
             global::G.TransferToNumberToolConfigInput? transferToNumber = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.TransferToNumber)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToNumberToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToNumberToolConfigInput> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TransferToNumberToolConfigInput)}");
-                transferToNumber = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                transferToNumber = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TransferToNumberToolConfigInput>(ref reader, options);
             }
             global::G.SkipTurnToolConfig? skipTurn = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.SkipTurn)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SkipTurnToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SkipTurnToolConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SkipTurnToolConfig)}");
-                skipTurn = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                skipTurn = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SkipTurnToolConfig>(ref reader, options);
             }
             global::G.PlayDTMFToolConfig? playKeypadTouchTone = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.PlayKeypadTouchTone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PlayDTMFToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PlayDTMFToolConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PlayDTMFToolConfig)}");
-                playKeypadTouchTone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                playKeypadTouchTone = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PlayDTMFToolConfig>(ref reader, options);
             }
             global::G.VoicemailDetectionToolConfig? voicemailDetection = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.VoicemailDetection)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoicemailDetectionToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoicemailDetectionToolConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.VoicemailDetectionToolConfig)}");
-                voicemailDetection = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                voicemailDetection = global::System.Text.Json.JsonSerializer.Deserialize<global::G.VoicemailDetectionToolConfig>(ref reader, options);
             }
             global::G.MemoryEntrySearchToolConfig? memoryEntrySearch = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntrySearch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntrySearchToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntrySearchToolConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MemoryEntrySearchToolConfig)}");
-                memoryEntrySearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                memoryEntrySearch = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MemoryEntrySearchToolConfig>(ref reader, options);
             }
             global::G.MemoryEntryCreateToolConfig? memoryEntryCreate = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntryCreate)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntryCreateToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntryCreateToolConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MemoryEntryCreateToolConfig)}");
-                memoryEntryCreate = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                memoryEntryCreate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MemoryEntryCreateToolConfig>(ref reader, options);
             }
             global::G.MemoryEntryUpdateToolConfig? memoryEntryUpdate = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntryUpdate)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntryUpdateToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntryUpdateToolConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MemoryEntryUpdateToolConfig)}");
-                memoryEntryUpdate = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                memoryEntryUpdate = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MemoryEntryUpdateToolConfig>(ref reader, options);
             }
             global::G.MemoryEntryDeleteToolConfig? memoryEntryDelete = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.MemoryEntryDelete)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntryDeleteToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntryDeleteToolConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MemoryEntryDeleteToolConfig)}");
-                memoryEntryDelete = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                memoryEntryDelete = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MemoryEntryDeleteToolConfig>(ref reader, options);
             }
             global::G.AgentPromptChangeToolConfig? agentPromptChange = default;
             if (discriminator?.SystemToolType == global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType.AgentPromptChange)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentPromptChangeToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentPromptChangeToolConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AgentPromptChangeToolConfig)}");
-                agentPromptChange = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                agentPromptChange = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AgentPromptChangeToolConfig>(ref reader, options);
             }
 
             var __value = new global::G.Params2(
@@ -143,80 +116,55 @@ namespace G.JsonConverters
             global::G.Params2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsEndCall)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EndCallToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EndCallToolConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EndCallToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EndCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EndCall, typeof(global::G.EndCallToolConfig), options);
             }
             else if (value.IsLanguageDetection)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LanguageDetectionToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LanguageDetectionToolConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LanguageDetectionToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LanguageDetection!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LanguageDetection, typeof(global::G.LanguageDetectionToolConfig), options);
             }
             else if (value.IsTransferToAgent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToAgentToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToAgentToolConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferToAgentToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToAgent!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToAgent, typeof(global::G.TransferToAgentToolConfig), options);
             }
             else if (value.IsTransferToNumber)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToNumberToolConfigInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToNumberToolConfigInput?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferToNumberToolConfigInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToNumber!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToNumber, typeof(global::G.TransferToNumberToolConfigInput), options);
             }
             else if (value.IsSkipTurn)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SkipTurnToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SkipTurnToolConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SkipTurnToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SkipTurn!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SkipTurn, typeof(global::G.SkipTurnToolConfig), options);
             }
             else if (value.IsPlayKeypadTouchTone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PlayDTMFToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PlayDTMFToolConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PlayDTMFToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PlayKeypadTouchTone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PlayKeypadTouchTone, typeof(global::G.PlayDTMFToolConfig), options);
             }
             else if (value.IsVoicemailDetection)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoicemailDetectionToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoicemailDetectionToolConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoicemailDetectionToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoicemailDetection!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoicemailDetection, typeof(global::G.VoicemailDetectionToolConfig), options);
             }
             else if (value.IsMemoryEntrySearch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntrySearchToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntrySearchToolConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MemoryEntrySearchToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntrySearch!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntrySearch, typeof(global::G.MemoryEntrySearchToolConfig), options);
             }
             else if (value.IsMemoryEntryCreate)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntryCreateToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntryCreateToolConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MemoryEntryCreateToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryCreate!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryCreate, typeof(global::G.MemoryEntryCreateToolConfig), options);
             }
             else if (value.IsMemoryEntryUpdate)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntryUpdateToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntryUpdateToolConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MemoryEntryUpdateToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryUpdate!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryUpdate, typeof(global::G.MemoryEntryUpdateToolConfig), options);
             }
             else if (value.IsMemoryEntryDelete)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MemoryEntryDeleteToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MemoryEntryDeleteToolConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MemoryEntryDeleteToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryDelete!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryEntryDelete, typeof(global::G.MemoryEntryDeleteToolConfig), options);
             }
             else if (value.IsAgentPromptChange)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentPromptChangeToolConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentPromptChangeToolConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentPromptChangeToolConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentPromptChange!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentPromptChange, typeof(global::G.AgentPromptChangeToolConfig), options);
             }
         }
     }

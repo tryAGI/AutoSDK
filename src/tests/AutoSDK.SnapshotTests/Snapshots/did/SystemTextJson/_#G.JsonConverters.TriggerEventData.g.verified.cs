@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -49,9 +48,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatEndEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatEndEventData> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatEndEventData).Name}");
-                        chatEnd = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatEnd = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatEndEventData>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -64,9 +61,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TriggerEventDataVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TriggerEventDataVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TriggerEventDataVariant2).Name}");
-                        triggerEventDataVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        triggerEventDataVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TriggerEventDataVariant2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -81,9 +76,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatEndEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatEndEventData> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatEndEventData).Name}");
-                    chatEnd = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatEnd = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatEndEventData>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -94,9 +87,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TriggerEventDataVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TriggerEventDataVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TriggerEventDataVariant2).Name}");
-                    triggerEventDataVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    triggerEventDataVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TriggerEventDataVariant2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -121,20 +112,15 @@ namespace G.JsonConverters
             global::G.TriggerEventData value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsChatEnd)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatEndEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatEndEventData?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatEndEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatEnd!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatEnd, typeof(global::G.ChatEndEventData), options);
             }
             else if (value.IsTriggerEventDataVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TriggerEventDataVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TriggerEventDataVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TriggerEventDataVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TriggerEventDataVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TriggerEventDataVariant2, typeof(global::G.TriggerEventDataVariant2), options);
             }
         }
     }

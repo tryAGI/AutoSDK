@@ -13,42 +13,31 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowEdgeModelInputBackwardConditionVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowEdgeModelInputBackwardConditionVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WorkflowEdgeModelInputBackwardConditionVariant1Discriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WorkflowEdgeModelInputBackwardConditionVariant1Discriminator>(ref readerCopy, options);
 
             global::G.WorkflowUnconditionalModelInput? unconditional = default;
             if (discriminator?.Type == global::G.WorkflowEdgeModelInputBackwardConditionVariant1DiscriminatorType.Unconditional)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowUnconditionalModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowUnconditionalModelInput> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WorkflowUnconditionalModelInput)}");
-                unconditional = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                unconditional = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WorkflowUnconditionalModelInput>(ref reader, options);
             }
             global::G.WorkflowLLMConditionModelInput? llm = default;
             if (discriminator?.Type == global::G.WorkflowEdgeModelInputBackwardConditionVariant1DiscriminatorType.Llm)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowLLMConditionModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowLLMConditionModelInput> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WorkflowLLMConditionModelInput)}");
-                llm = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                llm = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WorkflowLLMConditionModelInput>(ref reader, options);
             }
             global::G.WorkflowResultConditionModelInput? result = default;
             if (discriminator?.Type == global::G.WorkflowEdgeModelInputBackwardConditionVariant1DiscriminatorType.Result)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowResultConditionModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowResultConditionModelInput> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WorkflowResultConditionModelInput)}");
-                result = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                result = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WorkflowResultConditionModelInput>(ref reader, options);
             }
             global::G.WorkflowExpressionConditionModelInput? expression = default;
             if (discriminator?.Type == global::G.WorkflowEdgeModelInputBackwardConditionVariant1DiscriminatorType.Expression)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowExpressionConditionModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowExpressionConditionModelInput> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WorkflowExpressionConditionModelInput)}");
-                expression = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                expression = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WorkflowExpressionConditionModelInput>(ref reader, options);
             }
 
             var __value = new global::G.BackwardConditionVariant1(
@@ -71,32 +60,23 @@ namespace G.JsonConverters
             global::G.BackwardConditionVariant1 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsUnconditional)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowUnconditionalModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowUnconditionalModelInput?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowUnconditionalModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unconditional!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unconditional, typeof(global::G.WorkflowUnconditionalModelInput), options);
             }
             else if (value.IsLlm)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowLLMConditionModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowLLMConditionModelInput?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowLLMConditionModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm, typeof(global::G.WorkflowLLMConditionModelInput), options);
             }
             else if (value.IsResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowResultConditionModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowResultConditionModelInput?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowResultConditionModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Result!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Result, typeof(global::G.WorkflowResultConditionModelInput), options);
             }
             else if (value.IsExpression)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowExpressionConditionModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowExpressionConditionModelInput?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowExpressionConditionModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Expression!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Expression, typeof(global::G.WorkflowExpressionConditionModelInput), options);
             }
         }
     }

@@ -13,35 +13,26 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateMCPServerRequestConfigDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateMCPServerRequestConfigDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateMCPServerRequestConfigDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateMCPServerRequestConfigDiscriminator>(ref readerCopy, options);
 
             global::G.LettaSchemasMcpServerUpdateStdioMCPServer? stdio = default;
             if (discriminator?.McpServerType == global::G.UpdateMCPServerRequestConfigDiscriminatorMcpServerType.Stdio)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaSchemasMcpServerUpdateStdioMCPServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaSchemasMcpServerUpdateStdioMCPServer> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LettaSchemasMcpServerUpdateStdioMCPServer)}");
-                stdio = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                stdio = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LettaSchemasMcpServerUpdateStdioMCPServer>(ref reader, options);
             }
             global::G.LettaSchemasMcpServerUpdateSSEMCPServer? sse = default;
             if (discriminator?.McpServerType == global::G.UpdateMCPServerRequestConfigDiscriminatorMcpServerType.Sse)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaSchemasMcpServerUpdateSSEMCPServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaSchemasMcpServerUpdateSSEMCPServer> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LettaSchemasMcpServerUpdateSSEMCPServer)}");
-                sse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                sse = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LettaSchemasMcpServerUpdateSSEMCPServer>(ref reader, options);
             }
             global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer? streamableHttp = default;
             if (discriminator?.McpServerType == global::G.UpdateMCPServerRequestConfigDiscriminatorMcpServerType.StreamableHttp)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer)}");
-                streamableHttp = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                streamableHttp = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer>(ref reader, options);
             }
 
             var __value = new global::G.Config4(
@@ -62,26 +53,19 @@ namespace G.JsonConverters
             global::G.Config4 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsStdio)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaSchemasMcpServerUpdateStdioMCPServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaSchemasMcpServerUpdateStdioMCPServer?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaSchemasMcpServerUpdateStdioMCPServer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Stdio!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Stdio, typeof(global::G.LettaSchemasMcpServerUpdateStdioMCPServer), options);
             }
             else if (value.IsSse)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaSchemasMcpServerUpdateSSEMCPServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaSchemasMcpServerUpdateSSEMCPServer?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaSchemasMcpServerUpdateSSEMCPServer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sse, typeof(global::G.LettaSchemasMcpServerUpdateSSEMCPServer), options);
             }
             else if (value.IsStreamableHttp)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamableHttp!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamableHttp, typeof(global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer), options);
             }
         }
     }

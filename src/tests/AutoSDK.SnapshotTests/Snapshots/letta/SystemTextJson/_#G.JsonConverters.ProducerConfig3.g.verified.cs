@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -46,9 +45,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1).Name}");
-                        slackChannelReader = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        slackChannelReader = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,9 +58,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2).Name}");
-                        customWebhook = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        customWebhook = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -78,9 +73,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1).Name}");
-                    slackChannelReader = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    slackChannelReader = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -91,9 +84,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2).Name}");
-                    customWebhook = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    customWebhook = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -118,20 +109,15 @@ namespace G.JsonConverters
             global::G.ProducerConfig3 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsSlackChannelReader)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SlackChannelReader!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SlackChannelReader, typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1), options);
             }
             else if (value.IsCustomWebhook)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomWebhook!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomWebhook, typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2), options);
             }
         }
     }

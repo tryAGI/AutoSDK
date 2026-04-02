@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -46,9 +45,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateExpressiveResponseDtoVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateExpressiveResponseDtoVariant1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateExpressiveResponseDtoVariant1).Name}");
-                        createExpressiveResponseDtoVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        createExpressiveResponseDtoVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateExpressiveResponseDtoVariant1>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,9 +58,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateExpressiveResponseDtoVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateExpressiveResponseDtoVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateExpressiveResponseDtoVariant2).Name}");
-                        createExpressiveResponseDtoVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        createExpressiveResponseDtoVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateExpressiveResponseDtoVariant2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -78,9 +73,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateExpressiveResponseDtoVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateExpressiveResponseDtoVariant1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateExpressiveResponseDtoVariant1).Name}");
-                    createExpressiveResponseDtoVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    createExpressiveResponseDtoVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateExpressiveResponseDtoVariant1>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -91,9 +84,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateExpressiveResponseDtoVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateExpressiveResponseDtoVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateExpressiveResponseDtoVariant2).Name}");
-                    createExpressiveResponseDtoVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    createExpressiveResponseDtoVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateExpressiveResponseDtoVariant2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -118,20 +109,15 @@ namespace G.JsonConverters
             global::G.CreateExpressiveResponseDto value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsCreateExpressiveResponseDtoVariant1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateExpressiveResponseDtoVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateExpressiveResponseDtoVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateExpressiveResponseDtoVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateExpressiveResponseDtoVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateExpressiveResponseDtoVariant1, typeof(global::G.CreateExpressiveResponseDtoVariant1), options);
             }
             else if (value.IsCreateExpressiveResponseDtoVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateExpressiveResponseDtoVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateExpressiveResponseDtoVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateExpressiveResponseDtoVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateExpressiveResponseDtoVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateExpressiveResponseDtoVariant2, typeof(global::G.CreateExpressiveResponseDtoVariant2), options);
             }
         }
     }

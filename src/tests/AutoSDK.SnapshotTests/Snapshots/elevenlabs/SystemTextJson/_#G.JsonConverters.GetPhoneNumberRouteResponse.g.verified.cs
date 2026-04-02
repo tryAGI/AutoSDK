@@ -13,28 +13,21 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetPhoneNumberRouteResponseDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetPhoneNumberRouteResponseDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetPhoneNumberRouteResponseDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetPhoneNumberRouteResponseDiscriminator>(ref readerCopy, options);
 
             global::G.GetPhoneNumberTwilioResponseModel? twilio = default;
             if (discriminator?.Provider == global::G.GetPhoneNumberRouteResponseDiscriminatorProvider.Twilio)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetPhoneNumberTwilioResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetPhoneNumberTwilioResponseModel> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetPhoneNumberTwilioResponseModel)}");
-                twilio = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                twilio = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetPhoneNumberTwilioResponseModel>(ref reader, options);
             }
             global::G.GetPhoneNumberSIPTrunkResponseModel? sipTrunk = default;
             if (discriminator?.Provider == global::G.GetPhoneNumberRouteResponseDiscriminatorProvider.SipTrunk)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetPhoneNumberSIPTrunkResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetPhoneNumberSIPTrunkResponseModel> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetPhoneNumberSIPTrunkResponseModel)}");
-                sipTrunk = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                sipTrunk = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetPhoneNumberSIPTrunkResponseModel>(ref reader, options);
             }
 
             var __value = new global::G.GetPhoneNumberRouteResponse(
@@ -53,20 +46,15 @@ namespace G.JsonConverters
             global::G.GetPhoneNumberRouteResponse value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsTwilio)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetPhoneNumberTwilioResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetPhoneNumberTwilioResponseModel?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetPhoneNumberTwilioResponseModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Twilio!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Twilio, typeof(global::G.GetPhoneNumberTwilioResponseModel), options);
             }
             else if (value.IsSipTrunk)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetPhoneNumberSIPTrunkResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetPhoneNumberSIPTrunkResponseModel?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetPhoneNumberSIPTrunkResponseModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipTrunk!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipTrunk, typeof(global::G.GetPhoneNumberSIPTrunkResponseModel), options);
             }
         }
     }

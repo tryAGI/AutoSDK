@@ -13,28 +13,21 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConvAIStoredSecretDependenciesToolDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConvAIStoredSecretDependenciesToolDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConvAIStoredSecretDependenciesToolDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConvAIStoredSecretDependenciesToolDiscriminator>(ref readerCopy, options);
 
             global::G.DependentAvailableToolIdentifier? available = default;
             if (discriminator?.Type == global::G.ConvAIStoredSecretDependenciesToolDiscriminatorType.Available)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DependentAvailableToolIdentifier), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DependentAvailableToolIdentifier> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DependentAvailableToolIdentifier)}");
-                available = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                available = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DependentAvailableToolIdentifier>(ref reader, options);
             }
             global::G.DependentUnknownToolIdentifier? unknown = default;
             if (discriminator?.Type == global::G.ConvAIStoredSecretDependenciesToolDiscriminatorType.Unknown)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DependentUnknownToolIdentifier), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DependentUnknownToolIdentifier> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DependentUnknownToolIdentifier)}");
-                unknown = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                unknown = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DependentUnknownToolIdentifier>(ref reader, options);
             }
 
             var __value = new global::G.ToolsItem(
@@ -53,20 +46,15 @@ namespace G.JsonConverters
             global::G.ToolsItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsAvailable)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DependentAvailableToolIdentifier), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DependentAvailableToolIdentifier?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DependentAvailableToolIdentifier).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Available!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Available, typeof(global::G.DependentAvailableToolIdentifier), options);
             }
             else if (value.IsUnknown)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DependentUnknownToolIdentifier), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DependentUnknownToolIdentifier?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DependentUnknownToolIdentifier).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unknown!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unknown, typeof(global::G.DependentUnknownToolIdentifier), options);
             }
         }
     }

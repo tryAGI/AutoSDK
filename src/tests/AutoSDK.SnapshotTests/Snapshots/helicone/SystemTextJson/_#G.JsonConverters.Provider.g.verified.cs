@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
@@ -29,38 +28,8 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderName), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score0++;
-                    }
-                }
-            }
             var __score1 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelProviderName), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score1++;
-                    }
-                }
-            }
             var __score2 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderEnum), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score2++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -77,9 +46,7 @@ namespace G.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProviderName> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProviderName).Name}");
-                        name = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        name = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ProviderName>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -94,9 +61,7 @@ namespace G.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelProviderName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelProviderName> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelProviderName).Name}");
-                        modelName = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelName = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelProviderName>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -111,9 +76,7 @@ namespace G.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProviderEnum> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProviderEnum).Name}");
-                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ProviderEnum>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -129,9 +92,7 @@ namespace G.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProviderName> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProviderName).Name}");
-                    name = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    name = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ProviderName>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -143,9 +104,7 @@ namespace G.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelProviderName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelProviderName> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelProviderName).Name}");
-                    modelName = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelName = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ModelProviderName>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -157,9 +116,7 @@ namespace G.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProviderEnum> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProviderEnum).Name}");
-                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ProviderEnum>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -186,26 +143,19 @@ namespace G.JsonConverters
             global::G.Provider value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsName)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProviderName> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProviderName).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Name!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Name, typeof(global::G.ProviderName), options);
             }
             else if (value.IsModelName)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelProviderName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelProviderName> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelProviderName).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelName!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelName, typeof(global::G.ModelProviderName), options);
             }
             else if (value.IsEnum)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProviderEnum> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProviderEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum, typeof(global::G.ProviderEnum), options);
             }
         }
     }

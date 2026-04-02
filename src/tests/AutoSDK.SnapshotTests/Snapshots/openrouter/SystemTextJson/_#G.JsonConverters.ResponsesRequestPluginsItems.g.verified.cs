@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -73,9 +72,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems0> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems0).Name}");
-                        responsesRequestPluginsItems0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responsesRequestPluginsItems0 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems0>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -88,9 +85,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems1).Name}");
-                        responsesRequestPluginsItems1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responsesRequestPluginsItems1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems1>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -103,9 +98,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems2).Name}");
-                        responsesRequestPluginsItems2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responsesRequestPluginsItems2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -118,9 +111,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems3> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems3).Name}");
-                        responsesRequestPluginsItems3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responsesRequestPluginsItems3 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems3>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -133,9 +124,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems4> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems4).Name}");
-                        responsesRequestPluginsItems4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responsesRequestPluginsItems4 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems4>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -148,9 +137,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems5> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems5).Name}");
-                        responsesRequestPluginsItems5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responsesRequestPluginsItems5 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems5>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -165,9 +152,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems0> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems0).Name}");
-                    responsesRequestPluginsItems0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responsesRequestPluginsItems0 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems0>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -178,9 +163,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems1).Name}");
-                    responsesRequestPluginsItems1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responsesRequestPluginsItems1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems1>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -191,9 +174,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems2).Name}");
-                    responsesRequestPluginsItems2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responsesRequestPluginsItems2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -204,9 +185,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems3> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems3).Name}");
-                    responsesRequestPluginsItems3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responsesRequestPluginsItems3 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems3>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -217,9 +196,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems4> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems4).Name}");
-                    responsesRequestPluginsItems4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responsesRequestPluginsItems4 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems4>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -230,9 +207,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems5> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems5).Name}");
-                    responsesRequestPluginsItems5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responsesRequestPluginsItems5 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponsesRequestPluginsItems5>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -265,44 +240,31 @@ namespace G.JsonConverters
             global::G.ResponsesRequestPluginsItems value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsResponsesRequestPluginsItems0)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems0?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems0, typeof(global::G.ResponsesRequestPluginsItems0), options);
             }
             else if (value.IsResponsesRequestPluginsItems1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems1, typeof(global::G.ResponsesRequestPluginsItems1), options);
             }
             else if (value.IsResponsesRequestPluginsItems2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems2, typeof(global::G.ResponsesRequestPluginsItems2), options);
             }
             else if (value.IsResponsesRequestPluginsItems3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems3?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems3, typeof(global::G.ResponsesRequestPluginsItems3), options);
             }
             else if (value.IsResponsesRequestPluginsItems4)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems4?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems4, typeof(global::G.ResponsesRequestPluginsItems4), options);
             }
             else if (value.IsResponsesRequestPluginsItems5)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponsesRequestPluginsItems5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponsesRequestPluginsItems5?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponsesRequestPluginsItems5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestPluginsItems5, typeof(global::G.ResponsesRequestPluginsItems5), options);
             }
         }
     }

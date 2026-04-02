@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string id,
             ref string? xClientName,
-            global::G.UpdateFinetunedModelRequest request);
+            global::G.FinetuningUpdateFinetunedModelRequest request);
         partial void PrepareUpdateFinetunedModelRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string id,
             string? xClientName,
-            global::G.UpdateFinetunedModelRequest request);
+            global::G.FinetuningUpdateFinetunedModelRequest request);
         partial void ProcessUpdateFinetunedModelResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,7 +37,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UpdateFinetunedModelResponse> UpdateFinetunedModelAsync(
             string id,
 
-            global::G.UpdateFinetunedModelRequest request,
+            global::G.FinetuningUpdateFinetunedModelRequest request,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -446,7 +446,7 @@ namespace G
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.UpdateFinetunedModelRequest
+            var __request = new global::G.FinetuningUpdateFinetunedModelRequest
             {
                 Name = name,
                 Settings = settings,

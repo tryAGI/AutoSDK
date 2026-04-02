@@ -13,35 +13,26 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PatchConvAIDashboardSettingsRequestChartDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PatchConvAIDashboardSettingsRequestChartDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PatchConvAIDashboardSettingsRequestChartDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PatchConvAIDashboardSettingsRequestChartDiscriminator>(ref readerCopy, options);
 
             global::G.DashboardCallSuccessChartModel? callSuccess = default;
             if (discriminator?.Type == global::G.PatchConvAIDashboardSettingsRequestChartDiscriminatorType.CallSuccess)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardCallSuccessChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardCallSuccessChartModel> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DashboardCallSuccessChartModel)}");
-                callSuccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                callSuccess = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DashboardCallSuccessChartModel>(ref reader, options);
             }
             global::G.DashboardCriteriaChartModel? criteria = default;
             if (discriminator?.Type == global::G.PatchConvAIDashboardSettingsRequestChartDiscriminatorType.Criteria)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardCriteriaChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardCriteriaChartModel> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DashboardCriteriaChartModel)}");
-                criteria = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                criteria = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DashboardCriteriaChartModel>(ref reader, options);
             }
             global::G.DashboardDataCollectionChartModel? dataCollection = default;
             if (discriminator?.Type == global::G.PatchConvAIDashboardSettingsRequestChartDiscriminatorType.DataCollection)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardDataCollectionChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardDataCollectionChartModel> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DashboardDataCollectionChartModel)}");
-                dataCollection = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                dataCollection = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DashboardDataCollectionChartModel>(ref reader, options);
             }
 
             var __value = new global::G.ChartsItem2(
@@ -62,26 +53,19 @@ namespace G.JsonConverters
             global::G.ChartsItem2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsCallSuccess)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardCallSuccessChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardCallSuccessChartModel?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DashboardCallSuccessChartModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CallSuccess!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CallSuccess, typeof(global::G.DashboardCallSuccessChartModel), options);
             }
             else if (value.IsCriteria)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardCriteriaChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardCriteriaChartModel?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DashboardCriteriaChartModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Criteria!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Criteria, typeof(global::G.DashboardCriteriaChartModel), options);
             }
             else if (value.IsDataCollection)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardDataCollectionChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardDataCollectionChartModel?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DashboardDataCollectionChartModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataCollection!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataCollection, typeof(global::G.DashboardDataCollectionChartModel), options);
             }
         }
     }

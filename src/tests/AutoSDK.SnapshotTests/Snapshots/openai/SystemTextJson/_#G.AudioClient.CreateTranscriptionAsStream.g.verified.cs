@@ -215,7 +215,7 @@ namespace G
                     yield break;
                 }
 
-                var __streamedResponse = global::G.CreateTranscriptionResponseStreamEvent.FromJson(__content, JsonSerializerContext) ??
+                var __streamedResponse = global::G.CreateTranscriptionResponseStreamEvent.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::G.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)

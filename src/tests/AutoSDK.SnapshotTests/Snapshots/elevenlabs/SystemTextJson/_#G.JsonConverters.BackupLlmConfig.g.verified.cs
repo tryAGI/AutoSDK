@@ -13,35 +13,26 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptAgentAPIModelInputBackupLlmConfigDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptAgentAPIModelInputBackupLlmConfigDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PromptAgentAPIModelInputBackupLlmConfigDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PromptAgentAPIModelInputBackupLlmConfigDiscriminator>(ref readerCopy, options);
 
             global::G.BackupLLMDefault? @default = default;
             if (discriminator?.Preference == global::G.PromptAgentAPIModelInputBackupLlmConfigDiscriminatorPreference.Default)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BackupLLMDefault), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BackupLLMDefault> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BackupLLMDefault)}");
-                @default = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                @default = global::System.Text.Json.JsonSerializer.Deserialize<global::G.BackupLLMDefault>(ref reader, options);
             }
             global::G.BackupLLMDisabled? disabled = default;
             if (discriminator?.Preference == global::G.PromptAgentAPIModelInputBackupLlmConfigDiscriminatorPreference.Disabled)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BackupLLMDisabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BackupLLMDisabled> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BackupLLMDisabled)}");
-                disabled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                disabled = global::System.Text.Json.JsonSerializer.Deserialize<global::G.BackupLLMDisabled>(ref reader, options);
             }
             global::G.BackupLLMOverride? @override = default;
             if (discriminator?.Preference == global::G.PromptAgentAPIModelInputBackupLlmConfigDiscriminatorPreference.Override)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BackupLLMOverride), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BackupLLMOverride> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BackupLLMOverride)}");
-                @override = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                @override = global::System.Text.Json.JsonSerializer.Deserialize<global::G.BackupLLMOverride>(ref reader, options);
             }
 
             var __value = new global::G.BackupLlmConfig(
@@ -62,26 +53,19 @@ namespace G.JsonConverters
             global::G.BackupLlmConfig value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsDefault)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BackupLLMDefault), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BackupLLMDefault?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BackupLLMDefault).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Default!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Default, typeof(global::G.BackupLLMDefault), options);
             }
             else if (value.IsDisabled)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BackupLLMDisabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BackupLLMDisabled?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BackupLLMDisabled).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled, typeof(global::G.BackupLLMDisabled), options);
             }
             else if (value.IsOverride)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BackupLLMOverride), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BackupLLMOverride?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BackupLLMOverride).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Override!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Override, typeof(global::G.BackupLLMOverride), options);
             }
         }
     }

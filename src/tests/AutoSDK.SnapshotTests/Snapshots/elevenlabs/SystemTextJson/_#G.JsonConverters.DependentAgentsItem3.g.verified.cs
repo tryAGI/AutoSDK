@@ -13,28 +13,21 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetKnowledgeBaseSummaryTextResponseModelDependentAgentDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetKnowledgeBaseSummaryTextResponseModelDependentAgentDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetKnowledgeBaseSummaryTextResponseModelDependentAgentDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetKnowledgeBaseSummaryTextResponseModelDependentAgentDiscriminator>(ref readerCopy, options);
 
             global::G.DependentAvailableAgentIdentifier? available = default;
             if (discriminator?.Type == global::G.GetKnowledgeBaseSummaryTextResponseModelDependentAgentDiscriminatorType.Available)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DependentAvailableAgentIdentifier), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DependentAvailableAgentIdentifier> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DependentAvailableAgentIdentifier)}");
-                available = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                available = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DependentAvailableAgentIdentifier>(ref reader, options);
             }
             global::G.DependentUnknownAgentIdentifier? unknown = default;
             if (discriminator?.Type == global::G.GetKnowledgeBaseSummaryTextResponseModelDependentAgentDiscriminatorType.Unknown)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DependentUnknownAgentIdentifier), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DependentUnknownAgentIdentifier> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DependentUnknownAgentIdentifier)}");
-                unknown = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                unknown = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DependentUnknownAgentIdentifier>(ref reader, options);
             }
 
             var __value = new global::G.DependentAgentsItem3(
@@ -53,20 +46,15 @@ namespace G.JsonConverters
             global::G.DependentAgentsItem3 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsAvailable)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DependentAvailableAgentIdentifier), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DependentAvailableAgentIdentifier?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DependentAvailableAgentIdentifier).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Available!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Available, typeof(global::G.DependentAvailableAgentIdentifier), options);
             }
             else if (value.IsUnknown)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DependentUnknownAgentIdentifier), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DependentUnknownAgentIdentifier?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DependentUnknownAgentIdentifier).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unknown!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unknown, typeof(global::G.DependentUnknownAgentIdentifier), options);
             }
         }
     }

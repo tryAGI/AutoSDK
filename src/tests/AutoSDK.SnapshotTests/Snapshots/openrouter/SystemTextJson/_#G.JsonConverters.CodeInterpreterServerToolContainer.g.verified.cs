@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -45,9 +44,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        codeInterpreterServerToolContainerVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        codeInterpreterServerToolContainerVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -60,9 +57,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterServerToolContainer1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterServerToolContainer1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterServerToolContainer1).Name}");
-                        codeInterpreterServerToolContainer1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        codeInterpreterServerToolContainer1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CodeInterpreterServerToolContainer1>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -77,9 +72,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    codeInterpreterServerToolContainerVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    codeInterpreterServerToolContainerVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -90,9 +83,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterServerToolContainer1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterServerToolContainer1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterServerToolContainer1).Name}");
-                    codeInterpreterServerToolContainer1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    codeInterpreterServerToolContainer1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CodeInterpreterServerToolContainer1>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -117,20 +108,15 @@ namespace G.JsonConverters
             global::G.CodeInterpreterServerToolContainer value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsCodeInterpreterServerToolContainerVariant1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreterServerToolContainerVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreterServerToolContainerVariant1, typeof(string), options);
             }
             else if (value.IsCodeInterpreterServerToolContainer1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterServerToolContainer1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterServerToolContainer1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterServerToolContainer1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreterServerToolContainer1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreterServerToolContainer1, typeof(global::G.CodeInterpreterServerToolContainer1), options);
             }
         }
     }

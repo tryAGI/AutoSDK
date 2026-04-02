@@ -13,35 +13,26 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolChoiceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolChoiceDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolChoiceDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolChoiceDiscriminator>(ref readerCopy, options);
 
             global::G.ToolChoiceAuto? auto = default;
             if (discriminator?.Type == global::G.ToolChoiceDiscriminatorType.Auto)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolChoiceAuto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolChoiceAuto> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolChoiceAuto)}");
-                auto = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                auto = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolChoiceAuto>(ref reader, options);
             }
             global::G.ToolChoiceAny? any = default;
             if (discriminator?.Type == global::G.ToolChoiceDiscriminatorType.Any)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolChoiceAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolChoiceAny> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolChoiceAny)}");
-                any = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                any = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolChoiceAny>(ref reader, options);
             }
             global::G.ToolChoiceTool? tool = default;
             if (discriminator?.Type == global::G.ToolChoiceDiscriminatorType.Tool)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolChoiceTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolChoiceTool> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolChoiceTool)}");
-                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                tool = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolChoiceTool>(ref reader, options);
             }
 
             var __value = new global::G.ToolChoice(
@@ -62,26 +53,19 @@ namespace G.JsonConverters
             global::G.ToolChoice value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsAuto)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolChoiceAuto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolChoiceAuto?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolChoiceAuto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto, typeof(global::G.ToolChoiceAuto), options);
             }
             else if (value.IsAny)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolChoiceAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolChoiceAny?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolChoiceAny).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any, typeof(global::G.ToolChoiceAny), options);
             }
             else if (value.IsTool)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolChoiceTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolChoiceTool?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolChoiceTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool, typeof(global::G.ToolChoiceTool), options);
             }
         }
     }

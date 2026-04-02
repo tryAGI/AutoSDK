@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -79,9 +78,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigOpenAI), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigOpenAI> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigOpenAI).Name}");
-                        openAI = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        openAI = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LLMConfigOpenAI>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -94,9 +91,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigVariant2).Name}");
-                        lLMConfigVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        lLMConfigVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LLMConfigVariant2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -109,9 +104,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigVariant3> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigVariant3).Name}");
-                        lLMConfigVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        lLMConfigVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LLMConfigVariant3>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -124,9 +117,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigDId), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigDId> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigDId).Name}");
-                        dId = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        dId = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LLMConfigDId>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -139,9 +130,7 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigGoogle), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigGoogle> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigGoogle).Name}");
-                        google = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        google = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LLMConfigGoogle>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -156,9 +145,7 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigOpenAI), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigOpenAI> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigOpenAI).Name}");
-                    openAI = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    openAI = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LLMConfigOpenAI>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -169,9 +156,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigVariant2).Name}");
-                    lLMConfigVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    lLMConfigVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LLMConfigVariant2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -182,9 +167,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigVariant3> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigVariant3).Name}");
-                    lLMConfigVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    lLMConfigVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LLMConfigVariant3>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -195,9 +178,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigDId), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigDId> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigDId).Name}");
-                    dId = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    dId = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LLMConfigDId>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -208,9 +189,7 @@ namespace G.JsonConverters
 
                 try
                 {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigGoogle), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigGoogle> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigGoogle).Name}");
-                    google = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    google = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LLMConfigGoogle>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -241,38 +220,27 @@ namespace G.JsonConverters
             global::G.LLMConfig value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsOpenAI)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigOpenAI), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigOpenAI?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigOpenAI).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAI!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAI, typeof(global::G.LLMConfigOpenAI), options);
             }
             else if (value.IsLLMConfigVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LLMConfigVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LLMConfigVariant2, typeof(global::G.LLMConfigVariant2), options);
             }
             else if (value.IsLLMConfigVariant3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigVariant3?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LLMConfigVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LLMConfigVariant3, typeof(global::G.LLMConfigVariant3), options);
             }
             else if (value.IsDId)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigDId), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigDId?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigDId).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DId!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DId, typeof(global::G.LLMConfigDId), options);
             }
             else if (value.IsGoogle)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigGoogle), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigGoogle?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigGoogle).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Google!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Google, typeof(global::G.LLMConfigGoogle), options);
             }
         }
     }

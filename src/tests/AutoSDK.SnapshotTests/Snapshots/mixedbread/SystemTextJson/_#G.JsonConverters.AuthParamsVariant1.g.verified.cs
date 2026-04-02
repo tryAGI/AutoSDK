@@ -13,28 +13,21 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataSourceAuthParamsVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataSourceAuthParamsVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DataSourceAuthParamsVariant1Discriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DataSourceAuthParamsVariant1Discriminator>(ref readerCopy, options);
 
             global::G.DataSourceOAuth2Params? oauth2 = default;
             if (discriminator?.Type == global::G.DataSourceAuthParamsVariant1DiscriminatorType.Oauth2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataSourceOAuth2Params), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataSourceOAuth2Params> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DataSourceOAuth2Params)}");
-                oauth2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                oauth2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DataSourceOAuth2Params>(ref reader, options);
             }
             global::G.DataSourceApiKeyParams? apiKey = default;
             if (discriminator?.Type == global::G.DataSourceAuthParamsVariant1DiscriminatorType.ApiKey)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataSourceApiKeyParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataSourceApiKeyParams> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DataSourceApiKeyParams)}");
-                apiKey = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                apiKey = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DataSourceApiKeyParams>(ref reader, options);
             }
 
             var __value = new global::G.AuthParamsVariant1(
@@ -53,20 +46,15 @@ namespace G.JsonConverters
             global::G.AuthParamsVariant1 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsOauth2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataSourceOAuth2Params), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataSourceOAuth2Params?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataSourceOAuth2Params).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2, typeof(global::G.DataSourceOAuth2Params), options);
             }
             else if (value.IsApiKey)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataSourceApiKeyParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataSourceApiKeyParams?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataSourceApiKeyParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiKey!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiKey, typeof(global::G.DataSourceApiKeyParams), options);
             }
         }
     }

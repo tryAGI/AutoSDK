@@ -13,28 +13,21 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowPhoneNumberNodeModelOutputPostDialDigitsVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowPhoneNumberNodeModelOutputPostDialDigitsVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WorkflowPhoneNumberNodeModelOutputPostDialDigitsVariant1Discriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WorkflowPhoneNumberNodeModelOutputPostDialDigitsVariant1Discriminator>(ref readerCopy, options);
 
             global::G.PostDialDigitsStatic? @static = default;
             if (discriminator?.Type == global::G.WorkflowPhoneNumberNodeModelOutputPostDialDigitsVariant1DiscriminatorType.Static)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PostDialDigitsStatic), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PostDialDigitsStatic> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PostDialDigitsStatic)}");
-                @static = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                @static = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PostDialDigitsStatic>(ref reader, options);
             }
             global::G.PostDialDigitsDynamicVariable? dynamic = default;
             if (discriminator?.Type == global::G.WorkflowPhoneNumberNodeModelOutputPostDialDigitsVariant1DiscriminatorType.Dynamic)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PostDialDigitsDynamicVariable), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PostDialDigitsDynamicVariable> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PostDialDigitsDynamicVariable)}");
-                dynamic = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                dynamic = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PostDialDigitsDynamicVariable>(ref reader, options);
             }
 
             var __value = new global::G.PostDialDigitsVariant13(
@@ -53,20 +46,15 @@ namespace G.JsonConverters
             global::G.PostDialDigitsVariant13 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsStatic)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PostDialDigitsStatic), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PostDialDigitsStatic?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PostDialDigitsStatic).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static, typeof(global::G.PostDialDigitsStatic), options);
             }
             else if (value.IsDynamic)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PostDialDigitsDynamicVariable), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PostDialDigitsDynamicVariable?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PostDialDigitsDynamicVariable).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dynamic!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dynamic, typeof(global::G.PostDialDigitsDynamicVariable), options);
             }
         }
     }

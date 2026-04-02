@@ -13,35 +13,26 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowToolResponseModelOutputStepDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowToolResponseModelOutputStepDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WorkflowToolResponseModelOutputStepDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WorkflowToolResponseModelOutputStepDiscriminator>(ref readerCopy, options);
 
             global::G.WorkflowToolEdgeStepModel? edge = default;
             if (discriminator?.Type == global::G.WorkflowToolResponseModelOutputStepDiscriminatorType.Edge)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowToolEdgeStepModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowToolEdgeStepModel> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WorkflowToolEdgeStepModel)}");
-                edge = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                edge = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WorkflowToolEdgeStepModel>(ref reader, options);
             }
             global::G.WorkflowToolNestedToolsStepModelOutput? nestedTools = default;
             if (discriminator?.Type == global::G.WorkflowToolResponseModelOutputStepDiscriminatorType.NestedTools)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowToolNestedToolsStepModelOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowToolNestedToolsStepModelOutput> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WorkflowToolNestedToolsStepModelOutput)}");
-                nestedTools = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                nestedTools = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WorkflowToolNestedToolsStepModelOutput>(ref reader, options);
             }
             global::G.WorkflowToolMaxIterationsExceededStepModel? maxIterationsExceeded = default;
             if (discriminator?.Type == global::G.WorkflowToolResponseModelOutputStepDiscriminatorType.MaxIterationsExceeded)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowToolMaxIterationsExceededStepModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowToolMaxIterationsExceededStepModel> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WorkflowToolMaxIterationsExceededStepModel)}");
-                maxIterationsExceeded = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                maxIterationsExceeded = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WorkflowToolMaxIterationsExceededStepModel>(ref reader, options);
             }
 
             var __value = new global::G.StepsItem2(
@@ -62,26 +53,19 @@ namespace G.JsonConverters
             global::G.StepsItem2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsEdge)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowToolEdgeStepModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowToolEdgeStepModel?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowToolEdgeStepModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Edge!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Edge, typeof(global::G.WorkflowToolEdgeStepModel), options);
             }
             else if (value.IsNestedTools)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowToolNestedToolsStepModelOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowToolNestedToolsStepModelOutput?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowToolNestedToolsStepModelOutput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NestedTools!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NestedTools, typeof(global::G.WorkflowToolNestedToolsStepModelOutput), options);
             }
             else if (value.IsMaxIterationsExceeded)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowToolMaxIterationsExceededStepModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowToolMaxIterationsExceededStepModel?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowToolMaxIterationsExceededStepModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxIterationsExceeded!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxIterationsExceeded, typeof(global::G.WorkflowToolMaxIterationsExceededStepModel), options);
             }
         }
     }

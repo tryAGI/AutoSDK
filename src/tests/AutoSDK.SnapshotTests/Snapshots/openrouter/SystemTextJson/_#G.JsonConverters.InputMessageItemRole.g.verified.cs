@@ -13,8 +13,7 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
@@ -29,38 +28,8 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole0), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score0++;
-                    }
-                }
-            }
             var __score1 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole1), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score1++;
-                    }
-                }
-            }
             var __score2 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole2), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score2++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -77,9 +46,7 @@ namespace G.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole0> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole0).Name}");
-                        inputMessageItemRole0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputMessageItemRole0 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputMessageItemRole0>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -94,9 +61,7 @@ namespace G.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole1).Name}");
-                        inputMessageItemRole1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputMessageItemRole1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputMessageItemRole1>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -111,9 +76,7 @@ namespace G.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole2).Name}");
-                        inputMessageItemRole2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputMessageItemRole2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputMessageItemRole2>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -129,9 +92,7 @@ namespace G.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole0> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole0).Name}");
-                    inputMessageItemRole0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputMessageItemRole0 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputMessageItemRole0>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -143,9 +104,7 @@ namespace G.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole1).Name}");
-                    inputMessageItemRole1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputMessageItemRole1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputMessageItemRole1>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -157,9 +116,7 @@ namespace G.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole2).Name}");
-                    inputMessageItemRole2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputMessageItemRole2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InputMessageItemRole2>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -186,26 +143,19 @@ namespace G.JsonConverters
             global::G.InputMessageItemRole value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsInputMessageItemRole0)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole0> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItemRole0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItemRole0, typeof(global::G.InputMessageItemRole0), options);
             }
             else if (value.IsInputMessageItemRole1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItemRole1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItemRole1, typeof(global::G.InputMessageItemRole1), options);
             }
             else if (value.IsInputMessageItemRole2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItemRole2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItemRole2, typeof(global::G.InputMessageItemRole2), options);
             }
         }
     }
