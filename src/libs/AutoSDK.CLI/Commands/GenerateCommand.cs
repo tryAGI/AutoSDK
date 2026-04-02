@@ -327,15 +327,16 @@ internal sealed class GenerateCommand : Command
             throw new NotSupportedException($"Unsupported language '{language}'. Currently only 'csharp' is supported.");
         }
 
-        var coreResult = CorePipeline.Prepare(
-            ((yaml, settings), GlobalSettings: settings),
-            static (document, currentSettings) => document.GetSchemas((CSharpSettings)currentSettings),
-            CSharpPipeline.ApplyModelNaming,
-            static text => text.ToClassName(),
-            static text => text.ToPropertyName());
-        var plugin = CSharpLanguagePlugin.Instance;
-        var data = plugin.Enrich(coreResult);
-        var files = plugin
+        var data = CSharpPipeline.PrepareAndEnrich(
+            ((yaml, settings), GlobalSettings: settings));
+
+        if (settings.GenerateJsonSerializerContextTypes &&
+            string.IsNullOrWhiteSpace(data.Converters.Settings.JsonSerializerContext))
+        {
+            Console.WriteLine("Warning: Disabled generated System.Text.Json source-generation context because some union-heavy types exceeded compiler metadata limits.");
+        }
+
+        var files = CSharpLanguagePlugin.Instance
             .GenerateFiles(data)
             .Where(x => !x.IsEmpty)
             .ToArray();

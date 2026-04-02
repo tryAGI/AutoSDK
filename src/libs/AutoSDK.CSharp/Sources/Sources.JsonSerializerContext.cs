@@ -1,5 +1,8 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using System.Globalization;
+using System.Security.Cryptography;
+using System.Text;
 namespace AutoSDK.Generation;
 
 public static partial class Sources
@@ -123,16 +126,10 @@ namespace {client.Settings.Namespace}
                 }
 
                 var baseName = $"{GetImplicitTypeInfoPropertyName(type)}_{SanitizeTypeInfoPropertyName(type)}";
-                var name = baseName;
-                var suffix = 2;
-
-                while (usedNames.Contains(name))
-                {
-                    name = $"{baseName}_{suffix++}";
-                }
-
-                usedNames.Add(name);
-                explicitNames[type] = name;
+                explicitNames[type] = ReserveExplicitTypeInfoPropertyName(
+                    usedNames,
+                    baseName,
+                    type);
             }
         }
 
@@ -160,16 +157,10 @@ namespace {client.Settings.Namespace}
 
             var implicitName = GetImplicitTypeInfoPropertyName(type);
             var baseName = $"{implicitName}2";
-            var name = baseName;
-            var suffix = 3;
-
-            while (usedNames.Contains(name))
-            {
-                name = $"{implicitName}{suffix++}";
-            }
-
-            usedNames.Add(name);
-            explicitNames[type] = name;
+            explicitNames[type] = ReserveExplicitTypeInfoPropertyName(
+                usedNames,
+                baseName,
+                type);
         }
 
         // Phase 3: Handle collisions between explicit types and STJ's implicit nullable naming.
@@ -196,19 +187,119 @@ namespace {client.Settings.Namespace}
             }
 
             var baseName = $"{implicitName}2";
-            var name = baseName;
-            var suffix = 3;
-
-            while (usedNames.Contains(name))
-            {
-                name = $"{implicitName}{suffix++}";
-            }
-
-            usedNames.Add(name);
-            explicitNames[type] = name;
+            explicitNames[type] = ReserveExplicitTypeInfoPropertyName(
+                usedNames,
+                baseName,
+                type);
         }
 
         return explicitNames;
+    }
+
+    private const int MaxExplicitTypeInfoPropertyNameLength = 120;
+    private const int MaxGeneratedTypeInfoNameLength = 120;
+
+    public static bool HasOversizedGeneratedJsonSerializerContextTypeNames(
+        EquatableArray<TypeData> types)
+    {
+        var distinctTypeNames = types
+            .Select(static x => x.CSharpTypeWithoutNullability)
+            .Where(static x => !string.IsNullOrWhiteSpace(x))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+
+        if (distinctTypeNames.Any(static x => GetImplicitTypeInfoPropertyName(x).Length > MaxGeneratedTypeInfoNameLength))
+        {
+            return true;
+        }
+
+        if (types.Any(static x =>
+                x.IsValueType &&
+                x.CSharpTypeWithNullability != x.CSharpTypeWithoutNullability &&
+                $"Nullable{GetImplicitTypeInfoPropertyName(x.CSharpTypeWithoutNullability)}".Length > MaxGeneratedTypeInfoNameLength))
+        {
+            return true;
+        }
+
+        var concreteListTypes = GetConcreteListTypes(
+            types
+                .Select(static x => x.CSharpTypeWithNullability)
+                .Where(static x => !string.IsNullOrWhiteSpace(x))
+                .Distinct(StringComparer.Ordinal)
+                .ToArray());
+
+        return concreteListTypes.Any(static x => GetImplicitTypeInfoPropertyName(x).Length > MaxGeneratedTypeInfoNameLength);
+    }
+
+    private static string ReserveExplicitTypeInfoPropertyName(
+        HashSet<string> usedNames,
+        string baseName,
+        string type)
+    {
+        for (var suffix = 0; ; suffix++)
+        {
+            var candidateSeed = suffix == 0
+                ? baseName
+                : $"{baseName}_{suffix + 2}";
+            var candidate = NormalizeExplicitTypeInfoPropertyName(candidateSeed, type);
+
+            if (usedNames.Add(candidate))
+            {
+                return candidate;
+            }
+        }
+    }
+
+    private static string NormalizeExplicitTypeInfoPropertyName(string candidate, string type)
+    {
+        if (candidate.Length <= MaxExplicitTypeInfoPropertyNameLength)
+        {
+            return candidate;
+        }
+
+        var prefix = SanitizeTypeInfoPropertyName(GetSimpleTypeName(type));
+        var hash = ComputeStableTypeInfoPropertyNameHash(candidate);
+        var maxPrefixLength = MaxExplicitTypeInfoPropertyNameLength - hash.Length - 1;
+
+        if (maxPrefixLength <= 0)
+        {
+            return hash;
+        }
+
+        if (prefix.Length > maxPrefixLength)
+        {
+            prefix = prefix.Substring(0, maxPrefixLength);
+        }
+
+        if (prefix.Length == 0)
+        {
+            prefix = "Type";
+            if (prefix.Length > maxPrefixLength)
+            {
+                prefix = prefix.Substring(0, maxPrefixLength);
+            }
+        }
+
+        return $"{prefix}_{hash}";
+    }
+
+    private static string ComputeStableTypeInfoPropertyNameHash(string value)
+    {
+        var bytes = Encoding.UTF8.GetBytes(value);
+#if NET10_0_OR_GREATER
+        var hash = SHA256.HashData(bytes);
+#else
+        using var sha256 = SHA256.Create();
+        var hash = sha256.ComputeHash(bytes);
+#endif
+        var builder = new StringBuilder(capacity: 16);
+
+        for (var index = 0; index < 8; index++)
+        {
+            builder.Append(hash[index].ToString("x2", CultureInfo.InvariantCulture));
+        }
+
+        return builder.ToString();
     }
 
     private static string GetImplicitTypeInfoPropertyName(string type)

@@ -1,7 +1,9 @@
 ﻿using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 using AutoSDK.Generation;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.Serialization.Json;
 using AutoSDK.TypeMapping;
 using static AutoSDK.Serialization.Json.SystemTextJsonSerializer;
 
@@ -205,5 +207,54 @@ public partial class JsonTests
         file.Name.Should().Be("G.JsonSerializerContextTypes.g.cs");
         file.Text.Should().Contain("namespace G");
         file.Text.Should().NotContain("namespace System");
+    }
+
+    [TestMethod]
+    public void JsonSerializerContext_ShortensHugeExplicitTypeInfoPropertyNames()
+    {
+        var policyNames = Enumerable.Range(1, 26)
+            .Select(index => $"global::G.NewModerateModerateRequestPolicieVariant{index:D2}")
+            .ToArray();
+        var oneOfType = $"global::G.OneOf<{string.Join(", ", policyNames)}>";
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "HugeUnion",
+            ClassName: "HugeUnionClient",
+            FileNameWithoutExtension: "G",
+            InterfaceFileNameWithoutExtension: "IG",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+        var type = T(TypeData.Default with
+        {
+            Namespace = "G",
+            GeneratedNamespace = "G",
+            CSharpTypeRaw = $"{oneOfType}?",
+            IsValueType = true,
+            OneOfCount = policyNames.Length,
+        });
+
+        var file = Sources.JsonSerializerContext(
+            client,
+            ImmutableArray.Create(type).AsEquatableArray());
+        var matches = Regex.Matches(file.Text, "TypeInfoPropertyName = \"([^\"]+)\"");
+        var propertyNames = matches.Cast<Match>()
+            .Select(match => match.Groups[1].Value)
+            .ToArray();
+
+        matches.Should().NotBeEmpty();
+        propertyNames.Select(static value => value.Length).Max().Should().BeLessThanOrEqualTo(120);
+        propertyNames.Should().OnlyContain(value => value.Contains("_", StringComparison.Ordinal));
     }
 }

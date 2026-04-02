@@ -15,6 +15,21 @@ public static class CSharpPipeline
         CancellationToken cancellationToken = default)
     {
         var totalTime = System.Diagnostics.Stopwatch.StartNew();
+        var data = PrepareAndEnrichCore(tuple, allowJsonSerializerContextFallback: true, cancellationToken);
+        return data with
+        {
+            Times = data.Times with
+            {
+                Total = totalTime.Elapsed,
+            },
+        };
+    }
+
+    private static Models.Data PrepareAndEnrichCore(
+        ((string Text, Settings Settings) Context, Settings GlobalSettings) tuple,
+        bool allowJsonSerializerContextFallback,
+        CancellationToken cancellationToken)
+    {
         var coreResult = CorePipeline.Prepare(
             tuple,
             static (document, settings) => document.GetSchemas((CSharpSettings)settings),
@@ -24,13 +39,37 @@ public static class CSharpPipeline
             cancellationToken);
 
         var data = Enrich(coreResult, cancellationToken);
-        return data with
+
+        if (allowJsonSerializerContextFallback &&
+            ShouldDisableGeneratedJsonSerializerContext(tuple.Context.Settings, data))
         {
-            Times = data.Times with
+            var fallbackSettings = tuple.Context.Settings with
             {
-                Total = totalTime.Elapsed,
-            },
-        };
+                JsonSerializerContext = string.Empty,
+                GenerateJsonSerializerContextTypes = false,
+            };
+            var fallbackGlobalSettings = tuple.GlobalSettings with
+            {
+                JsonSerializerContext = string.Empty,
+                GenerateJsonSerializerContextTypes = false,
+            };
+
+            return PrepareAndEnrichCore(
+                ((tuple.Context.Text, fallbackSettings), fallbackGlobalSettings),
+                allowJsonSerializerContextFallback: false,
+                cancellationToken);
+        }
+
+        return data;
+    }
+
+    private static bool ShouldDisableGeneratedJsonSerializerContext(
+        Settings settings,
+        Models.Data data)
+    {
+        return settings.GenerateJsonSerializerContextTypes &&
+               settings.UsesSystemTextJson() &&
+               Sources.HasOversizedGeneratedJsonSerializerContextTypeNames(data.Types);
     }
 
     public static void ApplyModelNaming(IReadOnlyList<SchemaContext> schemas)

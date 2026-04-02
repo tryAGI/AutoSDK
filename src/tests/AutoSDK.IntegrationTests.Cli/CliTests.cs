@@ -873,6 +873,116 @@ paths:
     }
 
     [TestMethod]
+    public async Task Generate_WithHugeUnionTypeInfoPropertyName_Builds()
+    {
+        var policyNames = new[]
+        {
+            "NewModerateModerateRequestPolicieToxicity",
+            "NewModerateModerateRequestPoliciePersonalInformation",
+            "NewModerateModerateRequestPolicieToxicitySevere",
+            "NewModerateModerateRequestPolicieHate",
+            "NewModerateModerateRequestPolicieIllicit",
+            "NewModerateModerateRequestPolicieIllicitDrugs",
+            "NewModerateModerateRequestPolicieIllicitAlcohol",
+            "NewModerateModerateRequestPolicieIllicitFirearms",
+            "NewModerateModerateRequestPolicieIllicitTobacco",
+            "NewModerateModerateRequestPolicieIllicitGambling",
+            "NewModerateModerateRequestPolicieCannabis",
+            "NewModerateModerateRequestPolicieAdult",
+            "NewModerateModerateRequestPolicieCrypto",
+            "NewModerateModerateRequestPolicieSexual",
+            "NewModerateModerateRequestPolicieFlirtation",
+            "NewModerateModerateRequestPolicieProfanity",
+            "NewModerateModerateRequestPolicieViolence",
+            "NewModerateModerateRequestPolicieSelfHarm",
+            "NewModerateModerateRequestPolicieSpam",
+            "NewModerateModerateRequestPolicieSelfPromotion",
+            "NewModerateModerateRequestPoliciePolitical",
+            "NewModerateModerateRequestPolicieReligion",
+            "NewModerateModerateRequestPolicieCodeAbuse",
+            "NewModerateModerateRequestPoliciePiiMasking",
+            "NewModerateModerateRequestPolicieUrlMasking",
+            "NewModerateModerateRequestPolicieGuideline",
+        };
+        var anyOfRefs = string.Join(
+            Environment.NewLine,
+            policyNames.Select(name => $"                - $ref: '#/components/schemas/{name}'"));
+        var policySchemas = string.Join(
+            Environment.NewLine + Environment.NewLine,
+            policyNames.Select(name => $$"""
+    {{name}}:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+"""));
+        var spec = $$"""
+openapi: 3.0.3
+info:
+  title: HugeUnion
+  version: 1.0.0
+paths:
+  /moderate:
+    post:
+      operationId: moderate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModerateRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+components:
+  schemas:
+    ModerateRequest:
+      type: object
+      required:
+        - content
+      properties:
+        content:
+          type: string
+        policies:
+          type: array
+          items:
+            anyOf:
+{{anyOfRefs}}
+
+{{policySchemas}}
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "huge-union-typeinfo.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "HugeUnion",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var contextFile = Path.Combine(outputDirectory, "HugeUnion.JsonSerializerContext.g.cs");
+                var contextTypesFile = Path.Combine(outputDirectory, "HugeUnion.JsonSerializerContextTypes.g.cs");
+
+                File.Exists(contextFile).Should().BeFalse();
+                File.Exists(contextTypesFile).Should().BeFalse();
+
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("JsonSerializerOptions");
+                content.Should().NotContain("JsonSerializerContext { get; set; } =");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithRequiredNullableAnyOfRequestProperty_Builds()
     {
         const string spec = """
