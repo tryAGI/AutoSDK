@@ -992,6 +992,114 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithHugeUnionDeprecatedConverterTypes_SuppressesCS0618_AndBuilds()
+    {
+        var policyNames = new[]
+        {
+            "NewModerateModerateRequestPolicieToxicity",
+            "NewModerateModerateRequestPoliciePersonalInformation",
+            "NewModerateModerateRequestPolicieToxicitySevere",
+            "NewModerateModerateRequestPolicieHate",
+            "NewModerateModerateRequestPolicieIllicit",
+            "NewModerateModerateRequestPolicieIllicitDrugs",
+            "NewModerateModerateRequestPolicieIllicitAlcohol",
+            "NewModerateModerateRequestPolicieIllicitFirearms",
+            "NewModerateModerateRequestPolicieIllicitTobacco",
+            "NewModerateModerateRequestPolicieIllicitGambling",
+            "NewModerateModerateRequestPolicieCannabis",
+            "NewModerateModerateRequestPolicieAdult",
+            "NewModerateModerateRequestPolicieCrypto",
+            "NewModerateModerateRequestPolicieSexual",
+            "NewModerateModerateRequestPolicieFlirtation",
+            "NewModerateModerateRequestPolicieProfanity",
+            "NewModerateModerateRequestPolicieViolence",
+            "NewModerateModerateRequestPolicieSelfHarm",
+            "NewModerateModerateRequestPolicieSpam",
+            "NewModerateModerateRequestPolicieSelfPromotion",
+            "NewModerateModerateRequestPoliciePolitical",
+            "NewModerateModerateRequestPolicieReligion",
+            "NewModerateModerateRequestPolicieCodeAbuse",
+            "NewModerateModerateRequestPoliciePiiMasking",
+            "NewModerateModerateRequestPolicieUrlMasking",
+            "NewModerateModerateRequestPolicieGuideline",
+        };
+        var deprecatedPolicy = policyNames[0];
+        var anyOfRefs = string.Join(
+            Environment.NewLine,
+            policyNames.Select(name => $"                - $ref: '#/components/schemas/{name}'"));
+        var policySchemas = string.Join(
+            Environment.NewLine + Environment.NewLine,
+            policyNames.Select(name => $$"""
+    {{name}}:
+      type: object
+      {{(name == deprecatedPolicy ? "deprecated: true" : string.Empty)}}
+      properties:
+        enabled:
+          type: boolean
+"""));
+        var spec = $$"""
+openapi: 3.0.3
+info:
+  title: HugeUnionDeprecated
+  version: 1.0.0
+paths:
+  /moderate:
+    post:
+      operationId: moderate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModerateRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+components:
+  schemas:
+    ModerateRequest:
+      type: object
+      required:
+        - content
+      properties:
+        content:
+          type: string
+        policies:
+          type: array
+          items:
+            anyOf:
+{{anyOfRefs}}
+
+{{policySchemas}}
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "huge-union-deprecated.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "HugeUnionDeprecated",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("JsonSerializerOptions");
+                content.Should().Contain("#pragma warning disable CS0618 // Type or member is obsolete");
+                content.Should().Contain(deprecatedPolicy);
+                content.Should().NotContain("JsonSerializerContext { get; set; } =");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithFernRequestName_UsesRequestModelName()
     {
         const string spec = """

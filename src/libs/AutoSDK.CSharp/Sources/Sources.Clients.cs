@@ -11,6 +11,11 @@ public static partial class Sources
     {
         var serializer = client.Settings.JsonSerializerType.GetSerializer();
         var hasOptions = !client.Settings.HasJsonSerializerContext();
+        var suppressDeprecatedWarningsForJsonSerializerOptions =
+            hasOptions &&
+            client.Settings.UsesSystemTextJson() &&
+            client.Id == "MainConstructor" &&
+            client.Converters.Length != 0;
         
         return $@"
 #nullable enable
@@ -42,10 +47,12 @@ namespace {client.Settings.Namespace}
         
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@" 
+{(suppressDeprecatedWarningsForJsonSerializerOptions ? "        #pragma warning disable CS0618 // Type or member is obsolete" : TrimmedLine)}
         public {serializer.GetOptionsType()} JsonSerializerOptions {{ get; set; }}{(
             client.Id == "MainConstructor"
                 ? $" = {serializer.CreateDefaultSettings(client.Converters)};"
-                : $" = new {serializer.GetOptionsType()}();")}" : $@" 
+                : $" = new {serializer.GetOptionsType()}();")}
+{(suppressDeprecatedWarningsForJsonSerializerOptions ? "        #pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}" : $@" 
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }} = global::{client.Settings.JsonSerializerContext}.Default;")}
 
 {(client.Clients.Length != 0 ? "\n" + client.Clients.Select(x => $@"

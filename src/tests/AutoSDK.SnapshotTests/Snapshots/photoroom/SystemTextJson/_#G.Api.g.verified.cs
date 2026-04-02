@@ -43,6 +43,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        #pragma warning disable CS0618 // Type or member is obsolete
         public global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; } = new global::System.Text.Json.JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true,
@@ -126,6 +127,7 @@ namespace G
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
+        #pragma warning restore CS0618 // Type or member is obsolete
 
 
         /// <summary>
