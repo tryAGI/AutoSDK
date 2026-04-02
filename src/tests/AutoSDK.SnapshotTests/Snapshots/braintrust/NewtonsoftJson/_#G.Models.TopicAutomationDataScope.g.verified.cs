@@ -14,69 +14,69 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TopicAutomationDataScopeVariant1? Value1 { get; init; }
+        public global::G.TopicAutomationDataScopeVariant1? TopicAutomationDataScopeVariant1 { get; init; }
 #else
-        public global::G.TopicAutomationDataScopeVariant1? Value1 { get; }
+        public global::G.TopicAutomationDataScopeVariant1? TopicAutomationDataScopeVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TopicAutomationDataScopeVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsTopicAutomationDataScopeVariant1 => TopicAutomationDataScopeVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TopicAutomationDataScopeVariant2? Value2 { get; init; }
+        public global::G.TopicAutomationDataScopeVariant2? TopicAutomationDataScopeVariant2 { get; init; }
 #else
-        public global::G.TopicAutomationDataScopeVariant2? Value2 { get; }
+        public global::G.TopicAutomationDataScopeVariant2? TopicAutomationDataScopeVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TopicAutomationDataScopeVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsTopicAutomationDataScopeVariant2 => TopicAutomationDataScopeVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TopicAutomationDataScopeVariant3? Value3 { get; init; }
+        public global::G.TopicAutomationDataScopeVariant3? TopicAutomationDataScopeVariant3 { get; init; }
 #else
-        public global::G.TopicAutomationDataScopeVariant3? Value3 { get; }
+        public global::G.TopicAutomationDataScopeVariant3? TopicAutomationDataScopeVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TopicAutomationDataScopeVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsTopicAutomationDataScopeVariant3 => TopicAutomationDataScopeVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value4 { get; init; }
+        public object? TopicAutomationDataScopeVariant4 { get; init; }
 #else
-        public object? Value4 { get; }
+        public object? TopicAutomationDataScopeVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TopicAutomationDataScopeVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsTopicAutomationDataScopeVariant4 => TopicAutomationDataScopeVariant4 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -85,14 +85,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TopicAutomationDataScopeVariant1?(TopicAutomationDataScope @this) => @this.Value1;
+        public static implicit operator global::G.TopicAutomationDataScopeVariant1?(TopicAutomationDataScope @this) => @this.TopicAutomationDataScopeVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public TopicAutomationDataScope(global::G.TopicAutomationDataScopeVariant1? value)
         {
-            Value1 = value;
+            TopicAutomationDataScopeVariant1 = value;
         }
 
         /// <summary>
@@ -103,14 +103,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TopicAutomationDataScopeVariant2?(TopicAutomationDataScope @this) => @this.Value2;
+        public static implicit operator global::G.TopicAutomationDataScopeVariant2?(TopicAutomationDataScope @this) => @this.TopicAutomationDataScopeVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public TopicAutomationDataScope(global::G.TopicAutomationDataScopeVariant2? value)
         {
-            Value2 = value;
+            TopicAutomationDataScopeVariant2 = value;
         }
 
         /// <summary>
@@ -121,50 +121,50 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TopicAutomationDataScopeVariant3?(TopicAutomationDataScope @this) => @this.Value3;
+        public static implicit operator global::G.TopicAutomationDataScopeVariant3?(TopicAutomationDataScope @this) => @this.TopicAutomationDataScopeVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public TopicAutomationDataScope(global::G.TopicAutomationDataScopeVariant3? value)
         {
-            Value3 = value;
+            TopicAutomationDataScopeVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TopicAutomationDataScope(
-            global::G.TopicAutomationDataScopeVariant1? value1,
-            global::G.TopicAutomationDataScopeVariant2? value2,
-            global::G.TopicAutomationDataScopeVariant3? value3,
-            object? value4
+            global::G.TopicAutomationDataScopeVariant1? topicAutomationDataScopeVariant1,
+            global::G.TopicAutomationDataScopeVariant2? topicAutomationDataScopeVariant2,
+            global::G.TopicAutomationDataScopeVariant3? topicAutomationDataScopeVariant3,
+            object? topicAutomationDataScopeVariant4
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
+            TopicAutomationDataScopeVariant1 = topicAutomationDataScopeVariant1;
+            TopicAutomationDataScopeVariant2 = topicAutomationDataScopeVariant2;
+            TopicAutomationDataScopeVariant3 = topicAutomationDataScopeVariant3;
+            TopicAutomationDataScopeVariant4 = topicAutomationDataScopeVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            TopicAutomationDataScopeVariant4 as object ??
+            TopicAutomationDataScopeVariant3 as object ??
+            TopicAutomationDataScopeVariant2 as object ??
+            TopicAutomationDataScopeVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() 
+            TopicAutomationDataScopeVariant1?.ToString() ??
+            TopicAutomationDataScopeVariant2?.ToString() ??
+            TopicAutomationDataScopeVariant3?.ToString() ??
+            TopicAutomationDataScopeVariant4?.ToString() 
             ;
 
         /// <summary>
@@ -172,17 +172,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4;
+            return IsTopicAutomationDataScopeVariant1 || IsTopicAutomationDataScopeVariant2 || IsTopicAutomationDataScopeVariant3 || IsTopicAutomationDataScopeVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TopicAutomationDataScopeVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.TopicAutomationDataScopeVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.TopicAutomationDataScopeVariant3?, TResult>? value3 = null,
-            global::System.Func<object?, TResult>? value4 = null,
+            global::System.Func<global::G.TopicAutomationDataScopeVariant1?, TResult>? topicAutomationDataScopeVariant1 = null,
+            global::System.Func<global::G.TopicAutomationDataScopeVariant2?, TResult>? topicAutomationDataScopeVariant2 = null,
+            global::System.Func<global::G.TopicAutomationDataScopeVariant3?, TResult>? topicAutomationDataScopeVariant3 = null,
+            global::System.Func<object?, TResult>? topicAutomationDataScopeVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -190,21 +190,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsTopicAutomationDataScopeVariant1 && topicAutomationDataScopeVariant1 != null)
             {
-                return value1(Value1!);
+                return topicAutomationDataScopeVariant1(TopicAutomationDataScopeVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsTopicAutomationDataScopeVariant2 && topicAutomationDataScopeVariant2 != null)
             {
-                return value2(Value2!);
+                return topicAutomationDataScopeVariant2(TopicAutomationDataScopeVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsTopicAutomationDataScopeVariant3 && topicAutomationDataScopeVariant3 != null)
             {
-                return value3(Value3!);
+                return topicAutomationDataScopeVariant3(TopicAutomationDataScopeVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsTopicAutomationDataScopeVariant4 && topicAutomationDataScopeVariant4 != null)
             {
-                return value4(Value4!);
+                return topicAutomationDataScopeVariant4(TopicAutomationDataScopeVariant4!);
             }
 
             return default(TResult);
@@ -214,10 +214,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TopicAutomationDataScopeVariant1?>? value1 = null,
-            global::System.Action<global::G.TopicAutomationDataScopeVariant2?>? value2 = null,
-            global::System.Action<global::G.TopicAutomationDataScopeVariant3?>? value3 = null,
-            global::System.Action<object?>? value4 = null,
+            global::System.Action<global::G.TopicAutomationDataScopeVariant1?>? topicAutomationDataScopeVariant1 = null,
+            global::System.Action<global::G.TopicAutomationDataScopeVariant2?>? topicAutomationDataScopeVariant2 = null,
+            global::System.Action<global::G.TopicAutomationDataScopeVariant3?>? topicAutomationDataScopeVariant3 = null,
+            global::System.Action<object?>? topicAutomationDataScopeVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -225,21 +225,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsTopicAutomationDataScopeVariant1)
             {
-                value1?.Invoke(Value1!);
+                topicAutomationDataScopeVariant1?.Invoke(TopicAutomationDataScopeVariant1!);
             }
-            else if (IsValue2)
+            else if (IsTopicAutomationDataScopeVariant2)
             {
-                value2?.Invoke(Value2!);
+                topicAutomationDataScopeVariant2?.Invoke(TopicAutomationDataScopeVariant2!);
             }
-            else if (IsValue3)
+            else if (IsTopicAutomationDataScopeVariant3)
             {
-                value3?.Invoke(Value3!);
+                topicAutomationDataScopeVariant3?.Invoke(TopicAutomationDataScopeVariant3!);
             }
-            else if (IsValue4)
+            else if (IsTopicAutomationDataScopeVariant4)
             {
-                value4?.Invoke(Value4!);
+                topicAutomationDataScopeVariant4?.Invoke(TopicAutomationDataScopeVariant4!);
             }
         }
 
@@ -250,13 +250,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                TopicAutomationDataScopeVariant1,
                 typeof(global::G.TopicAutomationDataScopeVariant1),
-                Value2,
+                TopicAutomationDataScopeVariant2,
                 typeof(global::G.TopicAutomationDataScopeVariant2),
-                Value3,
+                TopicAutomationDataScopeVariant3,
                 typeof(global::G.TopicAutomationDataScopeVariant3),
-                Value4,
+                TopicAutomationDataScopeVariant4,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -274,10 +274,10 @@ namespace G
         public bool Equals(TopicAutomationDataScope other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.TopicAutomationDataScopeVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TopicAutomationDataScopeVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TopicAutomationDataScopeVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value4, other.Value4) 
+                global::System.Collections.Generic.EqualityComparer<global::G.TopicAutomationDataScopeVariant1?>.Default.Equals(TopicAutomationDataScopeVariant1, other.TopicAutomationDataScopeVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TopicAutomationDataScopeVariant2?>.Default.Equals(TopicAutomationDataScopeVariant2, other.TopicAutomationDataScopeVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TopicAutomationDataScopeVariant3?>.Default.Equals(TopicAutomationDataScopeVariant3, other.TopicAutomationDataScopeVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(TopicAutomationDataScopeVariant4, other.TopicAutomationDataScopeVariant4) 
                 ;
         }
 

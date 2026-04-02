@@ -65,35 +65,35 @@ namespace G
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value4 { get; init; }
+        public object? McpServerToolRequireApprovalVariant4 { get; init; }
 #else
-        public object? Value4 { get; }
+        public object? McpServerToolRequireApprovalVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpServerToolRequireApprovalVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsMcpServerToolRequireApprovalVariant4 => McpServerToolRequireApprovalVariant4 != null;
 
         /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value5 { get; init; }
+        public object? McpServerToolRequireApprovalVariant5 { get; init; }
 #else
-        public object? Value5 { get; }
+        public object? McpServerToolRequireApprovalVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpServerToolRequireApprovalVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsMcpServerToolRequireApprovalVariant5 => McpServerToolRequireApprovalVariant5 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -155,23 +155,23 @@ namespace G
             global::G.McpServerToolRequireApproval0? mcpServerToolRequireApproval0,
             global::G.McpServerToolRequireApproval1? mcpServerToolRequireApproval1,
             global::G.McpServerToolRequireApproval2? mcpServerToolRequireApproval2,
-            object? value4,
-            object? value5
+            object? mcpServerToolRequireApprovalVariant4,
+            object? mcpServerToolRequireApprovalVariant5
             )
         {
             McpServerToolRequireApproval0 = mcpServerToolRequireApproval0;
             McpServerToolRequireApproval1 = mcpServerToolRequireApproval1;
             McpServerToolRequireApproval2 = mcpServerToolRequireApproval2;
-            Value4 = value4;
-            Value5 = value5;
+            McpServerToolRequireApprovalVariant4 = mcpServerToolRequireApprovalVariant4;
+            McpServerToolRequireApprovalVariant5 = mcpServerToolRequireApprovalVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value5 as object ??
-            Value4 as object ??
+            McpServerToolRequireApprovalVariant5 as object ??
+            McpServerToolRequireApprovalVariant4 as object ??
             McpServerToolRequireApproval2 as object ??
             McpServerToolRequireApproval1 as object ??
             McpServerToolRequireApproval0 as object 
@@ -184,8 +184,8 @@ namespace G
             McpServerToolRequireApproval0?.ToString() ??
             McpServerToolRequireApproval1?.ToValueString() ??
             McpServerToolRequireApproval2?.ToValueString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() 
+            McpServerToolRequireApprovalVariant4?.ToString() ??
+            McpServerToolRequireApprovalVariant5?.ToString() 
             ;
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && !IsValue4 && !IsValue5 || !IsMcpServerToolRequireApproval0 && IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && !IsValue4 && !IsValue5 || !IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && IsMcpServerToolRequireApproval2 && !IsValue4 && !IsValue5 || !IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && IsValue4 && !IsValue5 || !IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && !IsValue4 && IsValue5;
+            return IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && !IsMcpServerToolRequireApprovalVariant4 && !IsMcpServerToolRequireApprovalVariant5 || !IsMcpServerToolRequireApproval0 && IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && !IsMcpServerToolRequireApprovalVariant4 && !IsMcpServerToolRequireApprovalVariant5 || !IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && IsMcpServerToolRequireApproval2 && !IsMcpServerToolRequireApprovalVariant4 && !IsMcpServerToolRequireApprovalVariant5 || !IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && IsMcpServerToolRequireApprovalVariant4 && !IsMcpServerToolRequireApprovalVariant5 || !IsMcpServerToolRequireApproval0 && !IsMcpServerToolRequireApproval1 && !IsMcpServerToolRequireApproval2 && !IsMcpServerToolRequireApprovalVariant4 && IsMcpServerToolRequireApprovalVariant5;
         }
 
         /// <summary>
@@ -203,8 +203,8 @@ namespace G
             global::System.Func<global::G.McpServerToolRequireApproval0?, TResult>? mcpServerToolRequireApproval0 = null,
             global::System.Func<global::G.McpServerToolRequireApproval1?, TResult>? mcpServerToolRequireApproval1 = null,
             global::System.Func<global::G.McpServerToolRequireApproval2?, TResult>? mcpServerToolRequireApproval2 = null,
-            global::System.Func<object?, TResult>? value4 = null,
-            global::System.Func<object?, TResult>? value5 = null,
+            global::System.Func<object?, TResult>? mcpServerToolRequireApprovalVariant4 = null,
+            global::System.Func<object?, TResult>? mcpServerToolRequireApprovalVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -224,13 +224,13 @@ namespace G
             {
                 return mcpServerToolRequireApproval2(McpServerToolRequireApproval2!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsMcpServerToolRequireApprovalVariant4 && mcpServerToolRequireApprovalVariant4 != null)
             {
-                return value4(Value4!);
+                return mcpServerToolRequireApprovalVariant4(McpServerToolRequireApprovalVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsMcpServerToolRequireApprovalVariant5 && mcpServerToolRequireApprovalVariant5 != null)
             {
-                return value5(Value5!);
+                return mcpServerToolRequireApprovalVariant5(McpServerToolRequireApprovalVariant5!);
             }
 
             return default(TResult);
@@ -243,8 +243,8 @@ namespace G
             global::System.Action<global::G.McpServerToolRequireApproval0?>? mcpServerToolRequireApproval0 = null,
             global::System.Action<global::G.McpServerToolRequireApproval1?>? mcpServerToolRequireApproval1 = null,
             global::System.Action<global::G.McpServerToolRequireApproval2?>? mcpServerToolRequireApproval2 = null,
-            global::System.Action<object?>? value4 = null,
-            global::System.Action<object?>? value5 = null,
+            global::System.Action<object?>? mcpServerToolRequireApprovalVariant4 = null,
+            global::System.Action<object?>? mcpServerToolRequireApprovalVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -264,13 +264,13 @@ namespace G
             {
                 mcpServerToolRequireApproval2?.Invoke(McpServerToolRequireApproval2!);
             }
-            else if (IsValue4)
+            else if (IsMcpServerToolRequireApprovalVariant4)
             {
-                value4?.Invoke(Value4!);
+                mcpServerToolRequireApprovalVariant4?.Invoke(McpServerToolRequireApprovalVariant4!);
             }
-            else if (IsValue5)
+            else if (IsMcpServerToolRequireApprovalVariant5)
             {
-                value5?.Invoke(Value5!);
+                mcpServerToolRequireApprovalVariant5?.Invoke(McpServerToolRequireApprovalVariant5!);
             }
         }
 
@@ -287,9 +287,9 @@ namespace G
                 typeof(global::G.McpServerToolRequireApproval1),
                 McpServerToolRequireApproval2,
                 typeof(global::G.McpServerToolRequireApproval2),
-                Value4,
+                McpServerToolRequireApprovalVariant4,
                 typeof(object),
-                Value5,
+                McpServerToolRequireApprovalVariant5,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -310,8 +310,8 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.McpServerToolRequireApproval0?>.Default.Equals(McpServerToolRequireApproval0, other.McpServerToolRequireApproval0) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.McpServerToolRequireApproval1?>.Default.Equals(McpServerToolRequireApproval1, other.McpServerToolRequireApproval1) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.McpServerToolRequireApproval2?>.Default.Equals(McpServerToolRequireApproval2, other.McpServerToolRequireApproval2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value5, other.Value5) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(McpServerToolRequireApprovalVariant4, other.McpServerToolRequireApprovalVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(McpServerToolRequireApprovalVariant5, other.McpServerToolRequireApprovalVariant5) 
                 ;
         }
 

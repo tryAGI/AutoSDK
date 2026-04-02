@@ -84,7 +84,7 @@ namespace G.JsonConverters
             global::G.FacetData? facet = default;
             global::G.BatchedFacetData? batchedFacet = default;
             global::G.FunctionDataParameters? parameters = default;
-            global::G.AllOf<global::G.TopicMapData, object>? value9 = default;
+            global::G.AllOf<global::G.TopicMapData, object>? functionDataVariant9 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -213,7 +213,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.TopicMapData, object>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.TopicMapData, object>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.TopicMapData, object>).Name}");
-                        value9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        functionDataVariant9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -224,7 +224,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (prompt == null && code == null && graph == null && remoteEval == null && global == null && facet == null && batchedFacet == null && parameters == null && value9 == null)
+            if (prompt == null && code == null && graph == null && remoteEval == null && global == null && facet == null && batchedFacet == null && parameters == null && functionDataVariant9 == null)
             {
                 try
                 {
@@ -334,7 +334,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.TopicMapData, object>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.TopicMapData, object>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.TopicMapData, object>).Name}");
-                    value9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    functionDataVariant9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -361,7 +361,7 @@ namespace G.JsonConverters
 
                 parameters,
 
-                value9
+                functionDataVariant9
                 );
 
             return __value;
@@ -424,11 +424,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataParameters).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Parameters!, typeInfo);
             }
-            else if (value.IsValue9)
+            else if (value.IsFunctionDataVariant9)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.TopicMapData, object>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.TopicMapData, object>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.TopicMapData, object>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value9!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionDataVariant9!.Value, typeInfo);
             }
         }
     }

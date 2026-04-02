@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatStreamEvent? Value1 { get; init; }
+        public global::G.ChatStreamEvent? Stream { get; init; }
 #else
-        public global::G.ChatStreamEvent? Value1 { get; }
+        public global::G.ChatStreamEvent? Stream { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stream))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsStream => Stream != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCitationGenerationEventLg3v2o? Value2 { get; init; }
+        public global::G.ChatCitationGenerationEventLg3v2o? Lg3v2o { get; init; }
 #else
-        public global::G.ChatCitationGenerationEventLg3v2o? Value2 { get; }
+        public global::G.ChatCitationGenerationEventLg3v2o? Lg3v2o { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Lg3v2o))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsLg3v2o => Lg3v2o != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatStreamEvent?(ChatCitationGenerationEvent @this) => @this.Value1;
+        public static implicit operator global::G.ChatStreamEvent?(ChatCitationGenerationEvent @this) => @this.Stream;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCitationGenerationEvent(global::G.ChatStreamEvent? value)
         {
-            Value1 = value;
+            Stream = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCitationGenerationEventLg3v2o?(ChatCitationGenerationEvent @this) => @this.Value2;
+        public static implicit operator global::G.ChatCitationGenerationEventLg3v2o?(ChatCitationGenerationEvent @this) => @this.Lg3v2o;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCitationGenerationEvent(global::G.ChatCitationGenerationEventLg3v2o? value)
         {
-            Value2 = value;
+            Lg3v2o = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCitationGenerationEvent(
-            global::G.ChatStreamEvent? value1,
-            global::G.ChatCitationGenerationEventLg3v2o? value2
+            global::G.ChatStreamEvent? stream,
+            global::G.ChatCitationGenerationEventLg3v2o? lg3v2o
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Stream = stream;
+            Lg3v2o = lg3v2o;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Lg3v2o as object ??
+            Stream as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Stream?.ToString() ??
+            Lg3v2o?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsStream && IsLg3v2o;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEvent?, TResult>? value1 = null,
-            global::System.Func<global::G.ChatCitationGenerationEventLg3v2o?, TResult>? value2 = null,
+            global::System.Func<global::G.ChatStreamEvent?, TResult>? stream = null,
+            global::System.Func<global::G.ChatCitationGenerationEventLg3v2o?, TResult>? lg3v2o = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsStream && stream != null)
             {
-                return value1(Value1!);
+                return stream(Stream!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsLg3v2o && lg3v2o != null)
             {
-                return value2(Value2!);
+                return lg3v2o(Lg3v2o!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEvent?>? value1 = null,
-            global::System.Action<global::G.ChatCitationGenerationEventLg3v2o?>? value2 = null,
+            global::System.Action<global::G.ChatStreamEvent?>? stream = null,
+            global::System.Action<global::G.ChatCitationGenerationEventLg3v2o?>? lg3v2o = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsStream)
             {
-                value1?.Invoke(Value1!);
+                stream?.Invoke(Stream!);
             }
-            else if (IsValue2)
+            else if (IsLg3v2o)
             {
-                value2?.Invoke(Value2!);
+                lg3v2o?.Invoke(Lg3v2o!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Stream,
                 typeof(global::G.ChatStreamEvent),
-                Value2,
+                Lg3v2o,
                 typeof(global::G.ChatCitationGenerationEventLg3v2o),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ChatCitationGenerationEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEvent?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCitationGenerationEventLg3v2o?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEvent?>.Default.Equals(Stream, other.Stream) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCitationGenerationEventLg3v2o?>.Default.Equals(Lg3v2o, other.Lg3v2o) 
                 ;
         }
 

@@ -33,18 +33,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InputMessageResourceVariant2? Value2 { get; init; }
+        public global::G.InputMessageResourceVariant2? InputMessageResourceVariant2 { get; init; }
 #else
-        public global::G.InputMessageResourceVariant2? Value2 { get; }
+        public global::G.InputMessageResourceVariant2? InputMessageResourceVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessageResourceVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsInputMessageResourceVariant2 => InputMessageResourceVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -71,14 +71,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InputMessageResourceVariant2?(InputMessageResource @this) => @this.Value2;
+        public static implicit operator global::G.InputMessageResourceVariant2?(InputMessageResource @this) => @this.InputMessageResourceVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public InputMessageResource(global::G.InputMessageResourceVariant2? value)
         {
-            Value2 = value;
+            InputMessageResourceVariant2 = value;
         }
 
         /// <summary>
@@ -86,18 +86,18 @@ namespace G
         /// </summary>
         public InputMessageResource(
             global::G.InputMessage? inputMessage,
-            global::G.InputMessageResourceVariant2? value2
+            global::G.InputMessageResourceVariant2? inputMessageResourceVariant2
             )
         {
             InputMessage = inputMessage;
-            Value2 = value2;
+            InputMessageResourceVariant2 = inputMessageResourceVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            InputMessageResourceVariant2 as object ??
             InputMessage as object 
             ;
 
@@ -106,7 +106,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             InputMessage?.ToString() ??
-            Value2?.ToString() 
+            InputMessageResourceVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsInputMessage && IsValue2;
+            return IsInputMessage && IsInputMessageResourceVariant2;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.InputMessage?, TResult>? inputMessage = null,
-            global::System.Func<global::G.InputMessageResourceVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.InputMessageResourceVariant2?, TResult>? inputMessageResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -134,9 +134,9 @@ namespace G
             {
                 return inputMessage(InputMessage!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsInputMessageResourceVariant2 && inputMessageResourceVariant2 != null)
             {
-                return value2(Value2!);
+                return inputMessageResourceVariant2(InputMessageResourceVariant2!);
             }
 
             return default(TResult);
@@ -147,7 +147,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.InputMessage?>? inputMessage = null,
-            global::System.Action<global::G.InputMessageResourceVariant2?>? value2 = null,
+            global::System.Action<global::G.InputMessageResourceVariant2?>? inputMessageResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -159,9 +159,9 @@ namespace G
             {
                 inputMessage?.Invoke(InputMessage!);
             }
-            else if (IsValue2)
+            else if (IsInputMessageResourceVariant2)
             {
-                value2?.Invoke(Value2!);
+                inputMessageResourceVariant2?.Invoke(InputMessageResourceVariant2!);
             }
         }
 
@@ -174,7 +174,7 @@ namespace G
             {
                 InputMessage,
                 typeof(global::G.InputMessage),
-                Value2,
+                InputMessageResourceVariant2,
                 typeof(global::G.InputMessageResourceVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -193,7 +193,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.InputMessage?>.Default.Equals(InputMessage, other.InputMessage) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.InputMessageResourceVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.InputMessageResourceVariant2?>.Default.Equals(InputMessageResourceVariant2, other.InputMessageResourceVariant2) 
                 ;
         }
 

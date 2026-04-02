@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 => ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 != null;
 
         /// <summary>
         /// An array of input items used for generating completions.
@@ -51,25 +51,25 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ResponsesPostRequestBodyContentApplicationJsonSchemaInput @this) => @this.Value1;
+        public static implicit operator string?(ResponsesPostRequestBodyContentApplicationJsonSchemaInput @this) => @this.ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesPostRequestBodyContentApplicationJsonSchemaInput(string? value)
         {
-            Value1 = value;
+            ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesPostRequestBodyContentApplicationJsonSchemaInput(
-            string? value1,
+            string? responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1,
             global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>? responsesPostRequestBodyContentApplicationJsonSchemaInput1
             )
         {
-            Value1 = value1;
+            ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 = responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1;
             ResponsesPostRequestBodyContentApplicationJsonSchemaInput1 = responsesPostRequestBodyContentApplicationJsonSchemaInput1;
         }
 
@@ -78,14 +78,14 @@ namespace G
         /// </summary>
         public object? Object =>
             ResponsesPostRequestBodyContentApplicationJsonSchemaInput1 as object ??
-            Value1 as object 
+            ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1?.ToString() ??
             ResponsesPostRequestBodyContentApplicationJsonSchemaInput1?.ToString() 
             ;
 
@@ -94,14 +94,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1 || !IsValue1 && IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1;
+            return IsResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 && !IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1 || !IsResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 && IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>?, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaInput1 = null,
             bool validate = true)
         {
@@ -110,9 +110,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 && responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 != null)
             {
-                return value1(Value1!);
+                return responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1(ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1!);
             }
             else if (IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1 && responsesPostRequestBodyContentApplicationJsonSchemaInput1 != null)
             {
@@ -126,7 +126,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>?>? responsesPostRequestBodyContentApplicationJsonSchemaInput1 = null,
             bool validate = true)
         {
@@ -135,9 +135,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1)
             {
-                value1?.Invoke(Value1!);
+                responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1?.Invoke(ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1!);
             }
             else if (IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1)
             {
@@ -152,7 +152,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1,
                 typeof(string),
                 ResponsesPostRequestBodyContentApplicationJsonSchemaInput1,
                 typeof(global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>),
@@ -172,7 +172,7 @@ namespace G
         public bool Equals(ResponsesPostRequestBodyContentApplicationJsonSchemaInput other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1, other.ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>?>.Default.Equals(ResponsesPostRequestBodyContentApplicationJsonSchemaInput1, other.ResponsesPostRequestBodyContentApplicationJsonSchemaInput1) 
                 ;
         }

@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ValueVariantsVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ValueVariantsVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ValueVariantsVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsValueVariantsVariant1 => ValueVariantsVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public long? Value2 { get; init; }
+        public long? ValueVariantsVariant2 { get; init; }
 #else
-        public long? Value2 { get; }
+        public long? ValueVariantsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ValueVariantsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsValueVariantsVariant2 => ValueVariantsVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public bool? Value3 { get; init; }
+        public bool? ValueVariantsVariant3 { get; init; }
 #else
-        public bool? Value3 { get; }
+        public bool? ValueVariantsVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ValueVariantsVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsValueVariantsVariant3 => ValueVariantsVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ValueVariants @this) => @this.Value1;
+        public static implicit operator string?(ValueVariants @this) => @this.ValueVariantsVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ValueVariants(string? value)
         {
-            Value1 = value;
+            ValueVariantsVariant1 = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator long?(ValueVariants @this) => @this.Value2;
+        public static implicit operator long?(ValueVariants @this) => @this.ValueVariantsVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ValueVariants(long? value)
         {
-            Value2 = value;
+            ValueVariantsVariant2 = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator bool?(ValueVariants @this) => @this.Value3;
+        public static implicit operator bool?(ValueVariants @this) => @this.ValueVariantsVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public ValueVariants(bool? value)
         {
-            Value3 = value;
+            ValueVariantsVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ValueVariants(
-            string? value1,
-            long? value2,
-            bool? value3
+            string? valueVariantsVariant1,
+            long? valueVariantsVariant2,
+            bool? valueVariantsVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            ValueVariantsVariant1 = valueVariantsVariant1;
+            ValueVariantsVariant2 = valueVariantsVariant2;
+            ValueVariantsVariant3 = valueVariantsVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ValueVariantsVariant3 as object ??
+            ValueVariantsVariant2 as object ??
+            ValueVariantsVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString().ToLowerInvariant() 
+            ValueVariantsVariant1?.ToString() ??
+            ValueVariantsVariant2?.ToString() ??
+            ValueVariantsVariant3?.ToString().ToLowerInvariant() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsValueVariantsVariant1 || IsValueVariantsVariant2 || IsValueVariantsVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<long?, TResult>? value2 = null,
-            global::System.Func<bool?, TResult>? value3 = null,
+            global::System.Func<string?, TResult>? valueVariantsVariant1 = null,
+            global::System.Func<long?, TResult>? valueVariantsVariant2 = null,
+            global::System.Func<bool?, TResult>? valueVariantsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsValueVariantsVariant1 && valueVariantsVariant1 != null)
             {
-                return value1(Value1!);
+                return valueVariantsVariant1(ValueVariantsVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsValueVariantsVariant2 && valueVariantsVariant2 != null)
             {
-                return value2(Value2!);
+                return valueVariantsVariant2(ValueVariantsVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsValueVariantsVariant3 && valueVariantsVariant3 != null)
             {
-                return value3(Value3!);
+                return valueVariantsVariant3(ValueVariantsVariant3!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<long?>? value2 = null,
-            global::System.Action<bool?>? value3 = null,
+            global::System.Action<string?>? valueVariantsVariant1 = null,
+            global::System.Action<long?>? valueVariantsVariant2 = null,
+            global::System.Action<bool?>? valueVariantsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsValueVariantsVariant1)
             {
-                value1?.Invoke(Value1!);
+                valueVariantsVariant1?.Invoke(ValueVariantsVariant1!);
             }
-            else if (IsValue2)
+            else if (IsValueVariantsVariant2)
             {
-                value2?.Invoke(Value2!);
+                valueVariantsVariant2?.Invoke(ValueVariantsVariant2!);
             }
-            else if (IsValue3)
+            else if (IsValueVariantsVariant3)
             {
-                value3?.Invoke(Value3!);
+                valueVariantsVariant3?.Invoke(ValueVariantsVariant3!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ValueVariantsVariant1,
                 typeof(string),
-                Value2,
+                ValueVariantsVariant2,
                 typeof(long),
-                Value3,
+                ValueVariantsVariant3,
                 typeof(bool),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(ValueVariants other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ValueVariantsVariant1, other.ValueVariantsVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(ValueVariantsVariant2, other.ValueVariantsVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(ValueVariantsVariant3, other.ValueVariantsVariant3) 
                 ;
         }
 

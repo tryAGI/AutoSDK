@@ -38,8 +38,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.GenerateStreamEvent? value1 = default;
-            global::G.GenerateStreamEndUbzr0t? value2 = default;
+            global::G.GenerateStreamEvent? @event = default;
+            global::G.GenerateStreamEndUbzr0t? ubzr0t = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -48,7 +48,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamEvent> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamEvent).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @event = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -63,7 +63,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamEndUbzr0t), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamEndUbzr0t> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamEndUbzr0t).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        ubzr0t = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,13 +74,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (@event == null && ubzr0t == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamEvent> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamEvent).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @event = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -93,7 +93,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamEndUbzr0t), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamEndUbzr0t> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamEndUbzr0t).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    ubzr0t = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -104,9 +104,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.GenerateStreamEnd(
-                value1,
+                @event,
 
-                value2
+                ubzr0t
                 );
 
             return __value;
@@ -121,17 +121,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsEvent)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Event!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsUbzr0t)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamEndUbzr0t), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamEndUbzr0t?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamEndUbzr0t).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ubzr0t!, typeInfo);
             }
         }
     }

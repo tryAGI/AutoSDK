@@ -14,83 +14,83 @@ namespace G
         /// Example: [0.875F, 0.140625F, 0.8976F]
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<float>? Value1 { get; init; }
+        public global::System.Collections.Generic.IList<float>? VectorStructOutputVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<float>? Value1 { get; }
+        public global::System.Collections.Generic.IList<float>? VectorStructOutputVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructOutputVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsVectorStructOutputVariant1 => VectorStructOutputVariant1 != null;
 
         /// <summary>
         /// Example: [[0.875F, 0.140625F, 0.1102F], [0.758F, 0.28126F, 0.96871F], [0.621F, 0.421878F, 0.9375F]]
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? VectorStructOutputVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? Value2 { get; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? VectorStructOutputVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructOutputVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsVectorStructOutputVariant2 => VectorStructOutputVariant2 != null;
 
         /// <summary>
         /// Example: {"image-embeddings":[0.8730000257492065,0.140625,0.897599995136261]}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? VectorStructOutputVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? VectorStructOutputVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructOutputVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsVectorStructOutputVariant3 => VectorStructOutputVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStructOutput(
-            global::System.Collections.Generic.IList<float>? value1,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value2,
-            object? value3
+            global::System.Collections.Generic.IList<float>? vectorStructOutputVariant1,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? vectorStructOutputVariant2,
+            object? vectorStructOutputVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            VectorStructOutputVariant1 = vectorStructOutputVariant1;
+            VectorStructOutputVariant2 = vectorStructOutputVariant2;
+            VectorStructOutputVariant3 = vectorStructOutputVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            VectorStructOutputVariant3 as object ??
+            VectorStructOutputVariant2 as object ??
+            VectorStructOutputVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            VectorStructOutputVariant1?.ToString() ??
+            VectorStructOutputVariant2?.ToString() ??
+            VectorStructOutputVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -98,16 +98,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsVectorStructOutputVariant1 || IsVectorStructOutputVariant2 || IsVectorStructOutputVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? value2 = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? vectorStructOutputVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? vectorStructOutputVariant2 = null,
+            global::System.Func<object?, TResult>? vectorStructOutputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -115,17 +115,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsVectorStructOutputVariant1 && vectorStructOutputVariant1 != null)
             {
-                return value1(Value1!);
+                return vectorStructOutputVariant1(VectorStructOutputVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsVectorStructOutputVariant2 && vectorStructOutputVariant2 != null)
             {
-                return value2(Value2!);
+                return vectorStructOutputVariant2(VectorStructOutputVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsVectorStructOutputVariant3 && vectorStructOutputVariant3 != null)
             {
-                return value3(Value3!);
+                return vectorStructOutputVariant3(VectorStructOutputVariant3!);
             }
 
             return default(TResult);
@@ -135,9 +135,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? value2 = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>?>? vectorStructOutputVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? vectorStructOutputVariant2 = null,
+            global::System.Action<object?>? vectorStructOutputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,17 +145,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsVectorStructOutputVariant1)
             {
-                value1?.Invoke(Value1!);
+                vectorStructOutputVariant1?.Invoke(VectorStructOutputVariant1!);
             }
-            else if (IsValue2)
+            else if (IsVectorStructOutputVariant2)
             {
-                value2?.Invoke(Value2!);
+                vectorStructOutputVariant2?.Invoke(VectorStructOutputVariant2!);
             }
-            else if (IsValue3)
+            else if (IsVectorStructOutputVariant3)
             {
-                value3?.Invoke(Value3!);
+                vectorStructOutputVariant3?.Invoke(VectorStructOutputVariant3!);
             }
         }
 
@@ -166,11 +166,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                VectorStructOutputVariant1,
                 typeof(global::System.Collections.Generic.IList<float>),
-                Value2,
+                VectorStructOutputVariant2,
                 typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>),
-                Value3,
+                VectorStructOutputVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -188,9 +188,9 @@ namespace G
         public bool Equals(VectorStructOutput other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(VectorStructOutputVariant1, other.VectorStructOutputVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(VectorStructOutputVariant2, other.VectorStructOutputVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(VectorStructOutputVariant3, other.VectorStructOutputVariant3) 
                 ;
         }
 

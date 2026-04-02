@@ -14,324 +14,324 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public float? Value1 { get; init; }
+        public float? ExpressionVariant1 { get; init; }
 #else
-        public float? Value1 { get; }
+        public float? ExpressionVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExpressionVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsExpressionVariant1 => ExpressionVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? ExpressionVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? ExpressionVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExpressionVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsExpressionVariant2 => ExpressionVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Condition? Value3 { get; init; }
+        public global::G.Condition? Condition { get; init; }
 #else
-        public global::G.Condition? Value3 { get; }
+        public global::G.Condition? Condition { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Condition))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsCondition => Condition != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GeoDistance? Value4 { get; init; }
+        public global::G.GeoDistance? GeoDistance { get; init; }
 #else
-        public global::G.GeoDistance? Value4 { get; }
+        public global::G.GeoDistance? GeoDistance { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GeoDistance))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsGeoDistance => GeoDistance != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DatetimeExpression? Value5 { get; init; }
+        public global::G.DatetimeExpression? Datetime { get; init; }
 #else
-        public global::G.DatetimeExpression? Value5 { get; }
+        public global::G.DatetimeExpression? Datetime { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Datetime))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsDatetime => Datetime != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DatetimeKeyExpression? Value6 { get; init; }
+        public global::G.DatetimeKeyExpression? DatetimeKey { get; init; }
 #else
-        public global::G.DatetimeKeyExpression? Value6 { get; }
+        public global::G.DatetimeKeyExpression? DatetimeKey { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DatetimeKey))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsDatetimeKey => DatetimeKey != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MultExpression? Value7 { get; init; }
+        public global::G.MultExpression? Mult { get; init; }
 #else
-        public global::G.MultExpression? Value7 { get; }
+        public global::G.MultExpression? Mult { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mult))]
 #endif
-        public bool IsValue7 => Value7 != null;
+        public bool IsMult => Mult != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SumExpression? Value8 { get; init; }
+        public global::G.SumExpression? Sum { get; init; }
 #else
-        public global::G.SumExpression? Value8 { get; }
+        public global::G.SumExpression? Sum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sum))]
 #endif
-        public bool IsValue8 => Value8 != null;
+        public bool IsSum => Sum != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.NegExpression? Value9 { get; init; }
+        public global::G.NegExpression? Neg { get; init; }
 #else
-        public global::G.NegExpression? Value9 { get; }
+        public global::G.NegExpression? Neg { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Neg))]
 #endif
-        public bool IsValue9 => Value9 != null;
+        public bool IsNeg => Neg != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AbsExpression? Value10 { get; init; }
+        public global::G.AbsExpression? Abs { get; init; }
 #else
-        public global::G.AbsExpression? Value10 { get; }
+        public global::G.AbsExpression? Abs { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Abs))]
 #endif
-        public bool IsValue10 => Value10 != null;
+        public bool IsAbs => Abs != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DivExpression? Value11 { get; init; }
+        public global::G.DivExpression? Div { get; init; }
 #else
-        public global::G.DivExpression? Value11 { get; }
+        public global::G.DivExpression? Div { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value11))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Div))]
 #endif
-        public bool IsValue11 => Value11 != null;
+        public bool IsDiv => Div != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SqrtExpression? Value12 { get; init; }
+        public global::G.SqrtExpression? Sqrt { get; init; }
 #else
-        public global::G.SqrtExpression? Value12 { get; }
+        public global::G.SqrtExpression? Sqrt { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sqrt))]
 #endif
-        public bool IsValue12 => Value12 != null;
+        public bool IsSqrt => Sqrt != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PowExpression? Value13 { get; init; }
+        public global::G.PowExpression? Pow { get; init; }
 #else
-        public global::G.PowExpression? Value13 { get; }
+        public global::G.PowExpression? Pow { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value13))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Pow))]
 #endif
-        public bool IsValue13 => Value13 != null;
+        public bool IsPow => Pow != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ExpExpression? Value14 { get; init; }
+        public global::G.ExpExpression? Exp { get; init; }
 #else
-        public global::G.ExpExpression? Value14 { get; }
+        public global::G.ExpExpression? Exp { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value14))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Exp))]
 #endif
-        public bool IsValue14 => Value14 != null;
+        public bool IsExp => Exp != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Log10Expression? Value15 { get; init; }
+        public global::G.Log10Expression? Log10 { get; init; }
 #else
-        public global::G.Log10Expression? Value15 { get; }
+        public global::G.Log10Expression? Log10 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value15))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Log10))]
 #endif
-        public bool IsValue15 => Value15 != null;
+        public bool IsLog10 => Log10 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LnExpression? Value16 { get; init; }
+        public global::G.LnExpression? Ln { get; init; }
 #else
-        public global::G.LnExpression? Value16 { get; }
+        public global::G.LnExpression? Ln { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value16))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ln))]
 #endif
-        public bool IsValue16 => Value16 != null;
+        public bool IsLn => Ln != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LinDecayExpression? Value17 { get; init; }
+        public global::G.LinDecayExpression? LinDecay { get; init; }
 #else
-        public global::G.LinDecayExpression? Value17 { get; }
+        public global::G.LinDecayExpression? LinDecay { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value17))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LinDecay))]
 #endif
-        public bool IsValue17 => Value17 != null;
+        public bool IsLinDecay => LinDecay != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ExpDecayExpression? Value18 { get; init; }
+        public global::G.ExpDecayExpression? ExpDecay { get; init; }
 #else
-        public global::G.ExpDecayExpression? Value18 { get; }
+        public global::G.ExpDecayExpression? ExpDecay { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value18))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExpDecay))]
 #endif
-        public bool IsValue18 => Value18 != null;
+        public bool IsExpDecay => ExpDecay != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GaussDecayExpression? Value19 { get; init; }
+        public global::G.GaussDecayExpression? GaussDecay { get; init; }
 #else
-        public global::G.GaussDecayExpression? Value19 { get; }
+        public global::G.GaussDecayExpression? GaussDecay { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value19))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GaussDecay))]
 #endif
-        public bool IsValue19 => Value19 != null;
+        public bool IsGaussDecay => GaussDecay != null;
         /// <summary>
         /// 
         /// </summary>
@@ -340,14 +340,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator float?(Expression @this) => @this.Value1;
+        public static implicit operator float?(Expression @this) => @this.ExpressionVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(float? value)
         {
-            Value1 = value;
+            ExpressionVariant1 = value;
         }
 
         /// <summary>
@@ -358,14 +358,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(Expression @this) => @this.Value2;
+        public static implicit operator string?(Expression @this) => @this.ExpressionVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(string? value)
         {
-            Value2 = value;
+            ExpressionVariant2 = value;
         }
 
         /// <summary>
@@ -376,14 +376,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Condition?(Expression @this) => @this.Value3;
+        public static implicit operator global::G.Condition?(Expression @this) => @this.Condition;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.Condition? value)
         {
-            Value3 = value;
+            Condition = value;
         }
 
         /// <summary>
@@ -394,14 +394,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GeoDistance?(Expression @this) => @this.Value4;
+        public static implicit operator global::G.GeoDistance?(Expression @this) => @this.GeoDistance;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.GeoDistance? value)
         {
-            Value4 = value;
+            GeoDistance = value;
         }
 
         /// <summary>
@@ -412,14 +412,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DatetimeExpression?(Expression @this) => @this.Value5;
+        public static implicit operator global::G.DatetimeExpression?(Expression @this) => @this.Datetime;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.DatetimeExpression? value)
         {
-            Value5 = value;
+            Datetime = value;
         }
 
         /// <summary>
@@ -430,14 +430,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DatetimeKeyExpression?(Expression @this) => @this.Value6;
+        public static implicit operator global::G.DatetimeKeyExpression?(Expression @this) => @this.DatetimeKey;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.DatetimeKeyExpression? value)
         {
-            Value6 = value;
+            DatetimeKey = value;
         }
 
         /// <summary>
@@ -448,14 +448,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MultExpression?(Expression @this) => @this.Value7;
+        public static implicit operator global::G.MultExpression?(Expression @this) => @this.Mult;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.MultExpression? value)
         {
-            Value7 = value;
+            Mult = value;
         }
 
         /// <summary>
@@ -466,14 +466,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SumExpression?(Expression @this) => @this.Value8;
+        public static implicit operator global::G.SumExpression?(Expression @this) => @this.Sum;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.SumExpression? value)
         {
-            Value8 = value;
+            Sum = value;
         }
 
         /// <summary>
@@ -484,14 +484,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.NegExpression?(Expression @this) => @this.Value9;
+        public static implicit operator global::G.NegExpression?(Expression @this) => @this.Neg;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.NegExpression? value)
         {
-            Value9 = value;
+            Neg = value;
         }
 
         /// <summary>
@@ -502,14 +502,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AbsExpression?(Expression @this) => @this.Value10;
+        public static implicit operator global::G.AbsExpression?(Expression @this) => @this.Abs;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.AbsExpression? value)
         {
-            Value10 = value;
+            Abs = value;
         }
 
         /// <summary>
@@ -520,14 +520,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DivExpression?(Expression @this) => @this.Value11;
+        public static implicit operator global::G.DivExpression?(Expression @this) => @this.Div;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.DivExpression? value)
         {
-            Value11 = value;
+            Div = value;
         }
 
         /// <summary>
@@ -538,14 +538,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SqrtExpression?(Expression @this) => @this.Value12;
+        public static implicit operator global::G.SqrtExpression?(Expression @this) => @this.Sqrt;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.SqrtExpression? value)
         {
-            Value12 = value;
+            Sqrt = value;
         }
 
         /// <summary>
@@ -556,14 +556,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PowExpression?(Expression @this) => @this.Value13;
+        public static implicit operator global::G.PowExpression?(Expression @this) => @this.Pow;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.PowExpression? value)
         {
-            Value13 = value;
+            Pow = value;
         }
 
         /// <summary>
@@ -574,14 +574,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ExpExpression?(Expression @this) => @this.Value14;
+        public static implicit operator global::G.ExpExpression?(Expression @this) => @this.Exp;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.ExpExpression? value)
         {
-            Value14 = value;
+            Exp = value;
         }
 
         /// <summary>
@@ -592,14 +592,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Log10Expression?(Expression @this) => @this.Value15;
+        public static implicit operator global::G.Log10Expression?(Expression @this) => @this.Log10;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.Log10Expression? value)
         {
-            Value15 = value;
+            Log10 = value;
         }
 
         /// <summary>
@@ -610,14 +610,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LnExpression?(Expression @this) => @this.Value16;
+        public static implicit operator global::G.LnExpression?(Expression @this) => @this.Ln;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.LnExpression? value)
         {
-            Value16 = value;
+            Ln = value;
         }
 
         /// <summary>
@@ -628,14 +628,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LinDecayExpression?(Expression @this) => @this.Value17;
+        public static implicit operator global::G.LinDecayExpression?(Expression @this) => @this.LinDecay;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.LinDecayExpression? value)
         {
-            Value17 = value;
+            LinDecay = value;
         }
 
         /// <summary>
@@ -646,14 +646,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ExpDecayExpression?(Expression @this) => @this.Value18;
+        public static implicit operator global::G.ExpDecayExpression?(Expression @this) => @this.ExpDecay;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.ExpDecayExpression? value)
         {
-            Value18 = value;
+            ExpDecay = value;
         }
 
         /// <summary>
@@ -664,110 +664,110 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GaussDecayExpression?(Expression @this) => @this.Value19;
+        public static implicit operator global::G.GaussDecayExpression?(Expression @this) => @this.GaussDecay;
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(global::G.GaussDecayExpression? value)
         {
-            Value19 = value;
+            GaussDecay = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Expression(
-            float? value1,
-            string? value2,
-            global::G.Condition? value3,
-            global::G.GeoDistance? value4,
-            global::G.DatetimeExpression? value5,
-            global::G.DatetimeKeyExpression? value6,
-            global::G.MultExpression? value7,
-            global::G.SumExpression? value8,
-            global::G.NegExpression? value9,
-            global::G.AbsExpression? value10,
-            global::G.DivExpression? value11,
-            global::G.SqrtExpression? value12,
-            global::G.PowExpression? value13,
-            global::G.ExpExpression? value14,
-            global::G.Log10Expression? value15,
-            global::G.LnExpression? value16,
-            global::G.LinDecayExpression? value17,
-            global::G.ExpDecayExpression? value18,
-            global::G.GaussDecayExpression? value19
+            float? expressionVariant1,
+            string? expressionVariant2,
+            global::G.Condition? condition,
+            global::G.GeoDistance? geoDistance,
+            global::G.DatetimeExpression? datetime,
+            global::G.DatetimeKeyExpression? datetimeKey,
+            global::G.MultExpression? mult,
+            global::G.SumExpression? sum,
+            global::G.NegExpression? neg,
+            global::G.AbsExpression? abs,
+            global::G.DivExpression? div,
+            global::G.SqrtExpression? sqrt,
+            global::G.PowExpression? pow,
+            global::G.ExpExpression? exp,
+            global::G.Log10Expression? log10,
+            global::G.LnExpression? ln,
+            global::G.LinDecayExpression? linDecay,
+            global::G.ExpDecayExpression? expDecay,
+            global::G.GaussDecayExpression? gaussDecay
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
-            Value7 = value7;
-            Value8 = value8;
-            Value9 = value9;
-            Value10 = value10;
-            Value11 = value11;
-            Value12 = value12;
-            Value13 = value13;
-            Value14 = value14;
-            Value15 = value15;
-            Value16 = value16;
-            Value17 = value17;
-            Value18 = value18;
-            Value19 = value19;
+            ExpressionVariant1 = expressionVariant1;
+            ExpressionVariant2 = expressionVariant2;
+            Condition = condition;
+            GeoDistance = geoDistance;
+            Datetime = datetime;
+            DatetimeKey = datetimeKey;
+            Mult = mult;
+            Sum = sum;
+            Neg = neg;
+            Abs = abs;
+            Div = div;
+            Sqrt = sqrt;
+            Pow = pow;
+            Exp = exp;
+            Log10 = log10;
+            Ln = ln;
+            LinDecay = linDecay;
+            ExpDecay = expDecay;
+            GaussDecay = gaussDecay;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value19 as object ??
-            Value18 as object ??
-            Value17 as object ??
-            Value16 as object ??
-            Value15 as object ??
-            Value14 as object ??
-            Value13 as object ??
-            Value12 as object ??
-            Value11 as object ??
-            Value10 as object ??
-            Value9 as object ??
-            Value8 as object ??
-            Value7 as object ??
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            GaussDecay as object ??
+            ExpDecay as object ??
+            LinDecay as object ??
+            Ln as object ??
+            Log10 as object ??
+            Exp as object ??
+            Pow as object ??
+            Sqrt as object ??
+            Div as object ??
+            Abs as object ??
+            Neg as object ??
+            Sum as object ??
+            Mult as object ??
+            DatetimeKey as object ??
+            Datetime as object ??
+            GeoDistance as object ??
+            Condition as object ??
+            ExpressionVariant2 as object ??
+            ExpressionVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() ??
-            Value7?.ToString() ??
-            Value8?.ToString() ??
-            Value9?.ToString() ??
-            Value10?.ToString() ??
-            Value11?.ToString() ??
-            Value12?.ToString() ??
-            Value13?.ToString() ??
-            Value14?.ToString() ??
-            Value15?.ToString() ??
-            Value16?.ToString() ??
-            Value17?.ToString() ??
-            Value18?.ToString() ??
-            Value19?.ToString() 
+            ExpressionVariant1?.ToString() ??
+            ExpressionVariant2?.ToString() ??
+            Condition?.ToString() ??
+            GeoDistance?.ToString() ??
+            Datetime?.ToString() ??
+            DatetimeKey?.ToString() ??
+            Mult?.ToString() ??
+            Sum?.ToString() ??
+            Neg?.ToString() ??
+            Abs?.ToString() ??
+            Div?.ToString() ??
+            Sqrt?.ToString() ??
+            Pow?.ToString() ??
+            Exp?.ToString() ??
+            Log10?.ToString() ??
+            Ln?.ToString() ??
+            LinDecay?.ToString() ??
+            ExpDecay?.ToString() ??
+            GaussDecay?.ToString() 
             ;
 
         /// <summary>
@@ -775,32 +775,32 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12 || IsValue13 || IsValue14 || IsValue15 || IsValue16 || IsValue17 || IsValue18 || IsValue19;
+            return IsExpressionVariant1 || IsExpressionVariant2 || IsCondition || IsGeoDistance || IsDatetime || IsDatetimeKey || IsMult || IsSum || IsNeg || IsAbs || IsDiv || IsSqrt || IsPow || IsExp || IsLog10 || IsLn || IsLinDecay || IsExpDecay || IsGaussDecay;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<float?, TResult>? value1 = null,
-            global::System.Func<string?, TResult>? value2 = null,
-            global::System.Func<global::G.Condition?, TResult>? value3 = null,
-            global::System.Func<global::G.GeoDistance?, TResult>? value4 = null,
-            global::System.Func<global::G.DatetimeExpression?, TResult>? value5 = null,
-            global::System.Func<global::G.DatetimeKeyExpression?, TResult>? value6 = null,
-            global::System.Func<global::G.MultExpression?, TResult>? value7 = null,
-            global::System.Func<global::G.SumExpression?, TResult>? value8 = null,
-            global::System.Func<global::G.NegExpression?, TResult>? value9 = null,
-            global::System.Func<global::G.AbsExpression?, TResult>? value10 = null,
-            global::System.Func<global::G.DivExpression?, TResult>? value11 = null,
-            global::System.Func<global::G.SqrtExpression?, TResult>? value12 = null,
-            global::System.Func<global::G.PowExpression?, TResult>? value13 = null,
-            global::System.Func<global::G.ExpExpression?, TResult>? value14 = null,
-            global::System.Func<global::G.Log10Expression?, TResult>? value15 = null,
-            global::System.Func<global::G.LnExpression?, TResult>? value16 = null,
-            global::System.Func<global::G.LinDecayExpression?, TResult>? value17 = null,
-            global::System.Func<global::G.ExpDecayExpression?, TResult>? value18 = null,
-            global::System.Func<global::G.GaussDecayExpression?, TResult>? value19 = null,
+            global::System.Func<float?, TResult>? expressionVariant1 = null,
+            global::System.Func<string?, TResult>? expressionVariant2 = null,
+            global::System.Func<global::G.Condition?, TResult>? condition = null,
+            global::System.Func<global::G.GeoDistance?, TResult>? geoDistance = null,
+            global::System.Func<global::G.DatetimeExpression?, TResult>? datetime = null,
+            global::System.Func<global::G.DatetimeKeyExpression?, TResult>? datetimeKey = null,
+            global::System.Func<global::G.MultExpression?, TResult>? mult = null,
+            global::System.Func<global::G.SumExpression?, TResult>? sum = null,
+            global::System.Func<global::G.NegExpression?, TResult>? neg = null,
+            global::System.Func<global::G.AbsExpression?, TResult>? abs = null,
+            global::System.Func<global::G.DivExpression?, TResult>? div = null,
+            global::System.Func<global::G.SqrtExpression?, TResult>? sqrt = null,
+            global::System.Func<global::G.PowExpression?, TResult>? pow = null,
+            global::System.Func<global::G.ExpExpression?, TResult>? exp = null,
+            global::System.Func<global::G.Log10Expression?, TResult>? log10 = null,
+            global::System.Func<global::G.LnExpression?, TResult>? ln = null,
+            global::System.Func<global::G.LinDecayExpression?, TResult>? linDecay = null,
+            global::System.Func<global::G.ExpDecayExpression?, TResult>? expDecay = null,
+            global::System.Func<global::G.GaussDecayExpression?, TResult>? gaussDecay = null,
             bool validate = true)
         {
             if (validate)
@@ -808,81 +808,81 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsExpressionVariant1 && expressionVariant1 != null)
             {
-                return value1(Value1!);
+                return expressionVariant1(ExpressionVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsExpressionVariant2 && expressionVariant2 != null)
             {
-                return value2(Value2!);
+                return expressionVariant2(ExpressionVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsCondition && condition != null)
             {
-                return value3(Value3!);
+                return condition(Condition!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsGeoDistance && geoDistance != null)
             {
-                return value4(Value4!);
+                return geoDistance(GeoDistance!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsDatetime && datetime != null)
             {
-                return value5(Value5!);
+                return datetime(Datetime!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsDatetimeKey && datetimeKey != null)
             {
-                return value6(Value6!);
+                return datetimeKey(DatetimeKey!);
             }
-            else if (IsValue7 && value7 != null)
+            else if (IsMult && mult != null)
             {
-                return value7(Value7!);
+                return mult(Mult!);
             }
-            else if (IsValue8 && value8 != null)
+            else if (IsSum && sum != null)
             {
-                return value8(Value8!);
+                return sum(Sum!);
             }
-            else if (IsValue9 && value9 != null)
+            else if (IsNeg && neg != null)
             {
-                return value9(Value9!);
+                return neg(Neg!);
             }
-            else if (IsValue10 && value10 != null)
+            else if (IsAbs && abs != null)
             {
-                return value10(Value10!);
+                return abs(Abs!);
             }
-            else if (IsValue11 && value11 != null)
+            else if (IsDiv && div != null)
             {
-                return value11(Value11!);
+                return div(Div!);
             }
-            else if (IsValue12 && value12 != null)
+            else if (IsSqrt && sqrt != null)
             {
-                return value12(Value12!);
+                return sqrt(Sqrt!);
             }
-            else if (IsValue13 && value13 != null)
+            else if (IsPow && pow != null)
             {
-                return value13(Value13!);
+                return pow(Pow!);
             }
-            else if (IsValue14 && value14 != null)
+            else if (IsExp && exp != null)
             {
-                return value14(Value14!);
+                return exp(Exp!);
             }
-            else if (IsValue15 && value15 != null)
+            else if (IsLog10 && log10 != null)
             {
-                return value15(Value15!);
+                return log10(Log10!);
             }
-            else if (IsValue16 && value16 != null)
+            else if (IsLn && ln != null)
             {
-                return value16(Value16!);
+                return ln(Ln!);
             }
-            else if (IsValue17 && value17 != null)
+            else if (IsLinDecay && linDecay != null)
             {
-                return value17(Value17!);
+                return linDecay(LinDecay!);
             }
-            else if (IsValue18 && value18 != null)
+            else if (IsExpDecay && expDecay != null)
             {
-                return value18(Value18!);
+                return expDecay(ExpDecay!);
             }
-            else if (IsValue19 && value19 != null)
+            else if (IsGaussDecay && gaussDecay != null)
             {
-                return value19(Value19!);
+                return gaussDecay(GaussDecay!);
             }
 
             return default(TResult);
@@ -892,25 +892,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<float?>? value1 = null,
-            global::System.Action<string?>? value2 = null,
-            global::System.Action<global::G.Condition?>? value3 = null,
-            global::System.Action<global::G.GeoDistance?>? value4 = null,
-            global::System.Action<global::G.DatetimeExpression?>? value5 = null,
-            global::System.Action<global::G.DatetimeKeyExpression?>? value6 = null,
-            global::System.Action<global::G.MultExpression?>? value7 = null,
-            global::System.Action<global::G.SumExpression?>? value8 = null,
-            global::System.Action<global::G.NegExpression?>? value9 = null,
-            global::System.Action<global::G.AbsExpression?>? value10 = null,
-            global::System.Action<global::G.DivExpression?>? value11 = null,
-            global::System.Action<global::G.SqrtExpression?>? value12 = null,
-            global::System.Action<global::G.PowExpression?>? value13 = null,
-            global::System.Action<global::G.ExpExpression?>? value14 = null,
-            global::System.Action<global::G.Log10Expression?>? value15 = null,
-            global::System.Action<global::G.LnExpression?>? value16 = null,
-            global::System.Action<global::G.LinDecayExpression?>? value17 = null,
-            global::System.Action<global::G.ExpDecayExpression?>? value18 = null,
-            global::System.Action<global::G.GaussDecayExpression?>? value19 = null,
+            global::System.Action<float?>? expressionVariant1 = null,
+            global::System.Action<string?>? expressionVariant2 = null,
+            global::System.Action<global::G.Condition?>? condition = null,
+            global::System.Action<global::G.GeoDistance?>? geoDistance = null,
+            global::System.Action<global::G.DatetimeExpression?>? datetime = null,
+            global::System.Action<global::G.DatetimeKeyExpression?>? datetimeKey = null,
+            global::System.Action<global::G.MultExpression?>? mult = null,
+            global::System.Action<global::G.SumExpression?>? sum = null,
+            global::System.Action<global::G.NegExpression?>? neg = null,
+            global::System.Action<global::G.AbsExpression?>? abs = null,
+            global::System.Action<global::G.DivExpression?>? div = null,
+            global::System.Action<global::G.SqrtExpression?>? sqrt = null,
+            global::System.Action<global::G.PowExpression?>? pow = null,
+            global::System.Action<global::G.ExpExpression?>? exp = null,
+            global::System.Action<global::G.Log10Expression?>? log10 = null,
+            global::System.Action<global::G.LnExpression?>? ln = null,
+            global::System.Action<global::G.LinDecayExpression?>? linDecay = null,
+            global::System.Action<global::G.ExpDecayExpression?>? expDecay = null,
+            global::System.Action<global::G.GaussDecayExpression?>? gaussDecay = null,
             bool validate = true)
         {
             if (validate)
@@ -918,81 +918,81 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsExpressionVariant1)
             {
-                value1?.Invoke(Value1!);
+                expressionVariant1?.Invoke(ExpressionVariant1!);
             }
-            else if (IsValue2)
+            else if (IsExpressionVariant2)
             {
-                value2?.Invoke(Value2!);
+                expressionVariant2?.Invoke(ExpressionVariant2!);
             }
-            else if (IsValue3)
+            else if (IsCondition)
             {
-                value3?.Invoke(Value3!);
+                condition?.Invoke(Condition!);
             }
-            else if (IsValue4)
+            else if (IsGeoDistance)
             {
-                value4?.Invoke(Value4!);
+                geoDistance?.Invoke(GeoDistance!);
             }
-            else if (IsValue5)
+            else if (IsDatetime)
             {
-                value5?.Invoke(Value5!);
+                datetime?.Invoke(Datetime!);
             }
-            else if (IsValue6)
+            else if (IsDatetimeKey)
             {
-                value6?.Invoke(Value6!);
+                datetimeKey?.Invoke(DatetimeKey!);
             }
-            else if (IsValue7)
+            else if (IsMult)
             {
-                value7?.Invoke(Value7!);
+                mult?.Invoke(Mult!);
             }
-            else if (IsValue8)
+            else if (IsSum)
             {
-                value8?.Invoke(Value8!);
+                sum?.Invoke(Sum!);
             }
-            else if (IsValue9)
+            else if (IsNeg)
             {
-                value9?.Invoke(Value9!);
+                neg?.Invoke(Neg!);
             }
-            else if (IsValue10)
+            else if (IsAbs)
             {
-                value10?.Invoke(Value10!);
+                abs?.Invoke(Abs!);
             }
-            else if (IsValue11)
+            else if (IsDiv)
             {
-                value11?.Invoke(Value11!);
+                div?.Invoke(Div!);
             }
-            else if (IsValue12)
+            else if (IsSqrt)
             {
-                value12?.Invoke(Value12!);
+                sqrt?.Invoke(Sqrt!);
             }
-            else if (IsValue13)
+            else if (IsPow)
             {
-                value13?.Invoke(Value13!);
+                pow?.Invoke(Pow!);
             }
-            else if (IsValue14)
+            else if (IsExp)
             {
-                value14?.Invoke(Value14!);
+                exp?.Invoke(Exp!);
             }
-            else if (IsValue15)
+            else if (IsLog10)
             {
-                value15?.Invoke(Value15!);
+                log10?.Invoke(Log10!);
             }
-            else if (IsValue16)
+            else if (IsLn)
             {
-                value16?.Invoke(Value16!);
+                ln?.Invoke(Ln!);
             }
-            else if (IsValue17)
+            else if (IsLinDecay)
             {
-                value17?.Invoke(Value17!);
+                linDecay?.Invoke(LinDecay!);
             }
-            else if (IsValue18)
+            else if (IsExpDecay)
             {
-                value18?.Invoke(Value18!);
+                expDecay?.Invoke(ExpDecay!);
             }
-            else if (IsValue19)
+            else if (IsGaussDecay)
             {
-                value19?.Invoke(Value19!);
+                gaussDecay?.Invoke(GaussDecay!);
             }
         }
 
@@ -1003,43 +1003,43 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ExpressionVariant1,
                 typeof(float),
-                Value2,
+                ExpressionVariant2,
                 typeof(string),
-                Value3,
+                Condition,
                 typeof(global::G.Condition),
-                Value4,
+                GeoDistance,
                 typeof(global::G.GeoDistance),
-                Value5,
+                Datetime,
                 typeof(global::G.DatetimeExpression),
-                Value6,
+                DatetimeKey,
                 typeof(global::G.DatetimeKeyExpression),
-                Value7,
+                Mult,
                 typeof(global::G.MultExpression),
-                Value8,
+                Sum,
                 typeof(global::G.SumExpression),
-                Value9,
+                Neg,
                 typeof(global::G.NegExpression),
-                Value10,
+                Abs,
                 typeof(global::G.AbsExpression),
-                Value11,
+                Div,
                 typeof(global::G.DivExpression),
-                Value12,
+                Sqrt,
                 typeof(global::G.SqrtExpression),
-                Value13,
+                Pow,
                 typeof(global::G.PowExpression),
-                Value14,
+                Exp,
                 typeof(global::G.ExpExpression),
-                Value15,
+                Log10,
                 typeof(global::G.Log10Expression),
-                Value16,
+                Ln,
                 typeof(global::G.LnExpression),
-                Value17,
+                LinDecay,
                 typeof(global::G.LinDecayExpression),
-                Value18,
+                ExpDecay,
                 typeof(global::G.ExpDecayExpression),
-                Value19,
+                GaussDecay,
                 typeof(global::G.GaussDecayExpression),
             };
             const int offset = unchecked((int)2166136261);
@@ -1057,25 +1057,25 @@ namespace G
         public bool Equals(Expression other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<float?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.Condition?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GeoDistance?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DatetimeExpression?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DatetimeKeyExpression?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MultExpression?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SumExpression?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.NegExpression?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AbsExpression?>.Default.Equals(Value10, other.Value10) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DivExpression?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SqrtExpression?>.Default.Equals(Value12, other.Value12) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PowExpression?>.Default.Equals(Value13, other.Value13) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ExpExpression?>.Default.Equals(Value14, other.Value14) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.Log10Expression?>.Default.Equals(Value15, other.Value15) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LnExpression?>.Default.Equals(Value16, other.Value16) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LinDecayExpression?>.Default.Equals(Value17, other.Value17) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ExpDecayExpression?>.Default.Equals(Value18, other.Value18) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GaussDecayExpression?>.Default.Equals(Value19, other.Value19) 
+                global::System.Collections.Generic.EqualityComparer<float?>.Default.Equals(ExpressionVariant1, other.ExpressionVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ExpressionVariant2, other.ExpressionVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.Condition?>.Default.Equals(Condition, other.Condition) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GeoDistance?>.Default.Equals(GeoDistance, other.GeoDistance) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DatetimeExpression?>.Default.Equals(Datetime, other.Datetime) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DatetimeKeyExpression?>.Default.Equals(DatetimeKey, other.DatetimeKey) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MultExpression?>.Default.Equals(Mult, other.Mult) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SumExpression?>.Default.Equals(Sum, other.Sum) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.NegExpression?>.Default.Equals(Neg, other.Neg) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AbsExpression?>.Default.Equals(Abs, other.Abs) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DivExpression?>.Default.Equals(Div, other.Div) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SqrtExpression?>.Default.Equals(Sqrt, other.Sqrt) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PowExpression?>.Default.Equals(Pow, other.Pow) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ExpExpression?>.Default.Equals(Exp, other.Exp) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.Log10Expression?>.Default.Equals(Log10, other.Log10) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LnExpression?>.Default.Equals(Ln, other.Ln) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LinDecayExpression?>.Default.Equals(LinDecay, other.LinDecay) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ExpDecayExpression?>.Default.Equals(ExpDecay, other.ExpDecay) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GaussDecayExpression?>.Default.Equals(GaussDecay, other.GaussDecay) 
                 ;
         }
 

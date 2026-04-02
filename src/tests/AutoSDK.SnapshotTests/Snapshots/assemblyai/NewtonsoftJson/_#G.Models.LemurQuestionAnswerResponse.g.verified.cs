@@ -16,35 +16,35 @@ namespace G
         /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","usage":{"input_tokens":27,"output_tokens":3}}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LemurBaseResponse? Value1 { get; init; }
+        public global::G.LemurBaseResponse? Base { get; init; }
 #else
-        public global::G.LemurBaseResponse? Value1 { get; }
+        public global::G.LemurBaseResponse? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LemurQuestionAnswerResponseVariant2? Value2 { get; init; }
+        public global::G.LemurQuestionAnswerResponseVariant2? LemurQuestionAnswerResponseVariant2 { get; init; }
 #else
-        public global::G.LemurQuestionAnswerResponseVariant2? Value2 { get; }
+        public global::G.LemurQuestionAnswerResponseVariant2? LemurQuestionAnswerResponseVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LemurQuestionAnswerResponseVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsLemurQuestionAnswerResponseVariant2 => LemurQuestionAnswerResponseVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -53,14 +53,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LemurBaseResponse?(LemurQuestionAnswerResponse @this) => @this.Value1;
+        public static implicit operator global::G.LemurBaseResponse?(LemurQuestionAnswerResponse @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public LemurQuestionAnswerResponse(global::G.LemurBaseResponse? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -71,42 +71,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LemurQuestionAnswerResponseVariant2?(LemurQuestionAnswerResponse @this) => @this.Value2;
+        public static implicit operator global::G.LemurQuestionAnswerResponseVariant2?(LemurQuestionAnswerResponse @this) => @this.LemurQuestionAnswerResponseVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public LemurQuestionAnswerResponse(global::G.LemurQuestionAnswerResponseVariant2? value)
         {
-            Value2 = value;
+            LemurQuestionAnswerResponseVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public LemurQuestionAnswerResponse(
-            global::G.LemurBaseResponse? value1,
-            global::G.LemurQuestionAnswerResponseVariant2? value2
+            global::G.LemurBaseResponse? @base,
+            global::G.LemurQuestionAnswerResponseVariant2? lemurQuestionAnswerResponseVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            LemurQuestionAnswerResponseVariant2 = lemurQuestionAnswerResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            LemurQuestionAnswerResponseVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            LemurQuestionAnswerResponseVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -114,15 +114,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsLemurQuestionAnswerResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.LemurBaseResponse?, TResult>? value1 = null,
-            global::System.Func<global::G.LemurQuestionAnswerResponseVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.LemurBaseResponse?, TResult>? @base = null,
+            global::System.Func<global::G.LemurQuestionAnswerResponseVariant2?, TResult>? lemurQuestionAnswerResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -130,13 +130,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsLemurQuestionAnswerResponseVariant2 && lemurQuestionAnswerResponseVariant2 != null)
             {
-                return value2(Value2!);
+                return lemurQuestionAnswerResponseVariant2(LemurQuestionAnswerResponseVariant2!);
             }
 
             return default(TResult);
@@ -146,8 +146,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.LemurBaseResponse?>? value1 = null,
-            global::System.Action<global::G.LemurQuestionAnswerResponseVariant2?>? value2 = null,
+            global::System.Action<global::G.LemurBaseResponse?>? @base = null,
+            global::System.Action<global::G.LemurQuestionAnswerResponseVariant2?>? lemurQuestionAnswerResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsLemurQuestionAnswerResponseVariant2)
             {
-                value2?.Invoke(Value2!);
+                lemurQuestionAnswerResponseVariant2?.Invoke(LemurQuestionAnswerResponseVariant2!);
             }
         }
 
@@ -172,9 +172,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::G.LemurBaseResponse),
-                Value2,
+                LemurQuestionAnswerResponseVariant2,
                 typeof(global::G.LemurQuestionAnswerResponseVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -192,8 +192,8 @@ namespace G
         public bool Equals(LemurQuestionAnswerResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.LemurBaseResponse?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LemurQuestionAnswerResponseVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.LemurBaseResponse?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LemurQuestionAnswerResponseVariant2?>.Default.Equals(LemurQuestionAnswerResponseVariant2, other.LemurQuestionAnswerResponseVariant2) 
                 ;
         }
 

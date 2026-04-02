@@ -14,69 +14,69 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DataEntryVariant1? Value1 { get; init; }
+        public global::G.DataEntryVariant1? DataEntryVariant1 { get; init; }
 #else
-        public global::G.DataEntryVariant1? Value1 { get; }
+        public global::G.DataEntryVariant1? DataEntryVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DataEntryVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsDataEntryVariant1 => DataEntryVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DataEntryVariant2? Value2 { get; init; }
+        public global::G.DataEntryVariant2? DataEntryVariant2 { get; init; }
 #else
-        public global::G.DataEntryVariant2? Value2 { get; }
+        public global::G.DataEntryVariant2? DataEntryVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DataEntryVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsDataEntryVariant2 => DataEntryVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DataEntryVariant3? Value3 { get; init; }
+        public global::G.DataEntryVariant3? DataEntryVariant3 { get; init; }
 #else
-        public global::G.DataEntryVariant3? Value3 { get; }
+        public global::G.DataEntryVariant3? DataEntryVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DataEntryVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsDataEntryVariant3 => DataEntryVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DataEntryVariant4? Value4 { get; init; }
+        public global::G.DataEntryVariant4? DataEntryVariant4 { get; init; }
 #else
-        public global::G.DataEntryVariant4? Value4 { get; }
+        public global::G.DataEntryVariant4? DataEntryVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DataEntryVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsDataEntryVariant4 => DataEntryVariant4 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -85,14 +85,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DataEntryVariant1?(DataEntry @this) => @this.Value1;
+        public static implicit operator global::G.DataEntryVariant1?(DataEntry @this) => @this.DataEntryVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public DataEntry(global::G.DataEntryVariant1? value)
         {
-            Value1 = value;
+            DataEntryVariant1 = value;
         }
 
         /// <summary>
@@ -103,14 +103,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DataEntryVariant2?(DataEntry @this) => @this.Value2;
+        public static implicit operator global::G.DataEntryVariant2?(DataEntry @this) => @this.DataEntryVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public DataEntry(global::G.DataEntryVariant2? value)
         {
-            Value2 = value;
+            DataEntryVariant2 = value;
         }
 
         /// <summary>
@@ -121,14 +121,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DataEntryVariant3?(DataEntry @this) => @this.Value3;
+        public static implicit operator global::G.DataEntryVariant3?(DataEntry @this) => @this.DataEntryVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public DataEntry(global::G.DataEntryVariant3? value)
         {
-            Value3 = value;
+            DataEntryVariant3 = value;
         }
 
         /// <summary>
@@ -139,50 +139,50 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DataEntryVariant4?(DataEntry @this) => @this.Value4;
+        public static implicit operator global::G.DataEntryVariant4?(DataEntry @this) => @this.DataEntryVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public DataEntry(global::G.DataEntryVariant4? value)
         {
-            Value4 = value;
+            DataEntryVariant4 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public DataEntry(
-            global::G.DataEntryVariant1? value1,
-            global::G.DataEntryVariant2? value2,
-            global::G.DataEntryVariant3? value3,
-            global::G.DataEntryVariant4? value4
+            global::G.DataEntryVariant1? dataEntryVariant1,
+            global::G.DataEntryVariant2? dataEntryVariant2,
+            global::G.DataEntryVariant3? dataEntryVariant3,
+            global::G.DataEntryVariant4? dataEntryVariant4
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
+            DataEntryVariant1 = dataEntryVariant1;
+            DataEntryVariant2 = dataEntryVariant2;
+            DataEntryVariant3 = dataEntryVariant3;
+            DataEntryVariant4 = dataEntryVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            DataEntryVariant4 as object ??
+            DataEntryVariant3 as object ??
+            DataEntryVariant2 as object ??
+            DataEntryVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() 
+            DataEntryVariant1?.ToString() ??
+            DataEntryVariant2?.ToString() ??
+            DataEntryVariant3?.ToString() ??
+            DataEntryVariant4?.ToString() 
             ;
 
         /// <summary>
@@ -190,17 +190,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4;
+            return IsDataEntryVariant1 || IsDataEntryVariant2 || IsDataEntryVariant3 || IsDataEntryVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.DataEntryVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.DataEntryVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.DataEntryVariant3?, TResult>? value3 = null,
-            global::System.Func<global::G.DataEntryVariant4?, TResult>? value4 = null,
+            global::System.Func<global::G.DataEntryVariant1?, TResult>? dataEntryVariant1 = null,
+            global::System.Func<global::G.DataEntryVariant2?, TResult>? dataEntryVariant2 = null,
+            global::System.Func<global::G.DataEntryVariant3?, TResult>? dataEntryVariant3 = null,
+            global::System.Func<global::G.DataEntryVariant4?, TResult>? dataEntryVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -208,21 +208,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsDataEntryVariant1 && dataEntryVariant1 != null)
             {
-                return value1(Value1!);
+                return dataEntryVariant1(DataEntryVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsDataEntryVariant2 && dataEntryVariant2 != null)
             {
-                return value2(Value2!);
+                return dataEntryVariant2(DataEntryVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsDataEntryVariant3 && dataEntryVariant3 != null)
             {
-                return value3(Value3!);
+                return dataEntryVariant3(DataEntryVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsDataEntryVariant4 && dataEntryVariant4 != null)
             {
-                return value4(Value4!);
+                return dataEntryVariant4(DataEntryVariant4!);
             }
 
             return default(TResult);
@@ -232,10 +232,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.DataEntryVariant1?>? value1 = null,
-            global::System.Action<global::G.DataEntryVariant2?>? value2 = null,
-            global::System.Action<global::G.DataEntryVariant3?>? value3 = null,
-            global::System.Action<global::G.DataEntryVariant4?>? value4 = null,
+            global::System.Action<global::G.DataEntryVariant1?>? dataEntryVariant1 = null,
+            global::System.Action<global::G.DataEntryVariant2?>? dataEntryVariant2 = null,
+            global::System.Action<global::G.DataEntryVariant3?>? dataEntryVariant3 = null,
+            global::System.Action<global::G.DataEntryVariant4?>? dataEntryVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -243,21 +243,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsDataEntryVariant1)
             {
-                value1?.Invoke(Value1!);
+                dataEntryVariant1?.Invoke(DataEntryVariant1!);
             }
-            else if (IsValue2)
+            else if (IsDataEntryVariant2)
             {
-                value2?.Invoke(Value2!);
+                dataEntryVariant2?.Invoke(DataEntryVariant2!);
             }
-            else if (IsValue3)
+            else if (IsDataEntryVariant3)
             {
-                value3?.Invoke(Value3!);
+                dataEntryVariant3?.Invoke(DataEntryVariant3!);
             }
-            else if (IsValue4)
+            else if (IsDataEntryVariant4)
             {
-                value4?.Invoke(Value4!);
+                dataEntryVariant4?.Invoke(DataEntryVariant4!);
             }
         }
 
@@ -268,13 +268,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                DataEntryVariant1,
                 typeof(global::G.DataEntryVariant1),
-                Value2,
+                DataEntryVariant2,
                 typeof(global::G.DataEntryVariant2),
-                Value3,
+                DataEntryVariant3,
                 typeof(global::G.DataEntryVariant3),
-                Value4,
+                DataEntryVariant4,
                 typeof(global::G.DataEntryVariant4),
             };
             const int offset = unchecked((int)2166136261);
@@ -292,10 +292,10 @@ namespace G
         public bool Equals(DataEntry other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.DataEntryVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DataEntryVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DataEntryVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DataEntryVariant4?>.Default.Equals(Value4, other.Value4) 
+                global::System.Collections.Generic.EqualityComparer<global::G.DataEntryVariant1?>.Default.Equals(DataEntryVariant1, other.DataEntryVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DataEntryVariant2?>.Default.Equals(DataEntryVariant2, other.DataEntryVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DataEntryVariant3?>.Default.Equals(DataEntryVariant3, other.DataEntryVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DataEntryVariant4?>.Default.Equals(DataEntryVariant4, other.DataEntryVariant4) 
                 ;
         }
 

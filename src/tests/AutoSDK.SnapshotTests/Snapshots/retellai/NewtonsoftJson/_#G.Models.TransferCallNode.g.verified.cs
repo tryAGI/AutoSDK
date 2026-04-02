@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.NodeBase? Value1 { get; init; }
+        public global::G.NodeBase? Base { get; init; }
 #else
-        public global::G.NodeBase? Value1 { get; }
+        public global::G.NodeBase? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TransferCallNodeVariant2? Value2 { get; init; }
+        public global::G.TransferCallNodeVariant2? TransferCallNodeVariant2 { get; init; }
 #else
-        public global::G.TransferCallNodeVariant2? Value2 { get; }
+        public global::G.TransferCallNodeVariant2? TransferCallNodeVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransferCallNodeVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsTransferCallNodeVariant2 => TransferCallNodeVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.NodeBase?(TransferCallNode @this) => @this.Value1;
+        public static implicit operator global::G.NodeBase?(TransferCallNode @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public TransferCallNode(global::G.NodeBase? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TransferCallNodeVariant2?(TransferCallNode @this) => @this.Value2;
+        public static implicit operator global::G.TransferCallNodeVariant2?(TransferCallNode @this) => @this.TransferCallNodeVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public TransferCallNode(global::G.TransferCallNodeVariant2? value)
         {
-            Value2 = value;
+            TransferCallNodeVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TransferCallNode(
-            global::G.NodeBase? value1,
-            global::G.TransferCallNodeVariant2? value2
+            global::G.NodeBase? @base,
+            global::G.TransferCallNodeVariant2? transferCallNodeVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            TransferCallNodeVariant2 = transferCallNodeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            TransferCallNodeVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            TransferCallNodeVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsTransferCallNodeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NodeBase?, TResult>? value1 = null,
-            global::System.Func<global::G.TransferCallNodeVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.NodeBase?, TResult>? @base = null,
+            global::System.Func<global::G.TransferCallNodeVariant2?, TResult>? transferCallNodeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsTransferCallNodeVariant2 && transferCallNodeVariant2 != null)
             {
-                return value2(Value2!);
+                return transferCallNodeVariant2(TransferCallNodeVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NodeBase?>? value1 = null,
-            global::System.Action<global::G.TransferCallNodeVariant2?>? value2 = null,
+            global::System.Action<global::G.NodeBase?>? @base = null,
+            global::System.Action<global::G.TransferCallNodeVariant2?>? transferCallNodeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsTransferCallNodeVariant2)
             {
-                value2?.Invoke(Value2!);
+                transferCallNodeVariant2?.Invoke(TransferCallNodeVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::G.NodeBase),
-                Value2,
+                TransferCallNodeVariant2,
                 typeof(global::G.TransferCallNodeVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(TransferCallNode other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.NodeBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TransferCallNodeVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.NodeBase?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TransferCallNodeVariant2?>.Default.Equals(TransferCallNodeVariant2, other.TransferCallNodeVariant2) 
                 ;
         }
 

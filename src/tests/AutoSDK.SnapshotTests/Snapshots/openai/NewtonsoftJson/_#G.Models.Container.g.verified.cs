@@ -15,18 +15,18 @@ namespace G
         /// The container ID.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ContainerVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ContainerVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsContainerVariant1 => ContainerVariant1 != null;
 
         /// <summary>
         /// Configuration for a code interpreter container. Optionally specify the IDs<br/>
@@ -53,14 +53,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(Container @this) => @this.Value1;
+        public static implicit operator string?(Container @this) => @this.ContainerVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public Container(string? value)
         {
-            Value1 = value;
+            ContainerVariant1 = value;
         }
 
         /// <summary>
@@ -85,11 +85,11 @@ namespace G
         /// 
         /// </summary>
         public Container(
-            string? value1,
+            string? containerVariant1,
             global::G.CodeInterpreterToolAuto? auto
             )
         {
-            Value1 = value1;
+            ContainerVariant1 = containerVariant1;
             Auto = auto;
         }
 
@@ -98,14 +98,14 @@ namespace G
         /// </summary>
         public object? Object =>
             Auto as object ??
-            Value1 as object 
+            ContainerVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            ContainerVariant1?.ToString() ??
             Auto?.ToString() 
             ;
 
@@ -114,14 +114,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsAuto || !IsValue1 && IsAuto;
+            return IsContainerVariant1 && !IsAuto || !IsContainerVariant1 && IsAuto;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? containerVariant1 = null,
             global::System.Func<global::G.CodeInterpreterToolAuto?, TResult>? auto = null,
             bool validate = true)
         {
@@ -130,9 +130,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsContainerVariant1 && containerVariant1 != null)
             {
-                return value1(Value1!);
+                return containerVariant1(ContainerVariant1!);
             }
             else if (IsAuto && auto != null)
             {
@@ -146,7 +146,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? containerVariant1 = null,
             global::System.Action<global::G.CodeInterpreterToolAuto?>? auto = null,
             bool validate = true)
         {
@@ -155,9 +155,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsContainerVariant1)
             {
-                value1?.Invoke(Value1!);
+                containerVariant1?.Invoke(ContainerVariant1!);
             }
             else if (IsAuto)
             {
@@ -172,7 +172,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ContainerVariant1,
                 typeof(string),
                 Auto,
                 typeof(global::G.CodeInterpreterToolAuto),
@@ -192,7 +192,7 @@ namespace G
         public bool Equals(Container other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ContainerVariant1, other.ContainerVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.CodeInterpreterToolAuto?>.Default.Equals(Auto, other.Auto) 
                 ;
         }

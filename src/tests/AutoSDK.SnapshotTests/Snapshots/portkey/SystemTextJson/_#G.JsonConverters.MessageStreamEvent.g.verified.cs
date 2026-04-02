@@ -50,11 +50,11 @@ namespace G.JsonConverters
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
             if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
 
-            global::G.MessageStreamEventVariant1? value1 = default;
-            global::G.MessageStreamEventVariant2? value2 = default;
-            global::G.MessageStreamEventVariant3? value3 = default;
-            global::G.MessageStreamEventVariant4? value4 = default;
-            global::G.MessageStreamEventVariant5? value5 = default;
+            global::G.MessageStreamEventVariant1? messageStreamEventVariant1 = default;
+            global::G.MessageStreamEventVariant2? messageStreamEventVariant2 = default;
+            global::G.MessageStreamEventVariant3? messageStreamEventVariant3 = default;
+            global::G.MessageStreamEventVariant4? messageStreamEventVariant4 = default;
+            global::G.MessageStreamEventVariant5? messageStreamEventVariant5 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -63,7 +63,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        messageStreamEventVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -78,7 +78,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        messageStreamEventVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,7 +93,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant3> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant3).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        messageStreamEventVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -108,7 +108,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant4> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant4).Name}");
-                        value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        messageStreamEventVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -123,7 +123,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant5> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant5).Name}");
-                        value5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        messageStreamEventVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -134,13 +134,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null)
+            if (messageStreamEventVariant1 == null && messageStreamEventVariant2 == null && messageStreamEventVariant3 == null && messageStreamEventVariant4 == null && messageStreamEventVariant5 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    messageStreamEventVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -153,7 +153,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    messageStreamEventVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -166,7 +166,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant3).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    messageStreamEventVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -179,7 +179,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant4> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant4).Name}");
-                    value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    messageStreamEventVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -192,7 +192,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant5> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant5).Name}");
-                    value5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    messageStreamEventVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -203,15 +203,15 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.MessageStreamEvent(
-                value1,
+                messageStreamEventVariant1,
 
-                value2,
+                messageStreamEventVariant2,
 
-                value3,
+                messageStreamEventVariant3,
 
-                value4,
+                messageStreamEventVariant4,
 
-                value5
+                messageStreamEventVariant5
                 );
 
             return __value;
@@ -226,35 +226,35 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsMessageStreamEventVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageStreamEventVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsMessageStreamEventVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageStreamEventVariant2!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsMessageStreamEventVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageStreamEventVariant3!, typeInfo);
             }
-            else if (value.IsValue4)
+            else if (value.IsMessageStreamEventVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageStreamEventVariant4!, typeInfo);
             }
-            else if (value.IsValue5)
+            else if (value.IsMessageStreamEventVariant5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStreamEventVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStreamEventVariant5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageStreamEventVariant5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageStreamEventVariant5!, typeInfo);
             }
         }
     }

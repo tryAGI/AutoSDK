@@ -35,8 +35,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.ValueFilter? value1 = default;
-            global::G.CustomFieldFilterVariant2? value2 = default;
+            global::G.ValueFilter? value = default;
+            global::G.CustomFieldFilterVariant2? customFieldFilterVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -45,7 +45,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ValueFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ValueFilter> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ValueFilter).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        value = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -60,7 +60,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomFieldFilterVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomFieldFilterVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomFieldFilterVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        customFieldFilterVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -71,13 +71,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (value == null && customFieldFilterVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ValueFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ValueFilter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ValueFilter).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    value = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -90,7 +90,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomFieldFilterVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomFieldFilterVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomFieldFilterVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    customFieldFilterVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -101,9 +101,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.CustomFieldFilter(
-                value1,
+                value,
 
-                value2
+                customFieldFilterVariant2
                 );
 
             return __value;
@@ -118,17 +118,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsValue)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ValueFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ValueFilter> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ValueFilter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsCustomFieldFilterVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomFieldFilterVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomFieldFilterVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomFieldFilterVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomFieldFilterVariant2!, typeInfo);
             }
         }
     }

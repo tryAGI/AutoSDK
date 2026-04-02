@@ -36,8 +36,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.LogoDtoVariant1? value1 = default;
-            bool? value2 = default;
+            global::G.LogoDtoVariant1? logoDtoVariant1 = default;
+            bool? logoDtoVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -46,7 +46,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LogoDtoVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LogoDtoVariant1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LogoDtoVariant1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        logoDtoVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,7 +61,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        logoDtoVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -72,13 +72,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (logoDtoVariant1 == null && logoDtoVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LogoDtoVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LogoDtoVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LogoDtoVariant1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    logoDtoVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -91,7 +91,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    logoDtoVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -102,9 +102,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.LogoDto(
-                value1,
+                logoDtoVariant1,
 
-                value2
+                logoDtoVariant2
                 );
 
             return __value;
@@ -119,17 +119,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsLogoDtoVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LogoDtoVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LogoDtoVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LogoDtoVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LogoDtoVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsLogoDtoVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LogoDtoVariant2!.Value, typeInfo);
             }
         }
     }

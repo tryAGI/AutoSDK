@@ -67,9 +67,9 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::G.ResearchEventDtoClassVariant1? value1 = default;
-            global::G.ResearchEventDtoClassVariant2? value2 = default;
-            global::G.ResearchEventDtoClassVariant3? value3 = default;
+            global::G.ResearchEventDtoClassVariant1? researchEventDtoClassVariant1 = default;
+            global::G.ResearchEventDtoClassVariant2? researchEventDtoClassVariant2 = default;
+            global::G.ResearchEventDtoClassVariant3? researchEventDtoClassVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -79,7 +79,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        researchEventDtoClassVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -96,7 +96,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        researchEventDtoClassVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -113,7 +113,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant3> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant3).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        researchEventDtoClassVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -124,14 +124,14 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (researchEventDtoClassVariant1 == null && researchEventDtoClassVariant2 == null && researchEventDtoClassVariant3 == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    researchEventDtoClassVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -145,7 +145,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    researchEventDtoClassVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -159,7 +159,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant3).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    researchEventDtoClassVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -170,11 +170,11 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.ResearchEventDtoClass(
-                value1,
+                researchEventDtoClassVariant1,
 
-                value2,
+                researchEventDtoClassVariant2,
 
-                value3
+                researchEventDtoClassVariant3
                 );
 
             return __value;
@@ -189,23 +189,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsResearchEventDtoClassVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResearchEventDtoClassVariant1!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsResearchEventDtoClassVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResearchEventDtoClassVariant2!.Value, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsResearchEventDtoClassVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResearchEventDtoClassVariant3!.Value, typeInfo);
             }
         }
     }

@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 => IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public double? Value2 { get; init; }
+        public double? IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 { get; init; }
 #else
-        public double? Value2 { get; }
+        public double? IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 => IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public bool? Value3 { get; init; }
+        public bool? IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 { get; init; }
 #else
-        public bool? Value3 { get; }
+        public bool? IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 => IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(IndexesIndexIdVideosGetParametersUserMetadataSchema @this) => @this.Value1;
+        public static implicit operator string?(IndexesIndexIdVideosGetParametersUserMetadataSchema @this) => @this.IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public IndexesIndexIdVideosGetParametersUserMetadataSchema(string? value)
         {
-            Value1 = value;
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator double?(IndexesIndexIdVideosGetParametersUserMetadataSchema @this) => @this.Value2;
+        public static implicit operator double?(IndexesIndexIdVideosGetParametersUserMetadataSchema @this) => @this.IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public IndexesIndexIdVideosGetParametersUserMetadataSchema(double? value)
         {
-            Value2 = value;
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator bool?(IndexesIndexIdVideosGetParametersUserMetadataSchema @this) => @this.Value3;
+        public static implicit operator bool?(IndexesIndexIdVideosGetParametersUserMetadataSchema @this) => @this.IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public IndexesIndexIdVideosGetParametersUserMetadataSchema(bool? value)
         {
-            Value3 = value;
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public IndexesIndexIdVideosGetParametersUserMetadataSchema(
-            string? value1,
-            double? value2,
-            bool? value3
+            string? indexesIndexIdVideosGetParametersUserMetadataSchemaVariant1,
+            double? indexesIndexIdVideosGetParametersUserMetadataSchemaVariant2,
+            bool? indexesIndexIdVideosGetParametersUserMetadataSchemaVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 = indexesIndexIdVideosGetParametersUserMetadataSchemaVariant1;
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 = indexesIndexIdVideosGetParametersUserMetadataSchemaVariant2;
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 = indexesIndexIdVideosGetParametersUserMetadataSchemaVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 as object ??
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 as object ??
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString().ToLowerInvariant() 
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1?.ToString() ??
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2?.ToString() ??
+            IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3?.ToString().ToLowerInvariant() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 || !IsValue1 && IsValue2 && !IsValue3 || !IsValue1 && !IsValue2 && IsValue3;
+            return IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 && !IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 && !IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 || !IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 && IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 && !IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 || !IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 && !IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 && IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<double?, TResult>? value2 = null,
-            global::System.Func<bool?, TResult>? value3 = null,
+            global::System.Func<string?, TResult>? indexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 = null,
+            global::System.Func<double?, TResult>? indexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 = null,
+            global::System.Func<bool?, TResult>? indexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 && indexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 != null)
             {
-                return value1(Value1!);
+                return indexesIndexIdVideosGetParametersUserMetadataSchemaVariant1(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 && indexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 != null)
             {
-                return value2(Value2!);
+                return indexesIndexIdVideosGetParametersUserMetadataSchemaVariant2(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 && indexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 != null)
             {
-                return value3(Value3!);
+                return indexesIndexIdVideosGetParametersUserMetadataSchemaVariant3(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<double?>? value2 = null,
-            global::System.Action<bool?>? value3 = null,
+            global::System.Action<string?>? indexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 = null,
+            global::System.Action<double?>? indexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 = null,
+            global::System.Action<bool?>? indexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1)
             {
-                value1?.Invoke(Value1!);
+                indexesIndexIdVideosGetParametersUserMetadataSchemaVariant1?.Invoke(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1!);
             }
-            else if (IsValue2)
+            else if (IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2)
             {
-                value2?.Invoke(Value2!);
+                indexesIndexIdVideosGetParametersUserMetadataSchemaVariant2?.Invoke(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2!);
             }
-            else if (IsValue3)
+            else if (IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3)
             {
-                value3?.Invoke(Value3!);
+                indexesIndexIdVideosGetParametersUserMetadataSchemaVariant3?.Invoke(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1,
                 typeof(string),
-                Value2,
+                IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2,
                 typeof(double),
-                Value3,
+                IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3,
                 typeof(bool),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(IndexesIndexIdVideosGetParametersUserMetadataSchema other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1, other.IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2, other.IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3, other.IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3) 
                 ;
         }
 

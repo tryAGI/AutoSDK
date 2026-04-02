@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ChatAssistantMessageContentVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ChatAssistantMessageContentVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatAssistantMessageContentVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsChatAssistantMessageContentVariant1 => ChatAssistantMessageContentVariant1 != null;
 
         /// <summary>
         /// 
@@ -48,18 +48,18 @@ namespace G
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? ChatAssistantMessageContentVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? ChatAssistantMessageContentVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatAssistantMessageContentVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsChatAssistantMessageContentVariant3 => ChatAssistantMessageContentVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,46 +68,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ChatAssistantMessageContent @this) => @this.Value1;
+        public static implicit operator string?(ChatAssistantMessageContent @this) => @this.ChatAssistantMessageContentVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatAssistantMessageContent(string? value)
         {
-            Value1 = value;
+            ChatAssistantMessageContentVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatAssistantMessageContent(
-            string? value1,
+            string? chatAssistantMessageContentVariant1,
             global::System.Collections.Generic.IList<global::G.ChatContentItems>? chatAssistantMessageContent1,
-            object? value3
+            object? chatAssistantMessageContentVariant3
             )
         {
-            Value1 = value1;
+            ChatAssistantMessageContentVariant1 = chatAssistantMessageContentVariant1;
             ChatAssistantMessageContent1 = chatAssistantMessageContent1;
-            Value3 = value3;
+            ChatAssistantMessageContentVariant3 = chatAssistantMessageContentVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            ChatAssistantMessageContentVariant3 as object ??
             ChatAssistantMessageContent1 as object ??
-            Value1 as object 
+            ChatAssistantMessageContentVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            ChatAssistantMessageContentVariant1?.ToString() ??
             ChatAssistantMessageContent1?.ToString() ??
-            Value3?.ToString() 
+            ChatAssistantMessageContentVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -115,16 +115,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsChatAssistantMessageContent1 && !IsValue3 || !IsValue1 && IsChatAssistantMessageContent1 && !IsValue3 || !IsValue1 && !IsChatAssistantMessageContent1 && IsValue3;
+            return IsChatAssistantMessageContentVariant1 && !IsChatAssistantMessageContent1 && !IsChatAssistantMessageContentVariant3 || !IsChatAssistantMessageContentVariant1 && IsChatAssistantMessageContent1 && !IsChatAssistantMessageContentVariant3 || !IsChatAssistantMessageContentVariant1 && !IsChatAssistantMessageContent1 && IsChatAssistantMessageContentVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? chatAssistantMessageContentVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::G.ChatContentItems>?, TResult>? chatAssistantMessageContent1 = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? chatAssistantMessageContentVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,17 +132,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsChatAssistantMessageContentVariant1 && chatAssistantMessageContentVariant1 != null)
             {
-                return value1(Value1!);
+                return chatAssistantMessageContentVariant1(ChatAssistantMessageContentVariant1!);
             }
             else if (IsChatAssistantMessageContent1 && chatAssistantMessageContent1 != null)
             {
                 return chatAssistantMessageContent1(ChatAssistantMessageContent1!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsChatAssistantMessageContentVariant3 && chatAssistantMessageContentVariant3 != null)
             {
-                return value3(Value3!);
+                return chatAssistantMessageContentVariant3(ChatAssistantMessageContentVariant3!);
             }
 
             return default(TResult);
@@ -152,9 +152,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? chatAssistantMessageContentVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::G.ChatContentItems>?>? chatAssistantMessageContent1 = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? chatAssistantMessageContentVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -162,17 +162,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsChatAssistantMessageContentVariant1)
             {
-                value1?.Invoke(Value1!);
+                chatAssistantMessageContentVariant1?.Invoke(ChatAssistantMessageContentVariant1!);
             }
             else if (IsChatAssistantMessageContent1)
             {
                 chatAssistantMessageContent1?.Invoke(ChatAssistantMessageContent1!);
             }
-            else if (IsValue3)
+            else if (IsChatAssistantMessageContentVariant3)
             {
-                value3?.Invoke(Value3!);
+                chatAssistantMessageContentVariant3?.Invoke(ChatAssistantMessageContentVariant3!);
             }
         }
 
@@ -183,11 +183,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ChatAssistantMessageContentVariant1,
                 typeof(string),
                 ChatAssistantMessageContent1,
                 typeof(global::System.Collections.Generic.IList<global::G.ChatContentItems>),
-                Value3,
+                ChatAssistantMessageContentVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -205,9 +205,9 @@ namespace G
         public bool Equals(ChatAssistantMessageContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ChatAssistantMessageContentVariant1, other.ChatAssistantMessageContentVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.ChatContentItems>?>.Default.Equals(ChatAssistantMessageContent1, other.ChatAssistantMessageContent1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ChatAssistantMessageContentVariant3, other.ChatAssistantMessageContentVariant3) 
                 ;
         }
 

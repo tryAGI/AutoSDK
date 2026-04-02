@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResearchEventDtoClassVariant1? Value1 { get; init; }
+        public global::G.ResearchEventDtoClassVariant1? ResearchEventDtoClassVariant1 { get; init; }
 #else
-        public global::G.ResearchEventDtoClassVariant1? Value1 { get; }
+        public global::G.ResearchEventDtoClassVariant1? ResearchEventDtoClassVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResearchEventDtoClassVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsResearchEventDtoClassVariant1 => ResearchEventDtoClassVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResearchEventDtoClassVariant2? Value2 { get; init; }
+        public global::G.ResearchEventDtoClassVariant2? ResearchEventDtoClassVariant2 { get; init; }
 #else
-        public global::G.ResearchEventDtoClassVariant2? Value2 { get; }
+        public global::G.ResearchEventDtoClassVariant2? ResearchEventDtoClassVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResearchEventDtoClassVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsResearchEventDtoClassVariant2 => ResearchEventDtoClassVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResearchEventDtoClassVariant3? Value3 { get; init; }
+        public global::G.ResearchEventDtoClassVariant3? ResearchEventDtoClassVariant3 { get; init; }
 #else
-        public global::G.ResearchEventDtoClassVariant3? Value3 { get; }
+        public global::G.ResearchEventDtoClassVariant3? ResearchEventDtoClassVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResearchEventDtoClassVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsResearchEventDtoClassVariant3 => ResearchEventDtoClassVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResearchEventDtoClassVariant1?(ResearchEventDtoClass @this) => @this.Value1;
+        public static implicit operator global::G.ResearchEventDtoClassVariant1?(ResearchEventDtoClass @this) => @this.ResearchEventDtoClassVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ResearchEventDtoClass(global::G.ResearchEventDtoClassVariant1? value)
         {
-            Value1 = value;
+            ResearchEventDtoClassVariant1 = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResearchEventDtoClassVariant2?(ResearchEventDtoClass @this) => @this.Value2;
+        public static implicit operator global::G.ResearchEventDtoClassVariant2?(ResearchEventDtoClass @this) => @this.ResearchEventDtoClassVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ResearchEventDtoClass(global::G.ResearchEventDtoClassVariant2? value)
         {
-            Value2 = value;
+            ResearchEventDtoClassVariant2 = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResearchEventDtoClassVariant3?(ResearchEventDtoClass @this) => @this.Value3;
+        public static implicit operator global::G.ResearchEventDtoClassVariant3?(ResearchEventDtoClass @this) => @this.ResearchEventDtoClassVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public ResearchEventDtoClass(global::G.ResearchEventDtoClassVariant3? value)
         {
-            Value3 = value;
+            ResearchEventDtoClassVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ResearchEventDtoClass(
-            global::G.ResearchEventDtoClassVariant1? value1,
-            global::G.ResearchEventDtoClassVariant2? value2,
-            global::G.ResearchEventDtoClassVariant3? value3
+            global::G.ResearchEventDtoClassVariant1? researchEventDtoClassVariant1,
+            global::G.ResearchEventDtoClassVariant2? researchEventDtoClassVariant2,
+            global::G.ResearchEventDtoClassVariant3? researchEventDtoClassVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            ResearchEventDtoClassVariant1 = researchEventDtoClassVariant1;
+            ResearchEventDtoClassVariant2 = researchEventDtoClassVariant2;
+            ResearchEventDtoClassVariant3 = researchEventDtoClassVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ResearchEventDtoClassVariant3 as object ??
+            ResearchEventDtoClassVariant2 as object ??
+            ResearchEventDtoClassVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            ResearchEventDtoClassVariant1?.ToString() ??
+            ResearchEventDtoClassVariant2?.ToString() ??
+            ResearchEventDtoClassVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 || !IsValue1 && IsValue2 && !IsValue3 || !IsValue1 && !IsValue2 && IsValue3;
+            return IsResearchEventDtoClassVariant1 && !IsResearchEventDtoClassVariant2 && !IsResearchEventDtoClassVariant3 || !IsResearchEventDtoClassVariant1 && IsResearchEventDtoClassVariant2 && !IsResearchEventDtoClassVariant3 || !IsResearchEventDtoClassVariant1 && !IsResearchEventDtoClassVariant2 && IsResearchEventDtoClassVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResearchEventDtoClassVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.ResearchEventDtoClassVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.ResearchEventDtoClassVariant3?, TResult>? value3 = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant1?, TResult>? researchEventDtoClassVariant1 = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant2?, TResult>? researchEventDtoClassVariant2 = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant3?, TResult>? researchEventDtoClassVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsResearchEventDtoClassVariant1 && researchEventDtoClassVariant1 != null)
             {
-                return value1(Value1!);
+                return researchEventDtoClassVariant1(ResearchEventDtoClassVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsResearchEventDtoClassVariant2 && researchEventDtoClassVariant2 != null)
             {
-                return value2(Value2!);
+                return researchEventDtoClassVariant2(ResearchEventDtoClassVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsResearchEventDtoClassVariant3 && researchEventDtoClassVariant3 != null)
             {
-                return value3(Value3!);
+                return researchEventDtoClassVariant3(ResearchEventDtoClassVariant3!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResearchEventDtoClassVariant1?>? value1 = null,
-            global::System.Action<global::G.ResearchEventDtoClassVariant2?>? value2 = null,
-            global::System.Action<global::G.ResearchEventDtoClassVariant3?>? value3 = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant1?>? researchEventDtoClassVariant1 = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant2?>? researchEventDtoClassVariant2 = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant3?>? researchEventDtoClassVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsResearchEventDtoClassVariant1)
             {
-                value1?.Invoke(Value1!);
+                researchEventDtoClassVariant1?.Invoke(ResearchEventDtoClassVariant1!);
             }
-            else if (IsValue2)
+            else if (IsResearchEventDtoClassVariant2)
             {
-                value2?.Invoke(Value2!);
+                researchEventDtoClassVariant2?.Invoke(ResearchEventDtoClassVariant2!);
             }
-            else if (IsValue3)
+            else if (IsResearchEventDtoClassVariant3)
             {
-                value3?.Invoke(Value3!);
+                researchEventDtoClassVariant3?.Invoke(ResearchEventDtoClassVariant3!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ResearchEventDtoClassVariant1,
                 typeof(global::G.ResearchEventDtoClassVariant1),
-                Value2,
+                ResearchEventDtoClassVariant2,
                 typeof(global::G.ResearchEventDtoClassVariant2),
-                Value3,
+                ResearchEventDtoClassVariant3,
                 typeof(global::G.ResearchEventDtoClassVariant3),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(ResearchEventDtoClass other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ResearchEventDtoClassVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResearchEventDtoClassVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResearchEventDtoClassVariant3?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ResearchEventDtoClassVariant1?>.Default.Equals(ResearchEventDtoClassVariant1, other.ResearchEventDtoClassVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResearchEventDtoClassVariant2?>.Default.Equals(ResearchEventDtoClassVariant2, other.ResearchEventDtoClassVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResearchEventDtoClassVariant3?>.Default.Equals(ResearchEventDtoClassVariant3, other.ResearchEventDtoClassVariant3) 
                 ;
         }
 

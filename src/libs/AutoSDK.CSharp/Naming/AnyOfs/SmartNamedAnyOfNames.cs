@@ -7,9 +7,10 @@ public static class SmartNamedAnyOfNames
 {
     public static string ComputePropertyName(IList<SchemaContext> children, string className, int i)
     {
+        var child = children.ElementAt(i);
         return ShouldUseSmartName(children, className)
             ? ComputeSmartName(
-                children.ElementAt(i).TypeData,
+                GetCandidateName(child),
                 className)
             : $"Value{i + 1}";
     }
@@ -17,19 +18,29 @@ public static class SmartNamedAnyOfNames
     public static bool ShouldUseSmartName(IList<SchemaContext> children, string className)
     {
         return children.All(x =>
-            x.Schema.IsSchemaReference() &&
-            !string.IsNullOrWhiteSpace(ComputeSmartName(x.TypeData, className)) &&
-            x.TypeData.CSharpTypeWithoutNullability.StartsWith("global::System.", StringComparison.Ordinal) != true);
+            !string.IsNullOrWhiteSpace(ComputeSmartName(GetCandidateName(x), className)));
     }
 
     public static string ComputeSmartName(TypeData typeData, string className)
     {
-        var typeName = typeData.ShortCSharpTypeWithoutNullability;
+        return ComputeSmartName(typeData.ShortCSharpTypeWithoutNullability, className);
+    }
+
+    public static string ComputeSmartName(string typeName, string className)
+    {
+        if (string.IsNullOrWhiteSpace(typeName))
+        {
+            return string.Empty;
+        }
+
         var nameWords = SplitToWordsByUpperCharacters(typeName);
         var classNameWords = SplitToWordsByUpperCharacters(className);
-
-        return string.Concat(
+        var reducedName = string.Concat(
             nameWords.Except(classNameWords));
+
+        return string.IsNullOrWhiteSpace(reducedName) || IsAnonymousVariantName(reducedName)
+            ? typeName
+            : reducedName;
     }
 
     public static string ComputeSmartNameForCombinedEnums(string[] names)
@@ -62,5 +73,48 @@ public static class SmartNamedAnyOfNames
         words.Add(text.Substring(startIndex));
 
         return words;
+    }
+
+    private static bool IsAnonymousVariantName(string text)
+    {
+        return text.StartsWith("Variant", StringComparison.Ordinal) &&
+               text.Length > "Variant".Length &&
+               text.AsSpan("Variant".Length).ToString().All(char.IsDigit);
+    }
+
+    private static string GetCandidateName(SchemaContext context)
+    {
+        var typeName = context.TypeData.ShortCSharpTypeWithoutNullability;
+        if (LooksLikeGeneratedIdentifier(typeName))
+        {
+            return typeName;
+        }
+
+        return LooksLikeGeneratedIdentifier(context.Id)
+            ? context.Id
+            : string.Empty;
+    }
+
+    private static bool LooksLikeGeneratedIdentifier(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return false;
+        }
+
+        if (!char.IsUpper(text[0]) && text[0] != '_')
+        {
+            return false;
+        }
+
+        for (var i = 1; i < text.Length; i++)
+        {
+            if (!char.IsLetterOrDigit(text[i]) && text[i] != '_')
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

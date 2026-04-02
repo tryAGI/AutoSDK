@@ -14,35 +14,35 @@ namespace G
         /// Base properties shared by all agent event types.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AgentEventBase? Value1 { get; init; }
+        public global::G.AgentEventBase? AgentBase { get; init; }
 #else
-        public global::G.AgentEventBase? Value1 { get; }
+        public global::G.AgentEventBase? AgentBase { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentBase))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAgentBase => AgentBase != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.StepTransitionEventVariant2? Value2 { get; init; }
+        public global::G.StepTransitionEventVariant2? StepTransitionEventVariant2 { get; init; }
 #else
-        public global::G.StepTransitionEventVariant2? Value2 { get; }
+        public global::G.StepTransitionEventVariant2? StepTransitionEventVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StepTransitionEventVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsStepTransitionEventVariant2 => StepTransitionEventVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AgentEventBase?(StepTransitionEvent @this) => @this.Value1;
+        public static implicit operator global::G.AgentEventBase?(StepTransitionEvent @this) => @this.AgentBase;
 
         /// <summary>
         /// 
         /// </summary>
         public StepTransitionEvent(global::G.AgentEventBase? value)
         {
-            Value1 = value;
+            AgentBase = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.StepTransitionEventVariant2?(StepTransitionEvent @this) => @this.Value2;
+        public static implicit operator global::G.StepTransitionEventVariant2?(StepTransitionEvent @this) => @this.StepTransitionEventVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public StepTransitionEvent(global::G.StepTransitionEventVariant2? value)
         {
-            Value2 = value;
+            StepTransitionEventVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public StepTransitionEvent(
-            global::G.AgentEventBase? value1,
-            global::G.StepTransitionEventVariant2? value2
+            global::G.AgentEventBase? agentBase,
+            global::G.StepTransitionEventVariant2? stepTransitionEventVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            AgentBase = agentBase;
+            StepTransitionEventVariant2 = stepTransitionEventVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            StepTransitionEventVariant2 as object ??
+            AgentBase as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            AgentBase?.ToString() ??
+            StepTransitionEventVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsAgentBase && IsStepTransitionEventVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentEventBase?, TResult>? value1 = null,
-            global::System.Func<global::G.StepTransitionEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.AgentEventBase?, TResult>? agentBase = null,
+            global::System.Func<global::G.StepTransitionEventVariant2?, TResult>? stepTransitionEventVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAgentBase && agentBase != null)
             {
-                return value1(Value1!);
+                return agentBase(AgentBase!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsStepTransitionEventVariant2 && stepTransitionEventVariant2 != null)
             {
-                return value2(Value2!);
+                return stepTransitionEventVariant2(StepTransitionEventVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentEventBase?>? value1 = null,
-            global::System.Action<global::G.StepTransitionEventVariant2?>? value2 = null,
+            global::System.Action<global::G.AgentEventBase?>? agentBase = null,
+            global::System.Action<global::G.StepTransitionEventVariant2?>? stepTransitionEventVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAgentBase)
             {
-                value1?.Invoke(Value1!);
+                agentBase?.Invoke(AgentBase!);
             }
-            else if (IsValue2)
+            else if (IsStepTransitionEventVariant2)
             {
-                value2?.Invoke(Value2!);
+                stepTransitionEventVariant2?.Invoke(StepTransitionEventVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                AgentBase,
                 typeof(global::G.AgentEventBase),
-                Value2,
+                StepTransitionEventVariant2,
                 typeof(global::G.StepTransitionEventVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(StepTransitionEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AgentEventBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.StepTransitionEventVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AgentEventBase?>.Default.Equals(AgentBase, other.AgentBase) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.StepTransitionEventVariant2?>.Default.Equals(StepTransitionEventVariant2, other.StepTransitionEventVariant2) 
                 ;
         }
 

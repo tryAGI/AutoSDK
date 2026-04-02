@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? FunctionCallOutputItemOutputVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? FunctionCallOutputItemOutputVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutputItemOutputVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsFunctionCallOutputItemOutputVariant1 => FunctionCallOutputItemOutputVariant1 != null;
 
         /// <summary>
         /// 
@@ -51,25 +51,25 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(FunctionCallOutputItemOutput @this) => @this.Value1;
+        public static implicit operator string?(FunctionCallOutputItemOutput @this) => @this.FunctionCallOutputItemOutputVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public FunctionCallOutputItemOutput(string? value)
         {
-            Value1 = value;
+            FunctionCallOutputItemOutputVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public FunctionCallOutputItemOutput(
-            string? value1,
+            string? functionCallOutputItemOutputVariant1,
             global::System.Collections.Generic.IList<global::G.FunctionCallOutputItemOutputOneOf1Items>? functionCallOutputItemOutput1
             )
         {
-            Value1 = value1;
+            FunctionCallOutputItemOutputVariant1 = functionCallOutputItemOutputVariant1;
             FunctionCallOutputItemOutput1 = functionCallOutputItemOutput1;
         }
 
@@ -78,14 +78,14 @@ namespace G
         /// </summary>
         public object? Object =>
             FunctionCallOutputItemOutput1 as object ??
-            Value1 as object 
+            FunctionCallOutputItemOutputVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            FunctionCallOutputItemOutputVariant1?.ToString() ??
             FunctionCallOutputItemOutput1?.ToString() 
             ;
 
@@ -94,14 +94,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsFunctionCallOutputItemOutput1 || !IsValue1 && IsFunctionCallOutputItemOutput1;
+            return IsFunctionCallOutputItemOutputVariant1 && !IsFunctionCallOutputItemOutput1 || !IsFunctionCallOutputItemOutputVariant1 && IsFunctionCallOutputItemOutput1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? functionCallOutputItemOutputVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::G.FunctionCallOutputItemOutputOneOf1Items>?, TResult>? functionCallOutputItemOutput1 = null,
             bool validate = true)
         {
@@ -110,9 +110,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsFunctionCallOutputItemOutputVariant1 && functionCallOutputItemOutputVariant1 != null)
             {
-                return value1(Value1!);
+                return functionCallOutputItemOutputVariant1(FunctionCallOutputItemOutputVariant1!);
             }
             else if (IsFunctionCallOutputItemOutput1 && functionCallOutputItemOutput1 != null)
             {
@@ -126,7 +126,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? functionCallOutputItemOutputVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::G.FunctionCallOutputItemOutputOneOf1Items>?>? functionCallOutputItemOutput1 = null,
             bool validate = true)
         {
@@ -135,9 +135,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsFunctionCallOutputItemOutputVariant1)
             {
-                value1?.Invoke(Value1!);
+                functionCallOutputItemOutputVariant1?.Invoke(FunctionCallOutputItemOutputVariant1!);
             }
             else if (IsFunctionCallOutputItemOutput1)
             {
@@ -152,7 +152,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                FunctionCallOutputItemOutputVariant1,
                 typeof(string),
                 FunctionCallOutputItemOutput1,
                 typeof(global::System.Collections.Generic.IList<global::G.FunctionCallOutputItemOutputOneOf1Items>),
@@ -172,7 +172,7 @@ namespace G
         public bool Equals(FunctionCallOutputItemOutput other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(FunctionCallOutputItemOutputVariant1, other.FunctionCallOutputItemOutputVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.FunctionCallOutputItemOutputOneOf1Items>?>.Default.Equals(FunctionCallOutputItemOutput1, other.FunctionCallOutputItemOutput1) 
                 ;
         }

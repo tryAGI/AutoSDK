@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ChatRequestImageConfigVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ChatRequestImageConfigVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestImageConfigVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsChatRequestImageConfigVariant1 => ChatRequestImageConfigVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public double? Value2 { get; init; }
+        public double? ChatRequestImageConfigVariant2 { get; init; }
 #else
-        public double? Value2 { get; }
+        public double? ChatRequestImageConfigVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestImageConfigVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsChatRequestImageConfigVariant2 => ChatRequestImageConfigVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<object>? Value3 { get; init; }
+        public global::System.Collections.Generic.IList<object>? ChatRequestImageConfigVariant3 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<object>? Value3 { get; }
+        public global::System.Collections.Generic.IList<object>? ChatRequestImageConfigVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestImageConfigVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsChatRequestImageConfigVariant3 => ChatRequestImageConfigVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ChatRequestImageConfig @this) => @this.Value1;
+        public static implicit operator string?(ChatRequestImageConfig @this) => @this.ChatRequestImageConfigVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestImageConfig(string? value)
         {
-            Value1 = value;
+            ChatRequestImageConfigVariant1 = value;
         }
 
         /// <summary>
@@ -86,46 +86,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator double?(ChatRequestImageConfig @this) => @this.Value2;
+        public static implicit operator double?(ChatRequestImageConfig @this) => @this.ChatRequestImageConfigVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestImageConfig(double? value)
         {
-            Value2 = value;
+            ChatRequestImageConfigVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestImageConfig(
-            string? value1,
-            double? value2,
-            global::System.Collections.Generic.IList<object>? value3
+            string? chatRequestImageConfigVariant1,
+            double? chatRequestImageConfigVariant2,
+            global::System.Collections.Generic.IList<object>? chatRequestImageConfigVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            ChatRequestImageConfigVariant1 = chatRequestImageConfigVariant1;
+            ChatRequestImageConfigVariant2 = chatRequestImageConfigVariant2;
+            ChatRequestImageConfigVariant3 = chatRequestImageConfigVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ChatRequestImageConfigVariant3 as object ??
+            ChatRequestImageConfigVariant2 as object ??
+            ChatRequestImageConfigVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            ChatRequestImageConfigVariant1?.ToString() ??
+            ChatRequestImageConfigVariant2?.ToString() ??
+            ChatRequestImageConfigVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -133,16 +133,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 || !IsValue1 && IsValue2 && !IsValue3 || !IsValue1 && !IsValue2 && IsValue3;
+            return IsChatRequestImageConfigVariant1 && !IsChatRequestImageConfigVariant2 && !IsChatRequestImageConfigVariant3 || !IsChatRequestImageConfigVariant1 && IsChatRequestImageConfigVariant2 && !IsChatRequestImageConfigVariant3 || !IsChatRequestImageConfigVariant1 && !IsChatRequestImageConfigVariant2 && IsChatRequestImageConfigVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<double?, TResult>? value2 = null,
-            global::System.Func<global::System.Collections.Generic.IList<object>?, TResult>? value3 = null,
+            global::System.Func<string?, TResult>? chatRequestImageConfigVariant1 = null,
+            global::System.Func<double?, TResult>? chatRequestImageConfigVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<object>?, TResult>? chatRequestImageConfigVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -150,17 +150,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsChatRequestImageConfigVariant1 && chatRequestImageConfigVariant1 != null)
             {
-                return value1(Value1!);
+                return chatRequestImageConfigVariant1(ChatRequestImageConfigVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsChatRequestImageConfigVariant2 && chatRequestImageConfigVariant2 != null)
             {
-                return value2(Value2!);
+                return chatRequestImageConfigVariant2(ChatRequestImageConfigVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsChatRequestImageConfigVariant3 && chatRequestImageConfigVariant3 != null)
             {
-                return value3(Value3!);
+                return chatRequestImageConfigVariant3(ChatRequestImageConfigVariant3!);
             }
 
             return default(TResult);
@@ -170,9 +170,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<double?>? value2 = null,
-            global::System.Action<global::System.Collections.Generic.IList<object>?>? value3 = null,
+            global::System.Action<string?>? chatRequestImageConfigVariant1 = null,
+            global::System.Action<double?>? chatRequestImageConfigVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<object>?>? chatRequestImageConfigVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -180,17 +180,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsChatRequestImageConfigVariant1)
             {
-                value1?.Invoke(Value1!);
+                chatRequestImageConfigVariant1?.Invoke(ChatRequestImageConfigVariant1!);
             }
-            else if (IsValue2)
+            else if (IsChatRequestImageConfigVariant2)
             {
-                value2?.Invoke(Value2!);
+                chatRequestImageConfigVariant2?.Invoke(ChatRequestImageConfigVariant2!);
             }
-            else if (IsValue3)
+            else if (IsChatRequestImageConfigVariant3)
             {
-                value3?.Invoke(Value3!);
+                chatRequestImageConfigVariant3?.Invoke(ChatRequestImageConfigVariant3!);
             }
         }
 
@@ -201,11 +201,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ChatRequestImageConfigVariant1,
                 typeof(string),
-                Value2,
+                ChatRequestImageConfigVariant2,
                 typeof(double),
-                Value3,
+                ChatRequestImageConfigVariant3,
                 typeof(global::System.Collections.Generic.IList<object>),
             };
             const int offset = unchecked((int)2166136261);
@@ -223,9 +223,9 @@ namespace G
         public bool Equals(ChatRequestImageConfig other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<object>?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ChatRequestImageConfigVariant1, other.ChatRequestImageConfigVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(ChatRequestImageConfigVariant2, other.ChatRequestImageConfigVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<object>?>.Default.Equals(ChatRequestImageConfigVariant3, other.ChatRequestImageConfigVariant3) 
                 ;
         }
 

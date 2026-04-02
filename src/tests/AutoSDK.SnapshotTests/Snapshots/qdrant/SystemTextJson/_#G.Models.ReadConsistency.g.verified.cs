@@ -20,18 +20,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? Value1 { get; init; }
+        public int? ReadConsistencyVariant1 { get; init; }
 #else
-        public int? Value1 { get; }
+        public int? ReadConsistencyVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReadConsistencyVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsReadConsistencyVariant1 => ReadConsistencyVariant1 != null;
 
         /// <summary>
         /// * `majority` - send N/2+1 random request and return points, which present on all of them<br/>
@@ -39,18 +39,18 @@ namespace G
         /// * `all` - send requests to all nodes and return points which present on all nodes
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ReadConsistencyType? Value2 { get; init; }
+        public global::G.ReadConsistencyType? Type { get; init; }
 #else
-        public global::G.ReadConsistencyType? Value2 { get; }
+        public global::G.ReadConsistencyType? Type { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Type))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsType => Type != null;
         /// <summary>
         /// 
         /// </summary>
@@ -59,14 +59,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator int?(ReadConsistency @this) => @this.Value1;
+        public static implicit operator int?(ReadConsistency @this) => @this.ReadConsistencyVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ReadConsistency(int? value)
         {
-            Value1 = value;
+            ReadConsistencyVariant1 = value;
         }
 
         /// <summary>
@@ -77,42 +77,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ReadConsistencyType?(ReadConsistency @this) => @this.Value2;
+        public static implicit operator global::G.ReadConsistencyType?(ReadConsistency @this) => @this.Type;
 
         /// <summary>
         /// 
         /// </summary>
         public ReadConsistency(global::G.ReadConsistencyType? value)
         {
-            Value2 = value;
+            Type = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ReadConsistency(
-            int? value1,
-            global::G.ReadConsistencyType? value2
+            int? readConsistencyVariant1,
+            global::G.ReadConsistencyType? type
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ReadConsistencyVariant1 = readConsistencyVariant1;
+            Type = type;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Type as object ??
+            ReadConsistencyVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToValueString() 
+            ReadConsistencyVariant1?.ToString() ??
+            Type?.ToValueString() 
             ;
 
         /// <summary>
@@ -120,15 +120,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsReadConsistencyVariant1 || IsType;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<int?, TResult>? value1 = null,
-            global::System.Func<global::G.ReadConsistencyType?, TResult>? value2 = null,
+            global::System.Func<int?, TResult>? readConsistencyVariant1 = null,
+            global::System.Func<global::G.ReadConsistencyType?, TResult>? type = null,
             bool validate = true)
         {
             if (validate)
@@ -136,13 +136,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsReadConsistencyVariant1 && readConsistencyVariant1 != null)
             {
-                return value1(Value1!);
+                return readConsistencyVariant1(ReadConsistencyVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsType && type != null)
             {
-                return value2(Value2!);
+                return type(Type!);
             }
 
             return default(TResult);
@@ -152,8 +152,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<int?>? value1 = null,
-            global::System.Action<global::G.ReadConsistencyType?>? value2 = null,
+            global::System.Action<int?>? readConsistencyVariant1 = null,
+            global::System.Action<global::G.ReadConsistencyType?>? type = null,
             bool validate = true)
         {
             if (validate)
@@ -161,13 +161,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsReadConsistencyVariant1)
             {
-                value1?.Invoke(Value1!);
+                readConsistencyVariant1?.Invoke(ReadConsistencyVariant1!);
             }
-            else if (IsValue2)
+            else if (IsType)
             {
-                value2?.Invoke(Value2!);
+                type?.Invoke(Type!);
             }
         }
 
@@ -178,9 +178,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ReadConsistencyVariant1,
                 typeof(int),
-                Value2,
+                Type,
                 typeof(global::G.ReadConsistencyType),
             };
             const int offset = unchecked((int)2166136261);
@@ -198,8 +198,8 @@ namespace G
         public bool Equals(ReadConsistency other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ReadConsistencyType?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(ReadConsistencyVariant1, other.ReadConsistencyVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ReadConsistencyType?>.Default.Equals(Type, other.Type) 
                 ;
         }
 

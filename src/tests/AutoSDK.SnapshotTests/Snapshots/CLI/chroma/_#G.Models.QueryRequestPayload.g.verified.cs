@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RawWhereFields? Value1 { get; init; }
+        public global::G.RawWhereFields? RawWhereFields { get; init; }
 #else
-        public global::G.RawWhereFields? Value1 { get; }
+        public global::G.RawWhereFields? RawWhereFields { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RawWhereFields))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsRawWhereFields => RawWhereFields != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.QueryRequestPayloadVariant2? Value2 { get; init; }
+        public global::G.QueryRequestPayloadVariant2? QueryRequestPayloadVariant2 { get; init; }
 #else
-        public global::G.QueryRequestPayloadVariant2? Value2 { get; }
+        public global::G.QueryRequestPayloadVariant2? QueryRequestPayloadVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueryRequestPayloadVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsQueryRequestPayloadVariant2 => QueryRequestPayloadVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RawWhereFields?(QueryRequestPayload @this) => @this.Value1;
+        public static implicit operator global::G.RawWhereFields?(QueryRequestPayload @this) => @this.RawWhereFields;
 
         /// <summary>
         /// 
         /// </summary>
         public QueryRequestPayload(global::G.RawWhereFields? value)
         {
-            Value1 = value;
+            RawWhereFields = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.QueryRequestPayloadVariant2?(QueryRequestPayload @this) => @this.Value2;
+        public static implicit operator global::G.QueryRequestPayloadVariant2?(QueryRequestPayload @this) => @this.QueryRequestPayloadVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public QueryRequestPayload(global::G.QueryRequestPayloadVariant2? value)
         {
-            Value2 = value;
+            QueryRequestPayloadVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public QueryRequestPayload(
-            global::G.RawWhereFields? value1,
-            global::G.QueryRequestPayloadVariant2? value2
+            global::G.RawWhereFields? rawWhereFields,
+            global::G.QueryRequestPayloadVariant2? queryRequestPayloadVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            RawWhereFields = rawWhereFields;
+            QueryRequestPayloadVariant2 = queryRequestPayloadVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            QueryRequestPayloadVariant2 as object ??
+            RawWhereFields as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            RawWhereFields?.ToString() ??
+            QueryRequestPayloadVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsRawWhereFields && IsQueryRequestPayloadVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RawWhereFields?, TResult>? value1 = null,
-            global::System.Func<global::G.QueryRequestPayloadVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.RawWhereFields?, TResult>? rawWhereFields = null,
+            global::System.Func<global::G.QueryRequestPayloadVariant2?, TResult>? queryRequestPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsRawWhereFields && rawWhereFields != null)
             {
-                return value1(Value1!);
+                return rawWhereFields(RawWhereFields!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsQueryRequestPayloadVariant2 && queryRequestPayloadVariant2 != null)
             {
-                return value2(Value2!);
+                return queryRequestPayloadVariant2(QueryRequestPayloadVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RawWhereFields?>? value1 = null,
-            global::System.Action<global::G.QueryRequestPayloadVariant2?>? value2 = null,
+            global::System.Action<global::G.RawWhereFields?>? rawWhereFields = null,
+            global::System.Action<global::G.QueryRequestPayloadVariant2?>? queryRequestPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsRawWhereFields)
             {
-                value1?.Invoke(Value1!);
+                rawWhereFields?.Invoke(RawWhereFields!);
             }
-            else if (IsValue2)
+            else if (IsQueryRequestPayloadVariant2)
             {
-                value2?.Invoke(Value2!);
+                queryRequestPayloadVariant2?.Invoke(QueryRequestPayloadVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                RawWhereFields,
                 typeof(global::G.RawWhereFields),
-                Value2,
+                QueryRequestPayloadVariant2,
                 typeof(global::G.QueryRequestPayloadVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(QueryRequestPayload other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.RawWhereFields?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.QueryRequestPayloadVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.RawWhereFields?>.Default.Equals(RawWhereFields, other.RawWhereFields) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.QueryRequestPayloadVariant2?>.Default.Equals(QueryRequestPayloadVariant2, other.QueryRequestPayloadVariant2) 
                 ;
         }
 

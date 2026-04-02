@@ -55,8 +55,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            long? value1 = default;
-            double? value2 = default;
+            long? orderValueVariant1 = default;
+            double? orderValueVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -66,7 +66,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(long), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<long> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(long).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        orderValueVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -83,7 +83,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        orderValueVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -94,14 +94,14 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (orderValueVariant1 == null && orderValueVariant2 == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(long), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<long> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(long).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    orderValueVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -115,7 +115,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    orderValueVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -126,9 +126,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.OrderValue(
-                value1,
+                orderValueVariant1,
 
-                value2
+                orderValueVariant2
                 );
 
             return __value;
@@ -143,17 +143,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsOrderValueVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(long), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<long> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(long).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OrderValueVariant1!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsOrderValueVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OrderValueVariant2!.Value, typeInfo);
             }
         }
     }

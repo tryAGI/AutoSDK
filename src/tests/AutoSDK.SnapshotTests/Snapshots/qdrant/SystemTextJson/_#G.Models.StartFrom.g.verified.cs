@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public long? Value1 { get; init; }
+        public long? StartFromVariant1 { get; init; }
 #else
-        public long? Value1 { get; }
+        public long? StartFromVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StartFromVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsStartFromVariant1 => StartFromVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public double? Value2 { get; init; }
+        public double? StartFromVariant2 { get; init; }
 #else
-        public double? Value2 { get; }
+        public double? StartFromVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StartFromVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsStartFromVariant2 => StartFromVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.DateTime? Value3 { get; init; }
+        public global::System.DateTime? DateTime { get; init; }
 #else
-        public global::System.DateTime? Value3 { get; }
+        public global::System.DateTime? DateTime { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DateTime))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsDateTime => DateTime != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator long?(StartFrom @this) => @this.Value1;
+        public static implicit operator long?(StartFrom @this) => @this.StartFromVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public StartFrom(long? value)
         {
-            Value1 = value;
+            StartFromVariant1 = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator double?(StartFrom @this) => @this.Value2;
+        public static implicit operator double?(StartFrom @this) => @this.StartFromVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public StartFrom(double? value)
         {
-            Value2 = value;
+            StartFromVariant2 = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::System.DateTime?(StartFrom @this) => @this.Value3;
+        public static implicit operator global::System.DateTime?(StartFrom @this) => @this.DateTime;
 
         /// <summary>
         /// 
         /// </summary>
         public StartFrom(global::System.DateTime? value)
         {
-            Value3 = value;
+            DateTime = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public StartFrom(
-            long? value1,
-            double? value2,
-            global::System.DateTime? value3
+            long? startFromVariant1,
+            double? startFromVariant2,
+            global::System.DateTime? dateTime
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            StartFromVariant1 = startFromVariant1;
+            StartFromVariant2 = startFromVariant2;
+            DateTime = dateTime;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            DateTime as object ??
+            StartFromVariant2 as object ??
+            StartFromVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            StartFromVariant1?.ToString() ??
+            StartFromVariant2?.ToString() ??
+            DateTime?.ToString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsStartFromVariant1 || IsStartFromVariant2 || IsDateTime;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<long?, TResult>? value1 = null,
-            global::System.Func<double?, TResult>? value2 = null,
-            global::System.Func<global::System.DateTime?, TResult>? value3 = null,
+            global::System.Func<long?, TResult>? startFromVariant1 = null,
+            global::System.Func<double?, TResult>? startFromVariant2 = null,
+            global::System.Func<global::System.DateTime?, TResult>? dateTime = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsStartFromVariant1 && startFromVariant1 != null)
             {
-                return value1(Value1!);
+                return startFromVariant1(StartFromVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsStartFromVariant2 && startFromVariant2 != null)
             {
-                return value2(Value2!);
+                return startFromVariant2(StartFromVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsDateTime && dateTime != null)
             {
-                return value3(Value3!);
+                return dateTime(DateTime!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<long?>? value1 = null,
-            global::System.Action<double?>? value2 = null,
-            global::System.Action<global::System.DateTime?>? value3 = null,
+            global::System.Action<long?>? startFromVariant1 = null,
+            global::System.Action<double?>? startFromVariant2 = null,
+            global::System.Action<global::System.DateTime?>? dateTime = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsStartFromVariant1)
             {
-                value1?.Invoke(Value1!);
+                startFromVariant1?.Invoke(StartFromVariant1!);
             }
-            else if (IsValue2)
+            else if (IsStartFromVariant2)
             {
-                value2?.Invoke(Value2!);
+                startFromVariant2?.Invoke(StartFromVariant2!);
             }
-            else if (IsValue3)
+            else if (IsDateTime)
             {
-                value3?.Invoke(Value3!);
+                dateTime?.Invoke(DateTime!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                StartFromVariant1,
                 typeof(long),
-                Value2,
+                StartFromVariant2,
                 typeof(double),
-                Value3,
+                DateTime,
                 typeof(global::System.DateTime),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(StartFrom other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.DateTime?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(StartFromVariant1, other.StartFromVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(StartFromVariant2, other.StartFromVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.DateTime?>.Default.Equals(DateTime, other.DateTime) 
                 ;
         }
 

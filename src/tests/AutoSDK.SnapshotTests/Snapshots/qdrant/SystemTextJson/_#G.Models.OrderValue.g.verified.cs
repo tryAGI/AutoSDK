@@ -14,35 +14,35 @@ namespace G
         /// Example: 42
         /// </summary>
 #if NET6_0_OR_GREATER
-        public long? Value1 { get; init; }
+        public long? OrderValueVariant1 { get; init; }
 #else
-        public long? Value1 { get; }
+        public long? OrderValueVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrderValueVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsOrderValueVariant1 => OrderValueVariant1 != null;
 
         /// <summary>
         /// Example: 42.5F
         /// </summary>
 #if NET6_0_OR_GREATER
-        public double? Value2 { get; init; }
+        public double? OrderValueVariant2 { get; init; }
 #else
-        public double? Value2 { get; }
+        public double? OrderValueVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrderValueVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsOrderValueVariant2 => OrderValueVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator long?(OrderValue @this) => @this.Value1;
+        public static implicit operator long?(OrderValue @this) => @this.OrderValueVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public OrderValue(long? value)
         {
-            Value1 = value;
+            OrderValueVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator double?(OrderValue @this) => @this.Value2;
+        public static implicit operator double?(OrderValue @this) => @this.OrderValueVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public OrderValue(double? value)
         {
-            Value2 = value;
+            OrderValueVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public OrderValue(
-            long? value1,
-            double? value2
+            long? orderValueVariant1,
+            double? orderValueVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            OrderValueVariant1 = orderValueVariant1;
+            OrderValueVariant2 = orderValueVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            OrderValueVariant2 as object ??
+            OrderValueVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            OrderValueVariant1?.ToString() ??
+            OrderValueVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsOrderValueVariant1 || IsOrderValueVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<long?, TResult>? value1 = null,
-            global::System.Func<double?, TResult>? value2 = null,
+            global::System.Func<long?, TResult>? orderValueVariant1 = null,
+            global::System.Func<double?, TResult>? orderValueVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsOrderValueVariant1 && orderValueVariant1 != null)
             {
-                return value1(Value1!);
+                return orderValueVariant1(OrderValueVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsOrderValueVariant2 && orderValueVariant2 != null)
             {
-                return value2(Value2!);
+                return orderValueVariant2(OrderValueVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<long?>? value1 = null,
-            global::System.Action<double?>? value2 = null,
+            global::System.Action<long?>? orderValueVariant1 = null,
+            global::System.Action<double?>? orderValueVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsOrderValueVariant1)
             {
-                value1?.Invoke(Value1!);
+                orderValueVariant1?.Invoke(OrderValueVariant1!);
             }
-            else if (IsValue2)
+            else if (IsOrderValueVariant2)
             {
-                value2?.Invoke(Value2!);
+                orderValueVariant2?.Invoke(OrderValueVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                OrderValueVariant1,
                 typeof(long),
-                Value2,
+                OrderValueVariant2,
                 typeof(double),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(OrderValue other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(OrderValueVariant1, other.OrderValueVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(OrderValueVariant2, other.OrderValueVariant2) 
                 ;
         }
 

@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SingleQueryResult? Value1 { get; init; }
+        public global::G.SingleQueryResult? Single { get; init; }
 #else
-        public global::G.SingleQueryResult? Value1 { get; }
+        public global::G.SingleQueryResult? Single { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Single))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsSingle => Single != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.QueryResultVariant2? Value2 { get; init; }
+        public global::G.QueryResultVariant2? QueryResultVariant2 { get; init; }
 #else
-        public global::G.QueryResultVariant2? Value2 { get; }
+        public global::G.QueryResultVariant2? QueryResultVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueryResultVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsQueryResultVariant2 => QueryResultVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SingleQueryResult?(QueryResult @this) => @this.Value1;
+        public static implicit operator global::G.SingleQueryResult?(QueryResult @this) => @this.Single;
 
         /// <summary>
         /// 
         /// </summary>
         public QueryResult(global::G.SingleQueryResult? value)
         {
-            Value1 = value;
+            Single = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.QueryResultVariant2?(QueryResult @this) => @this.Value2;
+        public static implicit operator global::G.QueryResultVariant2?(QueryResult @this) => @this.QueryResultVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public QueryResult(global::G.QueryResultVariant2? value)
         {
-            Value2 = value;
+            QueryResultVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public QueryResult(
-            global::G.SingleQueryResult? value1,
-            global::G.QueryResultVariant2? value2
+            global::G.SingleQueryResult? single,
+            global::G.QueryResultVariant2? queryResultVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Single = single;
+            QueryResultVariant2 = queryResultVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            QueryResultVariant2 as object ??
+            Single as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Single?.ToString() ??
+            QueryResultVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsSingle && IsQueryResultVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SingleQueryResult?, TResult>? value1 = null,
-            global::System.Func<global::G.QueryResultVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.SingleQueryResult?, TResult>? single = null,
+            global::System.Func<global::G.QueryResultVariant2?, TResult>? queryResultVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsSingle && single != null)
             {
-                return value1(Value1!);
+                return single(Single!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsQueryResultVariant2 && queryResultVariant2 != null)
             {
-                return value2(Value2!);
+                return queryResultVariant2(QueryResultVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SingleQueryResult?>? value1 = null,
-            global::System.Action<global::G.QueryResultVariant2?>? value2 = null,
+            global::System.Action<global::G.SingleQueryResult?>? single = null,
+            global::System.Action<global::G.QueryResultVariant2?>? queryResultVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsSingle)
             {
-                value1?.Invoke(Value1!);
+                single?.Invoke(Single!);
             }
-            else if (IsValue2)
+            else if (IsQueryResultVariant2)
             {
-                value2?.Invoke(Value2!);
+                queryResultVariant2?.Invoke(QueryResultVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Single,
                 typeof(global::G.SingleQueryResult),
-                Value2,
+                QueryResultVariant2,
                 typeof(global::G.QueryResultVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(QueryResult other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.SingleQueryResult?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.QueryResultVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.SingleQueryResult?>.Default.Equals(Single, other.Single) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.QueryResultVariant2?>.Default.Equals(QueryResultVariant2, other.QueryResultVariant2) 
                 ;
         }
 

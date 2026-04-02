@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>? Value1 { get; init; }
+        public global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>? NodeToolVariant1 { get; init; }
 #else
-        public global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>? Value1 { get; }
+        public global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>? NodeToolVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NodeToolVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsNodeToolVariant1 => NodeToolVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.NodeToolVariant2? Value2 { get; init; }
+        public global::G.NodeToolVariant2? NodeToolVariant2 { get; init; }
 #else
-        public global::G.NodeToolVariant2? Value2 { get; }
+        public global::G.NodeToolVariant2? NodeToolVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NodeToolVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsNodeToolVariant2 => NodeToolVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>?(NodeTool @this) => @this.Value1;
+        public static implicit operator global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>?(NodeTool @this) => @this.NodeToolVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public NodeTool(global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>? value)
         {
-            Value1 = value;
+            NodeToolVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.NodeToolVariant2?(NodeTool @this) => @this.Value2;
+        public static implicit operator global::G.NodeToolVariant2?(NodeTool @this) => @this.NodeToolVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public NodeTool(global::G.NodeToolVariant2? value)
         {
-            Value2 = value;
+            NodeToolVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public NodeTool(
-            global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>? value1,
-            global::G.NodeToolVariant2? value2
+            global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>? nodeToolVariant1,
+            global::G.NodeToolVariant2? nodeToolVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            NodeToolVariant1 = nodeToolVariant1;
+            NodeToolVariant2 = nodeToolVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            NodeToolVariant2 as object ??
+            NodeToolVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            NodeToolVariant1?.ToString() ??
+            NodeToolVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsNodeToolVariant1 && IsNodeToolVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>?, TResult>? value1 = null,
-            global::System.Func<global::G.NodeToolVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>?, TResult>? nodeToolVariant1 = null,
+            global::System.Func<global::G.NodeToolVariant2?, TResult>? nodeToolVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsNodeToolVariant1 && nodeToolVariant1 != null)
             {
-                return value1(Value1!);
+                return nodeToolVariant1(NodeToolVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsNodeToolVariant2 && nodeToolVariant2 != null)
             {
-                return value2(Value2!);
+                return nodeToolVariant2(NodeToolVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>?>? value1 = null,
-            global::System.Action<global::G.NodeToolVariant2?>? value2 = null,
+            global::System.Action<global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>?>? nodeToolVariant1 = null,
+            global::System.Action<global::G.NodeToolVariant2?>? nodeToolVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsNodeToolVariant1)
             {
-                value1?.Invoke(Value1!);
+                nodeToolVariant1?.Invoke(NodeToolVariant1!);
             }
-            else if (IsValue2)
+            else if (IsNodeToolVariant2)
             {
-                value2?.Invoke(Value2!);
+                nodeToolVariant2?.Invoke(NodeToolVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                NodeToolVariant1,
                 typeof(global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>),
-                Value2,
+                NodeToolVariant2,
                 typeof(global::G.NodeToolVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(NodeTool other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.NodeToolVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>?>.Default.Equals(NodeToolVariant1, other.NodeToolVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.NodeToolVariant2?>.Default.Equals(NodeToolVariant2, other.NodeToolVariant2) 
                 ;
         }
 

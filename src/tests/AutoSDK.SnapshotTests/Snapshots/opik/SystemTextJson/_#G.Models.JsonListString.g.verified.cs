@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value1 { get; init; }
+        public object? JsonListStringVariant1 { get; init; }
 #else
-        public object? Value1 { get; }
+        public object? JsonListStringVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonListStringVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsJsonListStringVariant1 => JsonListStringVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<object>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<object>? JsonListStringVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<object>? Value2 { get; }
+        public global::System.Collections.Generic.IList<object>? JsonListStringVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonListStringVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsJsonListStringVariant2 => JsonListStringVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value3 { get; init; }
+        public string? JsonListStringVariant3 { get; init; }
 #else
-        public string? Value3 { get; }
+        public string? JsonListStringVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonListStringVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsJsonListStringVariant3 => JsonListStringVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,46 +68,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(JsonListString @this) => @this.Value3;
+        public static implicit operator string?(JsonListString @this) => @this.JsonListStringVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public JsonListString(string? value)
         {
-            Value3 = value;
+            JsonListStringVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public JsonListString(
-            object? value1,
-            global::System.Collections.Generic.IList<object>? value2,
-            string? value3
+            object? jsonListStringVariant1,
+            global::System.Collections.Generic.IList<object>? jsonListStringVariant2,
+            string? jsonListStringVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            JsonListStringVariant1 = jsonListStringVariant1;
+            JsonListStringVariant2 = jsonListStringVariant2;
+            JsonListStringVariant3 = jsonListStringVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            JsonListStringVariant3 as object ??
+            JsonListStringVariant2 as object ??
+            JsonListStringVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            JsonListStringVariant1?.ToString() ??
+            JsonListStringVariant2?.ToString() ??
+            JsonListStringVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -115,16 +115,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsJsonListStringVariant1 || IsJsonListStringVariant2 || IsJsonListStringVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<object?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<object>?, TResult>? value2 = null,
-            global::System.Func<string?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? jsonListStringVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<object>?, TResult>? jsonListStringVariant2 = null,
+            global::System.Func<string?, TResult>? jsonListStringVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,17 +132,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsJsonListStringVariant1 && jsonListStringVariant1 != null)
             {
-                return value1(Value1!);
+                return jsonListStringVariant1(JsonListStringVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsJsonListStringVariant2 && jsonListStringVariant2 != null)
             {
-                return value2(Value2!);
+                return jsonListStringVariant2(JsonListStringVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsJsonListStringVariant3 && jsonListStringVariant3 != null)
             {
-                return value3(Value3!);
+                return jsonListStringVariant3(JsonListStringVariant3!);
             }
 
             return default(TResult);
@@ -152,9 +152,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<object?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<object>?>? value2 = null,
-            global::System.Action<string?>? value3 = null,
+            global::System.Action<object?>? jsonListStringVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<object>?>? jsonListStringVariant2 = null,
+            global::System.Action<string?>? jsonListStringVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -162,17 +162,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsJsonListStringVariant1)
             {
-                value1?.Invoke(Value1!);
+                jsonListStringVariant1?.Invoke(JsonListStringVariant1!);
             }
-            else if (IsValue2)
+            else if (IsJsonListStringVariant2)
             {
-                value2?.Invoke(Value2!);
+                jsonListStringVariant2?.Invoke(JsonListStringVariant2!);
             }
-            else if (IsValue3)
+            else if (IsJsonListStringVariant3)
             {
-                value3?.Invoke(Value3!);
+                jsonListStringVariant3?.Invoke(JsonListStringVariant3!);
             }
         }
 
@@ -183,11 +183,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                JsonListStringVariant1,
                 typeof(object),
-                Value2,
+                JsonListStringVariant2,
                 typeof(global::System.Collections.Generic.IList<object>),
-                Value3,
+                JsonListStringVariant3,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -205,9 +205,9 @@ namespace G
         public bool Equals(JsonListString other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<object>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(JsonListStringVariant1, other.JsonListStringVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<object>?>.Default.Equals(JsonListStringVariant2, other.JsonListStringVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(JsonListStringVariant3, other.JsonListStringVariant3) 
                 ;
         }
 

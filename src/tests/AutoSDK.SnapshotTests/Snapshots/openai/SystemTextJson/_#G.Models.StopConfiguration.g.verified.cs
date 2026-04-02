@@ -17,35 +17,35 @@ namespace G
         /// Default Value: &lt;|endoftext|&gt;
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? StopConfigurationVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? StopConfigurationVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StopConfigurationVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsStopConfigurationVariant1 => StopConfigurationVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<string>? StopConfigurationVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value2 { get; }
+        public global::System.Collections.Generic.IList<string>? StopConfigurationVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StopConfigurationVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsStopConfigurationVariant2 => StopConfigurationVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -54,42 +54,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(StopConfiguration @this) => @this.Value1;
+        public static implicit operator string?(StopConfiguration @this) => @this.StopConfigurationVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public StopConfiguration(string? value)
         {
-            Value1 = value;
+            StopConfigurationVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public StopConfiguration(
-            string? value1,
-            global::System.Collections.Generic.IList<string>? value2
+            string? stopConfigurationVariant1,
+            global::System.Collections.Generic.IList<string>? stopConfigurationVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            StopConfigurationVariant1 = stopConfigurationVariant1;
+            StopConfigurationVariant2 = stopConfigurationVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            StopConfigurationVariant2 as object ??
+            StopConfigurationVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            StopConfigurationVariant1?.ToString() ??
+            StopConfigurationVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -97,15 +97,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsStopConfigurationVariant1 && !IsStopConfigurationVariant2 || !IsStopConfigurationVariant1 && IsStopConfigurationVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? stopConfigurationVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? stopConfigurationVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -113,13 +113,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsStopConfigurationVariant1 && stopConfigurationVariant1 != null)
             {
-                return value1(Value1!);
+                return stopConfigurationVariant1(StopConfigurationVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsStopConfigurationVariant2 && stopConfigurationVariant2 != null)
             {
-                return value2(Value2!);
+                return stopConfigurationVariant2(StopConfigurationVariant2!);
             }
 
             return default(TResult);
@@ -129,8 +129,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value2 = null,
+            global::System.Action<string?>? stopConfigurationVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? stopConfigurationVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -138,13 +138,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsStopConfigurationVariant1)
             {
-                value1?.Invoke(Value1!);
+                stopConfigurationVariant1?.Invoke(StopConfigurationVariant1!);
             }
-            else if (IsValue2)
+            else if (IsStopConfigurationVariant2)
             {
-                value2?.Invoke(Value2!);
+                stopConfigurationVariant2?.Invoke(StopConfigurationVariant2!);
             }
         }
 
@@ -155,9 +155,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                StopConfigurationVariant1,
                 typeof(string),
-                Value2,
+                StopConfigurationVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
             };
             const int offset = unchecked((int)2166136261);
@@ -175,8 +175,8 @@ namespace G
         public bool Equals(StopConfiguration other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(StopConfigurationVariant1, other.StopConfigurationVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(StopConfigurationVariant2, other.StopConfigurationVariant2) 
                 ;
         }
 

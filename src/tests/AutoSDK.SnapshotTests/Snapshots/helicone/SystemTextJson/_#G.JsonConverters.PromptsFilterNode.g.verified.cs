@@ -40,9 +40,9 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::G.PickFilterLeafPromptV2? value1 = default;
-            global::G.PromptsFilterBranch? value2 = default;
-            global::G.PromptsFilterNodeEnum? value3 = default;
+            global::G.PickFilterLeafPromptV2? pickLeafPromptV2 = default;
+            global::G.PromptsFilterBranch? branch = default;
+            global::G.PromptsFilterNodeEnum? @enum = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -51,7 +51,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PickFilterLeafPromptV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PickFilterLeafPromptV2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PickFilterLeafPromptV2).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        pickLeafPromptV2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -66,7 +66,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptsFilterBranch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptsFilterBranch> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptsFilterBranch).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        branch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -81,7 +81,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptsFilterNodeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptsFilterNodeEnum> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptsFilterNodeEnum).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -92,13 +92,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (pickLeafPromptV2 == null && branch == null && @enum == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PickFilterLeafPromptV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PickFilterLeafPromptV2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PickFilterLeafPromptV2).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    pickLeafPromptV2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -111,7 +111,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptsFilterBranch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptsFilterBranch> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptsFilterBranch).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    branch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -124,7 +124,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptsFilterNodeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptsFilterNodeEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptsFilterNodeEnum).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -135,11 +135,11 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.PromptsFilterNode(
-                value1,
+                pickLeafPromptV2,
 
-                value2,
+                branch,
 
-                value3
+                @enum
                 );
 
             return __value;
@@ -154,23 +154,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsPickLeafPromptV2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PickFilterLeafPromptV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PickFilterLeafPromptV2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PickFilterLeafPromptV2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLeafPromptV2!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsBranch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptsFilterBranch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptsFilterBranch?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptsFilterBranch).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Branch!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsEnum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptsFilterNodeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptsFilterNodeEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptsFilterNodeEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
             }
         }
     }

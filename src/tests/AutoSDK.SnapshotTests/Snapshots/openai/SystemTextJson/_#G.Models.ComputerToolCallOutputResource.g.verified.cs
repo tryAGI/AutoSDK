@@ -31,18 +31,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ComputerToolCallOutputResourceVariant2? Value2 { get; init; }
+        public global::G.ComputerToolCallOutputResourceVariant2? ComputerToolCallOutputResourceVariant2 { get; init; }
 #else
-        public global::G.ComputerToolCallOutputResourceVariant2? Value2 { get; }
+        public global::G.ComputerToolCallOutputResourceVariant2? ComputerToolCallOutputResourceVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCallOutputResourceVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsComputerToolCallOutputResourceVariant2 => ComputerToolCallOutputResourceVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -69,14 +69,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ComputerToolCallOutputResourceVariant2?(ComputerToolCallOutputResource @this) => @this.Value2;
+        public static implicit operator global::G.ComputerToolCallOutputResourceVariant2?(ComputerToolCallOutputResource @this) => @this.ComputerToolCallOutputResourceVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ComputerToolCallOutputResource(global::G.ComputerToolCallOutputResourceVariant2? value)
         {
-            Value2 = value;
+            ComputerToolCallOutputResourceVariant2 = value;
         }
 
         /// <summary>
@@ -84,18 +84,18 @@ namespace G
         /// </summary>
         public ComputerToolCallOutputResource(
             global::G.ComputerToolCallOutput? computerToolCallOutput,
-            global::G.ComputerToolCallOutputResourceVariant2? value2
+            global::G.ComputerToolCallOutputResourceVariant2? computerToolCallOutputResourceVariant2
             )
         {
             ComputerToolCallOutput = computerToolCallOutput;
-            Value2 = value2;
+            ComputerToolCallOutputResourceVariant2 = computerToolCallOutputResourceVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            ComputerToolCallOutputResourceVariant2 as object ??
             ComputerToolCallOutput as object 
             ;
 
@@ -104,7 +104,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             ComputerToolCallOutput?.ToString() ??
-            Value2?.ToString() 
+            ComputerToolCallOutputResourceVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsComputerToolCallOutput && IsValue2;
+            return IsComputerToolCallOutput && IsComputerToolCallOutputResourceVariant2;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ComputerToolCallOutput?, TResult>? computerToolCallOutput = null,
-            global::System.Func<global::G.ComputerToolCallOutputResourceVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.ComputerToolCallOutputResourceVariant2?, TResult>? computerToolCallOutputResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,9 +132,9 @@ namespace G
             {
                 return computerToolCallOutput(ComputerToolCallOutput!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsComputerToolCallOutputResourceVariant2 && computerToolCallOutputResourceVariant2 != null)
             {
-                return value2(Value2!);
+                return computerToolCallOutputResourceVariant2(ComputerToolCallOutputResourceVariant2!);
             }
 
             return default(TResult);
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ComputerToolCallOutput?>? computerToolCallOutput = null,
-            global::System.Action<global::G.ComputerToolCallOutputResourceVariant2?>? value2 = null,
+            global::System.Action<global::G.ComputerToolCallOutputResourceVariant2?>? computerToolCallOutputResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -157,9 +157,9 @@ namespace G
             {
                 computerToolCallOutput?.Invoke(ComputerToolCallOutput!);
             }
-            else if (IsValue2)
+            else if (IsComputerToolCallOutputResourceVariant2)
             {
-                value2?.Invoke(Value2!);
+                computerToolCallOutputResourceVariant2?.Invoke(ComputerToolCallOutputResourceVariant2!);
             }
         }
 
@@ -172,7 +172,7 @@ namespace G
             {
                 ComputerToolCallOutput,
                 typeof(global::G.ComputerToolCallOutput),
-                Value2,
+                ComputerToolCallOutputResourceVariant2,
                 typeof(global::G.ComputerToolCallOutputResourceVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCallOutput?>.Default.Equals(ComputerToolCallOutput, other.ComputerToolCallOutput) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCallOutputResourceVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ComputerToolCallOutputResourceVariant2?>.Default.Equals(ComputerToolCallOutputResourceVariant2, other.ComputerToolCallOutputResourceVariant2) 
                 ;
         }
 

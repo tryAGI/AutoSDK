@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RateLimitsPolicy? Value1 { get; init; }
+        public global::G.RateLimitsPolicy? RateLimitsPolicy { get; init; }
 #else
-        public global::G.RateLimitsPolicy? Value1 { get; }
+        public global::G.RateLimitsPolicy? RateLimitsPolicy { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitsPolicy))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsRateLimitsPolicy => RateLimitsPolicy != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RateLimitsPolicyResponseVariant2? Value2 { get; init; }
+        public global::G.RateLimitsPolicyResponseVariant2? RateLimitsPolicyResponseVariant2 { get; init; }
 #else
-        public global::G.RateLimitsPolicyResponseVariant2? Value2 { get; }
+        public global::G.RateLimitsPolicyResponseVariant2? RateLimitsPolicyResponseVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitsPolicyResponseVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsRateLimitsPolicyResponseVariant2 => RateLimitsPolicyResponseVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RateLimitsPolicy?(RateLimitsPolicyResponse @this) => @this.Value1;
+        public static implicit operator global::G.RateLimitsPolicy?(RateLimitsPolicyResponse @this) => @this.RateLimitsPolicy;
 
         /// <summary>
         /// 
         /// </summary>
         public RateLimitsPolicyResponse(global::G.RateLimitsPolicy? value)
         {
-            Value1 = value;
+            RateLimitsPolicy = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RateLimitsPolicyResponseVariant2?(RateLimitsPolicyResponse @this) => @this.Value2;
+        public static implicit operator global::G.RateLimitsPolicyResponseVariant2?(RateLimitsPolicyResponse @this) => @this.RateLimitsPolicyResponseVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public RateLimitsPolicyResponse(global::G.RateLimitsPolicyResponseVariant2? value)
         {
-            Value2 = value;
+            RateLimitsPolicyResponseVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public RateLimitsPolicyResponse(
-            global::G.RateLimitsPolicy? value1,
-            global::G.RateLimitsPolicyResponseVariant2? value2
+            global::G.RateLimitsPolicy? rateLimitsPolicy,
+            global::G.RateLimitsPolicyResponseVariant2? rateLimitsPolicyResponseVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            RateLimitsPolicy = rateLimitsPolicy;
+            RateLimitsPolicyResponseVariant2 = rateLimitsPolicyResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            RateLimitsPolicyResponseVariant2 as object ??
+            RateLimitsPolicy as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            RateLimitsPolicy?.ToString() ??
+            RateLimitsPolicyResponseVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsRateLimitsPolicy && IsRateLimitsPolicyResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RateLimitsPolicy?, TResult>? value1 = null,
-            global::System.Func<global::G.RateLimitsPolicyResponseVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.RateLimitsPolicy?, TResult>? rateLimitsPolicy = null,
+            global::System.Func<global::G.RateLimitsPolicyResponseVariant2?, TResult>? rateLimitsPolicyResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsRateLimitsPolicy && rateLimitsPolicy != null)
             {
-                return value1(Value1!);
+                return rateLimitsPolicy(RateLimitsPolicy!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsRateLimitsPolicyResponseVariant2 && rateLimitsPolicyResponseVariant2 != null)
             {
-                return value2(Value2!);
+                return rateLimitsPolicyResponseVariant2(RateLimitsPolicyResponseVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RateLimitsPolicy?>? value1 = null,
-            global::System.Action<global::G.RateLimitsPolicyResponseVariant2?>? value2 = null,
+            global::System.Action<global::G.RateLimitsPolicy?>? rateLimitsPolicy = null,
+            global::System.Action<global::G.RateLimitsPolicyResponseVariant2?>? rateLimitsPolicyResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsRateLimitsPolicy)
             {
-                value1?.Invoke(Value1!);
+                rateLimitsPolicy?.Invoke(RateLimitsPolicy!);
             }
-            else if (IsValue2)
+            else if (IsRateLimitsPolicyResponseVariant2)
             {
-                value2?.Invoke(Value2!);
+                rateLimitsPolicyResponseVariant2?.Invoke(RateLimitsPolicyResponseVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                RateLimitsPolicy,
                 typeof(global::G.RateLimitsPolicy),
-                Value2,
+                RateLimitsPolicyResponseVariant2,
                 typeof(global::G.RateLimitsPolicyResponseVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(RateLimitsPolicyResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.RateLimitsPolicy?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RateLimitsPolicyResponseVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.RateLimitsPolicy?>.Default.Equals(RateLimitsPolicy, other.RateLimitsPolicy) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RateLimitsPolicyResponseVariant2?>.Default.Equals(RateLimitsPolicyResponseVariant2, other.RateLimitsPolicyResponseVariant2) 
                 ;
         }
 

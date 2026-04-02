@@ -14,86 +14,86 @@ namespace G
         /// Occurs when a [message](/docs/api-reference/messages/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageStreamEventVariant1? Value1 { get; init; }
+        public global::G.MessageStreamEventVariant1? MessageStreamEventVariant1 { get; init; }
 #else
-        public global::G.MessageStreamEventVariant1? Value1 { get; }
+        public global::G.MessageStreamEventVariant1? MessageStreamEventVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStreamEventVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMessageStreamEventVariant1 => MessageStreamEventVariant1 != null;
 
         /// <summary>
         /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageStreamEventVariant2? Value2 { get; init; }
+        public global::G.MessageStreamEventVariant2? MessageStreamEventVariant2 { get; init; }
 #else
-        public global::G.MessageStreamEventVariant2? Value2 { get; }
+        public global::G.MessageStreamEventVariant2? MessageStreamEventVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStreamEventVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsMessageStreamEventVariant2 => MessageStreamEventVariant2 != null;
 
         /// <summary>
         /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageStreamEventVariant3? Value3 { get; init; }
+        public global::G.MessageStreamEventVariant3? MessageStreamEventVariant3 { get; init; }
 #else
-        public global::G.MessageStreamEventVariant3? Value3 { get; }
+        public global::G.MessageStreamEventVariant3? MessageStreamEventVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStreamEventVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsMessageStreamEventVariant3 => MessageStreamEventVariant3 != null;
 
         /// <summary>
         /// Occurs when a [message](/docs/api-reference/messages/object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageStreamEventVariant4? Value4 { get; init; }
+        public global::G.MessageStreamEventVariant4? MessageStreamEventVariant4 { get; init; }
 #else
-        public global::G.MessageStreamEventVariant4? Value4 { get; }
+        public global::G.MessageStreamEventVariant4? MessageStreamEventVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStreamEventVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsMessageStreamEventVariant4 => MessageStreamEventVariant4 != null;
 
         /// <summary>
         /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageStreamEventVariant5? Value5 { get; init; }
+        public global::G.MessageStreamEventVariant5? MessageStreamEventVariant5 { get; init; }
 #else
-        public global::G.MessageStreamEventVariant5? Value5 { get; }
+        public global::G.MessageStreamEventVariant5? MessageStreamEventVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStreamEventVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsMessageStreamEventVariant5 => MessageStreamEventVariant5 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,14 +102,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageStreamEventVariant1?(MessageStreamEvent @this) => @this.Value1;
+        public static implicit operator global::G.MessageStreamEventVariant1?(MessageStreamEvent @this) => @this.MessageStreamEventVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(global::G.MessageStreamEventVariant1? value)
         {
-            Value1 = value;
+            MessageStreamEventVariant1 = value;
         }
 
         /// <summary>
@@ -120,14 +120,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageStreamEventVariant2?(MessageStreamEvent @this) => @this.Value2;
+        public static implicit operator global::G.MessageStreamEventVariant2?(MessageStreamEvent @this) => @this.MessageStreamEventVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(global::G.MessageStreamEventVariant2? value)
         {
-            Value2 = value;
+            MessageStreamEventVariant2 = value;
         }
 
         /// <summary>
@@ -138,14 +138,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageStreamEventVariant3?(MessageStreamEvent @this) => @this.Value3;
+        public static implicit operator global::G.MessageStreamEventVariant3?(MessageStreamEvent @this) => @this.MessageStreamEventVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(global::G.MessageStreamEventVariant3? value)
         {
-            Value3 = value;
+            MessageStreamEventVariant3 = value;
         }
 
         /// <summary>
@@ -156,14 +156,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageStreamEventVariant4?(MessageStreamEvent @this) => @this.Value4;
+        public static implicit operator global::G.MessageStreamEventVariant4?(MessageStreamEvent @this) => @this.MessageStreamEventVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(global::G.MessageStreamEventVariant4? value)
         {
-            Value4 = value;
+            MessageStreamEventVariant4 = value;
         }
 
         /// <summary>
@@ -174,54 +174,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageStreamEventVariant5?(MessageStreamEvent @this) => @this.Value5;
+        public static implicit operator global::G.MessageStreamEventVariant5?(MessageStreamEvent @this) => @this.MessageStreamEventVariant5;
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(global::G.MessageStreamEventVariant5? value)
         {
-            Value5 = value;
+            MessageStreamEventVariant5 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(
-            global::G.MessageStreamEventVariant1? value1,
-            global::G.MessageStreamEventVariant2? value2,
-            global::G.MessageStreamEventVariant3? value3,
-            global::G.MessageStreamEventVariant4? value4,
-            global::G.MessageStreamEventVariant5? value5
+            global::G.MessageStreamEventVariant1? messageStreamEventVariant1,
+            global::G.MessageStreamEventVariant2? messageStreamEventVariant2,
+            global::G.MessageStreamEventVariant3? messageStreamEventVariant3,
+            global::G.MessageStreamEventVariant4? messageStreamEventVariant4,
+            global::G.MessageStreamEventVariant5? messageStreamEventVariant5
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
+            MessageStreamEventVariant1 = messageStreamEventVariant1;
+            MessageStreamEventVariant2 = messageStreamEventVariant2;
+            MessageStreamEventVariant3 = messageStreamEventVariant3;
+            MessageStreamEventVariant4 = messageStreamEventVariant4;
+            MessageStreamEventVariant5 = messageStreamEventVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            MessageStreamEventVariant5 as object ??
+            MessageStreamEventVariant4 as object ??
+            MessageStreamEventVariant3 as object ??
+            MessageStreamEventVariant2 as object ??
+            MessageStreamEventVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() 
+            MessageStreamEventVariant1?.ToString() ??
+            MessageStreamEventVariant2?.ToString() ??
+            MessageStreamEventVariant3?.ToString() ??
+            MessageStreamEventVariant4?.ToString() ??
+            MessageStreamEventVariant5?.ToString() 
             ;
 
         /// <summary>
@@ -229,18 +229,18 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5;
+            return IsMessageStreamEventVariant1 && !IsMessageStreamEventVariant2 && !IsMessageStreamEventVariant3 && !IsMessageStreamEventVariant4 && !IsMessageStreamEventVariant5 || !IsMessageStreamEventVariant1 && IsMessageStreamEventVariant2 && !IsMessageStreamEventVariant3 && !IsMessageStreamEventVariant4 && !IsMessageStreamEventVariant5 || !IsMessageStreamEventVariant1 && !IsMessageStreamEventVariant2 && IsMessageStreamEventVariant3 && !IsMessageStreamEventVariant4 && !IsMessageStreamEventVariant5 || !IsMessageStreamEventVariant1 && !IsMessageStreamEventVariant2 && !IsMessageStreamEventVariant3 && IsMessageStreamEventVariant4 && !IsMessageStreamEventVariant5 || !IsMessageStreamEventVariant1 && !IsMessageStreamEventVariant2 && !IsMessageStreamEventVariant3 && !IsMessageStreamEventVariant4 && IsMessageStreamEventVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessageStreamEventVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.MessageStreamEventVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.MessageStreamEventVariant3?, TResult>? value3 = null,
-            global::System.Func<global::G.MessageStreamEventVariant4?, TResult>? value4 = null,
-            global::System.Func<global::G.MessageStreamEventVariant5?, TResult>? value5 = null,
+            global::System.Func<global::G.MessageStreamEventVariant1?, TResult>? messageStreamEventVariant1 = null,
+            global::System.Func<global::G.MessageStreamEventVariant2?, TResult>? messageStreamEventVariant2 = null,
+            global::System.Func<global::G.MessageStreamEventVariant3?, TResult>? messageStreamEventVariant3 = null,
+            global::System.Func<global::G.MessageStreamEventVariant4?, TResult>? messageStreamEventVariant4 = null,
+            global::System.Func<global::G.MessageStreamEventVariant5?, TResult>? messageStreamEventVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -248,25 +248,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMessageStreamEventVariant1 && messageStreamEventVariant1 != null)
             {
-                return value1(Value1!);
+                return messageStreamEventVariant1(MessageStreamEventVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsMessageStreamEventVariant2 && messageStreamEventVariant2 != null)
             {
-                return value2(Value2!);
+                return messageStreamEventVariant2(MessageStreamEventVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsMessageStreamEventVariant3 && messageStreamEventVariant3 != null)
             {
-                return value3(Value3!);
+                return messageStreamEventVariant3(MessageStreamEventVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsMessageStreamEventVariant4 && messageStreamEventVariant4 != null)
             {
-                return value4(Value4!);
+                return messageStreamEventVariant4(MessageStreamEventVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsMessageStreamEventVariant5 && messageStreamEventVariant5 != null)
             {
-                return value5(Value5!);
+                return messageStreamEventVariant5(MessageStreamEventVariant5!);
             }
 
             return default(TResult);
@@ -276,11 +276,11 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessageStreamEventVariant1?>? value1 = null,
-            global::System.Action<global::G.MessageStreamEventVariant2?>? value2 = null,
-            global::System.Action<global::G.MessageStreamEventVariant3?>? value3 = null,
-            global::System.Action<global::G.MessageStreamEventVariant4?>? value4 = null,
-            global::System.Action<global::G.MessageStreamEventVariant5?>? value5 = null,
+            global::System.Action<global::G.MessageStreamEventVariant1?>? messageStreamEventVariant1 = null,
+            global::System.Action<global::G.MessageStreamEventVariant2?>? messageStreamEventVariant2 = null,
+            global::System.Action<global::G.MessageStreamEventVariant3?>? messageStreamEventVariant3 = null,
+            global::System.Action<global::G.MessageStreamEventVariant4?>? messageStreamEventVariant4 = null,
+            global::System.Action<global::G.MessageStreamEventVariant5?>? messageStreamEventVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -288,25 +288,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMessageStreamEventVariant1)
             {
-                value1?.Invoke(Value1!);
+                messageStreamEventVariant1?.Invoke(MessageStreamEventVariant1!);
             }
-            else if (IsValue2)
+            else if (IsMessageStreamEventVariant2)
             {
-                value2?.Invoke(Value2!);
+                messageStreamEventVariant2?.Invoke(MessageStreamEventVariant2!);
             }
-            else if (IsValue3)
+            else if (IsMessageStreamEventVariant3)
             {
-                value3?.Invoke(Value3!);
+                messageStreamEventVariant3?.Invoke(MessageStreamEventVariant3!);
             }
-            else if (IsValue4)
+            else if (IsMessageStreamEventVariant4)
             {
-                value4?.Invoke(Value4!);
+                messageStreamEventVariant4?.Invoke(MessageStreamEventVariant4!);
             }
-            else if (IsValue5)
+            else if (IsMessageStreamEventVariant5)
             {
-                value5?.Invoke(Value5!);
+                messageStreamEventVariant5?.Invoke(MessageStreamEventVariant5!);
             }
         }
 
@@ -317,15 +317,15 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                MessageStreamEventVariant1,
                 typeof(global::G.MessageStreamEventVariant1),
-                Value2,
+                MessageStreamEventVariant2,
                 typeof(global::G.MessageStreamEventVariant2),
-                Value3,
+                MessageStreamEventVariant3,
                 typeof(global::G.MessageStreamEventVariant3),
-                Value4,
+                MessageStreamEventVariant4,
                 typeof(global::G.MessageStreamEventVariant4),
-                Value5,
+                MessageStreamEventVariant5,
                 typeof(global::G.MessageStreamEventVariant5),
             };
             const int offset = unchecked((int)2166136261);
@@ -343,11 +343,11 @@ namespace G
         public bool Equals(MessageStreamEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEventVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEventVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEventVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEventVariant4?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEventVariant5?>.Default.Equals(Value5, other.Value5) 
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEventVariant1?>.Default.Equals(MessageStreamEventVariant1, other.MessageStreamEventVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEventVariant2?>.Default.Equals(MessageStreamEventVariant2, other.MessageStreamEventVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEventVariant3?>.Default.Equals(MessageStreamEventVariant3, other.MessageStreamEventVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEventVariant4?>.Default.Equals(MessageStreamEventVariant4, other.MessageStreamEventVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageStreamEventVariant5?>.Default.Equals(MessageStreamEventVariant5, other.MessageStreamEventVariant5) 
                 ;
         }
 

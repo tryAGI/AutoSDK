@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResultSuccessErrorOverTimeArray? Value1 { get; init; }
+        public global::G.ResultSuccessErrorOverTimeArray? Success { get; init; }
 #else
-        public global::G.ResultSuccessErrorOverTimeArray? Value1 { get; }
+        public global::G.ResultSuccessErrorOverTimeArray? Success { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Success))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsSuccess => Success != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResultErrorString? Value2 { get; init; }
+        public global::G.ResultErrorString? ResultErrorString { get; init; }
 #else
-        public global::G.ResultErrorString? Value2 { get; }
+        public global::G.ResultErrorString? ResultErrorString { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResultErrorString))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsResultErrorString => ResultErrorString != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResultSuccessErrorOverTimeArray?(ResultErrorOverTimeArrayString @this) => @this.Value1;
+        public static implicit operator global::G.ResultSuccessErrorOverTimeArray?(ResultErrorOverTimeArrayString @this) => @this.Success;
 
         /// <summary>
         /// 
         /// </summary>
         public ResultErrorOverTimeArrayString(global::G.ResultSuccessErrorOverTimeArray? value)
         {
-            Value1 = value;
+            Success = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResultErrorString?(ResultErrorOverTimeArrayString @this) => @this.Value2;
+        public static implicit operator global::G.ResultErrorString?(ResultErrorOverTimeArrayString @this) => @this.ResultErrorString;
 
         /// <summary>
         /// 
         /// </summary>
         public ResultErrorOverTimeArrayString(global::G.ResultErrorString? value)
         {
-            Value2 = value;
+            ResultErrorString = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ResultErrorOverTimeArrayString(
-            global::G.ResultSuccessErrorOverTimeArray? value1,
-            global::G.ResultErrorString? value2
+            global::G.ResultSuccessErrorOverTimeArray? success,
+            global::G.ResultErrorString? resultErrorString
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Success = success;
+            ResultErrorString = resultErrorString;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ResultErrorString as object ??
+            Success as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Success?.ToString() ??
+            ResultErrorString?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsSuccess || IsResultErrorString;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResultSuccessErrorOverTimeArray?, TResult>? value1 = null,
-            global::System.Func<global::G.ResultErrorString?, TResult>? value2 = null,
+            global::System.Func<global::G.ResultSuccessErrorOverTimeArray?, TResult>? success = null,
+            global::System.Func<global::G.ResultErrorString?, TResult>? resultErrorString = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsSuccess && success != null)
             {
-                return value1(Value1!);
+                return success(Success!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsResultErrorString && resultErrorString != null)
             {
-                return value2(Value2!);
+                return resultErrorString(ResultErrorString!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResultSuccessErrorOverTimeArray?>? value1 = null,
-            global::System.Action<global::G.ResultErrorString?>? value2 = null,
+            global::System.Action<global::G.ResultSuccessErrorOverTimeArray?>? success = null,
+            global::System.Action<global::G.ResultErrorString?>? resultErrorString = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsSuccess)
             {
-                value1?.Invoke(Value1!);
+                success?.Invoke(Success!);
             }
-            else if (IsValue2)
+            else if (IsResultErrorString)
             {
-                value2?.Invoke(Value2!);
+                resultErrorString?.Invoke(ResultErrorString!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Success,
                 typeof(global::G.ResultSuccessErrorOverTimeArray),
-                Value2,
+                ResultErrorString,
                 typeof(global::G.ResultErrorString),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ResultErrorOverTimeArrayString other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ResultSuccessErrorOverTimeArray?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResultErrorString?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ResultSuccessErrorOverTimeArray?>.Default.Equals(Success, other.Success) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResultErrorString?>.Default.Equals(ResultErrorString, other.ResultErrorString) 
                 ;
         }
 

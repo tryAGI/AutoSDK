@@ -31,18 +31,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.EmbeddingResponseVariant2? Value2 { get; init; }
+        public global::G.EmbeddingResponseVariant2? EmbeddingResponseVariant2 { get; init; }
 #else
-        public global::G.EmbeddingResponseVariant2? Value2 { get; }
+        public global::G.EmbeddingResponseVariant2? EmbeddingResponseVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingResponseVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEmbeddingResponseVariant2 => EmbeddingResponseVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -69,14 +69,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.EmbeddingResponseVariant2?(EmbeddingResponse @this) => @this.Value2;
+        public static implicit operator global::G.EmbeddingResponseVariant2?(EmbeddingResponse @this) => @this.EmbeddingResponseVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingResponse(global::G.EmbeddingResponseVariant2? value)
         {
-            Value2 = value;
+            EmbeddingResponseVariant2 = value;
         }
 
         /// <summary>
@@ -84,18 +84,18 @@ namespace G
         /// </summary>
         public EmbeddingResponse(
             global::G.ResponseBase? responseBase,
-            global::G.EmbeddingResponseVariant2? value2
+            global::G.EmbeddingResponseVariant2? embeddingResponseVariant2
             )
         {
             ResponseBase = responseBase;
-            Value2 = value2;
+            EmbeddingResponseVariant2 = embeddingResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            EmbeddingResponseVariant2 as object ??
             ResponseBase as object 
             ;
 
@@ -104,7 +104,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             ResponseBase?.ToString() ??
-            Value2?.ToString() 
+            EmbeddingResponseVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsResponseBase && IsValue2;
+            return IsResponseBase && IsEmbeddingResponseVariant2;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ResponseBase?, TResult>? responseBase = null,
-            global::System.Func<global::G.EmbeddingResponseVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.EmbeddingResponseVariant2?, TResult>? embeddingResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,9 +132,9 @@ namespace G
             {
                 return responseBase(ResponseBase!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEmbeddingResponseVariant2 && embeddingResponseVariant2 != null)
             {
-                return value2(Value2!);
+                return embeddingResponseVariant2(EmbeddingResponseVariant2!);
             }
 
             return default(TResult);
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ResponseBase?>? responseBase = null,
-            global::System.Action<global::G.EmbeddingResponseVariant2?>? value2 = null,
+            global::System.Action<global::G.EmbeddingResponseVariant2?>? embeddingResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -157,9 +157,9 @@ namespace G
             {
                 responseBase?.Invoke(ResponseBase!);
             }
-            else if (IsValue2)
+            else if (IsEmbeddingResponseVariant2)
             {
-                value2?.Invoke(Value2!);
+                embeddingResponseVariant2?.Invoke(EmbeddingResponseVariant2!);
             }
         }
 
@@ -172,7 +172,7 @@ namespace G
             {
                 ResponseBase,
                 typeof(global::G.ResponseBase),
-                Value2,
+                EmbeddingResponseVariant2,
                 typeof(global::G.EmbeddingResponseVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseBase?>.Default.Equals(ResponseBase, other.ResponseBase) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.EmbeddingResponseVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.EmbeddingResponseVariant2?>.Default.Equals(EmbeddingResponseVariant2, other.EmbeddingResponseVariant2) 
                 ;
         }
 

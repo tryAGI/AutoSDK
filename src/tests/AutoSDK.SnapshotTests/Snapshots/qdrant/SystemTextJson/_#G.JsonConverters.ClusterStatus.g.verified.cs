@@ -41,8 +41,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.ClusterStatusVariant1? value1 = default;
-            global::G.ClusterStatusVariant2? value2 = default;
+            global::G.ClusterStatusVariant1? clusterStatusVariant1 = default;
+            global::G.ClusterStatusVariant2? clusterStatusVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -51,7 +51,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClusterStatusVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClusterStatusVariant1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClusterStatusVariant1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        clusterStatusVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -66,7 +66,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClusterStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClusterStatusVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClusterStatusVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        clusterStatusVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -77,13 +77,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (clusterStatusVariant1 == null && clusterStatusVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClusterStatusVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClusterStatusVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClusterStatusVariant1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    clusterStatusVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -96,7 +96,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClusterStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClusterStatusVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClusterStatusVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    clusterStatusVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -107,9 +107,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.ClusterStatus(
-                value1,
+                clusterStatusVariant1,
 
-                value2
+                clusterStatusVariant2
                 );
 
             return __value;
@@ -124,17 +124,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsClusterStatusVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClusterStatusVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClusterStatusVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClusterStatusVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClusterStatusVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsClusterStatusVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClusterStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClusterStatusVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClusterStatusVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClusterStatusVariant2!, typeInfo);
             }
         }
     }

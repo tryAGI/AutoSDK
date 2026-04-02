@@ -150,18 +150,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.TopicMapData, object>? Value9 { get; init; }
+        public global::G.AllOf<global::G.TopicMapData, object>? FunctionDataVariant9 { get; init; }
 #else
-        public global::G.AllOf<global::G.TopicMapData, object>? Value9 { get; }
+        public global::G.AllOf<global::G.TopicMapData, object>? FunctionDataVariant9 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionDataVariant9))]
 #endif
-        public bool IsValue9 => Value9 != null;
+        public bool IsFunctionDataVariant9 => FunctionDataVariant9 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -314,14 +314,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.TopicMapData, object>?(FunctionData @this) => @this.Value9;
+        public static implicit operator global::G.AllOf<global::G.TopicMapData, object>?(FunctionData @this) => @this.FunctionDataVariant9;
 
         /// <summary>
         /// 
         /// </summary>
         public FunctionData(global::G.AllOf<global::G.TopicMapData, object>? value)
         {
-            Value9 = value;
+            FunctionDataVariant9 = value;
         }
 
         /// <summary>
@@ -336,7 +336,7 @@ namespace G
             global::G.FacetData? facet,
             global::G.BatchedFacetData? batchedFacet,
             global::G.FunctionDataParameters? parameters,
-            global::G.AllOf<global::G.TopicMapData, object>? value9
+            global::G.AllOf<global::G.TopicMapData, object>? functionDataVariant9
             )
         {
             Prompt = prompt;
@@ -347,14 +347,14 @@ namespace G
             Facet = facet;
             BatchedFacet = batchedFacet;
             Parameters = parameters;
-            Value9 = value9;
+            FunctionDataVariant9 = functionDataVariant9;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value9 as object ??
+            FunctionDataVariant9 as object ??
             Parameters as object ??
             BatchedFacet as object ??
             Facet as object ??
@@ -377,7 +377,7 @@ namespace G
             Facet?.ToString() ??
             BatchedFacet?.ToString() ??
             Parameters?.ToString() ??
-            Value9?.ToString() 
+            FunctionDataVariant9?.ToString() 
             ;
 
         /// <summary>
@@ -385,7 +385,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsPrompt || IsCode || IsGraph || IsRemoteEval || IsGlobal || IsFacet || IsBatchedFacet || IsParameters || IsValue9;
+            return IsPrompt || IsCode || IsGraph || IsRemoteEval || IsGlobal || IsFacet || IsBatchedFacet || IsParameters || IsFunctionDataVariant9;
         }
 
         /// <summary>
@@ -400,7 +400,7 @@ namespace G
             global::System.Func<global::G.FacetData?, TResult>? facet = null,
             global::System.Func<global::G.BatchedFacetData?, TResult>? batchedFacet = null,
             global::System.Func<global::G.FunctionDataParameters?, TResult>? parameters = null,
-            global::System.Func<global::G.AllOf<global::G.TopicMapData, object>?, TResult>? value9 = null,
+            global::System.Func<global::G.AllOf<global::G.TopicMapData, object>?, TResult>? functionDataVariant9 = null,
             bool validate = true)
         {
             if (validate)
@@ -440,9 +440,9 @@ namespace G
             {
                 return parameters(Parameters!);
             }
-            else if (IsValue9 && value9 != null)
+            else if (IsFunctionDataVariant9 && functionDataVariant9 != null)
             {
-                return value9(Value9!);
+                return functionDataVariant9(FunctionDataVariant9!);
             }
 
             return default(TResult);
@@ -460,7 +460,7 @@ namespace G
             global::System.Action<global::G.FacetData?>? facet = null,
             global::System.Action<global::G.BatchedFacetData?>? batchedFacet = null,
             global::System.Action<global::G.FunctionDataParameters?>? parameters = null,
-            global::System.Action<global::G.AllOf<global::G.TopicMapData, object>?>? value9 = null,
+            global::System.Action<global::G.AllOf<global::G.TopicMapData, object>?>? functionDataVariant9 = null,
             bool validate = true)
         {
             if (validate)
@@ -500,9 +500,9 @@ namespace G
             {
                 parameters?.Invoke(Parameters!);
             }
-            else if (IsValue9)
+            else if (IsFunctionDataVariant9)
             {
-                value9?.Invoke(Value9!);
+                functionDataVariant9?.Invoke(FunctionDataVariant9!);
             }
         }
 
@@ -529,7 +529,7 @@ namespace G
                 typeof(global::G.BatchedFacetData),
                 Parameters,
                 typeof(global::G.FunctionDataParameters),
-                Value9,
+                FunctionDataVariant9,
                 typeof(global::G.AllOf<global::G.TopicMapData, object>),
             };
             const int offset = unchecked((int)2166136261);
@@ -555,7 +555,7 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.FacetData?>.Default.Equals(Facet, other.Facet) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BatchedFacetData?>.Default.Equals(BatchedFacet, other.BatchedFacet) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.FunctionDataParameters?>.Default.Equals(Parameters, other.Parameters) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.TopicMapData, object>?>.Default.Equals(Value9, other.Value9) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.TopicMapData, object>?>.Default.Equals(FunctionDataVariant9, other.FunctionDataVariant9) 
                 ;
         }
 

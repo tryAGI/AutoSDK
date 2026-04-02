@@ -209,6 +209,9 @@ public static class CSharpSchemaDataFactory
                     : titleName != null && !string.Equals(titleName, className, StringComparison.OrdinalIgnoreCase)
                         ? titleName
                         : SmartNamedAnyOfNames.ComputePropertyName(children, className, i);
+                name = name.ToCSharpName(context.Settings, context.Parent);
+                name = CSharpPropertyNameGenerator.AvoidObjectMemberNameCollision(name);
+                name = AvoidNamedAnyOfMemberNameCollision(name);
 
                 var resolvedSchema = child.Schema.ResolveIfRequired();
                 var jsonPropertyNames = ImmutableArray<string>.Empty;
@@ -379,5 +382,16 @@ public static class CSharpSchemaDataFactory
         }
 
         return builder.MoveToImmutable().AsEquatableArray();
+    }
+
+    private static string AvoidNamedAnyOfMemberNameCollision(string name)
+    {
+        return name switch
+        {
+            "Object" => "ObjectValue",
+            "Match" => "MatchValue",
+            "Validate" => "ValidateValue",
+            _ => name,
+        };
     }
 }

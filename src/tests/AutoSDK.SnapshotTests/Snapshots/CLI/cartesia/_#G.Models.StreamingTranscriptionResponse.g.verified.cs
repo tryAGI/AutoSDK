@@ -14,69 +14,69 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>? Value1 { get; init; }
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>? StreamingTranscriptionResponseVariant1 { get; init; }
 #else
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>? Value1 { get; }
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>? StreamingTranscriptionResponseVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamingTranscriptionResponseVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsStreamingTranscriptionResponseVariant1 => StreamingTranscriptionResponseVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>? Value2 { get; init; }
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>? StreamingTranscriptionResponseVariant2 { get; init; }
 #else
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>? Value2 { get; }
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>? StreamingTranscriptionResponseVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamingTranscriptionResponseVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsStreamingTranscriptionResponseVariant2 => StreamingTranscriptionResponseVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>? Value3 { get; init; }
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>? StreamingTranscriptionResponseVariant3 { get; init; }
 #else
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>? Value3 { get; }
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>? StreamingTranscriptionResponseVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamingTranscriptionResponseVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsStreamingTranscriptionResponseVariant3 => StreamingTranscriptionResponseVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>? Value4 { get; init; }
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>? StreamingTranscriptionResponseVariant4 { get; init; }
 #else
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>? Value4 { get; }
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>? StreamingTranscriptionResponseVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamingTranscriptionResponseVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsStreamingTranscriptionResponseVariant4 => StreamingTranscriptionResponseVariant4 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -85,14 +85,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>?(StreamingTranscriptionResponse @this) => @this.Value1;
+        public static implicit operator global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>?(StreamingTranscriptionResponse @this) => @this.StreamingTranscriptionResponseVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamingTranscriptionResponse(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>? value)
         {
-            Value1 = value;
+            StreamingTranscriptionResponseVariant1 = value;
         }
 
         /// <summary>
@@ -103,14 +103,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>?(StreamingTranscriptionResponse @this) => @this.Value2;
+        public static implicit operator global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>?(StreamingTranscriptionResponse @this) => @this.StreamingTranscriptionResponseVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamingTranscriptionResponse(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>? value)
         {
-            Value2 = value;
+            StreamingTranscriptionResponseVariant2 = value;
         }
 
         /// <summary>
@@ -121,14 +121,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>?(StreamingTranscriptionResponse @this) => @this.Value3;
+        public static implicit operator global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>?(StreamingTranscriptionResponse @this) => @this.StreamingTranscriptionResponseVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamingTranscriptionResponse(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>? value)
         {
-            Value3 = value;
+            StreamingTranscriptionResponseVariant3 = value;
         }
 
         /// <summary>
@@ -139,50 +139,50 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>?(StreamingTranscriptionResponse @this) => @this.Value4;
+        public static implicit operator global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>?(StreamingTranscriptionResponse @this) => @this.StreamingTranscriptionResponseVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public StreamingTranscriptionResponse(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>? value)
         {
-            Value4 = value;
+            StreamingTranscriptionResponseVariant4 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public StreamingTranscriptionResponse(
-            global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>? value1,
-            global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>? value2,
-            global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>? value3,
-            global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>? value4
+            global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>? streamingTranscriptionResponseVariant1,
+            global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>? streamingTranscriptionResponseVariant2,
+            global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>? streamingTranscriptionResponseVariant3,
+            global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>? streamingTranscriptionResponseVariant4
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
+            StreamingTranscriptionResponseVariant1 = streamingTranscriptionResponseVariant1;
+            StreamingTranscriptionResponseVariant2 = streamingTranscriptionResponseVariant2;
+            StreamingTranscriptionResponseVariant3 = streamingTranscriptionResponseVariant3;
+            StreamingTranscriptionResponseVariant4 = streamingTranscriptionResponseVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            StreamingTranscriptionResponseVariant4 as object ??
+            StreamingTranscriptionResponseVariant3 as object ??
+            StreamingTranscriptionResponseVariant2 as object ??
+            StreamingTranscriptionResponseVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() 
+            StreamingTranscriptionResponseVariant1?.ToString() ??
+            StreamingTranscriptionResponseVariant2?.ToString() ??
+            StreamingTranscriptionResponseVariant3?.ToString() ??
+            StreamingTranscriptionResponseVariant4?.ToString() 
             ;
 
         /// <summary>
@@ -190,17 +190,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4;
+            return IsStreamingTranscriptionResponseVariant1 && !IsStreamingTranscriptionResponseVariant2 && !IsStreamingTranscriptionResponseVariant3 && !IsStreamingTranscriptionResponseVariant4 || !IsStreamingTranscriptionResponseVariant1 && IsStreamingTranscriptionResponseVariant2 && !IsStreamingTranscriptionResponseVariant3 && !IsStreamingTranscriptionResponseVariant4 || !IsStreamingTranscriptionResponseVariant1 && !IsStreamingTranscriptionResponseVariant2 && IsStreamingTranscriptionResponseVariant3 && !IsStreamingTranscriptionResponseVariant4 || !IsStreamingTranscriptionResponseVariant1 && !IsStreamingTranscriptionResponseVariant2 && !IsStreamingTranscriptionResponseVariant3 && IsStreamingTranscriptionResponseVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>?, TResult>? value1 = null,
-            global::System.Func<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>?, TResult>? value2 = null,
-            global::System.Func<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>?, TResult>? value3 = null,
-            global::System.Func<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>?, TResult>? value4 = null,
+            global::System.Func<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>?, TResult>? streamingTranscriptionResponseVariant1 = null,
+            global::System.Func<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>?, TResult>? streamingTranscriptionResponseVariant2 = null,
+            global::System.Func<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>?, TResult>? streamingTranscriptionResponseVariant3 = null,
+            global::System.Func<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>?, TResult>? streamingTranscriptionResponseVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -208,21 +208,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsStreamingTranscriptionResponseVariant1 && streamingTranscriptionResponseVariant1 != null)
             {
-                return value1(Value1!);
+                return streamingTranscriptionResponseVariant1(StreamingTranscriptionResponseVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsStreamingTranscriptionResponseVariant2 && streamingTranscriptionResponseVariant2 != null)
             {
-                return value2(Value2!);
+                return streamingTranscriptionResponseVariant2(StreamingTranscriptionResponseVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsStreamingTranscriptionResponseVariant3 && streamingTranscriptionResponseVariant3 != null)
             {
-                return value3(Value3!);
+                return streamingTranscriptionResponseVariant3(StreamingTranscriptionResponseVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsStreamingTranscriptionResponseVariant4 && streamingTranscriptionResponseVariant4 != null)
             {
-                return value4(Value4!);
+                return streamingTranscriptionResponseVariant4(StreamingTranscriptionResponseVariant4!);
             }
 
             return default(TResult);
@@ -232,10 +232,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>?>? value1 = null,
-            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>?>? value2 = null,
-            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>?>? value3 = null,
-            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>?>? value4 = null,
+            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>?>? streamingTranscriptionResponseVariant1 = null,
+            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>?>? streamingTranscriptionResponseVariant2 = null,
+            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>?>? streamingTranscriptionResponseVariant3 = null,
+            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>?>? streamingTranscriptionResponseVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -243,21 +243,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsStreamingTranscriptionResponseVariant1)
             {
-                value1?.Invoke(Value1!);
+                streamingTranscriptionResponseVariant1?.Invoke(StreamingTranscriptionResponseVariant1!);
             }
-            else if (IsValue2)
+            else if (IsStreamingTranscriptionResponseVariant2)
             {
-                value2?.Invoke(Value2!);
+                streamingTranscriptionResponseVariant2?.Invoke(StreamingTranscriptionResponseVariant2!);
             }
-            else if (IsValue3)
+            else if (IsStreamingTranscriptionResponseVariant3)
             {
-                value3?.Invoke(Value3!);
+                streamingTranscriptionResponseVariant3?.Invoke(StreamingTranscriptionResponseVariant3!);
             }
-            else if (IsValue4)
+            else if (IsStreamingTranscriptionResponseVariant4)
             {
-                value4?.Invoke(Value4!);
+                streamingTranscriptionResponseVariant4?.Invoke(StreamingTranscriptionResponseVariant4!);
             }
         }
 
@@ -268,13 +268,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                StreamingTranscriptionResponseVariant1,
                 typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>),
-                Value2,
+                StreamingTranscriptionResponseVariant2,
                 typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>),
-                Value3,
+                StreamingTranscriptionResponseVariant3,
                 typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>),
-                Value4,
+                StreamingTranscriptionResponseVariant4,
                 typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>),
             };
             const int offset = unchecked((int)2166136261);
@@ -292,10 +292,10 @@ namespace G
         public bool Equals(StreamingTranscriptionResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>?>.Default.Equals(Value4, other.Value4) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>?>.Default.Equals(StreamingTranscriptionResponseVariant1, other.StreamingTranscriptionResponseVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>?>.Default.Equals(StreamingTranscriptionResponseVariant2, other.StreamingTranscriptionResponseVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>?>.Default.Equals(StreamingTranscriptionResponseVariant3, other.StreamingTranscriptionResponseVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>?>.Default.Equals(StreamingTranscriptionResponseVariant4, other.StreamingTranscriptionResponseVariant4) 
                 ;
         }
 

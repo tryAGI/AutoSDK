@@ -48,18 +48,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? SavedFunctionIdVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? SavedFunctionIdVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SavedFunctionIdVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsSavedFunctionIdVariant3 => SavedFunctionIdVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,19 +102,19 @@ namespace G
         public SavedFunctionId(
             global::G.SavedFunctionIdFunction? function,
             global::G.SavedFunctionIdGlobal? global,
-            object? value3
+            object? savedFunctionIdVariant3
             )
         {
             Function = function;
             Global = global;
-            Value3 = value3;
+            SavedFunctionIdVariant3 = savedFunctionIdVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            SavedFunctionIdVariant3 as object ??
             Global as object ??
             Function as object 
             ;
@@ -125,7 +125,7 @@ namespace G
         public override string? ToString() =>
             Function?.ToString() ??
             Global?.ToString() ??
-            Value3?.ToString() 
+            SavedFunctionIdVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsFunction || IsGlobal || IsValue3;
+            return IsFunction || IsGlobal || IsSavedFunctionIdVariant3;
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.SavedFunctionIdFunction?, TResult>? function = null,
             global::System.Func<global::G.SavedFunctionIdGlobal?, TResult>? global = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? savedFunctionIdVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -158,9 +158,9 @@ namespace G
             {
                 return global(Global!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsSavedFunctionIdVariant3 && savedFunctionIdVariant3 != null)
             {
-                return value3(Value3!);
+                return savedFunctionIdVariant3(SavedFunctionIdVariant3!);
             }
 
             return default(TResult);
@@ -172,7 +172,7 @@ namespace G
         public void Match(
             global::System.Action<global::G.SavedFunctionIdFunction?>? function = null,
             global::System.Action<global::G.SavedFunctionIdGlobal?>? global = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? savedFunctionIdVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +188,9 @@ namespace G
             {
                 global?.Invoke(Global!);
             }
-            else if (IsValue3)
+            else if (IsSavedFunctionIdVariant3)
             {
-                value3?.Invoke(Value3!);
+                savedFunctionIdVariant3?.Invoke(SavedFunctionIdVariant3!);
             }
         }
 
@@ -205,7 +205,7 @@ namespace G
                 typeof(global::G.SavedFunctionIdFunction),
                 Global,
                 typeof(global::G.SavedFunctionIdGlobal),
-                Value3,
+                SavedFunctionIdVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -225,7 +225,7 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.SavedFunctionIdFunction?>.Default.Equals(Function, other.Function) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.SavedFunctionIdGlobal?>.Default.Equals(Global, other.Global) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(SavedFunctionIdVariant3, other.SavedFunctionIdVariant3) 
                 ;
         }
 

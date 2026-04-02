@@ -14,35 +14,35 @@ namespace G
         /// Base properties shared by all agent event types.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AgentEventBase? Value1 { get; init; }
+        public global::G.AgentEventBase? Base { get; init; }
 #else
-        public global::G.AgentEventBase? Value1 { get; }
+        public global::G.AgentEventBase? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AgentOutputEventVariant2? Value2 { get; init; }
+        public global::G.AgentOutputEventVariant2? AgentOutputEventVariant2 { get; init; }
 #else
-        public global::G.AgentOutputEventVariant2? Value2 { get; }
+        public global::G.AgentOutputEventVariant2? AgentOutputEventVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentOutputEventVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsAgentOutputEventVariant2 => AgentOutputEventVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AgentEventBase?(AgentOutputEvent @this) => @this.Value1;
+        public static implicit operator global::G.AgentEventBase?(AgentOutputEvent @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public AgentOutputEvent(global::G.AgentEventBase? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AgentOutputEventVariant2?(AgentOutputEvent @this) => @this.Value2;
+        public static implicit operator global::G.AgentOutputEventVariant2?(AgentOutputEvent @this) => @this.AgentOutputEventVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public AgentOutputEvent(global::G.AgentOutputEventVariant2? value)
         {
-            Value2 = value;
+            AgentOutputEventVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AgentOutputEvent(
-            global::G.AgentEventBase? value1,
-            global::G.AgentOutputEventVariant2? value2
+            global::G.AgentEventBase? @base,
+            global::G.AgentOutputEventVariant2? agentOutputEventVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            AgentOutputEventVariant2 = agentOutputEventVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            AgentOutputEventVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            AgentOutputEventVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsAgentOutputEventVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentEventBase?, TResult>? value1 = null,
-            global::System.Func<global::G.AgentOutputEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.AgentEventBase?, TResult>? @base = null,
+            global::System.Func<global::G.AgentOutputEventVariant2?, TResult>? agentOutputEventVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsAgentOutputEventVariant2 && agentOutputEventVariant2 != null)
             {
-                return value2(Value2!);
+                return agentOutputEventVariant2(AgentOutputEventVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentEventBase?>? value1 = null,
-            global::System.Action<global::G.AgentOutputEventVariant2?>? value2 = null,
+            global::System.Action<global::G.AgentEventBase?>? @base = null,
+            global::System.Action<global::G.AgentOutputEventVariant2?>? agentOutputEventVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsAgentOutputEventVariant2)
             {
-                value2?.Invoke(Value2!);
+                agentOutputEventVariant2?.Invoke(AgentOutputEventVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::G.AgentEventBase),
-                Value2,
+                AgentOutputEventVariant2,
                 typeof(global::G.AgentOutputEventVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(AgentOutputEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AgentEventBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AgentOutputEventVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AgentEventBase?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AgentOutputEventVariant2?>.Default.Equals(AgentOutputEventVariant2, other.AgentOutputEventVariant2) 
                 ;
         }
 

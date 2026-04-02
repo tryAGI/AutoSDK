@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ModelResponseProperties? Value1 { get; init; }
+        public global::G.ModelResponseProperties? ModelResponseProperties { get; init; }
 #else
-        public global::G.ModelResponseProperties? Value1 { get; }
+        public global::G.ModelResponseProperties? ModelResponseProperties { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelResponseProperties))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsModelResponseProperties => ModelResponseProperties != null;
         /// <summary>
         /// 
         /// </summary>
@@ -34,28 +34,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ModelResponseProperties?(CreateModelResponseProperties @this) => @this.Value1;
+        public static implicit operator global::G.ModelResponseProperties?(CreateModelResponseProperties @this) => @this.ModelResponseProperties;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateModelResponseProperties(global::G.ModelResponseProperties? value)
         {
-            Value1 = value;
+            ModelResponseProperties = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value1 as object 
+            ModelResponseProperties as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() 
+            ModelResponseProperties?.ToString() 
             ;
 
         /// <summary>
@@ -63,14 +63,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1;
+            return IsModelResponseProperties;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ModelResponseProperties?, TResult>? value1 = null,
+            global::System.Func<global::G.ModelResponseProperties?, TResult>? modelResponseProperties = null,
             bool validate = true)
         {
             if (validate)
@@ -78,9 +78,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsModelResponseProperties && modelResponseProperties != null)
             {
-                return value1(Value1!);
+                return modelResponseProperties(ModelResponseProperties!);
             }
 
             return default(TResult);
@@ -90,7 +90,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ModelResponseProperties?>? value1 = null,
+            global::System.Action<global::G.ModelResponseProperties?>? modelResponseProperties = null,
             bool validate = true)
         {
             if (validate)
@@ -98,9 +98,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsModelResponseProperties)
             {
-                value1?.Invoke(Value1!);
+                modelResponseProperties?.Invoke(ModelResponseProperties!);
             }
         }
 
@@ -111,7 +111,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ModelResponseProperties,
                 typeof(global::G.ModelResponseProperties),
             };
             const int offset = unchecked((int)2166136261);
@@ -129,7 +129,7 @@ namespace G
         public bool Equals(CreateModelResponseProperties other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelResponseProperties?>.Default.Equals(Value1, other.Value1) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ModelResponseProperties?>.Default.Equals(ModelResponseProperties, other.ModelResponseProperties) 
                 ;
         }
 

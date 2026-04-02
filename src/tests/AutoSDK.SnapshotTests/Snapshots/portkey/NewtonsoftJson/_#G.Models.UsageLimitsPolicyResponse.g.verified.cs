@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.UsageLimitsPolicy? Value1 { get; init; }
+        public global::G.UsageLimitsPolicy? UsageLimitsPolicy { get; init; }
 #else
-        public global::G.UsageLimitsPolicy? Value1 { get; }
+        public global::G.UsageLimitsPolicy? UsageLimitsPolicy { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UsageLimitsPolicy))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsUsageLimitsPolicy => UsageLimitsPolicy != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.UsageLimitsPolicyResponseVariant2? Value2 { get; init; }
+        public global::G.UsageLimitsPolicyResponseVariant2? UsageLimitsPolicyResponseVariant2 { get; init; }
 #else
-        public global::G.UsageLimitsPolicyResponseVariant2? Value2 { get; }
+        public global::G.UsageLimitsPolicyResponseVariant2? UsageLimitsPolicyResponseVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UsageLimitsPolicyResponseVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsUsageLimitsPolicyResponseVariant2 => UsageLimitsPolicyResponseVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.UsageLimitsPolicy?(UsageLimitsPolicyResponse @this) => @this.Value1;
+        public static implicit operator global::G.UsageLimitsPolicy?(UsageLimitsPolicyResponse @this) => @this.UsageLimitsPolicy;
 
         /// <summary>
         /// 
         /// </summary>
         public UsageLimitsPolicyResponse(global::G.UsageLimitsPolicy? value)
         {
-            Value1 = value;
+            UsageLimitsPolicy = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.UsageLimitsPolicyResponseVariant2?(UsageLimitsPolicyResponse @this) => @this.Value2;
+        public static implicit operator global::G.UsageLimitsPolicyResponseVariant2?(UsageLimitsPolicyResponse @this) => @this.UsageLimitsPolicyResponseVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public UsageLimitsPolicyResponse(global::G.UsageLimitsPolicyResponseVariant2? value)
         {
-            Value2 = value;
+            UsageLimitsPolicyResponseVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public UsageLimitsPolicyResponse(
-            global::G.UsageLimitsPolicy? value1,
-            global::G.UsageLimitsPolicyResponseVariant2? value2
+            global::G.UsageLimitsPolicy? usageLimitsPolicy,
+            global::G.UsageLimitsPolicyResponseVariant2? usageLimitsPolicyResponseVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            UsageLimitsPolicy = usageLimitsPolicy;
+            UsageLimitsPolicyResponseVariant2 = usageLimitsPolicyResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            UsageLimitsPolicyResponseVariant2 as object ??
+            UsageLimitsPolicy as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            UsageLimitsPolicy?.ToString() ??
+            UsageLimitsPolicyResponseVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsUsageLimitsPolicy && IsUsageLimitsPolicyResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.UsageLimitsPolicy?, TResult>? value1 = null,
-            global::System.Func<global::G.UsageLimitsPolicyResponseVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.UsageLimitsPolicy?, TResult>? usageLimitsPolicy = null,
+            global::System.Func<global::G.UsageLimitsPolicyResponseVariant2?, TResult>? usageLimitsPolicyResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsUsageLimitsPolicy && usageLimitsPolicy != null)
             {
-                return value1(Value1!);
+                return usageLimitsPolicy(UsageLimitsPolicy!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsUsageLimitsPolicyResponseVariant2 && usageLimitsPolicyResponseVariant2 != null)
             {
-                return value2(Value2!);
+                return usageLimitsPolicyResponseVariant2(UsageLimitsPolicyResponseVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.UsageLimitsPolicy?>? value1 = null,
-            global::System.Action<global::G.UsageLimitsPolicyResponseVariant2?>? value2 = null,
+            global::System.Action<global::G.UsageLimitsPolicy?>? usageLimitsPolicy = null,
+            global::System.Action<global::G.UsageLimitsPolicyResponseVariant2?>? usageLimitsPolicyResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsUsageLimitsPolicy)
             {
-                value1?.Invoke(Value1!);
+                usageLimitsPolicy?.Invoke(UsageLimitsPolicy!);
             }
-            else if (IsValue2)
+            else if (IsUsageLimitsPolicyResponseVariant2)
             {
-                value2?.Invoke(Value2!);
+                usageLimitsPolicyResponseVariant2?.Invoke(UsageLimitsPolicyResponseVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                UsageLimitsPolicy,
                 typeof(global::G.UsageLimitsPolicy),
-                Value2,
+                UsageLimitsPolicyResponseVariant2,
                 typeof(global::G.UsageLimitsPolicyResponseVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(UsageLimitsPolicyResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.UsageLimitsPolicy?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.UsageLimitsPolicyResponseVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.UsageLimitsPolicy?>.Default.Equals(UsageLimitsPolicy, other.UsageLimitsPolicy) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.UsageLimitsPolicyResponseVariant2?>.Default.Equals(UsageLimitsPolicyResponseVariant2, other.UsageLimitsPolicyResponseVariant2) 
                 ;
         }
 

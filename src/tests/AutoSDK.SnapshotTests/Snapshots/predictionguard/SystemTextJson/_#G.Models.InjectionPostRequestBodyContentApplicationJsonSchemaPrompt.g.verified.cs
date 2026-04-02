@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 => InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<string>? InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value2 { get; }
+        public global::System.Collections.Generic.IList<string>? InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 => InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,42 +51,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(InjectionPostRequestBodyContentApplicationJsonSchemaPrompt @this) => @this.Value1;
+        public static implicit operator string?(InjectionPostRequestBodyContentApplicationJsonSchemaPrompt @this) => @this.InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public InjectionPostRequestBodyContentApplicationJsonSchemaPrompt(string? value)
         {
-            Value1 = value;
+            InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public InjectionPostRequestBodyContentApplicationJsonSchemaPrompt(
-            string? value1,
-            global::System.Collections.Generic.IList<string>? value2
+            string? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1,
+            global::System.Collections.Generic.IList<string>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 = injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1;
+            InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 = injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 as object ??
+            InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1?.ToString() ??
+            InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -94,15 +94,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 && !IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 || !IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 && IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -110,13 +110,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 && injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 != null)
             {
-                return value1(Value1!);
+                return injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 && injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 != null)
             {
-                return value2(Value2!);
+                return injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2!);
             }
 
             return default(TResult);
@@ -126,8 +126,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value2 = null,
+            global::System.Action<string?>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -135,13 +135,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1)
             {
-                value1?.Invoke(Value1!);
+                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1?.Invoke(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1!);
             }
-            else if (IsValue2)
+            else if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2)
             {
-                value2?.Invoke(Value2!);
+                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2?.Invoke(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2!);
             }
         }
 
@@ -152,9 +152,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1,
                 typeof(string),
-                Value2,
+                InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
             };
             const int offset = unchecked((int)2166136261);
@@ -172,8 +172,8 @@ namespace G
         public bool Equals(InjectionPostRequestBodyContentApplicationJsonSchemaPrompt other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1, other.InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2, other.InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2) 
                 ;
         }
 

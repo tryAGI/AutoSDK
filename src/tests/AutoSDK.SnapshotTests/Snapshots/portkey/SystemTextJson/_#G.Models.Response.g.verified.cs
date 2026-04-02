@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ModelResponseProperties? Value1 { get; init; }
+        public global::G.ModelResponseProperties? ModelProperties { get; init; }
 #else
-        public global::G.ModelResponseProperties? Value1 { get; }
+        public global::G.ModelResponseProperties? ModelProperties { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelProperties))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsModelProperties => ModelProperties != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResponseProperties? Value2 { get; init; }
+        public global::G.ResponseProperties? Properties { get; init; }
 #else
-        public global::G.ResponseProperties? Value2 { get; }
+        public global::G.ResponseProperties? Properties { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Properties))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsProperties => Properties != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResponseVariant3? Value3 { get; init; }
+        public global::G.ResponseVariant3? ResponseVariant3 { get; init; }
 #else
-        public global::G.ResponseVariant3? Value3 { get; }
+        public global::G.ResponseVariant3? ResponseVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsResponseVariant3 => ResponseVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ModelResponseProperties?(Response @this) => @this.Value1;
+        public static implicit operator global::G.ModelResponseProperties?(Response @this) => @this.ModelProperties;
 
         /// <summary>
         /// 
         /// </summary>
         public Response(global::G.ModelResponseProperties? value)
         {
-            Value1 = value;
+            ModelProperties = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResponseProperties?(Response @this) => @this.Value2;
+        public static implicit operator global::G.ResponseProperties?(Response @this) => @this.Properties;
 
         /// <summary>
         /// 
         /// </summary>
         public Response(global::G.ResponseProperties? value)
         {
-            Value2 = value;
+            Properties = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResponseVariant3?(Response @this) => @this.Value3;
+        public static implicit operator global::G.ResponseVariant3?(Response @this) => @this.ResponseVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public Response(global::G.ResponseVariant3? value)
         {
-            Value3 = value;
+            ResponseVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Response(
-            global::G.ModelResponseProperties? value1,
-            global::G.ResponseProperties? value2,
-            global::G.ResponseVariant3? value3
+            global::G.ModelResponseProperties? modelProperties,
+            global::G.ResponseProperties? properties,
+            global::G.ResponseVariant3? responseVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            ModelProperties = modelProperties;
+            Properties = properties;
+            ResponseVariant3 = responseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ResponseVariant3 as object ??
+            Properties as object ??
+            ModelProperties as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            ModelProperties?.ToString() ??
+            Properties?.ToString() ??
+            ResponseVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2 && IsValue3;
+            return IsModelProperties && IsProperties && IsResponseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ModelResponseProperties?, TResult>? value1 = null,
-            global::System.Func<global::G.ResponseProperties?, TResult>? value2 = null,
-            global::System.Func<global::G.ResponseVariant3?, TResult>? value3 = null,
+            global::System.Func<global::G.ModelResponseProperties?, TResult>? modelProperties = null,
+            global::System.Func<global::G.ResponseProperties?, TResult>? properties = null,
+            global::System.Func<global::G.ResponseVariant3?, TResult>? responseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsModelProperties && modelProperties != null)
             {
-                return value1(Value1!);
+                return modelProperties(ModelProperties!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsProperties && properties != null)
             {
-                return value2(Value2!);
+                return properties(Properties!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsResponseVariant3 && responseVariant3 != null)
             {
-                return value3(Value3!);
+                return responseVariant3(ResponseVariant3!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ModelResponseProperties?>? value1 = null,
-            global::System.Action<global::G.ResponseProperties?>? value2 = null,
-            global::System.Action<global::G.ResponseVariant3?>? value3 = null,
+            global::System.Action<global::G.ModelResponseProperties?>? modelProperties = null,
+            global::System.Action<global::G.ResponseProperties?>? properties = null,
+            global::System.Action<global::G.ResponseVariant3?>? responseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsModelProperties)
             {
-                value1?.Invoke(Value1!);
+                modelProperties?.Invoke(ModelProperties!);
             }
-            else if (IsValue2)
+            else if (IsProperties)
             {
-                value2?.Invoke(Value2!);
+                properties?.Invoke(Properties!);
             }
-            else if (IsValue3)
+            else if (IsResponseVariant3)
             {
-                value3?.Invoke(Value3!);
+                responseVariant3?.Invoke(ResponseVariant3!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ModelProperties,
                 typeof(global::G.ModelResponseProperties),
-                Value2,
+                Properties,
                 typeof(global::G.ResponseProperties),
-                Value3,
+                ResponseVariant3,
                 typeof(global::G.ResponseVariant3),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(Response other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelResponseProperties?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseProperties?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseVariant3?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ModelResponseProperties?>.Default.Equals(ModelProperties, other.ModelProperties) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseProperties?>.Default.Equals(Properties, other.Properties) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseVariant3?>.Default.Equals(ResponseVariant3, other.ResponseVariant3) 
                 ;
         }
 

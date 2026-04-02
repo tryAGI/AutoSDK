@@ -36,8 +36,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.CreateInputRequestBase? value1 = default;
-            global::G.CreateInterruptRequestVariant2? value2 = default;
+            global::G.CreateInputRequestBase? inputBase = default;
+            global::G.CreateInterruptRequestVariant2? createInterruptRequestVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -46,7 +46,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateInputRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateInputRequestBase> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateInputRequestBase).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputBase = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,7 +61,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateInterruptRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateInterruptRequestVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateInterruptRequestVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        createInterruptRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -72,13 +72,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (inputBase == null && createInterruptRequestVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateInputRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateInputRequestBase> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateInputRequestBase).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputBase = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -91,7 +91,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateInterruptRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateInterruptRequestVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateInterruptRequestVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    createInterruptRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -102,9 +102,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.CreateInterruptRequest(
-                value1,
+                inputBase,
 
-                value2
+                createInterruptRequestVariant2
                 );
 
             return __value;
@@ -119,17 +119,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsInputBase)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateInputRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateInputRequestBase?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateInputRequestBase).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputBase!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsCreateInterruptRequestVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateInterruptRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateInterruptRequestVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateInterruptRequestVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateInterruptRequestVariant2!, typeInfo);
             }
         }
     }

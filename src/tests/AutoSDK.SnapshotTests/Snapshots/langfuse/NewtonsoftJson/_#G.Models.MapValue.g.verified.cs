@@ -14,86 +14,86 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? MapValueVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? MapValueVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MapValueVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMapValueVariant1 => MapValueVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? Value2 { get; init; }
+        public int? MapValueVariant2 { get; init; }
 #else
-        public int? Value2 { get; }
+        public int? MapValueVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MapValueVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsMapValueVariant2 => MapValueVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? Value3 { get; init; }
+        public int? MapValueVariant3 { get; init; }
 #else
-        public int? Value3 { get; }
+        public int? MapValueVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MapValueVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsMapValueVariant3 => MapValueVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public bool? Value4 { get; init; }
+        public bool? MapValueVariant4 { get; init; }
 #else
-        public bool? Value4 { get; }
+        public bool? MapValueVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MapValueVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsMapValueVariant4 => MapValueVariant4 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value5 { get; init; }
+        public global::System.Collections.Generic.IList<string>? MapValueVariant5 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value5 { get; }
+        public global::System.Collections.Generic.IList<string>? MapValueVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MapValueVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsMapValueVariant5 => MapValueVariant5 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,14 +102,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(MapValue @this) => @this.Value1;
+        public static implicit operator string?(MapValue @this) => @this.MapValueVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public MapValue(string? value)
         {
-            Value1 = value;
+            MapValueVariant1 = value;
         }
 
         /// <summary>
@@ -120,14 +120,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator int?(MapValue @this) => @this.Value2;
+        public static implicit operator int?(MapValue @this) => @this.MapValueVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public MapValue(int? value)
         {
-            Value2 = value;
+            MapValueVariant2 = value;
         }
 
         /// <summary>
@@ -138,54 +138,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator bool?(MapValue @this) => @this.Value4;
+        public static implicit operator bool?(MapValue @this) => @this.MapValueVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public MapValue(bool? value)
         {
-            Value4 = value;
+            MapValueVariant4 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MapValue(
-            string? value1,
-            int? value2,
-            int? value3,
-            bool? value4,
-            global::System.Collections.Generic.IList<string>? value5
+            string? mapValueVariant1,
+            int? mapValueVariant2,
+            int? mapValueVariant3,
+            bool? mapValueVariant4,
+            global::System.Collections.Generic.IList<string>? mapValueVariant5
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
+            MapValueVariant1 = mapValueVariant1;
+            MapValueVariant2 = mapValueVariant2;
+            MapValueVariant3 = mapValueVariant3;
+            MapValueVariant4 = mapValueVariant4;
+            MapValueVariant5 = mapValueVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            MapValueVariant5 as object ??
+            MapValueVariant4 as object ??
+            MapValueVariant3 as object ??
+            MapValueVariant2 as object ??
+            MapValueVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString().ToLowerInvariant() ??
-            Value5?.ToString() 
+            MapValueVariant1?.ToString() ??
+            MapValueVariant2?.ToString() ??
+            MapValueVariant3?.ToString() ??
+            MapValueVariant4?.ToString().ToLowerInvariant() ??
+            MapValueVariant5?.ToString() 
             ;
 
         /// <summary>
@@ -193,18 +193,18 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5;
+            return IsMapValueVariant1 && !IsMapValueVariant2 && !IsMapValueVariant3 && !IsMapValueVariant4 && !IsMapValueVariant5 || !IsMapValueVariant1 && IsMapValueVariant2 && !IsMapValueVariant3 && !IsMapValueVariant4 && !IsMapValueVariant5 || !IsMapValueVariant1 && !IsMapValueVariant2 && IsMapValueVariant3 && !IsMapValueVariant4 && !IsMapValueVariant5 || !IsMapValueVariant1 && !IsMapValueVariant2 && !IsMapValueVariant3 && IsMapValueVariant4 && !IsMapValueVariant5 || !IsMapValueVariant1 && !IsMapValueVariant2 && !IsMapValueVariant3 && !IsMapValueVariant4 && IsMapValueVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<int?, TResult>? value2 = null,
-            global::System.Func<int?, TResult>? value3 = null,
-            global::System.Func<bool?, TResult>? value4 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value5 = null,
+            global::System.Func<string?, TResult>? mapValueVariant1 = null,
+            global::System.Func<int?, TResult>? mapValueVariant2 = null,
+            global::System.Func<int?, TResult>? mapValueVariant3 = null,
+            global::System.Func<bool?, TResult>? mapValueVariant4 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? mapValueVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -212,25 +212,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMapValueVariant1 && mapValueVariant1 != null)
             {
-                return value1(Value1!);
+                return mapValueVariant1(MapValueVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsMapValueVariant2 && mapValueVariant2 != null)
             {
-                return value2(Value2!);
+                return mapValueVariant2(MapValueVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsMapValueVariant3 && mapValueVariant3 != null)
             {
-                return value3(Value3!);
+                return mapValueVariant3(MapValueVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsMapValueVariant4 && mapValueVariant4 != null)
             {
-                return value4(Value4!);
+                return mapValueVariant4(MapValueVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsMapValueVariant5 && mapValueVariant5 != null)
             {
-                return value5(Value5!);
+                return mapValueVariant5(MapValueVariant5!);
             }
 
             return default(TResult);
@@ -240,11 +240,11 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<int?>? value2 = null,
-            global::System.Action<int?>? value3 = null,
-            global::System.Action<bool?>? value4 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value5 = null,
+            global::System.Action<string?>? mapValueVariant1 = null,
+            global::System.Action<int?>? mapValueVariant2 = null,
+            global::System.Action<int?>? mapValueVariant3 = null,
+            global::System.Action<bool?>? mapValueVariant4 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? mapValueVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -252,25 +252,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMapValueVariant1)
             {
-                value1?.Invoke(Value1!);
+                mapValueVariant1?.Invoke(MapValueVariant1!);
             }
-            else if (IsValue2)
+            else if (IsMapValueVariant2)
             {
-                value2?.Invoke(Value2!);
+                mapValueVariant2?.Invoke(MapValueVariant2!);
             }
-            else if (IsValue3)
+            else if (IsMapValueVariant3)
             {
-                value3?.Invoke(Value3!);
+                mapValueVariant3?.Invoke(MapValueVariant3!);
             }
-            else if (IsValue4)
+            else if (IsMapValueVariant4)
             {
-                value4?.Invoke(Value4!);
+                mapValueVariant4?.Invoke(MapValueVariant4!);
             }
-            else if (IsValue5)
+            else if (IsMapValueVariant5)
             {
-                value5?.Invoke(Value5!);
+                mapValueVariant5?.Invoke(MapValueVariant5!);
             }
         }
 
@@ -281,15 +281,15 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                MapValueVariant1,
                 typeof(string),
-                Value2,
+                MapValueVariant2,
                 typeof(int),
-                Value3,
+                MapValueVariant3,
                 typeof(int),
-                Value4,
+                MapValueVariant4,
                 typeof(bool),
-                Value5,
+                MapValueVariant5,
                 typeof(global::System.Collections.Generic.IList<string>),
             };
             const int offset = unchecked((int)2166136261);
@@ -307,11 +307,11 @@ namespace G
         public bool Equals(MapValue other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value5, other.Value5) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(MapValueVariant1, other.MapValueVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(MapValueVariant2, other.MapValueVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(MapValueVariant3, other.MapValueVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(MapValueVariant4, other.MapValueVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(MapValueVariant5, other.MapValueVariant5) 
                 ;
         }
 

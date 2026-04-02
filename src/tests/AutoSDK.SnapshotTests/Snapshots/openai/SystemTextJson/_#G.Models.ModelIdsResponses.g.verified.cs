@@ -14,18 +14,18 @@ namespace G
         /// Example: gpt-4o
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ModelIdsShared? Value1 { get; init; }
+        public global::G.ModelIdsShared? Shared { get; init; }
 #else
-        public global::G.ModelIdsShared? Value1 { get; }
+        public global::G.ModelIdsShared? Shared { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shared))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsShared => Shared != null;
 
         /// <summary>
         /// 
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ModelIdsShared?(ModelIdsResponses @this) => @this.Value1;
+        public static implicit operator global::G.ModelIdsShared?(ModelIdsResponses @this) => @this.Shared;
 
         /// <summary>
         /// 
         /// </summary>
         public ModelIdsResponses(global::G.ModelIdsShared? value)
         {
-            Value1 = value;
+            Shared = value;
         }
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace G
         /// 
         /// </summary>
         public ModelIdsResponses(
-            global::G.ModelIdsShared? value1,
+            global::G.ModelIdsShared? shared,
             global::G.ModelIdsResponsesEnum? responsesOnlyModel
             )
         {
-            Value1 = value1;
+            Shared = shared;
             ResponsesOnlyModel = responsesOnlyModel;
         }
 
@@ -96,14 +96,14 @@ namespace G
         /// </summary>
         public object? Object =>
             ResponsesOnlyModel as object ??
-            Value1 as object 
+            Shared as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            Shared?.ToString() ??
             ResponsesOnlyModel?.ToValueString() 
             ;
 
@@ -112,14 +112,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsResponsesOnlyModel;
+            return IsShared || IsResponsesOnlyModel;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ModelIdsShared?, TResult>? value1 = null,
+            global::System.Func<global::G.ModelIdsShared?, TResult>? shared = null,
             global::System.Func<global::G.ModelIdsResponsesEnum?, TResult>? responsesOnlyModel = null,
             bool validate = true)
         {
@@ -128,9 +128,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsShared && shared != null)
             {
-                return value1(Value1!);
+                return shared(Shared!);
             }
             else if (IsResponsesOnlyModel && responsesOnlyModel != null)
             {
@@ -144,7 +144,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ModelIdsShared?>? value1 = null,
+            global::System.Action<global::G.ModelIdsShared?>? shared = null,
             global::System.Action<global::G.ModelIdsResponsesEnum?>? responsesOnlyModel = null,
             bool validate = true)
         {
@@ -153,9 +153,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsShared)
             {
-                value1?.Invoke(Value1!);
+                shared?.Invoke(Shared!);
             }
             else if (IsResponsesOnlyModel)
             {
@@ -170,7 +170,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Shared,
                 typeof(global::G.ModelIdsShared),
                 ResponsesOnlyModel,
                 typeof(global::G.ModelIdsResponsesEnum),
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(ModelIdsResponses other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelIdsShared?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ModelIdsShared?>.Default.Equals(Shared, other.Shared) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ModelIdsResponsesEnum?>.Default.Equals(ResponsesOnlyModel, other.ResponsesOnlyModel) 
                 ;
         }

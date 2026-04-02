@@ -14,239 +14,239 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ModelVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ModelVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsModelVariant1 => ModelVariant1 != null;
 
         /// <summary>
         /// Our most intelligent model
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? ModelVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? ModelVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsModelVariant2 => ModelVariant2 != null;
 
         /// <summary>
         /// Our most intelligent model
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value3 { get; init; }
+        public string? ModelVariant3 { get; init; }
 #else
-        public string? Value3 { get; }
+        public string? ModelVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsModelVariant3 => ModelVariant3 != null;
 
         /// <summary>
         /// Fastest and most compact model for near-instant responsiveness
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value4 { get; init; }
+        public string? ModelVariant4 { get; init; }
 #else
-        public string? Value4 { get; }
+        public string? ModelVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsModelVariant4 => ModelVariant4 != null;
 
         /// <summary>
         /// Our fastest model
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value5 { get; init; }
+        public string? ModelVariant5 { get; init; }
 #else
-        public string? Value5 { get; }
+        public string? ModelVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsModelVariant5 => ModelVariant5 != null;
 
         /// <summary>
         /// Our previous most intelligent model
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value6 { get; init; }
+        public string? ModelVariant6 { get; init; }
 #else
-        public string? Value6 { get; }
+        public string? ModelVariant6 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant6))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsModelVariant6 => ModelVariant6 != null;
 
         /// <summary>
         /// Our previous most intelligent model
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value7 { get; init; }
+        public string? ModelVariant7 { get; init; }
 #else
-        public string? Value7 { get; }
+        public string? ModelVariant7 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant7))]
 #endif
-        public bool IsValue7 => Value7 != null;
+        public bool IsModelVariant7 => ModelVariant7 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value8 { get; init; }
+        public string? ModelVariant8 { get; init; }
 #else
-        public string? Value8 { get; }
+        public string? ModelVariant8 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant8))]
 #endif
-        public bool IsValue8 => Value8 != null;
+        public bool IsModelVariant8 => ModelVariant8 != null;
 
         /// <summary>
         /// Excels at writing and complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value9 { get; init; }
+        public string? ModelVariant9 { get; init; }
 #else
-        public string? Value9 { get; }
+        public string? ModelVariant9 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant9))]
 #endif
-        public bool IsValue9 => Value9 != null;
+        public bool IsModelVariant9 => ModelVariant9 != null;
 
         /// <summary>
         /// Excels at writing and complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value10 { get; init; }
+        public string? ModelVariant10 { get; init; }
 #else
-        public string? Value10 { get; }
+        public string? ModelVariant10 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant10))]
 #endif
-        public bool IsValue10 => Value10 != null;
+        public bool IsModelVariant10 => ModelVariant10 != null;
 
         /// <summary>
         /// Balance of speed and intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value11 { get; init; }
+        public string? ModelVariant11 { get; init; }
 #else
-        public string? Value11 { get; }
+        public string? ModelVariant11 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value11))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant11))]
 #endif
-        public bool IsValue11 => Value11 != null;
+        public bool IsModelVariant11 => ModelVariant11 != null;
 
         /// <summary>
         /// Our previous most fast and cost-effective
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value12 { get; init; }
+        public string? ModelVariant12 { get; init; }
 #else
-        public string? Value12 { get; }
+        public string? ModelVariant12 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant12))]
 #endif
-        public bool IsValue12 => Value12 != null;
+        public bool IsModelVariant12 => ModelVariant12 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value13 { get; init; }
+        public string? ModelVariant13 { get; init; }
 #else
-        public string? Value13 { get; }
+        public string? ModelVariant13 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value13))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant13))]
 #endif
-        public bool IsValue13 => Value13 != null;
+        public bool IsModelVariant13 => ModelVariant13 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value14 { get; init; }
+        public string? ModelVariant14 { get; init; }
 #else
-        public string? Value14 { get; }
+        public string? ModelVariant14 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value14))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant14))]
 #endif
-        public bool IsValue14 => Value14 != null;
+        public bool IsModelVariant14 => ModelVariant14 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -255,90 +255,90 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(Model @this) => @this.Value1;
+        public static implicit operator string?(Model @this) => @this.ModelVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public Model(string? value)
         {
-            Value1 = value;
+            ModelVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Model(
-            string? value1,
-            string? value2,
-            string? value3,
-            string? value4,
-            string? value5,
-            string? value6,
-            string? value7,
-            string? value8,
-            string? value9,
-            string? value10,
-            string? value11,
-            string? value12,
-            string? value13,
-            string? value14
+            string? modelVariant1,
+            string? modelVariant2,
+            string? modelVariant3,
+            string? modelVariant4,
+            string? modelVariant5,
+            string? modelVariant6,
+            string? modelVariant7,
+            string? modelVariant8,
+            string? modelVariant9,
+            string? modelVariant10,
+            string? modelVariant11,
+            string? modelVariant12,
+            string? modelVariant13,
+            string? modelVariant14
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
-            Value7 = value7;
-            Value8 = value8;
-            Value9 = value9;
-            Value10 = value10;
-            Value11 = value11;
-            Value12 = value12;
-            Value13 = value13;
-            Value14 = value14;
+            ModelVariant1 = modelVariant1;
+            ModelVariant2 = modelVariant2;
+            ModelVariant3 = modelVariant3;
+            ModelVariant4 = modelVariant4;
+            ModelVariant5 = modelVariant5;
+            ModelVariant6 = modelVariant6;
+            ModelVariant7 = modelVariant7;
+            ModelVariant8 = modelVariant8;
+            ModelVariant9 = modelVariant9;
+            ModelVariant10 = modelVariant10;
+            ModelVariant11 = modelVariant11;
+            ModelVariant12 = modelVariant12;
+            ModelVariant13 = modelVariant13;
+            ModelVariant14 = modelVariant14;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value14 as object ??
-            Value13 as object ??
-            Value12 as object ??
-            Value11 as object ??
-            Value10 as object ??
-            Value9 as object ??
-            Value8 as object ??
-            Value7 as object ??
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ModelVariant14 as object ??
+            ModelVariant13 as object ??
+            ModelVariant12 as object ??
+            ModelVariant11 as object ??
+            ModelVariant10 as object ??
+            ModelVariant9 as object ??
+            ModelVariant8 as object ??
+            ModelVariant7 as object ??
+            ModelVariant6 as object ??
+            ModelVariant5 as object ??
+            ModelVariant4 as object ??
+            ModelVariant3 as object ??
+            ModelVariant2 as object ??
+            ModelVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() ??
-            Value7?.ToString() ??
-            Value8?.ToString() ??
-            Value9?.ToString() ??
-            Value10?.ToString() ??
-            Value11?.ToString() ??
-            Value12?.ToString() ??
-            Value13?.ToString() ??
-            Value14?.ToString() 
+            ModelVariant1?.ToString() ??
+            ModelVariant2?.ToString() ??
+            ModelVariant3?.ToString() ??
+            ModelVariant4?.ToString() ??
+            ModelVariant5?.ToString() ??
+            ModelVariant6?.ToString() ??
+            ModelVariant7?.ToString() ??
+            ModelVariant8?.ToString() ??
+            ModelVariant9?.ToString() ??
+            ModelVariant10?.ToString() ??
+            ModelVariant11?.ToString() ??
+            ModelVariant12?.ToString() ??
+            ModelVariant13?.ToString() ??
+            ModelVariant14?.ToString() 
             ;
 
         /// <summary>
@@ -346,27 +346,27 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12 || IsValue13 || IsValue14;
+            return IsModelVariant1 || IsModelVariant2 || IsModelVariant3 || IsModelVariant4 || IsModelVariant5 || IsModelVariant6 || IsModelVariant7 || IsModelVariant8 || IsModelVariant9 || IsModelVariant10 || IsModelVariant11 || IsModelVariant12 || IsModelVariant13 || IsModelVariant14;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<string?, TResult>? value2 = null,
-            global::System.Func<string?, TResult>? value3 = null,
-            global::System.Func<string?, TResult>? value4 = null,
-            global::System.Func<string?, TResult>? value5 = null,
-            global::System.Func<string?, TResult>? value6 = null,
-            global::System.Func<string?, TResult>? value7 = null,
-            global::System.Func<string?, TResult>? value8 = null,
-            global::System.Func<string?, TResult>? value9 = null,
-            global::System.Func<string?, TResult>? value10 = null,
-            global::System.Func<string?, TResult>? value11 = null,
-            global::System.Func<string?, TResult>? value12 = null,
-            global::System.Func<string?, TResult>? value13 = null,
-            global::System.Func<string?, TResult>? value14 = null,
+            global::System.Func<string?, TResult>? modelVariant1 = null,
+            global::System.Func<string?, TResult>? modelVariant2 = null,
+            global::System.Func<string?, TResult>? modelVariant3 = null,
+            global::System.Func<string?, TResult>? modelVariant4 = null,
+            global::System.Func<string?, TResult>? modelVariant5 = null,
+            global::System.Func<string?, TResult>? modelVariant6 = null,
+            global::System.Func<string?, TResult>? modelVariant7 = null,
+            global::System.Func<string?, TResult>? modelVariant8 = null,
+            global::System.Func<string?, TResult>? modelVariant9 = null,
+            global::System.Func<string?, TResult>? modelVariant10 = null,
+            global::System.Func<string?, TResult>? modelVariant11 = null,
+            global::System.Func<string?, TResult>? modelVariant12 = null,
+            global::System.Func<string?, TResult>? modelVariant13 = null,
+            global::System.Func<string?, TResult>? modelVariant14 = null,
             bool validate = true)
         {
             if (validate)
@@ -374,61 +374,61 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsModelVariant1 && modelVariant1 != null)
             {
-                return value1(Value1!);
+                return modelVariant1(ModelVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsModelVariant2 && modelVariant2 != null)
             {
-                return value2(Value2!);
+                return modelVariant2(ModelVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsModelVariant3 && modelVariant3 != null)
             {
-                return value3(Value3!);
+                return modelVariant3(ModelVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsModelVariant4 && modelVariant4 != null)
             {
-                return value4(Value4!);
+                return modelVariant4(ModelVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsModelVariant5 && modelVariant5 != null)
             {
-                return value5(Value5!);
+                return modelVariant5(ModelVariant5!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsModelVariant6 && modelVariant6 != null)
             {
-                return value6(Value6!);
+                return modelVariant6(ModelVariant6!);
             }
-            else if (IsValue7 && value7 != null)
+            else if (IsModelVariant7 && modelVariant7 != null)
             {
-                return value7(Value7!);
+                return modelVariant7(ModelVariant7!);
             }
-            else if (IsValue8 && value8 != null)
+            else if (IsModelVariant8 && modelVariant8 != null)
             {
-                return value8(Value8!);
+                return modelVariant8(ModelVariant8!);
             }
-            else if (IsValue9 && value9 != null)
+            else if (IsModelVariant9 && modelVariant9 != null)
             {
-                return value9(Value9!);
+                return modelVariant9(ModelVariant9!);
             }
-            else if (IsValue10 && value10 != null)
+            else if (IsModelVariant10 && modelVariant10 != null)
             {
-                return value10(Value10!);
+                return modelVariant10(ModelVariant10!);
             }
-            else if (IsValue11 && value11 != null)
+            else if (IsModelVariant11 && modelVariant11 != null)
             {
-                return value11(Value11!);
+                return modelVariant11(ModelVariant11!);
             }
-            else if (IsValue12 && value12 != null)
+            else if (IsModelVariant12 && modelVariant12 != null)
             {
-                return value12(Value12!);
+                return modelVariant12(ModelVariant12!);
             }
-            else if (IsValue13 && value13 != null)
+            else if (IsModelVariant13 && modelVariant13 != null)
             {
-                return value13(Value13!);
+                return modelVariant13(ModelVariant13!);
             }
-            else if (IsValue14 && value14 != null)
+            else if (IsModelVariant14 && modelVariant14 != null)
             {
-                return value14(Value14!);
+                return modelVariant14(ModelVariant14!);
             }
 
             return default(TResult);
@@ -438,20 +438,20 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<string?>? value2 = null,
-            global::System.Action<string?>? value3 = null,
-            global::System.Action<string?>? value4 = null,
-            global::System.Action<string?>? value5 = null,
-            global::System.Action<string?>? value6 = null,
-            global::System.Action<string?>? value7 = null,
-            global::System.Action<string?>? value8 = null,
-            global::System.Action<string?>? value9 = null,
-            global::System.Action<string?>? value10 = null,
-            global::System.Action<string?>? value11 = null,
-            global::System.Action<string?>? value12 = null,
-            global::System.Action<string?>? value13 = null,
-            global::System.Action<string?>? value14 = null,
+            global::System.Action<string?>? modelVariant1 = null,
+            global::System.Action<string?>? modelVariant2 = null,
+            global::System.Action<string?>? modelVariant3 = null,
+            global::System.Action<string?>? modelVariant4 = null,
+            global::System.Action<string?>? modelVariant5 = null,
+            global::System.Action<string?>? modelVariant6 = null,
+            global::System.Action<string?>? modelVariant7 = null,
+            global::System.Action<string?>? modelVariant8 = null,
+            global::System.Action<string?>? modelVariant9 = null,
+            global::System.Action<string?>? modelVariant10 = null,
+            global::System.Action<string?>? modelVariant11 = null,
+            global::System.Action<string?>? modelVariant12 = null,
+            global::System.Action<string?>? modelVariant13 = null,
+            global::System.Action<string?>? modelVariant14 = null,
             bool validate = true)
         {
             if (validate)
@@ -459,61 +459,61 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsModelVariant1)
             {
-                value1?.Invoke(Value1!);
+                modelVariant1?.Invoke(ModelVariant1!);
             }
-            else if (IsValue2)
+            else if (IsModelVariant2)
             {
-                value2?.Invoke(Value2!);
+                modelVariant2?.Invoke(ModelVariant2!);
             }
-            else if (IsValue3)
+            else if (IsModelVariant3)
             {
-                value3?.Invoke(Value3!);
+                modelVariant3?.Invoke(ModelVariant3!);
             }
-            else if (IsValue4)
+            else if (IsModelVariant4)
             {
-                value4?.Invoke(Value4!);
+                modelVariant4?.Invoke(ModelVariant4!);
             }
-            else if (IsValue5)
+            else if (IsModelVariant5)
             {
-                value5?.Invoke(Value5!);
+                modelVariant5?.Invoke(ModelVariant5!);
             }
-            else if (IsValue6)
+            else if (IsModelVariant6)
             {
-                value6?.Invoke(Value6!);
+                modelVariant6?.Invoke(ModelVariant6!);
             }
-            else if (IsValue7)
+            else if (IsModelVariant7)
             {
-                value7?.Invoke(Value7!);
+                modelVariant7?.Invoke(ModelVariant7!);
             }
-            else if (IsValue8)
+            else if (IsModelVariant8)
             {
-                value8?.Invoke(Value8!);
+                modelVariant8?.Invoke(ModelVariant8!);
             }
-            else if (IsValue9)
+            else if (IsModelVariant9)
             {
-                value9?.Invoke(Value9!);
+                modelVariant9?.Invoke(ModelVariant9!);
             }
-            else if (IsValue10)
+            else if (IsModelVariant10)
             {
-                value10?.Invoke(Value10!);
+                modelVariant10?.Invoke(ModelVariant10!);
             }
-            else if (IsValue11)
+            else if (IsModelVariant11)
             {
-                value11?.Invoke(Value11!);
+                modelVariant11?.Invoke(ModelVariant11!);
             }
-            else if (IsValue12)
+            else if (IsModelVariant12)
             {
-                value12?.Invoke(Value12!);
+                modelVariant12?.Invoke(ModelVariant12!);
             }
-            else if (IsValue13)
+            else if (IsModelVariant13)
             {
-                value13?.Invoke(Value13!);
+                modelVariant13?.Invoke(ModelVariant13!);
             }
-            else if (IsValue14)
+            else if (IsModelVariant14)
             {
-                value14?.Invoke(Value14!);
+                modelVariant14?.Invoke(ModelVariant14!);
             }
         }
 
@@ -524,33 +524,33 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ModelVariant1,
                 typeof(string),
-                Value2,
+                ModelVariant2,
                 typeof(string),
-                Value3,
+                ModelVariant3,
                 typeof(string),
-                Value4,
+                ModelVariant4,
                 typeof(string),
-                Value5,
+                ModelVariant5,
                 typeof(string),
-                Value6,
+                ModelVariant6,
                 typeof(string),
-                Value7,
+                ModelVariant7,
                 typeof(string),
-                Value8,
+                ModelVariant8,
                 typeof(string),
-                Value9,
+                ModelVariant9,
                 typeof(string),
-                Value10,
+                ModelVariant10,
                 typeof(string),
-                Value11,
+                ModelVariant11,
                 typeof(string),
-                Value12,
+                ModelVariant12,
                 typeof(string),
-                Value13,
+                ModelVariant13,
                 typeof(string),
-                Value14,
+                ModelVariant14,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -568,20 +568,20 @@ namespace G
         public bool Equals(Model other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value10, other.Value10) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value12, other.Value12) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value13, other.Value13) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value14, other.Value14) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant1, other.ModelVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant2, other.ModelVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant3, other.ModelVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant4, other.ModelVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant5, other.ModelVariant5) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant6, other.ModelVariant6) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant7, other.ModelVariant7) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant8, other.ModelVariant8) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant9, other.ModelVariant9) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant10, other.ModelVariant10) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant11, other.ModelVariant11) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant12, other.ModelVariant12) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant13, other.ModelVariant13) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant14, other.ModelVariant14) 
                 ;
         }
 

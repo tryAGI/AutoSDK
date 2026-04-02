@@ -14,35 +14,35 @@ namespace G
         /// Override properties for conversation flow configuration in agent override requests.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ConversationFlowOverride? Value1 { get; init; }
+        public global::G.ConversationFlowOverride? Override { get; init; }
 #else
-        public global::G.ConversationFlowOverride? Value1 { get; }
+        public global::G.ConversationFlowOverride? Override { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Override))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsOverride => Override != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ConversationFlowVariant2? Value2 { get; init; }
+        public global::G.ConversationFlowVariant2? ConversationFlowVariant2 { get; init; }
 #else
-        public global::G.ConversationFlowVariant2? Value2 { get; }
+        public global::G.ConversationFlowVariant2? ConversationFlowVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationFlowVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsConversationFlowVariant2 => ConversationFlowVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ConversationFlowOverride?(ConversationFlow @this) => @this.Value1;
+        public static implicit operator global::G.ConversationFlowOverride?(ConversationFlow @this) => @this.Override;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlow(global::G.ConversationFlowOverride? value)
         {
-            Value1 = value;
+            Override = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ConversationFlowVariant2?(ConversationFlow @this) => @this.Value2;
+        public static implicit operator global::G.ConversationFlowVariant2?(ConversationFlow @this) => @this.ConversationFlowVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlow(global::G.ConversationFlowVariant2? value)
         {
-            Value2 = value;
+            ConversationFlowVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlow(
-            global::G.ConversationFlowOverride? value1,
-            global::G.ConversationFlowVariant2? value2
+            global::G.ConversationFlowOverride? @override,
+            global::G.ConversationFlowVariant2? conversationFlowVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Override = @override;
+            ConversationFlowVariant2 = conversationFlowVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ConversationFlowVariant2 as object ??
+            Override as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Override?.ToString() ??
+            ConversationFlowVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsOverride && IsConversationFlowVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ConversationFlowOverride?, TResult>? value1 = null,
-            global::System.Func<global::G.ConversationFlowVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.ConversationFlowOverride?, TResult>? @override = null,
+            global::System.Func<global::G.ConversationFlowVariant2?, TResult>? conversationFlowVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsOverride && @override != null)
             {
-                return value1(Value1!);
+                return @override(Override!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsConversationFlowVariant2 && conversationFlowVariant2 != null)
             {
-                return value2(Value2!);
+                return conversationFlowVariant2(ConversationFlowVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ConversationFlowOverride?>? value1 = null,
-            global::System.Action<global::G.ConversationFlowVariant2?>? value2 = null,
+            global::System.Action<global::G.ConversationFlowOverride?>? @override = null,
+            global::System.Action<global::G.ConversationFlowVariant2?>? conversationFlowVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsOverride)
             {
-                value1?.Invoke(Value1!);
+                @override?.Invoke(Override!);
             }
-            else if (IsValue2)
+            else if (IsConversationFlowVariant2)
             {
-                value2?.Invoke(Value2!);
+                conversationFlowVariant2?.Invoke(ConversationFlowVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Override,
                 typeof(global::G.ConversationFlowOverride),
-                Value2,
+                ConversationFlowVariant2,
                 typeof(global::G.ConversationFlowVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ConversationFlow other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ConversationFlowOverride?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ConversationFlowVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ConversationFlowOverride?>.Default.Equals(Override, other.Override) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ConversationFlowVariant2?>.Default.Equals(ConversationFlowVariant2, other.ConversationFlowVariant2) 
                 ;
         }
 

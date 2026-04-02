@@ -16,35 +16,35 @@ namespace G
         /// Base properties shared by all agent event types.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AgentEventBase? Value1 { get; init; }
+        public global::G.AgentEventBase? AgentBase { get; init; }
 #else
-        public global::G.AgentEventBase? Value1 { get; }
+        public global::G.AgentEventBase? AgentBase { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentBase))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAgentBase => AgentBase != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.StepTransitionLimitExceededEventVariant2? Value2 { get; init; }
+        public global::G.StepTransitionLimitExceededEventVariant2? StepTransitionLimitExceededEventVariant2 { get; init; }
 #else
-        public global::G.StepTransitionLimitExceededEventVariant2? Value2 { get; }
+        public global::G.StepTransitionLimitExceededEventVariant2? StepTransitionLimitExceededEventVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StepTransitionLimitExceededEventVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsStepTransitionLimitExceededEventVariant2 => StepTransitionLimitExceededEventVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -53,14 +53,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AgentEventBase?(StepTransitionLimitExceededEvent @this) => @this.Value1;
+        public static implicit operator global::G.AgentEventBase?(StepTransitionLimitExceededEvent @this) => @this.AgentBase;
 
         /// <summary>
         /// 
         /// </summary>
         public StepTransitionLimitExceededEvent(global::G.AgentEventBase? value)
         {
-            Value1 = value;
+            AgentBase = value;
         }
 
         /// <summary>
@@ -71,42 +71,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.StepTransitionLimitExceededEventVariant2?(StepTransitionLimitExceededEvent @this) => @this.Value2;
+        public static implicit operator global::G.StepTransitionLimitExceededEventVariant2?(StepTransitionLimitExceededEvent @this) => @this.StepTransitionLimitExceededEventVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public StepTransitionLimitExceededEvent(global::G.StepTransitionLimitExceededEventVariant2? value)
         {
-            Value2 = value;
+            StepTransitionLimitExceededEventVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public StepTransitionLimitExceededEvent(
-            global::G.AgentEventBase? value1,
-            global::G.StepTransitionLimitExceededEventVariant2? value2
+            global::G.AgentEventBase? agentBase,
+            global::G.StepTransitionLimitExceededEventVariant2? stepTransitionLimitExceededEventVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            AgentBase = agentBase;
+            StepTransitionLimitExceededEventVariant2 = stepTransitionLimitExceededEventVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            StepTransitionLimitExceededEventVariant2 as object ??
+            AgentBase as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            AgentBase?.ToString() ??
+            StepTransitionLimitExceededEventVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -114,15 +114,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsAgentBase && IsStepTransitionLimitExceededEventVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentEventBase?, TResult>? value1 = null,
-            global::System.Func<global::G.StepTransitionLimitExceededEventVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.AgentEventBase?, TResult>? agentBase = null,
+            global::System.Func<global::G.StepTransitionLimitExceededEventVariant2?, TResult>? stepTransitionLimitExceededEventVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -130,13 +130,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAgentBase && agentBase != null)
             {
-                return value1(Value1!);
+                return agentBase(AgentBase!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsStepTransitionLimitExceededEventVariant2 && stepTransitionLimitExceededEventVariant2 != null)
             {
-                return value2(Value2!);
+                return stepTransitionLimitExceededEventVariant2(StepTransitionLimitExceededEventVariant2!);
             }
 
             return default(TResult);
@@ -146,8 +146,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentEventBase?>? value1 = null,
-            global::System.Action<global::G.StepTransitionLimitExceededEventVariant2?>? value2 = null,
+            global::System.Action<global::G.AgentEventBase?>? agentBase = null,
+            global::System.Action<global::G.StepTransitionLimitExceededEventVariant2?>? stepTransitionLimitExceededEventVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAgentBase)
             {
-                value1?.Invoke(Value1!);
+                agentBase?.Invoke(AgentBase!);
             }
-            else if (IsValue2)
+            else if (IsStepTransitionLimitExceededEventVariant2)
             {
-                value2?.Invoke(Value2!);
+                stepTransitionLimitExceededEventVariant2?.Invoke(StepTransitionLimitExceededEventVariant2!);
             }
         }
 
@@ -172,9 +172,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                AgentBase,
                 typeof(global::G.AgentEventBase),
-                Value2,
+                StepTransitionLimitExceededEventVariant2,
                 typeof(global::G.StepTransitionLimitExceededEventVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -192,8 +192,8 @@ namespace G
         public bool Equals(StepTransitionLimitExceededEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AgentEventBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.StepTransitionLimitExceededEventVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AgentEventBase?>.Default.Equals(AgentBase, other.AgentBase) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.StepTransitionLimitExceededEventVariant2?>.Default.Equals(StepTransitionLimitExceededEventVariant2, other.StepTransitionLimitExceededEventVariant2) 
                 ;
         }
 

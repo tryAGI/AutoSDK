@@ -14,69 +14,69 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>? Value1 { get; init; }
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>? GetScoresResponseDataVariant1 { get; init; }
 #else
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>? Value1 { get; }
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>? GetScoresResponseDataVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetScoresResponseDataVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsGetScoresResponseDataVariant1 => GetScoresResponseDataVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>? Value2 { get; init; }
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>? GetScoresResponseDataVariant2 { get; init; }
 #else
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>? Value2 { get; }
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>? GetScoresResponseDataVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetScoresResponseDataVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsGetScoresResponseDataVariant2 => GetScoresResponseDataVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>? Value3 { get; init; }
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>? GetScoresResponseDataVariant3 { get; init; }
 #else
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>? Value3 { get; }
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>? GetScoresResponseDataVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetScoresResponseDataVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsGetScoresResponseDataVariant3 => GetScoresResponseDataVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>? Value4 { get; init; }
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>? GetScoresResponseDataVariant4 { get; init; }
 #else
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>? Value4 { get; }
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>? GetScoresResponseDataVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetScoresResponseDataVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsGetScoresResponseDataVariant4 => GetScoresResponseDataVariant4 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -85,14 +85,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>?(GetScoresResponseData @this) => @this.Value1;
+        public static implicit operator global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>?(GetScoresResponseData @this) => @this.GetScoresResponseDataVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public GetScoresResponseData(global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>? value)
         {
-            Value1 = value;
+            GetScoresResponseDataVariant1 = value;
         }
 
         /// <summary>
@@ -103,14 +103,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>?(GetScoresResponseData @this) => @this.Value2;
+        public static implicit operator global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>?(GetScoresResponseData @this) => @this.GetScoresResponseDataVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public GetScoresResponseData(global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>? value)
         {
-            Value2 = value;
+            GetScoresResponseDataVariant2 = value;
         }
 
         /// <summary>
@@ -121,14 +121,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>?(GetScoresResponseData @this) => @this.Value3;
+        public static implicit operator global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>?(GetScoresResponseData @this) => @this.GetScoresResponseDataVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public GetScoresResponseData(global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>? value)
         {
-            Value3 = value;
+            GetScoresResponseDataVariant3 = value;
         }
 
         /// <summary>
@@ -139,50 +139,50 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>?(GetScoresResponseData @this) => @this.Value4;
+        public static implicit operator global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>?(GetScoresResponseData @this) => @this.GetScoresResponseDataVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public GetScoresResponseData(global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>? value)
         {
-            Value4 = value;
+            GetScoresResponseDataVariant4 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public GetScoresResponseData(
-            global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>? value1,
-            global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>? value2,
-            global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>? value3,
-            global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>? value4
+            global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>? getScoresResponseDataVariant1,
+            global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>? getScoresResponseDataVariant2,
+            global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>? getScoresResponseDataVariant3,
+            global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>? getScoresResponseDataVariant4
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
+            GetScoresResponseDataVariant1 = getScoresResponseDataVariant1;
+            GetScoresResponseDataVariant2 = getScoresResponseDataVariant2;
+            GetScoresResponseDataVariant3 = getScoresResponseDataVariant3;
+            GetScoresResponseDataVariant4 = getScoresResponseDataVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            GetScoresResponseDataVariant4 as object ??
+            GetScoresResponseDataVariant3 as object ??
+            GetScoresResponseDataVariant2 as object ??
+            GetScoresResponseDataVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() 
+            GetScoresResponseDataVariant1?.ToString() ??
+            GetScoresResponseDataVariant2?.ToString() ??
+            GetScoresResponseDataVariant3?.ToString() ??
+            GetScoresResponseDataVariant4?.ToString() 
             ;
 
         /// <summary>
@@ -190,17 +190,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4;
+            return IsGetScoresResponseDataVariant1 && !IsGetScoresResponseDataVariant2 && !IsGetScoresResponseDataVariant3 && !IsGetScoresResponseDataVariant4 || !IsGetScoresResponseDataVariant1 && IsGetScoresResponseDataVariant2 && !IsGetScoresResponseDataVariant3 && !IsGetScoresResponseDataVariant4 || !IsGetScoresResponseDataVariant1 && !IsGetScoresResponseDataVariant2 && IsGetScoresResponseDataVariant3 && !IsGetScoresResponseDataVariant4 || !IsGetScoresResponseDataVariant1 && !IsGetScoresResponseDataVariant2 && !IsGetScoresResponseDataVariant3 && IsGetScoresResponseDataVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>?, TResult>? value1 = null,
-            global::System.Func<global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>?, TResult>? value2 = null,
-            global::System.Func<global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>?, TResult>? value3 = null,
-            global::System.Func<global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>?, TResult>? value4 = null,
+            global::System.Func<global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>?, TResult>? getScoresResponseDataVariant1 = null,
+            global::System.Func<global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>?, TResult>? getScoresResponseDataVariant2 = null,
+            global::System.Func<global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>?, TResult>? getScoresResponseDataVariant3 = null,
+            global::System.Func<global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>?, TResult>? getScoresResponseDataVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -208,21 +208,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsGetScoresResponseDataVariant1 && getScoresResponseDataVariant1 != null)
             {
-                return value1(Value1!);
+                return getScoresResponseDataVariant1(GetScoresResponseDataVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsGetScoresResponseDataVariant2 && getScoresResponseDataVariant2 != null)
             {
-                return value2(Value2!);
+                return getScoresResponseDataVariant2(GetScoresResponseDataVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsGetScoresResponseDataVariant3 && getScoresResponseDataVariant3 != null)
             {
-                return value3(Value3!);
+                return getScoresResponseDataVariant3(GetScoresResponseDataVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsGetScoresResponseDataVariant4 && getScoresResponseDataVariant4 != null)
             {
-                return value4(Value4!);
+                return getScoresResponseDataVariant4(GetScoresResponseDataVariant4!);
             }
 
             return default(TResult);
@@ -232,10 +232,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>?>? value1 = null,
-            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>?>? value2 = null,
-            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>?>? value3 = null,
-            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>?>? value4 = null,
+            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>?>? getScoresResponseDataVariant1 = null,
+            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>?>? getScoresResponseDataVariant2 = null,
+            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>?>? getScoresResponseDataVariant3 = null,
+            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>?>? getScoresResponseDataVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -243,21 +243,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsGetScoresResponseDataVariant1)
             {
-                value1?.Invoke(Value1!);
+                getScoresResponseDataVariant1?.Invoke(GetScoresResponseDataVariant1!);
             }
-            else if (IsValue2)
+            else if (IsGetScoresResponseDataVariant2)
             {
-                value2?.Invoke(Value2!);
+                getScoresResponseDataVariant2?.Invoke(GetScoresResponseDataVariant2!);
             }
-            else if (IsValue3)
+            else if (IsGetScoresResponseDataVariant3)
             {
-                value3?.Invoke(Value3!);
+                getScoresResponseDataVariant3?.Invoke(GetScoresResponseDataVariant3!);
             }
-            else if (IsValue4)
+            else if (IsGetScoresResponseDataVariant4)
             {
-                value4?.Invoke(Value4!);
+                getScoresResponseDataVariant4?.Invoke(GetScoresResponseDataVariant4!);
             }
         }
 
@@ -268,13 +268,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                GetScoresResponseDataVariant1,
                 typeof(global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>),
-                Value2,
+                GetScoresResponseDataVariant2,
                 typeof(global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>),
-                Value3,
+                GetScoresResponseDataVariant3,
                 typeof(global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>),
-                Value4,
+                GetScoresResponseDataVariant4,
                 typeof(global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>),
             };
             const int offset = unchecked((int)2166136261);
@@ -292,10 +292,10 @@ namespace G
         public bool Equals(GetScoresResponseData other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>?>.Default.Equals(Value4, other.Value4) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>?>.Default.Equals(GetScoresResponseDataVariant1, other.GetScoresResponseDataVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>?>.Default.Equals(GetScoresResponseDataVariant2, other.GetScoresResponseDataVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>?>.Default.Equals(GetScoresResponseDataVariant3, other.GetScoresResponseDataVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>?>.Default.Equals(GetScoresResponseDataVariant4, other.GetScoresResponseDataVariant4) 
                 ;
         }
 

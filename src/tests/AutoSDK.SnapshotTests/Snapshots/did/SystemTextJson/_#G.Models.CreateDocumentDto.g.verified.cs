@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateDocumentDtoVariant1? Value1 { get; init; }
+        public global::G.CreateDocumentDtoVariant1? CreateDocumentDtoVariant1 { get; init; }
 #else
-        public global::G.CreateDocumentDtoVariant1? Value1 { get; }
+        public global::G.CreateDocumentDtoVariant1? CreateDocumentDtoVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateDocumentDtoVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsCreateDocumentDtoVariant1 => CreateDocumentDtoVariant1 != null;
 
         /// <summary>
         /// Construct a type with the properties of T except for those in type K.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateDocumentDtoVariant2? Value2 { get; init; }
+        public global::G.CreateDocumentDtoVariant2? CreateDocumentDtoVariant2 { get; init; }
 #else
-        public global::G.CreateDocumentDtoVariant2? Value2 { get; }
+        public global::G.CreateDocumentDtoVariant2? CreateDocumentDtoVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateDocumentDtoVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCreateDocumentDtoVariant2 => CreateDocumentDtoVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateDocumentDtoVariant1?(CreateDocumentDto @this) => @this.Value1;
+        public static implicit operator global::G.CreateDocumentDtoVariant1?(CreateDocumentDto @this) => @this.CreateDocumentDtoVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateDocumentDto(global::G.CreateDocumentDtoVariant1? value)
         {
-            Value1 = value;
+            CreateDocumentDtoVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateDocumentDtoVariant2?(CreateDocumentDto @this) => @this.Value2;
+        public static implicit operator global::G.CreateDocumentDtoVariant2?(CreateDocumentDto @this) => @this.CreateDocumentDtoVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateDocumentDto(global::G.CreateDocumentDtoVariant2? value)
         {
-            Value2 = value;
+            CreateDocumentDtoVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateDocumentDto(
-            global::G.CreateDocumentDtoVariant1? value1,
-            global::G.CreateDocumentDtoVariant2? value2
+            global::G.CreateDocumentDtoVariant1? createDocumentDtoVariant1,
+            global::G.CreateDocumentDtoVariant2? createDocumentDtoVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            CreateDocumentDtoVariant1 = createDocumentDtoVariant1;
+            CreateDocumentDtoVariant2 = createDocumentDtoVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CreateDocumentDtoVariant2 as object ??
+            CreateDocumentDtoVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            CreateDocumentDtoVariant1?.ToString() ??
+            CreateDocumentDtoVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsCreateDocumentDtoVariant1 && IsCreateDocumentDtoVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateDocumentDtoVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.CreateDocumentDtoVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.CreateDocumentDtoVariant1?, TResult>? createDocumentDtoVariant1 = null,
+            global::System.Func<global::G.CreateDocumentDtoVariant2?, TResult>? createDocumentDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsCreateDocumentDtoVariant1 && createDocumentDtoVariant1 != null)
             {
-                return value1(Value1!);
+                return createDocumentDtoVariant1(CreateDocumentDtoVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCreateDocumentDtoVariant2 && createDocumentDtoVariant2 != null)
             {
-                return value2(Value2!);
+                return createDocumentDtoVariant2(CreateDocumentDtoVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateDocumentDtoVariant1?>? value1 = null,
-            global::System.Action<global::G.CreateDocumentDtoVariant2?>? value2 = null,
+            global::System.Action<global::G.CreateDocumentDtoVariant1?>? createDocumentDtoVariant1 = null,
+            global::System.Action<global::G.CreateDocumentDtoVariant2?>? createDocumentDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsCreateDocumentDtoVariant1)
             {
-                value1?.Invoke(Value1!);
+                createDocumentDtoVariant1?.Invoke(CreateDocumentDtoVariant1!);
             }
-            else if (IsValue2)
+            else if (IsCreateDocumentDtoVariant2)
             {
-                value2?.Invoke(Value2!);
+                createDocumentDtoVariant2?.Invoke(CreateDocumentDtoVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                CreateDocumentDtoVariant1,
                 typeof(global::G.CreateDocumentDtoVariant1),
-                Value2,
+                CreateDocumentDtoVariant2,
                 typeof(global::G.CreateDocumentDtoVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(CreateDocumentDto other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateDocumentDtoVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateDocumentDtoVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateDocumentDtoVariant1?>.Default.Equals(CreateDocumentDtoVariant1, other.CreateDocumentDtoVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateDocumentDtoVariant2?>.Default.Equals(CreateDocumentDtoVariant2, other.CreateDocumentDtoVariant2) 
                 ;
         }
 

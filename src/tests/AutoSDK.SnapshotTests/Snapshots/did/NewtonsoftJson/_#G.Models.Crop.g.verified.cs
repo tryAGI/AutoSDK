@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CropVariant1? Value1 { get; init; }
+        public global::G.CropVariant1? CropVariant1 { get; init; }
 #else
-        public global::G.CropVariant1? Value1 { get; }
+        public global::G.CropVariant1? CropVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CropVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsCropVariant1 => CropVariant1 != null;
 
         /// <summary>
         /// Custom crop
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CropVariant2? Value2 { get; init; }
+        public global::G.CropVariant2? CropVariant2 { get; init; }
 #else
-        public global::G.CropVariant2? Value2 { get; }
+        public global::G.CropVariant2? CropVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CropVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCropVariant2 => CropVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CropVariant1?(Crop @this) => @this.Value1;
+        public static implicit operator global::G.CropVariant1?(Crop @this) => @this.CropVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public Crop(global::G.CropVariant1? value)
         {
-            Value1 = value;
+            CropVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CropVariant2?(Crop @this) => @this.Value2;
+        public static implicit operator global::G.CropVariant2?(Crop @this) => @this.CropVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public Crop(global::G.CropVariant2? value)
         {
-            Value2 = value;
+            CropVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Crop(
-            global::G.CropVariant1? value1,
-            global::G.CropVariant2? value2
+            global::G.CropVariant1? cropVariant1,
+            global::G.CropVariant2? cropVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            CropVariant1 = cropVariant1;
+            CropVariant2 = cropVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CropVariant2 as object ??
+            CropVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            CropVariant1?.ToString() ??
+            CropVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsCropVariant1 || IsCropVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CropVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.CropVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.CropVariant1?, TResult>? cropVariant1 = null,
+            global::System.Func<global::G.CropVariant2?, TResult>? cropVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsCropVariant1 && cropVariant1 != null)
             {
-                return value1(Value1!);
+                return cropVariant1(CropVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCropVariant2 && cropVariant2 != null)
             {
-                return value2(Value2!);
+                return cropVariant2(CropVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CropVariant1?>? value1 = null,
-            global::System.Action<global::G.CropVariant2?>? value2 = null,
+            global::System.Action<global::G.CropVariant1?>? cropVariant1 = null,
+            global::System.Action<global::G.CropVariant2?>? cropVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsCropVariant1)
             {
-                value1?.Invoke(Value1!);
+                cropVariant1?.Invoke(CropVariant1!);
             }
-            else if (IsValue2)
+            else if (IsCropVariant2)
             {
-                value2?.Invoke(Value2!);
+                cropVariant2?.Invoke(CropVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                CropVariant1,
                 typeof(global::G.CropVariant1),
-                Value2,
+                CropVariant2,
                 typeof(global::G.CropVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(Crop other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CropVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CropVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CropVariant1?>.Default.Equals(CropVariant1, other.CropVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CropVariant2?>.Default.Equals(CropVariant2, other.CropVariant2) 
                 ;
         }
 

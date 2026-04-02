@@ -14,52 +14,52 @@ namespace G
         /// From T, pick a set of properties whose keys are in the union K
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt? Value1 { get; init; }
+        public global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt? PickLeafRequestResponseRmtOrSessions { get; init; }
 #else
-        public global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt? Value1 { get; }
+        public global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt? PickLeafRequestResponseRmtOrSessions { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PickLeafRequestResponseRmtOrSessions))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsPickLeafRequestResponseRmtOrSessions => PickLeafRequestResponseRmtOrSessions != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SessionFilterBranch? Value2 { get; init; }
+        public global::G.SessionFilterBranch? Branch { get; init; }
 #else
-        public global::G.SessionFilterBranch? Value2 { get; }
+        public global::G.SessionFilterBranch? Branch { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Branch))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsBranch => Branch != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SessionFilterNodeEnum? Value3 { get; init; }
+        public global::G.SessionFilterNodeEnum? Enum { get; init; }
 #else
-        public global::G.SessionFilterNodeEnum? Value3 { get; }
+        public global::G.SessionFilterNodeEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsEnum => Enum != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt?(SessionFilterNode @this) => @this.Value1;
+        public static implicit operator global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt?(SessionFilterNode @this) => @this.PickLeafRequestResponseRmtOrSessions;
 
         /// <summary>
         /// 
         /// </summary>
         public SessionFilterNode(global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt? value)
         {
-            Value1 = value;
+            PickLeafRequestResponseRmtOrSessions = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SessionFilterBranch?(SessionFilterNode @this) => @this.Value2;
+        public static implicit operator global::G.SessionFilterBranch?(SessionFilterNode @this) => @this.Branch;
 
         /// <summary>
         /// 
         /// </summary>
         public SessionFilterNode(global::G.SessionFilterBranch? value)
         {
-            Value2 = value;
+            Branch = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SessionFilterNodeEnum?(SessionFilterNode @this) => @this.Value3;
+        public static implicit operator global::G.SessionFilterNodeEnum?(SessionFilterNode @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public SessionFilterNode(global::G.SessionFilterNodeEnum? value)
         {
-            Value3 = value;
+            Enum = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public SessionFilterNode(
-            global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt? value1,
-            global::G.SessionFilterBranch? value2,
-            global::G.SessionFilterNodeEnum? value3
+            global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt? pickLeafRequestResponseRmtOrSessions,
+            global::G.SessionFilterBranch? branch,
+            global::G.SessionFilterNodeEnum? @enum
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            PickLeafRequestResponseRmtOrSessions = pickLeafRequestResponseRmtOrSessions;
+            Branch = branch;
+            Enum = @enum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            Enum as object ??
+            Branch as object ??
+            PickLeafRequestResponseRmtOrSessions as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToValueString() 
+            PickLeafRequestResponseRmtOrSessions?.ToString() ??
+            Branch?.ToString() ??
+            Enum?.ToValueString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsPickLeafRequestResponseRmtOrSessions || IsBranch || IsEnum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt?, TResult>? value1 = null,
-            global::System.Func<global::G.SessionFilterBranch?, TResult>? value2 = null,
-            global::System.Func<global::G.SessionFilterNodeEnum?, TResult>? value3 = null,
+            global::System.Func<global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt?, TResult>? pickLeafRequestResponseRmtOrSessions = null,
+            global::System.Func<global::G.SessionFilterBranch?, TResult>? branch = null,
+            global::System.Func<global::G.SessionFilterNodeEnum?, TResult>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsPickLeafRequestResponseRmtOrSessions && pickLeafRequestResponseRmtOrSessions != null)
             {
-                return value1(Value1!);
+                return pickLeafRequestResponseRmtOrSessions(PickLeafRequestResponseRmtOrSessions!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsBranch && branch != null)
             {
-                return value2(Value2!);
+                return branch(Branch!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsEnum && @enum != null)
             {
-                return value3(Value3!);
+                return @enum(Enum!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt?>? value1 = null,
-            global::System.Action<global::G.SessionFilterBranch?>? value2 = null,
-            global::System.Action<global::G.SessionFilterNodeEnum?>? value3 = null,
+            global::System.Action<global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt?>? pickLeafRequestResponseRmtOrSessions = null,
+            global::System.Action<global::G.SessionFilterBranch?>? branch = null,
+            global::System.Action<global::G.SessionFilterNodeEnum?>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsPickLeafRequestResponseRmtOrSessions)
             {
-                value1?.Invoke(Value1!);
+                pickLeafRequestResponseRmtOrSessions?.Invoke(PickLeafRequestResponseRmtOrSessions!);
             }
-            else if (IsValue2)
+            else if (IsBranch)
             {
-                value2?.Invoke(Value2!);
+                branch?.Invoke(Branch!);
             }
-            else if (IsValue3)
+            else if (IsEnum)
             {
-                value3?.Invoke(Value3!);
+                @enum?.Invoke(Enum!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                PickLeafRequestResponseRmtOrSessions,
                 typeof(global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt),
-                Value2,
+                Branch,
                 typeof(global::G.SessionFilterBranch),
-                Value3,
+                Enum,
                 typeof(global::G.SessionFilterNodeEnum),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(SessionFilterNode other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SessionFilterBranch?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SessionFilterNodeEnum?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt?>.Default.Equals(PickLeafRequestResponseRmtOrSessions, other.PickLeafRequestResponseRmtOrSessions) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SessionFilterBranch?>.Default.Equals(Branch, other.Branch) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SessionFilterNodeEnum?>.Default.Equals(Enum, other.Enum) 
                 ;
         }
 

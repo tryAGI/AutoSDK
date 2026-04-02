@@ -40,7 +40,7 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::G.InputMessage? inputMessage = default;
-            global::G.InputMessageResourceVariant2? value2 = default;
+            global::G.InputMessageResourceVariant2? inputMessageResourceVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -64,7 +64,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageResourceVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageResourceVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        inputMessageResourceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -75,7 +75,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (inputMessage == null && value2 == null)
+            if (inputMessage == null && inputMessageResourceVariant2 == null)
             {
                 try
                 {
@@ -94,7 +94,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageResourceVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageResourceVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    inputMessageResourceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -107,7 +107,7 @@ namespace G.JsonConverters
             var __value = new global::G.InputMessageResource(
                 inputMessage,
 
-                value2
+                inputMessageResourceVariant2
                 );
 
             return __value;
@@ -128,11 +128,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessage).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessage!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsInputMessageResourceVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageResourceVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageResourceVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageResourceVariant2!, typeInfo);
             }
         }
     }

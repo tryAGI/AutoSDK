@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MaskingUsingMaskImageRequestBodyVariant1? Value1 { get; init; }
+        public global::G.MaskingUsingMaskImageRequestBodyVariant1? MaskingUsingMaskImageRequestBodyVariant1 { get; init; }
 #else
-        public global::G.MaskingUsingMaskImageRequestBodyVariant1? Value1 { get; }
+        public global::G.MaskingUsingMaskImageRequestBodyVariant1? MaskingUsingMaskImageRequestBodyVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaskingUsingMaskImageRequestBodyVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMaskingUsingMaskImageRequestBodyVariant1 => MaskingUsingMaskImageRequestBodyVariant1 != null;
 
         /// <summary>
         /// Represents the optional parameters that can be passed to any generation request.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GenerationRequestOptionalParams? Value2 { get; init; }
+        public global::G.GenerationRequestOptionalParams? GenerationOptionalParams { get; init; }
 #else
-        public global::G.GenerationRequestOptionalParams? Value2 { get; }
+        public global::G.GenerationRequestOptionalParams? GenerationOptionalParams { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationOptionalParams))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsGenerationOptionalParams => GenerationOptionalParams != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MaskingUsingMaskImageRequestBodyVariant1?(MaskingUsingMaskImageRequestBody @this) => @this.Value1;
+        public static implicit operator global::G.MaskingUsingMaskImageRequestBodyVariant1?(MaskingUsingMaskImageRequestBody @this) => @this.MaskingUsingMaskImageRequestBodyVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public MaskingUsingMaskImageRequestBody(global::G.MaskingUsingMaskImageRequestBodyVariant1? value)
         {
-            Value1 = value;
+            MaskingUsingMaskImageRequestBodyVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GenerationRequestOptionalParams?(MaskingUsingMaskImageRequestBody @this) => @this.Value2;
+        public static implicit operator global::G.GenerationRequestOptionalParams?(MaskingUsingMaskImageRequestBody @this) => @this.GenerationOptionalParams;
 
         /// <summary>
         /// 
         /// </summary>
         public MaskingUsingMaskImageRequestBody(global::G.GenerationRequestOptionalParams? value)
         {
-            Value2 = value;
+            GenerationOptionalParams = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MaskingUsingMaskImageRequestBody(
-            global::G.MaskingUsingMaskImageRequestBodyVariant1? value1,
-            global::G.GenerationRequestOptionalParams? value2
+            global::G.MaskingUsingMaskImageRequestBodyVariant1? maskingUsingMaskImageRequestBodyVariant1,
+            global::G.GenerationRequestOptionalParams? generationOptionalParams
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            MaskingUsingMaskImageRequestBodyVariant1 = maskingUsingMaskImageRequestBodyVariant1;
+            GenerationOptionalParams = generationOptionalParams;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            GenerationOptionalParams as object ??
+            MaskingUsingMaskImageRequestBodyVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            MaskingUsingMaskImageRequestBodyVariant1?.ToString() ??
+            GenerationOptionalParams?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsMaskingUsingMaskImageRequestBodyVariant1 && IsGenerationOptionalParams;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MaskingUsingMaskImageRequestBodyVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.GenerationRequestOptionalParams?, TResult>? value2 = null,
+            global::System.Func<global::G.MaskingUsingMaskImageRequestBodyVariant1?, TResult>? maskingUsingMaskImageRequestBodyVariant1 = null,
+            global::System.Func<global::G.GenerationRequestOptionalParams?, TResult>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMaskingUsingMaskImageRequestBodyVariant1 && maskingUsingMaskImageRequestBodyVariant1 != null)
             {
-                return value1(Value1!);
+                return maskingUsingMaskImageRequestBodyVariant1(MaskingUsingMaskImageRequestBodyVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsGenerationOptionalParams && generationOptionalParams != null)
             {
-                return value2(Value2!);
+                return generationOptionalParams(GenerationOptionalParams!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MaskingUsingMaskImageRequestBodyVariant1?>? value1 = null,
-            global::System.Action<global::G.GenerationRequestOptionalParams?>? value2 = null,
+            global::System.Action<global::G.MaskingUsingMaskImageRequestBodyVariant1?>? maskingUsingMaskImageRequestBodyVariant1 = null,
+            global::System.Action<global::G.GenerationRequestOptionalParams?>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMaskingUsingMaskImageRequestBodyVariant1)
             {
-                value1?.Invoke(Value1!);
+                maskingUsingMaskImageRequestBodyVariant1?.Invoke(MaskingUsingMaskImageRequestBodyVariant1!);
             }
-            else if (IsValue2)
+            else if (IsGenerationOptionalParams)
             {
-                value2?.Invoke(Value2!);
+                generationOptionalParams?.Invoke(GenerationOptionalParams!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                MaskingUsingMaskImageRequestBodyVariant1,
                 typeof(global::G.MaskingUsingMaskImageRequestBodyVariant1),
-                Value2,
+                GenerationOptionalParams,
                 typeof(global::G.GenerationRequestOptionalParams),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(MaskingUsingMaskImageRequestBody other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.MaskingUsingMaskImageRequestBodyVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GenerationRequestOptionalParams?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.MaskingUsingMaskImageRequestBodyVariant1?>.Default.Equals(MaskingUsingMaskImageRequestBodyVariant1, other.MaskingUsingMaskImageRequestBodyVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GenerationRequestOptionalParams?>.Default.Equals(GenerationOptionalParams, other.GenerationOptionalParams) 
                 ;
         }
 

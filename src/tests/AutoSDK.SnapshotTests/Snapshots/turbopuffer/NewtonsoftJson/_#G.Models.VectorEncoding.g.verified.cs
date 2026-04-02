@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? VectorEncodingVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? VectorEncodingVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorEncodingVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsVectorEncodingVariant1 => VectorEncodingVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? VectorEncodingVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? VectorEncodingVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorEncodingVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsVectorEncodingVariant2 => VectorEncodingVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,42 +51,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(VectorEncoding @this) => @this.Value1;
+        public static implicit operator string?(VectorEncoding @this) => @this.VectorEncodingVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorEncoding(string? value)
         {
-            Value1 = value;
+            VectorEncodingVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public VectorEncoding(
-            string? value1,
-            string? value2
+            string? vectorEncodingVariant1,
+            string? vectorEncodingVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            VectorEncodingVariant1 = vectorEncodingVariant1;
+            VectorEncodingVariant2 = vectorEncodingVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            VectorEncodingVariant2 as object ??
+            VectorEncodingVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            VectorEncodingVariant1?.ToString() ??
+            VectorEncodingVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -94,15 +94,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsVectorEncodingVariant1 && !IsVectorEncodingVariant2 || !IsVectorEncodingVariant1 && IsVectorEncodingVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<string?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? vectorEncodingVariant1 = null,
+            global::System.Func<string?, TResult>? vectorEncodingVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -110,13 +110,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsVectorEncodingVariant1 && vectorEncodingVariant1 != null)
             {
-                return value1(Value1!);
+                return vectorEncodingVariant1(VectorEncodingVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsVectorEncodingVariant2 && vectorEncodingVariant2 != null)
             {
-                return value2(Value2!);
+                return vectorEncodingVariant2(VectorEncodingVariant2!);
             }
 
             return default(TResult);
@@ -126,8 +126,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<string?>? value2 = null,
+            global::System.Action<string?>? vectorEncodingVariant1 = null,
+            global::System.Action<string?>? vectorEncodingVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -135,13 +135,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsVectorEncodingVariant1)
             {
-                value1?.Invoke(Value1!);
+                vectorEncodingVariant1?.Invoke(VectorEncodingVariant1!);
             }
-            else if (IsValue2)
+            else if (IsVectorEncodingVariant2)
             {
-                value2?.Invoke(Value2!);
+                vectorEncodingVariant2?.Invoke(VectorEncodingVariant2!);
             }
         }
 
@@ -152,9 +152,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                VectorEncodingVariant1,
                 typeof(string),
-                Value2,
+                VectorEncodingVariant2,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -172,8 +172,8 @@ namespace G
         public bool Equals(VectorEncoding other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(VectorEncodingVariant1, other.VectorEncodingVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(VectorEncodingVariant2, other.VectorEncodingVariant2) 
                 ;
         }
 

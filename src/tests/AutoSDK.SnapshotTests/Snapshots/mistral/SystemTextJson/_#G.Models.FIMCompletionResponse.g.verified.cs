@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionResponse? Value1 { get; init; }
+        public global::G.ChatCompletionResponse? Chat { get; init; }
 #else
-        public global::G.ChatCompletionResponse? Value1 { get; }
+        public global::G.ChatCompletionResponse? Chat { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chat))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsChat => Chat != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FIMCompletionResponseVariant2? Value2 { get; init; }
+        public global::G.FIMCompletionResponseVariant2? FIMCompletionResponseVariant2 { get; init; }
 #else
-        public global::G.FIMCompletionResponseVariant2? Value2 { get; }
+        public global::G.FIMCompletionResponseVariant2? FIMCompletionResponseVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FIMCompletionResponseVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsFIMCompletionResponseVariant2 => FIMCompletionResponseVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionResponse?(FIMCompletionResponse @this) => @this.Value1;
+        public static implicit operator global::G.ChatCompletionResponse?(FIMCompletionResponse @this) => @this.Chat;
 
         /// <summary>
         /// 
         /// </summary>
         public FIMCompletionResponse(global::G.ChatCompletionResponse? value)
         {
-            Value1 = value;
+            Chat = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FIMCompletionResponseVariant2?(FIMCompletionResponse @this) => @this.Value2;
+        public static implicit operator global::G.FIMCompletionResponseVariant2?(FIMCompletionResponse @this) => @this.FIMCompletionResponseVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public FIMCompletionResponse(global::G.FIMCompletionResponseVariant2? value)
         {
-            Value2 = value;
+            FIMCompletionResponseVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public FIMCompletionResponse(
-            global::G.ChatCompletionResponse? value1,
-            global::G.FIMCompletionResponseVariant2? value2
+            global::G.ChatCompletionResponse? chat,
+            global::G.FIMCompletionResponseVariant2? fIMCompletionResponseVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Chat = chat;
+            FIMCompletionResponseVariant2 = fIMCompletionResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            FIMCompletionResponseVariant2 as object ??
+            Chat as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Chat?.ToString() ??
+            FIMCompletionResponseVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsChat && IsFIMCompletionResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionResponse?, TResult>? value1 = null,
-            global::System.Func<global::G.FIMCompletionResponseVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.ChatCompletionResponse?, TResult>? chat = null,
+            global::System.Func<global::G.FIMCompletionResponseVariant2?, TResult>? fIMCompletionResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsChat && chat != null)
             {
-                return value1(Value1!);
+                return chat(Chat!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsFIMCompletionResponseVariant2 && fIMCompletionResponseVariant2 != null)
             {
-                return value2(Value2!);
+                return fIMCompletionResponseVariant2(FIMCompletionResponseVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionResponse?>? value1 = null,
-            global::System.Action<global::G.FIMCompletionResponseVariant2?>? value2 = null,
+            global::System.Action<global::G.ChatCompletionResponse?>? chat = null,
+            global::System.Action<global::G.FIMCompletionResponseVariant2?>? fIMCompletionResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsChat)
             {
-                value1?.Invoke(Value1!);
+                chat?.Invoke(Chat!);
             }
-            else if (IsValue2)
+            else if (IsFIMCompletionResponseVariant2)
             {
-                value2?.Invoke(Value2!);
+                fIMCompletionResponseVariant2?.Invoke(FIMCompletionResponseVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Chat,
                 typeof(global::G.ChatCompletionResponse),
-                Value2,
+                FIMCompletionResponseVariant2,
                 typeof(global::G.FIMCompletionResponseVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(FIMCompletionResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionResponse?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FIMCompletionResponseVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionResponse?>.Default.Equals(Chat, other.Chat) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FIMCompletionResponseVariant2?>.Default.Equals(FIMCompletionResponseVariant2, other.FIMCompletionResponseVariant2) 
                 ;
         }
 

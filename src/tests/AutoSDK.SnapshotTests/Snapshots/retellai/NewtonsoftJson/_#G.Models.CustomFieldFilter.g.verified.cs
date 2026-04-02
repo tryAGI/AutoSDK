@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ValueFilter? Value1 { get; init; }
+        public global::G.ValueFilter? Value { get; init; }
 #else
-        public global::G.ValueFilter? Value1 { get; }
+        public global::G.ValueFilter? Value { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsValue => Value != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CustomFieldFilterVariant2? Value2 { get; init; }
+        public global::G.CustomFieldFilterVariant2? CustomFieldFilterVariant2 { get; init; }
 #else
-        public global::G.CustomFieldFilterVariant2? Value2 { get; }
+        public global::G.CustomFieldFilterVariant2? CustomFieldFilterVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomFieldFilterVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCustomFieldFilterVariant2 => CustomFieldFilterVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ValueFilter?(CustomFieldFilter @this) => @this.Value1;
+        public static implicit operator global::G.ValueFilter?(CustomFieldFilter @this) => @this.Value;
 
         /// <summary>
         /// 
         /// </summary>
         public CustomFieldFilter(global::G.ValueFilter? value)
         {
-            Value1 = value;
+            Value = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CustomFieldFilterVariant2?(CustomFieldFilter @this) => @this.Value2;
+        public static implicit operator global::G.CustomFieldFilterVariant2?(CustomFieldFilter @this) => @this.CustomFieldFilterVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public CustomFieldFilter(global::G.CustomFieldFilterVariant2? value)
         {
-            Value2 = value;
+            CustomFieldFilterVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CustomFieldFilter(
-            global::G.ValueFilter? value1,
-            global::G.CustomFieldFilterVariant2? value2
+            global::G.ValueFilter? value,
+            global::G.CustomFieldFilterVariant2? customFieldFilterVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Value = value;
+            CustomFieldFilterVariant2 = customFieldFilterVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CustomFieldFilterVariant2 as object ??
+            Value as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Value?.ToString() ??
+            CustomFieldFilterVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsValue && IsCustomFieldFilterVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ValueFilter?, TResult>? value1 = null,
-            global::System.Func<global::G.CustomFieldFilterVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.ValueFilter?, TResult>? value = null,
+            global::System.Func<global::G.CustomFieldFilterVariant2?, TResult>? customFieldFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsValue && value != null)
             {
-                return value1(Value1!);
+                return value(Value!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCustomFieldFilterVariant2 && customFieldFilterVariant2 != null)
             {
-                return value2(Value2!);
+                return customFieldFilterVariant2(CustomFieldFilterVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ValueFilter?>? value1 = null,
-            global::System.Action<global::G.CustomFieldFilterVariant2?>? value2 = null,
+            global::System.Action<global::G.ValueFilter?>? value = null,
+            global::System.Action<global::G.CustomFieldFilterVariant2?>? customFieldFilterVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsValue)
             {
-                value1?.Invoke(Value1!);
+                value?.Invoke(Value!);
             }
-            else if (IsValue2)
+            else if (IsCustomFieldFilterVariant2)
             {
-                value2?.Invoke(Value2!);
+                customFieldFilterVariant2?.Invoke(CustomFieldFilterVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Value,
                 typeof(global::G.ValueFilter),
-                Value2,
+                CustomFieldFilterVariant2,
                 typeof(global::G.CustomFieldFilterVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(CustomFieldFilter other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ValueFilter?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CustomFieldFilterVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ValueFilter?>.Default.Equals(Value, other.Value) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CustomFieldFilterVariant2?>.Default.Equals(CustomFieldFilterVariant2, other.CustomFieldFilterVariant2) 
                 ;
         }
 

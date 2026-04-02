@@ -40,7 +40,7 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             string? attributeTypeName = default;
-            global::G.AttributeSchemaConfig? value2 = default;
+            global::G.AttributeSchemaConfig? config = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -64,7 +64,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AttributeSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AttributeSchemaConfig> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AttributeSchemaConfig).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        config = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -75,7 +75,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (attributeTypeName == null && value2 == null)
+            if (attributeTypeName == null && config == null)
             {
                 try
                 {
@@ -94,7 +94,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AttributeSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AttributeSchemaConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AttributeSchemaConfig).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    config = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -107,7 +107,7 @@ namespace G.JsonConverters
             var __value = new global::G.AttributeSchema(
                 attributeTypeName,
 
-                value2
+                config
                 );
 
             return __value;
@@ -128,11 +128,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.AttributeTypeName!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AttributeSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AttributeSchemaConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AttributeSchemaConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Config!, typeInfo);
             }
         }
     }

@@ -31,18 +31,18 @@ namespace G
         /// The parent's span identifier, created by calling `.export()` on a span
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? InvokeParentVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? InvokeParentVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InvokeParentVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsInvokeParentVariant2 => InvokeParentVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -69,14 +69,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(InvokeParent @this) => @this.Value2;
+        public static implicit operator string?(InvokeParent @this) => @this.InvokeParentVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public InvokeParent(string? value)
         {
-            Value2 = value;
+            InvokeParentVariant2 = value;
         }
 
         /// <summary>
@@ -84,18 +84,18 @@ namespace G
         /// </summary>
         public InvokeParent(
             global::G.InvokeParentSpanParentStruct? spanParentStruct,
-            string? value2
+            string? invokeParentVariant2
             )
         {
             SpanParentStruct = spanParentStruct;
-            Value2 = value2;
+            InvokeParentVariant2 = invokeParentVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            InvokeParentVariant2 as object ??
             SpanParentStruct as object 
             ;
 
@@ -104,7 +104,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             SpanParentStruct?.ToString() ??
-            Value2?.ToString() 
+            InvokeParentVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsSpanParentStruct || IsValue2;
+            return IsSpanParentStruct || IsInvokeParentVariant2;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.InvokeParentSpanParentStruct?, TResult>? spanParentStruct = null,
-            global::System.Func<string?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? invokeParentVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,9 +132,9 @@ namespace G
             {
                 return spanParentStruct(SpanParentStruct!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsInvokeParentVariant2 && invokeParentVariant2 != null)
             {
-                return value2(Value2!);
+                return invokeParentVariant2(InvokeParentVariant2!);
             }
 
             return default(TResult);
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.InvokeParentSpanParentStruct?>? spanParentStruct = null,
-            global::System.Action<string?>? value2 = null,
+            global::System.Action<string?>? invokeParentVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -157,9 +157,9 @@ namespace G
             {
                 spanParentStruct?.Invoke(SpanParentStruct!);
             }
-            else if (IsValue2)
+            else if (IsInvokeParentVariant2)
             {
-                value2?.Invoke(Value2!);
+                invokeParentVariant2?.Invoke(InvokeParentVariant2!);
             }
         }
 
@@ -172,7 +172,7 @@ namespace G
             {
                 SpanParentStruct,
                 typeof(global::G.InvokeParentSpanParentStruct),
-                Value2,
+                InvokeParentVariant2,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.InvokeParentSpanParentStruct?>.Default.Equals(SpanParentStruct, other.SpanParentStruct) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(InvokeParentVariant2, other.InvokeParentVariant2) 
                 ;
         }
 

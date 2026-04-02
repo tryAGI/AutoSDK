@@ -31,35 +31,35 @@ namespace G
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value2 { get; init; }
+        public object? ChatChoiceFinishReasonVariant2 { get; init; }
 #else
-        public object? Value2 { get; }
+        public object? ChatChoiceFinishReasonVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatChoiceFinishReasonVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsChatChoiceFinishReasonVariant2 => ChatChoiceFinishReasonVariant2 != null;
 
         /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? ChatChoiceFinishReasonVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? ChatChoiceFinishReasonVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatChoiceFinishReasonVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsChatChoiceFinishReasonVariant3 => ChatChoiceFinishReasonVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -83,21 +83,21 @@ namespace G
         /// </summary>
         public ChatChoiceFinishReason(
             global::G.ChatFinishReasonEnum? chatFinishReasonEnum,
-            object? value2,
-            object? value3
+            object? chatChoiceFinishReasonVariant2,
+            object? chatChoiceFinishReasonVariant3
             )
         {
             ChatFinishReasonEnum = chatFinishReasonEnum;
-            Value2 = value2;
-            Value3 = value3;
+            ChatChoiceFinishReasonVariant2 = chatChoiceFinishReasonVariant2;
+            ChatChoiceFinishReasonVariant3 = chatChoiceFinishReasonVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
+            ChatChoiceFinishReasonVariant3 as object ??
+            ChatChoiceFinishReasonVariant2 as object ??
             ChatFinishReasonEnum as object 
             ;
 
@@ -106,8 +106,8 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             ChatFinishReasonEnum?.ToValueString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            ChatChoiceFinishReasonVariant2?.ToString() ??
+            ChatChoiceFinishReasonVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsChatFinishReasonEnum && !IsValue2 && !IsValue3 || !IsChatFinishReasonEnum && IsValue2 && !IsValue3 || !IsChatFinishReasonEnum && !IsValue2 && IsValue3;
+            return IsChatFinishReasonEnum && !IsChatChoiceFinishReasonVariant2 && !IsChatChoiceFinishReasonVariant3 || !IsChatFinishReasonEnum && IsChatChoiceFinishReasonVariant2 && !IsChatChoiceFinishReasonVariant3 || !IsChatFinishReasonEnum && !IsChatChoiceFinishReasonVariant2 && IsChatChoiceFinishReasonVariant3;
         }
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatFinishReasonEnum?, TResult>? chatFinishReasonEnum = null,
-            global::System.Func<object?, TResult>? value2 = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? chatChoiceFinishReasonVariant2 = null,
+            global::System.Func<object?, TResult>? chatChoiceFinishReasonVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -136,13 +136,13 @@ namespace G
             {
                 return chatFinishReasonEnum(ChatFinishReasonEnum!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsChatChoiceFinishReasonVariant2 && chatChoiceFinishReasonVariant2 != null)
             {
-                return value2(Value2!);
+                return chatChoiceFinishReasonVariant2(ChatChoiceFinishReasonVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsChatChoiceFinishReasonVariant3 && chatChoiceFinishReasonVariant3 != null)
             {
-                return value3(Value3!);
+                return chatChoiceFinishReasonVariant3(ChatChoiceFinishReasonVariant3!);
             }
 
             return default(TResult);
@@ -153,8 +153,8 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ChatFinishReasonEnum?>? chatFinishReasonEnum = null,
-            global::System.Action<object?>? value2 = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? chatChoiceFinishReasonVariant2 = null,
+            global::System.Action<object?>? chatChoiceFinishReasonVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -166,13 +166,13 @@ namespace G
             {
                 chatFinishReasonEnum?.Invoke(ChatFinishReasonEnum!);
             }
-            else if (IsValue2)
+            else if (IsChatChoiceFinishReasonVariant2)
             {
-                value2?.Invoke(Value2!);
+                chatChoiceFinishReasonVariant2?.Invoke(ChatChoiceFinishReasonVariant2!);
             }
-            else if (IsValue3)
+            else if (IsChatChoiceFinishReasonVariant3)
             {
-                value3?.Invoke(Value3!);
+                chatChoiceFinishReasonVariant3?.Invoke(ChatChoiceFinishReasonVariant3!);
             }
         }
 
@@ -185,9 +185,9 @@ namespace G
             {
                 ChatFinishReasonEnum,
                 typeof(global::G.ChatFinishReasonEnum),
-                Value2,
+                ChatChoiceFinishReasonVariant2,
                 typeof(object),
-                Value3,
+                ChatChoiceFinishReasonVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -206,8 +206,8 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ChatFinishReasonEnum?>.Default.Equals(ChatFinishReasonEnum, other.ChatFinishReasonEnum) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ChatChoiceFinishReasonVariant2, other.ChatChoiceFinishReasonVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ChatChoiceFinishReasonVariant3, other.ChatChoiceFinishReasonVariant3) 
                 ;
         }
 

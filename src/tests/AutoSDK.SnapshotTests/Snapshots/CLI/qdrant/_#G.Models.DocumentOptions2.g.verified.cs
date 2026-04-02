@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value1 { get; init; }
+        public object? OptionsVariant1 { get; init; }
 #else
-        public object? Value1 { get; }
+        public object? OptionsVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OptionsVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsOptionsVariant1 => OptionsVariant1 != null;
 
         /// <summary>
         /// Configuration of the local bm25 models.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Bm25Config? Value2 { get; init; }
+        public global::G.Bm25Config? Bm25Config { get; init; }
 #else
-        public global::G.Bm25Config? Value2 { get; }
+        public global::G.Bm25Config? Bm25Config { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Bm25Config))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsBm25Config => Bm25Config != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,42 +51,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Bm25Config?(DocumentOptions2 @this) => @this.Value2;
+        public static implicit operator global::G.Bm25Config?(DocumentOptions2 @this) => @this.Bm25Config;
 
         /// <summary>
         /// 
         /// </summary>
         public DocumentOptions2(global::G.Bm25Config? value)
         {
-            Value2 = value;
+            Bm25Config = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public DocumentOptions2(
-            object? value1,
-            global::G.Bm25Config? value2
+            object? optionsVariant1,
+            global::G.Bm25Config? bm25Config
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            OptionsVariant1 = optionsVariant1;
+            Bm25Config = bm25Config;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Bm25Config as object ??
+            OptionsVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            OptionsVariant1?.ToString() ??
+            Bm25Config?.ToString() 
             ;
 
         /// <summary>
@@ -94,15 +94,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsOptionsVariant1 || IsBm25Config;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<object?, TResult>? value1 = null,
-            global::System.Func<global::G.Bm25Config?, TResult>? value2 = null,
+            global::System.Func<object?, TResult>? optionsVariant1 = null,
+            global::System.Func<global::G.Bm25Config?, TResult>? bm25Config = null,
             bool validate = true)
         {
             if (validate)
@@ -110,13 +110,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsOptionsVariant1 && optionsVariant1 != null)
             {
-                return value1(Value1!);
+                return optionsVariant1(OptionsVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsBm25Config && bm25Config != null)
             {
-                return value2(Value2!);
+                return bm25Config(Bm25Config!);
             }
 
             return default(TResult);
@@ -126,8 +126,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<object?>? value1 = null,
-            global::System.Action<global::G.Bm25Config?>? value2 = null,
+            global::System.Action<object?>? optionsVariant1 = null,
+            global::System.Action<global::G.Bm25Config?>? bm25Config = null,
             bool validate = true)
         {
             if (validate)
@@ -135,13 +135,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsOptionsVariant1)
             {
-                value1?.Invoke(Value1!);
+                optionsVariant1?.Invoke(OptionsVariant1!);
             }
-            else if (IsValue2)
+            else if (IsBm25Config)
             {
-                value2?.Invoke(Value2!);
+                bm25Config?.Invoke(Bm25Config!);
             }
         }
 
@@ -152,9 +152,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                OptionsVariant1,
                 typeof(object),
-                Value2,
+                Bm25Config,
                 typeof(global::G.Bm25Config),
             };
             const int offset = unchecked((int)2166136261);
@@ -172,8 +172,8 @@ namespace G
         public bool Equals(DocumentOptions2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.Bm25Config?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(OptionsVariant1, other.OptionsVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.Bm25Config?>.Default.Equals(Bm25Config, other.Bm25Config) 
                 ;
         }
 

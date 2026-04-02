@@ -14,239 +14,239 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ConversationNode? Value1 { get; init; }
+        public global::G.ConversationNode? ConversationNode { get; init; }
 #else
-        public global::G.ConversationNode? Value1 { get; }
+        public global::G.ConversationNode? ConversationNode { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationNode))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsConversationNode => ConversationNode != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.EndNode? Value2 { get; init; }
+        public global::G.EndNode? End { get; init; }
 #else
-        public global::G.EndNode? Value2 { get; }
+        public global::G.EndNode? End { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(End))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEnd => End != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FunctionNode? Value3 { get; init; }
+        public global::G.FunctionNode? Function { get; init; }
 #else
-        public global::G.FunctionNode? Value3 { get; }
+        public global::G.FunctionNode? Function { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsFunction => Function != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CodeNode? Value4 { get; init; }
+        public global::G.CodeNode? Code { get; init; }
 #else
-        public global::G.CodeNode? Value4 { get; }
+        public global::G.CodeNode? Code { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Code))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsCode => Code != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TransferCallNode? Value5 { get; init; }
+        public global::G.TransferCallNode? TransferCall { get; init; }
 #else
-        public global::G.TransferCallNode? Value5 { get; }
+        public global::G.TransferCallNode? TransferCall { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransferCall))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsTransferCall => TransferCall != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PressDigitNode? Value6 { get; init; }
+        public global::G.PressDigitNode? PressDigit { get; init; }
 #else
-        public global::G.PressDigitNode? Value6 { get; }
+        public global::G.PressDigitNode? PressDigit { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PressDigit))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsPressDigit => PressDigit != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BranchNode? Value7 { get; init; }
+        public global::G.BranchNode? Branch { get; init; }
 #else
-        public global::G.BranchNode? Value7 { get; }
+        public global::G.BranchNode? Branch { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Branch))]
 #endif
-        public bool IsValue7 => Value7 != null;
+        public bool IsBranch => Branch != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SmsNode? Value8 { get; init; }
+        public global::G.SmsNode? Sms { get; init; }
 #else
-        public global::G.SmsNode? Value8 { get; }
+        public global::G.SmsNode? Sms { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sms))]
 #endif
-        public bool IsValue8 => Value8 != null;
+        public bool IsSms => Sms != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ExtractDynamicVariablesNode? Value9 { get; init; }
+        public global::G.ExtractDynamicVariablesNode? ExtractDynamicVariables { get; init; }
 #else
-        public global::G.ExtractDynamicVariablesNode? Value9 { get; }
+        public global::G.ExtractDynamicVariablesNode? ExtractDynamicVariables { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExtractDynamicVariables))]
 #endif
-        public bool IsValue9 => Value9 != null;
+        public bool IsExtractDynamicVariables => ExtractDynamicVariables != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AgentSwapNode? Value10 { get; init; }
+        public global::G.AgentSwapNode? AgentSwap { get; init; }
 #else
-        public global::G.AgentSwapNode? Value10 { get; }
+        public global::G.AgentSwapNode? AgentSwap { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentSwap))]
 #endif
-        public bool IsValue10 => Value10 != null;
+        public bool IsAgentSwap => AgentSwap != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MCPNode? Value11 { get; init; }
+        public global::G.MCPNode? Mcp { get; init; }
 #else
-        public global::G.MCPNode? Value11 { get; }
+        public global::G.MCPNode? Mcp { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value11))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mcp))]
 #endif
-        public bool IsValue11 => Value11 != null;
+        public bool IsMcp => Mcp != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ComponentNode? Value12 { get; init; }
+        public global::G.ComponentNode? Component { get; init; }
 #else
-        public global::G.ComponentNode? Value12 { get; }
+        public global::G.ComponentNode? Component { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Component))]
 #endif
-        public bool IsValue12 => Value12 != null;
+        public bool IsComponent => Component != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BridgeTransferNode? Value13 { get; init; }
+        public global::G.BridgeTransferNode? BridgeTransfer { get; init; }
 #else
-        public global::G.BridgeTransferNode? Value13 { get; }
+        public global::G.BridgeTransferNode? BridgeTransfer { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value13))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BridgeTransfer))]
 #endif
-        public bool IsValue13 => Value13 != null;
+        public bool IsBridgeTransfer => BridgeTransfer != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CancelTransferNode? Value14 { get; init; }
+        public global::G.CancelTransferNode? CancelTransfer { get; init; }
 #else
-        public global::G.CancelTransferNode? Value14 { get; }
+        public global::G.CancelTransferNode? CancelTransfer { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value14))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CancelTransfer))]
 #endif
-        public bool IsValue14 => Value14 != null;
+        public bool IsCancelTransfer => CancelTransfer != null;
         /// <summary>
         /// 
         /// </summary>
@@ -255,14 +255,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ConversationNode?(ConversationFlowNode @this) => @this.Value1;
+        public static implicit operator global::G.ConversationNode?(ConversationFlowNode @this) => @this.ConversationNode;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.ConversationNode? value)
         {
-            Value1 = value;
+            ConversationNode = value;
         }
 
         /// <summary>
@@ -273,14 +273,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.EndNode?(ConversationFlowNode @this) => @this.Value2;
+        public static implicit operator global::G.EndNode?(ConversationFlowNode @this) => @this.End;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.EndNode? value)
         {
-            Value2 = value;
+            End = value;
         }
 
         /// <summary>
@@ -291,14 +291,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FunctionNode?(ConversationFlowNode @this) => @this.Value3;
+        public static implicit operator global::G.FunctionNode?(ConversationFlowNode @this) => @this.Function;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.FunctionNode? value)
         {
-            Value3 = value;
+            Function = value;
         }
 
         /// <summary>
@@ -309,14 +309,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CodeNode?(ConversationFlowNode @this) => @this.Value4;
+        public static implicit operator global::G.CodeNode?(ConversationFlowNode @this) => @this.Code;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.CodeNode? value)
         {
-            Value4 = value;
+            Code = value;
         }
 
         /// <summary>
@@ -327,14 +327,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TransferCallNode?(ConversationFlowNode @this) => @this.Value5;
+        public static implicit operator global::G.TransferCallNode?(ConversationFlowNode @this) => @this.TransferCall;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.TransferCallNode? value)
         {
-            Value5 = value;
+            TransferCall = value;
         }
 
         /// <summary>
@@ -345,14 +345,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PressDigitNode?(ConversationFlowNode @this) => @this.Value6;
+        public static implicit operator global::G.PressDigitNode?(ConversationFlowNode @this) => @this.PressDigit;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.PressDigitNode? value)
         {
-            Value6 = value;
+            PressDigit = value;
         }
 
         /// <summary>
@@ -363,14 +363,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BranchNode?(ConversationFlowNode @this) => @this.Value7;
+        public static implicit operator global::G.BranchNode?(ConversationFlowNode @this) => @this.Branch;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.BranchNode? value)
         {
-            Value7 = value;
+            Branch = value;
         }
 
         /// <summary>
@@ -381,14 +381,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SmsNode?(ConversationFlowNode @this) => @this.Value8;
+        public static implicit operator global::G.SmsNode?(ConversationFlowNode @this) => @this.Sms;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.SmsNode? value)
         {
-            Value8 = value;
+            Sms = value;
         }
 
         /// <summary>
@@ -399,14 +399,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ExtractDynamicVariablesNode?(ConversationFlowNode @this) => @this.Value9;
+        public static implicit operator global::G.ExtractDynamicVariablesNode?(ConversationFlowNode @this) => @this.ExtractDynamicVariables;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.ExtractDynamicVariablesNode? value)
         {
-            Value9 = value;
+            ExtractDynamicVariables = value;
         }
 
         /// <summary>
@@ -417,14 +417,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AgentSwapNode?(ConversationFlowNode @this) => @this.Value10;
+        public static implicit operator global::G.AgentSwapNode?(ConversationFlowNode @this) => @this.AgentSwap;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.AgentSwapNode? value)
         {
-            Value10 = value;
+            AgentSwap = value;
         }
 
         /// <summary>
@@ -435,14 +435,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MCPNode?(ConversationFlowNode @this) => @this.Value11;
+        public static implicit operator global::G.MCPNode?(ConversationFlowNode @this) => @this.Mcp;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.MCPNode? value)
         {
-            Value11 = value;
+            Mcp = value;
         }
 
         /// <summary>
@@ -453,14 +453,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ComponentNode?(ConversationFlowNode @this) => @this.Value12;
+        public static implicit operator global::G.ComponentNode?(ConversationFlowNode @this) => @this.Component;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.ComponentNode? value)
         {
-            Value12 = value;
+            Component = value;
         }
 
         /// <summary>
@@ -471,14 +471,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BridgeTransferNode?(ConversationFlowNode @this) => @this.Value13;
+        public static implicit operator global::G.BridgeTransferNode?(ConversationFlowNode @this) => @this.BridgeTransfer;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.BridgeTransferNode? value)
         {
-            Value13 = value;
+            BridgeTransfer = value;
         }
 
         /// <summary>
@@ -489,90 +489,90 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CancelTransferNode?(ConversationFlowNode @this) => @this.Value14;
+        public static implicit operator global::G.CancelTransferNode?(ConversationFlowNode @this) => @this.CancelTransfer;
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(global::G.CancelTransferNode? value)
         {
-            Value14 = value;
+            CancelTransfer = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ConversationFlowNode(
-            global::G.ConversationNode? value1,
-            global::G.EndNode? value2,
-            global::G.FunctionNode? value3,
-            global::G.CodeNode? value4,
-            global::G.TransferCallNode? value5,
-            global::G.PressDigitNode? value6,
-            global::G.BranchNode? value7,
-            global::G.SmsNode? value8,
-            global::G.ExtractDynamicVariablesNode? value9,
-            global::G.AgentSwapNode? value10,
-            global::G.MCPNode? value11,
-            global::G.ComponentNode? value12,
-            global::G.BridgeTransferNode? value13,
-            global::G.CancelTransferNode? value14
+            global::G.ConversationNode? conversationNode,
+            global::G.EndNode? end,
+            global::G.FunctionNode? function,
+            global::G.CodeNode? code,
+            global::G.TransferCallNode? transferCall,
+            global::G.PressDigitNode? pressDigit,
+            global::G.BranchNode? branch,
+            global::G.SmsNode? sms,
+            global::G.ExtractDynamicVariablesNode? extractDynamicVariables,
+            global::G.AgentSwapNode? agentSwap,
+            global::G.MCPNode? mcp,
+            global::G.ComponentNode? component,
+            global::G.BridgeTransferNode? bridgeTransfer,
+            global::G.CancelTransferNode? cancelTransfer
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
-            Value7 = value7;
-            Value8 = value8;
-            Value9 = value9;
-            Value10 = value10;
-            Value11 = value11;
-            Value12 = value12;
-            Value13 = value13;
-            Value14 = value14;
+            ConversationNode = conversationNode;
+            End = end;
+            Function = function;
+            Code = code;
+            TransferCall = transferCall;
+            PressDigit = pressDigit;
+            Branch = branch;
+            Sms = sms;
+            ExtractDynamicVariables = extractDynamicVariables;
+            AgentSwap = agentSwap;
+            Mcp = mcp;
+            Component = component;
+            BridgeTransfer = bridgeTransfer;
+            CancelTransfer = cancelTransfer;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value14 as object ??
-            Value13 as object ??
-            Value12 as object ??
-            Value11 as object ??
-            Value10 as object ??
-            Value9 as object ??
-            Value8 as object ??
-            Value7 as object ??
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            CancelTransfer as object ??
+            BridgeTransfer as object ??
+            Component as object ??
+            Mcp as object ??
+            AgentSwap as object ??
+            ExtractDynamicVariables as object ??
+            Sms as object ??
+            Branch as object ??
+            PressDigit as object ??
+            TransferCall as object ??
+            Code as object ??
+            Function as object ??
+            End as object ??
+            ConversationNode as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() ??
-            Value7?.ToString() ??
-            Value8?.ToString() ??
-            Value9?.ToString() ??
-            Value10?.ToString() ??
-            Value11?.ToString() ??
-            Value12?.ToString() ??
-            Value13?.ToString() ??
-            Value14?.ToString() 
+            ConversationNode?.ToString() ??
+            End?.ToString() ??
+            Function?.ToString() ??
+            Code?.ToString() ??
+            TransferCall?.ToString() ??
+            PressDigit?.ToString() ??
+            Branch?.ToString() ??
+            Sms?.ToString() ??
+            ExtractDynamicVariables?.ToString() ??
+            AgentSwap?.ToString() ??
+            Mcp?.ToString() ??
+            Component?.ToString() ??
+            BridgeTransfer?.ToString() ??
+            CancelTransfer?.ToString() 
             ;
 
         /// <summary>
@@ -580,27 +580,27 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && IsValue12 && !IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && IsValue13 && !IsValue14 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && IsValue14;
+            return IsConversationNode && !IsEnd && !IsFunction && !IsCode && !IsTransferCall && !IsPressDigit && !IsBranch && !IsSms && !IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && !IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && IsEnd && !IsFunction && !IsCode && !IsTransferCall && !IsPressDigit && !IsBranch && !IsSms && !IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && !IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && IsFunction && !IsCode && !IsTransferCall && !IsPressDigit && !IsBranch && !IsSms && !IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && !IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && !IsFunction && IsCode && !IsTransferCall && !IsPressDigit && !IsBranch && !IsSms && !IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && !IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && !IsFunction && !IsCode && IsTransferCall && !IsPressDigit && !IsBranch && !IsSms && !IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && !IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && !IsFunction && !IsCode && !IsTransferCall && IsPressDigit && !IsBranch && !IsSms && !IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && !IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && !IsFunction && !IsCode && !IsTransferCall && !IsPressDigit && IsBranch && !IsSms && !IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && !IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && !IsFunction && !IsCode && !IsTransferCall && !IsPressDigit && !IsBranch && IsSms && !IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && !IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && !IsFunction && !IsCode && !IsTransferCall && !IsPressDigit && !IsBranch && !IsSms && IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && !IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && !IsFunction && !IsCode && !IsTransferCall && !IsPressDigit && !IsBranch && !IsSms && !IsExtractDynamicVariables && IsAgentSwap && !IsMcp && !IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && !IsFunction && !IsCode && !IsTransferCall && !IsPressDigit && !IsBranch && !IsSms && !IsExtractDynamicVariables && !IsAgentSwap && IsMcp && !IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && !IsFunction && !IsCode && !IsTransferCall && !IsPressDigit && !IsBranch && !IsSms && !IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && IsComponent && !IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && !IsFunction && !IsCode && !IsTransferCall && !IsPressDigit && !IsBranch && !IsSms && !IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && !IsComponent && IsBridgeTransfer && !IsCancelTransfer || !IsConversationNode && !IsEnd && !IsFunction && !IsCode && !IsTransferCall && !IsPressDigit && !IsBranch && !IsSms && !IsExtractDynamicVariables && !IsAgentSwap && !IsMcp && !IsComponent && !IsBridgeTransfer && IsCancelTransfer;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ConversationNode?, TResult>? value1 = null,
-            global::System.Func<global::G.EndNode?, TResult>? value2 = null,
-            global::System.Func<global::G.FunctionNode?, TResult>? value3 = null,
-            global::System.Func<global::G.CodeNode?, TResult>? value4 = null,
-            global::System.Func<global::G.TransferCallNode?, TResult>? value5 = null,
-            global::System.Func<global::G.PressDigitNode?, TResult>? value6 = null,
-            global::System.Func<global::G.BranchNode?, TResult>? value7 = null,
-            global::System.Func<global::G.SmsNode?, TResult>? value8 = null,
-            global::System.Func<global::G.ExtractDynamicVariablesNode?, TResult>? value9 = null,
-            global::System.Func<global::G.AgentSwapNode?, TResult>? value10 = null,
-            global::System.Func<global::G.MCPNode?, TResult>? value11 = null,
-            global::System.Func<global::G.ComponentNode?, TResult>? value12 = null,
-            global::System.Func<global::G.BridgeTransferNode?, TResult>? value13 = null,
-            global::System.Func<global::G.CancelTransferNode?, TResult>? value14 = null,
+            global::System.Func<global::G.ConversationNode?, TResult>? conversationNode = null,
+            global::System.Func<global::G.EndNode?, TResult>? end = null,
+            global::System.Func<global::G.FunctionNode?, TResult>? function = null,
+            global::System.Func<global::G.CodeNode?, TResult>? code = null,
+            global::System.Func<global::G.TransferCallNode?, TResult>? transferCall = null,
+            global::System.Func<global::G.PressDigitNode?, TResult>? pressDigit = null,
+            global::System.Func<global::G.BranchNode?, TResult>? branch = null,
+            global::System.Func<global::G.SmsNode?, TResult>? sms = null,
+            global::System.Func<global::G.ExtractDynamicVariablesNode?, TResult>? extractDynamicVariables = null,
+            global::System.Func<global::G.AgentSwapNode?, TResult>? agentSwap = null,
+            global::System.Func<global::G.MCPNode?, TResult>? mcp = null,
+            global::System.Func<global::G.ComponentNode?, TResult>? component = null,
+            global::System.Func<global::G.BridgeTransferNode?, TResult>? bridgeTransfer = null,
+            global::System.Func<global::G.CancelTransferNode?, TResult>? cancelTransfer = null,
             bool validate = true)
         {
             if (validate)
@@ -608,61 +608,61 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsConversationNode && conversationNode != null)
             {
-                return value1(Value1!);
+                return conversationNode(ConversationNode!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEnd && end != null)
             {
-                return value2(Value2!);
+                return end(End!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsFunction && function != null)
             {
-                return value3(Value3!);
+                return function(Function!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsCode && code != null)
             {
-                return value4(Value4!);
+                return code(Code!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsTransferCall && transferCall != null)
             {
-                return value5(Value5!);
+                return transferCall(TransferCall!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsPressDigit && pressDigit != null)
             {
-                return value6(Value6!);
+                return pressDigit(PressDigit!);
             }
-            else if (IsValue7 && value7 != null)
+            else if (IsBranch && branch != null)
             {
-                return value7(Value7!);
+                return branch(Branch!);
             }
-            else if (IsValue8 && value8 != null)
+            else if (IsSms && sms != null)
             {
-                return value8(Value8!);
+                return sms(Sms!);
             }
-            else if (IsValue9 && value9 != null)
+            else if (IsExtractDynamicVariables && extractDynamicVariables != null)
             {
-                return value9(Value9!);
+                return extractDynamicVariables(ExtractDynamicVariables!);
             }
-            else if (IsValue10 && value10 != null)
+            else if (IsAgentSwap && agentSwap != null)
             {
-                return value10(Value10!);
+                return agentSwap(AgentSwap!);
             }
-            else if (IsValue11 && value11 != null)
+            else if (IsMcp && mcp != null)
             {
-                return value11(Value11!);
+                return mcp(Mcp!);
             }
-            else if (IsValue12 && value12 != null)
+            else if (IsComponent && component != null)
             {
-                return value12(Value12!);
+                return component(Component!);
             }
-            else if (IsValue13 && value13 != null)
+            else if (IsBridgeTransfer && bridgeTransfer != null)
             {
-                return value13(Value13!);
+                return bridgeTransfer(BridgeTransfer!);
             }
-            else if (IsValue14 && value14 != null)
+            else if (IsCancelTransfer && cancelTransfer != null)
             {
-                return value14(Value14!);
+                return cancelTransfer(CancelTransfer!);
             }
 
             return default(TResult);
@@ -672,20 +672,20 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ConversationNode?>? value1 = null,
-            global::System.Action<global::G.EndNode?>? value2 = null,
-            global::System.Action<global::G.FunctionNode?>? value3 = null,
-            global::System.Action<global::G.CodeNode?>? value4 = null,
-            global::System.Action<global::G.TransferCallNode?>? value5 = null,
-            global::System.Action<global::G.PressDigitNode?>? value6 = null,
-            global::System.Action<global::G.BranchNode?>? value7 = null,
-            global::System.Action<global::G.SmsNode?>? value8 = null,
-            global::System.Action<global::G.ExtractDynamicVariablesNode?>? value9 = null,
-            global::System.Action<global::G.AgentSwapNode?>? value10 = null,
-            global::System.Action<global::G.MCPNode?>? value11 = null,
-            global::System.Action<global::G.ComponentNode?>? value12 = null,
-            global::System.Action<global::G.BridgeTransferNode?>? value13 = null,
-            global::System.Action<global::G.CancelTransferNode?>? value14 = null,
+            global::System.Action<global::G.ConversationNode?>? conversationNode = null,
+            global::System.Action<global::G.EndNode?>? end = null,
+            global::System.Action<global::G.FunctionNode?>? function = null,
+            global::System.Action<global::G.CodeNode?>? code = null,
+            global::System.Action<global::G.TransferCallNode?>? transferCall = null,
+            global::System.Action<global::G.PressDigitNode?>? pressDigit = null,
+            global::System.Action<global::G.BranchNode?>? branch = null,
+            global::System.Action<global::G.SmsNode?>? sms = null,
+            global::System.Action<global::G.ExtractDynamicVariablesNode?>? extractDynamicVariables = null,
+            global::System.Action<global::G.AgentSwapNode?>? agentSwap = null,
+            global::System.Action<global::G.MCPNode?>? mcp = null,
+            global::System.Action<global::G.ComponentNode?>? component = null,
+            global::System.Action<global::G.BridgeTransferNode?>? bridgeTransfer = null,
+            global::System.Action<global::G.CancelTransferNode?>? cancelTransfer = null,
             bool validate = true)
         {
             if (validate)
@@ -693,61 +693,61 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsConversationNode)
             {
-                value1?.Invoke(Value1!);
+                conversationNode?.Invoke(ConversationNode!);
             }
-            else if (IsValue2)
+            else if (IsEnd)
             {
-                value2?.Invoke(Value2!);
+                end?.Invoke(End!);
             }
-            else if (IsValue3)
+            else if (IsFunction)
             {
-                value3?.Invoke(Value3!);
+                function?.Invoke(Function!);
             }
-            else if (IsValue4)
+            else if (IsCode)
             {
-                value4?.Invoke(Value4!);
+                code?.Invoke(Code!);
             }
-            else if (IsValue5)
+            else if (IsTransferCall)
             {
-                value5?.Invoke(Value5!);
+                transferCall?.Invoke(TransferCall!);
             }
-            else if (IsValue6)
+            else if (IsPressDigit)
             {
-                value6?.Invoke(Value6!);
+                pressDigit?.Invoke(PressDigit!);
             }
-            else if (IsValue7)
+            else if (IsBranch)
             {
-                value7?.Invoke(Value7!);
+                branch?.Invoke(Branch!);
             }
-            else if (IsValue8)
+            else if (IsSms)
             {
-                value8?.Invoke(Value8!);
+                sms?.Invoke(Sms!);
             }
-            else if (IsValue9)
+            else if (IsExtractDynamicVariables)
             {
-                value9?.Invoke(Value9!);
+                extractDynamicVariables?.Invoke(ExtractDynamicVariables!);
             }
-            else if (IsValue10)
+            else if (IsAgentSwap)
             {
-                value10?.Invoke(Value10!);
+                agentSwap?.Invoke(AgentSwap!);
             }
-            else if (IsValue11)
+            else if (IsMcp)
             {
-                value11?.Invoke(Value11!);
+                mcp?.Invoke(Mcp!);
             }
-            else if (IsValue12)
+            else if (IsComponent)
             {
-                value12?.Invoke(Value12!);
+                component?.Invoke(Component!);
             }
-            else if (IsValue13)
+            else if (IsBridgeTransfer)
             {
-                value13?.Invoke(Value13!);
+                bridgeTransfer?.Invoke(BridgeTransfer!);
             }
-            else if (IsValue14)
+            else if (IsCancelTransfer)
             {
-                value14?.Invoke(Value14!);
+                cancelTransfer?.Invoke(CancelTransfer!);
             }
         }
 
@@ -758,33 +758,33 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ConversationNode,
                 typeof(global::G.ConversationNode),
-                Value2,
+                End,
                 typeof(global::G.EndNode),
-                Value3,
+                Function,
                 typeof(global::G.FunctionNode),
-                Value4,
+                Code,
                 typeof(global::G.CodeNode),
-                Value5,
+                TransferCall,
                 typeof(global::G.TransferCallNode),
-                Value6,
+                PressDigit,
                 typeof(global::G.PressDigitNode),
-                Value7,
+                Branch,
                 typeof(global::G.BranchNode),
-                Value8,
+                Sms,
                 typeof(global::G.SmsNode),
-                Value9,
+                ExtractDynamicVariables,
                 typeof(global::G.ExtractDynamicVariablesNode),
-                Value10,
+                AgentSwap,
                 typeof(global::G.AgentSwapNode),
-                Value11,
+                Mcp,
                 typeof(global::G.MCPNode),
-                Value12,
+                Component,
                 typeof(global::G.ComponentNode),
-                Value13,
+                BridgeTransfer,
                 typeof(global::G.BridgeTransferNode),
-                Value14,
+                CancelTransfer,
                 typeof(global::G.CancelTransferNode),
             };
             const int offset = unchecked((int)2166136261);
@@ -802,20 +802,20 @@ namespace G
         public bool Equals(ConversationFlowNode other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ConversationNode?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.EndNode?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FunctionNode?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CodeNode?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TransferCallNode?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PressDigitNode?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BranchNode?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SmsNode?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ExtractDynamicVariablesNode?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AgentSwapNode?>.Default.Equals(Value10, other.Value10) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MCPNode?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ComponentNode?>.Default.Equals(Value12, other.Value12) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BridgeTransferNode?>.Default.Equals(Value13, other.Value13) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CancelTransferNode?>.Default.Equals(Value14, other.Value14) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ConversationNode?>.Default.Equals(ConversationNode, other.ConversationNode) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.EndNode?>.Default.Equals(End, other.End) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FunctionNode?>.Default.Equals(Function, other.Function) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CodeNode?>.Default.Equals(Code, other.Code) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TransferCallNode?>.Default.Equals(TransferCall, other.TransferCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PressDigitNode?>.Default.Equals(PressDigit, other.PressDigit) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BranchNode?>.Default.Equals(Branch, other.Branch) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SmsNode?>.Default.Equals(Sms, other.Sms) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ExtractDynamicVariablesNode?>.Default.Equals(ExtractDynamicVariables, other.ExtractDynamicVariables) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AgentSwapNode?>.Default.Equals(AgentSwap, other.AgentSwap) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MCPNode?>.Default.Equals(Mcp, other.Mcp) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ComponentNode?>.Default.Equals(Component, other.Component) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BridgeTransferNode?>.Default.Equals(BridgeTransfer, other.BridgeTransfer) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CancelTransferNode?>.Default.Equals(CancelTransfer, other.CancelTransfer) 
                 ;
         }
 

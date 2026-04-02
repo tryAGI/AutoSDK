@@ -42,7 +42,7 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::G.FunctionToolCall? functionToolCall = default;
-            global::G.FunctionToolCallResourceVariant2? value2 = default;
+            global::G.FunctionToolCallResourceVariant2? functionToolCallResourceVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -66,7 +66,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionToolCallResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionToolCallResourceVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionToolCallResourceVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        functionToolCallResourceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -77,7 +77,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (functionToolCall == null && value2 == null)
+            if (functionToolCall == null && functionToolCallResourceVariant2 == null)
             {
                 try
                 {
@@ -96,7 +96,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionToolCallResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionToolCallResourceVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionToolCallResourceVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    functionToolCallResourceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -109,7 +109,7 @@ namespace G.JsonConverters
             var __value = new global::G.FunctionToolCallResource(
                 functionToolCall,
 
-                value2
+                functionToolCallResourceVariant2
                 );
 
             return __value;
@@ -130,11 +130,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionToolCall).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionToolCall!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsFunctionToolCallResourceVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionToolCallResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionToolCallResourceVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionToolCallResourceVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionToolCallResourceVariant2!, typeInfo);
             }
         }
     }

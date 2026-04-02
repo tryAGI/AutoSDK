@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? DoneReasonVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? DoneReasonVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DoneReasonVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsDoneReasonVariant1 => DoneReasonVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DoneReasonEnum? Value2 { get; init; }
+        public global::G.DoneReasonEnum? Enum { get; init; }
 #else
-        public global::G.DoneReasonEnum? Value2 { get; }
+        public global::G.DoneReasonEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEnum => Enum != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(DoneReason @this) => @this.Value1;
+        public static implicit operator string?(DoneReason @this) => @this.DoneReasonVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public DoneReason(string? value)
         {
-            Value1 = value;
+            DoneReasonVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DoneReasonEnum?(DoneReason @this) => @this.Value2;
+        public static implicit operator global::G.DoneReasonEnum?(DoneReason @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public DoneReason(global::G.DoneReasonEnum? value)
         {
-            Value2 = value;
+            Enum = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public DoneReason(
-            string? value1,
-            global::G.DoneReasonEnum? value2
+            string? doneReasonVariant1,
+            global::G.DoneReasonEnum? @enum
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            DoneReasonVariant1 = doneReasonVariant1;
+            Enum = @enum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Enum as object ??
+            DoneReasonVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToValueString() 
+            DoneReasonVariant1?.ToString() ??
+            Enum?.ToValueString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsDoneReasonVariant1 || IsEnum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::G.DoneReasonEnum?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? doneReasonVariant1 = null,
+            global::System.Func<global::G.DoneReasonEnum?, TResult>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsDoneReasonVariant1 && doneReasonVariant1 != null)
             {
-                return value1(Value1!);
+                return doneReasonVariant1(DoneReasonVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEnum && @enum != null)
             {
-                return value2(Value2!);
+                return @enum(Enum!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::G.DoneReasonEnum?>? value2 = null,
+            global::System.Action<string?>? doneReasonVariant1 = null,
+            global::System.Action<global::G.DoneReasonEnum?>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsDoneReasonVariant1)
             {
-                value1?.Invoke(Value1!);
+                doneReasonVariant1?.Invoke(DoneReasonVariant1!);
             }
-            else if (IsValue2)
+            else if (IsEnum)
             {
-                value2?.Invoke(Value2!);
+                @enum?.Invoke(Enum!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                DoneReasonVariant1,
                 typeof(string),
-                Value2,
+                Enum,
                 typeof(global::G.DoneReasonEnum),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(DoneReason other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DoneReasonEnum?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(DoneReasonVariant1, other.DoneReasonVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DoneReasonEnum?>.Default.Equals(Enum, other.Enum) 
                 ;
         }
 

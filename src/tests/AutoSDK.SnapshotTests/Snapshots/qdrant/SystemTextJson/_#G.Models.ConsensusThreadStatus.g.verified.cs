@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ConsensusThreadStatusVariant1? Value1 { get; init; }
+        public global::G.ConsensusThreadStatusVariant1? ConsensusThreadStatusVariant1 { get; init; }
 #else
-        public global::G.ConsensusThreadStatusVariant1? Value1 { get; }
+        public global::G.ConsensusThreadStatusVariant1? ConsensusThreadStatusVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConsensusThreadStatusVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsConsensusThreadStatusVariant1 => ConsensusThreadStatusVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ConsensusThreadStatusVariant2? Value2 { get; init; }
+        public global::G.ConsensusThreadStatusVariant2? ConsensusThreadStatusVariant2 { get; init; }
 #else
-        public global::G.ConsensusThreadStatusVariant2? Value2 { get; }
+        public global::G.ConsensusThreadStatusVariant2? ConsensusThreadStatusVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConsensusThreadStatusVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsConsensusThreadStatusVariant2 => ConsensusThreadStatusVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ConsensusThreadStatusVariant3? Value3 { get; init; }
+        public global::G.ConsensusThreadStatusVariant3? ConsensusThreadStatusVariant3 { get; init; }
 #else
-        public global::G.ConsensusThreadStatusVariant3? Value3 { get; }
+        public global::G.ConsensusThreadStatusVariant3? ConsensusThreadStatusVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConsensusThreadStatusVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsConsensusThreadStatusVariant3 => ConsensusThreadStatusVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ConsensusThreadStatusVariant1?(ConsensusThreadStatus @this) => @this.Value1;
+        public static implicit operator global::G.ConsensusThreadStatusVariant1?(ConsensusThreadStatus @this) => @this.ConsensusThreadStatusVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ConsensusThreadStatus(global::G.ConsensusThreadStatusVariant1? value)
         {
-            Value1 = value;
+            ConsensusThreadStatusVariant1 = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ConsensusThreadStatusVariant2?(ConsensusThreadStatus @this) => @this.Value2;
+        public static implicit operator global::G.ConsensusThreadStatusVariant2?(ConsensusThreadStatus @this) => @this.ConsensusThreadStatusVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ConsensusThreadStatus(global::G.ConsensusThreadStatusVariant2? value)
         {
-            Value2 = value;
+            ConsensusThreadStatusVariant2 = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ConsensusThreadStatusVariant3?(ConsensusThreadStatus @this) => @this.Value3;
+        public static implicit operator global::G.ConsensusThreadStatusVariant3?(ConsensusThreadStatus @this) => @this.ConsensusThreadStatusVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public ConsensusThreadStatus(global::G.ConsensusThreadStatusVariant3? value)
         {
-            Value3 = value;
+            ConsensusThreadStatusVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ConsensusThreadStatus(
-            global::G.ConsensusThreadStatusVariant1? value1,
-            global::G.ConsensusThreadStatusVariant2? value2,
-            global::G.ConsensusThreadStatusVariant3? value3
+            global::G.ConsensusThreadStatusVariant1? consensusThreadStatusVariant1,
+            global::G.ConsensusThreadStatusVariant2? consensusThreadStatusVariant2,
+            global::G.ConsensusThreadStatusVariant3? consensusThreadStatusVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            ConsensusThreadStatusVariant1 = consensusThreadStatusVariant1;
+            ConsensusThreadStatusVariant2 = consensusThreadStatusVariant2;
+            ConsensusThreadStatusVariant3 = consensusThreadStatusVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ConsensusThreadStatusVariant3 as object ??
+            ConsensusThreadStatusVariant2 as object ??
+            ConsensusThreadStatusVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            ConsensusThreadStatusVariant1?.ToString() ??
+            ConsensusThreadStatusVariant2?.ToString() ??
+            ConsensusThreadStatusVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 || !IsValue1 && IsValue2 && !IsValue3 || !IsValue1 && !IsValue2 && IsValue3;
+            return IsConsensusThreadStatusVariant1 && !IsConsensusThreadStatusVariant2 && !IsConsensusThreadStatusVariant3 || !IsConsensusThreadStatusVariant1 && IsConsensusThreadStatusVariant2 && !IsConsensusThreadStatusVariant3 || !IsConsensusThreadStatusVariant1 && !IsConsensusThreadStatusVariant2 && IsConsensusThreadStatusVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ConsensusThreadStatusVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.ConsensusThreadStatusVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.ConsensusThreadStatusVariant3?, TResult>? value3 = null,
+            global::System.Func<global::G.ConsensusThreadStatusVariant1?, TResult>? consensusThreadStatusVariant1 = null,
+            global::System.Func<global::G.ConsensusThreadStatusVariant2?, TResult>? consensusThreadStatusVariant2 = null,
+            global::System.Func<global::G.ConsensusThreadStatusVariant3?, TResult>? consensusThreadStatusVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsConsensusThreadStatusVariant1 && consensusThreadStatusVariant1 != null)
             {
-                return value1(Value1!);
+                return consensusThreadStatusVariant1(ConsensusThreadStatusVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsConsensusThreadStatusVariant2 && consensusThreadStatusVariant2 != null)
             {
-                return value2(Value2!);
+                return consensusThreadStatusVariant2(ConsensusThreadStatusVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsConsensusThreadStatusVariant3 && consensusThreadStatusVariant3 != null)
             {
-                return value3(Value3!);
+                return consensusThreadStatusVariant3(ConsensusThreadStatusVariant3!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ConsensusThreadStatusVariant1?>? value1 = null,
-            global::System.Action<global::G.ConsensusThreadStatusVariant2?>? value2 = null,
-            global::System.Action<global::G.ConsensusThreadStatusVariant3?>? value3 = null,
+            global::System.Action<global::G.ConsensusThreadStatusVariant1?>? consensusThreadStatusVariant1 = null,
+            global::System.Action<global::G.ConsensusThreadStatusVariant2?>? consensusThreadStatusVariant2 = null,
+            global::System.Action<global::G.ConsensusThreadStatusVariant3?>? consensusThreadStatusVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsConsensusThreadStatusVariant1)
             {
-                value1?.Invoke(Value1!);
+                consensusThreadStatusVariant1?.Invoke(ConsensusThreadStatusVariant1!);
             }
-            else if (IsValue2)
+            else if (IsConsensusThreadStatusVariant2)
             {
-                value2?.Invoke(Value2!);
+                consensusThreadStatusVariant2?.Invoke(ConsensusThreadStatusVariant2!);
             }
-            else if (IsValue3)
+            else if (IsConsensusThreadStatusVariant3)
             {
-                value3?.Invoke(Value3!);
+                consensusThreadStatusVariant3?.Invoke(ConsensusThreadStatusVariant3!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ConsensusThreadStatusVariant1,
                 typeof(global::G.ConsensusThreadStatusVariant1),
-                Value2,
+                ConsensusThreadStatusVariant2,
                 typeof(global::G.ConsensusThreadStatusVariant2),
-                Value3,
+                ConsensusThreadStatusVariant3,
                 typeof(global::G.ConsensusThreadStatusVariant3),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(ConsensusThreadStatus other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ConsensusThreadStatusVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ConsensusThreadStatusVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ConsensusThreadStatusVariant3?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ConsensusThreadStatusVariant1?>.Default.Equals(ConsensusThreadStatusVariant1, other.ConsensusThreadStatusVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ConsensusThreadStatusVariant2?>.Default.Equals(ConsensusThreadStatusVariant2, other.ConsensusThreadStatusVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ConsensusThreadStatusVariant3?>.Default.Equals(ConsensusThreadStatusVariant3, other.ConsensusThreadStatusVariant3) 
                 ;
         }
 

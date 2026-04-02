@@ -14,69 +14,69 @@ namespace G
         /// Make all properties in T optional
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PartialTablesAndViews? Value1 { get; init; }
+        public global::G.PartialTablesAndViews? PartialTablesAndViews { get; init; }
 #else
-        public global::G.PartialTablesAndViews? Value1 { get; }
+        public global::G.PartialTablesAndViews? PartialTablesAndViews { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PartialTablesAndViews))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsPartialTablesAndViews => PartialTablesAndViews != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FilterBranch? Value2 { get; init; }
+        public global::G.FilterBranch? Branch { get; init; }
 #else
-        public global::G.FilterBranch? Value2 { get; }
+        public global::G.FilterBranch? Branch { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Branch))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsBranch => Branch != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? Enum { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsEnum => Enum != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FilterNodeEnum2? Value4 { get; init; }
+        public global::G.FilterNodeEnum2? Enum2 { get; init; }
 #else
-        public global::G.FilterNodeEnum2? Value4 { get; }
+        public global::G.FilterNodeEnum2? Enum2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum2))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsEnum2 => Enum2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -85,14 +85,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PartialTablesAndViews?(FilterNode @this) => @this.Value1;
+        public static implicit operator global::G.PartialTablesAndViews?(FilterNode @this) => @this.PartialTablesAndViews;
 
         /// <summary>
         /// 
         /// </summary>
         public FilterNode(global::G.PartialTablesAndViews? value)
         {
-            Value1 = value;
+            PartialTablesAndViews = value;
         }
 
         /// <summary>
@@ -103,14 +103,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FilterBranch?(FilterNode @this) => @this.Value2;
+        public static implicit operator global::G.FilterBranch?(FilterNode @this) => @this.Branch;
 
         /// <summary>
         /// 
         /// </summary>
         public FilterNode(global::G.FilterBranch? value)
         {
-            Value2 = value;
+            Branch = value;
         }
 
         /// <summary>
@@ -121,50 +121,50 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FilterNodeEnum2?(FilterNode @this) => @this.Value4;
+        public static implicit operator global::G.FilterNodeEnum2?(FilterNode @this) => @this.Enum2;
 
         /// <summary>
         /// 
         /// </summary>
         public FilterNode(global::G.FilterNodeEnum2? value)
         {
-            Value4 = value;
+            Enum2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public FilterNode(
-            global::G.PartialTablesAndViews? value1,
-            global::G.FilterBranch? value2,
-            object? value3,
-            global::G.FilterNodeEnum2? value4
+            global::G.PartialTablesAndViews? partialTablesAndViews,
+            global::G.FilterBranch? branch,
+            object? @enum,
+            global::G.FilterNodeEnum2? enum2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
+            PartialTablesAndViews = partialTablesAndViews;
+            Branch = branch;
+            Enum = @enum;
+            Enum2 = enum2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            Enum2 as object ??
+            Enum as object ??
+            Branch as object ??
+            PartialTablesAndViews as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToValueString() 
+            PartialTablesAndViews?.ToString() ??
+            Branch?.ToString() ??
+            Enum?.ToString() ??
+            Enum2?.ToValueString() 
             ;
 
         /// <summary>
@@ -172,17 +172,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4;
+            return IsPartialTablesAndViews || IsBranch || IsEnum || IsEnum2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PartialTablesAndViews?, TResult>? value1 = null,
-            global::System.Func<global::G.FilterBranch?, TResult>? value2 = null,
-            global::System.Func<object?, TResult>? value3 = null,
-            global::System.Func<global::G.FilterNodeEnum2?, TResult>? value4 = null,
+            global::System.Func<global::G.PartialTablesAndViews?, TResult>? partialTablesAndViews = null,
+            global::System.Func<global::G.FilterBranch?, TResult>? branch = null,
+            global::System.Func<object?, TResult>? @enum = null,
+            global::System.Func<global::G.FilterNodeEnum2?, TResult>? enum2 = null,
             bool validate = true)
         {
             if (validate)
@@ -190,21 +190,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsPartialTablesAndViews && partialTablesAndViews != null)
             {
-                return value1(Value1!);
+                return partialTablesAndViews(PartialTablesAndViews!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsBranch && branch != null)
             {
-                return value2(Value2!);
+                return branch(Branch!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsEnum && @enum != null)
             {
-                return value3(Value3!);
+                return @enum(Enum!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsEnum2 && enum2 != null)
             {
-                return value4(Value4!);
+                return enum2(Enum2!);
             }
 
             return default(TResult);
@@ -214,10 +214,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PartialTablesAndViews?>? value1 = null,
-            global::System.Action<global::G.FilterBranch?>? value2 = null,
-            global::System.Action<object?>? value3 = null,
-            global::System.Action<global::G.FilterNodeEnum2?>? value4 = null,
+            global::System.Action<global::G.PartialTablesAndViews?>? partialTablesAndViews = null,
+            global::System.Action<global::G.FilterBranch?>? branch = null,
+            global::System.Action<object?>? @enum = null,
+            global::System.Action<global::G.FilterNodeEnum2?>? enum2 = null,
             bool validate = true)
         {
             if (validate)
@@ -225,21 +225,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsPartialTablesAndViews)
             {
-                value1?.Invoke(Value1!);
+                partialTablesAndViews?.Invoke(PartialTablesAndViews!);
             }
-            else if (IsValue2)
+            else if (IsBranch)
             {
-                value2?.Invoke(Value2!);
+                branch?.Invoke(Branch!);
             }
-            else if (IsValue3)
+            else if (IsEnum)
             {
-                value3?.Invoke(Value3!);
+                @enum?.Invoke(Enum!);
             }
-            else if (IsValue4)
+            else if (IsEnum2)
             {
-                value4?.Invoke(Value4!);
+                enum2?.Invoke(Enum2!);
             }
         }
 
@@ -250,13 +250,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                PartialTablesAndViews,
                 typeof(global::G.PartialTablesAndViews),
-                Value2,
+                Branch,
                 typeof(global::G.FilterBranch),
-                Value3,
+                Enum,
                 typeof(object),
-                Value4,
+                Enum2,
                 typeof(global::G.FilterNodeEnum2),
             };
             const int offset = unchecked((int)2166136261);
@@ -274,10 +274,10 @@ namespace G
         public bool Equals(FilterNode other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.PartialTablesAndViews?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FilterBranch?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FilterNodeEnum2?>.Default.Equals(Value4, other.Value4) 
+                global::System.Collections.Generic.EqualityComparer<global::G.PartialTablesAndViews?>.Default.Equals(PartialTablesAndViews, other.PartialTablesAndViews) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FilterBranch?>.Default.Equals(Branch, other.Branch) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Enum, other.Enum) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FilterNodeEnum2?>.Default.Equals(Enum2, other.Enum2) 
                 ;
         }
 

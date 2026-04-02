@@ -45,8 +45,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            object? value1 = default;
-            global::G.Bm25Config? value2 = default;
+            object? optionsVariant1 = default;
+            global::G.Bm25Config? bm25Config = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -55,7 +55,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        optionsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -70,7 +70,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Bm25Config), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Bm25Config> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Bm25Config).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        bm25Config = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -81,13 +81,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (optionsVariant1 == null && bm25Config == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    optionsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -100,7 +100,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Bm25Config), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Bm25Config> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Bm25Config).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    bm25Config = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -111,9 +111,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.DocumentOptions2(
-                value1,
+                optionsVariant1,
 
-                value2
+                bm25Config
                 );
 
             return __value;
@@ -128,17 +128,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsOptionsVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OptionsVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsBm25Config)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Bm25Config), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Bm25Config?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Bm25Config).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bm25Config!, typeInfo);
             }
         }
     }

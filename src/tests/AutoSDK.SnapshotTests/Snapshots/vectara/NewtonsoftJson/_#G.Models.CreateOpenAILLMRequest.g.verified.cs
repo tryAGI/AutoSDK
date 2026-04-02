@@ -14,35 +14,35 @@ namespace G
         /// Common fields for OpenAI-compatible and Responses API LLM requests.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.OpenAILLMRequestBase? Value1 { get; init; }
+        public global::G.OpenAILLMRequestBase? Base { get; init; }
 #else
-        public global::G.OpenAILLMRequestBase? Value1 { get; }
+        public global::G.OpenAILLMRequestBase? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateOpenAILLMRequestVariant2? Value2 { get; init; }
+        public global::G.CreateOpenAILLMRequestVariant2? CreateOpenAILLMRequestVariant2 { get; init; }
 #else
-        public global::G.CreateOpenAILLMRequestVariant2? Value2 { get; }
+        public global::G.CreateOpenAILLMRequestVariant2? CreateOpenAILLMRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateOpenAILLMRequestVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCreateOpenAILLMRequestVariant2 => CreateOpenAILLMRequestVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.OpenAILLMRequestBase?(CreateOpenAILLMRequest @this) => @this.Value1;
+        public static implicit operator global::G.OpenAILLMRequestBase?(CreateOpenAILLMRequest @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateOpenAILLMRequest(global::G.OpenAILLMRequestBase? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateOpenAILLMRequestVariant2?(CreateOpenAILLMRequest @this) => @this.Value2;
+        public static implicit operator global::G.CreateOpenAILLMRequestVariant2?(CreateOpenAILLMRequest @this) => @this.CreateOpenAILLMRequestVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateOpenAILLMRequest(global::G.CreateOpenAILLMRequestVariant2? value)
         {
-            Value2 = value;
+            CreateOpenAILLMRequestVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateOpenAILLMRequest(
-            global::G.OpenAILLMRequestBase? value1,
-            global::G.CreateOpenAILLMRequestVariant2? value2
+            global::G.OpenAILLMRequestBase? @base,
+            global::G.CreateOpenAILLMRequestVariant2? createOpenAILLMRequestVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            CreateOpenAILLMRequestVariant2 = createOpenAILLMRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CreateOpenAILLMRequestVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            CreateOpenAILLMRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsCreateOpenAILLMRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OpenAILLMRequestBase?, TResult>? value1 = null,
-            global::System.Func<global::G.CreateOpenAILLMRequestVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.OpenAILLMRequestBase?, TResult>? @base = null,
+            global::System.Func<global::G.CreateOpenAILLMRequestVariant2?, TResult>? createOpenAILLMRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCreateOpenAILLMRequestVariant2 && createOpenAILLMRequestVariant2 != null)
             {
-                return value2(Value2!);
+                return createOpenAILLMRequestVariant2(CreateOpenAILLMRequestVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OpenAILLMRequestBase?>? value1 = null,
-            global::System.Action<global::G.CreateOpenAILLMRequestVariant2?>? value2 = null,
+            global::System.Action<global::G.OpenAILLMRequestBase?>? @base = null,
+            global::System.Action<global::G.CreateOpenAILLMRequestVariant2?>? createOpenAILLMRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsCreateOpenAILLMRequestVariant2)
             {
-                value2?.Invoke(Value2!);
+                createOpenAILLMRequestVariant2?.Invoke(CreateOpenAILLMRequestVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::G.OpenAILLMRequestBase),
-                Value2,
+                CreateOpenAILLMRequestVariant2,
                 typeof(global::G.CreateOpenAILLMRequestVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(CreateOpenAILLMRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.OpenAILLMRequestBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateOpenAILLMRequestVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.OpenAILLMRequestBase?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateOpenAILLMRequestVariant2?>.Default.Equals(CreateOpenAILLMRequestVariant2, other.CreateOpenAILLMRequestVariant2) 
                 ;
         }
 

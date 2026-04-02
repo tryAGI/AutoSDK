@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AgentResponseVariant1? Value1 { get; init; }
+        public global::G.AgentResponseVariant1? AgentResponseVariant1 { get; init; }
 #else
-        public global::G.AgentResponseVariant1? Value1 { get; }
+        public global::G.AgentResponseVariant1? AgentResponseVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentResponseVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAgentResponseVariant1 => AgentResponseVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AgentRequest? Value2 { get; init; }
+        public global::G.AgentRequest? Request { get; init; }
 #else
-        public global::G.AgentRequest? Value2 { get; }
+        public global::G.AgentRequest? Request { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Request))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsRequest => Request != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AgentResponseVariant3? Value3 { get; init; }
+        public global::G.AgentResponseVariant3? AgentResponseVariant3 { get; init; }
 #else
-        public global::G.AgentResponseVariant3? Value3 { get; }
+        public global::G.AgentResponseVariant3? AgentResponseVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentResponseVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsAgentResponseVariant3 => AgentResponseVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AgentResponseVariant1?(AgentResponse @this) => @this.Value1;
+        public static implicit operator global::G.AgentResponseVariant1?(AgentResponse @this) => @this.AgentResponseVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public AgentResponse(global::G.AgentResponseVariant1? value)
         {
-            Value1 = value;
+            AgentResponseVariant1 = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AgentRequest?(AgentResponse @this) => @this.Value2;
+        public static implicit operator global::G.AgentRequest?(AgentResponse @this) => @this.Request;
 
         /// <summary>
         /// 
         /// </summary>
         public AgentResponse(global::G.AgentRequest? value)
         {
-            Value2 = value;
+            Request = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AgentResponseVariant3?(AgentResponse @this) => @this.Value3;
+        public static implicit operator global::G.AgentResponseVariant3?(AgentResponse @this) => @this.AgentResponseVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public AgentResponse(global::G.AgentResponseVariant3? value)
         {
-            Value3 = value;
+            AgentResponseVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AgentResponse(
-            global::G.AgentResponseVariant1? value1,
-            global::G.AgentRequest? value2,
-            global::G.AgentResponseVariant3? value3
+            global::G.AgentResponseVariant1? agentResponseVariant1,
+            global::G.AgentRequest? request,
+            global::G.AgentResponseVariant3? agentResponseVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            AgentResponseVariant1 = agentResponseVariant1;
+            Request = request;
+            AgentResponseVariant3 = agentResponseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            AgentResponseVariant3 as object ??
+            Request as object ??
+            AgentResponseVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            AgentResponseVariant1?.ToString() ??
+            Request?.ToString() ??
+            AgentResponseVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2 && IsValue3;
+            return IsAgentResponseVariant1 && IsRequest && IsAgentResponseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentResponseVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.AgentRequest?, TResult>? value2 = null,
-            global::System.Func<global::G.AgentResponseVariant3?, TResult>? value3 = null,
+            global::System.Func<global::G.AgentResponseVariant1?, TResult>? agentResponseVariant1 = null,
+            global::System.Func<global::G.AgentRequest?, TResult>? request = null,
+            global::System.Func<global::G.AgentResponseVariant3?, TResult>? agentResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAgentResponseVariant1 && agentResponseVariant1 != null)
             {
-                return value1(Value1!);
+                return agentResponseVariant1(AgentResponseVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsRequest && request != null)
             {
-                return value2(Value2!);
+                return request(Request!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsAgentResponseVariant3 && agentResponseVariant3 != null)
             {
-                return value3(Value3!);
+                return agentResponseVariant3(AgentResponseVariant3!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentResponseVariant1?>? value1 = null,
-            global::System.Action<global::G.AgentRequest?>? value2 = null,
-            global::System.Action<global::G.AgentResponseVariant3?>? value3 = null,
+            global::System.Action<global::G.AgentResponseVariant1?>? agentResponseVariant1 = null,
+            global::System.Action<global::G.AgentRequest?>? request = null,
+            global::System.Action<global::G.AgentResponseVariant3?>? agentResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAgentResponseVariant1)
             {
-                value1?.Invoke(Value1!);
+                agentResponseVariant1?.Invoke(AgentResponseVariant1!);
             }
-            else if (IsValue2)
+            else if (IsRequest)
             {
-                value2?.Invoke(Value2!);
+                request?.Invoke(Request!);
             }
-            else if (IsValue3)
+            else if (IsAgentResponseVariant3)
             {
-                value3?.Invoke(Value3!);
+                agentResponseVariant3?.Invoke(AgentResponseVariant3!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                AgentResponseVariant1,
                 typeof(global::G.AgentResponseVariant1),
-                Value2,
+                Request,
                 typeof(global::G.AgentRequest),
-                Value3,
+                AgentResponseVariant3,
                 typeof(global::G.AgentResponseVariant3),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(AgentResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AgentResponseVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AgentRequest?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AgentResponseVariant3?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AgentResponseVariant1?>.Default.Equals(AgentResponseVariant1, other.AgentResponseVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AgentRequest?>.Default.Equals(Request, other.Request) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AgentResponseVariant3?>.Default.Equals(AgentResponseVariant3, other.AgentResponseVariant3) 
                 ;
         }
 

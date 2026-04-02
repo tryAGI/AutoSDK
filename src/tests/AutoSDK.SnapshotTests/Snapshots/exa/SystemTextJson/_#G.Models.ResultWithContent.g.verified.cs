@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Result? Value1 { get; init; }
+        public global::G.Result? Result { get; init; }
 #else
-        public global::G.Result? Value1 { get; }
+        public global::G.Result? Result { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Result))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsResult => Result != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResultWithContentVariant2? Value2 { get; init; }
+        public global::G.ResultWithContentVariant2? ResultWithContentVariant2 { get; init; }
 #else
-        public global::G.ResultWithContentVariant2? Value2 { get; }
+        public global::G.ResultWithContentVariant2? ResultWithContentVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResultWithContentVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsResultWithContentVariant2 => ResultWithContentVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Result?(ResultWithContent @this) => @this.Value1;
+        public static implicit operator global::G.Result?(ResultWithContent @this) => @this.Result;
 
         /// <summary>
         /// 
         /// </summary>
         public ResultWithContent(global::G.Result? value)
         {
-            Value1 = value;
+            Result = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResultWithContentVariant2?(ResultWithContent @this) => @this.Value2;
+        public static implicit operator global::G.ResultWithContentVariant2?(ResultWithContent @this) => @this.ResultWithContentVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ResultWithContent(global::G.ResultWithContentVariant2? value)
         {
-            Value2 = value;
+            ResultWithContentVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ResultWithContent(
-            global::G.Result? value1,
-            global::G.ResultWithContentVariant2? value2
+            global::G.Result? result,
+            global::G.ResultWithContentVariant2? resultWithContentVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Result = result;
+            ResultWithContentVariant2 = resultWithContentVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ResultWithContentVariant2 as object ??
+            Result as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Result?.ToString() ??
+            ResultWithContentVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsResult && IsResultWithContentVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Result?, TResult>? value1 = null,
-            global::System.Func<global::G.ResultWithContentVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.Result?, TResult>? result = null,
+            global::System.Func<global::G.ResultWithContentVariant2?, TResult>? resultWithContentVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsResult && result != null)
             {
-                return value1(Value1!);
+                return result(Result!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsResultWithContentVariant2 && resultWithContentVariant2 != null)
             {
-                return value2(Value2!);
+                return resultWithContentVariant2(ResultWithContentVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Result?>? value1 = null,
-            global::System.Action<global::G.ResultWithContentVariant2?>? value2 = null,
+            global::System.Action<global::G.Result?>? result = null,
+            global::System.Action<global::G.ResultWithContentVariant2?>? resultWithContentVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsResult)
             {
-                value1?.Invoke(Value1!);
+                result?.Invoke(Result!);
             }
-            else if (IsValue2)
+            else if (IsResultWithContentVariant2)
             {
-                value2?.Invoke(Value2!);
+                resultWithContentVariant2?.Invoke(ResultWithContentVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Result,
                 typeof(global::G.Result),
-                Value2,
+                ResultWithContentVariant2,
                 typeof(global::G.ResultWithContentVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ResultWithContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.Result?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResultWithContentVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.Result?>.Default.Equals(Result, other.Result) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResultWithContentVariant2?>.Default.Equals(ResultWithContentVariant2, other.ResultWithContentVariant2) 
                 ;
         }
 

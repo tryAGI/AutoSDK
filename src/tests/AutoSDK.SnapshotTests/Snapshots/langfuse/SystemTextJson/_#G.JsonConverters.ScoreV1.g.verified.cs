@@ -67,9 +67,9 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>? value1 = default;
-            global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>? value2 = default;
-            global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>? value3 = default;
+            global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>? scoreV1Variant1 = default;
+            global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>? scoreV1Variant2 = default;
+            global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>? scoreV1Variant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -79,7 +79,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        scoreV1Variant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -96,7 +96,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        scoreV1Variant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -113,7 +113,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        scoreV1Variant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -124,14 +124,14 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (scoreV1Variant1 == null && scoreV1Variant2 == null && scoreV1Variant3 == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    scoreV1Variant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -145,7 +145,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    scoreV1Variant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -159,7 +159,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    scoreV1Variant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -170,11 +170,11 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.ScoreV1(
-                value1,
+                scoreV1Variant1,
 
-                value2,
+                scoreV1Variant2,
 
-                value3
+                scoreV1Variant3
                 );
 
             return __value;
@@ -189,23 +189,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsScoreV1Variant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ScoreV1Variant1!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsScoreV1Variant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ScoreV1Variant2!.Value, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsScoreV1Variant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ScoreV1Variant3!.Value, typeInfo);
             }
         }
     }

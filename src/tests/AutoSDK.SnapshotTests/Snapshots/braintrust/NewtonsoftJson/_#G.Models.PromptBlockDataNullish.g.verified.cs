@@ -48,18 +48,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? PromptBlockDataNullishVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? PromptBlockDataNullishVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PromptBlockDataNullishVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsPromptBlockDataNullishVariant3 => PromptBlockDataNullishVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,19 +102,19 @@ namespace G
         public PromptBlockDataNullish(
             global::G.PromptBlockDataNullishChat? chat,
             global::G.PromptBlockDataNullishCompletion? completion,
-            object? value3
+            object? promptBlockDataNullishVariant3
             )
         {
             Chat = chat;
             Completion = completion;
-            Value3 = value3;
+            PromptBlockDataNullishVariant3 = promptBlockDataNullishVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            PromptBlockDataNullishVariant3 as object ??
             Completion as object ??
             Chat as object 
             ;
@@ -125,7 +125,7 @@ namespace G
         public override string? ToString() =>
             Chat?.ToString() ??
             Completion?.ToString() ??
-            Value3?.ToString() 
+            PromptBlockDataNullishVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsChat || IsCompletion || IsValue3;
+            return IsChat || IsCompletion || IsPromptBlockDataNullishVariant3;
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.PromptBlockDataNullishChat?, TResult>? chat = null,
             global::System.Func<global::G.PromptBlockDataNullishCompletion?, TResult>? completion = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? promptBlockDataNullishVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -158,9 +158,9 @@ namespace G
             {
                 return completion(Completion!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsPromptBlockDataNullishVariant3 && promptBlockDataNullishVariant3 != null)
             {
-                return value3(Value3!);
+                return promptBlockDataNullishVariant3(PromptBlockDataNullishVariant3!);
             }
 
             return default(TResult);
@@ -172,7 +172,7 @@ namespace G
         public void Match(
             global::System.Action<global::G.PromptBlockDataNullishChat?>? chat = null,
             global::System.Action<global::G.PromptBlockDataNullishCompletion?>? completion = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? promptBlockDataNullishVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +188,9 @@ namespace G
             {
                 completion?.Invoke(Completion!);
             }
-            else if (IsValue3)
+            else if (IsPromptBlockDataNullishVariant3)
             {
-                value3?.Invoke(Value3!);
+                promptBlockDataNullishVariant3?.Invoke(PromptBlockDataNullishVariant3!);
             }
         }
 
@@ -205,7 +205,7 @@ namespace G
                 typeof(global::G.PromptBlockDataNullishChat),
                 Completion,
                 typeof(global::G.PromptBlockDataNullishCompletion),
-                Value3,
+                PromptBlockDataNullishVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -225,7 +225,7 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.PromptBlockDataNullishChat?>.Default.Equals(Chat, other.Chat) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.PromptBlockDataNullishCompletion?>.Default.Equals(Completion, other.Completion) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(PromptBlockDataNullishVariant3, other.PromptBlockDataNullishVariant3) 
                 ;
         }
 

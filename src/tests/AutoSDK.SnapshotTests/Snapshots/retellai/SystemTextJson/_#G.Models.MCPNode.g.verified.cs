@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.NodeBase? Value1 { get; init; }
+        public global::G.NodeBase? Base { get; init; }
 #else
-        public global::G.NodeBase? Value1 { get; }
+        public global::G.NodeBase? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MCPNodeVariant2? Value2 { get; init; }
+        public global::G.MCPNodeVariant2? MCPNodeVariant2 { get; init; }
 #else
-        public global::G.MCPNodeVariant2? Value2 { get; }
+        public global::G.MCPNodeVariant2? MCPNodeVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCPNodeVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsMCPNodeVariant2 => MCPNodeVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.NodeBase?(MCPNode @this) => @this.Value1;
+        public static implicit operator global::G.NodeBase?(MCPNode @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public MCPNode(global::G.NodeBase? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MCPNodeVariant2?(MCPNode @this) => @this.Value2;
+        public static implicit operator global::G.MCPNodeVariant2?(MCPNode @this) => @this.MCPNodeVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public MCPNode(global::G.MCPNodeVariant2? value)
         {
-            Value2 = value;
+            MCPNodeVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MCPNode(
-            global::G.NodeBase? value1,
-            global::G.MCPNodeVariant2? value2
+            global::G.NodeBase? @base,
+            global::G.MCPNodeVariant2? mCPNodeVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            MCPNodeVariant2 = mCPNodeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            MCPNodeVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            MCPNodeVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsMCPNodeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NodeBase?, TResult>? value1 = null,
-            global::System.Func<global::G.MCPNodeVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.NodeBase?, TResult>? @base = null,
+            global::System.Func<global::G.MCPNodeVariant2?, TResult>? mCPNodeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsMCPNodeVariant2 && mCPNodeVariant2 != null)
             {
-                return value2(Value2!);
+                return mCPNodeVariant2(MCPNodeVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NodeBase?>? value1 = null,
-            global::System.Action<global::G.MCPNodeVariant2?>? value2 = null,
+            global::System.Action<global::G.NodeBase?>? @base = null,
+            global::System.Action<global::G.MCPNodeVariant2?>? mCPNodeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsMCPNodeVariant2)
             {
-                value2?.Invoke(Value2!);
+                mCPNodeVariant2?.Invoke(MCPNodeVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::G.NodeBase),
-                Value2,
+                MCPNodeVariant2,
                 typeof(global::G.MCPNodeVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(MCPNode other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.NodeBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MCPNodeVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.NodeBase?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MCPNodeVariant2?>.Default.Equals(MCPNodeVariant2, other.MCPNodeVariant2) 
                 ;
         }
 

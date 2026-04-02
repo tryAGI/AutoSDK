@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 => ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 != null;
 
         /// <summary>
         /// An object representing the tool to be chosen
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice @this) => @this.Value1;
+        public static implicit operator string?(ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice @this) => @this.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice(string? value)
         {
-            Value1 = value;
+            ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 = value;
         }
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace G
         /// 
         /// </summary>
         public ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice(
-            string? value1,
+            string? responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1,
             global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1? responsesPostRequestBodyContentApplicationJsonSchemaToolChoice1
             )
         {
-            Value1 = value1;
+            ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 = responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1;
             ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 = responsesPostRequestBodyContentApplicationJsonSchemaToolChoice1;
         }
 
@@ -96,14 +96,14 @@ namespace G
         /// </summary>
         public object? Object =>
             ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 as object ??
-            Value1 as object 
+            ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1?.ToString() ??
             ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1?.ToString() 
             ;
 
@@ -112,14 +112,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 || !IsValue1 && IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1;
+            return IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 && !IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 || !IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 && IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 = null,
             global::System.Func<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1?, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 = null,
             bool validate = true)
         {
@@ -128,9 +128,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 && responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 != null)
             {
-                return value1(Value1!);
+                return responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1(ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1!);
             }
             else if (IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 && responsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 != null)
             {
@@ -144,7 +144,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 = null,
             global::System.Action<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1?>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 = null,
             bool validate = true)
         {
@@ -153,9 +153,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1)
             {
-                value1?.Invoke(Value1!);
+                responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1?.Invoke(ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1!);
             }
             else if (IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1)
             {
@@ -170,7 +170,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1,
                 typeof(string),
                 ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1,
                 typeof(global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1),
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1, other.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1?>.Default.Equals(ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1, other.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1) 
                 ;
         }

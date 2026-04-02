@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? UserGivenNameVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? UserGivenNameVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserGivenNameVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsUserGivenNameVariant1 => UserGivenNameVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<string>? UserGivenNameVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value2 { get; }
+        public global::System.Collections.Generic.IList<string>? UserGivenNameVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserGivenNameVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsUserGivenNameVariant2 => UserGivenNameVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,42 +51,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(UserGivenName @this) => @this.Value1;
+        public static implicit operator string?(UserGivenName @this) => @this.UserGivenNameVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public UserGivenName(string? value)
         {
-            Value1 = value;
+            UserGivenNameVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public UserGivenName(
-            string? value1,
-            global::System.Collections.Generic.IList<string>? value2
+            string? userGivenNameVariant1,
+            global::System.Collections.Generic.IList<string>? userGivenNameVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            UserGivenNameVariant1 = userGivenNameVariant1;
+            UserGivenNameVariant2 = userGivenNameVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            UserGivenNameVariant2 as object ??
+            UserGivenNameVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            UserGivenNameVariant1?.ToString() ??
+            UserGivenNameVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -94,15 +94,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsUserGivenNameVariant1 || IsUserGivenNameVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? userGivenNameVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? userGivenNameVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -110,13 +110,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsUserGivenNameVariant1 && userGivenNameVariant1 != null)
             {
-                return value1(Value1!);
+                return userGivenNameVariant1(UserGivenNameVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsUserGivenNameVariant2 && userGivenNameVariant2 != null)
             {
-                return value2(Value2!);
+                return userGivenNameVariant2(UserGivenNameVariant2!);
             }
 
             return default(TResult);
@@ -126,8 +126,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value2 = null,
+            global::System.Action<string?>? userGivenNameVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? userGivenNameVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -135,13 +135,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsUserGivenNameVariant1)
             {
-                value1?.Invoke(Value1!);
+                userGivenNameVariant1?.Invoke(UserGivenNameVariant1!);
             }
-            else if (IsValue2)
+            else if (IsUserGivenNameVariant2)
             {
-                value2?.Invoke(Value2!);
+                userGivenNameVariant2?.Invoke(UserGivenNameVariant2!);
             }
         }
 
@@ -152,9 +152,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                UserGivenNameVariant1,
                 typeof(string),
-                Value2,
+                UserGivenNameVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
             };
             const int offset = unchecked((int)2166136261);
@@ -172,8 +172,8 @@ namespace G
         public bool Equals(UserGivenName other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(UserGivenNameVariant1, other.UserGivenNameVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(UserGivenNameVariant2, other.UserGivenNameVariant2) 
                 ;
         }
 

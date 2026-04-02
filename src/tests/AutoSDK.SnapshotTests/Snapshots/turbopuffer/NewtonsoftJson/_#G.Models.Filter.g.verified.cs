@@ -14,579 +14,579 @@ namespace G
         /// Exact match for attribute value. If `null`, matches documents missing the attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value1 { get; init; }
+        public byte[]? FilterVariant1 { get; init; }
 #else
-        public byte[]? Value1 { get; }
+        public byte[]? FilterVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsFilterVariant1 => FilterVariant1 != null;
 
         /// <summary>
         /// Inverse of `Eq`. If value is `null`, matches documents with the attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value2 { get; init; }
+        public byte[]? FilterVariant2 { get; init; }
 #else
-        public byte[]? Value2 { get; }
+        public byte[]? FilterVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsFilterVariant2 => FilterVariant2 != null;
 
         /// <summary>
         /// Matches any attribute value contained in the provided list.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value3 { get; init; }
+        public byte[]? FilterVariant3 { get; init; }
 #else
-        public byte[]? Value3 { get; }
+        public byte[]? FilterVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsFilterVariant3 => FilterVariant3 != null;
 
         /// <summary>
         /// Inverse of `In`, matches any attributes values not contained in the provided list.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value4 { get; init; }
+        public byte[]? FilterVariant4 { get; init; }
 #else
-        public byte[]? Value4 { get; }
+        public byte[]? FilterVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsFilterVariant4 => FilterVariant4 != null;
 
         /// <summary>
         /// Checks whether the selected array attribute contains the provided value.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value5 { get; init; }
+        public byte[]? FilterVariant5 { get; init; }
 #else
-        public byte[]? Value5 { get; }
+        public byte[]? FilterVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsFilterVariant5 => FilterVariant5 != null;
 
         /// <summary>
         /// Inverse of Contains
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value6 { get; init; }
+        public byte[]? FilterVariant6 { get; init; }
 #else
-        public byte[]? Value6 { get; }
+        public byte[]? FilterVariant6 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant6))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsFilterVariant6 => FilterVariant6 != null;
 
         /// <summary>
         /// Checks whether the selected array attribute contains any of the values provided (intersection filter).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value7 { get; init; }
+        public byte[]? FilterVariant7 { get; init; }
 #else
-        public byte[]? Value7 { get; }
+        public byte[]? FilterVariant7 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant7))]
 #endif
-        public bool IsValue7 => Value7 != null;
+        public bool IsFilterVariant7 => FilterVariant7 != null;
 
         /// <summary>
         /// Inverse of ContainsAny.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value8 { get; init; }
+        public byte[]? FilterVariant8 { get; init; }
 #else
-        public byte[]? Value8 { get; }
+        public byte[]? FilterVariant8 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant8))]
 #endif
-        public bool IsValue8 => Value8 != null;
+        public bool IsFilterVariant8 => FilterVariant8 != null;
 
         /// <summary>
         /// For ints, this is a numeric less-than. For strings, lexicographic less-than. For datetimes, numeric less-than on millisecond representation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value9 { get; init; }
+        public byte[]? FilterVariant9 { get; init; }
 #else
-        public byte[]? Value9 { get; }
+        public byte[]? FilterVariant9 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant9))]
 #endif
-        public bool IsValue9 => Value9 != null;
+        public bool IsFilterVariant9 => FilterVariant9 != null;
 
         /// <summary>
         /// For ints, this is a numeric less-than-or-equal. For strings, lexicographic less-than-or-equal. For datetimes, numeric less-than-or-equal on millisecond representation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value10 { get; init; }
+        public byte[]? FilterVariant10 { get; init; }
 #else
-        public byte[]? Value10 { get; }
+        public byte[]? FilterVariant10 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant10))]
 #endif
-        public bool IsValue10 => Value10 != null;
+        public bool IsFilterVariant10 => FilterVariant10 != null;
 
         /// <summary>
         /// For ints, this is a numeric greater-than. For strings, lexicographic greater-than. For datetimes, numeric greater-than on millisecond representation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value11 { get; init; }
+        public byte[]? FilterVariant11 { get; init; }
 #else
-        public byte[]? Value11 { get; }
+        public byte[]? FilterVariant11 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value11))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant11))]
 #endif
-        public bool IsValue11 => Value11 != null;
+        public bool IsFilterVariant11 => FilterVariant11 != null;
 
         /// <summary>
         /// For ints, this is a numeric greater-than-or-equal. For strings, lexicographic greater-than-or-equal. For datetimes, numeric greater-than-or-equal on millisecond representation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value12 { get; init; }
+        public byte[]? FilterVariant12 { get; init; }
 #else
-        public byte[]? Value12 { get; }
+        public byte[]? FilterVariant12 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant12))]
 #endif
-        public bool IsValue12 => Value12 != null;
+        public bool IsFilterVariant12 => FilterVariant12 != null;
 
         /// <summary>
         /// Checks whether any element of an array attribute is less than the provided value, using the same rules as `Lt`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value13 { get; init; }
+        public byte[]? FilterVariant13 { get; init; }
 #else
-        public byte[]? Value13 { get; }
+        public byte[]? FilterVariant13 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value13))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant13))]
 #endif
-        public bool IsValue13 => Value13 != null;
+        public bool IsFilterVariant13 => FilterVariant13 != null;
 
         /// <summary>
         /// Checks whether any element of an array attribute is less than or equal to the provided value, using the same rules as `Lte`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value14 { get; init; }
+        public byte[]? FilterVariant14 { get; init; }
 #else
-        public byte[]? Value14 { get; }
+        public byte[]? FilterVariant14 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value14))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant14))]
 #endif
-        public bool IsValue14 => Value14 != null;
+        public bool IsFilterVariant14 => FilterVariant14 != null;
 
         /// <summary>
         /// Checks whether any element of an array attribute is greater than the provided value, using the same rules as `Gt`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value15 { get; init; }
+        public byte[]? FilterVariant15 { get; init; }
 #else
-        public byte[]? Value15 { get; }
+        public byte[]? FilterVariant15 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value15))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant15))]
 #endif
-        public bool IsValue15 => Value15 != null;
+        public bool IsFilterVariant15 => FilterVariant15 != null;
 
         /// <summary>
         /// Checks whether any element of an array attribute is greater than or equal to the provided value, using the same rules as `Gte`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value16 { get; init; }
+        public byte[]? FilterVariant16 { get; init; }
 #else
-        public byte[]? Value16 { get; }
+        public byte[]? FilterVariant16 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value16))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant16))]
 #endif
-        public bool IsValue16 => Value16 != null;
+        public bool IsFilterVariant16 => FilterVariant16 != null;
 
         /// <summary>
         /// Unix-style glob match against string values. The full syntax is described in the Rust `globset` crate documentation. Glob patterns with a concrete prefix like "foo*" internally compile to efficient range queries.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value17 { get; init; }
+        public byte[]? FilterVariant17 { get; init; }
 #else
-        public byte[]? Value17 { get; }
+        public byte[]? FilterVariant17 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value17))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant17))]
 #endif
-        public bool IsValue17 => Value17 != null;
+        public bool IsFilterVariant17 => FilterVariant17 != null;
 
         /// <summary>
         /// Inverse of `Glob`, Unix-style glob filters against string attributes values. The full syntax is described in the Rust `globset` crate documentation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value18 { get; init; }
+        public byte[]? FilterVariant18 { get; init; }
 #else
-        public byte[]? Value18 { get; }
+        public byte[]? FilterVariant18 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value18))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant18))]
 #endif
-        public bool IsValue18 => Value18 != null;
+        public bool IsFilterVariant18 => FilterVariant18 != null;
 
         /// <summary>
         /// Case insensitive version of `Glob`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value19 { get; init; }
+        public byte[]? FilterVariant19 { get; init; }
 #else
-        public byte[]? Value19 { get; }
+        public byte[]? FilterVariant19 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value19))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant19))]
 #endif
-        public bool IsValue19 => Value19 != null;
+        public bool IsFilterVariant19 => FilterVariant19 != null;
 
         /// <summary>
         /// Case insensitive version of `NotGlob`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value20 { get; init; }
+        public byte[]? FilterVariant20 { get; init; }
 #else
-        public byte[]? Value20 { get; }
+        public byte[]? FilterVariant20 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value20))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant20))]
 #endif
-        public bool IsValue20 => Value20 != null;
+        public bool IsFilterVariant20 => FilterVariant20 != null;
 
         /// <summary>
         /// Regular expression match against string values. Requires the regex schema attribute to be enabled before use.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value21 { get; init; }
+        public byte[]? FilterVariant21 { get; init; }
 #else
-        public byte[]? Value21 { get; }
+        public byte[]? FilterVariant21 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value21))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant21))]
 #endif
-        public bool IsValue21 => Value21 != null;
+        public bool IsFilterVariant21 => FilterVariant21 != null;
 
         /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value22 { get; init; }
+        public byte[]? FilterVariant22 { get; init; }
 #else
-        public byte[]? Value22 { get; }
+        public byte[]? FilterVariant22 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value22))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant22))]
 #endif
-        public bool IsValue22 => Value22 != null;
+        public bool IsFilterVariant22 => FilterVariant22 != null;
 
         /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value23 { get; init; }
+        public byte[]? FilterVariant23 { get; init; }
 #else
-        public byte[]? Value23 { get; }
+        public byte[]? FilterVariant23 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value23))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant23))]
 #endif
-        public bool IsValue23 => Value23 != null;
+        public bool IsFilterVariant23 => FilterVariant23 != null;
 
         /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value24 { get; init; }
+        public byte[]? FilterVariant24 { get; init; }
 #else
-        public byte[]? Value24 { get; }
+        public byte[]? FilterVariant24 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value24))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant24))]
 #endif
-        public bool IsValue24 => Value24 != null;
+        public bool IsFilterVariant24 => FilterVariant24 != null;
 
         /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value25 { get; init; }
+        public byte[]? FilterVariant25 { get; init; }
 #else
-        public byte[]? Value25 { get; }
+        public byte[]? FilterVariant25 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value25))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant25))]
 #endif
-        public bool IsValue25 => Value25 != null;
+        public bool IsFilterVariant25 => FilterVariant25 != null;
 
         /// <summary>
         /// Matches if any of the tokens in the input string are present in the attribute value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value26 { get; init; }
+        public byte[]? FilterVariant26 { get; init; }
 #else
-        public byte[]? Value26 { get; }
+        public byte[]? FilterVariant26 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value26))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant26))]
 #endif
-        public bool IsValue26 => Value26 != null;
+        public bool IsFilterVariant26 => FilterVariant26 != null;
 
         /// <summary>
         /// Matches if any of the tokens in the input string array are present in the attribute value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value27 { get; init; }
+        public byte[]? FilterVariant27 { get; init; }
 #else
-        public byte[]? Value27 { get; }
+        public byte[]? FilterVariant27 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value27))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant27))]
 #endif
-        public bool IsValue27 => Value27 != null;
+        public bool IsFilterVariant27 => FilterVariant27 != null;
 
         /// <summary>
         /// Matches if any of the tokens in the input string are present in the attribute value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value28 { get; init; }
+        public byte[]? FilterVariant28 { get; init; }
 #else
-        public byte[]? Value28 { get; }
+        public byte[]? FilterVariant28 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value28))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant28))]
 #endif
-        public bool IsValue28 => Value28 != null;
+        public bool IsFilterVariant28 => FilterVariant28 != null;
 
         /// <summary>
         /// Matches if any of the tokens in the input string array are present in the attribute value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value29 { get; init; }
+        public byte[]? FilterVariant29 { get; init; }
 #else
-        public byte[]? Value29 { get; }
+        public byte[]? FilterVariant29 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value29))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant29))]
 #endif
-        public bool IsValue29 => Value29 != null;
+        public bool IsFilterVariant29 => FilterVariant29 != null;
 
         /// <summary>
         /// Matches if all the tokens in the input string are present in the attribute value, in the correct order (i.e., as a phrase). Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value30 { get; init; }
+        public byte[]? FilterVariant30 { get; init; }
 #else
-        public byte[]? Value30 { get; }
+        public byte[]? FilterVariant30 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value30))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant30))]
 #endif
-        public bool IsValue30 => Value30 != null;
+        public bool IsFilterVariant30 => FilterVariant30 != null;
 
         /// <summary>
         /// Matches if all the tokens in the input string are present in the attribute value, in the correct order (i.e., as a phrase). Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value31 { get; init; }
+        public byte[]? FilterVariant31 { get; init; }
 #else
-        public byte[]? Value31 { get; }
+        public byte[]? FilterVariant31 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value31))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant31))]
 #endif
-        public bool IsValue31 => Value31 != null;
+        public bool IsFilterVariant31 => FilterVariant31 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value32 { get; init; }
+        public byte[]? FilterVariant32 { get; init; }
 #else
-        public byte[]? Value32 { get; }
+        public byte[]? FilterVariant32 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value32))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant32))]
 #endif
-        public bool IsValue32 => Value32 != null;
+        public bool IsFilterVariant32 => FilterVariant32 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value33 { get; init; }
+        public byte[]? FilterVariant33 { get; init; }
 #else
-        public byte[]? Value33 { get; }
+        public byte[]? FilterVariant33 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value33))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant33))]
 #endif
-        public bool IsValue33 => Value33 != null;
+        public bool IsFilterVariant33 => FilterVariant33 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value34 { get; init; }
+        public byte[]? FilterVariant34 { get; init; }
 #else
-        public byte[]? Value34 { get; }
+        public byte[]? FilterVariant34 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value34))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant34))]
 #endif
-        public bool IsValue34 => Value34 != null;
+        public bool IsFilterVariant34 => FilterVariant34 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -595,170 +595,170 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator byte[]?(Filter @this) => @this.Value1;
+        public static implicit operator byte[]?(Filter @this) => @this.FilterVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public Filter(byte[]? value)
         {
-            Value1 = value;
+            FilterVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Filter(
-            byte[]? value1,
-            byte[]? value2,
-            byte[]? value3,
-            byte[]? value4,
-            byte[]? value5,
-            byte[]? value6,
-            byte[]? value7,
-            byte[]? value8,
-            byte[]? value9,
-            byte[]? value10,
-            byte[]? value11,
-            byte[]? value12,
-            byte[]? value13,
-            byte[]? value14,
-            byte[]? value15,
-            byte[]? value16,
-            byte[]? value17,
-            byte[]? value18,
-            byte[]? value19,
-            byte[]? value20,
-            byte[]? value21,
-            byte[]? value22,
-            byte[]? value23,
-            byte[]? value24,
-            byte[]? value25,
-            byte[]? value26,
-            byte[]? value27,
-            byte[]? value28,
-            byte[]? value29,
-            byte[]? value30,
-            byte[]? value31,
-            byte[]? value32,
-            byte[]? value33,
-            byte[]? value34
+            byte[]? filterVariant1,
+            byte[]? filterVariant2,
+            byte[]? filterVariant3,
+            byte[]? filterVariant4,
+            byte[]? filterVariant5,
+            byte[]? filterVariant6,
+            byte[]? filterVariant7,
+            byte[]? filterVariant8,
+            byte[]? filterVariant9,
+            byte[]? filterVariant10,
+            byte[]? filterVariant11,
+            byte[]? filterVariant12,
+            byte[]? filterVariant13,
+            byte[]? filterVariant14,
+            byte[]? filterVariant15,
+            byte[]? filterVariant16,
+            byte[]? filterVariant17,
+            byte[]? filterVariant18,
+            byte[]? filterVariant19,
+            byte[]? filterVariant20,
+            byte[]? filterVariant21,
+            byte[]? filterVariant22,
+            byte[]? filterVariant23,
+            byte[]? filterVariant24,
+            byte[]? filterVariant25,
+            byte[]? filterVariant26,
+            byte[]? filterVariant27,
+            byte[]? filterVariant28,
+            byte[]? filterVariant29,
+            byte[]? filterVariant30,
+            byte[]? filterVariant31,
+            byte[]? filterVariant32,
+            byte[]? filterVariant33,
+            byte[]? filterVariant34
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
-            Value7 = value7;
-            Value8 = value8;
-            Value9 = value9;
-            Value10 = value10;
-            Value11 = value11;
-            Value12 = value12;
-            Value13 = value13;
-            Value14 = value14;
-            Value15 = value15;
-            Value16 = value16;
-            Value17 = value17;
-            Value18 = value18;
-            Value19 = value19;
-            Value20 = value20;
-            Value21 = value21;
-            Value22 = value22;
-            Value23 = value23;
-            Value24 = value24;
-            Value25 = value25;
-            Value26 = value26;
-            Value27 = value27;
-            Value28 = value28;
-            Value29 = value29;
-            Value30 = value30;
-            Value31 = value31;
-            Value32 = value32;
-            Value33 = value33;
-            Value34 = value34;
+            FilterVariant1 = filterVariant1;
+            FilterVariant2 = filterVariant2;
+            FilterVariant3 = filterVariant3;
+            FilterVariant4 = filterVariant4;
+            FilterVariant5 = filterVariant5;
+            FilterVariant6 = filterVariant6;
+            FilterVariant7 = filterVariant7;
+            FilterVariant8 = filterVariant8;
+            FilterVariant9 = filterVariant9;
+            FilterVariant10 = filterVariant10;
+            FilterVariant11 = filterVariant11;
+            FilterVariant12 = filterVariant12;
+            FilterVariant13 = filterVariant13;
+            FilterVariant14 = filterVariant14;
+            FilterVariant15 = filterVariant15;
+            FilterVariant16 = filterVariant16;
+            FilterVariant17 = filterVariant17;
+            FilterVariant18 = filterVariant18;
+            FilterVariant19 = filterVariant19;
+            FilterVariant20 = filterVariant20;
+            FilterVariant21 = filterVariant21;
+            FilterVariant22 = filterVariant22;
+            FilterVariant23 = filterVariant23;
+            FilterVariant24 = filterVariant24;
+            FilterVariant25 = filterVariant25;
+            FilterVariant26 = filterVariant26;
+            FilterVariant27 = filterVariant27;
+            FilterVariant28 = filterVariant28;
+            FilterVariant29 = filterVariant29;
+            FilterVariant30 = filterVariant30;
+            FilterVariant31 = filterVariant31;
+            FilterVariant32 = filterVariant32;
+            FilterVariant33 = filterVariant33;
+            FilterVariant34 = filterVariant34;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value34 as object ??
-            Value33 as object ??
-            Value32 as object ??
-            Value31 as object ??
-            Value30 as object ??
-            Value29 as object ??
-            Value28 as object ??
-            Value27 as object ??
-            Value26 as object ??
-            Value25 as object ??
-            Value24 as object ??
-            Value23 as object ??
-            Value22 as object ??
-            Value21 as object ??
-            Value20 as object ??
-            Value19 as object ??
-            Value18 as object ??
-            Value17 as object ??
-            Value16 as object ??
-            Value15 as object ??
-            Value14 as object ??
-            Value13 as object ??
-            Value12 as object ??
-            Value11 as object ??
-            Value10 as object ??
-            Value9 as object ??
-            Value8 as object ??
-            Value7 as object ??
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            FilterVariant34 as object ??
+            FilterVariant33 as object ??
+            FilterVariant32 as object ??
+            FilterVariant31 as object ??
+            FilterVariant30 as object ??
+            FilterVariant29 as object ??
+            FilterVariant28 as object ??
+            FilterVariant27 as object ??
+            FilterVariant26 as object ??
+            FilterVariant25 as object ??
+            FilterVariant24 as object ??
+            FilterVariant23 as object ??
+            FilterVariant22 as object ??
+            FilterVariant21 as object ??
+            FilterVariant20 as object ??
+            FilterVariant19 as object ??
+            FilterVariant18 as object ??
+            FilterVariant17 as object ??
+            FilterVariant16 as object ??
+            FilterVariant15 as object ??
+            FilterVariant14 as object ??
+            FilterVariant13 as object ??
+            FilterVariant12 as object ??
+            FilterVariant11 as object ??
+            FilterVariant10 as object ??
+            FilterVariant9 as object ??
+            FilterVariant8 as object ??
+            FilterVariant7 as object ??
+            FilterVariant6 as object ??
+            FilterVariant5 as object ??
+            FilterVariant4 as object ??
+            FilterVariant3 as object ??
+            FilterVariant2 as object ??
+            FilterVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() ??
-            Value7?.ToString() ??
-            Value8?.ToString() ??
-            Value9?.ToString() ??
-            Value10?.ToString() ??
-            Value11?.ToString() ??
-            Value12?.ToString() ??
-            Value13?.ToString() ??
-            Value14?.ToString() ??
-            Value15?.ToString() ??
-            Value16?.ToString() ??
-            Value17?.ToString() ??
-            Value18?.ToString() ??
-            Value19?.ToString() ??
-            Value20?.ToString() ??
-            Value21?.ToString() ??
-            Value22?.ToString() ??
-            Value23?.ToString() ??
-            Value24?.ToString() ??
-            Value25?.ToString() ??
-            Value26?.ToString() ??
-            Value27?.ToString() ??
-            Value28?.ToString() ??
-            Value29?.ToString() ??
-            Value30?.ToString() ??
-            Value31?.ToString() ??
-            Value32?.ToString() ??
-            Value33?.ToString() ??
-            Value34?.ToString() 
+            FilterVariant1?.ToString() ??
+            FilterVariant2?.ToString() ??
+            FilterVariant3?.ToString() ??
+            FilterVariant4?.ToString() ??
+            FilterVariant5?.ToString() ??
+            FilterVariant6?.ToString() ??
+            FilterVariant7?.ToString() ??
+            FilterVariant8?.ToString() ??
+            FilterVariant9?.ToString() ??
+            FilterVariant10?.ToString() ??
+            FilterVariant11?.ToString() ??
+            FilterVariant12?.ToString() ??
+            FilterVariant13?.ToString() ??
+            FilterVariant14?.ToString() ??
+            FilterVariant15?.ToString() ??
+            FilterVariant16?.ToString() ??
+            FilterVariant17?.ToString() ??
+            FilterVariant18?.ToString() ??
+            FilterVariant19?.ToString() ??
+            FilterVariant20?.ToString() ??
+            FilterVariant21?.ToString() ??
+            FilterVariant22?.ToString() ??
+            FilterVariant23?.ToString() ??
+            FilterVariant24?.ToString() ??
+            FilterVariant25?.ToString() ??
+            FilterVariant26?.ToString() ??
+            FilterVariant27?.ToString() ??
+            FilterVariant28?.ToString() ??
+            FilterVariant29?.ToString() ??
+            FilterVariant30?.ToString() ??
+            FilterVariant31?.ToString() ??
+            FilterVariant32?.ToString() ??
+            FilterVariant33?.ToString() ??
+            FilterVariant34?.ToString() 
             ;
 
         /// <summary>
@@ -766,47 +766,47 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12 || IsValue13 || IsValue14 || IsValue15 || IsValue16 || IsValue17 || IsValue18 || IsValue19 || IsValue20 || IsValue21 || IsValue22 || IsValue23 || IsValue24 || IsValue25 || IsValue26 || IsValue27 || IsValue28 || IsValue29 || IsValue30 || IsValue31 || IsValue32 || IsValue33 || IsValue34;
+            return IsFilterVariant1 || IsFilterVariant2 || IsFilterVariant3 || IsFilterVariant4 || IsFilterVariant5 || IsFilterVariant6 || IsFilterVariant7 || IsFilterVariant8 || IsFilterVariant9 || IsFilterVariant10 || IsFilterVariant11 || IsFilterVariant12 || IsFilterVariant13 || IsFilterVariant14 || IsFilterVariant15 || IsFilterVariant16 || IsFilterVariant17 || IsFilterVariant18 || IsFilterVariant19 || IsFilterVariant20 || IsFilterVariant21 || IsFilterVariant22 || IsFilterVariant23 || IsFilterVariant24 || IsFilterVariant25 || IsFilterVariant26 || IsFilterVariant27 || IsFilterVariant28 || IsFilterVariant29 || IsFilterVariant30 || IsFilterVariant31 || IsFilterVariant32 || IsFilterVariant33 || IsFilterVariant34;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<byte[]?, TResult>? value1 = null,
-            global::System.Func<byte[]?, TResult>? value2 = null,
-            global::System.Func<byte[]?, TResult>? value3 = null,
-            global::System.Func<byte[]?, TResult>? value4 = null,
-            global::System.Func<byte[]?, TResult>? value5 = null,
-            global::System.Func<byte[]?, TResult>? value6 = null,
-            global::System.Func<byte[]?, TResult>? value7 = null,
-            global::System.Func<byte[]?, TResult>? value8 = null,
-            global::System.Func<byte[]?, TResult>? value9 = null,
-            global::System.Func<byte[]?, TResult>? value10 = null,
-            global::System.Func<byte[]?, TResult>? value11 = null,
-            global::System.Func<byte[]?, TResult>? value12 = null,
-            global::System.Func<byte[]?, TResult>? value13 = null,
-            global::System.Func<byte[]?, TResult>? value14 = null,
-            global::System.Func<byte[]?, TResult>? value15 = null,
-            global::System.Func<byte[]?, TResult>? value16 = null,
-            global::System.Func<byte[]?, TResult>? value17 = null,
-            global::System.Func<byte[]?, TResult>? value18 = null,
-            global::System.Func<byte[]?, TResult>? value19 = null,
-            global::System.Func<byte[]?, TResult>? value20 = null,
-            global::System.Func<byte[]?, TResult>? value21 = null,
-            global::System.Func<byte[]?, TResult>? value22 = null,
-            global::System.Func<byte[]?, TResult>? value23 = null,
-            global::System.Func<byte[]?, TResult>? value24 = null,
-            global::System.Func<byte[]?, TResult>? value25 = null,
-            global::System.Func<byte[]?, TResult>? value26 = null,
-            global::System.Func<byte[]?, TResult>? value27 = null,
-            global::System.Func<byte[]?, TResult>? value28 = null,
-            global::System.Func<byte[]?, TResult>? value29 = null,
-            global::System.Func<byte[]?, TResult>? value30 = null,
-            global::System.Func<byte[]?, TResult>? value31 = null,
-            global::System.Func<byte[]?, TResult>? value32 = null,
-            global::System.Func<byte[]?, TResult>? value33 = null,
-            global::System.Func<byte[]?, TResult>? value34 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant1 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant2 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant3 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant4 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant5 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant6 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant7 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant8 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant9 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant10 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant11 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant12 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant13 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant14 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant15 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant16 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant17 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant18 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant19 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant20 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant21 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant22 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant23 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant24 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant25 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant26 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant27 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant28 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant29 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant30 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant31 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant32 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant33 = null,
+            global::System.Func<byte[]?, TResult>? filterVariant34 = null,
             bool validate = true)
         {
             if (validate)
@@ -814,141 +814,141 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsFilterVariant1 && filterVariant1 != null)
             {
-                return value1(Value1!);
+                return filterVariant1(FilterVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsFilterVariant2 && filterVariant2 != null)
             {
-                return value2(Value2!);
+                return filterVariant2(FilterVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsFilterVariant3 && filterVariant3 != null)
             {
-                return value3(Value3!);
+                return filterVariant3(FilterVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsFilterVariant4 && filterVariant4 != null)
             {
-                return value4(Value4!);
+                return filterVariant4(FilterVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsFilterVariant5 && filterVariant5 != null)
             {
-                return value5(Value5!);
+                return filterVariant5(FilterVariant5!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsFilterVariant6 && filterVariant6 != null)
             {
-                return value6(Value6!);
+                return filterVariant6(FilterVariant6!);
             }
-            else if (IsValue7 && value7 != null)
+            else if (IsFilterVariant7 && filterVariant7 != null)
             {
-                return value7(Value7!);
+                return filterVariant7(FilterVariant7!);
             }
-            else if (IsValue8 && value8 != null)
+            else if (IsFilterVariant8 && filterVariant8 != null)
             {
-                return value8(Value8!);
+                return filterVariant8(FilterVariant8!);
             }
-            else if (IsValue9 && value9 != null)
+            else if (IsFilterVariant9 && filterVariant9 != null)
             {
-                return value9(Value9!);
+                return filterVariant9(FilterVariant9!);
             }
-            else if (IsValue10 && value10 != null)
+            else if (IsFilterVariant10 && filterVariant10 != null)
             {
-                return value10(Value10!);
+                return filterVariant10(FilterVariant10!);
             }
-            else if (IsValue11 && value11 != null)
+            else if (IsFilterVariant11 && filterVariant11 != null)
             {
-                return value11(Value11!);
+                return filterVariant11(FilterVariant11!);
             }
-            else if (IsValue12 && value12 != null)
+            else if (IsFilterVariant12 && filterVariant12 != null)
             {
-                return value12(Value12!);
+                return filterVariant12(FilterVariant12!);
             }
-            else if (IsValue13 && value13 != null)
+            else if (IsFilterVariant13 && filterVariant13 != null)
             {
-                return value13(Value13!);
+                return filterVariant13(FilterVariant13!);
             }
-            else if (IsValue14 && value14 != null)
+            else if (IsFilterVariant14 && filterVariant14 != null)
             {
-                return value14(Value14!);
+                return filterVariant14(FilterVariant14!);
             }
-            else if (IsValue15 && value15 != null)
+            else if (IsFilterVariant15 && filterVariant15 != null)
             {
-                return value15(Value15!);
+                return filterVariant15(FilterVariant15!);
             }
-            else if (IsValue16 && value16 != null)
+            else if (IsFilterVariant16 && filterVariant16 != null)
             {
-                return value16(Value16!);
+                return filterVariant16(FilterVariant16!);
             }
-            else if (IsValue17 && value17 != null)
+            else if (IsFilterVariant17 && filterVariant17 != null)
             {
-                return value17(Value17!);
+                return filterVariant17(FilterVariant17!);
             }
-            else if (IsValue18 && value18 != null)
+            else if (IsFilterVariant18 && filterVariant18 != null)
             {
-                return value18(Value18!);
+                return filterVariant18(FilterVariant18!);
             }
-            else if (IsValue19 && value19 != null)
+            else if (IsFilterVariant19 && filterVariant19 != null)
             {
-                return value19(Value19!);
+                return filterVariant19(FilterVariant19!);
             }
-            else if (IsValue20 && value20 != null)
+            else if (IsFilterVariant20 && filterVariant20 != null)
             {
-                return value20(Value20!);
+                return filterVariant20(FilterVariant20!);
             }
-            else if (IsValue21 && value21 != null)
+            else if (IsFilterVariant21 && filterVariant21 != null)
             {
-                return value21(Value21!);
+                return filterVariant21(FilterVariant21!);
             }
-            else if (IsValue22 && value22 != null)
+            else if (IsFilterVariant22 && filterVariant22 != null)
             {
-                return value22(Value22!);
+                return filterVariant22(FilterVariant22!);
             }
-            else if (IsValue23 && value23 != null)
+            else if (IsFilterVariant23 && filterVariant23 != null)
             {
-                return value23(Value23!);
+                return filterVariant23(FilterVariant23!);
             }
-            else if (IsValue24 && value24 != null)
+            else if (IsFilterVariant24 && filterVariant24 != null)
             {
-                return value24(Value24!);
+                return filterVariant24(FilterVariant24!);
             }
-            else if (IsValue25 && value25 != null)
+            else if (IsFilterVariant25 && filterVariant25 != null)
             {
-                return value25(Value25!);
+                return filterVariant25(FilterVariant25!);
             }
-            else if (IsValue26 && value26 != null)
+            else if (IsFilterVariant26 && filterVariant26 != null)
             {
-                return value26(Value26!);
+                return filterVariant26(FilterVariant26!);
             }
-            else if (IsValue27 && value27 != null)
+            else if (IsFilterVariant27 && filterVariant27 != null)
             {
-                return value27(Value27!);
+                return filterVariant27(FilterVariant27!);
             }
-            else if (IsValue28 && value28 != null)
+            else if (IsFilterVariant28 && filterVariant28 != null)
             {
-                return value28(Value28!);
+                return filterVariant28(FilterVariant28!);
             }
-            else if (IsValue29 && value29 != null)
+            else if (IsFilterVariant29 && filterVariant29 != null)
             {
-                return value29(Value29!);
+                return filterVariant29(FilterVariant29!);
             }
-            else if (IsValue30 && value30 != null)
+            else if (IsFilterVariant30 && filterVariant30 != null)
             {
-                return value30(Value30!);
+                return filterVariant30(FilterVariant30!);
             }
-            else if (IsValue31 && value31 != null)
+            else if (IsFilterVariant31 && filterVariant31 != null)
             {
-                return value31(Value31!);
+                return filterVariant31(FilterVariant31!);
             }
-            else if (IsValue32 && value32 != null)
+            else if (IsFilterVariant32 && filterVariant32 != null)
             {
-                return value32(Value32!);
+                return filterVariant32(FilterVariant32!);
             }
-            else if (IsValue33 && value33 != null)
+            else if (IsFilterVariant33 && filterVariant33 != null)
             {
-                return value33(Value33!);
+                return filterVariant33(FilterVariant33!);
             }
-            else if (IsValue34 && value34 != null)
+            else if (IsFilterVariant34 && filterVariant34 != null)
             {
-                return value34(Value34!);
+                return filterVariant34(FilterVariant34!);
             }
 
             return default(TResult);
@@ -958,40 +958,40 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<byte[]?>? value1 = null,
-            global::System.Action<byte[]?>? value2 = null,
-            global::System.Action<byte[]?>? value3 = null,
-            global::System.Action<byte[]?>? value4 = null,
-            global::System.Action<byte[]?>? value5 = null,
-            global::System.Action<byte[]?>? value6 = null,
-            global::System.Action<byte[]?>? value7 = null,
-            global::System.Action<byte[]?>? value8 = null,
-            global::System.Action<byte[]?>? value9 = null,
-            global::System.Action<byte[]?>? value10 = null,
-            global::System.Action<byte[]?>? value11 = null,
-            global::System.Action<byte[]?>? value12 = null,
-            global::System.Action<byte[]?>? value13 = null,
-            global::System.Action<byte[]?>? value14 = null,
-            global::System.Action<byte[]?>? value15 = null,
-            global::System.Action<byte[]?>? value16 = null,
-            global::System.Action<byte[]?>? value17 = null,
-            global::System.Action<byte[]?>? value18 = null,
-            global::System.Action<byte[]?>? value19 = null,
-            global::System.Action<byte[]?>? value20 = null,
-            global::System.Action<byte[]?>? value21 = null,
-            global::System.Action<byte[]?>? value22 = null,
-            global::System.Action<byte[]?>? value23 = null,
-            global::System.Action<byte[]?>? value24 = null,
-            global::System.Action<byte[]?>? value25 = null,
-            global::System.Action<byte[]?>? value26 = null,
-            global::System.Action<byte[]?>? value27 = null,
-            global::System.Action<byte[]?>? value28 = null,
-            global::System.Action<byte[]?>? value29 = null,
-            global::System.Action<byte[]?>? value30 = null,
-            global::System.Action<byte[]?>? value31 = null,
-            global::System.Action<byte[]?>? value32 = null,
-            global::System.Action<byte[]?>? value33 = null,
-            global::System.Action<byte[]?>? value34 = null,
+            global::System.Action<byte[]?>? filterVariant1 = null,
+            global::System.Action<byte[]?>? filterVariant2 = null,
+            global::System.Action<byte[]?>? filterVariant3 = null,
+            global::System.Action<byte[]?>? filterVariant4 = null,
+            global::System.Action<byte[]?>? filterVariant5 = null,
+            global::System.Action<byte[]?>? filterVariant6 = null,
+            global::System.Action<byte[]?>? filterVariant7 = null,
+            global::System.Action<byte[]?>? filterVariant8 = null,
+            global::System.Action<byte[]?>? filterVariant9 = null,
+            global::System.Action<byte[]?>? filterVariant10 = null,
+            global::System.Action<byte[]?>? filterVariant11 = null,
+            global::System.Action<byte[]?>? filterVariant12 = null,
+            global::System.Action<byte[]?>? filterVariant13 = null,
+            global::System.Action<byte[]?>? filterVariant14 = null,
+            global::System.Action<byte[]?>? filterVariant15 = null,
+            global::System.Action<byte[]?>? filterVariant16 = null,
+            global::System.Action<byte[]?>? filterVariant17 = null,
+            global::System.Action<byte[]?>? filterVariant18 = null,
+            global::System.Action<byte[]?>? filterVariant19 = null,
+            global::System.Action<byte[]?>? filterVariant20 = null,
+            global::System.Action<byte[]?>? filterVariant21 = null,
+            global::System.Action<byte[]?>? filterVariant22 = null,
+            global::System.Action<byte[]?>? filterVariant23 = null,
+            global::System.Action<byte[]?>? filterVariant24 = null,
+            global::System.Action<byte[]?>? filterVariant25 = null,
+            global::System.Action<byte[]?>? filterVariant26 = null,
+            global::System.Action<byte[]?>? filterVariant27 = null,
+            global::System.Action<byte[]?>? filterVariant28 = null,
+            global::System.Action<byte[]?>? filterVariant29 = null,
+            global::System.Action<byte[]?>? filterVariant30 = null,
+            global::System.Action<byte[]?>? filterVariant31 = null,
+            global::System.Action<byte[]?>? filterVariant32 = null,
+            global::System.Action<byte[]?>? filterVariant33 = null,
+            global::System.Action<byte[]?>? filterVariant34 = null,
             bool validate = true)
         {
             if (validate)
@@ -999,141 +999,141 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsFilterVariant1)
             {
-                value1?.Invoke(Value1!);
+                filterVariant1?.Invoke(FilterVariant1!);
             }
-            else if (IsValue2)
+            else if (IsFilterVariant2)
             {
-                value2?.Invoke(Value2!);
+                filterVariant2?.Invoke(FilterVariant2!);
             }
-            else if (IsValue3)
+            else if (IsFilterVariant3)
             {
-                value3?.Invoke(Value3!);
+                filterVariant3?.Invoke(FilterVariant3!);
             }
-            else if (IsValue4)
+            else if (IsFilterVariant4)
             {
-                value4?.Invoke(Value4!);
+                filterVariant4?.Invoke(FilterVariant4!);
             }
-            else if (IsValue5)
+            else if (IsFilterVariant5)
             {
-                value5?.Invoke(Value5!);
+                filterVariant5?.Invoke(FilterVariant5!);
             }
-            else if (IsValue6)
+            else if (IsFilterVariant6)
             {
-                value6?.Invoke(Value6!);
+                filterVariant6?.Invoke(FilterVariant6!);
             }
-            else if (IsValue7)
+            else if (IsFilterVariant7)
             {
-                value7?.Invoke(Value7!);
+                filterVariant7?.Invoke(FilterVariant7!);
             }
-            else if (IsValue8)
+            else if (IsFilterVariant8)
             {
-                value8?.Invoke(Value8!);
+                filterVariant8?.Invoke(FilterVariant8!);
             }
-            else if (IsValue9)
+            else if (IsFilterVariant9)
             {
-                value9?.Invoke(Value9!);
+                filterVariant9?.Invoke(FilterVariant9!);
             }
-            else if (IsValue10)
+            else if (IsFilterVariant10)
             {
-                value10?.Invoke(Value10!);
+                filterVariant10?.Invoke(FilterVariant10!);
             }
-            else if (IsValue11)
+            else if (IsFilterVariant11)
             {
-                value11?.Invoke(Value11!);
+                filterVariant11?.Invoke(FilterVariant11!);
             }
-            else if (IsValue12)
+            else if (IsFilterVariant12)
             {
-                value12?.Invoke(Value12!);
+                filterVariant12?.Invoke(FilterVariant12!);
             }
-            else if (IsValue13)
+            else if (IsFilterVariant13)
             {
-                value13?.Invoke(Value13!);
+                filterVariant13?.Invoke(FilterVariant13!);
             }
-            else if (IsValue14)
+            else if (IsFilterVariant14)
             {
-                value14?.Invoke(Value14!);
+                filterVariant14?.Invoke(FilterVariant14!);
             }
-            else if (IsValue15)
+            else if (IsFilterVariant15)
             {
-                value15?.Invoke(Value15!);
+                filterVariant15?.Invoke(FilterVariant15!);
             }
-            else if (IsValue16)
+            else if (IsFilterVariant16)
             {
-                value16?.Invoke(Value16!);
+                filterVariant16?.Invoke(FilterVariant16!);
             }
-            else if (IsValue17)
+            else if (IsFilterVariant17)
             {
-                value17?.Invoke(Value17!);
+                filterVariant17?.Invoke(FilterVariant17!);
             }
-            else if (IsValue18)
+            else if (IsFilterVariant18)
             {
-                value18?.Invoke(Value18!);
+                filterVariant18?.Invoke(FilterVariant18!);
             }
-            else if (IsValue19)
+            else if (IsFilterVariant19)
             {
-                value19?.Invoke(Value19!);
+                filterVariant19?.Invoke(FilterVariant19!);
             }
-            else if (IsValue20)
+            else if (IsFilterVariant20)
             {
-                value20?.Invoke(Value20!);
+                filterVariant20?.Invoke(FilterVariant20!);
             }
-            else if (IsValue21)
+            else if (IsFilterVariant21)
             {
-                value21?.Invoke(Value21!);
+                filterVariant21?.Invoke(FilterVariant21!);
             }
-            else if (IsValue22)
+            else if (IsFilterVariant22)
             {
-                value22?.Invoke(Value22!);
+                filterVariant22?.Invoke(FilterVariant22!);
             }
-            else if (IsValue23)
+            else if (IsFilterVariant23)
             {
-                value23?.Invoke(Value23!);
+                filterVariant23?.Invoke(FilterVariant23!);
             }
-            else if (IsValue24)
+            else if (IsFilterVariant24)
             {
-                value24?.Invoke(Value24!);
+                filterVariant24?.Invoke(FilterVariant24!);
             }
-            else if (IsValue25)
+            else if (IsFilterVariant25)
             {
-                value25?.Invoke(Value25!);
+                filterVariant25?.Invoke(FilterVariant25!);
             }
-            else if (IsValue26)
+            else if (IsFilterVariant26)
             {
-                value26?.Invoke(Value26!);
+                filterVariant26?.Invoke(FilterVariant26!);
             }
-            else if (IsValue27)
+            else if (IsFilterVariant27)
             {
-                value27?.Invoke(Value27!);
+                filterVariant27?.Invoke(FilterVariant27!);
             }
-            else if (IsValue28)
+            else if (IsFilterVariant28)
             {
-                value28?.Invoke(Value28!);
+                filterVariant28?.Invoke(FilterVariant28!);
             }
-            else if (IsValue29)
+            else if (IsFilterVariant29)
             {
-                value29?.Invoke(Value29!);
+                filterVariant29?.Invoke(FilterVariant29!);
             }
-            else if (IsValue30)
+            else if (IsFilterVariant30)
             {
-                value30?.Invoke(Value30!);
+                filterVariant30?.Invoke(FilterVariant30!);
             }
-            else if (IsValue31)
+            else if (IsFilterVariant31)
             {
-                value31?.Invoke(Value31!);
+                filterVariant31?.Invoke(FilterVariant31!);
             }
-            else if (IsValue32)
+            else if (IsFilterVariant32)
             {
-                value32?.Invoke(Value32!);
+                filterVariant32?.Invoke(FilterVariant32!);
             }
-            else if (IsValue33)
+            else if (IsFilterVariant33)
             {
-                value33?.Invoke(Value33!);
+                filterVariant33?.Invoke(FilterVariant33!);
             }
-            else if (IsValue34)
+            else if (IsFilterVariant34)
             {
-                value34?.Invoke(Value34!);
+                filterVariant34?.Invoke(FilterVariant34!);
             }
         }
 
@@ -1144,73 +1144,73 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                FilterVariant1,
                 typeof(byte[]),
-                Value2,
+                FilterVariant2,
                 typeof(byte[]),
-                Value3,
+                FilterVariant3,
                 typeof(byte[]),
-                Value4,
+                FilterVariant4,
                 typeof(byte[]),
-                Value5,
+                FilterVariant5,
                 typeof(byte[]),
-                Value6,
+                FilterVariant6,
                 typeof(byte[]),
-                Value7,
+                FilterVariant7,
                 typeof(byte[]),
-                Value8,
+                FilterVariant8,
                 typeof(byte[]),
-                Value9,
+                FilterVariant9,
                 typeof(byte[]),
-                Value10,
+                FilterVariant10,
                 typeof(byte[]),
-                Value11,
+                FilterVariant11,
                 typeof(byte[]),
-                Value12,
+                FilterVariant12,
                 typeof(byte[]),
-                Value13,
+                FilterVariant13,
                 typeof(byte[]),
-                Value14,
+                FilterVariant14,
                 typeof(byte[]),
-                Value15,
+                FilterVariant15,
                 typeof(byte[]),
-                Value16,
+                FilterVariant16,
                 typeof(byte[]),
-                Value17,
+                FilterVariant17,
                 typeof(byte[]),
-                Value18,
+                FilterVariant18,
                 typeof(byte[]),
-                Value19,
+                FilterVariant19,
                 typeof(byte[]),
-                Value20,
+                FilterVariant20,
                 typeof(byte[]),
-                Value21,
+                FilterVariant21,
                 typeof(byte[]),
-                Value22,
+                FilterVariant22,
                 typeof(byte[]),
-                Value23,
+                FilterVariant23,
                 typeof(byte[]),
-                Value24,
+                FilterVariant24,
                 typeof(byte[]),
-                Value25,
+                FilterVariant25,
                 typeof(byte[]),
-                Value26,
+                FilterVariant26,
                 typeof(byte[]),
-                Value27,
+                FilterVariant27,
                 typeof(byte[]),
-                Value28,
+                FilterVariant28,
                 typeof(byte[]),
-                Value29,
+                FilterVariant29,
                 typeof(byte[]),
-                Value30,
+                FilterVariant30,
                 typeof(byte[]),
-                Value31,
+                FilterVariant31,
                 typeof(byte[]),
-                Value32,
+                FilterVariant32,
                 typeof(byte[]),
-                Value33,
+                FilterVariant33,
                 typeof(byte[]),
-                Value34,
+                FilterVariant34,
                 typeof(byte[]),
             };
             const int offset = unchecked((int)2166136261);
@@ -1228,40 +1228,40 @@ namespace G
         public bool Equals(Filter other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value10, other.Value10) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value12, other.Value12) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value13, other.Value13) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value14, other.Value14) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value15, other.Value15) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value16, other.Value16) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value17, other.Value17) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value18, other.Value18) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value19, other.Value19) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value20, other.Value20) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value21, other.Value21) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value22, other.Value22) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value23, other.Value23) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value24, other.Value24) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value25, other.Value25) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value26, other.Value26) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value27, other.Value27) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value28, other.Value28) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value29, other.Value29) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value30, other.Value30) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value31, other.Value31) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value32, other.Value32) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value33, other.Value33) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value34, other.Value34) 
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant1, other.FilterVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant2, other.FilterVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant3, other.FilterVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant4, other.FilterVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant5, other.FilterVariant5) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant6, other.FilterVariant6) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant7, other.FilterVariant7) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant8, other.FilterVariant8) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant9, other.FilterVariant9) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant10, other.FilterVariant10) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant11, other.FilterVariant11) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant12, other.FilterVariant12) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant13, other.FilterVariant13) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant14, other.FilterVariant14) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant15, other.FilterVariant15) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant16, other.FilterVariant16) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant17, other.FilterVariant17) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant18, other.FilterVariant18) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant19, other.FilterVariant19) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant20, other.FilterVariant20) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant21, other.FilterVariant21) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant22, other.FilterVariant22) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant23, other.FilterVariant23) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant24, other.FilterVariant24) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant25, other.FilterVariant25) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant26, other.FilterVariant26) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant27, other.FilterVariant27) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant28, other.FilterVariant28) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant29, other.FilterVariant29) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant30, other.FilterVariant30) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant31, other.FilterVariant31) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant32, other.FilterVariant32) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant33, other.FilterVariant33) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(FilterVariant34, other.FilterVariant34) 
                 ;
         }
 

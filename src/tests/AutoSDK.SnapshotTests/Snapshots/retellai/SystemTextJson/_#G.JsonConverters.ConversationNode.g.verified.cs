@@ -49,9 +49,9 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::G.NodeBase? value1 = default;
-            global::G.AgentOverrideConfig? value2 = default;
-            global::G.ConversationNodeVariant3? value3 = default;
+            global::G.NodeBase? @base = default;
+            global::G.AgentOverrideConfig? agentOverrideConfig = default;
+            global::G.ConversationNodeVariant3? conversationNodeVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -60,7 +60,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NodeBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NodeBase> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NodeBase).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -75,7 +75,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentOverrideConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentOverrideConfig> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentOverrideConfig).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        agentOverrideConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -90,7 +90,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationNodeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationNodeVariant3> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationNodeVariant3).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        conversationNodeVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -101,13 +101,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (@base == null && agentOverrideConfig == null && conversationNodeVariant3 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NodeBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NodeBase> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NodeBase).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -120,7 +120,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentOverrideConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentOverrideConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentOverrideConfig).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    agentOverrideConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -133,7 +133,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationNodeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationNodeVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationNodeVariant3).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    conversationNodeVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -144,11 +144,11 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.ConversationNode(
-                value1,
+                @base,
 
-                value2,
+                agentOverrideConfig,
 
-                value3
+                conversationNodeVariant3
                 );
 
             return __value;
@@ -163,23 +163,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsBase)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NodeBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NodeBase> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NodeBase).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsAgentOverrideConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentOverrideConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentOverrideConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentOverrideConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentOverrideConfig!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsConversationNodeVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationNodeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationNodeVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationNodeVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationNodeVariant3!, typeInfo);
             }
         }
     }

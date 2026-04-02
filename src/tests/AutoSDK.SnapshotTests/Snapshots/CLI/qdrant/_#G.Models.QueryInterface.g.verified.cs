@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.VectorInput? Value1 { get; init; }
+        public global::G.VectorInput? VectorInput { get; init; }
 #else
-        public global::G.VectorInput? Value1 { get; }
+        public global::G.VectorInput? VectorInput { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorInput))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsVectorInput => VectorInput != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Query? Value2 { get; init; }
+        public global::G.Query? Query { get; init; }
 #else
-        public global::G.Query? Value2 { get; }
+        public global::G.Query? Query { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Query))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsQuery => Query != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.VectorInput?(QueryInterface @this) => @this.Value1;
+        public static implicit operator global::G.VectorInput?(QueryInterface @this) => @this.VectorInput;
 
         /// <summary>
         /// 
         /// </summary>
         public QueryInterface(global::G.VectorInput? value)
         {
-            Value1 = value;
+            VectorInput = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Query?(QueryInterface @this) => @this.Value2;
+        public static implicit operator global::G.Query?(QueryInterface @this) => @this.Query;
 
         /// <summary>
         /// 
         /// </summary>
         public QueryInterface(global::G.Query? value)
         {
-            Value2 = value;
+            Query = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public QueryInterface(
-            global::G.VectorInput? value1,
-            global::G.Query? value2
+            global::G.VectorInput? vectorInput,
+            global::G.Query? query
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            VectorInput = vectorInput;
+            Query = query;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Query as object ??
+            VectorInput as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            VectorInput?.ToString() ??
+            Query?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsVectorInput || IsQuery;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.VectorInput?, TResult>? value1 = null,
-            global::System.Func<global::G.Query?, TResult>? value2 = null,
+            global::System.Func<global::G.VectorInput?, TResult>? vectorInput = null,
+            global::System.Func<global::G.Query?, TResult>? query = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsVectorInput && vectorInput != null)
             {
-                return value1(Value1!);
+                return vectorInput(VectorInput!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsQuery && query != null)
             {
-                return value2(Value2!);
+                return query(Query!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.VectorInput?>? value1 = null,
-            global::System.Action<global::G.Query?>? value2 = null,
+            global::System.Action<global::G.VectorInput?>? vectorInput = null,
+            global::System.Action<global::G.Query?>? query = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsVectorInput)
             {
-                value1?.Invoke(Value1!);
+                vectorInput?.Invoke(VectorInput!);
             }
-            else if (IsValue2)
+            else if (IsQuery)
             {
-                value2?.Invoke(Value2!);
+                query?.Invoke(Query!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                VectorInput,
                 typeof(global::G.VectorInput),
-                Value2,
+                Query,
                 typeof(global::G.Query),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(QueryInterface other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.VectorInput?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.Query?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.VectorInput?>.Default.Equals(VectorInput, other.VectorInput) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.Query?>.Default.Equals(Query, other.Query) 
                 ;
         }
 

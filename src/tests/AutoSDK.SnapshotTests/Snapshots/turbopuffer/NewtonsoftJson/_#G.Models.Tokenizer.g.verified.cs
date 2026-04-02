@@ -14,86 +14,86 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? TokenizerVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? TokenizerVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TokenizerVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsTokenizerVariant1 => TokenizerVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? TokenizerVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? TokenizerVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TokenizerVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsTokenizerVariant2 => TokenizerVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value3 { get; init; }
+        public string? TokenizerVariant3 { get; init; }
 #else
-        public string? Value3 { get; }
+        public string? TokenizerVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TokenizerVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsTokenizerVariant3 => TokenizerVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value4 { get; init; }
+        public string? TokenizerVariant4 { get; init; }
 #else
-        public string? Value4 { get; }
+        public string? TokenizerVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TokenizerVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsTokenizerVariant4 => TokenizerVariant4 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value5 { get; init; }
+        public string? TokenizerVariant5 { get; init; }
 #else
-        public string? Value5 { get; }
+        public string? TokenizerVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TokenizerVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsTokenizerVariant5 => TokenizerVariant5 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,54 +102,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(Tokenizer @this) => @this.Value1;
+        public static implicit operator string?(Tokenizer @this) => @this.TokenizerVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public Tokenizer(string? value)
         {
-            Value1 = value;
+            TokenizerVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Tokenizer(
-            string? value1,
-            string? value2,
-            string? value3,
-            string? value4,
-            string? value5
+            string? tokenizerVariant1,
+            string? tokenizerVariant2,
+            string? tokenizerVariant3,
+            string? tokenizerVariant4,
+            string? tokenizerVariant5
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
+            TokenizerVariant1 = tokenizerVariant1;
+            TokenizerVariant2 = tokenizerVariant2;
+            TokenizerVariant3 = tokenizerVariant3;
+            TokenizerVariant4 = tokenizerVariant4;
+            TokenizerVariant5 = tokenizerVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            TokenizerVariant5 as object ??
+            TokenizerVariant4 as object ??
+            TokenizerVariant3 as object ??
+            TokenizerVariant2 as object ??
+            TokenizerVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() 
+            TokenizerVariant1?.ToString() ??
+            TokenizerVariant2?.ToString() ??
+            TokenizerVariant3?.ToString() ??
+            TokenizerVariant4?.ToString() ??
+            TokenizerVariant5?.ToString() 
             ;
 
         /// <summary>
@@ -157,18 +157,18 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5;
+            return IsTokenizerVariant1 && !IsTokenizerVariant2 && !IsTokenizerVariant3 && !IsTokenizerVariant4 && !IsTokenizerVariant5 || !IsTokenizerVariant1 && IsTokenizerVariant2 && !IsTokenizerVariant3 && !IsTokenizerVariant4 && !IsTokenizerVariant5 || !IsTokenizerVariant1 && !IsTokenizerVariant2 && IsTokenizerVariant3 && !IsTokenizerVariant4 && !IsTokenizerVariant5 || !IsTokenizerVariant1 && !IsTokenizerVariant2 && !IsTokenizerVariant3 && IsTokenizerVariant4 && !IsTokenizerVariant5 || !IsTokenizerVariant1 && !IsTokenizerVariant2 && !IsTokenizerVariant3 && !IsTokenizerVariant4 && IsTokenizerVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<string?, TResult>? value2 = null,
-            global::System.Func<string?, TResult>? value3 = null,
-            global::System.Func<string?, TResult>? value4 = null,
-            global::System.Func<string?, TResult>? value5 = null,
+            global::System.Func<string?, TResult>? tokenizerVariant1 = null,
+            global::System.Func<string?, TResult>? tokenizerVariant2 = null,
+            global::System.Func<string?, TResult>? tokenizerVariant3 = null,
+            global::System.Func<string?, TResult>? tokenizerVariant4 = null,
+            global::System.Func<string?, TResult>? tokenizerVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -176,25 +176,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsTokenizerVariant1 && tokenizerVariant1 != null)
             {
-                return value1(Value1!);
+                return tokenizerVariant1(TokenizerVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsTokenizerVariant2 && tokenizerVariant2 != null)
             {
-                return value2(Value2!);
+                return tokenizerVariant2(TokenizerVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsTokenizerVariant3 && tokenizerVariant3 != null)
             {
-                return value3(Value3!);
+                return tokenizerVariant3(TokenizerVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsTokenizerVariant4 && tokenizerVariant4 != null)
             {
-                return value4(Value4!);
+                return tokenizerVariant4(TokenizerVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsTokenizerVariant5 && tokenizerVariant5 != null)
             {
-                return value5(Value5!);
+                return tokenizerVariant5(TokenizerVariant5!);
             }
 
             return default(TResult);
@@ -204,11 +204,11 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<string?>? value2 = null,
-            global::System.Action<string?>? value3 = null,
-            global::System.Action<string?>? value4 = null,
-            global::System.Action<string?>? value5 = null,
+            global::System.Action<string?>? tokenizerVariant1 = null,
+            global::System.Action<string?>? tokenizerVariant2 = null,
+            global::System.Action<string?>? tokenizerVariant3 = null,
+            global::System.Action<string?>? tokenizerVariant4 = null,
+            global::System.Action<string?>? tokenizerVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -216,25 +216,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsTokenizerVariant1)
             {
-                value1?.Invoke(Value1!);
+                tokenizerVariant1?.Invoke(TokenizerVariant1!);
             }
-            else if (IsValue2)
+            else if (IsTokenizerVariant2)
             {
-                value2?.Invoke(Value2!);
+                tokenizerVariant2?.Invoke(TokenizerVariant2!);
             }
-            else if (IsValue3)
+            else if (IsTokenizerVariant3)
             {
-                value3?.Invoke(Value3!);
+                tokenizerVariant3?.Invoke(TokenizerVariant3!);
             }
-            else if (IsValue4)
+            else if (IsTokenizerVariant4)
             {
-                value4?.Invoke(Value4!);
+                tokenizerVariant4?.Invoke(TokenizerVariant4!);
             }
-            else if (IsValue5)
+            else if (IsTokenizerVariant5)
             {
-                value5?.Invoke(Value5!);
+                tokenizerVariant5?.Invoke(TokenizerVariant5!);
             }
         }
 
@@ -245,15 +245,15 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                TokenizerVariant1,
                 typeof(string),
-                Value2,
+                TokenizerVariant2,
                 typeof(string),
-                Value3,
+                TokenizerVariant3,
                 typeof(string),
-                Value4,
+                TokenizerVariant4,
                 typeof(string),
-                Value5,
+                TokenizerVariant5,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -271,11 +271,11 @@ namespace G
         public bool Equals(Tokenizer other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value5, other.Value5) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(TokenizerVariant1, other.TokenizerVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(TokenizerVariant2, other.TokenizerVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(TokenizerVariant3, other.TokenizerVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(TokenizerVariant4, other.TokenizerVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(TokenizerVariant5, other.TokenizerVariant5) 
                 ;
         }
 

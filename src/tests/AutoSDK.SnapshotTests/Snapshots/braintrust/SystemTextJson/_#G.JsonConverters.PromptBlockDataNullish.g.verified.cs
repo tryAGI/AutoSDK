@@ -43,7 +43,7 @@ namespace G.JsonConverters
 
             global::G.PromptBlockDataNullishChat? chat = default;
             global::G.PromptBlockDataNullishCompletion? completion = default;
-            object? value3 = default;
+            object? promptBlockDataNullishVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -82,7 +82,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        promptBlockDataNullishVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,7 +93,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (chat == null && completion == null && value3 == null)
+            if (chat == null && completion == null && promptBlockDataNullishVariant3 == null)
             {
                 try
                 {
@@ -125,7 +125,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    promptBlockDataNullishVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -140,7 +140,7 @@ namespace G.JsonConverters
 
                 completion,
 
-                value3
+                promptBlockDataNullishVariant3
                 );
 
             return __value;
@@ -167,11 +167,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataNullishCompletion).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsPromptBlockDataNullishVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PromptBlockDataNullishVariant3!, typeInfo);
             }
         }
     }

@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ProviderName? Value1 { get; init; }
+        public global::G.ProviderName? Name { get; init; }
 #else
-        public global::G.ProviderName? Value1 { get; }
+        public global::G.ProviderName? Name { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Name))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsName => Name != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ModelProviderName? Value2 { get; init; }
+        public global::G.ModelProviderName? ModelName { get; init; }
 #else
-        public global::G.ModelProviderName? Value2 { get; }
+        public global::G.ModelProviderName? ModelName { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelName))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsModelName => ModelName != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ProviderEnum? Value3 { get; init; }
+        public global::G.ProviderEnum? Enum { get; init; }
 #else
-        public global::G.ProviderEnum? Value3 { get; }
+        public global::G.ProviderEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsEnum => Enum != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ProviderName?(Provider @this) => @this.Value1;
+        public static implicit operator global::G.ProviderName?(Provider @this) => @this.Name;
 
         /// <summary>
         /// 
         /// </summary>
         public Provider(global::G.ProviderName? value)
         {
-            Value1 = value;
+            Name = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ModelProviderName?(Provider @this) => @this.Value2;
+        public static implicit operator global::G.ModelProviderName?(Provider @this) => @this.ModelName;
 
         /// <summary>
         /// 
         /// </summary>
         public Provider(global::G.ModelProviderName? value)
         {
-            Value2 = value;
+            ModelName = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ProviderEnum?(Provider @this) => @this.Value3;
+        public static implicit operator global::G.ProviderEnum?(Provider @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public Provider(global::G.ProviderEnum? value)
         {
-            Value3 = value;
+            Enum = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Provider(
-            global::G.ProviderName? value1,
-            global::G.ModelProviderName? value2,
-            global::G.ProviderEnum? value3
+            global::G.ProviderName? name,
+            global::G.ModelProviderName? modelName,
+            global::G.ProviderEnum? @enum
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            Name = name;
+            ModelName = modelName;
+            Enum = @enum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            Enum as object ??
+            ModelName as object ??
+            Name as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToValueString() ??
-            Value2?.ToValueString() ??
-            Value3?.ToValueString() 
+            Name?.ToValueString() ??
+            ModelName?.ToValueString() ??
+            Enum?.ToValueString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsName || IsModelName || IsEnum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ProviderName?, TResult>? value1 = null,
-            global::System.Func<global::G.ModelProviderName?, TResult>? value2 = null,
-            global::System.Func<global::G.ProviderEnum?, TResult>? value3 = null,
+            global::System.Func<global::G.ProviderName?, TResult>? name = null,
+            global::System.Func<global::G.ModelProviderName?, TResult>? modelName = null,
+            global::System.Func<global::G.ProviderEnum?, TResult>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsName && name != null)
             {
-                return value1(Value1!);
+                return name(Name!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsModelName && modelName != null)
             {
-                return value2(Value2!);
+                return modelName(ModelName!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsEnum && @enum != null)
             {
-                return value3(Value3!);
+                return @enum(Enum!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ProviderName?>? value1 = null,
-            global::System.Action<global::G.ModelProviderName?>? value2 = null,
-            global::System.Action<global::G.ProviderEnum?>? value3 = null,
+            global::System.Action<global::G.ProviderName?>? name = null,
+            global::System.Action<global::G.ModelProviderName?>? modelName = null,
+            global::System.Action<global::G.ProviderEnum?>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsName)
             {
-                value1?.Invoke(Value1!);
+                name?.Invoke(Name!);
             }
-            else if (IsValue2)
+            else if (IsModelName)
             {
-                value2?.Invoke(Value2!);
+                modelName?.Invoke(ModelName!);
             }
-            else if (IsValue3)
+            else if (IsEnum)
             {
-                value3?.Invoke(Value3!);
+                @enum?.Invoke(Enum!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Name,
                 typeof(global::G.ProviderName),
-                Value2,
+                ModelName,
                 typeof(global::G.ModelProviderName),
-                Value3,
+                Enum,
                 typeof(global::G.ProviderEnum),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(Provider other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ProviderName?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelProviderName?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ProviderEnum?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ProviderName?>.Default.Equals(Name, other.Name) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ModelProviderName?>.Default.Equals(ModelName, other.ModelName) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ProviderEnum?>.Default.Equals(Enum, other.Enum) 
                 ;
         }
 

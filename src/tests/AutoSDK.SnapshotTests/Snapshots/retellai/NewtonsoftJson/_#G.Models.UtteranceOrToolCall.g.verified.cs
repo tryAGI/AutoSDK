@@ -14,86 +14,86 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Utterance? Value1 { get; init; }
+        public global::G.Utterance? Utterance { get; init; }
 #else
-        public global::G.Utterance? Value1 { get; }
+        public global::G.Utterance? Utterance { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Utterance))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsUtterance => Utterance != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ToolCallInvocationUtterance? Value2 { get; init; }
+        public global::G.ToolCallInvocationUtterance? Invocation { get; init; }
 #else
-        public global::G.ToolCallInvocationUtterance? Value2 { get; }
+        public global::G.ToolCallInvocationUtterance? Invocation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Invocation))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsInvocation => Invocation != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ToolCallResultUtterance? Value3 { get; init; }
+        public global::G.ToolCallResultUtterance? Result { get; init; }
 #else
-        public global::G.ToolCallResultUtterance? Value3 { get; }
+        public global::G.ToolCallResultUtterance? Result { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Result))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsResult => Result != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.NodeTransitionUtterance? Value4 { get; init; }
+        public global::G.NodeTransitionUtterance? NodeTransition { get; init; }
 #else
-        public global::G.NodeTransitionUtterance? Value4 { get; }
+        public global::G.NodeTransitionUtterance? NodeTransition { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NodeTransition))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsNodeTransition => NodeTransition != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DTMFUtterance? Value5 { get; init; }
+        public global::G.DTMFUtterance? Dtmf { get; init; }
 #else
-        public global::G.DTMFUtterance? Value5 { get; }
+        public global::G.DTMFUtterance? Dtmf { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dtmf))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsDtmf => Dtmf != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,14 +102,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Utterance?(UtteranceOrToolCall @this) => @this.Value1;
+        public static implicit operator global::G.Utterance?(UtteranceOrToolCall @this) => @this.Utterance;
 
         /// <summary>
         /// 
         /// </summary>
         public UtteranceOrToolCall(global::G.Utterance? value)
         {
-            Value1 = value;
+            Utterance = value;
         }
 
         /// <summary>
@@ -120,14 +120,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ToolCallInvocationUtterance?(UtteranceOrToolCall @this) => @this.Value2;
+        public static implicit operator global::G.ToolCallInvocationUtterance?(UtteranceOrToolCall @this) => @this.Invocation;
 
         /// <summary>
         /// 
         /// </summary>
         public UtteranceOrToolCall(global::G.ToolCallInvocationUtterance? value)
         {
-            Value2 = value;
+            Invocation = value;
         }
 
         /// <summary>
@@ -138,14 +138,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ToolCallResultUtterance?(UtteranceOrToolCall @this) => @this.Value3;
+        public static implicit operator global::G.ToolCallResultUtterance?(UtteranceOrToolCall @this) => @this.Result;
 
         /// <summary>
         /// 
         /// </summary>
         public UtteranceOrToolCall(global::G.ToolCallResultUtterance? value)
         {
-            Value3 = value;
+            Result = value;
         }
 
         /// <summary>
@@ -156,14 +156,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.NodeTransitionUtterance?(UtteranceOrToolCall @this) => @this.Value4;
+        public static implicit operator global::G.NodeTransitionUtterance?(UtteranceOrToolCall @this) => @this.NodeTransition;
 
         /// <summary>
         /// 
         /// </summary>
         public UtteranceOrToolCall(global::G.NodeTransitionUtterance? value)
         {
-            Value4 = value;
+            NodeTransition = value;
         }
 
         /// <summary>
@@ -174,54 +174,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DTMFUtterance?(UtteranceOrToolCall @this) => @this.Value5;
+        public static implicit operator global::G.DTMFUtterance?(UtteranceOrToolCall @this) => @this.Dtmf;
 
         /// <summary>
         /// 
         /// </summary>
         public UtteranceOrToolCall(global::G.DTMFUtterance? value)
         {
-            Value5 = value;
+            Dtmf = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public UtteranceOrToolCall(
-            global::G.Utterance? value1,
-            global::G.ToolCallInvocationUtterance? value2,
-            global::G.ToolCallResultUtterance? value3,
-            global::G.NodeTransitionUtterance? value4,
-            global::G.DTMFUtterance? value5
+            global::G.Utterance? utterance,
+            global::G.ToolCallInvocationUtterance? invocation,
+            global::G.ToolCallResultUtterance? result,
+            global::G.NodeTransitionUtterance? nodeTransition,
+            global::G.DTMFUtterance? dtmf
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
+            Utterance = utterance;
+            Invocation = invocation;
+            Result = result;
+            NodeTransition = nodeTransition;
+            Dtmf = dtmf;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            Dtmf as object ??
+            NodeTransition as object ??
+            Result as object ??
+            Invocation as object ??
+            Utterance as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() 
+            Utterance?.ToString() ??
+            Invocation?.ToString() ??
+            Result?.ToString() ??
+            NodeTransition?.ToString() ??
+            Dtmf?.ToString() 
             ;
 
         /// <summary>
@@ -229,18 +229,18 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5;
+            return IsUtterance && !IsInvocation && !IsResult && !IsNodeTransition && !IsDtmf || !IsUtterance && IsInvocation && !IsResult && !IsNodeTransition && !IsDtmf || !IsUtterance && !IsInvocation && IsResult && !IsNodeTransition && !IsDtmf || !IsUtterance && !IsInvocation && !IsResult && IsNodeTransition && !IsDtmf || !IsUtterance && !IsInvocation && !IsResult && !IsNodeTransition && IsDtmf;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Utterance?, TResult>? value1 = null,
-            global::System.Func<global::G.ToolCallInvocationUtterance?, TResult>? value2 = null,
-            global::System.Func<global::G.ToolCallResultUtterance?, TResult>? value3 = null,
-            global::System.Func<global::G.NodeTransitionUtterance?, TResult>? value4 = null,
-            global::System.Func<global::G.DTMFUtterance?, TResult>? value5 = null,
+            global::System.Func<global::G.Utterance?, TResult>? utterance = null,
+            global::System.Func<global::G.ToolCallInvocationUtterance?, TResult>? invocation = null,
+            global::System.Func<global::G.ToolCallResultUtterance?, TResult>? result = null,
+            global::System.Func<global::G.NodeTransitionUtterance?, TResult>? nodeTransition = null,
+            global::System.Func<global::G.DTMFUtterance?, TResult>? dtmf = null,
             bool validate = true)
         {
             if (validate)
@@ -248,25 +248,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsUtterance && utterance != null)
             {
-                return value1(Value1!);
+                return utterance(Utterance!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsInvocation && invocation != null)
             {
-                return value2(Value2!);
+                return invocation(Invocation!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsResult && result != null)
             {
-                return value3(Value3!);
+                return result(Result!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsNodeTransition && nodeTransition != null)
             {
-                return value4(Value4!);
+                return nodeTransition(NodeTransition!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsDtmf && dtmf != null)
             {
-                return value5(Value5!);
+                return dtmf(Dtmf!);
             }
 
             return default(TResult);
@@ -276,11 +276,11 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Utterance?>? value1 = null,
-            global::System.Action<global::G.ToolCallInvocationUtterance?>? value2 = null,
-            global::System.Action<global::G.ToolCallResultUtterance?>? value3 = null,
-            global::System.Action<global::G.NodeTransitionUtterance?>? value4 = null,
-            global::System.Action<global::G.DTMFUtterance?>? value5 = null,
+            global::System.Action<global::G.Utterance?>? utterance = null,
+            global::System.Action<global::G.ToolCallInvocationUtterance?>? invocation = null,
+            global::System.Action<global::G.ToolCallResultUtterance?>? result = null,
+            global::System.Action<global::G.NodeTransitionUtterance?>? nodeTransition = null,
+            global::System.Action<global::G.DTMFUtterance?>? dtmf = null,
             bool validate = true)
         {
             if (validate)
@@ -288,25 +288,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsUtterance)
             {
-                value1?.Invoke(Value1!);
+                utterance?.Invoke(Utterance!);
             }
-            else if (IsValue2)
+            else if (IsInvocation)
             {
-                value2?.Invoke(Value2!);
+                invocation?.Invoke(Invocation!);
             }
-            else if (IsValue3)
+            else if (IsResult)
             {
-                value3?.Invoke(Value3!);
+                result?.Invoke(Result!);
             }
-            else if (IsValue4)
+            else if (IsNodeTransition)
             {
-                value4?.Invoke(Value4!);
+                nodeTransition?.Invoke(NodeTransition!);
             }
-            else if (IsValue5)
+            else if (IsDtmf)
             {
-                value5?.Invoke(Value5!);
+                dtmf?.Invoke(Dtmf!);
             }
         }
 
@@ -317,15 +317,15 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Utterance,
                 typeof(global::G.Utterance),
-                Value2,
+                Invocation,
                 typeof(global::G.ToolCallInvocationUtterance),
-                Value3,
+                Result,
                 typeof(global::G.ToolCallResultUtterance),
-                Value4,
+                NodeTransition,
                 typeof(global::G.NodeTransitionUtterance),
-                Value5,
+                Dtmf,
                 typeof(global::G.DTMFUtterance),
             };
             const int offset = unchecked((int)2166136261);
@@ -343,11 +343,11 @@ namespace G
         public bool Equals(UtteranceOrToolCall other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.Utterance?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ToolCallInvocationUtterance?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ToolCallResultUtterance?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.NodeTransitionUtterance?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DTMFUtterance?>.Default.Equals(Value5, other.Value5) 
+                global::System.Collections.Generic.EqualityComparer<global::G.Utterance?>.Default.Equals(Utterance, other.Utterance) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ToolCallInvocationUtterance?>.Default.Equals(Invocation, other.Invocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ToolCallResultUtterance?>.Default.Equals(Result, other.Result) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.NodeTransitionUtterance?>.Default.Equals(NodeTransition, other.NodeTransition) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DTMFUtterance?>.Default.Equals(Dtmf, other.Dtmf) 
                 ;
         }
 

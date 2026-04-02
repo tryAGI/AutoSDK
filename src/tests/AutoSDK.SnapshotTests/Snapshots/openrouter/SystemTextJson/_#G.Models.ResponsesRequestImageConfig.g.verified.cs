@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ResponsesRequestImageConfigVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ResponsesRequestImageConfigVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesRequestImageConfigVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsResponsesRequestImageConfigVariant1 => ResponsesRequestImageConfigVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public double? Value2 { get; init; }
+        public double? ResponsesRequestImageConfigVariant2 { get; init; }
 #else
-        public double? Value2 { get; }
+        public double? ResponsesRequestImageConfigVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesRequestImageConfigVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsResponsesRequestImageConfigVariant2 => ResponsesRequestImageConfigVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ResponsesRequestImageConfig @this) => @this.Value1;
+        public static implicit operator string?(ResponsesRequestImageConfig @this) => @this.ResponsesRequestImageConfigVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesRequestImageConfig(string? value)
         {
-            Value1 = value;
+            ResponsesRequestImageConfigVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator double?(ResponsesRequestImageConfig @this) => @this.Value2;
+        public static implicit operator double?(ResponsesRequestImageConfig @this) => @this.ResponsesRequestImageConfigVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesRequestImageConfig(double? value)
         {
-            Value2 = value;
+            ResponsesRequestImageConfigVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ResponsesRequestImageConfig(
-            string? value1,
-            double? value2
+            string? responsesRequestImageConfigVariant1,
+            double? responsesRequestImageConfigVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ResponsesRequestImageConfigVariant1 = responsesRequestImageConfigVariant1;
+            ResponsesRequestImageConfigVariant2 = responsesRequestImageConfigVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ResponsesRequestImageConfigVariant2 as object ??
+            ResponsesRequestImageConfigVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ResponsesRequestImageConfigVariant1?.ToString() ??
+            ResponsesRequestImageConfigVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsResponsesRequestImageConfigVariant1 && !IsResponsesRequestImageConfigVariant2 || !IsResponsesRequestImageConfigVariant1 && IsResponsesRequestImageConfigVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<double?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? responsesRequestImageConfigVariant1 = null,
+            global::System.Func<double?, TResult>? responsesRequestImageConfigVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsResponsesRequestImageConfigVariant1 && responsesRequestImageConfigVariant1 != null)
             {
-                return value1(Value1!);
+                return responsesRequestImageConfigVariant1(ResponsesRequestImageConfigVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsResponsesRequestImageConfigVariant2 && responsesRequestImageConfigVariant2 != null)
             {
-                return value2(Value2!);
+                return responsesRequestImageConfigVariant2(ResponsesRequestImageConfigVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<double?>? value2 = null,
+            global::System.Action<string?>? responsesRequestImageConfigVariant1 = null,
+            global::System.Action<double?>? responsesRequestImageConfigVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsResponsesRequestImageConfigVariant1)
             {
-                value1?.Invoke(Value1!);
+                responsesRequestImageConfigVariant1?.Invoke(ResponsesRequestImageConfigVariant1!);
             }
-            else if (IsValue2)
+            else if (IsResponsesRequestImageConfigVariant2)
             {
-                value2?.Invoke(Value2!);
+                responsesRequestImageConfigVariant2?.Invoke(ResponsesRequestImageConfigVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ResponsesRequestImageConfigVariant1,
                 typeof(string),
-                Value2,
+                ResponsesRequestImageConfigVariant2,
                 typeof(double),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ResponsesRequestImageConfig other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ResponsesRequestImageConfigVariant1, other.ResponsesRequestImageConfigVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(ResponsesRequestImageConfigVariant2, other.ResponsesRequestImageConfigVariant2) 
                 ;
         }
 

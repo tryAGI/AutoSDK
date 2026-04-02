@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 => FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public double? Value2 { get; init; }
+        public double? FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 { get; init; }
 #else
-        public double? Value2 { get; }
+        public double? FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 => FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(FileSearchServerToolFiltersOneOf0ValueOneOf3Items @this) => @this.Value1;
+        public static implicit operator string?(FileSearchServerToolFiltersOneOf0ValueOneOf3Items @this) => @this.FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public FileSearchServerToolFiltersOneOf0ValueOneOf3Items(string? value)
         {
-            Value1 = value;
+            FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator double?(FileSearchServerToolFiltersOneOf0ValueOneOf3Items @this) => @this.Value2;
+        public static implicit operator double?(FileSearchServerToolFiltersOneOf0ValueOneOf3Items @this) => @this.FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public FileSearchServerToolFiltersOneOf0ValueOneOf3Items(double? value)
         {
-            Value2 = value;
+            FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public FileSearchServerToolFiltersOneOf0ValueOneOf3Items(
-            string? value1,
-            double? value2
+            string? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1,
+            double? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1;
+            FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 as object ??
+            FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1?.ToString() ??
+            FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 && !IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 || !IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 && IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<double?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = null,
+            global::System.Func<double?, TResult>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 && fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 != null)
             {
-                return value1(Value1!);
+                return fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1(FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 && fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 != null)
             {
-                return value2(Value2!);
+                return fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2(FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<double?>? value2 = null,
+            global::System.Action<string?>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = null,
+            global::System.Action<double?>? fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1)
             {
-                value1?.Invoke(Value1!);
+                fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1?.Invoke(FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1!);
             }
-            else if (IsValue2)
+            else if (IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2)
             {
-                value2?.Invoke(Value2!);
+                fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2?.Invoke(FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1,
                 typeof(string),
-                Value2,
+                FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2,
                 typeof(double),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(FileSearchServerToolFiltersOneOf0ValueOneOf3Items other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1, other.FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2, other.FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2) 
                 ;
         }
 

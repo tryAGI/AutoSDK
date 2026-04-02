@@ -14,52 +14,52 @@ namespace G
         /// Make all properties in T optional
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.UpdatePresenterAttributesVariant1? Value1 { get; init; }
+        public global::G.UpdatePresenterAttributesVariant1? UpdatePresenterAttributesVariant1 { get; init; }
 #else
-        public global::G.UpdatePresenterAttributesVariant1? Value1 { get; }
+        public global::G.UpdatePresenterAttributesVariant1? UpdatePresenterAttributesVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdatePresenterAttributesVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsUpdatePresenterAttributesVariant1 => UpdatePresenterAttributesVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.UpdatePresenterAttributesVariant2? Value2 { get; init; }
+        public global::G.UpdatePresenterAttributesVariant2? UpdatePresenterAttributesVariant2 { get; init; }
 #else
-        public global::G.UpdatePresenterAttributesVariant2? Value2 { get; }
+        public global::G.UpdatePresenterAttributesVariant2? UpdatePresenterAttributesVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdatePresenterAttributesVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsUpdatePresenterAttributesVariant2 => UpdatePresenterAttributesVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.UpdatePresenterAttributesVariant3? Value3 { get; init; }
+        public global::G.UpdatePresenterAttributesVariant3? UpdatePresenterAttributesVariant3 { get; init; }
 #else
-        public global::G.UpdatePresenterAttributesVariant3? Value3 { get; }
+        public global::G.UpdatePresenterAttributesVariant3? UpdatePresenterAttributesVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdatePresenterAttributesVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsUpdatePresenterAttributesVariant3 => UpdatePresenterAttributesVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.UpdatePresenterAttributesVariant1?(UpdatePresenterAttributes @this) => @this.Value1;
+        public static implicit operator global::G.UpdatePresenterAttributesVariant1?(UpdatePresenterAttributes @this) => @this.UpdatePresenterAttributesVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public UpdatePresenterAttributes(global::G.UpdatePresenterAttributesVariant1? value)
         {
-            Value1 = value;
+            UpdatePresenterAttributesVariant1 = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.UpdatePresenterAttributesVariant2?(UpdatePresenterAttributes @this) => @this.Value2;
+        public static implicit operator global::G.UpdatePresenterAttributesVariant2?(UpdatePresenterAttributes @this) => @this.UpdatePresenterAttributesVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public UpdatePresenterAttributes(global::G.UpdatePresenterAttributesVariant2? value)
         {
-            Value2 = value;
+            UpdatePresenterAttributesVariant2 = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.UpdatePresenterAttributesVariant3?(UpdatePresenterAttributes @this) => @this.Value3;
+        public static implicit operator global::G.UpdatePresenterAttributesVariant3?(UpdatePresenterAttributes @this) => @this.UpdatePresenterAttributesVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public UpdatePresenterAttributes(global::G.UpdatePresenterAttributesVariant3? value)
         {
-            Value3 = value;
+            UpdatePresenterAttributesVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public UpdatePresenterAttributes(
-            global::G.UpdatePresenterAttributesVariant1? value1,
-            global::G.UpdatePresenterAttributesVariant2? value2,
-            global::G.UpdatePresenterAttributesVariant3? value3
+            global::G.UpdatePresenterAttributesVariant1? updatePresenterAttributesVariant1,
+            global::G.UpdatePresenterAttributesVariant2? updatePresenterAttributesVariant2,
+            global::G.UpdatePresenterAttributesVariant3? updatePresenterAttributesVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            UpdatePresenterAttributesVariant1 = updatePresenterAttributesVariant1;
+            UpdatePresenterAttributesVariant2 = updatePresenterAttributesVariant2;
+            UpdatePresenterAttributesVariant3 = updatePresenterAttributesVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            UpdatePresenterAttributesVariant3 as object ??
+            UpdatePresenterAttributesVariant2 as object ??
+            UpdatePresenterAttributesVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            UpdatePresenterAttributesVariant1?.ToString() ??
+            UpdatePresenterAttributesVariant2?.ToString() ??
+            UpdatePresenterAttributesVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2 && IsValue3;
+            return IsUpdatePresenterAttributesVariant1 && IsUpdatePresenterAttributesVariant2 && IsUpdatePresenterAttributesVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.UpdatePresenterAttributesVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.UpdatePresenterAttributesVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.UpdatePresenterAttributesVariant3?, TResult>? value3 = null,
+            global::System.Func<global::G.UpdatePresenterAttributesVariant1?, TResult>? updatePresenterAttributesVariant1 = null,
+            global::System.Func<global::G.UpdatePresenterAttributesVariant2?, TResult>? updatePresenterAttributesVariant2 = null,
+            global::System.Func<global::G.UpdatePresenterAttributesVariant3?, TResult>? updatePresenterAttributesVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsUpdatePresenterAttributesVariant1 && updatePresenterAttributesVariant1 != null)
             {
-                return value1(Value1!);
+                return updatePresenterAttributesVariant1(UpdatePresenterAttributesVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsUpdatePresenterAttributesVariant2 && updatePresenterAttributesVariant2 != null)
             {
-                return value2(Value2!);
+                return updatePresenterAttributesVariant2(UpdatePresenterAttributesVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsUpdatePresenterAttributesVariant3 && updatePresenterAttributesVariant3 != null)
             {
-                return value3(Value3!);
+                return updatePresenterAttributesVariant3(UpdatePresenterAttributesVariant3!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.UpdatePresenterAttributesVariant1?>? value1 = null,
-            global::System.Action<global::G.UpdatePresenterAttributesVariant2?>? value2 = null,
-            global::System.Action<global::G.UpdatePresenterAttributesVariant3?>? value3 = null,
+            global::System.Action<global::G.UpdatePresenterAttributesVariant1?>? updatePresenterAttributesVariant1 = null,
+            global::System.Action<global::G.UpdatePresenterAttributesVariant2?>? updatePresenterAttributesVariant2 = null,
+            global::System.Action<global::G.UpdatePresenterAttributesVariant3?>? updatePresenterAttributesVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsUpdatePresenterAttributesVariant1)
             {
-                value1?.Invoke(Value1!);
+                updatePresenterAttributesVariant1?.Invoke(UpdatePresenterAttributesVariant1!);
             }
-            else if (IsValue2)
+            else if (IsUpdatePresenterAttributesVariant2)
             {
-                value2?.Invoke(Value2!);
+                updatePresenterAttributesVariant2?.Invoke(UpdatePresenterAttributesVariant2!);
             }
-            else if (IsValue3)
+            else if (IsUpdatePresenterAttributesVariant3)
             {
-                value3?.Invoke(Value3!);
+                updatePresenterAttributesVariant3?.Invoke(UpdatePresenterAttributesVariant3!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                UpdatePresenterAttributesVariant1,
                 typeof(global::G.UpdatePresenterAttributesVariant1),
-                Value2,
+                UpdatePresenterAttributesVariant2,
                 typeof(global::G.UpdatePresenterAttributesVariant2),
-                Value3,
+                UpdatePresenterAttributesVariant3,
                 typeof(global::G.UpdatePresenterAttributesVariant3),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(UpdatePresenterAttributes other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.UpdatePresenterAttributesVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.UpdatePresenterAttributesVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.UpdatePresenterAttributesVariant3?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.UpdatePresenterAttributesVariant1?>.Default.Equals(UpdatePresenterAttributesVariant1, other.UpdatePresenterAttributesVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.UpdatePresenterAttributesVariant2?>.Default.Equals(UpdatePresenterAttributesVariant2, other.UpdatePresenterAttributesVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.UpdatePresenterAttributesVariant3?>.Default.Equals(UpdatePresenterAttributesVariant3, other.UpdatePresenterAttributesVariant3) 
                 ;
         }
 

@@ -40,9 +40,9 @@ namespace G.JsonConverters
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
 
-            string? value1 = default;
-            int? value2 = default;
-            global::System.Collections.Generic.IList<int>? value3 = default;
+            string? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1 = default;
+            int? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2 = default;
+            global::System.Collections.Generic.IList<int>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3 = default;
             global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3 = default;
             if (__bestIndex >= 0)
             {
@@ -52,7 +52,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -67,7 +67,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -82,7 +82,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<int>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<int>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<int>).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -108,13 +108,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3 == null)
+            if (embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3 == null && embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -127,7 +127,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -140,7 +140,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<int>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<int>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<int>).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -164,11 +164,11 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items(
-                value1,
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1,
 
-                value2,
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2,
 
-                value3,
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3,
 
                 embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3
                 );
@@ -185,23 +185,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2!.Value, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<int>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<int>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<int>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3!, typeInfo);
             }
             else if (value.IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3)
             {

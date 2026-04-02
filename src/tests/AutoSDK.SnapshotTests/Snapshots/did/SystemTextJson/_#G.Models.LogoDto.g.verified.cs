@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LogoDtoVariant1? Value1 { get; init; }
+        public global::G.LogoDtoVariant1? LogoDtoVariant1 { get; init; }
 #else
-        public global::G.LogoDtoVariant1? Value1 { get; }
+        public global::G.LogoDtoVariant1? LogoDtoVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LogoDtoVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsLogoDtoVariant1 => LogoDtoVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public bool? Value2 { get; init; }
+        public bool? LogoDtoVariant2 { get; init; }
 #else
-        public bool? Value2 { get; }
+        public bool? LogoDtoVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LogoDtoVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsLogoDtoVariant2 => LogoDtoVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LogoDtoVariant1?(LogoDto @this) => @this.Value1;
+        public static implicit operator global::G.LogoDtoVariant1?(LogoDto @this) => @this.LogoDtoVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public LogoDto(global::G.LogoDtoVariant1? value)
         {
-            Value1 = value;
+            LogoDtoVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator bool?(LogoDto @this) => @this.Value2;
+        public static implicit operator bool?(LogoDto @this) => @this.LogoDtoVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public LogoDto(bool? value)
         {
-            Value2 = value;
+            LogoDtoVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public LogoDto(
-            global::G.LogoDtoVariant1? value1,
-            bool? value2
+            global::G.LogoDtoVariant1? logoDtoVariant1,
+            bool? logoDtoVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            LogoDtoVariant1 = logoDtoVariant1;
+            LogoDtoVariant2 = logoDtoVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            LogoDtoVariant2 as object ??
+            LogoDtoVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString().ToLowerInvariant() 
+            LogoDtoVariant1?.ToString() ??
+            LogoDtoVariant2?.ToString().ToLowerInvariant() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsLogoDtoVariant1 || IsLogoDtoVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.LogoDtoVariant1?, TResult>? value1 = null,
-            global::System.Func<bool?, TResult>? value2 = null,
+            global::System.Func<global::G.LogoDtoVariant1?, TResult>? logoDtoVariant1 = null,
+            global::System.Func<bool?, TResult>? logoDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsLogoDtoVariant1 && logoDtoVariant1 != null)
             {
-                return value1(Value1!);
+                return logoDtoVariant1(LogoDtoVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsLogoDtoVariant2 && logoDtoVariant2 != null)
             {
-                return value2(Value2!);
+                return logoDtoVariant2(LogoDtoVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.LogoDtoVariant1?>? value1 = null,
-            global::System.Action<bool?>? value2 = null,
+            global::System.Action<global::G.LogoDtoVariant1?>? logoDtoVariant1 = null,
+            global::System.Action<bool?>? logoDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsLogoDtoVariant1)
             {
-                value1?.Invoke(Value1!);
+                logoDtoVariant1?.Invoke(LogoDtoVariant1!);
             }
-            else if (IsValue2)
+            else if (IsLogoDtoVariant2)
             {
-                value2?.Invoke(Value2!);
+                logoDtoVariant2?.Invoke(LogoDtoVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                LogoDtoVariant1,
                 typeof(global::G.LogoDtoVariant1),
-                Value2,
+                LogoDtoVariant2,
                 typeof(bool),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(LogoDto other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.LogoDtoVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.LogoDtoVariant1?>.Default.Equals(LogoDtoVariant1, other.LogoDtoVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(LogoDtoVariant2, other.LogoDtoVariant2) 
                 ;
         }
 

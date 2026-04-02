@@ -14,35 +14,35 @@ namespace G
         /// The streamed event types
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatStreamEventType? Value1 { get; init; }
+        public global::G.ChatStreamEventType? StreamType { get; init; }
 #else
-        public global::G.ChatStreamEventType? Value1 { get; }
+        public global::G.ChatStreamEventType? StreamType { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamType))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsStreamType => StreamType != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatToolCallStartEventLv559x? Value2 { get; init; }
+        public global::G.ChatToolCallStartEventLv559x? Lv559x { get; init; }
 #else
-        public global::G.ChatToolCallStartEventLv559x? Value2 { get; }
+        public global::G.ChatToolCallStartEventLv559x? Lv559x { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Lv559x))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsLv559x => Lv559x != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatStreamEventType?(ChatToolCallStartEvent @this) => @this.Value1;
+        public static implicit operator global::G.ChatStreamEventType?(ChatToolCallStartEvent @this) => @this.StreamType;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatToolCallStartEvent(global::G.ChatStreamEventType? value)
         {
-            Value1 = value;
+            StreamType = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatToolCallStartEventLv559x?(ChatToolCallStartEvent @this) => @this.Value2;
+        public static implicit operator global::G.ChatToolCallStartEventLv559x?(ChatToolCallStartEvent @this) => @this.Lv559x;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatToolCallStartEvent(global::G.ChatToolCallStartEventLv559x? value)
         {
-            Value2 = value;
+            Lv559x = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatToolCallStartEvent(
-            global::G.ChatStreamEventType? value1,
-            global::G.ChatToolCallStartEventLv559x? value2
+            global::G.ChatStreamEventType? streamType,
+            global::G.ChatToolCallStartEventLv559x? lv559x
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            StreamType = streamType;
+            Lv559x = lv559x;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Lv559x as object ??
+            StreamType as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            StreamType?.ToString() ??
+            Lv559x?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsStreamType && IsLv559x;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEventType?, TResult>? value1 = null,
-            global::System.Func<global::G.ChatToolCallStartEventLv559x?, TResult>? value2 = null,
+            global::System.Func<global::G.ChatStreamEventType?, TResult>? streamType = null,
+            global::System.Func<global::G.ChatToolCallStartEventLv559x?, TResult>? lv559x = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsStreamType && streamType != null)
             {
-                return value1(Value1!);
+                return streamType(StreamType!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsLv559x && lv559x != null)
             {
-                return value2(Value2!);
+                return lv559x(Lv559x!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEventType?>? value1 = null,
-            global::System.Action<global::G.ChatToolCallStartEventLv559x?>? value2 = null,
+            global::System.Action<global::G.ChatStreamEventType?>? streamType = null,
+            global::System.Action<global::G.ChatToolCallStartEventLv559x?>? lv559x = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsStreamType)
             {
-                value1?.Invoke(Value1!);
+                streamType?.Invoke(StreamType!);
             }
-            else if (IsValue2)
+            else if (IsLv559x)
             {
-                value2?.Invoke(Value2!);
+                lv559x?.Invoke(Lv559x!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                StreamType,
                 typeof(global::G.ChatStreamEventType),
-                Value2,
+                Lv559x,
                 typeof(global::G.ChatToolCallStartEventLv559x),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ChatToolCallStartEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEventType?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatToolCallStartEventLv559x?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEventType?>.Default.Equals(StreamType, other.StreamType) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatToolCallStartEventLv559x?>.Default.Equals(Lv559x, other.Lv559x) 
                 ;
         }
 

@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BaseLastMileConfigForm? Value1 { get; init; }
+        public global::G.BaseLastMileConfigForm? Base { get; init; }
 #else
-        public global::G.BaseLastMileConfigForm? Value1 { get; }
+        public global::G.BaseLastMileConfigForm? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>? Value2 { get; init; }
+        public global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>? LastMileConfigFormVariant2 { get; init; }
 #else
-        public global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>? Value2 { get; }
+        public global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>? LastMileConfigFormVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LastMileConfigFormVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsLastMileConfigFormVariant2 => LastMileConfigFormVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BaseLastMileConfigForm?(LastMileConfigForm @this) => @this.Value1;
+        public static implicit operator global::G.BaseLastMileConfigForm?(LastMileConfigForm @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public LastMileConfigForm(global::G.BaseLastMileConfigForm? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?(LastMileConfigForm @this) => @this.Value2;
+        public static implicit operator global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?(LastMileConfigForm @this) => @this.LastMileConfigFormVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public LastMileConfigForm(global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>? value)
         {
-            Value2 = value;
+            LastMileConfigFormVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public LastMileConfigForm(
-            global::G.BaseLastMileConfigForm? value1,
-            global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>? value2
+            global::G.BaseLastMileConfigForm? @base,
+            global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>? lastMileConfigFormVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            LastMileConfigFormVariant2 = lastMileConfigFormVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            LastMileConfigFormVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            LastMileConfigFormVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsLastMileConfigFormVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseLastMileConfigForm?, TResult>? value1 = null,
-            global::System.Func<global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?, TResult>? value2 = null,
+            global::System.Func<global::G.BaseLastMileConfigForm?, TResult>? @base = null,
+            global::System.Func<global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?, TResult>? lastMileConfigFormVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsLastMileConfigFormVariant2 && lastMileConfigFormVariant2 != null)
             {
-                return value2(Value2!);
+                return lastMileConfigFormVariant2(LastMileConfigFormVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseLastMileConfigForm?>? value1 = null,
-            global::System.Action<global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?>? value2 = null,
+            global::System.Action<global::G.BaseLastMileConfigForm?>? @base = null,
+            global::System.Action<global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?>? lastMileConfigFormVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsLastMileConfigFormVariant2)
             {
-                value2?.Invoke(Value2!);
+                lastMileConfigFormVariant2?.Invoke(LastMileConfigFormVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::G.BaseLastMileConfigForm),
-                Value2,
+                LastMileConfigFormVariant2,
                 typeof(global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(LastMileConfigForm other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.BaseLastMileConfigForm?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BaseLastMileConfigForm?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?>.Default.Equals(LastMileConfigFormVariant2, other.LastMileConfigFormVariant2) 
                 ;
         }
 

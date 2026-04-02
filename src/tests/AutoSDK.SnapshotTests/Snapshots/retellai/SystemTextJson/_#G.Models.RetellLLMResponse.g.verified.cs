@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RetellLLMResponseVariant1? Value1 { get; init; }
+        public global::G.RetellLLMResponseVariant1? RetellLLMResponseVariant1 { get; init; }
 #else
-        public global::G.RetellLLMResponseVariant1? Value1 { get; }
+        public global::G.RetellLLMResponseVariant1? RetellLLMResponseVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RetellLLMResponseVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsRetellLLMResponseVariant1 => RetellLLMResponseVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RetellLlmRequest? Value2 { get; init; }
+        public global::G.RetellLlmRequest? LlmRequest { get; init; }
 #else
-        public global::G.RetellLlmRequest? Value2 { get; }
+        public global::G.RetellLlmRequest? LlmRequest { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LlmRequest))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsLlmRequest => LlmRequest != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RetellLLMResponseVariant3? Value3 { get; init; }
+        public global::G.RetellLLMResponseVariant3? RetellLLMResponseVariant3 { get; init; }
 #else
-        public global::G.RetellLLMResponseVariant3? Value3 { get; }
+        public global::G.RetellLLMResponseVariant3? RetellLLMResponseVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RetellLLMResponseVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsRetellLLMResponseVariant3 => RetellLLMResponseVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RetellLLMResponseVariant1?(RetellLLMResponse @this) => @this.Value1;
+        public static implicit operator global::G.RetellLLMResponseVariant1?(RetellLLMResponse @this) => @this.RetellLLMResponseVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public RetellLLMResponse(global::G.RetellLLMResponseVariant1? value)
         {
-            Value1 = value;
+            RetellLLMResponseVariant1 = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RetellLlmRequest?(RetellLLMResponse @this) => @this.Value2;
+        public static implicit operator global::G.RetellLlmRequest?(RetellLLMResponse @this) => @this.LlmRequest;
 
         /// <summary>
         /// 
         /// </summary>
         public RetellLLMResponse(global::G.RetellLlmRequest? value)
         {
-            Value2 = value;
+            LlmRequest = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RetellLLMResponseVariant3?(RetellLLMResponse @this) => @this.Value3;
+        public static implicit operator global::G.RetellLLMResponseVariant3?(RetellLLMResponse @this) => @this.RetellLLMResponseVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public RetellLLMResponse(global::G.RetellLLMResponseVariant3? value)
         {
-            Value3 = value;
+            RetellLLMResponseVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public RetellLLMResponse(
-            global::G.RetellLLMResponseVariant1? value1,
-            global::G.RetellLlmRequest? value2,
-            global::G.RetellLLMResponseVariant3? value3
+            global::G.RetellLLMResponseVariant1? retellLLMResponseVariant1,
+            global::G.RetellLlmRequest? llmRequest,
+            global::G.RetellLLMResponseVariant3? retellLLMResponseVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            RetellLLMResponseVariant1 = retellLLMResponseVariant1;
+            LlmRequest = llmRequest;
+            RetellLLMResponseVariant3 = retellLLMResponseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            RetellLLMResponseVariant3 as object ??
+            LlmRequest as object ??
+            RetellLLMResponseVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            RetellLLMResponseVariant1?.ToString() ??
+            LlmRequest?.ToString() ??
+            RetellLLMResponseVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2 && IsValue3;
+            return IsRetellLLMResponseVariant1 && IsLlmRequest && IsRetellLLMResponseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RetellLLMResponseVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.RetellLlmRequest?, TResult>? value2 = null,
-            global::System.Func<global::G.RetellLLMResponseVariant3?, TResult>? value3 = null,
+            global::System.Func<global::G.RetellLLMResponseVariant1?, TResult>? retellLLMResponseVariant1 = null,
+            global::System.Func<global::G.RetellLlmRequest?, TResult>? llmRequest = null,
+            global::System.Func<global::G.RetellLLMResponseVariant3?, TResult>? retellLLMResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsRetellLLMResponseVariant1 && retellLLMResponseVariant1 != null)
             {
-                return value1(Value1!);
+                return retellLLMResponseVariant1(RetellLLMResponseVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsLlmRequest && llmRequest != null)
             {
-                return value2(Value2!);
+                return llmRequest(LlmRequest!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsRetellLLMResponseVariant3 && retellLLMResponseVariant3 != null)
             {
-                return value3(Value3!);
+                return retellLLMResponseVariant3(RetellLLMResponseVariant3!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RetellLLMResponseVariant1?>? value1 = null,
-            global::System.Action<global::G.RetellLlmRequest?>? value2 = null,
-            global::System.Action<global::G.RetellLLMResponseVariant3?>? value3 = null,
+            global::System.Action<global::G.RetellLLMResponseVariant1?>? retellLLMResponseVariant1 = null,
+            global::System.Action<global::G.RetellLlmRequest?>? llmRequest = null,
+            global::System.Action<global::G.RetellLLMResponseVariant3?>? retellLLMResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsRetellLLMResponseVariant1)
             {
-                value1?.Invoke(Value1!);
+                retellLLMResponseVariant1?.Invoke(RetellLLMResponseVariant1!);
             }
-            else if (IsValue2)
+            else if (IsLlmRequest)
             {
-                value2?.Invoke(Value2!);
+                llmRequest?.Invoke(LlmRequest!);
             }
-            else if (IsValue3)
+            else if (IsRetellLLMResponseVariant3)
             {
-                value3?.Invoke(Value3!);
+                retellLLMResponseVariant3?.Invoke(RetellLLMResponseVariant3!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                RetellLLMResponseVariant1,
                 typeof(global::G.RetellLLMResponseVariant1),
-                Value2,
+                LlmRequest,
                 typeof(global::G.RetellLlmRequest),
-                Value3,
+                RetellLLMResponseVariant3,
                 typeof(global::G.RetellLLMResponseVariant3),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(RetellLLMResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.RetellLLMResponseVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RetellLlmRequest?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RetellLLMResponseVariant3?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.RetellLLMResponseVariant1?>.Default.Equals(RetellLLMResponseVariant1, other.RetellLLMResponseVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RetellLlmRequest?>.Default.Equals(LlmRequest, other.LlmRequest) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RetellLLMResponseVariant3?>.Default.Equals(RetellLLMResponseVariant3, other.RetellLLMResponseVariant3) 
                 ;
         }
 

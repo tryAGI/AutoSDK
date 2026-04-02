@@ -31,18 +31,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FunctionToolCallOutputResourceVariant2? Value2 { get; init; }
+        public global::G.FunctionToolCallOutputResourceVariant2? FunctionToolCallOutputResourceVariant2 { get; init; }
 #else
-        public global::G.FunctionToolCallOutputResourceVariant2? Value2 { get; }
+        public global::G.FunctionToolCallOutputResourceVariant2? FunctionToolCallOutputResourceVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallOutputResourceVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsFunctionToolCallOutputResourceVariant2 => FunctionToolCallOutputResourceVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -69,14 +69,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FunctionToolCallOutputResourceVariant2?(FunctionToolCallOutputResource @this) => @this.Value2;
+        public static implicit operator global::G.FunctionToolCallOutputResourceVariant2?(FunctionToolCallOutputResource @this) => @this.FunctionToolCallOutputResourceVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public FunctionToolCallOutputResource(global::G.FunctionToolCallOutputResourceVariant2? value)
         {
-            Value2 = value;
+            FunctionToolCallOutputResourceVariant2 = value;
         }
 
         /// <summary>
@@ -84,18 +84,18 @@ namespace G
         /// </summary>
         public FunctionToolCallOutputResource(
             global::G.FunctionToolCallOutput? functionToolCallOutput,
-            global::G.FunctionToolCallOutputResourceVariant2? value2
+            global::G.FunctionToolCallOutputResourceVariant2? functionToolCallOutputResourceVariant2
             )
         {
             FunctionToolCallOutput = functionToolCallOutput;
-            Value2 = value2;
+            FunctionToolCallOutputResourceVariant2 = functionToolCallOutputResourceVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            FunctionToolCallOutputResourceVariant2 as object ??
             FunctionToolCallOutput as object 
             ;
 
@@ -104,7 +104,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             FunctionToolCallOutput?.ToString() ??
-            Value2?.ToString() 
+            FunctionToolCallOutputResourceVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsFunctionToolCallOutput && IsValue2;
+            return IsFunctionToolCallOutput && IsFunctionToolCallOutputResourceVariant2;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.FunctionToolCallOutput?, TResult>? functionToolCallOutput = null,
-            global::System.Func<global::G.FunctionToolCallOutputResourceVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.FunctionToolCallOutputResourceVariant2?, TResult>? functionToolCallOutputResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,9 +132,9 @@ namespace G
             {
                 return functionToolCallOutput(FunctionToolCallOutput!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsFunctionToolCallOutputResourceVariant2 && functionToolCallOutputResourceVariant2 != null)
             {
-                return value2(Value2!);
+                return functionToolCallOutputResourceVariant2(FunctionToolCallOutputResourceVariant2!);
             }
 
             return default(TResult);
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.FunctionToolCallOutput?>? functionToolCallOutput = null,
-            global::System.Action<global::G.FunctionToolCallOutputResourceVariant2?>? value2 = null,
+            global::System.Action<global::G.FunctionToolCallOutputResourceVariant2?>? functionToolCallOutputResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -157,9 +157,9 @@ namespace G
             {
                 functionToolCallOutput?.Invoke(FunctionToolCallOutput!);
             }
-            else if (IsValue2)
+            else if (IsFunctionToolCallOutputResourceVariant2)
             {
-                value2?.Invoke(Value2!);
+                functionToolCallOutputResourceVariant2?.Invoke(FunctionToolCallOutputResourceVariant2!);
             }
         }
 
@@ -172,7 +172,7 @@ namespace G
             {
                 FunctionToolCallOutput,
                 typeof(global::G.FunctionToolCallOutput),
-                Value2,
+                FunctionToolCallOutputResourceVariant2,
                 typeof(global::G.FunctionToolCallOutputResourceVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCallOutput?>.Default.Equals(FunctionToolCallOutput, other.FunctionToolCallOutput) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCallOutputResourceVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCallOutputResourceVariant2?>.Default.Equals(FunctionToolCallOutputResourceVariant2, other.FunctionToolCallOutputResourceVariant2) 
                 ;
         }
 

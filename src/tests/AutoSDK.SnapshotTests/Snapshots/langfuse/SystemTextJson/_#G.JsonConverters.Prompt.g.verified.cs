@@ -55,8 +55,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>? value1 = default;
-            global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? value2 = default;
+            global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>? promptVariant1 = default;
+            global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? promptVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -66,7 +66,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        promptVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -83,7 +83,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        promptVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -94,14 +94,14 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (promptVariant1 == null && promptVariant2 == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    promptVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -115,7 +115,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    promptVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -126,9 +126,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.Prompt(
-                value1,
+                promptVariant1,
 
-                value2
+                promptVariant2
                 );
 
             return __value;
@@ -143,17 +143,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsPromptVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PromptVariant1!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsPromptVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PromptVariant2!.Value, typeInfo);
             }
         }
     }

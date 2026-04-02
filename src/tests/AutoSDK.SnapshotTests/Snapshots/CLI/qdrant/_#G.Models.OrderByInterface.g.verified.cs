@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? OrderByInterfaceVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? OrderByInterfaceVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrderByInterfaceVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsOrderByInterfaceVariant1 => OrderByInterfaceVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.OrderBy? Value2 { get; init; }
+        public global::G.OrderBy? OrderBy { get; init; }
 #else
-        public global::G.OrderBy? Value2 { get; }
+        public global::G.OrderBy? OrderBy { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrderBy))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsOrderBy => OrderBy != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(OrderByInterface @this) => @this.Value1;
+        public static implicit operator string?(OrderByInterface @this) => @this.OrderByInterfaceVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public OrderByInterface(string? value)
         {
-            Value1 = value;
+            OrderByInterfaceVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.OrderBy?(OrderByInterface @this) => @this.Value2;
+        public static implicit operator global::G.OrderBy?(OrderByInterface @this) => @this.OrderBy;
 
         /// <summary>
         /// 
         /// </summary>
         public OrderByInterface(global::G.OrderBy? value)
         {
-            Value2 = value;
+            OrderBy = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public OrderByInterface(
-            string? value1,
-            global::G.OrderBy? value2
+            string? orderByInterfaceVariant1,
+            global::G.OrderBy? orderBy
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            OrderByInterfaceVariant1 = orderByInterfaceVariant1;
+            OrderBy = orderBy;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            OrderBy as object ??
+            OrderByInterfaceVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            OrderByInterfaceVariant1?.ToString() ??
+            OrderBy?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsOrderByInterfaceVariant1 || IsOrderBy;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::G.OrderBy?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? orderByInterfaceVariant1 = null,
+            global::System.Func<global::G.OrderBy?, TResult>? orderBy = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsOrderByInterfaceVariant1 && orderByInterfaceVariant1 != null)
             {
-                return value1(Value1!);
+                return orderByInterfaceVariant1(OrderByInterfaceVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsOrderBy && orderBy != null)
             {
-                return value2(Value2!);
+                return orderBy(OrderBy!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::G.OrderBy?>? value2 = null,
+            global::System.Action<string?>? orderByInterfaceVariant1 = null,
+            global::System.Action<global::G.OrderBy?>? orderBy = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsOrderByInterfaceVariant1)
             {
-                value1?.Invoke(Value1!);
+                orderByInterfaceVariant1?.Invoke(OrderByInterfaceVariant1!);
             }
-            else if (IsValue2)
+            else if (IsOrderBy)
             {
-                value2?.Invoke(Value2!);
+                orderBy?.Invoke(OrderBy!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                OrderByInterfaceVariant1,
                 typeof(string),
-                Value2,
+                OrderBy,
                 typeof(global::G.OrderBy),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(OrderByInterface other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.OrderBy?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(OrderByInterfaceVariant1, other.OrderByInterfaceVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.OrderBy?>.Default.Equals(OrderBy, other.OrderBy) 
                 ;
         }
 

@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? FacetValueVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? FacetValueVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FacetValueVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsFacetValueVariant1 => FacetValueVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public long? Value2 { get; init; }
+        public long? FacetValueVariant2 { get; init; }
 #else
-        public long? Value2 { get; }
+        public long? FacetValueVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FacetValueVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsFacetValueVariant2 => FacetValueVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public bool? Value3 { get; init; }
+        public bool? FacetValueVariant3 { get; init; }
 #else
-        public bool? Value3 { get; }
+        public bool? FacetValueVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FacetValueVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsFacetValueVariant3 => FacetValueVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(FacetValue @this) => @this.Value1;
+        public static implicit operator string?(FacetValue @this) => @this.FacetValueVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public FacetValue(string? value)
         {
-            Value1 = value;
+            FacetValueVariant1 = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator long?(FacetValue @this) => @this.Value2;
+        public static implicit operator long?(FacetValue @this) => @this.FacetValueVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public FacetValue(long? value)
         {
-            Value2 = value;
+            FacetValueVariant2 = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator bool?(FacetValue @this) => @this.Value3;
+        public static implicit operator bool?(FacetValue @this) => @this.FacetValueVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public FacetValue(bool? value)
         {
-            Value3 = value;
+            FacetValueVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public FacetValue(
-            string? value1,
-            long? value2,
-            bool? value3
+            string? facetValueVariant1,
+            long? facetValueVariant2,
+            bool? facetValueVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            FacetValueVariant1 = facetValueVariant1;
+            FacetValueVariant2 = facetValueVariant2;
+            FacetValueVariant3 = facetValueVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            FacetValueVariant3 as object ??
+            FacetValueVariant2 as object ??
+            FacetValueVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString().ToLowerInvariant() 
+            FacetValueVariant1?.ToString() ??
+            FacetValueVariant2?.ToString() ??
+            FacetValueVariant3?.ToString().ToLowerInvariant() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsFacetValueVariant1 || IsFacetValueVariant2 || IsFacetValueVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<long?, TResult>? value2 = null,
-            global::System.Func<bool?, TResult>? value3 = null,
+            global::System.Func<string?, TResult>? facetValueVariant1 = null,
+            global::System.Func<long?, TResult>? facetValueVariant2 = null,
+            global::System.Func<bool?, TResult>? facetValueVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsFacetValueVariant1 && facetValueVariant1 != null)
             {
-                return value1(Value1!);
+                return facetValueVariant1(FacetValueVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsFacetValueVariant2 && facetValueVariant2 != null)
             {
-                return value2(Value2!);
+                return facetValueVariant2(FacetValueVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsFacetValueVariant3 && facetValueVariant3 != null)
             {
-                return value3(Value3!);
+                return facetValueVariant3(FacetValueVariant3!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<long?>? value2 = null,
-            global::System.Action<bool?>? value3 = null,
+            global::System.Action<string?>? facetValueVariant1 = null,
+            global::System.Action<long?>? facetValueVariant2 = null,
+            global::System.Action<bool?>? facetValueVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsFacetValueVariant1)
             {
-                value1?.Invoke(Value1!);
+                facetValueVariant1?.Invoke(FacetValueVariant1!);
             }
-            else if (IsValue2)
+            else if (IsFacetValueVariant2)
             {
-                value2?.Invoke(Value2!);
+                facetValueVariant2?.Invoke(FacetValueVariant2!);
             }
-            else if (IsValue3)
+            else if (IsFacetValueVariant3)
             {
-                value3?.Invoke(Value3!);
+                facetValueVariant3?.Invoke(FacetValueVariant3!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                FacetValueVariant1,
                 typeof(string),
-                Value2,
+                FacetValueVariant2,
                 typeof(long),
-                Value3,
+                FacetValueVariant3,
                 typeof(bool),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(FacetValue other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(FacetValueVariant1, other.FacetValueVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(FacetValueVariant2, other.FacetValueVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(FacetValueVariant3, other.FacetValueVariant3) 
                 ;
         }
 

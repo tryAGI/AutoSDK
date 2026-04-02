@@ -48,18 +48,18 @@ namespace G
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? OutputMessagePhaseVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? OutputMessagePhaseVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessagePhaseVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsOutputMessagePhaseVariant3 => OutputMessagePhaseVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,19 +102,19 @@ namespace G
         public OutputMessagePhase(
             global::G.OutputMessagePhase0? outputMessagePhase0,
             global::G.OutputMessagePhase1? outputMessagePhase1,
-            object? value3
+            object? outputMessagePhaseVariant3
             )
         {
             OutputMessagePhase0 = outputMessagePhase0;
             OutputMessagePhase1 = outputMessagePhase1;
-            Value3 = value3;
+            OutputMessagePhaseVariant3 = outputMessagePhaseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            OutputMessagePhaseVariant3 as object ??
             OutputMessagePhase1 as object ??
             OutputMessagePhase0 as object 
             ;
@@ -125,7 +125,7 @@ namespace G
         public override string? ToString() =>
             OutputMessagePhase0?.ToValueString() ??
             OutputMessagePhase1?.ToValueString() ??
-            Value3?.ToString() 
+            OutputMessagePhaseVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsOutputMessagePhase0 && !IsOutputMessagePhase1 && !IsValue3 || !IsOutputMessagePhase0 && IsOutputMessagePhase1 && !IsValue3 || !IsOutputMessagePhase0 && !IsOutputMessagePhase1 && IsValue3;
+            return IsOutputMessagePhase0 && !IsOutputMessagePhase1 && !IsOutputMessagePhaseVariant3 || !IsOutputMessagePhase0 && IsOutputMessagePhase1 && !IsOutputMessagePhaseVariant3 || !IsOutputMessagePhase0 && !IsOutputMessagePhase1 && IsOutputMessagePhaseVariant3;
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.OutputMessagePhase0?, TResult>? outputMessagePhase0 = null,
             global::System.Func<global::G.OutputMessagePhase1?, TResult>? outputMessagePhase1 = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? outputMessagePhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -158,9 +158,9 @@ namespace G
             {
                 return outputMessagePhase1(OutputMessagePhase1!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsOutputMessagePhaseVariant3 && outputMessagePhaseVariant3 != null)
             {
-                return value3(Value3!);
+                return outputMessagePhaseVariant3(OutputMessagePhaseVariant3!);
             }
 
             return default(TResult);
@@ -172,7 +172,7 @@ namespace G
         public void Match(
             global::System.Action<global::G.OutputMessagePhase0?>? outputMessagePhase0 = null,
             global::System.Action<global::G.OutputMessagePhase1?>? outputMessagePhase1 = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? outputMessagePhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +188,9 @@ namespace G
             {
                 outputMessagePhase1?.Invoke(OutputMessagePhase1!);
             }
-            else if (IsValue3)
+            else if (IsOutputMessagePhaseVariant3)
             {
-                value3?.Invoke(Value3!);
+                outputMessagePhaseVariant3?.Invoke(OutputMessagePhaseVariant3!);
             }
         }
 
@@ -205,7 +205,7 @@ namespace G
                 typeof(global::G.OutputMessagePhase0),
                 OutputMessagePhase1,
                 typeof(global::G.OutputMessagePhase1),
-                Value3,
+                OutputMessagePhaseVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -225,7 +225,7 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.OutputMessagePhase0?>.Default.Equals(OutputMessagePhase0, other.OutputMessagePhase0) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.OutputMessagePhase1?>.Default.Equals(OutputMessagePhase1, other.OutputMessagePhase1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(OutputMessagePhaseVariant3, other.OutputMessagePhaseVariant3) 
                 ;
         }
 

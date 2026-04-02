@@ -14,171 +14,171 @@ namespace G
         /// Occurs when a new [run](/docs/api-reference/runs/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant1? Value1 { get; init; }
+        public global::G.RunStreamEventVariant1? RunStreamEventVariant1 { get; init; }
 #else
-        public global::G.RunStreamEventVariant1? Value1 { get; }
+        public global::G.RunStreamEventVariant1? RunStreamEventVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsRunStreamEventVariant1 => RunStreamEventVariant1 != null;
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant2? Value2 { get; init; }
+        public global::G.RunStreamEventVariant2? RunStreamEventVariant2 { get; init; }
 #else
-        public global::G.RunStreamEventVariant2? Value2 { get; }
+        public global::G.RunStreamEventVariant2? RunStreamEventVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsRunStreamEventVariant2 => RunStreamEventVariant2 != null;
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant3? Value3 { get; init; }
+        public global::G.RunStreamEventVariant3? RunStreamEventVariant3 { get; init; }
 #else
-        public global::G.RunStreamEventVariant3? Value3 { get; }
+        public global::G.RunStreamEventVariant3? RunStreamEventVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsRunStreamEventVariant3 => RunStreamEventVariant3 != null;
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant4? Value4 { get; init; }
+        public global::G.RunStreamEventVariant4? RunStreamEventVariant4 { get; init; }
 #else
-        public global::G.RunStreamEventVariant4? Value4 { get; }
+        public global::G.RunStreamEventVariant4? RunStreamEventVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsRunStreamEventVariant4 => RunStreamEventVariant4 != null;
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant5? Value5 { get; init; }
+        public global::G.RunStreamEventVariant5? RunStreamEventVariant5 { get; init; }
 #else
-        public global::G.RunStreamEventVariant5? Value5 { get; }
+        public global::G.RunStreamEventVariant5? RunStreamEventVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsRunStreamEventVariant5 => RunStreamEventVariant5 != null;
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant6? Value6 { get; init; }
+        public global::G.RunStreamEventVariant6? RunStreamEventVariant6 { get; init; }
 #else
-        public global::G.RunStreamEventVariant6? Value6 { get; }
+        public global::G.RunStreamEventVariant6? RunStreamEventVariant6 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant6))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsRunStreamEventVariant6 => RunStreamEventVariant6 != null;
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant7? Value7 { get; init; }
+        public global::G.RunStreamEventVariant7? RunStreamEventVariant7 { get; init; }
 #else
-        public global::G.RunStreamEventVariant7? Value7 { get; }
+        public global::G.RunStreamEventVariant7? RunStreamEventVariant7 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant7))]
 #endif
-        public bool IsValue7 => Value7 != null;
+        public bool IsRunStreamEventVariant7 => RunStreamEventVariant7 != null;
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant8? Value8 { get; init; }
+        public global::G.RunStreamEventVariant8? RunStreamEventVariant8 { get; init; }
 #else
-        public global::G.RunStreamEventVariant8? Value8 { get; }
+        public global::G.RunStreamEventVariant8? RunStreamEventVariant8 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant8))]
 #endif
-        public bool IsValue8 => Value8 != null;
+        public bool IsRunStreamEventVariant8 => RunStreamEventVariant8 != null;
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant9? Value9 { get; init; }
+        public global::G.RunStreamEventVariant9? RunStreamEventVariant9 { get; init; }
 #else
-        public global::G.RunStreamEventVariant9? Value9 { get; }
+        public global::G.RunStreamEventVariant9? RunStreamEventVariant9 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant9))]
 #endif
-        public bool IsValue9 => Value9 != null;
+        public bool IsRunStreamEventVariant9 => RunStreamEventVariant9 != null;
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStreamEventVariant10? Value10 { get; init; }
+        public global::G.RunStreamEventVariant10? RunStreamEventVariant10 { get; init; }
 #else
-        public global::G.RunStreamEventVariant10? Value10 { get; }
+        public global::G.RunStreamEventVariant10? RunStreamEventVariant10 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStreamEventVariant10))]
 #endif
-        public bool IsValue10 => Value10 != null;
+        public bool IsRunStreamEventVariant10 => RunStreamEventVariant10 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -187,14 +187,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStreamEventVariant1?(RunStreamEvent @this) => @this.Value1;
+        public static implicit operator global::G.RunStreamEventVariant1?(RunStreamEvent @this) => @this.RunStreamEventVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStreamEvent(global::G.RunStreamEventVariant1? value)
         {
-            Value1 = value;
+            RunStreamEventVariant1 = value;
         }
 
         /// <summary>
@@ -205,14 +205,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStreamEventVariant2?(RunStreamEvent @this) => @this.Value2;
+        public static implicit operator global::G.RunStreamEventVariant2?(RunStreamEvent @this) => @this.RunStreamEventVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStreamEvent(global::G.RunStreamEventVariant2? value)
         {
-            Value2 = value;
+            RunStreamEventVariant2 = value;
         }
 
         /// <summary>
@@ -223,14 +223,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStreamEventVariant3?(RunStreamEvent @this) => @this.Value3;
+        public static implicit operator global::G.RunStreamEventVariant3?(RunStreamEvent @this) => @this.RunStreamEventVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStreamEvent(global::G.RunStreamEventVariant3? value)
         {
-            Value3 = value;
+            RunStreamEventVariant3 = value;
         }
 
         /// <summary>
@@ -241,14 +241,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStreamEventVariant4?(RunStreamEvent @this) => @this.Value4;
+        public static implicit operator global::G.RunStreamEventVariant4?(RunStreamEvent @this) => @this.RunStreamEventVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStreamEvent(global::G.RunStreamEventVariant4? value)
         {
-            Value4 = value;
+            RunStreamEventVariant4 = value;
         }
 
         /// <summary>
@@ -259,14 +259,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStreamEventVariant5?(RunStreamEvent @this) => @this.Value5;
+        public static implicit operator global::G.RunStreamEventVariant5?(RunStreamEvent @this) => @this.RunStreamEventVariant5;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStreamEvent(global::G.RunStreamEventVariant5? value)
         {
-            Value5 = value;
+            RunStreamEventVariant5 = value;
         }
 
         /// <summary>
@@ -277,14 +277,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStreamEventVariant6?(RunStreamEvent @this) => @this.Value6;
+        public static implicit operator global::G.RunStreamEventVariant6?(RunStreamEvent @this) => @this.RunStreamEventVariant6;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStreamEvent(global::G.RunStreamEventVariant6? value)
         {
-            Value6 = value;
+            RunStreamEventVariant6 = value;
         }
 
         /// <summary>
@@ -295,14 +295,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStreamEventVariant7?(RunStreamEvent @this) => @this.Value7;
+        public static implicit operator global::G.RunStreamEventVariant7?(RunStreamEvent @this) => @this.RunStreamEventVariant7;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStreamEvent(global::G.RunStreamEventVariant7? value)
         {
-            Value7 = value;
+            RunStreamEventVariant7 = value;
         }
 
         /// <summary>
@@ -313,14 +313,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStreamEventVariant8?(RunStreamEvent @this) => @this.Value8;
+        public static implicit operator global::G.RunStreamEventVariant8?(RunStreamEvent @this) => @this.RunStreamEventVariant8;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStreamEvent(global::G.RunStreamEventVariant8? value)
         {
-            Value8 = value;
+            RunStreamEventVariant8 = value;
         }
 
         /// <summary>
@@ -331,14 +331,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStreamEventVariant9?(RunStreamEvent @this) => @this.Value9;
+        public static implicit operator global::G.RunStreamEventVariant9?(RunStreamEvent @this) => @this.RunStreamEventVariant9;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStreamEvent(global::G.RunStreamEventVariant9? value)
         {
-            Value9 = value;
+            RunStreamEventVariant9 = value;
         }
 
         /// <summary>
@@ -349,74 +349,74 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStreamEventVariant10?(RunStreamEvent @this) => @this.Value10;
+        public static implicit operator global::G.RunStreamEventVariant10?(RunStreamEvent @this) => @this.RunStreamEventVariant10;
 
         /// <summary>
         /// 
         /// </summary>
         public RunStreamEvent(global::G.RunStreamEventVariant10? value)
         {
-            Value10 = value;
+            RunStreamEventVariant10 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public RunStreamEvent(
-            global::G.RunStreamEventVariant1? value1,
-            global::G.RunStreamEventVariant2? value2,
-            global::G.RunStreamEventVariant3? value3,
-            global::G.RunStreamEventVariant4? value4,
-            global::G.RunStreamEventVariant5? value5,
-            global::G.RunStreamEventVariant6? value6,
-            global::G.RunStreamEventVariant7? value7,
-            global::G.RunStreamEventVariant8? value8,
-            global::G.RunStreamEventVariant9? value9,
-            global::G.RunStreamEventVariant10? value10
+            global::G.RunStreamEventVariant1? runStreamEventVariant1,
+            global::G.RunStreamEventVariant2? runStreamEventVariant2,
+            global::G.RunStreamEventVariant3? runStreamEventVariant3,
+            global::G.RunStreamEventVariant4? runStreamEventVariant4,
+            global::G.RunStreamEventVariant5? runStreamEventVariant5,
+            global::G.RunStreamEventVariant6? runStreamEventVariant6,
+            global::G.RunStreamEventVariant7? runStreamEventVariant7,
+            global::G.RunStreamEventVariant8? runStreamEventVariant8,
+            global::G.RunStreamEventVariant9? runStreamEventVariant9,
+            global::G.RunStreamEventVariant10? runStreamEventVariant10
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
-            Value7 = value7;
-            Value8 = value8;
-            Value9 = value9;
-            Value10 = value10;
+            RunStreamEventVariant1 = runStreamEventVariant1;
+            RunStreamEventVariant2 = runStreamEventVariant2;
+            RunStreamEventVariant3 = runStreamEventVariant3;
+            RunStreamEventVariant4 = runStreamEventVariant4;
+            RunStreamEventVariant5 = runStreamEventVariant5;
+            RunStreamEventVariant6 = runStreamEventVariant6;
+            RunStreamEventVariant7 = runStreamEventVariant7;
+            RunStreamEventVariant8 = runStreamEventVariant8;
+            RunStreamEventVariant9 = runStreamEventVariant9;
+            RunStreamEventVariant10 = runStreamEventVariant10;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value10 as object ??
-            Value9 as object ??
-            Value8 as object ??
-            Value7 as object ??
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            RunStreamEventVariant10 as object ??
+            RunStreamEventVariant9 as object ??
+            RunStreamEventVariant8 as object ??
+            RunStreamEventVariant7 as object ??
+            RunStreamEventVariant6 as object ??
+            RunStreamEventVariant5 as object ??
+            RunStreamEventVariant4 as object ??
+            RunStreamEventVariant3 as object ??
+            RunStreamEventVariant2 as object ??
+            RunStreamEventVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() ??
-            Value7?.ToString() ??
-            Value8?.ToString() ??
-            Value9?.ToString() ??
-            Value10?.ToString() 
+            RunStreamEventVariant1?.ToString() ??
+            RunStreamEventVariant2?.ToString() ??
+            RunStreamEventVariant3?.ToString() ??
+            RunStreamEventVariant4?.ToString() ??
+            RunStreamEventVariant5?.ToString() ??
+            RunStreamEventVariant6?.ToString() ??
+            RunStreamEventVariant7?.ToString() ??
+            RunStreamEventVariant8?.ToString() ??
+            RunStreamEventVariant9?.ToString() ??
+            RunStreamEventVariant10?.ToString() 
             ;
 
         /// <summary>
@@ -424,23 +424,23 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10;
+            return IsRunStreamEventVariant1 && !IsRunStreamEventVariant2 && !IsRunStreamEventVariant3 && !IsRunStreamEventVariant4 && !IsRunStreamEventVariant5 && !IsRunStreamEventVariant6 && !IsRunStreamEventVariant7 && !IsRunStreamEventVariant8 && !IsRunStreamEventVariant9 && !IsRunStreamEventVariant10 || !IsRunStreamEventVariant1 && IsRunStreamEventVariant2 && !IsRunStreamEventVariant3 && !IsRunStreamEventVariant4 && !IsRunStreamEventVariant5 && !IsRunStreamEventVariant6 && !IsRunStreamEventVariant7 && !IsRunStreamEventVariant8 && !IsRunStreamEventVariant9 && !IsRunStreamEventVariant10 || !IsRunStreamEventVariant1 && !IsRunStreamEventVariant2 && IsRunStreamEventVariant3 && !IsRunStreamEventVariant4 && !IsRunStreamEventVariant5 && !IsRunStreamEventVariant6 && !IsRunStreamEventVariant7 && !IsRunStreamEventVariant8 && !IsRunStreamEventVariant9 && !IsRunStreamEventVariant10 || !IsRunStreamEventVariant1 && !IsRunStreamEventVariant2 && !IsRunStreamEventVariant3 && IsRunStreamEventVariant4 && !IsRunStreamEventVariant5 && !IsRunStreamEventVariant6 && !IsRunStreamEventVariant7 && !IsRunStreamEventVariant8 && !IsRunStreamEventVariant9 && !IsRunStreamEventVariant10 || !IsRunStreamEventVariant1 && !IsRunStreamEventVariant2 && !IsRunStreamEventVariant3 && !IsRunStreamEventVariant4 && IsRunStreamEventVariant5 && !IsRunStreamEventVariant6 && !IsRunStreamEventVariant7 && !IsRunStreamEventVariant8 && !IsRunStreamEventVariant9 && !IsRunStreamEventVariant10 || !IsRunStreamEventVariant1 && !IsRunStreamEventVariant2 && !IsRunStreamEventVariant3 && !IsRunStreamEventVariant4 && !IsRunStreamEventVariant5 && IsRunStreamEventVariant6 && !IsRunStreamEventVariant7 && !IsRunStreamEventVariant8 && !IsRunStreamEventVariant9 && !IsRunStreamEventVariant10 || !IsRunStreamEventVariant1 && !IsRunStreamEventVariant2 && !IsRunStreamEventVariant3 && !IsRunStreamEventVariant4 && !IsRunStreamEventVariant5 && !IsRunStreamEventVariant6 && IsRunStreamEventVariant7 && !IsRunStreamEventVariant8 && !IsRunStreamEventVariant9 && !IsRunStreamEventVariant10 || !IsRunStreamEventVariant1 && !IsRunStreamEventVariant2 && !IsRunStreamEventVariant3 && !IsRunStreamEventVariant4 && !IsRunStreamEventVariant5 && !IsRunStreamEventVariant6 && !IsRunStreamEventVariant7 && IsRunStreamEventVariant8 && !IsRunStreamEventVariant9 && !IsRunStreamEventVariant10 || !IsRunStreamEventVariant1 && !IsRunStreamEventVariant2 && !IsRunStreamEventVariant3 && !IsRunStreamEventVariant4 && !IsRunStreamEventVariant5 && !IsRunStreamEventVariant6 && !IsRunStreamEventVariant7 && !IsRunStreamEventVariant8 && IsRunStreamEventVariant9 && !IsRunStreamEventVariant10 || !IsRunStreamEventVariant1 && !IsRunStreamEventVariant2 && !IsRunStreamEventVariant3 && !IsRunStreamEventVariant4 && !IsRunStreamEventVariant5 && !IsRunStreamEventVariant6 && !IsRunStreamEventVariant7 && !IsRunStreamEventVariant8 && !IsRunStreamEventVariant9 && IsRunStreamEventVariant10;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RunStreamEventVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.RunStreamEventVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.RunStreamEventVariant3?, TResult>? value3 = null,
-            global::System.Func<global::G.RunStreamEventVariant4?, TResult>? value4 = null,
-            global::System.Func<global::G.RunStreamEventVariant5?, TResult>? value5 = null,
-            global::System.Func<global::G.RunStreamEventVariant6?, TResult>? value6 = null,
-            global::System.Func<global::G.RunStreamEventVariant7?, TResult>? value7 = null,
-            global::System.Func<global::G.RunStreamEventVariant8?, TResult>? value8 = null,
-            global::System.Func<global::G.RunStreamEventVariant9?, TResult>? value9 = null,
-            global::System.Func<global::G.RunStreamEventVariant10?, TResult>? value10 = null,
+            global::System.Func<global::G.RunStreamEventVariant1?, TResult>? runStreamEventVariant1 = null,
+            global::System.Func<global::G.RunStreamEventVariant2?, TResult>? runStreamEventVariant2 = null,
+            global::System.Func<global::G.RunStreamEventVariant3?, TResult>? runStreamEventVariant3 = null,
+            global::System.Func<global::G.RunStreamEventVariant4?, TResult>? runStreamEventVariant4 = null,
+            global::System.Func<global::G.RunStreamEventVariant5?, TResult>? runStreamEventVariant5 = null,
+            global::System.Func<global::G.RunStreamEventVariant6?, TResult>? runStreamEventVariant6 = null,
+            global::System.Func<global::G.RunStreamEventVariant7?, TResult>? runStreamEventVariant7 = null,
+            global::System.Func<global::G.RunStreamEventVariant8?, TResult>? runStreamEventVariant8 = null,
+            global::System.Func<global::G.RunStreamEventVariant9?, TResult>? runStreamEventVariant9 = null,
+            global::System.Func<global::G.RunStreamEventVariant10?, TResult>? runStreamEventVariant10 = null,
             bool validate = true)
         {
             if (validate)
@@ -448,45 +448,45 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsRunStreamEventVariant1 && runStreamEventVariant1 != null)
             {
-                return value1(Value1!);
+                return runStreamEventVariant1(RunStreamEventVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsRunStreamEventVariant2 && runStreamEventVariant2 != null)
             {
-                return value2(Value2!);
+                return runStreamEventVariant2(RunStreamEventVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsRunStreamEventVariant3 && runStreamEventVariant3 != null)
             {
-                return value3(Value3!);
+                return runStreamEventVariant3(RunStreamEventVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsRunStreamEventVariant4 && runStreamEventVariant4 != null)
             {
-                return value4(Value4!);
+                return runStreamEventVariant4(RunStreamEventVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsRunStreamEventVariant5 && runStreamEventVariant5 != null)
             {
-                return value5(Value5!);
+                return runStreamEventVariant5(RunStreamEventVariant5!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsRunStreamEventVariant6 && runStreamEventVariant6 != null)
             {
-                return value6(Value6!);
+                return runStreamEventVariant6(RunStreamEventVariant6!);
             }
-            else if (IsValue7 && value7 != null)
+            else if (IsRunStreamEventVariant7 && runStreamEventVariant7 != null)
             {
-                return value7(Value7!);
+                return runStreamEventVariant7(RunStreamEventVariant7!);
             }
-            else if (IsValue8 && value8 != null)
+            else if (IsRunStreamEventVariant8 && runStreamEventVariant8 != null)
             {
-                return value8(Value8!);
+                return runStreamEventVariant8(RunStreamEventVariant8!);
             }
-            else if (IsValue9 && value9 != null)
+            else if (IsRunStreamEventVariant9 && runStreamEventVariant9 != null)
             {
-                return value9(Value9!);
+                return runStreamEventVariant9(RunStreamEventVariant9!);
             }
-            else if (IsValue10 && value10 != null)
+            else if (IsRunStreamEventVariant10 && runStreamEventVariant10 != null)
             {
-                return value10(Value10!);
+                return runStreamEventVariant10(RunStreamEventVariant10!);
             }
 
             return default(TResult);
@@ -496,16 +496,16 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RunStreamEventVariant1?>? value1 = null,
-            global::System.Action<global::G.RunStreamEventVariant2?>? value2 = null,
-            global::System.Action<global::G.RunStreamEventVariant3?>? value3 = null,
-            global::System.Action<global::G.RunStreamEventVariant4?>? value4 = null,
-            global::System.Action<global::G.RunStreamEventVariant5?>? value5 = null,
-            global::System.Action<global::G.RunStreamEventVariant6?>? value6 = null,
-            global::System.Action<global::G.RunStreamEventVariant7?>? value7 = null,
-            global::System.Action<global::G.RunStreamEventVariant8?>? value8 = null,
-            global::System.Action<global::G.RunStreamEventVariant9?>? value9 = null,
-            global::System.Action<global::G.RunStreamEventVariant10?>? value10 = null,
+            global::System.Action<global::G.RunStreamEventVariant1?>? runStreamEventVariant1 = null,
+            global::System.Action<global::G.RunStreamEventVariant2?>? runStreamEventVariant2 = null,
+            global::System.Action<global::G.RunStreamEventVariant3?>? runStreamEventVariant3 = null,
+            global::System.Action<global::G.RunStreamEventVariant4?>? runStreamEventVariant4 = null,
+            global::System.Action<global::G.RunStreamEventVariant5?>? runStreamEventVariant5 = null,
+            global::System.Action<global::G.RunStreamEventVariant6?>? runStreamEventVariant6 = null,
+            global::System.Action<global::G.RunStreamEventVariant7?>? runStreamEventVariant7 = null,
+            global::System.Action<global::G.RunStreamEventVariant8?>? runStreamEventVariant8 = null,
+            global::System.Action<global::G.RunStreamEventVariant9?>? runStreamEventVariant9 = null,
+            global::System.Action<global::G.RunStreamEventVariant10?>? runStreamEventVariant10 = null,
             bool validate = true)
         {
             if (validate)
@@ -513,45 +513,45 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsRunStreamEventVariant1)
             {
-                value1?.Invoke(Value1!);
+                runStreamEventVariant1?.Invoke(RunStreamEventVariant1!);
             }
-            else if (IsValue2)
+            else if (IsRunStreamEventVariant2)
             {
-                value2?.Invoke(Value2!);
+                runStreamEventVariant2?.Invoke(RunStreamEventVariant2!);
             }
-            else if (IsValue3)
+            else if (IsRunStreamEventVariant3)
             {
-                value3?.Invoke(Value3!);
+                runStreamEventVariant3?.Invoke(RunStreamEventVariant3!);
             }
-            else if (IsValue4)
+            else if (IsRunStreamEventVariant4)
             {
-                value4?.Invoke(Value4!);
+                runStreamEventVariant4?.Invoke(RunStreamEventVariant4!);
             }
-            else if (IsValue5)
+            else if (IsRunStreamEventVariant5)
             {
-                value5?.Invoke(Value5!);
+                runStreamEventVariant5?.Invoke(RunStreamEventVariant5!);
             }
-            else if (IsValue6)
+            else if (IsRunStreamEventVariant6)
             {
-                value6?.Invoke(Value6!);
+                runStreamEventVariant6?.Invoke(RunStreamEventVariant6!);
             }
-            else if (IsValue7)
+            else if (IsRunStreamEventVariant7)
             {
-                value7?.Invoke(Value7!);
+                runStreamEventVariant7?.Invoke(RunStreamEventVariant7!);
             }
-            else if (IsValue8)
+            else if (IsRunStreamEventVariant8)
             {
-                value8?.Invoke(Value8!);
+                runStreamEventVariant8?.Invoke(RunStreamEventVariant8!);
             }
-            else if (IsValue9)
+            else if (IsRunStreamEventVariant9)
             {
-                value9?.Invoke(Value9!);
+                runStreamEventVariant9?.Invoke(RunStreamEventVariant9!);
             }
-            else if (IsValue10)
+            else if (IsRunStreamEventVariant10)
             {
-                value10?.Invoke(Value10!);
+                runStreamEventVariant10?.Invoke(RunStreamEventVariant10!);
             }
         }
 
@@ -562,25 +562,25 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                RunStreamEventVariant1,
                 typeof(global::G.RunStreamEventVariant1),
-                Value2,
+                RunStreamEventVariant2,
                 typeof(global::G.RunStreamEventVariant2),
-                Value3,
+                RunStreamEventVariant3,
                 typeof(global::G.RunStreamEventVariant3),
-                Value4,
+                RunStreamEventVariant4,
                 typeof(global::G.RunStreamEventVariant4),
-                Value5,
+                RunStreamEventVariant5,
                 typeof(global::G.RunStreamEventVariant5),
-                Value6,
+                RunStreamEventVariant6,
                 typeof(global::G.RunStreamEventVariant6),
-                Value7,
+                RunStreamEventVariant7,
                 typeof(global::G.RunStreamEventVariant7),
-                Value8,
+                RunStreamEventVariant8,
                 typeof(global::G.RunStreamEventVariant8),
-                Value9,
+                RunStreamEventVariant9,
                 typeof(global::G.RunStreamEventVariant9),
-                Value10,
+                RunStreamEventVariant10,
                 typeof(global::G.RunStreamEventVariant10),
             };
             const int offset = unchecked((int)2166136261);
@@ -598,16 +598,16 @@ namespace G
         public bool Equals(RunStreamEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant4?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant5?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant6?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant7?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant8?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant9?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant10?>.Default.Equals(Value10, other.Value10) 
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant1?>.Default.Equals(RunStreamEventVariant1, other.RunStreamEventVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant2?>.Default.Equals(RunStreamEventVariant2, other.RunStreamEventVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant3?>.Default.Equals(RunStreamEventVariant3, other.RunStreamEventVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant4?>.Default.Equals(RunStreamEventVariant4, other.RunStreamEventVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant5?>.Default.Equals(RunStreamEventVariant5, other.RunStreamEventVariant5) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant6?>.Default.Equals(RunStreamEventVariant6, other.RunStreamEventVariant6) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant7?>.Default.Equals(RunStreamEventVariant7, other.RunStreamEventVariant7) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant8?>.Default.Equals(RunStreamEventVariant8, other.RunStreamEventVariant8) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant9?>.Default.Equals(RunStreamEventVariant9, other.RunStreamEventVariant9) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStreamEventVariant10?>.Default.Equals(RunStreamEventVariant10, other.RunStreamEventVariant10) 
                 ;
         }
 

@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ScriptVariant1? Value1 { get; init; }
+        public global::G.ScriptVariant1? ScriptVariant1 { get; init; }
 #else
-        public global::G.ScriptVariant1? Value1 { get; }
+        public global::G.ScriptVariant1? ScriptVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ScriptVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsScriptVariant1 => ScriptVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ScriptVariant2? Value2 { get; init; }
+        public global::G.ScriptVariant2? ScriptVariant2 { get; init; }
 #else
-        public global::G.ScriptVariant2? Value2 { get; }
+        public global::G.ScriptVariant2? ScriptVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ScriptVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsScriptVariant2 => ScriptVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ScriptVariant1?(Script @this) => @this.Value1;
+        public static implicit operator global::G.ScriptVariant1?(Script @this) => @this.ScriptVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public Script(global::G.ScriptVariant1? value)
         {
-            Value1 = value;
+            ScriptVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ScriptVariant2?(Script @this) => @this.Value2;
+        public static implicit operator global::G.ScriptVariant2?(Script @this) => @this.ScriptVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public Script(global::G.ScriptVariant2? value)
         {
-            Value2 = value;
+            ScriptVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Script(
-            global::G.ScriptVariant1? value1,
-            global::G.ScriptVariant2? value2
+            global::G.ScriptVariant1? scriptVariant1,
+            global::G.ScriptVariant2? scriptVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ScriptVariant1 = scriptVariant1;
+            ScriptVariant2 = scriptVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ScriptVariant2 as object ??
+            ScriptVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ScriptVariant1?.ToString() ??
+            ScriptVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsScriptVariant1 || IsScriptVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ScriptVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.ScriptVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.ScriptVariant1?, TResult>? scriptVariant1 = null,
+            global::System.Func<global::G.ScriptVariant2?, TResult>? scriptVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsScriptVariant1 && scriptVariant1 != null)
             {
-                return value1(Value1!);
+                return scriptVariant1(ScriptVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsScriptVariant2 && scriptVariant2 != null)
             {
-                return value2(Value2!);
+                return scriptVariant2(ScriptVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ScriptVariant1?>? value1 = null,
-            global::System.Action<global::G.ScriptVariant2?>? value2 = null,
+            global::System.Action<global::G.ScriptVariant1?>? scriptVariant1 = null,
+            global::System.Action<global::G.ScriptVariant2?>? scriptVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsScriptVariant1)
             {
-                value1?.Invoke(Value1!);
+                scriptVariant1?.Invoke(ScriptVariant1!);
             }
-            else if (IsValue2)
+            else if (IsScriptVariant2)
             {
-                value2?.Invoke(Value2!);
+                scriptVariant2?.Invoke(ScriptVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ScriptVariant1,
                 typeof(global::G.ScriptVariant1),
-                Value2,
+                ScriptVariant2,
                 typeof(global::G.ScriptVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(Script other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ScriptVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ScriptVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ScriptVariant1?>.Default.Equals(ScriptVariant1, other.ScriptVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ScriptVariant2?>.Default.Equals(ScriptVariant2, other.ScriptVariant2) 
                 ;
         }
 

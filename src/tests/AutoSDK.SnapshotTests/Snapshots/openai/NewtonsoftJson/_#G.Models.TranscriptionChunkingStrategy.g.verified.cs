@@ -18,35 +18,35 @@ namespace G
         /// Default Value: [auto]
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TranscriptionChunkingStrategyEnum? Value1 { get; init; }
+        public global::G.TranscriptionChunkingStrategyEnum? Enum { get; init; }
 #else
-        public global::G.TranscriptionChunkingStrategyEnum? Value1 { get; }
+        public global::G.TranscriptionChunkingStrategyEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsEnum => Enum != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.VadConfig? Value2 { get; init; }
+        public global::G.VadConfig? VadConfig { get; init; }
 #else
-        public global::G.VadConfig? Value2 { get; }
+        public global::G.VadConfig? VadConfig { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VadConfig))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsVadConfig => VadConfig != null;
         /// <summary>
         /// 
         /// </summary>
@@ -55,14 +55,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TranscriptionChunkingStrategyEnum?(TranscriptionChunkingStrategy @this) => @this.Value1;
+        public static implicit operator global::G.TranscriptionChunkingStrategyEnum?(TranscriptionChunkingStrategy @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public TranscriptionChunkingStrategy(global::G.TranscriptionChunkingStrategyEnum? value)
         {
-            Value1 = value;
+            Enum = value;
         }
 
         /// <summary>
@@ -73,42 +73,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.VadConfig?(TranscriptionChunkingStrategy @this) => @this.Value2;
+        public static implicit operator global::G.VadConfig?(TranscriptionChunkingStrategy @this) => @this.VadConfig;
 
         /// <summary>
         /// 
         /// </summary>
         public TranscriptionChunkingStrategy(global::G.VadConfig? value)
         {
-            Value2 = value;
+            VadConfig = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TranscriptionChunkingStrategy(
-            global::G.TranscriptionChunkingStrategyEnum? value1,
-            global::G.VadConfig? value2
+            global::G.TranscriptionChunkingStrategyEnum? @enum,
+            global::G.VadConfig? vadConfig
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Enum = @enum;
+            VadConfig = vadConfig;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            VadConfig as object ??
+            Enum as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToValueString() ??
-            Value2?.ToString() 
+            Enum?.ToValueString() ??
+            VadConfig?.ToString() 
             ;
 
         /// <summary>
@@ -116,15 +116,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsEnum && !IsVadConfig || !IsEnum && IsVadConfig;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TranscriptionChunkingStrategyEnum?, TResult>? value1 = null,
-            global::System.Func<global::G.VadConfig?, TResult>? value2 = null,
+            global::System.Func<global::G.TranscriptionChunkingStrategyEnum?, TResult>? @enum = null,
+            global::System.Func<global::G.VadConfig?, TResult>? vadConfig = null,
             bool validate = true)
         {
             if (validate)
@@ -132,13 +132,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsEnum && @enum != null)
             {
-                return value1(Value1!);
+                return @enum(Enum!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsVadConfig && vadConfig != null)
             {
-                return value2(Value2!);
+                return vadConfig(VadConfig!);
             }
 
             return default(TResult);
@@ -148,8 +148,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TranscriptionChunkingStrategyEnum?>? value1 = null,
-            global::System.Action<global::G.VadConfig?>? value2 = null,
+            global::System.Action<global::G.TranscriptionChunkingStrategyEnum?>? @enum = null,
+            global::System.Action<global::G.VadConfig?>? vadConfig = null,
             bool validate = true)
         {
             if (validate)
@@ -157,13 +157,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsEnum)
             {
-                value1?.Invoke(Value1!);
+                @enum?.Invoke(Enum!);
             }
-            else if (IsValue2)
+            else if (IsVadConfig)
             {
-                value2?.Invoke(Value2!);
+                vadConfig?.Invoke(VadConfig!);
             }
         }
 
@@ -174,9 +174,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Enum,
                 typeof(global::G.TranscriptionChunkingStrategyEnum),
-                Value2,
+                VadConfig,
                 typeof(global::G.VadConfig),
             };
             const int offset = unchecked((int)2166136261);
@@ -194,8 +194,8 @@ namespace G
         public bool Equals(TranscriptionChunkingStrategy other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.TranscriptionChunkingStrategyEnum?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.VadConfig?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.TranscriptionChunkingStrategyEnum?>.Default.Equals(Enum, other.Enum) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.VadConfig?>.Default.Equals(VadConfig, other.VadConfig) 
                 ;
         }
 

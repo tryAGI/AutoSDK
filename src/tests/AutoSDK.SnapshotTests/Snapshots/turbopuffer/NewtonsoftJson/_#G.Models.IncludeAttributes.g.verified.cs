@@ -14,35 +14,35 @@ namespace G
         /// When `true`, include all attributes in the response. When `false`, include no attributes in the response.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public bool? Value1 { get; init; }
+        public bool? IncludeAttributesVariant1 { get; init; }
 #else
-        public bool? Value1 { get; }
+        public bool? IncludeAttributesVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IncludeAttributesVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsIncludeAttributesVariant1 => IncludeAttributesVariant1 != null;
 
         /// <summary>
         /// Include exactly the specified attributes in the response.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<string>? IncludeAttributesVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value2 { get; }
+        public global::System.Collections.Generic.IList<string>? IncludeAttributesVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IncludeAttributesVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsIncludeAttributesVariant2 => IncludeAttributesVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,42 +51,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator bool?(IncludeAttributes @this) => @this.Value1;
+        public static implicit operator bool?(IncludeAttributes @this) => @this.IncludeAttributesVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public IncludeAttributes(bool? value)
         {
-            Value1 = value;
+            IncludeAttributesVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public IncludeAttributes(
-            bool? value1,
-            global::System.Collections.Generic.IList<string>? value2
+            bool? includeAttributesVariant1,
+            global::System.Collections.Generic.IList<string>? includeAttributesVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            IncludeAttributesVariant1 = includeAttributesVariant1;
+            IncludeAttributesVariant2 = includeAttributesVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            IncludeAttributesVariant2 as object ??
+            IncludeAttributesVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString().ToLowerInvariant() ??
-            Value2?.ToString() 
+            IncludeAttributesVariant1?.ToString().ToLowerInvariant() ??
+            IncludeAttributesVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -94,15 +94,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsIncludeAttributesVariant1 && !IsIncludeAttributesVariant2 || !IsIncludeAttributesVariant1 && IsIncludeAttributesVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<bool?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value2 = null,
+            global::System.Func<bool?, TResult>? includeAttributesVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? includeAttributesVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -110,13 +110,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsIncludeAttributesVariant1 && includeAttributesVariant1 != null)
             {
-                return value1(Value1!);
+                return includeAttributesVariant1(IncludeAttributesVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsIncludeAttributesVariant2 && includeAttributesVariant2 != null)
             {
-                return value2(Value2!);
+                return includeAttributesVariant2(IncludeAttributesVariant2!);
             }
 
             return default(TResult);
@@ -126,8 +126,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<bool?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value2 = null,
+            global::System.Action<bool?>? includeAttributesVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? includeAttributesVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -135,13 +135,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsIncludeAttributesVariant1)
             {
-                value1?.Invoke(Value1!);
+                includeAttributesVariant1?.Invoke(IncludeAttributesVariant1!);
             }
-            else if (IsValue2)
+            else if (IsIncludeAttributesVariant2)
             {
-                value2?.Invoke(Value2!);
+                includeAttributesVariant2?.Invoke(IncludeAttributesVariant2!);
             }
         }
 
@@ -152,9 +152,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                IncludeAttributesVariant1,
                 typeof(bool),
-                Value2,
+                IncludeAttributesVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
             };
             const int offset = unchecked((int)2166136261);
@@ -172,8 +172,8 @@ namespace G
         public bool Equals(IncludeAttributes other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(IncludeAttributesVariant1, other.IncludeAttributesVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(IncludeAttributesVariant2, other.IncludeAttributesVariant2) 
                 ;
         }
 

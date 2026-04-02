@@ -14,86 +14,86 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value1 { get; init; }
+        public byte[]? Vector { get; init; }
 #else
-        public byte[]? Value1 { get; }
+        public byte[]? Vector { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Vector))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsVector => Vector != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value2 { get; init; }
+        public byte[]? Knn { get; init; }
 #else
-        public byte[]? Value2 { get; }
+        public byte[]? Knn { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Knn))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsKnn => Knn != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RankByText? Value3 { get; init; }
+        public global::G.RankByText? Text { get; init; }
 #else
-        public global::G.RankByText? Value3 { get; }
+        public global::G.RankByText? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value4 { get; init; }
+        public byte[]? Attribute { get; init; }
 #else
-        public byte[]? Value4 { get; }
+        public byte[]? Attribute { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Attribute))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsAttribute => Attribute != null;
 
         /// <summary>
         /// Order by multiple attributes. Results are sorted by the first attribute, then by the second attribute for ties, and so on.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<byte[]>? Value5 { get; init; }
+        public global::System.Collections.Generic.IList<byte[]>? Attributes { get; init; }
 #else
-        public global::System.Collections.Generic.IList<byte[]>? Value5 { get; }
+        public global::System.Collections.Generic.IList<byte[]>? Attributes { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Attributes))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsAttributes => Attributes != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,14 +102,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator byte[]?(RankBy @this) => @this.Value1;
+        public static implicit operator byte[]?(RankBy @this) => @this.Vector;
 
         /// <summary>
         /// 
         /// </summary>
         public RankBy(byte[]? value)
         {
-            Value1 = value;
+            Vector = value;
         }
 
         /// <summary>
@@ -120,54 +120,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RankByText?(RankBy @this) => @this.Value3;
+        public static implicit operator global::G.RankByText?(RankBy @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
         public RankBy(global::G.RankByText? value)
         {
-            Value3 = value;
+            Text = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public RankBy(
-            byte[]? value1,
-            byte[]? value2,
-            global::G.RankByText? value3,
-            byte[]? value4,
-            global::System.Collections.Generic.IList<byte[]>? value5
+            byte[]? vector,
+            byte[]? knn,
+            global::G.RankByText? text,
+            byte[]? attribute,
+            global::System.Collections.Generic.IList<byte[]>? attributes
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
+            Vector = vector;
+            Knn = knn;
+            Text = text;
+            Attribute = attribute;
+            Attributes = attributes;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            Attributes as object ??
+            Attribute as object ??
+            Text as object ??
+            Knn as object ??
+            Vector as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() 
+            Vector?.ToString() ??
+            Knn?.ToString() ??
+            Text?.ToString() ??
+            Attribute?.ToString() ??
+            Attributes?.ToString() 
             ;
 
         /// <summary>
@@ -175,18 +175,18 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5;
+            return IsVector || IsKnn || IsText || IsAttribute || IsAttributes;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<byte[]?, TResult>? value1 = null,
-            global::System.Func<byte[]?, TResult>? value2 = null,
-            global::System.Func<global::G.RankByText?, TResult>? value3 = null,
-            global::System.Func<byte[]?, TResult>? value4 = null,
-            global::System.Func<global::System.Collections.Generic.IList<byte[]>?, TResult>? value5 = null,
+            global::System.Func<byte[]?, TResult>? vector = null,
+            global::System.Func<byte[]?, TResult>? knn = null,
+            global::System.Func<global::G.RankByText?, TResult>? text = null,
+            global::System.Func<byte[]?, TResult>? attribute = null,
+            global::System.Func<global::System.Collections.Generic.IList<byte[]>?, TResult>? attributes = null,
             bool validate = true)
         {
             if (validate)
@@ -194,25 +194,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsVector && vector != null)
             {
-                return value1(Value1!);
+                return vector(Vector!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsKnn && knn != null)
             {
-                return value2(Value2!);
+                return knn(Knn!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsText && text != null)
             {
-                return value3(Value3!);
+                return text(Text!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsAttribute && attribute != null)
             {
-                return value4(Value4!);
+                return attribute(Attribute!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsAttributes && attributes != null)
             {
-                return value5(Value5!);
+                return attributes(Attributes!);
             }
 
             return default(TResult);
@@ -222,11 +222,11 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<byte[]?>? value1 = null,
-            global::System.Action<byte[]?>? value2 = null,
-            global::System.Action<global::G.RankByText?>? value3 = null,
-            global::System.Action<byte[]?>? value4 = null,
-            global::System.Action<global::System.Collections.Generic.IList<byte[]>?>? value5 = null,
+            global::System.Action<byte[]?>? vector = null,
+            global::System.Action<byte[]?>? knn = null,
+            global::System.Action<global::G.RankByText?>? text = null,
+            global::System.Action<byte[]?>? attribute = null,
+            global::System.Action<global::System.Collections.Generic.IList<byte[]>?>? attributes = null,
             bool validate = true)
         {
             if (validate)
@@ -234,25 +234,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsVector)
             {
-                value1?.Invoke(Value1!);
+                vector?.Invoke(Vector!);
             }
-            else if (IsValue2)
+            else if (IsKnn)
             {
-                value2?.Invoke(Value2!);
+                knn?.Invoke(Knn!);
             }
-            else if (IsValue3)
+            else if (IsText)
             {
-                value3?.Invoke(Value3!);
+                text?.Invoke(Text!);
             }
-            else if (IsValue4)
+            else if (IsAttribute)
             {
-                value4?.Invoke(Value4!);
+                attribute?.Invoke(Attribute!);
             }
-            else if (IsValue5)
+            else if (IsAttributes)
             {
-                value5?.Invoke(Value5!);
+                attributes?.Invoke(Attributes!);
             }
         }
 
@@ -263,15 +263,15 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Vector,
                 typeof(byte[]),
-                Value2,
+                Knn,
                 typeof(byte[]),
-                Value3,
+                Text,
                 typeof(global::G.RankByText),
-                Value4,
+                Attribute,
                 typeof(byte[]),
-                Value5,
+                Attributes,
                 typeof(global::System.Collections.Generic.IList<byte[]>),
             };
             const int offset = unchecked((int)2166136261);
@@ -289,11 +289,11 @@ namespace G
         public bool Equals(RankBy other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RankByText?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<byte[]>?>.Default.Equals(Value5, other.Value5) 
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Vector, other.Vector) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Knn, other.Knn) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RankByText?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Attribute, other.Attribute) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<byte[]>?>.Default.Equals(Attributes, other.Attributes) 
                 ;
         }
 

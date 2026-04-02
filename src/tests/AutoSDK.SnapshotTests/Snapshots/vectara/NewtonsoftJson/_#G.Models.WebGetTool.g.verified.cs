@@ -14,35 +14,35 @@ namespace G
         /// Base properties shared by all tool types.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ToolBase? Value1 { get; init; }
+        public global::G.ToolBase? Base { get; init; }
 #else
-        public global::G.ToolBase? Value1 { get; }
+        public global::G.ToolBase? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.WebGetToolVariant2? Value2 { get; init; }
+        public global::G.WebGetToolVariant2? WebGetToolVariant2 { get; init; }
 #else
-        public global::G.WebGetToolVariant2? Value2 { get; }
+        public global::G.WebGetToolVariant2? WebGetToolVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebGetToolVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsWebGetToolVariant2 => WebGetToolVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ToolBase?(WebGetTool @this) => @this.Value1;
+        public static implicit operator global::G.ToolBase?(WebGetTool @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public WebGetTool(global::G.ToolBase? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.WebGetToolVariant2?(WebGetTool @this) => @this.Value2;
+        public static implicit operator global::G.WebGetToolVariant2?(WebGetTool @this) => @this.WebGetToolVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public WebGetTool(global::G.WebGetToolVariant2? value)
         {
-            Value2 = value;
+            WebGetToolVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public WebGetTool(
-            global::G.ToolBase? value1,
-            global::G.WebGetToolVariant2? value2
+            global::G.ToolBase? @base,
+            global::G.WebGetToolVariant2? webGetToolVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            WebGetToolVariant2 = webGetToolVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            WebGetToolVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            WebGetToolVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsWebGetToolVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ToolBase?, TResult>? value1 = null,
-            global::System.Func<global::G.WebGetToolVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.ToolBase?, TResult>? @base = null,
+            global::System.Func<global::G.WebGetToolVariant2?, TResult>? webGetToolVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsWebGetToolVariant2 && webGetToolVariant2 != null)
             {
-                return value2(Value2!);
+                return webGetToolVariant2(WebGetToolVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ToolBase?>? value1 = null,
-            global::System.Action<global::G.WebGetToolVariant2?>? value2 = null,
+            global::System.Action<global::G.ToolBase?>? @base = null,
+            global::System.Action<global::G.WebGetToolVariant2?>? webGetToolVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsWebGetToolVariant2)
             {
-                value2?.Invoke(Value2!);
+                webGetToolVariant2?.Invoke(WebGetToolVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::G.ToolBase),
-                Value2,
+                WebGetToolVariant2,
                 typeof(global::G.WebGetToolVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(WebGetTool other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ToolBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.WebGetToolVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ToolBase?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.WebGetToolVariant2?>.Default.Equals(WebGetToolVariant2, other.WebGetToolVariant2) 
                 ;
         }
 

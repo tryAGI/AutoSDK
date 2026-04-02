@@ -64,7 +64,7 @@ namespace G.JsonConverters
             if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
             if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
 
-            global::G.FunctionIdFunctionId1? value1 = default;
+            global::G.FunctionIdFunctionId1? id1 = default;
             global::G.FunctionIdProjectSlug? projectSlug = default;
             global::G.FunctionIdGlobalFunction? globalFunction = default;
             global::G.FunctionIdPromptSessionId? promptSessionId = default;
@@ -79,7 +79,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionIdFunctionId1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionIdFunctionId1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionIdFunctionId1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        id1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -180,13 +180,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && projectSlug == null && globalFunction == null && promptSessionId == null && inlineCode == null && inlineFunction == null && inlinePrompt == null)
+            if (id1 == null && projectSlug == null && globalFunction == null && promptSessionId == null && inlineCode == null && inlineFunction == null && inlinePrompt == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionIdFunctionId1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionIdFunctionId1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionIdFunctionId1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    id1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -275,7 +275,7 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.FunctionId(
-                value1,
+                id1,
 
                 projectSlug,
 
@@ -302,11 +302,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsId1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionIdFunctionId1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionIdFunctionId1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionIdFunctionId1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Id1!, typeInfo);
             }
             else if (value.IsProjectSlug)
             {

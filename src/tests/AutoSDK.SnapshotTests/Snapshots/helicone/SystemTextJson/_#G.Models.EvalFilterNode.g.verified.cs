@@ -14,52 +14,52 @@ namespace G
         /// From T, pick a set of properties whose keys are in the union K
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PickFilterLeafRequestResponseRmt? Value1 { get; init; }
+        public global::G.PickFilterLeafRequestResponseRmt? PickLeafRequestResponseRmt { get; init; }
 #else
-        public global::G.PickFilterLeafRequestResponseRmt? Value1 { get; }
+        public global::G.PickFilterLeafRequestResponseRmt? PickLeafRequestResponseRmt { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PickLeafRequestResponseRmt))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsPickLeafRequestResponseRmt => PickLeafRequestResponseRmt != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.EvalFilterBranch? Value2 { get; init; }
+        public global::G.EvalFilterBranch? Branch { get; init; }
 #else
-        public global::G.EvalFilterBranch? Value2 { get; }
+        public global::G.EvalFilterBranch? Branch { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Branch))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsBranch => Branch != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.EvalFilterNodeEnum? Value3 { get; init; }
+        public global::G.EvalFilterNodeEnum? Enum { get; init; }
 #else
-        public global::G.EvalFilterNodeEnum? Value3 { get; }
+        public global::G.EvalFilterNodeEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsEnum => Enum != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PickFilterLeafRequestResponseRmt?(EvalFilterNode @this) => @this.Value1;
+        public static implicit operator global::G.PickFilterLeafRequestResponseRmt?(EvalFilterNode @this) => @this.PickLeafRequestResponseRmt;
 
         /// <summary>
         /// 
         /// </summary>
         public EvalFilterNode(global::G.PickFilterLeafRequestResponseRmt? value)
         {
-            Value1 = value;
+            PickLeafRequestResponseRmt = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.EvalFilterBranch?(EvalFilterNode @this) => @this.Value2;
+        public static implicit operator global::G.EvalFilterBranch?(EvalFilterNode @this) => @this.Branch;
 
         /// <summary>
         /// 
         /// </summary>
         public EvalFilterNode(global::G.EvalFilterBranch? value)
         {
-            Value2 = value;
+            Branch = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.EvalFilterNodeEnum?(EvalFilterNode @this) => @this.Value3;
+        public static implicit operator global::G.EvalFilterNodeEnum?(EvalFilterNode @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public EvalFilterNode(global::G.EvalFilterNodeEnum? value)
         {
-            Value3 = value;
+            Enum = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public EvalFilterNode(
-            global::G.PickFilterLeafRequestResponseRmt? value1,
-            global::G.EvalFilterBranch? value2,
-            global::G.EvalFilterNodeEnum? value3
+            global::G.PickFilterLeafRequestResponseRmt? pickLeafRequestResponseRmt,
+            global::G.EvalFilterBranch? branch,
+            global::G.EvalFilterNodeEnum? @enum
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            PickLeafRequestResponseRmt = pickLeafRequestResponseRmt;
+            Branch = branch;
+            Enum = @enum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            Enum as object ??
+            Branch as object ??
+            PickLeafRequestResponseRmt as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToValueString() 
+            PickLeafRequestResponseRmt?.ToString() ??
+            Branch?.ToString() ??
+            Enum?.ToValueString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsPickLeafRequestResponseRmt || IsBranch || IsEnum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PickFilterLeafRequestResponseRmt?, TResult>? value1 = null,
-            global::System.Func<global::G.EvalFilterBranch?, TResult>? value2 = null,
-            global::System.Func<global::G.EvalFilterNodeEnum?, TResult>? value3 = null,
+            global::System.Func<global::G.PickFilterLeafRequestResponseRmt?, TResult>? pickLeafRequestResponseRmt = null,
+            global::System.Func<global::G.EvalFilterBranch?, TResult>? branch = null,
+            global::System.Func<global::G.EvalFilterNodeEnum?, TResult>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsPickLeafRequestResponseRmt && pickLeafRequestResponseRmt != null)
             {
-                return value1(Value1!);
+                return pickLeafRequestResponseRmt(PickLeafRequestResponseRmt!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsBranch && branch != null)
             {
-                return value2(Value2!);
+                return branch(Branch!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsEnum && @enum != null)
             {
-                return value3(Value3!);
+                return @enum(Enum!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PickFilterLeafRequestResponseRmt?>? value1 = null,
-            global::System.Action<global::G.EvalFilterBranch?>? value2 = null,
-            global::System.Action<global::G.EvalFilterNodeEnum?>? value3 = null,
+            global::System.Action<global::G.PickFilterLeafRequestResponseRmt?>? pickLeafRequestResponseRmt = null,
+            global::System.Action<global::G.EvalFilterBranch?>? branch = null,
+            global::System.Action<global::G.EvalFilterNodeEnum?>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsPickLeafRequestResponseRmt)
             {
-                value1?.Invoke(Value1!);
+                pickLeafRequestResponseRmt?.Invoke(PickLeafRequestResponseRmt!);
             }
-            else if (IsValue2)
+            else if (IsBranch)
             {
-                value2?.Invoke(Value2!);
+                branch?.Invoke(Branch!);
             }
-            else if (IsValue3)
+            else if (IsEnum)
             {
-                value3?.Invoke(Value3!);
+                @enum?.Invoke(Enum!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                PickLeafRequestResponseRmt,
                 typeof(global::G.PickFilterLeafRequestResponseRmt),
-                Value2,
+                Branch,
                 typeof(global::G.EvalFilterBranch),
-                Value3,
+                Enum,
                 typeof(global::G.EvalFilterNodeEnum),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(EvalFilterNode other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.PickFilterLeafRequestResponseRmt?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.EvalFilterBranch?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.EvalFilterNodeEnum?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.PickFilterLeafRequestResponseRmt?>.Default.Equals(PickLeafRequestResponseRmt, other.PickLeafRequestResponseRmt) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.EvalFilterBranch?>.Default.Equals(Branch, other.Branch) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.EvalFilterNodeEnum?>.Default.Equals(Enum, other.Enum) 
                 ;
         }
 

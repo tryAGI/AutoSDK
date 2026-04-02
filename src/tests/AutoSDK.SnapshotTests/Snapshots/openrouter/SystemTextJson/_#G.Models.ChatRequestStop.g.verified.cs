@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ChatRequestStopVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ChatRequestStopVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestStopVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsChatRequestStopVariant1 => ChatRequestStopVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<string>? ChatRequestStopVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value2 { get; }
+        public global::System.Collections.Generic.IList<string>? ChatRequestStopVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestStopVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsChatRequestStopVariant2 => ChatRequestStopVariant2 != null;
 
         /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? ChatRequestStopVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? ChatRequestStopVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestStopVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsChatRequestStopVariant3 => ChatRequestStopVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,46 +68,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ChatRequestStop @this) => @this.Value1;
+        public static implicit operator string?(ChatRequestStop @this) => @this.ChatRequestStopVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestStop(string? value)
         {
-            Value1 = value;
+            ChatRequestStopVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestStop(
-            string? value1,
-            global::System.Collections.Generic.IList<string>? value2,
-            object? value3
+            string? chatRequestStopVariant1,
+            global::System.Collections.Generic.IList<string>? chatRequestStopVariant2,
+            object? chatRequestStopVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            ChatRequestStopVariant1 = chatRequestStopVariant1;
+            ChatRequestStopVariant2 = chatRequestStopVariant2;
+            ChatRequestStopVariant3 = chatRequestStopVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ChatRequestStopVariant3 as object ??
+            ChatRequestStopVariant2 as object ??
+            ChatRequestStopVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            ChatRequestStopVariant1?.ToString() ??
+            ChatRequestStopVariant2?.ToString() ??
+            ChatRequestStopVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -115,16 +115,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 || !IsValue1 && IsValue2 && !IsValue3 || !IsValue1 && !IsValue2 && IsValue3;
+            return IsChatRequestStopVariant1 && !IsChatRequestStopVariant2 && !IsChatRequestStopVariant3 || !IsChatRequestStopVariant1 && IsChatRequestStopVariant2 && !IsChatRequestStopVariant3 || !IsChatRequestStopVariant1 && !IsChatRequestStopVariant2 && IsChatRequestStopVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value2 = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<string?, TResult>? chatRequestStopVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? chatRequestStopVariant2 = null,
+            global::System.Func<object?, TResult>? chatRequestStopVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,17 +132,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsChatRequestStopVariant1 && chatRequestStopVariant1 != null)
             {
-                return value1(Value1!);
+                return chatRequestStopVariant1(ChatRequestStopVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsChatRequestStopVariant2 && chatRequestStopVariant2 != null)
             {
-                return value2(Value2!);
+                return chatRequestStopVariant2(ChatRequestStopVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsChatRequestStopVariant3 && chatRequestStopVariant3 != null)
             {
-                return value3(Value3!);
+                return chatRequestStopVariant3(ChatRequestStopVariant3!);
             }
 
             return default(TResult);
@@ -152,9 +152,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value2 = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<string?>? chatRequestStopVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? chatRequestStopVariant2 = null,
+            global::System.Action<object?>? chatRequestStopVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -162,17 +162,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsChatRequestStopVariant1)
             {
-                value1?.Invoke(Value1!);
+                chatRequestStopVariant1?.Invoke(ChatRequestStopVariant1!);
             }
-            else if (IsValue2)
+            else if (IsChatRequestStopVariant2)
             {
-                value2?.Invoke(Value2!);
+                chatRequestStopVariant2?.Invoke(ChatRequestStopVariant2!);
             }
-            else if (IsValue3)
+            else if (IsChatRequestStopVariant3)
             {
-                value3?.Invoke(Value3!);
+                chatRequestStopVariant3?.Invoke(ChatRequestStopVariant3!);
             }
         }
 
@@ -183,11 +183,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ChatRequestStopVariant1,
                 typeof(string),
-                Value2,
+                ChatRequestStopVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
-                Value3,
+                ChatRequestStopVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -205,9 +205,9 @@ namespace G
         public bool Equals(ChatRequestStop other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ChatRequestStopVariant1, other.ChatRequestStopVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(ChatRequestStopVariant2, other.ChatRequestStopVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ChatRequestStopVariant3, other.ChatRequestStopVariant3) 
                 ;
         }
 

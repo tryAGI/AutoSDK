@@ -150,35 +150,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.TopicMapData, object>? Value9 { get; init; }
+        public global::G.AllOf<global::G.TopicMapData, object>? FunctionDataNullishVariant9 { get; init; }
 #else
-        public global::G.AllOf<global::G.TopicMapData, object>? Value9 { get; }
+        public global::G.AllOf<global::G.TopicMapData, object>? FunctionDataNullishVariant9 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionDataNullishVariant9))]
 #endif
-        public bool IsValue9 => Value9 != null;
+        public bool IsFunctionDataNullishVariant9 => FunctionDataNullishVariant9 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value10 { get; init; }
+        public object? FunctionDataNullishVariant10 { get; init; }
 #else
-        public object? Value10 { get; }
+        public object? FunctionDataNullishVariant10 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionDataNullishVariant10))]
 #endif
-        public bool IsValue10 => Value10 != null;
+        public bool IsFunctionDataNullishVariant10 => FunctionDataNullishVariant10 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -331,14 +331,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.TopicMapData, object>?(FunctionDataNullish @this) => @this.Value9;
+        public static implicit operator global::G.AllOf<global::G.TopicMapData, object>?(FunctionDataNullish @this) => @this.FunctionDataNullishVariant9;
 
         /// <summary>
         /// 
         /// </summary>
         public FunctionDataNullish(global::G.AllOf<global::G.TopicMapData, object>? value)
         {
-            Value9 = value;
+            FunctionDataNullishVariant9 = value;
         }
 
         /// <summary>
@@ -353,8 +353,8 @@ namespace G
             global::G.FacetData? facet,
             global::G.BatchedFacetData? batchedFacet,
             global::G.FunctionDataNullishParameters? parameters,
-            global::G.AllOf<global::G.TopicMapData, object>? value9,
-            object? value10
+            global::G.AllOf<global::G.TopicMapData, object>? functionDataNullishVariant9,
+            object? functionDataNullishVariant10
             )
         {
             Prompt = prompt;
@@ -365,16 +365,16 @@ namespace G
             Facet = facet;
             BatchedFacet = batchedFacet;
             Parameters = parameters;
-            Value9 = value9;
-            Value10 = value10;
+            FunctionDataNullishVariant9 = functionDataNullishVariant9;
+            FunctionDataNullishVariant10 = functionDataNullishVariant10;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value10 as object ??
-            Value9 as object ??
+            FunctionDataNullishVariant10 as object ??
+            FunctionDataNullishVariant9 as object ??
             Parameters as object ??
             BatchedFacet as object ??
             Facet as object ??
@@ -397,8 +397,8 @@ namespace G
             Facet?.ToString() ??
             BatchedFacet?.ToString() ??
             Parameters?.ToString() ??
-            Value9?.ToString() ??
-            Value10?.ToString() 
+            FunctionDataNullishVariant9?.ToString() ??
+            FunctionDataNullishVariant10?.ToString() 
             ;
 
         /// <summary>
@@ -406,7 +406,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsPrompt || IsCode || IsGraph || IsRemoteEval || IsGlobal || IsFacet || IsBatchedFacet || IsParameters || IsValue9 || IsValue10;
+            return IsPrompt || IsCode || IsGraph || IsRemoteEval || IsGlobal || IsFacet || IsBatchedFacet || IsParameters || IsFunctionDataNullishVariant9 || IsFunctionDataNullishVariant10;
         }
 
         /// <summary>
@@ -421,8 +421,8 @@ namespace G
             global::System.Func<global::G.FacetData?, TResult>? facet = null,
             global::System.Func<global::G.BatchedFacetData?, TResult>? batchedFacet = null,
             global::System.Func<global::G.FunctionDataNullishParameters?, TResult>? parameters = null,
-            global::System.Func<global::G.AllOf<global::G.TopicMapData, object>?, TResult>? value9 = null,
-            global::System.Func<object?, TResult>? value10 = null,
+            global::System.Func<global::G.AllOf<global::G.TopicMapData, object>?, TResult>? functionDataNullishVariant9 = null,
+            global::System.Func<object?, TResult>? functionDataNullishVariant10 = null,
             bool validate = true)
         {
             if (validate)
@@ -462,13 +462,13 @@ namespace G
             {
                 return parameters(Parameters!);
             }
-            else if (IsValue9 && value9 != null)
+            else if (IsFunctionDataNullishVariant9 && functionDataNullishVariant9 != null)
             {
-                return value9(Value9!);
+                return functionDataNullishVariant9(FunctionDataNullishVariant9!);
             }
-            else if (IsValue10 && value10 != null)
+            else if (IsFunctionDataNullishVariant10 && functionDataNullishVariant10 != null)
             {
-                return value10(Value10!);
+                return functionDataNullishVariant10(FunctionDataNullishVariant10!);
             }
 
             return default(TResult);
@@ -486,8 +486,8 @@ namespace G
             global::System.Action<global::G.FacetData?>? facet = null,
             global::System.Action<global::G.BatchedFacetData?>? batchedFacet = null,
             global::System.Action<global::G.FunctionDataNullishParameters?>? parameters = null,
-            global::System.Action<global::G.AllOf<global::G.TopicMapData, object>?>? value9 = null,
-            global::System.Action<object?>? value10 = null,
+            global::System.Action<global::G.AllOf<global::G.TopicMapData, object>?>? functionDataNullishVariant9 = null,
+            global::System.Action<object?>? functionDataNullishVariant10 = null,
             bool validate = true)
         {
             if (validate)
@@ -527,13 +527,13 @@ namespace G
             {
                 parameters?.Invoke(Parameters!);
             }
-            else if (IsValue9)
+            else if (IsFunctionDataNullishVariant9)
             {
-                value9?.Invoke(Value9!);
+                functionDataNullishVariant9?.Invoke(FunctionDataNullishVariant9!);
             }
-            else if (IsValue10)
+            else if (IsFunctionDataNullishVariant10)
             {
-                value10?.Invoke(Value10!);
+                functionDataNullishVariant10?.Invoke(FunctionDataNullishVariant10!);
             }
         }
 
@@ -560,9 +560,9 @@ namespace G
                 typeof(global::G.BatchedFacetData),
                 Parameters,
                 typeof(global::G.FunctionDataNullishParameters),
-                Value9,
+                FunctionDataNullishVariant9,
                 typeof(global::G.AllOf<global::G.TopicMapData, object>),
-                Value10,
+                FunctionDataNullishVariant10,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -588,8 +588,8 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.FacetData?>.Default.Equals(Facet, other.Facet) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BatchedFacetData?>.Default.Equals(BatchedFacet, other.BatchedFacet) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.FunctionDataNullishParameters?>.Default.Equals(Parameters, other.Parameters) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.TopicMapData, object>?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value10, other.Value10) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.TopicMapData, object>?>.Default.Equals(FunctionDataNullishVariant9, other.FunctionDataNullishVariant9) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(FunctionDataNullishVariant10, other.FunctionDataNullishVariant10) 
                 ;
         }
 

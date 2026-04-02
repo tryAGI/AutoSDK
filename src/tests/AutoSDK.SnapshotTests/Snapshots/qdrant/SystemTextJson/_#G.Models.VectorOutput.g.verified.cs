@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<float>? Value1 { get; init; }
+        public global::System.Collections.Generic.IList<float>? VectorOutputVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<float>? Value1 { get; }
+        public global::System.Collections.Generic.IList<float>? VectorOutputVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorOutputVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsVectorOutputVariant1 => VectorOutputVariant1 != null;
 
         /// <summary>
         /// Sparse vector structure
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SparseVector? Value2 { get; init; }
+        public global::G.SparseVector? Sparse { get; init; }
 #else
-        public global::G.SparseVector? Value2 { get; }
+        public global::G.SparseVector? Sparse { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sparse))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsSparse => Sparse != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? Value3 { get; init; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? VectorOutputVariant3 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? Value3 { get; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? VectorOutputVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorOutputVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsVectorOutputVariant3 => VectorOutputVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,46 +68,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SparseVector?(VectorOutput @this) => @this.Value2;
+        public static implicit operator global::G.SparseVector?(VectorOutput @this) => @this.Sparse;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorOutput(global::G.SparseVector? value)
         {
-            Value2 = value;
+            Sparse = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public VectorOutput(
-            global::System.Collections.Generic.IList<float>? value1,
-            global::G.SparseVector? value2,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value3
+            global::System.Collections.Generic.IList<float>? vectorOutputVariant1,
+            global::G.SparseVector? sparse,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? vectorOutputVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            VectorOutputVariant1 = vectorOutputVariant1;
+            Sparse = sparse;
+            VectorOutputVariant3 = vectorOutputVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            VectorOutputVariant3 as object ??
+            Sparse as object ??
+            VectorOutputVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            VectorOutputVariant1?.ToString() ??
+            Sparse?.ToString() ??
+            VectorOutputVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -115,16 +115,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsVectorOutputVariant1 || IsSparse || IsVectorOutputVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? value1 = null,
-            global::System.Func<global::G.SparseVector?, TResult>? value2 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? value3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? vectorOutputVariant1 = null,
+            global::System.Func<global::G.SparseVector?, TResult>? sparse = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? vectorOutputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,17 +132,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsVectorOutputVariant1 && vectorOutputVariant1 != null)
             {
-                return value1(Value1!);
+                return vectorOutputVariant1(VectorOutputVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsSparse && sparse != null)
             {
-                return value2(Value2!);
+                return sparse(Sparse!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsVectorOutputVariant3 && vectorOutputVariant3 != null)
             {
-                return value3(Value3!);
+                return vectorOutputVariant3(VectorOutputVariant3!);
             }
 
             return default(TResult);
@@ -152,9 +152,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? value1 = null,
-            global::System.Action<global::G.SparseVector?>? value2 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? value3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>?>? vectorOutputVariant1 = null,
+            global::System.Action<global::G.SparseVector?>? sparse = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? vectorOutputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -162,17 +162,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsVectorOutputVariant1)
             {
-                value1?.Invoke(Value1!);
+                vectorOutputVariant1?.Invoke(VectorOutputVariant1!);
             }
-            else if (IsValue2)
+            else if (IsSparse)
             {
-                value2?.Invoke(Value2!);
+                sparse?.Invoke(Sparse!);
             }
-            else if (IsValue3)
+            else if (IsVectorOutputVariant3)
             {
-                value3?.Invoke(Value3!);
+                vectorOutputVariant3?.Invoke(VectorOutputVariant3!);
             }
         }
 
@@ -183,11 +183,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                VectorOutputVariant1,
                 typeof(global::System.Collections.Generic.IList<float>),
-                Value2,
+                Sparse,
                 typeof(global::G.SparseVector),
-                Value3,
+                VectorOutputVariant3,
                 typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>),
             };
             const int offset = unchecked((int)2166136261);
@@ -205,9 +205,9 @@ namespace G
         public bool Equals(VectorOutput other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SparseVector?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(VectorOutputVariant1, other.VectorOutputVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SparseVector?>.Default.Equals(Sparse, other.Sparse) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(VectorOutputVariant3, other.VectorOutputVariant3) 
                 ;
         }
 

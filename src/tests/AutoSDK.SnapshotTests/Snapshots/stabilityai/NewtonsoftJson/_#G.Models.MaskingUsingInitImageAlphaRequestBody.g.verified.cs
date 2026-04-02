@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MaskingUsingInitImageAlphaRequestBodyVariant1? Value1 { get; init; }
+        public global::G.MaskingUsingInitImageAlphaRequestBodyVariant1? MaskingUsingInitImageAlphaRequestBodyVariant1 { get; init; }
 #else
-        public global::G.MaskingUsingInitImageAlphaRequestBodyVariant1? Value1 { get; }
+        public global::G.MaskingUsingInitImageAlphaRequestBodyVariant1? MaskingUsingInitImageAlphaRequestBodyVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaskingUsingInitImageAlphaRequestBodyVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMaskingUsingInitImageAlphaRequestBodyVariant1 => MaskingUsingInitImageAlphaRequestBodyVariant1 != null;
 
         /// <summary>
         /// Represents the optional parameters that can be passed to any generation request.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GenerationRequestOptionalParams? Value2 { get; init; }
+        public global::G.GenerationRequestOptionalParams? GenerationOptionalParams { get; init; }
 #else
-        public global::G.GenerationRequestOptionalParams? Value2 { get; }
+        public global::G.GenerationRequestOptionalParams? GenerationOptionalParams { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationOptionalParams))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsGenerationOptionalParams => GenerationOptionalParams != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MaskingUsingInitImageAlphaRequestBodyVariant1?(MaskingUsingInitImageAlphaRequestBody @this) => @this.Value1;
+        public static implicit operator global::G.MaskingUsingInitImageAlphaRequestBodyVariant1?(MaskingUsingInitImageAlphaRequestBody @this) => @this.MaskingUsingInitImageAlphaRequestBodyVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public MaskingUsingInitImageAlphaRequestBody(global::G.MaskingUsingInitImageAlphaRequestBodyVariant1? value)
         {
-            Value1 = value;
+            MaskingUsingInitImageAlphaRequestBodyVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GenerationRequestOptionalParams?(MaskingUsingInitImageAlphaRequestBody @this) => @this.Value2;
+        public static implicit operator global::G.GenerationRequestOptionalParams?(MaskingUsingInitImageAlphaRequestBody @this) => @this.GenerationOptionalParams;
 
         /// <summary>
         /// 
         /// </summary>
         public MaskingUsingInitImageAlphaRequestBody(global::G.GenerationRequestOptionalParams? value)
         {
-            Value2 = value;
+            GenerationOptionalParams = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MaskingUsingInitImageAlphaRequestBody(
-            global::G.MaskingUsingInitImageAlphaRequestBodyVariant1? value1,
-            global::G.GenerationRequestOptionalParams? value2
+            global::G.MaskingUsingInitImageAlphaRequestBodyVariant1? maskingUsingInitImageAlphaRequestBodyVariant1,
+            global::G.GenerationRequestOptionalParams? generationOptionalParams
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            MaskingUsingInitImageAlphaRequestBodyVariant1 = maskingUsingInitImageAlphaRequestBodyVariant1;
+            GenerationOptionalParams = generationOptionalParams;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            GenerationOptionalParams as object ??
+            MaskingUsingInitImageAlphaRequestBodyVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            MaskingUsingInitImageAlphaRequestBodyVariant1?.ToString() ??
+            GenerationOptionalParams?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsMaskingUsingInitImageAlphaRequestBodyVariant1 && IsGenerationOptionalParams;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MaskingUsingInitImageAlphaRequestBodyVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.GenerationRequestOptionalParams?, TResult>? value2 = null,
+            global::System.Func<global::G.MaskingUsingInitImageAlphaRequestBodyVariant1?, TResult>? maskingUsingInitImageAlphaRequestBodyVariant1 = null,
+            global::System.Func<global::G.GenerationRequestOptionalParams?, TResult>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMaskingUsingInitImageAlphaRequestBodyVariant1 && maskingUsingInitImageAlphaRequestBodyVariant1 != null)
             {
-                return value1(Value1!);
+                return maskingUsingInitImageAlphaRequestBodyVariant1(MaskingUsingInitImageAlphaRequestBodyVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsGenerationOptionalParams && generationOptionalParams != null)
             {
-                return value2(Value2!);
+                return generationOptionalParams(GenerationOptionalParams!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MaskingUsingInitImageAlphaRequestBodyVariant1?>? value1 = null,
-            global::System.Action<global::G.GenerationRequestOptionalParams?>? value2 = null,
+            global::System.Action<global::G.MaskingUsingInitImageAlphaRequestBodyVariant1?>? maskingUsingInitImageAlphaRequestBodyVariant1 = null,
+            global::System.Action<global::G.GenerationRequestOptionalParams?>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMaskingUsingInitImageAlphaRequestBodyVariant1)
             {
-                value1?.Invoke(Value1!);
+                maskingUsingInitImageAlphaRequestBodyVariant1?.Invoke(MaskingUsingInitImageAlphaRequestBodyVariant1!);
             }
-            else if (IsValue2)
+            else if (IsGenerationOptionalParams)
             {
-                value2?.Invoke(Value2!);
+                generationOptionalParams?.Invoke(GenerationOptionalParams!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                MaskingUsingInitImageAlphaRequestBodyVariant1,
                 typeof(global::G.MaskingUsingInitImageAlphaRequestBodyVariant1),
-                Value2,
+                GenerationOptionalParams,
                 typeof(global::G.GenerationRequestOptionalParams),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(MaskingUsingInitImageAlphaRequestBody other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.MaskingUsingInitImageAlphaRequestBodyVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GenerationRequestOptionalParams?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.MaskingUsingInitImageAlphaRequestBodyVariant1?>.Default.Equals(MaskingUsingInitImageAlphaRequestBodyVariant1, other.MaskingUsingInitImageAlphaRequestBodyVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GenerationRequestOptionalParams?>.Default.Equals(GenerationOptionalParams, other.GenerationOptionalParams) 
                 ;
         }
 

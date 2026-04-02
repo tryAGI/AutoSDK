@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateOrganizationRequest? Value1 { get; init; }
+        public global::G.CreateOrganizationRequest? Create { get; init; }
 #else
-        public global::G.CreateOrganizationRequest? Value1 { get; }
+        public global::G.CreateOrganizationRequest? Create { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Create))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsCreate => Create != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.UpdateOrganizationRequestVariant2? Value2 { get; init; }
+        public global::G.UpdateOrganizationRequestVariant2? UpdateOrganizationRequestVariant2 { get; init; }
 #else
-        public global::G.UpdateOrganizationRequestVariant2? Value2 { get; }
+        public global::G.UpdateOrganizationRequestVariant2? UpdateOrganizationRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateOrganizationRequestVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsUpdateOrganizationRequestVariant2 => UpdateOrganizationRequestVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateOrganizationRequest?(UpdateOrganizationRequest @this) => @this.Value1;
+        public static implicit operator global::G.CreateOrganizationRequest?(UpdateOrganizationRequest @this) => @this.Create;
 
         /// <summary>
         /// 
         /// </summary>
         public UpdateOrganizationRequest(global::G.CreateOrganizationRequest? value)
         {
-            Value1 = value;
+            Create = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.UpdateOrganizationRequestVariant2?(UpdateOrganizationRequest @this) => @this.Value2;
+        public static implicit operator global::G.UpdateOrganizationRequestVariant2?(UpdateOrganizationRequest @this) => @this.UpdateOrganizationRequestVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public UpdateOrganizationRequest(global::G.UpdateOrganizationRequestVariant2? value)
         {
-            Value2 = value;
+            UpdateOrganizationRequestVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public UpdateOrganizationRequest(
-            global::G.CreateOrganizationRequest? value1,
-            global::G.UpdateOrganizationRequestVariant2? value2
+            global::G.CreateOrganizationRequest? create,
+            global::G.UpdateOrganizationRequestVariant2? updateOrganizationRequestVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Create = create;
+            UpdateOrganizationRequestVariant2 = updateOrganizationRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            UpdateOrganizationRequestVariant2 as object ??
+            Create as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Create?.ToString() ??
+            UpdateOrganizationRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsCreate && IsUpdateOrganizationRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateOrganizationRequest?, TResult>? value1 = null,
-            global::System.Func<global::G.UpdateOrganizationRequestVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.CreateOrganizationRequest?, TResult>? create = null,
+            global::System.Func<global::G.UpdateOrganizationRequestVariant2?, TResult>? updateOrganizationRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsCreate && create != null)
             {
-                return value1(Value1!);
+                return create(Create!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsUpdateOrganizationRequestVariant2 && updateOrganizationRequestVariant2 != null)
             {
-                return value2(Value2!);
+                return updateOrganizationRequestVariant2(UpdateOrganizationRequestVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateOrganizationRequest?>? value1 = null,
-            global::System.Action<global::G.UpdateOrganizationRequestVariant2?>? value2 = null,
+            global::System.Action<global::G.CreateOrganizationRequest?>? create = null,
+            global::System.Action<global::G.UpdateOrganizationRequestVariant2?>? updateOrganizationRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsCreate)
             {
-                value1?.Invoke(Value1!);
+                create?.Invoke(Create!);
             }
-            else if (IsValue2)
+            else if (IsUpdateOrganizationRequestVariant2)
             {
-                value2?.Invoke(Value2!);
+                updateOrganizationRequestVariant2?.Invoke(UpdateOrganizationRequestVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Create,
                 typeof(global::G.CreateOrganizationRequest),
-                Value2,
+                UpdateOrganizationRequestVariant2,
                 typeof(global::G.UpdateOrganizationRequestVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(UpdateOrganizationRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateOrganizationRequest?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.UpdateOrganizationRequestVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateOrganizationRequest?>.Default.Equals(Create, other.Create) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.UpdateOrganizationRequestVariant2?>.Default.Equals(UpdateOrganizationRequestVariant2, other.UpdateOrganizationRequestVariant2) 
                 ;
         }
 

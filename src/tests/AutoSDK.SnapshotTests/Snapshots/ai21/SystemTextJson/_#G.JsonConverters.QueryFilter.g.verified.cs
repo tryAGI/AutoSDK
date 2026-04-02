@@ -69,7 +69,7 @@ namespace G.JsonConverters
 
             global::G.ComparisonOperator? comparisonOperator = default;
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>? logicalOperator = default;
-            global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>? value3 = default;
+            global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>? queryFilterVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -113,7 +113,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        queryFilterVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -124,7 +124,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (comparisonOperator == null && logicalOperator == null && value3 == null)
+            if (comparisonOperator == null && logicalOperator == null && queryFilterVariant3 == null)
             {
                 try
                 {
@@ -159,7 +159,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    queryFilterVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -174,7 +174,7 @@ namespace G.JsonConverters
 
                 logicalOperator,
 
-                value3
+                queryFilterVariant3
                 );
 
             return __value;
@@ -201,11 +201,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.LogicalOperator!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsQueryFilterVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.QueryFilterVariant3!, typeInfo);
             }
         }
     }

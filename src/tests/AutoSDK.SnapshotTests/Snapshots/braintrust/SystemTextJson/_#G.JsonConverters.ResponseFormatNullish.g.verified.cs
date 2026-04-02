@@ -45,7 +45,7 @@ namespace G.JsonConverters
             global::G.ResponseFormatNullishJsonObject? jsonObject = default;
             global::G.ResponseFormatNullishJsonSchema? jsonSchema = default;
             global::G.ResponseFormatNullishText? text = default;
-            object? value4 = default;
+            object? responseFormatNullishVariant4 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -99,7 +99,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responseFormatNullishVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -110,7 +110,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (jsonObject == null && jsonSchema == null && text == null && value4 == null)
+            if (jsonObject == null && jsonSchema == null && text == null && responseFormatNullishVariant4 == null)
             {
                 try
                 {
@@ -155,7 +155,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responseFormatNullishVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -172,7 +172,7 @@ namespace G.JsonConverters
 
                 text,
 
-                value4
+                responseFormatNullishVariant4
                 );
 
             return __value;
@@ -205,11 +205,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseFormatNullishText).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
-            else if (value.IsValue4)
+            else if (value.IsResponseFormatNullishVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseFormatNullishVariant4!, typeInfo);
             }
         }
     }

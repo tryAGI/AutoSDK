@@ -14,35 +14,35 @@ namespace G
         /// The streamed event types
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatStreamEventType? Value1 { get; init; }
+        public global::G.ChatStreamEventType? StreamType { get; init; }
 #else
-        public global::G.ChatStreamEventType? Value1 { get; }
+        public global::G.ChatStreamEventType? StreamType { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamType))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsStreamType => StreamType != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatContentDeltaEvent3m0vqs? Value2 { get; init; }
+        public global::G.ChatContentDeltaEvent3m0vqs? Event3m0vqs { get; init; }
 #else
-        public global::G.ChatContentDeltaEvent3m0vqs? Value2 { get; }
+        public global::G.ChatContentDeltaEvent3m0vqs? Event3m0vqs { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event3m0vqs))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEvent3m0vqs => Event3m0vqs != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatStreamEventType?(ChatContentDeltaEvent @this) => @this.Value1;
+        public static implicit operator global::G.ChatStreamEventType?(ChatContentDeltaEvent @this) => @this.StreamType;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatContentDeltaEvent(global::G.ChatStreamEventType? value)
         {
-            Value1 = value;
+            StreamType = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatContentDeltaEvent3m0vqs?(ChatContentDeltaEvent @this) => @this.Value2;
+        public static implicit operator global::G.ChatContentDeltaEvent3m0vqs?(ChatContentDeltaEvent @this) => @this.Event3m0vqs;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatContentDeltaEvent(global::G.ChatContentDeltaEvent3m0vqs? value)
         {
-            Value2 = value;
+            Event3m0vqs = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatContentDeltaEvent(
-            global::G.ChatStreamEventType? value1,
-            global::G.ChatContentDeltaEvent3m0vqs? value2
+            global::G.ChatStreamEventType? streamType,
+            global::G.ChatContentDeltaEvent3m0vqs? event3m0vqs
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            StreamType = streamType;
+            Event3m0vqs = event3m0vqs;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Event3m0vqs as object ??
+            StreamType as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            StreamType?.ToString() ??
+            Event3m0vqs?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsStreamType && IsEvent3m0vqs;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEventType?, TResult>? value1 = null,
-            global::System.Func<global::G.ChatContentDeltaEvent3m0vqs?, TResult>? value2 = null,
+            global::System.Func<global::G.ChatStreamEventType?, TResult>? streamType = null,
+            global::System.Func<global::G.ChatContentDeltaEvent3m0vqs?, TResult>? event3m0vqs = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsStreamType && streamType != null)
             {
-                return value1(Value1!);
+                return streamType(StreamType!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEvent3m0vqs && event3m0vqs != null)
             {
-                return value2(Value2!);
+                return event3m0vqs(Event3m0vqs!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEventType?>? value1 = null,
-            global::System.Action<global::G.ChatContentDeltaEvent3m0vqs?>? value2 = null,
+            global::System.Action<global::G.ChatStreamEventType?>? streamType = null,
+            global::System.Action<global::G.ChatContentDeltaEvent3m0vqs?>? event3m0vqs = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsStreamType)
             {
-                value1?.Invoke(Value1!);
+                streamType?.Invoke(StreamType!);
             }
-            else if (IsValue2)
+            else if (IsEvent3m0vqs)
             {
-                value2?.Invoke(Value2!);
+                event3m0vqs?.Invoke(Event3m0vqs!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                StreamType,
                 typeof(global::G.ChatStreamEventType),
-                Value2,
+                Event3m0vqs,
                 typeof(global::G.ChatContentDeltaEvent3m0vqs),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ChatContentDeltaEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEventType?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatContentDeltaEvent3m0vqs?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEventType?>.Default.Equals(StreamType, other.StreamType) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatContentDeltaEvent3m0vqs?>.Default.Equals(Event3m0vqs, other.Event3m0vqs) 
                 ;
         }
 

@@ -14,106 +14,106 @@ namespace G
         /// Example: [0.875F, 0.140625F, 0.8976F]
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<float>? Value1 { get; init; }
+        public global::System.Collections.Generic.IList<float>? VectorStructVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<float>? Value1 { get; }
+        public global::System.Collections.Generic.IList<float>? VectorStructVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsVectorStructVariant1 => VectorStructVariant1 != null;
 
         /// <summary>
         /// Example: [[0.875F, 0.140625F, 0.1102F], [0.758F, 0.28126F, 0.96871F], [0.621F, 0.421878F, 0.9375F]]
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? VectorStructVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? Value2 { get; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? VectorStructVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsVectorStructVariant2 => VectorStructVariant2 != null;
 
         /// <summary>
         /// Example: {"image-embeddings":[0.8730000257492065,0.140625,0.897599995136261]}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? VectorStructVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? VectorStructVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsVectorStructVariant3 => VectorStructVariant3 != null;
 
         /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
         /// Text document for embedding. Requires inference infrastructure, unimplemented.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Document? Value4 { get; init; }
+        public global::G.Document? Document { get; init; }
 #else
-        public global::G.Document? Value4 { get; }
+        public global::G.Document? Document { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsDocument => Document != null;
 
         /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
         /// Image object for embedding. Requires inference infrastructure, unimplemented.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Image? Value5 { get; init; }
+        public global::G.Image? Image { get; init; }
 #else
-        public global::G.Image? Value5 { get; }
+        public global::G.Image? Image { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsImage => Image != null;
 
         /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
         /// Custom object for embedding. Requires inference infrastructure, unimplemented.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InferenceObject? Value6 { get; init; }
+        public global::G.InferenceObject? InferenceObject { get; init; }
 #else
-        public global::G.InferenceObject? Value6 { get; }
+        public global::G.InferenceObject? InferenceObject { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InferenceObject))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsInferenceObject => InferenceObject != null;
         /// <summary>
         /// 
         /// </summary>
@@ -122,14 +122,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Document?(VectorStruct @this) => @this.Value4;
+        public static implicit operator global::G.Document?(VectorStruct @this) => @this.Document;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStruct(global::G.Document? value)
         {
-            Value4 = value;
+            Document = value;
         }
 
         /// <summary>
@@ -140,14 +140,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Image?(VectorStruct @this) => @this.Value5;
+        public static implicit operator global::G.Image?(VectorStruct @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStruct(global::G.Image? value)
         {
-            Value5 = value;
+            Image = value;
         }
 
         /// <summary>
@@ -158,58 +158,58 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InferenceObject?(VectorStruct @this) => @this.Value6;
+        public static implicit operator global::G.InferenceObject?(VectorStruct @this) => @this.InferenceObject;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStruct(global::G.InferenceObject? value)
         {
-            Value6 = value;
+            InferenceObject = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStruct(
-            global::System.Collections.Generic.IList<float>? value1,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value2,
-            object? value3,
-            global::G.Document? value4,
-            global::G.Image? value5,
-            global::G.InferenceObject? value6
+            global::System.Collections.Generic.IList<float>? vectorStructVariant1,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? vectorStructVariant2,
+            object? vectorStructVariant3,
+            global::G.Document? document,
+            global::G.Image? image,
+            global::G.InferenceObject? inferenceObject
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
+            VectorStructVariant1 = vectorStructVariant1;
+            VectorStructVariant2 = vectorStructVariant2;
+            VectorStructVariant3 = vectorStructVariant3;
+            Document = document;
+            Image = image;
+            InferenceObject = inferenceObject;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            InferenceObject as object ??
+            Image as object ??
+            Document as object ??
+            VectorStructVariant3 as object ??
+            VectorStructVariant2 as object ??
+            VectorStructVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() 
+            VectorStructVariant1?.ToString() ??
+            VectorStructVariant2?.ToString() ??
+            VectorStructVariant3?.ToString() ??
+            Document?.ToString() ??
+            Image?.ToString() ??
+            InferenceObject?.ToString() 
             ;
 
         /// <summary>
@@ -217,19 +217,19 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6;
+            return IsVectorStructVariant1 || IsVectorStructVariant2 || IsVectorStructVariant3 || IsDocument || IsImage || IsInferenceObject;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? value2 = null,
-            global::System.Func<object?, TResult>? value3 = null,
-            global::System.Func<global::G.Document?, TResult>? value4 = null,
-            global::System.Func<global::G.Image?, TResult>? value5 = null,
-            global::System.Func<global::G.InferenceObject?, TResult>? value6 = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? vectorStructVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? vectorStructVariant2 = null,
+            global::System.Func<object?, TResult>? vectorStructVariant3 = null,
+            global::System.Func<global::G.Document?, TResult>? document = null,
+            global::System.Func<global::G.Image?, TResult>? image = null,
+            global::System.Func<global::G.InferenceObject?, TResult>? inferenceObject = null,
             bool validate = true)
         {
             if (validate)
@@ -237,29 +237,29 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsVectorStructVariant1 && vectorStructVariant1 != null)
             {
-                return value1(Value1!);
+                return vectorStructVariant1(VectorStructVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsVectorStructVariant2 && vectorStructVariant2 != null)
             {
-                return value2(Value2!);
+                return vectorStructVariant2(VectorStructVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsVectorStructVariant3 && vectorStructVariant3 != null)
             {
-                return value3(Value3!);
+                return vectorStructVariant3(VectorStructVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsDocument && document != null)
             {
-                return value4(Value4!);
+                return document(Document!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsImage && image != null)
             {
-                return value5(Value5!);
+                return image(Image!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsInferenceObject && inferenceObject != null)
             {
-                return value6(Value6!);
+                return inferenceObject(InferenceObject!);
             }
 
             return default(TResult);
@@ -269,12 +269,12 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? value2 = null,
-            global::System.Action<object?>? value3 = null,
-            global::System.Action<global::G.Document?>? value4 = null,
-            global::System.Action<global::G.Image?>? value5 = null,
-            global::System.Action<global::G.InferenceObject?>? value6 = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>?>? vectorStructVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? vectorStructVariant2 = null,
+            global::System.Action<object?>? vectorStructVariant3 = null,
+            global::System.Action<global::G.Document?>? document = null,
+            global::System.Action<global::G.Image?>? image = null,
+            global::System.Action<global::G.InferenceObject?>? inferenceObject = null,
             bool validate = true)
         {
             if (validate)
@@ -282,29 +282,29 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsVectorStructVariant1)
             {
-                value1?.Invoke(Value1!);
+                vectorStructVariant1?.Invoke(VectorStructVariant1!);
             }
-            else if (IsValue2)
+            else if (IsVectorStructVariant2)
             {
-                value2?.Invoke(Value2!);
+                vectorStructVariant2?.Invoke(VectorStructVariant2!);
             }
-            else if (IsValue3)
+            else if (IsVectorStructVariant3)
             {
-                value3?.Invoke(Value3!);
+                vectorStructVariant3?.Invoke(VectorStructVariant3!);
             }
-            else if (IsValue4)
+            else if (IsDocument)
             {
-                value4?.Invoke(Value4!);
+                document?.Invoke(Document!);
             }
-            else if (IsValue5)
+            else if (IsImage)
             {
-                value5?.Invoke(Value5!);
+                image?.Invoke(Image!);
             }
-            else if (IsValue6)
+            else if (IsInferenceObject)
             {
-                value6?.Invoke(Value6!);
+                inferenceObject?.Invoke(InferenceObject!);
             }
         }
 
@@ -315,17 +315,17 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                VectorStructVariant1,
                 typeof(global::System.Collections.Generic.IList<float>),
-                Value2,
+                VectorStructVariant2,
                 typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>),
-                Value3,
+                VectorStructVariant3,
                 typeof(object),
-                Value4,
+                Document,
                 typeof(global::G.Document),
-                Value5,
+                Image,
                 typeof(global::G.Image),
-                Value6,
+                InferenceObject,
                 typeof(global::G.InferenceObject),
             };
             const int offset = unchecked((int)2166136261);
@@ -343,12 +343,12 @@ namespace G
         public bool Equals(VectorStruct other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.Document?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.Image?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.InferenceObject?>.Default.Equals(Value6, other.Value6) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(VectorStructVariant1, other.VectorStructVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(VectorStructVariant2, other.VectorStructVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(VectorStructVariant3, other.VectorStructVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.Document?>.Default.Equals(Document, other.Document) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.Image?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.InferenceObject?>.Default.Equals(InferenceObject, other.InferenceObject) 
                 ;
         }
 

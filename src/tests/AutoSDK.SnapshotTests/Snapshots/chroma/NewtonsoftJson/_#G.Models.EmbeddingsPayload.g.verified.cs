@@ -14,62 +14,62 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? Value1 { get; init; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? EmbeddingsPayloadVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? Value1 { get; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? EmbeddingsPayloadVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPayloadVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsEmbeddingsPayloadVariant1 => EmbeddingsPayloadVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<string>? EmbeddingsPayloadVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value2 { get; }
+        public global::System.Collections.Generic.IList<string>? EmbeddingsPayloadVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPayloadVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEmbeddingsPayloadVariant2 => EmbeddingsPayloadVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingsPayload(
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value1,
-            global::System.Collections.Generic.IList<string>? value2
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? embeddingsPayloadVariant1,
+            global::System.Collections.Generic.IList<string>? embeddingsPayloadVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            EmbeddingsPayloadVariant1 = embeddingsPayloadVariant1;
+            EmbeddingsPayloadVariant2 = embeddingsPayloadVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            EmbeddingsPayloadVariant2 as object ??
+            EmbeddingsPayloadVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            EmbeddingsPayloadVariant1?.ToString() ??
+            EmbeddingsPayloadVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -77,15 +77,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsEmbeddingsPayloadVariant1 && !IsEmbeddingsPayloadVariant2 || !IsEmbeddingsPayloadVariant1 && IsEmbeddingsPayloadVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? embeddingsPayloadVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? embeddingsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -93,13 +93,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsEmbeddingsPayloadVariant1 && embeddingsPayloadVariant1 != null)
             {
-                return value1(Value1!);
+                return embeddingsPayloadVariant1(EmbeddingsPayloadVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEmbeddingsPayloadVariant2 && embeddingsPayloadVariant2 != null)
             {
-                return value2(Value2!);
+                return embeddingsPayloadVariant2(EmbeddingsPayloadVariant2!);
             }
 
             return default(TResult);
@@ -109,8 +109,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? embeddingsPayloadVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? embeddingsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -118,13 +118,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsEmbeddingsPayloadVariant1)
             {
-                value1?.Invoke(Value1!);
+                embeddingsPayloadVariant1?.Invoke(EmbeddingsPayloadVariant1!);
             }
-            else if (IsValue2)
+            else if (IsEmbeddingsPayloadVariant2)
             {
-                value2?.Invoke(Value2!);
+                embeddingsPayloadVariant2?.Invoke(EmbeddingsPayloadVariant2!);
             }
         }
 
@@ -135,9 +135,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                EmbeddingsPayloadVariant1,
                 typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>),
-                Value2,
+                EmbeddingsPayloadVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
             };
             const int offset = unchecked((int)2166136261);
@@ -155,8 +155,8 @@ namespace G
         public bool Equals(EmbeddingsPayload other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(EmbeddingsPayloadVariant1, other.EmbeddingsPayloadVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(EmbeddingsPayloadVariant2, other.EmbeddingsPayloadVariant2) 
                 ;
         }
 

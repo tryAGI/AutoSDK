@@ -41,9 +41,9 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::G.ConsensusThreadStatusVariant1? value1 = default;
-            global::G.ConsensusThreadStatusVariant2? value2 = default;
-            global::G.ConsensusThreadStatusVariant3? value3 = default;
+            global::G.ConsensusThreadStatusVariant1? consensusThreadStatusVariant1 = default;
+            global::G.ConsensusThreadStatusVariant2? consensusThreadStatusVariant2 = default;
+            global::G.ConsensusThreadStatusVariant3? consensusThreadStatusVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -52,7 +52,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConsensusThreadStatusVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConsensusThreadStatusVariant1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConsensusThreadStatusVariant1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        consensusThreadStatusVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -67,7 +67,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConsensusThreadStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConsensusThreadStatusVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConsensusThreadStatusVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        consensusThreadStatusVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -82,7 +82,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConsensusThreadStatusVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConsensusThreadStatusVariant3> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConsensusThreadStatusVariant3).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        consensusThreadStatusVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,13 +93,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (consensusThreadStatusVariant1 == null && consensusThreadStatusVariant2 == null && consensusThreadStatusVariant3 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConsensusThreadStatusVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConsensusThreadStatusVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConsensusThreadStatusVariant1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    consensusThreadStatusVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -112,7 +112,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConsensusThreadStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConsensusThreadStatusVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConsensusThreadStatusVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    consensusThreadStatusVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -125,7 +125,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConsensusThreadStatusVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConsensusThreadStatusVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConsensusThreadStatusVariant3).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    consensusThreadStatusVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -136,11 +136,11 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.ConsensusThreadStatus(
-                value1,
+                consensusThreadStatusVariant1,
 
-                value2,
+                consensusThreadStatusVariant2,
 
-                value3
+                consensusThreadStatusVariant3
                 );
 
             return __value;
@@ -155,23 +155,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsConsensusThreadStatusVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConsensusThreadStatusVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConsensusThreadStatusVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConsensusThreadStatusVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConsensusThreadStatusVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsConsensusThreadStatusVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConsensusThreadStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConsensusThreadStatusVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConsensusThreadStatusVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConsensusThreadStatusVariant2!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsConsensusThreadStatusVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConsensusThreadStatusVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConsensusThreadStatusVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConsensusThreadStatusVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConsensusThreadStatusVariant3!, typeInfo);
             }
         }
     }

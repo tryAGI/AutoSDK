@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SmsDestinationVariant1? Value1 { get; init; }
+        public global::G.SmsDestinationVariant1? SmsDestinationVariant1 { get; init; }
 #else
-        public global::G.SmsDestinationVariant1? Value1 { get; }
+        public global::G.SmsDestinationVariant1? SmsDestinationVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SmsDestinationVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsSmsDestinationVariant1 => SmsDestinationVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SmsDestinationVariant2? Value2 { get; init; }
+        public global::G.SmsDestinationVariant2? SmsDestinationVariant2 { get; init; }
 #else
-        public global::G.SmsDestinationVariant2? Value2 { get; }
+        public global::G.SmsDestinationVariant2? SmsDestinationVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SmsDestinationVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsSmsDestinationVariant2 => SmsDestinationVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SmsDestinationVariant1?(SmsDestination @this) => @this.Value1;
+        public static implicit operator global::G.SmsDestinationVariant1?(SmsDestination @this) => @this.SmsDestinationVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public SmsDestination(global::G.SmsDestinationVariant1? value)
         {
-            Value1 = value;
+            SmsDestinationVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SmsDestinationVariant2?(SmsDestination @this) => @this.Value2;
+        public static implicit operator global::G.SmsDestinationVariant2?(SmsDestination @this) => @this.SmsDestinationVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public SmsDestination(global::G.SmsDestinationVariant2? value)
         {
-            Value2 = value;
+            SmsDestinationVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public SmsDestination(
-            global::G.SmsDestinationVariant1? value1,
-            global::G.SmsDestinationVariant2? value2
+            global::G.SmsDestinationVariant1? smsDestinationVariant1,
+            global::G.SmsDestinationVariant2? smsDestinationVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            SmsDestinationVariant1 = smsDestinationVariant1;
+            SmsDestinationVariant2 = smsDestinationVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            SmsDestinationVariant2 as object ??
+            SmsDestinationVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            SmsDestinationVariant1?.ToString() ??
+            SmsDestinationVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsSmsDestinationVariant1 && !IsSmsDestinationVariant2 || !IsSmsDestinationVariant1 && IsSmsDestinationVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SmsDestinationVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.SmsDestinationVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.SmsDestinationVariant1?, TResult>? smsDestinationVariant1 = null,
+            global::System.Func<global::G.SmsDestinationVariant2?, TResult>? smsDestinationVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsSmsDestinationVariant1 && smsDestinationVariant1 != null)
             {
-                return value1(Value1!);
+                return smsDestinationVariant1(SmsDestinationVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsSmsDestinationVariant2 && smsDestinationVariant2 != null)
             {
-                return value2(Value2!);
+                return smsDestinationVariant2(SmsDestinationVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SmsDestinationVariant1?>? value1 = null,
-            global::System.Action<global::G.SmsDestinationVariant2?>? value2 = null,
+            global::System.Action<global::G.SmsDestinationVariant1?>? smsDestinationVariant1 = null,
+            global::System.Action<global::G.SmsDestinationVariant2?>? smsDestinationVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsSmsDestinationVariant1)
             {
-                value1?.Invoke(Value1!);
+                smsDestinationVariant1?.Invoke(SmsDestinationVariant1!);
             }
-            else if (IsValue2)
+            else if (IsSmsDestinationVariant2)
             {
-                value2?.Invoke(Value2!);
+                smsDestinationVariant2?.Invoke(SmsDestinationVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                SmsDestinationVariant1,
                 typeof(global::G.SmsDestinationVariant1),
-                Value2,
+                SmsDestinationVariant2,
                 typeof(global::G.SmsDestinationVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(SmsDestination other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.SmsDestinationVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SmsDestinationVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.SmsDestinationVariant1?>.Default.Equals(SmsDestinationVariant1, other.SmsDestinationVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SmsDestinationVariant2?>.Default.Equals(SmsDestinationVariant2, other.SmsDestinationVariant2) 
                 ;
         }
 

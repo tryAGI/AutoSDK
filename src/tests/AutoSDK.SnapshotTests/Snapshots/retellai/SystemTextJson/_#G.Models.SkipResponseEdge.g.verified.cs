@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.NodeEdge? Value1 { get; init; }
+        public global::G.NodeEdge? Node { get; init; }
 #else
-        public global::G.NodeEdge? Value1 { get; }
+        public global::G.NodeEdge? Node { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Node))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsNode => Node != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SkipResponseEdgeVariant2? Value2 { get; init; }
+        public global::G.SkipResponseEdgeVariant2? SkipResponseEdgeVariant2 { get; init; }
 #else
-        public global::G.SkipResponseEdgeVariant2? Value2 { get; }
+        public global::G.SkipResponseEdgeVariant2? SkipResponseEdgeVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SkipResponseEdgeVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsSkipResponseEdgeVariant2 => SkipResponseEdgeVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.NodeEdge?(SkipResponseEdge @this) => @this.Value1;
+        public static implicit operator global::G.NodeEdge?(SkipResponseEdge @this) => @this.Node;
 
         /// <summary>
         /// 
         /// </summary>
         public SkipResponseEdge(global::G.NodeEdge? value)
         {
-            Value1 = value;
+            Node = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SkipResponseEdgeVariant2?(SkipResponseEdge @this) => @this.Value2;
+        public static implicit operator global::G.SkipResponseEdgeVariant2?(SkipResponseEdge @this) => @this.SkipResponseEdgeVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public SkipResponseEdge(global::G.SkipResponseEdgeVariant2? value)
         {
-            Value2 = value;
+            SkipResponseEdgeVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public SkipResponseEdge(
-            global::G.NodeEdge? value1,
-            global::G.SkipResponseEdgeVariant2? value2
+            global::G.NodeEdge? node,
+            global::G.SkipResponseEdgeVariant2? skipResponseEdgeVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Node = node;
+            SkipResponseEdgeVariant2 = skipResponseEdgeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            SkipResponseEdgeVariant2 as object ??
+            Node as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Node?.ToString() ??
+            SkipResponseEdgeVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsNode && IsSkipResponseEdgeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NodeEdge?, TResult>? value1 = null,
-            global::System.Func<global::G.SkipResponseEdgeVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.NodeEdge?, TResult>? node = null,
+            global::System.Func<global::G.SkipResponseEdgeVariant2?, TResult>? skipResponseEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsNode && node != null)
             {
-                return value1(Value1!);
+                return node(Node!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsSkipResponseEdgeVariant2 && skipResponseEdgeVariant2 != null)
             {
-                return value2(Value2!);
+                return skipResponseEdgeVariant2(SkipResponseEdgeVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NodeEdge?>? value1 = null,
-            global::System.Action<global::G.SkipResponseEdgeVariant2?>? value2 = null,
+            global::System.Action<global::G.NodeEdge?>? node = null,
+            global::System.Action<global::G.SkipResponseEdgeVariant2?>? skipResponseEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsNode)
             {
-                value1?.Invoke(Value1!);
+                node?.Invoke(Node!);
             }
-            else if (IsValue2)
+            else if (IsSkipResponseEdgeVariant2)
             {
-                value2?.Invoke(Value2!);
+                skipResponseEdgeVariant2?.Invoke(SkipResponseEdgeVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Node,
                 typeof(global::G.NodeEdge),
-                Value2,
+                SkipResponseEdgeVariant2,
                 typeof(global::G.SkipResponseEdgeVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(SkipResponseEdge other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.NodeEdge?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SkipResponseEdgeVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.NodeEdge?>.Default.Equals(Node, other.Node) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SkipResponseEdgeVariant2?>.Default.Equals(SkipResponseEdgeVariant2, other.SkipResponseEdgeVariant2) 
                 ;
         }
 

@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Collection? Value1 { get; init; }
+        public global::G.Collection? Collection { get; init; }
 #else
-        public global::G.Collection? Value1 { get; }
+        public global::G.Collection? Collection { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Collection))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsCollection => Collection != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CollectionWithDetailsVariant2? Value2 { get; init; }
+        public global::G.CollectionWithDetailsVariant2? CollectionWithDetailsVariant2 { get; init; }
 #else
-        public global::G.CollectionWithDetailsVariant2? Value2 { get; }
+        public global::G.CollectionWithDetailsVariant2? CollectionWithDetailsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CollectionWithDetailsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCollectionWithDetailsVariant2 => CollectionWithDetailsVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Collection?(CollectionWithDetails @this) => @this.Value1;
+        public static implicit operator global::G.Collection?(CollectionWithDetails @this) => @this.Collection;
 
         /// <summary>
         /// 
         /// </summary>
         public CollectionWithDetails(global::G.Collection? value)
         {
-            Value1 = value;
+            Collection = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CollectionWithDetailsVariant2?(CollectionWithDetails @this) => @this.Value2;
+        public static implicit operator global::G.CollectionWithDetailsVariant2?(CollectionWithDetails @this) => @this.CollectionWithDetailsVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public CollectionWithDetails(global::G.CollectionWithDetailsVariant2? value)
         {
-            Value2 = value;
+            CollectionWithDetailsVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CollectionWithDetails(
-            global::G.Collection? value1,
-            global::G.CollectionWithDetailsVariant2? value2
+            global::G.Collection? collection,
+            global::G.CollectionWithDetailsVariant2? collectionWithDetailsVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Collection = collection;
+            CollectionWithDetailsVariant2 = collectionWithDetailsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CollectionWithDetailsVariant2 as object ??
+            Collection as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Collection?.ToString() ??
+            CollectionWithDetailsVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsCollection && IsCollectionWithDetailsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Collection?, TResult>? value1 = null,
-            global::System.Func<global::G.CollectionWithDetailsVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.Collection?, TResult>? collection = null,
+            global::System.Func<global::G.CollectionWithDetailsVariant2?, TResult>? collectionWithDetailsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsCollection && collection != null)
             {
-                return value1(Value1!);
+                return collection(Collection!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCollectionWithDetailsVariant2 && collectionWithDetailsVariant2 != null)
             {
-                return value2(Value2!);
+                return collectionWithDetailsVariant2(CollectionWithDetailsVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Collection?>? value1 = null,
-            global::System.Action<global::G.CollectionWithDetailsVariant2?>? value2 = null,
+            global::System.Action<global::G.Collection?>? collection = null,
+            global::System.Action<global::G.CollectionWithDetailsVariant2?>? collectionWithDetailsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsCollection)
             {
-                value1?.Invoke(Value1!);
+                collection?.Invoke(Collection!);
             }
-            else if (IsValue2)
+            else if (IsCollectionWithDetailsVariant2)
             {
-                value2?.Invoke(Value2!);
+                collectionWithDetailsVariant2?.Invoke(CollectionWithDetailsVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Collection,
                 typeof(global::G.Collection),
-                Value2,
+                CollectionWithDetailsVariant2,
                 typeof(global::G.CollectionWithDetailsVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(CollectionWithDetails other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.Collection?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CollectionWithDetailsVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.Collection?>.Default.Equals(Collection, other.Collection) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CollectionWithDetailsVariant2?>.Default.Equals(CollectionWithDetailsVariant2, other.CollectionWithDetailsVariant2) 
                 ;
         }
 

@@ -31,18 +31,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PullRequestWebhookVariant2? Value2 { get; init; }
+        public global::G.PullRequestWebhookVariant2? PullRequestWebhookVariant2 { get; init; }
 #else
-        public global::G.PullRequestWebhookVariant2? Value2 { get; }
+        public global::G.PullRequestWebhookVariant2? PullRequestWebhookVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PullRequestWebhookVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsPullRequestWebhookVariant2 => PullRequestWebhookVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -69,14 +69,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PullRequestWebhookVariant2?(PullRequestWebhook @this) => @this.Value2;
+        public static implicit operator global::G.PullRequestWebhookVariant2?(PullRequestWebhook @this) => @this.PullRequestWebhookVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public PullRequestWebhook(global::G.PullRequestWebhookVariant2? value)
         {
-            Value2 = value;
+            PullRequestWebhookVariant2 = value;
         }
 
         /// <summary>
@@ -84,18 +84,18 @@ namespace G
         /// </summary>
         public PullRequestWebhook(
             global::G.PullRequest? pullRequest,
-            global::G.PullRequestWebhookVariant2? value2
+            global::G.PullRequestWebhookVariant2? pullRequestWebhookVariant2
             )
         {
             PullRequest = pullRequest;
-            Value2 = value2;
+            PullRequestWebhookVariant2 = pullRequestWebhookVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            PullRequestWebhookVariant2 as object ??
             PullRequest as object 
             ;
 
@@ -104,7 +104,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             PullRequest?.ToString() ??
-            Value2?.ToString() 
+            PullRequestWebhookVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsPullRequest && IsValue2;
+            return IsPullRequest && IsPullRequestWebhookVariant2;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.PullRequest?, TResult>? pullRequest = null,
-            global::System.Func<global::G.PullRequestWebhookVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.PullRequestWebhookVariant2?, TResult>? pullRequestWebhookVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,9 +132,9 @@ namespace G
             {
                 return pullRequest(PullRequest!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsPullRequestWebhookVariant2 && pullRequestWebhookVariant2 != null)
             {
-                return value2(Value2!);
+                return pullRequestWebhookVariant2(PullRequestWebhookVariant2!);
             }
 
             return default(TResult);
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.PullRequest?>? pullRequest = null,
-            global::System.Action<global::G.PullRequestWebhookVariant2?>? value2 = null,
+            global::System.Action<global::G.PullRequestWebhookVariant2?>? pullRequestWebhookVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -157,9 +157,9 @@ namespace G
             {
                 pullRequest?.Invoke(PullRequest!);
             }
-            else if (IsValue2)
+            else if (IsPullRequestWebhookVariant2)
             {
-                value2?.Invoke(Value2!);
+                pullRequestWebhookVariant2?.Invoke(PullRequestWebhookVariant2!);
             }
         }
 
@@ -172,7 +172,7 @@ namespace G
             {
                 PullRequest,
                 typeof(global::G.PullRequest),
-                Value2,
+                PullRequestWebhookVariant2,
                 typeof(global::G.PullRequestWebhookVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.PullRequest?>.Default.Equals(PullRequest, other.PullRequest) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PullRequestWebhookVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.PullRequestWebhookVariant2?>.Default.Equals(PullRequestWebhookVariant2, other.PullRequestWebhookVariant2) 
                 ;
         }
 

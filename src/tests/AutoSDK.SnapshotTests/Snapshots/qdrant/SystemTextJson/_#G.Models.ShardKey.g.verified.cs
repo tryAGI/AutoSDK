@@ -14,35 +14,35 @@ namespace G
         /// Example: region_1
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ShardKeyVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ShardKeyVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardKeyVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsShardKeyVariant1 => ShardKeyVariant1 != null;
 
         /// <summary>
         /// Example: 12
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? Value2 { get; init; }
+        public int? ShardKeyVariant2 { get; init; }
 #else
-        public int? Value2 { get; }
+        public int? ShardKeyVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardKeyVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsShardKeyVariant2 => ShardKeyVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ShardKey @this) => @this.Value1;
+        public static implicit operator string?(ShardKey @this) => @this.ShardKeyVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ShardKey(string? value)
         {
-            Value1 = value;
+            ShardKeyVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator int?(ShardKey @this) => @this.Value2;
+        public static implicit operator int?(ShardKey @this) => @this.ShardKeyVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ShardKey(int? value)
         {
-            Value2 = value;
+            ShardKeyVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ShardKey(
-            string? value1,
-            int? value2
+            string? shardKeyVariant1,
+            int? shardKeyVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ShardKeyVariant1 = shardKeyVariant1;
+            ShardKeyVariant2 = shardKeyVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ShardKeyVariant2 as object ??
+            ShardKeyVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ShardKeyVariant1?.ToString() ??
+            ShardKeyVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsShardKeyVariant1 || IsShardKeyVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<int?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? shardKeyVariant1 = null,
+            global::System.Func<int?, TResult>? shardKeyVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsShardKeyVariant1 && shardKeyVariant1 != null)
             {
-                return value1(Value1!);
+                return shardKeyVariant1(ShardKeyVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsShardKeyVariant2 && shardKeyVariant2 != null)
             {
-                return value2(Value2!);
+                return shardKeyVariant2(ShardKeyVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<int?>? value2 = null,
+            global::System.Action<string?>? shardKeyVariant1 = null,
+            global::System.Action<int?>? shardKeyVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsShardKeyVariant1)
             {
-                value1?.Invoke(Value1!);
+                shardKeyVariant1?.Invoke(ShardKeyVariant1!);
             }
-            else if (IsValue2)
+            else if (IsShardKeyVariant2)
             {
-                value2?.Invoke(Value2!);
+                shardKeyVariant2?.Invoke(ShardKeyVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ShardKeyVariant1,
                 typeof(string),
-                Value2,
+                ShardKeyVariant2,
                 typeof(int),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ShardKey other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ShardKeyVariant1, other.ShardKeyVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(ShardKeyVariant2, other.ShardKeyVariant2) 
                 ;
         }
 

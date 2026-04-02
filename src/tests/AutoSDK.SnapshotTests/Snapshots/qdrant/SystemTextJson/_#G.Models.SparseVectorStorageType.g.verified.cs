@@ -14,35 +14,35 @@ namespace G
         /// Storage on disk (rocksdb storage)
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SparseVectorStorageTypeVariant1? Value1 { get; init; }
+        public global::G.SparseVectorStorageTypeVariant1? SparseVectorStorageTypeVariant1 { get; init; }
 #else
-        public global::G.SparseVectorStorageTypeVariant1? Value1 { get; }
+        public global::G.SparseVectorStorageTypeVariant1? SparseVectorStorageTypeVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseVectorStorageTypeVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsSparseVectorStorageTypeVariant1 => SparseVectorStorageTypeVariant1 != null;
 
         /// <summary>
         /// Storage in memory maps (gridstore storage)
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SparseVectorStorageTypeVariant2? Value2 { get; init; }
+        public global::G.SparseVectorStorageTypeVariant2? SparseVectorStorageTypeVariant2 { get; init; }
 #else
-        public global::G.SparseVectorStorageTypeVariant2? Value2 { get; }
+        public global::G.SparseVectorStorageTypeVariant2? SparseVectorStorageTypeVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseVectorStorageTypeVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsSparseVectorStorageTypeVariant2 => SparseVectorStorageTypeVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SparseVectorStorageTypeVariant1?(SparseVectorStorageType @this) => @this.Value1;
+        public static implicit operator global::G.SparseVectorStorageTypeVariant1?(SparseVectorStorageType @this) => @this.SparseVectorStorageTypeVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public SparseVectorStorageType(global::G.SparseVectorStorageTypeVariant1? value)
         {
-            Value1 = value;
+            SparseVectorStorageTypeVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SparseVectorStorageTypeVariant2?(SparseVectorStorageType @this) => @this.Value2;
+        public static implicit operator global::G.SparseVectorStorageTypeVariant2?(SparseVectorStorageType @this) => @this.SparseVectorStorageTypeVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public SparseVectorStorageType(global::G.SparseVectorStorageTypeVariant2? value)
         {
-            Value2 = value;
+            SparseVectorStorageTypeVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public SparseVectorStorageType(
-            global::G.SparseVectorStorageTypeVariant1? value1,
-            global::G.SparseVectorStorageTypeVariant2? value2
+            global::G.SparseVectorStorageTypeVariant1? sparseVectorStorageTypeVariant1,
+            global::G.SparseVectorStorageTypeVariant2? sparseVectorStorageTypeVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            SparseVectorStorageTypeVariant1 = sparseVectorStorageTypeVariant1;
+            SparseVectorStorageTypeVariant2 = sparseVectorStorageTypeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            SparseVectorStorageTypeVariant2 as object ??
+            SparseVectorStorageTypeVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToValueString() ??
-            Value2?.ToValueString() 
+            SparseVectorStorageTypeVariant1?.ToValueString() ??
+            SparseVectorStorageTypeVariant2?.ToValueString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsSparseVectorStorageTypeVariant1 && !IsSparseVectorStorageTypeVariant2 || !IsSparseVectorStorageTypeVariant1 && IsSparseVectorStorageTypeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SparseVectorStorageTypeVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.SparseVectorStorageTypeVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.SparseVectorStorageTypeVariant1?, TResult>? sparseVectorStorageTypeVariant1 = null,
+            global::System.Func<global::G.SparseVectorStorageTypeVariant2?, TResult>? sparseVectorStorageTypeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsSparseVectorStorageTypeVariant1 && sparseVectorStorageTypeVariant1 != null)
             {
-                return value1(Value1!);
+                return sparseVectorStorageTypeVariant1(SparseVectorStorageTypeVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsSparseVectorStorageTypeVariant2 && sparseVectorStorageTypeVariant2 != null)
             {
-                return value2(Value2!);
+                return sparseVectorStorageTypeVariant2(SparseVectorStorageTypeVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SparseVectorStorageTypeVariant1?>? value1 = null,
-            global::System.Action<global::G.SparseVectorStorageTypeVariant2?>? value2 = null,
+            global::System.Action<global::G.SparseVectorStorageTypeVariant1?>? sparseVectorStorageTypeVariant1 = null,
+            global::System.Action<global::G.SparseVectorStorageTypeVariant2?>? sparseVectorStorageTypeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsSparseVectorStorageTypeVariant1)
             {
-                value1?.Invoke(Value1!);
+                sparseVectorStorageTypeVariant1?.Invoke(SparseVectorStorageTypeVariant1!);
             }
-            else if (IsValue2)
+            else if (IsSparseVectorStorageTypeVariant2)
             {
-                value2?.Invoke(Value2!);
+                sparseVectorStorageTypeVariant2?.Invoke(SparseVectorStorageTypeVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                SparseVectorStorageTypeVariant1,
                 typeof(global::G.SparseVectorStorageTypeVariant1),
-                Value2,
+                SparseVectorStorageTypeVariant2,
                 typeof(global::G.SparseVectorStorageTypeVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(SparseVectorStorageType other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.SparseVectorStorageTypeVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SparseVectorStorageTypeVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.SparseVectorStorageTypeVariant1?>.Default.Equals(SparseVectorStorageTypeVariant1, other.SparseVectorStorageTypeVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SparseVectorStorageTypeVariant2?>.Default.Equals(SparseVectorStorageTypeVariant2, other.SparseVectorStorageTypeVariant2) 
                 ;
         }
 

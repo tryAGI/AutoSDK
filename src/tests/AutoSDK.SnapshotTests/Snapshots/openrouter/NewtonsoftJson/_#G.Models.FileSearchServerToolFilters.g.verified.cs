@@ -48,18 +48,18 @@ namespace G
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? FileSearchServerToolFiltersVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? FileSearchServerToolFiltersVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsFileSearchServerToolFiltersVariant3 => FileSearchServerToolFiltersVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,19 +102,19 @@ namespace G
         public FileSearchServerToolFilters(
             global::G.FileSearchServerToolFilters0? fileSearchServerToolFilters0,
             global::G.CompoundFilter? compoundFilter,
-            object? value3
+            object? fileSearchServerToolFiltersVariant3
             )
         {
             FileSearchServerToolFilters0 = fileSearchServerToolFilters0;
             CompoundFilter = compoundFilter;
-            Value3 = value3;
+            FileSearchServerToolFiltersVariant3 = fileSearchServerToolFiltersVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            FileSearchServerToolFiltersVariant3 as object ??
             CompoundFilter as object ??
             FileSearchServerToolFilters0 as object 
             ;
@@ -125,7 +125,7 @@ namespace G
         public override string? ToString() =>
             FileSearchServerToolFilters0?.ToString() ??
             CompoundFilter?.ToString() ??
-            Value3?.ToString() 
+            FileSearchServerToolFiltersVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsFileSearchServerToolFilters0 && !IsCompoundFilter && !IsValue3 || !IsFileSearchServerToolFilters0 && IsCompoundFilter && !IsValue3 || !IsFileSearchServerToolFilters0 && !IsCompoundFilter && IsValue3;
+            return IsFileSearchServerToolFilters0 && !IsCompoundFilter && !IsFileSearchServerToolFiltersVariant3 || !IsFileSearchServerToolFilters0 && IsCompoundFilter && !IsFileSearchServerToolFiltersVariant3 || !IsFileSearchServerToolFilters0 && !IsCompoundFilter && IsFileSearchServerToolFiltersVariant3;
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.FileSearchServerToolFilters0?, TResult>? fileSearchServerToolFilters0 = null,
             global::System.Func<global::G.CompoundFilter?, TResult>? compoundFilter = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? fileSearchServerToolFiltersVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -158,9 +158,9 @@ namespace G
             {
                 return compoundFilter(CompoundFilter!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsFileSearchServerToolFiltersVariant3 && fileSearchServerToolFiltersVariant3 != null)
             {
-                return value3(Value3!);
+                return fileSearchServerToolFiltersVariant3(FileSearchServerToolFiltersVariant3!);
             }
 
             return default(TResult);
@@ -172,7 +172,7 @@ namespace G
         public void Match(
             global::System.Action<global::G.FileSearchServerToolFilters0?>? fileSearchServerToolFilters0 = null,
             global::System.Action<global::G.CompoundFilter?>? compoundFilter = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? fileSearchServerToolFiltersVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +188,9 @@ namespace G
             {
                 compoundFilter?.Invoke(CompoundFilter!);
             }
-            else if (IsValue3)
+            else if (IsFileSearchServerToolFiltersVariant3)
             {
-                value3?.Invoke(Value3!);
+                fileSearchServerToolFiltersVariant3?.Invoke(FileSearchServerToolFiltersVariant3!);
             }
         }
 
@@ -205,7 +205,7 @@ namespace G
                 typeof(global::G.FileSearchServerToolFilters0),
                 CompoundFilter,
                 typeof(global::G.CompoundFilter),
-                Value3,
+                FileSearchServerToolFiltersVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -225,7 +225,7 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.FileSearchServerToolFilters0?>.Default.Equals(FileSearchServerToolFilters0, other.FileSearchServerToolFilters0) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.CompoundFilter?>.Default.Equals(CompoundFilter, other.CompoundFilter) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(FileSearchServerToolFiltersVariant3, other.FileSearchServerToolFiltersVariant3) 
                 ;
         }
 

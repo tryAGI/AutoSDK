@@ -17,18 +17,18 @@ namespace G
         /// `auto` is the default value
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantsApiResponseFormatOptionEnum? Value1 { get; init; }
+        public global::G.AssistantsApiResponseFormatOptionEnum? Enum { get; init; }
 #else
-        public global::G.AssistantsApiResponseFormatOptionEnum? Value1 { get; }
+        public global::G.AssistantsApiResponseFormatOptionEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsEnum => Enum != null;
 
         /// <summary>
         /// Default response format. Used to generate text responses.
@@ -92,14 +92,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantsApiResponseFormatOptionEnum?(AssistantsApiResponseFormatOption @this) => @this.Value1;
+        public static implicit operator global::G.AssistantsApiResponseFormatOptionEnum?(AssistantsApiResponseFormatOption @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantsApiResponseFormatOption(global::G.AssistantsApiResponseFormatOptionEnum? value)
         {
-            Value1 = value;
+            Enum = value;
         }
 
         /// <summary>
@@ -160,13 +160,13 @@ namespace G
         /// 
         /// </summary>
         public AssistantsApiResponseFormatOption(
-            global::G.AssistantsApiResponseFormatOptionEnum? value1,
+            global::G.AssistantsApiResponseFormatOptionEnum? @enum,
             global::G.ResponseFormatText? text,
             global::G.ResponseFormatJsonObject? jsonObject,
             global::G.ResponseFormatJsonSchema? jsonSchema
             )
         {
-            Value1 = value1;
+            Enum = @enum;
             Text = text;
             JsonObject = jsonObject;
             JsonSchema = jsonSchema;
@@ -179,14 +179,14 @@ namespace G
             JsonSchema as object ??
             JsonObject as object ??
             Text as object ??
-            Value1 as object 
+            Enum as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToValueString() ??
+            Enum?.ToValueString() ??
             Text?.ToString() ??
             JsonObject?.ToString() ??
             JsonSchema?.ToString() 
@@ -197,14 +197,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsText && !IsJsonObject && !IsJsonSchema || !IsValue1 && IsText && !IsJsonObject && !IsJsonSchema || !IsValue1 && !IsText && IsJsonObject && !IsJsonSchema || !IsValue1 && !IsText && !IsJsonObject && IsJsonSchema;
+            return IsEnum && !IsText && !IsJsonObject && !IsJsonSchema || !IsEnum && IsText && !IsJsonObject && !IsJsonSchema || !IsEnum && !IsText && IsJsonObject && !IsJsonSchema || !IsEnum && !IsText && !IsJsonObject && IsJsonSchema;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AssistantsApiResponseFormatOptionEnum?, TResult>? value1 = null,
+            global::System.Func<global::G.AssistantsApiResponseFormatOptionEnum?, TResult>? @enum = null,
             global::System.Func<global::G.ResponseFormatText?, TResult>? text = null,
             global::System.Func<global::G.ResponseFormatJsonObject?, TResult>? jsonObject = null,
             global::System.Func<global::G.ResponseFormatJsonSchema?, TResult>? jsonSchema = null,
@@ -215,9 +215,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsEnum && @enum != null)
             {
-                return value1(Value1!);
+                return @enum(Enum!);
             }
             else if (IsText && text != null)
             {
@@ -239,7 +239,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AssistantsApiResponseFormatOptionEnum?>? value1 = null,
+            global::System.Action<global::G.AssistantsApiResponseFormatOptionEnum?>? @enum = null,
             global::System.Action<global::G.ResponseFormatText?>? text = null,
             global::System.Action<global::G.ResponseFormatJsonObject?>? jsonObject = null,
             global::System.Action<global::G.ResponseFormatJsonSchema?>? jsonSchema = null,
@@ -250,9 +250,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsEnum)
             {
-                value1?.Invoke(Value1!);
+                @enum?.Invoke(Enum!);
             }
             else if (IsText)
             {
@@ -275,7 +275,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Enum,
                 typeof(global::G.AssistantsApiResponseFormatOptionEnum),
                 Text,
                 typeof(global::G.ResponseFormatText),
@@ -299,7 +299,7 @@ namespace G
         public bool Equals(AssistantsApiResponseFormatOption other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantsApiResponseFormatOptionEnum?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantsApiResponseFormatOptionEnum?>.Default.Equals(Enum, other.Enum) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatText?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatJsonObject?>.Default.Equals(JsonObject, other.JsonObject) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatJsonSchema?>.Default.Equals(JsonSchema, other.JsonSchema) 

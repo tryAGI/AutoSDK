@@ -14,307 +14,307 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? LanguageVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? LanguageVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsLanguageVariant1 => LanguageVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? LanguageVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? LanguageVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsLanguageVariant2 => LanguageVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value3 { get; init; }
+        public string? LanguageVariant3 { get; init; }
 #else
-        public string? Value3 { get; }
+        public string? LanguageVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsLanguageVariant3 => LanguageVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value4 { get; init; }
+        public string? LanguageVariant4 { get; init; }
 #else
-        public string? Value4 { get; }
+        public string? LanguageVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsLanguageVariant4 => LanguageVariant4 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value5 { get; init; }
+        public string? LanguageVariant5 { get; init; }
 #else
-        public string? Value5 { get; }
+        public string? LanguageVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsLanguageVariant5 => LanguageVariant5 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value6 { get; init; }
+        public string? LanguageVariant6 { get; init; }
 #else
-        public string? Value6 { get; }
+        public string? LanguageVariant6 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant6))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsLanguageVariant6 => LanguageVariant6 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value7 { get; init; }
+        public string? LanguageVariant7 { get; init; }
 #else
-        public string? Value7 { get; }
+        public string? LanguageVariant7 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant7))]
 #endif
-        public bool IsValue7 => Value7 != null;
+        public bool IsLanguageVariant7 => LanguageVariant7 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value8 { get; init; }
+        public string? LanguageVariant8 { get; init; }
 #else
-        public string? Value8 { get; }
+        public string? LanguageVariant8 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant8))]
 #endif
-        public bool IsValue8 => Value8 != null;
+        public bool IsLanguageVariant8 => LanguageVariant8 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value9 { get; init; }
+        public string? LanguageVariant9 { get; init; }
 #else
-        public string? Value9 { get; }
+        public string? LanguageVariant9 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant9))]
 #endif
-        public bool IsValue9 => Value9 != null;
+        public bool IsLanguageVariant9 => LanguageVariant9 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value10 { get; init; }
+        public string? LanguageVariant10 { get; init; }
 #else
-        public string? Value10 { get; }
+        public string? LanguageVariant10 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant10))]
 #endif
-        public bool IsValue10 => Value10 != null;
+        public bool IsLanguageVariant10 => LanguageVariant10 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value11 { get; init; }
+        public string? LanguageVariant11 { get; init; }
 #else
-        public string? Value11 { get; }
+        public string? LanguageVariant11 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value11))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant11))]
 #endif
-        public bool IsValue11 => Value11 != null;
+        public bool IsLanguageVariant11 => LanguageVariant11 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value12 { get; init; }
+        public string? LanguageVariant12 { get; init; }
 #else
-        public string? Value12 { get; }
+        public string? LanguageVariant12 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant12))]
 #endif
-        public bool IsValue12 => Value12 != null;
+        public bool IsLanguageVariant12 => LanguageVariant12 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value13 { get; init; }
+        public string? LanguageVariant13 { get; init; }
 #else
-        public string? Value13 { get; }
+        public string? LanguageVariant13 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value13))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant13))]
 #endif
-        public bool IsValue13 => Value13 != null;
+        public bool IsLanguageVariant13 => LanguageVariant13 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value14 { get; init; }
+        public string? LanguageVariant14 { get; init; }
 #else
-        public string? Value14 { get; }
+        public string? LanguageVariant14 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value14))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant14))]
 #endif
-        public bool IsValue14 => Value14 != null;
+        public bool IsLanguageVariant14 => LanguageVariant14 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value15 { get; init; }
+        public string? LanguageVariant15 { get; init; }
 #else
-        public string? Value15 { get; }
+        public string? LanguageVariant15 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value15))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant15))]
 #endif
-        public bool IsValue15 => Value15 != null;
+        public bool IsLanguageVariant15 => LanguageVariant15 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value16 { get; init; }
+        public string? LanguageVariant16 { get; init; }
 #else
-        public string? Value16 { get; }
+        public string? LanguageVariant16 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value16))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant16))]
 #endif
-        public bool IsValue16 => Value16 != null;
+        public bool IsLanguageVariant16 => LanguageVariant16 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value17 { get; init; }
+        public string? LanguageVariant17 { get; init; }
 #else
-        public string? Value17 { get; }
+        public string? LanguageVariant17 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value17))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant17))]
 #endif
-        public bool IsValue17 => Value17 != null;
+        public bool IsLanguageVariant17 => LanguageVariant17 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value18 { get; init; }
+        public string? LanguageVariant18 { get; init; }
 #else
-        public string? Value18 { get; }
+        public string? LanguageVariant18 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value18))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageVariant18))]
 #endif
-        public bool IsValue18 => Value18 != null;
+        public bool IsLanguageVariant18 => LanguageVariant18 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -323,106 +323,106 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(Language @this) => @this.Value1;
+        public static implicit operator string?(Language @this) => @this.LanguageVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public Language(string? value)
         {
-            Value1 = value;
+            LanguageVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Language(
-            string? value1,
-            string? value2,
-            string? value3,
-            string? value4,
-            string? value5,
-            string? value6,
-            string? value7,
-            string? value8,
-            string? value9,
-            string? value10,
-            string? value11,
-            string? value12,
-            string? value13,
-            string? value14,
-            string? value15,
-            string? value16,
-            string? value17,
-            string? value18
+            string? languageVariant1,
+            string? languageVariant2,
+            string? languageVariant3,
+            string? languageVariant4,
+            string? languageVariant5,
+            string? languageVariant6,
+            string? languageVariant7,
+            string? languageVariant8,
+            string? languageVariant9,
+            string? languageVariant10,
+            string? languageVariant11,
+            string? languageVariant12,
+            string? languageVariant13,
+            string? languageVariant14,
+            string? languageVariant15,
+            string? languageVariant16,
+            string? languageVariant17,
+            string? languageVariant18
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
-            Value7 = value7;
-            Value8 = value8;
-            Value9 = value9;
-            Value10 = value10;
-            Value11 = value11;
-            Value12 = value12;
-            Value13 = value13;
-            Value14 = value14;
-            Value15 = value15;
-            Value16 = value16;
-            Value17 = value17;
-            Value18 = value18;
+            LanguageVariant1 = languageVariant1;
+            LanguageVariant2 = languageVariant2;
+            LanguageVariant3 = languageVariant3;
+            LanguageVariant4 = languageVariant4;
+            LanguageVariant5 = languageVariant5;
+            LanguageVariant6 = languageVariant6;
+            LanguageVariant7 = languageVariant7;
+            LanguageVariant8 = languageVariant8;
+            LanguageVariant9 = languageVariant9;
+            LanguageVariant10 = languageVariant10;
+            LanguageVariant11 = languageVariant11;
+            LanguageVariant12 = languageVariant12;
+            LanguageVariant13 = languageVariant13;
+            LanguageVariant14 = languageVariant14;
+            LanguageVariant15 = languageVariant15;
+            LanguageVariant16 = languageVariant16;
+            LanguageVariant17 = languageVariant17;
+            LanguageVariant18 = languageVariant18;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value18 as object ??
-            Value17 as object ??
-            Value16 as object ??
-            Value15 as object ??
-            Value14 as object ??
-            Value13 as object ??
-            Value12 as object ??
-            Value11 as object ??
-            Value10 as object ??
-            Value9 as object ??
-            Value8 as object ??
-            Value7 as object ??
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            LanguageVariant18 as object ??
+            LanguageVariant17 as object ??
+            LanguageVariant16 as object ??
+            LanguageVariant15 as object ??
+            LanguageVariant14 as object ??
+            LanguageVariant13 as object ??
+            LanguageVariant12 as object ??
+            LanguageVariant11 as object ??
+            LanguageVariant10 as object ??
+            LanguageVariant9 as object ??
+            LanguageVariant8 as object ??
+            LanguageVariant7 as object ??
+            LanguageVariant6 as object ??
+            LanguageVariant5 as object ??
+            LanguageVariant4 as object ??
+            LanguageVariant3 as object ??
+            LanguageVariant2 as object ??
+            LanguageVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() ??
-            Value7?.ToString() ??
-            Value8?.ToString() ??
-            Value9?.ToString() ??
-            Value10?.ToString() ??
-            Value11?.ToString() ??
-            Value12?.ToString() ??
-            Value13?.ToString() ??
-            Value14?.ToString() ??
-            Value15?.ToString() ??
-            Value16?.ToString() ??
-            Value17?.ToString() ??
-            Value18?.ToString() 
+            LanguageVariant1?.ToString() ??
+            LanguageVariant2?.ToString() ??
+            LanguageVariant3?.ToString() ??
+            LanguageVariant4?.ToString() ??
+            LanguageVariant5?.ToString() ??
+            LanguageVariant6?.ToString() ??
+            LanguageVariant7?.ToString() ??
+            LanguageVariant8?.ToString() ??
+            LanguageVariant9?.ToString() ??
+            LanguageVariant10?.ToString() ??
+            LanguageVariant11?.ToString() ??
+            LanguageVariant12?.ToString() ??
+            LanguageVariant13?.ToString() ??
+            LanguageVariant14?.ToString() ??
+            LanguageVariant15?.ToString() ??
+            LanguageVariant16?.ToString() ??
+            LanguageVariant17?.ToString() ??
+            LanguageVariant18?.ToString() 
             ;
 
         /// <summary>
@@ -430,31 +430,31 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && IsValue16 && !IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && IsValue17 && !IsValue18 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && IsValue18;
+            return IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && IsLanguageVariant16 && !IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && IsLanguageVariant17 && !IsLanguageVariant18 || !IsLanguageVariant1 && !IsLanguageVariant2 && !IsLanguageVariant3 && !IsLanguageVariant4 && !IsLanguageVariant5 && !IsLanguageVariant6 && !IsLanguageVariant7 && !IsLanguageVariant8 && !IsLanguageVariant9 && !IsLanguageVariant10 && !IsLanguageVariant11 && !IsLanguageVariant12 && !IsLanguageVariant13 && !IsLanguageVariant14 && !IsLanguageVariant15 && !IsLanguageVariant16 && !IsLanguageVariant17 && IsLanguageVariant18;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<string?, TResult>? value2 = null,
-            global::System.Func<string?, TResult>? value3 = null,
-            global::System.Func<string?, TResult>? value4 = null,
-            global::System.Func<string?, TResult>? value5 = null,
-            global::System.Func<string?, TResult>? value6 = null,
-            global::System.Func<string?, TResult>? value7 = null,
-            global::System.Func<string?, TResult>? value8 = null,
-            global::System.Func<string?, TResult>? value9 = null,
-            global::System.Func<string?, TResult>? value10 = null,
-            global::System.Func<string?, TResult>? value11 = null,
-            global::System.Func<string?, TResult>? value12 = null,
-            global::System.Func<string?, TResult>? value13 = null,
-            global::System.Func<string?, TResult>? value14 = null,
-            global::System.Func<string?, TResult>? value15 = null,
-            global::System.Func<string?, TResult>? value16 = null,
-            global::System.Func<string?, TResult>? value17 = null,
-            global::System.Func<string?, TResult>? value18 = null,
+            global::System.Func<string?, TResult>? languageVariant1 = null,
+            global::System.Func<string?, TResult>? languageVariant2 = null,
+            global::System.Func<string?, TResult>? languageVariant3 = null,
+            global::System.Func<string?, TResult>? languageVariant4 = null,
+            global::System.Func<string?, TResult>? languageVariant5 = null,
+            global::System.Func<string?, TResult>? languageVariant6 = null,
+            global::System.Func<string?, TResult>? languageVariant7 = null,
+            global::System.Func<string?, TResult>? languageVariant8 = null,
+            global::System.Func<string?, TResult>? languageVariant9 = null,
+            global::System.Func<string?, TResult>? languageVariant10 = null,
+            global::System.Func<string?, TResult>? languageVariant11 = null,
+            global::System.Func<string?, TResult>? languageVariant12 = null,
+            global::System.Func<string?, TResult>? languageVariant13 = null,
+            global::System.Func<string?, TResult>? languageVariant14 = null,
+            global::System.Func<string?, TResult>? languageVariant15 = null,
+            global::System.Func<string?, TResult>? languageVariant16 = null,
+            global::System.Func<string?, TResult>? languageVariant17 = null,
+            global::System.Func<string?, TResult>? languageVariant18 = null,
             bool validate = true)
         {
             if (validate)
@@ -462,77 +462,77 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsLanguageVariant1 && languageVariant1 != null)
             {
-                return value1(Value1!);
+                return languageVariant1(LanguageVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsLanguageVariant2 && languageVariant2 != null)
             {
-                return value2(Value2!);
+                return languageVariant2(LanguageVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsLanguageVariant3 && languageVariant3 != null)
             {
-                return value3(Value3!);
+                return languageVariant3(LanguageVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsLanguageVariant4 && languageVariant4 != null)
             {
-                return value4(Value4!);
+                return languageVariant4(LanguageVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsLanguageVariant5 && languageVariant5 != null)
             {
-                return value5(Value5!);
+                return languageVariant5(LanguageVariant5!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsLanguageVariant6 && languageVariant6 != null)
             {
-                return value6(Value6!);
+                return languageVariant6(LanguageVariant6!);
             }
-            else if (IsValue7 && value7 != null)
+            else if (IsLanguageVariant7 && languageVariant7 != null)
             {
-                return value7(Value7!);
+                return languageVariant7(LanguageVariant7!);
             }
-            else if (IsValue8 && value8 != null)
+            else if (IsLanguageVariant8 && languageVariant8 != null)
             {
-                return value8(Value8!);
+                return languageVariant8(LanguageVariant8!);
             }
-            else if (IsValue9 && value9 != null)
+            else if (IsLanguageVariant9 && languageVariant9 != null)
             {
-                return value9(Value9!);
+                return languageVariant9(LanguageVariant9!);
             }
-            else if (IsValue10 && value10 != null)
+            else if (IsLanguageVariant10 && languageVariant10 != null)
             {
-                return value10(Value10!);
+                return languageVariant10(LanguageVariant10!);
             }
-            else if (IsValue11 && value11 != null)
+            else if (IsLanguageVariant11 && languageVariant11 != null)
             {
-                return value11(Value11!);
+                return languageVariant11(LanguageVariant11!);
             }
-            else if (IsValue12 && value12 != null)
+            else if (IsLanguageVariant12 && languageVariant12 != null)
             {
-                return value12(Value12!);
+                return languageVariant12(LanguageVariant12!);
             }
-            else if (IsValue13 && value13 != null)
+            else if (IsLanguageVariant13 && languageVariant13 != null)
             {
-                return value13(Value13!);
+                return languageVariant13(LanguageVariant13!);
             }
-            else if (IsValue14 && value14 != null)
+            else if (IsLanguageVariant14 && languageVariant14 != null)
             {
-                return value14(Value14!);
+                return languageVariant14(LanguageVariant14!);
             }
-            else if (IsValue15 && value15 != null)
+            else if (IsLanguageVariant15 && languageVariant15 != null)
             {
-                return value15(Value15!);
+                return languageVariant15(LanguageVariant15!);
             }
-            else if (IsValue16 && value16 != null)
+            else if (IsLanguageVariant16 && languageVariant16 != null)
             {
-                return value16(Value16!);
+                return languageVariant16(LanguageVariant16!);
             }
-            else if (IsValue17 && value17 != null)
+            else if (IsLanguageVariant17 && languageVariant17 != null)
             {
-                return value17(Value17!);
+                return languageVariant17(LanguageVariant17!);
             }
-            else if (IsValue18 && value18 != null)
+            else if (IsLanguageVariant18 && languageVariant18 != null)
             {
-                return value18(Value18!);
+                return languageVariant18(LanguageVariant18!);
             }
 
             return default(TResult);
@@ -542,24 +542,24 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<string?>? value2 = null,
-            global::System.Action<string?>? value3 = null,
-            global::System.Action<string?>? value4 = null,
-            global::System.Action<string?>? value5 = null,
-            global::System.Action<string?>? value6 = null,
-            global::System.Action<string?>? value7 = null,
-            global::System.Action<string?>? value8 = null,
-            global::System.Action<string?>? value9 = null,
-            global::System.Action<string?>? value10 = null,
-            global::System.Action<string?>? value11 = null,
-            global::System.Action<string?>? value12 = null,
-            global::System.Action<string?>? value13 = null,
-            global::System.Action<string?>? value14 = null,
-            global::System.Action<string?>? value15 = null,
-            global::System.Action<string?>? value16 = null,
-            global::System.Action<string?>? value17 = null,
-            global::System.Action<string?>? value18 = null,
+            global::System.Action<string?>? languageVariant1 = null,
+            global::System.Action<string?>? languageVariant2 = null,
+            global::System.Action<string?>? languageVariant3 = null,
+            global::System.Action<string?>? languageVariant4 = null,
+            global::System.Action<string?>? languageVariant5 = null,
+            global::System.Action<string?>? languageVariant6 = null,
+            global::System.Action<string?>? languageVariant7 = null,
+            global::System.Action<string?>? languageVariant8 = null,
+            global::System.Action<string?>? languageVariant9 = null,
+            global::System.Action<string?>? languageVariant10 = null,
+            global::System.Action<string?>? languageVariant11 = null,
+            global::System.Action<string?>? languageVariant12 = null,
+            global::System.Action<string?>? languageVariant13 = null,
+            global::System.Action<string?>? languageVariant14 = null,
+            global::System.Action<string?>? languageVariant15 = null,
+            global::System.Action<string?>? languageVariant16 = null,
+            global::System.Action<string?>? languageVariant17 = null,
+            global::System.Action<string?>? languageVariant18 = null,
             bool validate = true)
         {
             if (validate)
@@ -567,77 +567,77 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsLanguageVariant1)
             {
-                value1?.Invoke(Value1!);
+                languageVariant1?.Invoke(LanguageVariant1!);
             }
-            else if (IsValue2)
+            else if (IsLanguageVariant2)
             {
-                value2?.Invoke(Value2!);
+                languageVariant2?.Invoke(LanguageVariant2!);
             }
-            else if (IsValue3)
+            else if (IsLanguageVariant3)
             {
-                value3?.Invoke(Value3!);
+                languageVariant3?.Invoke(LanguageVariant3!);
             }
-            else if (IsValue4)
+            else if (IsLanguageVariant4)
             {
-                value4?.Invoke(Value4!);
+                languageVariant4?.Invoke(LanguageVariant4!);
             }
-            else if (IsValue5)
+            else if (IsLanguageVariant5)
             {
-                value5?.Invoke(Value5!);
+                languageVariant5?.Invoke(LanguageVariant5!);
             }
-            else if (IsValue6)
+            else if (IsLanguageVariant6)
             {
-                value6?.Invoke(Value6!);
+                languageVariant6?.Invoke(LanguageVariant6!);
             }
-            else if (IsValue7)
+            else if (IsLanguageVariant7)
             {
-                value7?.Invoke(Value7!);
+                languageVariant7?.Invoke(LanguageVariant7!);
             }
-            else if (IsValue8)
+            else if (IsLanguageVariant8)
             {
-                value8?.Invoke(Value8!);
+                languageVariant8?.Invoke(LanguageVariant8!);
             }
-            else if (IsValue9)
+            else if (IsLanguageVariant9)
             {
-                value9?.Invoke(Value9!);
+                languageVariant9?.Invoke(LanguageVariant9!);
             }
-            else if (IsValue10)
+            else if (IsLanguageVariant10)
             {
-                value10?.Invoke(Value10!);
+                languageVariant10?.Invoke(LanguageVariant10!);
             }
-            else if (IsValue11)
+            else if (IsLanguageVariant11)
             {
-                value11?.Invoke(Value11!);
+                languageVariant11?.Invoke(LanguageVariant11!);
             }
-            else if (IsValue12)
+            else if (IsLanguageVariant12)
             {
-                value12?.Invoke(Value12!);
+                languageVariant12?.Invoke(LanguageVariant12!);
             }
-            else if (IsValue13)
+            else if (IsLanguageVariant13)
             {
-                value13?.Invoke(Value13!);
+                languageVariant13?.Invoke(LanguageVariant13!);
             }
-            else if (IsValue14)
+            else if (IsLanguageVariant14)
             {
-                value14?.Invoke(Value14!);
+                languageVariant14?.Invoke(LanguageVariant14!);
             }
-            else if (IsValue15)
+            else if (IsLanguageVariant15)
             {
-                value15?.Invoke(Value15!);
+                languageVariant15?.Invoke(LanguageVariant15!);
             }
-            else if (IsValue16)
+            else if (IsLanguageVariant16)
             {
-                value16?.Invoke(Value16!);
+                languageVariant16?.Invoke(LanguageVariant16!);
             }
-            else if (IsValue17)
+            else if (IsLanguageVariant17)
             {
-                value17?.Invoke(Value17!);
+                languageVariant17?.Invoke(LanguageVariant17!);
             }
-            else if (IsValue18)
+            else if (IsLanguageVariant18)
             {
-                value18?.Invoke(Value18!);
+                languageVariant18?.Invoke(LanguageVariant18!);
             }
         }
 
@@ -648,41 +648,41 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                LanguageVariant1,
                 typeof(string),
-                Value2,
+                LanguageVariant2,
                 typeof(string),
-                Value3,
+                LanguageVariant3,
                 typeof(string),
-                Value4,
+                LanguageVariant4,
                 typeof(string),
-                Value5,
+                LanguageVariant5,
                 typeof(string),
-                Value6,
+                LanguageVariant6,
                 typeof(string),
-                Value7,
+                LanguageVariant7,
                 typeof(string),
-                Value8,
+                LanguageVariant8,
                 typeof(string),
-                Value9,
+                LanguageVariant9,
                 typeof(string),
-                Value10,
+                LanguageVariant10,
                 typeof(string),
-                Value11,
+                LanguageVariant11,
                 typeof(string),
-                Value12,
+                LanguageVariant12,
                 typeof(string),
-                Value13,
+                LanguageVariant13,
                 typeof(string),
-                Value14,
+                LanguageVariant14,
                 typeof(string),
-                Value15,
+                LanguageVariant15,
                 typeof(string),
-                Value16,
+                LanguageVariant16,
                 typeof(string),
-                Value17,
+                LanguageVariant17,
                 typeof(string),
-                Value18,
+                LanguageVariant18,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -700,24 +700,24 @@ namespace G
         public bool Equals(Language other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value10, other.Value10) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value12, other.Value12) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value13, other.Value13) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value14, other.Value14) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value15, other.Value15) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value16, other.Value16) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value17, other.Value17) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value18, other.Value18) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant1, other.LanguageVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant2, other.LanguageVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant3, other.LanguageVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant4, other.LanguageVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant5, other.LanguageVariant5) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant6, other.LanguageVariant6) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant7, other.LanguageVariant7) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant8, other.LanguageVariant8) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant9, other.LanguageVariant9) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant10, other.LanguageVariant10) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant11, other.LanguageVariant11) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant12, other.LanguageVariant12) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant13, other.LanguageVariant13) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant14, other.LanguageVariant14) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant15, other.LanguageVariant15) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant16, other.LanguageVariant16) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant17, other.LanguageVariant17) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(LanguageVariant18, other.LanguageVariant18) 
                 ;
         }
 

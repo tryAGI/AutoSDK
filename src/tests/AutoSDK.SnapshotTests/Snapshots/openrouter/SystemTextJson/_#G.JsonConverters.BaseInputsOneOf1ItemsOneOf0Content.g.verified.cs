@@ -56,7 +56,7 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>? baseInputsOneOf1ItemsOneOf0Content0 = default;
-            string? value2 = default;
+            string? baseInputsOneOf1ItemsOneOf0ContentVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -83,7 +83,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        baseInputsOneOf1ItemsOneOf0ContentVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -94,7 +94,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (baseInputsOneOf1ItemsOneOf0Content0 == null && value2 == null)
+            if (baseInputsOneOf1ItemsOneOf0Content0 == null && baseInputsOneOf1ItemsOneOf0ContentVariant2 == null)
             {
                 try
                 {
@@ -115,7 +115,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    baseInputsOneOf1ItemsOneOf0ContentVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -128,7 +128,7 @@ namespace G.JsonConverters
             var __value = new global::G.BaseInputsOneOf1ItemsOneOf0Content(
                 baseInputsOneOf1ItemsOneOf0Content0,
 
-                value2
+                baseInputsOneOf1ItemsOneOf0ContentVariant2
                 );
 
             return __value;
@@ -149,11 +149,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0Content0!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsBaseInputsOneOf1ItemsOneOf0ContentVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0ContentVariant2!, typeInfo);
             }
         }
     }

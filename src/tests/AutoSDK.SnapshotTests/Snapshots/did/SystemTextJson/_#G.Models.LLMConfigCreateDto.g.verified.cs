@@ -14,103 +14,103 @@ namespace G
         /// Create-request shapes: `provider` is required. Plain interfaces (no Omit/Pick) so TSOA can generate routes.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LLMConfigCreateDtoVariant1? Value1 { get; init; }
+        public global::G.LLMConfigCreateDtoVariant1? LLMConfigCreateDtoVariant1 { get; init; }
 #else
-        public global::G.LLMConfigCreateDtoVariant1? Value1 { get; }
+        public global::G.LLMConfigCreateDtoVariant1? LLMConfigCreateDtoVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LLMConfigCreateDtoVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsLLMConfigCreateDtoVariant1 => LLMConfigCreateDtoVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LLMConfigCreateDtoVariant2? Value2 { get; init; }
+        public global::G.LLMConfigCreateDtoVariant2? LLMConfigCreateDtoVariant2 { get; init; }
 #else
-        public global::G.LLMConfigCreateDtoVariant2? Value2 { get; }
+        public global::G.LLMConfigCreateDtoVariant2? LLMConfigCreateDtoVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LLMConfigCreateDtoVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsLLMConfigCreateDtoVariant2 => LLMConfigCreateDtoVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LLMConfigCreateDtoVariant3? Value3 { get; init; }
+        public global::G.LLMConfigCreateDtoVariant3? LLMConfigCreateDtoVariant3 { get; init; }
 #else
-        public global::G.LLMConfigCreateDtoVariant3? Value3 { get; }
+        public global::G.LLMConfigCreateDtoVariant3? LLMConfigCreateDtoVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LLMConfigCreateDtoVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsLLMConfigCreateDtoVariant3 => LLMConfigCreateDtoVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LLMConfigCreateDtoVariant4? Value4 { get; init; }
+        public global::G.LLMConfigCreateDtoVariant4? LLMConfigCreateDtoVariant4 { get; init; }
 #else
-        public global::G.LLMConfigCreateDtoVariant4? Value4 { get; }
+        public global::G.LLMConfigCreateDtoVariant4? LLMConfigCreateDtoVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LLMConfigCreateDtoVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsLLMConfigCreateDtoVariant4 => LLMConfigCreateDtoVariant4 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LLMConfigCreateDtoVariant5? Value5 { get; init; }
+        public global::G.LLMConfigCreateDtoVariant5? LLMConfigCreateDtoVariant5 { get; init; }
 #else
-        public global::G.LLMConfigCreateDtoVariant5? Value5 { get; }
+        public global::G.LLMConfigCreateDtoVariant5? LLMConfigCreateDtoVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LLMConfigCreateDtoVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsLLMConfigCreateDtoVariant5 => LLMConfigCreateDtoVariant5 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LLMConfigCreateDtoVariant6? Value6 { get; init; }
+        public global::G.LLMConfigCreateDtoVariant6? LLMConfigCreateDtoVariant6 { get; init; }
 #else
-        public global::G.LLMConfigCreateDtoVariant6? Value6 { get; }
+        public global::G.LLMConfigCreateDtoVariant6? LLMConfigCreateDtoVariant6 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LLMConfigCreateDtoVariant6))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsLLMConfigCreateDtoVariant6 => LLMConfigCreateDtoVariant6 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -119,14 +119,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LLMConfigCreateDtoVariant1?(LLMConfigCreateDto @this) => @this.Value1;
+        public static implicit operator global::G.LLMConfigCreateDtoVariant1?(LLMConfigCreateDto @this) => @this.LLMConfigCreateDtoVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public LLMConfigCreateDto(global::G.LLMConfigCreateDtoVariant1? value)
         {
-            Value1 = value;
+            LLMConfigCreateDtoVariant1 = value;
         }
 
         /// <summary>
@@ -137,14 +137,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LLMConfigCreateDtoVariant2?(LLMConfigCreateDto @this) => @this.Value2;
+        public static implicit operator global::G.LLMConfigCreateDtoVariant2?(LLMConfigCreateDto @this) => @this.LLMConfigCreateDtoVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public LLMConfigCreateDto(global::G.LLMConfigCreateDtoVariant2? value)
         {
-            Value2 = value;
+            LLMConfigCreateDtoVariant2 = value;
         }
 
         /// <summary>
@@ -155,14 +155,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LLMConfigCreateDtoVariant3?(LLMConfigCreateDto @this) => @this.Value3;
+        public static implicit operator global::G.LLMConfigCreateDtoVariant3?(LLMConfigCreateDto @this) => @this.LLMConfigCreateDtoVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public LLMConfigCreateDto(global::G.LLMConfigCreateDtoVariant3? value)
         {
-            Value3 = value;
+            LLMConfigCreateDtoVariant3 = value;
         }
 
         /// <summary>
@@ -173,14 +173,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LLMConfigCreateDtoVariant4?(LLMConfigCreateDto @this) => @this.Value4;
+        public static implicit operator global::G.LLMConfigCreateDtoVariant4?(LLMConfigCreateDto @this) => @this.LLMConfigCreateDtoVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public LLMConfigCreateDto(global::G.LLMConfigCreateDtoVariant4? value)
         {
-            Value4 = value;
+            LLMConfigCreateDtoVariant4 = value;
         }
 
         /// <summary>
@@ -191,14 +191,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LLMConfigCreateDtoVariant5?(LLMConfigCreateDto @this) => @this.Value5;
+        public static implicit operator global::G.LLMConfigCreateDtoVariant5?(LLMConfigCreateDto @this) => @this.LLMConfigCreateDtoVariant5;
 
         /// <summary>
         /// 
         /// </summary>
         public LLMConfigCreateDto(global::G.LLMConfigCreateDtoVariant5? value)
         {
-            Value5 = value;
+            LLMConfigCreateDtoVariant5 = value;
         }
 
         /// <summary>
@@ -209,58 +209,58 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LLMConfigCreateDtoVariant6?(LLMConfigCreateDto @this) => @this.Value6;
+        public static implicit operator global::G.LLMConfigCreateDtoVariant6?(LLMConfigCreateDto @this) => @this.LLMConfigCreateDtoVariant6;
 
         /// <summary>
         /// 
         /// </summary>
         public LLMConfigCreateDto(global::G.LLMConfigCreateDtoVariant6? value)
         {
-            Value6 = value;
+            LLMConfigCreateDtoVariant6 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public LLMConfigCreateDto(
-            global::G.LLMConfigCreateDtoVariant1? value1,
-            global::G.LLMConfigCreateDtoVariant2? value2,
-            global::G.LLMConfigCreateDtoVariant3? value3,
-            global::G.LLMConfigCreateDtoVariant4? value4,
-            global::G.LLMConfigCreateDtoVariant5? value5,
-            global::G.LLMConfigCreateDtoVariant6? value6
+            global::G.LLMConfigCreateDtoVariant1? lLMConfigCreateDtoVariant1,
+            global::G.LLMConfigCreateDtoVariant2? lLMConfigCreateDtoVariant2,
+            global::G.LLMConfigCreateDtoVariant3? lLMConfigCreateDtoVariant3,
+            global::G.LLMConfigCreateDtoVariant4? lLMConfigCreateDtoVariant4,
+            global::G.LLMConfigCreateDtoVariant5? lLMConfigCreateDtoVariant5,
+            global::G.LLMConfigCreateDtoVariant6? lLMConfigCreateDtoVariant6
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
+            LLMConfigCreateDtoVariant1 = lLMConfigCreateDtoVariant1;
+            LLMConfigCreateDtoVariant2 = lLMConfigCreateDtoVariant2;
+            LLMConfigCreateDtoVariant3 = lLMConfigCreateDtoVariant3;
+            LLMConfigCreateDtoVariant4 = lLMConfigCreateDtoVariant4;
+            LLMConfigCreateDtoVariant5 = lLMConfigCreateDtoVariant5;
+            LLMConfigCreateDtoVariant6 = lLMConfigCreateDtoVariant6;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            LLMConfigCreateDtoVariant6 as object ??
+            LLMConfigCreateDtoVariant5 as object ??
+            LLMConfigCreateDtoVariant4 as object ??
+            LLMConfigCreateDtoVariant3 as object ??
+            LLMConfigCreateDtoVariant2 as object ??
+            LLMConfigCreateDtoVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() 
+            LLMConfigCreateDtoVariant1?.ToString() ??
+            LLMConfigCreateDtoVariant2?.ToString() ??
+            LLMConfigCreateDtoVariant3?.ToString() ??
+            LLMConfigCreateDtoVariant4?.ToString() ??
+            LLMConfigCreateDtoVariant5?.ToString() ??
+            LLMConfigCreateDtoVariant6?.ToString() 
             ;
 
         /// <summary>
@@ -268,19 +268,19 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6;
+            return IsLLMConfigCreateDtoVariant1 || IsLLMConfigCreateDtoVariant2 || IsLLMConfigCreateDtoVariant3 || IsLLMConfigCreateDtoVariant4 || IsLLMConfigCreateDtoVariant5 || IsLLMConfigCreateDtoVariant6;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.LLMConfigCreateDtoVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.LLMConfigCreateDtoVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.LLMConfigCreateDtoVariant3?, TResult>? value3 = null,
-            global::System.Func<global::G.LLMConfigCreateDtoVariant4?, TResult>? value4 = null,
-            global::System.Func<global::G.LLMConfigCreateDtoVariant5?, TResult>? value5 = null,
-            global::System.Func<global::G.LLMConfigCreateDtoVariant6?, TResult>? value6 = null,
+            global::System.Func<global::G.LLMConfigCreateDtoVariant1?, TResult>? lLMConfigCreateDtoVariant1 = null,
+            global::System.Func<global::G.LLMConfigCreateDtoVariant2?, TResult>? lLMConfigCreateDtoVariant2 = null,
+            global::System.Func<global::G.LLMConfigCreateDtoVariant3?, TResult>? lLMConfigCreateDtoVariant3 = null,
+            global::System.Func<global::G.LLMConfigCreateDtoVariant4?, TResult>? lLMConfigCreateDtoVariant4 = null,
+            global::System.Func<global::G.LLMConfigCreateDtoVariant5?, TResult>? lLMConfigCreateDtoVariant5 = null,
+            global::System.Func<global::G.LLMConfigCreateDtoVariant6?, TResult>? lLMConfigCreateDtoVariant6 = null,
             bool validate = true)
         {
             if (validate)
@@ -288,29 +288,29 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsLLMConfigCreateDtoVariant1 && lLMConfigCreateDtoVariant1 != null)
             {
-                return value1(Value1!);
+                return lLMConfigCreateDtoVariant1(LLMConfigCreateDtoVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsLLMConfigCreateDtoVariant2 && lLMConfigCreateDtoVariant2 != null)
             {
-                return value2(Value2!);
+                return lLMConfigCreateDtoVariant2(LLMConfigCreateDtoVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsLLMConfigCreateDtoVariant3 && lLMConfigCreateDtoVariant3 != null)
             {
-                return value3(Value3!);
+                return lLMConfigCreateDtoVariant3(LLMConfigCreateDtoVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsLLMConfigCreateDtoVariant4 && lLMConfigCreateDtoVariant4 != null)
             {
-                return value4(Value4!);
+                return lLMConfigCreateDtoVariant4(LLMConfigCreateDtoVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsLLMConfigCreateDtoVariant5 && lLMConfigCreateDtoVariant5 != null)
             {
-                return value5(Value5!);
+                return lLMConfigCreateDtoVariant5(LLMConfigCreateDtoVariant5!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsLLMConfigCreateDtoVariant6 && lLMConfigCreateDtoVariant6 != null)
             {
-                return value6(Value6!);
+                return lLMConfigCreateDtoVariant6(LLMConfigCreateDtoVariant6!);
             }
 
             return default(TResult);
@@ -320,12 +320,12 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.LLMConfigCreateDtoVariant1?>? value1 = null,
-            global::System.Action<global::G.LLMConfigCreateDtoVariant2?>? value2 = null,
-            global::System.Action<global::G.LLMConfigCreateDtoVariant3?>? value3 = null,
-            global::System.Action<global::G.LLMConfigCreateDtoVariant4?>? value4 = null,
-            global::System.Action<global::G.LLMConfigCreateDtoVariant5?>? value5 = null,
-            global::System.Action<global::G.LLMConfigCreateDtoVariant6?>? value6 = null,
+            global::System.Action<global::G.LLMConfigCreateDtoVariant1?>? lLMConfigCreateDtoVariant1 = null,
+            global::System.Action<global::G.LLMConfigCreateDtoVariant2?>? lLMConfigCreateDtoVariant2 = null,
+            global::System.Action<global::G.LLMConfigCreateDtoVariant3?>? lLMConfigCreateDtoVariant3 = null,
+            global::System.Action<global::G.LLMConfigCreateDtoVariant4?>? lLMConfigCreateDtoVariant4 = null,
+            global::System.Action<global::G.LLMConfigCreateDtoVariant5?>? lLMConfigCreateDtoVariant5 = null,
+            global::System.Action<global::G.LLMConfigCreateDtoVariant6?>? lLMConfigCreateDtoVariant6 = null,
             bool validate = true)
         {
             if (validate)
@@ -333,29 +333,29 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsLLMConfigCreateDtoVariant1)
             {
-                value1?.Invoke(Value1!);
+                lLMConfigCreateDtoVariant1?.Invoke(LLMConfigCreateDtoVariant1!);
             }
-            else if (IsValue2)
+            else if (IsLLMConfigCreateDtoVariant2)
             {
-                value2?.Invoke(Value2!);
+                lLMConfigCreateDtoVariant2?.Invoke(LLMConfigCreateDtoVariant2!);
             }
-            else if (IsValue3)
+            else if (IsLLMConfigCreateDtoVariant3)
             {
-                value3?.Invoke(Value3!);
+                lLMConfigCreateDtoVariant3?.Invoke(LLMConfigCreateDtoVariant3!);
             }
-            else if (IsValue4)
+            else if (IsLLMConfigCreateDtoVariant4)
             {
-                value4?.Invoke(Value4!);
+                lLMConfigCreateDtoVariant4?.Invoke(LLMConfigCreateDtoVariant4!);
             }
-            else if (IsValue5)
+            else if (IsLLMConfigCreateDtoVariant5)
             {
-                value5?.Invoke(Value5!);
+                lLMConfigCreateDtoVariant5?.Invoke(LLMConfigCreateDtoVariant5!);
             }
-            else if (IsValue6)
+            else if (IsLLMConfigCreateDtoVariant6)
             {
-                value6?.Invoke(Value6!);
+                lLMConfigCreateDtoVariant6?.Invoke(LLMConfigCreateDtoVariant6!);
             }
         }
 
@@ -366,17 +366,17 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                LLMConfigCreateDtoVariant1,
                 typeof(global::G.LLMConfigCreateDtoVariant1),
-                Value2,
+                LLMConfigCreateDtoVariant2,
                 typeof(global::G.LLMConfigCreateDtoVariant2),
-                Value3,
+                LLMConfigCreateDtoVariant3,
                 typeof(global::G.LLMConfigCreateDtoVariant3),
-                Value4,
+                LLMConfigCreateDtoVariant4,
                 typeof(global::G.LLMConfigCreateDtoVariant4),
-                Value5,
+                LLMConfigCreateDtoVariant5,
                 typeof(global::G.LLMConfigCreateDtoVariant5),
-                Value6,
+                LLMConfigCreateDtoVariant6,
                 typeof(global::G.LLMConfigCreateDtoVariant6),
             };
             const int offset = unchecked((int)2166136261);
@@ -394,12 +394,12 @@ namespace G
         public bool Equals(LLMConfigCreateDto other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant4?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant5?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant6?>.Default.Equals(Value6, other.Value6) 
+                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant1?>.Default.Equals(LLMConfigCreateDtoVariant1, other.LLMConfigCreateDtoVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant2?>.Default.Equals(LLMConfigCreateDtoVariant2, other.LLMConfigCreateDtoVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant3?>.Default.Equals(LLMConfigCreateDtoVariant3, other.LLMConfigCreateDtoVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant4?>.Default.Equals(LLMConfigCreateDtoVariant4, other.LLMConfigCreateDtoVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant5?>.Default.Equals(LLMConfigCreateDtoVariant5, other.LLMConfigCreateDtoVariant5) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigCreateDtoVariant6?>.Default.Equals(LLMConfigCreateDtoVariant6, other.LLMConfigCreateDtoVariant6) 
                 ;
         }
 

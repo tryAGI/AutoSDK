@@ -19,18 +19,18 @@ namespace G
         /// - fflag_feat_fit_710_fsm_state_fields (state field display in APIs)
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Comment? Value1 { get; init; }
+        public global::G.Comment? Comment { get; init; }
 #else
-        public global::G.Comment? Value1 { get; }
+        public global::G.Comment? Comment { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Comment))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsComment => Comment != null;
 
         /// <summary>
         /// Comment Serializer with FSM state support.<br/>
@@ -41,18 +41,18 @@ namespace G
         /// - fflag_feat_fit_710_fsm_state_fields (state field display in APIs)
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CommentSerializerWithExpandedUser? Value2 { get; init; }
+        public global::G.CommentSerializerWithExpandedUser? SerializerWithUser { get; init; }
 #else
-        public global::G.CommentSerializerWithExpandedUser? Value2 { get; }
+        public global::G.CommentSerializerWithExpandedUser? SerializerWithUser { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SerializerWithUser))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsSerializerWithUser => SerializerWithUser != null;
         /// <summary>
         /// 
         /// </summary>
@@ -61,14 +61,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Comment?(MaybeExpandedComment @this) => @this.Value1;
+        public static implicit operator global::G.Comment?(MaybeExpandedComment @this) => @this.Comment;
 
         /// <summary>
         /// 
         /// </summary>
         public MaybeExpandedComment(global::G.Comment? value)
         {
-            Value1 = value;
+            Comment = value;
         }
 
         /// <summary>
@@ -79,42 +79,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CommentSerializerWithExpandedUser?(MaybeExpandedComment @this) => @this.Value2;
+        public static implicit operator global::G.CommentSerializerWithExpandedUser?(MaybeExpandedComment @this) => @this.SerializerWithUser;
 
         /// <summary>
         /// 
         /// </summary>
         public MaybeExpandedComment(global::G.CommentSerializerWithExpandedUser? value)
         {
-            Value2 = value;
+            SerializerWithUser = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MaybeExpandedComment(
-            global::G.Comment? value1,
-            global::G.CommentSerializerWithExpandedUser? value2
+            global::G.Comment? comment,
+            global::G.CommentSerializerWithExpandedUser? serializerWithUser
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Comment = comment;
+            SerializerWithUser = serializerWithUser;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            SerializerWithUser as object ??
+            Comment as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Comment?.ToString() ??
+            SerializerWithUser?.ToString() 
             ;
 
         /// <summary>
@@ -122,15 +122,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsComment && !IsSerializerWithUser || !IsComment && IsSerializerWithUser;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Comment?, TResult>? value1 = null,
-            global::System.Func<global::G.CommentSerializerWithExpandedUser?, TResult>? value2 = null,
+            global::System.Func<global::G.Comment?, TResult>? comment = null,
+            global::System.Func<global::G.CommentSerializerWithExpandedUser?, TResult>? serializerWithUser = null,
             bool validate = true)
         {
             if (validate)
@@ -138,13 +138,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsComment && comment != null)
             {
-                return value1(Value1!);
+                return comment(Comment!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsSerializerWithUser && serializerWithUser != null)
             {
-                return value2(Value2!);
+                return serializerWithUser(SerializerWithUser!);
             }
 
             return default(TResult);
@@ -154,8 +154,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Comment?>? value1 = null,
-            global::System.Action<global::G.CommentSerializerWithExpandedUser?>? value2 = null,
+            global::System.Action<global::G.Comment?>? comment = null,
+            global::System.Action<global::G.CommentSerializerWithExpandedUser?>? serializerWithUser = null,
             bool validate = true)
         {
             if (validate)
@@ -163,13 +163,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsComment)
             {
-                value1?.Invoke(Value1!);
+                comment?.Invoke(Comment!);
             }
-            else if (IsValue2)
+            else if (IsSerializerWithUser)
             {
-                value2?.Invoke(Value2!);
+                serializerWithUser?.Invoke(SerializerWithUser!);
             }
         }
 
@@ -180,9 +180,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Comment,
                 typeof(global::G.Comment),
-                Value2,
+                SerializerWithUser,
                 typeof(global::G.CommentSerializerWithExpandedUser),
             };
             const int offset = unchecked((int)2166136261);
@@ -200,8 +200,8 @@ namespace G
         public bool Equals(MaybeExpandedComment other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.Comment?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CommentSerializerWithExpandedUser?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.Comment?>.Default.Equals(Comment, other.Comment) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CommentSerializerWithExpandedUser?>.Default.Equals(SerializerWithUser, other.SerializerWithUser) 
                 ;
         }
 

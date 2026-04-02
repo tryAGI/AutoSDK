@@ -39,7 +39,7 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::G.InvokeParentSpanParentStruct? spanParentStruct = default;
-            string? value2 = default;
+            string? invokeParentVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -63,7 +63,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        invokeParentVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +74,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (spanParentStruct == null && value2 == null)
+            if (spanParentStruct == null && invokeParentVariant2 == null)
             {
                 try
                 {
@@ -93,7 +93,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    invokeParentVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -106,7 +106,7 @@ namespace G.JsonConverters
             var __value = new global::G.InvokeParent(
                 spanParentStruct,
 
-                value2
+                invokeParentVariant2
                 );
 
             return __value;
@@ -127,11 +127,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InvokeParentSpanParentStruct).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpanParentStruct!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsInvokeParentVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InvokeParentVariant2!, typeInfo);
             }
         }
     }

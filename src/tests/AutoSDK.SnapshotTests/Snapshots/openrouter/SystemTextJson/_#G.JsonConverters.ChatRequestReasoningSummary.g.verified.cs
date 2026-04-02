@@ -68,8 +68,8 @@ namespace G.JsonConverters
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             global::G.ChatReasoningSummaryVerbosityEnum? chatReasoningSummaryVerbosityEnum = default;
-            object? value2 = default;
-            object? value3 = default;
+            object? chatRequestReasoningSummaryVariant2 = default;
+            object? chatRequestReasoningSummaryVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -96,7 +96,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatRequestReasoningSummaryVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -113,7 +113,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        chatRequestReasoningSummaryVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -124,7 +124,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (chatReasoningSummaryVerbosityEnum == null && value2 == null && value3 == null)
+            if (chatReasoningSummaryVerbosityEnum == null && chatRequestReasoningSummaryVariant2 == null && chatRequestReasoningSummaryVariant3 == null)
             {
                 try
                 {
@@ -145,7 +145,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatRequestReasoningSummaryVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -159,7 +159,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    chatRequestReasoningSummaryVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -172,9 +172,9 @@ namespace G.JsonConverters
             var __value = new global::G.ChatRequestReasoningSummary(
                 chatReasoningSummaryVerbosityEnum,
 
-                value2,
+                chatRequestReasoningSummaryVariant2,
 
-                value3
+                chatRequestReasoningSummaryVariant3
                 );
 
             return __value;
@@ -195,17 +195,17 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatReasoningSummaryVerbosityEnum).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatReasoningSummaryVerbosityEnum!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsChatRequestReasoningSummaryVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestReasoningSummaryVariant2!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsChatRequestReasoningSummaryVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestReasoningSummaryVariant3!, typeInfo);
             }
         }
     }

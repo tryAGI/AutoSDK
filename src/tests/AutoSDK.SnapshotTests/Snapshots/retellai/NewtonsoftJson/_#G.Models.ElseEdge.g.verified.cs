@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.NodeEdge? Value1 { get; init; }
+        public global::G.NodeEdge? Node { get; init; }
 #else
-        public global::G.NodeEdge? Value1 { get; }
+        public global::G.NodeEdge? Node { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Node))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsNode => Node != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ElseEdgeVariant2? Value2 { get; init; }
+        public global::G.ElseEdgeVariant2? ElseEdgeVariant2 { get; init; }
 #else
-        public global::G.ElseEdgeVariant2? Value2 { get; }
+        public global::G.ElseEdgeVariant2? ElseEdgeVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ElseEdgeVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsElseEdgeVariant2 => ElseEdgeVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.NodeEdge?(ElseEdge @this) => @this.Value1;
+        public static implicit operator global::G.NodeEdge?(ElseEdge @this) => @this.Node;
 
         /// <summary>
         /// 
         /// </summary>
         public ElseEdge(global::G.NodeEdge? value)
         {
-            Value1 = value;
+            Node = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ElseEdgeVariant2?(ElseEdge @this) => @this.Value2;
+        public static implicit operator global::G.ElseEdgeVariant2?(ElseEdge @this) => @this.ElseEdgeVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ElseEdge(global::G.ElseEdgeVariant2? value)
         {
-            Value2 = value;
+            ElseEdgeVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ElseEdge(
-            global::G.NodeEdge? value1,
-            global::G.ElseEdgeVariant2? value2
+            global::G.NodeEdge? node,
+            global::G.ElseEdgeVariant2? elseEdgeVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Node = node;
+            ElseEdgeVariant2 = elseEdgeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ElseEdgeVariant2 as object ??
+            Node as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Node?.ToString() ??
+            ElseEdgeVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsNode && IsElseEdgeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NodeEdge?, TResult>? value1 = null,
-            global::System.Func<global::G.ElseEdgeVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.NodeEdge?, TResult>? node = null,
+            global::System.Func<global::G.ElseEdgeVariant2?, TResult>? elseEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsNode && node != null)
             {
-                return value1(Value1!);
+                return node(Node!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsElseEdgeVariant2 && elseEdgeVariant2 != null)
             {
-                return value2(Value2!);
+                return elseEdgeVariant2(ElseEdgeVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NodeEdge?>? value1 = null,
-            global::System.Action<global::G.ElseEdgeVariant2?>? value2 = null,
+            global::System.Action<global::G.NodeEdge?>? node = null,
+            global::System.Action<global::G.ElseEdgeVariant2?>? elseEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsNode)
             {
-                value1?.Invoke(Value1!);
+                node?.Invoke(Node!);
             }
-            else if (IsValue2)
+            else if (IsElseEdgeVariant2)
             {
-                value2?.Invoke(Value2!);
+                elseEdgeVariant2?.Invoke(ElseEdgeVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Node,
                 typeof(global::G.NodeEdge),
-                Value2,
+                ElseEdgeVariant2,
                 typeof(global::G.ElseEdgeVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ElseEdge other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.NodeEdge?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ElseEdgeVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.NodeEdge?>.Default.Equals(Node, other.Node) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ElseEdgeVariant2?>.Default.Equals(ElseEdgeVariant2, other.ElseEdgeVariant2) 
                 ;
         }
 

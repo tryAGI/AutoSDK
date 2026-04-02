@@ -14,62 +14,62 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value1 { get; init; }
+        public global::System.Collections.Generic.IList<string>? AnyVariantsVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value1 { get; }
+        public global::System.Collections.Generic.IList<string>? AnyVariantsVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnyVariantsVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAnyVariantsVariant1 => AnyVariantsVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<long>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<long>? AnyVariantsVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<long>? Value2 { get; }
+        public global::System.Collections.Generic.IList<long>? AnyVariantsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnyVariantsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsAnyVariantsVariant2 => AnyVariantsVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
         public AnyVariants(
-            global::System.Collections.Generic.IList<string>? value1,
-            global::System.Collections.Generic.IList<long>? value2
+            global::System.Collections.Generic.IList<string>? anyVariantsVariant1,
+            global::System.Collections.Generic.IList<long>? anyVariantsVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            AnyVariantsVariant1 = anyVariantsVariant1;
+            AnyVariantsVariant2 = anyVariantsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            AnyVariantsVariant2 as object ??
+            AnyVariantsVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            AnyVariantsVariant1?.ToString() ??
+            AnyVariantsVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -77,15 +77,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsAnyVariantsVariant1 || IsAnyVariantsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<long>?, TResult>? value2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? anyVariantsVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<long>?, TResult>? anyVariantsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -93,13 +93,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAnyVariantsVariant1 && anyVariantsVariant1 != null)
             {
-                return value1(Value1!);
+                return anyVariantsVariant1(AnyVariantsVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsAnyVariantsVariant2 && anyVariantsVariant2 != null)
             {
-                return value2(Value2!);
+                return anyVariantsVariant2(AnyVariantsVariant2!);
             }
 
             return default(TResult);
@@ -109,8 +109,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<long>?>? value2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? anyVariantsVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<long>?>? anyVariantsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -118,13 +118,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAnyVariantsVariant1)
             {
-                value1?.Invoke(Value1!);
+                anyVariantsVariant1?.Invoke(AnyVariantsVariant1!);
             }
-            else if (IsValue2)
+            else if (IsAnyVariantsVariant2)
             {
-                value2?.Invoke(Value2!);
+                anyVariantsVariant2?.Invoke(AnyVariantsVariant2!);
             }
         }
 
@@ -135,9 +135,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                AnyVariantsVariant1,
                 typeof(global::System.Collections.Generic.IList<string>),
-                Value2,
+                AnyVariantsVariant2,
                 typeof(global::System.Collections.Generic.IList<long>),
             };
             const int offset = unchecked((int)2166136261);
@@ -155,8 +155,8 @@ namespace G
         public bool Equals(AnyVariants other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<long>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(AnyVariantsVariant1, other.AnyVariantsVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<long>?>.Default.Equals(AnyVariantsVariant2, other.AnyVariantsVariant2) 
                 ;
         }
 

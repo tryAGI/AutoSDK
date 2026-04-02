@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<double>? Value1 { get; init; }
+        public global::System.Collections.Generic.IList<double>? EmbeddingItemVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<double>? Value1 { get; }
+        public global::System.Collections.Generic.IList<double>? EmbeddingItemVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingItemVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsEmbeddingItemVariant1 => EmbeddingItemVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<int>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<int>? EmbeddingItemVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<int>? Value2 { get; }
+        public global::System.Collections.Generic.IList<int>? EmbeddingItemVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingItemVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEmbeddingItemVariant2 => EmbeddingItemVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value3 { get; init; }
+        public string? EmbeddingItemVariant3 { get; init; }
 #else
-        public string? Value3 { get; }
+        public string? EmbeddingItemVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingItemVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsEmbeddingItemVariant3 => EmbeddingItemVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,46 +68,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(EmbeddingItem @this) => @this.Value3;
+        public static implicit operator string?(EmbeddingItem @this) => @this.EmbeddingItemVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingItem(string? value)
         {
-            Value3 = value;
+            EmbeddingItemVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingItem(
-            global::System.Collections.Generic.IList<double>? value1,
-            global::System.Collections.Generic.IList<int>? value2,
-            string? value3
+            global::System.Collections.Generic.IList<double>? embeddingItemVariant1,
+            global::System.Collections.Generic.IList<int>? embeddingItemVariant2,
+            string? embeddingItemVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            EmbeddingItemVariant1 = embeddingItemVariant1;
+            EmbeddingItemVariant2 = embeddingItemVariant2;
+            EmbeddingItemVariant3 = embeddingItemVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            EmbeddingItemVariant3 as object ??
+            EmbeddingItemVariant2 as object ??
+            EmbeddingItemVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            EmbeddingItemVariant1?.ToString() ??
+            EmbeddingItemVariant2?.ToString() ??
+            EmbeddingItemVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -115,16 +115,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsEmbeddingItemVariant1 || IsEmbeddingItemVariant2 || IsEmbeddingItemVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<double>?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<int>?, TResult>? value2 = null,
-            global::System.Func<string?, TResult>? value3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<double>?, TResult>? embeddingItemVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<int>?, TResult>? embeddingItemVariant2 = null,
+            global::System.Func<string?, TResult>? embeddingItemVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,17 +132,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsEmbeddingItemVariant1 && embeddingItemVariant1 != null)
             {
-                return value1(Value1!);
+                return embeddingItemVariant1(EmbeddingItemVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEmbeddingItemVariant2 && embeddingItemVariant2 != null)
             {
-                return value2(Value2!);
+                return embeddingItemVariant2(EmbeddingItemVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsEmbeddingItemVariant3 && embeddingItemVariant3 != null)
             {
-                return value3(Value3!);
+                return embeddingItemVariant3(EmbeddingItemVariant3!);
             }
 
             return default(TResult);
@@ -152,9 +152,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<double>?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<int>?>? value2 = null,
-            global::System.Action<string?>? value3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<double>?>? embeddingItemVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<int>?>? embeddingItemVariant2 = null,
+            global::System.Action<string?>? embeddingItemVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -162,17 +162,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsEmbeddingItemVariant1)
             {
-                value1?.Invoke(Value1!);
+                embeddingItemVariant1?.Invoke(EmbeddingItemVariant1!);
             }
-            else if (IsValue2)
+            else if (IsEmbeddingItemVariant2)
             {
-                value2?.Invoke(Value2!);
+                embeddingItemVariant2?.Invoke(EmbeddingItemVariant2!);
             }
-            else if (IsValue3)
+            else if (IsEmbeddingItemVariant3)
             {
-                value3?.Invoke(Value3!);
+                embeddingItemVariant3?.Invoke(EmbeddingItemVariant3!);
             }
         }
 
@@ -183,11 +183,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                EmbeddingItemVariant1,
                 typeof(global::System.Collections.Generic.IList<double>),
-                Value2,
+                EmbeddingItemVariant2,
                 typeof(global::System.Collections.Generic.IList<int>),
-                Value3,
+                EmbeddingItemVariant3,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -205,9 +205,9 @@ namespace G
         public bool Equals(EmbeddingItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<double>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<int>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<double>?>.Default.Equals(EmbeddingItemVariant1, other.EmbeddingItemVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<int>?>.Default.Equals(EmbeddingItemVariant2, other.EmbeddingItemVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(EmbeddingItemVariant3, other.EmbeddingItemVariant3) 
                 ;
         }
 

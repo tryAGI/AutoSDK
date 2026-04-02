@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.NodeEdge? Value1 { get; init; }
+        public global::G.NodeEdge? Node { get; init; }
 #else
-        public global::G.NodeEdge? Value1 { get; }
+        public global::G.NodeEdge? Node { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Node))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsNode => Node != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TransferFailedEdgeVariant2? Value2 { get; init; }
+        public global::G.TransferFailedEdgeVariant2? TransferFailedEdgeVariant2 { get; init; }
 #else
-        public global::G.TransferFailedEdgeVariant2? Value2 { get; }
+        public global::G.TransferFailedEdgeVariant2? TransferFailedEdgeVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransferFailedEdgeVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsTransferFailedEdgeVariant2 => TransferFailedEdgeVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.NodeEdge?(TransferFailedEdge @this) => @this.Value1;
+        public static implicit operator global::G.NodeEdge?(TransferFailedEdge @this) => @this.Node;
 
         /// <summary>
         /// 
         /// </summary>
         public TransferFailedEdge(global::G.NodeEdge? value)
         {
-            Value1 = value;
+            Node = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TransferFailedEdgeVariant2?(TransferFailedEdge @this) => @this.Value2;
+        public static implicit operator global::G.TransferFailedEdgeVariant2?(TransferFailedEdge @this) => @this.TransferFailedEdgeVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public TransferFailedEdge(global::G.TransferFailedEdgeVariant2? value)
         {
-            Value2 = value;
+            TransferFailedEdgeVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TransferFailedEdge(
-            global::G.NodeEdge? value1,
-            global::G.TransferFailedEdgeVariant2? value2
+            global::G.NodeEdge? node,
+            global::G.TransferFailedEdgeVariant2? transferFailedEdgeVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Node = node;
+            TransferFailedEdgeVariant2 = transferFailedEdgeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            TransferFailedEdgeVariant2 as object ??
+            Node as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Node?.ToString() ??
+            TransferFailedEdgeVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsNode && IsTransferFailedEdgeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NodeEdge?, TResult>? value1 = null,
-            global::System.Func<global::G.TransferFailedEdgeVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.NodeEdge?, TResult>? node = null,
+            global::System.Func<global::G.TransferFailedEdgeVariant2?, TResult>? transferFailedEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsNode && node != null)
             {
-                return value1(Value1!);
+                return node(Node!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsTransferFailedEdgeVariant2 && transferFailedEdgeVariant2 != null)
             {
-                return value2(Value2!);
+                return transferFailedEdgeVariant2(TransferFailedEdgeVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NodeEdge?>? value1 = null,
-            global::System.Action<global::G.TransferFailedEdgeVariant2?>? value2 = null,
+            global::System.Action<global::G.NodeEdge?>? node = null,
+            global::System.Action<global::G.TransferFailedEdgeVariant2?>? transferFailedEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsNode)
             {
-                value1?.Invoke(Value1!);
+                node?.Invoke(Node!);
             }
-            else if (IsValue2)
+            else if (IsTransferFailedEdgeVariant2)
             {
-                value2?.Invoke(Value2!);
+                transferFailedEdgeVariant2?.Invoke(TransferFailedEdgeVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Node,
                 typeof(global::G.NodeEdge),
-                Value2,
+                TransferFailedEdgeVariant2,
                 typeof(global::G.TransferFailedEdgeVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(TransferFailedEdge other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.NodeEdge?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TransferFailedEdgeVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.NodeEdge?>.Default.Equals(Node, other.Node) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TransferFailedEdgeVariant2?>.Default.Equals(TransferFailedEdgeVariant2, other.TransferFailedEdgeVariant2) 
                 ;
         }
 

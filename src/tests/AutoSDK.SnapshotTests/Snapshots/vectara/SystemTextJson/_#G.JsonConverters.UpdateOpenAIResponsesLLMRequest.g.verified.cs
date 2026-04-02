@@ -43,8 +43,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.OpenAILLMUpdateBase? value1 = default;
-            global::G.UpdateOpenAIResponsesLLMRequestVariant2? value2 = default;
+            global::G.OpenAILLMUpdateBase? @base = default;
+            global::G.UpdateOpenAIResponsesLLMRequestVariant2? updateOpenAIResponsesLLMRequestVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -53,7 +53,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAILLMUpdateBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAILLMUpdateBase> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAILLMUpdateBase).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -68,7 +68,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateOpenAIResponsesLLMRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateOpenAIResponsesLLMRequestVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateOpenAIResponsesLLMRequestVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        updateOpenAIResponsesLLMRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -79,13 +79,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (@base == null && updateOpenAIResponsesLLMRequestVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAILLMUpdateBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAILLMUpdateBase> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAILLMUpdateBase).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -98,7 +98,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateOpenAIResponsesLLMRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateOpenAIResponsesLLMRequestVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateOpenAIResponsesLLMRequestVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    updateOpenAIResponsesLLMRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -109,9 +109,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.UpdateOpenAIResponsesLLMRequest(
-                value1,
+                @base,
 
-                value2
+                updateOpenAIResponsesLLMRequestVariant2
                 );
 
             return __value;
@@ -126,17 +126,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsBase)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAILLMUpdateBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAILLMUpdateBase?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAILLMUpdateBase).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsUpdateOpenAIResponsesLLMRequestVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateOpenAIResponsesLLMRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateOpenAIResponsesLLMRequestVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateOpenAIResponsesLLMRequestVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateOpenAIResponsesLLMRequestVariant2!, typeInfo);
             }
         }
     }

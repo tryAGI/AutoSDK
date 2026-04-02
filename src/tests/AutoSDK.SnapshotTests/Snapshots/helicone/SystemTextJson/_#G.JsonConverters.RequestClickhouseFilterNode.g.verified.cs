@@ -40,9 +40,9 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::G.PickFilterLeafRequestResponseRmt? value1 = default;
-            global::G.RequestClickhouseFilterBranch? value2 = default;
-            global::G.RequestClickhouseFilterNodeEnum? value3 = default;
+            global::G.PickFilterLeafRequestResponseRmt? pickLeafResponseRmt = default;
+            global::G.RequestClickhouseFilterBranch? branch = default;
+            global::G.RequestClickhouseFilterNodeEnum? @enum = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -51,7 +51,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PickFilterLeafRequestResponseRmt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PickFilterLeafRequestResponseRmt> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PickFilterLeafRequestResponseRmt).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        pickLeafResponseRmt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -66,7 +66,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestClickhouseFilterBranch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestClickhouseFilterBranch> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestClickhouseFilterBranch).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        branch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -81,7 +81,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestClickhouseFilterNodeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestClickhouseFilterNodeEnum> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestClickhouseFilterNodeEnum).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -92,13 +92,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (pickLeafResponseRmt == null && branch == null && @enum == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PickFilterLeafRequestResponseRmt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PickFilterLeafRequestResponseRmt> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PickFilterLeafRequestResponseRmt).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    pickLeafResponseRmt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -111,7 +111,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestClickhouseFilterBranch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestClickhouseFilterBranch> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestClickhouseFilterBranch).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    branch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -124,7 +124,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestClickhouseFilterNodeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestClickhouseFilterNodeEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestClickhouseFilterNodeEnum).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -135,11 +135,11 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.RequestClickhouseFilterNode(
-                value1,
+                pickLeafResponseRmt,
 
-                value2,
+                branch,
 
-                value3
+                @enum
                 );
 
             return __value;
@@ -154,23 +154,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsPickLeafResponseRmt)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PickFilterLeafRequestResponseRmt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PickFilterLeafRequestResponseRmt?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PickFilterLeafRequestResponseRmt).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLeafResponseRmt!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsBranch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestClickhouseFilterBranch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestClickhouseFilterBranch?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestClickhouseFilterBranch).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Branch!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsEnum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestClickhouseFilterNodeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestClickhouseFilterNodeEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestClickhouseFilterNodeEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
             }
         }
     }

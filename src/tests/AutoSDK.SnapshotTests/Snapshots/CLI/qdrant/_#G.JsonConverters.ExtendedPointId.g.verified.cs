@@ -55,8 +55,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            int? value1 = default;
-            global::System.Guid? value2 = default;
+            int? extendedPointIdVariant1 = default;
+            global::System.Guid? guid = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -66,7 +66,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        extendedPointIdVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -83,7 +83,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Guid), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Guid> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Guid).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        guid = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -94,14 +94,14 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (extendedPointIdVariant1 == null && guid == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    extendedPointIdVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -115,7 +115,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Guid), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Guid> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Guid).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    guid = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -126,9 +126,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.ExtendedPointId(
-                value1,
+                extendedPointIdVariant1,
 
-                value2
+                guid
                 );
 
             return __value;
@@ -143,17 +143,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsExtendedPointIdVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExtendedPointIdVariant1!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsGuid)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Guid), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Guid> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Guid).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Guid!.Value, typeInfo);
             }
         }
     }

@@ -17,6 +17,28 @@ public partial class Tests
             }).WithCSharpComputedValues(),
             className: "ChatCompletionRequestMessageContentPart").Should().Be("Text");
     }
+
+    [TestMethod]
+    public void SmartNamedAnyOfNames_UsesFullTypeName_WhenReducedNameIsEmpty()
+    {
+        SmartNamedAnyOfNames.ComputeSmartName(
+            typeData: (TypeData.Default with
+            {
+                CSharpTypeRaw = "SearchParameters",
+            }).WithCSharpComputedValues(),
+            className: "SearchCorporaParameters").Should().Be("SearchParameters");
+    }
+
+    [TestMethod]
+    public void SmartNamedAnyOfNames_UsesFullTypeName_WhenReducedNameIsOnlyVariantSuffix()
+    {
+        SmartNamedAnyOfNames.ComputeSmartName(
+            typeData: (TypeData.Default with
+            {
+                CSharpTypeRaw = "CreateChatCompletionRequestVariant2",
+            }).WithCSharpComputedValues(),
+            className: "CreateChatCompletionRequest").Should().Be("CreateChatCompletionRequestVariant2");
+    }
     
     [TestMethod]
     public void DateTimeParameterSerialization_Valid()

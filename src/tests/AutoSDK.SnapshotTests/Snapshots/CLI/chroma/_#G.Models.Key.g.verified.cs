@@ -59,86 +59,86 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.KeyVariant1? Value1 { get; init; }
+        public global::G.KeyVariant1? KeyVariant1 { get; init; }
 #else
-        public global::G.KeyVariant1? Value1 { get; }
+        public global::G.KeyVariant1? KeyVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsKeyVariant1 => KeyVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.KeyVariant2? Value2 { get; init; }
+        public global::G.KeyVariant2? KeyVariant2 { get; init; }
 #else
-        public global::G.KeyVariant2? Value2 { get; }
+        public global::G.KeyVariant2? KeyVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsKeyVariant2 => KeyVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.KeyVariant3? Value3 { get; init; }
+        public global::G.KeyVariant3? KeyVariant3 { get; init; }
 #else
-        public global::G.KeyVariant3? Value3 { get; }
+        public global::G.KeyVariant3? KeyVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsKeyVariant3 => KeyVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.KeyVariant4? Value4 { get; init; }
+        public global::G.KeyVariant4? KeyVariant4 { get; init; }
 #else
-        public global::G.KeyVariant4? Value4 { get; }
+        public global::G.KeyVariant4? KeyVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsKeyVariant4 => KeyVariant4 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.KeyVariant5? Value5 { get; init; }
+        public global::G.KeyVariant5? KeyVariant5 { get; init; }
 #else
-        public global::G.KeyVariant5? Value5 { get; }
+        public global::G.KeyVariant5? KeyVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsKeyVariant5 => KeyVariant5 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -147,14 +147,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.KeyVariant1?(Key @this) => @this.Value1;
+        public static implicit operator global::G.KeyVariant1?(Key @this) => @this.KeyVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public Key(global::G.KeyVariant1? value)
         {
-            Value1 = value;
+            KeyVariant1 = value;
         }
 
         /// <summary>
@@ -165,14 +165,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.KeyVariant2?(Key @this) => @this.Value2;
+        public static implicit operator global::G.KeyVariant2?(Key @this) => @this.KeyVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public Key(global::G.KeyVariant2? value)
         {
-            Value2 = value;
+            KeyVariant2 = value;
         }
 
         /// <summary>
@@ -183,14 +183,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.KeyVariant3?(Key @this) => @this.Value3;
+        public static implicit operator global::G.KeyVariant3?(Key @this) => @this.KeyVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public Key(global::G.KeyVariant3? value)
         {
-            Value3 = value;
+            KeyVariant3 = value;
         }
 
         /// <summary>
@@ -201,14 +201,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.KeyVariant4?(Key @this) => @this.Value4;
+        public static implicit operator global::G.KeyVariant4?(Key @this) => @this.KeyVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public Key(global::G.KeyVariant4? value)
         {
-            Value4 = value;
+            KeyVariant4 = value;
         }
 
         /// <summary>
@@ -219,54 +219,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.KeyVariant5?(Key @this) => @this.Value5;
+        public static implicit operator global::G.KeyVariant5?(Key @this) => @this.KeyVariant5;
 
         /// <summary>
         /// 
         /// </summary>
         public Key(global::G.KeyVariant5? value)
         {
-            Value5 = value;
+            KeyVariant5 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Key(
-            global::G.KeyVariant1? value1,
-            global::G.KeyVariant2? value2,
-            global::G.KeyVariant3? value3,
-            global::G.KeyVariant4? value4,
-            global::G.KeyVariant5? value5
+            global::G.KeyVariant1? keyVariant1,
+            global::G.KeyVariant2? keyVariant2,
+            global::G.KeyVariant3? keyVariant3,
+            global::G.KeyVariant4? keyVariant4,
+            global::G.KeyVariant5? keyVariant5
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
+            KeyVariant1 = keyVariant1;
+            KeyVariant2 = keyVariant2;
+            KeyVariant3 = keyVariant3;
+            KeyVariant4 = keyVariant4;
+            KeyVariant5 = keyVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            KeyVariant5 as object ??
+            KeyVariant4 as object ??
+            KeyVariant3 as object ??
+            KeyVariant2 as object ??
+            KeyVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToValueString() ??
-            Value2?.ToValueString() ??
-            Value3?.ToValueString() ??
-            Value4?.ToValueString() ??
-            Value5?.ToString() 
+            KeyVariant1?.ToValueString() ??
+            KeyVariant2?.ToValueString() ??
+            KeyVariant3?.ToValueString() ??
+            KeyVariant4?.ToValueString() ??
+            KeyVariant5?.ToString() 
             ;
 
         /// <summary>
@@ -274,18 +274,18 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5;
+            return IsKeyVariant1 && !IsKeyVariant2 && !IsKeyVariant3 && !IsKeyVariant4 && !IsKeyVariant5 || !IsKeyVariant1 && IsKeyVariant2 && !IsKeyVariant3 && !IsKeyVariant4 && !IsKeyVariant5 || !IsKeyVariant1 && !IsKeyVariant2 && IsKeyVariant3 && !IsKeyVariant4 && !IsKeyVariant5 || !IsKeyVariant1 && !IsKeyVariant2 && !IsKeyVariant3 && IsKeyVariant4 && !IsKeyVariant5 || !IsKeyVariant1 && !IsKeyVariant2 && !IsKeyVariant3 && !IsKeyVariant4 && IsKeyVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.KeyVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.KeyVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.KeyVariant3?, TResult>? value3 = null,
-            global::System.Func<global::G.KeyVariant4?, TResult>? value4 = null,
-            global::System.Func<global::G.KeyVariant5?, TResult>? value5 = null,
+            global::System.Func<global::G.KeyVariant1?, TResult>? keyVariant1 = null,
+            global::System.Func<global::G.KeyVariant2?, TResult>? keyVariant2 = null,
+            global::System.Func<global::G.KeyVariant3?, TResult>? keyVariant3 = null,
+            global::System.Func<global::G.KeyVariant4?, TResult>? keyVariant4 = null,
+            global::System.Func<global::G.KeyVariant5?, TResult>? keyVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -293,25 +293,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsKeyVariant1 && keyVariant1 != null)
             {
-                return value1(Value1!);
+                return keyVariant1(KeyVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsKeyVariant2 && keyVariant2 != null)
             {
-                return value2(Value2!);
+                return keyVariant2(KeyVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsKeyVariant3 && keyVariant3 != null)
             {
-                return value3(Value3!);
+                return keyVariant3(KeyVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsKeyVariant4 && keyVariant4 != null)
             {
-                return value4(Value4!);
+                return keyVariant4(KeyVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsKeyVariant5 && keyVariant5 != null)
             {
-                return value5(Value5!);
+                return keyVariant5(KeyVariant5!);
             }
 
             return default(TResult);
@@ -321,11 +321,11 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.KeyVariant1?>? value1 = null,
-            global::System.Action<global::G.KeyVariant2?>? value2 = null,
-            global::System.Action<global::G.KeyVariant3?>? value3 = null,
-            global::System.Action<global::G.KeyVariant4?>? value4 = null,
-            global::System.Action<global::G.KeyVariant5?>? value5 = null,
+            global::System.Action<global::G.KeyVariant1?>? keyVariant1 = null,
+            global::System.Action<global::G.KeyVariant2?>? keyVariant2 = null,
+            global::System.Action<global::G.KeyVariant3?>? keyVariant3 = null,
+            global::System.Action<global::G.KeyVariant4?>? keyVariant4 = null,
+            global::System.Action<global::G.KeyVariant5?>? keyVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -333,25 +333,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsKeyVariant1)
             {
-                value1?.Invoke(Value1!);
+                keyVariant1?.Invoke(KeyVariant1!);
             }
-            else if (IsValue2)
+            else if (IsKeyVariant2)
             {
-                value2?.Invoke(Value2!);
+                keyVariant2?.Invoke(KeyVariant2!);
             }
-            else if (IsValue3)
+            else if (IsKeyVariant3)
             {
-                value3?.Invoke(Value3!);
+                keyVariant3?.Invoke(KeyVariant3!);
             }
-            else if (IsValue4)
+            else if (IsKeyVariant4)
             {
-                value4?.Invoke(Value4!);
+                keyVariant4?.Invoke(KeyVariant4!);
             }
-            else if (IsValue5)
+            else if (IsKeyVariant5)
             {
-                value5?.Invoke(Value5!);
+                keyVariant5?.Invoke(KeyVariant5!);
             }
         }
 
@@ -362,15 +362,15 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                KeyVariant1,
                 typeof(global::G.KeyVariant1),
-                Value2,
+                KeyVariant2,
                 typeof(global::G.KeyVariant2),
-                Value3,
+                KeyVariant3,
                 typeof(global::G.KeyVariant3),
-                Value4,
+                KeyVariant4,
                 typeof(global::G.KeyVariant4),
-                Value5,
+                KeyVariant5,
                 typeof(global::G.KeyVariant5),
             };
             const int offset = unchecked((int)2166136261);
@@ -388,11 +388,11 @@ namespace G
         public bool Equals(Key other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.KeyVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.KeyVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.KeyVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.KeyVariant4?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.KeyVariant5?>.Default.Equals(Value5, other.Value5) 
+                global::System.Collections.Generic.EqualityComparer<global::G.KeyVariant1?>.Default.Equals(KeyVariant1, other.KeyVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.KeyVariant2?>.Default.Equals(KeyVariant2, other.KeyVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.KeyVariant3?>.Default.Equals(KeyVariant3, other.KeyVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.KeyVariant4?>.Default.Equals(KeyVariant4, other.KeyVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.KeyVariant5?>.Default.Equals(KeyVariant5, other.KeyVariant5) 
                 ;
         }
 

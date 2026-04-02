@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? CreateModelStatusVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? CreateModelStatusVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateModelStatusVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsCreateModelStatusVariant1 => CreateModelStatusVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateModelStatusEnum? Value2 { get; init; }
+        public global::G.CreateModelStatusEnum? Enum { get; init; }
 #else
-        public global::G.CreateModelStatusEnum? Value2 { get; }
+        public global::G.CreateModelStatusEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEnum => Enum != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(CreateModelStatus @this) => @this.Value1;
+        public static implicit operator string?(CreateModelStatus @this) => @this.CreateModelStatusVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateModelStatus(string? value)
         {
-            Value1 = value;
+            CreateModelStatusVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateModelStatusEnum?(CreateModelStatus @this) => @this.Value2;
+        public static implicit operator global::G.CreateModelStatusEnum?(CreateModelStatus @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateModelStatus(global::G.CreateModelStatusEnum? value)
         {
-            Value2 = value;
+            Enum = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateModelStatus(
-            string? value1,
-            global::G.CreateModelStatusEnum? value2
+            string? createModelStatusVariant1,
+            global::G.CreateModelStatusEnum? @enum
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            CreateModelStatusVariant1 = createModelStatusVariant1;
+            Enum = @enum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Enum as object ??
+            CreateModelStatusVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToValueString() 
+            CreateModelStatusVariant1?.ToString() ??
+            Enum?.ToValueString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsCreateModelStatusVariant1 || IsEnum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::G.CreateModelStatusEnum?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? createModelStatusVariant1 = null,
+            global::System.Func<global::G.CreateModelStatusEnum?, TResult>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsCreateModelStatusVariant1 && createModelStatusVariant1 != null)
             {
-                return value1(Value1!);
+                return createModelStatusVariant1(CreateModelStatusVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEnum && @enum != null)
             {
-                return value2(Value2!);
+                return @enum(Enum!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::G.CreateModelStatusEnum?>? value2 = null,
+            global::System.Action<string?>? createModelStatusVariant1 = null,
+            global::System.Action<global::G.CreateModelStatusEnum?>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsCreateModelStatusVariant1)
             {
-                value1?.Invoke(Value1!);
+                createModelStatusVariant1?.Invoke(CreateModelStatusVariant1!);
             }
-            else if (IsValue2)
+            else if (IsEnum)
             {
-                value2?.Invoke(Value2!);
+                @enum?.Invoke(Enum!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                CreateModelStatusVariant1,
                 typeof(string),
-                Value2,
+                Enum,
                 typeof(global::G.CreateModelStatusEnum),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(CreateModelStatus other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateModelStatusEnum?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(CreateModelStatusVariant1, other.CreateModelStatusVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateModelStatusEnum?>.Default.Equals(Enum, other.Enum) 
                 ;
         }
 

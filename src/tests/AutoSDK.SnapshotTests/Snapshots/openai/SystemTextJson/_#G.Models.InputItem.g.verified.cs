@@ -35,18 +35,18 @@ namespace G
         /// Content item used to generate a response.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Item? Value2 { get; init; }
+        public global::G.Item? Item { get; init; }
 #else
-        public global::G.Item? Value2 { get; }
+        public global::G.Item? Item { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Item))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsItem => Item != null;
 
         /// <summary>
         /// An internal identifier for an item to reference.
@@ -90,14 +90,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Item?(InputItem @this) => @this.Value2;
+        public static implicit operator global::G.Item?(InputItem @this) => @this.Item;
 
         /// <summary>
         /// 
         /// </summary>
         public InputItem(global::G.Item? value)
         {
-            Value2 = value;
+            Item = value;
         }
 
         /// <summary>
@@ -123,12 +123,12 @@ namespace G
         /// </summary>
         public InputItem(
             global::G.EasyInputMessage? message,
-            global::G.Item? value2,
+            global::G.Item? item,
             global::G.ItemReferenceParam? itemReference
             )
         {
             Message = message;
-            Value2 = value2;
+            Item = item;
             ItemReference = itemReference;
         }
 
@@ -137,7 +137,7 @@ namespace G
         /// </summary>
         public object? Object =>
             ItemReference as object ??
-            Value2 as object ??
+            Item as object ??
             Message as object 
             ;
 
@@ -146,7 +146,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Message?.ToString() ??
-            Value2?.ToString() ??
+            Item?.ToString() ??
             ItemReference?.ToString() 
             ;
 
@@ -155,7 +155,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsMessage && !IsValue2 && !IsItemReference || !IsMessage && IsValue2 && !IsItemReference || !IsMessage && !IsValue2 && IsItemReference;
+            return IsMessage && !IsItem && !IsItemReference || !IsMessage && IsItem && !IsItemReference || !IsMessage && !IsItem && IsItemReference;
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.EasyInputMessage?, TResult>? message = null,
-            global::System.Func<global::G.Item?, TResult>? value2 = null,
+            global::System.Func<global::G.Item?, TResult>? item = null,
             global::System.Func<global::G.ItemReferenceParam?, TResult>? itemReference = null,
             bool validate = true)
         {
@@ -176,9 +176,9 @@ namespace G
             {
                 return message(Message!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsItem && item != null)
             {
-                return value2(Value2!);
+                return item(Item!);
             }
             else if (IsItemReference && itemReference != null)
             {
@@ -193,7 +193,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.EasyInputMessage?>? message = null,
-            global::System.Action<global::G.Item?>? value2 = null,
+            global::System.Action<global::G.Item?>? item = null,
             global::System.Action<global::G.ItemReferenceParam?>? itemReference = null,
             bool validate = true)
         {
@@ -206,9 +206,9 @@ namespace G
             {
                 message?.Invoke(Message!);
             }
-            else if (IsValue2)
+            else if (IsItem)
             {
-                value2?.Invoke(Value2!);
+                item?.Invoke(Item!);
             }
             else if (IsItemReference)
             {
@@ -225,7 +225,7 @@ namespace G
             {
                 Message,
                 typeof(global::G.EasyInputMessage),
-                Value2,
+                Item,
                 typeof(global::G.Item),
                 ItemReference,
                 typeof(global::G.ItemReferenceParam),
@@ -246,7 +246,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.EasyInputMessage?>.Default.Equals(Message, other.Message) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.Item?>.Default.Equals(Value2, other.Value2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.Item?>.Default.Equals(Item, other.Item) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ItemReferenceParam?>.Default.Equals(ItemReference, other.ItemReference) 
                 ;
         }

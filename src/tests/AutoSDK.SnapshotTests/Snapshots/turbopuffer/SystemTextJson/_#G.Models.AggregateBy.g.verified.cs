@@ -14,52 +14,52 @@ namespace G
         /// Count documents.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value1 { get; init; }
+        public byte[]? AggregateByVariant1 { get; init; }
 #else
-        public byte[]? Value1 { get; }
+        public byte[]? AggregateByVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AggregateByVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAggregateByVariant1 => AggregateByVariant1 != null;
 
         /// <summary>
         /// Sum the values of the given attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value2 { get; init; }
+        public byte[]? AggregateByVariant2 { get; init; }
 #else
-        public byte[]? Value2 { get; }
+        public byte[]? AggregateByVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AggregateByVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsAggregateByVariant2 => AggregateByVariant2 != null;
 
         /// <summary>
         /// Count documents with a non-null value for the given attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public byte[]? Value3 { get; init; }
+        public byte[]? AggregateByVariant3 { get; init; }
 #else
-        public byte[]? Value3 { get; }
+        public byte[]? AggregateByVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AggregateByVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsAggregateByVariant3 => AggregateByVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,46 +68,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator byte[]?(AggregateBy @this) => @this.Value1;
+        public static implicit operator byte[]?(AggregateBy @this) => @this.AggregateByVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public AggregateBy(byte[]? value)
         {
-            Value1 = value;
+            AggregateByVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AggregateBy(
-            byte[]? value1,
-            byte[]? value2,
-            byte[]? value3
+            byte[]? aggregateByVariant1,
+            byte[]? aggregateByVariant2,
+            byte[]? aggregateByVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            AggregateByVariant1 = aggregateByVariant1;
+            AggregateByVariant2 = aggregateByVariant2;
+            AggregateByVariant3 = aggregateByVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            AggregateByVariant3 as object ??
+            AggregateByVariant2 as object ??
+            AggregateByVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            AggregateByVariant1?.ToString() ??
+            AggregateByVariant2?.ToString() ??
+            AggregateByVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -115,16 +115,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsAggregateByVariant1 || IsAggregateByVariant2 || IsAggregateByVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<byte[]?, TResult>? value1 = null,
-            global::System.Func<byte[]?, TResult>? value2 = null,
-            global::System.Func<byte[]?, TResult>? value3 = null,
+            global::System.Func<byte[]?, TResult>? aggregateByVariant1 = null,
+            global::System.Func<byte[]?, TResult>? aggregateByVariant2 = null,
+            global::System.Func<byte[]?, TResult>? aggregateByVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,17 +132,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAggregateByVariant1 && aggregateByVariant1 != null)
             {
-                return value1(Value1!);
+                return aggregateByVariant1(AggregateByVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsAggregateByVariant2 && aggregateByVariant2 != null)
             {
-                return value2(Value2!);
+                return aggregateByVariant2(AggregateByVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsAggregateByVariant3 && aggregateByVariant3 != null)
             {
-                return value3(Value3!);
+                return aggregateByVariant3(AggregateByVariant3!);
             }
 
             return default(TResult);
@@ -152,9 +152,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<byte[]?>? value1 = null,
-            global::System.Action<byte[]?>? value2 = null,
-            global::System.Action<byte[]?>? value3 = null,
+            global::System.Action<byte[]?>? aggregateByVariant1 = null,
+            global::System.Action<byte[]?>? aggregateByVariant2 = null,
+            global::System.Action<byte[]?>? aggregateByVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -162,17 +162,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAggregateByVariant1)
             {
-                value1?.Invoke(Value1!);
+                aggregateByVariant1?.Invoke(AggregateByVariant1!);
             }
-            else if (IsValue2)
+            else if (IsAggregateByVariant2)
             {
-                value2?.Invoke(Value2!);
+                aggregateByVariant2?.Invoke(AggregateByVariant2!);
             }
-            else if (IsValue3)
+            else if (IsAggregateByVariant3)
             {
-                value3?.Invoke(Value3!);
+                aggregateByVariant3?.Invoke(AggregateByVariant3!);
             }
         }
 
@@ -183,11 +183,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                AggregateByVariant1,
                 typeof(byte[]),
-                Value2,
+                AggregateByVariant2,
                 typeof(byte[]),
-                Value3,
+                AggregateByVariant3,
                 typeof(byte[]),
             };
             const int offset = unchecked((int)2166136261);
@@ -205,9 +205,9 @@ namespace G
         public bool Equals(AggregateBy other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(AggregateByVariant1, other.AggregateByVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(AggregateByVariant2, other.AggregateByVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<byte[]?>.Default.Equals(AggregateByVariant3, other.AggregateByVariant3) 
                 ;
         }
 

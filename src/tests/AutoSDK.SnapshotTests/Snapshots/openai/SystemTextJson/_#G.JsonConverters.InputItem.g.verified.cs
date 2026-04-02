@@ -42,7 +42,7 @@ namespace G.JsonConverters
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             global::G.EasyInputMessage? message = default;
-            global::G.Item? value2 = default;
+            global::G.Item? item = default;
             global::G.ItemReferenceParam? itemReference = default;
             if (__bestIndex >= 0)
             {
@@ -67,7 +67,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Item), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Item> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Item).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        item = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,7 +93,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (message == null && value2 == null && itemReference == null)
+            if (message == null && item == null && itemReference == null)
             {
                 try
                 {
@@ -112,7 +112,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Item), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Item> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Item).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    item = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -138,7 +138,7 @@ namespace G.JsonConverters
             var __value = new global::G.InputItem(
                 message,
 
-                value2,
+                item,
 
                 itemReference
                 );
@@ -161,11 +161,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EasyInputMessage).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Item), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Item> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Item).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Item!.Value, typeInfo);
             }
             else if (value.IsItemReference)
             {

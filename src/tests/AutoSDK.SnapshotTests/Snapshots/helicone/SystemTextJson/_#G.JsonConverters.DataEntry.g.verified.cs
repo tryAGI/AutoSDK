@@ -45,10 +45,10 @@ namespace G.JsonConverters
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
 
-            global::G.DataEntryVariant1? value1 = default;
-            global::G.DataEntryVariant2? value2 = default;
-            global::G.DataEntryVariant3? value3 = default;
-            global::G.DataEntryVariant4? value4 = default;
+            global::G.DataEntryVariant1? dataEntryVariant1 = default;
+            global::G.DataEntryVariant2? dataEntryVariant2 = default;
+            global::G.DataEntryVariant3? dataEntryVariant3 = default;
+            global::G.DataEntryVariant4? dataEntryVariant4 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -57,7 +57,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        dataEntryVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -72,7 +72,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        dataEntryVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -87,7 +87,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant3> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant3).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        dataEntryVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -102,7 +102,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant4> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant4).Name}");
-                        value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        dataEntryVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -113,13 +113,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null)
+            if (dataEntryVariant1 == null && dataEntryVariant2 == null && dataEntryVariant3 == null && dataEntryVariant4 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    dataEntryVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -132,7 +132,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    dataEntryVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -145,7 +145,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant3).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    dataEntryVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -158,7 +158,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant4> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant4).Name}");
-                    value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    dataEntryVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -169,13 +169,13 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.DataEntry(
-                value1,
+                dataEntryVariant1,
 
-                value2,
+                dataEntryVariant2,
 
-                value3,
+                dataEntryVariant3,
 
-                value4
+                dataEntryVariant4
                 );
 
             return __value;
@@ -190,29 +190,29 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsDataEntryVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataEntryVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsDataEntryVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataEntryVariant2!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsDataEntryVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataEntryVariant3!, typeInfo);
             }
-            else if (value.IsValue4)
+            else if (value.IsDataEntryVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataEntryVariant4!, typeInfo);
             }
         }
     }

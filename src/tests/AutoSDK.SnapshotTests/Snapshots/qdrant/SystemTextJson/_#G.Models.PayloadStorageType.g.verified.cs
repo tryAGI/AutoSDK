@@ -14,69 +14,69 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PayloadStorageTypeVariant1? Value1 { get; init; }
+        public global::G.PayloadStorageTypeVariant1? PayloadStorageTypeVariant1 { get; init; }
 #else
-        public global::G.PayloadStorageTypeVariant1? Value1 { get; }
+        public global::G.PayloadStorageTypeVariant1? PayloadStorageTypeVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PayloadStorageTypeVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsPayloadStorageTypeVariant1 => PayloadStorageTypeVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PayloadStorageTypeVariant2? Value2 { get; init; }
+        public global::G.PayloadStorageTypeVariant2? PayloadStorageTypeVariant2 { get; init; }
 #else
-        public global::G.PayloadStorageTypeVariant2? Value2 { get; }
+        public global::G.PayloadStorageTypeVariant2? PayloadStorageTypeVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PayloadStorageTypeVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsPayloadStorageTypeVariant2 => PayloadStorageTypeVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PayloadStorageTypeVariant3? Value3 { get; init; }
+        public global::G.PayloadStorageTypeVariant3? PayloadStorageTypeVariant3 { get; init; }
 #else
-        public global::G.PayloadStorageTypeVariant3? Value3 { get; }
+        public global::G.PayloadStorageTypeVariant3? PayloadStorageTypeVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PayloadStorageTypeVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsPayloadStorageTypeVariant3 => PayloadStorageTypeVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PayloadStorageTypeVariant4? Value4 { get; init; }
+        public global::G.PayloadStorageTypeVariant4? PayloadStorageTypeVariant4 { get; init; }
 #else
-        public global::G.PayloadStorageTypeVariant4? Value4 { get; }
+        public global::G.PayloadStorageTypeVariant4? PayloadStorageTypeVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PayloadStorageTypeVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsPayloadStorageTypeVariant4 => PayloadStorageTypeVariant4 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -85,14 +85,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PayloadStorageTypeVariant1?(PayloadStorageType @this) => @this.Value1;
+        public static implicit operator global::G.PayloadStorageTypeVariant1?(PayloadStorageType @this) => @this.PayloadStorageTypeVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public PayloadStorageType(global::G.PayloadStorageTypeVariant1? value)
         {
-            Value1 = value;
+            PayloadStorageTypeVariant1 = value;
         }
 
         /// <summary>
@@ -103,14 +103,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PayloadStorageTypeVariant2?(PayloadStorageType @this) => @this.Value2;
+        public static implicit operator global::G.PayloadStorageTypeVariant2?(PayloadStorageType @this) => @this.PayloadStorageTypeVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public PayloadStorageType(global::G.PayloadStorageTypeVariant2? value)
         {
-            Value2 = value;
+            PayloadStorageTypeVariant2 = value;
         }
 
         /// <summary>
@@ -121,14 +121,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PayloadStorageTypeVariant3?(PayloadStorageType @this) => @this.Value3;
+        public static implicit operator global::G.PayloadStorageTypeVariant3?(PayloadStorageType @this) => @this.PayloadStorageTypeVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public PayloadStorageType(global::G.PayloadStorageTypeVariant3? value)
         {
-            Value3 = value;
+            PayloadStorageTypeVariant3 = value;
         }
 
         /// <summary>
@@ -139,50 +139,50 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PayloadStorageTypeVariant4?(PayloadStorageType @this) => @this.Value4;
+        public static implicit operator global::G.PayloadStorageTypeVariant4?(PayloadStorageType @this) => @this.PayloadStorageTypeVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public PayloadStorageType(global::G.PayloadStorageTypeVariant4? value)
         {
-            Value4 = value;
+            PayloadStorageTypeVariant4 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public PayloadStorageType(
-            global::G.PayloadStorageTypeVariant1? value1,
-            global::G.PayloadStorageTypeVariant2? value2,
-            global::G.PayloadStorageTypeVariant3? value3,
-            global::G.PayloadStorageTypeVariant4? value4
+            global::G.PayloadStorageTypeVariant1? payloadStorageTypeVariant1,
+            global::G.PayloadStorageTypeVariant2? payloadStorageTypeVariant2,
+            global::G.PayloadStorageTypeVariant3? payloadStorageTypeVariant3,
+            global::G.PayloadStorageTypeVariant4? payloadStorageTypeVariant4
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
+            PayloadStorageTypeVariant1 = payloadStorageTypeVariant1;
+            PayloadStorageTypeVariant2 = payloadStorageTypeVariant2;
+            PayloadStorageTypeVariant3 = payloadStorageTypeVariant3;
+            PayloadStorageTypeVariant4 = payloadStorageTypeVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            PayloadStorageTypeVariant4 as object ??
+            PayloadStorageTypeVariant3 as object ??
+            PayloadStorageTypeVariant2 as object ??
+            PayloadStorageTypeVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() 
+            PayloadStorageTypeVariant1?.ToString() ??
+            PayloadStorageTypeVariant2?.ToString() ??
+            PayloadStorageTypeVariant3?.ToString() ??
+            PayloadStorageTypeVariant4?.ToString() 
             ;
 
         /// <summary>
@@ -190,17 +190,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4;
+            return IsPayloadStorageTypeVariant1 && !IsPayloadStorageTypeVariant2 && !IsPayloadStorageTypeVariant3 && !IsPayloadStorageTypeVariant4 || !IsPayloadStorageTypeVariant1 && IsPayloadStorageTypeVariant2 && !IsPayloadStorageTypeVariant3 && !IsPayloadStorageTypeVariant4 || !IsPayloadStorageTypeVariant1 && !IsPayloadStorageTypeVariant2 && IsPayloadStorageTypeVariant3 && !IsPayloadStorageTypeVariant4 || !IsPayloadStorageTypeVariant1 && !IsPayloadStorageTypeVariant2 && !IsPayloadStorageTypeVariant3 && IsPayloadStorageTypeVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PayloadStorageTypeVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.PayloadStorageTypeVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.PayloadStorageTypeVariant3?, TResult>? value3 = null,
-            global::System.Func<global::G.PayloadStorageTypeVariant4?, TResult>? value4 = null,
+            global::System.Func<global::G.PayloadStorageTypeVariant1?, TResult>? payloadStorageTypeVariant1 = null,
+            global::System.Func<global::G.PayloadStorageTypeVariant2?, TResult>? payloadStorageTypeVariant2 = null,
+            global::System.Func<global::G.PayloadStorageTypeVariant3?, TResult>? payloadStorageTypeVariant3 = null,
+            global::System.Func<global::G.PayloadStorageTypeVariant4?, TResult>? payloadStorageTypeVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -208,21 +208,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsPayloadStorageTypeVariant1 && payloadStorageTypeVariant1 != null)
             {
-                return value1(Value1!);
+                return payloadStorageTypeVariant1(PayloadStorageTypeVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsPayloadStorageTypeVariant2 && payloadStorageTypeVariant2 != null)
             {
-                return value2(Value2!);
+                return payloadStorageTypeVariant2(PayloadStorageTypeVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsPayloadStorageTypeVariant3 && payloadStorageTypeVariant3 != null)
             {
-                return value3(Value3!);
+                return payloadStorageTypeVariant3(PayloadStorageTypeVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsPayloadStorageTypeVariant4 && payloadStorageTypeVariant4 != null)
             {
-                return value4(Value4!);
+                return payloadStorageTypeVariant4(PayloadStorageTypeVariant4!);
             }
 
             return default(TResult);
@@ -232,10 +232,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PayloadStorageTypeVariant1?>? value1 = null,
-            global::System.Action<global::G.PayloadStorageTypeVariant2?>? value2 = null,
-            global::System.Action<global::G.PayloadStorageTypeVariant3?>? value3 = null,
-            global::System.Action<global::G.PayloadStorageTypeVariant4?>? value4 = null,
+            global::System.Action<global::G.PayloadStorageTypeVariant1?>? payloadStorageTypeVariant1 = null,
+            global::System.Action<global::G.PayloadStorageTypeVariant2?>? payloadStorageTypeVariant2 = null,
+            global::System.Action<global::G.PayloadStorageTypeVariant3?>? payloadStorageTypeVariant3 = null,
+            global::System.Action<global::G.PayloadStorageTypeVariant4?>? payloadStorageTypeVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -243,21 +243,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsPayloadStorageTypeVariant1)
             {
-                value1?.Invoke(Value1!);
+                payloadStorageTypeVariant1?.Invoke(PayloadStorageTypeVariant1!);
             }
-            else if (IsValue2)
+            else if (IsPayloadStorageTypeVariant2)
             {
-                value2?.Invoke(Value2!);
+                payloadStorageTypeVariant2?.Invoke(PayloadStorageTypeVariant2!);
             }
-            else if (IsValue3)
+            else if (IsPayloadStorageTypeVariant3)
             {
-                value3?.Invoke(Value3!);
+                payloadStorageTypeVariant3?.Invoke(PayloadStorageTypeVariant3!);
             }
-            else if (IsValue4)
+            else if (IsPayloadStorageTypeVariant4)
             {
-                value4?.Invoke(Value4!);
+                payloadStorageTypeVariant4?.Invoke(PayloadStorageTypeVariant4!);
             }
         }
 
@@ -268,13 +268,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                PayloadStorageTypeVariant1,
                 typeof(global::G.PayloadStorageTypeVariant1),
-                Value2,
+                PayloadStorageTypeVariant2,
                 typeof(global::G.PayloadStorageTypeVariant2),
-                Value3,
+                PayloadStorageTypeVariant3,
                 typeof(global::G.PayloadStorageTypeVariant3),
-                Value4,
+                PayloadStorageTypeVariant4,
                 typeof(global::G.PayloadStorageTypeVariant4),
             };
             const int offset = unchecked((int)2166136261);
@@ -292,10 +292,10 @@ namespace G
         public bool Equals(PayloadStorageType other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.PayloadStorageTypeVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PayloadStorageTypeVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PayloadStorageTypeVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PayloadStorageTypeVariant4?>.Default.Equals(Value4, other.Value4) 
+                global::System.Collections.Generic.EqualityComparer<global::G.PayloadStorageTypeVariant1?>.Default.Equals(PayloadStorageTypeVariant1, other.PayloadStorageTypeVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PayloadStorageTypeVariant2?>.Default.Equals(PayloadStorageTypeVariant2, other.PayloadStorageTypeVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PayloadStorageTypeVariant3?>.Default.Equals(PayloadStorageTypeVariant3, other.PayloadStorageTypeVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PayloadStorageTypeVariant4?>.Default.Equals(PayloadStorageTypeVariant4, other.PayloadStorageTypeVariant4) 
                 ;
         }
 

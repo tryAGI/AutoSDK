@@ -14,35 +14,35 @@ namespace G
         /// From T, pick a set of properties whose keys are in the union K
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateExpressiveResponseDtoVariant1? Value1 { get; init; }
+        public global::G.CreateExpressiveResponseDtoVariant1? CreateExpressiveResponseDtoVariant1 { get; init; }
 #else
-        public global::G.CreateExpressiveResponseDtoVariant1? Value1 { get; }
+        public global::G.CreateExpressiveResponseDtoVariant1? CreateExpressiveResponseDtoVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateExpressiveResponseDtoVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsCreateExpressiveResponseDtoVariant1 => CreateExpressiveResponseDtoVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateExpressiveResponseDtoVariant2? Value2 { get; init; }
+        public global::G.CreateExpressiveResponseDtoVariant2? CreateExpressiveResponseDtoVariant2 { get; init; }
 #else
-        public global::G.CreateExpressiveResponseDtoVariant2? Value2 { get; }
+        public global::G.CreateExpressiveResponseDtoVariant2? CreateExpressiveResponseDtoVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateExpressiveResponseDtoVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCreateExpressiveResponseDtoVariant2 => CreateExpressiveResponseDtoVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateExpressiveResponseDtoVariant1?(CreateExpressiveResponseDto @this) => @this.Value1;
+        public static implicit operator global::G.CreateExpressiveResponseDtoVariant1?(CreateExpressiveResponseDto @this) => @this.CreateExpressiveResponseDtoVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateExpressiveResponseDto(global::G.CreateExpressiveResponseDtoVariant1? value)
         {
-            Value1 = value;
+            CreateExpressiveResponseDtoVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateExpressiveResponseDtoVariant2?(CreateExpressiveResponseDto @this) => @this.Value2;
+        public static implicit operator global::G.CreateExpressiveResponseDtoVariant2?(CreateExpressiveResponseDto @this) => @this.CreateExpressiveResponseDtoVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateExpressiveResponseDto(global::G.CreateExpressiveResponseDtoVariant2? value)
         {
-            Value2 = value;
+            CreateExpressiveResponseDtoVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateExpressiveResponseDto(
-            global::G.CreateExpressiveResponseDtoVariant1? value1,
-            global::G.CreateExpressiveResponseDtoVariant2? value2
+            global::G.CreateExpressiveResponseDtoVariant1? createExpressiveResponseDtoVariant1,
+            global::G.CreateExpressiveResponseDtoVariant2? createExpressiveResponseDtoVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            CreateExpressiveResponseDtoVariant1 = createExpressiveResponseDtoVariant1;
+            CreateExpressiveResponseDtoVariant2 = createExpressiveResponseDtoVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CreateExpressiveResponseDtoVariant2 as object ??
+            CreateExpressiveResponseDtoVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            CreateExpressiveResponseDtoVariant1?.ToString() ??
+            CreateExpressiveResponseDtoVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsCreateExpressiveResponseDtoVariant1 && IsCreateExpressiveResponseDtoVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateExpressiveResponseDtoVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.CreateExpressiveResponseDtoVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.CreateExpressiveResponseDtoVariant1?, TResult>? createExpressiveResponseDtoVariant1 = null,
+            global::System.Func<global::G.CreateExpressiveResponseDtoVariant2?, TResult>? createExpressiveResponseDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsCreateExpressiveResponseDtoVariant1 && createExpressiveResponseDtoVariant1 != null)
             {
-                return value1(Value1!);
+                return createExpressiveResponseDtoVariant1(CreateExpressiveResponseDtoVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCreateExpressiveResponseDtoVariant2 && createExpressiveResponseDtoVariant2 != null)
             {
-                return value2(Value2!);
+                return createExpressiveResponseDtoVariant2(CreateExpressiveResponseDtoVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateExpressiveResponseDtoVariant1?>? value1 = null,
-            global::System.Action<global::G.CreateExpressiveResponseDtoVariant2?>? value2 = null,
+            global::System.Action<global::G.CreateExpressiveResponseDtoVariant1?>? createExpressiveResponseDtoVariant1 = null,
+            global::System.Action<global::G.CreateExpressiveResponseDtoVariant2?>? createExpressiveResponseDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsCreateExpressiveResponseDtoVariant1)
             {
-                value1?.Invoke(Value1!);
+                createExpressiveResponseDtoVariant1?.Invoke(CreateExpressiveResponseDtoVariant1!);
             }
-            else if (IsValue2)
+            else if (IsCreateExpressiveResponseDtoVariant2)
             {
-                value2?.Invoke(Value2!);
+                createExpressiveResponseDtoVariant2?.Invoke(CreateExpressiveResponseDtoVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                CreateExpressiveResponseDtoVariant1,
                 typeof(global::G.CreateExpressiveResponseDtoVariant1),
-                Value2,
+                CreateExpressiveResponseDtoVariant2,
                 typeof(global::G.CreateExpressiveResponseDtoVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(CreateExpressiveResponseDto other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateExpressiveResponseDtoVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateExpressiveResponseDtoVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateExpressiveResponseDtoVariant1?>.Default.Equals(CreateExpressiveResponseDtoVariant1, other.CreateExpressiveResponseDtoVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateExpressiveResponseDtoVariant2?>.Default.Equals(CreateExpressiveResponseDtoVariant2, other.CreateExpressiveResponseDtoVariant2) 
                 ;
         }
 

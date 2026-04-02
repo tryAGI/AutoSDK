@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TestCaseDefinitionInput? Value1 { get; init; }
+        public global::G.TestCaseDefinitionInput? Input { get; init; }
 #else
-        public global::G.TestCaseDefinitionInput? Value1 { get; }
+        public global::G.TestCaseDefinitionInput? Input { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Input))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsInput => Input != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TestCaseDefinitionVariant2? Value2 { get; init; }
+        public global::G.TestCaseDefinitionVariant2? TestCaseDefinitionVariant2 { get; init; }
 #else
-        public global::G.TestCaseDefinitionVariant2? Value2 { get; }
+        public global::G.TestCaseDefinitionVariant2? TestCaseDefinitionVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TestCaseDefinitionVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsTestCaseDefinitionVariant2 => TestCaseDefinitionVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TestCaseDefinitionInput?(TestCaseDefinition @this) => @this.Value1;
+        public static implicit operator global::G.TestCaseDefinitionInput?(TestCaseDefinition @this) => @this.Input;
 
         /// <summary>
         /// 
         /// </summary>
         public TestCaseDefinition(global::G.TestCaseDefinitionInput? value)
         {
-            Value1 = value;
+            Input = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TestCaseDefinitionVariant2?(TestCaseDefinition @this) => @this.Value2;
+        public static implicit operator global::G.TestCaseDefinitionVariant2?(TestCaseDefinition @this) => @this.TestCaseDefinitionVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public TestCaseDefinition(global::G.TestCaseDefinitionVariant2? value)
         {
-            Value2 = value;
+            TestCaseDefinitionVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TestCaseDefinition(
-            global::G.TestCaseDefinitionInput? value1,
-            global::G.TestCaseDefinitionVariant2? value2
+            global::G.TestCaseDefinitionInput? input,
+            global::G.TestCaseDefinitionVariant2? testCaseDefinitionVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Input = input;
+            TestCaseDefinitionVariant2 = testCaseDefinitionVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            TestCaseDefinitionVariant2 as object ??
+            Input as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Input?.ToString() ??
+            TestCaseDefinitionVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsInput && IsTestCaseDefinitionVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TestCaseDefinitionInput?, TResult>? value1 = null,
-            global::System.Func<global::G.TestCaseDefinitionVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.TestCaseDefinitionInput?, TResult>? input = null,
+            global::System.Func<global::G.TestCaseDefinitionVariant2?, TResult>? testCaseDefinitionVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsInput && input != null)
             {
-                return value1(Value1!);
+                return input(Input!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsTestCaseDefinitionVariant2 && testCaseDefinitionVariant2 != null)
             {
-                return value2(Value2!);
+                return testCaseDefinitionVariant2(TestCaseDefinitionVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TestCaseDefinitionInput?>? value1 = null,
-            global::System.Action<global::G.TestCaseDefinitionVariant2?>? value2 = null,
+            global::System.Action<global::G.TestCaseDefinitionInput?>? input = null,
+            global::System.Action<global::G.TestCaseDefinitionVariant2?>? testCaseDefinitionVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsInput)
             {
-                value1?.Invoke(Value1!);
+                input?.Invoke(Input!);
             }
-            else if (IsValue2)
+            else if (IsTestCaseDefinitionVariant2)
             {
-                value2?.Invoke(Value2!);
+                testCaseDefinitionVariant2?.Invoke(TestCaseDefinitionVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Input,
                 typeof(global::G.TestCaseDefinitionInput),
-                Value2,
+                TestCaseDefinitionVariant2,
                 typeof(global::G.TestCaseDefinitionVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(TestCaseDefinition other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.TestCaseDefinitionInput?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TestCaseDefinitionVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.TestCaseDefinitionInput?>.Default.Equals(Input, other.Input) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TestCaseDefinitionVariant2?>.Default.Equals(TestCaseDefinitionVariant2, other.TestCaseDefinitionVariant2) 
                 ;
         }
 

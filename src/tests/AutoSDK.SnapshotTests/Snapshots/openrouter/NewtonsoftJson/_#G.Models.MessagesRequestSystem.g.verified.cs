@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? MessagesRequestSystemVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? MessagesRequestSystemVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestSystemVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMessagesRequestSystemVariant1 => MessagesRequestSystemVariant1 != null;
 
         /// <summary>
         /// 
@@ -51,25 +51,25 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(MessagesRequestSystem @this) => @this.Value1;
+        public static implicit operator string?(MessagesRequestSystem @this) => @this.MessagesRequestSystemVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesRequestSystem(string? value)
         {
-            Value1 = value;
+            MessagesRequestSystemVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesRequestSystem(
-            string? value1,
+            string? messagesRequestSystemVariant1,
             global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>? messagesRequestSystem1
             )
         {
-            Value1 = value1;
+            MessagesRequestSystemVariant1 = messagesRequestSystemVariant1;
             MessagesRequestSystem1 = messagesRequestSystem1;
         }
 
@@ -78,14 +78,14 @@ namespace G
         /// </summary>
         public object? Object =>
             MessagesRequestSystem1 as object ??
-            Value1 as object 
+            MessagesRequestSystemVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            MessagesRequestSystemVariant1?.ToString() ??
             MessagesRequestSystem1?.ToString() 
             ;
 
@@ -94,14 +94,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsMessagesRequestSystem1 || !IsValue1 && IsMessagesRequestSystem1;
+            return IsMessagesRequestSystemVariant1 && !IsMessagesRequestSystem1 || !IsMessagesRequestSystemVariant1 && IsMessagesRequestSystem1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? messagesRequestSystemVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>?, TResult>? messagesRequestSystem1 = null,
             bool validate = true)
         {
@@ -110,9 +110,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMessagesRequestSystemVariant1 && messagesRequestSystemVariant1 != null)
             {
-                return value1(Value1!);
+                return messagesRequestSystemVariant1(MessagesRequestSystemVariant1!);
             }
             else if (IsMessagesRequestSystem1 && messagesRequestSystem1 != null)
             {
@@ -126,7 +126,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? messagesRequestSystemVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>?>? messagesRequestSystem1 = null,
             bool validate = true)
         {
@@ -135,9 +135,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMessagesRequestSystemVariant1)
             {
-                value1?.Invoke(Value1!);
+                messagesRequestSystemVariant1?.Invoke(MessagesRequestSystemVariant1!);
             }
             else if (IsMessagesRequestSystem1)
             {
@@ -152,7 +152,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                MessagesRequestSystemVariant1,
                 typeof(string),
                 MessagesRequestSystem1,
                 typeof(global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>),
@@ -172,7 +172,7 @@ namespace G
         public bool Equals(MessagesRequestSystem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(MessagesRequestSystemVariant1, other.MessagesRequestSystemVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>?>.Default.Equals(MessagesRequestSystem1, other.MessagesRequestSystem1) 
                 ;
         }

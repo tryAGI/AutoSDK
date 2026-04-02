@@ -84,25 +84,25 @@ namespace G.JsonConverters
             if (__score17 > __bestScore) { __bestScore = __score17; __bestIndex = 17; }
             if (__score18 > __bestScore) { __bestScore = __score18; __bestIndex = 18; }
 
-            float? value1 = default;
-            string? value2 = default;
-            global::G.Condition? value3 = default;
-            global::G.GeoDistance? value4 = default;
-            global::G.DatetimeExpression? value5 = default;
-            global::G.DatetimeKeyExpression? value6 = default;
-            global::G.MultExpression? value7 = default;
-            global::G.SumExpression? value8 = default;
-            global::G.NegExpression? value9 = default;
-            global::G.AbsExpression? value10 = default;
-            global::G.DivExpression? value11 = default;
-            global::G.SqrtExpression? value12 = default;
-            global::G.PowExpression? value13 = default;
-            global::G.ExpExpression? value14 = default;
-            global::G.Log10Expression? value15 = default;
-            global::G.LnExpression? value16 = default;
-            global::G.LinDecayExpression? value17 = default;
-            global::G.ExpDecayExpression? value18 = default;
-            global::G.GaussDecayExpression? value19 = default;
+            float? expressionVariant1 = default;
+            string? expressionVariant2 = default;
+            global::G.Condition? condition = default;
+            global::G.GeoDistance? geoDistance = default;
+            global::G.DatetimeExpression? datetime = default;
+            global::G.DatetimeKeyExpression? datetimeKey = default;
+            global::G.MultExpression? mult = default;
+            global::G.SumExpression? sum = default;
+            global::G.NegExpression? neg = default;
+            global::G.AbsExpression? abs = default;
+            global::G.DivExpression? div = default;
+            global::G.SqrtExpression? sqrt = default;
+            global::G.PowExpression? pow = default;
+            global::G.ExpExpression? exp = default;
+            global::G.Log10Expression? log10 = default;
+            global::G.LnExpression? ln = default;
+            global::G.LinDecayExpression? linDecay = default;
+            global::G.ExpDecayExpression? expDecay = default;
+            global::G.GaussDecayExpression? gaussDecay = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -111,7 +111,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(float), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<float> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(float).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        expressionVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -126,7 +126,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        expressionVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -141,7 +141,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Condition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Condition> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Condition).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        condition = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -156,7 +156,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GeoDistance), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GeoDistance> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GeoDistance).Name}");
-                        value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        geoDistance = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -171,7 +171,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeExpression).Name}");
-                        value5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        datetime = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -186,7 +186,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeKeyExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeKeyExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeKeyExpression).Name}");
-                        value6 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        datetimeKey = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -201,7 +201,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MultExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MultExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MultExpression).Name}");
-                        value7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        mult = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -216,7 +216,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SumExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SumExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SumExpression).Name}");
-                        value8 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        sum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -231,7 +231,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NegExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NegExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NegExpression).Name}");
-                        value9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        neg = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -246,7 +246,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AbsExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AbsExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AbsExpression).Name}");
-                        value10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        abs = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -261,7 +261,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DivExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DivExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DivExpression).Name}");
-                        value11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        div = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -276,7 +276,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SqrtExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SqrtExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SqrtExpression).Name}");
-                        value12 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        sqrt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -291,7 +291,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PowExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PowExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PowExpression).Name}");
-                        value13 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        pow = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -306,7 +306,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExpExpression).Name}");
-                        value14 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        exp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -321,7 +321,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Log10Expression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Log10Expression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Log10Expression).Name}");
-                        value15 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        log10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -336,7 +336,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LnExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LnExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LnExpression).Name}");
-                        value16 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        ln = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -351,7 +351,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LinDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LinDecayExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LinDecayExpression).Name}");
-                        value17 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        linDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -366,7 +366,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpDecayExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExpDecayExpression).Name}");
-                        value18 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        expDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -381,7 +381,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GaussDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GaussDecayExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GaussDecayExpression).Name}");
-                        value19 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        gaussDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -392,13 +392,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(float), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<float> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(float).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    expressionVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -411,7 +411,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    expressionVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -424,7 +424,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Condition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Condition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Condition).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    condition = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -437,7 +437,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GeoDistance), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GeoDistance> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GeoDistance).Name}");
-                    value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    geoDistance = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -450,7 +450,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeExpression).Name}");
-                    value5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    datetime = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -463,7 +463,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeKeyExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeKeyExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeKeyExpression).Name}");
-                    value6 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    datetimeKey = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -476,7 +476,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MultExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MultExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MultExpression).Name}");
-                    value7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    mult = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -489,7 +489,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SumExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SumExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SumExpression).Name}");
-                    value8 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    sum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -502,7 +502,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NegExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NegExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NegExpression).Name}");
-                    value9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    neg = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -515,7 +515,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AbsExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AbsExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AbsExpression).Name}");
-                    value10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    abs = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -528,7 +528,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DivExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DivExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DivExpression).Name}");
-                    value11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    div = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -541,7 +541,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SqrtExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SqrtExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SqrtExpression).Name}");
-                    value12 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    sqrt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -554,7 +554,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PowExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PowExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PowExpression).Name}");
-                    value13 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    pow = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -567,7 +567,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExpExpression).Name}");
-                    value14 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    exp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -580,7 +580,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Log10Expression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Log10Expression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Log10Expression).Name}");
-                    value15 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    log10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -593,7 +593,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LnExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LnExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LnExpression).Name}");
-                    value16 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    ln = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -606,7 +606,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LinDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LinDecayExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LinDecayExpression).Name}");
-                    value17 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    linDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -619,7 +619,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpDecayExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExpDecayExpression).Name}");
-                    value18 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    expDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -632,7 +632,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GaussDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GaussDecayExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GaussDecayExpression).Name}");
-                    value19 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    gaussDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -643,43 +643,43 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.Expression(
-                value1,
+                expressionVariant1,
 
-                value2,
+                expressionVariant2,
 
-                value3,
+                condition,
 
-                value4,
+                geoDistance,
 
-                value5,
+                datetime,
 
-                value6,
+                datetimeKey,
 
-                value7,
+                mult,
 
-                value8,
+                sum,
 
-                value9,
+                neg,
 
-                value10,
+                abs,
 
-                value11,
+                div,
 
-                value12,
+                sqrt,
 
-                value13,
+                pow,
 
-                value14,
+                exp,
 
-                value15,
+                log10,
 
-                value16,
+                ln,
 
-                value17,
+                linDecay,
 
-                value18,
+                expDecay,
 
-                value19
+                gaussDecay
                 );
 
             return __value;
@@ -694,119 +694,119 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsExpressionVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(float), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<float> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(float).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExpressionVariant1!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsExpressionVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExpressionVariant2!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsCondition)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Condition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Condition> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Condition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Condition!.Value, typeInfo);
             }
-            else if (value.IsValue4)
+            else if (value.IsGeoDistance)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GeoDistance), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GeoDistance?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GeoDistance).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GeoDistance!, typeInfo);
             }
-            else if (value.IsValue5)
+            else if (value.IsDatetime)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Datetime!, typeInfo);
             }
-            else if (value.IsValue6)
+            else if (value.IsDatetimeKey)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeKeyExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeKeyExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeKeyExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value6!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DatetimeKey!, typeInfo);
             }
-            else if (value.IsValue7)
+            else if (value.IsMult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MultExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MultExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MultExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value7!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mult!, typeInfo);
             }
-            else if (value.IsValue8)
+            else if (value.IsSum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SumExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SumExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SumExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value8!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sum!, typeInfo);
             }
-            else if (value.IsValue9)
+            else if (value.IsNeg)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NegExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NegExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NegExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value9!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Neg!, typeInfo);
             }
-            else if (value.IsValue10)
+            else if (value.IsAbs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AbsExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AbsExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AbsExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value10!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Abs!, typeInfo);
             }
-            else if (value.IsValue11)
+            else if (value.IsDiv)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DivExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DivExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DivExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value11!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Div!, typeInfo);
             }
-            else if (value.IsValue12)
+            else if (value.IsSqrt)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SqrtExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SqrtExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SqrtExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value12!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sqrt!, typeInfo);
             }
-            else if (value.IsValue13)
+            else if (value.IsPow)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PowExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PowExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PowExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value13!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pow!, typeInfo);
             }
-            else if (value.IsValue14)
+            else if (value.IsExp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExpExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value14!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Exp!, typeInfo);
             }
-            else if (value.IsValue15)
+            else if (value.IsLog10)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Log10Expression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Log10Expression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Log10Expression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value15!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Log10!, typeInfo);
             }
-            else if (value.IsValue16)
+            else if (value.IsLn)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LnExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LnExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LnExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value16!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ln!, typeInfo);
             }
-            else if (value.IsValue17)
+            else if (value.IsLinDecay)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LinDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LinDecayExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LinDecayExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value17!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LinDecay!, typeInfo);
             }
-            else if (value.IsValue18)
+            else if (value.IsExpDecay)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpDecayExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExpDecayExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value18!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExpDecay!, typeInfo);
             }
-            else if (value.IsValue19)
+            else if (value.IsGaussDecay)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GaussDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GaussDecayExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GaussDecayExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value19!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GaussDecay!, typeInfo);
             }
         }
     }

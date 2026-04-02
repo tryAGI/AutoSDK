@@ -14,52 +14,52 @@ namespace G
         /// Type, used for specifying point ID in user interface
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ExtendedPointId? Value1 { get; init; }
+        public global::G.ExtendedPointId? ExtendedPointId { get; init; }
 #else
-        public global::G.ExtendedPointId? Value1 { get; }
+        public global::G.ExtendedPointId? ExtendedPointId { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExtendedPointId))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsExtendedPointId => ExtendedPointId != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<float>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<float>? RecommendExampleVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<float>? Value2 { get; }
+        public global::System.Collections.Generic.IList<float>? RecommendExampleVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RecommendExampleVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsRecommendExampleVariant2 => RecommendExampleVariant2 != null;
 
         /// <summary>
         /// Sparse vector structure
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SparseVector? Value3 { get; init; }
+        public global::G.SparseVector? SparseVector { get; init; }
 #else
-        public global::G.SparseVector? Value3 { get; }
+        public global::G.SparseVector? SparseVector { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseVector))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsSparseVector => SparseVector != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ExtendedPointId?(RecommendExample @this) => @this.Value1;
+        public static implicit operator global::G.ExtendedPointId?(RecommendExample @this) => @this.ExtendedPointId;
 
         /// <summary>
         /// 
         /// </summary>
         public RecommendExample(global::G.ExtendedPointId? value)
         {
-            Value1 = value;
+            ExtendedPointId = value;
         }
 
         /// <summary>
@@ -86,46 +86,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SparseVector?(RecommendExample @this) => @this.Value3;
+        public static implicit operator global::G.SparseVector?(RecommendExample @this) => @this.SparseVector;
 
         /// <summary>
         /// 
         /// </summary>
         public RecommendExample(global::G.SparseVector? value)
         {
-            Value3 = value;
+            SparseVector = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public RecommendExample(
-            global::G.ExtendedPointId? value1,
-            global::System.Collections.Generic.IList<float>? value2,
-            global::G.SparseVector? value3
+            global::G.ExtendedPointId? extendedPointId,
+            global::System.Collections.Generic.IList<float>? recommendExampleVariant2,
+            global::G.SparseVector? sparseVector
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            ExtendedPointId = extendedPointId;
+            RecommendExampleVariant2 = recommendExampleVariant2;
+            SparseVector = sparseVector;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            SparseVector as object ??
+            RecommendExampleVariant2 as object ??
+            ExtendedPointId as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            ExtendedPointId?.ToString() ??
+            RecommendExampleVariant2?.ToString() ??
+            SparseVector?.ToString() 
             ;
 
         /// <summary>
@@ -133,16 +133,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsExtendedPointId || IsRecommendExampleVariant2 || IsSparseVector;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ExtendedPointId?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? value2 = null,
-            global::System.Func<global::G.SparseVector?, TResult>? value3 = null,
+            global::System.Func<global::G.ExtendedPointId?, TResult>? extendedPointId = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? recommendExampleVariant2 = null,
+            global::System.Func<global::G.SparseVector?, TResult>? sparseVector = null,
             bool validate = true)
         {
             if (validate)
@@ -150,17 +150,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsExtendedPointId && extendedPointId != null)
             {
-                return value1(Value1!);
+                return extendedPointId(ExtendedPointId!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsRecommendExampleVariant2 && recommendExampleVariant2 != null)
             {
-                return value2(Value2!);
+                return recommendExampleVariant2(RecommendExampleVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsSparseVector && sparseVector != null)
             {
-                return value3(Value3!);
+                return sparseVector(SparseVector!);
             }
 
             return default(TResult);
@@ -170,9 +170,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ExtendedPointId?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? value2 = null,
-            global::System.Action<global::G.SparseVector?>? value3 = null,
+            global::System.Action<global::G.ExtendedPointId?>? extendedPointId = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>?>? recommendExampleVariant2 = null,
+            global::System.Action<global::G.SparseVector?>? sparseVector = null,
             bool validate = true)
         {
             if (validate)
@@ -180,17 +180,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsExtendedPointId)
             {
-                value1?.Invoke(Value1!);
+                extendedPointId?.Invoke(ExtendedPointId!);
             }
-            else if (IsValue2)
+            else if (IsRecommendExampleVariant2)
             {
-                value2?.Invoke(Value2!);
+                recommendExampleVariant2?.Invoke(RecommendExampleVariant2!);
             }
-            else if (IsValue3)
+            else if (IsSparseVector)
             {
-                value3?.Invoke(Value3!);
+                sparseVector?.Invoke(SparseVector!);
             }
         }
 
@@ -201,11 +201,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ExtendedPointId,
                 typeof(global::G.ExtendedPointId),
-                Value2,
+                RecommendExampleVariant2,
                 typeof(global::System.Collections.Generic.IList<float>),
-                Value3,
+                SparseVector,
                 typeof(global::G.SparseVector),
             };
             const int offset = unchecked((int)2166136261);
@@ -223,9 +223,9 @@ namespace G
         public bool Equals(RecommendExample other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ExtendedPointId?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SparseVector?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ExtendedPointId?>.Default.Equals(ExtendedPointId, other.ExtendedPointId) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(RecommendExampleVariant2, other.RecommendExampleVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SparseVector?>.Default.Equals(SparseVector, other.SparseVector) 
                 ;
         }
 

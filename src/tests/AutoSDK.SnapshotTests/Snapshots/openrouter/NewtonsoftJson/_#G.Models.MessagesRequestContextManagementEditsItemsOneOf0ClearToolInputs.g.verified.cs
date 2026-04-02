@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public bool? Value1 { get; init; }
+        public bool? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 { get; init; }
 #else
-        public bool? Value1 { get; }
+        public bool? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 => MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<string>? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value2 { get; }
+        public global::System.Collections.Generic.IList<string>? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 => MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 != null;
 
         /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 => MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,46 +68,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator bool?(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs @this) => @this.Value1;
+        public static implicit operator bool?(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs @this) => @this.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs(bool? value)
         {
-            Value1 = value;
+            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs(
-            bool? value1,
-            global::System.Collections.Generic.IList<string>? value2,
-            object? value3
+            bool? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1,
+            global::System.Collections.Generic.IList<string>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2,
+            object? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1;
+            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2;
+            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 as object ??
+            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 as object ??
+            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString().ToLowerInvariant() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.ToString().ToLowerInvariant() ??
+            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.ToString() ??
+            MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -115,16 +115,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 || !IsValue1 && IsValue2 && !IsValue3 || !IsValue1 && !IsValue2 && IsValue3;
+            return IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 && !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 && !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 || !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 && IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 && !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 || !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 && !IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 && IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<bool?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value2 = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<bool?, TResult>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = null,
+            global::System.Func<object?, TResult>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,17 +132,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 != null)
             {
-                return value1(Value1!);
+                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 != null)
             {
-                return value2(Value2!);
+                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 != null)
             {
-                return value3(Value3!);
+                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!);
             }
 
             return default(TResult);
@@ -152,9 +152,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<bool?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value2 = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<bool?>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 = null,
+            global::System.Action<object?>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -162,17 +162,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1)
             {
-                value1?.Invoke(Value1!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!);
             }
-            else if (IsValue2)
+            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2)
             {
-                value2?.Invoke(Value2!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
             }
-            else if (IsValue3)
+            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3)
             {
-                value3?.Invoke(Value3!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!);
             }
         }
 
@@ -183,11 +183,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1,
                 typeof(bool),
-                Value2,
+                MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
-                Value3,
+                MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -205,9 +205,9 @@ namespace G
         public bool Equals(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1, other.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2, other.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3, other.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3) 
                 ;
         }
 

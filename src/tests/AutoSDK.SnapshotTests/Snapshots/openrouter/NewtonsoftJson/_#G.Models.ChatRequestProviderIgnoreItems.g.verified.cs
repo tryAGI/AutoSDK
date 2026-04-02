@@ -31,18 +31,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? ChatRequestProviderIgnoreItemsVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? ChatRequestProviderIgnoreItemsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestProviderIgnoreItemsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsChatRequestProviderIgnoreItemsVariant2 => ChatRequestProviderIgnoreItemsVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -69,14 +69,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ChatRequestProviderIgnoreItems @this) => @this.Value2;
+        public static implicit operator string?(ChatRequestProviderIgnoreItems @this) => @this.ChatRequestProviderIgnoreItemsVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatRequestProviderIgnoreItems(string? value)
         {
-            Value2 = value;
+            ChatRequestProviderIgnoreItemsVariant2 = value;
         }
 
         /// <summary>
@@ -84,18 +84,18 @@ namespace G
         /// </summary>
         public ChatRequestProviderIgnoreItems(
             global::G.ProviderName? providerName,
-            string? value2
+            string? chatRequestProviderIgnoreItemsVariant2
             )
         {
             ProviderName = providerName;
-            Value2 = value2;
+            ChatRequestProviderIgnoreItemsVariant2 = chatRequestProviderIgnoreItemsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            ChatRequestProviderIgnoreItemsVariant2 as object ??
             ProviderName as object 
             ;
 
@@ -104,7 +104,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             ProviderName?.ToValueString() ??
-            Value2?.ToString() 
+            ChatRequestProviderIgnoreItemsVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsProviderName && !IsValue2 || !IsProviderName && IsValue2;
+            return IsProviderName && !IsChatRequestProviderIgnoreItemsVariant2 || !IsProviderName && IsChatRequestProviderIgnoreItemsVariant2;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ProviderName?, TResult>? providerName = null,
-            global::System.Func<string?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? chatRequestProviderIgnoreItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,9 +132,9 @@ namespace G
             {
                 return providerName(ProviderName!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsChatRequestProviderIgnoreItemsVariant2 && chatRequestProviderIgnoreItemsVariant2 != null)
             {
-                return value2(Value2!);
+                return chatRequestProviderIgnoreItemsVariant2(ChatRequestProviderIgnoreItemsVariant2!);
             }
 
             return default(TResult);
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ProviderName?>? providerName = null,
-            global::System.Action<string?>? value2 = null,
+            global::System.Action<string?>? chatRequestProviderIgnoreItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -157,9 +157,9 @@ namespace G
             {
                 providerName?.Invoke(ProviderName!);
             }
-            else if (IsValue2)
+            else if (IsChatRequestProviderIgnoreItemsVariant2)
             {
-                value2?.Invoke(Value2!);
+                chatRequestProviderIgnoreItemsVariant2?.Invoke(ChatRequestProviderIgnoreItemsVariant2!);
             }
         }
 
@@ -172,7 +172,7 @@ namespace G
             {
                 ProviderName,
                 typeof(global::G.ProviderName),
-                Value2,
+                ChatRequestProviderIgnoreItemsVariant2,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ProviderName?>.Default.Equals(ProviderName, other.ProviderName) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ChatRequestProviderIgnoreItemsVariant2, other.ChatRequestProviderIgnoreItemsVariant2) 
                 ;
         }
 

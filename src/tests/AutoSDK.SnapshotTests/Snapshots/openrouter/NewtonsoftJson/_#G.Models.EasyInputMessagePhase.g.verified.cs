@@ -48,18 +48,18 @@ namespace G
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? EasyInputMessagePhaseVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? EasyInputMessagePhaseVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessagePhaseVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsEasyInputMessagePhaseVariant3 => EasyInputMessagePhaseVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,19 +102,19 @@ namespace G
         public EasyInputMessagePhase(
             global::G.EasyInputMessagePhase0? easyInputMessagePhase0,
             global::G.EasyInputMessagePhase1? easyInputMessagePhase1,
-            object? value3
+            object? easyInputMessagePhaseVariant3
             )
         {
             EasyInputMessagePhase0 = easyInputMessagePhase0;
             EasyInputMessagePhase1 = easyInputMessagePhase1;
-            Value3 = value3;
+            EasyInputMessagePhaseVariant3 = easyInputMessagePhaseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            EasyInputMessagePhaseVariant3 as object ??
             EasyInputMessagePhase1 as object ??
             EasyInputMessagePhase0 as object 
             ;
@@ -125,7 +125,7 @@ namespace G
         public override string? ToString() =>
             EasyInputMessagePhase0?.ToValueString() ??
             EasyInputMessagePhase1?.ToValueString() ??
-            Value3?.ToString() 
+            EasyInputMessagePhaseVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsEasyInputMessagePhase0 && !IsEasyInputMessagePhase1 && !IsValue3 || !IsEasyInputMessagePhase0 && IsEasyInputMessagePhase1 && !IsValue3 || !IsEasyInputMessagePhase0 && !IsEasyInputMessagePhase1 && IsValue3;
+            return IsEasyInputMessagePhase0 && !IsEasyInputMessagePhase1 && !IsEasyInputMessagePhaseVariant3 || !IsEasyInputMessagePhase0 && IsEasyInputMessagePhase1 && !IsEasyInputMessagePhaseVariant3 || !IsEasyInputMessagePhase0 && !IsEasyInputMessagePhase1 && IsEasyInputMessagePhaseVariant3;
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.EasyInputMessagePhase0?, TResult>? easyInputMessagePhase0 = null,
             global::System.Func<global::G.EasyInputMessagePhase1?, TResult>? easyInputMessagePhase1 = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? easyInputMessagePhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -158,9 +158,9 @@ namespace G
             {
                 return easyInputMessagePhase1(EasyInputMessagePhase1!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsEasyInputMessagePhaseVariant3 && easyInputMessagePhaseVariant3 != null)
             {
-                return value3(Value3!);
+                return easyInputMessagePhaseVariant3(EasyInputMessagePhaseVariant3!);
             }
 
             return default(TResult);
@@ -172,7 +172,7 @@ namespace G
         public void Match(
             global::System.Action<global::G.EasyInputMessagePhase0?>? easyInputMessagePhase0 = null,
             global::System.Action<global::G.EasyInputMessagePhase1?>? easyInputMessagePhase1 = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? easyInputMessagePhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +188,9 @@ namespace G
             {
                 easyInputMessagePhase1?.Invoke(EasyInputMessagePhase1!);
             }
-            else if (IsValue3)
+            else if (IsEasyInputMessagePhaseVariant3)
             {
-                value3?.Invoke(Value3!);
+                easyInputMessagePhaseVariant3?.Invoke(EasyInputMessagePhaseVariant3!);
             }
         }
 
@@ -205,7 +205,7 @@ namespace G
                 typeof(global::G.EasyInputMessagePhase0),
                 EasyInputMessagePhase1,
                 typeof(global::G.EasyInputMessagePhase1),
-                Value3,
+                EasyInputMessagePhaseVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -225,7 +225,7 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.EasyInputMessagePhase0?>.Default.Equals(EasyInputMessagePhase0, other.EasyInputMessagePhase0) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.EasyInputMessagePhase1?>.Default.Equals(EasyInputMessagePhase1, other.EasyInputMessagePhase1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(EasyInputMessagePhaseVariant3, other.EasyInputMessagePhaseVariant3) 
                 ;
         }
 

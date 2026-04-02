@@ -14,35 +14,35 @@ namespace G
         /// Base properties shared by all tool types.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ToolBase? Value1 { get; init; }
+        public global::G.ToolBase? Base { get; init; }
 #else
-        public global::G.ToolBase? Value1 { get; }
+        public global::G.ToolBase? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.WebSearchToolVariant2? Value2 { get; init; }
+        public global::G.WebSearchToolVariant2? WebSearchToolVariant2 { get; init; }
 #else
-        public global::G.WebSearchToolVariant2? Value2 { get; }
+        public global::G.WebSearchToolVariant2? WebSearchToolVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchToolVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsWebSearchToolVariant2 => WebSearchToolVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ToolBase?(WebSearchTool @this) => @this.Value1;
+        public static implicit operator global::G.ToolBase?(WebSearchTool @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public WebSearchTool(global::G.ToolBase? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.WebSearchToolVariant2?(WebSearchTool @this) => @this.Value2;
+        public static implicit operator global::G.WebSearchToolVariant2?(WebSearchTool @this) => @this.WebSearchToolVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public WebSearchTool(global::G.WebSearchToolVariant2? value)
         {
-            Value2 = value;
+            WebSearchToolVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public WebSearchTool(
-            global::G.ToolBase? value1,
-            global::G.WebSearchToolVariant2? value2
+            global::G.ToolBase? @base,
+            global::G.WebSearchToolVariant2? webSearchToolVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            WebSearchToolVariant2 = webSearchToolVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            WebSearchToolVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            WebSearchToolVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsWebSearchToolVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ToolBase?, TResult>? value1 = null,
-            global::System.Func<global::G.WebSearchToolVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.ToolBase?, TResult>? @base = null,
+            global::System.Func<global::G.WebSearchToolVariant2?, TResult>? webSearchToolVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsWebSearchToolVariant2 && webSearchToolVariant2 != null)
             {
-                return value2(Value2!);
+                return webSearchToolVariant2(WebSearchToolVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ToolBase?>? value1 = null,
-            global::System.Action<global::G.WebSearchToolVariant2?>? value2 = null,
+            global::System.Action<global::G.ToolBase?>? @base = null,
+            global::System.Action<global::G.WebSearchToolVariant2?>? webSearchToolVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsWebSearchToolVariant2)
             {
-                value2?.Invoke(Value2!);
+                webSearchToolVariant2?.Invoke(WebSearchToolVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::G.ToolBase),
-                Value2,
+                WebSearchToolVariant2,
                 typeof(global::G.WebSearchToolVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(WebSearchTool other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ToolBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.WebSearchToolVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ToolBase?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.WebSearchToolVariant2?>.Default.Equals(WebSearchToolVariant2, other.WebSearchToolVariant2) 
                 ;
         }
 

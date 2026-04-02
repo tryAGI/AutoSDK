@@ -31,18 +31,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::G.InstructRequest>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<global::G.InstructRequest>? ChatClassificationRequestInputsVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::G.InstructRequest>? Value2 { get; }
+        public global::System.Collections.Generic.IList<global::G.InstructRequest>? ChatClassificationRequestInputsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatClassificationRequestInputsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsChatClassificationRequestInputsVariant2 => ChatClassificationRequestInputsVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -66,18 +66,18 @@ namespace G
         /// </summary>
         public ChatClassificationRequestInputs(
             global::G.InstructRequest? instructRequest,
-            global::System.Collections.Generic.IList<global::G.InstructRequest>? value2
+            global::System.Collections.Generic.IList<global::G.InstructRequest>? chatClassificationRequestInputsVariant2
             )
         {
             InstructRequest = instructRequest;
-            Value2 = value2;
+            ChatClassificationRequestInputsVariant2 = chatClassificationRequestInputsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            ChatClassificationRequestInputsVariant2 as object ??
             InstructRequest as object 
             ;
 
@@ -86,7 +86,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             InstructRequest?.ToString() ??
-            Value2?.ToString() 
+            ChatClassificationRequestInputsVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsInstructRequest || IsValue2;
+            return IsInstructRequest || IsChatClassificationRequestInputsVariant2;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.InstructRequest?, TResult>? instructRequest = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.InstructRequest>?, TResult>? value2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.InstructRequest>?, TResult>? chatClassificationRequestInputsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -114,9 +114,9 @@ namespace G
             {
                 return instructRequest(InstructRequest!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsChatClassificationRequestInputsVariant2 && chatClassificationRequestInputsVariant2 != null)
             {
-                return value2(Value2!);
+                return chatClassificationRequestInputsVariant2(ChatClassificationRequestInputsVariant2!);
             }
 
             return default(TResult);
@@ -127,7 +127,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.InstructRequest?>? instructRequest = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.InstructRequest>?>? value2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.InstructRequest>?>? chatClassificationRequestInputsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -139,9 +139,9 @@ namespace G
             {
                 instructRequest?.Invoke(InstructRequest!);
             }
-            else if (IsValue2)
+            else if (IsChatClassificationRequestInputsVariant2)
             {
-                value2?.Invoke(Value2!);
+                chatClassificationRequestInputsVariant2?.Invoke(ChatClassificationRequestInputsVariant2!);
             }
         }
 
@@ -154,7 +154,7 @@ namespace G
             {
                 InstructRequest,
                 typeof(global::G.InstructRequest),
-                Value2,
+                ChatClassificationRequestInputsVariant2,
                 typeof(global::System.Collections.Generic.IList<global::G.InstructRequest>),
             };
             const int offset = unchecked((int)2166136261);
@@ -173,7 +173,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.InstructRequest?>.Default.Equals(InstructRequest, other.InstructRequest) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.InstructRequest>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.InstructRequest>?>.Default.Equals(ChatClassificationRequestInputsVariant2, other.ChatClassificationRequestInputsVariant2) 
                 ;
         }
 

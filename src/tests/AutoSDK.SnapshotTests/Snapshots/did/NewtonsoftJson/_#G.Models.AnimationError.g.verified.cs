@@ -14,103 +14,103 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AnimationErrorVariant1? Value1 { get; init; }
+        public global::G.AnimationErrorVariant1? AnimationErrorVariant1 { get; init; }
 #else
-        public global::G.AnimationErrorVariant1? Value1 { get; }
+        public global::G.AnimationErrorVariant1? AnimationErrorVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnimationErrorVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAnimationErrorVariant1 => AnimationErrorVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AnimationErrorVariant2? Value2 { get; init; }
+        public global::G.AnimationErrorVariant2? AnimationErrorVariant2 { get; init; }
 #else
-        public global::G.AnimationErrorVariant2? Value2 { get; }
+        public global::G.AnimationErrorVariant2? AnimationErrorVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnimationErrorVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsAnimationErrorVariant2 => AnimationErrorVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AnimationErrorVariant3? Value3 { get; init; }
+        public global::G.AnimationErrorVariant3? AnimationErrorVariant3 { get; init; }
 #else
-        public global::G.AnimationErrorVariant3? Value3 { get; }
+        public global::G.AnimationErrorVariant3? AnimationErrorVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnimationErrorVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsAnimationErrorVariant3 => AnimationErrorVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AnimationErrorVariant4? Value4 { get; init; }
+        public global::G.AnimationErrorVariant4? AnimationErrorVariant4 { get; init; }
 #else
-        public global::G.AnimationErrorVariant4? Value4 { get; }
+        public global::G.AnimationErrorVariant4? AnimationErrorVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnimationErrorVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsAnimationErrorVariant4 => AnimationErrorVariant4 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AnimationErrorVariant5? Value5 { get; init; }
+        public global::G.AnimationErrorVariant5? AnimationErrorVariant5 { get; init; }
 #else
-        public global::G.AnimationErrorVariant5? Value5 { get; }
+        public global::G.AnimationErrorVariant5? AnimationErrorVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnimationErrorVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsAnimationErrorVariant5 => AnimationErrorVariant5 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AnimationErrorVariant6? Value6 { get; init; }
+        public global::G.AnimationErrorVariant6? AnimationErrorVariant6 { get; init; }
 #else
-        public global::G.AnimationErrorVariant6? Value6 { get; }
+        public global::G.AnimationErrorVariant6? AnimationErrorVariant6 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnimationErrorVariant6))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsAnimationErrorVariant6 => AnimationErrorVariant6 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -119,14 +119,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AnimationErrorVariant1?(AnimationError @this) => @this.Value1;
+        public static implicit operator global::G.AnimationErrorVariant1?(AnimationError @this) => @this.AnimationErrorVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public AnimationError(global::G.AnimationErrorVariant1? value)
         {
-            Value1 = value;
+            AnimationErrorVariant1 = value;
         }
 
         /// <summary>
@@ -137,14 +137,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AnimationErrorVariant2?(AnimationError @this) => @this.Value2;
+        public static implicit operator global::G.AnimationErrorVariant2?(AnimationError @this) => @this.AnimationErrorVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public AnimationError(global::G.AnimationErrorVariant2? value)
         {
-            Value2 = value;
+            AnimationErrorVariant2 = value;
         }
 
         /// <summary>
@@ -155,14 +155,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AnimationErrorVariant3?(AnimationError @this) => @this.Value3;
+        public static implicit operator global::G.AnimationErrorVariant3?(AnimationError @this) => @this.AnimationErrorVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public AnimationError(global::G.AnimationErrorVariant3? value)
         {
-            Value3 = value;
+            AnimationErrorVariant3 = value;
         }
 
         /// <summary>
@@ -173,14 +173,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AnimationErrorVariant4?(AnimationError @this) => @this.Value4;
+        public static implicit operator global::G.AnimationErrorVariant4?(AnimationError @this) => @this.AnimationErrorVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public AnimationError(global::G.AnimationErrorVariant4? value)
         {
-            Value4 = value;
+            AnimationErrorVariant4 = value;
         }
 
         /// <summary>
@@ -191,14 +191,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AnimationErrorVariant5?(AnimationError @this) => @this.Value5;
+        public static implicit operator global::G.AnimationErrorVariant5?(AnimationError @this) => @this.AnimationErrorVariant5;
 
         /// <summary>
         /// 
         /// </summary>
         public AnimationError(global::G.AnimationErrorVariant5? value)
         {
-            Value5 = value;
+            AnimationErrorVariant5 = value;
         }
 
         /// <summary>
@@ -209,58 +209,58 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AnimationErrorVariant6?(AnimationError @this) => @this.Value6;
+        public static implicit operator global::G.AnimationErrorVariant6?(AnimationError @this) => @this.AnimationErrorVariant6;
 
         /// <summary>
         /// 
         /// </summary>
         public AnimationError(global::G.AnimationErrorVariant6? value)
         {
-            Value6 = value;
+            AnimationErrorVariant6 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AnimationError(
-            global::G.AnimationErrorVariant1? value1,
-            global::G.AnimationErrorVariant2? value2,
-            global::G.AnimationErrorVariant3? value3,
-            global::G.AnimationErrorVariant4? value4,
-            global::G.AnimationErrorVariant5? value5,
-            global::G.AnimationErrorVariant6? value6
+            global::G.AnimationErrorVariant1? animationErrorVariant1,
+            global::G.AnimationErrorVariant2? animationErrorVariant2,
+            global::G.AnimationErrorVariant3? animationErrorVariant3,
+            global::G.AnimationErrorVariant4? animationErrorVariant4,
+            global::G.AnimationErrorVariant5? animationErrorVariant5,
+            global::G.AnimationErrorVariant6? animationErrorVariant6
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
+            AnimationErrorVariant1 = animationErrorVariant1;
+            AnimationErrorVariant2 = animationErrorVariant2;
+            AnimationErrorVariant3 = animationErrorVariant3;
+            AnimationErrorVariant4 = animationErrorVariant4;
+            AnimationErrorVariant5 = animationErrorVariant5;
+            AnimationErrorVariant6 = animationErrorVariant6;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            AnimationErrorVariant6 as object ??
+            AnimationErrorVariant5 as object ??
+            AnimationErrorVariant4 as object ??
+            AnimationErrorVariant3 as object ??
+            AnimationErrorVariant2 as object ??
+            AnimationErrorVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() 
+            AnimationErrorVariant1?.ToString() ??
+            AnimationErrorVariant2?.ToString() ??
+            AnimationErrorVariant3?.ToString() ??
+            AnimationErrorVariant4?.ToString() ??
+            AnimationErrorVariant5?.ToString() ??
+            AnimationErrorVariant6?.ToString() 
             ;
 
         /// <summary>
@@ -268,19 +268,19 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6;
+            return IsAnimationErrorVariant1 || IsAnimationErrorVariant2 || IsAnimationErrorVariant3 || IsAnimationErrorVariant4 || IsAnimationErrorVariant5 || IsAnimationErrorVariant6;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AnimationErrorVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.AnimationErrorVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.AnimationErrorVariant3?, TResult>? value3 = null,
-            global::System.Func<global::G.AnimationErrorVariant4?, TResult>? value4 = null,
-            global::System.Func<global::G.AnimationErrorVariant5?, TResult>? value5 = null,
-            global::System.Func<global::G.AnimationErrorVariant6?, TResult>? value6 = null,
+            global::System.Func<global::G.AnimationErrorVariant1?, TResult>? animationErrorVariant1 = null,
+            global::System.Func<global::G.AnimationErrorVariant2?, TResult>? animationErrorVariant2 = null,
+            global::System.Func<global::G.AnimationErrorVariant3?, TResult>? animationErrorVariant3 = null,
+            global::System.Func<global::G.AnimationErrorVariant4?, TResult>? animationErrorVariant4 = null,
+            global::System.Func<global::G.AnimationErrorVariant5?, TResult>? animationErrorVariant5 = null,
+            global::System.Func<global::G.AnimationErrorVariant6?, TResult>? animationErrorVariant6 = null,
             bool validate = true)
         {
             if (validate)
@@ -288,29 +288,29 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAnimationErrorVariant1 && animationErrorVariant1 != null)
             {
-                return value1(Value1!);
+                return animationErrorVariant1(AnimationErrorVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsAnimationErrorVariant2 && animationErrorVariant2 != null)
             {
-                return value2(Value2!);
+                return animationErrorVariant2(AnimationErrorVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsAnimationErrorVariant3 && animationErrorVariant3 != null)
             {
-                return value3(Value3!);
+                return animationErrorVariant3(AnimationErrorVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsAnimationErrorVariant4 && animationErrorVariant4 != null)
             {
-                return value4(Value4!);
+                return animationErrorVariant4(AnimationErrorVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsAnimationErrorVariant5 && animationErrorVariant5 != null)
             {
-                return value5(Value5!);
+                return animationErrorVariant5(AnimationErrorVariant5!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsAnimationErrorVariant6 && animationErrorVariant6 != null)
             {
-                return value6(Value6!);
+                return animationErrorVariant6(AnimationErrorVariant6!);
             }
 
             return default(TResult);
@@ -320,12 +320,12 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AnimationErrorVariant1?>? value1 = null,
-            global::System.Action<global::G.AnimationErrorVariant2?>? value2 = null,
-            global::System.Action<global::G.AnimationErrorVariant3?>? value3 = null,
-            global::System.Action<global::G.AnimationErrorVariant4?>? value4 = null,
-            global::System.Action<global::G.AnimationErrorVariant5?>? value5 = null,
-            global::System.Action<global::G.AnimationErrorVariant6?>? value6 = null,
+            global::System.Action<global::G.AnimationErrorVariant1?>? animationErrorVariant1 = null,
+            global::System.Action<global::G.AnimationErrorVariant2?>? animationErrorVariant2 = null,
+            global::System.Action<global::G.AnimationErrorVariant3?>? animationErrorVariant3 = null,
+            global::System.Action<global::G.AnimationErrorVariant4?>? animationErrorVariant4 = null,
+            global::System.Action<global::G.AnimationErrorVariant5?>? animationErrorVariant5 = null,
+            global::System.Action<global::G.AnimationErrorVariant6?>? animationErrorVariant6 = null,
             bool validate = true)
         {
             if (validate)
@@ -333,29 +333,29 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAnimationErrorVariant1)
             {
-                value1?.Invoke(Value1!);
+                animationErrorVariant1?.Invoke(AnimationErrorVariant1!);
             }
-            else if (IsValue2)
+            else if (IsAnimationErrorVariant2)
             {
-                value2?.Invoke(Value2!);
+                animationErrorVariant2?.Invoke(AnimationErrorVariant2!);
             }
-            else if (IsValue3)
+            else if (IsAnimationErrorVariant3)
             {
-                value3?.Invoke(Value3!);
+                animationErrorVariant3?.Invoke(AnimationErrorVariant3!);
             }
-            else if (IsValue4)
+            else if (IsAnimationErrorVariant4)
             {
-                value4?.Invoke(Value4!);
+                animationErrorVariant4?.Invoke(AnimationErrorVariant4!);
             }
-            else if (IsValue5)
+            else if (IsAnimationErrorVariant5)
             {
-                value5?.Invoke(Value5!);
+                animationErrorVariant5?.Invoke(AnimationErrorVariant5!);
             }
-            else if (IsValue6)
+            else if (IsAnimationErrorVariant6)
             {
-                value6?.Invoke(Value6!);
+                animationErrorVariant6?.Invoke(AnimationErrorVariant6!);
             }
         }
 
@@ -366,17 +366,17 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                AnimationErrorVariant1,
                 typeof(global::G.AnimationErrorVariant1),
-                Value2,
+                AnimationErrorVariant2,
                 typeof(global::G.AnimationErrorVariant2),
-                Value3,
+                AnimationErrorVariant3,
                 typeof(global::G.AnimationErrorVariant3),
-                Value4,
+                AnimationErrorVariant4,
                 typeof(global::G.AnimationErrorVariant4),
-                Value5,
+                AnimationErrorVariant5,
                 typeof(global::G.AnimationErrorVariant5),
-                Value6,
+                AnimationErrorVariant6,
                 typeof(global::G.AnimationErrorVariant6),
             };
             const int offset = unchecked((int)2166136261);
@@ -394,12 +394,12 @@ namespace G
         public bool Equals(AnimationError other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant4?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant5?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant6?>.Default.Equals(Value6, other.Value6) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant1?>.Default.Equals(AnimationErrorVariant1, other.AnimationErrorVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant2?>.Default.Equals(AnimationErrorVariant2, other.AnimationErrorVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant3?>.Default.Equals(AnimationErrorVariant3, other.AnimationErrorVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant4?>.Default.Equals(AnimationErrorVariant4, other.AnimationErrorVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant5?>.Default.Equals(AnimationErrorVariant5, other.AnimationErrorVariant5) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AnimationErrorVariant6?>.Default.Equals(AnimationErrorVariant6, other.AnimationErrorVariant6) 
                 ;
         }
 

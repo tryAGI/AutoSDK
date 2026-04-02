@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BaseSearchRequest? Value1 { get; init; }
+        public global::G.BaseSearchRequest? Base { get; init; }
 #else
-        public global::G.BaseSearchRequest? Value1 { get; }
+        public global::G.BaseSearchRequest? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SearchRequestVariant2? Value2 { get; init; }
+        public global::G.SearchRequestVariant2? SearchRequestVariant2 { get; init; }
 #else
-        public global::G.SearchRequestVariant2? Value2 { get; }
+        public global::G.SearchRequestVariant2? SearchRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchRequestVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsSearchRequestVariant2 => SearchRequestVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BaseSearchRequest?(SearchRequest @this) => @this.Value1;
+        public static implicit operator global::G.BaseSearchRequest?(SearchRequest @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public SearchRequest(global::G.BaseSearchRequest? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SearchRequestVariant2?(SearchRequest @this) => @this.Value2;
+        public static implicit operator global::G.SearchRequestVariant2?(SearchRequest @this) => @this.SearchRequestVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public SearchRequest(global::G.SearchRequestVariant2? value)
         {
-            Value2 = value;
+            SearchRequestVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public SearchRequest(
-            global::G.BaseSearchRequest? value1,
-            global::G.SearchRequestVariant2? value2
+            global::G.BaseSearchRequest? @base,
+            global::G.SearchRequestVariant2? searchRequestVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            SearchRequestVariant2 = searchRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            SearchRequestVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            SearchRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsSearchRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseSearchRequest?, TResult>? value1 = null,
-            global::System.Func<global::G.SearchRequestVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.BaseSearchRequest?, TResult>? @base = null,
+            global::System.Func<global::G.SearchRequestVariant2?, TResult>? searchRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsSearchRequestVariant2 && searchRequestVariant2 != null)
             {
-                return value2(Value2!);
+                return searchRequestVariant2(SearchRequestVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseSearchRequest?>? value1 = null,
-            global::System.Action<global::G.SearchRequestVariant2?>? value2 = null,
+            global::System.Action<global::G.BaseSearchRequest?>? @base = null,
+            global::System.Action<global::G.SearchRequestVariant2?>? searchRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsSearchRequestVariant2)
             {
-                value2?.Invoke(Value2!);
+                searchRequestVariant2?.Invoke(SearchRequestVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::G.BaseSearchRequest),
-                Value2,
+                SearchRequestVariant2,
                 typeof(global::G.SearchRequestVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(SearchRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.BaseSearchRequest?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SearchRequestVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BaseSearchRequest?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SearchRequestVariant2?>.Default.Equals(SearchRequestVariant2, other.SearchRequestVariant2) 
                 ;
         }
 

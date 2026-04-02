@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 => AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<object>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<object>? AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<object>? Value2 { get; }
+        public global::System.Collections.Generic.IList<object>? AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 => AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,42 +51,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularities @this) => @this.Value1;
+        public static implicit operator string?(AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularities @this) => @this.AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularities(string? value)
         {
-            Value1 = value;
+            AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularities(
-            string? value1,
-            global::System.Collections.Generic.IList<object>? value2
+            string? audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1,
+            global::System.Collections.Generic.IList<object>? audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 = audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1;
+            AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 = audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 as object ??
+            AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1?.ToString() ??
+            AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -94,15 +94,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 && !IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 || !IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 && IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<object>?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<object>?, TResult>? audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -110,13 +110,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 && audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 != null)
             {
-                return value1(Value1!);
+                return audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1(AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 && audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 != null)
             {
-                return value2(Value2!);
+                return audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2(AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2!);
             }
 
             return default(TResult);
@@ -126,8 +126,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<object>?>? value2 = null,
+            global::System.Action<string?>? audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<object>?>? audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -135,13 +135,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1)
             {
-                value1?.Invoke(Value1!);
+                audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1?.Invoke(AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1!);
             }
-            else if (IsValue2)
+            else if (IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2)
             {
-                value2?.Invoke(Value2!);
+                audioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2?.Invoke(AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2!);
             }
         }
 
@@ -152,9 +152,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1,
                 typeof(string),
-                Value2,
+                AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2,
                 typeof(global::System.Collections.Generic.IList<object>),
             };
             const int offset = unchecked((int)2166136261);
@@ -172,8 +172,8 @@ namespace G
         public bool Equals(AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularities other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<object>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1, other.AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<object>?>.Default.Equals(AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2, other.AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2) 
                 ;
         }
 

@@ -167,7 +167,7 @@ namespace G.JsonConverters
             global::G.ExtractDynamicVariableTool? extractDynamicVariable = default;
             global::G.BridgeTransferTool? bridgeTransfer = default;
             global::G.CancelTransferTool? cancelTransfer = default;
-            global::G.MCPTool? mCP = default;
+            global::G.MCPTool? mcp = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -356,7 +356,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPTool).Name}");
-                        mCP = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        mcp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -367,7 +367,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mCP == null)
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
             {
                 try
                 {
@@ -529,7 +529,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPTool).Name}");
-                    mCP = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    mcp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -564,7 +564,7 @@ namespace G.JsonConverters
 
                 cancelTransfer,
 
-                mCP
+                mcp
                 );
 
             return __value;
@@ -651,11 +651,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CancelTransferTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.CancelTransfer!, typeInfo);
             }
-            else if (value.IsMCP)
+            else if (value.IsMcp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MCP!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp!, typeInfo);
             }
         }
     }

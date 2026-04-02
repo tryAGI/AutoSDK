@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BatchReference? Value1 { get; init; }
+        public global::G.BatchReference? BatchReference { get; init; }
 #else
-        public global::G.BatchReference? Value1 { get; }
+        public global::G.BatchReference? BatchReference { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchReference))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBatchReference => BatchReference != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BatchReferenceResponseVariant2? Value2 { get; init; }
+        public global::G.BatchReferenceResponseVariant2? BatchReferenceResponseVariant2 { get; init; }
 #else
-        public global::G.BatchReferenceResponseVariant2? Value2 { get; }
+        public global::G.BatchReferenceResponseVariant2? BatchReferenceResponseVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchReferenceResponseVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsBatchReferenceResponseVariant2 => BatchReferenceResponseVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BatchReference?(BatchReferenceResponse @this) => @this.Value1;
+        public static implicit operator global::G.BatchReference?(BatchReferenceResponse @this) => @this.BatchReference;
 
         /// <summary>
         /// 
         /// </summary>
         public BatchReferenceResponse(global::G.BatchReference? value)
         {
-            Value1 = value;
+            BatchReference = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BatchReferenceResponseVariant2?(BatchReferenceResponse @this) => @this.Value2;
+        public static implicit operator global::G.BatchReferenceResponseVariant2?(BatchReferenceResponse @this) => @this.BatchReferenceResponseVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public BatchReferenceResponse(global::G.BatchReferenceResponseVariant2? value)
         {
-            Value2 = value;
+            BatchReferenceResponseVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public BatchReferenceResponse(
-            global::G.BatchReference? value1,
-            global::G.BatchReferenceResponseVariant2? value2
+            global::G.BatchReference? batchReference,
+            global::G.BatchReferenceResponseVariant2? batchReferenceResponseVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            BatchReference = batchReference;
+            BatchReferenceResponseVariant2 = batchReferenceResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            BatchReferenceResponseVariant2 as object ??
+            BatchReference as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            BatchReference?.ToString() ??
+            BatchReferenceResponseVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBatchReference && IsBatchReferenceResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BatchReference?, TResult>? value1 = null,
-            global::System.Func<global::G.BatchReferenceResponseVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.BatchReference?, TResult>? batchReference = null,
+            global::System.Func<global::G.BatchReferenceResponseVariant2?, TResult>? batchReferenceResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBatchReference && batchReference != null)
             {
-                return value1(Value1!);
+                return batchReference(BatchReference!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsBatchReferenceResponseVariant2 && batchReferenceResponseVariant2 != null)
             {
-                return value2(Value2!);
+                return batchReferenceResponseVariant2(BatchReferenceResponseVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BatchReference?>? value1 = null,
-            global::System.Action<global::G.BatchReferenceResponseVariant2?>? value2 = null,
+            global::System.Action<global::G.BatchReference?>? batchReference = null,
+            global::System.Action<global::G.BatchReferenceResponseVariant2?>? batchReferenceResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBatchReference)
             {
-                value1?.Invoke(Value1!);
+                batchReference?.Invoke(BatchReference!);
             }
-            else if (IsValue2)
+            else if (IsBatchReferenceResponseVariant2)
             {
-                value2?.Invoke(Value2!);
+                batchReferenceResponseVariant2?.Invoke(BatchReferenceResponseVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                BatchReference,
                 typeof(global::G.BatchReference),
-                Value2,
+                BatchReferenceResponseVariant2,
                 typeof(global::G.BatchReferenceResponseVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(BatchReferenceResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.BatchReference?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BatchReferenceResponseVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BatchReference?>.Default.Equals(BatchReference, other.BatchReference) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BatchReferenceResponseVariant2?>.Default.Equals(BatchReferenceResponseVariant2, other.BatchReferenceResponseVariant2) 
                 ;
         }
 

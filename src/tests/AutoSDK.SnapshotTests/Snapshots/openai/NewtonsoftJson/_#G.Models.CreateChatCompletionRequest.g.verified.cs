@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateModelResponseProperties? Value1 { get; init; }
+        public global::G.CreateModelResponseProperties? ModelResponseProperties { get; init; }
 #else
-        public global::G.CreateModelResponseProperties? Value1 { get; }
+        public global::G.CreateModelResponseProperties? ModelResponseProperties { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelResponseProperties))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsModelResponseProperties => ModelResponseProperties != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateChatCompletionRequestVariant2? Value2 { get; init; }
+        public global::G.CreateChatCompletionRequestVariant2? CreateChatCompletionRequestVariant2 { get; init; }
 #else
-        public global::G.CreateChatCompletionRequestVariant2? Value2 { get; }
+        public global::G.CreateChatCompletionRequestVariant2? CreateChatCompletionRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateChatCompletionRequestVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCreateChatCompletionRequestVariant2 => CreateChatCompletionRequestVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateModelResponseProperties?(CreateChatCompletionRequest @this) => @this.Value1;
+        public static implicit operator global::G.CreateModelResponseProperties?(CreateChatCompletionRequest @this) => @this.ModelResponseProperties;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateChatCompletionRequest(global::G.CreateModelResponseProperties? value)
         {
-            Value1 = value;
+            ModelResponseProperties = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateChatCompletionRequestVariant2?(CreateChatCompletionRequest @this) => @this.Value2;
+        public static implicit operator global::G.CreateChatCompletionRequestVariant2?(CreateChatCompletionRequest @this) => @this.CreateChatCompletionRequestVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateChatCompletionRequest(global::G.CreateChatCompletionRequestVariant2? value)
         {
-            Value2 = value;
+            CreateChatCompletionRequestVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateChatCompletionRequest(
-            global::G.CreateModelResponseProperties? value1,
-            global::G.CreateChatCompletionRequestVariant2? value2
+            global::G.CreateModelResponseProperties? modelResponseProperties,
+            global::G.CreateChatCompletionRequestVariant2? createChatCompletionRequestVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ModelResponseProperties = modelResponseProperties;
+            CreateChatCompletionRequestVariant2 = createChatCompletionRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CreateChatCompletionRequestVariant2 as object ??
+            ModelResponseProperties as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ModelResponseProperties?.ToString() ??
+            CreateChatCompletionRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsModelResponseProperties && IsCreateChatCompletionRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateModelResponseProperties?, TResult>? value1 = null,
-            global::System.Func<global::G.CreateChatCompletionRequestVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.CreateModelResponseProperties?, TResult>? modelResponseProperties = null,
+            global::System.Func<global::G.CreateChatCompletionRequestVariant2?, TResult>? createChatCompletionRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsModelResponseProperties && modelResponseProperties != null)
             {
-                return value1(Value1!);
+                return modelResponseProperties(ModelResponseProperties!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCreateChatCompletionRequestVariant2 && createChatCompletionRequestVariant2 != null)
             {
-                return value2(Value2!);
+                return createChatCompletionRequestVariant2(CreateChatCompletionRequestVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateModelResponseProperties?>? value1 = null,
-            global::System.Action<global::G.CreateChatCompletionRequestVariant2?>? value2 = null,
+            global::System.Action<global::G.CreateModelResponseProperties?>? modelResponseProperties = null,
+            global::System.Action<global::G.CreateChatCompletionRequestVariant2?>? createChatCompletionRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsModelResponseProperties)
             {
-                value1?.Invoke(Value1!);
+                modelResponseProperties?.Invoke(ModelResponseProperties!);
             }
-            else if (IsValue2)
+            else if (IsCreateChatCompletionRequestVariant2)
             {
-                value2?.Invoke(Value2!);
+                createChatCompletionRequestVariant2?.Invoke(CreateChatCompletionRequestVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ModelResponseProperties,
                 typeof(global::G.CreateModelResponseProperties),
-                Value2,
+                CreateChatCompletionRequestVariant2,
                 typeof(global::G.CreateChatCompletionRequestVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(CreateChatCompletionRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateModelResponseProperties?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateChatCompletionRequestVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateModelResponseProperties?>.Default.Equals(ModelResponseProperties, other.ModelResponseProperties) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateChatCompletionRequestVariant2?>.Default.Equals(CreateChatCompletionRequestVariant2, other.CreateChatCompletionRequestVariant2) 
                 ;
         }
 

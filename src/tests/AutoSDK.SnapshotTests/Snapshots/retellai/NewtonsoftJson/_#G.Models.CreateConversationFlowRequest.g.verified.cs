@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ConversationFlow? Value1 { get; init; }
+        public global::G.ConversationFlow? ConversationFlow { get; init; }
 #else
-        public global::G.ConversationFlow? Value1 { get; }
+        public global::G.ConversationFlow? ConversationFlow { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationFlow))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsConversationFlow => ConversationFlow != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value2 { get; init; }
+        public object? CreateConversationFlowRequestVariant2 { get; init; }
 #else
-        public object? Value2 { get; }
+        public object? CreateConversationFlowRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateConversationFlowRequestVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCreateConversationFlowRequestVariant2 => CreateConversationFlowRequestVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,42 +51,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ConversationFlow?(CreateConversationFlowRequest @this) => @this.Value1;
+        public static implicit operator global::G.ConversationFlow?(CreateConversationFlowRequest @this) => @this.ConversationFlow;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateConversationFlowRequest(global::G.ConversationFlow? value)
         {
-            Value1 = value;
+            ConversationFlow = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateConversationFlowRequest(
-            global::G.ConversationFlow? value1,
-            object? value2
+            global::G.ConversationFlow? conversationFlow,
+            object? createConversationFlowRequestVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ConversationFlow = conversationFlow;
+            CreateConversationFlowRequestVariant2 = createConversationFlowRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CreateConversationFlowRequestVariant2 as object ??
+            ConversationFlow as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ConversationFlow?.ToString() ??
+            CreateConversationFlowRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -94,15 +94,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsConversationFlow && IsCreateConversationFlowRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ConversationFlow?, TResult>? value1 = null,
-            global::System.Func<object?, TResult>? value2 = null,
+            global::System.Func<global::G.ConversationFlow?, TResult>? conversationFlow = null,
+            global::System.Func<object?, TResult>? createConversationFlowRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -110,13 +110,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsConversationFlow && conversationFlow != null)
             {
-                return value1(Value1!);
+                return conversationFlow(ConversationFlow!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCreateConversationFlowRequestVariant2 && createConversationFlowRequestVariant2 != null)
             {
-                return value2(Value2!);
+                return createConversationFlowRequestVariant2(CreateConversationFlowRequestVariant2!);
             }
 
             return default(TResult);
@@ -126,8 +126,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ConversationFlow?>? value1 = null,
-            global::System.Action<object?>? value2 = null,
+            global::System.Action<global::G.ConversationFlow?>? conversationFlow = null,
+            global::System.Action<object?>? createConversationFlowRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -135,13 +135,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsConversationFlow)
             {
-                value1?.Invoke(Value1!);
+                conversationFlow?.Invoke(ConversationFlow!);
             }
-            else if (IsValue2)
+            else if (IsCreateConversationFlowRequestVariant2)
             {
-                value2?.Invoke(Value2!);
+                createConversationFlowRequestVariant2?.Invoke(CreateConversationFlowRequestVariant2!);
             }
         }
 
@@ -152,9 +152,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ConversationFlow,
                 typeof(global::G.ConversationFlow),
-                Value2,
+                CreateConversationFlowRequestVariant2,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -172,8 +172,8 @@ namespace G
         public bool Equals(CreateConversationFlowRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ConversationFlow?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ConversationFlow?>.Default.Equals(ConversationFlow, other.ConversationFlow) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(CreateConversationFlowRequestVariant2, other.CreateConversationFlowRequestVariant2) 
                 ;
         }
 

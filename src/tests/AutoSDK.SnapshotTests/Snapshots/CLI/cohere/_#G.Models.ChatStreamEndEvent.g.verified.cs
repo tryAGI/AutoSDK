@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatStreamEvent? Value1 { get; init; }
+        public global::G.ChatStreamEvent? ChatStreamEvent { get; init; }
 #else
-        public global::G.ChatStreamEvent? Value1 { get; }
+        public global::G.ChatStreamEvent? ChatStreamEvent { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatStreamEvent))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsChatStreamEvent => ChatStreamEvent != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatStreamEndEventY8gq2x? Value2 { get; init; }
+        public global::G.ChatStreamEndEventY8gq2x? Y8gq2x { get; init; }
 #else
-        public global::G.ChatStreamEndEventY8gq2x? Value2 { get; }
+        public global::G.ChatStreamEndEventY8gq2x? Y8gq2x { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Y8gq2x))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsY8gq2x => Y8gq2x != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatStreamEvent?(ChatStreamEndEvent @this) => @this.Value1;
+        public static implicit operator global::G.ChatStreamEvent?(ChatStreamEndEvent @this) => @this.ChatStreamEvent;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatStreamEndEvent(global::G.ChatStreamEvent? value)
         {
-            Value1 = value;
+            ChatStreamEvent = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatStreamEndEventY8gq2x?(ChatStreamEndEvent @this) => @this.Value2;
+        public static implicit operator global::G.ChatStreamEndEventY8gq2x?(ChatStreamEndEvent @this) => @this.Y8gq2x;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatStreamEndEvent(global::G.ChatStreamEndEventY8gq2x? value)
         {
-            Value2 = value;
+            Y8gq2x = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatStreamEndEvent(
-            global::G.ChatStreamEvent? value1,
-            global::G.ChatStreamEndEventY8gq2x? value2
+            global::G.ChatStreamEvent? chatStreamEvent,
+            global::G.ChatStreamEndEventY8gq2x? y8gq2x
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ChatStreamEvent = chatStreamEvent;
+            Y8gq2x = y8gq2x;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Y8gq2x as object ??
+            ChatStreamEvent as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ChatStreamEvent?.ToString() ??
+            Y8gq2x?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsChatStreamEvent && IsY8gq2x;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEvent?, TResult>? value1 = null,
-            global::System.Func<global::G.ChatStreamEndEventY8gq2x?, TResult>? value2 = null,
+            global::System.Func<global::G.ChatStreamEvent?, TResult>? chatStreamEvent = null,
+            global::System.Func<global::G.ChatStreamEndEventY8gq2x?, TResult>? y8gq2x = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsChatStreamEvent && chatStreamEvent != null)
             {
-                return value1(Value1!);
+                return chatStreamEvent(ChatStreamEvent!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsY8gq2x && y8gq2x != null)
             {
-                return value2(Value2!);
+                return y8gq2x(Y8gq2x!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEvent?>? value1 = null,
-            global::System.Action<global::G.ChatStreamEndEventY8gq2x?>? value2 = null,
+            global::System.Action<global::G.ChatStreamEvent?>? chatStreamEvent = null,
+            global::System.Action<global::G.ChatStreamEndEventY8gq2x?>? y8gq2x = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsChatStreamEvent)
             {
-                value1?.Invoke(Value1!);
+                chatStreamEvent?.Invoke(ChatStreamEvent!);
             }
-            else if (IsValue2)
+            else if (IsY8gq2x)
             {
-                value2?.Invoke(Value2!);
+                y8gq2x?.Invoke(Y8gq2x!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ChatStreamEvent,
                 typeof(global::G.ChatStreamEvent),
-                Value2,
+                Y8gq2x,
                 typeof(global::G.ChatStreamEndEventY8gq2x),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ChatStreamEndEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEvent?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEndEventY8gq2x?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEvent?>.Default.Equals(ChatStreamEvent, other.ChatStreamEvent) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatStreamEndEventY8gq2x?>.Default.Equals(Y8gq2x, other.Y8gq2x) 
                 ;
         }
 

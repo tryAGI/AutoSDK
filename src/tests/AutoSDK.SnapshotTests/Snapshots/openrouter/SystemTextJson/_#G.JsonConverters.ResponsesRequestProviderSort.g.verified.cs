@@ -40,7 +40,7 @@ namespace G.JsonConverters
 
             global::G.ProviderSort? providerSort = default;
             global::G.ProviderSortConfig? providerSortConfig = default;
-            object? value3 = default;
+            object? responsesRequestProviderSortVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -79,7 +79,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        responsesRequestProviderSortVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -90,7 +90,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (providerSort == null && providerSortConfig == null && value3 == null)
+            if (providerSort == null && providerSortConfig == null && responsesRequestProviderSortVariant3 == null)
             {
                 try
                 {
@@ -122,7 +122,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    responsesRequestProviderSortVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -137,7 +137,7 @@ namespace G.JsonConverters
 
                 providerSortConfig,
 
-                value3
+                responsesRequestProviderSortVariant3
                 );
 
             return __value;
@@ -164,11 +164,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProviderSortConfig).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProviderSortConfig!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsResponsesRequestProviderSortVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestProviderSortVariant3!, typeInfo);
             }
         }
     }

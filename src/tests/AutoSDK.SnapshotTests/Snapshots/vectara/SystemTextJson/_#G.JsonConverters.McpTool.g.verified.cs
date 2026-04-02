@@ -51,8 +51,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.ToolBase? value1 = default;
-            global::G.McpToolVariant2? value2 = default;
+            global::G.ToolBase? @base = default;
+            global::G.McpToolVariant2? mcpToolVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -61,7 +61,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolBase> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolBase).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -76,7 +76,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpToolVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpToolVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.McpToolVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        mcpToolVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -87,13 +87,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (@base == null && mcpToolVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolBase> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolBase).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -106,7 +106,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpToolVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpToolVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.McpToolVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    mcpToolVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -117,9 +117,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.McpTool(
-                value1,
+                @base,
 
-                value2
+                mcpToolVariant2
                 );
 
             return __value;
@@ -134,17 +134,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsBase)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolBase?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolBase).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsMcpToolVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpToolVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpToolVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.McpToolVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpToolVariant2!, typeInfo);
             }
         }
     }

@@ -14,35 +14,35 @@ namespace G
         /// Base properties shared by all input request types.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateInputRequestBase? Value1 { get; init; }
+        public global::G.CreateInputRequestBase? InputBase { get; init; }
 #else
-        public global::G.CreateInputRequestBase? Value1 { get; }
+        public global::G.CreateInputRequestBase? InputBase { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputBase))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsInputBase => InputBase != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateInterruptRequestVariant2? Value2 { get; init; }
+        public global::G.CreateInterruptRequestVariant2? CreateInterruptRequestVariant2 { get; init; }
 #else
-        public global::G.CreateInterruptRequestVariant2? Value2 { get; }
+        public global::G.CreateInterruptRequestVariant2? CreateInterruptRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateInterruptRequestVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCreateInterruptRequestVariant2 => CreateInterruptRequestVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateInputRequestBase?(CreateInterruptRequest @this) => @this.Value1;
+        public static implicit operator global::G.CreateInputRequestBase?(CreateInterruptRequest @this) => @this.InputBase;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateInterruptRequest(global::G.CreateInputRequestBase? value)
         {
-            Value1 = value;
+            InputBase = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateInterruptRequestVariant2?(CreateInterruptRequest @this) => @this.Value2;
+        public static implicit operator global::G.CreateInterruptRequestVariant2?(CreateInterruptRequest @this) => @this.CreateInterruptRequestVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateInterruptRequest(global::G.CreateInterruptRequestVariant2? value)
         {
-            Value2 = value;
+            CreateInterruptRequestVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateInterruptRequest(
-            global::G.CreateInputRequestBase? value1,
-            global::G.CreateInterruptRequestVariant2? value2
+            global::G.CreateInputRequestBase? inputBase,
+            global::G.CreateInterruptRequestVariant2? createInterruptRequestVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            InputBase = inputBase;
+            CreateInterruptRequestVariant2 = createInterruptRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CreateInterruptRequestVariant2 as object ??
+            InputBase as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            InputBase?.ToString() ??
+            CreateInterruptRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsInputBase && IsCreateInterruptRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateInputRequestBase?, TResult>? value1 = null,
-            global::System.Func<global::G.CreateInterruptRequestVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.CreateInputRequestBase?, TResult>? inputBase = null,
+            global::System.Func<global::G.CreateInterruptRequestVariant2?, TResult>? createInterruptRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsInputBase && inputBase != null)
             {
-                return value1(Value1!);
+                return inputBase(InputBase!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCreateInterruptRequestVariant2 && createInterruptRequestVariant2 != null)
             {
-                return value2(Value2!);
+                return createInterruptRequestVariant2(CreateInterruptRequestVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateInputRequestBase?>? value1 = null,
-            global::System.Action<global::G.CreateInterruptRequestVariant2?>? value2 = null,
+            global::System.Action<global::G.CreateInputRequestBase?>? inputBase = null,
+            global::System.Action<global::G.CreateInterruptRequestVariant2?>? createInterruptRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsInputBase)
             {
-                value1?.Invoke(Value1!);
+                inputBase?.Invoke(InputBase!);
             }
-            else if (IsValue2)
+            else if (IsCreateInterruptRequestVariant2)
             {
-                value2?.Invoke(Value2!);
+                createInterruptRequestVariant2?.Invoke(CreateInterruptRequestVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                InputBase,
                 typeof(global::G.CreateInputRequestBase),
-                Value2,
+                CreateInterruptRequestVariant2,
                 typeof(global::G.CreateInterruptRequestVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(CreateInterruptRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateInputRequestBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateInterruptRequestVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateInputRequestBase?>.Default.Equals(InputBase, other.InputBase) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateInterruptRequestVariant2?>.Default.Equals(CreateInterruptRequestVariant2, other.CreateInterruptRequestVariant2) 
                 ;
         }
 

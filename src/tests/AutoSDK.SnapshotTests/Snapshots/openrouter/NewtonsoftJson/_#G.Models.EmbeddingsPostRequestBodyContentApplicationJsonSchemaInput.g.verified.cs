@@ -14,69 +14,69 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<string>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value2 { get; }
+        public global::System.Collections.Generic.IList<string>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<double>? Value3 { get; init; }
+        public global::System.Collections.Generic.IList<double>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<double>? Value3 { get; }
+        public global::System.Collections.Generic.IList<double>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Value4 { get; init; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Value4 { get; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 != null;
 
         /// <summary>
         /// 
@@ -102,31 +102,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput @this) => @this.Value1;
+        public static implicit operator string?(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput @this) => @this.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput(string? value)
         {
-            Value1 = value;
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput(
-            string? value1,
-            global::System.Collections.Generic.IList<string>? value2,
-            global::System.Collections.Generic.IList<double>? value3,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? value4,
+            string? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1,
+            global::System.Collections.Generic.IList<string>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2,
+            global::System.Collections.Generic.IList<double>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4,
             global::System.Collections.Generic.IList<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>? embeddingsPostRequestBodyContentApplicationJsonSchemaInput4
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 = embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1;
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 = embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2;
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 = embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3;
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 = embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4;
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 = embeddingsPostRequestBodyContentApplicationJsonSchemaInput4;
         }
 
@@ -135,20 +135,20 @@ namespace G
         /// </summary>
         public object? Object =>
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 as object ??
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 as object ??
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 as object ??
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1?.ToString() ??
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2?.ToString() ??
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3?.ToString() ??
+            EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4?.ToString() ??
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4?.ToString() 
             ;
 
@@ -157,17 +157,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4;
+            return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 || !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 && IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 || !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 && IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 || !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 && IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 || !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 && !IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 && IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value2 = null,
-            global::System.Func<global::System.Collections.Generic.IList<double>?, TResult>? value3 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?, TResult>? value4 = null,
+            global::System.Func<string?, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<double>?, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>?, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInput4 = null,
             bool validate = true)
         {
@@ -176,21 +176,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 != null)
             {
-                return value1(Value1!);
+                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 != null)
             {
-                return value2(Value2!);
+                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 != null)
             {
-                return value3(Value3!);
+                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 != null)
             {
-                return value4(Value4!);
+                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4!);
             }
             else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 && embeddingsPostRequestBodyContentApplicationJsonSchemaInput4 != null)
             {
@@ -204,10 +204,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value2 = null,
-            global::System.Action<global::System.Collections.Generic.IList<double>?>? value3 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?>? value4 = null,
+            global::System.Action<string?>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<double>?>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>?>? embeddingsPostRequestBodyContentApplicationJsonSchemaInput4 = null,
             bool validate = true)
         {
@@ -216,21 +216,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1)
             {
-                value1?.Invoke(Value1!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1!);
             }
-            else if (IsValue2)
+            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2)
             {
-                value2?.Invoke(Value2!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2!);
             }
-            else if (IsValue3)
+            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3)
             {
-                value3?.Invoke(Value3!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3!);
             }
-            else if (IsValue4)
+            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4)
             {
-                value4?.Invoke(Value4!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4!);
             }
             else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4)
             {
@@ -245,13 +245,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1,
                 typeof(string),
-                Value2,
+                EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
-                Value3,
+                EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3,
                 typeof(global::System.Collections.Generic.IList<double>),
-                Value4,
+                EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4,
                 typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>),
                 EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4,
                 typeof(global::System.Collections.Generic.IList<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>),
@@ -271,10 +271,10 @@ namespace G
         public bool Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<double>?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?>.Default.Equals(Value4, other.Value4) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<double>?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>?>.Default.Equals(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4, other.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4) 
                 ;
         }

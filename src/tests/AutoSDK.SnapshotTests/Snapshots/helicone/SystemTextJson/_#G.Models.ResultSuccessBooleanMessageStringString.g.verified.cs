@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResultSuccessSuccessBooleanMessageString? Value1 { get; init; }
+        public global::G.ResultSuccessSuccessBooleanMessageString? ResultSuccessSuccessBooleanMessageString { get; init; }
 #else
-        public global::G.ResultSuccessSuccessBooleanMessageString? Value1 { get; }
+        public global::G.ResultSuccessSuccessBooleanMessageString? ResultSuccessSuccessBooleanMessageString { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResultSuccessSuccessBooleanMessageString))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsResultSuccessSuccessBooleanMessageString => ResultSuccessSuccessBooleanMessageString != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResultErrorString? Value2 { get; init; }
+        public global::G.ResultErrorString? Error { get; init; }
 #else
-        public global::G.ResultErrorString? Value2 { get; }
+        public global::G.ResultErrorString? Error { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsError => Error != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResultSuccessSuccessBooleanMessageString?(ResultSuccessBooleanMessageStringString @this) => @this.Value1;
+        public static implicit operator global::G.ResultSuccessSuccessBooleanMessageString?(ResultSuccessBooleanMessageStringString @this) => @this.ResultSuccessSuccessBooleanMessageString;
 
         /// <summary>
         /// 
         /// </summary>
         public ResultSuccessBooleanMessageStringString(global::G.ResultSuccessSuccessBooleanMessageString? value)
         {
-            Value1 = value;
+            ResultSuccessSuccessBooleanMessageString = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResultErrorString?(ResultSuccessBooleanMessageStringString @this) => @this.Value2;
+        public static implicit operator global::G.ResultErrorString?(ResultSuccessBooleanMessageStringString @this) => @this.Error;
 
         /// <summary>
         /// 
         /// </summary>
         public ResultSuccessBooleanMessageStringString(global::G.ResultErrorString? value)
         {
-            Value2 = value;
+            Error = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ResultSuccessBooleanMessageStringString(
-            global::G.ResultSuccessSuccessBooleanMessageString? value1,
-            global::G.ResultErrorString? value2
+            global::G.ResultSuccessSuccessBooleanMessageString? resultSuccessSuccessBooleanMessageString,
+            global::G.ResultErrorString? error
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ResultSuccessSuccessBooleanMessageString = resultSuccessSuccessBooleanMessageString;
+            Error = error;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Error as object ??
+            ResultSuccessSuccessBooleanMessageString as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ResultSuccessSuccessBooleanMessageString?.ToString() ??
+            Error?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsResultSuccessSuccessBooleanMessageString || IsError;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResultSuccessSuccessBooleanMessageString?, TResult>? value1 = null,
-            global::System.Func<global::G.ResultErrorString?, TResult>? value2 = null,
+            global::System.Func<global::G.ResultSuccessSuccessBooleanMessageString?, TResult>? resultSuccessSuccessBooleanMessageString = null,
+            global::System.Func<global::G.ResultErrorString?, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsResultSuccessSuccessBooleanMessageString && resultSuccessSuccessBooleanMessageString != null)
             {
-                return value1(Value1!);
+                return resultSuccessSuccessBooleanMessageString(ResultSuccessSuccessBooleanMessageString!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsError && error != null)
             {
-                return value2(Value2!);
+                return error(Error!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResultSuccessSuccessBooleanMessageString?>? value1 = null,
-            global::System.Action<global::G.ResultErrorString?>? value2 = null,
+            global::System.Action<global::G.ResultSuccessSuccessBooleanMessageString?>? resultSuccessSuccessBooleanMessageString = null,
+            global::System.Action<global::G.ResultErrorString?>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsResultSuccessSuccessBooleanMessageString)
             {
-                value1?.Invoke(Value1!);
+                resultSuccessSuccessBooleanMessageString?.Invoke(ResultSuccessSuccessBooleanMessageString!);
             }
-            else if (IsValue2)
+            else if (IsError)
             {
-                value2?.Invoke(Value2!);
+                error?.Invoke(Error!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ResultSuccessSuccessBooleanMessageString,
                 typeof(global::G.ResultSuccessSuccessBooleanMessageString),
-                Value2,
+                Error,
                 typeof(global::G.ResultErrorString),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(ResultSuccessBooleanMessageStringString other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ResultSuccessSuccessBooleanMessageString?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResultErrorString?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ResultSuccessSuccessBooleanMessageString?>.Default.Equals(ResultSuccessSuccessBooleanMessageString, other.ResultSuccessSuccessBooleanMessageString) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResultErrorString?>.Default.Equals(Error, other.Error) 
                 ;
         }
 

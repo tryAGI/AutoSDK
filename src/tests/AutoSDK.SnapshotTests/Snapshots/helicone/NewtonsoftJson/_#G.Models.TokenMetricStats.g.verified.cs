@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MetricStats? Value1 { get; init; }
+        public global::G.MetricStats? MetricStats { get; init; }
 #else
-        public global::G.MetricStats? Value1 { get; }
+        public global::G.MetricStats? MetricStats { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MetricStats))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMetricStats => MetricStats != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TokenMetricStatsVariant2? Value2 { get; init; }
+        public global::G.TokenMetricStatsVariant2? TokenMetricStatsVariant2 { get; init; }
 #else
-        public global::G.TokenMetricStatsVariant2? Value2 { get; }
+        public global::G.TokenMetricStatsVariant2? TokenMetricStatsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TokenMetricStatsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsTokenMetricStatsVariant2 => TokenMetricStatsVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MetricStats?(TokenMetricStats @this) => @this.Value1;
+        public static implicit operator global::G.MetricStats?(TokenMetricStats @this) => @this.MetricStats;
 
         /// <summary>
         /// 
         /// </summary>
         public TokenMetricStats(global::G.MetricStats? value)
         {
-            Value1 = value;
+            MetricStats = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TokenMetricStatsVariant2?(TokenMetricStats @this) => @this.Value2;
+        public static implicit operator global::G.TokenMetricStatsVariant2?(TokenMetricStats @this) => @this.TokenMetricStatsVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public TokenMetricStats(global::G.TokenMetricStatsVariant2? value)
         {
-            Value2 = value;
+            TokenMetricStatsVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TokenMetricStats(
-            global::G.MetricStats? value1,
-            global::G.TokenMetricStatsVariant2? value2
+            global::G.MetricStats? metricStats,
+            global::G.TokenMetricStatsVariant2? tokenMetricStatsVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            MetricStats = metricStats;
+            TokenMetricStatsVariant2 = tokenMetricStatsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            TokenMetricStatsVariant2 as object ??
+            MetricStats as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            MetricStats?.ToString() ??
+            TokenMetricStatsVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsMetricStats && IsTokenMetricStatsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MetricStats?, TResult>? value1 = null,
-            global::System.Func<global::G.TokenMetricStatsVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.MetricStats?, TResult>? metricStats = null,
+            global::System.Func<global::G.TokenMetricStatsVariant2?, TResult>? tokenMetricStatsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMetricStats && metricStats != null)
             {
-                return value1(Value1!);
+                return metricStats(MetricStats!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsTokenMetricStatsVariant2 && tokenMetricStatsVariant2 != null)
             {
-                return value2(Value2!);
+                return tokenMetricStatsVariant2(TokenMetricStatsVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MetricStats?>? value1 = null,
-            global::System.Action<global::G.TokenMetricStatsVariant2?>? value2 = null,
+            global::System.Action<global::G.MetricStats?>? metricStats = null,
+            global::System.Action<global::G.TokenMetricStatsVariant2?>? tokenMetricStatsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMetricStats)
             {
-                value1?.Invoke(Value1!);
+                metricStats?.Invoke(MetricStats!);
             }
-            else if (IsValue2)
+            else if (IsTokenMetricStatsVariant2)
             {
-                value2?.Invoke(Value2!);
+                tokenMetricStatsVariant2?.Invoke(TokenMetricStatsVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                MetricStats,
                 typeof(global::G.MetricStats),
-                Value2,
+                TokenMetricStatsVariant2,
                 typeof(global::G.TokenMetricStatsVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(TokenMetricStats other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.MetricStats?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TokenMetricStatsVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.MetricStats?>.Default.Equals(MetricStats, other.MetricStats) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TokenMetricStatsVariant2?>.Default.Equals(TokenMetricStatsVariant2, other.TokenMetricStatsVariant2) 
                 ;
         }
 

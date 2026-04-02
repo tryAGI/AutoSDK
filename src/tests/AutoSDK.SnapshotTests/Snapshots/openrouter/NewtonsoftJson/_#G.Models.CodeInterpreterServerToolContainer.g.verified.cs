@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? CodeInterpreterServerToolContainerVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? CodeInterpreterServerToolContainerVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterServerToolContainerVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsCodeInterpreterServerToolContainerVariant1 => CodeInterpreterServerToolContainerVariant1 != null;
 
         /// <summary>
         /// 
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(CodeInterpreterServerToolContainer @this) => @this.Value1;
+        public static implicit operator string?(CodeInterpreterServerToolContainer @this) => @this.CodeInterpreterServerToolContainerVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public CodeInterpreterServerToolContainer(string? value)
         {
-            Value1 = value;
+            CodeInterpreterServerToolContainerVariant1 = value;
         }
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace G
         /// 
         /// </summary>
         public CodeInterpreterServerToolContainer(
-            string? value1,
+            string? codeInterpreterServerToolContainerVariant1,
             global::G.CodeInterpreterServerToolContainer1? codeInterpreterServerToolContainer1
             )
         {
-            Value1 = value1;
+            CodeInterpreterServerToolContainerVariant1 = codeInterpreterServerToolContainerVariant1;
             CodeInterpreterServerToolContainer1 = codeInterpreterServerToolContainer1;
         }
 
@@ -96,14 +96,14 @@ namespace G
         /// </summary>
         public object? Object =>
             CodeInterpreterServerToolContainer1 as object ??
-            Value1 as object 
+            CodeInterpreterServerToolContainerVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            CodeInterpreterServerToolContainerVariant1?.ToString() ??
             CodeInterpreterServerToolContainer1?.ToString() 
             ;
 
@@ -112,14 +112,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsCodeInterpreterServerToolContainer1 || !IsValue1 && IsCodeInterpreterServerToolContainer1;
+            return IsCodeInterpreterServerToolContainerVariant1 && !IsCodeInterpreterServerToolContainer1 || !IsCodeInterpreterServerToolContainerVariant1 && IsCodeInterpreterServerToolContainer1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? codeInterpreterServerToolContainerVariant1 = null,
             global::System.Func<global::G.CodeInterpreterServerToolContainer1?, TResult>? codeInterpreterServerToolContainer1 = null,
             bool validate = true)
         {
@@ -128,9 +128,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsCodeInterpreterServerToolContainerVariant1 && codeInterpreterServerToolContainerVariant1 != null)
             {
-                return value1(Value1!);
+                return codeInterpreterServerToolContainerVariant1(CodeInterpreterServerToolContainerVariant1!);
             }
             else if (IsCodeInterpreterServerToolContainer1 && codeInterpreterServerToolContainer1 != null)
             {
@@ -144,7 +144,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? codeInterpreterServerToolContainerVariant1 = null,
             global::System.Action<global::G.CodeInterpreterServerToolContainer1?>? codeInterpreterServerToolContainer1 = null,
             bool validate = true)
         {
@@ -153,9 +153,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsCodeInterpreterServerToolContainerVariant1)
             {
-                value1?.Invoke(Value1!);
+                codeInterpreterServerToolContainerVariant1?.Invoke(CodeInterpreterServerToolContainerVariant1!);
             }
             else if (IsCodeInterpreterServerToolContainer1)
             {
@@ -170,7 +170,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                CodeInterpreterServerToolContainerVariant1,
                 typeof(string),
                 CodeInterpreterServerToolContainer1,
                 typeof(global::G.CodeInterpreterServerToolContainer1),
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(CodeInterpreterServerToolContainer other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(CodeInterpreterServerToolContainerVariant1, other.CodeInterpreterServerToolContainerVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.CodeInterpreterServerToolContainer1?>.Default.Equals(CodeInterpreterServerToolContainer1, other.CodeInterpreterServerToolContainer1) 
                 ;
         }

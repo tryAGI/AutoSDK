@@ -1080,6 +1080,142 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public void OpenAiOfficialSpec_CreateChatCompletionRequest_UsesNamedMixedAllOfMembers()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+
+        var data = Data.Prepare(((TestSpecCache.GetText("openai.yaml"), settings), GlobalSettings: settings));
+        var anyOf = data.AnyOfs.Single(x => x.Name == "CreateChatCompletionRequest");
+        var generatedAnyOf = Sources.GenerateAnyOf(anyOf);
+
+        anyOf.SubType.Should().Be("AllOf");
+        anyOf.Properties.Select(x => x.Name).Should().Contain(["ModelResponseProperties", "CreateChatCompletionRequestVariant2"]);
+        anyOf.Properties.Select(x => x.Name).Should().NotContain(["Value1", "Value2"]);
+        generatedAnyOf.Should().Contain("public global::G.CreateModelResponseProperties? ModelResponseProperties { get; init; }");
+        generatedAnyOf.Should().Contain("public global::G.CreateChatCompletionRequestVariant2? CreateChatCompletionRequestVariant2 { get; init; }");
+        generatedAnyOf.Should().NotContain(" Value1 ");
+        generatedAnyOf.Should().NotContain(" Value2 ");
+    }
+
+    [TestMethod]
+    public void VectaraOfficialSpec_MixedAllOfMembers_UseNamedProperties()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+            UseExtensionNaming = false,
+        };
+
+        var data = Data.Prepare(((TestSpecCache.GetText("vectara.yaml"), settings), GlobalSettings: settings));
+        var keyedSearchCorpus = data.AnyOfs.Single(x => x.Name == "KeyedSearchCorpus");
+        var searchCorporaParameters = data.AnyOfs.Single(x => x.Name == "SearchCorporaParameters");
+        var generatedKeyedSearchCorpus = Sources.GenerateAnyOf(keyedSearchCorpus);
+        var generatedSearchCorporaParameters = Sources.GenerateAnyOf(searchCorporaParameters);
+
+        keyedSearchCorpus.SubType.Should().Be("AllOf");
+        keyedSearchCorpus.Properties.Select(x => x.Name).Should().Contain(["SearchCorpus", "KeyedSearchCorpusVariant2"]);
+        keyedSearchCorpus.Properties.Select(x => x.Name).Should().NotContain(["Value1", "Value2"]);
+        generatedKeyedSearchCorpus.Should().Contain("public global::G.SearchCorpus? SearchCorpus { get; init; }");
+        generatedKeyedSearchCorpus.Should().Contain("public global::G.KeyedSearchCorpusVariant2? KeyedSearchCorpusVariant2 { get; init; }");
+        generatedKeyedSearchCorpus.Should().NotContain(" Value1 ");
+        generatedKeyedSearchCorpus.Should().NotContain(" Value2 ");
+
+        searchCorporaParameters.SubType.Should().Be("AllOf");
+        searchCorporaParameters.Properties.Select(x => x.Name).Should().Contain(["SearchCorporaParametersVariant1", "SearchParameters"]);
+        searchCorporaParameters.Properties.Select(x => x.Name).Should().NotContain(["Value1", "Value2"]);
+        generatedSearchCorporaParameters.Should().Contain("public global::G.SearchCorporaParametersVariant1? SearchCorporaParametersVariant1 { get; init; }");
+        generatedSearchCorporaParameters.Should().Contain("public global::G.SearchParameters? SearchParameters { get; init; }");
+        generatedSearchCorporaParameters.Should().NotContain(" Value1 ");
+        generatedSearchCorporaParameters.Should().NotContain(" Value2 ");
+    }
+
+    [TestMethod]
+    public void AnthropicOfficialSpec_MixedPrimitiveAndEnumMembers_UseGeneratedNames()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+
+        var data = Data.Prepare(((TestSpecCache.GetText("anthropic.yaml"), settings), GlobalSettings: settings));
+        var anyOf = data.AnyOfs.Single(x => x.Name == "AnthropicBeta");
+        var generatedAnyOf = Sources.GenerateAnyOf(anyOf);
+
+        anyOf.SubType.Should().Be("AnyOf");
+        anyOf.Properties.Select(x => x.Name).Should().Contain(["AnthropicBetaVariant1", "Enum"]);
+        anyOf.Properties.Select(x => x.Name).Should().NotContain(["Value1", "Value2", "string"]);
+        generatedAnyOf.Should().Contain("public string? AnthropicBetaVariant1 { get; init; }");
+        generatedAnyOf.Should().Contain("public global::G.AnthropicBetaEnum? Enum { get; init; }");
+        generatedAnyOf.Should().NotContain(" Value1 ");
+        generatedAnyOf.Should().NotContain(" Value2 ");
+    }
+
+    [TestMethod]
+    public void GitHubOfficialSpec_MixedCompositeMembers_UseGeneratedVariantNames()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+
+        var data = Data.Prepare(((TestSpecCache.GetText("github.yaml"), settings), GlobalSettings: settings));
+        var anyOf = data.AnyOfs.Single(x => x.Name == "RepositoryRuleDetailed");
+        var generatedAnyOf = Sources.GenerateAnyOf(anyOf);
+
+        anyOf.SubType.Should().Be("OneOf");
+        anyOf.Properties.Select(x => x.Name).Should().Contain(["RepositoryRuleDetailedVariant1", "RepositoryRuleDetailedVariant17"]);
+        anyOf.Properties.Select(x => x.Name).Should().NotContain(["Value1", "AllOf"]);
+        generatedAnyOf.Should().Contain("RepositoryRuleDetailedVariant1 { get; init; }");
+        generatedAnyOf.Should().Contain("RepositoryRuleDetailedVariant17 { get; init; }");
+        generatedAnyOf.Should().NotContain(" IsAllOf");
+    }
+
+    [TestMethod]
+    public void WeaviateOfficialSpec_MixedObjectMembers_UseDistinctGeneratedNames()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+
+        var data = Data.Prepare(((TestSpecCache.GetText("weaviate.yaml"), settings), GlobalSettings: settings));
+        var anyOf = data.AnyOfs.Single(x => x.Name == "ObjectsGetResponse");
+        var names = anyOf.Properties.Select(x => x.Name).ToArray();
+        var generatedAnyOf = Sources.GenerateAnyOf(anyOf);
+
+        names.Should().OnlyHaveUniqueItems();
+        names.Should().Contain(["ObjectValue", "ObjectsGetResponseVariant2", "ObjectsGetResponseVariant3"]);
+        names.Should().NotContain(["Value1", "Value2", "Value3"]);
+        generatedAnyOf.Should().Contain("public global::G.Object? ObjectValue { get; init; }");
+        generatedAnyOf.Should().Contain("public global::G.ObjectsGetResponseVariant2? ObjectsGetResponseVariant2 { get; init; }");
+        generatedAnyOf.Should().Contain("public global::G.ObjectsGetResponseVariant3? ObjectsGetResponseVariant3 { get; init; }");
+        generatedAnyOf.Should().Contain("public object? Object =>");
+    }
+
+    [TestMethod]
     public void AllOf_WithOptionalComponent_DoesNotRequireEveryValue()
     {
         var settings = DefaultSettings with

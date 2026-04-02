@@ -15,35 +15,35 @@ namespace G
         /// Example: "0"
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? WebhookConfigInsecureSslVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? WebhookConfigInsecureSslVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebhookConfigInsecureSslVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsWebhookConfigInsecureSslVariant1 => WebhookConfigInsecureSslVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public double? Value2 { get; init; }
+        public double? WebhookConfigInsecureSslVariant2 { get; init; }
 #else
-        public double? Value2 { get; }
+        public double? WebhookConfigInsecureSslVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebhookConfigInsecureSslVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsWebhookConfigInsecureSslVariant2 => WebhookConfigInsecureSslVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -52,14 +52,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(WebhookConfigInsecureSsl @this) => @this.Value1;
+        public static implicit operator string?(WebhookConfigInsecureSsl @this) => @this.WebhookConfigInsecureSslVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public WebhookConfigInsecureSsl(string? value)
         {
-            Value1 = value;
+            WebhookConfigInsecureSslVariant1 = value;
         }
 
         /// <summary>
@@ -70,42 +70,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator double?(WebhookConfigInsecureSsl @this) => @this.Value2;
+        public static implicit operator double?(WebhookConfigInsecureSsl @this) => @this.WebhookConfigInsecureSslVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public WebhookConfigInsecureSsl(double? value)
         {
-            Value2 = value;
+            WebhookConfigInsecureSslVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public WebhookConfigInsecureSsl(
-            string? value1,
-            double? value2
+            string? webhookConfigInsecureSslVariant1,
+            double? webhookConfigInsecureSslVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            WebhookConfigInsecureSslVariant1 = webhookConfigInsecureSslVariant1;
+            WebhookConfigInsecureSslVariant2 = webhookConfigInsecureSslVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            WebhookConfigInsecureSslVariant2 as object ??
+            WebhookConfigInsecureSslVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            WebhookConfigInsecureSslVariant1?.ToString() ??
+            WebhookConfigInsecureSslVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -113,15 +113,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsWebhookConfigInsecureSslVariant1 && !IsWebhookConfigInsecureSslVariant2 || !IsWebhookConfigInsecureSslVariant1 && IsWebhookConfigInsecureSslVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<double?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? webhookConfigInsecureSslVariant1 = null,
+            global::System.Func<double?, TResult>? webhookConfigInsecureSslVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -129,13 +129,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsWebhookConfigInsecureSslVariant1 && webhookConfigInsecureSslVariant1 != null)
             {
-                return value1(Value1!);
+                return webhookConfigInsecureSslVariant1(WebhookConfigInsecureSslVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsWebhookConfigInsecureSslVariant2 && webhookConfigInsecureSslVariant2 != null)
             {
-                return value2(Value2!);
+                return webhookConfigInsecureSslVariant2(WebhookConfigInsecureSslVariant2!);
             }
 
             return default(TResult);
@@ -145,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<double?>? value2 = null,
+            global::System.Action<string?>? webhookConfigInsecureSslVariant1 = null,
+            global::System.Action<double?>? webhookConfigInsecureSslVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +154,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsWebhookConfigInsecureSslVariant1)
             {
-                value1?.Invoke(Value1!);
+                webhookConfigInsecureSslVariant1?.Invoke(WebhookConfigInsecureSslVariant1!);
             }
-            else if (IsValue2)
+            else if (IsWebhookConfigInsecureSslVariant2)
             {
-                value2?.Invoke(Value2!);
+                webhookConfigInsecureSslVariant2?.Invoke(WebhookConfigInsecureSslVariant2!);
             }
         }
 
@@ -171,9 +171,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                WebhookConfigInsecureSslVariant1,
                 typeof(string),
-                Value2,
+                WebhookConfigInsecureSslVariant2,
                 typeof(double),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,8 +191,8 @@ namespace G
         public bool Equals(WebhookConfigInsecureSsl other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(WebhookConfigInsecureSslVariant1, other.WebhookConfigInsecureSslVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(WebhookConfigInsecureSslVariant2, other.WebhookConfigInsecureSslVariant2) 
                 ;
         }
 

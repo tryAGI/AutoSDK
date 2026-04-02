@@ -48,18 +48,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? ViewOptionsVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? ViewOptionsVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ViewOptionsVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsViewOptionsVariant3 => ViewOptionsVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,19 +102,19 @@ namespace G
         public ViewOptions(
             global::G.ViewOptionsMonitorViewOptions? monitorViewOptions,
             global::G.ViewOptionsTableViewOptions? tableViewOptions,
-            object? value3
+            object? viewOptionsVariant3
             )
         {
             MonitorViewOptions = monitorViewOptions;
             TableViewOptions = tableViewOptions;
-            Value3 = value3;
+            ViewOptionsVariant3 = viewOptionsVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
+            ViewOptionsVariant3 as object ??
             TableViewOptions as object ??
             MonitorViewOptions as object 
             ;
@@ -125,7 +125,7 @@ namespace G
         public override string? ToString() =>
             MonitorViewOptions?.ToString() ??
             TableViewOptions?.ToString() ??
-            Value3?.ToString() 
+            ViewOptionsVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsMonitorViewOptions || IsTableViewOptions || IsValue3;
+            return IsMonitorViewOptions || IsTableViewOptions || IsViewOptionsVariant3;
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.ViewOptionsMonitorViewOptions?, TResult>? monitorViewOptions = null,
             global::System.Func<global::G.ViewOptionsTableViewOptions?, TResult>? tableViewOptions = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<object?, TResult>? viewOptionsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -158,9 +158,9 @@ namespace G
             {
                 return tableViewOptions(TableViewOptions!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsViewOptionsVariant3 && viewOptionsVariant3 != null)
             {
-                return value3(Value3!);
+                return viewOptionsVariant3(ViewOptionsVariant3!);
             }
 
             return default(TResult);
@@ -172,7 +172,7 @@ namespace G
         public void Match(
             global::System.Action<global::G.ViewOptionsMonitorViewOptions?>? monitorViewOptions = null,
             global::System.Action<global::G.ViewOptionsTableViewOptions?>? tableViewOptions = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<object?>? viewOptionsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +188,9 @@ namespace G
             {
                 tableViewOptions?.Invoke(TableViewOptions!);
             }
-            else if (IsValue3)
+            else if (IsViewOptionsVariant3)
             {
-                value3?.Invoke(Value3!);
+                viewOptionsVariant3?.Invoke(ViewOptionsVariant3!);
             }
         }
 
@@ -205,7 +205,7 @@ namespace G
                 typeof(global::G.ViewOptionsMonitorViewOptions),
                 TableViewOptions,
                 typeof(global::G.ViewOptionsTableViewOptions),
-                Value3,
+                ViewOptionsVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -225,7 +225,7 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ViewOptionsMonitorViewOptions?>.Default.Equals(MonitorViewOptions, other.MonitorViewOptions) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ViewOptionsTableViewOptions?>.Default.Equals(TableViewOptions, other.TableViewOptions) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ViewOptionsVariant3, other.ViewOptionsVariant3) 
                 ;
         }
 

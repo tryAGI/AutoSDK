@@ -14,18 +14,18 @@ namespace G
         /// Occurs when a new [thread](/docs/api-reference/threads/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ThreadStreamEventVariant1? Value1 { get; init; }
+        public global::G.ThreadStreamEventVariant1? ThreadStreamEventVariant1 { get; init; }
 #else
-        public global::G.ThreadStreamEventVariant1? Value1 { get; }
+        public global::G.ThreadStreamEventVariant1? ThreadStreamEventVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadStreamEventVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsThreadStreamEventVariant1 => ThreadStreamEventVariant1 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -34,28 +34,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ThreadStreamEventVariant1?(ThreadStreamEvent @this) => @this.Value1;
+        public static implicit operator global::G.ThreadStreamEventVariant1?(ThreadStreamEvent @this) => @this.ThreadStreamEventVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ThreadStreamEvent(global::G.ThreadStreamEventVariant1? value)
         {
-            Value1 = value;
+            ThreadStreamEventVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value1 as object 
+            ThreadStreamEventVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() 
+            ThreadStreamEventVariant1?.ToString() 
             ;
 
         /// <summary>
@@ -63,14 +63,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1;
+            return IsThreadStreamEventVariant1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ThreadStreamEventVariant1?, TResult>? value1 = null,
+            global::System.Func<global::G.ThreadStreamEventVariant1?, TResult>? threadStreamEventVariant1 = null,
             bool validate = true)
         {
             if (validate)
@@ -78,9 +78,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsThreadStreamEventVariant1 && threadStreamEventVariant1 != null)
             {
-                return value1(Value1!);
+                return threadStreamEventVariant1(ThreadStreamEventVariant1!);
             }
 
             return default(TResult);
@@ -90,7 +90,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ThreadStreamEventVariant1?>? value1 = null,
+            global::System.Action<global::G.ThreadStreamEventVariant1?>? threadStreamEventVariant1 = null,
             bool validate = true)
         {
             if (validate)
@@ -98,9 +98,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsThreadStreamEventVariant1)
             {
-                value1?.Invoke(Value1!);
+                threadStreamEventVariant1?.Invoke(ThreadStreamEventVariant1!);
             }
         }
 
@@ -111,7 +111,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ThreadStreamEventVariant1,
                 typeof(global::G.ThreadStreamEventVariant1),
             };
             const int offset = unchecked((int)2166136261);
@@ -129,7 +129,7 @@ namespace G
         public bool Equals(ThreadStreamEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ThreadStreamEventVariant1?>.Default.Equals(Value1, other.Value1) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ThreadStreamEventVariant1?>.Default.Equals(ThreadStreamEventVariant1, other.ThreadStreamEventVariant1) 
                 ;
         }
 

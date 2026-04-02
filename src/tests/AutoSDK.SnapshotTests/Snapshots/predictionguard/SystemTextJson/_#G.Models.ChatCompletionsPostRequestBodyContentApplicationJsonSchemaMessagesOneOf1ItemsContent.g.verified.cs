@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 => ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 != null;
 
         /// <summary>
         /// The content of the message, used for file inputs.
@@ -51,25 +51,25 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent @this) => @this.Value1;
+        public static implicit operator string?(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent @this) => @this.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent(string? value)
         {
-            Value1 = value;
+            ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent(
-            string? value1,
+            string? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1,
             global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1Items>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1
             )
         {
-            Value1 = value1;
+            ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 = chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1;
             ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1 = chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1;
         }
 
@@ -78,14 +78,14 @@ namespace G
         /// </summary>
         public object? Object =>
             ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1 as object ??
-            Value1 as object 
+            ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1?.ToString() ??
             ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1?.ToString() 
             ;
 
@@ -94,14 +94,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1 || !IsValue1 && IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1;
+            return IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 && !IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1 || !IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 && IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1Items>?, TResult>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1 = null,
             bool validate = true)
         {
@@ -110,9 +110,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 && chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 != null)
             {
-                return value1(Value1!);
+                return chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1!);
             }
             else if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1 && chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1 != null)
             {
@@ -126,7 +126,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1Items>?>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1 = null,
             bool validate = true)
         {
@@ -135,9 +135,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1)
             {
-                value1?.Invoke(Value1!);
+                chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1?.Invoke(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1!);
             }
             else if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1)
             {
@@ -152,7 +152,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1,
                 typeof(string),
                 ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1,
                 typeof(global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1Items>),
@@ -172,7 +172,7 @@ namespace G
         public bool Equals(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1, other.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1Items>?>.Default.Equals(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1, other.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1) 
                 ;
         }

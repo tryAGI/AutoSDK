@@ -14,35 +14,35 @@ namespace G
         /// Base properties shared by all input request types.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateInputRequestBase? Value1 { get; init; }
+        public global::G.CreateInputRequestBase? Base { get; init; }
 #else
-        public global::G.CreateInputRequestBase? Value1 { get; }
+        public global::G.CreateInputRequestBase? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateInputMessageRequestVariant2? Value2 { get; init; }
+        public global::G.CreateInputMessageRequestVariant2? CreateInputMessageRequestVariant2 { get; init; }
 #else
-        public global::G.CreateInputMessageRequestVariant2? Value2 { get; }
+        public global::G.CreateInputMessageRequestVariant2? CreateInputMessageRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateInputMessageRequestVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCreateInputMessageRequestVariant2 => CreateInputMessageRequestVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateInputRequestBase?(CreateInputMessageRequest @this) => @this.Value1;
+        public static implicit operator global::G.CreateInputRequestBase?(CreateInputMessageRequest @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateInputMessageRequest(global::G.CreateInputRequestBase? value)
         {
-            Value1 = value;
+            Base = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateInputMessageRequestVariant2?(CreateInputMessageRequest @this) => @this.Value2;
+        public static implicit operator global::G.CreateInputMessageRequestVariant2?(CreateInputMessageRequest @this) => @this.CreateInputMessageRequestVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateInputMessageRequest(global::G.CreateInputMessageRequestVariant2? value)
         {
-            Value2 = value;
+            CreateInputMessageRequestVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateInputMessageRequest(
-            global::G.CreateInputRequestBase? value1,
-            global::G.CreateInputMessageRequestVariant2? value2
+            global::G.CreateInputRequestBase? @base,
+            global::G.CreateInputMessageRequestVariant2? createInputMessageRequestVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Base = @base;
+            CreateInputMessageRequestVariant2 = createInputMessageRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CreateInputMessageRequestVariant2 as object ??
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Base?.ToString() ??
+            CreateInputMessageRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsBase && IsCreateInputMessageRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateInputRequestBase?, TResult>? value1 = null,
-            global::System.Func<global::G.CreateInputMessageRequestVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.CreateInputRequestBase?, TResult>? @base = null,
+            global::System.Func<global::G.CreateInputMessageRequestVariant2?, TResult>? createInputMessageRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBase && @base != null)
             {
-                return value1(Value1!);
+                return @base(Base!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCreateInputMessageRequestVariant2 && createInputMessageRequestVariant2 != null)
             {
-                return value2(Value2!);
+                return createInputMessageRequestVariant2(CreateInputMessageRequestVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateInputRequestBase?>? value1 = null,
-            global::System.Action<global::G.CreateInputMessageRequestVariant2?>? value2 = null,
+            global::System.Action<global::G.CreateInputRequestBase?>? @base = null,
+            global::System.Action<global::G.CreateInputMessageRequestVariant2?>? createInputMessageRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBase)
             {
-                value1?.Invoke(Value1!);
+                @base?.Invoke(Base!);
             }
-            else if (IsValue2)
+            else if (IsCreateInputMessageRequestVariant2)
             {
-                value2?.Invoke(Value2!);
+                createInputMessageRequestVariant2?.Invoke(CreateInputMessageRequestVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Base,
                 typeof(global::G.CreateInputRequestBase),
-                Value2,
+                CreateInputMessageRequestVariant2,
                 typeof(global::G.CreateInputMessageRequestVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(CreateInputMessageRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateInputRequestBase?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateInputMessageRequestVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateInputRequestBase?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateInputMessageRequestVariant2?>.Default.Equals(CreateInputMessageRequestVariant2, other.CreateInputMessageRequestVariant2) 
                 ;
         }
 

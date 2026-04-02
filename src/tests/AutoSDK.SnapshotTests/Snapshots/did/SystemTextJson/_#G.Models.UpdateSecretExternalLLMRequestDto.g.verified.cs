@@ -31,18 +31,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.UpdateSecretExternalLLMRequestDtoVariant2? Value2 { get; init; }
+        public global::G.UpdateSecretExternalLLMRequestDtoVariant2? UpdateSecretExternalLLMRequestDtoVariant2 { get; init; }
 #else
-        public global::G.UpdateSecretExternalLLMRequestDtoVariant2? Value2 { get; }
+        public global::G.UpdateSecretExternalLLMRequestDtoVariant2? UpdateSecretExternalLLMRequestDtoVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateSecretExternalLLMRequestDtoVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsUpdateSecretExternalLLMRequestDtoVariant2 => UpdateSecretExternalLLMRequestDtoVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -69,14 +69,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.UpdateSecretExternalLLMRequestDtoVariant2?(UpdateSecretExternalLLMRequestDto @this) => @this.Value2;
+        public static implicit operator global::G.UpdateSecretExternalLLMRequestDtoVariant2?(UpdateSecretExternalLLMRequestDto @this) => @this.UpdateSecretExternalLLMRequestDtoVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public UpdateSecretExternalLLMRequestDto(global::G.UpdateSecretExternalLLMRequestDtoVariant2? value)
         {
-            Value2 = value;
+            UpdateSecretExternalLLMRequestDtoVariant2 = value;
         }
 
         /// <summary>
@@ -84,18 +84,18 @@ namespace G
         /// </summary>
         public UpdateSecretExternalLLMRequestDto(
             global::G.UpdateSecretExternalLLMRequestDtoOpenAIConfiguration? openAIConfiguration,
-            global::G.UpdateSecretExternalLLMRequestDtoVariant2? value2
+            global::G.UpdateSecretExternalLLMRequestDtoVariant2? updateSecretExternalLLMRequestDtoVariant2
             )
         {
             OpenAIConfiguration = openAIConfiguration;
-            Value2 = value2;
+            UpdateSecretExternalLLMRequestDtoVariant2 = updateSecretExternalLLMRequestDtoVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            UpdateSecretExternalLLMRequestDtoVariant2 as object ??
             OpenAIConfiguration as object 
             ;
 
@@ -104,7 +104,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             OpenAIConfiguration?.ToString() ??
-            Value2?.ToString() 
+            UpdateSecretExternalLLMRequestDtoVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsOpenAIConfiguration || IsValue2;
+            return IsOpenAIConfiguration || IsUpdateSecretExternalLLMRequestDtoVariant2;
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.UpdateSecretExternalLLMRequestDtoOpenAIConfiguration?, TResult>? openAIConfiguration = null,
-            global::System.Func<global::G.UpdateSecretExternalLLMRequestDtoVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.UpdateSecretExternalLLMRequestDtoVariant2?, TResult>? updateSecretExternalLLMRequestDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -132,9 +132,9 @@ namespace G
             {
                 return openAIConfiguration(OpenAIConfiguration!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsUpdateSecretExternalLLMRequestDtoVariant2 && updateSecretExternalLLMRequestDtoVariant2 != null)
             {
-                return value2(Value2!);
+                return updateSecretExternalLLMRequestDtoVariant2(UpdateSecretExternalLLMRequestDtoVariant2!);
             }
 
             return default(TResult);
@@ -145,7 +145,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.UpdateSecretExternalLLMRequestDtoOpenAIConfiguration?>? openAIConfiguration = null,
-            global::System.Action<global::G.UpdateSecretExternalLLMRequestDtoVariant2?>? value2 = null,
+            global::System.Action<global::G.UpdateSecretExternalLLMRequestDtoVariant2?>? updateSecretExternalLLMRequestDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -157,9 +157,9 @@ namespace G
             {
                 openAIConfiguration?.Invoke(OpenAIConfiguration!);
             }
-            else if (IsValue2)
+            else if (IsUpdateSecretExternalLLMRequestDtoVariant2)
             {
-                value2?.Invoke(Value2!);
+                updateSecretExternalLLMRequestDtoVariant2?.Invoke(UpdateSecretExternalLLMRequestDtoVariant2!);
             }
         }
 
@@ -172,7 +172,7 @@ namespace G
             {
                 OpenAIConfiguration,
                 typeof(global::G.UpdateSecretExternalLLMRequestDtoOpenAIConfiguration),
-                Value2,
+                UpdateSecretExternalLLMRequestDtoVariant2,
                 typeof(global::G.UpdateSecretExternalLLMRequestDtoVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,7 +191,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.UpdateSecretExternalLLMRequestDtoOpenAIConfiguration?>.Default.Equals(OpenAIConfiguration, other.OpenAIConfiguration) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.UpdateSecretExternalLLMRequestDtoVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.UpdateSecretExternalLLMRequestDtoVariant2?>.Default.Equals(UpdateSecretExternalLLMRequestDtoVariant2, other.UpdateSecretExternalLLMRequestDtoVariant2) 
                 ;
         }
 

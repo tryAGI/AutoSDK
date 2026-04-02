@@ -14,52 +14,52 @@ namespace G
         /// If `true` - return all payload, If `false` - do not return payload
         /// </summary>
 #if NET6_0_OR_GREATER
-        public bool? Value1 { get; init; }
+        public bool? WithPayloadInterfaceVariant1 { get; init; }
 #else
-        public bool? Value1 { get; }
+        public bool? WithPayloadInterfaceVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithPayloadInterfaceVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsWithPayloadInterfaceVariant1 => WithPayloadInterfaceVariant1 != null;
 
         /// <summary>
         /// Specify which fields to return
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<string>? WithPayloadInterfaceVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value2 { get; }
+        public global::System.Collections.Generic.IList<string>? WithPayloadInterfaceVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithPayloadInterfaceVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsWithPayloadInterfaceVariant2 => WithPayloadInterfaceVariant2 != null;
 
         /// <summary>
         /// Specifies how to treat payload selector
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PayloadSelector? Value3 { get; init; }
+        public global::G.PayloadSelector? Selector { get; init; }
 #else
-        public global::G.PayloadSelector? Value3 { get; }
+        public global::G.PayloadSelector? Selector { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Selector))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsSelector => Selector != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator bool?(WithPayloadInterface @this) => @this.Value1;
+        public static implicit operator bool?(WithPayloadInterface @this) => @this.WithPayloadInterfaceVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public WithPayloadInterface(bool? value)
         {
-            Value1 = value;
+            WithPayloadInterfaceVariant1 = value;
         }
 
         /// <summary>
@@ -86,46 +86,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PayloadSelector?(WithPayloadInterface @this) => @this.Value3;
+        public static implicit operator global::G.PayloadSelector?(WithPayloadInterface @this) => @this.Selector;
 
         /// <summary>
         /// 
         /// </summary>
         public WithPayloadInterface(global::G.PayloadSelector? value)
         {
-            Value3 = value;
+            Selector = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public WithPayloadInterface(
-            bool? value1,
-            global::System.Collections.Generic.IList<string>? value2,
-            global::G.PayloadSelector? value3
+            bool? withPayloadInterfaceVariant1,
+            global::System.Collections.Generic.IList<string>? withPayloadInterfaceVariant2,
+            global::G.PayloadSelector? selector
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            WithPayloadInterfaceVariant1 = withPayloadInterfaceVariant1;
+            WithPayloadInterfaceVariant2 = withPayloadInterfaceVariant2;
+            Selector = selector;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            Selector as object ??
+            WithPayloadInterfaceVariant2 as object ??
+            WithPayloadInterfaceVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString().ToLowerInvariant() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            WithPayloadInterfaceVariant1?.ToString().ToLowerInvariant() ??
+            WithPayloadInterfaceVariant2?.ToString() ??
+            Selector?.ToString() 
             ;
 
         /// <summary>
@@ -133,16 +133,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsWithPayloadInterfaceVariant1 || IsWithPayloadInterfaceVariant2 || IsSelector;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<bool?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value2 = null,
-            global::System.Func<global::G.PayloadSelector?, TResult>? value3 = null,
+            global::System.Func<bool?, TResult>? withPayloadInterfaceVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? withPayloadInterfaceVariant2 = null,
+            global::System.Func<global::G.PayloadSelector?, TResult>? selector = null,
             bool validate = true)
         {
             if (validate)
@@ -150,17 +150,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsWithPayloadInterfaceVariant1 && withPayloadInterfaceVariant1 != null)
             {
-                return value1(Value1!);
+                return withPayloadInterfaceVariant1(WithPayloadInterfaceVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsWithPayloadInterfaceVariant2 && withPayloadInterfaceVariant2 != null)
             {
-                return value2(Value2!);
+                return withPayloadInterfaceVariant2(WithPayloadInterfaceVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsSelector && selector != null)
             {
-                return value3(Value3!);
+                return selector(Selector!);
             }
 
             return default(TResult);
@@ -170,9 +170,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<bool?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value2 = null,
-            global::System.Action<global::G.PayloadSelector?>? value3 = null,
+            global::System.Action<bool?>? withPayloadInterfaceVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? withPayloadInterfaceVariant2 = null,
+            global::System.Action<global::G.PayloadSelector?>? selector = null,
             bool validate = true)
         {
             if (validate)
@@ -180,17 +180,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsWithPayloadInterfaceVariant1)
             {
-                value1?.Invoke(Value1!);
+                withPayloadInterfaceVariant1?.Invoke(WithPayloadInterfaceVariant1!);
             }
-            else if (IsValue2)
+            else if (IsWithPayloadInterfaceVariant2)
             {
-                value2?.Invoke(Value2!);
+                withPayloadInterfaceVariant2?.Invoke(WithPayloadInterfaceVariant2!);
             }
-            else if (IsValue3)
+            else if (IsSelector)
             {
-                value3?.Invoke(Value3!);
+                selector?.Invoke(Selector!);
             }
         }
 
@@ -201,11 +201,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                WithPayloadInterfaceVariant1,
                 typeof(bool),
-                Value2,
+                WithPayloadInterfaceVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
-                Value3,
+                Selector,
                 typeof(global::G.PayloadSelector),
             };
             const int offset = unchecked((int)2166136261);
@@ -223,9 +223,9 @@ namespace G
         public bool Equals(WithPayloadInterface other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PayloadSelector?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(WithPayloadInterfaceVariant1, other.WithPayloadInterfaceVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(WithPayloadInterfaceVariant2, other.WithPayloadInterfaceVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PayloadSelector?>.Default.Equals(Selector, other.Selector) 
                 ;
         }
 

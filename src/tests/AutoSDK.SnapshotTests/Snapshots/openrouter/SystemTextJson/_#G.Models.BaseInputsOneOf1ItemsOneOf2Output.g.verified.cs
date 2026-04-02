@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? BaseInputsOneOf1ItemsOneOf2OutputVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? BaseInputsOneOf1ItemsOneOf2OutputVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf2OutputVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsBaseInputsOneOf1ItemsOneOf2OutputVariant1 => BaseInputsOneOf1ItemsOneOf2OutputVariant1 != null;
 
         /// <summary>
         /// 
@@ -51,25 +51,25 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(BaseInputsOneOf1ItemsOneOf2Output @this) => @this.Value1;
+        public static implicit operator string?(BaseInputsOneOf1ItemsOneOf2Output @this) => @this.BaseInputsOneOf1ItemsOneOf2OutputVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public BaseInputsOneOf1ItemsOneOf2Output(string? value)
         {
-            Value1 = value;
+            BaseInputsOneOf1ItemsOneOf2OutputVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public BaseInputsOneOf1ItemsOneOf2Output(
-            string? value1,
+            string? baseInputsOneOf1ItemsOneOf2OutputVariant1,
             global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items>? baseInputsOneOf1ItemsOneOf2Output1
             )
         {
-            Value1 = value1;
+            BaseInputsOneOf1ItemsOneOf2OutputVariant1 = baseInputsOneOf1ItemsOneOf2OutputVariant1;
             BaseInputsOneOf1ItemsOneOf2Output1 = baseInputsOneOf1ItemsOneOf2Output1;
         }
 
@@ -78,14 +78,14 @@ namespace G
         /// </summary>
         public object? Object =>
             BaseInputsOneOf1ItemsOneOf2Output1 as object ??
-            Value1 as object 
+            BaseInputsOneOf1ItemsOneOf2OutputVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            BaseInputsOneOf1ItemsOneOf2OutputVariant1?.ToString() ??
             BaseInputsOneOf1ItemsOneOf2Output1?.ToString() 
             ;
 
@@ -94,14 +94,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsBaseInputsOneOf1ItemsOneOf2Output1 || !IsValue1 && IsBaseInputsOneOf1ItemsOneOf2Output1;
+            return IsBaseInputsOneOf1ItemsOneOf2OutputVariant1 && !IsBaseInputsOneOf1ItemsOneOf2Output1 || !IsBaseInputsOneOf1ItemsOneOf2OutputVariant1 && IsBaseInputsOneOf1ItemsOneOf2Output1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? baseInputsOneOf1ItemsOneOf2OutputVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items>?, TResult>? baseInputsOneOf1ItemsOneOf2Output1 = null,
             bool validate = true)
         {
@@ -110,9 +110,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsBaseInputsOneOf1ItemsOneOf2OutputVariant1 && baseInputsOneOf1ItemsOneOf2OutputVariant1 != null)
             {
-                return value1(Value1!);
+                return baseInputsOneOf1ItemsOneOf2OutputVariant1(BaseInputsOneOf1ItemsOneOf2OutputVariant1!);
             }
             else if (IsBaseInputsOneOf1ItemsOneOf2Output1 && baseInputsOneOf1ItemsOneOf2Output1 != null)
             {
@@ -126,7 +126,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? baseInputsOneOf1ItemsOneOf2OutputVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items>?>? baseInputsOneOf1ItemsOneOf2Output1 = null,
             bool validate = true)
         {
@@ -135,9 +135,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsBaseInputsOneOf1ItemsOneOf2OutputVariant1)
             {
-                value1?.Invoke(Value1!);
+                baseInputsOneOf1ItemsOneOf2OutputVariant1?.Invoke(BaseInputsOneOf1ItemsOneOf2OutputVariant1!);
             }
             else if (IsBaseInputsOneOf1ItemsOneOf2Output1)
             {
@@ -152,7 +152,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                BaseInputsOneOf1ItemsOneOf2OutputVariant1,
                 typeof(string),
                 BaseInputsOneOf1ItemsOneOf2Output1,
                 typeof(global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items>),
@@ -172,7 +172,7 @@ namespace G
         public bool Equals(BaseInputsOneOf1ItemsOneOf2Output other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BaseInputsOneOf1ItemsOneOf2OutputVariant1, other.BaseInputsOneOf1ItemsOneOf2OutputVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items>?>.Default.Equals(BaseInputsOneOf1ItemsOneOf2Output1, other.BaseInputsOneOf1ItemsOneOf2Output1) 
                 ;
         }

@@ -37,8 +37,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.ToolMockInputMatchRuleVariant1? value1 = default;
-            global::G.ToolMockInputMatchRuleVariant2? value2 = default;
+            global::G.ToolMockInputMatchRuleVariant1? toolMockInputMatchRuleVariant1 = default;
+            global::G.ToolMockInputMatchRuleVariant2? toolMockInputMatchRuleVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -47,7 +47,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMockInputMatchRuleVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMockInputMatchRuleVariant1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMockInputMatchRuleVariant1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        toolMockInputMatchRuleVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -62,7 +62,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMockInputMatchRuleVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMockInputMatchRuleVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMockInputMatchRuleVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        toolMockInputMatchRuleVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -73,13 +73,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (toolMockInputMatchRuleVariant1 == null && toolMockInputMatchRuleVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMockInputMatchRuleVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMockInputMatchRuleVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMockInputMatchRuleVariant1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    toolMockInputMatchRuleVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -92,7 +92,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMockInputMatchRuleVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMockInputMatchRuleVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMockInputMatchRuleVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    toolMockInputMatchRuleVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -103,9 +103,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.ToolMockInputMatchRule(
-                value1,
+                toolMockInputMatchRuleVariant1,
 
-                value2
+                toolMockInputMatchRuleVariant2
                 );
 
             return __value;
@@ -120,17 +120,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsToolMockInputMatchRuleVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMockInputMatchRuleVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMockInputMatchRuleVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMockInputMatchRuleVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolMockInputMatchRuleVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsToolMockInputMatchRuleVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMockInputMatchRuleVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMockInputMatchRuleVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMockInputMatchRuleVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolMockInputMatchRuleVariant2!, typeInfo);
             }
         }
     }

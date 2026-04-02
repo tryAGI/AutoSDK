@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value1 { get; init; }
+        public global::System.Collections.Generic.IList<string>? McpServerToolAllowedToolsVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value1 { get; }
+        public global::System.Collections.Generic.IList<string>? McpServerToolAllowedToolsVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpServerToolAllowedToolsVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMcpServerToolAllowedToolsVariant1 => McpServerToolAllowedToolsVariant1 != null;
 
         /// <summary>
         /// 
@@ -48,35 +48,35 @@ namespace G
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? McpServerToolAllowedToolsVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? McpServerToolAllowedToolsVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpServerToolAllowedToolsVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsMcpServerToolAllowedToolsVariant3 => McpServerToolAllowedToolsVariant3 != null;
 
         /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value4 { get; init; }
+        public object? McpServerToolAllowedToolsVariant4 { get; init; }
 #else
-        public object? Value4 { get; }
+        public object? McpServerToolAllowedToolsVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpServerToolAllowedToolsVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsMcpServerToolAllowedToolsVariant4 => McpServerToolAllowedToolsVariant4 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -99,36 +99,36 @@ namespace G
         /// 
         /// </summary>
         public McpServerToolAllowedTools(
-            global::System.Collections.Generic.IList<string>? value1,
+            global::System.Collections.Generic.IList<string>? mcpServerToolAllowedToolsVariant1,
             global::G.McpServerToolAllowedTools1? mcpServerToolAllowedTools1,
-            object? value3,
-            object? value4
+            object? mcpServerToolAllowedToolsVariant3,
+            object? mcpServerToolAllowedToolsVariant4
             )
         {
-            Value1 = value1;
+            McpServerToolAllowedToolsVariant1 = mcpServerToolAllowedToolsVariant1;
             McpServerToolAllowedTools1 = mcpServerToolAllowedTools1;
-            Value3 = value3;
-            Value4 = value4;
+            McpServerToolAllowedToolsVariant3 = mcpServerToolAllowedToolsVariant3;
+            McpServerToolAllowedToolsVariant4 = mcpServerToolAllowedToolsVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value4 as object ??
-            Value3 as object ??
+            McpServerToolAllowedToolsVariant4 as object ??
+            McpServerToolAllowedToolsVariant3 as object ??
             McpServerToolAllowedTools1 as object ??
-            Value1 as object 
+            McpServerToolAllowedToolsVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            McpServerToolAllowedToolsVariant1?.ToString() ??
             McpServerToolAllowedTools1?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() 
+            McpServerToolAllowedToolsVariant3?.ToString() ??
+            McpServerToolAllowedToolsVariant4?.ToString() 
             ;
 
         /// <summary>
@@ -136,17 +136,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsMcpServerToolAllowedTools1 && !IsValue3 && !IsValue4 || !IsValue1 && IsMcpServerToolAllowedTools1 && !IsValue3 && !IsValue4 || !IsValue1 && !IsMcpServerToolAllowedTools1 && IsValue3 && !IsValue4 || !IsValue1 && !IsMcpServerToolAllowedTools1 && !IsValue3 && IsValue4;
+            return IsMcpServerToolAllowedToolsVariant1 && !IsMcpServerToolAllowedTools1 && !IsMcpServerToolAllowedToolsVariant3 && !IsMcpServerToolAllowedToolsVariant4 || !IsMcpServerToolAllowedToolsVariant1 && IsMcpServerToolAllowedTools1 && !IsMcpServerToolAllowedToolsVariant3 && !IsMcpServerToolAllowedToolsVariant4 || !IsMcpServerToolAllowedToolsVariant1 && !IsMcpServerToolAllowedTools1 && IsMcpServerToolAllowedToolsVariant3 && !IsMcpServerToolAllowedToolsVariant4 || !IsMcpServerToolAllowedToolsVariant1 && !IsMcpServerToolAllowedTools1 && !IsMcpServerToolAllowedToolsVariant3 && IsMcpServerToolAllowedToolsVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? mcpServerToolAllowedToolsVariant1 = null,
             global::System.Func<global::G.McpServerToolAllowedTools1?, TResult>? mcpServerToolAllowedTools1 = null,
-            global::System.Func<object?, TResult>? value3 = null,
-            global::System.Func<object?, TResult>? value4 = null,
+            global::System.Func<object?, TResult>? mcpServerToolAllowedToolsVariant3 = null,
+            global::System.Func<object?, TResult>? mcpServerToolAllowedToolsVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -154,21 +154,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMcpServerToolAllowedToolsVariant1 && mcpServerToolAllowedToolsVariant1 != null)
             {
-                return value1(Value1!);
+                return mcpServerToolAllowedToolsVariant1(McpServerToolAllowedToolsVariant1!);
             }
             else if (IsMcpServerToolAllowedTools1 && mcpServerToolAllowedTools1 != null)
             {
                 return mcpServerToolAllowedTools1(McpServerToolAllowedTools1!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsMcpServerToolAllowedToolsVariant3 && mcpServerToolAllowedToolsVariant3 != null)
             {
-                return value3(Value3!);
+                return mcpServerToolAllowedToolsVariant3(McpServerToolAllowedToolsVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsMcpServerToolAllowedToolsVariant4 && mcpServerToolAllowedToolsVariant4 != null)
             {
-                return value4(Value4!);
+                return mcpServerToolAllowedToolsVariant4(McpServerToolAllowedToolsVariant4!);
             }
 
             return default(TResult);
@@ -178,10 +178,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? mcpServerToolAllowedToolsVariant1 = null,
             global::System.Action<global::G.McpServerToolAllowedTools1?>? mcpServerToolAllowedTools1 = null,
-            global::System.Action<object?>? value3 = null,
-            global::System.Action<object?>? value4 = null,
+            global::System.Action<object?>? mcpServerToolAllowedToolsVariant3 = null,
+            global::System.Action<object?>? mcpServerToolAllowedToolsVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -189,21 +189,21 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMcpServerToolAllowedToolsVariant1)
             {
-                value1?.Invoke(Value1!);
+                mcpServerToolAllowedToolsVariant1?.Invoke(McpServerToolAllowedToolsVariant1!);
             }
             else if (IsMcpServerToolAllowedTools1)
             {
                 mcpServerToolAllowedTools1?.Invoke(McpServerToolAllowedTools1!);
             }
-            else if (IsValue3)
+            else if (IsMcpServerToolAllowedToolsVariant3)
             {
-                value3?.Invoke(Value3!);
+                mcpServerToolAllowedToolsVariant3?.Invoke(McpServerToolAllowedToolsVariant3!);
             }
-            else if (IsValue4)
+            else if (IsMcpServerToolAllowedToolsVariant4)
             {
-                value4?.Invoke(Value4!);
+                mcpServerToolAllowedToolsVariant4?.Invoke(McpServerToolAllowedToolsVariant4!);
             }
         }
 
@@ -214,13 +214,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                McpServerToolAllowedToolsVariant1,
                 typeof(global::System.Collections.Generic.IList<string>),
                 McpServerToolAllowedTools1,
                 typeof(global::G.McpServerToolAllowedTools1),
-                Value3,
+                McpServerToolAllowedToolsVariant3,
                 typeof(object),
-                Value4,
+                McpServerToolAllowedToolsVariant4,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -238,10 +238,10 @@ namespace G
         public bool Equals(McpServerToolAllowedTools other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(McpServerToolAllowedToolsVariant1, other.McpServerToolAllowedToolsVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.McpServerToolAllowedTools1?>.Default.Equals(McpServerToolAllowedTools1, other.McpServerToolAllowedTools1) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value4, other.Value4) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(McpServerToolAllowedToolsVariant3, other.McpServerToolAllowedToolsVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(McpServerToolAllowedToolsVariant4, other.McpServerToolAllowedToolsVariant4) 
                 ;
         }
 

@@ -38,8 +38,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.ChatStreamEventType? value1 = default;
-            global::G.ChatContentDeltaEvent3m0vqs? value2 = default;
+            global::G.ChatStreamEventType? streamType = default;
+            global::G.ChatContentDeltaEvent3m0vqs? event3m0vqs = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -48,7 +48,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatStreamEventType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatStreamEventType> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatStreamEventType).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        streamType = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -63,7 +63,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentDeltaEvent3m0vqs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentDeltaEvent3m0vqs> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentDeltaEvent3m0vqs).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        event3m0vqs = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,13 +74,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (streamType == null && event3m0vqs == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatStreamEventType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatStreamEventType> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatStreamEventType).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    streamType = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -93,7 +93,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentDeltaEvent3m0vqs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentDeltaEvent3m0vqs> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentDeltaEvent3m0vqs).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    event3m0vqs = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -104,9 +104,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.ChatContentDeltaEvent(
-                value1,
+                streamType,
 
-                value2
+                event3m0vqs
                 );
 
             return __value;
@@ -121,17 +121,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsStreamType)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatStreamEventType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatStreamEventType?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatStreamEventType).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamType!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsEvent3m0vqs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentDeltaEvent3m0vqs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentDeltaEvent3m0vqs?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentDeltaEvent3m0vqs).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Event3m0vqs!, typeInfo);
             }
         }
     }

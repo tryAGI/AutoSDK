@@ -218,18 +218,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MCPTool? MCP { get; init; }
+        public global::G.MCPTool? Mcp { get; init; }
 #else
-        public global::G.MCPTool? MCP { get; }
+        public global::G.MCPTool? Mcp { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MCP))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mcp))]
 #endif
-        public bool IsMCP => MCP != null;
+        public bool IsMcp => Mcp != null;
         /// <summary>
         /// 
         /// </summary>
@@ -454,14 +454,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MCPTool?(Tool @this) => @this.MCP;
+        public static implicit operator global::G.MCPTool?(Tool @this) => @this.Mcp;
 
         /// <summary>
         /// 
         /// </summary>
         public Tool(global::G.MCPTool? value)
         {
-            MCP = value;
+            Mcp = value;
         }
 
         /// <summary>
@@ -480,7 +480,7 @@ namespace G
             global::G.ExtractDynamicVariableTool? extractDynamicVariable,
             global::G.BridgeTransferTool? bridgeTransfer,
             global::G.CancelTransferTool? cancelTransfer,
-            global::G.MCPTool? mCP
+            global::G.MCPTool? mcp
             )
         {
             EndCall = endCall;
@@ -495,14 +495,14 @@ namespace G
             ExtractDynamicVariable = extractDynamicVariable;
             BridgeTransfer = bridgeTransfer;
             CancelTransfer = cancelTransfer;
-            MCP = mCP;
+            Mcp = mcp;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MCP as object ??
+            Mcp as object ??
             CancelTransfer as object ??
             BridgeTransfer as object ??
             ExtractDynamicVariable as object ??
@@ -533,7 +533,7 @@ namespace G
             ExtractDynamicVariable?.ToString() ??
             BridgeTransfer?.ToString() ??
             CancelTransfer?.ToString() ??
-            MCP?.ToString() 
+            Mcp?.ToString() 
             ;
 
         /// <summary>
@@ -541,7 +541,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMCP || !IsEndCall && IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMCP || !IsEndCall && !IsTransferCall && IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMCP || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMCP || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMCP || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMCP || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMCP || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMCP || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMCP || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMCP || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && IsBridgeTransfer && !IsCancelTransfer && !IsMCP || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && IsCancelTransfer && !IsMCP || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && IsMCP;
+            return IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMcp || !IsEndCall && IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMcp || !IsEndCall && !IsTransferCall && IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMcp || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMcp || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMcp || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMcp || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMcp || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMcp || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMcp || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && !IsMcp || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && IsBridgeTransfer && !IsCancelTransfer && !IsMcp || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && IsCancelTransfer && !IsMcp || !IsEndCall && !IsTransferCall && !IsCheckAvailabilityCal && !IsBookAppointmentCal && !IsAgentSwap && !IsPressDigit && !IsSendSM && !IsCustom && !IsCode && !IsExtractDynamicVariable && !IsBridgeTransfer && !IsCancelTransfer && IsMcp;
         }
 
         /// <summary>
@@ -560,7 +560,7 @@ namespace G
             global::System.Func<global::G.ExtractDynamicVariableTool?, TResult>? extractDynamicVariable = null,
             global::System.Func<global::G.BridgeTransferTool?, TResult>? bridgeTransfer = null,
             global::System.Func<global::G.CancelTransferTool?, TResult>? cancelTransfer = null,
-            global::System.Func<global::G.MCPTool?, TResult>? mCP = null,
+            global::System.Func<global::G.MCPTool?, TResult>? mcp = null,
             bool validate = true)
         {
             if (validate)
@@ -616,9 +616,9 @@ namespace G
             {
                 return cancelTransfer(CancelTransfer!);
             }
-            else if (IsMCP && mCP != null)
+            else if (IsMcp && mcp != null)
             {
-                return mCP(MCP!);
+                return mcp(Mcp!);
             }
 
             return default(TResult);
@@ -640,7 +640,7 @@ namespace G
             global::System.Action<global::G.ExtractDynamicVariableTool?>? extractDynamicVariable = null,
             global::System.Action<global::G.BridgeTransferTool?>? bridgeTransfer = null,
             global::System.Action<global::G.CancelTransferTool?>? cancelTransfer = null,
-            global::System.Action<global::G.MCPTool?>? mCP = null,
+            global::System.Action<global::G.MCPTool?>? mcp = null,
             bool validate = true)
         {
             if (validate)
@@ -696,9 +696,9 @@ namespace G
             {
                 cancelTransfer?.Invoke(CancelTransfer!);
             }
-            else if (IsMCP)
+            else if (IsMcp)
             {
-                mCP?.Invoke(MCP!);
+                mcp?.Invoke(Mcp!);
             }
         }
 
@@ -733,7 +733,7 @@ namespace G
                 typeof(global::G.BridgeTransferTool),
                 CancelTransfer,
                 typeof(global::G.CancelTransferTool),
-                MCP,
+                Mcp,
                 typeof(global::G.MCPTool),
             };
             const int offset = unchecked((int)2166136261);
@@ -763,7 +763,7 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.ExtractDynamicVariableTool?>.Default.Equals(ExtractDynamicVariable, other.ExtractDynamicVariable) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BridgeTransferTool?>.Default.Equals(BridgeTransfer, other.BridgeTransfer) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.CancelTransferTool?>.Default.Equals(CancelTransfer, other.CancelTransfer) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MCPTool?>.Default.Equals(MCP, other.MCP) 
+                global::System.Collections.Generic.EqualityComparer<global::G.MCPTool?>.Default.Equals(Mcp, other.Mcp) 
                 ;
         }
 

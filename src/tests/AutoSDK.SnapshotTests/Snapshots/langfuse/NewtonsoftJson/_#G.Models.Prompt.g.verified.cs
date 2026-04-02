@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>? Value1 { get; init; }
+        public global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>? PromptVariant1 { get; init; }
 #else
-        public global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>? Value1 { get; }
+        public global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>? PromptVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PromptVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsPromptVariant1 => PromptVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? Value2 { get; init; }
+        public global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? PromptVariant2 { get; init; }
 #else
-        public global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? Value2 { get; }
+        public global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? PromptVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PromptVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsPromptVariant2 => PromptVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>?(Prompt @this) => @this.Value1;
+        public static implicit operator global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>?(Prompt @this) => @this.PromptVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public Prompt(global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>? value)
         {
-            Value1 = value;
+            PromptVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>?(Prompt @this) => @this.Value2;
+        public static implicit operator global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>?(Prompt @this) => @this.PromptVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public Prompt(global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? value)
         {
-            Value2 = value;
+            PromptVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Prompt(
-            global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>? value1,
-            global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? value2
+            global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>? promptVariant1,
+            global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? promptVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            PromptVariant1 = promptVariant1;
+            PromptVariant2 = promptVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            PromptVariant2 as object ??
+            PromptVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            PromptVariant1?.ToString() ??
+            PromptVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsPromptVariant1 && !IsPromptVariant2 || !IsPromptVariant1 && IsPromptVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>?, TResult>? value1 = null,
-            global::System.Func<global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>?, TResult>? value2 = null,
+            global::System.Func<global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>?, TResult>? promptVariant1 = null,
+            global::System.Func<global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>?, TResult>? promptVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsPromptVariant1 && promptVariant1 != null)
             {
-                return value1(Value1!);
+                return promptVariant1(PromptVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsPromptVariant2 && promptVariant2 != null)
             {
-                return value2(Value2!);
+                return promptVariant2(PromptVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>?>? value1 = null,
-            global::System.Action<global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>?>? value2 = null,
+            global::System.Action<global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>?>? promptVariant1 = null,
+            global::System.Action<global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>?>? promptVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsPromptVariant1)
             {
-                value1?.Invoke(Value1!);
+                promptVariant1?.Invoke(PromptVariant1!);
             }
-            else if (IsValue2)
+            else if (IsPromptVariant2)
             {
-                value2?.Invoke(Value2!);
+                promptVariant2?.Invoke(PromptVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                PromptVariant1,
                 typeof(global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>),
-                Value2,
+                PromptVariant2,
                 typeof(global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(Prompt other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>?>.Default.Equals(PromptVariant1, other.PromptVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>?>.Default.Equals(PromptVariant2, other.PromptVariant2) 
                 ;
         }
 

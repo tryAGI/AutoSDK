@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ChatDeveloperMessageContentVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ChatDeveloperMessageContentVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatDeveloperMessageContentVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsChatDeveloperMessageContentVariant1 => ChatDeveloperMessageContentVariant1 != null;
 
         /// <summary>
         /// 
@@ -51,25 +51,25 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ChatDeveloperMessageContent @this) => @this.Value1;
+        public static implicit operator string?(ChatDeveloperMessageContent @this) => @this.ChatDeveloperMessageContentVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatDeveloperMessageContent(string? value)
         {
-            Value1 = value;
+            ChatDeveloperMessageContentVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatDeveloperMessageContent(
-            string? value1,
+            string? chatDeveloperMessageContentVariant1,
             global::System.Collections.Generic.IList<global::G.ChatContentText>? chatDeveloperMessageContent1
             )
         {
-            Value1 = value1;
+            ChatDeveloperMessageContentVariant1 = chatDeveloperMessageContentVariant1;
             ChatDeveloperMessageContent1 = chatDeveloperMessageContent1;
         }
 
@@ -78,14 +78,14 @@ namespace G
         /// </summary>
         public object? Object =>
             ChatDeveloperMessageContent1 as object ??
-            Value1 as object 
+            ChatDeveloperMessageContentVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            ChatDeveloperMessageContentVariant1?.ToString() ??
             ChatDeveloperMessageContent1?.ToString() 
             ;
 
@@ -94,14 +94,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsChatDeveloperMessageContent1 || !IsValue1 && IsChatDeveloperMessageContent1;
+            return IsChatDeveloperMessageContentVariant1 && !IsChatDeveloperMessageContent1 || !IsChatDeveloperMessageContentVariant1 && IsChatDeveloperMessageContent1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? chatDeveloperMessageContentVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::G.ChatContentText>?, TResult>? chatDeveloperMessageContent1 = null,
             bool validate = true)
         {
@@ -110,9 +110,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsChatDeveloperMessageContentVariant1 && chatDeveloperMessageContentVariant1 != null)
             {
-                return value1(Value1!);
+                return chatDeveloperMessageContentVariant1(ChatDeveloperMessageContentVariant1!);
             }
             else if (IsChatDeveloperMessageContent1 && chatDeveloperMessageContent1 != null)
             {
@@ -126,7 +126,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? chatDeveloperMessageContentVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::G.ChatContentText>?>? chatDeveloperMessageContent1 = null,
             bool validate = true)
         {
@@ -135,9 +135,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsChatDeveloperMessageContentVariant1)
             {
-                value1?.Invoke(Value1!);
+                chatDeveloperMessageContentVariant1?.Invoke(ChatDeveloperMessageContentVariant1!);
             }
             else if (IsChatDeveloperMessageContent1)
             {
@@ -152,7 +152,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ChatDeveloperMessageContentVariant1,
                 typeof(string),
                 ChatDeveloperMessageContent1,
                 typeof(global::System.Collections.Generic.IList<global::G.ChatContentText>),
@@ -172,7 +172,7 @@ namespace G
         public bool Equals(ChatDeveloperMessageContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ChatDeveloperMessageContentVariant1, other.ChatDeveloperMessageContentVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.ChatContentText>?>.Default.Equals(ChatDeveloperMessageContent1, other.ChatDeveloperMessageContent1) 
                 ;
         }

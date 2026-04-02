@@ -14,52 +14,52 @@ namespace G
         /// A UUID.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Guid? Value1 { get; init; }
+        public global::System.Guid? Guid { get; init; }
 #else
-        public global::System.Guid? Value1 { get; }
+        public global::System.Guid? Guid { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Guid))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsGuid => Guid != null;
 
         /// <summary>
         /// A string ID.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? IdVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? IdVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IdVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsIdVariant2 => IdVariant2 != null;
 
         /// <summary>
         /// An integer ID.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? Value3 { get; init; }
+        public int? IdVariant3 { get; init; }
 #else
-        public int? Value3 { get; }
+        public int? IdVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IdVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsIdVariant3 => IdVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::System.Guid?(Id @this) => @this.Value1;
+        public static implicit operator global::System.Guid?(Id @this) => @this.Guid;
 
         /// <summary>
         /// 
         /// </summary>
         public Id(global::System.Guid? value)
         {
-            Value1 = value;
+            Guid = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(Id @this) => @this.Value2;
+        public static implicit operator string?(Id @this) => @this.IdVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public Id(string? value)
         {
-            Value2 = value;
+            IdVariant2 = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator int?(Id @this) => @this.Value3;
+        public static implicit operator int?(Id @this) => @this.IdVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public Id(int? value)
         {
-            Value3 = value;
+            IdVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Id(
-            global::System.Guid? value1,
-            string? value2,
-            int? value3
+            global::System.Guid? guid,
+            string? idVariant2,
+            int? idVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            Guid = guid;
+            IdVariant2 = idVariant2;
+            IdVariant3 = idVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            IdVariant3 as object ??
+            IdVariant2 as object ??
+            Guid as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            Guid?.ToString() ??
+            IdVariant2?.ToString() ??
+            IdVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsGuid || IsIdVariant2 || IsIdVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Guid?, TResult>? value1 = null,
-            global::System.Func<string?, TResult>? value2 = null,
-            global::System.Func<int?, TResult>? value3 = null,
+            global::System.Func<global::System.Guid?, TResult>? guid = null,
+            global::System.Func<string?, TResult>? idVariant2 = null,
+            global::System.Func<int?, TResult>? idVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsGuid && guid != null)
             {
-                return value1(Value1!);
+                return guid(Guid!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsIdVariant2 && idVariant2 != null)
             {
-                return value2(Value2!);
+                return idVariant2(IdVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsIdVariant3 && idVariant3 != null)
             {
-                return value3(Value3!);
+                return idVariant3(IdVariant3!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Guid?>? value1 = null,
-            global::System.Action<string?>? value2 = null,
-            global::System.Action<int?>? value3 = null,
+            global::System.Action<global::System.Guid?>? guid = null,
+            global::System.Action<string?>? idVariant2 = null,
+            global::System.Action<int?>? idVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsGuid)
             {
-                value1?.Invoke(Value1!);
+                guid?.Invoke(Guid!);
             }
-            else if (IsValue2)
+            else if (IsIdVariant2)
             {
-                value2?.Invoke(Value2!);
+                idVariant2?.Invoke(IdVariant2!);
             }
-            else if (IsValue3)
+            else if (IsIdVariant3)
             {
-                value3?.Invoke(Value3!);
+                idVariant3?.Invoke(IdVariant3!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Guid,
                 typeof(global::System.Guid),
-                Value2,
+                IdVariant2,
                 typeof(string),
-                Value3,
+                IdVariant3,
                 typeof(int),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(Id other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Guid?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Guid?>.Default.Equals(Guid, other.Guid) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(IdVariant2, other.IdVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(IdVariant3, other.IdVariant3) 
                 ;
         }
 

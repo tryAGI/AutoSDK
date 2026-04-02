@@ -49,8 +49,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.BedrockConfiguration? value1 = default;
-            global::G.SageMakerConfigurationVariant2? value2 = default;
+            global::G.BedrockConfiguration? bedrock = default;
+            global::G.SageMakerConfigurationVariant2? sageMakerConfigurationVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -59,7 +59,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BedrockConfiguration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BedrockConfiguration> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BedrockConfiguration).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        bedrock = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +74,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SageMakerConfigurationVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SageMakerConfigurationVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SageMakerConfigurationVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        sageMakerConfigurationVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -85,13 +85,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (bedrock == null && sageMakerConfigurationVariant2 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BedrockConfiguration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BedrockConfiguration> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BedrockConfiguration).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    bedrock = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -104,7 +104,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SageMakerConfigurationVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SageMakerConfigurationVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SageMakerConfigurationVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    sageMakerConfigurationVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -115,9 +115,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.SageMakerConfiguration(
-                value1,
+                bedrock,
 
-                value2
+                sageMakerConfigurationVariant2
                 );
 
             return __value;
@@ -132,17 +132,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsBedrock)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BedrockConfiguration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BedrockConfiguration?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BedrockConfiguration).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bedrock!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsSageMakerConfigurationVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SageMakerConfigurationVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SageMakerConfigurationVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SageMakerConfigurationVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SageMakerConfigurationVariant2!, typeInfo);
             }
         }
     }

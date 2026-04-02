@@ -14,86 +14,86 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? JSONValueVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? JSONValueVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JSONValueVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsJSONValueVariant1 => JSONValueVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public double? Value2 { get; init; }
+        public double? JSONValueVariant2 { get; init; }
 #else
-        public double? Value2 { get; }
+        public double? JSONValueVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JSONValueVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsJSONValueVariant2 => JSONValueVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public bool? Value3 { get; init; }
+        public bool? JSONValueVariant3 { get; init; }
 #else
-        public bool? Value3 { get; }
+        public bool? JSONValueVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JSONValueVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsJSONValueVariant3 => JSONValueVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::G.JSONValue>? Value4 { get; init; }
+        public global::System.Collections.Generic.IList<global::G.JSONValue>? JSONValueVariant4 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::G.JSONValue>? Value4 { get; }
+        public global::System.Collections.Generic.IList<global::G.JSONValue>? JSONValueVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JSONValueVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsJSONValueVariant4 => JSONValueVariant4 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>? Value5 { get; init; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>? JSONValueVariant5 { get; init; }
 #else
-        public global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>? Value5 { get; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>? JSONValueVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JSONValueVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsJSONValueVariant5 => JSONValueVariant5 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -102,14 +102,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(JSONValue @this) => @this.Value1;
+        public static implicit operator string?(JSONValue @this) => @this.JSONValueVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public JSONValue(string? value)
         {
-            Value1 = value;
+            JSONValueVariant1 = value;
         }
 
         /// <summary>
@@ -120,14 +120,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator double?(JSONValue @this) => @this.Value2;
+        public static implicit operator double?(JSONValue @this) => @this.JSONValueVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public JSONValue(double? value)
         {
-            Value2 = value;
+            JSONValueVariant2 = value;
         }
 
         /// <summary>
@@ -138,14 +138,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator bool?(JSONValue @this) => @this.Value3;
+        public static implicit operator bool?(JSONValue @this) => @this.JSONValueVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public JSONValue(bool? value)
         {
-            Value3 = value;
+            JSONValueVariant3 = value;
         }
 
         /// <summary>
@@ -156,54 +156,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>?(JSONValue @this) => @this.Value5;
+        public static implicit operator global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>?(JSONValue @this) => @this.JSONValueVariant5;
 
         /// <summary>
         /// 
         /// </summary>
         public JSONValue(global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>? value)
         {
-            Value5 = value;
+            JSONValueVariant5 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public JSONValue(
-            string? value1,
-            double? value2,
-            bool? value3,
-            global::System.Collections.Generic.IList<global::G.JSONValue>? value4,
-            global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>? value5
+            string? jSONValueVariant1,
+            double? jSONValueVariant2,
+            bool? jSONValueVariant3,
+            global::System.Collections.Generic.IList<global::G.JSONValue>? jSONValueVariant4,
+            global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>? jSONValueVariant5
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
+            JSONValueVariant1 = jSONValueVariant1;
+            JSONValueVariant2 = jSONValueVariant2;
+            JSONValueVariant3 = jSONValueVariant3;
+            JSONValueVariant4 = jSONValueVariant4;
+            JSONValueVariant5 = jSONValueVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            JSONValueVariant5 as object ??
+            JSONValueVariant4 as object ??
+            JSONValueVariant3 as object ??
+            JSONValueVariant2 as object ??
+            JSONValueVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString().ToLowerInvariant() ??
-            Value4?.ToString() ??
-            Value5?.ToString() 
+            JSONValueVariant1?.ToString() ??
+            JSONValueVariant2?.ToString() ??
+            JSONValueVariant3?.ToString().ToLowerInvariant() ??
+            JSONValueVariant4?.ToString() ??
+            JSONValueVariant5?.ToString() 
             ;
 
         /// <summary>
@@ -211,18 +211,18 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5;
+            return IsJSONValueVariant1 || IsJSONValueVariant2 || IsJSONValueVariant3 || IsJSONValueVariant4 || IsJSONValueVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<double?, TResult>? value2 = null,
-            global::System.Func<bool?, TResult>? value3 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.JSONValue>?, TResult>? value4 = null,
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>?, TResult>? value5 = null,
+            global::System.Func<string?, TResult>? jSONValueVariant1 = null,
+            global::System.Func<double?, TResult>? jSONValueVariant2 = null,
+            global::System.Func<bool?, TResult>? jSONValueVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.JSONValue>?, TResult>? jSONValueVariant4 = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>?, TResult>? jSONValueVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -230,25 +230,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsJSONValueVariant1 && jSONValueVariant1 != null)
             {
-                return value1(Value1!);
+                return jSONValueVariant1(JSONValueVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsJSONValueVariant2 && jSONValueVariant2 != null)
             {
-                return value2(Value2!);
+                return jSONValueVariant2(JSONValueVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsJSONValueVariant3 && jSONValueVariant3 != null)
             {
-                return value3(Value3!);
+                return jSONValueVariant3(JSONValueVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsJSONValueVariant4 && jSONValueVariant4 != null)
             {
-                return value4(Value4!);
+                return jSONValueVariant4(JSONValueVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsJSONValueVariant5 && jSONValueVariant5 != null)
             {
-                return value5(Value5!);
+                return jSONValueVariant5(JSONValueVariant5!);
             }
 
             return default(TResult);
@@ -258,11 +258,11 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<double?>? value2 = null,
-            global::System.Action<bool?>? value3 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.JSONValue>?>? value4 = null,
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>?>? value5 = null,
+            global::System.Action<string?>? jSONValueVariant1 = null,
+            global::System.Action<double?>? jSONValueVariant2 = null,
+            global::System.Action<bool?>? jSONValueVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.JSONValue>?>? jSONValueVariant4 = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>?>? jSONValueVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -270,25 +270,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsJSONValueVariant1)
             {
-                value1?.Invoke(Value1!);
+                jSONValueVariant1?.Invoke(JSONValueVariant1!);
             }
-            else if (IsValue2)
+            else if (IsJSONValueVariant2)
             {
-                value2?.Invoke(Value2!);
+                jSONValueVariant2?.Invoke(JSONValueVariant2!);
             }
-            else if (IsValue3)
+            else if (IsJSONValueVariant3)
             {
-                value3?.Invoke(Value3!);
+                jSONValueVariant3?.Invoke(JSONValueVariant3!);
             }
-            else if (IsValue4)
+            else if (IsJSONValueVariant4)
             {
-                value4?.Invoke(Value4!);
+                jSONValueVariant4?.Invoke(JSONValueVariant4!);
             }
-            else if (IsValue5)
+            else if (IsJSONValueVariant5)
             {
-                value5?.Invoke(Value5!);
+                jSONValueVariant5?.Invoke(JSONValueVariant5!);
             }
         }
 
@@ -299,15 +299,15 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                JSONValueVariant1,
                 typeof(string),
-                Value2,
+                JSONValueVariant2,
                 typeof(double),
-                Value3,
+                JSONValueVariant3,
                 typeof(bool),
-                Value4,
+                JSONValueVariant4,
                 typeof(global::System.Collections.Generic.IList<global::G.JSONValue>),
-                Value5,
+                JSONValueVariant5,
                 typeof(global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>),
             };
             const int offset = unchecked((int)2166136261);
@@ -325,11 +325,11 @@ namespace G
         public bool Equals(JSONValue other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.JSONValue>?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>?>.Default.Equals(Value5, other.Value5) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(JSONValueVariant1, other.JSONValueVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(JSONValueVariant2, other.JSONValueVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(JSONValueVariant3, other.JSONValueVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.JSONValue>?>.Default.Equals(JSONValueVariant4, other.JSONValueVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>?>.Default.Equals(JSONValueVariant5, other.JSONValueVariant5) 
                 ;
         }
 

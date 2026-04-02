@@ -31,35 +31,35 @@ namespace G
         /// OpenAI External LLM
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LLMConfigVariant2? Value2 { get; init; }
+        public global::G.LLMConfigVariant2? LLMConfigVariant2 { get; init; }
 #else
-        public global::G.LLMConfigVariant2? Value2 { get; }
+        public global::G.LLMConfigVariant2? LLMConfigVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LLMConfigVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsLLMConfigVariant2 => LLMConfigVariant2 != null;
 
         /// <summary>
         /// Azure OpenAI External LLM
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.LLMConfigVariant3? Value3 { get; init; }
+        public global::G.LLMConfigVariant3? LLMConfigVariant3 { get; init; }
 #else
-        public global::G.LLMConfigVariant3? Value3 { get; }
+        public global::G.LLMConfigVariant3? LLMConfigVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LLMConfigVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsLLMConfigVariant3 => LLMConfigVariant3 != null;
 
         /// <summary>
         /// 
@@ -120,14 +120,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LLMConfigVariant2?(LLMConfig @this) => @this.Value2;
+        public static implicit operator global::G.LLMConfigVariant2?(LLMConfig @this) => @this.LLMConfigVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public LLMConfig(global::G.LLMConfigVariant2? value)
         {
-            Value2 = value;
+            LLMConfigVariant2 = value;
         }
 
         /// <summary>
@@ -138,14 +138,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.LLMConfigVariant3?(LLMConfig @this) => @this.Value3;
+        public static implicit operator global::G.LLMConfigVariant3?(LLMConfig @this) => @this.LLMConfigVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public LLMConfig(global::G.LLMConfigVariant3? value)
         {
-            Value3 = value;
+            LLMConfigVariant3 = value;
         }
 
         /// <summary>
@@ -189,15 +189,15 @@ namespace G
         /// </summary>
         public LLMConfig(
             global::G.LLMConfigOpenAI? openAI,
-            global::G.LLMConfigVariant2? value2,
-            global::G.LLMConfigVariant3? value3,
+            global::G.LLMConfigVariant2? lLMConfigVariant2,
+            global::G.LLMConfigVariant3? lLMConfigVariant3,
             global::G.LLMConfigDId? dId,
             global::G.LLMConfigGoogle? google
             )
         {
             OpenAI = openAI;
-            Value2 = value2;
-            Value3 = value3;
+            LLMConfigVariant2 = lLMConfigVariant2;
+            LLMConfigVariant3 = lLMConfigVariant3;
             DId = dId;
             Google = google;
         }
@@ -208,8 +208,8 @@ namespace G
         public object? Object =>
             Google as object ??
             DId as object ??
-            Value3 as object ??
-            Value2 as object ??
+            LLMConfigVariant3 as object ??
+            LLMConfigVariant2 as object ??
             OpenAI as object 
             ;
 
@@ -218,8 +218,8 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             OpenAI?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
+            LLMConfigVariant2?.ToString() ??
+            LLMConfigVariant3?.ToString() ??
             DId?.ToString() ??
             Google?.ToString() 
             ;
@@ -229,7 +229,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsOpenAI || IsValue2 || IsValue3 || IsDId || IsGoogle;
+            return IsOpenAI || IsLLMConfigVariant2 || IsLLMConfigVariant3 || IsDId || IsGoogle;
         }
 
         /// <summary>
@@ -237,8 +237,8 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.LLMConfigOpenAI?, TResult>? openAI = null,
-            global::System.Func<global::G.LLMConfigVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.LLMConfigVariant3?, TResult>? value3 = null,
+            global::System.Func<global::G.LLMConfigVariant2?, TResult>? lLMConfigVariant2 = null,
+            global::System.Func<global::G.LLMConfigVariant3?, TResult>? lLMConfigVariant3 = null,
             global::System.Func<global::G.LLMConfigDId?, TResult>? dId = null,
             global::System.Func<global::G.LLMConfigGoogle?, TResult>? google = null,
             bool validate = true)
@@ -252,13 +252,13 @@ namespace G
             {
                 return openAI(OpenAI!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsLLMConfigVariant2 && lLMConfigVariant2 != null)
             {
-                return value2(Value2!);
+                return lLMConfigVariant2(LLMConfigVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsLLMConfigVariant3 && lLMConfigVariant3 != null)
             {
-                return value3(Value3!);
+                return lLMConfigVariant3(LLMConfigVariant3!);
             }
             else if (IsDId && dId != null)
             {
@@ -277,8 +277,8 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.LLMConfigOpenAI?>? openAI = null,
-            global::System.Action<global::G.LLMConfigVariant2?>? value2 = null,
-            global::System.Action<global::G.LLMConfigVariant3?>? value3 = null,
+            global::System.Action<global::G.LLMConfigVariant2?>? lLMConfigVariant2 = null,
+            global::System.Action<global::G.LLMConfigVariant3?>? lLMConfigVariant3 = null,
             global::System.Action<global::G.LLMConfigDId?>? dId = null,
             global::System.Action<global::G.LLMConfigGoogle?>? google = null,
             bool validate = true)
@@ -292,13 +292,13 @@ namespace G
             {
                 openAI?.Invoke(OpenAI!);
             }
-            else if (IsValue2)
+            else if (IsLLMConfigVariant2)
             {
-                value2?.Invoke(Value2!);
+                lLMConfigVariant2?.Invoke(LLMConfigVariant2!);
             }
-            else if (IsValue3)
+            else if (IsLLMConfigVariant3)
             {
-                value3?.Invoke(Value3!);
+                lLMConfigVariant3?.Invoke(LLMConfigVariant3!);
             }
             else if (IsDId)
             {
@@ -319,9 +319,9 @@ namespace G
             {
                 OpenAI,
                 typeof(global::G.LLMConfigOpenAI),
-                Value2,
+                LLMConfigVariant2,
                 typeof(global::G.LLMConfigVariant2),
-                Value3,
+                LLMConfigVariant3,
                 typeof(global::G.LLMConfigVariant3),
                 DId,
                 typeof(global::G.LLMConfigDId),
@@ -344,8 +344,8 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigOpenAI?>.Default.Equals(OpenAI, other.OpenAI) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigVariant3?>.Default.Equals(Value3, other.Value3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigVariant2?>.Default.Equals(LLMConfigVariant2, other.LLMConfigVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigVariant3?>.Default.Equals(LLMConfigVariant3, other.LLMConfigVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigDId?>.Default.Equals(DId, other.DId) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.LLMConfigGoogle?>.Default.Equals(Google, other.Google) 
                 ;

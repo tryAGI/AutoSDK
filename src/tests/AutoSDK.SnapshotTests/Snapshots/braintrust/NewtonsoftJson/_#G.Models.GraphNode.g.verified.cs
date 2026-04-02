@@ -14,137 +14,137 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraphNodeVariant1? Value1 { get; init; }
+        public global::G.GraphNodeVariant1? GraphNodeVariant1 { get; init; }
 #else
-        public global::G.GraphNodeVariant1? Value1 { get; }
+        public global::G.GraphNodeVariant1? GraphNodeVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsGraphNodeVariant1 => GraphNodeVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraphNodeVariant2? Value2 { get; init; }
+        public global::G.GraphNodeVariant2? GraphNodeVariant2 { get; init; }
 #else
-        public global::G.GraphNodeVariant2? Value2 { get; }
+        public global::G.GraphNodeVariant2? GraphNodeVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsGraphNodeVariant2 => GraphNodeVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraphNodeVariant3? Value3 { get; init; }
+        public global::G.GraphNodeVariant3? GraphNodeVariant3 { get; init; }
 #else
-        public global::G.GraphNodeVariant3? Value3 { get; }
+        public global::G.GraphNodeVariant3? GraphNodeVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsGraphNodeVariant3 => GraphNodeVariant3 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraphNodeVariant4? Value4 { get; init; }
+        public global::G.GraphNodeVariant4? GraphNodeVariant4 { get; init; }
 #else
-        public global::G.GraphNodeVariant4? Value4 { get; }
+        public global::G.GraphNodeVariant4? GraphNodeVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsGraphNodeVariant4 => GraphNodeVariant4 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraphNodeVariant5? Value5 { get; init; }
+        public global::G.GraphNodeVariant5? GraphNodeVariant5 { get; init; }
 #else
-        public global::G.GraphNodeVariant5? Value5 { get; }
+        public global::G.GraphNodeVariant5? GraphNodeVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsGraphNodeVariant5 => GraphNodeVariant5 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraphNodeVariant6? Value6 { get; init; }
+        public global::G.GraphNodeVariant6? GraphNodeVariant6 { get; init; }
 #else
-        public global::G.GraphNodeVariant6? Value6 { get; }
+        public global::G.GraphNodeVariant6? GraphNodeVariant6 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant6))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsGraphNodeVariant6 => GraphNodeVariant6 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraphNodeVariant7? Value7 { get; init; }
+        public global::G.GraphNodeVariant7? GraphNodeVariant7 { get; init; }
 #else
-        public global::G.GraphNodeVariant7? Value7 { get; }
+        public global::G.GraphNodeVariant7? GraphNodeVariant7 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant7))]
 #endif
-        public bool IsValue7 => Value7 != null;
+        public bool IsGraphNodeVariant7 => GraphNodeVariant7 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GraphNodeVariant8? Value8 { get; init; }
+        public global::G.GraphNodeVariant8? GraphNodeVariant8 { get; init; }
 #else
-        public global::G.GraphNodeVariant8? Value8 { get; }
+        public global::G.GraphNodeVariant8? GraphNodeVariant8 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant8))]
 #endif
-        public bool IsValue8 => Value8 != null;
+        public bool IsGraphNodeVariant8 => GraphNodeVariant8 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -153,14 +153,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraphNodeVariant1?(GraphNode @this) => @this.Value1;
+        public static implicit operator global::G.GraphNodeVariant1?(GraphNode @this) => @this.GraphNodeVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public GraphNode(global::G.GraphNodeVariant1? value)
         {
-            Value1 = value;
+            GraphNodeVariant1 = value;
         }
 
         /// <summary>
@@ -171,14 +171,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraphNodeVariant2?(GraphNode @this) => @this.Value2;
+        public static implicit operator global::G.GraphNodeVariant2?(GraphNode @this) => @this.GraphNodeVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public GraphNode(global::G.GraphNodeVariant2? value)
         {
-            Value2 = value;
+            GraphNodeVariant2 = value;
         }
 
         /// <summary>
@@ -189,14 +189,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraphNodeVariant3?(GraphNode @this) => @this.Value3;
+        public static implicit operator global::G.GraphNodeVariant3?(GraphNode @this) => @this.GraphNodeVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public GraphNode(global::G.GraphNodeVariant3? value)
         {
-            Value3 = value;
+            GraphNodeVariant3 = value;
         }
 
         /// <summary>
@@ -207,14 +207,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraphNodeVariant4?(GraphNode @this) => @this.Value4;
+        public static implicit operator global::G.GraphNodeVariant4?(GraphNode @this) => @this.GraphNodeVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public GraphNode(global::G.GraphNodeVariant4? value)
         {
-            Value4 = value;
+            GraphNodeVariant4 = value;
         }
 
         /// <summary>
@@ -225,14 +225,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraphNodeVariant5?(GraphNode @this) => @this.Value5;
+        public static implicit operator global::G.GraphNodeVariant5?(GraphNode @this) => @this.GraphNodeVariant5;
 
         /// <summary>
         /// 
         /// </summary>
         public GraphNode(global::G.GraphNodeVariant5? value)
         {
-            Value5 = value;
+            GraphNodeVariant5 = value;
         }
 
         /// <summary>
@@ -243,14 +243,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraphNodeVariant6?(GraphNode @this) => @this.Value6;
+        public static implicit operator global::G.GraphNodeVariant6?(GraphNode @this) => @this.GraphNodeVariant6;
 
         /// <summary>
         /// 
         /// </summary>
         public GraphNode(global::G.GraphNodeVariant6? value)
         {
-            Value6 = value;
+            GraphNodeVariant6 = value;
         }
 
         /// <summary>
@@ -261,14 +261,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraphNodeVariant7?(GraphNode @this) => @this.Value7;
+        public static implicit operator global::G.GraphNodeVariant7?(GraphNode @this) => @this.GraphNodeVariant7;
 
         /// <summary>
         /// 
         /// </summary>
         public GraphNode(global::G.GraphNodeVariant7? value)
         {
-            Value7 = value;
+            GraphNodeVariant7 = value;
         }
 
         /// <summary>
@@ -279,66 +279,66 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GraphNodeVariant8?(GraphNode @this) => @this.Value8;
+        public static implicit operator global::G.GraphNodeVariant8?(GraphNode @this) => @this.GraphNodeVariant8;
 
         /// <summary>
         /// 
         /// </summary>
         public GraphNode(global::G.GraphNodeVariant8? value)
         {
-            Value8 = value;
+            GraphNodeVariant8 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public GraphNode(
-            global::G.GraphNodeVariant1? value1,
-            global::G.GraphNodeVariant2? value2,
-            global::G.GraphNodeVariant3? value3,
-            global::G.GraphNodeVariant4? value4,
-            global::G.GraphNodeVariant5? value5,
-            global::G.GraphNodeVariant6? value6,
-            global::G.GraphNodeVariant7? value7,
-            global::G.GraphNodeVariant8? value8
+            global::G.GraphNodeVariant1? graphNodeVariant1,
+            global::G.GraphNodeVariant2? graphNodeVariant2,
+            global::G.GraphNodeVariant3? graphNodeVariant3,
+            global::G.GraphNodeVariant4? graphNodeVariant4,
+            global::G.GraphNodeVariant5? graphNodeVariant5,
+            global::G.GraphNodeVariant6? graphNodeVariant6,
+            global::G.GraphNodeVariant7? graphNodeVariant7,
+            global::G.GraphNodeVariant8? graphNodeVariant8
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
-            Value7 = value7;
-            Value8 = value8;
+            GraphNodeVariant1 = graphNodeVariant1;
+            GraphNodeVariant2 = graphNodeVariant2;
+            GraphNodeVariant3 = graphNodeVariant3;
+            GraphNodeVariant4 = graphNodeVariant4;
+            GraphNodeVariant5 = graphNodeVariant5;
+            GraphNodeVariant6 = graphNodeVariant6;
+            GraphNodeVariant7 = graphNodeVariant7;
+            GraphNodeVariant8 = graphNodeVariant8;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value8 as object ??
-            Value7 as object ??
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            GraphNodeVariant8 as object ??
+            GraphNodeVariant7 as object ??
+            GraphNodeVariant6 as object ??
+            GraphNodeVariant5 as object ??
+            GraphNodeVariant4 as object ??
+            GraphNodeVariant3 as object ??
+            GraphNodeVariant2 as object ??
+            GraphNodeVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() ??
-            Value7?.ToString() ??
-            Value8?.ToString() 
+            GraphNodeVariant1?.ToString() ??
+            GraphNodeVariant2?.ToString() ??
+            GraphNodeVariant3?.ToString() ??
+            GraphNodeVariant4?.ToString() ??
+            GraphNodeVariant5?.ToString() ??
+            GraphNodeVariant6?.ToString() ??
+            GraphNodeVariant7?.ToString() ??
+            GraphNodeVariant8?.ToString() 
             ;
 
         /// <summary>
@@ -346,21 +346,21 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8;
+            return IsGraphNodeVariant1 || IsGraphNodeVariant2 || IsGraphNodeVariant3 || IsGraphNodeVariant4 || IsGraphNodeVariant5 || IsGraphNodeVariant6 || IsGraphNodeVariant7 || IsGraphNodeVariant8;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GraphNodeVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.GraphNodeVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.GraphNodeVariant3?, TResult>? value3 = null,
-            global::System.Func<global::G.GraphNodeVariant4?, TResult>? value4 = null,
-            global::System.Func<global::G.GraphNodeVariant5?, TResult>? value5 = null,
-            global::System.Func<global::G.GraphNodeVariant6?, TResult>? value6 = null,
-            global::System.Func<global::G.GraphNodeVariant7?, TResult>? value7 = null,
-            global::System.Func<global::G.GraphNodeVariant8?, TResult>? value8 = null,
+            global::System.Func<global::G.GraphNodeVariant1?, TResult>? graphNodeVariant1 = null,
+            global::System.Func<global::G.GraphNodeVariant2?, TResult>? graphNodeVariant2 = null,
+            global::System.Func<global::G.GraphNodeVariant3?, TResult>? graphNodeVariant3 = null,
+            global::System.Func<global::G.GraphNodeVariant4?, TResult>? graphNodeVariant4 = null,
+            global::System.Func<global::G.GraphNodeVariant5?, TResult>? graphNodeVariant5 = null,
+            global::System.Func<global::G.GraphNodeVariant6?, TResult>? graphNodeVariant6 = null,
+            global::System.Func<global::G.GraphNodeVariant7?, TResult>? graphNodeVariant7 = null,
+            global::System.Func<global::G.GraphNodeVariant8?, TResult>? graphNodeVariant8 = null,
             bool validate = true)
         {
             if (validate)
@@ -368,37 +368,37 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsGraphNodeVariant1 && graphNodeVariant1 != null)
             {
-                return value1(Value1!);
+                return graphNodeVariant1(GraphNodeVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsGraphNodeVariant2 && graphNodeVariant2 != null)
             {
-                return value2(Value2!);
+                return graphNodeVariant2(GraphNodeVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsGraphNodeVariant3 && graphNodeVariant3 != null)
             {
-                return value3(Value3!);
+                return graphNodeVariant3(GraphNodeVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsGraphNodeVariant4 && graphNodeVariant4 != null)
             {
-                return value4(Value4!);
+                return graphNodeVariant4(GraphNodeVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsGraphNodeVariant5 && graphNodeVariant5 != null)
             {
-                return value5(Value5!);
+                return graphNodeVariant5(GraphNodeVariant5!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsGraphNodeVariant6 && graphNodeVariant6 != null)
             {
-                return value6(Value6!);
+                return graphNodeVariant6(GraphNodeVariant6!);
             }
-            else if (IsValue7 && value7 != null)
+            else if (IsGraphNodeVariant7 && graphNodeVariant7 != null)
             {
-                return value7(Value7!);
+                return graphNodeVariant7(GraphNodeVariant7!);
             }
-            else if (IsValue8 && value8 != null)
+            else if (IsGraphNodeVariant8 && graphNodeVariant8 != null)
             {
-                return value8(Value8!);
+                return graphNodeVariant8(GraphNodeVariant8!);
             }
 
             return default(TResult);
@@ -408,14 +408,14 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GraphNodeVariant1?>? value1 = null,
-            global::System.Action<global::G.GraphNodeVariant2?>? value2 = null,
-            global::System.Action<global::G.GraphNodeVariant3?>? value3 = null,
-            global::System.Action<global::G.GraphNodeVariant4?>? value4 = null,
-            global::System.Action<global::G.GraphNodeVariant5?>? value5 = null,
-            global::System.Action<global::G.GraphNodeVariant6?>? value6 = null,
-            global::System.Action<global::G.GraphNodeVariant7?>? value7 = null,
-            global::System.Action<global::G.GraphNodeVariant8?>? value8 = null,
+            global::System.Action<global::G.GraphNodeVariant1?>? graphNodeVariant1 = null,
+            global::System.Action<global::G.GraphNodeVariant2?>? graphNodeVariant2 = null,
+            global::System.Action<global::G.GraphNodeVariant3?>? graphNodeVariant3 = null,
+            global::System.Action<global::G.GraphNodeVariant4?>? graphNodeVariant4 = null,
+            global::System.Action<global::G.GraphNodeVariant5?>? graphNodeVariant5 = null,
+            global::System.Action<global::G.GraphNodeVariant6?>? graphNodeVariant6 = null,
+            global::System.Action<global::G.GraphNodeVariant7?>? graphNodeVariant7 = null,
+            global::System.Action<global::G.GraphNodeVariant8?>? graphNodeVariant8 = null,
             bool validate = true)
         {
             if (validate)
@@ -423,37 +423,37 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsGraphNodeVariant1)
             {
-                value1?.Invoke(Value1!);
+                graphNodeVariant1?.Invoke(GraphNodeVariant1!);
             }
-            else if (IsValue2)
+            else if (IsGraphNodeVariant2)
             {
-                value2?.Invoke(Value2!);
+                graphNodeVariant2?.Invoke(GraphNodeVariant2!);
             }
-            else if (IsValue3)
+            else if (IsGraphNodeVariant3)
             {
-                value3?.Invoke(Value3!);
+                graphNodeVariant3?.Invoke(GraphNodeVariant3!);
             }
-            else if (IsValue4)
+            else if (IsGraphNodeVariant4)
             {
-                value4?.Invoke(Value4!);
+                graphNodeVariant4?.Invoke(GraphNodeVariant4!);
             }
-            else if (IsValue5)
+            else if (IsGraphNodeVariant5)
             {
-                value5?.Invoke(Value5!);
+                graphNodeVariant5?.Invoke(GraphNodeVariant5!);
             }
-            else if (IsValue6)
+            else if (IsGraphNodeVariant6)
             {
-                value6?.Invoke(Value6!);
+                graphNodeVariant6?.Invoke(GraphNodeVariant6!);
             }
-            else if (IsValue7)
+            else if (IsGraphNodeVariant7)
             {
-                value7?.Invoke(Value7!);
+                graphNodeVariant7?.Invoke(GraphNodeVariant7!);
             }
-            else if (IsValue8)
+            else if (IsGraphNodeVariant8)
             {
-                value8?.Invoke(Value8!);
+                graphNodeVariant8?.Invoke(GraphNodeVariant8!);
             }
         }
 
@@ -464,21 +464,21 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                GraphNodeVariant1,
                 typeof(global::G.GraphNodeVariant1),
-                Value2,
+                GraphNodeVariant2,
                 typeof(global::G.GraphNodeVariant2),
-                Value3,
+                GraphNodeVariant3,
                 typeof(global::G.GraphNodeVariant3),
-                Value4,
+                GraphNodeVariant4,
                 typeof(global::G.GraphNodeVariant4),
-                Value5,
+                GraphNodeVariant5,
                 typeof(global::G.GraphNodeVariant5),
-                Value6,
+                GraphNodeVariant6,
                 typeof(global::G.GraphNodeVariant6),
-                Value7,
+                GraphNodeVariant7,
                 typeof(global::G.GraphNodeVariant7),
-                Value8,
+                GraphNodeVariant8,
                 typeof(global::G.GraphNodeVariant8),
             };
             const int offset = unchecked((int)2166136261);
@@ -496,14 +496,14 @@ namespace G
         public bool Equals(GraphNode other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant4?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant5?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant6?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant7?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant8?>.Default.Equals(Value8, other.Value8) 
+                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant1?>.Default.Equals(GraphNodeVariant1, other.GraphNodeVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant2?>.Default.Equals(GraphNodeVariant2, other.GraphNodeVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant3?>.Default.Equals(GraphNodeVariant3, other.GraphNodeVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant4?>.Default.Equals(GraphNodeVariant4, other.GraphNodeVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant5?>.Default.Equals(GraphNodeVariant5, other.GraphNodeVariant5) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant6?>.Default.Equals(GraphNodeVariant6, other.GraphNodeVariant6) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant7?>.Default.Equals(GraphNodeVariant7, other.GraphNodeVariant7) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GraphNodeVariant8?>.Default.Equals(GraphNodeVariant8, other.GraphNodeVariant8) 
                 ;
         }
 

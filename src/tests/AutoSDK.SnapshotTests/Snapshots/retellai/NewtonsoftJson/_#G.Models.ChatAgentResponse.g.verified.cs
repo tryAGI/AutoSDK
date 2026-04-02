@@ -14,52 +14,52 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatAgentResponseVariant1? Value1 { get; init; }
+        public global::G.ChatAgentResponseVariant1? ChatAgentResponseVariant1 { get; init; }
 #else
-        public global::G.ChatAgentResponseVariant1? Value1 { get; }
+        public global::G.ChatAgentResponseVariant1? ChatAgentResponseVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatAgentResponseVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsChatAgentResponseVariant1 => ChatAgentResponseVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatAgentRequest? Value2 { get; init; }
+        public global::G.ChatAgentRequest? Request { get; init; }
 #else
-        public global::G.ChatAgentRequest? Value2 { get; }
+        public global::G.ChatAgentRequest? Request { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Request))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsRequest => Request != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatAgentResponseVariant3? Value3 { get; init; }
+        public global::G.ChatAgentResponseVariant3? ChatAgentResponseVariant3 { get; init; }
 #else
-        public global::G.ChatAgentResponseVariant3? Value3 { get; }
+        public global::G.ChatAgentResponseVariant3? ChatAgentResponseVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatAgentResponseVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsChatAgentResponseVariant3 => ChatAgentResponseVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatAgentResponseVariant1?(ChatAgentResponse @this) => @this.Value1;
+        public static implicit operator global::G.ChatAgentResponseVariant1?(ChatAgentResponse @this) => @this.ChatAgentResponseVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatAgentResponse(global::G.ChatAgentResponseVariant1? value)
         {
-            Value1 = value;
+            ChatAgentResponseVariant1 = value;
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatAgentRequest?(ChatAgentResponse @this) => @this.Value2;
+        public static implicit operator global::G.ChatAgentRequest?(ChatAgentResponse @this) => @this.Request;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatAgentResponse(global::G.ChatAgentRequest? value)
         {
-            Value2 = value;
+            Request = value;
         }
 
         /// <summary>
@@ -104,46 +104,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatAgentResponseVariant3?(ChatAgentResponse @this) => @this.Value3;
+        public static implicit operator global::G.ChatAgentResponseVariant3?(ChatAgentResponse @this) => @this.ChatAgentResponseVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatAgentResponse(global::G.ChatAgentResponseVariant3? value)
         {
-            Value3 = value;
+            ChatAgentResponseVariant3 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatAgentResponse(
-            global::G.ChatAgentResponseVariant1? value1,
-            global::G.ChatAgentRequest? value2,
-            global::G.ChatAgentResponseVariant3? value3
+            global::G.ChatAgentResponseVariant1? chatAgentResponseVariant1,
+            global::G.ChatAgentRequest? request,
+            global::G.ChatAgentResponseVariant3? chatAgentResponseVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            ChatAgentResponseVariant1 = chatAgentResponseVariant1;
+            Request = request;
+            ChatAgentResponseVariant3 = chatAgentResponseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ChatAgentResponseVariant3 as object ??
+            Request as object ??
+            ChatAgentResponseVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            ChatAgentResponseVariant1?.ToString() ??
+            Request?.ToString() ??
+            ChatAgentResponseVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -151,16 +151,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2 && IsValue3;
+            return IsChatAgentResponseVariant1 && IsRequest && IsChatAgentResponseVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatAgentResponseVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.ChatAgentRequest?, TResult>? value2 = null,
-            global::System.Func<global::G.ChatAgentResponseVariant3?, TResult>? value3 = null,
+            global::System.Func<global::G.ChatAgentResponseVariant1?, TResult>? chatAgentResponseVariant1 = null,
+            global::System.Func<global::G.ChatAgentRequest?, TResult>? request = null,
+            global::System.Func<global::G.ChatAgentResponseVariant3?, TResult>? chatAgentResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -168,17 +168,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsChatAgentResponseVariant1 && chatAgentResponseVariant1 != null)
             {
-                return value1(Value1!);
+                return chatAgentResponseVariant1(ChatAgentResponseVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsRequest && request != null)
             {
-                return value2(Value2!);
+                return request(Request!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsChatAgentResponseVariant3 && chatAgentResponseVariant3 != null)
             {
-                return value3(Value3!);
+                return chatAgentResponseVariant3(ChatAgentResponseVariant3!);
             }
 
             return default(TResult);
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatAgentResponseVariant1?>? value1 = null,
-            global::System.Action<global::G.ChatAgentRequest?>? value2 = null,
-            global::System.Action<global::G.ChatAgentResponseVariant3?>? value3 = null,
+            global::System.Action<global::G.ChatAgentResponseVariant1?>? chatAgentResponseVariant1 = null,
+            global::System.Action<global::G.ChatAgentRequest?>? request = null,
+            global::System.Action<global::G.ChatAgentResponseVariant3?>? chatAgentResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,17 +198,17 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsChatAgentResponseVariant1)
             {
-                value1?.Invoke(Value1!);
+                chatAgentResponseVariant1?.Invoke(ChatAgentResponseVariant1!);
             }
-            else if (IsValue2)
+            else if (IsRequest)
             {
-                value2?.Invoke(Value2!);
+                request?.Invoke(Request!);
             }
-            else if (IsValue3)
+            else if (IsChatAgentResponseVariant3)
             {
-                value3?.Invoke(Value3!);
+                chatAgentResponseVariant3?.Invoke(ChatAgentResponseVariant3!);
             }
         }
 
@@ -219,11 +219,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                ChatAgentResponseVariant1,
                 typeof(global::G.ChatAgentResponseVariant1),
-                Value2,
+                Request,
                 typeof(global::G.ChatAgentRequest),
-                Value3,
+                ChatAgentResponseVariant3,
                 typeof(global::G.ChatAgentResponseVariant3),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(ChatAgentResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatAgentResponseVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatAgentRequest?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatAgentResponseVariant3?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatAgentResponseVariant1?>.Default.Equals(ChatAgentResponseVariant1, other.ChatAgentResponseVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatAgentRequest?>.Default.Equals(Request, other.Request) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatAgentResponseVariant3?>.Default.Equals(ChatAgentResponseVariant3, other.ChatAgentResponseVariant3) 
                 ;
         }
 

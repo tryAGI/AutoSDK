@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>? Value1 { get; init; }
+        public global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>? GetExpressiveAvatarDtoVariant1 { get; init; }
 #else
-        public global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>? Value1 { get; }
+        public global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>? GetExpressiveAvatarDtoVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetExpressiveAvatarDtoVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsGetExpressiveAvatarDtoVariant1 => GetExpressiveAvatarDtoVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GetExpressiveAvatarDtoVariant2? Value2 { get; init; }
+        public global::G.GetExpressiveAvatarDtoVariant2? GetExpressiveAvatarDtoVariant2 { get; init; }
 #else
-        public global::G.GetExpressiveAvatarDtoVariant2? Value2 { get; }
+        public global::G.GetExpressiveAvatarDtoVariant2? GetExpressiveAvatarDtoVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetExpressiveAvatarDtoVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsGetExpressiveAvatarDtoVariant2 => GetExpressiveAvatarDtoVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>?(GetExpressiveAvatarDto @this) => @this.Value1;
+        public static implicit operator global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>?(GetExpressiveAvatarDto @this) => @this.GetExpressiveAvatarDtoVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public GetExpressiveAvatarDto(global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>? value)
         {
-            Value1 = value;
+            GetExpressiveAvatarDtoVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GetExpressiveAvatarDtoVariant2?(GetExpressiveAvatarDto @this) => @this.Value2;
+        public static implicit operator global::G.GetExpressiveAvatarDtoVariant2?(GetExpressiveAvatarDto @this) => @this.GetExpressiveAvatarDtoVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public GetExpressiveAvatarDto(global::G.GetExpressiveAvatarDtoVariant2? value)
         {
-            Value2 = value;
+            GetExpressiveAvatarDtoVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public GetExpressiveAvatarDto(
-            global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>? value1,
-            global::G.GetExpressiveAvatarDtoVariant2? value2
+            global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>? getExpressiveAvatarDtoVariant1,
+            global::G.GetExpressiveAvatarDtoVariant2? getExpressiveAvatarDtoVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            GetExpressiveAvatarDtoVariant1 = getExpressiveAvatarDtoVariant1;
+            GetExpressiveAvatarDtoVariant2 = getExpressiveAvatarDtoVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            GetExpressiveAvatarDtoVariant2 as object ??
+            GetExpressiveAvatarDtoVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            GetExpressiveAvatarDtoVariant1?.ToString() ??
+            GetExpressiveAvatarDtoVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsGetExpressiveAvatarDtoVariant1 && IsGetExpressiveAvatarDtoVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>?, TResult>? value1 = null,
-            global::System.Func<global::G.GetExpressiveAvatarDtoVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>?, TResult>? getExpressiveAvatarDtoVariant1 = null,
+            global::System.Func<global::G.GetExpressiveAvatarDtoVariant2?, TResult>? getExpressiveAvatarDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsGetExpressiveAvatarDtoVariant1 && getExpressiveAvatarDtoVariant1 != null)
             {
-                return value1(Value1!);
+                return getExpressiveAvatarDtoVariant1(GetExpressiveAvatarDtoVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsGetExpressiveAvatarDtoVariant2 && getExpressiveAvatarDtoVariant2 != null)
             {
-                return value2(Value2!);
+                return getExpressiveAvatarDtoVariant2(GetExpressiveAvatarDtoVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>?>? value1 = null,
-            global::System.Action<global::G.GetExpressiveAvatarDtoVariant2?>? value2 = null,
+            global::System.Action<global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>?>? getExpressiveAvatarDtoVariant1 = null,
+            global::System.Action<global::G.GetExpressiveAvatarDtoVariant2?>? getExpressiveAvatarDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsGetExpressiveAvatarDtoVariant1)
             {
-                value1?.Invoke(Value1!);
+                getExpressiveAvatarDtoVariant1?.Invoke(GetExpressiveAvatarDtoVariant1!);
             }
-            else if (IsValue2)
+            else if (IsGetExpressiveAvatarDtoVariant2)
             {
-                value2?.Invoke(Value2!);
+                getExpressiveAvatarDtoVariant2?.Invoke(GetExpressiveAvatarDtoVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                GetExpressiveAvatarDtoVariant1,
                 typeof(global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>),
-                Value2,
+                GetExpressiveAvatarDtoVariant2,
                 typeof(global::G.GetExpressiveAvatarDtoVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(GetExpressiveAvatarDto other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.GetExpressiveAvatarDtoVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>?>.Default.Equals(GetExpressiveAvatarDtoVariant1, other.GetExpressiveAvatarDtoVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GetExpressiveAvatarDtoVariant2?>.Default.Equals(GetExpressiveAvatarDtoVariant2, other.GetExpressiveAvatarDtoVariant2) 
                 ;
         }
 

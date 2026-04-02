@@ -42,7 +42,7 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::G.ComputerToolCallOutput? computerToolCallOutput = default;
-            global::G.ComputerToolCallOutputResourceVariant2? value2 = default;
+            global::G.ComputerToolCallOutputResourceVariant2? computerToolCallOutputResourceVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -66,7 +66,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerToolCallOutputResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerToolCallOutputResourceVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerToolCallOutputResourceVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        computerToolCallOutputResourceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -77,7 +77,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (computerToolCallOutput == null && value2 == null)
+            if (computerToolCallOutput == null && computerToolCallOutputResourceVariant2 == null)
             {
                 try
                 {
@@ -96,7 +96,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerToolCallOutputResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerToolCallOutputResourceVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerToolCallOutputResourceVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    computerToolCallOutputResourceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -109,7 +109,7 @@ namespace G.JsonConverters
             var __value = new global::G.ComputerToolCallOutputResource(
                 computerToolCallOutput,
 
-                value2
+                computerToolCallOutputResourceVariant2
                 );
 
             return __value;
@@ -130,11 +130,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerToolCallOutput).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerToolCallOutput!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsComputerToolCallOutputResourceVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerToolCallOutputResourceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerToolCallOutputResourceVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerToolCallOutputResourceVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComputerToolCallOutputResourceVariant2!, typeInfo);
             }
         }
     }

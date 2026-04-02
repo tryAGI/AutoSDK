@@ -31,35 +31,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? InputsOneOf1ItemsOneOf5ContentVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? InputsOneOf1ItemsOneOf5ContentVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputsOneOf1ItemsOneOf5ContentVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsInputsOneOf1ItemsOneOf5ContentVariant2 => InputsOneOf1ItemsOneOf5ContentVariant2 != null;
 
         /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? InputsOneOf1ItemsOneOf5ContentVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? InputsOneOf1ItemsOneOf5ContentVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputsOneOf1ItemsOneOf5ContentVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsInputsOneOf1ItemsOneOf5ContentVariant3 => InputsOneOf1ItemsOneOf5ContentVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -68,14 +68,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(InputsOneOf1ItemsOneOf5Content @this) => @this.Value2;
+        public static implicit operator string?(InputsOneOf1ItemsOneOf5Content @this) => @this.InputsOneOf1ItemsOneOf5ContentVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public InputsOneOf1ItemsOneOf5Content(string? value)
         {
-            Value2 = value;
+            InputsOneOf1ItemsOneOf5ContentVariant2 = value;
         }
 
         /// <summary>
@@ -83,21 +83,21 @@ namespace G
         /// </summary>
         public InputsOneOf1ItemsOneOf5Content(
             global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items>? inputsOneOf1ItemsOneOf5Content0,
-            string? value2,
-            object? value3
+            string? inputsOneOf1ItemsOneOf5ContentVariant2,
+            object? inputsOneOf1ItemsOneOf5ContentVariant3
             )
         {
             InputsOneOf1ItemsOneOf5Content0 = inputsOneOf1ItemsOneOf5Content0;
-            Value2 = value2;
-            Value3 = value3;
+            InputsOneOf1ItemsOneOf5ContentVariant2 = inputsOneOf1ItemsOneOf5ContentVariant2;
+            InputsOneOf1ItemsOneOf5ContentVariant3 = inputsOneOf1ItemsOneOf5ContentVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
+            InputsOneOf1ItemsOneOf5ContentVariant3 as object ??
+            InputsOneOf1ItemsOneOf5ContentVariant2 as object ??
             InputsOneOf1ItemsOneOf5Content0 as object 
             ;
 
@@ -106,8 +106,8 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             InputsOneOf1ItemsOneOf5Content0?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            InputsOneOf1ItemsOneOf5ContentVariant2?.ToString() ??
+            InputsOneOf1ItemsOneOf5ContentVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsInputsOneOf1ItemsOneOf5Content0 && !IsValue2 && !IsValue3 || !IsInputsOneOf1ItemsOneOf5Content0 && IsValue2 && !IsValue3 || !IsInputsOneOf1ItemsOneOf5Content0 && !IsValue2 && IsValue3;
+            return IsInputsOneOf1ItemsOneOf5Content0 && !IsInputsOneOf1ItemsOneOf5ContentVariant2 && !IsInputsOneOf1ItemsOneOf5ContentVariant3 || !IsInputsOneOf1ItemsOneOf5Content0 && IsInputsOneOf1ItemsOneOf5ContentVariant2 && !IsInputsOneOf1ItemsOneOf5ContentVariant3 || !IsInputsOneOf1ItemsOneOf5Content0 && !IsInputsOneOf1ItemsOneOf5ContentVariant2 && IsInputsOneOf1ItemsOneOf5ContentVariant3;
         }
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items>?, TResult>? inputsOneOf1ItemsOneOf5Content0 = null,
-            global::System.Func<string?, TResult>? value2 = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<string?, TResult>? inputsOneOf1ItemsOneOf5ContentVariant2 = null,
+            global::System.Func<object?, TResult>? inputsOneOf1ItemsOneOf5ContentVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -136,13 +136,13 @@ namespace G
             {
                 return inputsOneOf1ItemsOneOf5Content0(InputsOneOf1ItemsOneOf5Content0!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsInputsOneOf1ItemsOneOf5ContentVariant2 && inputsOneOf1ItemsOneOf5ContentVariant2 != null)
             {
-                return value2(Value2!);
+                return inputsOneOf1ItemsOneOf5ContentVariant2(InputsOneOf1ItemsOneOf5ContentVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsInputsOneOf1ItemsOneOf5ContentVariant3 && inputsOneOf1ItemsOneOf5ContentVariant3 != null)
             {
-                return value3(Value3!);
+                return inputsOneOf1ItemsOneOf5ContentVariant3(InputsOneOf1ItemsOneOf5ContentVariant3!);
             }
 
             return default(TResult);
@@ -153,8 +153,8 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items>?>? inputsOneOf1ItemsOneOf5Content0 = null,
-            global::System.Action<string?>? value2 = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<string?>? inputsOneOf1ItemsOneOf5ContentVariant2 = null,
+            global::System.Action<object?>? inputsOneOf1ItemsOneOf5ContentVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -166,13 +166,13 @@ namespace G
             {
                 inputsOneOf1ItemsOneOf5Content0?.Invoke(InputsOneOf1ItemsOneOf5Content0!);
             }
-            else if (IsValue2)
+            else if (IsInputsOneOf1ItemsOneOf5ContentVariant2)
             {
-                value2?.Invoke(Value2!);
+                inputsOneOf1ItemsOneOf5ContentVariant2?.Invoke(InputsOneOf1ItemsOneOf5ContentVariant2!);
             }
-            else if (IsValue3)
+            else if (IsInputsOneOf1ItemsOneOf5ContentVariant3)
             {
-                value3?.Invoke(Value3!);
+                inputsOneOf1ItemsOneOf5ContentVariant3?.Invoke(InputsOneOf1ItemsOneOf5ContentVariant3!);
             }
         }
 
@@ -185,9 +185,9 @@ namespace G
             {
                 InputsOneOf1ItemsOneOf5Content0,
                 typeof(global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items>),
-                Value2,
+                InputsOneOf1ItemsOneOf5ContentVariant2,
                 typeof(string),
-                Value3,
+                InputsOneOf1ItemsOneOf5ContentVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -206,8 +206,8 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items>?>.Default.Equals(InputsOneOf1ItemsOneOf5Content0, other.InputsOneOf1ItemsOneOf5Content0) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(InputsOneOf1ItemsOneOf5ContentVariant2, other.InputsOneOf1ItemsOneOf5ContentVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(InputsOneOf1ItemsOneOf5ContentVariant3, other.InputsOneOf1ItemsOneOf5ContentVariant3) 
                 ;
         }
 

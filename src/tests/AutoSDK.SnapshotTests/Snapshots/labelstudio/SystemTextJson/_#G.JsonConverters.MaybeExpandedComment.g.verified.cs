@@ -62,8 +62,8 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::G.Comment? value1 = default;
-            global::G.CommentSerializerWithExpandedUser? value2 = default;
+            global::G.Comment? comment = default;
+            global::G.CommentSerializerWithExpandedUser? serializerWithUser = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -72,7 +72,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Comment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Comment> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Comment).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        comment = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -87,7 +87,7 @@ namespace G.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CommentSerializerWithExpandedUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CommentSerializerWithExpandedUser> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CommentSerializerWithExpandedUser).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        serializerWithUser = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -98,13 +98,13 @@ namespace G.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (comment == null && serializerWithUser == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Comment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Comment> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Comment).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    comment = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -117,7 +117,7 @@ namespace G.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CommentSerializerWithExpandedUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CommentSerializerWithExpandedUser> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CommentSerializerWithExpandedUser).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    serializerWithUser = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -128,9 +128,9 @@ namespace G.JsonConverters
             }
 
             var __value = new global::G.MaybeExpandedComment(
-                value1,
+                comment,
 
-                value2
+                serializerWithUser
                 );
 
             return __value;
@@ -145,17 +145,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsComment)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Comment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Comment?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Comment).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Comment!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsSerializerWithUser)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CommentSerializerWithExpandedUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CommentSerializerWithExpandedUser?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CommentSerializerWithExpandedUser).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SerializerWithUser!, typeInfo);
             }
         }
     }

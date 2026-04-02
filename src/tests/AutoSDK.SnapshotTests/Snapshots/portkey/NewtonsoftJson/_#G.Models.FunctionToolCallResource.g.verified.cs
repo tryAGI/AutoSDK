@@ -32,18 +32,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FunctionToolCallResourceVariant2? Value2 { get; init; }
+        public global::G.FunctionToolCallResourceVariant2? FunctionToolCallResourceVariant2 { get; init; }
 #else
-        public global::G.FunctionToolCallResourceVariant2? Value2 { get; }
+        public global::G.FunctionToolCallResourceVariant2? FunctionToolCallResourceVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallResourceVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsFunctionToolCallResourceVariant2 => FunctionToolCallResourceVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -70,14 +70,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FunctionToolCallResourceVariant2?(FunctionToolCallResource @this) => @this.Value2;
+        public static implicit operator global::G.FunctionToolCallResourceVariant2?(FunctionToolCallResource @this) => @this.FunctionToolCallResourceVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public FunctionToolCallResource(global::G.FunctionToolCallResourceVariant2? value)
         {
-            Value2 = value;
+            FunctionToolCallResourceVariant2 = value;
         }
 
         /// <summary>
@@ -85,18 +85,18 @@ namespace G
         /// </summary>
         public FunctionToolCallResource(
             global::G.FunctionToolCall? functionToolCall,
-            global::G.FunctionToolCallResourceVariant2? value2
+            global::G.FunctionToolCallResourceVariant2? functionToolCallResourceVariant2
             )
         {
             FunctionToolCall = functionToolCall;
-            Value2 = value2;
+            FunctionToolCallResourceVariant2 = functionToolCallResourceVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            FunctionToolCallResourceVariant2 as object ??
             FunctionToolCall as object 
             ;
 
@@ -105,7 +105,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             FunctionToolCall?.ToString() ??
-            Value2?.ToString() 
+            FunctionToolCallResourceVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsFunctionToolCall && IsValue2;
+            return IsFunctionToolCall && IsFunctionToolCallResourceVariant2;
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.FunctionToolCall?, TResult>? functionToolCall = null,
-            global::System.Func<global::G.FunctionToolCallResourceVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.FunctionToolCallResourceVariant2?, TResult>? functionToolCallResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -133,9 +133,9 @@ namespace G
             {
                 return functionToolCall(FunctionToolCall!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsFunctionToolCallResourceVariant2 && functionToolCallResourceVariant2 != null)
             {
-                return value2(Value2!);
+                return functionToolCallResourceVariant2(FunctionToolCallResourceVariant2!);
             }
 
             return default(TResult);
@@ -146,7 +146,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.FunctionToolCall?>? functionToolCall = null,
-            global::System.Action<global::G.FunctionToolCallResourceVariant2?>? value2 = null,
+            global::System.Action<global::G.FunctionToolCallResourceVariant2?>? functionToolCallResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -158,9 +158,9 @@ namespace G
             {
                 functionToolCall?.Invoke(FunctionToolCall!);
             }
-            else if (IsValue2)
+            else if (IsFunctionToolCallResourceVariant2)
             {
-                value2?.Invoke(Value2!);
+                functionToolCallResourceVariant2?.Invoke(FunctionToolCallResourceVariant2!);
             }
         }
 
@@ -173,7 +173,7 @@ namespace G
             {
                 FunctionToolCall,
                 typeof(global::G.FunctionToolCall),
-                Value2,
+                FunctionToolCallResourceVariant2,
                 typeof(global::G.FunctionToolCallResourceVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -192,7 +192,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCall?>.Default.Equals(FunctionToolCall, other.FunctionToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCallResourceVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.FunctionToolCallResourceVariant2?>.Default.Equals(FunctionToolCallResourceVariant2, other.FunctionToolCallResourceVariant2) 
                 ;
         }
 

@@ -14,35 +14,35 @@ namespace G
         /// Configuration for search parameters specific to a single corpus within a customer account, including filters and semantics.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SearchCorpus? Value1 { get; init; }
+        public global::G.SearchCorpus? SearchCorpus { get; init; }
 #else
-        public global::G.SearchCorpus? Value1 { get; }
+        public global::G.SearchCorpus? SearchCorpus { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchCorpus))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsSearchCorpus => SearchCorpus != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.KeyedSearchCorpusVariant2? Value2 { get; init; }
+        public global::G.KeyedSearchCorpusVariant2? KeyedSearchCorpusVariant2 { get; init; }
 #else
-        public global::G.KeyedSearchCorpusVariant2? Value2 { get; }
+        public global::G.KeyedSearchCorpusVariant2? KeyedSearchCorpusVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyedSearchCorpusVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsKeyedSearchCorpusVariant2 => KeyedSearchCorpusVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SearchCorpus?(KeyedSearchCorpus @this) => @this.Value1;
+        public static implicit operator global::G.SearchCorpus?(KeyedSearchCorpus @this) => @this.SearchCorpus;
 
         /// <summary>
         /// 
         /// </summary>
         public KeyedSearchCorpus(global::G.SearchCorpus? value)
         {
-            Value1 = value;
+            SearchCorpus = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.KeyedSearchCorpusVariant2?(KeyedSearchCorpus @this) => @this.Value2;
+        public static implicit operator global::G.KeyedSearchCorpusVariant2?(KeyedSearchCorpus @this) => @this.KeyedSearchCorpusVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public KeyedSearchCorpus(global::G.KeyedSearchCorpusVariant2? value)
         {
-            Value2 = value;
+            KeyedSearchCorpusVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public KeyedSearchCorpus(
-            global::G.SearchCorpus? value1,
-            global::G.KeyedSearchCorpusVariant2? value2
+            global::G.SearchCorpus? searchCorpus,
+            global::G.KeyedSearchCorpusVariant2? keyedSearchCorpusVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            SearchCorpus = searchCorpus;
+            KeyedSearchCorpusVariant2 = keyedSearchCorpusVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            KeyedSearchCorpusVariant2 as object ??
+            SearchCorpus as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            SearchCorpus?.ToString() ??
+            KeyedSearchCorpusVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsSearchCorpus && IsKeyedSearchCorpusVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SearchCorpus?, TResult>? value1 = null,
-            global::System.Func<global::G.KeyedSearchCorpusVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.SearchCorpus?, TResult>? searchCorpus = null,
+            global::System.Func<global::G.KeyedSearchCorpusVariant2?, TResult>? keyedSearchCorpusVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsSearchCorpus && searchCorpus != null)
             {
-                return value1(Value1!);
+                return searchCorpus(SearchCorpus!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsKeyedSearchCorpusVariant2 && keyedSearchCorpusVariant2 != null)
             {
-                return value2(Value2!);
+                return keyedSearchCorpusVariant2(KeyedSearchCorpusVariant2!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SearchCorpus?>? value1 = null,
-            global::System.Action<global::G.KeyedSearchCorpusVariant2?>? value2 = null,
+            global::System.Action<global::G.SearchCorpus?>? searchCorpus = null,
+            global::System.Action<global::G.KeyedSearchCorpusVariant2?>? keyedSearchCorpusVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsSearchCorpus)
             {
-                value1?.Invoke(Value1!);
+                searchCorpus?.Invoke(SearchCorpus!);
             }
-            else if (IsValue2)
+            else if (IsKeyedSearchCorpusVariant2)
             {
-                value2?.Invoke(Value2!);
+                keyedSearchCorpusVariant2?.Invoke(KeyedSearchCorpusVariant2!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                SearchCorpus,
                 typeof(global::G.SearchCorpus),
-                Value2,
+                KeyedSearchCorpusVariant2,
                 typeof(global::G.KeyedSearchCorpusVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(KeyedSearchCorpus other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.SearchCorpus?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.KeyedSearchCorpusVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.SearchCorpus?>.Default.Equals(SearchCorpus, other.SearchCorpus) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.KeyedSearchCorpusVariant2?>.Default.Equals(KeyedSearchCorpusVariant2, other.KeyedSearchCorpusVariant2) 
                 ;
         }
 

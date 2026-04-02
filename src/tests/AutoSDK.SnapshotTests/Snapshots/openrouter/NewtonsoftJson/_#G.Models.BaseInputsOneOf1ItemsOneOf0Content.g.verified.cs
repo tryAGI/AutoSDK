@@ -31,18 +31,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? BaseInputsOneOf1ItemsOneOf0ContentVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? BaseInputsOneOf1ItemsOneOf0ContentVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf0ContentVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsBaseInputsOneOf1ItemsOneOf0ContentVariant2 => BaseInputsOneOf1ItemsOneOf0ContentVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(BaseInputsOneOf1ItemsOneOf0Content @this) => @this.Value2;
+        public static implicit operator string?(BaseInputsOneOf1ItemsOneOf0Content @this) => @this.BaseInputsOneOf1ItemsOneOf0ContentVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public BaseInputsOneOf1ItemsOneOf0Content(string? value)
         {
-            Value2 = value;
+            BaseInputsOneOf1ItemsOneOf0ContentVariant2 = value;
         }
 
         /// <summary>
@@ -66,18 +66,18 @@ namespace G
         /// </summary>
         public BaseInputsOneOf1ItemsOneOf0Content(
             global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>? baseInputsOneOf1ItemsOneOf0Content0,
-            string? value2
+            string? baseInputsOneOf1ItemsOneOf0ContentVariant2
             )
         {
             BaseInputsOneOf1ItemsOneOf0Content0 = baseInputsOneOf1ItemsOneOf0Content0;
-            Value2 = value2;
+            BaseInputsOneOf1ItemsOneOf0ContentVariant2 = baseInputsOneOf1ItemsOneOf0ContentVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
+            BaseInputsOneOf1ItemsOneOf0ContentVariant2 as object ??
             BaseInputsOneOf1ItemsOneOf0Content0 as object 
             ;
 
@@ -86,7 +86,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             BaseInputsOneOf1ItemsOneOf0Content0?.ToString() ??
-            Value2?.ToString() 
+            BaseInputsOneOf1ItemsOneOf0ContentVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsBaseInputsOneOf1ItemsOneOf0Content0 && !IsValue2 || !IsBaseInputsOneOf1ItemsOneOf0Content0 && IsValue2;
+            return IsBaseInputsOneOf1ItemsOneOf0Content0 && !IsBaseInputsOneOf1ItemsOneOf0ContentVariant2 || !IsBaseInputsOneOf1ItemsOneOf0Content0 && IsBaseInputsOneOf1ItemsOneOf0ContentVariant2;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>?, TResult>? baseInputsOneOf1ItemsOneOf0Content0 = null,
-            global::System.Func<string?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? baseInputsOneOf1ItemsOneOf0ContentVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -114,9 +114,9 @@ namespace G
             {
                 return baseInputsOneOf1ItemsOneOf0Content0(BaseInputsOneOf1ItemsOneOf0Content0!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsBaseInputsOneOf1ItemsOneOf0ContentVariant2 && baseInputsOneOf1ItemsOneOf0ContentVariant2 != null)
             {
-                return value2(Value2!);
+                return baseInputsOneOf1ItemsOneOf0ContentVariant2(BaseInputsOneOf1ItemsOneOf0ContentVariant2!);
             }
 
             return default(TResult);
@@ -127,7 +127,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>?>? baseInputsOneOf1ItemsOneOf0Content0 = null,
-            global::System.Action<string?>? value2 = null,
+            global::System.Action<string?>? baseInputsOneOf1ItemsOneOf0ContentVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -139,9 +139,9 @@ namespace G
             {
                 baseInputsOneOf1ItemsOneOf0Content0?.Invoke(BaseInputsOneOf1ItemsOneOf0Content0!);
             }
-            else if (IsValue2)
+            else if (IsBaseInputsOneOf1ItemsOneOf0ContentVariant2)
             {
-                value2?.Invoke(Value2!);
+                baseInputsOneOf1ItemsOneOf0ContentVariant2?.Invoke(BaseInputsOneOf1ItemsOneOf0ContentVariant2!);
             }
         }
 
@@ -154,7 +154,7 @@ namespace G
             {
                 BaseInputsOneOf1ItemsOneOf0Content0,
                 typeof(global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>),
-                Value2,
+                BaseInputsOneOf1ItemsOneOf0ContentVariant2,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -173,7 +173,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items>?>.Default.Equals(BaseInputsOneOf1ItemsOneOf0Content0, other.BaseInputsOneOf1ItemsOneOf0Content0) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BaseInputsOneOf1ItemsOneOf0ContentVariant2, other.BaseInputsOneOf1ItemsOneOf0ContentVariant2) 
                 ;
         }
 

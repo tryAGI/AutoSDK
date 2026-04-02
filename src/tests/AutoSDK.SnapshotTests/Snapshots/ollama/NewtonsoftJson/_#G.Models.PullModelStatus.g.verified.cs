@@ -15,35 +15,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? PullModelStatusVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? PullModelStatusVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PullModelStatusVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsPullModelStatusVariant1 => PullModelStatusVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PullModelStatusEnum? Value2 { get; init; }
+        public global::G.PullModelStatusEnum? Enum { get; init; }
 #else
-        public global::G.PullModelStatusEnum? Value2 { get; }
+        public global::G.PullModelStatusEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEnum => Enum != null;
         /// <summary>
         /// 
         /// </summary>
@@ -52,14 +52,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(PullModelStatus @this) => @this.Value1;
+        public static implicit operator string?(PullModelStatus @this) => @this.PullModelStatusVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public PullModelStatus(string? value)
         {
-            Value1 = value;
+            PullModelStatusVariant1 = value;
         }
 
         /// <summary>
@@ -70,42 +70,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PullModelStatusEnum?(PullModelStatus @this) => @this.Value2;
+        public static implicit operator global::G.PullModelStatusEnum?(PullModelStatus @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public PullModelStatus(global::G.PullModelStatusEnum? value)
         {
-            Value2 = value;
+            Enum = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public PullModelStatus(
-            string? value1,
-            global::G.PullModelStatusEnum? value2
+            string? pullModelStatusVariant1,
+            global::G.PullModelStatusEnum? @enum
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            PullModelStatusVariant1 = pullModelStatusVariant1;
+            Enum = @enum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Enum as object ??
+            PullModelStatusVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToValueString() 
+            PullModelStatusVariant1?.ToString() ??
+            Enum?.ToValueString() 
             ;
 
         /// <summary>
@@ -113,15 +113,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsPullModelStatusVariant1 || IsEnum;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::G.PullModelStatusEnum?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? pullModelStatusVariant1 = null,
+            global::System.Func<global::G.PullModelStatusEnum?, TResult>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -129,13 +129,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsPullModelStatusVariant1 && pullModelStatusVariant1 != null)
             {
-                return value1(Value1!);
+                return pullModelStatusVariant1(PullModelStatusVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEnum && @enum != null)
             {
-                return value2(Value2!);
+                return @enum(Enum!);
             }
 
             return default(TResult);
@@ -145,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::G.PullModelStatusEnum?>? value2 = null,
+            global::System.Action<string?>? pullModelStatusVariant1 = null,
+            global::System.Action<global::G.PullModelStatusEnum?>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +154,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsPullModelStatusVariant1)
             {
-                value1?.Invoke(Value1!);
+                pullModelStatusVariant1?.Invoke(PullModelStatusVariant1!);
             }
-            else if (IsValue2)
+            else if (IsEnum)
             {
-                value2?.Invoke(Value2!);
+                @enum?.Invoke(Enum!);
             }
         }
 
@@ -171,9 +171,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                PullModelStatusVariant1,
                 typeof(string),
-                Value2,
+                Enum,
                 typeof(global::G.PullModelStatusEnum),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,8 +191,8 @@ namespace G
         public bool Equals(PullModelStatus other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PullModelStatusEnum?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(PullModelStatusVariant1, other.PullModelStatusVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PullModelStatusEnum?>.Default.Equals(Enum, other.Enum) 
                 ;
         }
 

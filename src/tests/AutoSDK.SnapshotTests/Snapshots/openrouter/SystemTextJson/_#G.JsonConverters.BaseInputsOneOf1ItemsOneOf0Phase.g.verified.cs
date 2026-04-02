@@ -69,7 +69,7 @@ namespace G.JsonConverters
 
             global::G.BaseInputsOneOf1ItemsOneOf0Phase0? baseInputsOneOf1ItemsOneOf0Phase0 = default;
             global::G.BaseInputsOneOf1ItemsOneOf0Phase1? baseInputsOneOf1ItemsOneOf0Phase1 = default;
-            object? value3 = default;
+            object? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -113,7 +113,7 @@ namespace G.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        baseInputsOneOf1ItemsOneOf0PhaseVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -124,7 +124,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (baseInputsOneOf1ItemsOneOf0Phase0 == null && baseInputsOneOf1ItemsOneOf0Phase1 == null && value3 == null)
+            if (baseInputsOneOf1ItemsOneOf0Phase0 == null && baseInputsOneOf1ItemsOneOf0Phase1 == null && baseInputsOneOf1ItemsOneOf0PhaseVariant3 == null)
             {
                 try
                 {
@@ -159,7 +159,7 @@ namespace G.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    baseInputsOneOf1ItemsOneOf0PhaseVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -174,7 +174,7 @@ namespace G.JsonConverters
 
                 baseInputsOneOf1ItemsOneOf0Phase1,
 
-                value3
+                baseInputsOneOf1ItemsOneOf0PhaseVariant3
                 );
 
             return __value;
@@ -201,11 +201,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseInputsOneOf1ItemsOneOf0Phase1).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0Phase1!.Value, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf0PhaseVariant3!, typeInfo);
             }
         }
     }

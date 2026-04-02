@@ -15,89 +15,89 @@ namespace G
         /// Will be very fast at the cost of consuming a lot of memory.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.VectorStorageTypeVariant1? Value1 { get; init; }
+        public global::G.VectorStorageTypeVariant1? VectorStorageTypeVariant1 { get; init; }
 #else
-        public global::G.VectorStorageTypeVariant1? Value1 { get; }
+        public global::G.VectorStorageTypeVariant1? VectorStorageTypeVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsVectorStorageTypeVariant1 => VectorStorageTypeVariant1 != null;
 
         /// <summary>
         /// Storage in mmap file, not appendable<br/>
         /// Search performance is defined by disk speed and the fraction of vectors that fit in memory.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.VectorStorageTypeVariant2? Value2 { get; init; }
+        public global::G.VectorStorageTypeVariant2? VectorStorageTypeVariant2 { get; init; }
 #else
-        public global::G.VectorStorageTypeVariant2? Value2 { get; }
+        public global::G.VectorStorageTypeVariant2? VectorStorageTypeVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsVectorStorageTypeVariant2 => VectorStorageTypeVariant2 != null;
 
         /// <summary>
         /// Storage in chunked mmap files, appendable<br/>
         /// Search performance is defined by disk speed and the fraction of vectors that fit in memory.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.VectorStorageTypeVariant3? Value3 { get; init; }
+        public global::G.VectorStorageTypeVariant3? VectorStorageTypeVariant3 { get; init; }
 #else
-        public global::G.VectorStorageTypeVariant3? Value3 { get; }
+        public global::G.VectorStorageTypeVariant3? VectorStorageTypeVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsVectorStorageTypeVariant3 => VectorStorageTypeVariant3 != null;
 
         /// <summary>
         /// Same as `ChunkedMmap`, but vectors are forced to be locked in RAM In this way we avoid cold requests to disk, but risk to run out of memory<br/>
         /// Designed as a replacement for `Memory`, which doesn't depend on RocksDB
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.VectorStorageTypeVariant4? Value4 { get; init; }
+        public global::G.VectorStorageTypeVariant4? VectorStorageTypeVariant4 { get; init; }
 #else
-        public global::G.VectorStorageTypeVariant4? Value4 { get; }
+        public global::G.VectorStorageTypeVariant4? VectorStorageTypeVariant4 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant4))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsVectorStorageTypeVariant4 => VectorStorageTypeVariant4 != null;
 
         /// <summary>
         /// Storage in a single mmap file, not appendable Pre-fetched into RAM on load
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.VectorStorageTypeVariant5? Value5 { get; init; }
+        public global::G.VectorStorageTypeVariant5? VectorStorageTypeVariant5 { get; init; }
 #else
-        public global::G.VectorStorageTypeVariant5? Value5 { get; }
+        public global::G.VectorStorageTypeVariant5? VectorStorageTypeVariant5 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant5))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsVectorStorageTypeVariant5 => VectorStorageTypeVariant5 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -106,14 +106,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.VectorStorageTypeVariant1?(VectorStorageType @this) => @this.Value1;
+        public static implicit operator global::G.VectorStorageTypeVariant1?(VectorStorageType @this) => @this.VectorStorageTypeVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStorageType(global::G.VectorStorageTypeVariant1? value)
         {
-            Value1 = value;
+            VectorStorageTypeVariant1 = value;
         }
 
         /// <summary>
@@ -124,14 +124,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.VectorStorageTypeVariant2?(VectorStorageType @this) => @this.Value2;
+        public static implicit operator global::G.VectorStorageTypeVariant2?(VectorStorageType @this) => @this.VectorStorageTypeVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStorageType(global::G.VectorStorageTypeVariant2? value)
         {
-            Value2 = value;
+            VectorStorageTypeVariant2 = value;
         }
 
         /// <summary>
@@ -142,14 +142,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.VectorStorageTypeVariant3?(VectorStorageType @this) => @this.Value3;
+        public static implicit operator global::G.VectorStorageTypeVariant3?(VectorStorageType @this) => @this.VectorStorageTypeVariant3;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStorageType(global::G.VectorStorageTypeVariant3? value)
         {
-            Value3 = value;
+            VectorStorageTypeVariant3 = value;
         }
 
         /// <summary>
@@ -160,14 +160,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.VectorStorageTypeVariant4?(VectorStorageType @this) => @this.Value4;
+        public static implicit operator global::G.VectorStorageTypeVariant4?(VectorStorageType @this) => @this.VectorStorageTypeVariant4;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStorageType(global::G.VectorStorageTypeVariant4? value)
         {
-            Value4 = value;
+            VectorStorageTypeVariant4 = value;
         }
 
         /// <summary>
@@ -178,54 +178,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.VectorStorageTypeVariant5?(VectorStorageType @this) => @this.Value5;
+        public static implicit operator global::G.VectorStorageTypeVariant5?(VectorStorageType @this) => @this.VectorStorageTypeVariant5;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStorageType(global::G.VectorStorageTypeVariant5? value)
         {
-            Value5 = value;
+            VectorStorageTypeVariant5 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStorageType(
-            global::G.VectorStorageTypeVariant1? value1,
-            global::G.VectorStorageTypeVariant2? value2,
-            global::G.VectorStorageTypeVariant3? value3,
-            global::G.VectorStorageTypeVariant4? value4,
-            global::G.VectorStorageTypeVariant5? value5
+            global::G.VectorStorageTypeVariant1? vectorStorageTypeVariant1,
+            global::G.VectorStorageTypeVariant2? vectorStorageTypeVariant2,
+            global::G.VectorStorageTypeVariant3? vectorStorageTypeVariant3,
+            global::G.VectorStorageTypeVariant4? vectorStorageTypeVariant4,
+            global::G.VectorStorageTypeVariant5? vectorStorageTypeVariant5
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
+            VectorStorageTypeVariant1 = vectorStorageTypeVariant1;
+            VectorStorageTypeVariant2 = vectorStorageTypeVariant2;
+            VectorStorageTypeVariant3 = vectorStorageTypeVariant3;
+            VectorStorageTypeVariant4 = vectorStorageTypeVariant4;
+            VectorStorageTypeVariant5 = vectorStorageTypeVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            VectorStorageTypeVariant5 as object ??
+            VectorStorageTypeVariant4 as object ??
+            VectorStorageTypeVariant3 as object ??
+            VectorStorageTypeVariant2 as object ??
+            VectorStorageTypeVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToValueString() ??
-            Value2?.ToValueString() ??
-            Value3?.ToValueString() ??
-            Value4?.ToValueString() ??
-            Value5?.ToValueString() 
+            VectorStorageTypeVariant1?.ToValueString() ??
+            VectorStorageTypeVariant2?.ToValueString() ??
+            VectorStorageTypeVariant3?.ToValueString() ??
+            VectorStorageTypeVariant4?.ToValueString() ??
+            VectorStorageTypeVariant5?.ToValueString() 
             ;
 
         /// <summary>
@@ -233,18 +233,18 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5;
+            return IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 || !IsVectorStorageTypeVariant1 && IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 || !IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 || !IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 || !IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && IsVectorStorageTypeVariant5;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.VectorStorageTypeVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.VectorStorageTypeVariant2?, TResult>? value2 = null,
-            global::System.Func<global::G.VectorStorageTypeVariant3?, TResult>? value3 = null,
-            global::System.Func<global::G.VectorStorageTypeVariant4?, TResult>? value4 = null,
-            global::System.Func<global::G.VectorStorageTypeVariant5?, TResult>? value5 = null,
+            global::System.Func<global::G.VectorStorageTypeVariant1?, TResult>? vectorStorageTypeVariant1 = null,
+            global::System.Func<global::G.VectorStorageTypeVariant2?, TResult>? vectorStorageTypeVariant2 = null,
+            global::System.Func<global::G.VectorStorageTypeVariant3?, TResult>? vectorStorageTypeVariant3 = null,
+            global::System.Func<global::G.VectorStorageTypeVariant4?, TResult>? vectorStorageTypeVariant4 = null,
+            global::System.Func<global::G.VectorStorageTypeVariant5?, TResult>? vectorStorageTypeVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -252,25 +252,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsVectorStorageTypeVariant1 && vectorStorageTypeVariant1 != null)
             {
-                return value1(Value1!);
+                return vectorStorageTypeVariant1(VectorStorageTypeVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsVectorStorageTypeVariant2 && vectorStorageTypeVariant2 != null)
             {
-                return value2(Value2!);
+                return vectorStorageTypeVariant2(VectorStorageTypeVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsVectorStorageTypeVariant3 && vectorStorageTypeVariant3 != null)
             {
-                return value3(Value3!);
+                return vectorStorageTypeVariant3(VectorStorageTypeVariant3!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsVectorStorageTypeVariant4 && vectorStorageTypeVariant4 != null)
             {
-                return value4(Value4!);
+                return vectorStorageTypeVariant4(VectorStorageTypeVariant4!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsVectorStorageTypeVariant5 && vectorStorageTypeVariant5 != null)
             {
-                return value5(Value5!);
+                return vectorStorageTypeVariant5(VectorStorageTypeVariant5!);
             }
 
             return default(TResult);
@@ -280,11 +280,11 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.VectorStorageTypeVariant1?>? value1 = null,
-            global::System.Action<global::G.VectorStorageTypeVariant2?>? value2 = null,
-            global::System.Action<global::G.VectorStorageTypeVariant3?>? value3 = null,
-            global::System.Action<global::G.VectorStorageTypeVariant4?>? value4 = null,
-            global::System.Action<global::G.VectorStorageTypeVariant5?>? value5 = null,
+            global::System.Action<global::G.VectorStorageTypeVariant1?>? vectorStorageTypeVariant1 = null,
+            global::System.Action<global::G.VectorStorageTypeVariant2?>? vectorStorageTypeVariant2 = null,
+            global::System.Action<global::G.VectorStorageTypeVariant3?>? vectorStorageTypeVariant3 = null,
+            global::System.Action<global::G.VectorStorageTypeVariant4?>? vectorStorageTypeVariant4 = null,
+            global::System.Action<global::G.VectorStorageTypeVariant5?>? vectorStorageTypeVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -292,25 +292,25 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsVectorStorageTypeVariant1)
             {
-                value1?.Invoke(Value1!);
+                vectorStorageTypeVariant1?.Invoke(VectorStorageTypeVariant1!);
             }
-            else if (IsValue2)
+            else if (IsVectorStorageTypeVariant2)
             {
-                value2?.Invoke(Value2!);
+                vectorStorageTypeVariant2?.Invoke(VectorStorageTypeVariant2!);
             }
-            else if (IsValue3)
+            else if (IsVectorStorageTypeVariant3)
             {
-                value3?.Invoke(Value3!);
+                vectorStorageTypeVariant3?.Invoke(VectorStorageTypeVariant3!);
             }
-            else if (IsValue4)
+            else if (IsVectorStorageTypeVariant4)
             {
-                value4?.Invoke(Value4!);
+                vectorStorageTypeVariant4?.Invoke(VectorStorageTypeVariant4!);
             }
-            else if (IsValue5)
+            else if (IsVectorStorageTypeVariant5)
             {
-                value5?.Invoke(Value5!);
+                vectorStorageTypeVariant5?.Invoke(VectorStorageTypeVariant5!);
             }
         }
 
@@ -321,15 +321,15 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                VectorStorageTypeVariant1,
                 typeof(global::G.VectorStorageTypeVariant1),
-                Value2,
+                VectorStorageTypeVariant2,
                 typeof(global::G.VectorStorageTypeVariant2),
-                Value3,
+                VectorStorageTypeVariant3,
                 typeof(global::G.VectorStorageTypeVariant3),
-                Value4,
+                VectorStorageTypeVariant4,
                 typeof(global::G.VectorStorageTypeVariant4),
-                Value5,
+                VectorStorageTypeVariant5,
                 typeof(global::G.VectorStorageTypeVariant5),
             };
             const int offset = unchecked((int)2166136261);
@@ -347,11 +347,11 @@ namespace G
         public bool Equals(VectorStorageType other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.VectorStorageTypeVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.VectorStorageTypeVariant2?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.VectorStorageTypeVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.VectorStorageTypeVariant4?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.VectorStorageTypeVariant5?>.Default.Equals(Value5, other.Value5) 
+                global::System.Collections.Generic.EqualityComparer<global::G.VectorStorageTypeVariant1?>.Default.Equals(VectorStorageTypeVariant1, other.VectorStorageTypeVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.VectorStorageTypeVariant2?>.Default.Equals(VectorStorageTypeVariant2, other.VectorStorageTypeVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.VectorStorageTypeVariant3?>.Default.Equals(VectorStorageTypeVariant3, other.VectorStorageTypeVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.VectorStorageTypeVariant4?>.Default.Equals(VectorStorageTypeVariant4, other.VectorStorageTypeVariant4) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.VectorStorageTypeVariant5?>.Default.Equals(VectorStorageTypeVariant5, other.VectorStorageTypeVariant5) 
                 ;
         }
 

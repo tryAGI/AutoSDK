@@ -14,35 +14,35 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? WithLookupInterfaceVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? WithLookupInterfaceVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithLookupInterfaceVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsWithLookupInterfaceVariant1 => WithLookupInterfaceVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.WithLookup? Value2 { get; init; }
+        public global::G.WithLookup? WithLookup { get; init; }
 #else
-        public global::G.WithLookup? Value2 { get; }
+        public global::G.WithLookup? WithLookup { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithLookup))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsWithLookup => WithLookup != null;
         /// <summary>
         /// 
         /// </summary>
@@ -51,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(WithLookupInterface @this) => @this.Value1;
+        public static implicit operator string?(WithLookupInterface @this) => @this.WithLookupInterfaceVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public WithLookupInterface(string? value)
         {
-            Value1 = value;
+            WithLookupInterfaceVariant1 = value;
         }
 
         /// <summary>
@@ -69,42 +69,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.WithLookup?(WithLookupInterface @this) => @this.Value2;
+        public static implicit operator global::G.WithLookup?(WithLookupInterface @this) => @this.WithLookup;
 
         /// <summary>
         /// 
         /// </summary>
         public WithLookupInterface(global::G.WithLookup? value)
         {
-            Value2 = value;
+            WithLookup = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public WithLookupInterface(
-            string? value1,
-            global::G.WithLookup? value2
+            string? withLookupInterfaceVariant1,
+            global::G.WithLookup? withLookup
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            WithLookupInterfaceVariant1 = withLookupInterfaceVariant1;
+            WithLookup = withLookup;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            WithLookup as object ??
+            WithLookupInterfaceVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            WithLookupInterfaceVariant1?.ToString() ??
+            WithLookup?.ToString() 
             ;
 
         /// <summary>
@@ -112,15 +112,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsWithLookupInterfaceVariant1 || IsWithLookup;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::G.WithLookup?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? withLookupInterfaceVariant1 = null,
+            global::System.Func<global::G.WithLookup?, TResult>? withLookup = null,
             bool validate = true)
         {
             if (validate)
@@ -128,13 +128,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsWithLookupInterfaceVariant1 && withLookupInterfaceVariant1 != null)
             {
-                return value1(Value1!);
+                return withLookupInterfaceVariant1(WithLookupInterfaceVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsWithLookup && withLookup != null)
             {
-                return value2(Value2!);
+                return withLookup(WithLookup!);
             }
 
             return default(TResult);
@@ -144,8 +144,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::G.WithLookup?>? value2 = null,
+            global::System.Action<string?>? withLookupInterfaceVariant1 = null,
+            global::System.Action<global::G.WithLookup?>? withLookup = null,
             bool validate = true)
         {
             if (validate)
@@ -153,13 +153,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsWithLookupInterfaceVariant1)
             {
-                value1?.Invoke(Value1!);
+                withLookupInterfaceVariant1?.Invoke(WithLookupInterfaceVariant1!);
             }
-            else if (IsValue2)
+            else if (IsWithLookup)
             {
-                value2?.Invoke(Value2!);
+                withLookup?.Invoke(WithLookup!);
             }
         }
 
@@ -170,9 +170,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                WithLookupInterfaceVariant1,
                 typeof(string),
-                Value2,
+                WithLookup,
                 typeof(global::G.WithLookup),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace G
         public bool Equals(WithLookupInterface other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.WithLookup?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(WithLookupInterfaceVariant1, other.WithLookupInterfaceVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.WithLookup?>.Default.Equals(WithLookup, other.WithLookup) 
                 ;
         }
 

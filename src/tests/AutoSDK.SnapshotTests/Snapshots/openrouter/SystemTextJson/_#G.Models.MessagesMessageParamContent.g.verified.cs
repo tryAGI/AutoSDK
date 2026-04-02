@@ -14,18 +14,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? MessagesMessageParamContentVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? MessagesMessageParamContentVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMessagesMessageParamContentVariant1 => MessagesMessageParamContentVariant1 != null;
 
         /// <summary>
         /// 
@@ -51,25 +51,25 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(MessagesMessageParamContent @this) => @this.Value1;
+        public static implicit operator string?(MessagesMessageParamContent @this) => @this.MessagesMessageParamContentVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesMessageParamContent(string? value)
         {
-            Value1 = value;
+            MessagesMessageParamContentVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesMessageParamContent(
-            string? value1,
+            string? messagesMessageParamContentVariant1,
             global::System.Collections.Generic.IList<global::G.MessagesMessageParamContentOneOf1Items>? messagesMessageParamContent1
             )
         {
-            Value1 = value1;
+            MessagesMessageParamContentVariant1 = messagesMessageParamContentVariant1;
             MessagesMessageParamContent1 = messagesMessageParamContent1;
         }
 
@@ -78,14 +78,14 @@ namespace G
         /// </summary>
         public object? Object =>
             MessagesMessageParamContent1 as object ??
-            Value1 as object 
+            MessagesMessageParamContentVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
+            MessagesMessageParamContentVariant1?.ToString() ??
             MessagesMessageParamContent1?.ToString() 
             ;
 
@@ -94,14 +94,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsMessagesMessageParamContent1 || !IsValue1 && IsMessagesMessageParamContent1;
+            return IsMessagesMessageParamContentVariant1 && !IsMessagesMessageParamContent1 || !IsMessagesMessageParamContentVariant1 && IsMessagesMessageParamContent1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? messagesMessageParamContentVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::G.MessagesMessageParamContentOneOf1Items>?, TResult>? messagesMessageParamContent1 = null,
             bool validate = true)
         {
@@ -110,9 +110,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMessagesMessageParamContentVariant1 && messagesMessageParamContentVariant1 != null)
             {
-                return value1(Value1!);
+                return messagesMessageParamContentVariant1(MessagesMessageParamContentVariant1!);
             }
             else if (IsMessagesMessageParamContent1 && messagesMessageParamContent1 != null)
             {
@@ -126,7 +126,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? messagesMessageParamContentVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::G.MessagesMessageParamContentOneOf1Items>?>? messagesMessageParamContent1 = null,
             bool validate = true)
         {
@@ -135,9 +135,9 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMessagesMessageParamContentVariant1)
             {
-                value1?.Invoke(Value1!);
+                messagesMessageParamContentVariant1?.Invoke(MessagesMessageParamContentVariant1!);
             }
             else if (IsMessagesMessageParamContent1)
             {
@@ -152,7 +152,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                MessagesMessageParamContentVariant1,
                 typeof(string),
                 MessagesMessageParamContent1,
                 typeof(global::System.Collections.Generic.IList<global::G.MessagesMessageParamContentOneOf1Items>),
@@ -172,7 +172,7 @@ namespace G
         public bool Equals(MessagesMessageParamContent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(MessagesMessageParamContentVariant1, other.MessagesMessageParamContentVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.MessagesMessageParamContentOneOf1Items>?>.Default.Equals(MessagesMessageParamContent1, other.MessagesMessageParamContent1) 
                 ;
         }
