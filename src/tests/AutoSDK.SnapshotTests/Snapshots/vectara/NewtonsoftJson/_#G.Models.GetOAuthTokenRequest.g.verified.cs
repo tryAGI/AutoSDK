@@ -24,8 +24,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("grant_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public object GrantType { get; set; } = default!;
+        /// <default>"client_credentials"</default>
+        [global::Newtonsoft.Json.JsonProperty("grant_type")]
+        public string GrantType { get; set; } = "client_credentials";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,11 +47,11 @@ namespace G
         public GetOAuthTokenRequest(
             string clientId,
             string clientSecret,
-            object grantType)
+            string grantType = "client_credentials")
         {
             this.ClientId = clientId ?? throw new global::System.ArgumentNullException(nameof(clientId));
             this.ClientSecret = clientSecret ?? throw new global::System.ArgumentNullException(nameof(clientSecret));
-            this.GrantType = grantType ?? throw new global::System.ArgumentNullException(nameof(grantType));
+            this.GrantType = grantType;
         }
 
         /// <summary>

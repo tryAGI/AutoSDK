@@ -122,6 +122,7 @@ public static class OpenApiExtensions
             openApiDocument.ApplyFernRequestNames();
         }
 
+        openApiDocument.NormalizeFernTypes();
         openApiDocument.SanitizeNumericConstraints();
         openApiDocument.InferLargeIntegerFormats();
         openApiDocument.SanitizeDiscriminators();
@@ -224,6 +225,171 @@ public static class OpenApiExtensions
 
         openApiSchema.Extensions ??= new Dictionary<string, IOpenApiExtension>(StringComparer.Ordinal);
         openApiSchema.Extensions[name] = new JsonNodeExtension(JsonValue.Create(value)!);
+    }
+
+    private static void NormalizeFernTypes(this OpenApiDocument openApiDocument)
+    {
+        foreach (var schema in (openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>())
+                     .OrderBy(x => x.Key, StringComparer.Ordinal)
+                     .Select(x => x.Value))
+        {
+            NormalizeFernTypeSchema(schema);
+        }
+
+        foreach (var path in openApiDocument.Paths ?? new OpenApiPaths())
+        {
+            foreach (var parameter in path.Value.Parameters ?? [])
+            {
+                NormalizeFernTypeSchema(parameter.Schema);
+            }
+
+            foreach (var operation in path.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
+            {
+                foreach (var parameter in operation.Value.Parameters ?? [])
+                {
+                    NormalizeFernTypeSchema(parameter.Schema);
+                }
+
+                foreach (var mediaType in operation.Value.RequestBody?.Content ?? new Dictionary<string, IOpenApiMediaType>())
+                {
+                    NormalizeFernTypeSchema(mediaType.Value.Schema);
+                }
+
+                foreach (var response in operation.Value.Responses ?? new OpenApiResponses())
+                {
+                    foreach (var mediaType in response.Value.Content ?? new Dictionary<string, IOpenApiMediaType>())
+                    {
+                        NormalizeFernTypeSchema(mediaType.Value.Schema);
+                    }
+                }
+            }
+        }
+    }
+
+    private static void NormalizeFernTypeSchema(IOpenApiSchema? schema)
+    {
+        if (schema is not OpenApiSchema concreteSchema)
+        {
+            return;
+        }
+
+        ApplyFernTypeNormalization(concreteSchema);
+
+        foreach (var property in (concreteSchema.Properties ?? new Dictionary<string, IOpenApiSchema>())
+                     .OrderBy(x => x.Key, StringComparer.Ordinal)
+                     .Select(x => x.Value))
+        {
+            NormalizeFernTypeSchema(property);
+        }
+
+        foreach (var child in concreteSchema.AnyOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            NormalizeFernTypeSchema(child);
+        }
+
+        foreach (var child in concreteSchema.OneOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            NormalizeFernTypeSchema(child);
+        }
+
+        foreach (var child in concreteSchema.AllOf ?? Enumerable.Empty<IOpenApiSchema>())
+        {
+            NormalizeFernTypeSchema(child);
+        }
+
+        NormalizeFernTypeSchema(concreteSchema.Items);
+        NormalizeFernTypeSchema(concreteSchema.AdditionalProperties);
+    }
+
+    private static void ApplyFernTypeNormalization(OpenApiSchema schema)
+    {
+        if (!TryGetExtensionStringValue(schema.Extensions, "x-fern-type", out var fernType) ||
+            string.IsNullOrWhiteSpace(fernType))
+        {
+            return;
+        }
+
+        if (TryParseFernLiteralType(fernType, out var literalValue, out var literalType))
+        {
+            schema.Type ??= literalType;
+            schema.Const ??= literalValue;
+            return;
+        }
+
+        if (string.Equals(fernType, "datetime", StringComparison.OrdinalIgnoreCase))
+        {
+            schema.Type ??= JsonSchemaType.String;
+            schema.Format ??= "date-time";
+            return;
+        }
+
+        if (string.Equals(fernType, "optional<datetime>", StringComparison.OrdinalIgnoreCase))
+        {
+            schema.Type = (schema.Type ?? JsonSchemaType.String) | JsonSchemaType.Null;
+            schema.Format ??= "date-time";
+        }
+    }
+
+    private static bool TryParseFernLiteralType(
+        string fernType,
+        out string? literalValue,
+        out JsonSchemaType literalType)
+    {
+        literalValue = null;
+        literalType = default;
+
+        var match = Regex.Match(
+            fernType,
+            @"^\s*literal<(?<value>.+)>\s*$",
+            RegexOptions.CultureInvariant);
+        if (!match.Success)
+        {
+            return false;
+        }
+
+        var rawValue = match.Groups["value"].Value.Trim();
+
+        try
+        {
+            var node = JsonNode.Parse(rawValue);
+            if (node is JsonValue jsonValue)
+            {
+                if (jsonValue.TryGetValue<string>(out var stringValue))
+                {
+                    literalValue = stringValue;
+                    literalType = JsonSchemaType.String;
+                    return true;
+                }
+
+                if (jsonValue.TryGetValue<bool>(out var boolValue))
+                {
+                    literalValue = boolValue ? "true" : "false";
+                    literalType = JsonSchemaType.Boolean;
+                    return true;
+                }
+
+                if (jsonValue.TryGetValue<long>(out var longValue))
+                {
+                    literalValue = longValue.ToString(CultureInfo.InvariantCulture);
+                    literalType = JsonSchemaType.Integer;
+                    return true;
+                }
+
+                if (jsonValue.TryGetValue<double>(out var doubleValue))
+                {
+                    literalValue = doubleValue.ToString("R", CultureInfo.InvariantCulture);
+                    literalType = JsonSchemaType.Number;
+                    return true;
+                }
+            }
+        }
+        catch (JsonException)
+        {
+        }
+
+        literalValue = rawValue.Trim('"');
+        literalType = JsonSchemaType.String;
+        return true;
     }
 
     private static bool TryPromoteOpenApiFragment(

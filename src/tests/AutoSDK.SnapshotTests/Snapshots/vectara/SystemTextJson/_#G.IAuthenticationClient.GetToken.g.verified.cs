@@ -32,7 +32,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetTokenResponse> GetTokenAsync(
             string clientId,
             string clientSecret,
-            object grantType,
+            string grantType = "client_credentials",
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

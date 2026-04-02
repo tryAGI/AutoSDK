@@ -32,13 +32,13 @@ namespace G
         /// Created
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Created { get; set; } = default!;
+        public global::System.DateTime Created { get; set; } = default!;
 
         /// <summary>
         /// Completed
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("completed", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Completed { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("completed")]
+        public global::System.DateTime? Completed { get; set; }
 
         /// <summary>
         /// Audio URL
@@ -73,29 +73,29 @@ namespace G
         /// <param name="created">
         /// Created
         /// </param>
-        /// <param name="completed">
-        /// Completed
-        /// </param>
         /// <param name="audioUrl">
         /// Audio URL
         /// </param>
         /// <param name="error">
         /// Error message of why the transcript failed
         /// </param>
+        /// <param name="completed">
+        /// Completed
+        /// </param>
         public TranscriptListItem(
             global::System.Guid id,
             string resourceUrl,
             global::G.TranscriptStatus status,
-            string created,
-            object completed,
+            global::System.DateTime created,
             string audioUrl,
-            object error)
+            object error,
+            global::System.DateTime? completed)
         {
             this.Id = id;
             this.ResourceUrl = resourceUrl ?? throw new global::System.ArgumentNullException(nameof(resourceUrl));
             this.Status = status;
-            this.Created = created ?? throw new global::System.ArgumentNullException(nameof(created));
-            this.Completed = completed ?? throw new global::System.ArgumentNullException(nameof(completed));
+            this.Created = created;
+            this.Completed = completed;
             this.AudioUrl = audioUrl ?? throw new global::System.ArgumentNullException(nameof(audioUrl));
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

@@ -914,6 +914,83 @@ public class ExtensionParsingTests
     }
 
     [TestMethod]
+    public void XFernType_NormalizesLiteralAndDateTimeShapes()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: FernType
+                              version: 1.0.0
+                            paths:
+                              /oauth/token:
+                                post:
+                                  operationId: getToken
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      application/json:
+                                        schema:
+                                          type: object
+                                          properties:
+                                            client_id:
+                                              type: string
+                                            client_secret:
+                                              type: string
+                                            grant_type:
+                                              x-fern-type: literal<"client_credentials">
+                                          required:
+                                            - client_id
+                                            - client_secret
+                                            - grant_type
+                                  responses:
+                                    '200':
+                                      description: OK
+                              /transcript:
+                                get:
+                                  operationId: getTranscript
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: object
+                                            properties:
+                                              created:
+                                                type: string
+                                                x-fern-type: datetime
+                                              completed:
+                                                x-fern-type: optional<datetime>
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Classes.Select(x => x.ClassName).Should().Contain("GetTokenRequest");
+        data.Classes.Select(x => x.ClassName).Should().NotContain("GetTokenRequestGrantType");
+
+        var requestModel = data.Classes.First(x => x.ClassName == "GetTokenRequest");
+        var grantType = requestModel.Properties.First(x => x.Id == "grant_type");
+        grantType.Type.CSharpTypeWithoutNullability.Should().Be("string");
+        grantType.IsRequired.Should().BeFalse();
+        grantType.DefaultValue.Should().Be("\"client_credentials\"");
+
+        var transcriptModel = data.Classes.First(x => x.ClassName == "GetTranscriptResponse");
+        var created = transcriptModel.Properties.First(x => x.Id == "created");
+        created.Type.CSharpTypeWithoutNullability.Should().Be("global::System.DateTime");
+        created.Type.CSharpTypeNullability.Should().BeTrue();
+
+        var completed = transcriptModel.Properties.First(x => x.Id == "completed");
+        completed.Type.CSharpTypeWithoutNullability.Should().Be("global::System.DateTime");
+        completed.Type.CSharpTypeNullability.Should().BeTrue();
+    }
+
+    [TestMethod]
     public void XFernSdkGroupName_EmptyTagsFilteredFromResolvedTags()
     {
         // When x-fern-sdk-group-name reassigns ALL operations away from their original tag,

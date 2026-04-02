@@ -1155,6 +1155,77 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithFernTypeLiteralAndDateTime_UsesTypedOutput()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: FernType
+  version: 1.0.0
+paths:
+  /oauth/token:
+    post:
+      operationId: getToken
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+                grant_type:
+                  x-fern-type: literal<"client_credentials">
+              required:
+                - client_id
+                - client_secret
+                - grant_type
+      responses:
+        '200':
+          description: OK
+  /transcript:
+    get:
+      operationId: getTranscript
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  created:
+                    type: string
+                    x-fern-type: datetime
+                  completed:
+                    x-fern-type: optional<datetime>
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "fern-type.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "G",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().NotContain("class GetTokenRequestGrantType");
+                content.Should().NotContain("object grantType");
+                content.Should().Contain("string grantType = \"client_credentials\"");
+                content.Should().Contain("public string GrantType { get; set; } = \"client_credentials\";");
+                content.Should().Contain("public global::System.DateTime? Created { get; set; }");
+                content.Should().Contain("public global::System.DateTime? Completed { get; set; }");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithRequiredNullableAnyOfRequestProperty_Builds()
     {
         const string spec = """
