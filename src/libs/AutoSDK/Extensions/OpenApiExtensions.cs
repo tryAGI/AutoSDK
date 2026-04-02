@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 using AutoSDK.Helpers;
@@ -27,6 +28,7 @@ public static class OpenApiExtensions
         CancellationToken cancellationToken = default)
     {
         yamlOrJson = yamlOrJson ?? throw new ArgumentNullException(nameof(yamlOrJson));
+        yamlOrJson = NormalizeOpenApi31NumericExclusiveBounds(yamlOrJson);
 
         var readerSettings = new OpenApiReaderSettings
         {
@@ -168,6 +170,195 @@ info:
 
 """ + text;
         return true;
+    }
+
+    private static string NormalizeOpenApi31NumericExclusiveBounds(string text)
+    {
+        if (TryNormalizeOpenApi31Json(text, out var normalizedText) ||
+            TryNormalizeOpenApi31Yaml(text, out normalizedText))
+        {
+            return normalizedText;
+        }
+
+        return text;
+    }
+
+    private static bool TryNormalizeOpenApi31Json(
+        string text,
+        out string normalizedText)
+    {
+        normalizedText = string.Empty;
+
+        JsonNode? root;
+        try
+        {
+            root = JsonNode.Parse(text);
+        }
+        catch
+        {
+            return false;
+        }
+
+        if (root is not JsonObject rootObject ||
+            !IsOpenApi31Document(rootObject) ||
+            !NormalizeNumericExclusiveBounds(rootObject))
+        {
+            return false;
+        }
+
+        normalizedText = rootObject.ToJsonString();
+        return true;
+    }
+
+    private static bool TryNormalizeOpenApi31Yaml(
+        string text,
+        out string normalizedText)
+    {
+        normalizedText = string.Empty;
+
+        if (!TryDeserializeYamlAsJsonObject(text, out var rootObject) ||
+            rootObject == null ||
+            !IsOpenApi31Document(rootObject) ||
+            !NormalizeNumericExclusiveBounds(rootObject))
+        {
+            return false;
+        }
+
+        normalizedText = rootObject.ToJsonString();
+        return true;
+    }
+
+    private static bool TryDeserializeYamlAsJsonObject(
+        string text,
+        out JsonObject? rootObject)
+    {
+        rootObject = null;
+
+        try
+        {
+            var sharpYamlAssembly = AppDomain.CurrentDomain.GetAssemblies()
+                .FirstOrDefault(a => a.GetName().Name == "SharpYaml");
+
+            if (sharpYamlAssembly == null)
+            {
+                sharpYamlAssembly = System.Reflection.Assembly.Load("SharpYaml");
+            }
+
+            var serializerType = sharpYamlAssembly?.GetType("SharpYaml.Serialization.Serializer");
+            if (serializerType == null)
+            {
+                return false;
+            }
+
+            var serializer = Activator.CreateInstance(serializerType);
+            var deserializeMethod = serializerType.GetMethod("Deserialize", new[] { typeof(string) });
+            var result = deserializeMethod?.Invoke(serializer, new object[] { text });
+            if (result == null)
+            {
+                return false;
+            }
+
+            rootObject = JsonNode.Parse(JsonSerializer.Serialize(result)) as JsonObject;
+            return rootObject != null;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    private static bool IsOpenApi31Document(JsonObject rootObject)
+    {
+        return rootObject["openapi"]?.ToString()?.StartsWith("3.1", StringComparison.Ordinal) == true;
+    }
+
+    private static bool NormalizeNumericExclusiveBounds(JsonNode? node)
+    {
+        return node switch
+        {
+            JsonObject jsonObject => NormalizeNumericExclusiveBounds(jsonObject),
+            JsonArray jsonArray => NormalizeNumericExclusiveBounds(jsonArray),
+            _ => false,
+        };
+    }
+
+    private static bool NormalizeNumericExclusiveBounds(JsonObject jsonObject)
+    {
+        var changed = NormalizeExclusiveMinimum(jsonObject);
+        changed |= NormalizeExclusiveMaximum(jsonObject);
+
+        foreach (var property in jsonObject.ToList())
+        {
+            changed |= NormalizeNumericExclusiveBounds(property.Value);
+        }
+
+        return changed;
+    }
+
+    private static bool NormalizeNumericExclusiveBounds(JsonArray jsonArray)
+    {
+        var changed = false;
+
+        foreach (var item in jsonArray)
+        {
+            changed |= NormalizeNumericExclusiveBounds(item);
+        }
+
+        return changed;
+    }
+
+    private static bool NormalizeExclusiveMinimum(JsonObject jsonObject)
+    {
+        var exclusiveMinimumNode = jsonObject["exclusiveMinimum"];
+        if (!TryGetNumericValue(exclusiveMinimumNode, out var exclusiveMinimum))
+        {
+            return false;
+        }
+
+        if (TryGetNumericValue(jsonObject["minimum"], out var minimum) &&
+            exclusiveMinimum < minimum)
+        {
+            jsonObject["exclusiveMinimum"] = false;
+            return true;
+        }
+
+        jsonObject["minimum"] = exclusiveMinimumNode?.DeepClone();
+        jsonObject["exclusiveMinimum"] = true;
+        return true;
+    }
+
+    private static bool NormalizeExclusiveMaximum(JsonObject jsonObject)
+    {
+        var exclusiveMaximumNode = jsonObject["exclusiveMaximum"];
+        if (!TryGetNumericValue(exclusiveMaximumNode, out var exclusiveMaximum))
+        {
+            return false;
+        }
+
+        if (TryGetNumericValue(jsonObject["maximum"], out var maximum) &&
+            exclusiveMaximum > maximum)
+        {
+            jsonObject["exclusiveMaximum"] = false;
+            return true;
+        }
+
+        jsonObject["maximum"] = exclusiveMaximumNode?.DeepClone();
+        jsonObject["exclusiveMaximum"] = true;
+        return true;
+    }
+
+    private static bool TryGetNumericValue(
+        JsonNode? node,
+        out decimal value)
+    {
+        value = default;
+
+        return node is JsonValue &&
+               decimal.TryParse(
+                   node.ToJsonString(),
+                   NumberStyles.Float,
+                   CultureInfo.InvariantCulture,
+                   out value);
     }
 
     private static bool LooksLikeOpenApiFragment(JsonObject jsonObject)

@@ -734,6 +734,82 @@ paths:
     }
 
     [TestMethod]
+    public async Task Generate_WithOpenApi31NumericExclusiveBounds_Builds()
+    {
+        const string spec = """
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "NumericBounds",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/generate": {
+      "post": {
+        "operationId": "generateText",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GenerateRequest": {
+        "type": "object",
+        "properties": {
+          "best_of": {
+            "type": "integer",
+            "minimum": 0,
+            "exclusiveMinimum": 0
+          },
+          "frequency_penalty": {
+            "type": "number",
+            "exclusiveMinimum": -2
+          },
+          "top_p": {
+            "type": "number",
+            "maximum": 1,
+            "exclusiveMinimum": 0
+          }
+        }
+      }
+    }
+  }
+}
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "openapi-31-numeric-exclusive-bounds.json",
+            specContent: spec,
+            targetFramework: "net10.0");
+    }
+
+    [TestMethod]
     public async Task Generate_WithRequiredNullableAnyOfRequestProperty_Builds()
     {
         const string spec = """
