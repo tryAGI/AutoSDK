@@ -137,7 +137,19 @@
 <!--        MetadataName="%(CompilerVisibleProperty.Identity)" />-->
 <!--  </ItemGroup>-->
 
-  <ItemGroup Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net10.0'))">
+  <PropertyGroup>
+    <_AutoSDKRequiresServerSentEvents Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net10.0'))">true</_AutoSDKRequiresServerSentEvents>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresServerSentEvents)' == 'true' and '$(ManagePackageVersionsCentrally)' == 'true' and '@(PackageVersion->WithMetadataValue('Identity', 'System.Net.ServerSentEvents'))' == ''">
+    <PackageVersion Include="System.Net.ServerSentEvents" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresServerSentEvents)' == 'true' and '$(ManagePackageVersionsCentrally)' == 'true'">
+    <PackageReference Include="System.Net.ServerSentEvents" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresServerSentEvents)' == 'true' and '$(ManagePackageVersionsCentrally)' != 'true'">
     <PackageReference Include="System.Net.ServerSentEvents" Version="9.0.0" />
   </ItemGroup>
 
