@@ -151,6 +151,6 @@ service Greeter {
         action
             .Should()
             .Throw<NotSupportedException>()
-            .WithMessage("*gRPC .proto inputs are not supported yet*");
+            .WithMessage("*gRPC .proto inputs are not supported by AutoSDK's OpenAPI/AsyncAPI pipeline*");
     }
 }

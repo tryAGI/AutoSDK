@@ -74,7 +74,7 @@ internal sealed class CliCommand : Command
         var specFormat = SpecFormatDetector.DetectFormat(yaml);
         if (specFormat == SpecFormat.GrpcProto)
         {
-            await Console.Error.WriteLineAsync(SpecFormatDetector.GrpcProtoNotSupportedMessage).ConfigureAwait(false);
+            await Console.Error.WriteLineAsync(SpecFormatDetector.GrpcProtoCommandNotSupportedMessage).ConfigureAwait(false);
             await Console.Error.FlushAsync().ConfigureAwait(false);
             Environment.Exit(1);
             return;

@@ -26,12 +26,87 @@ public class CliTests
     }
 
     [TestMethod]
-    public async Task Generate_ProtoInput_ShowsGrpcNotSupportedMessage()
+    public async Task Generate_ProtoInput_ScaffoldsGrpcClientProject()
     {
-        await AssertProtoInputShowsGrpcNotSupportedMessageAsync(
-            "generate",
-            "--namespace", "Demo",
-            "--output", "Generated");
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var protoPath = Path.Combine(tempDirectory, "greeter.proto");
+            var messagesDirectory = Path.Combine(tempDirectory, "messages");
+            Directory.CreateDirectory(messagesDirectory);
+
+            await File.WriteAllTextAsync(
+                protoPath,
+                """
+                syntax = "proto3";
+
+                package demo;
+                option csharp_namespace = "Demo.Grpc";
+
+                import "messages/common.proto";
+
+                service Greeter {
+                  rpc SayHello (demo.messages.HelloRequest) returns (demo.messages.HelloReply);
+                }
+                """);
+            await File.WriteAllTextAsync(
+                Path.Combine(messagesDirectory, "common.proto"),
+                """
+                syntax = "proto3";
+
+                package demo.messages;
+
+                message HelloRequest {
+                  string name = 1;
+                }
+
+                message HelloReply {
+                  string message = 1;
+                }
+                """);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var outputDirectory = Path.Combine(tempDirectory, "Generated");
+            var result = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate",
+                protoPath,
+                "--namespace", "Ignored.ByProtoNamespace",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory);
+
+            result.ExitCode.Should().Be(0);
+            result.StandardError.Should().BeNullOrWhiteSpace();
+
+            var csprojPath = Path.Combine(outputDirectory, "Greeter.Grpc.csproj");
+            File.Exists(csprojPath).Should().BeTrue();
+            File.Exists(Path.Combine(outputDirectory, "GrpcChannelFactory.cs")).Should().BeTrue();
+            File.Exists(Path.Combine(outputDirectory, "README.md")).Should().BeTrue();
+            File.Exists(Path.Combine(outputDirectory, "Protos", "greeter.proto")).Should().BeTrue();
+            File.Exists(Path.Combine(outputDirectory, "Protos", "messages", "common.proto")).Should().BeTrue();
+
+            var csprojText = await File.ReadAllTextAsync(csprojPath);
+            csprojText.Should().Contain("Grpc.Tools");
+            csprojText.Should().Contain("<RootNamespace>Demo.Grpc</RootNamespace>");
+
+            var buildResult = await RunDotnetAsync(
+                outputDirectory,
+                "build",
+                "--disable-build-servers",
+                csprojPath);
+            buildResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
     }
 
     [TestMethod]
@@ -2036,7 +2111,7 @@ components:
             var result = await RunDotnetAsync(repositoryDirectory, arguments.ToArray());
 
             result.ExitCode.Should().Be(1);
-            result.StandardError.Should().Contain("gRPC .proto inputs are not supported yet.");
+            result.StandardError.Should().Contain("gRPC .proto inputs are not supported by this command.");
             result.StandardError.Should().NotContain("OpenAPI specification version");
         }
         finally

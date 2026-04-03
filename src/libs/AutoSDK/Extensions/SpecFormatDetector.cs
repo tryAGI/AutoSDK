@@ -7,9 +7,13 @@ namespace AutoSDK.Extensions;
 /// </summary>
 public static class SpecFormatDetector
 {
-    public const string GrpcProtoNotSupportedMessage =
-        "gRPC .proto inputs are not supported yet. AutoSDK currently supports OpenAPI and AsyncAPI specifications. " +
-        "For gRPC today, generate an OpenAPI description via grpc-gateway/transcoding or use standard gRPC tooling.";
+    public const string GrpcProtoPipelineNotSupportedMessage =
+        "gRPC .proto inputs are not supported by AutoSDK's OpenAPI/AsyncAPI pipeline. " +
+        "Use `autosdk generate <file.proto>` to scaffold a C# gRPC client project, or use standard gRPC tooling directly.";
+
+    public const string GrpcProtoCommandNotSupportedMessage =
+        "gRPC .proto inputs are not supported by this command. " +
+        "Use `autosdk generate <file.proto>` to scaffold a C# gRPC client project instead.";
 
     /// <summary>
     /// Detects the format of the given specification text.

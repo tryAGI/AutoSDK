@@ -64,7 +64,7 @@ public static class OpenApiExtensions
 
         if (SpecFormatDetector.DetectFormat(yamlOrJson) == SpecFormat.GrpcProto)
         {
-            throw new NotSupportedException(SpecFormatDetector.GrpcProtoNotSupportedMessage);
+            throw new NotSupportedException(SpecFormatDetector.GrpcProtoPipelineNotSupportedMessage);
         }
 
         yamlOrJson = NormalizeOpenApi31NumericExclusiveBounds(yamlOrJson);

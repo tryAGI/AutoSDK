@@ -213,7 +213,7 @@ internal sealed class GenerateCommand : Command
         Description = "Generation backend. Currently supported: csharp.",
     };
 
-    public GenerateCommand() : base(name: "generate", description: "Generates client sdk using an OpenAPI or AsyncAPI spec.")
+    public GenerateCommand() : base(name: "generate", description: "Generates client SDK code from OpenAPI/AsyncAPI, or scaffolds a C# gRPC project from a local .proto file.")
     {
         Arguments.Add(Input);
         Options.Add(Output);
@@ -337,9 +337,14 @@ internal sealed class GenerateCommand : Command
         var specFormat = SpecFormatDetector.DetectFormat(yaml);
         if (specFormat == SpecFormat.GrpcProto)
         {
-            await Console.Error.WriteLineAsync(SpecFormatDetector.GrpcProtoNotSupportedMessage).ConfigureAwait(false);
-            await Console.Error.FlushAsync().ConfigureAwait(false);
-            Environment.Exit(1);
+            Console.WriteLine("Scaffolding gRPC project...");
+            await GrpcProjectScaffolder.ScaffoldAsync(
+                input,
+                yaml,
+                output,
+                settings.Namespace,
+                settings.TargetFramework).ConfigureAwait(false);
+            Console.WriteLine("Done.");
             return;
         }
 
