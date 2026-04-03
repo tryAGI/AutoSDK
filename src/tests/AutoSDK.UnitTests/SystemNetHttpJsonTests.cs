@@ -76,4 +76,14 @@ components:
         polyfillCode.Should().Contain("global::System.Net.Http.Json.JsonContent.Create(");
         polyfillCode.Should().Contain("global::System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync");
     }
+
+    [TestMethod]
+    public void SystemNetHttpJsonFlag_FallbackPolyfillsAvoidFrameworkSpecificNamedArguments()
+    {
+        var polyfillCode = Sources.Polyfills((CSharpSettings)DefaultSettings).Text;
+
+        polyfillCode.Should().NotContain("jsonSerializerContext:");
+        polyfillCode.Should().NotContain("mediaType: mediaType");
+        polyfillCode.Should().Contain("stringContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(mediaType)");
+    }
 }

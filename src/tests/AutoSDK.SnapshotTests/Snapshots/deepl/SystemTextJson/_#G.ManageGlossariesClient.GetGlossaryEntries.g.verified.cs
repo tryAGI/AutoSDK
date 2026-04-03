@@ -460,14 +460,7 @@ return new global::G.AutoSDKHttpResponse(
                 try
                 {
                     __response.EnsureSuccessStatusCode();
-
-                    using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                        cancellationToken
-#endif
-                    ).ConfigureAwait(false);
-
-return new global::G.AutoSDKHttpResponse(
+                    return new global::G.AutoSDKHttpResponse(
                         statusCode: __response.StatusCode,
                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response));
                 }

@@ -654,7 +654,11 @@ namespace {endPoint.Settings.Namespace}
 
         if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
         {
-            return GenerateSuccessResponseReturnWithoutBody(endPoint, wrapSuccessResponse);
+            var response = GenerateSuccessResponseReturnWithoutBody(endPoint, wrapSuccessResponse);
+            return string.IsNullOrWhiteSpace(response)
+                ? response
+                : $@" 
+                    {response}";
         }
 
         if (endPoint.ContentType == ContentType.String &&
@@ -665,16 +669,19 @@ namespace {endPoint.Settings.Namespace}
                 var readCall = GenerateSystemNetHttpJsonReadCall(endPoint);
 
                 return wrapSuccessResponse
-                    ? $@"var __value = {readCall} ??
+                    ? $@" 
+                    var __value = {readCall} ??
                         throw new global::System.InvalidOperationException(""Response deserialization failed."");
                     {GenerateSuccessResponseReturn(endPoint, "__value", wrapSuccessResponse)}"
-                    : $@"return
+                    : $@" 
+                    return
                         {readCall} ??
                         throw new global::System.InvalidOperationException(""Response deserialization failed."");";
             }
 
             return wrapSuccessResponse
-                ? $@"using var __content = await __response.Content.ReadAsStreamAsync(
+                ? $@" 
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
@@ -683,7 +690,8 @@ namespace {endPoint.Settings.Namespace}
                     var __value = {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
                         throw new global::System.InvalidOperationException(""Response deserialization failed."");
                     {GenerateSuccessResponseReturn(endPoint, "__value", wrapSuccessResponse)}"
-                : $@"using var __content = await __response.Content.ReadAsStreamAsync(
+                : $@" 
+                    using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
@@ -694,7 +702,8 @@ namespace {endPoint.Settings.Namespace}
                         throw new global::System.InvalidOperationException(""Response deserialization failed."");";
         }
 
-        return $@"{endPoint.ContentType switch
+        return $@" 
+                    {endPoint.ContentType switch
         {
             ContentType.Stream => "using ",
             _ => string.Empty,

@@ -124,7 +124,6 @@ namespace recraft
                 try
                 {
                     __response.EnsureSuccessStatusCode();
-
                     using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken

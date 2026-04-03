@@ -89,10 +89,14 @@ namespace {settings.Namespace}
                 options: jsonSerializerOptions);
 #else
             var json = global::System.Text.Json.JsonSerializer.Serialize(inputValue, jsonSerializerOptions);
-            return new global::System.Net.Http.StringContent(
+            var stringContent = new global::System.Net.Http.StringContent(
                 content: json,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: mediaType);
+                encoding: global::System.Text.Encoding.UTF8);
+            stringContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(mediaType)
+            {{
+                CharSet = global::System.Text.Encoding.UTF8.WebName,
+            }};
+            return stringContent;
 #endif
         }}
 
@@ -124,11 +128,15 @@ namespace {settings.Namespace}
             var json = global::System.Text.Json.JsonSerializer.Serialize(
                 value: inputValue,
                 inputType: inputType,
-                jsonSerializerContext: jsonSerializerContext);
-            return new global::System.Net.Http.StringContent(
+                jsonSerializerContext);
+            var stringContent = new global::System.Net.Http.StringContent(
                 content: json,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: mediaType);
+                encoding: global::System.Text.Encoding.UTF8);
+            stringContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(mediaType)
+            {{
+                CharSet = global::System.Text.Encoding.UTF8.WebName,
+            }};
+            return stringContent;
 #endif
         }}
 
@@ -178,7 +186,7 @@ namespace {settings.Namespace}
             return (T?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 utf8Json: stream,
                 returnType: typeof(T),
-                jsonSerializerContext: jsonSerializerContext,
+                jsonSerializerContext,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 #endif
         }}
