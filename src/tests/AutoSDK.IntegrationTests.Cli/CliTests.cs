@@ -2212,7 +2212,7 @@ components:
             File.Exists(assetsPath).Should().BeTrue();
 
             var projectAssets = await File.ReadAllTextAsync(assetsPath);
-            projectAssets.Should().Contain("System.Net.ServerSentEvents");
+            projectAssets.Should().Contain("System.Net.ServerSentEvents/10.0.5");
         }
         finally
         {
