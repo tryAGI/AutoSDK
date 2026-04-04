@@ -142,7 +142,7 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(_AutoSDKRequiresServerSentEvents)' == 'true' and '$(ManagePackageVersionsCentrally)' == 'true' and '@(PackageVersion->WithMetadataValue('Identity', 'System.Net.ServerSentEvents'))' == ''">
-    <PackageVersion Include="System.Net.ServerSentEvents" Version="9.0.0" />
+    <PackageVersion Include="System.Net.ServerSentEvents" Version="10.0.5" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(_AutoSDKRequiresServerSentEvents)' == 'true' and '$(ManagePackageVersionsCentrally)' == 'true'">
@@ -150,7 +150,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(_AutoSDKRequiresServerSentEvents)' == 'true' and '$(ManagePackageVersionsCentrally)' != 'true'">
-    <PackageReference Include="System.Net.ServerSentEvents" Version="9.0.0" />
+    <PackageReference Include="System.Net.ServerSentEvents" Version="10.0.5" />
   </ItemGroup>
 
 </Project>
