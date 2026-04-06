@@ -40,15 +40,10 @@ public static class CSharpPropertyNameGenerator
     public static string SanitizeName(string? name, string clsCompliantEnumPrefix, bool skipHandlingWordSeparators = false)
     {
         static bool InvalidFirstChar(char ch)
-            => ch is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z');
+            => ch != '_' && !char.IsLetter(ch);
 
         static bool InvalidSubsequentChar(char ch)
-            => ch is not (
-                '_'
-                or >= 'A' and <= 'Z'
-                or >= 'a' and <= 'z'
-                or >= '0' and <= '9'
-                );
+            => ch != '_' && !char.IsLetterOrDigit(ch);
 
         if (name is null || name.Length == 0)
         {
