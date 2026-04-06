@@ -58,6 +58,76 @@ public class AuthorizationGenerationTests
     }
 
     [TestMethod]
+    public void GenerateAuthorization_WithHyphenatedSchemeName_SanitizesFriendlyName()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Hyphenated Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - access-token: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                access-token:
+                                  type: http
+                                  scheme: access-token
+                            """;
+
+        var authorization = GetSingleAuthorization(yaml);
+
+        authorization.FriendlyName.Should().Be("AccessToken");
+        authorization.MethodName.Should().Be("AuthorizeUsingAccessToken");
+        Sources.Authorization(authorization).Name.Should().Contain(".AccessToken.g.cs");
+        Sources.AuthorizationInterface(authorization).Name.Should().Contain(".AccessToken.g.cs");
+    }
+
+    [TestMethod]
+    public void GenerateAuthorization_ApiKeyInCookie_UsesApiKeyParameter()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Cookie Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - access-token: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                access-token:
+                                  type: apiKey
+                                  in: cookie
+                                  name: access-token
+                            """;
+
+        var authorization = GetSingleAuthorization(yaml);
+        var content = Sources.Authorization(authorization).Text;
+
+        authorization.FriendlyName.Should().Be("ApiKeyInCookie");
+        authorization.MethodName.Should().Be("AuthorizeUsingApiKeyInCookie");
+        authorization.Parameters.Should().ContainSingle().Which.Should().Be("apiKey");
+        content.Should().Contain("public void AuthorizeUsingApiKeyInCookie(");
+        content.Should().Contain("string apiKey");
+        content.Should().Contain("Location = \"Cookie\"");
+        content.Should().Contain("Name = \"access-token\"");
+        content.Should().Contain("Value = apiKey");
+    }
+
+    [TestMethod]
     public void GenerateAuthorization_OAuth2AuthorizationCode_GeneratesAuthorizationCodeHelpers()
     {
         const string yaml = """

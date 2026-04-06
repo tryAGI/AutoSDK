@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using AutoSDK.Naming.Properties;
 using Microsoft.OpenApi;
 
 namespace AutoSDK.Generation;
@@ -21,6 +22,7 @@ public static class CSharpAuthorizationFactory
             (SecuritySchemeType.Http, _, _) => scheme.Scheme?.ToPropertyName() ?? "Http",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => "ApiKeyInHeader",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => "ApiKeyInQuery",
+            (SecuritySchemeType.ApiKey, _, ParameterLocation.Cookie) => "ApiKeyInCookie",
             (SecuritySchemeType.OAuth2, _, _) => "OAuth2",
             (SecuritySchemeType.OpenIdConnect, _, _) => "OpenIdConnect",
             _ => scheme.Name?.ToPropertyName() ?? scheme.Scheme?.ToPropertyName() ?? "Authorization",
@@ -32,6 +34,7 @@ public static class CSharpAuthorizationFactory
             (SecuritySchemeType.Http, _, _) => ["apiKey"],
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => ["apiKey"],
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => ["apiKey"],
+            (SecuritySchemeType.ApiKey, _, ParameterLocation.Cookie) => ["apiKey"],
             _ => [],
         };
 
@@ -84,6 +87,8 @@ public static class CSharpAuthorizationFactory
         EquatableArray<OAuthFlow> flows,
         string openIdConnectUrl)
     {
+        friendlyName = NormalizeFriendlyName(friendlyName, settings);
+
         return new Authorization(
             FriendlyName: friendlyName,
             MethodName: $"AuthorizeUsing{friendlyName}",
@@ -96,5 +101,26 @@ public static class CSharpAuthorizationFactory
             GlobalSettings: globalSettings,
             Flows: flows,
             OpenIdConnectUrl: openIdConnectUrl);
+    }
+
+    private static string NormalizeFriendlyName(
+        string friendlyName,
+        CSharpSettings settings)
+    {
+        if (string.IsNullOrWhiteSpace(friendlyName))
+        {
+            return "Authorization";
+        }
+
+        var normalizedName = friendlyName.ToClassName();
+        normalizedName = CSharpPropertyNameGenerator.SanitizeName(
+            normalizedName,
+            settings.ClsCompliantEnumPrefix,
+            skipHandlingWordSeparators: true);
+        normalizedName = CSharpPropertyNameGenerator.AvoidObjectMemberNameCollision(normalizedName);
+
+        return string.IsNullOrWhiteSpace(normalizedName)
+            ? "Authorization"
+            : normalizedName;
     }
 }
