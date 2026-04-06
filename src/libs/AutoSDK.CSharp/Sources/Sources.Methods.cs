@@ -296,6 +296,23 @@ namespace {endPoint.Settings.Namespace}
     public static string GenerateMethod(
         EndPoint endPoint, bool isInterface = false, bool returnResponseWrapper = false)
     {
+        var hasOAuth2Authorization = endPoint.Authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
+        var rootClassName = endPoint.Settings.ClassName.Replace(".", string.Empty);
+        var completionOption = $"global::System.Net.Http.HttpCompletionOption.{(endPoint.Stream
+            ? nameof(HttpCompletionOption.ResponseHeadersRead)
+            : nameof(HttpCompletionOption.ResponseContentRead))}";
+        var sendExpression = hasOAuth2Authorization
+            ? $@"global::{endPoint.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Helpers.SendAsync(
+                httpClient: HttpClient,
+                request: __httpRequest,
+                completionOption: {completionOption},
+                authorizations: Authorizations,
+                oAuth2Coordinator: AutoSDKOAuth2State,
+                cancellationToken: cancellationToken)"
+            : $@"HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: {completionOption},
+                cancellationToken: cancellationToken)";
         var taskType = returnResponseWrapper
             ? $"global::System.Threading.Tasks.Task<{GetResponseWrapperType(endPoint)}>"
             : endPoint.RawStream
@@ -414,13 +431,7 @@ namespace {endPoint.Settings.Namespace}
                 {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                 request: request")});
 
-            {(endPoint.RawStream ? "" : "using ")}var __response = await HttpClient.SendAsync(
-                request: __httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.{(endPoint.Stream
-                    // https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-migrate-from-httpwebrequest#usage-of-buffering-properties
-                    ? nameof(HttpCompletionOption.ResponseHeadersRead)
-                    : nameof(HttpCompletionOption.ResponseContentRead))},
-                cancellationToken: cancellationToken).ConfigureAwait(false);
+            {(endPoint.RawStream ? "" : "using ")}var __response = await {sendExpression}.ConfigureAwait(false);
 {(endPoint.RawStream ? @"
             try
             {" : TrimmedLine)}

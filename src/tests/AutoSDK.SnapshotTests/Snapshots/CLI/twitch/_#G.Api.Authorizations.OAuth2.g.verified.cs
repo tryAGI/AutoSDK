@@ -1,0 +1,648 @@
+﻿//HintName: G.Api.Authorizations.OAuth2.g.cs
+
+#nullable enable
+
+namespace G
+{
+    public sealed partial class Api
+    {
+        /// <summary>
+        /// Represents an OAuth2 token.
+        /// </summary>
+        public sealed class OAuth2Token
+        {
+            /// <summary>
+            /// Gets or sets the access token.
+            /// </summary>
+            public string AccessToken { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets the token type.
+            /// </summary>
+            public string TokenType { get; set; } = "Bearer";
+
+            /// <summary>
+            /// Gets or sets the refresh token.
+            /// </summary>
+            public string? RefreshToken { get; set; }
+
+            /// <summary>
+            /// Gets or sets the scope.
+            /// </summary>
+            public string? Scope { get; set; }
+
+            /// <summary>
+            /// Gets or sets the expiration time.
+            /// </summary>
+            public global::System.DateTimeOffset? ExpiresAt { get; set; }
+
+            /// <summary>
+            /// Determines whether the token should be refreshed.
+            /// </summary>
+            /// <param name="clockSkew"></param>
+            /// <returns></returns>
+            public bool ShouldRefresh(
+                global::System.TimeSpan clockSkew)
+            {
+                if (clockSkew < global::System.TimeSpan.Zero)
+                {
+                    throw new global::System.ArgumentOutOfRangeException(nameof(clockSkew));
+                }
+
+                return ExpiresAt.HasValue &&
+                    global::System.DateTimeOffset.UtcNow >= ExpiresAt.Value - clockSkew;
+            }
+
+            /// <summary>
+            /// Creates a clone of the token.
+            /// </summary>
+            /// <returns></returns>
+            public OAuth2Token Clone()
+            {
+                return new OAuth2Token
+                {
+                    AccessToken = AccessToken,
+                    TokenType = TokenType,
+                    RefreshToken = RefreshToken,
+                    Scope = Scope,
+                    ExpiresAt = ExpiresAt,
+                };
+            }
+        }
+
+        /// <summary>
+        /// Stores OAuth2 tokens.
+        /// </summary>
+        public interface IOAuth2TokenStore
+        {
+            /// <summary>
+            /// Gets the currently stored OAuth2 token.
+            /// </summary>
+            /// <returns></returns>
+            OAuth2Token? GetToken();
+
+            /// <summary>
+            /// Stores the specified OAuth2 token.
+            /// </summary>
+            /// <param name="token"></param>
+            void SetToken(
+                OAuth2Token? token);
+        }
+
+        /// <summary>
+        /// Stores OAuth2 tokens in memory.
+        /// </summary>
+        public sealed class InMemoryOAuth2TokenStore : IOAuth2TokenStore
+        {
+            private readonly object _syncRoot = new object();
+            private OAuth2Token? _token;
+
+            /// <inheritdoc/>
+            public OAuth2Token? GetToken()
+            {
+                lock (_syncRoot)
+                {
+                    return _token?.Clone();
+                }
+            }
+
+            /// <inheritdoc/>
+            public void SetToken(
+                OAuth2Token? token)
+            {
+                lock (_syncRoot)
+                {
+                    _token = token?.Clone();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Coordinates OAuth2 token storage and refresh.
+        /// </summary>
+        public sealed class AutoSDKOAuth2Coordinator
+        {
+            private readonly global::System.Threading.SemaphoreSlim _refreshSemaphore = new global::System.Threading.SemaphoreSlim(1, 1);
+            private global::System.Func<global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<OAuth2Token>>? _refreshTokenAsync;
+
+            /// <summary>
+            /// Gets or sets the OAuth2 token store.
+            /// </summary>
+            public IOAuth2TokenStore TokenStore { get; set; } = new InMemoryOAuth2TokenStore();
+
+            /// <summary>
+            /// Gets or sets a value indicating whether OAuth2 tokens should be refreshed automatically.
+            /// </summary>
+            public bool AutoRefreshTokens { get; set; } = true;
+
+            /// <summary>
+            /// Gets or sets the clock skew used when checking token expiration.
+            /// </summary>
+            public global::System.TimeSpan RefreshClockSkew { get; set; } = global::System.TimeSpan.FromMinutes(1);
+
+            /// <summary>
+            /// Gets a value indicating whether OAuth2 tokens can be refreshed automatically.
+            /// </summary>
+            public bool CanAutoRefresh => AutoRefreshTokens && _refreshTokenAsync is not null;
+
+            /// <summary>
+            /// Gets the currently stored OAuth2 token.
+            /// </summary>
+            /// <returns></returns>
+            public OAuth2Token? GetToken()
+            {
+                return TokenStore.GetToken();
+            }
+
+            /// <summary>
+            /// Stores the specified OAuth2 token.
+            /// </summary>
+            /// <param name="token"></param>
+            public void SetToken(
+                OAuth2Token? token)
+            {
+                TokenStore.SetToken(token);
+            }
+
+            /// <summary>
+            /// Configures the OAuth2 token refresh callback.
+            /// </summary>
+            /// <param name="refreshTokenAsync"></param>
+            public void ConfigureRefresh(
+                global::System.Func<global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<OAuth2Token>> refreshTokenAsync)
+            {
+                _refreshTokenAsync = refreshTokenAsync ?? throw new global::System.ArgumentNullException(nameof(refreshTokenAsync));
+            }
+
+            /// <summary>
+            /// Ensures the current OAuth2 token is applied and refreshed if needed.
+            /// </summary>
+            /// <param name="applyToken"></param>
+            /// <param name="cancellationToken"></param>
+            /// <returns></returns>
+            public async global::System.Threading.Tasks.Task<bool> TryEnsureFreshTokenAsync(
+                global::System.Action<OAuth2Token> applyToken,
+                global::System.Threading.CancellationToken cancellationToken = default)
+            {
+                applyToken = applyToken ?? throw new global::System.ArgumentNullException(nameof(applyToken));
+
+                var token = GetToken();
+                if (token is null)
+                {
+                    return false;
+                }
+
+                applyToken(token);
+                if (!CanAutoRefresh || !token.ShouldRefresh(RefreshClockSkew))
+                {
+                    return false;
+                }
+
+                return await TryRefreshAsync(
+                    currentAccessToken: token.AccessToken,
+                    requireChangedToken: false,
+                    applyToken: applyToken,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+
+            /// <summary>
+            /// Attempts to refresh the OAuth2 token after an unauthorized response.
+            /// </summary>
+            /// <param name="currentAccessToken"></param>
+            /// <param name="applyToken"></param>
+            /// <param name="cancellationToken"></param>
+            /// <returns></returns>
+            public async global::System.Threading.Tasks.Task<bool> TryRefreshAfterUnauthorizedAsync(
+                string? currentAccessToken,
+                global::System.Action<OAuth2Token> applyToken,
+                global::System.Threading.CancellationToken cancellationToken = default)
+            {
+                applyToken = applyToken ?? throw new global::System.ArgumentNullException(nameof(applyToken));
+                if (!CanAutoRefresh)
+                {
+                    return false;
+                }
+
+                return await TryRefreshAsync(
+                    currentAccessToken: currentAccessToken,
+                    requireChangedToken: true,
+                    applyToken: applyToken,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+
+            private async global::System.Threading.Tasks.Task<bool> TryRefreshAsync(
+                string? currentAccessToken,
+                bool requireChangedToken,
+                global::System.Action<OAuth2Token> applyToken,
+                global::System.Threading.CancellationToken cancellationToken)
+            {
+                var refreshTokenAsync = _refreshTokenAsync;
+                if (refreshTokenAsync is null)
+                {
+                    return false;
+                }
+
+                await _refreshSemaphore.WaitAsync(cancellationToken).ConfigureAwait(false);
+                try
+                {
+                    var token = GetToken();
+                    if (token is not null)
+                    {
+                        if (!string.IsNullOrWhiteSpace(currentAccessToken) &&
+                            !string.Equals(token.AccessToken, currentAccessToken, global::System.StringComparison.Ordinal))
+                        {
+                            applyToken(token);
+                            return true;
+                        }
+                        if (!requireChangedToken && !token.ShouldRefresh(RefreshClockSkew))
+                        {
+                            applyToken(token);
+                            return true;
+                        }
+                    }
+
+                    OAuth2Token refreshedToken;
+                    try
+                    {
+                        refreshedToken = await refreshTokenAsync(cancellationToken).ConfigureAwait(false);
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+
+                    if (string.IsNullOrWhiteSpace(refreshedToken.AccessToken))
+                    {
+                        return false;
+                    }
+
+                    SetToken(refreshedToken);
+                    applyToken(refreshedToken);
+                    return true;
+                }
+                finally
+                {
+                    _refreshSemaphore.Release();
+                }
+            }
+        }
+
+        internal static class AutoSDKOAuth2Helpers
+        {
+            internal static void SetAuthorization(
+                global::System.Collections.Generic.List<global::G.EndPointAuthorization> authorizations,
+                OAuth2Token? token)
+            {
+                authorizations = authorizations ?? throw new global::System.ArgumentNullException(nameof(authorizations));
+
+                for (var i = authorizations.Count - 1; i >= 0; i--)
+                {
+                    if (authorizations[i].Type == "OAuth2")
+                    {
+                        authorizations.RemoveAt(i);
+                    }
+                }
+
+                if (token is null)
+                {
+                    return;
+                }
+
+                authorizations.Add(new global::G.EndPointAuthorization
+                {
+                    Type = "OAuth2",
+                    Location = "Header",
+                    Name = string.IsNullOrWhiteSpace(token.TokenType) ? "Bearer" : token.TokenType,
+                    Value = token.AccessToken,
+                });
+            }
+
+            internal static async global::System.Threading.Tasks.Task<global::System.Net.Http.HttpResponseMessage> SendAsync(
+                global::System.Net.Http.HttpClient httpClient,
+                global::System.Net.Http.HttpRequestMessage request,
+                global::System.Net.Http.HttpCompletionOption completionOption,
+                global::System.Collections.Generic.List<global::G.EndPointAuthorization> authorizations,
+                AutoSDKOAuth2Coordinator oAuth2Coordinator,
+                global::System.Threading.CancellationToken cancellationToken = default)
+            {
+                httpClient = httpClient ?? throw new global::System.ArgumentNullException(nameof(httpClient));
+                request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+                authorizations = authorizations ?? throw new global::System.ArgumentNullException(nameof(authorizations));
+                oAuth2Coordinator = oAuth2Coordinator ?? throw new global::System.ArgumentNullException(nameof(oAuth2Coordinator));
+
+                _ = await oAuth2Coordinator.TryEnsureFreshTokenAsync(
+                    applyToken: token => SetAuthorization(authorizations, token),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
+
+                ApplyAuthorizationHeader(request, authorizations);
+                var currentAccessToken = GetCurrentAccessToken(authorizations);
+                using var retryRequest = oAuth2Coordinator.CanAutoRefresh
+                    ? await CloneRequestAsync(request, cancellationToken).ConfigureAwait(false)
+                    : null;
+
+                var response = await httpClient.SendAsync(
+                    request: request,
+                    completionOption: completionOption,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
+
+                if ((int)response.StatusCode != 401 || retryRequest is null)
+                {
+                    return response;
+                }
+
+                var refreshed = await oAuth2Coordinator.TryRefreshAfterUnauthorizedAsync(
+                    currentAccessToken: currentAccessToken,
+                    applyToken: token => SetAuthorization(authorizations, token),
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
+                if (!refreshed)
+                {
+                    return response;
+                }
+
+                response.Dispose();
+                ApplyAuthorizationHeader(retryRequest, authorizations);
+                return await httpClient.SendAsync(
+                    request: retryRequest,
+                    completionOption: completionOption,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+
+            private static string? GetCurrentAccessToken(
+                global::System.Collections.Generic.List<global::G.EndPointAuthorization> authorizations)
+            {
+                foreach (var authorization in authorizations)
+                {
+                    if (authorization.Type == "OAuth2")
+                    {
+                        return authorization.Value;
+                    }
+                }
+
+                return null;
+            }
+
+            private static void ApplyAuthorizationHeader(
+                global::System.Net.Http.HttpRequestMessage request,
+                global::System.Collections.Generic.List<global::G.EndPointAuthorization> authorizations)
+            {
+                foreach (var authorization in authorizations)
+                {
+                    if (authorization.Type == "OAuth2")
+                    {
+                        request.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                            scheme: authorization.Name,
+                            parameter: authorization.Value);
+                        return;
+                    }
+                }
+            }
+
+            private static async global::System.Threading.Tasks.Task<global::System.Net.Http.HttpRequestMessage> CloneRequestAsync(
+                global::System.Net.Http.HttpRequestMessage request,
+                global::System.Threading.CancellationToken cancellationToken)
+            {
+                var clone = new global::System.Net.Http.HttpRequestMessage(
+                    method: request.Method,
+                    requestUri: request.RequestUri);
+                clone.Version = request.Version;
+#if NET6_0_OR_GREATER
+                clone.VersionPolicy = request.VersionPolicy;
+#endif
+                foreach (var header in request.Headers)
+                {
+                    clone.Headers.TryAddWithoutValidation(header.Key, header.Value);
+                }
+                if (request.Content is not null)
+                {
+                    var bytes = await global::G.AutoSdkPolyfills.ReadAsByteArrayAsync(
+                        request.Content,
+                        cancellationToken).ConfigureAwait(false);
+                    var content = new global::System.Net.Http.ByteArrayContent(bytes);
+                    foreach (var header in request.Content.Headers)
+                    {
+                        content.Headers.TryAddWithoutValidation(header.Key, header.Value);
+                    }
+
+                    clone.Content = content;
+                }
+
+                return clone;
+            }
+        }
+        /// <summary>
+        /// Known OAuth2 scopes.
+        /// </summary>
+        public enum OAuth2Scope
+        {
+            Analytics_read_extensions,            Analytics_read_games,            Bits_read,            Channel_manage_ads,            Channel_read_ads,            Channel_manage_broadcast,            Channel_read_charity,            Channel_edit_commercial,            Channel_read_editors,            Channel_manage_extensions,            Channel_read_goals,            Channel_read_guestStar,            Channel_manage_guestStar,            Channel_read_hypeTrain,            Channel_manage_moderators,            Channel_read_polls,            Channel_manage_polls,            Channel_read_predictions,            Channel_manage_predictions,            Channel_manage_raids,            Channel_read_redemptions,            Channel_manage_redemptions,            Channel_manage_schedule,            Channel_read_streamKey,            Channel_read_subscriptions,            Channel_manage_videos,            Channel_read_vips,            Channel_manage_vips,            Clips_edit,            Moderation_read,            Moderator_manage_announcements,            Moderator_manage_automod,            Moderator_read_automodSettings,            Moderator_manage_automodSettings,            Moderator_manage_bannedUsers,            Moderator_read_blockedTerms,            Moderator_manage_blockedTerms,            Moderator_manage_chatMessages,            Moderator_read_chatSettings,            Moderator_manage_chatSettings,            Moderator_read_chatters,            Moderator_read_followers,            Moderator_read_guestStar,            Moderator_manage_guestStar,            Moderator_read_shieldMode,            Moderator_manage_shieldMode,            Moderator_read_shoutouts,            Moderator_manage_shoutouts,            Moderator_read_unbanRequests,            Moderator_manage_unbanRequests,            User_edit,            User_read_blockedUsers,            User_manage_blockedUsers,            User_read_broadcast,            User_manage_chatColor,            User_read_email,            User_read_emotes,            User_read_follows,            User_read_moderatedChannels,            User_read_subscriptions,            User_manage_whispers,            Channel_bot,            Channel_moderate,            Chat_edit,            Chat_read,            User_bot,            User_read_chat,            User_write_chat,            Whispers_read,            Whispers_edit,
+        }
+        /// <summary>
+        /// Gets or sets the OAuth2 token store.
+        /// </summary>
+        public IOAuth2TokenStore OAuth2TokenStore
+        {
+            get => AutoSDKOAuth2State.TokenStore;
+            set
+            {
+                value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+
+                var token = AutoSDKOAuth2State.GetToken();
+                AutoSDKOAuth2State.TokenStore = value;
+                if (token is not null)
+                {
+                    AutoSDKOAuth2State.SetToken(token);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether OAuth2 tokens should be refreshed automatically.
+        /// </summary>
+        public bool AutoRefreshOAuth2Tokens
+        {
+            get => AutoSDKOAuth2State.AutoRefreshTokens;
+            set => AutoSDKOAuth2State.AutoRefreshTokens = value;
+        }
+
+        /// <summary>
+        /// Gets or sets the clock skew used when checking OAuth2 token expiration.
+        /// </summary>
+        public global::System.TimeSpan OAuth2RefreshClockSkew
+        {
+            get => AutoSDKOAuth2State.RefreshClockSkew;
+            set
+            {
+                if (value < global::System.TimeSpan.Zero)
+                {
+                    throw new global::System.ArgumentOutOfRangeException(nameof(value));
+                }
+
+                AutoSDKOAuth2State.RefreshClockSkew = value;
+            }
+        }
+
+        /// <summary>
+        /// Configures the OAuth2 token refresh callback.
+        /// </summary>
+        /// <param name="refreshTokenAsync"></param>
+        public void ConfigureOAuth2TokenRefresh(
+            global::System.Func<global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<OAuth2Token>> refreshTokenAsync)
+        {
+            AutoSDKOAuth2State.ConfigureRefresh(refreshTokenAsync);
+        }
+
+        /// <summary>
+        /// Gets the currently stored OAuth2 token.
+        /// </summary>
+        /// <returns>The stored OAuth2 token, if present.</returns>
+        public OAuth2Token? GetOAuth2Token()
+        {
+            return AutoSDKOAuth2State.GetToken();
+        }
+
+        /// <summary>
+        /// Clears the stored OAuth2 token.
+        /// </summary>
+        public void ClearOAuth2Token()
+        {
+            AutoSDKOAuth2State.SetToken(null);
+            AutoSDKOAuth2Helpers.SetAuthorization(Authorizations, null);
+        }
+
+        /// <summary>
+        /// Authorize using an OAuth2 access token.
+        /// </summary>
+        /// <param name="accessToken"></param>
+        public void AuthorizeUsingOAuth2(
+            string accessToken)
+        {
+            accessToken = accessToken ?? throw new global::System.ArgumentNullException(nameof(accessToken));
+
+            AuthorizeUsingOAuth2(new OAuth2Token
+            {
+                AccessToken = accessToken,
+                TokenType = "Bearer",
+            });
+        }
+
+        /// <summary>
+        /// Authorize using an OAuth2 token.
+        /// </summary>
+        /// <param name="token"></param>
+        public void AuthorizeUsingOAuth2(
+            OAuth2Token token)
+        {
+            token = token ?? throw new global::System.ArgumentNullException(nameof(token));
+            if (string.IsNullOrWhiteSpace(token.AccessToken))
+            {
+                throw new global::System.ArgumentException("Access token cannot be empty.", nameof(token));
+            }
+            if (string.IsNullOrWhiteSpace(token.TokenType))
+            {
+                token.TokenType = "Bearer";
+            }
+
+            var storedToken = token.Clone();
+            AutoSDKOAuth2State.SetToken(storedToken);
+            AutoSDKOAuth2Helpers.SetAuthorization(Authorizations, storedToken);
+        }
+
+
+        private async global::System.Threading.Tasks.Task<OAuth2Token> ExchangeOAuth2TokenAsync(
+            global::System.Uri tokenUrl,
+            global::System.Collections.Generic.IEnumerable<global::System.Collections.Generic.KeyValuePair<string, string>> body,
+            string? requestedScope = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            tokenUrl = tokenUrl ?? throw new global::System.ArgumentNullException(nameof(tokenUrl));
+            body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+
+            using var response = await HttpClient.PostAsync(
+                requestUri: tokenUrl,
+                content: new global::System.Net.Http.FormUrlEncodedContent(body),
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            using var jsonDocument = global::System.Text.Json.JsonDocument.Parse(json);
+            if (!jsonDocument.RootElement.TryGetProperty("access_token", out var accessTokenElement))
+            {
+                throw new global::System.InvalidOperationException("access_token was not present in the token response.");
+            }
+
+            var accessToken = accessTokenElement.GetString();
+            if (string.IsNullOrWhiteSpace(accessToken))
+            {
+                throw new global::System.InvalidOperationException("access_token was empty in the token response.");
+            }
+
+            string? tokenType = null;
+            if (jsonDocument.RootElement.TryGetProperty("token_type", out var tokenTypeElement))
+            {
+                tokenType = tokenTypeElement.GetString();
+            }
+
+            string? refreshToken = null;
+            if (jsonDocument.RootElement.TryGetProperty("refresh_token", out var refreshTokenElement))
+            {
+                refreshToken = refreshTokenElement.GetString();
+            }
+
+            string? scope = null;
+            if (jsonDocument.RootElement.TryGetProperty("scope", out var scopeElement))
+            {
+                scope = scopeElement.GetString();
+            }
+
+            long? expiresIn = null;
+            if (jsonDocument.RootElement.TryGetProperty("expires_in", out var expiresInElement))
+            {
+                if (expiresInElement.ValueKind == global::System.Text.Json.JsonValueKind.Number &&
+                    expiresInElement.TryGetInt64(out var expiresInValue))
+                {
+                    expiresIn = expiresInValue;
+                }
+                else if (expiresInElement.ValueKind == global::System.Text.Json.JsonValueKind.String &&
+                         long.TryParse(expiresInElement.GetString(), out expiresInValue))
+                {
+                    expiresIn = expiresInValue;
+                }
+            }
+
+            var token = new OAuth2Token
+            {
+                AccessToken = accessToken,
+                TokenType = string.IsNullOrWhiteSpace(tokenType) ? "Bearer" : tokenType,
+                RefreshToken = refreshToken,
+                Scope = string.IsNullOrWhiteSpace(scope) ? requestedScope : scope,
+                ExpiresAt = expiresIn.HasValue
+                    ? global::System.DateTimeOffset.UtcNow.AddSeconds(expiresIn.Value)
+                    : (global::System.DateTimeOffset?)null,
+            };
+
+            return token;
+        }
+        private static string ToOAuth2ScopeValue(
+            OAuth2Scope scope)
+        {
+            return scope switch
+            {
+                OAuth2Scope.Analytics_read_extensions => "analytics:read:extensions",                OAuth2Scope.Analytics_read_games => "analytics:read:games",                OAuth2Scope.Bits_read => "bits:read",                OAuth2Scope.Channel_manage_ads => "channel:manage:ads",                OAuth2Scope.Channel_read_ads => "channel:read:ads",                OAuth2Scope.Channel_manage_broadcast => "channel:manage:broadcast",                OAuth2Scope.Channel_read_charity => "channel:read:charity",                OAuth2Scope.Channel_edit_commercial => "channel:edit:commercial",                OAuth2Scope.Channel_read_editors => "channel:read:editors",                OAuth2Scope.Channel_manage_extensions => "channel:manage:extensions",                OAuth2Scope.Channel_read_goals => "channel:read:goals",                OAuth2Scope.Channel_read_guestStar => "channel:read:guest_star",                OAuth2Scope.Channel_manage_guestStar => "channel:manage:guest_star",                OAuth2Scope.Channel_read_hypeTrain => "channel:read:hype_train",                OAuth2Scope.Channel_manage_moderators => "channel:manage:moderators",                OAuth2Scope.Channel_read_polls => "channel:read:polls",                OAuth2Scope.Channel_manage_polls => "channel:manage:polls",                OAuth2Scope.Channel_read_predictions => "channel:read:predictions",                OAuth2Scope.Channel_manage_predictions => "channel:manage:predictions",                OAuth2Scope.Channel_manage_raids => "channel:manage:raids",                OAuth2Scope.Channel_read_redemptions => "channel:read:redemptions",                OAuth2Scope.Channel_manage_redemptions => "channel:manage:redemptions",                OAuth2Scope.Channel_manage_schedule => "channel:manage:schedule",                OAuth2Scope.Channel_read_streamKey => "channel:read:stream_key",                OAuth2Scope.Channel_read_subscriptions => "channel:read:subscriptions",                OAuth2Scope.Channel_manage_videos => "channel:manage:videos",                OAuth2Scope.Channel_read_vips => "channel:read:vips",                OAuth2Scope.Channel_manage_vips => "channel:manage:vips",                OAuth2Scope.Clips_edit => "clips:edit",                OAuth2Scope.Moderation_read => "moderation:read",                OAuth2Scope.Moderator_manage_announcements => "moderator:manage:announcements",                OAuth2Scope.Moderator_manage_automod => "moderator:manage:automod",                OAuth2Scope.Moderator_read_automodSettings => "moderator:read:automod_settings",                OAuth2Scope.Moderator_manage_automodSettings => "moderator:manage:automod_settings",                OAuth2Scope.Moderator_manage_bannedUsers => "moderator:manage:banned_users",                OAuth2Scope.Moderator_read_blockedTerms => "moderator:read:blocked_terms",                OAuth2Scope.Moderator_manage_blockedTerms => "moderator:manage:blocked_terms",                OAuth2Scope.Moderator_manage_chatMessages => "moderator:manage:chat_messages",                OAuth2Scope.Moderator_read_chatSettings => "moderator:read:chat_settings",                OAuth2Scope.Moderator_manage_chatSettings => "moderator:manage:chat_settings",                OAuth2Scope.Moderator_read_chatters => "moderator:read:chatters",                OAuth2Scope.Moderator_read_followers => "moderator:read:followers",                OAuth2Scope.Moderator_read_guestStar => "moderator:read:guest_star",                OAuth2Scope.Moderator_manage_guestStar => "moderator:manage:guest_star",                OAuth2Scope.Moderator_read_shieldMode => "moderator:read:shield_mode",                OAuth2Scope.Moderator_manage_shieldMode => "moderator:manage:shield_mode",                OAuth2Scope.Moderator_read_shoutouts => "moderator:read:shoutouts",                OAuth2Scope.Moderator_manage_shoutouts => "moderator:manage:shoutouts",                OAuth2Scope.Moderator_read_unbanRequests => "moderator:read:unban_requests",                OAuth2Scope.Moderator_manage_unbanRequests => "moderator:manage:unban_requests",                OAuth2Scope.User_edit => "user:edit",                OAuth2Scope.User_read_blockedUsers => "user:read:blocked_users",                OAuth2Scope.User_manage_blockedUsers => "user:manage:blocked_users",                OAuth2Scope.User_read_broadcast => "user:read:broadcast",                OAuth2Scope.User_manage_chatColor => "user:manage:chat_color",                OAuth2Scope.User_read_email => "user:read:email",                OAuth2Scope.User_read_emotes => "user:read:emotes",                OAuth2Scope.User_read_follows => "user:read:follows",                OAuth2Scope.User_read_moderatedChannels => "user:read:moderated_channels",                OAuth2Scope.User_read_subscriptions => "user:read:subscriptions",                OAuth2Scope.User_manage_whispers => "user:manage:whispers",                OAuth2Scope.Channel_bot => "channel:bot",                OAuth2Scope.Channel_moderate => "channel:moderate",                OAuth2Scope.Chat_edit => "chat:edit",                OAuth2Scope.Chat_read => "chat:read",                OAuth2Scope.User_bot => "user:bot",                OAuth2Scope.User_read_chat => "user:read:chat",                OAuth2Scope.User_write_chat => "user:write:chat",                OAuth2Scope.Whispers_read => "whispers:read",                OAuth2Scope.Whispers_edit => "whispers:edit",
+                _ => throw new global::System.NotImplementedException("OAuth2 scope not implemented."),
+            };
+        }
+
+        private static string? JoinOAuth2Scopes(
+            global::System.Collections.Generic.IEnumerable<OAuth2Scope>? scopes)
+        {
+            if (scopes is null)
+            {
+                return null;
+            }
+
+            return string.Join(" ", global::System.Linq.Enumerable.Select(scopes, static x => ToOAuth2ScopeValue(x)));
+        }
+    }
+}

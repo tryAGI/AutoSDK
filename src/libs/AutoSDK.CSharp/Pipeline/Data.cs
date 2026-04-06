@@ -469,9 +469,11 @@ public static class Data
         var authorizations = openApiDocument.Security!
             .SelectMany(requirement => requirement.OrderBy(x => x.Key.Name ?? string.Empty, StringComparer.Ordinal))
             .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, csharpSettings, csharpGlobalSettings))
+            .Concat(methods.SelectMany(x => x.Authorizations))
             .GroupBy(x => x.FriendlyName)
             .Select(g => g.First())
             .ToArray();
+        var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
 
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
         // Enum converters
@@ -573,7 +575,8 @@ public static class Data
                 BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                 Settings: csharpSettings,
                 GlobalSettings: csharpGlobalSettings,
-                Converters: converters)] : [];
+                Converters: converters,
+                HasOAuth2Support: hasOAuth2Support)] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
             clients = clients.Concat(
@@ -589,7 +592,8 @@ public static class Data
                         BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                         Settings: csharpSettings,
                         GlobalSettings: csharpGlobalSettings,
-                        Converters: [])))
+                        Converters: [],
+                        HasOAuth2Support: hasOAuth2Support)))
                 .ToArray();
         }
         
@@ -818,9 +822,11 @@ public static class Data
         var authorizations = openApiDocument.Security!
             .SelectMany(requirement => requirement.OrderBy(x => x.Key.Name ?? string.Empty, StringComparer.Ordinal))
             .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
+            .Concat(methods.SelectMany(x => x.Authorizations))
             .GroupBy(x => x.FriendlyName)
             .Select(g => g.First())
             .ToArray();
+        var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
 
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
         foreach (var value in enums)
@@ -921,7 +927,8 @@ public static class Data
                 BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                 Settings: settings,
                 GlobalSettings: globalSettings,
-                Converters: converters)]
+                Converters: converters,
+                HasOAuth2Support: hasOAuth2Support)]
             : [];
 
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
@@ -938,7 +945,8 @@ public static class Data
                         BaseUrlSummary: openApiDocument.Servers!.FirstOrDefault()?.Description?.ClearForXml() ?? string.Empty,
                         Settings: settings,
                         GlobalSettings: globalSettings,
-                        Converters: [])))
+                        Converters: [],
+                        HasOAuth2Support: hasOAuth2Support)))
                 .ToArray();
         }
 

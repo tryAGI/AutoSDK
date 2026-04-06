@@ -13,5 +13,6 @@ public record struct Client(
     string BaseUrlSummary,
     Settings Settings,
     Settings GlobalSettings,
-    ImmutableArray<string> Converters
+    ImmutableArray<string> Converters,
+    bool HasOAuth2Support = false
 );

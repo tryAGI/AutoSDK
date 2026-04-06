@@ -36,6 +36,9 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+
+        internal global::G.Api.AutoSDKOAuth2Coordinator AutoSDKOAuth2State { get; set; } = new global::G.Api.AutoSDKOAuth2Coordinator();
         /// <summary>
         /// 
         /// </summary>
@@ -297,6 +300,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -306,6 +310,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -315,6 +320,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -324,6 +330,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -333,6 +340,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -342,6 +350,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -351,6 +360,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -360,6 +370,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -369,6 +380,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -378,6 +390,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -387,6 +400,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -396,6 +410,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -405,6 +420,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -414,6 +430,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -423,6 +440,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -432,6 +450,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -441,6 +460,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -450,6 +470,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -459,6 +480,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -468,6 +490,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -477,6 +500,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -486,6 +510,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -495,6 +520,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -504,6 +530,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -513,6 +540,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -522,6 +550,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>
@@ -531,6 +560,7 @@ namespace G
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKOAuth2State = AutoSDKOAuth2State,
         };
 
         /// <summary>

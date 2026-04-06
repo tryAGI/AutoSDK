@@ -11,6 +11,7 @@ public static partial class Sources
     {
         var serializer = client.Settings.JsonSerializerType.GetSerializer();
         var hasOptions = !client.Settings.HasJsonSerializerContext();
+        var rootClassName = client.Settings.ClassName.Replace(".", string.Empty);
         var suppressDeprecatedWarningsForJsonSerializerOptions =
             hasOptions &&
             client.Settings.UsesSystemTextJson() &&
@@ -44,6 +45,9 @@ namespace {client.Settings.Namespace}
 #if DEBUG
             = true;
 #endif
+{(client.HasOAuth2Support ? $@"
+
+        internal global::{client.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Coordinator AutoSDKOAuth2State {{ get; set; }} = new global::{client.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Coordinator();" : TrimmedLine)}
         
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@" 
@@ -63,6 +67,7 @@ namespace {client.Settings.Namespace}
             {(hasOptions
                 ? "JsonSerializerOptions = JsonSerializerOptions,"
                 : "JsonSerializerContext = JsonSerializerContext,")}
+            {(client.HasOAuth2Support ? "AutoSDKOAuth2State = AutoSDKOAuth2State," : TrimmedLine)}
         }};
 ").Inject() : TrimmedLine)}
 

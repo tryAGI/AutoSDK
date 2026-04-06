@@ -31,6 +31,9 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+
+        internal global::G.Api.AutoSDKOAuth2Coordinator AutoSDKOAuth2State { get; set; } = new global::G.Api.AutoSDKOAuth2Coordinator();
         /// <summary>
         /// 
         /// </summary>
