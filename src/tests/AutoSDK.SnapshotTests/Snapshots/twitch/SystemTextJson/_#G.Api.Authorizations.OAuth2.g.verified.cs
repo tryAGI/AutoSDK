@@ -414,9 +414,12 @@ namespace G
                 }
                 if (request.Content is not null)
                 {
-                    var bytes = await global::G.AutoSdkPolyfills.ReadAsByteArrayAsync(
-                        request.Content,
-                        cancellationToken).ConfigureAwait(false);
+                    byte[] bytes;
+#if NET5_0_OR_GREATER
+                    bytes = await request.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
+#else
+                    bytes = await request.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
+#endif
                     var content = new global::System.Net.Http.ByteArrayContent(bytes);
                     foreach (var header in request.Content.Headers)
                     {
