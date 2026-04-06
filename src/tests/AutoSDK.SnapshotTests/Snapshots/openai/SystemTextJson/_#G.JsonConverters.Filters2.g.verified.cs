@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -46,7 +47,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        comparisonFilter = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ComparisonFilter>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComparisonFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComparisonFilter> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComparisonFilter).Name}");
+                        comparisonFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -59,7 +62,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CompoundFilter>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompoundFilter> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompoundFilter).Name}");
+                        compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +79,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    comparisonFilter = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ComparisonFilter>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComparisonFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComparisonFilter> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComparisonFilter).Name}");
+                    comparisonFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -85,7 +92,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CompoundFilter>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompoundFilter> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompoundFilter).Name}");
+                    compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -110,15 +119,20 @@ namespace G.JsonConverters
             global::G.Filters2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsComparisonFilter)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComparisonFilter, typeof(global::G.ComparisonFilter), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComparisonFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComparisonFilter?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComparisonFilter).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComparisonFilter!, typeInfo);
             }
             else if (value.IsCompoundFilter)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompoundFilter, typeof(global::G.CompoundFilter), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompoundFilter?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompoundFilter).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompoundFilter!, typeInfo);
             }
         }
     }

@@ -13,31 +13,42 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InsightControllerUpdateRequestDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InsightControllerUpdateRequestDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InsightControllerUpdateRequestDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.InsightControllerUpdateRequestDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.UpdateBarInsightFromCallTableDTO? bar = default;
             if (discriminator?.Type == global::G.InsightControllerUpdateRequestDiscriminatorType.Bar)
             {
-                bar = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateBarInsightFromCallTableDTO>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateBarInsightFromCallTableDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateBarInsightFromCallTableDTO> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateBarInsightFromCallTableDTO)}");
+                bar = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.UpdatePieInsightFromCallTableDTO? pie = default;
             if (discriminator?.Type == global::G.InsightControllerUpdateRequestDiscriminatorType.Pie)
             {
-                pie = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdatePieInsightFromCallTableDTO>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdatePieInsightFromCallTableDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdatePieInsightFromCallTableDTO> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdatePieInsightFromCallTableDTO)}");
+                pie = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.UpdateLineInsightFromCallTableDTO? line = default;
             if (discriminator?.Type == global::G.InsightControllerUpdateRequestDiscriminatorType.Line)
             {
-                line = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateLineInsightFromCallTableDTO>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateLineInsightFromCallTableDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateLineInsightFromCallTableDTO> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateLineInsightFromCallTableDTO)}");
+                line = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.UpdateTextInsightFromCallTableDTO? text = default;
             if (discriminator?.Type == global::G.InsightControllerUpdateRequestDiscriminatorType.Text)
             {
-                text = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateTextInsightFromCallTableDTO>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateTextInsightFromCallTableDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateTextInsightFromCallTableDTO> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateTextInsightFromCallTableDTO)}");
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.InsightControllerUpdateRequest(
@@ -60,23 +71,32 @@ namespace G.JsonConverters
             global::G.InsightControllerUpdateRequest value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsBar)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bar, typeof(global::G.UpdateBarInsightFromCallTableDTO), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateBarInsightFromCallTableDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateBarInsightFromCallTableDTO?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateBarInsightFromCallTableDTO).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bar!, typeInfo);
             }
             else if (value.IsPie)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pie, typeof(global::G.UpdatePieInsightFromCallTableDTO), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdatePieInsightFromCallTableDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdatePieInsightFromCallTableDTO?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdatePieInsightFromCallTableDTO).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pie!, typeInfo);
             }
             else if (value.IsLine)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Line, typeof(global::G.UpdateLineInsightFromCallTableDTO), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateLineInsightFromCallTableDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateLineInsightFromCallTableDTO?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateLineInsightFromCallTableDTO).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Line!, typeInfo);
             }
             else if (value.IsText)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeof(global::G.UpdateTextInsightFromCallTableDTO), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateTextInsightFromCallTableDTO), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateTextInsightFromCallTableDTO?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateTextInsightFromCallTableDTO).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
         }
     }

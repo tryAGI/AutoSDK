@@ -4,7 +4,7 @@
 namespace G.JsonConverters
 {
     /// <inheritdoc />
-    public class OneOfJsonConverter<T1> : global::System.Text.Json.Serialization.JsonConverter<global::G.OneOf<T1>>
+    public class OneOfJsonConverter<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T1> : global::System.Text.Json.Serialization.JsonConverter<global::G.OneOf<T1>>
     {
         /// <inheritdoc />
         public override global::G.OneOf<T1> Read(

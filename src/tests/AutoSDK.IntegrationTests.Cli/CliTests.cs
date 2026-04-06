@@ -1078,16 +1078,16 @@ components:
                 var contextFile = Path.Combine(outputDirectory, "HugeUnion.JsonSerializerContext.g.cs");
                 var contextTypesFile = Path.Combine(outputDirectory, "HugeUnion.JsonSerializerContextTypes.g.cs");
 
-                File.Exists(contextFile).Should().BeFalse();
-                File.Exists(contextTypesFile).Should().BeFalse();
+                File.Exists(contextFile).Should().BeTrue();
+                File.Exists(contextTypesFile).Should().BeTrue();
 
                 var generatedContents = await Task.WhenAll(
                     Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
                         .Select(path => File.ReadAllTextAsync(path)));
                 var content = string.Join("\n\n", generatedContents);
 
-                content.Should().Contain("JsonSerializerOptions");
-                content.Should().NotContain("JsonSerializerContext { get; set; } =");
+                content.Should().Contain("TypeInfoPropertyName =");
+                content.Should().Contain("JsonSerializerContext { get; set; } = global::HugeUnion.SourceGenerationContext.Default;");
             });
     }
 
@@ -1187,15 +1187,85 @@ components:
             namespaceValue: "HugeUnionDeprecated",
             assertGeneratedOutput: async outputDirectory =>
             {
+                var contextFile = Path.Combine(outputDirectory, "HugeUnionDeprecated.JsonSerializerContext.g.cs");
+                var contextTypesFile = Path.Combine(outputDirectory, "HugeUnionDeprecated.JsonSerializerContextTypes.g.cs");
+
+                File.Exists(contextFile).Should().BeTrue();
+                File.Exists(contextTypesFile).Should().BeTrue();
+
                 var generatedContents = await Task.WhenAll(
                     Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
                         .Select(path => File.ReadAllTextAsync(path)));
                 var content = string.Join("\n\n", generatedContents);
 
-                content.Should().Contain("JsonSerializerOptions");
+                content.Should().Contain("TypeInfoPropertyName =");
                 content.Should().Contain("#pragma warning disable CS0618 // Type or member is obsolete");
                 content.Should().Contain(deprecatedPolicy);
-                content.Should().NotContain("JsonSerializerContext { get; set; } =");
+                content.Should().Contain("JsonSerializerContext { get; set; } = global::HugeUnionDeprecated.SourceGenerationContext.Default;");
+            });
+    }
+
+    [TestMethod]
+    public async Task Generate_WithInlineAllOf_PropagatesTrimAnnotations()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: InlineAllOf
+  version: 1.0.0
+paths:
+  /compose:
+    post:
+      operationId: compose
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/BaseRequest'
+                - $ref: '#/components/schemas/ExtraRequest'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    BaseRequest:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+    ExtraRequest:
+      type: object
+      required:
+        - enabled
+      properties:
+        enabled:
+          type: boolean
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "inline-allof-trim.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "InlineAllOf",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var allOfFile = Path.Combine(outputDirectory, "InlineAllOf.AllOf.2.g.cs");
+                var converterFile = Path.Combine(outputDirectory, "InlineAllOf.JsonConverters.AllOf2.g.cs");
+
+                File.Exists(allOfFile).Should().BeTrue();
+                File.Exists(converterFile).Should().BeTrue();
+
+                var allOfContent = await File.ReadAllTextAsync(allOfFile);
+                var converterContent = await File.ReadAllTextAsync(converterFile);
+
+                allOfContent.Should().Contain("public readonly partial struct AllOf<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(");
+                allOfContent.Should().Contain("private static bool RequiresValue<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(");
+                allOfContent.Should().Contain("private static class RequirementCache<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(");
+                converterContent.Should().Contain("public class AllOfJsonConverter<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(");
             });
     }
 

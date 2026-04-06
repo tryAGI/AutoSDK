@@ -14,12 +14,17 @@ public static partial class Sources
             return string.Empty;
         }
 
-        var distinctTypes = types
+        var allDistinctTypes = types
             .Select(x => x.CSharpTypeWithNullability)
             .Distinct()
             .ToArray();
+        var distinctTypes = allDistinctTypes
+            .Where(ShouldIncludeInJsonSerializerContextTypes)
+            .ToArray();
 
-        var concreteListTypes = GetConcreteListTypes(distinctTypes);
+        var concreteListTypes = GetConcreteListTypes(allDistinctTypes)
+            .Where(ShouldIncludeInJsonSerializerContextTypes)
+            .ToArray();
 
         return $@"
 #nullable enable

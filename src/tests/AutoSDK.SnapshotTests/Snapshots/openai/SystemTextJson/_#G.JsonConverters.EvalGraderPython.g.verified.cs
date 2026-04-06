@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -46,7 +47,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        pythonGrader = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GraderPython>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderPython), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderPython> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderPython).Name}");
+                        pythonGrader = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -59,7 +62,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        evalGraderPythonVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.EvalGraderPythonVariant2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalGraderPythonVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalGraderPythonVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalGraderPythonVariant2).Name}");
+                        evalGraderPythonVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +79,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    pythonGrader = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GraderPython>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderPython), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderPython> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderPython).Name}");
+                    pythonGrader = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -85,7 +92,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    evalGraderPythonVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.EvalGraderPythonVariant2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalGraderPythonVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalGraderPythonVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalGraderPythonVariant2).Name}");
+                    evalGraderPythonVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -110,15 +119,20 @@ namespace G.JsonConverters
             global::G.EvalGraderPython value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsPythonGrader)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PythonGrader, typeof(global::G.GraderPython), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderPython), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderPython?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderPython).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PythonGrader!, typeInfo);
             }
             else if (value.IsEvalGraderPythonVariant2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalGraderPythonVariant2, typeof(global::G.EvalGraderPythonVariant2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalGraderPythonVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalGraderPythonVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalGraderPythonVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalGraderPythonVariant2!, typeInfo);
             }
         }
     }

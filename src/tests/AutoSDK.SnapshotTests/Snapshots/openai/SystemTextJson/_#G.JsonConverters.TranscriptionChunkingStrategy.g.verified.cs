@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -45,7 +46,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        @enum = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TranscriptionChunkingStrategyEnum>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptionChunkingStrategyEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptionChunkingStrategyEnum> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptionChunkingStrategyEnum).Name}");
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -58,7 +61,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        vadConfig = global::System.Text.Json.JsonSerializer.Deserialize<global::G.VadConfig>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VadConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VadConfig> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VadConfig).Name}");
+                        vadConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -73,7 +78,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    @enum = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TranscriptionChunkingStrategyEnum>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptionChunkingStrategyEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptionChunkingStrategyEnum> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptionChunkingStrategyEnum).Name}");
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -84,7 +91,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    vadConfig = global::System.Text.Json.JsonSerializer.Deserialize<global::G.VadConfig>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VadConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VadConfig> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VadConfig).Name}");
+                    vadConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -109,15 +118,20 @@ namespace G.JsonConverters
             global::G.TranscriptionChunkingStrategy value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsEnum)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum, typeof(global::G.TranscriptionChunkingStrategyEnum), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptionChunkingStrategyEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptionChunkingStrategyEnum> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptionChunkingStrategyEnum).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
             }
             else if (value.IsVadConfig)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VadConfig, typeof(global::G.VadConfig), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VadConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VadConfig?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VadConfig).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VadConfig!, typeInfo);
             }
         }
     }

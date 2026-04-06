@@ -14,8 +14,11 @@ public static partial class Sources
         }
 
         var types = $"<{string.Join(", ", Enumerable.Range(1, anyOfData.Count).Select(x => $"T{x}"))}>";
+        var typeParameterDeclarations = !anyOfData.IsNamed
+            ? $"<{string.Join(", ", Enumerable.Range(1, anyOfData.Count).Select(x => $"[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T{x}"))}>"
+            : string.Empty;
         var classNameWithTypes = !anyOfData.IsNamed
-            ? $"{anyOfData.SubType}JsonConverter{types}"
+            ? $"{anyOfData.SubType}JsonConverter{typeParameterDeclarations}"
             : $"{anyOfData.Name}JsonConverter";
         var typeNameWithTypes = !anyOfData.IsNamed
             ? $"global::{anyOfData.Namespace}.{anyOfData.SubType}{types}"

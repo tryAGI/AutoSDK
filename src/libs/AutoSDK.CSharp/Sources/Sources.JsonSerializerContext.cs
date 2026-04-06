@@ -133,6 +133,28 @@ namespace {client.Settings.Namespace}
             }
         }
 
+        // Phase 1b: STJ derives TypeInfo property names from full generic type signatures.
+        // Very large unions can push those implicit names over the compiler's metadata limits
+        // even when there is no collision, so force a shorter explicit name in that case.
+        foreach (var type in types)
+        {
+            if (explicitNames.ContainsKey(type))
+            {
+                continue;
+            }
+
+            var implicitName = GetImplicitTypeInfoPropertyName(type);
+            if (implicitName.Length <= MaxGeneratedTypeInfoNameLength)
+            {
+                continue;
+            }
+
+            explicitNames[type] = ReserveExplicitTypeInfoPropertyName(
+                usedNames,
+                implicitName,
+                type);
+        }
+
         // Phase 2: Handle collisions between explicit attributes and implicit STJ discovery.
         // Value types with nullable variants in JsonSerializerContextTypes cause STJ to
         // discover the inner non-nullable type implicitly. If the same type is also
@@ -229,6 +251,18 @@ namespace {client.Settings.Namespace}
                 .ToArray());
 
         return concreteListTypes.Any(static x => GetImplicitTypeInfoPropertyName(x).Length > MaxGeneratedTypeInfoNameLength);
+    }
+
+    private static bool ShouldIncludeInJsonSerializerContextTypes(string type)
+    {
+        var implicitName = GetImplicitTypeInfoPropertyName(type);
+        if (implicitName.Length > MaxGeneratedTypeInfoNameLength)
+        {
+            return false;
+        }
+
+        return !type.EndsWith("?", StringComparison.Ordinal) ||
+               $"Nullable{implicitName}".Length <= MaxGeneratedTypeInfoNameLength;
     }
 
     private static string ReserveExplicitTypeInfoPropertyName(

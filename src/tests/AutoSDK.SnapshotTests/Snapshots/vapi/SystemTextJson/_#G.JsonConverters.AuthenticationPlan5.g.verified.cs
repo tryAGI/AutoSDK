@@ -13,26 +13,35 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CustomCredentialAuthenticationPlanDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomCredentialAuthenticationPlanDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomCredentialAuthenticationPlanDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CustomCredentialAuthenticationPlanDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.OAuth2AuthenticationPlan? oauth2 = default;
             if (discriminator?.Type == global::G.CustomCredentialAuthenticationPlanDiscriminatorType.Oauth2)
             {
-                oauth2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.OAuth2AuthenticationPlan>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OAuth2AuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OAuth2AuthenticationPlan> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OAuth2AuthenticationPlan)}");
+                oauth2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.HMACAuthenticationPlan? hmac = default;
             if (discriminator?.Type == global::G.CustomCredentialAuthenticationPlanDiscriminatorType.Hmac)
             {
-                hmac = global::System.Text.Json.JsonSerializer.Deserialize<global::G.HMACAuthenticationPlan>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HMACAuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HMACAuthenticationPlan> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.HMACAuthenticationPlan)}");
+                hmac = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.BearerAuthenticationPlan? bearer = default;
             if (discriminator?.Type == global::G.CustomCredentialAuthenticationPlanDiscriminatorType.Bearer)
             {
-                bearer = global::System.Text.Json.JsonSerializer.Deserialize<global::G.BearerAuthenticationPlan>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BearerAuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BearerAuthenticationPlan> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BearerAuthenticationPlan)}");
+                bearer = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.AuthenticationPlan5(
@@ -53,19 +62,26 @@ namespace G.JsonConverters
             global::G.AuthenticationPlan5 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsOauth2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2, typeof(global::G.OAuth2AuthenticationPlan), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OAuth2AuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OAuth2AuthenticationPlan?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OAuth2AuthenticationPlan).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2!, typeInfo);
             }
             else if (value.IsHmac)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Hmac, typeof(global::G.HMACAuthenticationPlan), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HMACAuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HMACAuthenticationPlan?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HMACAuthenticationPlan).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Hmac!, typeInfo);
             }
             else if (value.IsBearer)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bearer, typeof(global::G.BearerAuthenticationPlan), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BearerAuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BearerAuthenticationPlan?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BearerAuthenticationPlan).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bearer!, typeInfo);
             }
         }
     }

@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -48,7 +49,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        scoreModelGrader = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GraderScoreModel>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderScoreModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderScoreModel> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderScoreModel).Name}");
+                        scoreModelGrader = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,7 +64,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        evalGraderScoreModelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.EvalGraderScoreModelVariant2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalGraderScoreModelVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalGraderScoreModelVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalGraderScoreModelVariant2).Name}");
+                        evalGraderScoreModelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -76,7 +81,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    scoreModelGrader = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GraderScoreModel>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderScoreModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderScoreModel> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderScoreModel).Name}");
+                    scoreModelGrader = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -87,7 +94,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    evalGraderScoreModelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.EvalGraderScoreModelVariant2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalGraderScoreModelVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalGraderScoreModelVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalGraderScoreModelVariant2).Name}");
+                    evalGraderScoreModelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -112,15 +121,20 @@ namespace G.JsonConverters
             global::G.EvalGraderScoreModel value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsScoreModelGrader)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ScoreModelGrader, typeof(global::G.GraderScoreModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderScoreModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderScoreModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderScoreModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ScoreModelGrader!, typeInfo);
             }
             else if (value.IsEvalGraderScoreModelVariant2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalGraderScoreModelVariant2, typeof(global::G.EvalGraderScoreModelVariant2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalGraderScoreModelVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalGraderScoreModelVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalGraderScoreModelVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EvalGraderScoreModelVariant2!, typeInfo);
             }
         }
     }
