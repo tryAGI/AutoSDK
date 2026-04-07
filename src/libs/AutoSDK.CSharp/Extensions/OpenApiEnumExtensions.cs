@@ -327,7 +327,10 @@ public static class OpenApiEnumExtensions
         return (PropertyData.Default with
         {
             Id = id,
-            Name = CSharpPropertyNameGenerator.SanitizeName(name, settings.ClsCompliantEnumPrefix),
+            Name = CSharpPropertyNameGenerator.SanitizeName(
+                name,
+                settings.ClsCompliantEnumPrefix,
+                identifierCharacterSet: settings.IdentifierCharacterSet),
             Summary = OpenApiExtensions.ClearForXml(ExtractEnumSummaryFromDescription(id, description)),
         }).WithCSharpParameterName();
     }

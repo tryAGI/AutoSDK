@@ -105,10 +105,13 @@ public static class CSharpClientNameGenerator
 
     public static string GeneratePropertyName(CSharpSettings settings, string? tagName)
     {
-        var name = new string((tagName ?? string.Empty)
-            .SkipWhile(c => !char.IsDigit(c) && !char.IsLetter(c))
-            .ToArray());
+        var name = CSharpIdentifierCharacterRules.TrimLeadingInvalidSourceCharacters(
+            tagName ?? string.Empty,
+            settings.IdentifierCharacterSet);
 
-        return CSharpPropertyNameGenerator.SanitizeName(name.ToClassName(), settings.ClsCompliantEnumPrefix);
+        return CSharpPropertyNameGenerator.SanitizeName(
+            name.ToClassName(),
+            settings.ClsCompliantEnumPrefix,
+            identifierCharacterSet: settings.IdentifierCharacterSet);
     }
 }

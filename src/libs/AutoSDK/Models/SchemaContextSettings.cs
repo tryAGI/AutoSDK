@@ -17,7 +17,8 @@ public record struct SchemaContextSettings(
     bool UseExtensionNaming,
     ModelStyle ModelStyle,
     string NamespaceDelimiter,
-    ExcludedModelNamespaceMode ExcludedModelNamespaceMode)
+    ExcludedModelNamespaceMode ExcludedModelNamespaceMode,
+    IdentifierCharacterSet IdentifierCharacterSet = IdentifierCharacterSet.UnicodeLetters)
 {
     public static SchemaContextSettings Default => new(
         Namespace: string.Empty,
@@ -36,5 +37,6 @@ public record struct SchemaContextSettings(
         UseExtensionNaming: true,
         ModelStyle: default,
         NamespaceDelimiter: string.Empty,
-        ExcludedModelNamespaceMode: ExcludedModelNamespaceMode.External);
+        ExcludedModelNamespaceMode: ExcludedModelNamespaceMode.External,
+        IdentifierCharacterSet: IdentifierCharacterSet.UnicodeLetters);
 }

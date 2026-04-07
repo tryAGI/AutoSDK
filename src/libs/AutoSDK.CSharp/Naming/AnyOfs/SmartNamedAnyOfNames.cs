@@ -5,20 +5,27 @@ namespace AutoSDK.Naming.AnyOfs;
 
 public static class SmartNamedAnyOfNames
 {
-    public static string ComputePropertyName(IList<SchemaContext> children, string className, int i)
+    public static string ComputePropertyName(
+        IList<SchemaContext> children,
+        string className,
+        int i,
+        IdentifierCharacterSet identifierCharacterSet = IdentifierCharacterSet.UnicodeLetters)
     {
         var child = children.ElementAt(i);
-        return ShouldUseSmartName(children, className)
+        return ShouldUseSmartName(children, className, identifierCharacterSet)
             ? ComputeSmartName(
-                GetCandidateName(child),
+                GetCandidateName(child, identifierCharacterSet),
                 className)
             : $"Value{i + 1}";
     }
 
-    public static bool ShouldUseSmartName(IList<SchemaContext> children, string className)
+    public static bool ShouldUseSmartName(
+        IList<SchemaContext> children,
+        string className,
+        IdentifierCharacterSet identifierCharacterSet = IdentifierCharacterSet.UnicodeLetters)
     {
         return children.All(x =>
-            !string.IsNullOrWhiteSpace(ComputeSmartName(GetCandidateName(x), className)));
+            !string.IsNullOrWhiteSpace(ComputeSmartName(GetCandidateName(x, identifierCharacterSet), className)));
     }
 
     public static string ComputeSmartName(TypeData typeData, string className)
@@ -82,39 +89,21 @@ public static class SmartNamedAnyOfNames
                text.AsSpan("Variant".Length).ToString().All(char.IsDigit);
     }
 
-    private static string GetCandidateName(SchemaContext context)
+    private static string GetCandidateName(SchemaContext context, IdentifierCharacterSet identifierCharacterSet)
     {
         var typeName = context.TypeData.ShortCSharpTypeWithoutNullability;
-        if (LooksLikeGeneratedIdentifier(typeName))
+        if (LooksLikeGeneratedIdentifier(typeName, identifierCharacterSet))
         {
             return typeName;
         }
 
-        return LooksLikeGeneratedIdentifier(context.Id)
+        return LooksLikeGeneratedIdentifier(context.Id, identifierCharacterSet)
             ? context.Id
             : string.Empty;
     }
 
-    private static bool LooksLikeGeneratedIdentifier(string text)
+    private static bool LooksLikeGeneratedIdentifier(string text, IdentifierCharacterSet identifierCharacterSet)
     {
-        if (string.IsNullOrWhiteSpace(text))
-        {
-            return false;
-        }
-
-        if (!char.IsUpper(text[0]) && text[0] != '_')
-        {
-            return false;
-        }
-
-        for (var i = 1; i < text.Length; i++)
-        {
-            if (!char.IsLetterOrDigit(text[i]) && text[i] != '_')
-            {
-                return false;
-            }
-        }
-
-        return true;
+        return CSharpIdentifierCharacterRules.LooksLikeGeneratedIdentifier(text, identifierCharacterSet);
     }
 }

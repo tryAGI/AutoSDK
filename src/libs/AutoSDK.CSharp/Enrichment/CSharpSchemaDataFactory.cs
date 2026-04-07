@@ -118,7 +118,11 @@ public static class CSharpSchemaDataFactory
             name = name.FixPropertyName(context.Parent.Id);
         }
 
-        name = CSharpPropertyNameGenerator.SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
+        name = CSharpPropertyNameGenerator.SanitizeName(
+            name,
+            context.Settings.ClsCompliantEnumPrefix,
+            true,
+            context.Settings.IdentifierCharacterSet);
 
         var isRequired =
             parameter.Required ||
@@ -217,7 +221,7 @@ public static class CSharpSchemaDataFactory
                     ? discriminatorValue
                     : titleName != null && !string.Equals(titleName, className, StringComparison.OrdinalIgnoreCase)
                         ? titleName
-                        : SmartNamedAnyOfNames.ComputePropertyName(children, className, i);
+                        : SmartNamedAnyOfNames.ComputePropertyName(children, className, i, context.Settings.IdentifierCharacterSet);
                 name = name.ToCSharpName(context.Settings, context.Parent);
                 name = CSharpPropertyNameGenerator.AvoidObjectMemberNameCollision(name);
                 name = AvoidNamedAnyOfMemberNameCollision(name);

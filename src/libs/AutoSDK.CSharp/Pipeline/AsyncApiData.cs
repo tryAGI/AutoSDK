@@ -709,7 +709,10 @@ public static class AsyncApiData
             var name = paramName.ToPropertyName();
             name = CSharpPropertyNameGenerator.HandleWordSeparators(name);
             name = CSharpPropertyNameGenerator.SanitizeName(
-                name, settings.ClsCompliantEnumPrefix, true);
+                name,
+                settings.ClsCompliantEnumPrefix,
+                true,
+                settings.IdentifierCharacterSet);
 
             var methodParam = new MethodParameter(
                 Id: paramName,
