@@ -31,6 +31,10 @@ public static class OptionsExtensions
                        "Api",
             ClsCompliantEnumPrefix: options.GetGlobalOption(nameof(Settings.ClsCompliantEnumPrefix), prefix) ??
                                     "x",
+            IdentifierCharacterSet: options.GetEnumGlobalOption(
+                nameof(Settings.IdentifierCharacterSet),
+                prefix,
+                defaultValue: Settings.Default.IdentifierCharacterSet),
             NamingConvention: options.GetEnumGlobalOption<NamingConvention>(nameof(Settings.NamingConvention), prefix),
             JsonSerializerType: options.GetEnumGlobalOption<JsonSerializerType>(nameof(Settings.JsonSerializerType), prefix),
             UseRequiredKeyword: options.GetEnumGlobalOption<SdkFeatureUsage>(nameof(Settings.UseRequiredKeyword), prefix),

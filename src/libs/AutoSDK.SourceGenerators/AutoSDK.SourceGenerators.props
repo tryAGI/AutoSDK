@@ -20,6 +20,8 @@
     <CompilerVisibleProperty Include="AutoSDK_ClassName"/>
     <!-- Prefix for enums which start with a number to make them CLS compliant. Default: "x". Pass empty string to disable prefixing(it will be non-CLS compliant '_') -->
     <CompilerVisibleProperty Include="AutoSDK_ClsCompliantEnumPrefix"/>
+    <!-- Ascii/UnicodeLetters/CSharpSpec. Default: UnicodeLetters -->
+    <CompilerVisibleProperty Include="AutoSDK_IdentifierCharacterSet"/>
     <!-- InnerClasses/ConcatNames. Default: InnerClasses -->
     <CompilerVisibleProperty Include="AutoSDK_NamingConvention"/>
     <!-- SystemTextJson/NewtonsoftJson. Default: SystemTextJson -->

@@ -193,7 +193,10 @@ public static class ModelNameGenerator
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
-        context.ClassName = CSharpPropertyNameGenerator.SanitizeName(context.ComputeClassName(), context.Settings.ClsCompliantEnumPrefix);
+        context.ClassName = CSharpPropertyNameGenerator.SanitizeName(
+            context.ComputeClassName(),
+            context.Settings.ClsCompliantEnumPrefix,
+            identifierCharacterSet: context.Settings.IdentifierCharacterSet);
         context.Id = context.ClassName;
 
         return context.Id;

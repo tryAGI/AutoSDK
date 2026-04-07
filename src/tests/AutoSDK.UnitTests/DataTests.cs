@@ -3,6 +3,7 @@ using AutoSDK.Naming.Methods;
 using AutoSDK.Naming.Models;
 using AutoSDK.Serialization.Json;
 using ExcludedModelNamespaceMode = AutoSDK.Models.ExcludedModelNamespaceMode;
+using IdentifierCharacterSet = AutoSDK.Models.IdentifierCharacterSet;
 using SchemaNamingSettings = AutoSDK.Models.SchemaNamingSettings;
 
 namespace AutoSDK.UnitTests;
@@ -527,7 +528,11 @@ public partial class DataTests
     {
         var resolved = CSharpNamespacedTypeNameResolver.TryResolve(
             rawId,
-            new SchemaNamingSettings(string.Empty, useExtensionNaming: true, namespaceDelimiter: "."),
+            new SchemaNamingSettings(
+                string.Empty,
+                useExtensionNaming: true,
+                namespaceDelimiter: ".",
+                identifierCharacterSet: IdentifierCharacterSet.UnicodeLetters),
             rootNamespace: "G",
             out var value);
 

@@ -138,7 +138,8 @@ public static class CSharpSettingsExtensions
         return new SchemaNamingSettings(
             clsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
             useExtensionNaming: settings.UseExtensionNaming,
-            namespaceDelimiter: settings.NamespaceDelimiter);
+            namespaceDelimiter: settings.NamespaceDelimiter,
+            identifierCharacterSet: settings.IdentifierCharacterSet);
     }
 
     public static SchemaContextSettings ToSchemaContextSettings(this CSharpSettings settings)
@@ -160,12 +161,14 @@ public static class CSharpSettingsExtensions
             UseExtensionNaming: settings.UseExtensionNaming,
             ModelStyle: settings.ModelStyle,
             NamespaceDelimiter: settings.NamespaceDelimiter,
-            ExcludedModelNamespaceMode: settings.ExcludedModelNamespaceMode);
+            ExcludedModelNamespaceMode: settings.ExcludedModelNamespaceMode,
+            IdentifierCharacterSet: settings.IdentifierCharacterSet);
     }
 
     public static EnumNamingSettings ToEnumNamingSettings(this CSharpSettings settings)
     {
         return new EnumNamingSettings(
-            clsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix);
+            clsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
+            identifierCharacterSet: settings.IdentifierCharacterSet);
     }
 }

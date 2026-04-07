@@ -80,6 +80,13 @@ internal sealed class GenerateCommand : Command
         DefaultValueFactory = _ => "x",
         Description = "Prefix for enums which start with a number to make them CLS compliant. Pass empty string to disable prefixing(it will be non-CLS compliant '_')",
     };
+
+    private Option<IdentifierCharacterSet> IdentifierCharacterSetOption { get; } = new(
+        name: "--identifier-character-set")
+    {
+        DefaultValueFactory = _ => Settings.Default.IdentifierCharacterSet,
+        Description = "Identifier sanitizer mode: Ascii, UnicodeLetters, or CSharpSpec.",
+    };
     
     private Option<bool> IgnoreOpenApiErrors { get; } = new(
         name: "--ignore-openapi-errors")
@@ -224,6 +231,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(SingleFile);
         Options.Add(ExcludeDeprecatedOperations);
         Options.Add(ClsCompliantEnumPrefix);
+        Options.Add(IdentifierCharacterSetOption);
         Options.Add(IgnoreOpenApiErrors);
         Options.Add(IgnoreOpenApiWarnings);
         Options.Add(GenerateModelValidationMethods);
@@ -279,6 +287,7 @@ internal sealed class GenerateCommand : Command
             Namespace = namespaceValue,
             ClassName = parseResult.GetRequiredValue(ClientClassName),
             ClsCompliantEnumPrefix = parseResult.GetRequiredValue(ClsCompliantEnumPrefix),
+            IdentifierCharacterSet = parseResult.GetRequiredValue(IdentifierCharacterSetOption),
             MethodNamingConvention = parseResult.GetRequiredValue(MethodNamingConvention),
             ExcludeDeprecatedOperations = parseResult.GetRequiredValue(ExcludeDeprecatedOperations),
             JsonSerializerContext = $"{namespaceValue}.{contextClassName}",

@@ -11,6 +11,7 @@ public record struct CSharpSettings(
     string Namespace,
     string ClassName,
     string ClsCompliantEnumPrefix,
+    IdentifierCharacterSet IdentifierCharacterSet,
     NamingConvention NamingConvention,
     CSharpJsonSerializerType JsonSerializerType,
     SdkFeatureUsage UseRequiredKeyword,
@@ -64,6 +65,7 @@ public record struct CSharpSettings(
             Namespace: settings.Namespace,
             ClassName: settings.ClassName,
             ClsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
+            IdentifierCharacterSet: settings.IdentifierCharacterSet,
             NamingConvention: settings.NamingConvention,
             JsonSerializerType: settings.JsonSerializerType switch
             {
@@ -137,6 +139,7 @@ public record struct CSharpSettings(
             Namespace: Namespace,
             ClassName: ClassName,
             ClsCompliantEnumPrefix: ClsCompliantEnumPrefix,
+            IdentifierCharacterSet: IdentifierCharacterSet,
             NamingConvention: NamingConvention,
             JsonSerializerType: JsonSerializerType switch
             {

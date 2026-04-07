@@ -20,6 +20,7 @@ public class SummaryGenerator : IMethodNameGenerator
         return CSharpPropertyNameGenerator.SanitizeName(
             methodName,
             operation.Settings.ClsCompliantEnumPrefix,
-            skipHandlingWordSeparators: true);
+            skipHandlingWordSeparators: true,
+            identifierCharacterSet: operation.Settings.IdentifierCharacterSet);
     }
 }

@@ -149,6 +149,10 @@ public static class CSharpNamespacedTypeNameResolver
     {
         var name = segment.ToPropertyName();
         name = CSharpPropertyNameGenerator.HandleWordSeparators(name);
-        return CSharpPropertyNameGenerator.SanitizeName(name, settings.ClsCompliantEnumPrefix, skipHandlingWordSeparators: true);
+        return CSharpPropertyNameGenerator.SanitizeName(
+            name,
+            settings.ClsCompliantEnumPrefix,
+            skipHandlingWordSeparators: true,
+            identifierCharacterSet: settings.IdentifierCharacterSet);
     }
 }

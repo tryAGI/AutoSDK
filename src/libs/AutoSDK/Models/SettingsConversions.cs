@@ -34,12 +34,12 @@ public static class SettingsConversions
 
     public static EnumNamingSettings ToEnumNamingSettings(this Settings settings)
     {
-        return new EnumNamingSettings(settings.ClsCompliantEnumPrefix);
+        return new EnumNamingSettings(settings.ClsCompliantEnumPrefix, settings.IdentifierCharacterSet);
     }
 
     public static EnumNamingSettings ToEnumNamingSettings(this SchemaContextSettings settings)
     {
-        return new EnumNamingSettings(settings.ClsCompliantEnumPrefix);
+        return new EnumNamingSettings(settings.ClsCompliantEnumPrefix, settings.IdentifierCharacterSet);
     }
 
     public static SchemaNamingSettings ToSchemaNamingSettings(this Settings settings)
@@ -47,7 +47,8 @@ public static class SettingsConversions
         return new SchemaNamingSettings(
             clsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
             useExtensionNaming: settings.UseExtensionNaming,
-            namespaceDelimiter: settings.NamespaceDelimiter);
+            namespaceDelimiter: settings.NamespaceDelimiter,
+            identifierCharacterSet: settings.IdentifierCharacterSet);
     }
 
     public static SchemaNamingSettings ToSchemaNamingSettings(this SchemaContextSettings settings)
@@ -55,7 +56,8 @@ public static class SettingsConversions
         return new SchemaNamingSettings(
             clsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
             useExtensionNaming: settings.UseExtensionNaming,
-            namespaceDelimiter: settings.NamespaceDelimiter);
+            namespaceDelimiter: settings.NamespaceDelimiter,
+            identifierCharacterSet: settings.IdentifierCharacterSet);
     }
 
     public static SchemaContextSettings ToSchemaContextSettings(this Settings settings)
@@ -77,7 +79,8 @@ public static class SettingsConversions
             UseExtensionNaming: settings.UseExtensionNaming,
             ModelStyle: settings.ModelStyle,
             NamespaceDelimiter: settings.NamespaceDelimiter,
-            ExcludedModelNamespaceMode: settings.ExcludedModelNamespaceMode);
+            ExcludedModelNamespaceMode: settings.ExcludedModelNamespaceMode,
+            IdentifierCharacterSet: settings.IdentifierCharacterSet);
     }
 
     public static EmitterSettings ToEmitterSettings(this SchemaContextSettings settings)

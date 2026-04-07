@@ -116,7 +116,8 @@ public static class CSharpAuthorizationFactory
         normalizedName = CSharpPropertyNameGenerator.SanitizeName(
             normalizedName,
             settings.ClsCompliantEnumPrefix,
-            skipHandlingWordSeparators: true);
+            skipHandlingWordSeparators: true,
+            identifierCharacterSet: settings.IdentifierCharacterSet);
         normalizedName = CSharpPropertyNameGenerator.AvoidObjectMemberNameCollision(normalizedName);
 
         return string.IsNullOrWhiteSpace(normalizedName)

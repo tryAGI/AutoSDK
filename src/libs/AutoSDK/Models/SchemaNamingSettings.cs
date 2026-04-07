@@ -2,22 +2,29 @@ namespace AutoSDK.Models;
 
 public readonly struct SchemaNamingSettings : IEquatable<SchemaNamingSettings>
 {
-    public SchemaNamingSettings(string clsCompliantEnumPrefix, bool useExtensionNaming, string namespaceDelimiter)
+    public SchemaNamingSettings(
+        string clsCompliantEnumPrefix,
+        bool useExtensionNaming,
+        string namespaceDelimiter,
+        IdentifierCharacterSet identifierCharacterSet = IdentifierCharacterSet.UnicodeLetters)
     {
         ClsCompliantEnumPrefix = clsCompliantEnumPrefix;
         UseExtensionNaming = useExtensionNaming;
         NamespaceDelimiter = namespaceDelimiter;
+        IdentifierCharacterSet = identifierCharacterSet;
     }
 
     public string ClsCompliantEnumPrefix { get; }
     public bool UseExtensionNaming { get; }
     public string NamespaceDelimiter { get; }
+    public IdentifierCharacterSet IdentifierCharacterSet { get; }
 
     public bool Equals(SchemaNamingSettings other)
     {
         return string.Equals(ClsCompliantEnumPrefix, other.ClsCompliantEnumPrefix, StringComparison.Ordinal) &&
                UseExtensionNaming == other.UseExtensionNaming &&
-               string.Equals(NamespaceDelimiter, other.NamespaceDelimiter, StringComparison.Ordinal);
+               string.Equals(NamespaceDelimiter, other.NamespaceDelimiter, StringComparison.Ordinal) &&
+               IdentifierCharacterSet == other.IdentifierCharacterSet;
     }
 
     public override bool Equals(object? obj)
@@ -32,6 +39,7 @@ public readonly struct SchemaNamingSettings : IEquatable<SchemaNamingSettings>
             var hashCode = StringComparer.Ordinal.GetHashCode(ClsCompliantEnumPrefix ?? string.Empty);
             hashCode = (hashCode * 397) ^ UseExtensionNaming.GetHashCode();
             hashCode = (hashCode * 397) ^ StringComparer.Ordinal.GetHashCode(NamespaceDelimiter ?? string.Empty);
+            hashCode = (hashCode * 397) ^ (int)IdentifierCharacterSet;
             return hashCode;
         }
     }

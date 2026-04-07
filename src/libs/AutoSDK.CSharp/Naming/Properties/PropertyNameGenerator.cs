@@ -1,5 +1,6 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using System.Text;
 
 namespace AutoSDK.Naming.Properties;
 
@@ -31,20 +32,18 @@ public static class CSharpPropertyNameGenerator
             name = name.FixPropertyName(context.Parent.Id);
         }
 
-        name = SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
+        name = SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true, context.Settings.IdentifierCharacterSet);
         name = AvoidObjectMemberNameCollision(name);
 
         return name;
     }
 
-    public static string SanitizeName(string? name, string clsCompliantEnumPrefix, bool skipHandlingWordSeparators = false)
+    public static string SanitizeName(
+        string? name,
+        string clsCompliantEnumPrefix,
+        bool skipHandlingWordSeparators = false,
+        IdentifierCharacterSet identifierCharacterSet = IdentifierCharacterSet.UnicodeLetters)
     {
-        static bool InvalidFirstChar(char ch)
-            => ch != '_' && !char.IsLetter(ch);
-
-        static bool InvalidSubsequentChar(char ch)
-            => ch != '_' && !char.IsLetterOrDigit(ch);
-
         if (name is null || name.Length == 0)
         {
             return "";
@@ -62,7 +61,7 @@ public static class CSharpPropertyNameGenerator
                 : clsCompliantEnumPrefix;
         }
 
-        if (InvalidFirstChar(name[0]))
+        if (!CSharpIdentifierCharacterRules.IsValidIdentifierStart(name, 0, identifierCharacterSet))
         {
             name = (string.IsNullOrWhiteSpace(clsCompliantEnumPrefix)
                 ? "_"
@@ -70,9 +69,12 @@ public static class CSharpPropertyNameGenerator
         }
 
         var needsSanitize = false;
-        for (var i = 1; i < name.Length; i++)
+        for (var i = 0; i < name.Length; i += CSharpIdentifierCharacterRules.GetCodePointLength(name, i))
         {
-            if (InvalidSubsequentChar(name[i]))
+            var isValid = i == 0
+                ? CSharpIdentifierCharacterRules.IsValidIdentifierStart(name, i, identifierCharacterSet)
+                : CSharpIdentifierCharacterRules.IsValidIdentifierPart(name, i, identifierCharacterSet);
+            if (!isValid)
             {
                 needsSanitize = true;
                 break;
@@ -83,18 +85,24 @@ public static class CSharpPropertyNameGenerator
             return name;
         }
 
-        Span<char> buf = stackalloc char[name.Length];
-        name.AsSpan().CopyTo(buf);
-
-        for (var i = 1; i < buf.Length; i++)
+        var builder = new StringBuilder(name.Length);
+        for (var i = 0; i < name.Length; i += CSharpIdentifierCharacterRules.GetCodePointLength(name, i))
         {
-            if (InvalidSubsequentChar(buf[i]))
+            var codePointLength = CSharpIdentifierCharacterRules.GetCodePointLength(name, i);
+            var isValid = i == 0
+                ? CSharpIdentifierCharacterRules.IsValidIdentifierStart(name, i, identifierCharacterSet)
+                : CSharpIdentifierCharacterRules.IsValidIdentifierPart(name, i, identifierCharacterSet);
+            if (isValid)
             {
-                buf[i] = '_';
+                builder.Append(name, i, codePointLength);
+            }
+            else
+            {
+                builder.Append('_');
             }
         }
 
-        return buf.ToString();
+        return builder.ToString();
     }
 
     public static string HandleWordSeparators(string name)
@@ -115,7 +123,7 @@ public static class CSharpPropertyNameGenerator
             name = name.FixPropertyName(parent.Id);
         }
 
-        return SanitizeName(name, settings.ClsCompliantEnumPrefix, true);
+        return SanitizeName(name, settings.ClsCompliantEnumPrefix, true, settings.IdentifierCharacterSet);
     }
 
     public static string ToCSharpName(this string text, CSharpSettings settings, SchemaContext? parent)
