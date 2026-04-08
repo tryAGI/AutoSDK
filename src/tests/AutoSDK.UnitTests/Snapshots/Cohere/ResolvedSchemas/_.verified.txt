@@ -991,7 +991,7 @@
   CreateConnectorRequest(ref)[/connectors],
   UpdateConnectorRequest(ref)[/connectors],
   FinetunedModel(ref)[/finetuning],
-  UpdateFinetunedModelRequest(class)[/finetuning],
+  FinetuningUpdateFinetunedModelRequest(class)[/finetuning],
     Name(string)[/finetuning],
     CreatorId(string)[/finetuning],
     OrganizationId(string)[/finetuning],

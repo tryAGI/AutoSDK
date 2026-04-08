@@ -214,12 +214,20 @@ public static class CorePipeline
 
         var hasTagFilters = settings.IncludeTags.Length > 0 || settings.ExcludeTags.Length > 0;
         var hasModelFilters = includedModels.Count > 0 || excludedModels.Count > 0;
-        var allSchemasPass = (settings.GenerateModels || settings.GenerateSdk) &&
-                             !hasTagFilters &&
-                             !hasModelFilters;
+        var skipModels = !settings.GenerateModels && !settings.GenerateSdk;
+        var includeAllSchemas = (settings.GenerateModels || settings.GenerateSdk) &&
+                                !hasTagFilters &&
+                                !hasModelFilters;
+        var includeOperationSchemas = settings.GenerateMethods ||
+                                      settings.GenerateConstructors ||
+                                      settings.GenerateCli ||
+                                      includedOperationIds.Count > 0 ||
+                                      excludedOperationIds.Count > 0 ||
+                                      hasTagFilters ||
+                                      settings.ExcludeDeprecatedOperations;
 
         IReadOnlyList<SchemaContext> filteredSchemas;
-        if (allSchemasPass)
+        if (includeAllSchemas)
         {
             filteredSchemas = schemas;
         }
@@ -245,10 +253,36 @@ public static class CorePipeline
             for (var i = 0; i < schemas.Count; i++)
             {
                 var schema = schemas[i];
-                if (!(settings.GenerateModels ||
-                      settings.GenerateSdk ||
-                      (schema.Operation?.OperationId != null &&
-                       includedOperationIds.Contains(schema.Operation.OperationId))))
+                var shouldIncludeSchema = settings.GenerateModels || settings.GenerateSdk;
+                if (!shouldIncludeSchema)
+                {
+                    if (!includeOperationSchemas || schema.Operation == null)
+                    {
+                        continue;
+                    }
+
+                    var operationId = schema.Operation.OperationId;
+                    if (settings.ExcludeDeprecatedOperations &&
+                        schema.Operation.IsDeprecated())
+                    {
+                        continue;
+                    }
+
+                    if (includedOperationIds.Count > 0 &&
+                        (operationId == null || !includedOperationIds.Contains(operationId)))
+                    {
+                        continue;
+                    }
+
+                    if (operationId != null &&
+                        excludedOperationIds.Contains(operationId))
+                    {
+                        continue;
+                    }
+                }
+
+                if (!shouldIncludeSchema &&
+                    schema.ComponentId != null)
                 {
                     continue;
                 }
@@ -281,6 +315,17 @@ public static class CorePipeline
                 schema.CollectWithAllChildren(
                     collected,
                     hasModelFilters ? CanExpandReference : null);
+            }
+
+            if (skipModels)
+            {
+                foreach (var schema in collected)
+                {
+                    if (schema.IsComponent)
+                    {
+                        schema.IsFilteredOutModel = true;
+                    }
+                }
             }
 
             filteredSchemas = new List<SchemaContext>(collected);
@@ -337,7 +382,7 @@ public static class CorePipeline
             ExcludedOperationIds: excludedOperationIds.ToImmutableArray(),
             ComponentSchemas: componentSchemas,
             SyntheticEventSchemaNames: new Dictionary<string, string>(StringComparer.Ordinal),
-            SkipModels: false,
+            SkipModels: skipModels,
             Times: new Times(
                 Parsing: parsingTime.Elapsed,
                 TraversalTree: traversalTreeTime.Elapsed,

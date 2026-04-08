@@ -1459,6 +1459,70 @@ public partial class DataTests
         generated.Should().Contain("base.Name = name");
     }
 
+    [TestMethod]
+    [DataRow(true)]
+    [DataRow(false)]
+    public void TwoProjectMethodsGeneration_UsesReferencedModelsWithoutEmittingDuplicates(bool useLegacyPrepare)
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: TwoProjectRepro
+                              version: 1.0.0
+                            paths:
+                              /pets/{petId}:
+                                post:
+                                  operationId: createPet
+                                  parameters:
+                                    - in: path
+                                      name: petId
+                                      required: true
+                                      schema:
+                                        type: string
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      application/json:
+                                        schema:
+                                          $ref: '#/components/schemas/Pet'
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/Pet'
+                            components:
+                              schemas:
+                                Pet:
+                                  type: object
+                                  properties:
+                                    name:
+                                      type: string
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateSdk = false,
+            GenerateModels = false,
+            GenerateMethods = true,
+            GenerateConstructors = true,
+            JsonSerializerContext = "TestNamespace.SourceGenerationContext",
+        };
+
+        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var endpoint = data.Methods.Should().ContainSingle().Subject;
+        var generatedMethod = Sources.GenerateEndPoint(endpoint);
+
+        data.Classes.Should().BeEmpty();
+        data.Enums.Should().BeEmpty();
+        data.AnyOfs.Should().BeEmpty();
+        endpoint.RequestType.CSharpTypeWithoutNullability.Should().Be("global::TestNamespace.Pet");
+        endpoint.SuccessResponse.Type.CSharpTypeWithoutNullability.Should().Be("global::TestNamespace.Pet");
+        generatedMethod.Should().Contain("global::TestNamespace.Pet request");
+        generatedMethod.Should().Contain("global::System.Threading.Tasks.Task<global::TestNamespace.Pet>");
+    }
+
     private static AutoSDK.Models.Data PreparePetstoreWithExclusions(bool useLegacyPrepare, string yaml, AutoSDK.Models.Settings settings)
     {
         return PrepareOpenApi(useLegacyPrepare, yaml, settings);

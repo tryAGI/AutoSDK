@@ -1988,7 +1988,7 @@
   GetOAuthTokenRequest(class)[Authentication],
     ClientId(string)[Authentication],
     ClientSecret(string)[Authentication],
-    GetOAuthTokenRequestGrantType(class)[Authentication],
+    GrantType(string)[Authentication],
   CreateToolServerRequest(ref)[Tool Servers],
   UpdateToolServerRequest(ref)[Tool Servers],
   CreateToolRequest(ref)[Tools],

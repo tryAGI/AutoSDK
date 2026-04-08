@@ -1988,7 +1988,7 @@
   GetOAuthTokenRequest(class),
     ClientId(string),
     ClientSecret(string),
-    GetOAuthTokenRequestGrantType(class),
+    GrantType(string),
   CreateToolServerRequest(ref),
   UpdateToolServerRequest(ref),
   CreateToolRequest(ref),

@@ -252,11 +252,19 @@ public static class Data
 
         var hasTagFilters = settings.IncludeTags.Length > 0 || settings.ExcludeTags.Length > 0;
         var hasModelFilters = includedModels.Count > 0 || excludedModels.Count > 0;
-        var allSchemasPass = (settings.GenerateModels || settings.GenerateSdk) &&
-                             !hasTagFilters && !hasModelFilters;
+        var skipModels = !settings.GenerateModels && !settings.GenerateSdk;
+        var includeAllSchemas = (settings.GenerateModels || settings.GenerateSdk) &&
+                                !hasTagFilters && !hasModelFilters;
+        var includeOperationSchemas = settings.GenerateMethods ||
+                                      settings.GenerateConstructors ||
+                                      settings.GenerateCli ||
+                                      includedOperationIds.Count > 0 ||
+                                      excludedOperationIds.Count > 0 ||
+                                      hasTagFilters ||
+                                      settings.ExcludeDeprecatedOperations;
 
         IReadOnlyList<SchemaContext> filteredSchemas;
-        if (allSchemasPass)
+        if (includeAllSchemas)
         {
             // Fast path: all schemas pass the predicate, no expansion needed.
             // schemas already contains all children from TraversalTree.
@@ -285,9 +293,35 @@ public static class Data
             for (var i = 0; i < schemas.Count; i++)
             {
                 var x = schemas[i];
-                if (!(settings.GenerateModels ||
-                      settings.GenerateSdk ||
-                      (x.Operation?.OperationId != null && includedOperationIds.Contains(x.Operation.OperationId))))
+                var shouldIncludeSchema = settings.GenerateModels || settings.GenerateSdk;
+                if (!shouldIncludeSchema)
+                {
+                    if (!includeOperationSchemas || x.Operation == null)
+                    {
+                        continue;
+                    }
+
+                    var operationId = x.Operation.OperationId;
+                    if (settings.ExcludeDeprecatedOperations &&
+                        x.Operation.IsDeprecated())
+                    {
+                        continue;
+                    }
+
+                    if (includedOperationIds.Count > 0 &&
+                        (operationId == null || !includedOperationIds.Contains(operationId)))
+                    {
+                        continue;
+                    }
+
+                    if (operationId != null &&
+                        excludedOperationIds.Contains(operationId))
+                    {
+                        continue;
+                    }
+                }
+                if (!shouldIncludeSchema &&
+                    x.ComponentId != null)
                 {
                     continue;
                 }
@@ -316,6 +350,16 @@ public static class Data
                 x.CollectWithAllChildren(
                     collected,
                     hasModelFilters ? CanExpandReference : null);
+            }
+            if (skipModels)
+            {
+                foreach (var schema in collected)
+                {
+                    if (schema.IsComponent)
+                    {
+                        schema.IsFilteredOutModel = true;
+                    }
+                }
             }
             filteredSchemas = new List<SchemaContext>(collected);
         }
@@ -598,7 +642,7 @@ public static class Data
         }
         
         var types =
-            settings.GenerateJsonSerializerContextTypes
+            !skipModels && settings.GenerateJsonSerializerContextTypes
                 ? filteredSchemas
                     .Where(x =>
                         x.TypeData != TypeData.Default &&
@@ -608,19 +652,26 @@ public static class Data
                     .Select(x => x.First())
                     .ToImmutableArray()
                 : [];
-        
-        classes = classes
-            .Select(x => x with
-            {
-                SchemaContext = default!,
-            })
-            .ToImmutableArray();
-        enums = enums
-            .Select(x => x with
-            {
-                SchemaContext = default!,
-            })
-            .ToImmutableArray();
+
+        var outputClasses = skipModels
+            ? ImmutableArray<ModelData>.Empty
+            : classes
+                .Select(x => x with
+                {
+                    SchemaContext = default!,
+                })
+                .ToImmutableArray();
+        var outputEnums = skipModels
+            ? ImmutableArray<ModelData>.Empty
+            : enums
+                .Select(x => x with
+                {
+                    SchemaContext = default!,
+                })
+                .ToImmutableArray();
+        var outputAnyOfDatas = skipModels
+            ? ImmutableArray<AnyOfData>.Empty
+            : anyOfDatas;
         
         computeDataClassesTime.Stop();
 #if NET
@@ -628,11 +679,11 @@ public static class Data
 #endif
 
         return new Models.Data(
-            Classes: classes,
-            Enums: enums,
+            Classes: outputClasses,
+            Enums: outputEnums,
             Methods: methods,
             Clients: clients.ToImmutableArray(),
-            AnyOfs: anyOfDatas,
+            AnyOfs: outputAnyOfDatas,
             Types: types,
             Authorizations: settings.GenerateSdk || settings.GenerateConstructors
                 ? authorizations.ToImmutableArray()
@@ -689,6 +740,7 @@ public static class Data
         var coreTimes = coreResult.Times;
         var schemas = coreResult.Schemas;
         var filteredSchemas = coreResult.FilteredSchemas;
+        var skipModels = coreResult.SkipModels;
         var settings = (CSharpSettings)coreResult.Settings;
         var globalSettings = (CSharpSettings)coreResult.GlobalSettings;
         var includedOperationIds = new HashSet<string>(coreResult.IncludedOperationIds);
@@ -950,7 +1002,7 @@ public static class Data
                 .ToArray();
         }
 
-        var types = settings.GenerateJsonSerializerContextTypes
+        var types = !skipModels && settings.GenerateJsonSerializerContextTypes
             ? filteredSchemas
                 .Where(x =>
                     x.TypeData != TypeData.Default &&
@@ -961,18 +1013,25 @@ public static class Data
                 .ToImmutableArray()
             : [];
 
-        classes = classes
-            .Select(x => x with
-            {
-                SchemaContext = default!,
-            })
-            .ToImmutableArray();
-        enums = enums
-            .Select(x => x with
-            {
-                SchemaContext = default!,
-            })
-            .ToImmutableArray();
+        var outputClasses = skipModels
+            ? ImmutableArray<ModelData>.Empty
+            : classes
+                .Select(x => x with
+                {
+                    SchemaContext = default!,
+                })
+                .ToImmutableArray();
+        var outputEnums = skipModels
+            ? ImmutableArray<ModelData>.Empty
+            : enums
+                .Select(x => x with
+                {
+                    SchemaContext = default!,
+                })
+                .ToImmutableArray();
+        var outputAnyOfDatas = skipModels
+            ? ImmutableArray<AnyOfData>.Empty
+            : anyOfDatas;
 
         computeDataClassesTime.Stop();
 #if NET
@@ -980,11 +1039,11 @@ public static class Data
 #endif
 
         return new Models.Data(
-            Classes: classes,
-            Enums: enums,
+            Classes: outputClasses,
+            Enums: outputEnums,
             Methods: methods,
             Clients: clients.ToImmutableArray(),
-            AnyOfs: anyOfDatas,
+            AnyOfs: outputAnyOfDatas,
             Types: types,
             Authorizations: settings.GenerateSdk || settings.GenerateConstructors
                 ? authorizations.ToImmutableArray()

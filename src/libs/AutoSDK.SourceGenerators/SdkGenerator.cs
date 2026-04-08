@@ -17,31 +17,7 @@ public class SdkGenerator : IIncrementalGenerator
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
         var settings = context.DetectSettings();
-        settings
-            .SelectAndReportExceptions((x, c) => x.GenerateSdk
-                ? Sources.Polyfills(x, c)
-                : FileWithName.Empty
-                .AsFileWithName(), context, Id)
-            .AddSource(context);
-        settings
-            .SelectAndReportExceptions((x, c) => x.GenerateSdk
-                ? Sources.Exceptions(x, c)
-                : FileWithName.Empty
-                .AsFileWithName(), context, Id)
-            .AddSource(context);
-        settings
-            .SelectAndReportExceptions((x, c) => x.GenerateSdk
-                ? Sources.PathBuilder(x, c)
-                : FileWithName.Empty
-                .AsFileWithName(), context, Id)
-            .AddSource(context);
-        settings
-            .SelectAndReportExceptions((x, c) => x.GenerateSdk
-                ? Sources.UnixTimestampJsonConverter(x, c)
-                : FileWithName.Empty
-                .AsFileWithName(), context, Id)
-            .AddSource(context);
-        
+
         var data = context.AdditionalTextsProvider
             .Combine(context.AnalyzerConfigOptionsProvider)
             .Where(static pair =>
@@ -52,7 +28,32 @@ public class SdkGenerator : IIncrementalGenerator
                 pair.Right.GetSettings(prefix: "AutoSDK", additionalText: pair.Left)))
             .Combine(settings)
             .SelectAndReportExceptions(CSharpPipeline.PrepareAndEnrich, context, Id);
-        
+
+        data
+            .SelectAndReportExceptions((x, c) => ShouldGeneratePolyfills(x)
+                ? Sources.Polyfills(x.Converters.Settings, c)
+                : FileWithName.Empty
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        data
+            .SelectAndReportExceptions((x, c) => ShouldGenerateExceptions(x)
+                ? Sources.Exceptions(x.Converters.Settings, c)
+                : FileWithName.Empty
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        data
+            .SelectAndReportExceptions((x, c) => ShouldGeneratePathBuilder(x)
+                ? Sources.PathBuilder(x.Converters.Settings, c)
+                : FileWithName.Empty
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        data
+            .SelectAndReportExceptions((x, c) => ShouldGenerateUnixTimestampJsonConverter(x)
+                ? Sources.UnixTimestampJsonConverter(x.Converters.Settings, c)
+                : FileWithName.Empty
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+
         data
             .SelectAndReportExceptions((x, c) => x.Methods.Any(y => y.RawStream)
                 ? Sources.ResponseStream(x.Converters.Settings, c)
@@ -185,6 +186,30 @@ public class SdkGenerator : IIncrementalGenerator
         return additionalText.Path.StartsWith("http", StringComparison.OrdinalIgnoreCase)
             ? Task.Run(() => new HttpClient().GetStringAsync(new Uri(additionalText.Path)), cancellationToken).Result
             : additionalText.GetText(cancellationToken)?.ToString() ?? string.Empty;
+    }
+
+    private static bool ShouldGeneratePolyfills(AutoSDK.Models.Data data)
+    {
+        return data.Converters.Settings.GeneratePolyfills &&
+               !data.Methods.IsEmpty;
+    }
+
+    private static bool ShouldGenerateExceptions(AutoSDK.Models.Data data)
+    {
+        return data.Converters.Settings.GenerateExceptions &&
+               (!data.Methods.IsEmpty || !data.Clients.IsEmpty);
+    }
+
+    private static bool ShouldGeneratePathBuilder(AutoSDK.Models.Data data)
+    {
+        return !data.Methods.IsEmpty || !data.Clients.IsEmpty;
+    }
+
+    private static bool ShouldGenerateUnixTimestampJsonConverter(AutoSDK.Models.Data data)
+    {
+        return data.Converters.Settings.GenerateJsonSerializerContextTypes ||
+               (!data.Clients.IsEmpty &&
+                data.Clients.Any(client => !client.Settings.HasJsonSerializerContext()));
     }
     
     #endregion
