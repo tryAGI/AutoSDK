@@ -24,6 +24,28 @@ internal sealed class GenerateCommand : Command
         DefaultValueFactory = _ => "Generated",
         Description = "Output file path",
     };
+
+    private Option<string[]> GrpcInputs { get; } = new(
+        name: "--grpc-input")
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Additional gRPC/protobuf inputs to scaffold alongside the primary OpenAPI/AsyncAPI generation path. Repeatable.",
+        AllowMultipleArgumentsPerToken = true,
+    };
+
+    private Option<string> ApiOutputSubdirectory { get; } = new(
+        name: "--api-output-subdirectory")
+    {
+        DefaultValueFactory = _ => "rest",
+        Description = "When using --grpc-input, place the primary OpenAPI/AsyncAPI output under this subdirectory.",
+    };
+
+    private Option<string> GrpcOutputSubdirectory { get; } = new(
+        name: "--grpc-output-subdirectory")
+    {
+        DefaultValueFactory = _ => "grpc",
+        Description = "When using --grpc-input, place scaffolded gRPC projects under this subdirectory.",
+    };
     
     private Option<string> TargetFramework { get; } = new(
         name: "--targetFramework",
@@ -220,10 +242,13 @@ internal sealed class GenerateCommand : Command
         Description = "Generation backend. Currently supported: csharp.",
     };
 
-    public GenerateCommand() : base(name: "generate", description: "Generates client SDK code from OpenAPI/AsyncAPI, or scaffolds a C# gRPC project from a local .proto file.")
+    public GenerateCommand() : base(name: "generate", description: "Generates client SDK code from OpenAPI/AsyncAPI, or scaffolds a C# gRPC project from a local .proto, descriptor set, or Buf module input.")
     {
         Arguments.Add(Input);
         Options.Add(Output);
+        Options.Add(GrpcInputs);
+        Options.Add(ApiOutputSubdirectory);
+        Options.Add(GrpcOutputSubdirectory);
         Options.Add(TargetFramework);
         Options.Add(Namespace);
         Options.Add(ClientClassName);
@@ -260,6 +285,9 @@ internal sealed class GenerateCommand : Command
         string output = parseResult.GetRequiredValue(Output);
         bool singleFile = parseResult.GetRequiredValue(SingleFile);
         string language = parseResult.GetRequiredValue(Language);
+        var grpcInputs = parseResult.GetRequiredValue(GrpcInputs).ToImmutableArray();
+        var apiOutputSubdirectory = parseResult.GetRequiredValue(ApiOutputSubdirectory);
+        var grpcOutputSubdirectory = parseResult.GetRequiredValue(GrpcOutputSubdirectory);
         
         var namespaceValue = parseResult.GetRequiredValue(Namespace);
         var contextName = parseResult.GetRequiredValue(JsonSerializerContextName);
@@ -274,6 +302,29 @@ internal sealed class GenerateCommand : Command
         if (!string.IsNullOrEmpty(namespaceDelimiterValue) && namespaceDelimiterValue.Length != 1)
         {
             throw new ArgumentException("--namespace-delimiter must be empty or a single character.");
+        }
+
+        if (grpcInputs.Any(static value => string.IsNullOrWhiteSpace(value)))
+        {
+            throw new ArgumentException("--grpc-input values must be non-empty.");
+        }
+
+        if (string.IsNullOrWhiteSpace(apiOutputSubdirectory))
+        {
+            throw new ArgumentException("--api-output-subdirectory must be non-empty.");
+        }
+
+        if (string.IsNullOrWhiteSpace(grpcOutputSubdirectory))
+        {
+            throw new ArgumentException("--grpc-output-subdirectory must be non-empty.");
+        }
+
+        if (string.Equals(
+                NormalizePath(apiOutputSubdirectory).TrimEnd('/'),
+                NormalizePath(grpcOutputSubdirectory).TrimEnd('/'),
+                StringComparison.OrdinalIgnoreCase))
+        {
+            throw new ArgumentException("--api-output-subdirectory and --grpc-output-subdirectory must be different.");
         }
 
         if (!generateModels && string.IsNullOrWhiteSpace(typesNamespaceValue))
@@ -312,15 +363,41 @@ internal sealed class GenerateCommand : Command
             TypesNamespace = typesNamespaceValue,
         };
             
+        if (!string.Equals(language, "csharp", StringComparison.OrdinalIgnoreCase))
+        {
+            throw new NotSupportedException($"Unsupported language '{language}'. Currently only 'csharp' is supported.");
+        }
+
+        var isPrimaryGrpcInput = GrpcProjectScaffolder.CanHandleInput(input);
+        if (grpcInputs.Length > 0 && isPrimaryGrpcInput)
+        {
+            throw new ArgumentException(
+                "Mixed-mode generation expects the primary input to be OpenAPI/AsyncAPI. " +
+                "Use --grpc-input for the protobuf sidecars and keep the main input as the REST spec.");
+        }
+
+        if (isPrimaryGrpcInput)
+        {
+            Console.WriteLine($"Loading {input}...");
+            Console.WriteLine("Scaffolding gRPC project...");
+            await GrpcProjectScaffolder.ScaffoldAsync(
+                input,
+                output,
+                settings.Namespace,
+                settings.TargetFramework).ConfigureAwait(false);
+            Console.WriteLine("Done.");
+            return;
+        }
+
         Console.WriteLine($"Loading {input}...");
-        
+
         using var client = new HttpClient();
         var yaml = input.StartsWith("http", StringComparison.OrdinalIgnoreCase)
             ? await client.GetStringAsync(new Uri(input)).ConfigureAwait(false)
             : await File.ReadAllTextAsync(input).ConfigureAwait(false);
-        
+
         var name = Path.GetFileNameWithoutExtension(input);
-        
+
         if (string.IsNullOrWhiteSpace(settings.Namespace))
         {
             settings = settings with
@@ -338,21 +415,16 @@ internal sealed class GenerateCommand : Command
             };
         }
 
-        if (!string.Equals(language, "csharp", StringComparison.OrdinalIgnoreCase))
-        {
-            throw new NotSupportedException($"Unsupported language '{language}'. Currently only 'csharp' is supported.");
-        }
-
         var specFormat = SpecFormatDetector.DetectFormat(yaml);
         if (specFormat == SpecFormat.GrpcProto)
         {
             Console.WriteLine("Scaffolding gRPC project...");
             await GrpcProjectScaffolder.ScaffoldAsync(
                 input,
-                yaml,
                 output,
                 settings.Namespace,
-                settings.TargetFramework).ConfigureAwait(false);
+                settings.TargetFramework,
+                protoText: yaml).ConfigureAwait(false);
             Console.WriteLine("Done.");
             return;
         }
@@ -372,21 +444,109 @@ internal sealed class GenerateCommand : Command
             .GenerateFiles(data)
             .Where(x => !x.IsEmpty)
             .ToArray();
-        
-        Directory.CreateDirectory(output);
+
+        var apiOutput = grpcInputs.Length > 0
+            ? Path.Combine(output, apiOutputSubdirectory)
+            : output;
+
+        Directory.CreateDirectory(apiOutput);
         
         if (singleFile)
         {
             var text = string.Join(Environment.NewLine, files.Select(x => x.Text));
-            await File.WriteAllTextAsync(Path.Combine(output, $"{name}.cs"), text).ConfigureAwait(false);
-            return;
+            await File.WriteAllTextAsync(Path.Combine(apiOutput, $"{name}.cs"), text).ConfigureAwait(false);
         }
-        
-        foreach (var file in files)
+        else
         {
-            await File.WriteAllTextAsync(Path.Combine(output, file.Name), file.Text).ConfigureAwait(false);
+            foreach (var file in files)
+            {
+                await File.WriteAllTextAsync(Path.Combine(apiOutput, file.Name), file.Text).ConfigureAwait(false);
+            }
+        }
+
+        if (grpcInputs.Length > 0)
+        {
+            await ScaffoldMixedModeGrpcInputsAsync(
+                grpcInputs,
+                output,
+                grpcOutputSubdirectory,
+                settings.Namespace,
+                settings.TargetFramework).ConfigureAwait(false);
+
+            await File.WriteAllTextAsync(
+                Path.Combine(output, "README.md"),
+                RenderMixedModeReadme(
+                    input,
+                    apiOutputSubdirectory,
+                    grpcOutputSubdirectory,
+                    grpcInputs),
+                cancellationToken: default).ConfigureAwait(false);
         }
         
         Console.WriteLine("Done.");
+    }
+
+    private static async Task ScaffoldMixedModeGrpcInputsAsync(
+        ImmutableArray<string> grpcInputs,
+        string output,
+        string grpcOutputSubdirectory,
+        string namespaceValue,
+        string targetFramework)
+    {
+        var grpcRoot = Path.Combine(output, grpcOutputSubdirectory);
+        Directory.CreateDirectory(grpcRoot);
+
+        foreach (var grpcInput in grpcInputs)
+        {
+            var projectName = GrpcProjectScaffolder.GetSuggestedProjectName(grpcInput);
+            var grpcOutput = Path.Combine(grpcRoot, projectName);
+
+            Console.WriteLine($"Scaffolding gRPC project for {grpcInput}...");
+            await GrpcProjectScaffolder.ScaffoldAsync(
+                grpcInput,
+                grpcOutput,
+                namespaceValue,
+                targetFramework).ConfigureAwait(false);
+        }
+    }
+
+    private static string RenderMixedModeReadme(
+        string primaryInput,
+        string apiOutputSubdirectory,
+        string grpcOutputSubdirectory,
+        ImmutableArray<string> grpcInputs)
+    {
+        var grpcProjectLines = string.Join(
+            Environment.NewLine,
+            grpcInputs.Select(grpcInput =>
+                $"- `{NormalizePath(Path.Combine(grpcOutputSubdirectory, GrpcProjectScaffolder.GetSuggestedProjectName(grpcInput)))}` from `{grpcInput}`"));
+
+        return $$"""
+                 # Mixed OpenAPI + gRPC Output
+
+                 This layout was generated by AutoSDK from one primary REST/OpenAPI-style input plus additional protobuf inputs.
+
+                 ## Included
+
+                 - primary input: `{{primaryInput}}`
+                 - API output: `{{NormalizePath(apiOutputSubdirectory)}}`
+                 {{grpcProjectLines}}
+
+                 ## Usage
+
+                 1. Consume the OpenAPI/AsyncAPI-generated C# files from `{{NormalizePath(apiOutputSubdirectory)}}`
+                 2. Build each scaffolded gRPC project under `{{NormalizePath(grpcOutputSubdirectory)}}`
+                 3. Keep the split layout if you want deterministic file boundaries between REST and gRPC outputs
+
+                 ## Notes
+
+                 - Use `--api-output-subdirectory` and `--grpc-output-subdirectory` to customize the mixed-mode layout
+                 - Existing `--namespace` and proto `csharp_namespace` settings still control the generated namespaces inside each output
+                 """;
+    }
+
+    private static string NormalizePath(string path)
+    {
+        return path.Replace('\\', '/');
     }
 }
