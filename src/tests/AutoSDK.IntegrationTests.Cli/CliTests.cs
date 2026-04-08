@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using Google.Protobuf;
+using Google.Protobuf.Reflection;
 
 namespace AutoSDK.IntegrationTests;
 
@@ -87,20 +89,323 @@ public class CliTests
 
             var csprojPath = Path.Combine(outputDirectory, "Greeter.Grpc.csproj");
             File.Exists(csprojPath).Should().BeTrue();
-            File.Exists(Path.Combine(outputDirectory, "GrpcChannelFactory.cs")).Should().BeTrue();
             File.Exists(Path.Combine(outputDirectory, "README.md")).Should().BeTrue();
             File.Exists(Path.Combine(outputDirectory, "Protos", "greeter.proto")).Should().BeTrue();
             File.Exists(Path.Combine(outputDirectory, "Protos", "messages", "common.proto")).Should().BeTrue();
+            AssertAutoSdkGrpcSupportFilesExist(outputDirectory);
 
             var csprojText = await File.ReadAllTextAsync(csprojPath);
             csprojText.Should().Contain("Grpc.Tools");
             csprojText.Should().Contain("<RootNamespace>Demo.Grpc</RootNamespace>");
+            csprojText.Should().Contain("Microsoft.Extensions.DependencyInjection.Abstractions");
 
             var buildResult = await RunDotnetAsync(
                 outputDirectory,
                 "build",
                 "--disable-build-servers",
                 csprojPath);
+            buildResult.ExitCode.Should().Be(0);
+
+            var consumerBuildResult = await BuildAutoSdkGrpcConsumerAsync(
+                tempDirectory,
+                csprojPath,
+                "Demo.Grpc",
+                "Greeter.GreeterClient");
+            consumerBuildResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
+    public async Task Generate_ProtoInput_WithMissingImport_ShowsExplicitMessage()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var protoPath = Path.Combine(tempDirectory, "greeter.proto");
+            await File.WriteAllTextAsync(
+                protoPath,
+                """
+                syntax = "proto3";
+
+                package demo;
+
+                import "messages/common.proto";
+
+                service Greeter {
+                  rpc SayHello (demo.messages.HelloRequest) returns (demo.messages.HelloReply);
+                }
+                """);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var outputDirectory = Path.Combine(tempDirectory, "Generated");
+            var result = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate",
+                protoPath,
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory);
+
+            result.ExitCode.Should().Be(1);
+            result.StandardError.Should().Contain("Unable to resolve imported proto files: messages/common.proto");
+            result.StandardError.Should().Contain("use a Buf module or descriptor-set input");
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
+    public async Task Generate_DescriptorSetInput_ScaffoldsGrpcClientProject()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var descriptorSetPath = Path.Combine(tempDirectory, "greeter.binpb");
+            var descriptorSet = new FileDescriptorSet
+            {
+                File =
+                {
+                    CreateGreeterFileDescriptorProto(),
+                },
+            };
+            await File.WriteAllBytesAsync(descriptorSetPath, descriptorSet.ToByteArray());
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var outputDirectory = Path.Combine(tempDirectory, "Generated");
+            var result = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate",
+                descriptorSetPath,
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory);
+
+            result.ExitCode.Should().Be(0);
+            result.StandardError.Should().BeNullOrWhiteSpace();
+
+            var csprojPath = Path.Combine(outputDirectory, "Greeter.Grpc.csproj");
+            File.Exists(csprojPath).Should().BeTrue();
+            File.Exists(Path.Combine(outputDirectory, "README.md")).Should().BeTrue();
+            File.Exists(Path.Combine(outputDirectory, "Descriptors", "greeter.binpb")).Should().BeTrue();
+            AssertAutoSdkGrpcSupportFilesExist(outputDirectory);
+
+            var csprojText = await File.ReadAllTextAsync(csprojPath);
+            csprojText.Should().Contain("GenerateGrpcFromDescriptorSet");
+            csprojText.Should().Contain("<RootNamespace>Demo.Grpc</RootNamespace>");
+            csprojText.Should().Contain("Microsoft.Extensions.DependencyInjection.Abstractions");
+
+            var buildResult = await RunDotnetAsync(
+                outputDirectory,
+                "build",
+                "--disable-build-servers",
+                csprojPath);
+            buildResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
+    public async Task Generate_DescriptorSetInput_WithInvalidBinary_ShowsExplicitMessage()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var descriptorSetPath = Path.Combine(tempDirectory, "greeter.binpb");
+            await File.WriteAllTextAsync(descriptorSetPath, "not a descriptor set");
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var outputDirectory = Path.Combine(tempDirectory, "Generated");
+            var result = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate",
+                descriptorSetPath,
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory);
+
+            result.ExitCode.Should().Be(1);
+            result.StandardError.Should().Contain($"Input '{descriptorSetPath}' is not a valid binary protobuf descriptor set.");
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
+    public async Task Generate_BufModuleInput_ScaffoldsGrpcClientProject()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var protoSourceDirectory = Path.Combine(tempDirectory, "ProtoSource");
+            await WriteGreeterProtoTreeAsync(protoSourceDirectory);
+
+            var fakeBufDirectory = Path.Combine(tempDirectory, "FakeBuf");
+            await WriteFakeBufAsync(fakeBufDirectory);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var outputDirectory = Path.Combine(tempDirectory, "Generated");
+            var environment = new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["AUTOSDK_FAKE_BUF_SOURCE"] = protoSourceDirectory,
+                ["PATH"] = string.Join(
+                    Path.PathSeparator,
+                    new[]
+                    {
+                        fakeBufDirectory,
+                        Environment.GetEnvironmentVariable("PATH") ?? string.Empty,
+                    }),
+            };
+
+            var result = await RunDotnetAsync(
+                repositoryDirectory,
+                environment,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate",
+                "buf.build/acme/petapis:main",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory);
+
+            result.ExitCode.Should().Be(0);
+            result.StandardError.Should().BeNullOrWhiteSpace();
+
+            var csprojPath = Path.Combine(outputDirectory, "Petapis.Grpc.csproj");
+            File.Exists(csprojPath).Should().BeTrue();
+            File.Exists(Path.Combine(outputDirectory, "README.md")).Should().BeTrue();
+            File.Exists(Path.Combine(outputDirectory, "Protos", "greeter.proto")).Should().BeTrue();
+            File.Exists(Path.Combine(outputDirectory, "Protos", "messages", "common.proto")).Should().BeTrue();
+            AssertAutoSdkGrpcSupportFilesExist(outputDirectory);
+
+            var csprojText = await File.ReadAllTextAsync(csprojPath);
+            csprojText.Should().Contain("Grpc.Tools");
+            csprojText.Should().Contain("<RootNamespace>Demo.Grpc</RootNamespace>");
+            csprojText.Should().Contain("Microsoft.Extensions.DependencyInjection.Abstractions");
+
+            var buildResult = await RunDotnetAsync(
+                outputDirectory,
+                environment,
+                "build",
+                "--disable-build-servers",
+                csprojPath);
+            buildResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
+    public async Task Generate_OpenApiAndProtoInput_ProducesMixedModeLayout()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var openApiPath = Path.Combine(tempDirectory, "demo.yaml");
+            await File.WriteAllTextAsync(
+                openApiPath,
+                """
+                openapi: 3.0.3
+                info:
+                  title: Demo
+                  version: 1.0.0
+                paths:
+                  /hello:
+                    get:
+                      operationId: getHello
+                      responses:
+                        '200':
+                          description: ok
+                          content:
+                            application/json:
+                              schema:
+                                type: object
+                                properties:
+                                  message:
+                                    type: string
+                """);
+
+            await WriteGreeterProtoTreeAsync(tempDirectory);
+            var protoPath = Path.Combine(tempDirectory, "greeter.proto");
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var outputDirectory = Path.Combine(tempDirectory, "Generated");
+            var result = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate",
+                openApiPath,
+                "--grpc-input", protoPath,
+                "--api-output-subdirectory", "rest-sdk",
+                "--grpc-output-subdirectory", "grpc-sdk",
+                "--namespace", "Demo.Mixed",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory);
+
+            result.ExitCode.Should().Be(0);
+            result.StandardError.Should().BeNullOrWhiteSpace();
+
+            var readmePath = Path.Combine(outputDirectory, "README.md");
+            var apiOutputDirectory = Path.Combine(outputDirectory, "rest-sdk");
+            var grpcProjectDirectory = Path.Combine(outputDirectory, "grpc-sdk", "Greeter");
+            var grpcProjectPath = Path.Combine(grpcProjectDirectory, "Greeter.Grpc.csproj");
+
+            File.Exists(readmePath).Should().BeTrue();
+            Directory.Exists(apiOutputDirectory).Should().BeTrue();
+            Directory.Exists(grpcProjectDirectory).Should().BeTrue();
+            File.Exists(grpcProjectPath).Should().BeTrue();
+            Directory.EnumerateFiles(apiOutputDirectory, "*.cs", SearchOption.AllDirectories).Should().NotBeEmpty();
+            AssertAutoSdkGrpcSupportFilesExist(grpcProjectDirectory);
+
+            var readmeText = await File.ReadAllTextAsync(readmePath);
+            readmeText.Should().Contain("rest-sdk");
+            readmeText.Should().Contain("grpc-sdk/Greeter");
+
+            var buildResult = await RunDotnetAsync(
+                grpcProjectDirectory,
+                "build",
+                "--disable-build-servers",
+                grpcProjectPath);
             buildResult.ExitCode.Should().Be(0);
         }
         finally
@@ -2294,6 +2599,17 @@ components:
         string workingDirectory,
         params string[] arguments)
     {
+        return await RunDotnetAsync(
+            workingDirectory,
+            environment: null,
+            arguments).ConfigureAwait(false);
+    }
+
+    private static async Task<(int ExitCode, string StandardOutput, string StandardError)> RunDotnetAsync(
+        string workingDirectory,
+        IReadOnlyDictionary<string, string>? environment,
+        params string[] arguments)
+    {
         using var process = new Process
         {
             StartInfo = new ProcessStartInfo("dotnet")
@@ -2307,6 +2623,14 @@ components:
 
         process.StartInfo.Environment["DOTNET_CLI_USE_MSBUILD_SERVER"] = "0";
         process.StartInfo.Environment["UseSharedCompilation"] = "false";
+
+        if (environment != null)
+        {
+            foreach (var pair in environment)
+            {
+                process.StartInfo.Environment[pair.Key] = pair.Value;
+            }
+        }
 
         foreach (var argument in arguments)
         {
@@ -2324,6 +2648,250 @@ components:
             ExitCode: process.ExitCode,
             StandardOutput: await standardOutputTask,
             StandardError: await standardErrorTask);
+    }
+
+    private static void AssertAutoSdkGrpcSupportFilesExist(string outputDirectory)
+    {
+        File.Exists(Path.Combine(outputDirectory, "AutoSdkGrpcClient.cs")).Should().BeTrue();
+        File.Exists(Path.Combine(outputDirectory, "AutoSdkGrpcClientFactory.cs")).Should().BeTrue();
+        File.Exists(Path.Combine(outputDirectory, "AutoSdkGrpcClientOptions.cs")).Should().BeTrue();
+        File.Exists(Path.Combine(outputDirectory, "AutoSdkGrpcCallOptionsInterceptor.cs")).Should().BeTrue();
+        File.Exists(Path.Combine(outputDirectory, "AutoSdkGrpcServiceCollectionExtensions.cs")).Should().BeTrue();
+        File.Exists(Path.Combine(outputDirectory, "GrpcChannelFactory.cs")).Should().BeTrue();
+    }
+
+    private static async Task<(int ExitCode, string StandardOutput, string StandardError)> BuildAutoSdkGrpcConsumerAsync(
+        string tempDirectory,
+        string generatedProjectPath,
+        string rootNamespace,
+        string clientTypeName)
+    {
+        var consumerDirectory = Path.Combine(tempDirectory, "Consumer");
+        Directory.CreateDirectory(consumerDirectory);
+
+        var escapedProjectPath = System.Security.SecurityElement.Escape(Path.GetFullPath(generatedProjectPath))!;
+        await File.WriteAllTextAsync(
+            Path.Combine(consumerDirectory, "Consumer.csproj"),
+            $$"""
+            <Project Sdk="Microsoft.NET.Sdk">
+              <PropertyGroup>
+                <OutputType>Exe</OutputType>
+                <TargetFramework>net10.0</TargetFramework>
+                <ImplicitUsings>enable</ImplicitUsings>
+                <Nullable>enable</Nullable>
+              </PropertyGroup>
+
+              <ItemGroup>
+                <ProjectReference Include="{{escapedProjectPath}}" />
+                <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.1" />
+              </ItemGroup>
+            </Project>
+            """);
+
+        await File.WriteAllTextAsync(
+            Path.Combine(consumerDirectory, "Program.cs"),
+            $$"""
+            using {{rootNamespace}};
+            using Microsoft.Extensions.DependencyInjection;
+
+            var services = new ServiceCollection();
+            services.AddAutoSdkGrpcClient<{{clientTypeName}}>(options =>
+            {
+                options.Address = "https://localhost:5001";
+                options.UseBearerToken("token");
+                options.AddHeader("x-correlation-id", "integration-test");
+                options.WithDefaultDeadline(TimeSpan.FromSeconds(5));
+                options.WithRetry(maxAttempts: 3);
+            });
+
+            using var provider = services.BuildServiceProvider();
+            var typedClient = provider.GetRequiredService<{{clientTypeName}}>();
+
+            using var directClient = AutoSdkGrpcClientFactory.Create<{{clientTypeName}}>(options =>
+            {
+                options.Address = "https://localhost:5001";
+                options.UseApiKey("secret", "x-api-key");
+            });
+
+            return typedClient != null && directClient.Client != null ? 0 : 1;
+            """);
+
+        return await RunDotnetAsync(
+            consumerDirectory,
+            "build",
+            "--disable-build-servers",
+            Path.Combine(consumerDirectory, "Consumer.csproj")).ConfigureAwait(false);
+    }
+
+    private static async Task WriteGreeterProtoTreeAsync(string rootDirectory)
+    {
+        Directory.CreateDirectory(rootDirectory);
+        var messagesDirectory = Path.Combine(rootDirectory, "messages");
+        Directory.CreateDirectory(messagesDirectory);
+
+        await File.WriteAllTextAsync(
+            Path.Combine(rootDirectory, "greeter.proto"),
+            """
+            syntax = "proto3";
+
+            package demo;
+            option csharp_namespace = "Demo.Grpc";
+
+            import "messages/common.proto";
+
+            service Greeter {
+              rpc SayHello (demo.messages.HelloRequest) returns (demo.messages.HelloReply);
+            }
+            """);
+        await File.WriteAllTextAsync(
+            Path.Combine(messagesDirectory, "common.proto"),
+            """
+            syntax = "proto3";
+
+            package demo.messages;
+
+            message HelloRequest {
+              string name = 1;
+            }
+
+            message HelloReply {
+              string message = 1;
+            }
+            """);
+    }
+
+    private static FileDescriptorProto CreateGreeterFileDescriptorProto()
+    {
+        return new FileDescriptorProto
+        {
+            Name = "demo/greeter.proto",
+            Package = "demo",
+            Syntax = "proto3",
+            Options = new Google.Protobuf.Reflection.FileOptions
+            {
+                CsharpNamespace = "Demo.Grpc",
+            },
+            MessageType =
+            {
+                new DescriptorProto
+                {
+                    Name = "HelloRequest",
+                    Field =
+                    {
+                        new FieldDescriptorProto
+                        {
+                            Name = "name",
+                            Number = 1,
+                            Label = FieldDescriptorProto.Types.Label.Optional,
+                            Type = FieldDescriptorProto.Types.Type.String,
+                        },
+                    },
+                },
+                new DescriptorProto
+                {
+                    Name = "HelloReply",
+                    Field =
+                    {
+                        new FieldDescriptorProto
+                        {
+                            Name = "message",
+                            Number = 1,
+                            Label = FieldDescriptorProto.Types.Label.Optional,
+                            Type = FieldDescriptorProto.Types.Type.String,
+                        },
+                    },
+                },
+            },
+            Service =
+            {
+                new ServiceDescriptorProto
+                {
+                    Name = "Greeter",
+                    Method =
+                    {
+                        new MethodDescriptorProto
+                        {
+                            Name = "SayHello",
+                            InputType = ".demo.HelloRequest",
+                            OutputType = ".demo.HelloReply",
+                        },
+                    },
+                },
+            },
+        };
+    }
+
+    private static async Task WriteFakeBufAsync(string directory)
+    {
+        Directory.CreateDirectory(directory);
+
+        var shellScriptPath = Path.Combine(directory, "buf");
+        await File.WriteAllTextAsync(
+            shellScriptPath,
+            """
+            #!/bin/sh
+            set -eu
+            if [ "$1" != "export" ]; then
+              echo "expected export command" >&2
+              exit 2
+            fi
+            shift
+            shift
+            OUT=""
+            while [ "$#" -gt 0 ]; do
+              if [ "$1" = "-o" ]; then
+                OUT="$2"
+                shift 2
+                continue
+              fi
+              shift
+            done
+            if [ -z "$OUT" ]; then
+              echo "missing -o" >&2
+              exit 3
+            fi
+            mkdir -p "$OUT/messages"
+            cp "$AUTOSDK_FAKE_BUF_SOURCE/greeter.proto" "$OUT/greeter.proto"
+            cp "$AUTOSDK_FAKE_BUF_SOURCE/messages/common.proto" "$OUT/messages/common.proto"
+            """);
+
+        if (!OperatingSystem.IsWindows())
+        {
+            File.SetUnixFileMode(
+                shellScriptPath,
+                UnixFileMode.UserRead |
+                UnixFileMode.UserWrite |
+                UnixFileMode.UserExecute |
+                UnixFileMode.GroupRead |
+                UnixFileMode.GroupExecute |
+                UnixFileMode.OtherRead |
+                UnixFileMode.OtherExecute);
+        }
+
+        await File.WriteAllTextAsync(
+            Path.Combine(directory, "buf.cmd"),
+            """
+            @echo off
+            setlocal
+            if not "%~1"=="export" exit /b 2
+            shift
+            shift
+            set "OUT="
+            :loop
+            if "%~1"=="" goto done
+            if "%~1"=="-o" (
+              set "OUT=%~2"
+              shift
+            )
+            shift
+            goto loop
+            :done
+            if "%OUT%"=="" exit /b 3
+            if not exist "%OUT%\messages" mkdir "%OUT%\messages"
+            copy /Y "%AUTOSDK_FAKE_BUF_SOURCE%\greeter.proto" "%OUT%\greeter.proto" >nul
+            copy /Y "%AUTOSDK_FAKE_BUF_SOURCE%\messages\common.proto" "%OUT%\messages\common.proto" >nul
+            exit /b 0
+            """);
     }
 
     private static void TryDeleteDirectory(string path)

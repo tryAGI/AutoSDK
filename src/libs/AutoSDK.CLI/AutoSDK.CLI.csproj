@@ -27,6 +27,7 @@
     <EmbeddedResource Remove="Resources\bin\**" />
     <PackageReference Include="Microsoft.OpenApi" Version="3.5.1" />
     <PackageReference Include="Microsoft.OpenApi.YamlReader" Version="3.5.1" />
+    <PackageReference Include="Google.Protobuf" Version="3.34.0" />
     <PackageReference Include="System.CommandLine" Version="2.0.5" />
     <PackageReference Include="Firecrawl" Version="1.1.1" />
     <PackageReference Include="tryAGI.OpenAI" Version="4.2.0" />
