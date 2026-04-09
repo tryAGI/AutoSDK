@@ -304,11 +304,16 @@ public class CliTests
 
                 combinedSource.Should().Contain("public sealed class AutoSDKClientOptions");
                 combinedSource.Should().Contain("public sealed class AutoSDKRequestOptions");
+                combinedSource.Should().Contain("public interface IAutoSDKHook");
+                combinedSource.Should().Contain("public sealed class AutoSDKHookContext");
                 combinedSource.Should().Contain("global::Generated.Options.AutoSDKClientOptions? options = null");
                 combinedSource.Should().Contain("global::Generated.Options.AutoSDKRequestOptions? requestOptions = default");
                 combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.AppendQueryParameters(");
                 combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.ApplyHeaders(");
                 combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.GetMaxAttempts(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.OnAfterErrorAsync(");
             });
     }
 
