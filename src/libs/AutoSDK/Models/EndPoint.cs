@@ -37,7 +37,8 @@ public record struct EndPoint(
     bool? ForcedRequestStreamValue,
     string StreamTerminator,
     string Remarks,
-    bool GenerateResponseWrapper
+    bool GenerateResponseWrapper,
+    EquatableArray<PollingOperation> PollingOperations
 )
 {
     public bool Stream => StreamFormat != StreamFormat.None;

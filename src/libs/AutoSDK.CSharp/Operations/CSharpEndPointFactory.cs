@@ -163,6 +163,10 @@ public static class CSharpEndPointFactory
             streamFormat = streamFormatValue;
         }
 
+        var pollingOperations = streamFormat == StreamFormat.None
+            ? operation.Operation.GetPollingOperations()
+            : ImmutableArray<PollingOperation>.Empty.AsEquatableArray();
+
         var endPointId = string.IsNullOrWhiteSpace(methodNameSuffix)
             ? operation.MethodName
             : operation.MethodName + methodNameSuffix;
@@ -172,6 +176,7 @@ public static class CSharpEndPointFactory
         var notAsyncMethodName = endPointId.ToPropertyName();
         var generateResponseWrapper =
             responses.Any(x => x.HasHeaders && (x.Is2XX || x.IsDefault)) ||
+            !pollingOperations.IsEmpty ||
             OpenApiExtensions.GetExtensionBooleanValue(
                 operation.Operation.Extensions,
                 "x-autosdk-response-wrapper");
@@ -220,7 +225,8 @@ public static class CSharpEndPointFactory
                 ? streamTerminator ?? "[DONE]"
                 : string.Empty,
             Remarks: GetCodeSamplesRemarks(operation.Operation),
-            GenerateResponseWrapper: generateResponseWrapper);
+            GenerateResponseWrapper: generateResponseWrapper,
+            PollingOperations: pollingOperations);
     }
 
     private static void DeduplicateMethodParameterNames(List<MethodParameter> parameters)

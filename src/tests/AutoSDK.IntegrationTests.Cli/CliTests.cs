@@ -318,6 +318,72 @@ public class CliTests
     }
 
     [TestMethod]
+    public async Task Generate_WithSpeakeasyPolling_EmitsWaitHelpersAndBuilds()
+    {
+        const string spec = """
+                            openapi: 3.0.3
+                            info:
+                              title: Polling
+                              version: 1.0.0
+                            paths:
+                              /jobs/{id}:
+                                get:
+                                  operationId: getJob
+                                  parameters:
+                                    - in: path
+                                      name: id
+                                      required: true
+                                      schema:
+                                        type: string
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: object
+                                            required:
+                                              - status
+                                            properties:
+                                              status:
+                                                type: string
+                                  x-speakeasy-polling:
+                                    - name: WaitForCompleted
+                                      delaySeconds: 2
+                                      intervalSeconds: 4
+                                      limitCount: 12
+                                      failureCriteria:
+                                        - condition: $statusCode == 200
+                                        - condition: $response.body#/status == "errored"
+                                      successCriteria:
+                                        - condition: $statusCode == 200
+                                        - condition: $response.body#/status == "completed"
+                            """;
+
+        await GenerateFromContentAsync(
+            fileName: "polling.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "Generated.Polling",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedFiles = Directory.GetFiles(outputDirectory, "*.cs", SearchOption.AllDirectories);
+                generatedFiles.Should().NotBeEmpty();
+
+                var combinedSource = string.Join(
+                    Environment.NewLine,
+                    await Task.WhenAll(generatedFiles.Select(path => File.ReadAllTextAsync(path))));
+
+                combinedSource.Should().Contain("public sealed class AutoSDKPollingOptions");
+                combinedSource.Should().Contain("public sealed class AutoSDKPollingException");
+                combinedSource.Should().Contain("GetJobWaitForCompletedAsync(");
+                combinedSource.Should().Contain("await GetJobAsResponseAsync(");
+                combinedSource.Should().Contain("AutoSDKPollingSupport.ResolvePollingOptions(");
+                combinedSource.Should().Contain("AutoSDKPollingSupport.MatchesSimpleCondition(");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_BufModuleInput_ScaffoldsGrpcClientProject()
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
