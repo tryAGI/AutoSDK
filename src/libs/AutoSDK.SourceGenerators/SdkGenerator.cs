@@ -50,6 +50,13 @@ public class SdkGenerator : IIncrementalGenerator
                 : FileWithName.Empty
                 .AsFileWithName(), context, Id)
             .AddSource(context);
+        data
+            .SelectAndReportExceptions((x, c) => x.Clients.Any(static y => y.UsesServerSelectionSupport) ||
+                                                x.Methods.Any(static y => y.ClientUsesServerSelectionSupport)
+                ? Sources.ServerSelectionSupport(x.Converters.Settings, c)
+                : FileWithName.Empty
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
         supportData
             .SelectAndReportExceptions((x, c) => ShouldGenerateUnixTimestampJsonConverter(x.Right)
                 ? Sources.UnixTimestampJsonConverter(x.Left, c)
