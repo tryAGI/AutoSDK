@@ -19,7 +19,7 @@ namespace G
         ///  --header "Content-Type: application/json" \<br/>
         /// --data-raw '{"inputs":[{"id": "Image ID", "value": ["12345"]}]}'
         /// </remarks>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.GenerateApplicationResponseChunk>> GenerateContentAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateApplicationResponseChunk> GenerateContentAsStreamAsync(
             global::System.Guid applicationId,
 
             global::G.GenerateApplicationRequest request,
@@ -32,7 +32,7 @@ namespace G
         /// <param name="inputs"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.GenerateApplicationResponseChunk>> GenerateContentAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateApplicationResponseChunk> GenerateContentAsStreamAsync(
             global::System.Guid applicationId,
             global::System.Collections.Generic.IList<global::G.GenerateApplicationInput> inputs,
             global::System.Threading.CancellationToken cancellationToken = default);

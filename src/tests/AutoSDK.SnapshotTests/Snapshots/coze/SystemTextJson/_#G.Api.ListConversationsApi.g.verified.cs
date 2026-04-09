@@ -93,7 +93,7 @@ namespace G
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("sort_order", sortOrder)
                 .AddOptionalParameter("connector_id", connectorId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

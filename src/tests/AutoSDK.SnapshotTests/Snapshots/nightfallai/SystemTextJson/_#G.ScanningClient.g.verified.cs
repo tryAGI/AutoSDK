@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Scan text for sensitive data (PII, PHI, PCI, secrets, credentials)<br/>
+    /// Scan text for sensitive data (PII, PHI, PCI, secrets, credentials).<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// Nightfall AI Production API
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.nightfall.ai";
+        public const string DefaultBaseUrl = "https://api.nightfall.ai/";
 
         private bool _disposeHttpClient = true;
 

@@ -112,7 +112,7 @@ namespace G
                 .AddRequiredParameter("starting_on", startingOn.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddRequiredParameter("ending_before", endingBefore.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("on_current_plan", onCurrentPlan?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

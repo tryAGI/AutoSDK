@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://www.mystic.ai";
+        public const string DefaultBaseUrl = "https://www.mystic.ai/";
 
         private bool _disposeHttpClient = true;
 

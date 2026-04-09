@@ -26,7 +26,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.shotstack.io";
+        public const string DefaultBaseUrl = "https://api.shotstack.io/";
 
         private bool _disposeHttpClient = true;
 

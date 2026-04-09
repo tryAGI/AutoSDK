@@ -128,7 +128,7 @@ namespace G
                 .AddOptionalParameter("ai_secret_name", aiSecretName)
                 .AddOptionalParameter("org_name", orgName)
                 .AddOptionalParameter("ai_secret_type", aiSecretType?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

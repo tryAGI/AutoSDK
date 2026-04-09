@@ -100,7 +100,7 @@ namespace G
                 .AddOptionalParameter("search", search)
                 .AddOptionalParameter("from_time", fromTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("to_time", toTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

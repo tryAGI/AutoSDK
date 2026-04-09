@@ -94,7 +94,7 @@ namespace G
                 .AddOptionalParameter("dataset_deleted", datasetDeleted?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("project_id", projectId?.ToString())
                 .AddOptionalParameter("filters", filters) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

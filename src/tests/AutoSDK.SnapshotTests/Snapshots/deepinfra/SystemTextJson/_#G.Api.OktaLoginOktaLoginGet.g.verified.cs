@@ -55,7 +55,7 @@ namespace G
                 .AddRequiredParameter("team_id", teamId)
                 .AddOptionalParameter("origin", origin)
                 .AddOptionalParameter("login_id", loginId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

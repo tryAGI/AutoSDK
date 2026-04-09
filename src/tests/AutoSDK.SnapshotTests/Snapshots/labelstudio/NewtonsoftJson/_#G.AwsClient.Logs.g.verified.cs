@@ -94,7 +94,7 @@ namespace G
                 .AddOptionalParameter("end_date", endDate)
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("start_date", startDate) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

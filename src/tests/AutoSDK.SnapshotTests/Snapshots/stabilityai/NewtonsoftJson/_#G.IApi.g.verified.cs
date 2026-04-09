@@ -52,17 +52,17 @@ namespace G
 
 
         /// <summary>
-        /// Enumerate available engines
+        /// Enumerate available engines.
         /// </summary>
         public V1EnginesClient V1Engines { get; }
 
         /// <summary>
-        /// Generate images from text, existing images, or both
+        /// Generate images from text, existing images, or both.
         /// </summary>
         public V1GenerationClient V1Generation { get; }
 
         /// <summary>
-        /// Manage your Stability.ai account, and view account/organization balances
+        /// Manage your Stability.ai account, and view account/organization balances.
         /// </summary>
         public V1UserClient V1User { get; }
 

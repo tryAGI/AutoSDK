@@ -60,7 +60,7 @@ namespace G
                 .AddRequiredParameter("moderator_id", moderatorId)
                 .AddRequiredParameter("session_id", sessionId)
                 .AddRequiredParameter("guest_id", guestId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

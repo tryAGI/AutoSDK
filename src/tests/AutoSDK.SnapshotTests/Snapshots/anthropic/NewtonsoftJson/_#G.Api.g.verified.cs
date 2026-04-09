@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.anthropic.com";
+        public const string DefaultBaseUrl = "https://api.anthropic.com/";
 
         private bool _disposeHttpClient = true;
 

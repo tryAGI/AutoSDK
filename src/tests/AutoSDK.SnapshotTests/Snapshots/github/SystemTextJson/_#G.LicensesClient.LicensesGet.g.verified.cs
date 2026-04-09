@@ -41,7 +41,7 @@ namespace G
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/licenses/{license}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

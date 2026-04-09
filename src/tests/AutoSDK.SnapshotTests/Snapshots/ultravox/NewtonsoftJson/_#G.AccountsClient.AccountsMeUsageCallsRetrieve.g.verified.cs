@@ -104,7 +104,7 @@ namespace G
                 .AddOptionalParameter("search", search)
                 .AddOptionalParameter("toDate", toDate?.ToString("yyyy-MM-dd"))
                 .AddOptionalParameter("voiceId", voiceId?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

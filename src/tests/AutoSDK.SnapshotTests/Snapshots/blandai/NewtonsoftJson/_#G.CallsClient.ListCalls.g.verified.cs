@@ -159,7 +159,7 @@ namespace G
                 .AddOptionalParameter("answered_by", answeredBy)
                 .AddOptionalParameter("inbound", inbound?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("campaign_id", campaignId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

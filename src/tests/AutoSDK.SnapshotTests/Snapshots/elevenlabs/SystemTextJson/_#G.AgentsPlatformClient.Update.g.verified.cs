@@ -77,7 +77,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("enable_versioning_if_not_enabled", enableVersioningIfNotEnabled?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("branch_id", branchId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),

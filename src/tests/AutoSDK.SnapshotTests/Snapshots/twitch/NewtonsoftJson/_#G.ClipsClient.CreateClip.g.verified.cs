@@ -80,7 +80,7 @@ namespace G
             __pathBuilder
                 .AddRequiredParameter("broadcaster_id", broadcasterId)
                 .AddOptionalParameter("has_delay", hasDelay?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

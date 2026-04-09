@@ -146,7 +146,7 @@ namespace G
                 .AddOptionalParameter("cluster_id", clusterId)
                 .AddOptionalParameter("node_pool", nodePool)
                 .AddOptionalParameter("created_at", createdAt) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

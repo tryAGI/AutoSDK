@@ -141,7 +141,7 @@ namespace G
                 .AddOptionalParameter("endpoint_id", endpointId?.ToString())
                 .AddOptionalParameter("request_id", requestId?.ToString())
                 .AddOptionalParameter("expand", expand?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

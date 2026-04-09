@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// Local Phoenix instance
         /// </summary>
-        public const string DefaultBaseUrl = "http://localhost:6006";
+        public const string DefaultBaseUrl = "http://localhost:6006/";
 
         private bool _disposeHttpClient = true;
 

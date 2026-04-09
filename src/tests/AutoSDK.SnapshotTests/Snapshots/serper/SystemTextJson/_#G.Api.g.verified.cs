@@ -15,7 +15,7 @@ namespace G
         /// <summary>
         /// Production server
         /// </summary>
-        public const string DefaultBaseUrl = "https://google.serper.dev";
+        public const string DefaultBaseUrl = "https://google.serper.dev/";
 
         private bool _disposeHttpClient = true;
 

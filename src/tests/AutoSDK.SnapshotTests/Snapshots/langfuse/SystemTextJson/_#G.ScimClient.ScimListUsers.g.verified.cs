@@ -80,7 +80,7 @@ namespace G
                 .AddOptionalParameter("filter", filter)
                 .AddOptionalParameter("startIndex", startIndex?.ToString())
                 .AddOptionalParameter("count", count?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

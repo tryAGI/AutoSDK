@@ -75,7 +75,7 @@ namespace G
             __pathBuilder
                 .AddRequiredParameter("username", username)
                 .AddRequiredParameter("authToken", authToken) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

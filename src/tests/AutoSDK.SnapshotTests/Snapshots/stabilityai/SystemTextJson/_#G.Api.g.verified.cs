@@ -24,7 +24,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.stability.ai";
+        public const string DefaultBaseUrl = "https://api.stability.ai/";
 
         private bool _disposeHttpClient = true;
 
@@ -88,7 +88,7 @@ namespace G
 
 
         /// <summary>
-        /// Enumerate available engines
+        /// Enumerate available engines.
         /// </summary>
         public V1EnginesClient V1Engines => new V1EnginesClient(HttpClient, authorizations: Authorizations)
         {
@@ -97,7 +97,7 @@ namespace G
         };
 
         /// <summary>
-        /// Generate images from text, existing images, or both
+        /// Generate images from text, existing images, or both.
         /// </summary>
         public V1GenerationClient V1Generation => new V1GenerationClient(HttpClient, authorizations: Authorizations)
         {
@@ -106,7 +106,7 @@ namespace G
         };
 
         /// <summary>
-        /// Manage your Stability.ai account, and view account/organization balances
+        /// Manage your Stability.ai account, and view account/organization balances.
         /// </summary>
         public V1UserClient V1User => new V1UserClient(HttpClient, authorizations: Authorizations)
         {

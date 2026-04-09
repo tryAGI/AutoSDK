@@ -76,7 +76,7 @@ namespace G
                 .AddOptionalParameter("project_id", projectId?.ToString())
                 .AddOptionalParameter("project_deleted", projectDeleted?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("filters", filters) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

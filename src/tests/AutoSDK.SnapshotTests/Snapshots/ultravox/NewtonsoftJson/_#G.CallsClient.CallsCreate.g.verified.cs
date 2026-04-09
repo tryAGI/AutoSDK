@@ -84,7 +84,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("enableGreetingPrompt", enableGreetingPrompt?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("priorCallId", priorCallId?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

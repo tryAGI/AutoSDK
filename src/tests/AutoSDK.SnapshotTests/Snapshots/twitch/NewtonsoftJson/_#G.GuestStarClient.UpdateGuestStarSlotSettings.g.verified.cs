@@ -84,7 +84,7 @@ namespace G
                 .AddOptionalParameter("is_video_enabled", isVideoEnabled?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("is_live", isLive?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("volume", volume?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),

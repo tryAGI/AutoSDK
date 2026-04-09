@@ -72,7 +72,7 @@ namespace G
                 .AddOptionalParameter("visibility", visibility?.ToValueString())
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

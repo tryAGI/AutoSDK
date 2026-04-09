@@ -43,52 +43,52 @@ namespace G
 
 
         /// <summary>
-        /// Account information
+        /// Account information.
         /// </summary>
         public AccountClient Account { get; }
 
         /// <summary>
-        /// Retrieve caption output (SRT/VTT)
+        /// Retrieve caption output (SRT/VTT).
         /// </summary>
         public CaptionsClient Captions { get; }
 
         /// <summary>
-        /// Language identification from audio
+        /// Language identification from audio.
         /// </summary>
         public LanguageIdentificationJobsClient LanguageIdentificationJobs { get; }
 
         /// <summary>
-        /// Retrieve language identification results
+        /// Retrieve language identification results.
         /// </summary>
         public LanguageIdentificationResultsClient LanguageIdentificationResults { get; }
 
         /// <summary>
-        /// Sentiment analysis on text or transcripts
+        /// Sentiment analysis on text or transcripts.
         /// </summary>
         public SentimentAnalysisJobsClient SentimentAnalysisJobs { get; }
 
         /// <summary>
-        /// Retrieve sentiment analysis results
+        /// Retrieve sentiment analysis results.
         /// </summary>
         public SentimentAnalysisResultsClient SentimentAnalysisResults { get; }
 
         /// <summary>
-        /// Topic extraction from text or transcripts
+        /// Topic extraction from text or transcripts.
         /// </summary>
         public TopicExtractionJobsClient TopicExtractionJobs { get; }
 
         /// <summary>
-        /// Retrieve topic extraction results
+        /// Retrieve topic extraction results.
         /// </summary>
         public TopicExtractionResultsClient TopicExtractionResults { get; }
 
         /// <summary>
-        /// Retrieve transcription results
+        /// Retrieve transcription results.
         /// </summary>
         public TranscriptClient Transcript { get; }
 
         /// <summary>
-        /// Async speech-to-text transcription
+        /// Async speech-to-text transcription.
         /// </summary>
         public TranscriptionJobsClient TranscriptionJobs { get; }
 

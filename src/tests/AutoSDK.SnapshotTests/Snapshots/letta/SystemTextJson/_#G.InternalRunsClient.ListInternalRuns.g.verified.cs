@@ -263,7 +263,7 @@ namespace G
                 .AddOptionalParameter("duration_operator", durationOperator?.ToString())
                 .AddOptionalParameter("start_date", startDate?.ToString())
                 .AddOptionalParameter("end_date", endDate?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

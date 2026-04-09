@@ -133,7 +133,7 @@ namespace G
                 .AddOptionalParameter("state", state)
                 .AddOptionalParameter("transition_name", transitionName)
                 .AddOptionalParameter("triggered_by", triggeredBy?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

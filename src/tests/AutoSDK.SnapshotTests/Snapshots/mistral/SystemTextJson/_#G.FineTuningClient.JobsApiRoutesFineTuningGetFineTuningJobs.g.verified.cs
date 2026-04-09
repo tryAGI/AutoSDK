@@ -129,7 +129,7 @@ namespace G
                 .AddOptionalParameter("wandb_project", wandbProject)
                 .AddOptionalParameter("wandb_name", wandbName)
                 .AddOptionalParameter("suffix", suffix) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -90,7 +90,7 @@ namespace G
                 .AddOptionalParameter("page_num", pageNum?.ToString())
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

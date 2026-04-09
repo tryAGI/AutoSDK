@@ -85,7 +85,7 @@ namespace G
                 .AddOptionalParameter("version", version?.ToString())
                 .AddOptionalParameter("label", label)
                 .AddOptionalParameter("resolve", resolve?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

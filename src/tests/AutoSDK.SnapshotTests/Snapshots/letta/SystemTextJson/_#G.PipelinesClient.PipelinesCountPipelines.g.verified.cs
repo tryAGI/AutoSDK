@@ -81,7 +81,7 @@ namespace G
                 .AddOptionalParameter("search", search)
                 .AddOptionalParameter("integration_type", integrationType)
                 .AddOptionalParameter("integration_id", integrationId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

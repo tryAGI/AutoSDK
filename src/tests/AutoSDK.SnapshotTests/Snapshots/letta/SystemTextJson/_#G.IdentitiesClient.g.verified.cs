@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// Letta Cloud
         /// </summary>
-        public const string DefaultBaseUrl = "https://app.letta.com";
+        public const string DefaultBaseUrl = "https://app.letta.com/";
 
         private bool _disposeHttpClient = true;
 

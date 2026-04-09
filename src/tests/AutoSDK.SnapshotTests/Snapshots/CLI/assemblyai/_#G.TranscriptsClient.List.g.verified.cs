@@ -117,7 +117,7 @@ namespace G
                 .AddOptionalParameter("before_id", beforeId?.ToString())
                 .AddOptionalParameter("after_id", afterId?.ToString())
                 .AddOptionalParameter("throttled_only", throttledOnly?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

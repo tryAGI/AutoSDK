@@ -126,7 +126,7 @@ namespace G
                 .AddOptionalParameter("summary_search", summarySearch)
                 .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("order_by", orderBy?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

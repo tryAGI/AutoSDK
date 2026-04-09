@@ -73,7 +73,7 @@ namespace G
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/public/projects/{projectId}/memberships",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

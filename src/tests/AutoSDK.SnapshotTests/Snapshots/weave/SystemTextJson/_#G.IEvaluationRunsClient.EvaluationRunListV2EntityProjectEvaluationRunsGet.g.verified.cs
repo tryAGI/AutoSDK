@@ -28,7 +28,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.EvaluationRunReadRes>> EvaluationRunListV2EntityProjectEvaluationRunsGetAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.EvaluationRunReadRes> EvaluationRunListV2EntityProjectEvaluationRunsGetAsync(
             string entity,
             string project,
             global::System.Collections.Generic.IList<string>? evaluations = default,

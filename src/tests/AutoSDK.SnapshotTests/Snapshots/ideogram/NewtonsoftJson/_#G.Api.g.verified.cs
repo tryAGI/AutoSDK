@@ -48,7 +48,7 @@ namespace G
         };
 
         /// <summary>
-        /// Content related to managing API account and API access
+        /// Content related to managing API account and API access.
         /// </summary>
         public ManageClient Manage => new ManageClient(HttpClient, authorizations: Authorizations)
         {
@@ -57,7 +57,7 @@ namespace G
         };
 
         /// <summary>
-        /// Operations related to understanding visual content
+        /// Operations related to understanding visual content.
         /// </summary>
         public VisionClient Vision => new VisionClient(HttpClient, authorizations: Authorizations)
         {

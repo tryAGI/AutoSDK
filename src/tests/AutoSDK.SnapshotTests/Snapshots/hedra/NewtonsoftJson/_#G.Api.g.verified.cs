@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "/web-app";
+        public const string DefaultBaseUrl = "file:///web-app";
 
         private bool _disposeHttpClient = true;
 

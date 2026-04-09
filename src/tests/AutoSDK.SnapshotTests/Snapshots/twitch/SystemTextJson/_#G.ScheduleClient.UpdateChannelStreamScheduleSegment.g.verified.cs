@@ -86,7 +86,7 @@ namespace G
             __pathBuilder
                 .AddRequiredParameter("broadcaster_id", broadcasterId)
                 .AddRequiredParameter("id", id) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),

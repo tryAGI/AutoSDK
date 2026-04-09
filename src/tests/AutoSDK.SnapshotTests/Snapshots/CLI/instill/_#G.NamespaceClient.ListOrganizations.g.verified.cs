@@ -87,7 +87,7 @@ namespace G
                 .AddOptionalParameter("pageToken", pageToken)
                 .AddOptionalParameter("view", view?.ToValueString())
                 .AddOptionalParameter("filter", filter) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

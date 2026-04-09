@@ -98,7 +98,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("provider", provider?.ToValueString())
                 .AddOptionalParameter("id", id) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

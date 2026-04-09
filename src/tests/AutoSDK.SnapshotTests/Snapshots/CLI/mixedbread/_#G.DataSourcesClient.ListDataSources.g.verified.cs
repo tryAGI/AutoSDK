@@ -99,7 +99,7 @@ namespace G
                 .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before)
                 .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

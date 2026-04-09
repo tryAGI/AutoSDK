@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// OCR API<br/>
+    /// OCR API.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// Production server
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.mistral.ai";
+        public const string DefaultBaseUrl = "https://api.mistral.ai/";
 
         private bool _disposeHttpClient = true;
 

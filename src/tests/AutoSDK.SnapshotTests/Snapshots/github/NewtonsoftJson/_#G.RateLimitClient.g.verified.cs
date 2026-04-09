@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Check your current rate limit status<br/>
+    /// Check your current rate limit status.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.github.com";
+        public const string DefaultBaseUrl = "https://api.github.com/";
 
         private bool _disposeHttpClient = true;
 

@@ -99,7 +99,7 @@ namespace G
                 .AddOptionalParameter("timestamp_ms", timestampMs?.ToString())
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                 .AddOptionalParameter("direction", direction?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

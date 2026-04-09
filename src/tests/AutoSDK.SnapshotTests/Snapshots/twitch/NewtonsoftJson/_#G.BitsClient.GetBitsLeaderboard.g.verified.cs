@@ -98,7 +98,7 @@ namespace G
                 .AddOptionalParameter("period", period?.ToValueString())
                 .AddOptionalParameter("started_at", startedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("user_id", userId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

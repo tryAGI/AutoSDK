@@ -49,7 +49,7 @@ namespace G
         ///  --header "Content-Type: application/json" \<br/>
         /// --data-raw '{"model":"palmyra-x-003-instruct","prompt":"Write me a short SEO article about camping gear","max_tokens":150,"temperature":0.7,"top_p":0.9,"stop":["."],"best_of":1,"random_seed":42,"stream":false}'
         /// </remarks>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.StreamingData>> CompletionsAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamingData> CompletionsAsStreamAsync(
 
             global::G.CompletionsRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
@@ -82,7 +82,7 @@ namespace G
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/completions",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -181,7 +181,7 @@ namespace G
                     yield break;
                 }
 
-                var __streamedResponse = global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.StreamingData>?>(__content, JsonSerializerOptions) ??
+                var __streamedResponse = global::G.StreamingData.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::G.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)
@@ -226,7 +226,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.StreamingData>> CompletionsAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamingData> CompletionsAsStreamAsync(
             string model,
             string prompt,
             long? maxTokens = default,

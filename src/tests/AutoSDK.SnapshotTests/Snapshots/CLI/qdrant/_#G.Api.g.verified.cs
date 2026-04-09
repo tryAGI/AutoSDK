@@ -155,7 +155,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "http://localhost:6333";
+        public const string DefaultBaseUrl = "http://localhost:6333/";
 
         private bool _disposeHttpClient = true;
 

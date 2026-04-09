@@ -71,7 +71,7 @@ namespace G
                 .AddRequiredParameter("agent_id", agentId)
                 .AddOptionalParameter("include_conversation_id", includeConversationId?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("branch_id", branchId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

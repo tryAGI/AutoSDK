@@ -102,7 +102,7 @@ namespace G
                 .AddOptionalParameter("search", search)
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("cursor", cursor) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

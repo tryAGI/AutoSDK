@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.groq.com";
+        public const string DefaultBaseUrl = "https://api.groq.com/";
 
         private bool _disposeHttpClient = true;
 

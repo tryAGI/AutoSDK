@@ -95,7 +95,7 @@ namespace G
                 .AddRequiredParameter("start", start.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddRequiredParameter("end", end.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("pipeline_id", pipelineId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

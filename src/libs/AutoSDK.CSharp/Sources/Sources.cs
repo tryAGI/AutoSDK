@@ -28,11 +28,12 @@ public static partial class Sources
     public static FileWithName HttpEnvironmentFile(
         IReadOnlyList<OpenApiServer> servers,
         IReadOnlyList<OpenApiSecuritySchemeReference> securitySchemes,
+        Uri? documentSelf = null,
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
             Name: "http-client.env.json",
-            Text: GenerateHttpEnvironmentFile(servers, securitySchemes));
+            Text: GenerateHttpEnvironmentFile(servers, securitySchemes, documentSelf));
     }
 
     public static FileWithName WebhooksHttpFile(

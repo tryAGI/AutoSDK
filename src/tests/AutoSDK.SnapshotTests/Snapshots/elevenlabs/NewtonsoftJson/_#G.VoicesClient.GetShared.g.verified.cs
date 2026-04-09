@@ -192,7 +192,7 @@ namespace G
                 .AddOptionalParameter("owner_id", ownerId)
                 .AddOptionalParameter("sort", sort)
                 .AddOptionalParameter("page", page?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

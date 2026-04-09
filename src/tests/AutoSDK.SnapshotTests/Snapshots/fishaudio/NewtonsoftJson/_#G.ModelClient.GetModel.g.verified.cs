@@ -141,7 +141,7 @@ namespace G
                 .AddOptionalParameter("language", language?.ToString())
                 .AddOptionalParameter("title_language", titleLanguage?.ToString())
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

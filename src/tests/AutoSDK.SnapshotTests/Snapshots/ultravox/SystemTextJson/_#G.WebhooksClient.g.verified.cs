@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.ultravox.ai";
+        public const string DefaultBaseUrl = "https://api.ultravox.ai/";
 
         private bool _disposeHttpClient = true;
 

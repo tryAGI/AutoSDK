@@ -69,7 +69,7 @@ namespace G
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v3/org/owner/project/{nanoId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

@@ -18,7 +18,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.GenerateApplicationResponseChunk>> response,
+            global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateApplicationResponseChunk> response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<global::System.Guid> ApplicationId { get; } = new(

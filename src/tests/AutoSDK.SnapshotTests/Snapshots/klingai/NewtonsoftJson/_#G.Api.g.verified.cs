@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.klingai.com";
+        public const string DefaultBaseUrl = "https://api.klingai.com/";
 
         private bool _disposeHttpClient = true;
 

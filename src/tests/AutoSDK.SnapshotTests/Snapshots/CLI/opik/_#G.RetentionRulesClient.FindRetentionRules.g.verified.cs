@@ -62,7 +62,7 @@ namespace G
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("size", size?.ToString())
                 .AddOptionalParameter("include_inactive", includeInactive?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

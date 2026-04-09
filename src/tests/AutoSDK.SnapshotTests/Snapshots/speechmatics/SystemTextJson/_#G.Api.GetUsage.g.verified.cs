@@ -74,7 +74,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("since", since?.ToString("yyyy-MM-dd"))
                 .AddOptionalParameter("until", until?.ToString("yyyy-MM-dd")) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

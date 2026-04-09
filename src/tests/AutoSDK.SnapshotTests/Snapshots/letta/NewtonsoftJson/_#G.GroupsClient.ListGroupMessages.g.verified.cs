@@ -149,7 +149,7 @@ namespace G
                 .AddOptionalParameter("use_assistant_message", useAssistantMessage?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("assistant_message_tool_name", assistantMessageToolName)
                 .AddOptionalParameter("assistant_message_tool_kwarg", assistantMessageToolKwarg) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

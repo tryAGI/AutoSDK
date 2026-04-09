@@ -135,7 +135,7 @@ namespace G
                 .AddOptionalParameter("cursor", cursor)
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("mount_relative_prefix", mountRelativePrefix) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -112,7 +112,7 @@ namespace G
                 .AddOptionalParameter("download_resources", downloadResources?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("export_type", exportType)
                 .AddOptionalParameter("ids", ids, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

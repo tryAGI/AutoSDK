@@ -90,7 +90,7 @@ namespace G
                 .AddOptionalParameter("vacation_start_time", vacationStartTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("vacation_end_time", vacationEndTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("timezone", timezone) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),

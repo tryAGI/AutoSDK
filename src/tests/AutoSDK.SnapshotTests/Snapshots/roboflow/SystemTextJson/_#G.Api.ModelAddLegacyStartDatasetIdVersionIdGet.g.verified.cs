@@ -75,7 +75,7 @@ namespace G
                 .AddOptionalParameter("api_key", apiKey)
                 .AddOptionalParameter("countinference", countinference?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("service_secret", serviceSecret) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

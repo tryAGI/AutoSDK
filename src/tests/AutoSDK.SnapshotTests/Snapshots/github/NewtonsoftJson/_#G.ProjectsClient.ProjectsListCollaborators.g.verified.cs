@@ -107,7 +107,7 @@ namespace G
                 .AddOptionalParameter("affiliation", affiliation?.ToValueString())
                 .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("page", page?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

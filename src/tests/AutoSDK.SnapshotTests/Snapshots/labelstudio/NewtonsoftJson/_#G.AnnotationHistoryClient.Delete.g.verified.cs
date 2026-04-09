@@ -87,7 +87,7 @@ namespace G
                 .AddOptionalParameter("annotation", annotation?.ToString())
                 .AddOptionalParameter("project", project?.ToString())
                 .AddOptionalParameter("task", task?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

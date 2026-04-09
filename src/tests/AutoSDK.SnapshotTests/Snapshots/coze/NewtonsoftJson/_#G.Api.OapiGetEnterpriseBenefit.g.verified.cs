@@ -75,7 +75,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("benefit_type_list", benefitTypeList, delimiter: ",", explode: true)
                 .AddOptionalParameter("resource_id", resourceId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

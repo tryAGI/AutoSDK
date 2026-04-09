@@ -111,7 +111,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("consistency_level", consistencyLevel?.ToValueString())
                 .AddOptionalParameter("tenant", tenant) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

@@ -87,7 +87,7 @@ namespace G
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

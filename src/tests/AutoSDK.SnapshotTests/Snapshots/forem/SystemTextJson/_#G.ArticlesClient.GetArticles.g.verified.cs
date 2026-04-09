@@ -102,7 +102,7 @@ namespace G
                 .AddOptionalParameter("state", state?.ToValueString())
                 .AddOptionalParameter("top", top?.ToString())
                 .AddOptionalParameter("collection_id", collectionId?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

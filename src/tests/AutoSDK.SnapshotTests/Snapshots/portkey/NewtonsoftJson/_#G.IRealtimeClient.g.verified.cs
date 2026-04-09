@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// WebSocket proxy for provider Realtime APIs<br/>
+    /// WebSocket proxy for provider Realtime APIs.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

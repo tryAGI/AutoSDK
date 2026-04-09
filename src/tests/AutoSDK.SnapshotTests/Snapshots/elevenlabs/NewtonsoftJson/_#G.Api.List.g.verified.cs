@@ -111,7 +111,7 @@ namespace G
                 .AddOptionalParameter("types", types?.ToString())
                 .AddOptionalParameter("include_folders", includeFolders?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("sort_mode", sortMode?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

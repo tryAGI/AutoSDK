@@ -66,7 +66,7 @@ namespace G
                 .AddRequiredParameter("session_id", sessionId)
                 .AddRequiredParameter("guest_id", guestId)
                 .AddRequiredParameter("slot_id", slotId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

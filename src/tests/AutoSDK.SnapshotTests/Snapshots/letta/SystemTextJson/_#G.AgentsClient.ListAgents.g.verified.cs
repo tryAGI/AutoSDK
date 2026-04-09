@@ -224,7 +224,7 @@ namespace G
                 .AddOptionalParameter("ascending", ascending?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("sort_by", sortBy)
                 .AddOptionalParameter("last_stop_reason", lastStopReason?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

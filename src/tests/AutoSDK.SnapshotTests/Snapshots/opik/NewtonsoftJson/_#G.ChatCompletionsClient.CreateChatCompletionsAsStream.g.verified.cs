@@ -24,7 +24,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>>> CreateChatCompletionsAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>> CreateChatCompletionsAsStreamAsync(
 
             global::G.ChatCompletionRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
@@ -67,7 +67,7 @@ namespace G
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/private/chat/completions",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -150,7 +150,7 @@ namespace G
                     yield break;
                 }
 
-                var __streamedResponse = global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>>?>(__content, JsonSerializerOptions) ??
+                var __streamedResponse = global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::G.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)
@@ -195,7 +195,7 @@ namespace G
         /// <param name="functionCall"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>>> CreateChatCompletionsAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>> CreateChatCompletionsAsStreamAsync(
             string? model = default,
             global::System.Collections.Generic.IList<global::G.Message>? messages = default,
             double? temperature = default,

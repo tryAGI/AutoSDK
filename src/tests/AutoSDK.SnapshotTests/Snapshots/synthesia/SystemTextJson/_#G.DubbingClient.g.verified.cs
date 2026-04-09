@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// Synthesia public API URL.
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.synthesia.io";
+        public const string DefaultBaseUrl = "https://api.synthesia.io/";
 
         private bool _disposeHttpClient = true;
 

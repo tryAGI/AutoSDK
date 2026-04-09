@@ -92,7 +92,7 @@ namespace G
                 .AddOptionalParameter("fileId", fileId)
                 .AddOptionalParameter("versionId", versionId)
                 .AddOptionalParameter("search", search) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

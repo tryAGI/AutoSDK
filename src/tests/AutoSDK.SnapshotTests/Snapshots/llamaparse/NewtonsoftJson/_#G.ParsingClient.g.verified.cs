@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.cloud.llamaindex.ai";
+        public const string DefaultBaseUrl = "https://api.cloud.llamaindex.ai/";
 
         private bool _disposeHttpClient = true;
 

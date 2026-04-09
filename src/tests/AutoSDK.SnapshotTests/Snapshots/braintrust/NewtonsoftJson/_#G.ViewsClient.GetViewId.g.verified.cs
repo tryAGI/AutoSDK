@@ -110,7 +110,7 @@ namespace G
             __pathBuilder
                 .AddRequiredParameter("object_type", objectType.ToValueString())
                 .AddRequiredParameter("object_id", objectId.ToString()!) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

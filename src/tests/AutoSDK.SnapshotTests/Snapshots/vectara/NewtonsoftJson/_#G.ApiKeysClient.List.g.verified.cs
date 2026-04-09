@@ -127,7 +127,7 @@ namespace G
                 .AddOptionalParameter("page_key", pageKey)
                 .AddOptionalParameter("corpus_key", corpusKey)
                 .AddOptionalParameter("api_key_role", apiKeyRole?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

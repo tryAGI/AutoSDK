@@ -208,7 +208,7 @@ namespace G
                 .AddOptionalParameter("connected_to_agents_count_gt", connectedToAgentsCountGt?.ToString())
                 .AddOptionalParameter("connected_to_agents_count_lt", connectedToAgentsCountLt?.ToString())
                 .AddOptionalParameter("connected_to_agents_count_eq", connectedToAgentsCountEq?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

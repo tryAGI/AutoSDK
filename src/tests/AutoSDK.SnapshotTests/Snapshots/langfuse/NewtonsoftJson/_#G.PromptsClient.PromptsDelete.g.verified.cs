@@ -74,7 +74,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("label", label)
                 .AddOptionalParameter("version", version?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

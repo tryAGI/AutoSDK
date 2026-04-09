@@ -80,7 +80,7 @@ namespace G
             __pathBuilder
                 .AddRequiredParameter("ttl", ttl.ToString()!)
                 .AddRequiredParameter("url_for", urlFor, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

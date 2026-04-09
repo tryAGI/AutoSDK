@@ -113,7 +113,7 @@ namespace G
                 .AddRequiredParameter("start_date", startDate.ToString("yyyy-MM-dd"))
                 .AddRequiredParameter("end_date", endDate.ToString("yyyy-MM-dd"))
                 .AddOptionalParameter("group_by", groupBy?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

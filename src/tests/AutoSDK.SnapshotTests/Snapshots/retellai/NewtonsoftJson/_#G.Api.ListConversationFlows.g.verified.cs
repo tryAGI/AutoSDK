@@ -82,7 +82,7 @@ namespace G
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("pagination_key", paginationKey)
                 .AddOptionalParameter("pagination_key_version", paginationKeyVersion?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

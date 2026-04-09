@@ -123,7 +123,7 @@ namespace G
                 .AddOptionalParameter("wait", wait?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("ordering", ordering?.ToValueString())
                 .AddOptionalParameter("timeout", timeout?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,

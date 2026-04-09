@@ -172,7 +172,7 @@ namespace G
                 .AddOptionalParameter("permission", permission)
                 .AddOptionalParameter("last_used_before", lastUsedBefore?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("last_used_after", lastUsedAfter?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

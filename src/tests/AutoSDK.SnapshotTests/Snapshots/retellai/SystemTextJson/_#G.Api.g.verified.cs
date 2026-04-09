@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// The production server.
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.retellai.com";
+        public const string DefaultBaseUrl = "https://api.retellai.com/";
 
         private bool _disposeHttpClient = true;
 

@@ -164,7 +164,7 @@ namespace G
                 .AddOptionalParameter("exclude_api_requests", excludeApiRequests?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("only_api_requests", onlyApiRequests?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("min_similarity", minSimilarity?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -106,7 +106,7 @@ namespace G
                 .AddOptionalParameter("ended_at", endedAt?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("first", first?.ToString())
                 .AddOptionalParameter("after", after) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

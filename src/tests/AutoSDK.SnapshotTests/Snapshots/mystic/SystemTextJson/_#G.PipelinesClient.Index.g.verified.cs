@@ -94,7 +94,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("skip", skip?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

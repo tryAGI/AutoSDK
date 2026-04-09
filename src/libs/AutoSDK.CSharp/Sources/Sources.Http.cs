@@ -68,6 +68,7 @@ public static partial class Sources
         var method = operation.OperationType.Method.ToUpperInvariant();
         var path = ConvertPathToHttpVariables(operation.OperationPath);
         var op = operation.Operation;
+        var preferredContent = GetPreferredRequestContent(op);
 
         // Title line
         var summary = !string.IsNullOrWhiteSpace(op.Summary)
@@ -123,9 +124,9 @@ public static partial class Sources
         }
 
         // Request body handling
-        if (GetPreferredRequestContent(op) is { } preferredContent)
+        if (preferredContent is { } requestContent)
         {
-            sb.Append("Content-Type: ").AppendLine(preferredContent.ContentType);
+            sb.Append("Content-Type: ").AppendLine(requestContent.ContentType);
         }
 
         // Accept header
@@ -138,17 +139,15 @@ public static partial class Sources
         // Blank line before body
         sb.AppendLine();
 
-        // JSON body
-        if (GetPreferredRequestContent(op) is { ContentType: "application/json", Schema: { } bodySchema })
+        if (preferredContent is { } bodyContent &&
+            GetHttpRequestBody(bodyContent.ContentType, bodyContent.MediaType, bodyContent.Schema) is { } body &&
+            !string.IsNullOrWhiteSpace(body))
         {
-            var body = GenerateJsonBody(bodySchema);
-            if (!string.IsNullOrWhiteSpace(body))
-            {
-                sb.AppendLine(body);
-                sb.AppendLine();
-            }
+            sb.AppendLine(body);
+            sb.AppendLine();
         }
 
+        AppendResponseDocumentation(sb, op);
         AppendLinkDocumentation(sb, op);
         AppendCallbackDocumentation(sb, op);
 
@@ -157,7 +156,8 @@ public static partial class Sources
 
     public static string GenerateHttpEnvironmentFile(
         IReadOnlyList<OpenApiServer> servers,
-        IReadOnlyList<OpenApiSecuritySchemeReference> securitySchemes)
+        IReadOnlyList<OpenApiSecuritySchemeReference> securitySchemes,
+        Uri? documentSelf = null)
     {
         servers = servers ?? throw new ArgumentNullException(nameof(servers));
         securitySchemes = securitySchemes ?? throw new ArgumentNullException(nameof(securitySchemes));
@@ -178,13 +178,11 @@ public static partial class Sources
             for (var i = 0; i < servers.Count; i++)
             {
                 var server = servers[i];
-                var envName = !string.IsNullOrWhiteSpace(server.Description)
-                    ? SanitizeEnvName(server.Description!)
-                    : GetEnvNameFromIndex(i, servers.Count);
+                var envName = GetServerEnvironmentName(server, i, servers.Count);
 
                 var env = new JsonObject
                 {
-                    ["host"] = server.ExpandServerTemplate().TrimEnd('/') is { Length: > 0 } host
+                    ["host"] = server.ExpandServerTemplate(documentSelf).TrimEnd('/') is { Length: > 0 } host
                         ? host
                         : "http://localhost",
                 };
@@ -206,10 +204,15 @@ public static partial class Sources
 
     private static string GetHttpParameterValue(IOpenApiParameter parameter)
     {
-        // Use example if available
+        var exampleText = GetExampleText(parameter.Examples, contentType: null, rawScalars: true);
+        if (exampleText != null)
+        {
+            return exampleText;
+        }
+
         if (parameter.Example != null)
         {
-            return parameter.Example.ToString();
+            return FormatExampleNode(parameter.Example, contentType: null, rawScalars: true);
         }
 
         // Use schema default if available
@@ -228,7 +231,7 @@ public static partial class Sources
         return "{{" + parameter.Name + "}}";
     }
 
-    private static (string ContentType, IOpenApiSchema? Schema)? GetPreferredRequestContent(OpenApiOperation operation)
+    private static (string ContentType, IOpenApiMediaType MediaType, IOpenApiSchema? Schema)? GetPreferredRequestContent(OpenApiOperation operation)
     {
         var content = operation.RequestBody?.Content;
         if (content is not { Count: > 0 })
@@ -236,13 +239,18 @@ public static partial class Sources
             return null;
         }
 
-        if (content.TryGetValue("application/json", out var jsonMedia))
+        var jsonEntry = content
+            .OrderBy(x => x.Key, StringComparer.Ordinal)
+            .FirstOrDefault(x => IsJsonContentType(x.Key));
+        if (!string.IsNullOrWhiteSpace(jsonEntry.Key))
         {
-            return ("application/json", jsonMedia.Schema);
+            return (jsonEntry.Key, jsonEntry.Value, jsonEntry.Value.Schema);
         }
 
-        var first = content.First();
-        return (first.Key, first.Value.Schema);
+        var first = content
+            .OrderBy(x => x.Key, StringComparer.Ordinal)
+            .First();
+        return (first.Key, first.Value, first.Value.Schema);
     }
 
     private static void AppendLinkDocumentation(StringBuilder sb, OpenApiOperation operation)
@@ -385,9 +393,10 @@ public static partial class Sources
 
         sb.Append("# Method: ").AppendLine(method);
 
-        if (GetPreferredRequestContent(operation) is { } preferredContent)
+        var preferredContent = GetPreferredRequestContent(operation);
+        if (preferredContent is { } requestContent)
         {
-            sb.Append("# Content-Type: ").AppendLine(preferredContent.ContentType);
+            sb.Append("# Content-Type: ").AppendLine(requestContent.ContentType);
         }
 
         var acceptTypes = GetHttpAcceptTypes(operation);
@@ -396,16 +405,15 @@ public static partial class Sources
             sb.Append("# Accept: ").AppendLine(acceptTypes);
         }
 
-        if (GetPreferredRequestContent(operation) is { ContentType: "application/json", Schema: { } bodySchema })
+        if (preferredContent is { } bodyContent &&
+            GetHttpRequestBody(bodyContent.ContentType, bodyContent.MediaType, bodyContent.Schema) is { } body &&
+            !string.IsNullOrWhiteSpace(body))
         {
-            var body = GenerateJsonBody(bodySchema);
-            if (!string.IsNullOrWhiteSpace(body))
-            {
-                sb.AppendLine();
-                sb.AppendLine(body);
-            }
+            sb.AppendLine();
+            sb.AppendLine(body);
         }
 
+        AppendResponseDocumentation(sb, operation);
         sb.AppendLine();
         sb.AppendLine();
     }
@@ -520,6 +528,145 @@ public static partial class Sources
         }
 
         return string.Join(", ", contentTypes.OrderBy(x => x, StringComparer.Ordinal));
+    }
+
+    private static string? GetHttpRequestBody(
+        string contentType,
+        IOpenApiMediaType mediaType,
+        IOpenApiSchema? schema)
+    {
+        var exampleText = GetExampleText(mediaType.Examples, contentType, rawScalars: false);
+        if (exampleText != null)
+        {
+            return exampleText;
+        }
+
+        if (mediaType.Example != null)
+        {
+            return FormatExampleNode(mediaType.Example, contentType, rawScalars: false);
+        }
+
+        if (schema != null && IsJsonContentType(contentType))
+        {
+            return GenerateJsonBody(schema);
+        }
+
+        return null;
+    }
+
+    private static string? GetExampleText(
+        IDictionary<string, IOpenApiExample>? examples,
+        string? contentType,
+        bool rawScalars)
+    {
+        if (examples == null || examples.Count == 0)
+        {
+            return null;
+        }
+
+        foreach (var example in examples
+                     .OrderBy(x => x.Key, StringComparer.Ordinal)
+                     .Select(x => x.Value))
+        {
+            var text = GetExampleText(example, contentType, rawScalars);
+            if (text != null)
+            {
+                return text;
+            }
+        }
+
+        return null;
+    }
+
+    private static string? GetExampleText(
+        IOpenApiExample? example,
+        string? contentType,
+        bool rawScalars)
+    {
+        if (example == null)
+        {
+            return null;
+        }
+
+        if (example.SerializedValue != null)
+        {
+            return example.SerializedValue;
+        }
+
+        if (example.DataValue != null)
+        {
+            return FormatExampleNode(example.DataValue, contentType, rawScalars);
+        }
+
+        if (example.Value != null)
+        {
+            return FormatExampleNode(example.Value, contentType, rawScalars);
+        }
+
+        return null;
+    }
+
+    private static string FormatExampleNode(
+        JsonNode node,
+        string? contentType,
+        bool rawScalars)
+    {
+        if (node is JsonValue value &&
+            value.TryGetValue<string>(out var stringValue))
+        {
+            if (rawScalars || !IsJsonContentType(contentType))
+            {
+                return stringValue;
+            }
+
+            return JsonValue.Create(stringValue)!.ToJsonString(HttpJsonOptions);
+        }
+
+        return IsJsonContentType(contentType)
+            ? node.ToJsonString(HttpJsonOptions)
+            : node.ToJsonString();
+    }
+
+    private static void AppendResponseDocumentation(StringBuilder sb, OpenApiOperation operation)
+    {
+        var responses = (operation.Responses ?? [])
+            .Where(x =>
+                !string.IsNullOrWhiteSpace(x.Value.Summary) ||
+                !string.IsNullOrWhiteSpace(x.Value.Description) ||
+                x.Value.Content is { Count: > 0 })
+            .OrderBy(x => x.Key, StringComparer.Ordinal)
+            .ToArray();
+        if (responses.Length == 0)
+        {
+            return;
+        }
+
+        sb.AppendLine("## Responses");
+        foreach (var response in responses)
+        {
+            sb.Append("# ").AppendLine(response.Key);
+
+            if (!string.IsNullOrWhiteSpace(response.Value.Summary))
+            {
+                sb.Append("# Summary: ").AppendLine(response.Value.Summary);
+            }
+
+            if (!string.IsNullOrWhiteSpace(response.Value.Description))
+            {
+                sb.Append("# Description: ").AppendLine(response.Value.Description);
+            }
+
+            var contentTypes = response.Value.Content?
+                .Keys
+                .OrderBy(x => x, StringComparer.Ordinal)
+                .ToArray();
+            if (contentTypes is { Length: > 0 })
+            {
+                sb.Append("# Content-Type: ").AppendLine(string.Join(", ", contentTypes));
+            }
+        }
+
+        sb.AppendLine();
     }
 
     private static string GenerateJsonBody(IOpenApiSchema schema, int depth = 0, HashSet<IOpenApiSchema>? visited = null)
@@ -675,6 +822,39 @@ public static partial class Sources
         }
 
         return JsonValue.Create("string");
+    }
+
+    private static string GetServerEnvironmentName(OpenApiServer server, int index, int total)
+    {
+        if (!string.IsNullOrWhiteSpace(server.Name))
+        {
+            return SanitizeEnvName(server.Name!);
+        }
+
+        if (!string.IsNullOrWhiteSpace(server.Description))
+        {
+            return SanitizeEnvName(server.Description!);
+        }
+
+        return GetEnvNameFromIndex(index, total);
+    }
+
+    private static bool IsJsonContentType(string? contentType)
+    {
+        if (string.IsNullOrWhiteSpace(contentType))
+        {
+            return false;
+        }
+
+        var normalizedContentType = contentType!;
+        var separatorIndex = normalizedContentType.IndexOf(';');
+        var mediaType = (separatorIndex >= 0
+                ? normalizedContentType.Substring(0, separatorIndex)
+                : normalizedContentType)
+            .Trim();
+        return mediaType.Equals("application/json", StringComparison.OrdinalIgnoreCase) ||
+               mediaType.Equals("text/json", StringComparison.OrdinalIgnoreCase) ||
+               mediaType.EndsWith("+json", StringComparison.OrdinalIgnoreCase);
     }
 
     private static void AddAuthVariables(

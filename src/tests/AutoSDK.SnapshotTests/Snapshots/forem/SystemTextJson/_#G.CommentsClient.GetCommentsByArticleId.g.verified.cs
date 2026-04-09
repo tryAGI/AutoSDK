@@ -51,7 +51,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("a_id", aId)
                 .AddOptionalParameter("p_id", pId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

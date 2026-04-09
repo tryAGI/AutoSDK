@@ -131,7 +131,7 @@ namespace G
                 .AddOptionalParameter("enabled", enabled?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("page_key", pageKey) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

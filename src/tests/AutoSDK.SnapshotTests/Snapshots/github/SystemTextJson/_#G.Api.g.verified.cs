@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.github.com";
+        public const string DefaultBaseUrl = "https://api.github.com/";
 
         private bool _disposeHttpClient = true;
 
@@ -6012,7 +6012,7 @@ namespace G
         };
 
         /// <summary>
-        /// View gitignore templates
+        /// View gitignore templates.
         /// </summary>
         public GitignoreClient Gitignore => new GitignoreClient(HttpClient, authorizations: Authorizations)
         {
@@ -6048,7 +6048,7 @@ namespace G
         };
 
         /// <summary>
-        /// Render GitHub flavored markdown
+        /// Render GitHub flavored markdown.
         /// </summary>
         public MarkdownClient Markdown => new MarkdownClient(HttpClient, authorizations: Authorizations)
         {
@@ -6120,7 +6120,7 @@ namespace G
         };
 
         /// <summary>
-        /// Check your current rate limit status
+        /// Check your current rate limit status.
         /// </summary>
         public RateLimitClient RateLimit => new RateLimitClient(HttpClient, authorizations: Authorizations)
         {

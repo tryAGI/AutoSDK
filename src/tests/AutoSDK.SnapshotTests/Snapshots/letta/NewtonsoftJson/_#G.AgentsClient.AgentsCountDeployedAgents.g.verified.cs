@@ -86,7 +86,7 @@ namespace G
                 .AddOptionalParameter("search", search, selector: static x => x.ToString() ?? string.Empty, delimiter: ",", explode: true)
                 .AddOptionalParameter("project_id", projectId)
                 .AddOptionalParameter("combinator", combinator?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

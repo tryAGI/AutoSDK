@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// Production
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.cartesia.ai";
+        public const string DefaultBaseUrl = "https://api.cartesia.ai/";
 
         private bool _disposeHttpClient = true;
 

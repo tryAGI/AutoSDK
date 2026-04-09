@@ -123,7 +123,7 @@ namespace G
                 .AddOptionalParameter("showDeleted", showDeleted?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("visibility", visibility?.ToValueString())
                 .AddOptionalParameter("orderBy", orderBy) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -120,7 +120,7 @@ namespace G
                 .AddOptionalParameter("unit", unit?.ToValueString())
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("current_page", currentPage?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
