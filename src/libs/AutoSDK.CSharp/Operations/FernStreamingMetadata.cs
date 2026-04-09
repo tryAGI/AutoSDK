@@ -63,8 +63,8 @@ internal sealed class FernStreamingMetadata
             }
 
             var streamFormat =
-                successResponse.MimeType.Contains("application/json", StringComparison.OrdinalIgnoreCase) ||
-                successResponse.MimeType.Contains("+json", StringComparison.OrdinalIgnoreCase)
+                successResponse.MimeType.IsJsonMimeType() ||
+                successResponse.MimeType.IsSequentialJsonMimeType()
                     ? StreamFormat.Ndjson
                     : StreamFormat.Binary;
 
@@ -159,8 +159,8 @@ internal sealed class FernStreamingMetadata
             return StreamFormat.Ndjson;
         }
 
-        return successResponse.MimeType.Contains("application/json", StringComparison.OrdinalIgnoreCase) ||
-               successResponse.MimeType.Contains("+json", StringComparison.OrdinalIgnoreCase)
+        return successResponse.MimeType.IsJsonMimeType() ||
+               successResponse.MimeType.IsSequentialJsonMimeType()
             ? StreamFormat.Ndjson
             : StreamFormat.Binary;
     }
@@ -418,7 +418,7 @@ internal sealed class FernStreamingMetadata
             var content = response.Value?.Content ?? new Dictionary<string, IOpenApiMediaType>();
             if (!string.IsNullOrWhiteSpace(preferredMimeType))
             {
-                var preferred = content.FirstOrDefault(x => x.Key.Contains(preferredMimeType, StringComparison.OrdinalIgnoreCase));
+                var preferred = content.FirstOrDefault(x => x.Key.IsMimeType(preferredMimeType!));
                 if (preferred.Value?.Schema != null)
                 {
                     return preferred.Value.Schema;
