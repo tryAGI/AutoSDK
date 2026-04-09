@@ -1,0 +1,132 @@
+openapi: 3.1.0
+info:
+  title: Callback Webhook Link Fixture
+  version: 1.0.0
+paths:
+  /subscriptions:
+    post:
+      operationId: createSubscription
+      summary: Create subscription
+      tags:
+        - subscriptions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - callbackUrl
+                - topic
+              properties:
+                callbackUrl:
+                  type: string
+                  format: uri
+                topic:
+                  type: string
+      callbacks:
+        subscriptionStatus:
+          '{$request.body#/callbackUrl}':
+            post:
+              operationId: subscriptionStatusCallback
+              summary: Receive subscription status
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      required:
+                        - subscriptionId
+                        - state
+                      properties:
+                        subscriptionId:
+                          type: string
+                        state:
+                          type: string
+              responses:
+                '200':
+                  description: Callback acknowledged
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionAccepted'
+          links:
+            subscriptionStatus:
+              operationId: getSubscriptionStatus
+              description: Follow the created subscription status
+              parameters:
+                subscriptionId: '$response.body#/id'
+  /subscriptions/{subscriptionId}:
+    get:
+      operationId: getSubscriptionStatus
+      summary: Get subscription status
+      tags:
+        - subscriptions
+      parameters:
+        - in: path
+          name: subscriptionId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Current subscription status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionStatus'
+webhooks:
+  subscription.updated:
+    post:
+      operationId: subscriptionUpdatedWebhook
+      summary: Subscription updated webhook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - event
+                - data
+              properties:
+                event:
+                  type: string
+                data:
+                  type: object
+                  required:
+                    - id
+                    - state
+                  properties:
+                    id:
+                      type: string
+                    state:
+                      type: string
+      responses:
+        '200':
+          description: Webhook acknowledged
+components:
+  schemas:
+    SubscriptionAccepted:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+    SubscriptionStatus:
+      type: object
+      required:
+        - id
+        - state
+      properties:
+        id:
+          type: string
+        state:
+          type: string
