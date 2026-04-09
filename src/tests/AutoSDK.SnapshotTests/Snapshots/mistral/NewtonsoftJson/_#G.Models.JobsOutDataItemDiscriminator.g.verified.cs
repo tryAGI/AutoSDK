@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("job_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobsOutDataItemDiscriminatorJobTypeJsonConverter))]
         public global::G.JobsOutDataItemDiscriminatorJobType? JobType { get; set; }
 
         /// <summary>

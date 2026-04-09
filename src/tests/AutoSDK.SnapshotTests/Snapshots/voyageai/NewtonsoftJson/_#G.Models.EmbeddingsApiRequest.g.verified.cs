@@ -31,6 +31,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingsApiRequestInputTypeJsonConverter))]
         public global::G.EmbeddingsApiRequestInputType? InputType { get; set; }
 
         /// <summary>
@@ -52,6 +53,7 @@ namespace G
         /// Default Value: float
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_dtype")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingsApiRequestOutputDtypeJsonConverter))]
         public global::G.EmbeddingsApiRequestOutputDtype? OutputDtype { get; set; }
 
         /// <summary>
@@ -65,6 +67,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoding_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingsApiRequestEncodingFormatJsonConverter))]
         public global::G.EmbeddingsApiRequestEncodingFormat? EncodingFormat { get; set; }
 
         /// <summary>

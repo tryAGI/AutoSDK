@@ -13,11 +13,13 @@ namespace G
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:predictions** scope.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreatePredictionResponse> CreatePredictionAsync(
 
             global::G.CreatePredictionBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Channel Points Prediction.<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="predictionWindow">
         /// The length of time (in seconds) that the prediction will run for. The minimum is 30 seconds and the maximum is 1800 seconds (30 minutes).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreatePredictionResponse> CreatePredictionAsync(
@@ -45,6 +48,7 @@ namespace G
             string title,
             global::System.Collections.Generic.IList<global::G.CreatePredictionBodyOutcome> outcomes,
             int predictionWindow,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RateLimitsTypeJsonConverter))]
         public global::G.RateLimitsType? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("unit")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RateLimitsUnitJsonConverter))]
         public global::G.RateLimitsUnit? Unit { get; set; }
 
         /// <summary>

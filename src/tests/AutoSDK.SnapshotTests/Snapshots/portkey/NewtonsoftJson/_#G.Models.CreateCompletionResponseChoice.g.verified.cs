@@ -15,6 +15,7 @@ namespace G
         /// or `content_filter` if content was omitted due to a flag from our content filters.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateCompletionResponseChoiceFinishReasonJsonConverter))]
         public global::G.CreateCompletionResponseChoiceFinishReason FinishReason { get; set; } = default!;
 
         /// <summary>

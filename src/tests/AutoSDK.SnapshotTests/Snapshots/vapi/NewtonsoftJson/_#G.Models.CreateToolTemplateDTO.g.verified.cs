@@ -31,6 +31,7 @@ namespace G
         /// Default Value: private
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateToolTemplateDTOVisibilityJsonConverter))]
         public global::G.CreateToolTemplateDTOVisibility? Visibility { get; set; }
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace G
         /// </summary>
         /// <default>global::G.CreateToolTemplateDTOType.Tool</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateToolTemplateDTOTypeJsonConverter))]
         public global::G.CreateToolTemplateDTOType Type { get; set; } = global::G.CreateToolTemplateDTOType.Tool;
 
         /// <summary>
@@ -50,6 +52,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateToolTemplateDTOProviderJsonConverter))]
         public global::G.CreateToolTemplateDTOProvider? Provider { get; set; }
 
         /// <summary>

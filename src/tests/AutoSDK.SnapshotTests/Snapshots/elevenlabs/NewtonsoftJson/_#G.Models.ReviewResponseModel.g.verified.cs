@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("review_status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReviewResponseModelReviewStatusJsonConverter))]
         public global::G.ReviewResponseModelReviewStatus ReviewStatus { get; set; } = default!;
 
         /// <summary>

@@ -29,6 +29,7 @@ namespace G
         /// Default Value: document
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextEmbeddingAPIInputInputTypeJsonConverter))]
         public global::G.TextEmbeddingAPIInputInputType? InputType { get; set; }
 
         /// <summary>

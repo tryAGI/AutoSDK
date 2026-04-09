@@ -14,6 +14,7 @@ namespace G
         /// The type of the file search tool. Always `file_search`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileSearchToolTypeJsonConverter))]
         public global::G.FileSearchToolType Type { get; set; }
 
         /// <summary>

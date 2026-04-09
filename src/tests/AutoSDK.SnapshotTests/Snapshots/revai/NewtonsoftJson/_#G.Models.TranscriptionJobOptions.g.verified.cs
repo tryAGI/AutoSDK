@@ -26,6 +26,7 @@ namespace G
         /// Default Value: en
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptionJobOptionsLanguageJsonConverter))]
         public global::G.TranscriptionJobOptionsLanguage? Language { get; set; }
 
         /// <summary>

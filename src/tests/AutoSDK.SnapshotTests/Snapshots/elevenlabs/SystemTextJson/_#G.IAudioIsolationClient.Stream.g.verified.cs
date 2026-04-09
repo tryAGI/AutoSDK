@@ -13,12 +13,14 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> StreamAsync(
 
             global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPost request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Audio Isolation Stream<br/>
@@ -37,6 +39,7 @@ namespace G
         /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
         /// Default Value: other
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> StreamAsync(
@@ -44,6 +47,7 @@ namespace G
             string audioname,
             string? xiApiKey = default,
             global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? fileFormat = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

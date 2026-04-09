@@ -35,16 +35,105 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.ChatCompletionRequestToolChoiceJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionRequestToolChoiceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatContentPartTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ChatContentPartTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatContentPartImageUrlDetailJsonConverter(),
+
+                    new global::G.JsonConverters.ChatContentPartImageUrlDetailNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseFormatTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseFormatTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionNamedToolChoiceTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionNamedToolChoiceTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionResponseObjectJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionResponseObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionChoiceFinishReasonJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionChoiceFinishReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionChunkResponseObjectJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionChunkResponseObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionChunkChoiceFinishReasonJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionChunkChoiceFinishReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionDeltaRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionDeltaRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallChunkTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallChunkTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EmbeddingResponseObjectJsonConverter(),
+
+                    new global::G.JsonConverters.EmbeddingResponseObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EmbeddingDataObjectJsonConverter(),
+
+                    new global::G.JsonConverters.EmbeddingDataObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DocumentElementTypeJsonConverter(),
+
+                    new global::G.JsonConverters.DocumentElementTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LayoutElementTypeJsonConverter(),
+
+                    new global::G.JsonConverters.LayoutElementTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DocumentParseRequestOcrJsonConverter(),
+
+                    new global::G.JsonConverters.DocumentParseRequestOcrNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
+        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -53,7 +142,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DocumentAIClient DocumentAI => new DocumentAIClient(HttpClient, authorizations: Authorizations)
+        public DocumentAIClient DocumentAI => new DocumentAIClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -62,7 +151,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations)
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -71,7 +160,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GroundednessCheckClient GroundednessCheck => new GroundednessCheckClient(HttpClient, authorizations: Authorizations)
+        public GroundednessCheckClient GroundednessCheck => new GroundednessCheckClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -80,7 +169,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TranslationClient Translation => new TranslationClient(HttpClient, authorizations: Authorizations)
+        public TranslationClient Translation => new TranslationClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -99,11 +188,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

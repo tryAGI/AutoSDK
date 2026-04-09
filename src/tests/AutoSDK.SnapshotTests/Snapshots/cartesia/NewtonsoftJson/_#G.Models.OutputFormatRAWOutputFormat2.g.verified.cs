@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("container")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputFormatRAWOutputFormatContainerJsonConverter))]
         public global::G.OutputFormatRAWOutputFormatContainer? Container { get; set; }
 
         /// <summary>

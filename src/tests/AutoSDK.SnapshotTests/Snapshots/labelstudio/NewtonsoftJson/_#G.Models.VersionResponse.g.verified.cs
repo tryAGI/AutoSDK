@@ -27,6 +27,7 @@ namespace G
         /// * `Enterprise` - Enterprise
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("edition", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditionEnumJsonConverter))]
         public global::G.EditionEnum Edition { get; set; } = default!;
 
         /// <summary>

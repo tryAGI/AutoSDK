@@ -21,6 +21,7 @@ namespace G
         /// The event type, must be `response.audio_transcript.done`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventResponseAudioTranscriptDoneTypeJsonConverter))]
         public global::G.RealtimeServerEventResponseAudioTranscriptDoneType Type { get; set; }
 
         /// <summary>

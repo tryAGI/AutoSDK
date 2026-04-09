@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTaskRequestVariant7TypeJsonConverter))]
         public global::G.CreateTaskRequestVariant7Type Type { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("animation", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTaskRequestVariant7AnimationJsonConverter))]
         public global::G.CreateTaskRequestVariant7Animation Animation { get; set; } = default!;
 
         /// <summary>

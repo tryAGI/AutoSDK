@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>queued</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobStepStatusJsonConverter))]
         public global::G.JobStepStatus Status { get; set; } = default!;
 
         /// <summary>

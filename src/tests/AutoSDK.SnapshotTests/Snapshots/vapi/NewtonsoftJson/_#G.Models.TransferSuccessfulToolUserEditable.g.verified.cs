@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "transferSuccessful" for Transfer Successful tool. This tool can only be used during warm-transfer-experimental by the transfer assistant to confirm that the transfer should proceed and finalize the handoff to the destination.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferSuccessfulToolUserEditableTypeJsonConverter))]
         public global::G.TransferSuccessfulToolUserEditableType Type { get; set; }
 
         /// <summary>

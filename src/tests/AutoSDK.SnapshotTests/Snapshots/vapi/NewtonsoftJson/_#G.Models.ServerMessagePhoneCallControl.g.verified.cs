@@ -20,12 +20,14 @@ namespace G
         /// When it is requested in `assistant.serverMessages`, the hangup and forwarding responsibilities are delegated to your server. Vapi will no longer do the actual transfer and hangup.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessagePhoneCallControlTypeJsonConverter))]
         public global::G.ServerMessagePhoneCallControlType Type { get; set; }
 
         /// <summary>
         /// This is the request to control the phone call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("request", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessagePhoneCallControlRequestJsonConverter))]
         public global::G.ServerMessagePhoneCallControlRequest Request { get; set; } = default!;
 
         /// <summary>

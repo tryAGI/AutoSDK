@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectServiceAccountDeleteResponseObjectJsonConverter))]
         public global::G.ProjectServiceAccountDeleteResponseObject Object { get; set; }
 
         /// <summary>

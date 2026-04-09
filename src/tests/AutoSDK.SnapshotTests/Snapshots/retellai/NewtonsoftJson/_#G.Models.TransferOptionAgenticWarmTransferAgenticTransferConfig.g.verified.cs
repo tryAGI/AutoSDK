@@ -27,6 +27,7 @@ namespace G
         /// Default Value: cancel_transfer
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action_on_timeout")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferOptionAgenticWarmTransferAgenticTransferConfigActionOnTimeoutJsonConverter))]
         public global::G.TransferOptionAgenticWarmTransferAgenticTransferConfigActionOnTimeout? ActionOnTimeout { get; set; }
 
         /// <summary>

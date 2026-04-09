@@ -19,6 +19,7 @@ namespace G
         /// Whether to return the chunks for the file<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -26,6 +27,7 @@ namespace G
             global::G.AnyOf<string, global::System.Guid?> vectorStoreIdentifier,
             global::G.AnyOf<string, global::System.Guid?> fileId,
             bool? returnChunks = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

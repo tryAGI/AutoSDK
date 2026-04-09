@@ -13,6 +13,7 @@ namespace G
         /// The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("build_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposCreatePagesSiteRequestBuildTypeJsonConverter))]
         public global::G.ReposCreatePagesSiteRequestBuildType? BuildType { get; set; }
 
         /// <summary>

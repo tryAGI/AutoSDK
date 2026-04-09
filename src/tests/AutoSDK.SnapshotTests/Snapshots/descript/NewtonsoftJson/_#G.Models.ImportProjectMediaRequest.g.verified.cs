@@ -44,6 +44,7 @@ namespace G
         /// </summary>
         /// <example>edit</example>
         [global::Newtonsoft.Json.JsonProperty("team_access")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImportProjectMediaRequestTeamAccessJsonConverter))]
         public global::G.ImportProjectMediaRequestTeamAccess? TeamAccess { get; set; }
 
         /// <summary>

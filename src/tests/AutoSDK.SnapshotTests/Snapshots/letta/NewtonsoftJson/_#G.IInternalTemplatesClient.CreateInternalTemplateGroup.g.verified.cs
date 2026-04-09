@@ -12,11 +12,13 @@ namespace G
         /// Create a new multi-agent group with the specified configuration.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Group> CreateInternalTemplateGroupAsync(
 
             global::G.InternalTemplateGroupCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Group<br/>
@@ -42,6 +44,7 @@ namespace G
         /// <param name="deploymentId">
         /// The id of the deployment.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Group> CreateInternalTemplateGroupAsync(
@@ -53,6 +56,7 @@ namespace G
             global::G.ManagerConfig3? managerConfig = default,
             string? projectId = default,
             bool? hidden = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

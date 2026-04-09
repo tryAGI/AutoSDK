@@ -13,6 +13,7 @@ namespace G
         /// The authentication type for the secret.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSecretRequestCreateSecretRequest1ApiKeyTypeJsonConverter))]
         public global::G.CreateSecretRequestCreateSecretRequest1ApiKeyType Type { get; set; }
 
         /// <summary>

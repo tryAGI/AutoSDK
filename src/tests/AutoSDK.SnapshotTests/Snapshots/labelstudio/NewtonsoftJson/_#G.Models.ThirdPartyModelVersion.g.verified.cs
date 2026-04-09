@@ -66,6 +66,7 @@ namespace G
         /// * `Custom` - Custom
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProviderEnumJsonConverter))]
         public global::G.ProviderEnum? Provider { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResearchEventDtoClassVariant1Variant2OutputVariant2OutputTypeJsonConverter))]
         public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2OutputType OutputType { get; set; }
 
         /// <summary>

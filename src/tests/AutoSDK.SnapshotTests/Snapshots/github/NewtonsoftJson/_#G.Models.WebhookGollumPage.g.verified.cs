@@ -13,6 +13,7 @@ namespace G
         /// The action that was performed on the page. Can be `created` or `edited`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookGollumPageActionJsonConverter))]
         public global::G.WebhookGollumPageAction Action { get; set; } = default!;
 
         /// <summary>

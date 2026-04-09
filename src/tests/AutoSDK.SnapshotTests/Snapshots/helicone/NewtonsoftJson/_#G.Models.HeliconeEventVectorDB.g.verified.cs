@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HeliconeEventVectorDBTypeJsonConverter))]
         public global::G.HeliconeEventVectorDBType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operation", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HeliconeEventVectorDBOperationJsonConverter))]
         public global::G.HeliconeEventVectorDBOperation Operation { get; set; } = default!;
 
         /// <summary>

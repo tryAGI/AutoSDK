@@ -13,6 +13,7 @@ namespace G
         /// The type of the content.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunStepDetailsToolCallsFileSearchResultObjectContentItemTypeJsonConverter))]
         public global::G.RunStepDetailsToolCallsFileSearchResultObjectContentItemType? Type { get; set; }
 
         /// <summary>

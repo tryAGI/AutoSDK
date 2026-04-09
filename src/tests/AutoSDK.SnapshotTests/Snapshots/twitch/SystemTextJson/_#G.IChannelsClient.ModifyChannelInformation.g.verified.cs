@@ -15,12 +15,14 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ModifyChannelInformationAsync(
             string broadcasterId,
 
             global::G.ModifyChannelInformationBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Updates a channel’s properties.<br/>
@@ -54,6 +56,7 @@ namespace G
         /// <param name="isBrandedContent">
         /// Boolean flag indicating if the channel has branded content.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task ModifyChannelInformationAsync(
@@ -65,6 +68,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? tags = default,
             global::System.Collections.Generic.IList<global::G.ModifyChannelInformationBodyContentClassificationLabel>? contentClassificationLabels = default,
             bool? isBrandedContent = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -49,6 +49,7 @@ namespace G
         /// A literal 'g' which identifies the log as a project log
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("log_id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectLogsEventLogIdJsonConverter))]
         public global::G.ProjectLogsEventLogId LogId { get; set; }
 
         /// <summary>

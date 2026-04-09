@@ -32,16 +32,313 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.BaseModelCardTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BaseModelCardTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FTModelCardTypeJsonConverter(),
+
+                    new global::G.JsonConverters.FTModelCardTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ModelListDataItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ModelListDataItemDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilePurposeJsonConverter(),
+
+                    new global::G.JsonConverters.FilePurposeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SampleTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SampleTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SourceJsonConverter(),
+
+                    new global::G.JsonConverters.SourceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierJobOutStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierJobOutStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierJobOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierJobOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierJobOutIntegrationsVariant1ItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierJobOutIntegrationsVariant1ItemDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierJobOutJobTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierJobOutJobTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionJobOutStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionJobOutStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionJobOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionJobOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionJobOutIntegrationsVariant1ItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionJobOutIntegrationsVariant1ItemDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionJobOutJobTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionJobOutJobTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionJobOutRepositorieDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionJobOutRepositorieDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FineTuneableModelJsonConverter(),
+
+                    new global::G.JsonConverters.FineTuneableModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GithubRepositoryOutTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GithubRepositoryOutTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JobsOutDataItemDiscriminatorJobTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JobsOutDataItemDiscriminatorJobTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JobsOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.JobsOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WandbIntegrationOutTypeJsonConverter(),
+
+                    new global::G.JsonConverters.WandbIntegrationOutTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LegacyJobMetadataOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.LegacyJobMetadataOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FTClassifierLossFunctionJsonConverter(),
+
+                    new global::G.JsonConverters.FTClassifierLossFunctionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FineTuneableModelTypeJsonConverter(),
+
+                    new global::G.JsonConverters.FineTuneableModelTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GithubRepositoryInTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GithubRepositoryInTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JobInIntegrationsVariant1ItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JobInIntegrationsVariant1ItemDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JobInRepositoriesVariant1ItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JobInRepositoriesVariant1ItemDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WandbIntegrationTypeJsonConverter(),
+
+                    new global::G.JsonConverters.WandbIntegrationTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierDetailedJobOutStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierDetailedJobOutStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierDetailedJobOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierDetailedJobOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierDetailedJobOutJobTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierDetailedJobOutJobTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionDetailedJobOutStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionDetailedJobOutStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionDetailedJobOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionDetailedJobOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionDetailedJobOutJobTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionDetailedJobOutJobTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionDetailedJobOutRepositorieDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionDetailedJobOutRepositorieDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierFTModelOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierFTModelOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierFTModelOutModelTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClassifierFTModelOutModelTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionFTModelOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionFTModelOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionFTModelOutModelTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionFTModelOutModelTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ArchiveFTModelOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.ArchiveFTModelOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnarchiveFTModelOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.UnarchiveFTModelOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BatchJobStatusJsonConverter(),
+
+                    new global::G.JsonConverters.BatchJobStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BatchJobOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.BatchJobOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BatchJobsOutObjectJsonConverter(),
+
+                    new global::G.JsonConverters.BatchJobsOutObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ApiEndpointJsonConverter(),
+
+                    new global::G.JsonConverters.ApiEndpointNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionRequestMessageDiscriminatorRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionRequestMessageDiscriminatorRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatModerationRequestInputVariant1ItemDiscriminatorRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatModerationRequestInputVariant1ItemDiscriminatorRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatModerationRequestInputVariant2ItemItemDiscriminatorRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatModerationRequestInputVariant2ItemItemDiscriminatorRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DocumentURLChunkTypeJsonConverter(),
+
+                    new global::G.JsonConverters.DocumentURLChunkTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ImageURLChunkTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ImageURLChunkTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InstructRequestMessageDiscriminatorRoleJsonConverter(),
+
+                    new global::G.JsonConverters.InstructRequestMessageDiscriminatorRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ReferenceChunkTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ReferenceChunkTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseFormatsJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseFormatsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SystemMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.SystemMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextChunkTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextChunkTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolChoiceEnumJsonConverter(),
+
+                    new global::G.JsonConverters.ToolChoiceEnumNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolTypesJsonConverter(),
+
+                    new global::G.JsonConverters.ToolTypesNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UserMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.UserMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsCompletionRequestMessageDiscriminatorRoleJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsCompletionRequestMessageDiscriminatorRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ContentChunkDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ContentChunkDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionResponseStreamChoiceFinishReasonJsonConverter(),
+
+                    new global::G.JsonConverters.CompletionResponseStreamChoiceFinishReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionChoiceFinishReasonJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionChoiceFinishReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1DiscriminatorJobTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1DiscriminatorJobTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobResponseDiscriminatorJobTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobResponseDiscriminatorJobTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminatorJobTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminatorJobTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminatorJobTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningStartFineTuningJobResponseDiscriminatorJobTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
         /// Agents. Agents API.
         /// </summary>
-        public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations)
+        public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -50,7 +347,7 @@ namespace G
         /// <summary>
         /// Batch. Batch API.
         /// </summary>
-        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
+        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -59,7 +356,7 @@ namespace G
         /// <summary>
         /// Chat. Chat Completion API.
         /// </summary>
-        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
+        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -68,7 +365,7 @@ namespace G
         /// <summary>
         /// Classifiers. Classifiers API.
         /// </summary>
-        public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations)
+        public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -77,7 +374,7 @@ namespace G
         /// <summary>
         /// Embeddings. Embeddings API.
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations)
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -86,7 +383,7 @@ namespace G
         /// <summary>
         /// Files. Files API.
         /// </summary>
-        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
+        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -95,7 +392,7 @@ namespace G
         /// <summary>
         /// FIM. Fill-in-the-middle API.
         /// </summary>
-        public FimClient Fim => new FimClient(HttpClient, authorizations: Authorizations)
+        public FimClient Fim => new FimClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -104,7 +401,7 @@ namespace G
         /// <summary>
         /// Fine Tuning. Fine-tuning API.
         /// </summary>
-        public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations)
+        public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -113,7 +410,7 @@ namespace G
         /// <summary>
         /// Models. Model Management API.
         /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
+        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -122,7 +419,7 @@ namespace G
         /// <summary>
         /// OCR API.
         /// </summary>
-        public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations)
+        public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -141,11 +438,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

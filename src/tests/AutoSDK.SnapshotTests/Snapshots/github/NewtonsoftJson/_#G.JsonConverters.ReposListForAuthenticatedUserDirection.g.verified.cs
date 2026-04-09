@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.ReposListForAuthenticatedUserDirection.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ReposListForAuthenticatedUserDirectionJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.ReposListForAuthenticatedUserDirection>
+    {
+        /// <inheritdoc />
+        public override global::G.ReposListForAuthenticatedUserDirection ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.ReposListForAuthenticatedUserDirection existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.ReposListForAuthenticatedUserDirectionExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.ReposListForAuthenticatedUserDirection)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.ReposListForAuthenticatedUserDirection);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.ReposListForAuthenticatedUserDirection value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.ReposListForAuthenticatedUserDirectionExtensions.ToValueString(value));
+        }
+    }
+}

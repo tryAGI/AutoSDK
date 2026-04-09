@@ -51,6 +51,7 @@ namespace G
         /// </summary>
         /// <example>transparent</example>
         [global::Newtonsoft.Json.JsonProperty("background")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageEditRequestBackgroundJsonConverter))]
         public global::G.CreateImageEditRequestBackground? Background { get; set; }
 
         /// <summary>
@@ -78,6 +79,7 @@ namespace G
         /// </summary>
         /// <example>1024x1024</example>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageEditRequestSizeJsonConverter))]
         public global::G.CreateImageEditRequestSize? Size { get; set; }
 
         /// <summary>
@@ -87,6 +89,7 @@ namespace G
         /// </summary>
         /// <example>url</example>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageEditRequestResponseFormatJsonConverter))]
         public global::G.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
@@ -98,6 +101,7 @@ namespace G
         /// </summary>
         /// <example>png</example>
         [global::Newtonsoft.Json.JsonProperty("output_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageEditRequestOutputFormatJsonConverter))]
         public global::G.CreateImageEditRequestOutputFormat? OutputFormat { get; set; }
 
         /// <summary>
@@ -126,6 +130,7 @@ namespace G
         /// </summary>
         /// <example>high</example>
         [global::Newtonsoft.Json.JsonProperty("quality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageEditRequestQualityJsonConverter))]
         public global::G.CreateImageEditRequestQuality? Quality { get; set; }
 
         /// <summary>

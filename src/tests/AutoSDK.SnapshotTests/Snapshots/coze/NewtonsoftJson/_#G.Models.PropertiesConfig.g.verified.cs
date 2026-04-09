@@ -31,6 +31,7 @@ namespace G
         /// 房间模式
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("room_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PropertiesConfigRoomModeJsonConverter))]
         public global::G.PropertiesConfigRoomMode? RoomMode { get; set; }
 
         /// <summary>

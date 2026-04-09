@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <example>artifact.structuredOutputs[OutputID]</example>
         [global::Newtonsoft.Json.JsonProperty("column")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterStructuredOutputColumnOnCallTableColumnJsonConverter))]
         public global::G.FilterStructuredOutputColumnOnCallTableColumn Column { get; set; }
 
         /// <summary>
@@ -28,6 +29,7 @@ namespace G
         /// </summary>
         /// <example>"=" or "&gt;" or "&lt;" or "in" or "not_in"</example>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterStructuredOutputColumnOnCallTableOperatorJsonConverter))]
         public global::G.FilterStructuredOutputColumnOnCallTableOperator Operator { get; set; } = default!;
 
         /// <summary>

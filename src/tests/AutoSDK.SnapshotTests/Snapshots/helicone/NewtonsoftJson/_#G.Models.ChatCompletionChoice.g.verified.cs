@@ -18,6 +18,7 @@ namespace G
         /// function.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionChoiceFinishReasonJsonConverter))]
         public global::G.ChatCompletionChoiceFinishReason FinishReason { get; set; } = default!;
 
         /// <summary>

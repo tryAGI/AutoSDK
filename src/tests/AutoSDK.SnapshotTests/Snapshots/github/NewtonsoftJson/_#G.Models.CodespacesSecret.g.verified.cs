@@ -33,6 +33,7 @@ namespace G
         /// The type of repositories in the organization that the secret is visible to
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodespacesSecretVisibilityJsonConverter))]
         public global::G.CodespacesSecretVisibility Visibility { get; set; } = default!;
 
         /// <summary>

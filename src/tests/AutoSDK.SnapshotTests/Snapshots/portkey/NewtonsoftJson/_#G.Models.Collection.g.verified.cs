@@ -49,6 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CollectionStatusJsonConverter))]
         public global::G.CollectionStatus? Status { get; set; }
 
         /// <summary>

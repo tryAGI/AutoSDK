@@ -13,6 +13,7 @@ namespace G
         /// type of the Response Engine.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseEngineRetellLmTypeJsonConverter))]
         public global::G.ResponseEngineRetellLmType Type { get; set; }
 
         /// <summary>

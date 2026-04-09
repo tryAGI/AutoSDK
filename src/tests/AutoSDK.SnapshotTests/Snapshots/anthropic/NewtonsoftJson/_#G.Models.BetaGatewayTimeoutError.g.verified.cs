@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaGatewayTimeoutErrorType.TimeoutError</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaGatewayTimeoutErrorTypeJsonConverter))]
         public global::G.BetaGatewayTimeoutErrorType Type { get; set; } = global::G.BetaGatewayTimeoutErrorType.TimeoutError;
 
         /// <summary>

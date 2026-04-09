@@ -55,6 +55,7 @@ namespace G
         /// Unix timestamp of when the item was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("date_unix", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset DateUnix { get; set; } = default!;
 
         /// <summary>
@@ -79,6 +80,7 @@ namespace G
         /// The state of the history item.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpeechHistoryItemResponseModelStateJsonConverter))]
         public global::G.SpeechHistoryItemResponseModelState State { get; set; } = default!;
 
         /// <summary>

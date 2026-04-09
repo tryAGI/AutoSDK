@@ -153,6 +153,7 @@ namespace G
         /// Default Value: automatic
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyDubAVideoOrAnAudioFileV1DubbingPostModeJsonConverter))]
         public global::G.BodyDubAVideoOrAnAudioFileV1DubbingPostMode? Mode { get; set; }
 
         /// <summary>

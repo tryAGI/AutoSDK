@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerateStreamedResponseDiscriminatorEventTypeJsonConverter))]
         public global::G.GenerateStreamedResponseDiscriminatorEventType? EventType { get; set; }
 
         /// <summary>

@@ -18,12 +18,14 @@ namespace G
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CompletionResponse> CompletePostAsync(
 
             global::G.CompletionRequest request,
             string? anthropicVersion = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Text Completion<br/>
@@ -76,6 +78,7 @@ namespace G
         /// Whether to incrementally stream the response using server-sent events.<br/>
         /// See [streaming](https://docs.anthropic.com/en/api/streaming) for details.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CompletionResponse> CompletePostAsync(
@@ -91,6 +94,7 @@ namespace G
             int? topK = default,
             global::G.Metadata? metadata = default,
             bool? stream = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

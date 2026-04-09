@@ -16,6 +16,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ActionEnumJsonConverter))]
         public global::G.ActionEnum? Action { get; set; }
 
         /// <summary>

@@ -16,6 +16,7 @@ namespace G
         /// Role of this turn: 'assistant' for LLM generations (trainable), 'tool' for tool results (non-trainable).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TurnTokenDataRoleJsonConverter))]
         public global::G.TurnTokenDataRole Role { get; set; } = default!;
 
         /// <summary>

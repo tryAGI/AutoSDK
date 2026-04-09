@@ -27,12 +27,14 @@ namespace G
         /// The original language in `iso639-1` or `iso639-2` format depending on the language
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("original_language", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptionLanguageCodeEnumJsonConverter))]
         public global::G.TranscriptionLanguageCodeEnum OriginalLanguage { get; set; } = default!;
 
         /// <summary>
         /// The target language in `iso639-1` or `iso639-2` format depending on the language
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_language", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranslationLanguageCodeEnumJsonConverter))]
         public global::G.TranslationLanguageCodeEnum TargetLanguage { get; set; } = default!;
 
         /// <summary>

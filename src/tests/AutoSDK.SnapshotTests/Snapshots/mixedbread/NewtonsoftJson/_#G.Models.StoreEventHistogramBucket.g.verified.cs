@@ -25,6 +25,7 @@ namespace G
         /// Type of the event
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StoreEventHistogramBucketTypeJsonConverter))]
         public global::G.StoreEventHistogramBucketType Type { get; set; } = default!;
 
         /// <summary>

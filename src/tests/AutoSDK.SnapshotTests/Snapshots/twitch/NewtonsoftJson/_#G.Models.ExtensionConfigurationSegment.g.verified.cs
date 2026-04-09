@@ -17,6 +17,7 @@ namespace G
         /// * global
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segment", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtensionConfigurationSegmentSegmentJsonConverter))]
         public global::G.ExtensionConfigurationSegmentSegment Segment { get; set; } = default!;
 
         /// <summary>

@@ -38,6 +38,7 @@ namespace G
         /// Default Value: TOPLEFT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("coord_origin")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CoordOriginJsonConverter))]
         public global::G.CoordOrigin? CoordOrigin { get; set; }
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>apiMessage</example>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PredictionHistoryItemRoleJsonConverter))]
         public global::G.PredictionHistoryItemRole? Role { get; set; }
 
         /// <summary>

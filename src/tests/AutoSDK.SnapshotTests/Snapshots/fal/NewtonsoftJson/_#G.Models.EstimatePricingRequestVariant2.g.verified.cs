@@ -13,6 +13,7 @@ namespace G
         /// Estimate type: unit price calculation based on billing units
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("estimate_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EstimatePricingRequestVariant2EstimateTypeJsonConverter))]
         public global::G.EstimatePricingRequestVariant2EstimateType EstimateType { get; set; }
 
         /// <summary>

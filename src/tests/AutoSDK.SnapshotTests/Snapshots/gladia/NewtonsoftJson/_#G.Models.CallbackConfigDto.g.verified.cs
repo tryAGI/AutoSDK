@@ -24,6 +24,7 @@ namespace G
         /// </summary>
         /// <example>POST</example>
         [global::Newtonsoft.Json.JsonProperty("method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackMethodEnumJsonConverter))]
         public global::G.CallbackMethodEnum? Method { get; set; }
 
         /// <summary>

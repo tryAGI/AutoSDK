@@ -21,6 +21,7 @@ namespace G
         /// The position of the image in the output video. "first" will use the image as the first frame of the video, "last" will use the image as the last frame of the video.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("position", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageToVideoRequestVeo31PromptImagePromptImagePositionJsonConverter))]
         public global::G.CreateImageToVideoRequestVeo31PromptImagePromptImagePosition Position { get; set; } = default!;
 
         /// <summary>

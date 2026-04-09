@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_level")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PropertiesDataPropertiesBasicInfoUserLevelJsonConverter))]
         public global::G.PropertiesDataPropertiesBasicInfoUserLevel? UserLevel { get; set; }
 
         /// <summary>

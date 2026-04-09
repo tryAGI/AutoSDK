@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("group_by")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunGroupByJsonConverter))]
         public global::G.RunGroupBy GroupBy { get; set; }
 
         /// <summary>

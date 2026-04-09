@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExportItemStatusJsonConverter))]
         public global::G.ExportItemStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExportItemObjectJsonConverter))]
         public global::G.ExportItemObject Object { get; set; }
 
         /// <summary>

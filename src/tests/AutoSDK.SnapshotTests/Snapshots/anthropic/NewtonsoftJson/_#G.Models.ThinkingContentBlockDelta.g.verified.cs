@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ThinkingContentBlockDeltaType.ThinkingDelta</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ThinkingContentBlockDeltaTypeJsonConverter))]
         public global::G.ThinkingContentBlockDeltaType Type { get; set; } = global::G.ThinkingContentBlockDeltaType.ThinkingDelta;
 
         /// <summary>

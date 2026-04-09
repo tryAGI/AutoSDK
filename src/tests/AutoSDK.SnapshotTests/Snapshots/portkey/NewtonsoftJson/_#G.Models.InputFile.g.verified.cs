@@ -13,6 +13,7 @@ namespace G
         /// The type of the input item. Always `input_file`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputFileTypeJsonConverter))]
         public global::G.InputFileType Type { get; set; }
 
         /// <summary>

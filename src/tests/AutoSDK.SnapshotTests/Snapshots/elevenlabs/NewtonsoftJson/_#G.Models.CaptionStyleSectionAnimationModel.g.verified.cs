@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enter_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CaptionStyleSectionAnimationModelEnterTypeJsonConverter))]
         public global::G.CaptionStyleSectionAnimationModelEnterType EnterType { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("exit_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CaptionStyleSectionAnimationModelExitTypeJsonConverter))]
         public global::G.CaptionStyleSectionAnimationModelExitType ExitType { get; set; } = default!;
 
         /// <summary>

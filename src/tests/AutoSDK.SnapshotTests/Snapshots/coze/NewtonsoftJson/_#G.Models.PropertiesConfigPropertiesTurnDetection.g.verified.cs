@@ -13,6 +13,7 @@ namespace G
         /// 语音检测类型，支持 server_vad / client_vad / client_interrupt，默认 server_vad
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PropertiesConfigPropertiesTurnDetectionTypeJsonConverter))]
         public global::G.PropertiesConfigPropertiesTurnDetectionType? Type { get; set; }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// The type of tool. "function" for Function tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionToolProviderDetailsTypeJsonConverter))]
         public global::G.FunctionToolProviderDetailsType Type { get; set; }
 
         /// <summary>

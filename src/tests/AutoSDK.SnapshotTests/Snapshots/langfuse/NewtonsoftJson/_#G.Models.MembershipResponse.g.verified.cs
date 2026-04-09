@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MembershipRoleJsonConverter))]
         public global::G.MembershipRole Role { get; set; } = default!;
 
         /// <summary>

@@ -10,11 +10,13 @@ namespace G
         /// It is recommended to set `modelfile` to the content of the Modelfile rather than just set `path`. This is a requirement for remote create. Remote model creation should also create any file blobs, fields such as `FROM` and `ADAPTER`, explicitly with the server using Create a Blob and the value to the path indicated in the response.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateModelResponse> CreateModelAsync(
 
             global::G.CreateModelRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a model from a Modelfile.<br/>
@@ -39,6 +41,7 @@ namespace G
         /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateModelResponse> CreateModelAsync(
@@ -47,6 +50,7 @@ namespace G
             string? path = default,
             string? quantize = default,
             bool? stream = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

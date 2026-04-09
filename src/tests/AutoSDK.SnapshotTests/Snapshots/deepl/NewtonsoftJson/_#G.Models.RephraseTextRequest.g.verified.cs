@@ -31,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>de</example>
         [global::Newtonsoft.Json.JsonProperty("target_lang")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TargetLanguageWriteJsonConverter))]
         public global::G.TargetLanguageWrite? TargetLang { get; set; }
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace G
         /// The `prefer_` prefix allows falling back to the default style if the language does not yet support styles.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("writing_style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WritingStyleJsonConverter))]
         public global::G.WritingStyle? WritingStyle { get; set; }
 
         /// <summary>
@@ -45,6 +47,7 @@ namespace G
         /// The `prefer_` prefix allows falling back to the default tone if the language does not yet support tones.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tone")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WritingToneJsonConverter))]
         public global::G.WritingTone? Tone { get; set; }
 
         /// <summary>

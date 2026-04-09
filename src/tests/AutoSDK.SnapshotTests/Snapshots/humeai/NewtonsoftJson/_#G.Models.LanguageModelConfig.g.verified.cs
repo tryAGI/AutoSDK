@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("granularity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LanguageModelConfigGranularityJsonConverter))]
         public global::G.LanguageModelConfigGranularity? Granularity { get; set; }
 
         /// <summary>

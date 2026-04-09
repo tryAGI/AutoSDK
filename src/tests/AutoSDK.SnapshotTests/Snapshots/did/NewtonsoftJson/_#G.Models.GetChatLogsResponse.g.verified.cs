@@ -53,6 +53,7 @@ namespace G
         /// Indicates full partial or failed export
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetChatLogsResponseStatusJsonConverter))]
         public global::G.GetChatLogsResponseStatus Status { get; set; } = default!;
 
         /// <summary>

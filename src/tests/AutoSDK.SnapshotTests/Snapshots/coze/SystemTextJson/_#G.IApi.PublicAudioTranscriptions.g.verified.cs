@@ -10,11 +10,13 @@ namespace G
         /// {"0":{"ops":[{"insert":"将音频文件转录为文本。\n"},{"attributes":{"anchor":"be23719f","lmkr":"1","heading":"h2"},"insert":"*"},{"insert":"接口描述\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"此 API 用于将指定音频文件转录为文本。\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"attributes":{"zoneId":"x4xWyDX0dW","zoneType":"Z","type":"warning","title":"注意","border":"#fed4a4","background":"#fff5eb","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"语音文件的具体限制如下：\n"},{"attributes":{"aceTable":"rsaz3aujktbark4q0n5mcl19it13pjr5nd cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh"},"insert":"*"},{"insert":"\n"},{"attributes":{"zoneId":"xMnnYIBhOG","zoneType":"Z","type":"tip","title":"说明","border":"#bacefd","background":"#f0f4ff","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"}],"zoneId":"0","zoneType":"Z"},"x4xWyDX0dW":{"ops":[{"insert":"调用语音识别 API 会产生"},{"attributes":{"bold":"true"},"insert":"语音识别费用"},{"insert":"，具体费用详情请参考"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/coze_pro/asr_tts_fee#d4ab71d9\",\"linkId\":\"XgGO5Oid8O\",\"newTab\":true}"},"insert":"音视频费用"},{"insert":"。\n"}],"zoneId":"x4xWyDX0dW","zoneType":"Z"},"rsaz3aujktbark4q0n5mcl19it13pjr5nd":{"ops":[{"attributes":{"colWidth":"100"},"insert":{"id":"r1gv0diy056deo5u873mcy1ewpju9gkmvn"}},{"attributes":{"rowHeight":"41","colWidth":"100"},"insert":{"id":"r1ivmnay4ygvf86q92qsgzajlt0kp1ur85"}},{"attributes":{"colWidth":"100","rowHeight":"40"},"insert":{"id":"r1eaudhza0s7t3oe0tsopelm9n5mq66vcm"}}],"zoneId":"rsaz3aujktbark4q0n5mcl19it13pjr5nd","zoneType":"R"},"cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh":{"ops":[{"attributes":{"colWidth":"151"},"insert":{"id":"c1m1wojhwkam09ehofvmdy4pg0lcbhnzob"}},{"attributes":{"colWidth":"752"},"insert":{"id":"c10lug6nb45li27qbvjdu2fq20u107pde0"}}],"zoneId":"cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh","zoneType":"C"},"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"attributes":{"bold":"true"},"insert":"限制"},{"insert":"\n"}],"zoneId":"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"attributes":{"bold":"true"},"insert":"说明"},{"insert":"\n"}],"zoneId":"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"insert":"文件格式\n"}],"zoneId":"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"insert":"支持的文件格式包括 ogg、mp3 和 wav。\n"}],"zoneId":"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"insert":"文件大小\n"}],"zoneId":"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"insert":"每个音频文件最大为 10 MB，并且时长需小于 30 分钟。\n"}],"zoneId":"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xMnnYIBhOG":{"ops":[{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"上传的音频文件的采样率和码率等参数无限制。\n"},{"attributes":{"list":"bullet1","lmkr":"1"},"insert":"*"},{"insert":"如果语音文件过大，建议调用 WebSocket 的"},{"insert":"双向流式语音识别 API","attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/developer_guides/asr_api\",\"linkId\":\"CRfi4OuzbE\"}"}},{"insert":" 分片上传文件。\n"}],"zoneId":"xMnnYIBhOG","zoneType":"Z"}}
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PublicAudioTranscriptionsResponse> PublicAudioTranscriptionsAsync(
 
             global::G.PublicAudioTranscriptionsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 语音识别<br/>
@@ -26,11 +28,13 @@ namespace G
         /// <param name="filename">
         /// 音频文件，应使用 multipart/form-data 方式上传文件。
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PublicAudioTranscriptionsResponse> PublicAudioTranscriptionsAsync(
             byte[] file,
             string filename,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

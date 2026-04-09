@@ -12,11 +12,13 @@ namespace G
         /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateConduitsResponse> UpdateConduitsAsync(
 
             global::G.UpdateConduitsBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// NEW Updates a conduit’s shard count.<br/>
@@ -30,11 +32,13 @@ namespace G
         /// <param name="shardCount">
         /// The new number of shards for this conduit.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateConduitsResponse> UpdateConduitsAsync(
             string id,
             int shardCount,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

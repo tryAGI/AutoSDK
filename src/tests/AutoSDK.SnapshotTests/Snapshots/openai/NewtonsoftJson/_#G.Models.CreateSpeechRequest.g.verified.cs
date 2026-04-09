@@ -39,6 +39,7 @@ namespace G
         /// Default Value: mp3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSpeechRequestResponseFormatJsonConverter))]
         public global::G.CreateSpeechRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>

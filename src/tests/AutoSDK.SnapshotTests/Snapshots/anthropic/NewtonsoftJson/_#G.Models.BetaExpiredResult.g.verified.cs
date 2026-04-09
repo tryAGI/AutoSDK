@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaExpiredResultType.Expired</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaExpiredResultTypeJsonConverter))]
         public global::G.BetaExpiredResultType Type { get; set; } = global::G.BetaExpiredResultType.Expired;
 
         /// <summary>

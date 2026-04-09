@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransportConfigurationTwilioProviderJsonConverter))]
         public global::G.TransportConfigurationTwilioProvider Provider { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// </summary>
         /// <example>mono</example>
         [global::Newtonsoft.Json.JsonProperty("recordingChannels")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransportConfigurationTwilioRecordingChannelsJsonConverter))]
         public global::G.TransportConfigurationTwilioRecordingChannels? RecordingChannels { get; set; }
 
         /// <summary>

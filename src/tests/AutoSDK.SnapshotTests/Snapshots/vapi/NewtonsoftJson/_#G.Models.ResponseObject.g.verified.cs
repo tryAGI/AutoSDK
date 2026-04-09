@@ -21,6 +21,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ResponseObjectObject.Response</default>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseObjectObjectJsonConverter))]
         public global::G.ResponseObjectObject Object { get; set; } = global::G.ResponseObjectObject.Response;
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace G
         /// Status of the response
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseObjectStatusJsonConverter))]
         public global::G.ResponseObjectStatus Status { get; set; } = default!;
 
         /// <summary>

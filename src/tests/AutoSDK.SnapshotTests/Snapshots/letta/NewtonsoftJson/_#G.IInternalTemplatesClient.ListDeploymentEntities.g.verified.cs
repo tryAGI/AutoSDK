@@ -14,11 +14,13 @@ namespace G
         /// <param name="entityTypes">
         /// Filter by entity types (block, agent, group)
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListDeploymentEntitiesResponse> ListDeploymentEntitiesAsync(
             string deploymentId,
             global::System.Collections.Generic.IList<string>? entityTypes = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

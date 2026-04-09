@@ -13,6 +13,7 @@ namespace G
         /// Large Language Model provider.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateRequestLlmVariant6ProviderJsonConverter))]
         public global::G.CreateRequestLlmVariant6Provider Provider { get; set; }
 
         /// <summary>
@@ -28,6 +29,7 @@ namespace G
         /// - Assistant: Uses general model knowledge only
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateRequestLlmVariant6TemplateJsonConverter))]
         public global::G.CreateRequestLlmVariant6Template? Template { get; set; }
 
         /// <summary>
@@ -50,6 +52,7 @@ namespace G
         /// The model to use
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateRequestLlmVariant6ModelJsonConverter))]
         public global::G.CreateRequestLlmVariant6Model? Model { get; set; }
 
         /// <summary>

@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PlayHTVoiceProviderJsonConverter))]
         public global::G.PlayHTVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -52,6 +53,7 @@ namespace G
         /// </summary>
         /// <example>openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464</example>
         [global::Newtonsoft.Json.JsonProperty("emotion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PlayHTVoiceEmotionJsonConverter))]
         public global::G.PlayHTVoiceEmotion? Emotion { get; set; }
 
         /// <summary>
@@ -82,12 +84,14 @@ namespace G
         /// Playht voice model/engine to use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PlayHTVoiceModelJsonConverter))]
         public global::G.PlayHTVoiceModel? Model { get; set; }
 
         /// <summary>
         /// The language to use for the speech.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PlayHTVoiceLanguageJsonConverter))]
         public global::G.PlayHTVoiceLanguage? Language { get; set; }
 
         /// <summary>

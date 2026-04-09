@@ -20,6 +20,7 @@ namespace G
         /// Optional. Immutable. The type of the grantee.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("granteeType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PermissionGranteeTypeJsonConverter))]
         public global::G.PermissionGranteeType? GranteeType { get; set; }
 
         /// <summary>
@@ -32,6 +33,7 @@ namespace G
         /// Required. The role granted by this permission.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PermissionRoleJsonConverter))]
         public global::G.PermissionRole? Role { get; set; }
 
         /// <summary>

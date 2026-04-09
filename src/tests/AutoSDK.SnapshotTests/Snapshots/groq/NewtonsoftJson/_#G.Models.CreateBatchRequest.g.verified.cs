@@ -21,6 +21,7 @@ namespace G
         /// The endpoint to be used for all requests in the batch. Currently `/v1/chat/completions` is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("endpoint")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateBatchRequestEndpointJsonConverter))]
         public global::G.CreateBatchRequestEndpoint Endpoint { get; set; }
 
         /// <summary>

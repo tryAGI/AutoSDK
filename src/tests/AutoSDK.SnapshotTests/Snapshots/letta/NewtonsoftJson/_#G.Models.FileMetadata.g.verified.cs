@@ -64,6 +64,7 @@ namespace G
         /// Default Value: pending
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("processing_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileProcessingStatusJsonConverter))]
         public global::G.FileProcessingStatus? ProcessingStatus { get; set; }
 
         /// <summary>

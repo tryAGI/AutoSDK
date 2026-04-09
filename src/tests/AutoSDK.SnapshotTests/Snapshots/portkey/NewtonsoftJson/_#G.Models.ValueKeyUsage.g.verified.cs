@@ -19,6 +19,7 @@ namespace G
         /// Usage status
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ValueKeyUsageStatusJsonConverter))]
         public global::G.ValueKeyUsageStatus? Status { get; set; }
 
         /// <summary>

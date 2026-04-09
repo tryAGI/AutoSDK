@@ -44,6 +44,7 @@ namespace G
         /// New types of items may appear without being requested; unrecognized item types can be ignored.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RecognitionResultTypeJsonConverter))]
         public global::G.RecognitionResultType Type { get; set; } = default!;
 
         /// <summary>
@@ -68,6 +69,7 @@ namespace G
         /// Attachment direction of the punctuation mark. This only applies to punctuation marks. This information can be used to produce a well-formed text representation by placing the `word_delimiter` from `language_pack_info` on the correct side of the punctuation mark.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("attaches_to")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RecognitionResultAttachesToJsonConverter))]
         public global::G.RecognitionResultAttachesTo? AttachesTo { get; set; }
 
         /// <summary>

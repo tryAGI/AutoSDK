@@ -28,6 +28,7 @@ namespace G
         /// Default Value: DefaultCompression
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("CompressionLevel")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BackupConfigCompressionLevelJsonConverter))]
         public global::G.BackupConfigCompressionLevel? CompressionLevel { get; set; }
 
         /// <summary>

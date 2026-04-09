@@ -11,6 +11,7 @@ namespace G
         /// <param name="datasetId"></param>
         /// <param name="requestId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ResultErrorUnknown, global::G.ResultSuccessAny>> UpdateHeliconeDatasetRequestAsync(
@@ -18,6 +19,7 @@ namespace G
             string requestId,
 
             global::G.UpdateHeliconeDatasetRequestRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
@@ -26,6 +28,7 @@ namespace G
         /// <param name="requestId"></param>
         /// <param name="responseBody"></param>
         /// <param name="requestBody"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ResultErrorUnknown, global::G.ResultSuccessAny>> UpdateHeliconeDatasetRequestAsync(
@@ -33,6 +36,7 @@ namespace G
             string requestId,
             global::G.Json? responseBody = default,
             global::G.Json? requestBody = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

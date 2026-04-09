@@ -20,11 +20,13 @@ namespace G
         /// Requires administrator or owner role and the Agreement V2 feature flag.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgreementV2BackfillTriggerResponse> TriggerBackfillAsync(
 
             global::G.AgreementV2BackfillTriggerRequestRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Trigger Agreement V2 backfill<br/>
@@ -49,12 +51,14 @@ namespace G
         /// <param name="projectId">
         /// Backfill a single specific project.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgreementV2BackfillTriggerResponse> TriggerBackfillAsync(
             bool? allProjects = default,
             int? numProjects = default,
             int? projectId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

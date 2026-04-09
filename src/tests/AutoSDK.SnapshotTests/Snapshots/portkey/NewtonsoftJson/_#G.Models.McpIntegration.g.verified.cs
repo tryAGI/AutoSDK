@@ -85,18 +85,21 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpIntegrationAuthTypeJsonConverter))]
         public global::G.McpIntegrationAuthType? AuthType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpIntegrationTransportJsonConverter))]
         public global::G.McpIntegrationTransport? Transport { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpIntegrationTypeJsonConverter))]
         public global::G.McpIntegrationType? Type { get; set; }
 
         /// <summary>

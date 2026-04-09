@@ -19,6 +19,7 @@ namespace G
         /// Dubbing Type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dubbing_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiJobResponseDubbingTypeJsonConverter))]
         public global::G.ApiJobResponseDubbingType DubbingType { get; set; } = default!;
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// Priority of the job. Allowed values: LOW, NORMAL, HIGH
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("priority", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiJobResponsePriorityJsonConverter))]
         public global::G.ApiJobResponsePriority Priority { get; set; } = default!;
 
         /// <summary>

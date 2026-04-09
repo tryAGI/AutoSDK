@@ -26,6 +26,7 @@ namespace G
         /// Default Value: GET
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookToolApiSchemaConfigInputMethodJsonConverter))]
         public global::G.WebhookToolApiSchemaConfigInputMethod? Method { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// Default Value: application/json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookToolApiSchemaConfigInputContentTypeJsonConverter))]
         public global::G.WebhookToolApiSchemaConfigInputContentType? ContentType { get; set; }
 
         /// <summary>

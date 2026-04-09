@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateMessageApiRequestContentTypeJsonConverter))]
         public global::G.CreateMessageApiRequestContentType ContentType { get; set; } = default!;
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// 已TODO 字段打平
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateMessageApiRequestRoleJsonConverter))]
         public global::G.CreateMessageApiRequestRole Role { get; set; } = default!;
 
         /// <summary>

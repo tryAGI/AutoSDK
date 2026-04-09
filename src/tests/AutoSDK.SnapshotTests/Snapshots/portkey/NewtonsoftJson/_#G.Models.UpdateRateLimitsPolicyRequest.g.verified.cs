@@ -19,6 +19,7 @@ namespace G
         /// Rate unit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("unit")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateRateLimitsPolicyRequestUnitJsonConverter))]
         public global::G.UpdateRateLimitsPolicyRequestUnit? Unit { get; set; }
 
         /// <summary>

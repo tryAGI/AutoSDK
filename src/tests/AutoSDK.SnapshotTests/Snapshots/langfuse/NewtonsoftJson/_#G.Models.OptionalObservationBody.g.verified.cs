@@ -49,6 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ObservationLevelJsonConverter))]
         public global::G.ObservationLevel? Level { get; set; }
 
         /// <summary>

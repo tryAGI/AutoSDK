@@ -9,11 +9,13 @@ namespace G
         /// 
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ResultTableIdStringExperimentIdStringString> CreateNewExperimentTableAsync(
 
             global::G.CreateExperimentTableParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
@@ -31,6 +33,7 @@ namespace G
         /// <param name="experimentTableMetadata">
         /// Construct a type with a set of properties K of type T
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ResultTableIdStringExperimentIdStringString> CreateNewExperimentTableAsync(
@@ -41,6 +44,7 @@ namespace G
             bool isMajorVersion,
             global::G.RecordStringAny promptSubversionMetadata,
             global::G.RecordStringAny? experimentTableMetadata = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

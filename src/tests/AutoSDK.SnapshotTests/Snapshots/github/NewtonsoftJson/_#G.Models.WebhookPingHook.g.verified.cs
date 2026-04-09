@@ -61,6 +61,7 @@ namespace G
         /// The type of webhook. The only valid value is 'web'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPingHookNameJsonConverter))]
         public global::G.WebhookPingHookName Name { get; set; }
 
         /// <summary>

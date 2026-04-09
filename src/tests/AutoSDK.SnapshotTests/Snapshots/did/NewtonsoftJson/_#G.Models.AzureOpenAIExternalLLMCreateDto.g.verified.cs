@@ -22,6 +22,7 @@ namespace G
         /// - Assistant: Uses general model knowledge only
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AzureOpenAIExternalLLMCreateDtoTemplateJsonConverter))]
         public global::G.AzureOpenAIExternalLLMCreateDtoTemplate? Template { get; set; }
 
         /// <summary>

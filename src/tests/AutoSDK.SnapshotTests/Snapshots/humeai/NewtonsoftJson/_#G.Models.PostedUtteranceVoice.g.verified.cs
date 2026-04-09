@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostedUtteranceVoiceProviderJsonConverter))]
         public global::G.PostedUtteranceVoiceProvider? Provider { get; set; }
 
         /// <summary>

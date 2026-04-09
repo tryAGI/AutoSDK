@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.CreateEvalCompletionsRunDataSourceType.Completions</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEvalCompletionsRunDataSourceTypeJsonConverter))]
         public global::G.CreateEvalCompletionsRunDataSourceType Type { get; set; } = global::G.CreateEvalCompletionsRunDataSourceType.Completions;
 
         /// <summary>

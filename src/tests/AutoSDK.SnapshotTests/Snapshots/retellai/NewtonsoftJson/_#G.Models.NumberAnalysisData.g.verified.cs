@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>number</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NumberAnalysisDataTypeJsonConverter))]
         public global::G.NumberAnalysisDataType Type { get; set; }
 
         /// <summary>

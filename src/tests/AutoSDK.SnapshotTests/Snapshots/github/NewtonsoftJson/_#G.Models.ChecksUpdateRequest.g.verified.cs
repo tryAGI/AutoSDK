@@ -37,6 +37,7 @@ namespace G
         /// The current status of the check run. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChecksUpdateRequestStatusJsonConverter))]
         public global::G.ChecksUpdateRequestStatus? Status { get; set; }
 
         /// <summary>
@@ -44,6 +45,7 @@ namespace G
         /// **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChecksUpdateRequestConclusionJsonConverter))]
         public global::G.ChecksUpdateRequestConclusion? Conclusion { get; set; }
 
         /// <summary>

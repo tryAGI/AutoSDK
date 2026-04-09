@@ -13,6 +13,7 @@ namespace G
         /// Type of the object the event is originating from.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ObjectReferenceNullishObjectTypeJsonConverter))]
         public global::G.ObjectReferenceNullishObjectType ObjectType { get; set; } = default!;
 
         /// <summary>

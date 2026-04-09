@@ -13,6 +13,7 @@ namespace G
         /// Name of the preset model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditImageGetVirtualModelModelVariant1PresetNameJsonConverter))]
         public global::G.EditImageGetVirtualModelModelVariant1PresetName Name { get; set; } = default!;
 
         /// <summary>

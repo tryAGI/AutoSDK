@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComprehendMedicalTypeJsonConverter))]
         public global::G.ComprehendMedicalType ResponseType { get; set; } = default!;
 
         /// <summary>

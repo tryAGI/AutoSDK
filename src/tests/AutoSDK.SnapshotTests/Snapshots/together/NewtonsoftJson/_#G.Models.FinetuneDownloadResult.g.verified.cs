@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FinetuneDownloadResultObjectJsonConverter))]
         public global::G.FinetuneDownloadResultObject? Object { get; set; }
 
         /// <summary>

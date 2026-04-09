@@ -30,6 +30,7 @@ namespace G
         /// Default Value: basic
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search_depth")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSearchRequestSearchDepthJsonConverter))]
         public global::G.CreateSearchRequestSearchDepth? SearchDepth { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace G
         /// Default Value: general
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topic")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSearchRequestTopicJsonConverter))]
         public global::G.CreateSearchRequestTopic? Topic { get; set; }
 
         /// <summary>
@@ -60,6 +62,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("time_range")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSearchRequestTimeRangeJsonConverter))]
         public global::G.CreateSearchRequestTimeRange? TimeRange { get; set; }
 
         /// <summary>
@@ -134,6 +137,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("country")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSearchRequestCountryJsonConverter))]
         public global::G.CreateSearchRequestCountry? Country { get; set; }
 
         /// <summary>

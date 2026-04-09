@@ -25,6 +25,7 @@ namespace G
         /// The type of object being returned
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetAnalyticsGraphsCacheLatencyResponseObjectJsonConverter))]
         public global::G.GetAnalyticsGraphsCacheLatencyResponseObject Object { get; set; }
 
         /// <summary>

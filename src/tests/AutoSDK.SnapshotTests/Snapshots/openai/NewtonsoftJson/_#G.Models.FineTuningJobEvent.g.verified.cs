@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always "fine_tuning.job.event".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuningJobEventObjectJsonConverter))]
         public global::G.FineTuningJobEventObject Object { get; set; }
 
         /// <summary>
@@ -25,12 +26,14 @@ namespace G
         /// The Unix timestamp (in seconds) for when the fine-tuning job was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The log level of the event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuningJobEventLevelJsonConverter))]
         public global::G.FineTuningJobEventLevel Level { get; set; } = default!;
 
         /// <summary>
@@ -43,6 +46,7 @@ namespace G
         /// The type of event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuningJobEventTypeJsonConverter))]
         public global::G.FineTuningJobEventType? Type { get; set; }
 
         /// <summary>

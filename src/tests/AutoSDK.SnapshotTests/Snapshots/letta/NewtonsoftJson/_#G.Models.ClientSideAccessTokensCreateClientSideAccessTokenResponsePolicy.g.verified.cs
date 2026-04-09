@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyVersionJsonConverter))]
         public global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyVersion Version { get; set; }
 
         /// <summary>

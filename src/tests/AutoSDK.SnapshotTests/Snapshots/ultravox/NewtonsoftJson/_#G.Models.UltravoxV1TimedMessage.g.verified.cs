@@ -26,6 +26,7 @@ namespace G
         /// The behavior to exhibit when the message is finished being spoken.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("endBehavior")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1TimedMessageEndBehaviorJsonConverter))]
         public global::G.UltravoxV1TimedMessageEndBehavior? EndBehavior { get; set; }
 
         /// <summary>

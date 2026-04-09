@@ -19,6 +19,7 @@ namespace G
         /// - Replace a company name with its phonetic pronunciation: { type: 'exact', key: 'Vapi', value: 'Vappy' }
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExactReplacementTypeJsonConverter))]
         public global::G.ExactReplacementType Type { get; set; }
 
         /// <summary>

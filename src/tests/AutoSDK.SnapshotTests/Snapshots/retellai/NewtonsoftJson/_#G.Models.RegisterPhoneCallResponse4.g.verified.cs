@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RegisterPhoneCallResponseStatus4JsonConverter))]
         public global::G.RegisterPhoneCallResponseStatus4? Status { get; set; }
 
         /// <summary>

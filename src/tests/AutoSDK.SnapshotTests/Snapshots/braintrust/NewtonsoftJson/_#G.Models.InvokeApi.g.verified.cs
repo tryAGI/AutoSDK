@@ -55,6 +55,7 @@ namespace G
         /// The mode format of the returned value (defaults to 'auto')
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StreamingModeJsonConverter))]
         public global::G.StreamingMode? Mode { get; set; }
 
         /// <summary>

@@ -20,6 +20,7 @@ namespace G
         /// Default Value: numeric
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FeedbackPayloadPathValueTypeJsonConverter))]
         public global::G.FeedbackPayloadPathValueType? ValueType { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The type of the summary part. Always `summary_text`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseReasoningSummaryPartDoneEventPartTypeJsonConverter))]
         public global::G.ResponseReasoningSummaryPartDoneEventPartType Type { get; set; }
 
         /// <summary>

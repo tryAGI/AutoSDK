@@ -13,6 +13,7 @@ namespace G
         /// The model to use for transcription. Can be `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, or `whisper-1`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModelJsonConverter))]
         public global::G.RealtimeTranscriptionSessionCreateResponseInputAudioTranscriptionModel? Model { get; set; }
 
         /// <summary>

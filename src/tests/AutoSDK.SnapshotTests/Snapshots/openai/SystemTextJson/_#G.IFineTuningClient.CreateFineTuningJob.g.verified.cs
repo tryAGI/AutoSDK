@@ -13,11 +13,13 @@ namespace G
         /// [Learn more about fine-tuning](/docs/guides/model-optimization)
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FineTuningJob> CreateFineTuningJobAsync(
 
             global::G.CreateFineTuningJobRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.<br/>
@@ -70,6 +72,7 @@ namespace G
         /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
         /// with a maximum length of 512 characters.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FineTuningJob> CreateFineTuningJobAsync(
@@ -81,6 +84,7 @@ namespace G
             int? seed = default,
             global::G.FineTuneMethod? method = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

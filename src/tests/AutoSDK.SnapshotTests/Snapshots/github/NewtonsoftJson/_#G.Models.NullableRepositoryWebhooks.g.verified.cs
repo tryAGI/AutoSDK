@@ -634,6 +634,7 @@ namespace G
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_title")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NullableRepositoryWebhooksSquashMergeCommitTitleJsonConverter))]
         public global::G.NullableRepositoryWebhooksSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
@@ -643,6 +644,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_message")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NullableRepositoryWebhooksSquashMergeCommitMessageJsonConverter))]
         public global::G.NullableRepositoryWebhooksSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
@@ -651,6 +653,7 @@ namespace G
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_title")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NullableRepositoryWebhooksMergeCommitTitleJsonConverter))]
         public global::G.NullableRepositoryWebhooksMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
@@ -660,6 +663,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_message")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NullableRepositoryWebhooksMergeCommitMessageJsonConverter))]
         public global::G.NullableRepositoryWebhooksMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>

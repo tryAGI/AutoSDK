@@ -31,6 +31,7 @@ namespace G
         /// Unix timestamp (in seconds) when the file was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>

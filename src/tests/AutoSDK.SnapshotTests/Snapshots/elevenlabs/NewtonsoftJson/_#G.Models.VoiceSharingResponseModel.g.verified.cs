@@ -13,6 +13,7 @@ namespace G
         /// The status of the voice sharing.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceSharingResponseModelStatusJsonConverter))]
         public global::G.VoiceSharingResponseModelStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -103,6 +104,7 @@ namespace G
         /// The category of the voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("category", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceSharingResponseModelCategoryJsonConverter))]
         public global::G.VoiceSharingResponseModelCategory Category { get; set; } = default!;
 
         /// <summary>
@@ -157,6 +159,7 @@ namespace G
         /// The review status of the voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("review_status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceSharingResponseModelReviewStatusJsonConverter))]
         public global::G.VoiceSharingResponseModelReviewStatus ReviewStatus { get; set; } = default!;
 
         /// <summary>

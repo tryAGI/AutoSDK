@@ -13,6 +13,7 @@ namespace G
         /// The role of the message input. One of `user`, `assistant`, `system`, or `developer`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseEasyInputMessageRoleJsonConverter))]
         public global::G.ResponseEasyInputMessageRole Role { get; set; } = default!;
 
         /// <summary>

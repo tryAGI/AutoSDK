@@ -13,6 +13,7 @@ namespace G
         /// The type of the output text. Always `output_text`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputTextContentTypeJsonConverter))]
         public global::G.ResponseOutputTextContentType Type { get; set; }
 
         /// <summary>

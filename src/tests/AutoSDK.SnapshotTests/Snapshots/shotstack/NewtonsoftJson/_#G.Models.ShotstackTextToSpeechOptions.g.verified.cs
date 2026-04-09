@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ShotstackTextToSpeechOptionsType.TextToSpeech</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ShotstackTextToSpeechOptionsTypeJsonConverter))]
         public global::G.ShotstackTextToSpeechOptionsType Type { get; set; } = global::G.ShotstackTextToSpeechOptionsType.TextToSpeech;
 
         /// <summary>
@@ -181,6 +182,7 @@ namespace G
         /// </summary>
         /// <example>Matthew</example>
         [global::Newtonsoft.Json.JsonProperty("voice", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ShotstackTextToSpeechOptionsVoiceJsonConverter))]
         public global::G.ShotstackTextToSpeechOptionsVoice Voice { get; set; } = default!;
 
         /// <summary>
@@ -219,6 +221,7 @@ namespace G
         /// Default Value: en-US
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ShotstackTextToSpeechOptionsLanguageJsonConverter))]
         public global::G.ShotstackTextToSpeechOptionsLanguage? Language { get; set; }
 
         /// <summary>

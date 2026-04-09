@@ -10,11 +10,13 @@ namespace G
         /// Create a new block with template-related fields.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Block> CreateInternalTemplateBlockAsync(
 
             global::G.InternalTemplateBlockCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Block<br/>
@@ -72,6 +74,7 @@ namespace G
         /// <param name="tags">
         /// The tags to associate with the block.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Block> CreateInternalTemplateBlockAsync(
@@ -91,6 +94,7 @@ namespace G
             object? metadata = default,
             bool? hidden = default,
             global::System.Collections.Generic.IList<string>? tags = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

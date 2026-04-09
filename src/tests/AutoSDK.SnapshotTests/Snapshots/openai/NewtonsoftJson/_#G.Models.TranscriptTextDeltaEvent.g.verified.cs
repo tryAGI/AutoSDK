@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `transcript.text.delta`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptTextDeltaEventTypeJsonConverter))]
         public global::G.TranscriptTextDeltaEventType Type { get; set; }
 
         /// <summary>

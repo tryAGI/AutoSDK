@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "session.updated" is sent when a session is updated.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageSessionUpdatedTypeJsonConverter))]
         public global::G.ServerMessageSessionUpdatedType Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The package's language or package management ecosystem.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ecosystem", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecurityAdvisoryEcosystemsJsonConverter))]
         public global::G.SecurityAdvisoryEcosystems Ecosystem { get; set; } = default!;
 
         /// <summary>

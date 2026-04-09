@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_user_access")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpServerUserAccessListResponseDefaultUserAccessJsonConverter))]
         public global::G.McpServerUserAccessListResponseDefaultUserAccess? DefaultUserAccess { get; set; }
 
         /// <summary>

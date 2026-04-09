@@ -14,6 +14,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Codespace> CodespacesCreateWithPrForAuthenticatedUserAsync(
@@ -22,6 +23,7 @@ namespace G
             int pullNumber,
 
             global::G.CodespacesCreateWithPrForAuthenticatedUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a codespace from a pull request<br/>
@@ -61,6 +63,7 @@ namespace G
         /// <param name="retentionPeriodMinutes">
         /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Codespace> CodespacesCreateWithPrForAuthenticatedUserAsync(
@@ -77,6 +80,7 @@ namespace G
             int? idleTimeoutMinutes = default,
             string? displayName = default,
             int? retentionPeriodMinutes = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

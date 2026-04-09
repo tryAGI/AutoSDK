@@ -10,11 +10,13 @@ namespace G
         /// Send feedback from users to improve our services.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MetadataSendFeedbackResponse> MetadataSendFeedbackAsync(
 
             global::G.MetadataSendFeedbackRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Send user feedback<br/>
@@ -48,6 +50,7 @@ namespace G
         /// <param name="billingTier"></param>
         /// <param name="recentChunks"></param>
         /// <param name="debugLogTail"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MetadataSendFeedbackResponse> MetadataSendFeedbackAsync(
@@ -77,6 +80,7 @@ namespace G
             string? billingTier = default,
             global::System.Collections.Generic.IList<object>? recentChunks = default,
             string? debugLogTail = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

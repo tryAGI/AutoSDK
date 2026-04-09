@@ -39,12 +39,14 @@ namespace G
         /// This is the Google model that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoogleModelModelJsonConverter))]
         public global::G.GoogleModelModel Model { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoogleModelProviderJsonConverter))]
         public global::G.GoogleModelProvider Provider { get; set; }
 
         /// <summary>

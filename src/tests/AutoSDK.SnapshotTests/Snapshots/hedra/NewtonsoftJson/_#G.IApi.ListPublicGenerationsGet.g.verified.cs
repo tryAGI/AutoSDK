@@ -17,6 +17,7 @@ namespace G
         /// <param name="pagingParams">
         /// Default Value: {"limit":100,"offset":0}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PagedResponseGeneration> ListPublicGenerationsGetAsync(
@@ -27,6 +28,7 @@ namespace G
             global::System.Guid? agentThreadId = default,
             string? ids = default,
             global::G.PagingParams? pagingParams = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -37,12 +37,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetWriteTypeJsonConverter))]
         public global::G.DatasetWriteType? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetWriteVisibilityJsonConverter))]
         public global::G.DatasetWriteVisibility? Visibility { get; set; }
 
         /// <summary>

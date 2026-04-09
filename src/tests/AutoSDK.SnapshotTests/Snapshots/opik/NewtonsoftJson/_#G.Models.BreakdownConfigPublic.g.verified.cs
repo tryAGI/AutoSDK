@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("field")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BreakdownConfigPublicFieldJsonConverter))]
         public global::G.BreakdownConfigPublicField? Field { get; set; }
 
         /// <summary>

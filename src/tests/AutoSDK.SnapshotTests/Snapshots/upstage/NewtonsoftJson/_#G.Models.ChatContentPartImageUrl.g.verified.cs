@@ -20,6 +20,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatContentPartImageUrlDetailJsonConverter))]
         public global::G.ChatContentPartImageUrlDetail? Detail { get; set; }
 
         /// <summary>

@@ -16,6 +16,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EditProjectResponseModel> UpdateAsync(
@@ -23,6 +24,7 @@ namespace G
 
             global::G.BodyUpdateStudioProjectV1StudioProjectsProjectIdPost request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Studio Project<br/>
@@ -56,6 +58,7 @@ namespace G
         /// When the Studio project is downloaded, should the returned audio have postprocessing in order to make it compliant with audiobook normalized volume requirements<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EditProjectResponseModel> UpdateAsync(
@@ -68,6 +71,7 @@ namespace G
             string? author = default,
             string? isbnNumber = default,
             bool? volumeNormalization = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

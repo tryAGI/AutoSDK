@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.StabilityAiTextToImageOptionsType.TextToImage</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StabilityAiTextToImageOptionsTypeJsonConverter))]
         public global::G.StabilityAiTextToImageOptionsType Type { get; set; } = global::G.StabilityAiTextToImageOptionsType.TextToImage;
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace G
         /// </summary>
         /// <example>stable-diffusion-xl-1024-v1-0</example>
         [global::Newtonsoft.Json.JsonProperty("engine")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StabilityAiTextToImageOptionsEngineJsonConverter))]
         public global::G.StabilityAiTextToImageOptionsEngine? Engine { get; set; }
 
         /// <summary>
@@ -107,6 +109,7 @@ namespace G
         /// </summary>
         /// <example>photographic</example>
         [global::Newtonsoft.Json.JsonProperty("stylePreset")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StabilityAiTextToImageOptionsStylePresetJsonConverter))]
         public global::G.StabilityAiTextToImageOptionsStylePreset? StylePreset { get; set; }
 
         /// <summary>

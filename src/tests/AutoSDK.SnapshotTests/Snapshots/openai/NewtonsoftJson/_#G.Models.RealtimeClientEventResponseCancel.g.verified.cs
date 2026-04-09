@@ -21,6 +21,7 @@ namespace G
         /// The event type, must be `response.cancel`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventResponseCancelTypeJsonConverter))]
         public global::G.RealtimeClientEventResponseCancelType Type { get; set; }
 
         /// <summary>

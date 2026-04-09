@@ -19,6 +19,7 @@ namespace G
         /// Default Value: thinking
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ThinkingContentTypeJsonConverter))]
         public global::G.ThinkingContentType? Type { get; set; }
 
         /// <summary>

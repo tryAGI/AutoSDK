@@ -30,6 +30,7 @@ namespace G
         /// </summary>
         /// <example>stay-on-line</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RecordingConsentPlanStayOnLineTypeJsonConverter))]
         public global::G.RecordingConsentPlanStayOnLineType Type { get; set; }
 
         /// <summary>

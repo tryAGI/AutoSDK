@@ -10,11 +10,13 @@ namespace G
         /// Search deployed agents
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentsSearchDeployedAgentsResponse> AgentsSearchDeployedAgentsAsync(
 
             global::G.AgentsSearchDeployedAgentsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search Deployed Agents<br/>
@@ -27,6 +29,7 @@ namespace G
         /// <param name="after"></param>
         /// <param name="sortBy"></param>
         /// <param name="ascending"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentsSearchDeployedAgentsResponse> AgentsSearchDeployedAgentsAsync(
@@ -37,6 +40,7 @@ namespace G
             string? after = default,
             global::G.AgentsSearchDeployedAgentsRequestSortBy? sortBy = default,
             bool? ascending = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

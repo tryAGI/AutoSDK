@@ -59,6 +59,7 @@ namespace G
         /// </summary>
         /// <example>platform</example>
         [global::Newtonsoft.Json.JsonProperty("ownership")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LLMOwnershipJsonConverter))]
         public global::G.LLMOwnership? Ownership { get; set; }
 
         /// <summary>

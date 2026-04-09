@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReturnChatAudioReconstructionStatusJsonConverter))]
         public global::G.ReturnChatAudioReconstructionStatus? Status { get; set; }
 
         /// <summary>

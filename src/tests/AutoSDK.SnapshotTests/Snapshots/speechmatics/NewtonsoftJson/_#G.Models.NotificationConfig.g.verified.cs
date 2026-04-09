@@ -45,6 +45,7 @@ namespace G
         /// The method to be used with http and https urls. The default is post.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NotificationConfigMethodJsonConverter))]
         public global::G.NotificationConfigMethod? Method { get; set; }
 
         /// <summary>

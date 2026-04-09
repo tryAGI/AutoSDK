@@ -20,12 +20,14 @@ namespace G
         /// The type of tool. "sipRequest" for SIP request tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSipRequestToolDTOTypeJsonConverter))]
         public global::G.CreateSipRequestToolDTOType Type { get; set; }
 
         /// <summary>
         /// The SIP method to send.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verb", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSipRequestToolDTOVerbJsonConverter))]
         public global::G.CreateSipRequestToolDTOVerb Verb { get; set; } = default!;
 
         /// <summary>

@@ -1,0 +1,73 @@
+﻿//HintName: G.JsonConverters.LegacyWebSearchServerToolTypeNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class LegacyWebSearchServerToolTypeNullableJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.LegacyWebSearchServerToolType?>
+    {
+        /// <inheritdoc />
+        public override global::G.LegacyWebSearchServerToolType? ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.LegacyWebSearchServerToolType? existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.LegacyWebSearchServerToolTypeExtensions.ToEnum(stringValue);
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.LegacyWebSearchServerToolType)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.LegacyWebSearchServerToolType?);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.LegacyWebSearchServerToolType? value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNull();
+            }
+            else
+            {
+                writer.WriteValue(global::G.LegacyWebSearchServerToolTypeExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

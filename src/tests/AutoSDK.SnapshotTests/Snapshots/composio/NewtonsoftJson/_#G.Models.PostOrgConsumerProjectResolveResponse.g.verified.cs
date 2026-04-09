@@ -37,6 +37,7 @@ namespace G
         /// Resolved project type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostOrgConsumerProjectResolveResponseProjectTypeJsonConverter))]
         public global::G.PostOrgConsumerProjectResolveResponseProjectType ProjectType { get; set; }
 
         /// <summary>

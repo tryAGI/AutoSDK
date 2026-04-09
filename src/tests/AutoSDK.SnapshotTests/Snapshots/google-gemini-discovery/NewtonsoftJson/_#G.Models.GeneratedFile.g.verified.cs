@@ -26,6 +26,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GeneratedFileStateJsonConverter))]
         public global::G.GeneratedFileState? State { get; set; }
 
         /// <summary>

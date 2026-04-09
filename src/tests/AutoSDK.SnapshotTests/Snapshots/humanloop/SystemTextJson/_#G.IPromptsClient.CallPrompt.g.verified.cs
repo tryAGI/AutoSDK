@@ -10,11 +10,13 @@ namespace G
         /// Call a Prompt with proxied LLM call and automatic logging.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PromptCallResponse> CallPromptAsync(
 
             global::G.PromptCallRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Call Prompt<br/>
@@ -63,6 +65,7 @@ namespace G
         /// <param name="user">
         /// End-user ID related to the Log.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PromptCallResponse> CallPromptAsync(
@@ -81,6 +84,7 @@ namespace G
             bool? returnInputs = default,
             string? traceParentId = default,
             string? user = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

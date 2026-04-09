@@ -13,6 +13,7 @@ namespace G
         /// This is the provider of the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalModelListOptionsProviderJsonConverter))]
         public global::G.EvalModelListOptionsProvider Provider { get; set; } = default!;
 
         /// <summary>

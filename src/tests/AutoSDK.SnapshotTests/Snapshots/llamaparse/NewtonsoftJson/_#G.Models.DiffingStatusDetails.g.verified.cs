@@ -14,6 +14,7 @@ namespace G
         /// Default Value: pending
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DiffingStatusDetailsStatusJsonConverter))]
         public global::G.DiffingStatusDetailsStatus? Status { get; set; }
 
         /// <summary>

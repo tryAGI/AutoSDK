@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UploadDatasetRequestAction2JsonConverter))]
         public global::G.UploadDatasetRequestAction2? Action { get; set; }
 
         /// <summary>

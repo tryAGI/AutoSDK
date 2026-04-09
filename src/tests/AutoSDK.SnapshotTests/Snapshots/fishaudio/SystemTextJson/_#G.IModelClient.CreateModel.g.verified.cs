@@ -9,11 +9,13 @@ namespace G
         /// Create Model
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateModelResponse> CreateModelAsync(
 
             global::G.CreateModelRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Model
@@ -57,6 +59,7 @@ namespace G
         /// Enhance audio quality<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateModelResponse> CreateModelAsync(
@@ -71,6 +74,7 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags = default,
             bool? enhanceAudioQuality = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// The type of actor. Is either `session` or `api_key`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuditLogActorTypeJsonConverter))]
         public global::G.AuditLogActorType? Type { get; set; }
 
         /// <summary>

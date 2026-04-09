@@ -22,6 +22,7 @@ namespace G
         /// - `failed`: The upload process failed; you must retry uploading this chunk.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChunkInfoStatusJsonConverter))]
         public global::G.ChunkInfoStatus? Status { get; set; }
 
         /// <summary>

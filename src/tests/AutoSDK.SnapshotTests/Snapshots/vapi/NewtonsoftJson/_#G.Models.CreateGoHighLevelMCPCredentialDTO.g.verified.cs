@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateGoHighLevelMCPCredentialDTOProviderJsonConverter))]
         public global::G.CreateGoHighLevelMCPCredentialDTOProvider Provider { get; set; }
 
         /// <summary>

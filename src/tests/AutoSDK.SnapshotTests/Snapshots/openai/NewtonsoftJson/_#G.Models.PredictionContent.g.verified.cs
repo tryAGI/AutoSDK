@@ -15,6 +15,7 @@ namespace G
         /// currently always `content`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PredictionContentTypeJsonConverter))]
         public global::G.PredictionContentType Type { get; set; }
 
         /// <summary>

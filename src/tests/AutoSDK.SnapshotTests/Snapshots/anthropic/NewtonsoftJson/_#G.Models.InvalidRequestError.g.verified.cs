@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.InvalidRequestErrorType.InvalidRequestError</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InvalidRequestErrorTypeJsonConverter))]
         public global::G.InvalidRequestErrorType Type { get; set; } = global::G.InvalidRequestErrorType.InvalidRequestError;
 
         /// <summary>

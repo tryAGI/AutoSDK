@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateRunRequestRunTypeJsonConverter))]
         public global::G.CreateRunRequestRunType RunType { get; set; } = default!;
 
         /// <summary>

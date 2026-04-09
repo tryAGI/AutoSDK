@@ -25,6 +25,7 @@ namespace G
         /// Overall sentiment classification
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sentiment")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SentimentMessageSentimentJsonConverter))]
         public global::G.SentimentMessageSentiment? Sentiment { get; set; }
 
         /// <summary>

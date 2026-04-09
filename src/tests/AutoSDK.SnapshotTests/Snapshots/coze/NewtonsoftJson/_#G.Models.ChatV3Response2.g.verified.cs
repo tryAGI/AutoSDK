@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatV3ResponseEventJsonConverter))]
         public global::G.ChatV3ResponseEvent? Event { get; set; }
 
         /// <summary>

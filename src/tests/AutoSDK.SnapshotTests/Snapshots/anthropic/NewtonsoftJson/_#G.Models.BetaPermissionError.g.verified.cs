@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaPermissionErrorType.PermissionError</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaPermissionErrorTypeJsonConverter))]
         public global::G.BetaPermissionErrorType Type { get; set; } = global::G.BetaPermissionErrorType.PermissionError;
 
         /// <summary>

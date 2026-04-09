@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InworldVoiceProviderJsonConverter))]
         public global::G.InworldVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace G
         /// </summary>
         /// <example>Alex</example>
         [global::Newtonsoft.Json.JsonProperty("voiceId", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InworldVoiceVoiceIdJsonConverter))]
         public global::G.InworldVoiceVoiceId VoiceId { get; set; } = default!;
 
         /// <summary>
@@ -52,6 +54,7 @@ namespace G
         /// Default Value: inworld-tts-1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InworldVoiceModelJsonConverter))]
         public global::G.InworldVoiceModel? Model { get; set; }
 
         /// <summary>
@@ -59,6 +62,7 @@ namespace G
         /// Default Value: en
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("languageCode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InworldVoiceLanguageCodeJsonConverter))]
         public global::G.InworldVoiceLanguageCode? LanguageCode { get; set; }
 
         /// <summary>

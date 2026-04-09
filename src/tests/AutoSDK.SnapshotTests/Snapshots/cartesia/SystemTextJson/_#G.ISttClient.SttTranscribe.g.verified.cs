@@ -24,6 +24,7 @@ namespace G
         /// </param>
         /// <param name="sampleRate"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TranscriptionResponse> SttTranscribeAsync(
@@ -32,6 +33,7 @@ namespace G
             global::G.SttTranscribeRequest request,
             global::G.STTEncoding? encoding = default,
             int? sampleRate = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Speech-to-Text (Batch)<br/>
@@ -62,6 +64,7 @@ namespace G
         /// <param name="timestampGranularities">
         /// The timestamp granularities to populate for this transcription. Currently only `word` level timestamps are supported.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TranscriptionResponse> SttTranscribeAsync(
@@ -73,6 +76,7 @@ namespace G
             string? model = default,
             global::G.SttTranscribeRequestLanguage? language = default,
             global::System.Collections.Generic.IList<global::G.TimestampGranularity>? timestampGranularities = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

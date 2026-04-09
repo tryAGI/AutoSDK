@@ -13,6 +13,7 @@ namespace G
         /// This is the type of cost, always 'transcriber' for this class.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriberCostTypeJsonConverter))]
         public global::G.TranscriberCostType Type { get; set; }
 
         /// <summary>

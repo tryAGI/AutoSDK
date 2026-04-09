@@ -13,6 +13,7 @@ namespace G
         /// This is the type of the message. Send "transfer" message to transfer the call to a destination.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientInboundMessageTransferTypeJsonConverter))]
         public global::G.ClientInboundMessageTransferType Type { get; set; }
 
         /// <summary>

@@ -12,6 +12,7 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="templateName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TemplatesUpdateCurrentTemplateFromAgentFileResponse> TemplatesUpdateCurrentTemplateFromAgentFileAsync(
@@ -19,6 +20,7 @@ namespace G
             string templateName,
 
             global::G.TemplatesUpdateCurrentTemplateFromAgentFileRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update current template from agent file (Cloud-only)<br/>
@@ -37,6 +39,7 @@ namespace G
         /// If true, Letta will automatically save any changes as a version before updating the template<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TemplatesUpdateCurrentTemplateFromAgentFileResponse> TemplatesUpdateCurrentTemplateFromAgentFileAsync(
@@ -45,6 +48,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, object?> agentFileJson,
             bool? updateExistingTools = default,
             bool? saveExistingChanges = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

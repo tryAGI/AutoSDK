@@ -13,6 +13,7 @@ namespace G
         /// Always `image_url`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateModerationRequestInputVariant3ItemVariant1TypeJsonConverter))]
         public global::G.CreateModerationRequestInputVariant3ItemVariant1Type Type { get; set; }
 
         /// <summary>

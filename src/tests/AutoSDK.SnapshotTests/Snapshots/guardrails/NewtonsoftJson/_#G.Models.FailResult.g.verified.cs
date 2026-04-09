@@ -13,6 +13,7 @@ namespace G
         /// Always 'fail' for FailResult.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outcome")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FailResultOutcomeJsonConverter))]
         public global::G.FailResultOutcome Outcome { get; set; }
 
         /// <summary>

@@ -55,12 +55,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateMcpIntegrationAuthTypeJsonConverter))]
         public global::G.CreateMcpIntegrationAuthType AuthType { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateMcpIntegrationTransportJsonConverter))]
         public global::G.CreateMcpIntegrationTransport Transport { get; set; } = default!;
 
         /// <summary>

@@ -49,12 +49,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptPartialSummaryStatusJsonConverter))]
         public global::G.PromptPartialSummaryStatus? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptPartialSummaryObjectJsonConverter))]
         public global::G.PromptPartialSummaryObject? Object { get; set; }
 
         /// <summary>

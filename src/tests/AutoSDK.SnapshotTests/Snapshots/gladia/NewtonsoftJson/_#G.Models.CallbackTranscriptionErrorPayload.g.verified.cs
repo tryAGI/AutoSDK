@@ -25,6 +25,7 @@ namespace G
         /// <default>global::G.CallbackTranscriptionErrorPayloadEvent.TranscriptionError</default>
         /// <example>transcription.error</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackTranscriptionErrorPayloadEventJsonConverter))]
         public global::G.CallbackTranscriptionErrorPayloadEvent Event { get; set; } = global::G.CallbackTranscriptionErrorPayloadEvent.TranscriptionError;
 
         /// <summary>

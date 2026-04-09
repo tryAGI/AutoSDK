@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputAudioBufferSpeechStoppedEventTypeJsonConverter))]
         public global::G.InputAudioBufferSpeechStoppedEventType? Type { get; set; }
 
         /// <summary>

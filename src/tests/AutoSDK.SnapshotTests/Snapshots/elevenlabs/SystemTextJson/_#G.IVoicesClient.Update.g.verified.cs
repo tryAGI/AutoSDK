@@ -16,6 +16,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EditVoiceSettingsResponseModel> UpdateAsync(
@@ -23,6 +24,7 @@ namespace G
 
             global::G.VoiceSettingsResponseModel request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Edit Voice Settings<br/>
@@ -54,6 +56,7 @@ namespace G
         /// Adjusts the speed of the voice. A value of 1.0 is the default speed, while values less than 1.0 slow down the speech, and values greater than 1.0 speed it up.<br/>
         /// Default Value: 1F
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EditVoiceSettingsResponseModel> UpdateAsync(
@@ -64,6 +67,7 @@ namespace G
             double? similarityBoost = default,
             double? style = default,
             double? speed = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

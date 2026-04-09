@@ -22,6 +22,7 @@ namespace G
         /// Example: daily-report
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentSchedule> UpdateAsync(
@@ -31,6 +32,7 @@ namespace G
             global::G.UpdateAgentScheduleRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update agent schedule<br/>
@@ -70,6 +72,7 @@ namespace G
         /// <param name="maxExecutionsToKeep">
         /// Updated maximum number of past execution records to keep.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentSchedule> UpdateAsync(
@@ -84,6 +87,7 @@ namespace G
             bool? enabled = default,
             object? sessionMetadata = default,
             int? maxExecutionsToKeep = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

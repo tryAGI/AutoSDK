@@ -13,12 +13,14 @@ namespace G
         /// </summary>
         /// <param name="promptId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdatePromptResponse> UpdatePromptAsync(
             string promptId,
 
             global::G.UpdatePromptRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a prompt<br/>
@@ -62,6 +64,7 @@ namespace G
         /// <param name="promptMetadata">
         /// Additional metadata for the prompt version. When `patch` is `true`, this field is optional and will be inherited from the current latest version if omitted.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdatePromptResponse> UpdatePromptAsync(
@@ -79,6 +82,7 @@ namespace G
             object? toolChoice = default,
             int? isRawTemplate = default,
             object? promptMetadata = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

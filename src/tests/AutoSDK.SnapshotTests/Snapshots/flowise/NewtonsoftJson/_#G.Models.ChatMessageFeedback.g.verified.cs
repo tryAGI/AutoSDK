@@ -37,6 +37,7 @@ namespace G
         /// Rating for the message
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rating")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatMessageFeedbackRatingJsonConverter))]
         public global::G.ChatMessageFeedbackRating? Rating { get; set; }
 
         /// <summary>

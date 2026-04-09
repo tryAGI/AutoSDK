@@ -13,6 +13,7 @@ namespace G
         /// The type of the extracted element
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ElementTypeJsonConverter))]
         public global::G.ElementType Type { get; set; } = default!;
 
         /// <summary>

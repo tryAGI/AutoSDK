@@ -13,6 +13,7 @@ namespace G
         /// The type of the local shell tool. Always `local_shell`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LocalShellToolTypeJsonConverter))]
         public global::G.LocalShellToolType Type { get; set; }
 
         /// <summary>

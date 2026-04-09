@@ -20,6 +20,7 @@ namespace G
         /// Default Value: NORMAL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelAssetTextureTypesJsonConverter))]
         public global::G.ModelAssetTextureTypes? Type { get; set; }
 
         /// <summary>

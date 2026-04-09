@@ -13,6 +13,7 @@ namespace G
         /// The error code for the response.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseErrorCodeJsonConverter))]
         public global::G.ResponseErrorCode Code { get; set; } = default!;
 
         /// <summary>

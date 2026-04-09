@@ -43,6 +43,7 @@ namespace G
         /// The source of the feedback. Must be one of "external" (default), "app", or "api"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FeedbackProjectLogsItemSourceJsonConverter))]
         public global::G.FeedbackProjectLogsItemSource? Source { get; set; }
 
         /// <summary>

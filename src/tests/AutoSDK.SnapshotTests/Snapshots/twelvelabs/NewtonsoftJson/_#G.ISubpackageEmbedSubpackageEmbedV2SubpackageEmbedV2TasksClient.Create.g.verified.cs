@@ -38,12 +38,14 @@ namespace G
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbedV2TasksCreateResponse202> CreateAsync(
             string xApiKey,
 
             global::G.CreateAsyncEmbeddingRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an async embedding task<br/>
@@ -93,6 +95,7 @@ namespace G
         /// <param name="video">
         /// This field is required if the `input_type` parameter is `video`.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbedV2TasksCreateResponse202> CreateAsync(
@@ -101,6 +104,7 @@ namespace G
             global::G.CreateAsyncEmbeddingRequestModelName modelName = global::G.CreateAsyncEmbeddingRequestModelName.Marengo30,
             global::G.AudioInputRequest? audio = default,
             global::G.VideoInputRequest? video = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

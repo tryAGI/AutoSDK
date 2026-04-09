@@ -15,6 +15,7 @@ namespace G
         /// `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_level", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ActionsWorkflowAccessToRepositoryAccessLevelJsonConverter))]
         public global::G.ActionsWorkflowAccessToRepositoryAccessLevel AccessLevel { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FinetuneExampleUtteranceVariant3RoleJsonConverter))]
         public global::G.FinetuneExampleUtteranceVariant3Role Role { get; set; }
 
         /// <summary>

@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>gpu_1x_h100_sxm5</example>
         [global::Newtonsoft.Json.JsonProperty("instance_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateComputeInstanceResponseInstanceTypeJsonConverter))]
         public global::G.CreateComputeInstanceResponseInstanceType InstanceType { get; set; } = default!;
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// </summary>
         /// <example>us-west</example>
         [global::Newtonsoft.Json.JsonProperty("region", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateComputeInstanceResponseRegionJsonConverter))]
         public global::G.CreateComputeInstanceResponseRegion Region { get; set; } = default!;
 
         /// <summary>
@@ -39,6 +41,7 @@ namespace G
         /// </summary>
         /// <example>sector_1</example>
         [global::Newtonsoft.Json.JsonProperty("sector")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateComputeInstanceResponseSectorJsonConverter))]
         public global::G.CreateComputeInstanceResponseSector? Sector { get; set; }
 
         /// <summary>
@@ -55,6 +58,7 @@ namespace G
         /// </summary>
         /// <example>ready</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateComputeInstanceResponseStatusJsonConverter))]
         public global::G.CreateComputeInstanceResponseStatus Status { get; set; } = default!;
 
         /// <summary>

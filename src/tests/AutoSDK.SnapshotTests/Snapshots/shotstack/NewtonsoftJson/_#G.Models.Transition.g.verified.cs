@@ -37,6 +37,7 @@ namespace G
         /// The transition speed can also be controlled by appending `Fast` or `Slow` to the transition, e.g. `fadeFast` or `CarouselLeftSlow`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("in")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransitionInJsonConverter))]
         public global::G.TransitionIn? In { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace G
         /// The transition speed can also be controlled by appending `Fast` or `Slow` to the transition, e.g. `fadeFast` or `CarouselLeftSlow`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("out")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransitionOutJsonConverter))]
         public global::G.TransitionOut? Out { get; set; }
 
         /// <summary>

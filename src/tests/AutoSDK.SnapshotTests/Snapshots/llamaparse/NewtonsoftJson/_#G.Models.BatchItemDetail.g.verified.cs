@@ -13,6 +13,7 @@ namespace G
         /// Processing status of this item
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BatchFileStatusJsonConverter))]
         public global::G.BatchFileStatus Status { get; set; } = default!;
 
         /// <summary>

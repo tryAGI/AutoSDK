@@ -13,6 +13,7 @@ namespace G
         /// For function calling, the type is always `function`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolChoiceFunctionTypeJsonConverter))]
         public global::G.ToolChoiceFunctionType Type { get; set; }
 
         /// <summary>

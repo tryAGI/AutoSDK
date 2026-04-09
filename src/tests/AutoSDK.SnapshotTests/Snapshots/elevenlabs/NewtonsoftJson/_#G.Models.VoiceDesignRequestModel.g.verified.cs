@@ -20,6 +20,7 @@ namespace G
         /// Default Value: eleven_multilingual_ttv_v2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceDesignRequestModelModelIdJsonConverter))]
         public global::G.VoiceDesignRequestModelModelId? ModelId { get; set; }
 
         /// <summary>

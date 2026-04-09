@@ -10,11 +10,13 @@ namespace G
         /// Start multipart attachment upload
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.StartMultipartUploadResponse> StartMultiPartUploadAsync(
 
             global::G.StartMultipartUploadRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Start multipart attachment upload<br/>
@@ -29,6 +31,7 @@ namespace G
         /// <param name="entityType"></param>
         /// <param name="entityId"></param>
         /// <param name="path"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.StartMultipartUploadResponse> StartMultiPartUploadAsync(
@@ -39,6 +42,7 @@ namespace G
             string path,
             string? mimeType = default,
             string? projectName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

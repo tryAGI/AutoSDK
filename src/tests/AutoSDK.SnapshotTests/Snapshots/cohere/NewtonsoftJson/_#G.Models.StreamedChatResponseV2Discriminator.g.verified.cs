@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StreamedChatResponseV2DiscriminatorTypeJsonConverter))]
         public global::G.StreamedChatResponseV2DiscriminatorType? Type { get; set; }
 
         /// <summary>

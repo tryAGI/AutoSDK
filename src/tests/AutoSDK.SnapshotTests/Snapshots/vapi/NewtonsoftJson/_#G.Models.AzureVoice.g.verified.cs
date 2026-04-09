@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AzureVoiceProviderJsonConverter))]
         public global::G.AzureVoiceProvider Provider { get; set; }
 
         /// <summary>

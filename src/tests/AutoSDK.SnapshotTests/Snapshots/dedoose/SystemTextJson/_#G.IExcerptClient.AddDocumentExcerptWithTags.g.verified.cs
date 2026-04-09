@@ -10,11 +10,13 @@ namespace G
         /// AddDocumentExcerptWithTags
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExcerptWithTagApps> AddDocumentExcerptWithTagsAsync(
 
             global::G.AddDocumentExcerptWithTagsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// AddDocumentExcerptWithTags<br/>
@@ -29,6 +31,7 @@ namespace G
         /// <param name="endIndex"></param>
         /// <param name="excerptText"></param>
         /// <param name="tagApps"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExcerptWithTagApps> AddDocumentExcerptWithTagsAsync(
@@ -41,6 +44,7 @@ namespace G
             int endIndex,
             string excerptText,
             global::System.Collections.Generic.IList<global::G.TagAppSimple> tagApps,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

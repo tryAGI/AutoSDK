@@ -27,6 +27,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ComputerCallOutputItemParamType.ComputerCallOutput</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerCallOutputItemParamTypeJsonConverter))]
         public global::G.ComputerCallOutputItemParamType Type { get; set; } = global::G.ComputerCallOutputItemParamType.ComputerCallOutput;
 
         /// <summary>

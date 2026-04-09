@@ -19,12 +19,14 @@ namespace G
         /// The object type, which is always `thread.message`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageObjectObjectJsonConverter))]
         public global::G.MessageObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -37,6 +39,7 @@ namespace G
         /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageObjectStatusJsonConverter))]
         public global::G.MessageObjectStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -49,18 +52,21 @@ namespace G
         /// The Unix timestamp (in seconds) for when the message was completed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? CompletedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was marked as incomplete.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("incomplete_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? IncompleteAt { get; set; }
 
         /// <summary>
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageObjectRoleJsonConverter))]
         public global::G.MessageObjectRole Role { get; set; } = default!;
 
         /// <summary>

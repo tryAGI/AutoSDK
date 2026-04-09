@@ -13,6 +13,7 @@ namespace G
         /// Scroll the page or a specific element
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeOptionsActionScrollTypeJsonConverter))]
         public global::G.ScrapeOptionsActionScrollType Type { get; set; }
 
         /// <summary>
@@ -20,6 +21,7 @@ namespace G
         /// Default Value: down
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("direction")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeOptionsActionScrollDirectionJsonConverter))]
         public global::G.ScrapeOptionsActionScrollDirection? Direction { get; set; }
 
         /// <summary>

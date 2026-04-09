@@ -13,6 +13,7 @@ namespace G
         /// Default Value: media
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MediaContentTypeJsonConverter))]
         public global::G.MediaContentType? Type { get; set; }
 
         /// <summary>

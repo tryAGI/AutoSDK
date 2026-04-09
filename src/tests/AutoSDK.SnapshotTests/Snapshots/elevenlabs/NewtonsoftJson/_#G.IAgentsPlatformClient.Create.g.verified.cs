@@ -17,6 +17,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateAgentResponseModel> CreateAsync(
@@ -24,6 +25,7 @@ namespace G
             global::G.BodyCreateAgentV1ConvaiAgentsCreatePost request,
             bool? enableVersioning = default,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Agent<br/>
@@ -52,6 +54,7 @@ namespace G
         /// <param name="tags">
         /// Tags to help classify and filter the agent
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateAgentResponseModel> CreateAsync(
@@ -62,6 +65,7 @@ namespace G
             global::G.AgentWorkflowRequestModel? workflow = default,
             string? name = default,
             global::System.Collections.Generic.IList<string>? tags = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

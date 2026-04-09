@@ -17,6 +17,7 @@ namespace G
         /// </param>
         /// <param name="tenant"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ObjectsClassReferencesDeleteAsync(
@@ -27,6 +28,7 @@ namespace G
             global::G.SingleRef request,
             global::G.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete a cross-reference.<br/>
@@ -54,6 +56,7 @@ namespace G
         /// <param name="classification">
         /// This meta field contains additional info about the classified reference property
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task ObjectsClassReferencesDeleteAsync(
@@ -67,6 +70,7 @@ namespace G
             string? beacon = default,
             string? href = default,
             global::G.ReferenceMetaClassification? classification = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

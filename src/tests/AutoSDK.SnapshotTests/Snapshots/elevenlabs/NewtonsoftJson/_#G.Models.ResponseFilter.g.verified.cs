@@ -14,6 +14,7 @@ namespace G
         /// Default Value: all
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseFilterModeJsonConverter))]
         public global::G.ResponseFilterMode? Mode { get; set; }
 
         /// <summary>

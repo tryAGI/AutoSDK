@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageStreamEventDiscriminatorTypeJsonConverter))]
         public global::G.MessageStreamEventDiscriminatorType? Type { get; set; }
 
         /// <summary>

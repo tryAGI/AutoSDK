@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `response.refusal.done`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseRefusalDoneEventTypeJsonConverter))]
         public global::G.ResponseRefusalDoneEventType Type { get; set; }
 
         /// <summary>

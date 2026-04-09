@@ -13,6 +13,7 @@ namespace G
         /// Always `other`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OtherChunkingStrategyResponseParamTypeJsonConverter))]
         public global::G.OtherChunkingStrategyResponseParamType Type { get; set; }
 
         /// <summary>

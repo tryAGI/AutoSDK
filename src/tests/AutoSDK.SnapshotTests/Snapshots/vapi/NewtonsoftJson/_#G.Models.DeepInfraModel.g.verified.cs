@@ -39,6 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeepInfraModelProviderJsonConverter))]
         public global::G.DeepInfraModelProvider Provider { get; set; }
 
         /// <summary>

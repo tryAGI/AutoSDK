@@ -19,6 +19,7 @@ namespace G
         /// The event type, must be `response.text.delta`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventResponseTextDeltaTypeJsonConverter))]
         public global::G.RealtimeServerEventResponseTextDeltaType Type { get; set; }
 
         /// <summary>

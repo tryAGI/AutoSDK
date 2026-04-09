@@ -43,6 +43,7 @@ namespace G
         /// The state of the chapter.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChapterResponseModelStateJsonConverter))]
         public global::G.ChapterResponseModelState State { get; set; } = default!;
 
         /// <summary>

@@ -22,6 +22,7 @@ namespace G
         /// Default Value: medium
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search_context_size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchContextSizeJsonConverter))]
         public global::G.WebSearchContextSize? SearchContextSize { get; set; }
 
         /// <summary>

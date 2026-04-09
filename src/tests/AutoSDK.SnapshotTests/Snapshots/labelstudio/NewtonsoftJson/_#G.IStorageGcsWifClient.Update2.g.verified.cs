@@ -17,12 +17,14 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GCSWIFImportStorage> Update2Async(
             int id,
 
             global::G.PatchedGCSWIFImportStorageRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Update GCS WIF import storage<br/>
@@ -109,6 +111,7 @@ namespace G
         /// <param name="useBlobUrls">
         /// Interpret objects as BLOBs and generate URLs
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GCSWIFImportStorage> Update2Async(
@@ -136,6 +139,7 @@ namespace G
             string? title = default,
             string? traceback = default,
             bool? useBlobUrls = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

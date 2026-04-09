@@ -13,6 +13,7 @@ namespace G
         /// Must be 'partial_transcript'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PartialTranscriptPayloadMessageTypeJsonConverter))]
         public global::G.PartialTranscriptPayloadMessageType MessageType { get; set; }
 
         /// <summary>

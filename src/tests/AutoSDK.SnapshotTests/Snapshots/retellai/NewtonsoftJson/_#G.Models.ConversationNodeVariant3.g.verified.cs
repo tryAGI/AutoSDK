@@ -13,6 +13,7 @@ namespace G
         /// Type of the node
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationNodeVariant3TypeJsonConverter))]
         public global::G.ConversationNodeVariant3Type Type { get; set; }
 
         /// <summary>

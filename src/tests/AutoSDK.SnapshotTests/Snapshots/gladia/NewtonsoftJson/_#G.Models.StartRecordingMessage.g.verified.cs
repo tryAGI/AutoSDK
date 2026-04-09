@@ -32,6 +32,7 @@ namespace G
         /// <default>global::G.StartRecordingMessageType.StartRecording</default>
         /// <example>start_recording</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StartRecordingMessageTypeJsonConverter))]
         public global::G.StartRecordingMessageType Type { get; set; } = global::G.StartRecordingMessageType.StartRecording;
 
         /// <summary>

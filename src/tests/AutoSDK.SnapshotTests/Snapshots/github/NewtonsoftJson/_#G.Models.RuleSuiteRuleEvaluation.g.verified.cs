@@ -19,12 +19,14 @@ namespace G
         /// The enforcement level of this rule source.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enforcement")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RuleSuiteRuleEvaluationEnforcementJsonConverter))]
         public global::G.RuleSuiteRuleEvaluationEnforcement? Enforcement { get; set; }
 
         /// <summary>
         /// The result of the evaluation of the individual rule.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RuleSuiteRuleEvaluationResultJsonConverter))]
         public global::G.RuleSuiteRuleEvaluationResult? Result { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "knowledge-base-request" is sent to request knowledge base documents. To enable, use `assistant.knowledgeBase.provider=custom-knowledge-base`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageKnowledgeBaseRequestTypeJsonConverter))]
         public global::G.ServerMessageKnowledgeBaseRequestType Type { get; set; }
 
         /// <summary>

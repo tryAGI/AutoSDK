@@ -13,6 +13,7 @@ namespace G
         /// Status of this individual media import
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImportSuccessResultMediaStatusStatusJsonConverter))]
         public global::G.ImportSuccessResultMediaStatusStatus Status { get; set; } = default!;
 
         /// <summary>

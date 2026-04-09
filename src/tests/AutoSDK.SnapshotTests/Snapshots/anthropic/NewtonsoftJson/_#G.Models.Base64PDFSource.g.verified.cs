@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.Base64PDFSourceTypeJsonConverter))]
         public global::G.Base64PDFSourceType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.Base64PDFSourceMediaTypeJsonConverter))]
         public global::G.Base64PDFSourceMediaType MediaType { get; set; }
 
         /// <summary>

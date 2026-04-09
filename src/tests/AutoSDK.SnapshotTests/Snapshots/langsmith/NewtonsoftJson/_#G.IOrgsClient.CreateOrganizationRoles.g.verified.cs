@@ -9,11 +9,13 @@ namespace G
         /// Create Organization Roles
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Role> CreateOrganizationRolesAsync(
 
             global::G.CreateRoleRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Organization Roles
@@ -21,12 +23,14 @@ namespace G
         /// <param name="displayName"></param>
         /// <param name="description"></param>
         /// <param name="permissions"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Role> CreateOrganizationRolesAsync(
             string displayName,
             string description,
             global::System.Collections.Generic.IList<string> permissions,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

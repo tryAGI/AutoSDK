@@ -26,6 +26,7 @@ namespace G
         /// Default Value: png
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RemoveBackgroundPostParamsFormatJsonConverter))]
         public global::G.RemoveBackgroundPostParamsFormat? Format { get; set; }
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace G
         /// Default Value: rgba
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("channels")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RemoveBackgroundPostParamsChannelsJsonConverter))]
         public global::G.RemoveBackgroundPostParamsChannels? Channels { get; set; }
 
         /// <summary>
@@ -46,6 +48,7 @@ namespace G
         /// Default Value: full
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RemoveBackgroundPostParamsSizeJsonConverter))]
         public global::G.RemoveBackgroundPostParamsSize? Size { get; set; }
 
         /// <summary>
@@ -53,6 +56,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("crop")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RemoveBackgroundPostParamsCropJsonConverter))]
         public global::G.RemoveBackgroundPostParamsCrop? Crop { get; set; }
 
         /// <summary>
@@ -60,6 +64,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("despill")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RemoveBackgroundPostParamsDespillJsonConverter))]
         public global::G.RemoveBackgroundPostParamsDespill? Despill { get; set; }
 
         /// <summary>

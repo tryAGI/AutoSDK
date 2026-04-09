@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SubmitToolOutputsResponseEventJsonConverter))]
         public global::G.SubmitToolOutputsResponseEvent? Event { get; set; }
 
         /// <summary>

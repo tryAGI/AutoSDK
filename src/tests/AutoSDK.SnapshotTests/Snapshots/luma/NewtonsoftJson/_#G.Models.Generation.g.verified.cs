@@ -21,6 +21,7 @@ namespace G
         /// Default Value: video
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generation_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerationTypeJsonConverter))]
         public global::G.GenerationType? GenerationType { get; set; }
 
         /// <summary>
@@ -29,6 +30,7 @@ namespace G
         /// </summary>
         /// <example>completed</example>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StateJsonConverter))]
         public global::G.State? State { get; set; }
 
         /// <summary>

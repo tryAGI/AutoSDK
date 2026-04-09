@@ -46,6 +46,7 @@ namespace G
         /// Default Value: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioResponseFormatJsonConverter))]
         public global::G.AudioResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>

@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DoneEventEventJsonConverter))]
         public global::G.DoneEventEvent Event { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DoneEventDataJsonConverter))]
         public global::G.DoneEventData Data { get; set; }
 
         /// <summary>

@@ -20,12 +20,14 @@ namespace G
         /// The type of tool. "bash" for Bash tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateBashToolDTOTypeJsonConverter))]
         public global::G.CreateBashToolDTOType Type { get; set; }
 
         /// <summary>
         /// The sub type of tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateBashToolDTOSubTypeJsonConverter))]
         public global::G.CreateBashToolDTOSubType SubType { get; set; }
 
         /// <summary>
@@ -46,6 +48,7 @@ namespace G
         /// </summary>
         /// <default>global::G.CreateBashToolDTOName.Bash</default>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateBashToolDTONameJsonConverter))]
         public global::G.CreateBashToolDTOName Name { get; set; } = global::G.CreateBashToolDTOName.Bash;
 
         /// <summary>

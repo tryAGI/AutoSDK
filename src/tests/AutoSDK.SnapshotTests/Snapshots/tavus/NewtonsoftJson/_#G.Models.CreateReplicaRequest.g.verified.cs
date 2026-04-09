@@ -37,12 +37,14 @@ namespace G
         /// Model to use (defaults to phoenix-4).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateReplicaRequestModelNameJsonConverter))]
         public global::G.CreateReplicaRequestModelName? ModelName { get; set; }
 
         /// <summary>
         /// The type of replica.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("replica_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateReplicaRequestReplicaTypeJsonConverter))]
         public global::G.CreateReplicaRequestReplicaType? ReplicaType { get; set; }
 
         /// <summary>

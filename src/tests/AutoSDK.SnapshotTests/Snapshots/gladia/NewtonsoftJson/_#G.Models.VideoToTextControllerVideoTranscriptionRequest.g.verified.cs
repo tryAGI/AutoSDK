@@ -31,12 +31,14 @@ namespace G
         /// Default Value: automatic single language
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language_behaviour")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoToTextControllerVideoTranscriptionRequestLanguageBehaviourJsonConverter))]
         public global::G.VideoToTextControllerVideoTranscriptionRequestLanguageBehaviour? LanguageBehaviour { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoToTextControllerVideoTranscriptionRequestLanguageJsonConverter))]
         public global::G.VideoToTextControllerVideoTranscriptionRequestLanguage? Language { get; set; }
 
         /// <summary>
@@ -79,12 +81,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_translation_language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoToTextControllerVideoTranscriptionRequestTargetTranslationLanguageJsonConverter))]
         public global::G.VideoToTextControllerVideoTranscriptionRequestTargetTranslationLanguage? TargetTranslationLanguage { get; set; }
 
         /// <summary>
         /// Default Value: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoToTextControllerVideoTranscriptionRequestOutputFormatJsonConverter))]
         public global::G.VideoToTextControllerVideoTranscriptionRequestOutputFormat? OutputFormat { get; set; }
 
         /// <summary>

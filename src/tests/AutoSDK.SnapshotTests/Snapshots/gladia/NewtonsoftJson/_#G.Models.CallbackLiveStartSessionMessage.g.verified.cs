@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLiveStartSessionMessageEvent.LiveStartSession</default>
         /// <example>live.start_session</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLiveStartSessionMessageEventJsonConverter))]
         public global::G.CallbackLiveStartSessionMessageEvent Event { get; set; } = global::G.CallbackLiveStartSessionMessageEvent.LiveStartSession;
 
         /// <summary>

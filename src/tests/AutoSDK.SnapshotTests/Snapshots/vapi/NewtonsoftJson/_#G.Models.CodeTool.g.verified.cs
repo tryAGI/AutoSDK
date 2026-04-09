@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "code" for Code tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeToolTypeJsonConverter))]
         public global::G.CodeToolType Type { get; set; }
 
         /// <summary>

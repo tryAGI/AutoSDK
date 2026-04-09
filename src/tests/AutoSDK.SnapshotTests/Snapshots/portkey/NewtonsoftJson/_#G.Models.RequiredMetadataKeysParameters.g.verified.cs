@@ -21,6 +21,7 @@ namespace G
         /// </summary>
         /// <default>global::G.RequiredMetadataKeysParametersOperator.All</default>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RequiredMetadataKeysParametersOperatorJsonConverter))]
         public global::G.RequiredMetadataKeysParametersOperator Operator { get; set; } = default!;
 
         /// <summary>

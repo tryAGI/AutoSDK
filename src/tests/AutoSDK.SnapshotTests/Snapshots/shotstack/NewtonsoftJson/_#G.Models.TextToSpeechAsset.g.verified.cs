@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.TextToSpeechAssetType.TextToSpeech</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextToSpeechAssetTypeJsonConverter))]
         public global::G.TextToSpeechAssetType Type { get; set; } = global::G.TextToSpeechAssetType.TextToSpeech;
 
         /// <summary>
@@ -76,6 +77,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effect")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextToSpeechAssetEffectJsonConverter))]
         public global::G.TextToSpeechAssetEffect? Effect { get; set; }
 
         /// <summary>

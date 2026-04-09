@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.AppPermissionsInteractionLimits.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class AppPermissionsInteractionLimitsJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.AppPermissionsInteractionLimits>
+    {
+        /// <inheritdoc />
+        public override global::G.AppPermissionsInteractionLimits ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.AppPermissionsInteractionLimits existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.AppPermissionsInteractionLimitsExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.AppPermissionsInteractionLimits)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.AppPermissionsInteractionLimits);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.AppPermissionsInteractionLimits value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.AppPermissionsInteractionLimitsExtensions.ToValueString(value));
+        }
+    }
+}

@@ -20,6 +20,7 @@ namespace G
         /// The type of the file search tool call. Always `file_search_call`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileSearchToolCallTypeJsonConverter))]
         public global::G.FileSearchToolCallType Type { get; set; }
 
         /// <summary>
@@ -27,6 +28,7 @@ namespace G
         /// `searching`, `incomplete` or `failed`,
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileSearchToolCallStatusJsonConverter))]
         public global::G.FileSearchToolCallStatus Status { get; set; } = default!;
 
         /// <summary>

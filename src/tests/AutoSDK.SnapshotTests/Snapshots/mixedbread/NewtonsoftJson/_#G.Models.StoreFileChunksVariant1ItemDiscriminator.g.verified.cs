@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StoreFileChunksVariant1ItemDiscriminatorTypeJsonConverter))]
         public global::G.StoreFileChunksVariant1ItemDiscriminatorType? Type { get; set; }
 
         /// <summary>

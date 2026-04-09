@@ -13,6 +13,7 @@ namespace G
         /// The type of the local shell action. Always `exec`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LocalShellExecActionTypeJsonConverter))]
         public global::G.LocalShellExecActionType Type { get; set; }
 
         /// <summary>

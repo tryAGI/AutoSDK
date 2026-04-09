@@ -72,6 +72,7 @@ namespace G
         /// * `FAILED` - Failed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgreementV2BackfillJobStatusEnumJsonConverter))]
         public global::G.AgreementV2BackfillJobStatusEnum? Status { get; set; }
 
         /// <summary>

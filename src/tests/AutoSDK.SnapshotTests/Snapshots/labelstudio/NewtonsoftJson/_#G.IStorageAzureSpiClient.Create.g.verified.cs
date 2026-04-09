@@ -16,11 +16,13 @@ namespace G
         /// Create Azure import storage with Service Principal authentication.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AzureServicePrincipalImportStorage> CreateAsync(
 
             global::G.AzureServicePrincipalImportStorageRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Create Azure import storage with SPI<br/>
@@ -103,6 +105,7 @@ namespace G
         /// <param name="userDelegationKey">
         /// User Delegation Key (Backend)
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AzureServicePrincipalImportStorage> CreateAsync(
@@ -128,6 +131,7 @@ namespace G
             string? traceback = default,
             bool? useBlobUrls = default,
             string? userDelegationKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,18 +13,21 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExportFormatJsonConverter))]
         public global::G.ExportFormat Format { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pose")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExportPoseJsonConverter))]
         public global::G.ExportPose? Pose { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("compatibilityMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompatibilityModeJsonConverter))]
         public global::G.CompatibilityMode? CompatibilityMode { get; set; }
 
         /// <summary>

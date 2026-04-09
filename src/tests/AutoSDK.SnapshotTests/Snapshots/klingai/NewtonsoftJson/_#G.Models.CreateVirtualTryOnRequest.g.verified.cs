@@ -14,6 +14,7 @@ namespace G
         /// Default Value: kolors-virtual-try-on-v1-5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateVirtualTryOnRequestModelNameJsonConverter))]
         public global::G.CreateVirtualTryOnRequestModelName? ModelName { get; set; }
 
         /// <summary>

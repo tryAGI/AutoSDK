@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("objectType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CommentObjectTypeJsonConverter))]
         public global::G.CommentObjectType ObjectType { get; set; } = default!;
 
         /// <summary>

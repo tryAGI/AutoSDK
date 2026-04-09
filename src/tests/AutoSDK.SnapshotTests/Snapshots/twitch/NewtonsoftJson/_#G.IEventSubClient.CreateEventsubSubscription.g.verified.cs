@@ -14,11 +14,13 @@ namespace G
         /// If you use [Conduits](https://dev.twitch.tv/docs/eventsub/handling-conduit-events) to receive events, the request must specify an app access token. The request will fail if you use a user access token.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateEventSubSubscriptionResponse> CreateEventsubSubscriptionAsync(
 
             global::G.CreateEventSubSubscriptionBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Creates an EventSub subscription.<br/>
@@ -40,6 +42,7 @@ namespace G
         /// <param name="transport">
         /// The transport details that you want Twitch to use when sending you notifications.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateEventSubSubscriptionResponse> CreateEventsubSubscriptionAsync(
@@ -47,6 +50,7 @@ namespace G
             string version,
             object condition,
             global::G.CreateEventSubSubscriptionBodyTransport transport,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

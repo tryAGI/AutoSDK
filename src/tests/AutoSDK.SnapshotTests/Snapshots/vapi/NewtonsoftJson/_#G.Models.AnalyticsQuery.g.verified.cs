@@ -13,6 +13,7 @@ namespace G
         /// This is the table you want to query.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("table", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnalyticsQueryTableJsonConverter))]
         public global::G.AnalyticsQueryTable Table { get; set; } = default!;
 
         /// <summary>

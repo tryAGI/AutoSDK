@@ -21,6 +21,7 @@ namespace G
         /// The event type, must be `conversation.item.deleted`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventConversationItemDeletedTypeJsonConverter))]
         public global::G.RealtimeServerEventConversationItemDeletedType Type { get; set; }
 
         /// <summary>

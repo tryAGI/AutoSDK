@@ -13,78 +13,91 @@ namespace G
         /// Formatting options for Calendar Era
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("calendar_era")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesCalendarEraJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesCalendarEra? CalendarEra { get; set; }
 
         /// <summary>
         /// Formatting options for Centuries
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("centuries")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesCenturiesJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesCenturies? Centuries { get; set; }
 
         /// <summary>
         /// Formatting options for Date Format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("date_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesDateFormatJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesDateFormat? DateFormat { get; set; }
 
         /// <summary>
         /// Formatting options for Dates In Numerical Form
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dates_in_numerical_form")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesDatesInNumericalFormJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesDatesInNumericalForm? DatesInNumericalForm { get; set; }
 
         /// <summary>
         /// Formatting options for Decades
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("decades")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesDecadesJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesDecades? Decades { get; set; }
 
         /// <summary>
         /// Formatting options for Hours Minutes Seconds Separator
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hours_minutes_seconds_separator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesHoursMinutesSecondsSeparatorJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesHoursMinutesSecondsSeparator? HoursMinutesSecondsSeparator { get; set; }
 
         /// <summary>
         /// Formatting options for Hours Minutes Separator
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hours_minutes_separator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesHoursMinutesSeparatorJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesHoursMinutesSeparator? HoursMinutesSeparator { get; set; }
 
         /// <summary>
         /// Formatting options for Midnight In Numerals
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("midnight_in_numerals")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesMidnightInNumeralsJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesMidnightInNumerals? MidnightInNumerals { get; set; }
 
         /// <summary>
         /// Formatting options for Single Digit Days And Months
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("single_digit_days_and_months")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonthsJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesSingleDigitDaysAndMonths? SingleDigitDaysAndMonths { get; set; }
 
         /// <summary>
         /// Formatting options for Single Digit Hours
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("single_digit_hours")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesSingleDigitHoursJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesSingleDigitHours? SingleDigitHours { get; set; }
 
         /// <summary>
         /// Formatting options for Time Format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("time_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesTimeFormatJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesTimeFormat? TimeFormat { get; set; }
 
         /// <summary>
         /// Formatting options for Writing Dates
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("writing_dates")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesWritingDatesJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesWritingDates? WritingDates { get; set; }
 
         /// <summary>
         /// Formatting options for Years
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("years")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesDatesAndTimesYearsJsonConverter))]
         public global::G.ConfiguredRulesDatesAndTimesYears? Years { get; set; }
 
         /// <summary>

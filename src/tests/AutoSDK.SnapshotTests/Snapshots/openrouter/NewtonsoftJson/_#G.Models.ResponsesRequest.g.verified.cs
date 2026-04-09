@@ -181,6 +181,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIResponsesTruncationJsonConverter))]
         public global::G.OpenAIResponsesTruncation? Truncation { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookProjectCardConvertedActionJsonConverter))]
         public global::G.WebhookProjectCardConvertedAction Action { get; set; }
 
         /// <summary>

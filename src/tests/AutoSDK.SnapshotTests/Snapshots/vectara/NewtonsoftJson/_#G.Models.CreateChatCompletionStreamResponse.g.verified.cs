@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always 'chat.completion.chunk' for streaming responses.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter))]
         public global::G.CreateChatCompletionStreamResponseObject Object { get; set; }
 
         /// <summary>

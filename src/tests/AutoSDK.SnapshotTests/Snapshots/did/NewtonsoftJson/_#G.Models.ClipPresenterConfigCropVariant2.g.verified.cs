@@ -13,6 +13,7 @@ namespace G
         /// The type of the crop.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClipPresenterConfigCropVariant2TypeJsonConverter))]
         public global::G.ClipPresenterConfigCropVariant2Type Type { get; set; }
 
         /// <summary>

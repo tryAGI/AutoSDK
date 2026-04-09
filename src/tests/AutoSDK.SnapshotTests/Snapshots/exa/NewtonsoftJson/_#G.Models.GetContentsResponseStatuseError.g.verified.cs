@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>CRAWL_NOT_FOUND</example>
         [global::Newtonsoft.Json.JsonProperty("tag")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetContentsResponseStatuseErrorTagJsonConverter))]
         public global::G.GetContentsResponseStatuseErrorTag? Tag { get; set; }
 
         /// <summary>

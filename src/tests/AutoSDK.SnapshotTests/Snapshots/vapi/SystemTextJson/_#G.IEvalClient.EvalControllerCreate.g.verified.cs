@@ -9,11 +9,13 @@ namespace G
         /// Create Eval
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Eval> EvalControllerCreateAsync(
 
             global::G.CreateEvalDTO request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Eval
@@ -39,6 +41,7 @@ namespace G
         /// Currently it is fixed to `chat.mockConversation`.<br/>
         /// Example: chat.mockConversation
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Eval> EvalControllerCreateAsync(
@@ -46,6 +49,7 @@ namespace G
             string? name = default,
             string? description = default,
             global::G.CreateEvalDTOType type = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

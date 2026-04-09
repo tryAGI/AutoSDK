@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackSmallestAIVoiceProviderJsonConverter))]
         public global::G.FallbackSmallestAIVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -34,6 +35,7 @@ namespace G
         /// Smallest AI voice model to use. Defaults to 'lightning' when not specified.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackSmallestAIVoiceModelJsonConverter))]
         public global::G.FallbackSmallestAIVoiceModel? Model { get; set; }
 
         /// <summary>

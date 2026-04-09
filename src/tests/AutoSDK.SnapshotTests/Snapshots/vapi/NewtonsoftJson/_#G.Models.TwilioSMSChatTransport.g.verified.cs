@@ -14,6 +14,7 @@ namespace G
         /// Default Value: chat
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conversationType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TwilioSMSChatTransportConversationTypeJsonConverter))]
         public global::G.TwilioSMSChatTransportConversationType? ConversationType { get; set; }
 
         /// <summary>
@@ -52,6 +53,7 @@ namespace G
         /// Currently supports 'twilio.sms' for SMS delivery via Twilio.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TwilioSMSChatTransportTypeJsonConverter))]
         public global::G.TwilioSMSChatTransportType Type { get; set; }
 
         /// <summary>

@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="conversationFlowComponentId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ConversationFlowComponentResponse> UpdateConversationFlowComponentAsync(
             string conversationFlowComponentId,
 
             global::G.ConversationFlowComponent request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an existing shared conversation flow component
@@ -43,6 +45,7 @@ namespace G
         /// <param name="beginTagDisplayPosition">
         /// Display position for the begin tag in the frontend
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ConversationFlowComponentResponse> UpdateConversationFlowComponentAsync(
@@ -53,6 +56,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ConversationFlowNode>? nodes = default,
             string? startNodeId = default,
             global::G.ConversationFlowComponentBeginTagDisplayPosition? beginTagDisplayPosition = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

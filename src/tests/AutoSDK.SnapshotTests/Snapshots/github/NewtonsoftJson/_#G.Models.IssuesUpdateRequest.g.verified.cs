@@ -31,6 +31,7 @@ namespace G
         /// The open or closed state of the issue.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IssuesUpdateRequestStateJsonConverter))]
         public global::G.IssuesUpdateRequestState? State { get; set; }
 
         /// <summary>
@@ -39,6 +40,7 @@ namespace G
         /// </summary>
         /// <example>not_planned</example>
         [global::Newtonsoft.Json.JsonProperty("state_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IssuesUpdateRequestStateReasonJsonConverter))]
         public global::G.IssuesUpdateRequestStateReason? StateReason { get; set; }
 
         /// <summary>

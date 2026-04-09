@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "model-output" is sent as the model outputs tokens.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageModelOutputTypeJsonConverter))]
         public global::G.ServerMessageModelOutputType Type { get; set; }
 
         /// <summary>

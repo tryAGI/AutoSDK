@@ -15,12 +15,14 @@ namespace G
         /// Example: upload_abc123
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Upload> CompleteUploadAsync(
             string uploadId,
 
             global::G.CompleteUploadRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Completes the [Upload](/docs/api-reference/uploads/object). <br/>
@@ -37,12 +39,14 @@ namespace G
         /// <param name="md5">
         /// The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Upload> CompleteUploadAsync(
             string uploadId,
             global::System.Collections.Generic.IList<string> partIds,
             string? md5 = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

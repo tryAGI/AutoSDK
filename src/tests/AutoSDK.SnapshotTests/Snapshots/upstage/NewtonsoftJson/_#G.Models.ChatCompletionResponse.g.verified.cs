@@ -19,12 +19,14 @@ namespace G
         /// The object type, always "chat.completion".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionResponseObjectJsonConverter))]
         public global::G.ChatCompletionResponseObject? Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp of when the chat completion was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? Created { get; set; }
 
         /// <summary>

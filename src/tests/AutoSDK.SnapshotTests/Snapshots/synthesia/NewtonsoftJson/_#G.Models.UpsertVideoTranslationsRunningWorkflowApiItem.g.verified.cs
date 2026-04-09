@@ -19,12 +19,14 @@ namespace G
         /// Default Value: in_progress
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpsertVideoTranslationsRunningWorkflowApiItemStatusJsonConverter))]
         public global::G.UpsertVideoTranslationsRunningWorkflowApiItemStatus? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("step", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpsertVideoTranslationsRunningWorkflowApiItemStepJsonConverter))]
         public global::G.UpsertVideoTranslationsRunningWorkflowApiItemStep Step { get; set; } = default!;
 
         /// <summary>

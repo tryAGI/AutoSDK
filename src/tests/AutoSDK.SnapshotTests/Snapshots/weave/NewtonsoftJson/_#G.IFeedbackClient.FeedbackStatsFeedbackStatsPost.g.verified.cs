@@ -10,11 +10,13 @@ namespace G
         /// Return aggregated feedback statistics over time buckets.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedbackStatsRes> FeedbackStatsFeedbackStatsPostAsync(
 
             global::G.FeedbackStatsReq request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Feedback Stats<br/>
@@ -43,6 +45,7 @@ namespace G
         /// <param name="metrics">
         /// Metrics to aggregate from payload_dump.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedbackStatsRes> FeedbackStatsFeedbackStatsPostAsync(
@@ -54,6 +57,7 @@ namespace G
             int? granularity = default,
             string? timezone = default,
             global::System.Collections.Generic.IList<global::G.FeedbackMetricSpec>? metrics = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

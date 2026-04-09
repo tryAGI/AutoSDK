@@ -13,6 +13,7 @@ namespace G
         /// The type of the output message. Always `message`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputMessageTypeJsonConverter))]
         public global::G.ResponseOutputMessageType Type { get; set; }
 
         /// <summary>
@@ -25,12 +26,14 @@ namespace G
         /// The status of the message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputMessageStatusJsonConverter))]
         public global::G.ResponseOutputMessageStatus? Status { get; set; }
 
         /// <summary>
         /// The role of the output message. Always `assistant`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputMessageRoleJsonConverter))]
         public global::G.ResponseOutputMessageRole Role { get; set; }
 
         /// <summary>

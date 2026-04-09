@@ -13,6 +13,7 @@ namespace G
         /// The type of the input item. Always `input_audio`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputAudioTypeJsonConverter))]
         public global::G.InputAudioType Type { get; set; }
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace G
         /// `wav`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputAudioFormatJsonConverter))]
         public global::G.InputAudioFormat Format { get; set; } = default!;
 
         /// <summary>

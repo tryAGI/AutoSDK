@@ -30,6 +30,7 @@ namespace G
         /// Default Value: embedded
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image_export_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageRefModeJsonConverter))]
         public global::G.ImageRefMode? ImageExportMode { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// Default Value: easyocr
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ocr_engine")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OcrEnginesEnumJsonConverter))]
         public global::G.OcrEnginesEnum? OcrEngine { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace G
         /// Default Value: docling_parse
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pdf_backend")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PdfBackendJsonConverter))]
         public global::G.PdfBackend? PdfBackend { get; set; }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace G
         /// Default Value: accurate
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("table_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TableFormerModeJsonConverter))]
         public global::G.TableFormerMode? TableMode { get; set; }
 
         /// <summary>
@@ -85,6 +89,7 @@ namespace G
         /// Default Value: standard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pipeline")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProcessingPipelineJsonConverter))]
         public global::G.ProcessingPipeline? Pipeline { get; set; }
 
         /// <summary>

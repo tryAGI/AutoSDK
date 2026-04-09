@@ -37,6 +37,7 @@ namespace G
         /// The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has completed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookCheckSuiteRerequestedCheckSuiteConclusionJsonConverter))]
         public global::G.WebhookCheckSuiteRerequestedCheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>
@@ -103,6 +104,7 @@ namespace G
         /// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookCheckSuiteRerequestedCheckSuiteStatusJsonConverter))]
         public global::G.WebhookCheckSuiteRerequestedCheckSuiteStatus? Status { get; set; }
 
         /// <summary>

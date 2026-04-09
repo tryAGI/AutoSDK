@@ -13,6 +13,7 @@ namespace G
         /// Always `text`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateModerationRequestInputVariant3ItemVariant2TypeJsonConverter))]
         public global::G.CreateModerationRequestInputVariant3ItemVariant2Type Type { get; set; }
 
         /// <summary>

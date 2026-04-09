@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaRequestImageBlockSourceDiscriminatorTypeJsonConverter))]
         public global::G.BetaRequestImageBlockSourceDiscriminatorType? Type { get; set; }
 
         /// <summary>

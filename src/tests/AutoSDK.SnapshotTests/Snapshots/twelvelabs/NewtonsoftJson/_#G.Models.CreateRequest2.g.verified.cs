@@ -13,6 +13,7 @@ namespace G
         /// Specifies the upload method for the asset. Use `direct` to upload a local file or `url` for a publicly accessible URL.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssetsPostRequestBodyContentMultipartFormDataSchemaMethodJsonConverter))]
         public global::G.AssetsPostRequestBodyContentMultipartFormDataSchemaMethod Method { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomModelTypeJsonConverter))]
         public global::G.CustomModelType ModelType { get; set; } = default!;
 
         /// <summary>

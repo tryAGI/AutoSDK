@@ -67,6 +67,7 @@ namespace G
         /// State of the release asset.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookReleasePrereleasedReleaseAssetStateJsonConverter))]
         public global::G.WebhookReleasePrereleasedReleaseAssetState State { get; set; }
 
         /// <summary>

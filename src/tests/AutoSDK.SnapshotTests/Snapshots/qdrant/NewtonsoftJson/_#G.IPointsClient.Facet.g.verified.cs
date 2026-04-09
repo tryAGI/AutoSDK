@@ -21,6 +21,7 @@ namespace G
         /// </param>
         /// <param name="timeout"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FacetResponse2> FacetAsync(
@@ -29,6 +30,7 @@ namespace G
             global::G.FacetRequest request,
             global::G.ReadConsistency? consistency = default,
             int? timeout = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Facet a payload key with a given filter.<br/>
@@ -58,6 +60,7 @@ namespace G
         /// <param name="exact">
         /// Whether to do a more expensive exact count for each of the values in the facet. Default is false.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FacetResponse2> FacetAsync(
@@ -69,6 +72,7 @@ namespace G
             int? limit = default,
             global::G.Filter? filter = default,
             bool? exact = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -19,6 +19,7 @@ namespace G
         /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allowed_actions")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AllowedActionsJsonConverter))]
         public global::G.AllowedActions? AllowedActions { get; set; }
 
         /// <summary>

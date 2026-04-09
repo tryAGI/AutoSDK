@@ -13,6 +13,7 @@ namespace G
         /// The type of content fragment. Must be `text` for text fragments.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextFragmentTypeJsonConverter))]
         public global::G.TextFragmentType Type { get; set; }
 
         /// <summary>

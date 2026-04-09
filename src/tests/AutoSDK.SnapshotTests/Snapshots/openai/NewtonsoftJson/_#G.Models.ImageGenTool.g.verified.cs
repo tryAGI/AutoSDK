@@ -13,6 +13,7 @@ namespace G
         /// The type of the image generation tool. Always `image_generation`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenToolTypeJsonConverter))]
         public global::G.ImageGenToolType Type { get; set; }
 
         /// <summary>
@@ -20,6 +21,7 @@ namespace G
         /// Default Value: gpt-image-1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenToolModelJsonConverter))]
         public global::G.ImageGenToolModel? Model { get; set; }
 
         /// <summary>
@@ -28,6 +30,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenToolQualityJsonConverter))]
         public global::G.ImageGenToolQuality? Quality { get; set; }
 
         /// <summary>
@@ -36,6 +39,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenToolSizeJsonConverter))]
         public global::G.ImageGenToolSize? Size { get; set; }
 
         /// <summary>
@@ -44,6 +48,7 @@ namespace G
         /// Default Value: png
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenToolOutputFormatJsonConverter))]
         public global::G.ImageGenToolOutputFormat? OutputFormat { get; set; }
 
         /// <summary>
@@ -58,6 +63,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("moderation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenToolModerationJsonConverter))]
         public global::G.ImageGenToolModeration? Moderation { get; set; }
 
         /// <summary>
@@ -66,6 +72,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("background")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenToolBackgroundJsonConverter))]
         public global::G.ImageGenToolBackground? Background { get; set; }
 
         /// <summary>

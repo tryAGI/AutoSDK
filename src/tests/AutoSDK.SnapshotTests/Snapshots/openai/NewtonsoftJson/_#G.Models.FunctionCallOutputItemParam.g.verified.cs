@@ -27,6 +27,7 @@ namespace G
         /// </summary>
         /// <default>global::G.FunctionCallOutputItemParamType.FunctionCallOutput</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionCallOutputItemParamTypeJsonConverter))]
         public global::G.FunctionCallOutputItemParamType Type { get; set; } = global::G.FunctionCallOutputItemParamType.FunctionCallOutput;
 
         /// <summary>

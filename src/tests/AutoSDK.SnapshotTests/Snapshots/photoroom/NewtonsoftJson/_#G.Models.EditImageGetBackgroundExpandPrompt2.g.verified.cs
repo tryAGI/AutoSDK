@@ -15,6 +15,7 @@ namespace G
         /// (Note: `background.expandPrompt.mode` only affects `background.prompt`)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditImageGetBackgroundExpandPromptModeJsonConverter))]
         public global::G.EditImageGetBackgroundExpandPromptMode Mode { get; set; } = default!;
 
         /// <summary>

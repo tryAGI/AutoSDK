@@ -13,6 +13,7 @@ namespace G
         /// Estimate type: historical API pricing based on past usage patterns
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("estimate_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EstimatePricingRequestVariant1EstimateTypeJsonConverter))]
         public global::G.EstimatePricingRequestVariant1EstimateType EstimateType { get; set; }
 
         /// <summary>

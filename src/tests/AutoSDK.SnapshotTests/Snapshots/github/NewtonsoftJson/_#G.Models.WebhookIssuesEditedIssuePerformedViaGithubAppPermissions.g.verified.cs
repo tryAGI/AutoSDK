@@ -13,210 +13,245 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actions")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsActionsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsActions? Actions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("administration")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsAdministrationJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsAdministration? Administration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("checks")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsChecksJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsChecks? Checks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_references")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsContentReferencesJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsContentReferences? ContentReferences { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contents")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsContentsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsContents? Contents { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deployments")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsDeploymentsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsDeployments? Deployments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("discussions")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsDiscussionsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsDiscussions? Discussions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("emails")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsEmailsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsEmails? Emails { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environments")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsEnvironmentsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsEnvironments? Environments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("issues")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsIssuesJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsIssues? Issues { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("keys")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsKeysJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsKeys? Keys { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsMembersJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsMembers? Members { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsMetadataJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsMetadata? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_administration")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationAdministrationJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationAdministration? OrganizationAdministration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_hooks")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationHooksJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationHooks? OrganizationHooks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_packages")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationPackagesJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationPackages? OrganizationPackages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_plan")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationPlanJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationPlan? OrganizationPlan { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_projects")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationProjectsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationProjects? OrganizationProjects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_secrets")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationSecretsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationSecrets? OrganizationSecrets { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_self_hosted_runners")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunnersJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? OrganizationSelfHostedRunners { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_user_blocking")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationUserBlockingJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking? OrganizationUserBlocking { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("packages")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsPackagesJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsPackages? Packages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pages")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsPagesJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsPages? Pages { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_requests")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsPullRequestsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsPullRequests? PullRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_hooks")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsRepositoryHooksJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsRepositoryHooks? RepositoryHooks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_projects")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsRepositoryProjectsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsRepositoryProjects? RepositoryProjects { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_alerts")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsSecretScanningAlertsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts? SecretScanningAlerts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secrets")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsSecretsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsSecrets? Secrets { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_events")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsSecurityEventsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsSecurityEvents? SecurityEvents { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("security_scanning_alert")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsSecurityScanningAlertJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert? SecurityScanningAlert { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("single_file")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsSingleFileJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsSingleFile? SingleFile { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("statuses")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsStatusesJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsStatuses? Statuses { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("team_discussions")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsTeamDiscussionsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsTeamDiscussions? TeamDiscussions { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vulnerability_alerts")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsVulnerabilityAlertsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts? VulnerabilityAlerts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workflows")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsWorkflowsJsonConverter))]
         public global::G.WebhookIssuesEditedIssuePerformedViaGithubAppPermissionsWorkflows? Workflows { get; set; }
 
         /// <summary>

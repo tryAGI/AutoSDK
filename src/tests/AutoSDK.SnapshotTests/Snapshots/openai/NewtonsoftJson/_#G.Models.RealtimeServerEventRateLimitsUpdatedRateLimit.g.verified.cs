@@ -13,6 +13,7 @@ namespace G
         /// The name of the rate limit (`requests`, `tokens`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventRateLimitsUpdatedRateLimitNameJsonConverter))]
         public global::G.RealtimeServerEventRateLimitsUpdatedRateLimitName? Name { get; set; }
 
         /// <summary>

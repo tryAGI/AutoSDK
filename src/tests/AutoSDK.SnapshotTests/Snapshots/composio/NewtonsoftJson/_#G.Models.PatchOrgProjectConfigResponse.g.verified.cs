@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("log_visibility_setting", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PatchOrgProjectConfigResponseLogVisibilitySettingJsonConverter))]
         public global::G.PatchOrgProjectConfigResponseLogVisibilitySetting LogVisibilitySetting { get; set; } = default!;
 
         /// <summary>

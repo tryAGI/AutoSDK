@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("providerName", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeleteProviderKeyResponseVariant1ProviderNameJsonConverter))]
         public global::G.DeleteProviderKeyResponseVariant1ProviderName ProviderName { get; set; } = default!;
 
         /// <summary>

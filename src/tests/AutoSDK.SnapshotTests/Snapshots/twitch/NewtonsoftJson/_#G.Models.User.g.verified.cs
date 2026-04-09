@@ -36,6 +36,7 @@ namespace G
         /// * "" — Normal user
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UserTypeJsonConverter))]
         public global::G.UserType Type { get; set; } = default!;
 
         /// <summary>
@@ -46,6 +47,7 @@ namespace G
         /// * "" — A normal broadcaster
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("broadcaster_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UserBroadcasterTypeJsonConverter))]
         public global::G.UserBroadcasterType BroadcasterType { get; set; } = default!;
 
         /// <summary>

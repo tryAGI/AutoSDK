@@ -13,6 +13,7 @@ namespace G
         /// The type of the code interpreter file output. Always `files`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeInterpreterFileOutputTypeJsonConverter))]
         public global::G.CodeInterpreterFileOutputType Type { get; set; }
 
         /// <summary>

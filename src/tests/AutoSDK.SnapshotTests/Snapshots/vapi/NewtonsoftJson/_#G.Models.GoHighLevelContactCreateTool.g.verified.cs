@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "gohighlevel.contact.create" for GoHighLevel Contact Create tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoHighLevelContactCreateToolTypeJsonConverter))]
         public global::G.GoHighLevelContactCreateToolType Type { get; set; }
 
         /// <summary>

@@ -13,12 +13,14 @@ namespace G
         /// McpServer id
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MCPServer> PatchMcpServerIdAsync(
             global::System.Guid mcpServerId,
 
             global::G.PatchMCPServer request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Partially update mcp_server<br/>
@@ -36,6 +38,7 @@ namespace G
         /// <param name="description">
         /// Textual description of the MCP server
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MCPServer> PatchMcpServerIdAsync(
@@ -43,6 +46,7 @@ namespace G
             string? name = default,
             string? url = default,
             string? description = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

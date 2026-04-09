@@ -29,6 +29,7 @@ namespace G
         /// The type of document (one of the seven currently supported file types)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fileType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DocumentTypeJsonConverter))]
         public global::G.DocumentType? FileType { get; set; }
 
         /// <summary>

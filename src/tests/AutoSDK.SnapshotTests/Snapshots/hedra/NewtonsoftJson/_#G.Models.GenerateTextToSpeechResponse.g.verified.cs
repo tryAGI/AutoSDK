@@ -76,6 +76,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SupportedLanguageJsonConverter))]
         public global::G.SupportedLanguage? Language { get; set; }
 
         /// <summary>
@@ -100,6 +101,7 @@ namespace G
         /// Status of the generation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerationStatusJsonConverter))]
         public global::G.GenerationStatus Status { get; set; } = default!;
 
         /// <summary>

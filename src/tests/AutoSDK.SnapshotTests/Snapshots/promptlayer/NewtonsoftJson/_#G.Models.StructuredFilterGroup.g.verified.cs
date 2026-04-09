@@ -14,6 +14,7 @@ namespace G
         /// Default Value: AND
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("logic")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StructuredFilterGroupLogicJsonConverter))]
         public global::G.StructuredFilterGroupLogic? Logic { get; set; }
 
         /// <summary>

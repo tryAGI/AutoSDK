@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeBundleLocationVariant3SandboxSpecVariant1ProviderJsonConverter))]
         public global::G.CodeBundleLocationVariant3SandboxSpecVariant1Provider Provider { get; set; }
 
         /// <summary>

@@ -37,12 +37,14 @@ namespace G
         /// Policy type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RateLimitsPolicyTypeJsonConverter))]
         public global::G.RateLimitsPolicyType Type { get; set; } = default!;
 
         /// <summary>
         /// Rate unit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("unit", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RateLimitsPolicyUnitJsonConverter))]
         public global::G.RateLimitsPolicyUnit Unit { get; set; } = default!;
 
         /// <summary>
@@ -55,6 +57,7 @@ namespace G
         /// Policy status
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RateLimitsPolicyStatusJsonConverter))]
         public global::G.RateLimitsPolicyStatus Status { get; set; } = default!;
 
         /// <summary>

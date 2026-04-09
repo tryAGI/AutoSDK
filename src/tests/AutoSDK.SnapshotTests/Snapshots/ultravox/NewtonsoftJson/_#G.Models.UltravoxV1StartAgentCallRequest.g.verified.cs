@@ -56,6 +56,7 @@ namespace G
         /// The (overridden) medium initially used by the agent. May be altered by the client later.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("initialOutputMedium")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1StartAgentCallRequestInitialOutputMediumJsonConverter))]
         public global::G.UltravoxV1StartAgentCallRequestInitialOutputMedium? InitialOutputMedium { get; set; }
 
         /// <summary>

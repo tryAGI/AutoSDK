@@ -79,6 +79,7 @@ namespace G
         /// The status of an agent metric result. `failed` indicates that the metric result was not computed or parsed properly.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentMetricResultStatusJsonConverter))]
         public global::G.AgentMetricResultStatus Status { get; set; } = default!;
 
         /// <summary>

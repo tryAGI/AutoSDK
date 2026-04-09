@@ -61,6 +61,7 @@ namespace G
         /// </summary>
         /// <example>force_push</example>
         [global::Newtonsoft.Json.JsonProperty("activity_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ActivityActivityTypeJsonConverter))]
         public global::G.ActivityActivityType ActivityType { get; set; } = default!;
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// Default Value: medium
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateResponseRequestReasoningEffortJsonConverter))]
         public global::G.CreateResponseRequestReasoningEffort? Effort { get; set; }
 
         /// <summary>

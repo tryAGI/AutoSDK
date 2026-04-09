@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetSchemaForUpdate> UpdateDatasetAsync(
             global::System.Guid datasetId,
 
             global::G.DatasetUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Dataset<br/>
@@ -24,12 +26,14 @@ namespace G
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DatasetSchemaForUpdate>> UpdateDatasetAsResponseAsync(
             global::System.Guid datasetId,
 
             global::G.DatasetUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Dataset<br/>
@@ -52,6 +56,7 @@ namespace G
         /// <param name="transformations">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetSchemaForUpdate> UpdateDatasetAsync(
@@ -62,6 +67,7 @@ namespace G
             global::G.AnyOf<object, global::G.Missing, object>? outputsSchemaDefinition = default,
             global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? patchExamples = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing, object>? transformations = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

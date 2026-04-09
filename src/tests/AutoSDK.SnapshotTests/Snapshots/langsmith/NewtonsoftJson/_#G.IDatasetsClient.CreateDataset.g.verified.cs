@@ -10,11 +10,13 @@ namespace G
         /// Create a new dataset.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Dataset> CreateDatasetAsync(
 
             global::G.DatasetCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Dataset<br/>
@@ -35,6 +37,7 @@ namespace G
         /// Enum for dataset data types.<br/>
         /// Default Value: kv
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Dataset> CreateDatasetAsync(
@@ -48,6 +51,7 @@ namespace G
             global::System.Guid? id = default,
             object? extra = default,
             global::G.DataType? dataType = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

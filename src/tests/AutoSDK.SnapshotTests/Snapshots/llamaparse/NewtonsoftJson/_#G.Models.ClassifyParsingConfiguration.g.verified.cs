@@ -14,6 +14,7 @@ namespace G
         /// Default Value: en
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lang")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ParserLanguagesJsonConverter))]
         public global::G.ParserLanguages? Lang { get; set; }
 
         /// <summary>

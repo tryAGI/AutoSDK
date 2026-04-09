@@ -1,0 +1,73 @@
+﻿//HintName: G.JsonConverters.BatchReferenceResponseVariant2ResultStatusNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class BatchReferenceResponseVariant2ResultStatusNullableJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.BatchReferenceResponseVariant2ResultStatus?>
+    {
+        /// <inheritdoc />
+        public override global::G.BatchReferenceResponseVariant2ResultStatus? ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.BatchReferenceResponseVariant2ResultStatus? existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.BatchReferenceResponseVariant2ResultStatusExtensions.ToEnum(stringValue);
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.BatchReferenceResponseVariant2ResultStatus)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.BatchReferenceResponseVariant2ResultStatus?);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.BatchReferenceResponseVariant2ResultStatus? value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNull();
+            }
+            else
+            {
+                writer.WriteValue(global::G.BatchReferenceResponseVariant2ResultStatusExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <example>workspace-user</example>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkspaceMemberObjectJsonConverter))]
         public global::G.WorkspaceMemberObject? Object { get; set; }
 
         /// <summary>
@@ -42,6 +43,7 @@ namespace G
         /// </summary>
         /// <example>admin</example>
         [global::Newtonsoft.Json.JsonProperty("org_role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkspaceMemberOrgRoleJsonConverter))]
         public global::G.WorkspaceMemberOrgRole? OrgRole { get; set; }
 
         /// <summary>
@@ -49,6 +51,7 @@ namespace G
         /// </summary>
         /// <example>admin</example>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkspaceMemberRoleJsonConverter))]
         public global::G.WorkspaceMemberRole? Role { get; set; }
 
         /// <summary>
@@ -70,6 +73,7 @@ namespace G
         /// </summary>
         /// <example>active</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkspaceMemberStatusJsonConverter))]
         public global::G.WorkspaceMemberStatus? Status { get; set; }
 
         /// <summary>

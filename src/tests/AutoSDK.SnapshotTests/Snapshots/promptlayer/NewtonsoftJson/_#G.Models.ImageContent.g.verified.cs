@@ -13,6 +13,7 @@ namespace G
         /// Default Value: image_url
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageContentTypeJsonConverter))]
         public global::G.ImageContentType? Type { get; set; }
 
         /// <summary>

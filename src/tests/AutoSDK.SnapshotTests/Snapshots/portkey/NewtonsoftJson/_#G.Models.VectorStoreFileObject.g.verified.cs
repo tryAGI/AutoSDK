@@ -19,6 +19,7 @@ namespace G
         /// The object type, which is always `vector_store.file`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreFileObjectObjectJsonConverter))]
         public global::G.VectorStoreFileObjectObject Object { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the vector store file was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -43,6 +45,7 @@ namespace G
         /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreFileObjectStatusJsonConverter))]
         public global::G.VectorStoreFileObjectStatus Status { get; set; } = default!;
 
         /// <summary>

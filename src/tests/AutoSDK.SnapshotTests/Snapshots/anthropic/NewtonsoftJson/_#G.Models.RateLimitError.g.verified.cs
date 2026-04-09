@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.RateLimitErrorType.RateLimitError</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RateLimitErrorTypeJsonConverter))]
         public global::G.RateLimitErrorType Type { get; set; } = global::G.RateLimitErrorType.RateLimitError;
 
         /// <summary>

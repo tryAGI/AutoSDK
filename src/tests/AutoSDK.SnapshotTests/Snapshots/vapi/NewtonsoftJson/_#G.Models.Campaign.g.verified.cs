@@ -13,12 +13,14 @@ namespace G
         /// This is the status of the campaign.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CampaignStatusJsonConverter))]
         public global::G.CampaignStatus Status { get; set; } = default!;
 
         /// <summary>
         /// This is the explanation for how the campaign ended.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("endedReason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CampaignEndedReasonJsonConverter))]
         public global::G.CampaignEndedReason? EndedReason { get; set; }
 
         /// <summary>

@@ -13,12 +13,14 @@ namespace G
         /// The type of automation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateProjectAutomationConfigVariant3EventTypeJsonConverter))]
         public global::G.CreateProjectAutomationConfigVariant3EventType EventType { get; set; }
 
         /// <summary>
         /// The object type that the retention policy applies to
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RetentionObjectTypeJsonConverter))]
         public global::G.RetentionObjectType ObjectType { get; set; } = default!;
 
         /// <summary>

@@ -45,6 +45,7 @@ namespace G
         /// Visibility of a variable
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrganizationActionsVariableVisibilityJsonConverter))]
         public global::G.OrganizationActionsVariableVisibility Visibility { get; set; } = default!;
 
         /// <summary>

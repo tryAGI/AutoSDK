@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.EmbedFloatsResponseResponseType.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class EmbedFloatsResponseResponseTypeJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.EmbedFloatsResponseResponseType>
+    {
+        /// <inheritdoc />
+        public override global::G.EmbedFloatsResponseResponseType ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.EmbedFloatsResponseResponseType existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.EmbedFloatsResponseResponseTypeExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.EmbedFloatsResponseResponseType)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.EmbedFloatsResponseResponseType);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.EmbedFloatsResponseResponseType value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.EmbedFloatsResponseResponseTypeExtensions.ToValueString(value));
+        }
+    }
+}

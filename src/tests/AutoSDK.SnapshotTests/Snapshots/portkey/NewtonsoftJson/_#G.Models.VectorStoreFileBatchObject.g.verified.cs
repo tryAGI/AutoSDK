@@ -19,12 +19,14 @@ namespace G
         /// The object type, which is always `vector_store.file_batch`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreFileBatchObjectObjectJsonConverter))]
         public global::G.VectorStoreFileBatchObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store files batch was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -37,6 +39,7 @@ namespace G
         /// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreFileBatchObjectStatusJsonConverter))]
         public global::G.VectorStoreFileBatchObjectStatus Status { get; set; } = default!;
 
         /// <summary>

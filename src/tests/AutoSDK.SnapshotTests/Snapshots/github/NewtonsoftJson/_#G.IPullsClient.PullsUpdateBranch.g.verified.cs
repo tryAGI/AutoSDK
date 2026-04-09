@@ -14,6 +14,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullsUpdateBranchResponse> PullsUpdateBranchAsync(
@@ -22,6 +23,7 @@ namespace G
             int pullNumber,
 
             global::G.PullsUpdateBranchRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a pull request branch<br/>
@@ -34,6 +36,7 @@ namespace G
         /// <param name="expectedHeadSha">
         /// The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a `422 Unprocessable Entity` status. You can use the "[List commits](https://docs.github.com/rest/commits/commits#list-commits)" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullsUpdateBranchResponse> PullsUpdateBranchAsync(
@@ -41,6 +44,7 @@ namespace G
             string repo,
             int pullNumber,
             string? expectedHeadSha = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// Digit pressed by the user from their phone keypad.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DTMFUtteranceRoleJsonConverter))]
         public global::G.DTMFUtteranceRole Role { get; set; }
 
         /// <summary>

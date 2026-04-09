@@ -14,6 +14,7 @@ namespace G
         /// Default Value: none
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("domain")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AzurePIIParametersDomainJsonConverter))]
         public global::G.AzurePIIParametersDomain? Domain { get; set; }
 
         /// <summary>

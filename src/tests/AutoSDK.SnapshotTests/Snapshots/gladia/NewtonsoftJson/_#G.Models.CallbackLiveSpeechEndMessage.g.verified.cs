@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLiveSpeechEndMessageEvent.LiveSpeechEnd</default>
         /// <example>live.speech_end</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLiveSpeechEndMessageEventJsonConverter))]
         public global::G.CallbackLiveSpeechEndMessageEvent Event { get; set; } = global::G.CallbackLiveSpeechEndMessageEvent.LiveSpeechEnd;
 
         /// <summary>

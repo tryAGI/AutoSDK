@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AzureOpenAICredentialProviderJsonConverter))]
         public global::G.AzureOpenAICredentialProvider Provider { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AzureOpenAICredentialRegionJsonConverter))]
         public global::G.AzureOpenAICredentialRegion Region { get; set; } = default!;
 
         /// <summary>

@@ -55,12 +55,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExperimentWriteTypeJsonConverter))]
         public global::G.ExperimentWriteType? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("evaluation_method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExperimentWriteEvaluationMethodJsonConverter))]
         public global::G.ExperimentWriteEvaluationMethod? EvaluationMethod { get; set; }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExperimentWriteStatusJsonConverter))]
         public global::G.ExperimentWriteStatus? Status { get; set; }
 
         /// <summary>

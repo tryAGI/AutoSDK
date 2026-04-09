@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatToolMessageRoleJsonConverter))]
         public global::G.ChatToolMessageRole Role { get; set; }
 
         /// <summary>

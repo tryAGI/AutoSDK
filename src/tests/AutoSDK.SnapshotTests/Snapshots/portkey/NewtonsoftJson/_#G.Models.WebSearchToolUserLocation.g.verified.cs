@@ -13,6 +13,7 @@ namespace G
         /// The type of location approximation. Always `approximate`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchToolUserLocationTypeJsonConverter))]
         public global::G.WebSearchToolUserLocationType Type { get; set; }
 
         /// <summary>

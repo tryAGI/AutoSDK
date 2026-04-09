@@ -23,6 +23,7 @@ namespace G
         /// * `agent_user` - Limited access to interact with the agent by creating sessions and sending inputs. Cannot view agent configuration or modify settings.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentRoleRoleJsonConverter))]
         public global::G.AgentRoleRole Role { get; set; } = default!;
 
         /// <summary>

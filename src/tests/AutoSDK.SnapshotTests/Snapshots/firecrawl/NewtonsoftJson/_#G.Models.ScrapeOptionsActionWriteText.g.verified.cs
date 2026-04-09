@@ -13,6 +13,7 @@ namespace G
         /// Write text into an input field, text area, or contenteditable element. Note: You must first focus the element using a 'click' action before writing. The text will be typed character by character to simulate keyboard input.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeOptionsActionWriteTextTypeJsonConverter))]
         public global::G.ScrapeOptionsActionWriteTextType Type { get; set; }
 
         /// <summary>

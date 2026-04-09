@@ -19,6 +19,7 @@ namespace G
         /// The metric type to monitor.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metric_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertMetricTypeJsonConverter))]
         public global::G.AlertMetricType MetricType { get; set; } = default!;
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// Whether threshold is absolute or relative to previous period.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("threshold_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertRuleRequestThresholdTypeJsonConverter))]
         public global::G.AlertRuleRequestThresholdType ThresholdType { get; set; } = default!;
 
         /// <summary>
@@ -43,18 +45,21 @@ namespace G
         /// Comparison operator for the threshold.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comparator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertRuleRequestComparatorJsonConverter))]
         public global::G.AlertRuleRequestComparator Comparator { get; set; } = default!;
 
         /// <summary>
         /// How often to evaluate the metric.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("frequency", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertRuleRequestFrequencyJsonConverter))]
         public global::G.AlertRuleRequestFrequency Frequency { get; set; } = default!;
 
         /// <summary>
         /// Time window for metric evaluation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("window", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertRuleRequestWindowJsonConverter))]
         public global::G.AlertRuleRequestWindow Window { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Denotes whether an email is publicly visible.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibilityJsonConverter))]
         public global::G.UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility Visibility { get; set; } = default!;
 
         /// <summary>

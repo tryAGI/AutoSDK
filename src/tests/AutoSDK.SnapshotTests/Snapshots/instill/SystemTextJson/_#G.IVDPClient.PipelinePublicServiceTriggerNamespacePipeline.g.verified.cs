@@ -18,6 +18,7 @@ namespace G
         /// <param name="pipelineId"></param>
         /// <param name="instillRequesterUid"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TriggerNamespacePipelineResponse> PipelinePublicServiceTriggerNamespacePipelineAsync(
@@ -26,6 +27,7 @@ namespace G
 
             global::G.TriggerNamespacePipelineBody request,
             string? instillRequesterUid = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Trigger a pipeline<br/>
@@ -43,6 +45,7 @@ namespace G
         /// Pipeline input parameters, it will be deprecated soon.
         /// </param>
         /// <param name="data"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TriggerNamespacePipelineResponse> PipelinePublicServiceTriggerNamespacePipelineAsync(
@@ -51,6 +54,7 @@ namespace G
             global::System.Collections.Generic.IList<object> inputs,
             global::System.Collections.Generic.IList<global::G.TriggerData> data,
             string? instillRequesterUid = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

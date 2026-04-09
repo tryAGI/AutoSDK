@@ -15,12 +15,14 @@ namespace G
         /// The type of the message input. Always set to `message`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputMessageTypeJsonConverter))]
         public global::G.InputMessageType? Type { get; set; }
 
         /// <summary>
         /// The role of the message input. One of `user`, `system`, or `developer`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputMessageRoleJsonConverter))]
         public global::G.InputMessageRole Role { get; set; } = default!;
 
         /// <summary>
@@ -28,6 +30,7 @@ namespace G
         /// `incomplete`. Populated when items are returned via API.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputMessageStatusJsonConverter))]
         public global::G.InputMessageStatus? Status { get; set; }
 
         /// <summary>

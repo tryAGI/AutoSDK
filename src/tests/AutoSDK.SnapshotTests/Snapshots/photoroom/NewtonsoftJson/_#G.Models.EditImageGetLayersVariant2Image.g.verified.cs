@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("horizontalAlignment")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditImageGetLayersVariant2ImageHorizontalAlignmentJsonConverter))]
         public global::G.EditImageGetLayersVariant2ImageHorizontalAlignment? HorizontalAlignment { get; set; }
 
         /// <summary>
@@ -109,6 +110,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("removeBackground")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditImageGetLayersVariant2ImageRemoveBackgroundJsonConverter))]
         public global::G.EditImageGetLayersVariant2ImageRemoveBackground? RemoveBackground { get; set; }
 
         /// <summary>
@@ -121,12 +123,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("useForAIBackground")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditImageGetLayersVariant2ImageUseForAIBackgroundJsonConverter))]
         public global::G.EditImageGetLayersVariant2ImageUseForAIBackground? UseForAIBackground { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verticalAlignment")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditImageGetLayersVariant2ImageVerticalAlignmentJsonConverter))]
         public global::G.EditImageGetLayersVariant2ImageVerticalAlignment? VerticalAlignment { get; set; }
 
         /// <summary>

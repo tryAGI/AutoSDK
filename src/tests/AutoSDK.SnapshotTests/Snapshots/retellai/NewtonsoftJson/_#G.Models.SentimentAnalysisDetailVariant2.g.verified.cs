@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sentiment")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SentimentAnalysisDetailVariant2SentimentJsonConverter))]
         public global::G.SentimentAnalysisDetailVariant2Sentiment? Sentiment { get; set; }
 
         /// <summary>

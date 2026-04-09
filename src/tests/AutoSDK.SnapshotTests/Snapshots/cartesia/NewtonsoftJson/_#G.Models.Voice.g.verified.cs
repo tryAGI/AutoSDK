@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gender")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenderPresentationJsonConverter))]
         public global::G.GenderPresentation? Gender { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace G
         /// The language that the given voice should speak the transcript in. For valid options, see [Models](/build-with-cartesia/tts-models).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SupportedLanguageJsonConverter))]
         public global::G.SupportedLanguage Language { get; set; } = default!;
 
         /// <summary>

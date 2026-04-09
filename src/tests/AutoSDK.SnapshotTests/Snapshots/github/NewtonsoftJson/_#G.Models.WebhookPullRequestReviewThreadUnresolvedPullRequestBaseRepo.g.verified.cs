@@ -546,6 +546,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoVisibilityJsonConverter))]
         public global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestBaseRepoVisibility Visibility { get; set; } = default!;
 
         /// <summary>

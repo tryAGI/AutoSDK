@@ -38,6 +38,7 @@ namespace G
         /// Default Value: text
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_structure")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptPublicTemplateStructureJsonConverter))]
         public global::G.PromptPublicTemplateStructure? TemplateStructure { get; set; }
 
         /// <summary>

@@ -28,6 +28,7 @@ namespace G
         /// * `Reviewer` - Reviewer
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectGroupRoleEnumJsonConverter))]
         public global::G.ProjectGroupRoleEnum Role { get; set; } = default!;
 
         /// <summary>

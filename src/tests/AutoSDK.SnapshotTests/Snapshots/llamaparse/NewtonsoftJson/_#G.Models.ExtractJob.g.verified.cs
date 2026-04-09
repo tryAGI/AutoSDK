@@ -27,6 +27,7 @@ namespace G
         /// The status of the extraction job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtractJobStatusJsonConverter))]
         public global::G.ExtractJobStatus Status { get; set; } = default!;
 
         /// <summary>

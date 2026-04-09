@@ -27,6 +27,7 @@ namespace G
         /// The event type, must be `session.update`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventSessionUpdateTypeJsonConverter))]
         public global::G.RealtimeClientEventSessionUpdateType Type { get; set; }
 
         /// <summary>

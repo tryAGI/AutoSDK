@@ -16,12 +16,14 @@ namespace G
         /// </summary>
         /// <default>global::G.ShapeAssetType.Shape</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ShapeAssetTypeJsonConverter))]
         public global::G.ShapeAssetType Type { get; set; } = global::G.ShapeAssetType.Shape;
 
         /// <summary>
         /// The shape to display.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shape", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ShapeAssetShapeJsonConverter))]
         public global::G.ShapeAssetShape Shape { get; set; } = default!;
 
         /// <summary>

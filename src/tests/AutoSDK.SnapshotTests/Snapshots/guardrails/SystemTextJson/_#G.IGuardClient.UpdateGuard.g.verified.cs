@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="guardName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Guard> UpdateGuardAsync(
             string guardName,
 
             global::G.Guard request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Updates a Guard
@@ -31,6 +33,7 @@ namespace G
         /// A description that concisely states the expected behaviour or purpose of the Guard.
         /// </param>
         /// <param name="validators"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Guard> UpdateGuardAsync(
@@ -39,6 +42,7 @@ namespace G
             string name,
             string? description = default,
             global::System.Collections.Generic.IList<global::G.ValidatorReference>? validators = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

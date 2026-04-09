@@ -27,6 +27,7 @@ namespace G
         /// @default 'ai'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssistantMessageJudgePlanAITypeJsonConverter))]
         public global::G.AssistantMessageJudgePlanAIType Type { get; set; }
 
         /// <summary>

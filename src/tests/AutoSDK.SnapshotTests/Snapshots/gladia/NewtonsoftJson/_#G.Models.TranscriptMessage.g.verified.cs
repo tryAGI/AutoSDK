@@ -32,6 +32,7 @@ namespace G
         /// <default>global::G.TranscriptMessageType.Transcript</default>
         /// <example>transcript</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptMessageTypeJsonConverter))]
         public global::G.TranscriptMessageType Type { get; set; } = global::G.TranscriptMessageType.Transcript;
 
         /// <summary>

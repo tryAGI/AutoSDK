@@ -9,11 +9,13 @@ namespace G
         /// Process File Async
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TaskStatusResponse> ProcessFileAsyncV1ConvertFileAsyncPostAsync(
 
             global::G.BodyProcessFileAsyncV1ConvertFileAsyncPost request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Process File Async
@@ -155,6 +157,7 @@ namespace G
         /// <param name="layoutCustomConfig">
         /// Custom configuration for layout model. Use this to specify a non-default kind with its options. The 'kind' field in the config dict determines which layout implementation to use. If not specified, uses the default kind with preset configuration.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TaskStatusResponse> ProcessFileAsyncV1ConvertFileAsyncPostAsync(
@@ -197,6 +200,7 @@ namespace G
             string? codeFormulaCustomConfig = default,
             object? tableStructureCustomConfig = default,
             object? layoutCustomConfig = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

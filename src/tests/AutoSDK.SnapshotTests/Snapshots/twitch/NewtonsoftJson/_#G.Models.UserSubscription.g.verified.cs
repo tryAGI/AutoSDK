@@ -59,6 +59,7 @@ namespace G
         /// * 3000 — Tier 3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UserSubscriptionTierJsonConverter))]
         public global::G.UserSubscriptionTier Tier { get; set; } = default!;
 
         /// <summary>

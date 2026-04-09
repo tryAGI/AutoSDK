@@ -13,6 +13,7 @@ namespace G
         /// The type of object returned, must be 'list'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ContainerListResourceObjectJsonConverter))]
         public global::G.ContainerListResourceObject Object { get; set; }
 
         /// <summary>

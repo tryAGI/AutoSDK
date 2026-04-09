@@ -21,6 +21,7 @@ namespace G
         /// * bits — The minimum price is 1 and the maximum is 10000.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateExtensionBitsProductBodyCostTypeJsonConverter))]
         public global::G.UpdateExtensionBitsProductBodyCostType Type { get; set; }
 
         /// <summary>

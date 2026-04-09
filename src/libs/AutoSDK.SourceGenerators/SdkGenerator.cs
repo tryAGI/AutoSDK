@@ -50,14 +50,13 @@ public class SdkGenerator : IIncrementalGenerator
                 : FileWithName.Empty
                 .AsFileWithName(), context, Id)
             .AddSource(context);
-        supportData
-            .SelectAndReportExceptions((x, c) => ShouldGenerateOptionsSupport(x.Right)
-                ? Sources.OptionsSupport(
-                    x.Left,
-                    includePollingSupport: ShouldGeneratePollingSupport(x.Right),
-                    cancellationToken: c)
-                : FileWithName.Empty
-                .AsFileWithName(), context, Id)
+        data
+            .Collect()
+            .SelectMany(static (x, _) => GetOptionsSupportSettings(x))
+            .SelectAndReportExceptions((x, c) => Sources.OptionsSupport(
+                x.Settings,
+                includePollingSupport: x.IncludePollingSupport,
+                cancellationToken: c), context, Id)
             .AddSource(context);
         supportData
             .SelectAndReportExceptions((x, c) => ShouldGenerateSecuritySupport(x.Right)
@@ -235,9 +234,16 @@ public class SdkGenerator : IIncrementalGenerator
             !x.Clients.IsEmpty);
     }
 
-    private static bool ShouldGeneratePollingSupport(ImmutableArray<AutoSDK.Models.Data> data)
+    private static IEnumerable<(CSharpSettings Settings, bool IncludePollingSupport)> GetOptionsSupportSettings(ImmutableArray<AutoSDK.Models.Data> data)
     {
-        return data.Any(static x => x.Methods.Any(static y => !y.PollingOperations.IsEmpty));
+        return data
+            .Where(static x =>
+                !x.Methods.IsEmpty ||
+                !x.Clients.IsEmpty)
+            .GroupBy(static x => x.Converters.Settings.Namespace, StringComparer.Ordinal)
+            .Select(static x => (
+                Settings: CSharpSettings.FromSettings(x.First().Converters.Settings),
+                IncludePollingSupport: x.Any(static y => y.Methods.Any(static z => !z.PollingOperations.IsEmpty))));
     }
 
     private static bool ShouldGenerateSecuritySupport(ImmutableArray<AutoSDK.Models.Data> data)

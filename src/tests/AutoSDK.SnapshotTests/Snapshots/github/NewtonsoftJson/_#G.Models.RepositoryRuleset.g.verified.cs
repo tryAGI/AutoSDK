@@ -25,12 +25,14 @@ namespace G
         /// The target of the ruleset
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetTargetJsonConverter))]
         public global::G.RepositoryRulesetTarget? Target { get; set; }
 
         /// <summary>
         /// The type of the source of the ruleset
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetSourceTypeJsonConverter))]
         public global::G.RepositoryRulesetSourceType? SourceType { get; set; }
 
         /// <summary>
@@ -43,6 +45,7 @@ namespace G
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enforcement", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleEnforcementJsonConverter))]
         public global::G.RepositoryRuleEnforcement Enforcement { get; set; } = default!;
 
         /// <summary>
@@ -56,6 +59,7 @@ namespace G
         /// querying the repository-level endpoint.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("current_user_can_bypass")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetCurrentUserCanBypassJsonConverter))]
         public global::G.RepositoryRulesetCurrentUserCanBypass? CurrentUserCanBypass { get; set; }
 
         /// <summary>

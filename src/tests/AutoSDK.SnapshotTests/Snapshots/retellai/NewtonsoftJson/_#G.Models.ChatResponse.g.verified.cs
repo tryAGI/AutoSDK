@@ -58,6 +58,7 @@ namespace G
         /// </summary>
         /// <example>ongoing</example>
         [global::Newtonsoft.Json.JsonProperty("chat_status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatResponseChatStatusJsonConverter))]
         public global::G.ChatResponseChatStatus ChatStatus { get; set; } = default!;
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace G
         /// </summary>
         /// <example>api_chat</example>
         [global::Newtonsoft.Json.JsonProperty("chat_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatResponseChatTypeJsonConverter))]
         public global::G.ChatResponseChatType? ChatType { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The content type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationItemContentPartTypeJsonConverter))]
         public global::G.ConversationItemContentPartType? Type { get; set; }
 
         /// <summary>

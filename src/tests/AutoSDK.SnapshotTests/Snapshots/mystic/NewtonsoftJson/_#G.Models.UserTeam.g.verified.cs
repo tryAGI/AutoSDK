@@ -32,6 +32,7 @@ namespace G
         /// Defines various account tiers with different access levels and permissions.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("account_tier", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AccountTierJsonConverter))]
         public global::G.AccountTier AccountTier { get; set; } = default!;
 
         /// <summary>

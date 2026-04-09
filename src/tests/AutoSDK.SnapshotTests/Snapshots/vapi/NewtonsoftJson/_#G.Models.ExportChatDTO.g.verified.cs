@@ -52,6 +52,7 @@ namespace G
         /// Default Value: [assistantId, cost, createdAt, id, messages, output, previousChatId, sessionId, squadId, updatedAt]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("columns")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExportChatDTOColumnsJsonConverter))]
         public global::G.ExportChatDTOColumns? Columns { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace G
         /// Default Value: csv
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExportChatDTOFormatJsonConverter))]
         public global::G.ExportChatDTOFormat? Format { get; set; }
 
         /// <summary>
@@ -79,6 +81,7 @@ namespace G
         /// This is the sort order for pagination. Defaults to 'DESC'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sortOrder")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExportChatDTOSortOrderJsonConverter))]
         public global::G.ExportChatDTOSortOrder? SortOrder { get; set; }
 
         /// <summary>

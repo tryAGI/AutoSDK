@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="callId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnalyzeCallResponse> AnalyzeCallAsync(
             string callId,
 
             global::G.AnalyzeCallRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Analyze Call with AI<br/>
@@ -29,12 +31,14 @@ namespace G
         /// <param name="questions">
         /// Array of question-answer pairs. Each entry is [question_text, expected_type].
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnalyzeCallResponse> AnalyzeCallAsync(
             string callId,
             string goal,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> questions,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

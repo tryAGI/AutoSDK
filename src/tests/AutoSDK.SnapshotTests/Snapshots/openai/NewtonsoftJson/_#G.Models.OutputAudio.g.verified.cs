@@ -13,6 +13,7 @@ namespace G
         /// The type of the output audio. Always `output_audio`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputAudioTypeJsonConverter))]
         public global::G.OutputAudioType Type { get; set; }
 
         /// <summary>

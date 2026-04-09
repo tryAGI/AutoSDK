@@ -25,6 +25,7 @@ namespace G
         /// The type of the configured score
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("score_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectScoreTypeJsonConverter))]
         public global::G.ProjectScoreType? ScoreType { get; set; }
 
         /// <summary>

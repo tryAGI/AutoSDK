@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MemoryFilesListDirectoryResponseEntrieTypeJsonConverter))]
         public global::G.MemoryFilesListDirectoryResponseEntrieType Type { get; set; } = default!;
 
         /// <summary>

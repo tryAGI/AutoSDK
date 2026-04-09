@@ -13,6 +13,7 @@ namespace G
         /// Type of the node - initiates a warm transfer by bridging the call
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BridgeTransferNodeVariant2TypeJsonConverter))]
         public global::G.BridgeTransferNodeVariant2Type Type { get; set; }
 
         /// <summary>

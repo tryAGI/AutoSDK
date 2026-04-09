@@ -12,11 +12,13 @@ namespace G
         /// Compatible with OpenAI chat completions API format.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatCompletionResponse> CreateChatCompletionAsync(
 
             global::G.ChatCompletionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create chat completion<br/>
@@ -72,6 +74,7 @@ namespace G
         /// <param name="toolChoice">
         /// Controls which (if any) tool is called by the model.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatCompletionResponse> CreateChatCompletionAsync(
@@ -89,6 +92,7 @@ namespace G
             global::G.ResponseFormat? responseFormat = default,
             global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? tools = default,
             global::G.OneOf<global::G.ChatCompletionRequestToolChoice?, global::G.ChatCompletionNamedToolChoice>? toolChoice = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

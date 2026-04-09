@@ -20,6 +20,7 @@ namespace G
         /// <param name="isVideoEnabled"></param>
         /// <param name="isLive"></param>
         /// <param name="volume"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
 #if NET8_0_OR_GREATER
@@ -34,6 +35,7 @@ namespace G
             bool? isVideoEnabled = default,
             bool? isLive = default,
             int? volume = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

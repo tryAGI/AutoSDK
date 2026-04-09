@@ -17,6 +17,7 @@ namespace G
         /// </summary>
         /// <example>duration</example>
         [global::Newtonsoft.Json.JsonProperty("column", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterNumberTypeColumnOnCallTableColumnJsonConverter))]
         public global::G.FilterNumberTypeColumnOnCallTableColumn Column { get; set; } = default!;
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace G
         /// </summary>
         /// <example>"=" or "&gt;" or "&lt;" or "&gt;=" or "&lt;="</example>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterNumberTypeColumnOnCallTableOperatorJsonConverter))]
         public global::G.FilterNumberTypeColumnOnCallTableOperator Operator { get; set; } = default!;
 
         /// <summary>

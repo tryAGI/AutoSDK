@@ -54,12 +54,14 @@ namespace G
         /// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretScanningAlertStateJsonConverter))]
         public global::G.SecretScanningAlertState? State { get; set; }
 
         /// <summary>
         /// **Required when the `state` is `resolved`.** The reason for resolving the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretScanningAlertResolutionJsonConverter))]
         public global::G.SecretScanningAlertResolution? Resolution { get; set; }
 
         /// <summary>
@@ -121,6 +123,7 @@ namespace G
         /// The token status as of the latest validity check.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("validity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretScanningAlertValidityJsonConverter))]
         public global::G.SecretScanningAlertValidity? Validity { get; set; }
 
         /// <summary>

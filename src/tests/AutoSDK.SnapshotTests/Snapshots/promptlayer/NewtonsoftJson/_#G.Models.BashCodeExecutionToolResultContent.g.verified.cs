@@ -13,6 +13,7 @@ namespace G
         /// Default Value: bash_code_execution_tool_result
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BashCodeExecutionToolResultContentTypeJsonConverter))]
         public global::G.BashCodeExecutionToolResultContentType? Type { get; set; }
 
         /// <summary>

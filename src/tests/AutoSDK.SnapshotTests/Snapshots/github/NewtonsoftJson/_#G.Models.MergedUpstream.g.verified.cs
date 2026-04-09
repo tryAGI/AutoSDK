@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MergedUpstreamMergeTypeJsonConverter))]
         public global::G.MergedUpstreamMergeType? MergeType { get; set; }
 
         /// <summary>

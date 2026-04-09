@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAssetRequestConfigurationDiscriminatorNameJsonConverter))]
         public global::G.CreateAssetRequestConfigurationDiscriminatorName? Name { get; set; }
 
         /// <summary>

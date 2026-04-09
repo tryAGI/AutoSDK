@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IngestionEventVariant7TypeJsonConverter))]
         public global::G.IngestionEventVariant7Type? Type { get; set; }
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// Default Value: general
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummaryTypesEnumJsonConverter))]
         public global::G.SummaryTypesEnum? Type { get; set; }
 
         /// <summary>

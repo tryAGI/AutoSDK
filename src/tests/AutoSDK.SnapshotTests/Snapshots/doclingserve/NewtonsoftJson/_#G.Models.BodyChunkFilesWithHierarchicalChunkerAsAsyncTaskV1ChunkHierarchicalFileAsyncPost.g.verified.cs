@@ -27,6 +27,7 @@ namespace G
         /// Default Value: inbody
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TargetNameJsonConverter))]
         public global::G.TargetName? TargetType { get; set; }
 
         /// <summary>
@@ -41,6 +42,7 @@ namespace G
         /// Default Value: embedded
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("convert_image_export_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageRefModeJsonConverter))]
         public global::G.ImageRefMode? ConvertImageExportMode { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace G
         /// Default Value: easyocr
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("convert_ocr_engine")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OcrEnginesEnumJsonConverter))]
         public global::G.OcrEnginesEnum? ConvertOcrEngine { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace G
         /// Default Value: docling_parse
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("convert_pdf_backend")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PdfBackendJsonConverter))]
         public global::G.PdfBackend? ConvertPdfBackend { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace G
         /// Default Value: accurate
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("convert_table_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TableFormerModeJsonConverter))]
         public global::G.TableFormerMode? ConvertTableMode { get; set; }
 
         /// <summary>
@@ -96,6 +101,7 @@ namespace G
         /// Default Value: standard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("convert_pipeline")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProcessingPipelineJsonConverter))]
         public global::G.ProcessingPipeline? ConvertPipeline { get; set; }
 
         /// <summary>

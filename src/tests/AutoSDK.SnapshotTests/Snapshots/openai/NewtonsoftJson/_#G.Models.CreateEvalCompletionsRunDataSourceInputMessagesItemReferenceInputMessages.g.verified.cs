@@ -13,6 +13,7 @@ namespace G
         /// The type of input messages. Always `item_reference`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessagesTypeJsonConverter))]
         public global::G.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessagesType Type { get; set; }
 
         /// <summary>

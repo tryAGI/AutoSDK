@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `response.web_search_call.searching`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseWebSearchCallSearchingEventTypeJsonConverter))]
         public global::G.ResponseWebSearchCallSearchingEventType Type { get; set; }
 
         /// <summary>

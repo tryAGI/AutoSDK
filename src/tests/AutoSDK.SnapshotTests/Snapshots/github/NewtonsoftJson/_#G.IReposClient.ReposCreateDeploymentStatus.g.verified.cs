@@ -14,6 +14,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="deploymentId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeploymentStatus> ReposCreateDeploymentStatusAsync(
@@ -22,6 +23,7 @@ namespace G
             int deploymentId,
 
             global::G.ReposCreateDeploymentStatusRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a deployment status<br/>
@@ -32,6 +34,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="deploymentId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DeploymentStatus>> ReposCreateDeploymentStatusAsResponseAsync(
@@ -40,6 +43,7 @@ namespace G
             int deploymentId,
 
             global::G.ReposCreateDeploymentStatusRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a deployment status<br/>
@@ -72,6 +76,7 @@ namespace G
         /// <param name="autoInactive">
         /// Adds a new `inactive` status to all prior non-transient, non-production environment deployments with the same repository and `environment` name as the created status's deployment. An `inactive` status is only added to deployments that had a `success` state. Default: `true`
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeploymentStatus> ReposCreateDeploymentStatusAsync(
@@ -85,6 +90,7 @@ namespace G
             string? environment = default,
             string? environmentUrl = default,
             bool? autoInactive = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

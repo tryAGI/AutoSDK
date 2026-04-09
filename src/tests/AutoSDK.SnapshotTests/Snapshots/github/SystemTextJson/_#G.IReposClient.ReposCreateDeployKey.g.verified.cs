@@ -12,6 +12,7 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeployKey> ReposCreateDeployKeyAsync(
@@ -19,6 +20,7 @@ namespace G
             string repo,
 
             global::G.ReposCreateDeployKeyRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a deploy key<br/>
@@ -27,6 +29,7 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DeployKey>> ReposCreateDeployKeyAsResponseAsync(
@@ -34,6 +37,7 @@ namespace G
             string repo,
 
             global::G.ReposCreateDeployKeyRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a deploy key<br/>
@@ -52,6 +56,7 @@ namespace G
         ///   <br/>
         /// Deploy keys with write access can perform the same actions as an organization member with admin access, or a collaborator on a personal repository. For more information, see "[Repository permission levels for an organization](https://docs.github.com/articles/repository-permission-levels-for-an-organization/)" and "[Permission levels for a user account repository](https://docs.github.com/articles/permission-levels-for-a-user-account-repository/)."
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeployKey> ReposCreateDeployKeyAsync(
@@ -60,6 +65,7 @@ namespace G
             string key,
             string? title = default,
             bool? readOnly = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

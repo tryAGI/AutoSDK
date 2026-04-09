@@ -13,6 +13,7 @@ namespace G
         /// Identifier of the guardrail check type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GuardrailCheckIdJsonConverter))]
         public global::G.GuardrailCheckId Id { get; set; } = default!;
 
         /// <summary>

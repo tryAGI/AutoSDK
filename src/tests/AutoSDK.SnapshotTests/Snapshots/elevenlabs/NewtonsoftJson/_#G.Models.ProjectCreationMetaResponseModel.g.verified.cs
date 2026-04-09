@@ -19,12 +19,14 @@ namespace G
         /// The status of the project creation action.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectCreationMetaResponseModelStatusJsonConverter))]
         public global::G.ProjectCreationMetaResponseModelStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The type of the project creation action.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectCreationMetaResponseModelTypeJsonConverter))]
         public global::G.ProjectCreationMetaResponseModelType Type { get; set; } = default!;
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effect")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SoundtrackEffectJsonConverter))]
         public global::G.SoundtrackEffect? Effect { get; set; }
 
         /// <summary>
