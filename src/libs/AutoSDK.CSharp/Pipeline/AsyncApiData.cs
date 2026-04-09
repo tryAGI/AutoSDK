@@ -733,6 +733,7 @@ public static class AsyncApiData
                 IsDeprecated: false,
                 Summary: summary,
                 Description: description,
+                ContentType: null,
                 ConverterType: type.ConverterType,
                 Properties: properties,
                 HasSchemaDefault: false,

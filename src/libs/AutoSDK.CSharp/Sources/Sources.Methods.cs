@@ -424,6 +424,7 @@ namespace {endPoint.Settings.Namespace}
                 __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
             }}").Inject()}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
+{GenerateCookieParameterHandling(endPoint)}
  
 {GenerateRequestData(endPoint)}
 
@@ -504,6 +505,383 @@ namespace {endPoint.Settings.Namespace}
             : $"$\"{{{name}{additionalConvert}}}\"";
     }
 
+    private static string GenerateCookieParameterHandling(
+        EndPoint endPoint)
+    {
+        var cookieParameters = endPoint.Parameters
+            .Where(x => x.Location == ParameterLocation.Cookie)
+            .ToArray();
+        if (cookieParameters.Length == 0)
+        {
+            return TrimmedLine;
+        }
+
+        var builder = new System.Text.StringBuilder();
+        builder.AppendLine("            var __cookies = new global::System.Collections.Generic.List<string>();");
+        foreach (var parameter in cookieParameters)
+        {
+            builder.AppendLine(GenerateCookieParameterHandling(parameter, endPoint.Settings));
+        }
+
+        builder.AppendLine(@"            if (__cookies.Count > 0)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation(""Cookie"", string.Join(""; "", __cookies));
+            }");
+
+        return builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateCookieParameterHandling(
+        MethodParameter parameter,
+        Settings settings)
+    {
+        if (parameter.Properties.Length > 0)
+        {
+            var builder = new System.Text.StringBuilder();
+            foreach (var property in parameter.Properties)
+            {
+                builder.AppendLine(GeneratePropertySegmentAppendStatements(
+                    collectionName: "__cookies",
+                    segmentName: property.Id,
+                    accessExpression: GetParameterPropertyAccessExpression(parameter, property),
+                    type: property.Type,
+                    isNullableLike: IsParameterPropertyNullableLike(parameter, property),
+                    urlEncode: false,
+                    localNamePrefix: $"{parameter.ParameterName}_{property.Name}",
+                    settings: settings));
+            }
+
+            return builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        return GenerateSegmentAppendStatements(
+            collectionName: "__cookies",
+            segmentName: parameter.Id,
+            accessExpression: parameter.ParameterName,
+            type: parameter.Type,
+            isNullableLike: IsNullableLike(parameter.Type),
+            urlEncode: false,
+            localNamePrefix: parameter.ParameterName,
+            settings: settings);
+    }
+
+    private static string GenerateQueryStringParameterHandling(
+        EndPoint endPoint)
+    {
+        var queryStringParameters = endPoint.Parameters
+            .Where(x => x.Location == ParameterLocation.QueryString)
+            .ToArray();
+        if (queryStringParameters.Length == 0)
+        {
+            return TrimmedLine;
+        }
+
+        var builder = new System.Text.StringBuilder();
+        foreach (var parameter in queryStringParameters)
+        {
+            builder.AppendLine(GenerateQueryStringParameterHandling(endPoint, parameter));
+        }
+
+        return builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateQueryStringParameterHandling(
+        EndPoint endPoint,
+        MethodParameter parameter)
+    {
+        if (string.Equals(parameter.ContentType, "application/x-www-form-urlencoded", StringComparison.OrdinalIgnoreCase) &&
+            parameter.Properties.Length > 0)
+        {
+            var segmentsVariableName = $"__queryStringSegments_{parameter.ParameterName}";
+            var builder = new System.Text.StringBuilder();
+            builder.AppendLine("            var " + segmentsVariableName + " = new global::System.Collections.Generic.List<string>();");
+            foreach (var property in parameter.Properties)
+            {
+                builder.AppendLine(GeneratePropertySegmentAppendStatements(
+                    collectionName: segmentsVariableName,
+                    segmentName: property.Id,
+                    accessExpression: GetParameterPropertyAccessExpression(parameter, property),
+                    type: property.Type,
+                    isNullableLike: IsParameterPropertyNullableLike(parameter, property),
+                    urlEncode: true,
+                    localNamePrefix: $"{parameter.ParameterName}_{property.Name}",
+                    settings: endPoint.Settings));
+            }
+
+            builder.AppendLine(
+                "            if (" + segmentsVariableName + @".Count > 0)
+            {
+                __pathBuilder = __pathBuilder.AddRawQueryString(string.Join(""&"", " + segmentsVariableName + @"));
+            }");
+
+            return builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        var serializedValueExpression = GenerateStandaloneQueryStringValueExpression(endPoint, parameter);
+        var code = $@"            var __queryStringValue_{parameter.ParameterName} = {serializedValueExpression};
+            if (!string.IsNullOrWhiteSpace(__queryStringValue_{parameter.ParameterName}))
+            {{
+                __pathBuilder = __pathBuilder.AddRawQueryString(__queryStringValue_{parameter.ParameterName});
+            }}";
+
+        if (!IsNullableLike(parameter.Type))
+        {
+            return code.RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        return $@"            if ({parameter.ParameterName} is not null)
+            {{
+{code.AddIndent(1)}
+            }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateStandaloneQueryStringValueExpression(
+        EndPoint endPoint,
+        MethodParameter parameter)
+    {
+        if (parameter.Type.CSharpTypeWithoutNullability == "string")
+        {
+            return string.Equals(parameter.ContentType, "application/x-www-form-urlencoded", StringComparison.OrdinalIgnoreCase)
+                ? parameter.ParameterName
+                : $"global::System.Uri.EscapeDataString({parameter.ParameterName})";
+        }
+
+        if (string.Equals(parameter.ContentType, "application/x-www-form-urlencoded", StringComparison.OrdinalIgnoreCase))
+        {
+            return GenerateSerializedValueExpression(
+                type: parameter.Type,
+                expression: parameter.ParameterName,
+                isNullableLike: IsNullableLike(parameter.Type),
+                settings: endPoint.Settings);
+        }
+
+        return $"global::System.Uri.EscapeDataString({GenerateJsonSerializeExpression(endPoint, parameter)})";
+    }
+
+    private static string GenerateJsonSerializeExpression(
+        EndPoint endPoint,
+        MethodParameter parameter)
+    {
+        return GenerateJsonSerializeExpression(
+            type: parameter.Type,
+            valueExpression: parameter.ParameterName,
+            settings: endPoint.Settings);
+    }
+
+    private static string GenerateJsonSerializeExpression(
+        TypeData type,
+        string valueExpression,
+        Settings settings)
+    {
+        if (!settings.UsesSystemTextJson())
+        {
+            return type.UsesGeneratedJsonHelpers
+                ? $"{valueExpression}.ToJson(JsonSerializerOptions)"
+                : $"global::Newtonsoft.Json.JsonConvert.SerializeObject({valueExpression}, JsonSerializerOptions)";
+        }
+
+        if (type.UsesGeneratedJsonHelpers)
+        {
+            return settings.HasJsonSerializerContext()
+                ? $"{valueExpression}.ToJson(JsonSerializerContext)"
+                : $"{valueExpression}.ToJson(JsonSerializerOptions)";
+        }
+
+        return settings.HasJsonSerializerContext()
+            ? $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, {valueExpression}.GetType(), JsonSerializerContext)"
+            : $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, JsonSerializerOptions)";
+    }
+
+    private static string GeneratePropertySegmentAppendStatements(
+        string collectionName,
+        string segmentName,
+        string accessExpression,
+        TypeData type,
+        bool isNullableLike,
+        bool urlEncode,
+        string localNamePrefix,
+        Settings settings)
+    {
+        return GenerateSegmentAppendStatements(
+            collectionName: collectionName,
+            segmentName: segmentName,
+            accessExpression: accessExpression,
+            type: type,
+            isNullableLike: isNullableLike,
+            urlEncode: urlEncode,
+            localNamePrefix: localNamePrefix,
+            settings: settings);
+    }
+
+    private static string GenerateSegmentAppendStatements(
+        string collectionName,
+        string segmentName,
+        string accessExpression,
+        TypeData type,
+        bool isNullableLike,
+        bool urlEncode,
+        string localNamePrefix,
+        Settings settings)
+    {
+        if (type.IsArray &&
+            !type.SubTypes.IsEmpty)
+        {
+            var itemType = type.SubTypes[0].Unbox<TypeData>();
+            var collectionVariableName = $"__{localNamePrefix}";
+            var itemVariableName = $"{collectionVariableName}_item";
+            var appendExpression = CreateSegmentAppendExpression(
+                collectionName: collectionName,
+                segmentName: segmentName,
+                valueExpression: GenerateSerializedValueExpression(
+                    type: itemType,
+                    expression: itemVariableName,
+                    isNullableLike: IsNullableLike(itemType),
+                    settings: settings),
+                urlEncode: urlEncode);
+
+            var body = $@"foreach (var {itemVariableName} in {collectionVariableName})
+                {{
+                    {appendExpression};
+                }}";
+            if (!isNullableLike)
+            {
+                return $@"            var {collectionVariableName} = {accessExpression};
+            {body}".RemoveBlankLinesWhereOnlyWhitespaces();
+            }
+
+            return $@"            var {collectionVariableName} = {accessExpression};
+            if ({collectionVariableName} is not null)
+            {{
+{body.AddIndent(1)}
+            }}".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        var localVariableName = $"__{localNamePrefix}";
+        var appendValueExpression = GenerateSerializedValueExpression(
+            type: type,
+            expression: localVariableName,
+            isNullableLike: isNullableLike,
+            settings: settings);
+        var appendStatement = CreateSegmentAppendExpression(
+            collectionName: collectionName,
+            segmentName: segmentName,
+            valueExpression: appendValueExpression,
+            urlEncode: urlEncode);
+        if (!isNullableLike)
+        {
+            return $@"            var {localVariableName} = {accessExpression};
+            {appendStatement};".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        return $@"            var {localVariableName} = {accessExpression};
+            if ({localVariableName} is not null)
+            {{
+                {appendStatement};
+            }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string CreateSegmentAppendExpression(
+        string collectionName,
+        string segmentName,
+        string valueExpression,
+        bool urlEncode)
+    {
+        segmentName = segmentName.Replace("\"", "\\\"");
+
+        return urlEncode
+            ? $"{collectionName}.Add(\"{segmentName}=\" + global::System.Uri.EscapeDataString({valueExpression}))"
+            : $"{collectionName}.Add($\"{segmentName}={{{valueExpression}}}\")";
+    }
+
+    private static string GetParameterPropertyAccessExpression(
+        MethodParameter parameter,
+        PropertyData property)
+    {
+        return parameter.Type.CSharpTypeNullability
+            ? $"{parameter.ParameterName}?.{property.Name}"
+            : $"{parameter.ParameterName}.{property.Name}";
+    }
+
+    private static bool IsParameterPropertyNullableLike(
+        MethodParameter parameter,
+        PropertyData property)
+    {
+        var isLiftedNullable =
+            parameter.Type.CSharpTypeNullability &&
+            property.Type.IsValueType &&
+            !property.Type.CSharpTypeNullability;
+
+        return IsNullableLike(property.Type, isLiftedNullable);
+    }
+
+    private static bool IsNullableLike(
+        TypeData type,
+        bool liftedNullable = false)
+    {
+        return !type.IsValueType ||
+               type.CSharpTypeNullability ||
+               liftedNullable;
+    }
+
+    private static string GenerateSerializedValueExpression(
+        TypeData type,
+        string expression,
+        bool isNullableLike,
+        Settings settings)
+    {
+        if (type.CSharpTypeWithoutNullability == "string")
+        {
+            return isNullableLike
+                ? $"{expression}.ToString() ?? string.Empty"
+                : expression;
+        }
+
+        if (type.IsEnum &&
+            !type.IsAnyOfLike)
+        {
+            var enumExpression = isNullableLike && type.IsValueType
+                ? $"{expression}.Value"
+                : expression;
+            return $"{enumExpression}.ToValueString()";
+        }
+
+        if (type.IsAnyOfLike)
+        {
+            return $"{expression}.ToString() ?? string.Empty";
+        }
+
+        if (type.IsDate)
+        {
+            var dateExpression = isNullableLike && type.IsValueType
+                ? $"{expression}.Value"
+                : expression;
+            return $"{dateExpression}.ToString(\"yyyy-MM-dd\")";
+        }
+
+        if (type.IsDateTime)
+        {
+            var dateTimeExpression = isNullableLike && type.IsValueType
+                ? $"{expression}.Value"
+                : expression;
+            return $"{dateTimeExpression}.ToString(\"yyyy-MM-ddTHH:mm:ssZ\")";
+        }
+
+        if (type.CSharpTypeWithoutNullability == "bool")
+        {
+            var boolExpression = isNullableLike && type.IsValueType
+                ? $"{expression}.Value"
+                : expression;
+            return $"{boolExpression}.ToString().ToLowerInvariant()";
+        }
+
+        if (type.Properties.Length > 0)
+        {
+            return GenerateJsonSerializeExpression(type, expression, settings);
+        }
+
+        return $"{expression}.ToString() ?? string.Empty";
+    }
+
     public static string GeneratePathAndQuery(
         EndPoint endPoint,
         string authorizationVariableName = "Authorizations")
@@ -560,6 +938,8 @@ namespace {endPoint.Settings.Namespace}
             code += @" 
                 ;";
         }
+
+        code += "\n" + GenerateQueryStringParameterHandling(endPoint);
 
         code += @" 
             var __path = __pathBuilder.ToString();";
