@@ -34,6 +34,7 @@ namespace {authorization.Settings.Namespace}
 {{
     public sealed partial class {authorization.Settings.ClassName}
     {{
+{GetAuthorizationObsoleteAttribute(authorization, 8)}
         /// <inheritdoc/>
         public void {authorization.MethodName}(
 {authorization.Parameters.Select(x => $@"
@@ -118,6 +119,7 @@ namespace {authorization.Settings.Namespace}
         /// </summary>
 {authorization.Parameters.Select(x => $@"
         /// <param name=""{x}""></param>").Inject()}
+{GetAuthorizationObsoleteAttribute(authorization, 8)}
         public void {authorization.MethodName}(
 {authorization.Parameters.Select(x => $@"
             string {x},").Inject().TrimEnd(',')});
@@ -141,6 +143,7 @@ namespace {authorization.Settings.Namespace}
     public sealed partial class {authorization.Settings.ClassName}
     {{
         /// <inheritdoc cref=""{authorization.Settings.ClassName}(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{{global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization}}?, bool)""/>
+{GetAuthorizationObsoleteAttribute(authorization, 8)}
         public {authorization.Settings.ClassName}(
 {string.Join("\n", authorization.Parameters.Select(x => $@" 
             string {x},"))}
@@ -195,14 +198,25 @@ namespace {authorization.Settings.Namespace}
         };
     }
 
+    private static string GetAuthorizationObsoleteAttribute(
+        Authorization authorization,
+        int indent)
+    {
+        return authorization.IsDeprecated
+            ? $"{new string(' ', indent)}[global::System.Obsolete(\"This security scheme marked as deprecated.\")]"
+            : string.Empty;
+    }
+
     private static string GenerateOAuth2AuthorizationMembers(Authorization authorization)
     {
         var hasAuthorizationCodeFlow = authorization.Flows.Any(static x => x.Type == nameof(OpenApiOAuthFlows.AuthorizationCode));
+        var hasDeviceAuthorizationFlow = authorization.Flows.Any(static x => x.Type == nameof(OpenApiOAuthFlows.DeviceAuthorization));
         var hasScopeEnum = GetDistinctOAuth2Scopes(authorization).Length != 0;
 
         return $@"
 {GenerateOAuth2SupportTypes(authorization)}
 {GenerateOAuth2ScopeEnum(authorization)}
+{GenerateOAuth2SecurityMetadataMembers(authorization)}
         /// <summary>
         /// Gets or sets the OAuth2 token store.
         /// </summary>
@@ -280,6 +294,7 @@ namespace {authorization.Settings.Namespace}
         /// Authorize using an OAuth2 access token.
         /// </summary>
         /// <param name=""accessToken""></param>
+{GetAuthorizationObsoleteAttribute(authorization, 8)}
         public void {authorization.MethodName}(
             string accessToken)
         {{
@@ -296,6 +311,7 @@ namespace {authorization.Settings.Namespace}
         /// Authorize using an OAuth2 token.
         /// </summary>
         /// <param name=""token""></param>
+{GetAuthorizationObsoleteAttribute(authorization, 8)}
         public void {authorization.MethodName}(
             OAuth2Token token)
         {{
@@ -336,6 +352,28 @@ namespace {authorization.Settings.Namespace}
 
             return token;
         }}" : TrimmedLine)}
+{(hasDeviceAuthorizationFlow ? $@"
+
+        private async global::System.Threading.Tasks.Task<OAuth2DeviceAuthorizationResponse> RequestOAuth2DeviceAuthorizationAsync(
+            global::System.Uri deviceAuthorizationUrl,
+            global::System.Collections.Generic.IEnumerable<global::System.Collections.Generic.KeyValuePair<string, string>> body,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            deviceAuthorizationUrl = deviceAuthorizationUrl ?? throw new global::System.ArgumentNullException(nameof(deviceAuthorizationUrl));
+            body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+
+            using var response = await HttpClient.PostAsync(
+                requestUri: deviceAuthorizationUrl,
+                content: new global::System.Net.Http.FormUrlEncodedContent(body),
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+{GenerateOAuth2DeviceAuthorizationRead(authorization, "json")}
+
+            return deviceAuthorization;
+        }}" : TrimmedLine)}
 {authorization.Flows.Select(x => GenerateOAuth2AuthorizationFlowMember(authorization, x)).Inject()}
 {(hasAuthorizationCodeFlow ? GenerateOAuth2PkceMembers() : TrimmedLine)}
 {(hasScopeEnum ? GenerateOAuth2ScopeHelpers(authorization) : TrimmedLine)}
@@ -347,6 +385,16 @@ namespace {authorization.Settings.Namespace}
         var rootClassName = authorization.Settings.ClassName.Replace(".", string.Empty);
 
         return $@"
+        /// <summary>
+        /// Gets the OAuth2 metadata URL declared by the security scheme, if any.
+        /// </summary>
+        public string? OAuth2MetadataUrl {{ get; }}
+
+        /// <summary>
+        /// Gets a value indicating whether the OAuth2 security scheme is deprecated.
+        /// </summary>
+        public bool IsOAuth2Deprecated {{ get; }}
+
         /// <summary>
         /// Gets or sets the OAuth2 token store.
         /// </summary>
@@ -384,6 +432,7 @@ namespace {authorization.Settings.Namespace}
         /// Authorize using an OAuth2 access token.
         /// </summary>
         /// <param name=""accessToken""></param>
+{GetAuthorizationObsoleteAttribute(authorization, 8)}
         public void {authorization.MethodName}(
             string accessToken);
 
@@ -391,9 +440,29 @@ namespace {authorization.Settings.Namespace}
         /// Authorize using an OAuth2 token.
         /// </summary>
         /// <param name=""token""></param>
+{GetAuthorizationObsoleteAttribute(authorization, 8)}
         public void {authorization.MethodName}(
             global::{authorization.Settings.Namespace}.{rootClassName}.OAuth2Token token);
 {authorization.Flows.Select(x => GenerateOAuth2AuthorizationFlowInterfaceMember(authorization, x)).Inject()}
+".Trim('\r', '\n');
+    }
+
+    private static string GenerateOAuth2SecurityMetadataMembers(Authorization authorization)
+    {
+        var oauth2MetadataUrl = authorization.OAuth2MetadataUrl.ClearForCSharp();
+
+        return $@"
+        /// <summary>
+        /// Gets the OAuth2 metadata URL declared by the security scheme, if any.
+        /// </summary>
+        public string? OAuth2MetadataUrl => string.IsNullOrWhiteSpace(""{oauth2MetadataUrl}"")
+            ? null
+            : ""{oauth2MetadataUrl}"";
+
+        /// <summary>
+        /// Gets a value indicating whether the OAuth2 security scheme is deprecated.
+        /// </summary>
+        public bool IsOAuth2Deprecated => {(authorization.IsDeprecated ? "true" : "false")};
 ".Trim('\r', '\n');
     }
 
@@ -402,6 +471,7 @@ namespace {authorization.Settings.Namespace}
         OAuthFlow flow)
     {
         var hasScopeEnum = GetDistinctOAuth2Scopes(authorization).Length != 0;
+        var obsoleteAttribute = GetAuthorizationObsoleteAttribute(authorization, 8);
         var refreshUrl = string.IsNullOrWhiteSpace(flow.RefreshUrl)
             ? flow.TokenUrl
             : flow.RefreshUrl;
@@ -417,6 +487,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""clientSecret""></param>
         /// <param name=""scopes""></param>
         /// <param name=""cancellationToken""></param>
+{obsoleteAttribute}
         public global::System.Threading.Tasks.Task {authorization.MethodName}WithCredentialsAsync(
             string clientId,
             string clientSecret,
@@ -431,6 +502,7 @@ namespace {authorization.Settings.Namespace}
         }}
 " : TrimmedLine)}
         /// <inheritdoc/>
+{obsoleteAttribute}
         public async global::System.Threading.Tasks.Task {authorization.MethodName}WithCredentialsAsync(
             string clientId,
             string clientSecret,
@@ -492,6 +564,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""codeChallenge""></param>
         /// <param name=""codeChallengeMethod""></param>
         /// <returns>The authorization URL.</returns>
+{obsoleteAttribute}
         public string GetOAuth2AuthorizationUrl(
             string clientId,
             string redirectUri,
@@ -521,6 +594,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""codeChallenge""></param>
         /// <param name=""codeChallengeMethod""></param>
         /// <returns>The authorization URL.</returns>
+{obsoleteAttribute}
         public string GetOAuth2AuthorizationUrl(
             string clientId,
             string redirectUri,
@@ -577,6 +651,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""codeVerifier""></param>
         /// <param name=""cancellationToken""></param>
         /// <returns>The OAuth2 token.</returns>
+{obsoleteAttribute}
         public async global::System.Threading.Tasks.Task<OAuth2Token> ExchangeOAuth2CodeForTokenAsync(
             string clientId,
             string code,
@@ -618,6 +693,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""clientSecret""></param>
         /// <param name=""cancellationToken""></param>
         /// <returns>The refreshed OAuth2 token.</returns>
+{obsoleteAttribute}
         public async global::System.Threading.Tasks.Task<OAuth2Token> RefreshOAuth2TokenAsync(
             string clientId,
             string? clientSecret = null,
@@ -657,6 +733,7 @@ namespace {authorization.Settings.Namespace}
         }}
 
         /// <inheritdoc/>
+{obsoleteAttribute}
         public async global::System.Threading.Tasks.Task {authorization.MethodName}WithAuthorizationCodeAsync(
             string clientId,
             string code,
@@ -681,6 +758,169 @@ namespace {authorization.Settings.Namespace}
 
             {authorization.MethodName}(token);
         }}",
+            nameof(OpenApiOAuthFlows.DeviceAuthorization) => $@"
+
+{(hasScopeEnum ? $@"        /// <summary>
+        /// Requests an OAuth2 device authorization using typed scopes.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""scopes""></param>
+        /// <param name=""cancellationToken""></param>
+        /// <returns>The device authorization response.</returns>
+{obsoleteAttribute}
+        public global::System.Threading.Tasks.Task<OAuth2DeviceAuthorizationResponse> RequestOAuth2DeviceAuthorizationAsync(
+            string clientId,
+            global::System.Collections.Generic.IEnumerable<OAuth2Scope>? scopes = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            return RequestOAuth2DeviceAuthorizationAsync(
+                clientId: clientId,
+                scope: JoinOAuth2Scopes(scopes),
+                cancellationToken: cancellationToken);
+        }}
+" : TrimmedLine)}
+        /// <summary>
+        /// Requests an OAuth2 device authorization.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""scope""></param>
+        /// <param name=""cancellationToken""></param>
+        /// <returns>The device authorization response.</returns>
+{obsoleteAttribute}
+        public async global::System.Threading.Tasks.Task<OAuth2DeviceAuthorizationResponse> RequestOAuth2DeviceAuthorizationAsync(
+            string clientId,
+            string? scope = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            clientId = clientId ?? throw new global::System.ArgumentNullException(nameof(clientId));
+
+            var body = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<string, string>>
+            {{
+                new global::System.Collections.Generic.KeyValuePair<string, string>(""client_id"", clientId),
+            }};
+            if (!string.IsNullOrWhiteSpace(scope))
+            {{
+                body.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(""scope"", scope));
+            }}
+
+            return await RequestOAuth2DeviceAuthorizationAsync(
+                deviceAuthorizationUrl: new global::System.Uri(""{flow.DeviceAuthorizationUrl}""),
+                body: body,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }}
+
+{(hasScopeEnum ? $@"        /// <summary>
+        /// Exchanges an OAuth2 device code for a token using typed scopes.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""deviceCode""></param>
+        /// <param name=""clientSecret""></param>
+        /// <param name=""scopes""></param>
+        /// <param name=""cancellationToken""></param>
+        /// <returns>The OAuth2 token.</returns>
+{obsoleteAttribute}
+        public global::System.Threading.Tasks.Task<OAuth2Token> ExchangeOAuth2DeviceCodeForTokenAsync(
+            string clientId,
+            string deviceCode,
+            string? clientSecret = null,
+            global::System.Collections.Generic.IEnumerable<OAuth2Scope>? scopes = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            return ExchangeOAuth2DeviceCodeForTokenAsync(
+                clientId: clientId,
+                deviceCode: deviceCode,
+                clientSecret: clientSecret,
+                scope: JoinOAuth2Scopes(scopes),
+                cancellationToken: cancellationToken);
+        }}
+" : TrimmedLine)}
+        /// <summary>
+        /// Exchanges an OAuth2 device code for a token.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""deviceCode""></param>
+        /// <param name=""clientSecret""></param>
+        /// <param name=""scope""></param>
+        /// <param name=""cancellationToken""></param>
+        /// <returns>The OAuth2 token.</returns>
+{obsoleteAttribute}
+        public async global::System.Threading.Tasks.Task<OAuth2Token> ExchangeOAuth2DeviceCodeForTokenAsync(
+            string clientId,
+            string deviceCode,
+            string? clientSecret = null,
+            string? scope = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            clientId = clientId ?? throw new global::System.ArgumentNullException(nameof(clientId));
+            deviceCode = deviceCode ?? throw new global::System.ArgumentNullException(nameof(deviceCode));
+
+            var body = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<string, string>>
+            {{
+                new global::System.Collections.Generic.KeyValuePair<string, string>(""grant_type"", ""urn:ietf:params:oauth:grant-type:device_code""),
+                new global::System.Collections.Generic.KeyValuePair<string, string>(""client_id"", clientId),
+                new global::System.Collections.Generic.KeyValuePair<string, string>(""device_code"", deviceCode),
+            }};
+            if (!string.IsNullOrWhiteSpace(clientSecret))
+            {{
+                body.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(""client_secret"", clientSecret));
+            }}
+
+            return await ExchangeOAuth2TokenAsync(
+                tokenUrl: new global::System.Uri(""{flow.TokenUrl}""),
+                body: body,
+                requestedScope: scope,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }}
+
+{(hasScopeEnum ? $@"        /// <summary>
+        /// Authorize using OAuth2 authentication with the device authorization flow and typed scopes.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""deviceCode""></param>
+        /// <param name=""clientSecret""></param>
+        /// <param name=""scopes""></param>
+        /// <param name=""cancellationToken""></param>
+{obsoleteAttribute}
+        public global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithDeviceAuthorizationAsync(
+            string clientId,
+            string deviceCode,
+            string? clientSecret = null,
+            global::System.Collections.Generic.IEnumerable<OAuth2Scope>? scopes = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            return AuthorizeUsingOAuth2WithDeviceAuthorizationAsync(
+                clientId: clientId,
+                deviceCode: deviceCode,
+                clientSecret: clientSecret,
+                scope: JoinOAuth2Scopes(scopes),
+                cancellationToken: cancellationToken);
+        }}
+" : TrimmedLine)}
+        /// <summary>
+        /// Authorize using OAuth2 authentication with the device authorization flow.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""deviceCode""></param>
+        /// <param name=""clientSecret""></param>
+        /// <param name=""scope""></param>
+        /// <param name=""cancellationToken""></param>
+{obsoleteAttribute}
+        public async global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithDeviceAuthorizationAsync(
+            string clientId,
+            string deviceCode,
+            string? clientSecret = null,
+            string? scope = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            var token = await ExchangeOAuth2DeviceCodeForTokenAsync(
+                clientId: clientId,
+                deviceCode: deviceCode,
+                clientSecret: clientSecret,
+                scope: scope,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+
+            {authorization.MethodName}(token);
+        }}",
             _ => string.Empty,
         };
     }
@@ -691,7 +931,9 @@ namespace {authorization.Settings.Namespace}
     {
         var rootClassName = authorization.Settings.ClassName.Replace(".", string.Empty);
         var hasScopeEnum = GetDistinctOAuth2Scopes(authorization).Length != 0;
+        var obsoleteAttribute = GetAuthorizationObsoleteAttribute(authorization, 8);
         var scopeEnumType = $"global::{authorization.Settings.Namespace}.{rootClassName}.OAuth2Scope";
+        var deviceAuthorizationResponseType = $"global::{authorization.Settings.Namespace}.{rootClassName}.OAuth2DeviceAuthorizationResponse";
         var tokenType = $"global::{authorization.Settings.Namespace}.{rootClassName}.OAuth2Token";
 
         return flow.Type switch
@@ -705,6 +947,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""clientSecret""></param>
         /// <param name=""scopes""></param>
         /// <param name=""cancellationToken""></param>
+{obsoleteAttribute}
         public global::System.Threading.Tasks.Task {authorization.MethodName}WithCredentialsAsync(
             string clientId,
             string clientSecret,
@@ -718,6 +961,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""clientSecret""></param>
         /// <param name=""scope""></param>
         /// <param name=""cancellationToken""></param>
+{obsoleteAttribute}
         public global::System.Threading.Tasks.Task {authorization.MethodName}WithCredentialsAsync(
             string clientId,
             string clientSecret,
@@ -735,6 +979,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""codeChallenge""></param>
         /// <param name=""codeChallengeMethod""></param>
         /// <returns>The authorization URL.</returns>
+{obsoleteAttribute}
         public string GetOAuth2AuthorizationUrl(
             string clientId,
             string redirectUri,
@@ -753,6 +998,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""codeChallenge""></param>
         /// <param name=""codeChallengeMethod""></param>
         /// <returns>The authorization URL.</returns>
+{obsoleteAttribute}
         public string GetOAuth2AuthorizationUrl(
             string clientId,
             string redirectUri,
@@ -771,6 +1017,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""codeVerifier""></param>
         /// <param name=""cancellationToken""></param>
         /// <returns>The OAuth2 token.</returns>
+{obsoleteAttribute}
         public global::System.Threading.Tasks.Task<{tokenType}> ExchangeOAuth2CodeForTokenAsync(
             string clientId,
             string code,
@@ -786,6 +1033,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""clientSecret""></param>
         /// <param name=""cancellationToken""></param>
         /// <returns>The refreshed OAuth2 token.</returns>
+{obsoleteAttribute}
         public global::System.Threading.Tasks.Task<{tokenType}> RefreshOAuth2TokenAsync(
             string clientId,
             string? clientSecret = null,
@@ -800,12 +1048,106 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""clientSecret""></param>
         /// <param name=""codeVerifier""></param>
         /// <param name=""cancellationToken""></param>
+{obsoleteAttribute}
         public global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithAuthorizationCodeAsync(
             string clientId,
             string code,
             string redirectUri,
             string? clientSecret = null,
             string? codeVerifier = null,
+            global::System.Threading.CancellationToken cancellationToken = default);",
+            nameof(OpenApiOAuthFlows.DeviceAuthorization) => $@"
+
+{(hasScopeEnum ? $@"        /// <summary>
+        /// Requests an OAuth2 device authorization using typed scopes.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""scopes""></param>
+        /// <param name=""cancellationToken""></param>
+        /// <returns>The device authorization response.</returns>
+{obsoleteAttribute}
+        public global::System.Threading.Tasks.Task<{deviceAuthorizationResponseType}> RequestOAuth2DeviceAuthorizationAsync(
+            string clientId,
+            global::System.Collections.Generic.IEnumerable<{scopeEnumType}>? scopes = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+" : TrimmedLine)}
+        /// <summary>
+        /// Requests an OAuth2 device authorization.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""scope""></param>
+        /// <param name=""cancellationToken""></param>
+        /// <returns>The device authorization response.</returns>
+{obsoleteAttribute}
+        public global::System.Threading.Tasks.Task<{deviceAuthorizationResponseType}> RequestOAuth2DeviceAuthorizationAsync(
+            string clientId,
+            string? scope = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+{(hasScopeEnum ? $@"        /// <summary>
+        /// Exchanges an OAuth2 device code for a token using typed scopes.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""deviceCode""></param>
+        /// <param name=""clientSecret""></param>
+        /// <param name=""scopes""></param>
+        /// <param name=""cancellationToken""></param>
+        /// <returns>The OAuth2 token.</returns>
+{obsoleteAttribute}
+        public global::System.Threading.Tasks.Task<{tokenType}> ExchangeOAuth2DeviceCodeForTokenAsync(
+            string clientId,
+            string deviceCode,
+            string? clientSecret = null,
+            global::System.Collections.Generic.IEnumerable<{scopeEnumType}>? scopes = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+" : TrimmedLine)}
+        /// <summary>
+        /// Exchanges an OAuth2 device code for a token.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""deviceCode""></param>
+        /// <param name=""clientSecret""></param>
+        /// <param name=""scope""></param>
+        /// <param name=""cancellationToken""></param>
+        /// <returns>The OAuth2 token.</returns>
+{obsoleteAttribute}
+        public global::System.Threading.Tasks.Task<{tokenType}> ExchangeOAuth2DeviceCodeForTokenAsync(
+            string clientId,
+            string deviceCode,
+            string? clientSecret = null,
+            string? scope = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+{(hasScopeEnum ? $@"        /// <summary>
+        /// Authorize using OAuth2 authentication with the device authorization flow and typed scopes.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""deviceCode""></param>
+        /// <param name=""clientSecret""></param>
+        /// <param name=""scopes""></param>
+        /// <param name=""cancellationToken""></param>
+{obsoleteAttribute}
+        public global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithDeviceAuthorizationAsync(
+            string clientId,
+            string deviceCode,
+            string? clientSecret = null,
+            global::System.Collections.Generic.IEnumerable<{scopeEnumType}>? scopes = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+" : TrimmedLine)}
+        /// <summary>
+        /// Authorize using OAuth2 authentication with the device authorization flow.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""deviceCode""></param>
+        /// <param name=""clientSecret""></param>
+        /// <param name=""scope""></param>
+        /// <param name=""cancellationToken""></param>
+{obsoleteAttribute}
+        public global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithDeviceAuthorizationAsync(
+            string clientId,
+            string deviceCode,
+            string? clientSecret = null,
+            string? scope = null,
             global::System.Threading.CancellationToken cancellationToken = default);",
             _ => string.Empty,
         };
@@ -868,6 +1210,47 @@ namespace {authorization.Settings.Namespace}
     private static string GenerateOAuth2SupportTypes(Authorization authorization)
     {
         return $@"
+        /// <summary>
+        /// Represents an OAuth2 device authorization response.
+        /// </summary>
+        public sealed class OAuth2DeviceAuthorizationResponse
+        {{
+            /// <summary>
+            /// Gets or sets the device code.
+            /// </summary>
+            public string DeviceCode {{ get; set; }} = string.Empty;
+
+            /// <summary>
+            /// Gets or sets the user code.
+            /// </summary>
+            public string UserCode {{ get; set; }} = string.Empty;
+
+            /// <summary>
+            /// Gets or sets the verification URI.
+            /// </summary>
+            public string VerificationUri {{ get; set; }} = string.Empty;
+
+            /// <summary>
+            /// Gets or sets the complete verification URI, if available.
+            /// </summary>
+            public string? VerificationUriComplete {{ get; set; }}
+
+            /// <summary>
+            /// Gets or sets the display message for the end user, if provided.
+            /// </summary>
+            public string? Message {{ get; set; }}
+
+            /// <summary>
+            /// Gets or sets the polling interval.
+            /// </summary>
+            public global::System.TimeSpan? Interval {{ get; set; }}
+
+            /// <summary>
+            /// Gets or sets the expiration time.
+            /// </summary>
+            public global::System.DateTimeOffset? ExpiresAt {{ get; set; }}
+        }}
+
         /// <summary>
         /// Represents an OAuth2 token.
         /// </summary>
@@ -1426,6 +1809,147 @@ namespace {authorization.Settings.Namespace}
                 TokenType = string.IsNullOrWhiteSpace(tokenType) ? ""Bearer"" : tokenType,
                 RefreshToken = refreshToken,
                 Scope = string.IsNullOrWhiteSpace(scope) ? {requestedScopeVariableName} : scope,
+                ExpiresAt = expiresIn.HasValue
+                    ? global::System.DateTimeOffset.UtcNow.AddSeconds(expiresIn.Value)
+                    : (global::System.DateTimeOffset?)null,
+            }};";
+    }
+
+    private static string GenerateOAuth2DeviceAuthorizationRead(
+        Authorization authorization,
+        string jsonVariableName)
+    {
+        return authorization.Settings.UsesNewtonsoftJson()
+            ? $@"
+            var payload = global::Newtonsoft.Json.Linq.JObject.Parse({jsonVariableName});
+            var deviceCode = payload.Value<string>(""device_code"");
+            if (string.IsNullOrWhiteSpace(deviceCode))
+            {{
+                throw new global::System.InvalidOperationException(""device_code was not present in the device authorization response."");
+            }}
+
+            var userCode = payload.Value<string>(""user_code"");
+            if (string.IsNullOrWhiteSpace(userCode))
+            {{
+                throw new global::System.InvalidOperationException(""user_code was not present in the device authorization response."");
+            }}
+
+            var verificationUri = payload.Value<string>(""verification_uri"") ??
+                payload.Value<string>(""verification_url"");
+            if (string.IsNullOrWhiteSpace(verificationUri))
+            {{
+                throw new global::System.InvalidOperationException(""verification_uri was not present in the device authorization response."");
+            }}
+
+            var verificationUriComplete = payload.Value<string>(""verification_uri_complete"");
+            var message = payload.Value<string>(""message"");
+            var intervalSeconds = payload.Value<long?>(""interval"");
+            var expiresIn = payload.Value<long?>(""expires_in"");
+            var deviceAuthorization = new OAuth2DeviceAuthorizationResponse
+            {{
+                DeviceCode = deviceCode,
+                UserCode = userCode,
+                VerificationUri = verificationUri,
+                VerificationUriComplete = verificationUriComplete,
+                Message = message,
+                Interval = intervalSeconds.HasValue
+                    ? global::System.TimeSpan.FromSeconds(intervalSeconds.Value)
+                    : (global::System.TimeSpan?)null,
+                ExpiresAt = expiresIn.HasValue
+                    ? global::System.DateTimeOffset.UtcNow.AddSeconds(expiresIn.Value)
+                    : (global::System.DateTimeOffset?)null,
+            }};"
+            : $@"
+            using var jsonDocument = global::System.Text.Json.JsonDocument.Parse({jsonVariableName});
+            if (!jsonDocument.RootElement.TryGetProperty(""device_code"", out var deviceCodeElement))
+            {{
+                throw new global::System.InvalidOperationException(""device_code was not present in the device authorization response."");
+            }}
+
+            var deviceCode = deviceCodeElement.GetString();
+            if (string.IsNullOrWhiteSpace(deviceCode))
+            {{
+                throw new global::System.InvalidOperationException(""device_code was empty in the device authorization response."");
+            }}
+
+            if (!jsonDocument.RootElement.TryGetProperty(""user_code"", out var userCodeElement))
+            {{
+                throw new global::System.InvalidOperationException(""user_code was not present in the device authorization response."");
+            }}
+
+            var userCode = userCodeElement.GetString();
+            if (string.IsNullOrWhiteSpace(userCode))
+            {{
+                throw new global::System.InvalidOperationException(""user_code was empty in the device authorization response."");
+            }}
+
+            string? verificationUri = null;
+            if (jsonDocument.RootElement.TryGetProperty(""verification_uri"", out var verificationUriElement))
+            {{
+                verificationUri = verificationUriElement.GetString();
+            }}
+            else if (jsonDocument.RootElement.TryGetProperty(""verification_url"", out var verificationUrlElement))
+            {{
+                verificationUri = verificationUrlElement.GetString();
+            }}
+
+            if (string.IsNullOrWhiteSpace(verificationUri))
+            {{
+                throw new global::System.InvalidOperationException(""verification_uri was not present in the device authorization response."");
+            }}
+
+            string? verificationUriComplete = null;
+            if (jsonDocument.RootElement.TryGetProperty(""verification_uri_complete"", out var verificationUriCompleteElement))
+            {{
+                verificationUriComplete = verificationUriCompleteElement.GetString();
+            }}
+
+            string? message = null;
+            if (jsonDocument.RootElement.TryGetProperty(""message"", out var messageElement))
+            {{
+                message = messageElement.GetString();
+            }}
+
+            long? intervalSeconds = null;
+            if (jsonDocument.RootElement.TryGetProperty(""interval"", out var intervalElement))
+            {{
+                if (intervalElement.ValueKind == global::System.Text.Json.JsonValueKind.Number &&
+                    intervalElement.TryGetInt64(out var intervalSecondsValue))
+                {{
+                    intervalSeconds = intervalSecondsValue;
+                }}
+                else if (intervalElement.ValueKind == global::System.Text.Json.JsonValueKind.String &&
+                         long.TryParse(intervalElement.GetString(), out intervalSecondsValue))
+                {{
+                    intervalSeconds = intervalSecondsValue;
+                }}
+            }}
+
+            long? expiresIn = null;
+            if (jsonDocument.RootElement.TryGetProperty(""expires_in"", out var expiresInElement))
+            {{
+                if (expiresInElement.ValueKind == global::System.Text.Json.JsonValueKind.Number &&
+                    expiresInElement.TryGetInt64(out var expiresInValue))
+                {{
+                    expiresIn = expiresInValue;
+                }}
+                else if (expiresInElement.ValueKind == global::System.Text.Json.JsonValueKind.String &&
+                         long.TryParse(expiresInElement.GetString(), out expiresInValue))
+                {{
+                    expiresIn = expiresInValue;
+                }}
+            }}
+
+            var deviceAuthorization = new OAuth2DeviceAuthorizationResponse
+            {{
+                DeviceCode = deviceCode,
+                UserCode = userCode,
+                VerificationUri = verificationUri,
+                VerificationUriComplete = verificationUriComplete,
+                Message = message,
+                Interval = intervalSeconds.HasValue
+                    ? global::System.TimeSpan.FromSeconds(intervalSeconds.Value)
+                    : (global::System.TimeSpan?)null,
                 ExpiresAt = expiresIn.HasValue
                     ? global::System.DateTimeOffset.UtcNow.AddSeconds(expiresIn.Value)
                     : (global::System.DateTimeOffset?)null,

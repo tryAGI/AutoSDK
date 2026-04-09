@@ -16,4 +16,9 @@ public record struct Authorization(
     Settings GlobalSettings,
     EquatableArray<OAuthFlow> Flows,
     string OpenIdConnectUrl
-);
+)
+{
+    public string OAuth2MetadataUrl { get; set; } = string.Empty;
+
+    public bool IsDeprecated { get; set; }
+}

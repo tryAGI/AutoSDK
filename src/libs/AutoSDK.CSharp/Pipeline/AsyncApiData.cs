@@ -885,7 +885,9 @@ public static class AsyncApiData
                 settings: settings,
                 globalSettings: globalSettings,
                 flows: ImmutableArray<OAuthFlow>.Empty.AsEquatableArray(),
-                openIdConnectUrl: string.Empty));
+                openIdConnectUrl: string.Empty,
+                oAuth2MetadataUrl: string.Empty,
+                isDeprecated: false));
         }
 
         return authorizations.ToArray();
