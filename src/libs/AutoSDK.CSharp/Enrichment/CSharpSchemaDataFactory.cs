@@ -92,6 +92,16 @@ public static class CSharpSchemaDataFactory
         context = context ?? throw new ArgumentNullException(nameof(context));
         var parameter = context.Parameter ?? throw new InvalidOperationException("Parameter or parameter data is required.");
         var parameterName = context.ParameterName ?? throw new InvalidOperationException("Property name or parameter name is required.");
+        if (context.Settings.UseExtensionNaming &&
+            OpenApiExtensions.TryGetParameterNameOverride(
+                parameter.Extensions,
+                context.Schema.Extensions,
+                out var parameterNameOverride) &&
+            !string.IsNullOrWhiteSpace(parameterNameOverride))
+        {
+            parameterName = parameterNameOverride;
+        }
+
         var type = context.TypeData;
         if (parameter.In == ParameterLocation.Query &&
             (context.IsClass || context.ResolvedReference?.IsClass == true))

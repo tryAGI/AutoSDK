@@ -349,7 +349,6 @@ public static class CSharpTraversalTreeHelperExtensions
         OpenApiOperation operation)
     {
         return settings.UseExtensionNaming &&
-               (OpenApiExtensions.GetExtensionBooleanValue(operation.Extensions, "x-fern-ignore") ||
-                OpenApiExtensions.GetExtensionBooleanValue(operation.Extensions, "x-hidden"));
+               OpenApiExtensions.ShouldIgnoreOperationForDotNet(operation.Extensions);
     }
 }

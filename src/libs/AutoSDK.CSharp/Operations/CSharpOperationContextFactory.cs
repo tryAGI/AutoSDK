@@ -61,8 +61,7 @@ public static class CSharpOperationContextFactory
         IReadOnlyDictionary<string, Tag>? resolvedTags)
     {
         if (settings.UseExtensionNaming &&
-            OpenApiExtensions.TryGetExtensionStringValue(
-                operation.Extensions, "x-fern-sdk-group-name", out var groupName) &&
+            OpenApiExtensions.TryGetOperationGroupNameOverride(operation.Extensions, out var groupName) &&
             !string.IsNullOrWhiteSpace(groupName))
         {
             if (resolvedTags?.TryGetValue(groupName, out var existingTag) == true)

@@ -800,7 +800,7 @@
     JsonSchemaDescription(class),
       DescriptionVariant1(string),
       DescriptionVariant2(null),
-    JsonSchemaSchema(class),
+    SchemaDefinition(class),
     Strict(bool),
   OCRImageObject(class),
     Id(string),

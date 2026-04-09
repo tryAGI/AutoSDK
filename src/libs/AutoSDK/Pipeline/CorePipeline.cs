@@ -158,10 +158,7 @@ public static class CorePipeline
                 }
 
                 if (settings.UseExtensionNaming &&
-                    OpenApiExtensions.TryGetExtensionStringValue(
-                        operation.Extensions,
-                        "x-fern-sdk-group-name",
-                        out var groupName) &&
+                    OpenApiExtensions.TryGetOperationGroupNameOverride(operation.Extensions, out var groupName) &&
                     !string.IsNullOrWhiteSpace(groupName) &&
                     knownTagNames.Add(groupName))
                 {

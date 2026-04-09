@@ -800,7 +800,7 @@
     JsonSchemaDescription(class)[chat, agents],
       DescriptionVariant1(string)[chat, agents],
       DescriptionVariant2(null)[chat, agents],
-    JsonSchemaSchema(class)[chat, agents],
+    SchemaDefinition(class)[chat, agents],
     Strict(bool)[chat, agents],
   OCRImageObject(class)[ocr],
     Id(string)[ocr],

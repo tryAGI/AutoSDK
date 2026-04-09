@@ -120,11 +120,11 @@ public static class ModelNameGenerator
                     ?? (context.OperationType != null && context.OperationPath != null
                         ? MethodAndPathNameHelper.DeriveNameFromMethodAndPath(context.OperationType.Method, context.OperationPath)
                         : null),
-                "_", context.Parameter?.Name),
+                "_", ResolveParameterName(context)),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf when !string.IsNullOrWhiteSpace(context.Schema.Title) => context.Schema.Title!.ToClassName(),
             Hint.AnyOf or Hint.OneOf or Hint.AllOf => context.Index != null ? string.Concat("Variant", (context.Index.Value + 1).ToString(CultureInfo.InvariantCulture)) : "Variant",
             Hint.Discriminator => "Discriminator",
-            _ when context.PropertyName != null => context.PropertyName,
+            _ when context.PropertyName != null => ResolvePropertyName(context),
             _ => null,
         })?.ToCSharpName(context.Settings, context.Parent);
     }
@@ -141,11 +141,10 @@ public static class ModelNameGenerator
         string className;
 
         if (context.Settings.UseExtensionNaming &&
-            OpenApiExtensions.TryGetExtensionStringValue(
-                context.Schema.Extensions, "x-fern-type-name", out var fernTypeName) &&
-            !string.IsNullOrWhiteSpace(fernTypeName))
+            OpenApiExtensions.TryGetTypeNameOverride(context.Schema.Extensions, out var typeNameOverride) &&
+            !string.IsNullOrWhiteSpace(typeNameOverride))
         {
-            className = fernTypeName.ToClassName();
+            className = typeNameOverride.ToClassName();
             context.CachedComputedClassName = className;
             return className;
         }
@@ -187,6 +186,33 @@ public static class ModelNameGenerator
 
         context.CachedComputedClassName = className;
         return className;
+    }
+
+    private static string? ResolvePropertyName(SchemaContext context)
+    {
+        if (context.Settings.UseExtensionNaming &&
+            OpenApiExtensions.TryGetPropertyNameOverride(context.Schema.Extensions, out var propertyNameOverride) &&
+            !string.IsNullOrWhiteSpace(propertyNameOverride))
+        {
+            return propertyNameOverride;
+        }
+
+        return context.PropertyName;
+    }
+
+    private static string? ResolveParameterName(SchemaContext context)
+    {
+        if (context.Settings.UseExtensionNaming &&
+            OpenApiExtensions.TryGetParameterNameOverride(
+                context.Parameter?.Extensions,
+                context.Schema.Extensions,
+                out var parameterNameOverride) &&
+            !string.IsNullOrWhiteSpace(parameterNameOverride))
+        {
+            return parameterNameOverride;
+        }
+
+        return context.Parameter?.Name;
     }
 
     public static string ComputeId(SchemaContext context)
