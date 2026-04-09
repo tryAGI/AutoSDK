@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="name"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ScalingConfigGet> PatchAsync(
             string name,
 
             global::G.ScalingConfigPatch request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Patch<br/>
@@ -29,6 +31,7 @@ namespace G
         /// <param name="args"></param>
         /// <param name="minimumNodes"></param>
         /// <param name="maximumNodes"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ScalingConfigGet> PatchAsync(
@@ -37,6 +40,7 @@ namespace G
             object? args = default,
             int? minimumNodes = default,
             int? maximumNodes = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

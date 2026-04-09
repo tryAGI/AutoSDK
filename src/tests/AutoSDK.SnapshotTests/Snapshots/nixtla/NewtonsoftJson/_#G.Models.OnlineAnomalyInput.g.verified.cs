@@ -32,6 +32,7 @@ namespace G
         /// Default Value: univariate
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("threshold_method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OnlineAnomalyInputThresholdMethodJsonConverter))]
         public global::G.OnlineAnomalyInputThresholdMethod? ThresholdMethod { get; set; }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finetune_loss")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OnlineAnomalyInputFinetuneLossJsonConverter))]
         public global::G.OnlineAnomalyInputFinetuneLoss? FinetuneLoss { get; set; }
 
         /// <summary>

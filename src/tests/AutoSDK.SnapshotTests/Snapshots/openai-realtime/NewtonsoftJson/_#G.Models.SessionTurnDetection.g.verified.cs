@@ -13,6 +13,7 @@ namespace G
         /// The type of turn detection.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionTurnDetectionTypeJsonConverter))]
         public global::G.SessionTurnDetectionType? Type { get; set; }
 
         /// <summary>

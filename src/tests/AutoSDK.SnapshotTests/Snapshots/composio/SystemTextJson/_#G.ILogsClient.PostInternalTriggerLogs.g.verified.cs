@@ -10,11 +10,13 @@ namespace G
         /// Search and retrieve trigger event logs with advanced filtering capabilities including search parameters
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostInternalTriggerLogsResponse> PostInternalTriggerLogsAsync(
 
             global::G.PostInternalTriggerLogsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search and retrieve trigger event logs<br/>
@@ -54,6 +56,7 @@ namespace G
         /// Whether to include payload fields in the response. Set to false for faster list views.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostInternalTriggerLogsResponse> PostInternalTriggerLogsAsync(
@@ -69,6 +72,7 @@ namespace G
             string? cursor = default,
             global::System.Collections.Generic.IList<global::G.PostInternalTriggerLogsRequestSearchParam>? searchParams = default,
             bool? includePayload = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

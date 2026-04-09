@@ -40,6 +40,7 @@ namespace G
         /// The visibility of the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposCreateInOrgRequestVisibilityJsonConverter))]
         public global::G.ReposCreateInOrgRequestVisibility? Visibility { get; set; }
 
         /// <summary>
@@ -154,6 +155,7 @@ namespace G
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_title")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposCreateInOrgRequestSquashMergeCommitTitleJsonConverter))]
         public global::G.ReposCreateInOrgRequestSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
@@ -163,6 +165,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_message")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposCreateInOrgRequestSquashMergeCommitMessageJsonConverter))]
         public global::G.ReposCreateInOrgRequestSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
@@ -172,6 +175,7 @@ namespace G
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_title")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposCreateInOrgRequestMergeCommitTitleJsonConverter))]
         public global::G.ReposCreateInOrgRequestMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
@@ -181,6 +185,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_message")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposCreateInOrgRequestMergeCommitMessageJsonConverter))]
         public global::G.ReposCreateInOrgRequestMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>

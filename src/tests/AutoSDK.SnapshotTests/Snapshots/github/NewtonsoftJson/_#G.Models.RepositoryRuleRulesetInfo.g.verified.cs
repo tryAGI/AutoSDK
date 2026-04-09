@@ -13,6 +13,7 @@ namespace G
         /// The type of source for the ruleset that includes this rule.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ruleset_source_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleRulesetInfoRulesetSourceTypeJsonConverter))]
         public global::G.RepositoryRuleRulesetInfoRulesetSourceType? RulesetSourceType { get; set; }
 
         /// <summary>

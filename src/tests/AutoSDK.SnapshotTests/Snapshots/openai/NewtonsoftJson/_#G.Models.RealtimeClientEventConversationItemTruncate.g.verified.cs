@@ -27,6 +27,7 @@ namespace G
         /// The event type, must be `conversation.item.truncate`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventConversationItemTruncateTypeJsonConverter))]
         public global::G.RealtimeClientEventConversationItemTruncateType Type { get; set; }
 
         /// <summary>

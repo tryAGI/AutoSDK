@@ -40,8 +40,8 @@ namespace G
         /// Optional list of file IDs to filter chunks by (inclusion filter)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>))]
-        public global::G.AnyOf<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>? FileIds { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>))]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>? FileIds { get; set; }
 
         /// <summary>
         /// Search configuration options
@@ -114,7 +114,7 @@ namespace G
             string? query,
             int? topK,
             global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>? filters,
-            global::G.AnyOf<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>? fileIds,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>? fileIds,
             global::G.StoreChunkSearchOptions? searchOptions,
             bool? stream,
             string? instructions,

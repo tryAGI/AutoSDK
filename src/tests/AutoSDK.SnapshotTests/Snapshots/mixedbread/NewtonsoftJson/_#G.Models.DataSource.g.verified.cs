@@ -31,6 +31,7 @@ namespace G
         /// The type of data source
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DataSourceTypeJsonConverter))]
         public global::G.DataSourceType Type { get; set; } = default!;
 
         /// <summary>

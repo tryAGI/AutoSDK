@@ -14,6 +14,7 @@ namespace G
         /// Default Value: document
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MetadataQueryRequestLevelJsonConverter))]
         public global::G.MetadataQueryRequestLevel? Level { get; set; }
 
         /// <summary>

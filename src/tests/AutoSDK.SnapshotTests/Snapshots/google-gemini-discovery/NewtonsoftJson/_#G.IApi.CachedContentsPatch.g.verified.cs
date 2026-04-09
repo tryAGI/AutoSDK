@@ -11,6 +11,7 @@ namespace G
         /// <param name="cachedContentsId"></param>
         /// <param name="updateMask"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CachedContent> CachedContentsPatchAsync(
@@ -18,6 +19,7 @@ namespace G
 
             global::G.CachedContent request,
             string? updateMask = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Updates CachedContent resource (only expiration is updatable).
@@ -51,6 +53,7 @@ namespace G
         /// <param name="usageMetadata">
         /// Metadata on the usage of the cached content.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CachedContent> CachedContentsPatchAsync(
@@ -65,6 +68,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
             global::G.ToolConfig? toolConfig = default,
             global::G.CachedContentUsageMetadata? usageMetadata = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

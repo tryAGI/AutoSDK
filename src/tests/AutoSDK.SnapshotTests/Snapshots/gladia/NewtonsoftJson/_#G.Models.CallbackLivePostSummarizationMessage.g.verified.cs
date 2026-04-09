@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLivePostSummarizationMessageEvent.LivePostSummarization</default>
         /// <example>live.post_summarization</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLivePostSummarizationMessageEventJsonConverter))]
         public global::G.CallbackLivePostSummarizationMessageEvent Event { get; set; } = global::G.CallbackLivePostSummarizationMessageEvent.LivePostSummarization;
 
         /// <summary>

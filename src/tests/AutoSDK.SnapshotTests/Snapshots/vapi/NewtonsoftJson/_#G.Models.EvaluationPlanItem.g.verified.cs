@@ -34,6 +34,7 @@ namespace G
         /// </summary>
         /// <example>=</example>
         [global::Newtonsoft.Json.JsonProperty("comparator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvaluationPlanItemComparatorJsonConverter))]
         public global::G.EvaluationPlanItemComparator Comparator { get; set; } = default!;
 
         /// <summary>

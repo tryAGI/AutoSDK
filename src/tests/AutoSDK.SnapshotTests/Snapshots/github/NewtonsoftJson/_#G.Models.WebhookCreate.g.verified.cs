@@ -60,6 +60,7 @@ namespace G
         /// The type of Git ref object created in the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ref_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookCreateRefTypeJsonConverter))]
         public global::G.WebhookCreateRefType RefType { get; set; } = default!;
 
         /// <summary>

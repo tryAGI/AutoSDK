@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Files { get; set; }
+        public required global::System.Collections.Generic.IList<byte[]> Files { get; set; }
 
         /// <summary>
         /// Default Value: inbody
@@ -109,7 +109,7 @@ namespace G
         /// Default Value: [1, 9223372036854775807L]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_range")]
-        public byte[]? PageRange { get; set; }
+        public global::System.Collections.Generic.IList<int>? PageRange { get; set; }
 
         /// <summary>
         /// The timeout for processing each document, in seconds.<br/>
@@ -422,7 +422,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BodyProcessFileAsyncV1ConvertFileAsyncPost(
-            global::System.Collections.Generic.IList<string> files,
+            global::System.Collections.Generic.IList<byte[]> files,
             global::G.TargetName? targetType,
             global::System.Collections.Generic.IList<global::G.InputFormat>? fromFormats,
             global::System.Collections.Generic.IList<global::G.OutputFormat>? toFormats,
@@ -435,7 +435,7 @@ namespace G
             global::G.TableFormerMode? tableMode,
             bool? tableCellMatching,
             global::G.ProcessingPipeline? pipeline,
-            byte[]? pageRange,
+            global::System.Collections.Generic.IList<int>? pageRange,
             double? documentTimeout,
             bool? abortOnError,
             bool? doTableStructure,

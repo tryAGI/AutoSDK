@@ -13,6 +13,7 @@ namespace G
         /// The session description object describes the initial proposal in an offer/answer exchange.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateStream1ResponseJsepTypeJsonConverter))]
         public global::G.CreateStream1ResponseJsepType Type { get; set; }
 
         /// <summary>

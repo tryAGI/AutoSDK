@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LastMileConfigFormVariant2Variant2TypeJsonConverter))]
         public global::G.LastMileConfigFormVariant2Variant2Type Type { get; set; }
 
         /// <summary>

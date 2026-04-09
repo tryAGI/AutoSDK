@@ -19,6 +19,7 @@ namespace G
         /// Default Value: e5_mistral_7b_instruct
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingModelEnumJsonConverter))]
         public global::G.EmbeddingModelEnum? EmbeddingModel { get; set; }
 
         /// <summary>

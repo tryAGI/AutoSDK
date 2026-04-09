@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.Create3RequestScriptVariant1ProviderMicrosoftTypeJsonConverter))]
         public global::G.Create3RequestScriptVariant1ProviderMicrosoftType Type { get; set; }
 
         /// <summary>

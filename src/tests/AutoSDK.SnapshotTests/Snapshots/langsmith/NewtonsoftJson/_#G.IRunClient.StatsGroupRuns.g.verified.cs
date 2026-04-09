@@ -10,11 +10,13 @@ namespace G
         /// Get stats for the grouped runs.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RunGroupStats> StatsGroupRunsAsync(
 
             global::G.RunGroupRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Stats Group Runs<br/>
@@ -31,6 +33,7 @@ namespace G
         /// <param name="limit">
         /// Default Value: 10
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RunGroupStats> StatsGroupRunsAsync(
@@ -41,6 +44,7 @@ namespace G
             global::System.DateTime? endTime = default,
             int? offset = default,
             int? limit = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

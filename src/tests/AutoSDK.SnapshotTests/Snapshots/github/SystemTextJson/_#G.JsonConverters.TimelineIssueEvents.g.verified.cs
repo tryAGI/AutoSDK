@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -318,7 +319,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        labeledIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LabeledIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LabeledIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LabeledIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LabeledIssueEvent).Name}");
+                        labeledIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -331,7 +334,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        unlabeledIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UnlabeledIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UnlabeledIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UnlabeledIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UnlabeledIssueEvent).Name}");
+                        unlabeledIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -344,7 +349,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        milestonedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MilestonedIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MilestonedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MilestonedIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MilestonedIssueEvent).Name}");
+                        milestonedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -357,7 +364,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        demilestonedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DemilestonedIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DemilestonedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DemilestonedIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DemilestonedIssueEvent).Name}");
+                        demilestonedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -370,7 +379,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        renamedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RenamedIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RenamedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RenamedIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RenamedIssueEvent).Name}");
+                        renamedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -383,7 +394,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        reviewRequestedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ReviewRequestedIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReviewRequestedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReviewRequestedIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReviewRequestedIssueEvent).Name}");
+                        reviewRequestedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -396,7 +409,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        reviewRequestRemovedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ReviewRequestRemovedIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReviewRequestRemovedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReviewRequestRemovedIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReviewRequestRemovedIssueEvent).Name}");
+                        reviewRequestRemovedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -409,7 +424,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        reviewDismissedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ReviewDismissedIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReviewDismissedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReviewDismissedIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReviewDismissedIssueEvent).Name}");
+                        reviewDismissedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -422,7 +439,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        lockedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LockedIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LockedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LockedIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LockedIssueEvent).Name}");
+                        lockedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -435,7 +454,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        addedToProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AddedToProjectIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AddedToProjectIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AddedToProjectIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AddedToProjectIssueEvent).Name}");
+                        addedToProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -448,7 +469,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        movedColumnInProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MovedColumnInProjectIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MovedColumnInProjectIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MovedColumnInProjectIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MovedColumnInProjectIssueEvent).Name}");
+                        movedColumnInProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -461,7 +484,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        removedFromProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RemovedFromProjectIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RemovedFromProjectIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RemovedFromProjectIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RemovedFromProjectIssueEvent).Name}");
+                        removedFromProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -474,7 +499,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        convertedNoteToIssueIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConvertedNoteToIssueIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConvertedNoteToIssueIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConvertedNoteToIssueIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConvertedNoteToIssueIssueEvent).Name}");
+                        convertedNoteToIssueIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -487,7 +514,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        timelineCommentEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineCommentEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCommentEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCommentEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCommentEvent).Name}");
+                        timelineCommentEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -500,7 +529,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        timelineCrossReferencedEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineCrossReferencedEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCrossReferencedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCrossReferencedEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCrossReferencedEvent).Name}");
+                        timelineCrossReferencedEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -513,7 +544,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        timelineCommittedEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineCommittedEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCommittedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCommittedEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCommittedEvent).Name}");
+                        timelineCommittedEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -526,7 +559,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        timelineReviewedEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineReviewedEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineReviewedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineReviewedEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineReviewedEvent).Name}");
+                        timelineReviewedEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -539,7 +574,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        timelineLineCommentedEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineLineCommentedEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineLineCommentedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineLineCommentedEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineLineCommentedEvent).Name}");
+                        timelineLineCommentedEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -552,7 +589,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        timelineCommitCommentedEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineCommitCommentedEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCommitCommentedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCommitCommentedEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCommitCommentedEvent).Name}");
+                        timelineCommitCommentedEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -565,7 +604,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        timelineAssignedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineAssignedIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineAssignedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineAssignedIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineAssignedIssueEvent).Name}");
+                        timelineAssignedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -578,7 +619,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        timelineUnassignedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineUnassignedIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineUnassignedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineUnassignedIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineUnassignedIssueEvent).Name}");
+                        timelineUnassignedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -591,7 +634,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        stateChangeIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.StateChangeIssueEvent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StateChangeIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StateChangeIssueEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StateChangeIssueEvent).Name}");
+                        stateChangeIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -606,7 +651,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    labeledIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LabeledIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LabeledIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LabeledIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LabeledIssueEvent).Name}");
+                    labeledIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -617,7 +664,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    unlabeledIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UnlabeledIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UnlabeledIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UnlabeledIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UnlabeledIssueEvent).Name}");
+                    unlabeledIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -628,7 +677,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    milestonedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MilestonedIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MilestonedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MilestonedIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MilestonedIssueEvent).Name}");
+                    milestonedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -639,7 +690,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    demilestonedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DemilestonedIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DemilestonedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DemilestonedIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DemilestonedIssueEvent).Name}");
+                    demilestonedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -650,7 +703,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    renamedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RenamedIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RenamedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RenamedIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RenamedIssueEvent).Name}");
+                    renamedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -661,7 +716,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    reviewRequestedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ReviewRequestedIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReviewRequestedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReviewRequestedIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReviewRequestedIssueEvent).Name}");
+                    reviewRequestedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -672,7 +729,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    reviewRequestRemovedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ReviewRequestRemovedIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReviewRequestRemovedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReviewRequestRemovedIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReviewRequestRemovedIssueEvent).Name}");
+                    reviewRequestRemovedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -683,7 +742,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    reviewDismissedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ReviewDismissedIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReviewDismissedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReviewDismissedIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReviewDismissedIssueEvent).Name}");
+                    reviewDismissedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -694,7 +755,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    lockedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LockedIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LockedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LockedIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LockedIssueEvent).Name}");
+                    lockedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -705,7 +768,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    addedToProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AddedToProjectIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AddedToProjectIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AddedToProjectIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AddedToProjectIssueEvent).Name}");
+                    addedToProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -716,7 +781,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    movedColumnInProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MovedColumnInProjectIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MovedColumnInProjectIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MovedColumnInProjectIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MovedColumnInProjectIssueEvent).Name}");
+                    movedColumnInProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -727,7 +794,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    removedFromProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RemovedFromProjectIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RemovedFromProjectIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RemovedFromProjectIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RemovedFromProjectIssueEvent).Name}");
+                    removedFromProjectIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -738,7 +807,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    convertedNoteToIssueIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConvertedNoteToIssueIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConvertedNoteToIssueIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConvertedNoteToIssueIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConvertedNoteToIssueIssueEvent).Name}");
+                    convertedNoteToIssueIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -749,7 +820,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    timelineCommentEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineCommentEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCommentEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCommentEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCommentEvent).Name}");
+                    timelineCommentEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -760,7 +833,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    timelineCrossReferencedEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineCrossReferencedEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCrossReferencedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCrossReferencedEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCrossReferencedEvent).Name}");
+                    timelineCrossReferencedEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -771,7 +846,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    timelineCommittedEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineCommittedEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCommittedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCommittedEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCommittedEvent).Name}");
+                    timelineCommittedEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -782,7 +859,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    timelineReviewedEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineReviewedEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineReviewedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineReviewedEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineReviewedEvent).Name}");
+                    timelineReviewedEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -793,7 +872,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    timelineLineCommentedEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineLineCommentedEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineLineCommentedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineLineCommentedEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineLineCommentedEvent).Name}");
+                    timelineLineCommentedEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -804,7 +885,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    timelineCommitCommentedEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineCommitCommentedEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCommitCommentedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCommitCommentedEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCommitCommentedEvent).Name}");
+                    timelineCommitCommentedEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -815,7 +898,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    timelineAssignedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineAssignedIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineAssignedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineAssignedIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineAssignedIssueEvent).Name}");
+                    timelineAssignedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -826,7 +911,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    timelineUnassignedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TimelineUnassignedIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineUnassignedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineUnassignedIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineUnassignedIssueEvent).Name}");
+                    timelineUnassignedIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -837,7 +924,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    stateChangeIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.StateChangeIssueEvent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StateChangeIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StateChangeIssueEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StateChangeIssueEvent).Name}");
+                    stateChangeIssueEvent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -902,95 +991,140 @@ namespace G.JsonConverters
             global::G.TimelineIssueEvents value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsLabeledIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LabeledIssueEvent, typeof(global::G.LabeledIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LabeledIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LabeledIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LabeledIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LabeledIssueEvent!, typeInfo);
             }
             else if (value.IsUnlabeledIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UnlabeledIssueEvent, typeof(global::G.UnlabeledIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UnlabeledIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UnlabeledIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UnlabeledIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UnlabeledIssueEvent!, typeInfo);
             }
             else if (value.IsMilestonedIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MilestonedIssueEvent, typeof(global::G.MilestonedIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MilestonedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MilestonedIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MilestonedIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MilestonedIssueEvent!, typeInfo);
             }
             else if (value.IsDemilestonedIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DemilestonedIssueEvent, typeof(global::G.DemilestonedIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DemilestonedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DemilestonedIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DemilestonedIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DemilestonedIssueEvent!, typeInfo);
             }
             else if (value.IsRenamedIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RenamedIssueEvent, typeof(global::G.RenamedIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RenamedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RenamedIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RenamedIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RenamedIssueEvent!, typeInfo);
             }
             else if (value.IsReviewRequestedIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReviewRequestedIssueEvent, typeof(global::G.ReviewRequestedIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReviewRequestedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReviewRequestedIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReviewRequestedIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReviewRequestedIssueEvent!, typeInfo);
             }
             else if (value.IsReviewRequestRemovedIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReviewRequestRemovedIssueEvent, typeof(global::G.ReviewRequestRemovedIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReviewRequestRemovedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReviewRequestRemovedIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReviewRequestRemovedIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReviewRequestRemovedIssueEvent!, typeInfo);
             }
             else if (value.IsReviewDismissedIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReviewDismissedIssueEvent, typeof(global::G.ReviewDismissedIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReviewDismissedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReviewDismissedIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReviewDismissedIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReviewDismissedIssueEvent!, typeInfo);
             }
             else if (value.IsLockedIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LockedIssueEvent, typeof(global::G.LockedIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LockedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LockedIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LockedIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LockedIssueEvent!, typeInfo);
             }
             else if (value.IsAddedToProjectIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AddedToProjectIssueEvent, typeof(global::G.AddedToProjectIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AddedToProjectIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AddedToProjectIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AddedToProjectIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AddedToProjectIssueEvent!, typeInfo);
             }
             else if (value.IsMovedColumnInProjectIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MovedColumnInProjectIssueEvent, typeof(global::G.MovedColumnInProjectIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MovedColumnInProjectIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MovedColumnInProjectIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MovedColumnInProjectIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MovedColumnInProjectIssueEvent!, typeInfo);
             }
             else if (value.IsRemovedFromProjectIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RemovedFromProjectIssueEvent, typeof(global::G.RemovedFromProjectIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RemovedFromProjectIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RemovedFromProjectIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RemovedFromProjectIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RemovedFromProjectIssueEvent!, typeInfo);
             }
             else if (value.IsConvertedNoteToIssueIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConvertedNoteToIssueIssueEvent, typeof(global::G.ConvertedNoteToIssueIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConvertedNoteToIssueIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConvertedNoteToIssueIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConvertedNoteToIssueIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConvertedNoteToIssueIssueEvent!, typeInfo);
             }
             else if (value.IsTimelineCommentEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineCommentEvent, typeof(global::G.TimelineCommentEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCommentEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCommentEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCommentEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineCommentEvent!, typeInfo);
             }
             else if (value.IsTimelineCrossReferencedEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineCrossReferencedEvent, typeof(global::G.TimelineCrossReferencedEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCrossReferencedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCrossReferencedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCrossReferencedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineCrossReferencedEvent!, typeInfo);
             }
             else if (value.IsTimelineCommittedEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineCommittedEvent, typeof(global::G.TimelineCommittedEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCommittedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCommittedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCommittedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineCommittedEvent!, typeInfo);
             }
             else if (value.IsTimelineReviewedEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineReviewedEvent, typeof(global::G.TimelineReviewedEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineReviewedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineReviewedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineReviewedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineReviewedEvent!, typeInfo);
             }
             else if (value.IsTimelineLineCommentedEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineLineCommentedEvent, typeof(global::G.TimelineLineCommentedEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineLineCommentedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineLineCommentedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineLineCommentedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineLineCommentedEvent!, typeInfo);
             }
             else if (value.IsTimelineCommitCommentedEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineCommitCommentedEvent, typeof(global::G.TimelineCommitCommentedEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineCommitCommentedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineCommitCommentedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineCommitCommentedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineCommitCommentedEvent!, typeInfo);
             }
             else if (value.IsTimelineAssignedIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineAssignedIssueEvent, typeof(global::G.TimelineAssignedIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineAssignedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineAssignedIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineAssignedIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineAssignedIssueEvent!, typeInfo);
             }
             else if (value.IsTimelineUnassignedIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineUnassignedIssueEvent, typeof(global::G.TimelineUnassignedIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TimelineUnassignedIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TimelineUnassignedIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TimelineUnassignedIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimelineUnassignedIssueEvent!, typeInfo);
             }
             else if (value.IsStateChangeIssueEvent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StateChangeIssueEvent, typeof(global::G.StateChangeIssueEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StateChangeIssueEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StateChangeIssueEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StateChangeIssueEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StateChangeIssueEvent!, typeInfo);
             }
         }
     }

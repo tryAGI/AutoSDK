@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomToolTypeJsonConverter))]
         public global::G.CustomToolType Type { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// Method to use for the request, default to POST.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomToolMethodJsonConverter))]
         public global::G.CustomToolMethod? Method { get; set; }
 
         /// <summary>
@@ -91,6 +93,7 @@ namespace G
         /// Type of execution message. "prompt" means the agent will use execution_message_description as a prompt to generate the message. "static_text" means the agent will speak the execution_message_description directly. Defaults to "prompt".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_message_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomToolExecutionMessageTypeJsonConverter))]
         public global::G.CustomToolExecutionMessageType? ExecutionMessageType { get; set; }
 
         /// <summary>

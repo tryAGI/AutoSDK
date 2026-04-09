@@ -9,11 +9,13 @@ namespace G
         /// Create Tagging
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Tagging> CreateTaggingAsync(
 
             global::G.TaggingCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Tagging
@@ -21,12 +23,14 @@ namespace G
         /// <param name="tagValueId"></param>
         /// <param name="resourceType"></param>
         /// <param name="resourceId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Tagging> CreateTaggingAsync(
             global::System.Guid tagValueId,
             global::G.ResourceType resourceType,
             global::System.Guid resourceId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

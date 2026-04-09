@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpanFilterPublicOperatorJsonConverter))]
         public global::G.SpanFilterPublicOperator? Operator { get; set; }
 
         /// <summary>

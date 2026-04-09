@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="xiApiKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeploymentOut> UploadLoraModelLoraModelPostAsync(
 
             global::G.LoraModelUploadIn request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload Lora Model
@@ -25,6 +27,7 @@ namespace G
         /// <param name="hfToken"></param>
         /// <param name="loraModelName"></param>
         /// <param name="baseModelName"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeploymentOut> UploadLoraModelLoraModelPostAsync(
@@ -33,6 +36,7 @@ namespace G
             string? xiApiKey = default,
             string? hfToken = default,
             string? baseModelName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

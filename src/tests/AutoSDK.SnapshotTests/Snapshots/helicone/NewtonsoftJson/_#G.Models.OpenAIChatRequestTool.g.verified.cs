@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIChatRequestToolTypeJsonConverter))]
         public global::G.OpenAIChatRequestToolType Type { get; set; }
 
         /// <summary>

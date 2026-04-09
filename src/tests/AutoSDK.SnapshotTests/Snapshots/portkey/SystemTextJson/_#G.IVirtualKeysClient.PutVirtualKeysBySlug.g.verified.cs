@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="slug"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> PutVirtualKeysBySlugAsync(
             string slug,
 
             global::G.PutVirtualKeysRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a Virtual Key
@@ -31,6 +33,7 @@ namespace G
         /// <param name="secretMappings">
         /// Dynamically resolve secrets from secret references at runtime. Valid target_field values are "key" or "model_config.&lt;field&gt;" (e.g. "model_config.awsSecretAccessKey"). Each target_field must be unique.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> PutVirtualKeysBySlugAsync(
@@ -41,6 +44,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.PutVirtualKeysRequestDeploymentConfigItem>? deploymentConfig = default,
             global::G.UsageLimits? usageLimits = default,
             global::System.Collections.Generic.IList<global::G.SecretMapping>? secretMappings = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

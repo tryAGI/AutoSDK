@@ -34,6 +34,7 @@ namespace G
         /// When set to auto the codec will be selected according to the browser.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("compatibility_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateStreamRequestCompatibilityMode2JsonConverter))]
         public global::G.CreateStreamRequestCompatibilityMode2? CompatibilityMode { get; set; }
 
         /// <summary>

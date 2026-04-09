@@ -6,6 +6,25 @@ namespace G
 {
     public partial class CreateVideoApiClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_V1VideoDeleteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Api-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_V1VideoDeleteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_V1VideoDeleteSecurityRequirement0,
+            };
         partial void PrepareV1VideoDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? videoId);
@@ -36,12 +55,18 @@ namespace G
                 httpClient: HttpClient,
                 videoId: ref videoId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_V1VideoDeleteSecurityRequirements,
+                operationName: "V1VideoDeleteAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/video.delete",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("video_id", videoId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -51,7 +76,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

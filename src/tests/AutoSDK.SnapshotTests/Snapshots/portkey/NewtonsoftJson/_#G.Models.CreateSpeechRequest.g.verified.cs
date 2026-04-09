@@ -25,6 +25,7 @@ namespace G
         /// The voice to use when generating the audio. Supported voices are `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. Previews of the voices are available in the [Text to speech guide](https://platform.openai.com/docs/guides/text-to-speech/voice-options).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSpeechRequestVoiceJsonConverter))]
         public global::G.CreateSpeechRequestVoice Voice { get; set; } = default!;
 
         /// <summary>
@@ -32,6 +33,7 @@ namespace G
         /// Default Value: mp3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSpeechRequestResponseFormatJsonConverter))]
         public global::G.CreateSpeechRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>

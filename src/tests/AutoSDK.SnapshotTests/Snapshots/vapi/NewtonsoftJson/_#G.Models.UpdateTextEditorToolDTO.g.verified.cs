@@ -20,6 +20,7 @@ namespace G
         /// The sub type of tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateTextEditorToolDTOSubTypeJsonConverter))]
         public global::G.UpdateTextEditorToolDTOSubType? SubType { get; set; }
 
         /// <summary>
@@ -118,6 +119,7 @@ namespace G
         /// Default Value: str_replace_editor
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateTextEditorToolDTONameJsonConverter))]
         public global::G.UpdateTextEditorToolDTOName? Name { get; set; }
 
         /// <summary>

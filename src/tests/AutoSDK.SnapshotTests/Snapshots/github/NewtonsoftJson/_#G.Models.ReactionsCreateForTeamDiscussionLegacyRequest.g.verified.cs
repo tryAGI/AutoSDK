@@ -13,6 +13,7 @@ namespace G
         /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the team discussion.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReactionsCreateForTeamDiscussionLegacyRequestContentJsonConverter))]
         public global::G.ReactionsCreateForTeamDiscussionLegacyRequestContent Content { get; set; } = default!;
 
         /// <summary>

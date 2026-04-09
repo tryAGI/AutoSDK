@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <example>fake</example>
         [global::Newtonsoft.Json.JsonProperty("label", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AiDetectionResponseLabelJsonConverter))]
         public global::G.AiDetectionResponseLabel Label { get; set; } = default!;
 
         /// <summary>

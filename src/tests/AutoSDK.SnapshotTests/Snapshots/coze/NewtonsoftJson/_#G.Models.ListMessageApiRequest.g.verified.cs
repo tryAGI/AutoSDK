@@ -37,6 +37,7 @@ namespace G
         /// 查询顺序  desc倒序 asc正序 TODO 默认倒序
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("order")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListMessageApiRequestOrderJsonConverter))]
         public global::G.ListMessageApiRequestOrder? Order { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The role of the author of this message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionDeltaRoleJsonConverter))]
         public global::G.ChatCompletionDeltaRole? Role { get; set; }
 
         /// <summary>

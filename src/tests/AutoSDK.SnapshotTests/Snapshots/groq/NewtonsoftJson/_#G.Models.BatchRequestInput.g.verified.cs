@@ -19,6 +19,7 @@ namespace G
         /// The HTTP method to be used for the request. Currently only `POST` is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BatchRequestInputMethodJsonConverter))]
         public global::G.BatchRequestInputMethod? Method { get; set; }
 
         /// <summary>

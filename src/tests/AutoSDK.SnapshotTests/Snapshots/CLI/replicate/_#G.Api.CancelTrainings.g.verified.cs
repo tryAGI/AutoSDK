@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CancelTrainingsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CancelTrainingsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CancelTrainingsSecurityRequirement0,
+            };
         partial void PrepareCancelTrainingsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string trainingId);
@@ -33,9 +52,15 @@ namespace G
                 httpClient: HttpClient,
                 trainingId: ref trainingId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CancelTrainingsSecurityRequirements,
+                operationName: "CancelTrainingsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/trainings/{trainingId}/cancel",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -45,7 +70,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

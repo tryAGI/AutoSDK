@@ -25,6 +25,7 @@ namespace G
         /// Request status indicating success, warning, or error.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LogRequestResponseStatusJsonConverter))]
         public global::G.LogRequestResponseStatus? Status { get; set; }
 
         /// <summary>

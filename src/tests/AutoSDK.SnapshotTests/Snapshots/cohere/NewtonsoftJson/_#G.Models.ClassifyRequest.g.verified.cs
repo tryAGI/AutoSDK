@@ -53,6 +53,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncate")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassifyRequestTruncateJsonConverter))]
         public global::G.ClassifyRequestTruncate? Truncate { get; set; }
 
         /// <summary>

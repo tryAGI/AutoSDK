@@ -19,12 +19,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranslationStatusApiItemSuccessStatusJsonConverter))]
         public global::G.TranslationStatusApiItemSuccessStatus Status { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("step", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranslationStatusApiItemSuccessStepJsonConverter))]
         public global::G.TranslationStatusApiItemSuccessStep Step { get; set; } = default!;
 
         /// <summary>

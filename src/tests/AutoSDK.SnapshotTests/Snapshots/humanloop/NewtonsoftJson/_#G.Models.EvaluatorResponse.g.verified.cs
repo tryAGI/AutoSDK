@@ -85,6 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvaluatorResponseTypeJsonConverter))]
         public global::G.EvaluatorResponseType? Type { get; set; }
 
         /// <summary>

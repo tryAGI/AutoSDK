@@ -23,12 +23,14 @@ namespace G
         /// <default>global::G.TeamMembershipRole.Member</default>
         /// <example>member</example>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamMembershipRoleJsonConverter))]
         public global::G.TeamMembershipRole Role { get; set; } = default!;
 
         /// <summary>
         /// The state of the user's membership in the team.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamMembershipStateJsonConverter))]
         public global::G.TeamMembershipState State { get; set; } = default!;
 
         /// <summary>

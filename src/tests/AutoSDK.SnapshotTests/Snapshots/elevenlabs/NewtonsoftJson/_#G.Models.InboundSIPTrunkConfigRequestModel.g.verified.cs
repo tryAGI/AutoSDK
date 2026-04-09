@@ -26,6 +26,7 @@ namespace G
         /// Default Value: allowed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_encryption")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SIPMediaEncryptionEnumJsonConverter))]
         public global::G.SIPMediaEncryptionEnum? MediaEncryption { get; set; }
 
         /// <summary>

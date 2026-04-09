@@ -17,6 +17,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummarizationConfigContentTypeJsonConverter))]
         public global::G.SummarizationConfigContentType? ContentType { get; set; }
 
         /// <summary>
@@ -26,12 +27,14 @@ namespace G
         /// Default Value: brief
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summary_length")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummarizationConfigSummaryLengthJsonConverter))]
         public global::G.SummarizationConfigSummaryLength? SummaryLength { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summary_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummarizationConfigSummaryTypeJsonConverter))]
         public global::G.SummarizationConfigSummaryType? SummaryType { get; set; }
 
         /// <summary>

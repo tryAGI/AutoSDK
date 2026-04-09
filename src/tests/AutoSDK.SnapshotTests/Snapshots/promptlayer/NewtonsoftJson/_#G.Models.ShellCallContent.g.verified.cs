@@ -13,6 +13,7 @@ namespace G
         /// Default Value: shell_call
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ShellCallContentTypeJsonConverter))]
         public global::G.ShellCallContentType? Type { get; set; }
 
         /// <summary>

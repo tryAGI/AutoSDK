@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ComputerToolCallType.ComputerCall</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerToolCallTypeJsonConverter))]
         public global::G.ComputerToolCallType Type { get; set; } = global::G.ComputerToolCallType.ComputerCall;
 
         /// <summary>
@@ -47,6 +48,7 @@ namespace G
         /// `incomplete`. Populated when items are returned via API.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerToolCallStatusJsonConverter))]
         public global::G.ComputerToolCallStatus Status { get; set; } = default!;
 
         /// <summary>

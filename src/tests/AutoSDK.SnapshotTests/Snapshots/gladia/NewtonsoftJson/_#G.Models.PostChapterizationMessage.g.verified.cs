@@ -40,6 +40,7 @@ namespace G
         /// <default>global::G.PostChapterizationMessageType.PostChapterization</default>
         /// <example>post_chapterization</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostChapterizationMessageTypeJsonConverter))]
         public global::G.PostChapterizationMessageType Type { get; set; } = global::G.PostChapterizationMessageType.PostChapterization;
 
         /// <summary>

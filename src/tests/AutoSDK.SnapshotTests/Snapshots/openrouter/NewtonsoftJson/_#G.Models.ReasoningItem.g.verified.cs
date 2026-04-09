@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputItemReasoningTypeJsonConverter))]
         public global::G.OutputItemReasoningType Type { get; set; }
 
         /// <summary>

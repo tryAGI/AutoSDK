@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelTypeJsonConverter))]
         public global::G.JobsApiRoutesFineTuningUpdateFineTunedModelResponseDiscriminatorModelType? ModelType { get; set; }
 
         /// <summary>

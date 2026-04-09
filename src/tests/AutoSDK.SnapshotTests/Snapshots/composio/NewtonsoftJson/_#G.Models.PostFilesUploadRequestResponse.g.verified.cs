@@ -39,6 +39,7 @@ namespace G
         /// [DEPRECATED] Indicates this is a new file that needs to be uploaded
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostFilesUploadRequestResponseTypeJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.PostFilesUploadRequestResponseType Type { get; set; }
 

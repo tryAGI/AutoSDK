@@ -50,6 +50,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("make_latest")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposUpdateReleaseRequestMakeLatestJsonConverter))]
         public global::G.ReposUpdateReleaseRequestMakeLatest? MakeLatest { get; set; }
 
         /// <summary>

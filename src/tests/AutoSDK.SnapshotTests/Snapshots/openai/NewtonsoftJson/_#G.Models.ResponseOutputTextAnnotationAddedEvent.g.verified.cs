@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always 'response.output_text_annotation.added'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputTextAnnotationAddedEventTypeJsonConverter))]
         public global::G.ResponseOutputTextAnnotationAddedEventType Type { get; set; }
 
         /// <summary>

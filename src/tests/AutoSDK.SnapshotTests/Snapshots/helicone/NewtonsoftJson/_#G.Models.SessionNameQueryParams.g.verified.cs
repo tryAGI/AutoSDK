@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pSize")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionNameQueryParamsPSizeJsonConverter))]
         public global::G.SessionNameQueryParamsPSize? PSize { get; set; }
 
         /// <summary>

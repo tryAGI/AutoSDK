@@ -32,6 +32,7 @@ namespace G
         /// </summary>
         /// <example>auto</example>
         [global::Newtonsoft.Json.JsonProperty("detail")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageReadEventVariant2DetailJsonConverter))]
         public global::G.ImageReadEventVariant2Detail? Detail { get; set; }
 
         /// <summary>

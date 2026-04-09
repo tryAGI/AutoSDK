@@ -6,6 +6,25 @@ namespace G
 {
     public partial class SubscriptionsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CheckUserSubscriptionSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "OAuth2",
+                        Location = "Header",
+                        Name = "",
+                        FriendlyName = "OAuth2",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CheckUserSubscriptionSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CheckUserSubscriptionSecurityRequirement0,
+            };
         partial void PrepareCheckUserSubscriptionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
@@ -47,13 +66,19 @@ namespace G
                 broadcasterId: ref broadcasterId,
                 userId: ref userId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CheckUserSubscriptionSecurityRequirements,
+                operationName: "CheckUserSubscriptionAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/subscriptions/user",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("broadcaster_id", broadcasterId)
                 .AddRequiredParameter("user_id", userId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -63,7 +88,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -92,7 +117,7 @@ namespace G
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 

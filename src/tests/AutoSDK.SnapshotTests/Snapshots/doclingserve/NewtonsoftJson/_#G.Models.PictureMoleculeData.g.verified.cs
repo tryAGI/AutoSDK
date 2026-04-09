@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segmentation", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<byte[]> Segmentation { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> Segmentation { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
             string smi,
             double confidence,
             string className,
-            global::System.Collections.Generic.IList<byte[]> segmentation,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> segmentation,
             string provenance,
             string? kind)
         {

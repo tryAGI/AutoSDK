@@ -26,6 +26,7 @@ namespace G
         /// </summary>
         /// <example>list</example>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageResponseObjectJsonConverter))]
         public global::G.ImageResponseObject Object { get; set; }
 
         /// <summary>

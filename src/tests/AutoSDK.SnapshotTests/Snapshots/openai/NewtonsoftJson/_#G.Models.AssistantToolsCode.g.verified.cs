@@ -13,6 +13,7 @@ namespace G
         /// The type of tool being defined: `code_interpreter`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssistantToolsCodeTypeJsonConverter))]
         public global::G.AssistantToolsCodeType Type { get; set; }
 
         /// <summary>

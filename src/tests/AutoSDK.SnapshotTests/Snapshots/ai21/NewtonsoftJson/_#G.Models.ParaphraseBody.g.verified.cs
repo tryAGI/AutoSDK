@@ -19,6 +19,7 @@ namespace G
         /// Default Value: general
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StyleTypeJsonConverter))]
         public global::G.StyleType? Style { get; set; }
 
         /// <summary>

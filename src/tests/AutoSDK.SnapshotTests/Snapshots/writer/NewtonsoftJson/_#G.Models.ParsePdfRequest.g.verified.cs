@@ -13,6 +13,7 @@ namespace G
         /// The format into which the PDF content should be converted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PdfConversionFormatJsonConverter))]
         public global::G.PdfConversionFormat Format { get; set; } = default!;
 
         /// <summary>

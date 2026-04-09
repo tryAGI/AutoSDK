@@ -13,6 +13,7 @@ namespace G
         /// The type of the object the environment variable is scoped for
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PutEnvVarRequestObjectTypeJsonConverter))]
         public global::G.PutEnvVarRequestObjectType ObjectType { get; set; } = default!;
 
         /// <summary>

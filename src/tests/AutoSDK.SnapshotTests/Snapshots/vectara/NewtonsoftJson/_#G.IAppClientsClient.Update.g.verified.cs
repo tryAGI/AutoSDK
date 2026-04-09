@@ -13,6 +13,7 @@ namespace G
         /// <param name="requestTimeoutMillis"></param>
         /// <param name="appClientId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AppClient> UpdateAsync(
@@ -21,6 +22,7 @@ namespace G
             global::G.UpdateAppClientRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an App Client<br/>
@@ -41,6 +43,7 @@ namespace G
         /// <param name="agentRoles">
         /// The new agent role assignments. These will replace the current agent roles.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AppClient> UpdateAsync(
@@ -51,6 +54,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles = default,
             global::System.Collections.Generic.IList<global::G.CorpusRole>? corpusRoles = default,
             global::System.Collections.Generic.IList<global::G.AgentRole>? agentRoles = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

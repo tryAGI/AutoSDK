@@ -9,11 +9,13 @@ namespace G
         /// Get all memories.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MemoriesListV2ResponseItem>> MemoriesListV2Async(
 
             global::G.MemoryGetInputV2 request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get all memories.
@@ -38,6 +40,7 @@ namespace G
         /// <param name="projectId">
         /// The unique identifier of the project associated with the memory.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MemoriesListV2ResponseItem>> MemoriesListV2Async(
@@ -47,6 +50,7 @@ namespace G
             int? pageSize = default,
             string? orgId = default,
             string? projectId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

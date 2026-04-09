@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("aws_auth_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AwsAccessKeyAuthConfigAwsAuthTypeJsonConverter))]
         public global::G.AwsAccessKeyAuthConfigAwsAuthType AwsAuthType { get; set; }
 
         /// <summary>

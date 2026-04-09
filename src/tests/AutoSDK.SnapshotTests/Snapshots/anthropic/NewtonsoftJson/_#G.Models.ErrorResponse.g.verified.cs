@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ErrorResponseType.Error</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ErrorResponseTypeJsonConverter))]
         public global::G.ErrorResponseType Type { get; set; } = global::G.ErrorResponseType.Error;
 
         /// <summary>

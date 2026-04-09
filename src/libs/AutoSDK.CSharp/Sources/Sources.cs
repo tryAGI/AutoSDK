@@ -28,11 +28,12 @@ public static partial class Sources
     public static FileWithName HttpEnvironmentFile(
         IReadOnlyList<OpenApiServer> servers,
         IReadOnlyList<OpenApiSecuritySchemeReference> securitySchemes,
+        Uri? documentSelf = null,
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
             Name: "http-client.env.json",
-            Text: GenerateHttpEnvironmentFile(servers, securitySchemes));
+            Text: GenerateHttpEnvironmentFile(servers, securitySchemes, documentSelf));
     }
 
     public static FileWithName WebhooksHttpFile(
@@ -209,8 +210,7 @@ public static partial class Sources
         ModelData data,
         CancellationToken cancellationToken = default)
     {
-        if (data.Style != ModelStyle.Enumeration ||
-            data.Settings.UsesNewtonsoftJson())
+        if (data.Style != ModelStyle.Enumeration)
         {
             return FileWithName.Empty;
         }
@@ -224,8 +224,7 @@ public static partial class Sources
         ModelData data,
         CancellationToken cancellationToken = default)
     {
-        if (data.Style != ModelStyle.Enumeration ||
-            data.Settings.UsesNewtonsoftJson())
+        if (data.Style != ModelStyle.Enumeration)
         {
             return FileWithName.Empty;
         }
@@ -409,12 +408,31 @@ public static partial class Sources
     }
 
     public static FileWithName ServerSelectionSupport(
+    public static FileWithName ServerSelectionSupport(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
             Name: $"{settings.Namespace}.ServerSelection.g.cs",
             Text: GenerateServerSelectionSupport(settings));
+    }
+
+    public static FileWithName OptionsSupport(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.OptionsSupport.g.cs",
+            Text: GenerateOptionsSupport(settings, cancellationToken: cancellationToken));
+    }
+
+    public static FileWithName SecuritySupport(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.Security.g.cs",
+            Text: GenerateSecuritySupport(settings, cancellationToken: cancellationToken));
     }
 
     public static FileWithName ResponseStream(

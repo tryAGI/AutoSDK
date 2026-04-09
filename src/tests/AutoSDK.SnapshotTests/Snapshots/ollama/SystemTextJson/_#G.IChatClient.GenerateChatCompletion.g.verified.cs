@@ -10,11 +10,13 @@ namespace G
         /// This is a streaming endpoint, so there will be a series of responses. The final response object will include statistics and additional data from the request.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateChatCompletionResponse> GenerateChatCompletionAsync(
 
             global::G.GenerateChatCompletionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate the next message in a chat with a provided model.<br/>
@@ -50,6 +52,7 @@ namespace G
         /// <param name="tools">
         /// A list of tools the model may call.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateChatCompletionResponse> GenerateChatCompletionAsync(
@@ -60,6 +63,7 @@ namespace G
             bool? stream = default,
             int? keepAlive = default,
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

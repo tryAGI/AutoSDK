@@ -153,343 +153,347 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssetRequest? Type31 { get; set; }
+        public byte[]? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssetResponse? Type32 { get; set; }
+        public global::G.CreateAssetRequest? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreditBalance? Type33 { get; set; }
+        public global::G.CreateAssetResponse? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, int>? Type34 { get; set; }
+        public global::G.CreditBalance? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorCode? Type35 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, int>? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateAudioFromVideoRequest? Type36 { get; set; }
+        public global::G.ErrorCode? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Guid>? Type37 { get; set; }
+        public global::G.GenerateAudioFromVideoRequest? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateAudioFromVideoResponse? Type38 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageRequest? Type39 { get; set; }
+        public global::G.GenerateAudioFromVideoResponse? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageRequestType? Type40 { get; set; }
+        public global::G.GenerateImageRequest? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageResponse? Type41 { get; set; }
+        public global::G.GenerateImageRequestType? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageResponseType? Type42 { get; set; }
+        public global::G.GenerateImageResponse? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.BatchImageResultItem>? Type43 { get; set; }
+        public global::G.GenerateImageResponseType? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageUpscaleRequest? Type44 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BatchImageResultItem>? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageUpscaleResponse? Type45 { get; set; }
+        public global::G.GenerateImageUpscaleRequest? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateIsolatedAudioRequest? Type46 { get; set; }
+        public global::G.GenerateImageUpscaleResponse? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateIsolatedAudioResponse? Type47 { get; set; }
+        public global::G.GenerateIsolatedAudioRequest? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateMotionControlRequestInput? Type48 { get; set; }
+        public global::G.GenerateIsolatedAudioResponse? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedVideoInputs? Type49 { get; set; }
+        public global::G.GenerateMotionControlRequestInput? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateMotionControlRequestOutput? Type50 { get; set; }
+        public global::G.GeneratedVideoInputs? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateMotionControlResponse? Type51 { get; set; }
+        public global::G.GenerateMotionControlRequestOutput? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateSpeechToSpeechRequest? Type52 { get; set; }
+        public global::G.GenerateMotionControlResponse? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateSpeechToSpeechResponse? Type53 { get; set; }
+        public global::G.GenerateSpeechToSpeechRequest? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateTextToSoundRequest? Type54 { get; set; }
+        public global::G.GenerateSpeechToSpeechResponse? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateTextToSoundResponse? Type55 { get; set; }
+        public global::G.GenerateTextToSoundRequest? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateTextToSpeechRequest? Type56 { get; set; }
+        public global::G.GenerateTextToSoundResponse? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SupportedLanguage? Type57 { get; set; }
+        public global::G.GenerateTextToSpeechRequest? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateTextToSpeechResponse? Type58 { get; set; }
+        public global::G.SupportedLanguage? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoRequestInput? Type59 { get; set; }
+        public global::G.GenerateTextToSpeechResponse? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>, object>? Type60 { get; set; }
+        public global::G.GenerateVideoRequestInput? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoRequestOutput? Type61 { get; set; }
+        public global::G.AnyOf<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>, object>? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoResponse? Type62 { get; set; }
+        public global::G.GenerateVideoRequestOutput? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.BatchVideoResultItem>? Type63 { get; set; }
+        public global::G.GenerateVideoResponse? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoToVideoRequest? Type64 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BatchVideoResultItem>? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.KlingEditElement>? Type65 { get; set; }
+        public global::G.GenerateVideoToVideoRequest? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.KlingEditElement? Type66 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.KlingEditElement>? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoToVideoResponse? Type67 { get; set; }
+        public global::G.KlingEditElement? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoUpscaleRequest? Type68 { get; set; }
+        public global::G.GenerateVideoToVideoResponse? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoUpscaleResponse? Type69 { get; set; }
+        public global::G.GenerateVideoUpscaleRequest? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoWithAudioRequest? Type70 { get; set; }
+        public global::G.GenerateVideoUpscaleResponse? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoWithAudioResponse? Type71 { get; set; }
+        public global::G.GenerateVideoWithAudioRequest? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVoiceCloneRequest? Type72 { get; set; }
+        public global::G.GenerateVideoWithAudioResponse? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVoiceCloneResponse? Type73 { get; set; }
+        public global::G.GenerateVoiceCloneRequest? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedAudioInputs? Type74 { get; set; }
+        public global::G.GenerateVoiceCloneResponse? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type75 { get; set; }
+        public global::G.GeneratedAudioInputs? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedImageInputs? Type76 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<byte[], global::System.Collections.Generic.IList<byte[]>, object>? Type77 { get; set; }
+        public global::G.GeneratedImageInputs? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type78 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, object>? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<byte[]>? Type79 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedVideoInputsCharacterOrientation2? Type80 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.VideoShot>? Type81 { get; set; }
+        public global::G.GeneratedVideoInputsCharacterOrientation2? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VideoShot? Type82 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.VideoShot>? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Generation? Type83 { get; set; }
+        public global::G.VideoShot? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Input? Type84 { get; set; }
+        public global::G.Generation? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationInputDiscriminator? Type85 { get; set; }
+        public global::G.Input? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationInputDiscriminatorType? Type86 { get; set; }
+        public global::G.GenerationInputDiscriminator? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationError2? Type87 { get; set; }
+        public global::G.GenerationInputDiscriminatorType? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationStatusResponse? Type88 { get; set; }
+        public global::G.GenerationError2? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationType? Type89 { get; set; }
+        public global::G.GenerationStatusResponse? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HTTPValidationError? Type90 { get; set; }
+        public global::G.GenerationType? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ValidationError>? Type91 { get; set; }
+        public global::G.HTTPValidationError? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ValidationError? Type92 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ValidationError>? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.InputSlot>? Type93 { get; set; }
+        public global::G.ValidationError? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputSlot? Type94 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.InputSlot>? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public long? Type95 { get; set; }
+        public global::G.InputSlot? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PageInfo? Type96 { get; set; }
+        public long? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PagedResponseGeneration? Type97 { get; set; }
+        public global::G.PageInfo? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Generation>? Type98 { get; set; }
+        public global::G.PagedResponseGeneration? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PagingParams? Type99 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Generation>? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, double>>? Type100 { get; set; }
+        public global::G.PagingParams? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, double>? Type101 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, double>>? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>? Type102 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, int?>? Type103 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.VoiceLabel>? Type104 { get; set; }
+        public global::G.AnyOf<string, int?>? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VoiceLabel? Type105 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.VoiceLabel>? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateAssetPublicGenerationsPostRequest? Type106 { get; set; }
+        public global::G.VoiceLabel? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateAssetPublicGenerationsPostRequestDiscriminator? Type107 { get; set; }
+        public global::G.GenerateAssetPublicGenerationsPostRequest? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateAssetPublicGenerationsPostRequestDiscriminatorType? Type108 { get; set; }
+        public global::G.GenerateAssetPublicGenerationsPostRequestDiscriminator? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?, object>? Type109 { get; set; }
+        public global::G.GenerateAssetPublicGenerationsPostRequestDiscriminatorType? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type110 { get; set; }
+        public global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?, object>? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AIModel>? Type111 { get; set; }
+        public global::System.DateTime? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Asset>? Type112 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AIModel>? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateAssetPublicGenerationsPostResponse? Type113 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Asset>? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateAssetPublicGenerationsPostResponseDiscriminator? Type114 { get; set; }
+        public global::G.GenerateAssetPublicGenerationsPostResponse? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateAssetPublicGenerationsPostResponseDiscriminatorType? Type115 { get; set; }
+        public global::G.GenerateAssetPublicGenerationsPostResponseDiscriminator? Type115 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerateAssetPublicGenerationsPostResponseDiscriminatorType? Type116 { get; set; }
 
         /// <summary>
         /// 
@@ -526,42 +530,46 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<byte[], global::System.Collections.Generic.List<byte[]>, object>? ListType8 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.List<double>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>, object>? ListType8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<byte[]>? ListType9 { get; set; }
+        public global::System.Collections.Generic.List<double>? ListType9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.VideoShot>? ListType10 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>? ListType10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ValidationError>? ListType11 { get; set; }
+        public global::System.Collections.Generic.List<global::G.VideoShot>? ListType11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.InputSlot>? ListType12 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ValidationError>? ListType12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Generation>? ListType13 { get; set; }
+        public global::System.Collections.Generic.List<global::G.InputSlot>? ListType13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.AnyOf<string, int?>>? ListType14 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Generation>? ListType14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.VoiceLabel>? ListType15 { get; set; }
+        public global::System.Collections.Generic.List<global::G.AnyOf<string, int?>>? ListType15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.AIModel>? ListType16 { get; set; }
+        public global::System.Collections.Generic.List<global::G.VoiceLabel>? ListType16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Asset>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::G.AIModel>? ListType17 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.Asset>? ListType18 { get; set; }
     }
 }

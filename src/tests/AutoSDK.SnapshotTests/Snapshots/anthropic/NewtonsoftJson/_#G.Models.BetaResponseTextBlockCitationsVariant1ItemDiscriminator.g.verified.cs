@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter))]
         public global::G.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorType? Type { get; set; }
 
         /// <summary>

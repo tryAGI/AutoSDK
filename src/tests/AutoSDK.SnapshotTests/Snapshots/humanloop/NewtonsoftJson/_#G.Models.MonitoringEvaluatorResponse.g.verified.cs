@@ -25,6 +25,7 @@ namespace G
         /// State of the monitoring evaluator.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MonitoringEvaluatorResponseStateJsonConverter))]
         public global::G.MonitoringEvaluatorResponseState? State { get; set; }
 
         /// <summary>

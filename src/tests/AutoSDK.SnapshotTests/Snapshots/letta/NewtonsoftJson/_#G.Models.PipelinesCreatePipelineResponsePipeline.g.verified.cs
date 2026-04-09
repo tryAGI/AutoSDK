@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("integration_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PipelinesCreatePipelineResponsePipelineIntegrationTypeJsonConverter))]
         public global::G.PipelinesCreatePipelineResponsePipelineIntegrationType IntegrationType { get; set; } = default!;
 
         /// <summary>

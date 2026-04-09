@@ -40,7 +40,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>>> response,
+            global::System.Collections.Generic.IAsyncEnumerable<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>> response,
             global::System.Threading.CancellationToken cancellationToken);
 
 

@@ -32,6 +32,7 @@ namespace G
         /// * `NO` - Not Activated
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.Role9e7EnumJsonConverter))]
         public global::G.Role9e7Enum? DefaultRole { get; set; }
 
         /// <summary>

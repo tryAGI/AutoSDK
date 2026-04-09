@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AudioClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateTranscriptionAsStreamSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateTranscriptionAsStreamSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateTranscriptionAsStreamSecurityRequirement0,
+            };
         partial void PrepareCreateTranscriptionAsStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.CreateTranscriptionRequest request);
@@ -21,11 +40,13 @@ namespace G
         /// Transcribes audio into the input language.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateTranscriptionResponseStreamEvent> CreateTranscriptionAsStreamAsync(
 
             global::G.CreateTranscriptionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -50,184 +71,369 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
-            var __pathBuilder = new global::G.PathBuilder(
-                path: "/audio/transcriptions",
-                baseUri: HttpClient.BaseAddress); 
-            var __path = __pathBuilder.ToString();
-            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateTranscriptionAsStreamSecurityRequirements,
+                operationName: "CreateTranscriptionAsStreamAsync");
+
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: true);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: "/audio/transcriptions",
+                                baseUri: HttpClient.BaseAddress);
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
-            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
-            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
+                foreach (var __authorization in __authorizations)
                 {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
+                    if (__authorization.Type == "Http" ||
+                        __authorization.Type == "OAuth2")
+                    {
+                        __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                            scheme: __authorization.Name,
+                            parameter: __authorization.Value);
+                    }
+                    else if (__authorization.Type == "ApiKey" &&
+                             __authorization.Location == "Header")
+                    {
+                        __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                    }
                 }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                            __httpRequestContent.Add(
+                                content: __contentFile,
+                                name: "\"file\"",
+                                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+                            if (__contentFile.Headers.ContentDisposition != null)
+                            {
+                                __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                            }
+                            __httpRequestContent.Add(
+                                content: new global::System.Net.Http.StringContent(request.Model.ToString() ?? string.Empty),
+                                name: "\"model\"");
+                            if (request.Language != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Language}"),
+                                    name: "\"language\"");
+                            } 
+                            if (request.Prompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                                    name: "\"prompt\"");
+                            } 
+                            if (request.ResponseFormat != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                                    name: "\"response_format\"");
+                            } 
+                            if (request.Temperature != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
+                                    name: "\"temperature\"");
+                            } 
+                            if (request.Include != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Include, x => x.ToValueString()))}]"),
+                                    name: "\"include[]\"");
+                            } 
+                            if (request.TimestampGranularities != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities, x => x.ToValueString()))}]"),
+                                    name: "\"timestamp_granularities[]\"");
+                            } 
+                            if (request.Stream != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Stream}"),
+                                    name: "\"stream\"");
+                            } 
+                            if (request.ChunkingStrategy != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.ChunkingStrategy?.ToString() ?? string.Empty),
+                                    name: "\"chunking_strategy\"");
+                            }
+                            __httpRequest.Content = __httpRequestContent;
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareCreateTranscriptionAsStreamRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    request: request);
+
+                return __httpRequest;
             }
-            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
-            __httpRequestContent.Add(
-                content: __contentFile,
-                name: "\"file\"",
-                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
-            if (__contentFile.Headers.ContentDisposition != null)
-            {
-                __contentFile.Headers.ContentDisposition.FileNameStar = null;
-            }
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent(request.Model.ToString() ?? string.Empty),
-                name: "\"model\"");
-            if (request.Language != default)
-            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Language}"),
-                    name: "\"language\"");
-            } 
-            if (request.Prompt != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
-                    name: "\"prompt\"");
-            } 
-            if (request.ResponseFormat != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                    name: "\"response_format\"");
-            } 
-            if (request.Temperature != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
-                    name: "\"temperature\"");
-            } 
-            if (request.Include != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Include, x => x.ToValueString()))}]"),
-                    name: "\"include[]\"");
-            } 
-            if (request.TimestampGranularities != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities, x => x.ToValueString()))}]"),
-                    name: "\"timestamp_granularities[]\"");
-            } 
-            if (request.Stream != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Stream}"),
-                    name: "\"stream\"");
-            } 
-            if (request.ChunkingStrategy != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent(request.ChunkingStrategy?.ToString() ?? string.Empty),
-                    name: "\"chunking_strategy\"");
-            }
-            __httpRequest.Content = __httpRequestContent;
-
-            PrepareRequest(
-                client: HttpClient,
-                request: __httpRequest);
-            PrepareCreateTranscriptionAsStreamRequest(
-                httpClient: HttpClient,
-                httpRequestMessage: __httpRequest,
-                request: request);
-
-            using var __response = await HttpClient.SendAsync(
-                request: __httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
-
-            ProcessResponse(
-                client: HttpClient,
-                response: __response);
-            ProcessCreateTranscriptionAsStreamResponse(
-                httpClient: HttpClient,
-                httpResponseMessage: __response);
-
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
             try
             {
-                __response.EnsureSuccessStatusCode();
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateTranscriptionAsStream",
+                                methodName: "CreateTranscriptionAsStreamAsync",
+                                pathTemplate: "\"/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateTranscriptionAsStream",
+                                methodName: "CreateTranscriptionAsStreamAsync",
+                                pathTemplate: "\"/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateTranscriptionAsStream",
+                                methodName: "CreateTranscriptionAsStreamAsync",
+                                pathTemplate: "\"/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessCreateTranscriptionAsStreamResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateTranscriptionAsStream",
+                                methodName: "CreateTranscriptionAsStreamAsync",
+                                pathTemplate: "\"/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateTranscriptionAsStream",
+                                methodName: "CreateTranscriptionAsStreamAsync",
+                                pathTemplate: "\"/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+
+                            try
+                            {
+                                __response.EnsureSuccessStatusCode();
+                            }
+                            catch (global::System.Net.Http.HttpRequestException __ex)
+                            {
+                                string? __content = null;
+                                try
+                                {
+                                    __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+                                }
+                                catch (global::System.Exception)
+                                {
+                                }
+
+                                throw new global::G.ApiException(
+                                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __ex,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+
+                            using var __stream = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                __effectiveCancellationToken
+                #endif
+                            ).ConfigureAwait(false);
+
+                            await foreach (var __sseEvent in global::System.Net.ServerSentEvents.SseParser
+                                .Create(__stream).EnumerateAsync(__effectiveCancellationToken))
+                            {
+                                var __content = __sseEvent.Data;
+                                if (__content == "[DONE]")
+                                {
+                                    yield break;
+                                }
+
+                                var __streamedResponse = global::G.CreateTranscriptionResponseStreamEvent.FromJson(__content, JsonSerializerContext) ??
+                                                       throw new global::G.ApiException(
+                                                           message: $"Response deserialization failed for \"{__content}\" ",
+                                                           statusCode: __response.StatusCode)
+                                                       {
+                                                           ResponseBody = __content,
+                                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                                               __response.Headers,
+                                                               h => h.Key,
+                                                               h => h.Value),
+                                                       };
+
+                                yield return __streamedResponse;
+                            }
+
+                }
             }
-            catch (global::System.Net.Http.HttpRequestException __ex)
+            finally
             {
-                string? __content = null;
-                try
-                {
-                    __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                        cancellationToken
-#endif
-                    ).ConfigureAwait(false);
-                }
-                catch (global::System.Exception)
-                {
-                }
-
-                throw new global::G.ApiException(
-                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __ex,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-
-            using var __stream = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                cancellationToken
-#endif
-            ).ConfigureAwait(false);
-
-            await foreach (var __sseEvent in global::System.Net.ServerSentEvents.SseParser
-                .Create(__stream).EnumerateAsync(cancellationToken))
-            {
-                var __content = __sseEvent.Data;
-                if (__content == "[DONE]")
-                {
-                    yield break;
-                }
-
-                var __streamedResponse = global::G.CreateTranscriptionResponseStreamEvent.FromJson(__content, JsonSerializerContext) ??
-                                       throw new global::G.ApiException(
-                                           message: $"Response deserialization failed for \"{__content}\" ",
-                                           statusCode: __response.StatusCode)
-                                       {
-                                           ResponseBody = __content,
-                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                               __response.Headers,
-                                               h => h.Key,
-                                               h => h.Value),
-                                       };
-
-                yield return __streamedResponse;
+                __httpRequest?.Dispose();
             }
         }
         /// <summary>
@@ -271,6 +477,7 @@ namespace G
         /// <param name="chunkingStrategy">
         /// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. 
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::G.CreateTranscriptionResponseStreamEvent> CreateTranscriptionAsStreamAsync(
@@ -284,6 +491,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TranscriptionInclude>? include = default,
             global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
             global::G.AnyOf<global::G.CreateTranscriptionRequestChunkingStrategy?, global::G.VadConfig>? chunkingStrategy = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.CreateTranscriptionRequest
@@ -303,6 +511,7 @@ namespace G
 
             var __enumerable = CreateTranscriptionAsStreamAsync(
                 request: __request,
+                requestOptions: requestOptions,
                 cancellationToken: cancellationToken);
 
             await foreach (var __response in __enumerable)

@@ -13,6 +13,7 @@ namespace G
         /// Default Value: text_editor_code_execution_tool_result
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextEditorCodeExecutionToolResultContentTypeJsonConverter))]
         public global::G.TextEditorCodeExecutionToolResultContentType? Type { get; set; }
 
         /// <summary>

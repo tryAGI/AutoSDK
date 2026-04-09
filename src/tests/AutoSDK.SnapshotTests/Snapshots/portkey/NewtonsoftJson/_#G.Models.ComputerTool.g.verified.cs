@@ -14,6 +14,7 @@ namespace G
         /// The type of the computer use tool. Always `computer_use_preview`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerToolTypeJsonConverter))]
         public global::G.ComputerToolType Type { get; set; }
 
         /// <summary>
@@ -32,6 +33,7 @@ namespace G
         /// The type of computer environment to control.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environment", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerToolEnvironmentJsonConverter))]
         public global::G.ComputerToolEnvironment Environment { get; set; } = default!;
 
         /// <summary>

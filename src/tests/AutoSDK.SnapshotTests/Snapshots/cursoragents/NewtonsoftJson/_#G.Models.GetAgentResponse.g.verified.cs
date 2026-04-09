@@ -31,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>RUNNING</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetAgentResponseStatusJsonConverter))]
         public global::G.GetAgentResponseStatus Status { get; set; } = default!;
 
         /// <summary>

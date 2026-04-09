@@ -9,11 +9,13 @@ namespace G
         /// Create avatar from SMPL shape parameters
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AssetResponse> CreateAvatarFromBetasAsync(
 
             global::G.BetasAvatarRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create avatar from SMPL shape parameters
@@ -30,6 +32,7 @@ namespace G
         /// <param name="poseName"></param>
         /// <param name="poses"></param>
         /// <param name="predictedMeasurements"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AssetResponse> CreateAvatarFromBetasAsync(
@@ -43,6 +46,7 @@ namespace G
             string? poseName = default,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? poses = default,
             global::System.Collections.Generic.Dictionary<string, double>? predictedMeasurements = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

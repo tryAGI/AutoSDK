@@ -13,6 +13,7 @@ namespace G
         /// The type of the object. Always `summary_text`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningItemSummaryItemTypeJsonConverter))]
         public global::G.ReasoningItemSummaryItemType Type { get; set; }
 
         /// <summary>

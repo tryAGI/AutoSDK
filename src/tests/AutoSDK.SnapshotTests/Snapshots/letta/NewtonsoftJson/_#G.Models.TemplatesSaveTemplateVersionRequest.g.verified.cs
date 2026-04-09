@@ -31,6 +31,7 @@ namespace G
         /// Strategy for reconciling memory blocks during migration: "reconcile-all" deletes blocks not in the template, "preserve-deleted" keeps them. Defaults to "preserve-deleted".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("block_reconciliation_strategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TemplatesSaveTemplateVersionRequestBlockReconciliationStrategyJsonConverter))]
         public global::G.TemplatesSaveTemplateVersionRequestBlockReconciliationStrategy? BlockReconciliationStrategy { get; set; }
 
         /// <summary>

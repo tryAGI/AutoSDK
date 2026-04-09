@@ -25,6 +25,7 @@ namespace G
         /// The type of tool call. This is always going to be `function` for this type of tool call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunStepDeltaStepDetailsToolCallsFunctionObjectTypeJsonConverter))]
         public global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectType Type { get; set; }
 
         /// <summary>

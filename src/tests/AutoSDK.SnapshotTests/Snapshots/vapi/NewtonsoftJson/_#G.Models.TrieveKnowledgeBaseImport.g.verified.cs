@@ -13,6 +13,7 @@ namespace G
         /// This is to import an existing dataset from Trieve.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TrieveKnowledgeBaseImportTypeJsonConverter))]
         public global::G.TrieveKnowledgeBaseImportType Type { get; set; }
 
         /// <summary>

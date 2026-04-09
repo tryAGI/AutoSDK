@@ -12,6 +12,7 @@ namespace G
         /// <param name="requestTimeout"></param>
         /// <param name="authorization"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateVectordbAliasesDropAsync(
@@ -19,6 +20,7 @@ namespace G
             global::G.AliasName request,
             int? requestTimeout = default,
             string? authorization = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Drop Alias<br/>
@@ -36,6 +38,7 @@ namespace G
         /// The alias to drop.<br/>
         /// When dropping an alias, you do not need to provide the collection name because one alias can only be assigned to exactly one collection. Therefore, the server knows which collection the specified alias belongs to.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreateVectordbAliasesDropAsync(
@@ -44,6 +47,7 @@ namespace G
             int? requestTimeout = default,
             string? authorization = default,
             string? dbName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

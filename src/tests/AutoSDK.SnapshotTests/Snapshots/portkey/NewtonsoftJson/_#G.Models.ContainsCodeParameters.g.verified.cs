@@ -13,6 +13,7 @@ namespace G
         /// Code format to check for
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ContainsCodeParametersFormatJsonConverter))]
         public global::G.ContainsCodeParametersFormat Format { get; set; } = default!;
 
         /// <summary>

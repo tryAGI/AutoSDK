@@ -10,11 +10,13 @@ namespace G
         /// DeleteTagByJob
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> DeleteTagByJobAsync(
 
             global::G.DeleteTagByJobRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// DeleteTagByJob<br/>
@@ -22,11 +24,13 @@ namespace G
         /// </summary>
         /// <param name="currentProjectId"></param>
         /// <param name="tag"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> DeleteTagByJobAsync(
             global::System.Guid currentProjectId,
             global::G.Tag tag,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

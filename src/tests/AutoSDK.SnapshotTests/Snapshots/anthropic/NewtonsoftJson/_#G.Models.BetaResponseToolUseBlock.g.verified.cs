@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaResponseToolUseBlockType.ToolUse</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaResponseToolUseBlockTypeJsonConverter))]
         public global::G.BetaResponseToolUseBlockType Type { get; set; } = global::G.BetaResponseToolUseBlockType.ToolUse;
 
         /// <summary>

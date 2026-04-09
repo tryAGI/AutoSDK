@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BookAppointmentCalToolTypeJsonConverter))]
         public global::G.BookAppointmentCalToolType Type { get; set; }
 
         /// <summary>

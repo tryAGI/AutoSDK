@@ -14,6 +14,7 @@ namespace G
         /// Default Value: GPT_4O_MINI
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SupportedLLMModelNamesJsonConverter))]
         public global::G.SupportedLLMModelNames? ModelName { get; set; }
 
         /// <summary>

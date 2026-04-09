@@ -11,6 +11,7 @@ namespace G
         /// <param name="workspaceId"></param>
         /// <param name="slug"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PutProvidersResponse> PutProvidersBySlugAsync(
@@ -18,6 +19,7 @@ namespace G
 
             global::G.PutProvidersRequest request,
             string? workspaceId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a Provider
@@ -32,6 +34,7 @@ namespace G
         /// <param name="rateLimits"></param>
         /// <param name="expiresAt"></param>
         /// <param name="resetUsage"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PutProvidersResponse> PutProvidersBySlugAsync(
@@ -43,6 +46,7 @@ namespace G
             global::G.RateLimits? rateLimits = default,
             global::System.DateTime? expiresAt = default,
             bool? resetUsage = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

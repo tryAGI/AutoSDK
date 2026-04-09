@@ -71,6 +71,7 @@ namespace G
         /// </summary>
         /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("classification_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter))]
         public global::G.ClassifyResponseClassificationClassificationType ClassificationType { get; set; } = default!;
 
         /// <summary>

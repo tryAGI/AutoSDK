@@ -31,10 +31,87 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.SuspendReasonJsonConverter(),
+
+                    new global::G.JsonConverters.SuspendReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2JsonConverter(),
+
+                    new global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1ItemJsonConverter(),
+
+                    new global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1ItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2JsonConverter(),
+
+                    new global::G.JsonConverters.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeployGPUsJsonConverter(),
+
+                    new global::G.JsonConverters.DeployGPUsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeployTypeJsonConverter(),
+
+                    new global::G.JsonConverters.DeployTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HFTasksEJsonConverter(),
+
+                    new global::G.JsonConverters.HFTasksENullableJsonConverter(),
+
+                    new global::G.JsonConverters.ImageURLDetailJsonConverter(),
+
+                    new global::G.JsonConverters.ImageURLDetailNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InputAudioFormatJsonConverter(),
+
+                    new global::G.JsonConverters.InputAudioFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ModelDocBlockKeyJsonConverter(),
+
+                    new global::G.JsonConverters.ModelDocBlockKeyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIBatchesInEndpointJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIBatchesInEndpointNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIChatCompletionsInReasoningEffort2JsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIChatCompletionsInReasoningEffort2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseFormatTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseFormatTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SchemaVariantKeyJsonConverter(),
+
+                    new global::G.JsonConverters.SchemaVariantKeyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SourceTypeEnumJsonConverter(),
+
+                    new global::G.JsonConverters.SourceTypeEnumNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TtsResponseFormatJsonConverter(),
+
+                    new global::G.JsonConverters.TtsResponseFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
@@ -50,11 +127,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

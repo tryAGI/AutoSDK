@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider_name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItemsProviderNameJsonConverter))]
         public global::G.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItemsProviderName? ProviderName { get; set; }
 
         /// <summary>

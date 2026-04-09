@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSecretDefaultWebhooksSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetSecretDefaultWebhooksSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetSecretDefaultWebhooksSecurityRequirement0,
+            };
         partial void PrepareGetSecretDefaultWebhooksArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetSecretDefaultWebhooksRequest(
@@ -46,9 +65,15 @@ namespace G
             PrepareGetSecretDefaultWebhooksArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSecretDefaultWebhooksSecurityRequirements,
+                operationName: "GetSecretDefaultWebhooksAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/webhooks/default/secret",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

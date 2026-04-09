@@ -67,6 +67,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_visibility_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExperimentItemPublicTraceVisibilityModeJsonConverter))]
         public global::G.ExperimentItemPublicTraceVisibilityMode? TraceVisibilityMode { get; set; }
 
         /// <summary>

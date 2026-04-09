@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionToolTypeJsonConverter))]
         public global::G.ChatCompletionToolType Type { get; set; }
 
         /// <summary>

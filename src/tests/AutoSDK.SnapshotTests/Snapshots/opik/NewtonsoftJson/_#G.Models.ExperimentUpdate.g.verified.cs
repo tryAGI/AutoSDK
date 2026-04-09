@@ -43,12 +43,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExperimentUpdateTypeJsonConverter))]
         public global::G.ExperimentUpdateType? Type { get; set; }
 
         /// <summary>
         /// The status of the experiment
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExperimentUpdateStatusJsonConverter))]
         public global::G.ExperimentUpdateStatus? Status { get; set; }
 
         /// <summary>

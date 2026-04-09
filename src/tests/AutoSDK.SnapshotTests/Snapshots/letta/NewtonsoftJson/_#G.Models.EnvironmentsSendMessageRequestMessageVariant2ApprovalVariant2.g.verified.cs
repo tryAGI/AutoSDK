@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnvironmentsSendMessageRequestMessageVariant2ApprovalVariant2TypeJsonConverter))]
         public global::G.EnvironmentsSendMessageRequestMessageVariant2ApprovalVariant2Type? Type { get; set; }
 
         /// <summary>

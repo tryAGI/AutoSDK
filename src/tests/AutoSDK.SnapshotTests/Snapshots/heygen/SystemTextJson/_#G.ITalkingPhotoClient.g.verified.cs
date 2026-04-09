@@ -6,7 +6,7 @@ namespace G
 {
     /// <summary>
     /// These API endpoints allow you to manage photo avatars in your account.<br/>
-    /// **Reference**: [https://docs.heygen.com/reference/upload-talking-photo](https://docs.heygen.com/reference/upload-talking-photo)<br/>
+    /// **Reference**: [https://docs.heygen.com/reference/upload-talking-photo](https://docs.heygen.com/reference/upload-talking-photo).<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -35,6 +35,11 @@ namespace G
         /// ensuring <see cref="ApiException.ResponseBody"/> is populated.
         /// </summary>
         public bool ReadResponseAsString { get; set; }
+
+        /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::G.AutoSDKClientOptions Options { get; }
 
         /// <summary>
         /// 

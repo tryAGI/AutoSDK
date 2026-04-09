@@ -21,6 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manager_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ManagerTypeJsonConverter))]
         public global::G.ManagerType ManagerType { get; set; } = default!;
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// The current status of the event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EventReadResponseStatusJsonConverter))]
         public global::G.EventReadResponseStatus? Status { get; set; }
 
         /// <summary>

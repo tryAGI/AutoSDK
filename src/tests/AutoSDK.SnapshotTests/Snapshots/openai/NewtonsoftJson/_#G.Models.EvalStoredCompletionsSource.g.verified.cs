@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.EvalStoredCompletionsSourceType.StoredCompletions</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalStoredCompletionsSourceTypeJsonConverter))]
         public global::G.EvalStoredCompletionsSourceType Type { get; set; } = global::G.EvalStoredCompletionsSourceType.StoredCompletions;
 
         /// <summary>
@@ -37,12 +38,14 @@ namespace G
         /// An optional Unix timestamp to filter items created after this time.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_after")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? CreatedAfter { get; set; }
 
         /// <summary>
         /// An optional Unix timestamp to filter items created before this time.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_before")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? CreatedBefore { get; set; }
 
         /// <summary>

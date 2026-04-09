@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="dryRun"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::G.LegacyJobMetadataOut>> JobsApiRoutesFineTuningCreateFineTuningJobAsync(
 
             global::G.JobIn request,
             bool? dryRun = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Fine Tuning Job<br/>
@@ -48,6 +50,7 @@ namespace G
         /// <param name="hyperparameters"></param>
         /// <param name="repositories"></param>
         /// <param name="classifierTargets"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1?, global::G.LegacyJobMetadataOut>> JobsApiRoutesFineTuningCreateFineTuningJobAsync(
@@ -63,6 +66,7 @@ namespace G
             global::G.FineTuneableModelType? jobType = default,
             global::System.Collections.Generic.IList<global::G.RepositoriesVariant1Item>? repositories = default,
             global::System.Collections.Generic.IList<global::G.ClassifierTargetIn>? classifierTargets = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

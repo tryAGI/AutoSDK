@@ -16,7 +16,7 @@ namespace G
         /// <summary>
         /// Guard API (content screening)
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.lakera.ai";
+        public const string DefaultBaseUrl = "https://api.lakera.ai/";
 
         private bool _disposeHttpClient = true;
 

@@ -42,6 +42,7 @@ namespace G
         /// * `failed` - Failed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrganizationMemberTagImportStatusStatusEnumJsonConverter))]
         public global::G.OrganizationMemberTagImportStatusStatusEnum? Status { get; set; }
 
         /// <summary>

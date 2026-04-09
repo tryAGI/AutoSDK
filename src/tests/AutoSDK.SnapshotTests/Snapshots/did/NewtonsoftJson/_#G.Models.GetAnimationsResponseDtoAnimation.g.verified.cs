@@ -61,6 +61,7 @@ namespace G
         /// The status of the animation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetAnimationsResponseDtoAnimationStatusJsonConverter))]
         public global::G.GetAnimationsResponseDtoAnimationStatus Status { get; set; } = default!;
 
         /// <summary>

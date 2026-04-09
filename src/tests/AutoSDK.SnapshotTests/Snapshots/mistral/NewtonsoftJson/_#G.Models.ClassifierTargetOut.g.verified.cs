@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("loss_function", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FTClassifierLossFunctionJsonConverter))]
         public global::G.FTClassifierLossFunction LossFunction { get; set; } = default!;
 
         /// <summary>

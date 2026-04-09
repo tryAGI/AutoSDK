@@ -6,6 +6,25 @@ namespace G
 {
     public partial class StreamingApiClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_StreamingAvatarListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Api-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_StreamingAvatarListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_StreamingAvatarListSecurityRequirement0,
+            };
         partial void PrepareStreamingAvatarListArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareStreamingAvatarListRequest(
@@ -29,9 +48,15 @@ namespace G
             PrepareStreamingAvatarListArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_StreamingAvatarListSecurityRequirements,
+                operationName: "StreamingAvatarListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/streaming/avatar.list",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -41,7 +66,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

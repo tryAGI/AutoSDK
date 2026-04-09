@@ -19,6 +19,7 @@ namespace G
         /// <param name="projectPk"></param>
         /// <param name="userPk"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Pause> UpdateAsync(
@@ -27,6 +28,7 @@ namespace G
             int userPk,
 
             global::G.PatchedPauseRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Update pause<br/>
@@ -52,6 +54,7 @@ namespace G
         /// <param name="verboseReason">
         /// Detailed description of why the project is paused, will be readable by paused annotators
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Pause> UpdateAsync(
@@ -60,6 +63,7 @@ namespace G
             int userPk,
             global::G.ReasonEnum? reason = default,
             string? verboseReason = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

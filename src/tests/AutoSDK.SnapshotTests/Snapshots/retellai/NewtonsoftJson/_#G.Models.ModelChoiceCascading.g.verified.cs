@@ -13,12 +13,14 @@ namespace G
         /// Type of model choice
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelChoiceCascadingTypeJsonConverter))]
         public global::G.ModelChoiceCascadingType Type { get; set; }
 
         /// <summary>
         /// Available LLM models for agents.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LLMModelJsonConverter))]
         public global::G.LLMModel Model { get; set; } = default!;
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace G
         /// "queued": the job has been queued. "processing": the job is being processed. "done": the job has been processed and the result is available. "error": an error occurred during the job's processing.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PreRecordedResponseStatusJsonConverter))]
         public global::G.PreRecordedResponseStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -84,6 +85,7 @@ namespace G
         /// <default>global::G.PreRecordedResponseKind.PreRecorded</default>
         /// <example>pre-recorded</example>
         [global::Newtonsoft.Json.JsonProperty("kind")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PreRecordedResponseKindJsonConverter))]
         public global::G.PreRecordedResponseKind Kind { get; set; } = global::G.PreRecordedResponseKind.PreRecorded;
 
         /// <summary>

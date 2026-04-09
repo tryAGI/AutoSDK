@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GroupedExamplesWithRunsResponse> ReadExamplesWithRunsGroupedAsync(
             global::System.Guid datasetId,
 
             global::G.QueryGroupedExamplesWithRuns request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Read Examples With Runs Grouped<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="perGroupLimit">
         /// Default Value: 5
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GroupedExamplesWithRunsResponse> ReadExamplesWithRunsGroupedAsync(
@@ -49,6 +52,7 @@ namespace G
             int? limit = default,
             bool? preview = default,
             int? perGroupLimit = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

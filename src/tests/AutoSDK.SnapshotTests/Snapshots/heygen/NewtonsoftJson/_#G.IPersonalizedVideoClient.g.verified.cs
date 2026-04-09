@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// Import contacts into your HeyGen **Personalized Video** campaign. <br/>
     /// **Guide**: [https://docs.heygen.com/docs/import-contacts-via-api](https://docs.heygen.com/docs/import-contacts-via-api)  <br/>
-    /// Reference: [https://docs.heygen.com/reference/add-contact](https://docs.heygen.com/reference/add-contact)<br/>
+    /// Reference: [https://docs.heygen.com/reference/add-contact](https://docs.heygen.com/reference/add-contact).<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -36,6 +36,11 @@ namespace G
         /// ensuring <see cref="ApiException.ResponseBody"/> is populated.
         /// </summary>
         public bool ReadResponseAsString { get; set; }
+
+        /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::G.AutoSDKClientOptions Options { get; }
 
         /// <summary>
         /// 

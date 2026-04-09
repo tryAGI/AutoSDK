@@ -35,6 +35,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuneReinforcementHyperparametersReasoningEffortJsonConverter))]
         public global::G.FineTuneReinforcementHyperparametersReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>

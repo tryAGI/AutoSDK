@@ -80,6 +80,7 @@ namespace G
         /// Default Value: MANAGED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pipeline_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PipelineTypeJsonConverter))]
         public global::G.PipelineType? PipelineType { get; set; }
 
         /// <summary>

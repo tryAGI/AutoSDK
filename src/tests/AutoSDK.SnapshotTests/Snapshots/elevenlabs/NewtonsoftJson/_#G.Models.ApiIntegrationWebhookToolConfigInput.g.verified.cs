@@ -65,6 +65,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_call_sound_behavior")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolCallSoundBehaviorJsonConverter))]
         public global::G.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_error_handling_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolErrorHandlingModeJsonConverter))]
         public global::G.ToolErrorHandlingMode? ToolErrorHandlingMode { get; set; }
 
         /// <summary>
@@ -87,6 +89,7 @@ namespace G
         /// Default Value: immediate
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolExecutionModeJsonConverter))]
         public global::G.ToolExecutionMode? ExecutionMode { get; set; }
 
         /// <summary>

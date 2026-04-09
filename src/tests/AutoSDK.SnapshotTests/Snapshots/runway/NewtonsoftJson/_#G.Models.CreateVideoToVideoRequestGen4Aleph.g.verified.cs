@@ -27,6 +27,7 @@ namespace G
         /// The resolution of the output video.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ratio", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateVideoToVideoRequestGen4AlephRatioJsonConverter))]
         public global::G.CreateVideoToVideoRequestGen4AlephRatio Ratio { get; set; } = default!;
 
         /// <summary>

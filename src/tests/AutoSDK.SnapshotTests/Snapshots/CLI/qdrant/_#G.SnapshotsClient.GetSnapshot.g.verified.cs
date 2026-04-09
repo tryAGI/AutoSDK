@@ -6,6 +6,49 @@ namespace G
 {
     public partial class SnapshotsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSnapshotSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSnapshotSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSnapshotSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetSnapshotSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetSnapshotSecurityRequirement0,
+                s_GetSnapshotSecurityRequirement1,
+                s_GetSnapshotSecurityRequirement2,
+            };
         partial void PrepareGetSnapshotArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -44,9 +87,15 @@ namespace G
                 collectionName: ref collectionName,
                 snapshotName: ref snapshotName);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSnapshotSecurityRequirements,
+                operationName: "GetSnapshotAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/collections/{collectionName}/snapshots/{snapshotName}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -56,7 +105,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

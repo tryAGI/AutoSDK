@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("kind")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HybridChunkerOptionsDocumentsRequestTargetDiscriminatorKindJsonConverter))]
         public global::G.HybridChunkerOptionsDocumentsRequestTargetDiscriminatorKind? Kind { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="commitSha"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CommitComment> ReposCreateCommitCommentAsync(
@@ -27,6 +28,7 @@ namespace G
             string commitSha,
 
             global::G.ReposCreateCommitCommentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a commit comment<br/>
@@ -42,6 +44,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="commitSha"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CommitComment>> ReposCreateCommitCommentAsResponseAsync(
@@ -50,6 +53,7 @@ namespace G
             string commitSha,
 
             global::G.ReposCreateCommitCommentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a commit comment<br/>
@@ -76,6 +80,7 @@ namespace G
         /// <param name="line">
         /// **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CommitComment> ReposCreateCommitCommentAsync(
@@ -86,6 +91,7 @@ namespace G
             string? path = default,
             int? position = default,
             int? line = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

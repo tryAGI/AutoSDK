@@ -76,6 +76,7 @@ namespace G
         /// The type of agent.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("agent_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentTypeJsonConverter))]
         public global::G.AgentType? AgentType { get; set; }
 
         /// <summary>

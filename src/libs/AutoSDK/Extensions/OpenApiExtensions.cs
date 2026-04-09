@@ -1723,6 +1723,7 @@ info:
 
         if (concreteSchema.Discriminator?.Mapping is { Count: > 0 } mapping)
         {
+            var discriminator = concreteSchema.Discriminator;
             var validMappings = mapping
                 .Where(x => x.Value.Reference?.Id is { } id && componentIds.Contains(id))
                 .ToDictionary(x => x.Key, x => x.Value, StringComparer.Ordinal);
@@ -1730,17 +1731,22 @@ info:
                 (concreteSchema.OneOf?.Count ?? 0) > 0 ||
                 (concreteSchema.AnyOf?.Count ?? 0) > 0 ||
                 (concreteSchema.AllOf?.Count ?? 0) > 0;
+            var hasDefaultMapping = discriminator?.DefaultMapping != null;
 
-            if (validMappings.Count == 0 && !hasCompositionChildren)
+            if (validMappings.Count == 0 && !hasCompositionChildren && !hasDefaultMapping)
             {
                 concreteSchema.Discriminator = null;
             }
-            else if (validMappings.Count > 0 && validMappings.Count != mapping.Count)
+            else if (validMappings.Count != mapping.Count)
             {
                 concreteSchema.Discriminator = new OpenApiDiscriminator
                 {
-                    PropertyName = concreteSchema.Discriminator.PropertyName,
-                    Mapping = validMappings,
+                    PropertyName = discriminator?.PropertyName,
+                    Mapping = validMappings.Count > 0 ? validMappings : null,
+                    DefaultMapping = discriminator?.DefaultMapping,
+                    Extensions = discriminator?.Extensions != null
+                        ? new Dictionary<string, IOpenApiExtension>(discriminator.Extensions)
+                        : null,
                 };
             }
         }
@@ -1815,7 +1821,8 @@ info:
     }
 
     public static string ExpandServerTemplate(
-        this OpenApiServer? server)
+        this OpenApiServer? server,
+        Uri? documentSelf = null)
     {
         var url = server?.Url;
         if (string.IsNullOrWhiteSpace(url))
@@ -1825,28 +1832,38 @@ info:
 
         var expanded = url!;
         var variables = server?.Variables;
-        if (variables == null || variables.Count == 0)
+        if (variables != null)
         {
-            return expanded;
+            foreach (var pair in variables)
+            {
+                var name = pair.Key;
+                var variable = pair.Value;
+                var value = variable?.Default;
+                if (string.IsNullOrWhiteSpace(value) &&
+                    variable?.Enum is { Count: > 0 })
+                {
+                    value = variable.Enum[0];
+                }
+
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    continue;
+                }
+
+                expanded = expanded.Replace("{" + name + "}", value);
+            }
         }
 
-        foreach (var pair in variables)
+        if (Uri.TryCreate(expanded, UriKind.Absolute, out var absoluteUri))
         {
-            var name = pair.Key;
-            var variable = pair.Value;
-            var value = variable?.Default;
-            if (string.IsNullOrWhiteSpace(value) &&
-                variable?.Enum is { Count: > 0 })
-            {
-                value = variable.Enum[0];
-            }
+            return absoluteUri.ToString();
+        }
 
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                continue;
-            }
-
-            expanded = expanded.Replace("{" + name + "}", value);
+        if (documentSelf != null &&
+            Uri.TryCreate(expanded, UriKind.Relative, out var relativeUri) &&
+            Uri.TryCreate(documentSelf, relativeUri, out var resolvedUri))
+        {
+            return resolvedUri.ToString();
         }
 
         return expanded;
@@ -1934,7 +1951,7 @@ info:
 
             foreach (var operation in pathItem.Operations?.Values ?? Enumerable.Empty<OpenApiOperation>())
             {
-                operation.Security = new List<OpenApiSecurityRequirement>();
+                operation.Security = null;
                 SuppressMatchingSecurityParameters(operation.Parameters, matchers);
             }
         }

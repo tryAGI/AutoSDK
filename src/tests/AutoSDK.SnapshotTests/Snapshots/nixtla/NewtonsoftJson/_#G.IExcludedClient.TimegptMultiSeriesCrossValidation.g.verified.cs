@@ -12,12 +12,14 @@ namespace G
         /// Perform Cross Validation for multiple series
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<string> TimegptMultiSeriesCrossValidationAsync(
 
             global::G.MultiSeriesCrossValidation request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Foundational Time Series Model Multi Series Cross Validation (Beta)<br/>
@@ -64,6 +66,7 @@ namespace G
         /// The loss used to train the large time model on the data. Select from ['default', 'mae', 'mse', 'rmse', 'mape', 'smape']. It will only be used if finetune_steps larger than 0. Default is a robust loss function that is less sensitive to outliers.<br/>
         /// Default Value: default
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -79,6 +82,7 @@ namespace G
             bool? cleanExFirst = default,
             int? finetuneSteps = default,
             global::G.MultiSeriesCrossValidationFinetuneLoss? finetuneLoss = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

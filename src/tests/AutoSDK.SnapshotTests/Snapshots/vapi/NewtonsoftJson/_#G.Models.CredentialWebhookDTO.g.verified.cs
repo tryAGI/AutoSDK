@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CredentialWebhookDTOTypeJsonConverter))]
         public global::G.CredentialWebhookDTOType Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operation", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CredentialWebhookDTOOperationJsonConverter))]
         public global::G.CredentialWebhookDTOOperation Operation { get; set; } = default!;
 
         /// <summary>
@@ -37,6 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("authMode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CredentialWebhookDTOAuthModeJsonConverter))]
         public global::G.CredentialWebhookDTOAuthMode AuthMode { get; set; } = default!;
 
         /// <summary>

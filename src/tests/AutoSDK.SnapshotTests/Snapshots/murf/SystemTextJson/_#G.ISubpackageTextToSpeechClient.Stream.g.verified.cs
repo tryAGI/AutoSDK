@@ -26,11 +26,13 @@ namespace G
         /// | South America (São Paulo) | `https://sa-east.api.murf.ai/v1/speech/stream`    | 2 |
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TextToSpeechStreamResponse200> StreamAsync(
 
             global::G.GenerateSpeechStreamingRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Stream Speech<br/>
@@ -100,6 +102,7 @@ namespace G
         /// <param name="voiceId">
         /// Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TextToSpeechStreamResponse200> StreamAsync(
@@ -116,6 +119,7 @@ namespace G
             double? sampleRate = default,
             string? style = default,
             int? variation = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

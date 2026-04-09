@@ -13,6 +13,7 @@ namespace G
         /// The type of the extracted element
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ElementTypeJsonConverter))]
         public global::G.ElementType Type { get; set; } = default!;
 
         /// <summary>
@@ -25,7 +26,7 @@ namespace G
         /// The bounding box coordinates [x1, y1, x2, y2]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bbox", Required = global::Newtonsoft.Json.Required.Always)]
-        public byte[] Bbox { get; set; } = default!;
+        public global::System.Collections.Generic.IList<double> Bbox { get; set; } = default!;
 
         /// <summary>
         /// The page number where the element was found
@@ -84,7 +85,7 @@ namespace G
         public ChunkElement(
             global::G.ElementType type,
             double confidence,
-            byte[] bbox,
+            global::System.Collections.Generic.IList<double> bbox,
             int page,
             string content,
             string? summary,

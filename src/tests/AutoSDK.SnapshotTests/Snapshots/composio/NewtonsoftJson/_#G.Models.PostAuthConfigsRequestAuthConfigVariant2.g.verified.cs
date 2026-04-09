@@ -15,6 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostAuthConfigsRequestAuthConfigVariant2TypeJsonConverter))]
         public global::G.PostAuthConfigsRequestAuthConfigVariant2Type Type { get; set; }
 
         /// <summary>
@@ -27,6 +28,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("authScheme", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostAuthConfigsRequestAuthConfigVariant2AuthSchemeJsonConverter))]
         public global::G.PostAuthConfigsRequestAuthConfigVariant2AuthScheme AuthScheme { get; set; } = default!;
 
         /// <summary>

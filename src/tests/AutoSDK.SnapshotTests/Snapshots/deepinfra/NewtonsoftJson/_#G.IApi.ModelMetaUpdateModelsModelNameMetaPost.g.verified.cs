@@ -11,6 +11,7 @@ namespace G
         /// <param name="modelName"></param>
         /// <param name="xiApiKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> ModelMetaUpdateModelsModelNameMetaPostAsync(
@@ -18,6 +19,7 @@ namespace G
 
             global::G.ModelMetaIn request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Model Meta Update
@@ -45,6 +47,7 @@ namespace G
         /// <param name="reportedType">
         /// model type
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> ModelMetaUpdateModelsModelNameMetaPostAsync(
@@ -57,6 +60,7 @@ namespace G
             string? readme = default,
             string? coverImgUrl = default,
             global::G.HFTasksE? reportedType = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

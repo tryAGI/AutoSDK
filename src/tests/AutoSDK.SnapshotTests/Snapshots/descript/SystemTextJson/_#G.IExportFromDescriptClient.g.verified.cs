@@ -16,7 +16,7 @@ namespace G
     /// ```<br/>
     /// &lt;meta property="descript:partner" content="9121bf3a-60fe-4a31-ad59-ed32df610cc3" /&gt;<br/>
     /// &lt;meta property="descript:source" content="409148bd-81aa-4af6-a9c3-29b761506f3a" /&gt;<br/>
-    /// ```<br/>
+    /// ```.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -45,6 +45,11 @@ namespace G
         /// ensuring <see cref="ApiException.ResponseBody"/> is populated.
         /// </summary>
         public bool ReadResponseAsString { get; set; }
+
+        /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::G.AutoSDKClientOptions Options { get; }
 
         /// <summary>
         /// 

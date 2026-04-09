@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.github.com";
+        public const string DefaultBaseUrl = "https://api.github.com/";
 
         private bool _disposeHttpClient = true;
 
@@ -32,6 +32,9 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -5870,7 +5873,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage GitHub Actions using the REST API.
         /// </summary>
-        public ActionsClient Actions => new ActionsClient(HttpClient, authorizations: Authorizations)
+        public ActionsClient Actions => new ActionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5879,7 +5882,7 @@ namespace G
         /// <summary>
         /// Activity APIs provide access to notifications, subscriptions, and timelines.
         /// </summary>
-        public ActivityClient Activity => new ActivityClient(HttpClient, authorizations: Authorizations)
+        public ActivityClient Activity => new ActivityClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5888,7 +5891,7 @@ namespace G
         /// <summary>
         /// Information for integrations and installations.
         /// </summary>
-        public AppsClient Apps => new AppsClient(HttpClient, authorizations: Authorizations)
+        public AppsClient Apps => new AppsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5897,7 +5900,7 @@ namespace G
         /// <summary>
         /// Monitor charges and usage from Actions and Packages.
         /// </summary>
-        public BillingClient Billing => new BillingClient(HttpClient, authorizations: Authorizations)
+        public BillingClient Billing => new BillingClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5906,7 +5909,7 @@ namespace G
         /// <summary>
         /// Rich interactions with checks run by your integrations.
         /// </summary>
-        public ChecksClient Checks => new ChecksClient(HttpClient, authorizations: Authorizations)
+        public ChecksClient Checks => new ChecksClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5915,7 +5918,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Classroom.
         /// </summary>
-        public ClassroomClient Classroom => new ClassroomClient(HttpClient, authorizations: Authorizations)
+        public ClassroomClient Classroom => new ClassroomClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5924,7 +5927,7 @@ namespace G
         /// <summary>
         /// Retrieve code scanning alerts from a repository.
         /// </summary>
-        public CodeScanningClient CodeScanning => new CodeScanningClient(HttpClient, authorizations: Authorizations)
+        public CodeScanningClient CodeScanning => new CodeScanningClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5933,7 +5936,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage Code security using the REST API.
         /// </summary>
-        public CodeSecurityClient CodeSecurity => new CodeSecurityClient(HttpClient, authorizations: Authorizations)
+        public CodeSecurityClient CodeSecurity => new CodeSecurityClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5942,7 +5945,7 @@ namespace G
         /// <summary>
         /// Insight into codes of conduct for your communities.
         /// </summary>
-        public CodesOfConductClient CodesOfConduct => new CodesOfConductClient(HttpClient, authorizations: Authorizations)
+        public CodesOfConductClient CodesOfConduct => new CodesOfConductClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5951,7 +5954,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage Codespaces using the REST API.
         /// </summary>
-        public CodespacesClient Codespaces => new CodespacesClient(HttpClient, authorizations: Authorizations)
+        public CodespacesClient Codespaces => new CodespacesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5960,7 +5963,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage Copilot using the REST API.
         /// </summary>
-        public CopilotClient Copilot => new CopilotClient(HttpClient, authorizations: Authorizations)
+        public CopilotClient Copilot => new CopilotClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5969,7 +5972,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage Dependabot.
         /// </summary>
-        public DependabotClient Dependabot => new DependabotClient(HttpClient, authorizations: Authorizations)
+        public DependabotClient Dependabot => new DependabotClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5978,7 +5981,7 @@ namespace G
         /// <summary>
         /// Endpoints to access Dependency Graph features.
         /// </summary>
-        public DependencyGraphClient DependencyGraph => new DependencyGraphClient(HttpClient, authorizations: Authorizations)
+        public DependencyGraphClient DependencyGraph => new DependencyGraphClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5987,7 +5990,7 @@ namespace G
         /// <summary>
         /// List emojis available to use on GitHub.
         /// </summary>
-        public EmojisClient Emojis => new EmojisClient(HttpClient, authorizations: Authorizations)
+        public EmojisClient Emojis => new EmojisClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -5996,7 +5999,7 @@ namespace G
         /// <summary>
         /// View, modify your gists.
         /// </summary>
-        public GistsClient Gists => new GistsClient(HttpClient, authorizations: Authorizations)
+        public GistsClient Gists => new GistsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6005,16 +6008,16 @@ namespace G
         /// <summary>
         /// Raw Git functionality.
         /// </summary>
-        public GitClient Git => new GitClient(HttpClient, authorizations: Authorizations)
+        public GitClient Git => new GitClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// View gitignore templates
+        /// View gitignore templates.
         /// </summary>
-        public GitignoreClient Gitignore => new GitignoreClient(HttpClient, authorizations: Authorizations)
+        public GitignoreClient Gitignore => new GitignoreClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6023,7 +6026,7 @@ namespace G
         /// <summary>
         /// Owner or admin management of users interactions.
         /// </summary>
-        public InteractionsClient Interactions => new InteractionsClient(HttpClient, authorizations: Authorizations)
+        public InteractionsClient Interactions => new InteractionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6032,7 +6035,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Issues.
         /// </summary>
-        public IssuesClient Issues => new IssuesClient(HttpClient, authorizations: Authorizations)
+        public IssuesClient Issues => new IssuesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6041,16 +6044,16 @@ namespace G
         /// <summary>
         /// View various OSS licenses.
         /// </summary>
-        public LicensesClient Licenses => new LicensesClient(HttpClient, authorizations: Authorizations)
+        public LicensesClient Licenses => new LicensesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Render GitHub flavored markdown
+        /// Render GitHub flavored markdown.
         /// </summary>
-        public MarkdownClient Markdown => new MarkdownClient(HttpClient, authorizations: Authorizations)
+        public MarkdownClient Markdown => new MarkdownClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6059,7 +6062,7 @@ namespace G
         /// <summary>
         /// Endpoints that give information about the API.
         /// </summary>
-        public MetaClient Meta => new MetaClient(HttpClient, authorizations: Authorizations)
+        public MetaClient Meta => new MetaClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6068,7 +6071,7 @@ namespace G
         /// <summary>
         /// Move projects to or from GitHub.
         /// </summary>
-        public MigrationsClient Migrations => new MigrationsClient(HttpClient, authorizations: Authorizations)
+        public MigrationsClient Migrations => new MigrationsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6077,7 +6080,7 @@ namespace G
         /// <summary>
         /// Endpoints to manage GitHub OIDC configuration using the REST API.
         /// </summary>
-        public OidcClient Oidc => new OidcClient(HttpClient, authorizations: Authorizations)
+        public OidcClient Oidc => new OidcClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6086,7 +6089,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Orgs.
         /// </summary>
-        public OrgsClient Orgs => new OrgsClient(HttpClient, authorizations: Authorizations)
+        public OrgsClient Orgs => new OrgsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6095,7 +6098,7 @@ namespace G
         /// <summary>
         /// Manage packages for authenticated users and organizations.
         /// </summary>
-        public PackagesClient Packages => new PackagesClient(HttpClient, authorizations: Authorizations)
+        public PackagesClient Packages => new PackagesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6104,7 +6107,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Projects.
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations)
+        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6113,16 +6116,16 @@ namespace G
         /// <summary>
         /// Interact with GitHub Pull Requests.
         /// </summary>
-        public PullsClient Pulls => new PullsClient(HttpClient, authorizations: Authorizations)
+        public PullsClient Pulls => new PullsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Check your current rate limit status
+        /// Check your current rate limit status.
         /// </summary>
-        public RateLimitClient RateLimit => new RateLimitClient(HttpClient, authorizations: Authorizations)
+        public RateLimitClient RateLimit => new RateLimitClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6131,7 +6134,7 @@ namespace G
         /// <summary>
         /// Interact with reactions to various GitHub entities.
         /// </summary>
-        public ReactionsClient Reactions => new ReactionsClient(HttpClient, authorizations: Authorizations)
+        public ReactionsClient Reactions => new ReactionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6140,7 +6143,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Repos.
         /// </summary>
-        public ReposClient Repos => new ReposClient(HttpClient, authorizations: Authorizations)
+        public ReposClient Repos => new ReposClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6149,7 +6152,7 @@ namespace G
         /// <summary>
         /// Look for stuff on GitHub.
         /// </summary>
-        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations)
+        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6158,7 +6161,7 @@ namespace G
         /// <summary>
         /// Retrieve secret scanning alerts from a repository.
         /// </summary>
-        public SecretScanningClient SecretScanning => new SecretScanningClient(HttpClient, authorizations: Authorizations)
+        public SecretScanningClient SecretScanning => new SecretScanningClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6167,7 +6170,7 @@ namespace G
         /// <summary>
         /// Manage security advisories.
         /// </summary>
-        public SecurityAdvisoriesClient SecurityAdvisories => new SecurityAdvisoriesClient(HttpClient, authorizations: Authorizations)
+        public SecurityAdvisoriesClient SecurityAdvisories => new SecurityAdvisoriesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6176,7 +6179,7 @@ namespace G
         /// <summary>
         /// Interact with GitHub Teams.
         /// </summary>
-        public TeamsClient Teams => new TeamsClient(HttpClient, authorizations: Authorizations)
+        public TeamsClient Teams => new TeamsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6185,7 +6188,7 @@ namespace G
         /// <summary>
         /// Interact with and view information about users and also current user.
         /// </summary>
-        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
+        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -6204,11 +6207,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

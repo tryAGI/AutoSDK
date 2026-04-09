@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnthropicBedrockCredentialProviderJsonConverter))]
         public global::G.AnthropicBedrockCredentialProvider Provider { get; set; }
 
         /// <summary>
         /// AWS region where Bedrock is configured.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnthropicBedrockCredentialRegionJsonConverter))]
         public global::G.AnthropicBedrockCredentialRegion Region { get; set; } = default!;
 
         /// <summary>

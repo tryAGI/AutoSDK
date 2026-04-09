@@ -31,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>Positive</example>
         [global::Newtonsoft.Json.JsonProperty("user_sentiment")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallAnalysisUserSentimentJsonConverter))]
         public global::G.CallAnalysisUserSentiment? UserSentiment { get; set; }
 
         /// <summary>

@@ -10,6 +10,7 @@ namespace G
         /// Ask a question to specified Knowledge Graphs.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -21,6 +22,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.QuestionResponse> QuestionAsync(
 
             global::G.QuestionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Question<br/>
@@ -39,6 +41,7 @@ namespace G
         /// <param name="queryConfig">
         /// Configuration options for Knowledge Graph queries.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.QuestionResponse> QuestionAsync(
@@ -46,6 +49,7 @@ namespace G
             string question,
             bool? subqueries = default,
             global::G.GraphQueryConfig? queryConfig = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

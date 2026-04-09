@@ -32,6 +32,7 @@ namespace G
         /// <default>global::G.PostFinalTranscriptMessageType.PostFinalTranscript</default>
         /// <example>post_final_transcript</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostFinalTranscriptMessageTypeJsonConverter))]
         public global::G.PostFinalTranscriptMessageType Type { get; set; } = global::G.PostFinalTranscriptMessageType.PostFinalTranscript;
 
         /// <summary>

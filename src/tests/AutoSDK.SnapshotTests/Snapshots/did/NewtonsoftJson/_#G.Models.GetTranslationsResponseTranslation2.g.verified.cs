@@ -37,6 +37,7 @@ namespace G
         /// The status of the translation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetTranslationsResponseTranslationStatus2JsonConverter))]
         public global::G.GetTranslationsResponseTranslationStatus2 Status { get; set; } = default!;
 
         /// <summary>

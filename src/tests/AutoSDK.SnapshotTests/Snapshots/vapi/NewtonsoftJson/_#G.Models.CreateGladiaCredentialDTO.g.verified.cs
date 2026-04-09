@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateGladiaCredentialDTOProviderJsonConverter))]
         public global::G.CreateGladiaCredentialDTOProvider Provider { get; set; }
 
         /// <summary>

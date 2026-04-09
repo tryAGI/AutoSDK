@@ -27,6 +27,7 @@ namespace G
         /// </summary>
         /// <example>"git"</example>
         [global::Newtonsoft.Json.JsonProperty("vcs")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MigrationsUpdateImportRequestVcsJsonConverter))]
         public global::G.MigrationsUpdateImportRequestVcs? Vcs { get; set; }
 
         /// <summary>

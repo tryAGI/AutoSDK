@@ -13,31 +13,42 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SearchAllMessagesResponseItemDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SearchAllMessagesResponseItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SearchAllMessagesResponseItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SearchAllMessagesResponseItemDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.SystemMessageListResult? systemMessage = default;
             if (discriminator?.MessageType == global::G.SearchAllMessagesResponseItemDiscriminatorMessageType.SystemMessage)
             {
-                systemMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SystemMessageListResult>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemMessageListResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SystemMessageListResult)}");
+                systemMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.UserMessageListResult? userMessage = default;
             if (discriminator?.MessageType == global::G.SearchAllMessagesResponseItemDiscriminatorMessageType.UserMessage)
             {
-                userMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserMessageListResult>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserMessageListResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UserMessageListResult)}");
+                userMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ReasoningMessageListResult? reasoningMessage = default;
             if (discriminator?.MessageType == global::G.SearchAllMessagesResponseItemDiscriminatorMessageType.ReasoningMessage)
             {
-                reasoningMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ReasoningMessageListResult>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningMessageListResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ReasoningMessageListResult)}");
+                reasoningMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.AssistantMessageListResult? assistantMessage = default;
             if (discriminator?.MessageType == global::G.SearchAllMessagesResponseItemDiscriminatorMessageType.AssistantMessage)
             {
-                assistantMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantMessageListResult>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantMessageListResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AssistantMessageListResult)}");
+                assistantMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.SearchAllMessagesResponseItem(
@@ -60,23 +71,32 @@ namespace G.JsonConverters
             global::G.SearchAllMessagesResponseItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsSystemMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemMessage, typeof(global::G.SystemMessageListResult), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemMessageListResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SystemMessageListResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemMessage!, typeInfo);
             }
             else if (value.IsUserMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserMessage, typeof(global::G.UserMessageListResult), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserMessageListResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserMessageListResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserMessage!, typeInfo);
             }
             else if (value.IsReasoningMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningMessage, typeof(global::G.ReasoningMessageListResult), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningMessageListResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningMessageListResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningMessage!, typeInfo);
             }
             else if (value.IsAssistantMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantMessage, typeof(global::G.AssistantMessageListResult), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantMessageListResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantMessageListResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantMessageListResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantMessage!, typeInfo);
             }
         }
     }

@@ -23,6 +23,7 @@ namespace G
         /// Default Value: medium
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningEffortJsonConverter))]
         public global::G.ReasoningEffort? Effort { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// One of `auto`, `concise`, or `detailed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summary")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningSummaryJsonConverter))]
         public global::G.ReasoningSummary? Summary { get; set; }
 
         /// <summary>
@@ -40,6 +42,7 @@ namespace G
         /// One of `auto`, `concise`, or `detailed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generate_summary")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningGenerateSummaryJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.ReasoningGenerateSummary? GenerateSummary { get; set; }
 

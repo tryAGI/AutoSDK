@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "gohighlevel.calendar.event.create" for GoHighLevel Calendar Event Create tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateGoHighLevelCalendarEventCreateToolDTOTypeJsonConverter))]
         public global::G.CreateGoHighLevelCalendarEventCreateToolDTOType Type { get; set; }
 
         /// <summary>

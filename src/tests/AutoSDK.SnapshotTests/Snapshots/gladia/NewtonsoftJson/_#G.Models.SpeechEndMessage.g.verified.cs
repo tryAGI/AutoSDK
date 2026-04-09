@@ -32,6 +32,7 @@ namespace G
         /// <default>global::G.SpeechEndMessageType.SpeechEnd</default>
         /// <example>speech_end</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpeechEndMessageTypeJsonConverter))]
         public global::G.SpeechEndMessageType Type { get; set; } = global::G.SpeechEndMessageType.SpeechEnd;
 
         /// <summary>

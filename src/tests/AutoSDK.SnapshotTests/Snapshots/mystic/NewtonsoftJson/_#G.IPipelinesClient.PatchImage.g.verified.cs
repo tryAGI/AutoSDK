@@ -14,6 +14,7 @@ namespace G
         /// <param name="pointer"></param>
         /// <param name="pipelineIdOrPointer"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetDetailedPatch> PatchImageAsync(
@@ -22,6 +23,7 @@ namespace G
             global::G.BodyPatchImageV4PipelinesPipelineIdImagePatch request,
             string? pointer = default,
             string? pipelineIdOrPointer = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Patch Image<br/>
@@ -33,6 +35,7 @@ namespace G
         /// <param name="pipelineIdOrPointer"></param>
         /// <param name="imageFile"></param>
         /// <param name="imageFilename"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetDetailedPatch> PatchImageAsync(
@@ -41,6 +44,7 @@ namespace G
             string imageFilename,
             string? pointer = default,
             string? pipelineIdOrPointer = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

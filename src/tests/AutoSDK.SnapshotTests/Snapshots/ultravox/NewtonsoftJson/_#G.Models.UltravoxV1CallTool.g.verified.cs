@@ -69,6 +69,7 @@ namespace G
         ///  header.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("defaultReaction")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1CallToolDefaultReactionJsonConverter))]
         public global::G.UltravoxV1CallToolDefaultReaction? DefaultReaction { get; set; }
 
         /// <summary>

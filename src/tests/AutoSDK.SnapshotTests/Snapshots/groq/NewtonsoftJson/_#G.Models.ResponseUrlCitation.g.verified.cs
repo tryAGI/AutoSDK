@@ -13,6 +13,7 @@ namespace G
         /// The type of the annotation. Always `url_citation`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseUrlCitationTypeJsonConverter))]
         public global::G.ResponseUrlCitationType Type { get; set; }
 
         /// <summary>

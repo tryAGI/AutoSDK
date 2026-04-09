@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "google.calendar.availability.check" for Google Calendar Check Availability tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoogleCalendarCheckAvailabilityToolTypeJsonConverter))]
         public global::G.GoogleCalendarCheckAvailabilityToolType Type { get; set; }
 
         /// <summary>

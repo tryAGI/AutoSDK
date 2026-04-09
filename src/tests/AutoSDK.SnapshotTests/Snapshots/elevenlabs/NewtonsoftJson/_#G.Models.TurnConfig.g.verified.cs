@@ -42,6 +42,7 @@ namespace G
         /// Default Value: turn
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TurnModeJsonConverter))]
         public global::G.TurnMode? Mode { get; set; }
 
         /// <summary>
@@ -49,6 +50,7 @@ namespace G
         /// Default Value: normal
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("turn_eagerness")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TurnEagernessJsonConverter))]
         public global::G.TurnEagerness? TurnEagerness { get; set; }
 
         /// <summary>
@@ -56,6 +58,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("spelling_patience")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpellingPatienceJsonConverter))]
         public global::G.SpellingPatience? SpellingPatience { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Always `image_file`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageContentImageFileObjectTypeJsonConverter))]
         public global::G.MessageContentImageFileObjectType Type { get; set; }
 
         /// <summary>

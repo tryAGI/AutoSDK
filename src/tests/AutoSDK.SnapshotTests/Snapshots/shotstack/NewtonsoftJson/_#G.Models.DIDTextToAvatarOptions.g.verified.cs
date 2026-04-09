@@ -13,6 +13,7 @@ namespace G
         /// The type of asset to generate - set to `text-to-avatar` for text-to-avatar.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DIDTextToAvatarOptionsTypeJsonConverter))]
         public global::G.DIDTextToAvatarOptionsType Type { get; set; }
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("avatar", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DIDTextToAvatarOptionsAvatarJsonConverter))]
         public global::G.DIDTextToAvatarOptionsAvatar Avatar { get; set; } = default!;
 
         /// <summary>

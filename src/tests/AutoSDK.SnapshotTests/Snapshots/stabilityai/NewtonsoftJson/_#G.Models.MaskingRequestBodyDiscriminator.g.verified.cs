@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mask_source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MaskingRequestBodyDiscriminatorMaskSourceJsonConverter))]
         public global::G.MaskingRequestBodyDiscriminatorMaskSource? MaskSource { get; set; }
 
         /// <summary>

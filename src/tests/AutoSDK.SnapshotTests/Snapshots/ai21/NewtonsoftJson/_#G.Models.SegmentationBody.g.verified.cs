@@ -13,6 +13,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sourceType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DocumentTypeJsonConverter))]
         public global::G.DocumentType SourceType { get; set; } = default!;
 
         /// <summary>

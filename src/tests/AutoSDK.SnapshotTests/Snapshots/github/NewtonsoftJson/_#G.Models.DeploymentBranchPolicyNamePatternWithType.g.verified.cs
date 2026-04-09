@@ -25,6 +25,7 @@ namespace G
         /// </summary>
         /// <example>branch</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeploymentBranchPolicyNamePatternWithTypeTypeJsonConverter))]
         public global::G.DeploymentBranchPolicyNamePatternWithTypeType? Type { get; set; }
 
         /// <summary>

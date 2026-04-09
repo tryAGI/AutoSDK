@@ -21,6 +21,7 @@ namespace G
         /// </summary>
         /// <example>member</example>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAdminWorkspacesUsersRequestUserRoleJsonConverter))]
         public global::G.CreateAdminWorkspacesUsersRequestUserRole? Role { get; set; }
 
         /// <summary>

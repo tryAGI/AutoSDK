@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ai_model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageAiModelJsonConverter))]
         public global::G.ImageAiModel AiModel { get; set; } = default!;
 
         /// <summary>
@@ -32,12 +33,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pose_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextToImageRequestPoseModeJsonConverter))]
         public global::G.TextToImageRequestPoseMode? PoseMode { get; set; }
 
         /// <summary>
         /// Default Value: 1:1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("aspect_ratio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AspectRatioJsonConverter))]
         public global::G.AspectRatio? AspectRatio { get; set; }
 
         /// <summary>

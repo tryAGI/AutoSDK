@@ -9,11 +9,13 @@ namespace G
         /// Create Structured Output
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.StructuredOutput> StructuredOutputControllerCreateAsync(
 
             global::G.CreateStructuredOutputDTO request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Structured Output
@@ -77,6 +79,7 @@ namespace G
         /// These are the workflow IDs that this structured output is linked to.<br/>
         /// When linked to workflows, this structured output will be available for extraction during those workflow's execution.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.StructuredOutput> StructuredOutputControllerCreateAsync(
@@ -89,6 +92,7 @@ namespace G
             string? description = default,
             global::System.Collections.Generic.IList<string>? assistantIds = default,
             global::System.Collections.Generic.IList<string>? workflowIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

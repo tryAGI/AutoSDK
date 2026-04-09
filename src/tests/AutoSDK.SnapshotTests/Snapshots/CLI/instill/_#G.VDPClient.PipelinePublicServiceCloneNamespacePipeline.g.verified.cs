@@ -6,6 +6,25 @@ namespace G
 {
     public partial class VdpClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PipelinePublicServiceCloneNamespacePipelineSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PipelinePublicServiceCloneNamespacePipelineSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PipelinePublicServiceCloneNamespacePipelineSecurityRequirement0,
+            };
         partial void PreparePipelinePublicServiceCloneNamespacePipelineArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string namespaceId,
@@ -53,9 +72,15 @@ namespace G
                 pipelineId: ref pipelineId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PipelinePublicServiceCloneNamespacePipelineSecurityRequirements,
+                operationName: "PipelinePublicServiceCloneNamespacePipelineAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/pipelines/{pipelineId}/clone",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -65,7 +90,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

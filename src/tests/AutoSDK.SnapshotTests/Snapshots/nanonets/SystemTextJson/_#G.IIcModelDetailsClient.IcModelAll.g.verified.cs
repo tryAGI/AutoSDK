@@ -9,6 +9,7 @@ namespace G
         /// Get All Model Details<br/>
         /// Get information of all models in an account, irrespective of the type of model (OCR model or Image Classification model).
         /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -18,6 +19,7 @@ namespace G
         /// IRestResponse response = client.Execute(request);
         /// </remarks>
         global::System.Threading.Tasks.Task<string> IcModelAllAsync(
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

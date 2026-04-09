@@ -80,6 +80,7 @@ namespace G
         /// The sync status of the connector
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SyncStatusJsonConverter))]
         public global::G.SyncStatus Status { get; set; } = default!;
 
         /// <summary>

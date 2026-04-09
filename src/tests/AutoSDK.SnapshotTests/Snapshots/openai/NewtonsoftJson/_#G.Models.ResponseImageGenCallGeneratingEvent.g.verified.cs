@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always 'response.image_generation_call.generating'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseImageGenCallGeneratingEventTypeJsonConverter))]
         public global::G.ResponseImageGenCallGeneratingEventType Type { get; set; }
 
         /// <summary>

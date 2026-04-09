@@ -83,6 +83,7 @@ namespace G
         /// This is the sort order for pagination. Defaults to 'DESC'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sortOrder")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetSessionPaginatedDTOSortOrderJsonConverter))]
         public global::G.GetSessionPaginatedDTOSortOrder? SortOrder { get; set; }
 
         /// <summary>

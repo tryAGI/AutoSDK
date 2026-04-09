@@ -13,6 +13,7 @@ namespace G
         /// The role of the speaker in the conversation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MemoriesHistoryListResponseItemInputItemRoleJsonConverter))]
         public global::G.MemoriesHistoryListResponseItemInputItemRole Role { get; set; } = default!;
 
         /// <summary>

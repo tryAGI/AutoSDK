@@ -20,6 +20,7 @@ namespace G
         /// It is required to be `text` to create a text insight.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextInsightFromCallTableDTOTypeJsonConverter))]
         public global::G.CreateTextInsightFromCallTableDTOType Type { get; set; }
 
         /// <summary>

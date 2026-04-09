@@ -20,6 +20,7 @@ namespace G
         /// Default Value: mp4
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClipConfigResultFormatJsonConverter))]
         public global::G.ClipConfigResultFormat? ResultFormat { get; set; }
 
         /// <summary>

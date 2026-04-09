@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.TextAssetType.Text</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextAssetTypeJsonConverter))]
         public global::G.TextAssetType Type { get; set; } = global::G.TextAssetType.Text;
 
         /// <summary>

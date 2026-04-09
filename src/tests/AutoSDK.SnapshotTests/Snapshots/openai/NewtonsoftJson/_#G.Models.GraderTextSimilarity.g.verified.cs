@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.GraderTextSimilarityType.TextSimilarity</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraderTextSimilarityTypeJsonConverter))]
         public global::G.GraderTextSimilarityType Type { get; set; } = global::G.GraderTextSimilarityType.TextSimilarity;
 
         /// <summary>
@@ -39,6 +40,7 @@ namespace G
         /// The evaluation metric to use. One of `fuzzy_match`, `bleu`, `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`, or `rouge_l`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("evaluation_metric", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraderTextSimilarityEvaluationMetricJsonConverter))]
         public global::G.GraderTextSimilarityEvaluationMetric EvaluationMetric { get; set; } = default!;
 
         /// <summary>

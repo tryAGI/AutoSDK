@@ -128,6 +128,130 @@ public class AuthorizationGenerationTests
     }
 
     [TestMethod]
+    public void GenerateAuthorization_ReplacesOnlyMatchingScheme()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Header Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - access-token: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                access-token:
+                                  type: apiKey
+                                  in: header
+                                  name: access-token
+                            """;
+
+        var authorization = GetSingleAuthorization(yaml);
+        var content = Sources.Authorization(authorization).Text;
+
+        content.Should().NotContain("Authorizations.Clear();");
+        content.Should().Contain("for (var i = Authorizations.Count - 1; i >= 0; i--)");
+        content.Should().Contain("__authorization.Type == \"ApiKey\"");
+        content.Should().Contain("__authorization.Location == \"Header\"");
+        content.Should().Contain("__authorization.Name == \"access-token\"");
+    }
+
+    [TestMethod]
+    public void Prepare_PreservesDistinctApiKeyRequirements_ForAndSemantics()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Composite Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - apiKeyAuth: []
+                                      appIdAuth: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                apiKeyAuth:
+                                  type: apiKey
+                                  in: header
+                                  name: X-API-Key
+                                appIdAuth:
+                                  type: apiKey
+                                  in: header
+                                  name: X-App-Id
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateSdk = true,
+            GenerateConstructors = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+
+        data.Authorizations.Select(x => x.FriendlyName)
+            .Should()
+            .Equal("ApiKeyAuth", "AppIdAuth");
+
+        var endPoint = data.Methods.Should().ContainSingle().Subject;
+        endPoint.AuthorizationRequirements.Should().ContainSingle();
+        endPoint.AuthorizationRequirements[0].Authorizations.Select(x => x.FriendlyName)
+            .Should()
+            .Equal("ApiKeyAuth", "AppIdAuth");
+
+        var methodSource = Sources.Method(endPoint).Text;
+        methodSource.Should().Contain("EndPointSecurityResolver.ResolveAuthorizations");
+        methodSource.Should().Contain("foreach (var __authorization in __authorizations)");
+    }
+
+    [TestMethod]
+    public void Prepare_ExplicitEmptyOperationSecurity_DoesNotInheritDocumentRequirements()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Public Ping
+                              version: 1.0.0
+                            security:
+                              - bearerAuth: []
+                            paths:
+                              /ping:
+                                get:
+                                  operationId: getPing
+                                  security: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                bearerAuth:
+                                  type: http
+                                  scheme: bearer
+                            """;
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)DefaultSettings), (CSharpSettings)DefaultSettings));
+        var endPoint = data.Methods.Should().ContainSingle().Subject;
+
+        endPoint.Authorizations.Should().BeEmpty();
+        endPoint.AuthorizationRequirements.Should().BeEmpty();
+
+        var methodSource = Sources.Method(endPoint).Text;
+        methodSource.Should().NotContain("EndPointSecurityResolver.ResolveAuthorizations");
+        methodSource.Should().NotContain("AutoSDKOAuth2Helpers.SendAsync");
+        methodSource.Should().NotContain("foreach (var __authorization in");
+    }
+
+    [TestMethod]
     public void GenerateAuthorization_OAuth2AuthorizationCode_GeneratesAuthorizationCodeHelpers()
     {
         const string yaml = """
@@ -247,6 +371,68 @@ public class AuthorizationGenerationTests
         content.Should().Contain("string? scope = null");
         content.Should().Contain("ConfigureOAuth2TokenRefresh(");
         content.Should().Contain("public async global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithCredentialsAsync(");
+    }
+
+    [TestMethod]
+    public void GenerateAuthorization_OpenApi32OAuthDeviceAuthorization_PreservesMetadataAndGeneratesHelpers()
+    {
+        const string yaml = """
+                            openapi: 3.2.0
+                            info:
+                              title: OAuth2 Device Authorization
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - OAuth2: [read, write]
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                OAuth2:
+                                  type: oauth2
+                                  oauth2MetadataUrl: https://example.com/.well-known/oauth-authorization-server
+                                  deprecated: true
+                                  flows:
+                                    deviceAuthorization:
+                                      deviceAuthorizationUrl: https://example.com/oauth/device
+                                      tokenUrl: https://example.com/oauth/token
+                                      refreshUrl: https://example.com/oauth/refresh
+                                      scopes:
+                                        read: Read access
+                                        write: Write access
+                            """;
+
+        var authorization = GetSingleAuthorization(yaml);
+
+        authorization.IsDeprecated.Should().BeTrue();
+        authorization.OAuth2MetadataUrl.Should().Be("https://example.com/.well-known/oauth-authorization-server");
+        authorization.Flows.Should().ContainSingle();
+        authorization.Flows[0].Type.Should().Be(nameof(OpenApiOAuthFlows.DeviceAuthorization));
+        authorization.Flows[0].DeviceAuthorizationUrl.Should().Be("https://example.com/oauth/device");
+
+        var content = Sources.Authorization(authorization).Text;
+        var interfaceContent = Sources.AuthorizationInterface(authorization).Text;
+
+        content.Should().Contain("public string? OAuth2MetadataUrl");
+        content.Should().Contain("https://example.com/.well-known/oauth-authorization-server");
+        content.Should().Contain("public bool IsOAuth2Deprecated => true;");
+        content.Should().Contain("[global::System.Obsolete(\"This security scheme marked as deprecated.\")]");
+        content.Should().Contain("public sealed class OAuth2DeviceAuthorizationResponse");
+        content.Should().Contain("public global::System.Threading.Tasks.Task<OAuth2DeviceAuthorizationResponse> RequestOAuth2DeviceAuthorizationAsync(");
+        content.Should().Contain("https://example.com/oauth/device");
+        content.Should().Contain("public global::System.Threading.Tasks.Task<OAuth2Token> ExchangeOAuth2DeviceCodeForTokenAsync(");
+        content.Should().Contain("\"urn:ietf:params:oauth:grant-type:device_code\"");
+        content.Should().Contain("public global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithDeviceAuthorizationAsync(");
+
+        interfaceContent.Should().Contain("public string? OAuth2MetadataUrl { get; }");
+        interfaceContent.Should().Contain("public bool IsOAuth2Deprecated { get; }");
+        interfaceContent.Should().Contain("public global::System.Threading.Tasks.Task<global::G.Api.OAuth2DeviceAuthorizationResponse> RequestOAuth2DeviceAuthorizationAsync(");
+        interfaceContent.Should().Contain("public global::System.Threading.Tasks.Task<global::G.Api.OAuth2Token> ExchangeOAuth2DeviceCodeForTokenAsync(");
+        interfaceContent.Should().Contain("public global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithDeviceAuthorizationAsync(");
     }
 
     [TestMethod]

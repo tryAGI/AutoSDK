@@ -35,6 +35,7 @@ namespace G
         /// Default Value: sanitize
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecurityFilterPlanModeJsonConverter))]
         public global::G.SecurityFilterPlanMode? Mode { get; set; }
 
         /// <summary>

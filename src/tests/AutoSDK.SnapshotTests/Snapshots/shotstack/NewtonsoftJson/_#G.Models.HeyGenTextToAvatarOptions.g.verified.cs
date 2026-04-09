@@ -13,6 +13,7 @@ namespace G
         /// The type of asset to generate - set to `text-to-avatar` for text-to-avatar.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HeyGenTextToAvatarOptionsTypeJsonConverter))]
         public global::G.HeyGenTextToAvatarOptionsType Type { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("avatar", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HeyGenTextToAvatarOptionsAvatarJsonConverter))]
         public global::G.HeyGenTextToAvatarOptionsAvatar Avatar { get; set; } = default!;
 
         /// <summary>
@@ -144,12 +146,14 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HeyGenTextToAvatarOptionsVoiceJsonConverter))]
         public global::G.HeyGenTextToAvatarOptionsVoice Voice { get; set; } = default!;
 
         /// <summary>
         /// The display style of the avatar, a rectangle `normal` or circular `circle` background. Defaults to `normal`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("avatarStyle")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HeyGenTextToAvatarOptionsAvatarStyleJsonConverter))]
         public global::G.HeyGenTextToAvatarOptionsAvatarStyle? AvatarStyle { get; set; }
 
         /// <summary>
@@ -164,6 +168,7 @@ namespace G
         /// The aspect ratio of the video, `16:9` horizontal or `9:16` vertical. Defaults to `16:9`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ratio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HeyGenTextToAvatarOptionsRatioJsonConverter))]
         public global::G.HeyGenTextToAvatarOptionsRatio? Ratio { get; set; }
 
         /// <summary>

@@ -79,6 +79,7 @@ namespace G
         /// Default Value: job.metadata
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LegacyJobMetadataOutObjectJsonConverter))]
         public global::G.LegacyJobMetadataOutObject? Object { get; set; }
 
         /// <summary>

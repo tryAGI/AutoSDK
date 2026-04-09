@@ -37,6 +37,7 @@ namespace G
         /// Current job status: PENDING, RUNNING, COMPLETED, FAILED, or CANCELLED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ParseJobResponseStatusJsonConverter))]
         public global::G.ParseJobResponseStatus Status { get; set; } = default!;
 
         /// <summary>

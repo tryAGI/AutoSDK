@@ -6,6 +6,40 @@ namespace G
 {
     public partial class SttClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_SttTranscribeSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_SttTranscribeSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_SttTranscribeSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_SttTranscribeSecurityRequirement0,
+                s_SttTranscribeSecurityRequirement1,
+            };
         partial void PrepareSttTranscribeArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.SttTranscribeCartesiaVersion cartesiaVersion,
@@ -68,13 +102,19 @@ namespace G
                 sampleRate: ref sampleRate,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SttTranscribeSecurityRequirements,
+                operationName: "SttTranscribeAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/stt",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("encoding", encoding?.ToValueString())
                 .AddOptionalParameter("sample_rate", sampleRate?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -84,7 +124,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

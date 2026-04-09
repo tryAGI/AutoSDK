@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpeakV1ServerEventDiscriminatorMessageTypeJsonConverter))]
         public global::G.SpeakV1ServerEventDiscriminatorMessageType? MessageType { get; set; }
 
         /// <summary>

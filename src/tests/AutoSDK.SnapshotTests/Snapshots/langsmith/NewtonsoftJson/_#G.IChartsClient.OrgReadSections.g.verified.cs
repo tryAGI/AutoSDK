@@ -24,6 +24,7 @@ namespace G
         /// Default Value: true
         /// </param>
         /// <param name="tagValueId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CustomChartsSectionResponse>> OrgReadSectionsAsync(
@@ -34,6 +35,7 @@ namespace G
             string? sortBy = default,
             bool? sortByDesc = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

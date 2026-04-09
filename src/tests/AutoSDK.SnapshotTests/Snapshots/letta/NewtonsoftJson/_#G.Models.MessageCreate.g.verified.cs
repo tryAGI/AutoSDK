@@ -20,6 +20,7 @@ namespace G
         /// The role of the participant.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageCreateRoleJsonConverter))]
         public global::G.MessageCreateRole Role { get; set; } = default!;
 
         /// <summary>

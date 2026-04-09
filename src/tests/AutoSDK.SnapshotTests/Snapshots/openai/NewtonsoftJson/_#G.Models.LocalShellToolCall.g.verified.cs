@@ -13,6 +13,7 @@ namespace G
         /// The type of the local shell call. Always `local_shell_call`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LocalShellToolCallTypeJsonConverter))]
         public global::G.LocalShellToolCallType Type { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// The status of the local shell call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LocalShellToolCallStatusJsonConverter))]
         public global::G.LocalShellToolCallStatus Status { get; set; } = default!;
 
         /// <summary>

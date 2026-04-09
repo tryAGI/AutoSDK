@@ -46,6 +46,7 @@ namespace G
         /// </summary>
         /// <example>medium</example>
         [global::Newtonsoft.Json.JsonProperty("quality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageRequestQualityJsonConverter))]
         public global::G.CreateImageRequestQuality? Quality { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace G
         /// </summary>
         /// <example>url</example>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageRequestResponseFormatJsonConverter))]
         public global::G.CreateImageRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace G
         /// </summary>
         /// <example>png</example>
         [global::Newtonsoft.Json.JsonProperty("output_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageRequestOutputFormatJsonConverter))]
         public global::G.CreateImageRequestOutputFormat? OutputFormat { get; set; }
 
         /// <summary>
@@ -82,6 +85,7 @@ namespace G
         /// </summary>
         /// <example>1024x1024</example>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageRequestSizeJsonConverter))]
         public global::G.CreateImageRequestSize? Size { get; set; }
 
         /// <summary>
@@ -91,6 +95,7 @@ namespace G
         /// </summary>
         /// <example>low</example>
         [global::Newtonsoft.Json.JsonProperty("moderation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageRequestModerationJsonConverter))]
         public global::G.CreateImageRequestModeration? Moderation { get; set; }
 
         /// <summary>
@@ -105,6 +110,7 @@ namespace G
         /// </summary>
         /// <example>transparent</example>
         [global::Newtonsoft.Json.JsonProperty("background")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageRequestBackgroundJsonConverter))]
         public global::G.CreateImageRequestBackground? Background { get; set; }
 
         /// <summary>
@@ -114,6 +120,7 @@ namespace G
         /// </summary>
         /// <example>vivid</example>
         [global::Newtonsoft.Json.JsonProperty("style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageRequestStyleJsonConverter))]
         public global::G.CreateImageRequestStyle? Style { get; set; }
 
         /// <summary>

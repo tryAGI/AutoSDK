@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransformModelJsonConverter))]
         public global::G.TransformModel? Model { get; set; }
 
         /// <summary>
@@ -43,18 +44,21 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseFormatJsonConverter))]
         public global::G.ResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageSizeJsonConverter))]
         public global::G.ImageSize? Size { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageStyleJsonConverter))]
         public global::G.ImageStyle? Style { get; set; }
 
         /// <summary>
@@ -67,6 +71,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("substyle")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageSubStyleJsonConverter))]
         public global::G.ImageSubStyle? Substyle { get; set; }
 
         /// <summary>

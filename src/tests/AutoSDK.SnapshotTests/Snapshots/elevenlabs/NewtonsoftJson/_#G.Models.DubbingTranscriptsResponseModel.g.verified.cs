@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transcript_format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DubbingTranscriptsResponseModelTranscriptFormatJsonConverter))]
         public global::G.DubbingTranscriptsResponseModelTranscriptFormat TranscriptFormat { get; set; } = default!;
 
         /// <summary>

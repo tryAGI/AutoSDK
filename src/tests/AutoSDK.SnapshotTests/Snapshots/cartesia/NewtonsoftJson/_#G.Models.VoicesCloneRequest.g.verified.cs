@@ -37,6 +37,7 @@ namespace G
         /// The language that the given voice should speak the transcript in. For valid options, see [Models](/build-with-cartesia/tts-models).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SupportedLanguageJsonConverter))]
         public global::G.SupportedLanguage? Language { get; set; }
 
         /// <summary>

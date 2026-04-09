@@ -60,6 +60,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("releaseStage")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReleaseStageJsonConverter))]
         public global::G.ReleaseStage? ReleaseStage { get; set; }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// If this message is not provided, one of the default filler messages "Hold on a sec", "One moment", "Just a sec", "Give me a moment" or "This'll just take a sec" will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolMessageStartTypeJsonConverter))]
         public global::G.ToolMessageStartType Type { get; set; }
 
         /// <summary>

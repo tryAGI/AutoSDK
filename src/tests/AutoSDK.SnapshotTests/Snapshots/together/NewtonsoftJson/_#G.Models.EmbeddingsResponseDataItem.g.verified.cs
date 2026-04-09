@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingsResponseDataItemObjectJsonConverter))]
         public global::G.EmbeddingsResponseDataItemObject Object { get; set; }
 
         /// <summary>

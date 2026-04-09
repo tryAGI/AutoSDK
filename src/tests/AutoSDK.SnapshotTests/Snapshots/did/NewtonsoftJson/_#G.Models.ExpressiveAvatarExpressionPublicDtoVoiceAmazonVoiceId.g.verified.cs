@@ -100,7 +100,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Léa")]
-        L_a,
+        Léa,
         /// <summary>
         /// 
         /// </summary>
@@ -162,7 +162,7 @@ namespace G
                 ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Kimberly => "Kimberly",
                 ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Lucia => "Lucia",
                 ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Lupe => "Lupe",
-                ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.L_a => "Léa",
+                ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Léa => "Léa",
                 ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Matthew => "Matthew",
                 ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Olivia => "Olivia",
                 ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Salli => "Salli",
@@ -196,7 +196,7 @@ namespace G
                 "Kimberly" => ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Kimberly,
                 "Lucia" => ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Lucia,
                 "Lupe" => ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Lupe,
-                "Léa" => ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.L_a,
+                "Léa" => ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Léa,
                 "Matthew" => ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Matthew,
                 "Olivia" => ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Olivia,
                 "Salli" => ExpressiveAvatarExpressionPublicDtoVoiceAmazonVoiceId.Salli,

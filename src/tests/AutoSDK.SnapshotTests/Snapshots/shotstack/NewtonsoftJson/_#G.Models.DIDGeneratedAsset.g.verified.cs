@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.DIDGeneratedAssetProvider.DId</default>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DIDGeneratedAssetProviderJsonConverter))]
         public global::G.DIDGeneratedAssetProvider Provider { get; set; } = global::G.DIDGeneratedAssetProvider.DId;
 
         /// <summary>

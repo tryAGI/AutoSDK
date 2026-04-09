@@ -31,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>API</example>
         [global::Newtonsoft.Json.JsonProperty("scope")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListApiKeysResponseKeyScopeJsonConverter))]
         public global::G.ListApiKeysResponseKeyScope Scope { get; set; }
 
         /// <summary>

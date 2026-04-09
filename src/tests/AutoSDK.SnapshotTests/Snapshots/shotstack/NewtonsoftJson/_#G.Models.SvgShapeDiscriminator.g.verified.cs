@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgShapeDiscriminatorTypeJsonConverter))]
         public global::G.SvgShapeDiscriminatorType? Type { get; set; }
 
         /// <summary>

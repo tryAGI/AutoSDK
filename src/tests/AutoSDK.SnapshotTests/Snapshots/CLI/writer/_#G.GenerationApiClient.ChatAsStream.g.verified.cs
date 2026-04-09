@@ -6,6 +6,25 @@ namespace G
 {
     public partial class GenerationApiClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ChatAsStreamSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ChatAsStreamSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ChatAsStreamSecurityRequirement0,
+            };
         partial void PrepareChatAsStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.ChatRequest request);
@@ -30,7 +49,7 @@ namespace G
         ///  --header "Content-Type: application/json" \<br/>
         /// --data-raw '{"model":"palmyra-x5","messages":[{"content":"Write a memo summarizing this earnings report.","role":"user"}]}'
         /// </remarks>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.ChatCompletionChunk>> ChatAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatCompletionChunk> ChatAsStreamAsync(
 
             global::G.ChatRequest request,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
@@ -59,9 +78,15 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ChatAsStreamSecurityRequirements,
+                operationName: "ChatAsStreamAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/chat",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -71,7 +96,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -160,7 +185,7 @@ namespace G
                     yield break;
                 }
 
-                var __streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.ChatCompletionChunk>?>(__content, JsonSerializerOptions) ??
+                var __streamedResponse = global::G.ChatCompletionChunk.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::G.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)
@@ -223,7 +248,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.ChatCompletionChunk>> ChatAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatCompletionChunk> ChatAsStreamAsync(
             string model,
             global::System.Collections.Generic.IList<global::G.ChatMessage> messages,
             int? maxTokens = default,

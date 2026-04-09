@@ -21,6 +21,7 @@ namespace G
         /// Default Value: 1730898830008L
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> V1LibraryManagement3Async(
@@ -28,6 +29,7 @@ namespace G
 
             global::G.FilesUpdateRequest request,
             int? requestStartTime = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update File<br/>
@@ -53,6 +55,7 @@ namespace G
         /// Any labels to associate with this file. Separate multiple labels with commas. If<br/>
         /// provided, will overwrite all existing labels.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> V1LibraryManagement3Async(
@@ -60,6 +63,7 @@ namespace G
             int? requestStartTime = default,
             string? publicUrl = default,
             global::System.Collections.Generic.IList<string>? labels = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

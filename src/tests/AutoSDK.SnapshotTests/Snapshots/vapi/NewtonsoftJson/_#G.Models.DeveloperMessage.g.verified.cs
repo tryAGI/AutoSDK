@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.DeveloperMessageRole.Developer</default>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeveloperMessageRoleJsonConverter))]
         public global::G.DeveloperMessageRole Role { get; set; } = global::G.DeveloperMessageRole.Developer;
 
         /// <summary>

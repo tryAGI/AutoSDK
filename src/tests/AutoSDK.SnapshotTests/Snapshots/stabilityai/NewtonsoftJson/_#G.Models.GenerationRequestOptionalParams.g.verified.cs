@@ -24,6 +24,7 @@ namespace G
         /// </summary>
         /// <example>FAST_BLUE</example>
         [global::Newtonsoft.Json.JsonProperty("clip_guidance_preset")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClipGuidancePresetJsonConverter))]
         public global::G.ClipGuidancePreset? ClipGuidancePreset { get; set; }
 
         /// <summary>
@@ -32,6 +33,7 @@ namespace G
         /// </summary>
         /// <example>K_DPM_2_ANCESTRAL</example>
         [global::Newtonsoft.Json.JsonProperty("sampler")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SamplerJsonConverter))]
         public global::G.Sampler? Sampler { get; set; }
 
         /// <summary>

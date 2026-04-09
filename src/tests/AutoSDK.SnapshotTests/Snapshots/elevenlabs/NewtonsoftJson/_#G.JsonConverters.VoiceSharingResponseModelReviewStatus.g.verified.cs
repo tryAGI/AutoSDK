@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.VoiceSharingResponseModelReviewStatus.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class VoiceSharingResponseModelReviewStatusJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.VoiceSharingResponseModelReviewStatus>
+    {
+        /// <inheritdoc />
+        public override global::G.VoiceSharingResponseModelReviewStatus ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.VoiceSharingResponseModelReviewStatus existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.VoiceSharingResponseModelReviewStatusExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.VoiceSharingResponseModelReviewStatus)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.VoiceSharingResponseModelReviewStatus);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.VoiceSharingResponseModelReviewStatus value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.VoiceSharingResponseModelReviewStatusExtensions.ToValueString(value));
+        }
+    }
+}

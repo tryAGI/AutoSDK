@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.GraderMultiType.Multi</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraderMultiTypeJsonConverter))]
         public global::G.GraderMultiType Type { get; set; } = global::G.GraderMultiType.Multi;
 
         /// <summary>

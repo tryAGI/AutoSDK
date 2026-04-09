@@ -31,6 +31,7 @@ namespace G
         /// The endpoint type for the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_endpoint_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LLMConfigModelEndpointTypeJsonConverter))]
         public global::G.LLMConfigModelEndpointType ModelEndpointType { get; set; } = default!;
 
         /// <summary>

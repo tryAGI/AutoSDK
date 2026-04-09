@@ -14,6 +14,7 @@ namespace G
         /// The shape type - set to `arrow`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgArrowShapeTypeJsonConverter))]
         public global::G.SvgArrowShapeType Type { get; set; }
 
         /// <summary>

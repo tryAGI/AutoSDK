@@ -9,11 +9,13 @@ namespace G
         /// Process File
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ConvertDocumentResponse, global::G.PresignedUrlConvertDocumentResponse>> ProcessFileV1ConvertFilePostAsync(
 
             global::G.BodyProcessFileV1ConvertFilePost request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Process File
@@ -155,10 +157,11 @@ namespace G
         /// <param name="layoutCustomConfig">
         /// Custom configuration for layout model. Use this to specify a non-default kind with its options. The 'kind' field in the config dict determines which layout implementation to use. If not specified, uses the default kind with preset configuration.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ConvertDocumentResponse, global::G.PresignedUrlConvertDocumentResponse>> ProcessFileV1ConvertFilePostAsync(
-            global::System.Collections.Generic.IList<string> files,
+            global::System.Collections.Generic.IList<byte[]> files,
             global::G.TargetName? targetType = default,
             global::System.Collections.Generic.IList<global::G.InputFormat>? fromFormats = default,
             global::System.Collections.Generic.IList<global::G.OutputFormat>? toFormats = default,
@@ -171,7 +174,7 @@ namespace G
             global::G.TableFormerMode? tableMode = default,
             bool? tableCellMatching = default,
             global::G.ProcessingPipeline? pipeline = default,
-            byte[]? pageRange = default,
+            global::System.Collections.Generic.IList<int>? pageRange = default,
             double? documentTimeout = default,
             bool? abortOnError = default,
             bool? doTableStructure = default,
@@ -197,6 +200,7 @@ namespace G
             string? codeFormulaCustomConfig = default,
             object? tableStructureCustomConfig = default,
             object? layoutCustomConfig = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

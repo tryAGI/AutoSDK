@@ -60,6 +60,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("appType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AppTypeJsonConverter))]
         public global::G.AppType? AppType { get; set; }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectUpdateVisibilityJsonConverter))]
         public global::G.ProjectUpdateVisibility? Visibility { get; set; }
 
         /// <summary>

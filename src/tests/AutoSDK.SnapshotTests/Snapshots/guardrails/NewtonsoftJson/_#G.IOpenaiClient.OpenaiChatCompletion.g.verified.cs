@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="guardName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenAIChatCompletion> OpenaiChatCompletionAsync(
             string guardName,
 
             global::G.OpenAIChatCompletionPayload request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// OpenAI SDK compatible endpoint for Chat Completions
@@ -34,6 +36,7 @@ namespace G
         /// <param name="temperature">
         /// The sampling temperature
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenAIChatCompletion> OpenaiChatCompletionAsync(
@@ -42,6 +45,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.OpenAIChatMessage>? messages = default,
             int? maxTokens = default,
             double? temperature = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

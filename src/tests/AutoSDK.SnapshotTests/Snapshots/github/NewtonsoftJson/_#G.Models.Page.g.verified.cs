@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>built</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PageStatusJsonConverter))]
         public global::G.PageStatus? Status { get; set; }
 
         /// <summary>
@@ -39,6 +40,7 @@ namespace G
         /// </summary>
         /// <example>pending</example>
         [global::Newtonsoft.Json.JsonProperty("protected_domain_state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PageProtectedDomainStateJsonConverter))]
         public global::G.PageProtectedDomainState? ProtectedDomainState { get; set; }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace G
         /// </summary>
         /// <example>legacy</example>
         [global::Newtonsoft.Json.JsonProperty("build_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PageBuildTypeJsonConverter))]
         public global::G.PageBuildType? BuildType { get; set; }
 
         /// <summary>

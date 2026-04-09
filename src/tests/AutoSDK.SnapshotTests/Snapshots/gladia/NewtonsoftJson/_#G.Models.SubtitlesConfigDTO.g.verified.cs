@@ -47,6 +47,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SubtitlesStyleEnumJsonConverter))]
         public global::G.SubtitlesStyleEnum? Style { get; set; }
 
         /// <summary>

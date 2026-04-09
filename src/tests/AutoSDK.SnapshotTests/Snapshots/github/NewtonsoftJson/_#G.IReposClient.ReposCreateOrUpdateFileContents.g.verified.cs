@@ -16,6 +16,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="path"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FileCommit> ReposCreateOrUpdateFileContentsAsync(
@@ -24,6 +25,7 @@ namespace G
             string path,
 
             global::G.ReposCreateOrUpdateFileContentsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create or update file contents<br/>
@@ -53,6 +55,7 @@ namespace G
         /// <param name="author">
         /// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FileCommit> ReposCreateOrUpdateFileContentsAsync(
@@ -65,6 +68,7 @@ namespace G
             string? branch = default,
             global::G.ReposCreateOrUpdateFileContentsRequestCommitter? committer = default,
             global::G.ReposCreateOrUpdateFileContentsRequestAuthor? author = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

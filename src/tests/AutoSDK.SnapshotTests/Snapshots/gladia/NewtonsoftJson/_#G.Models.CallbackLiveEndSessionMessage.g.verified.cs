@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLiveEndSessionMessageEvent.LiveEndSession</default>
         /// <example>live.end_session</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLiveEndSessionMessageEventJsonConverter))]
         public global::G.CallbackLiveEndSessionMessageEvent Event { get; set; } = global::G.CallbackLiveEndSessionMessageEvent.LiveEndSession;
 
         /// <summary>

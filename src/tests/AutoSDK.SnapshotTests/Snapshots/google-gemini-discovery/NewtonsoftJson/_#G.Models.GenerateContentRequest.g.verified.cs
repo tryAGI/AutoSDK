@@ -61,6 +61,7 @@ namespace G
         /// Optional. The service tier of the request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("serviceTier")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerateContentRequestServiceTierJsonConverter))]
         public global::G.GenerateContentRequestServiceTier? ServiceTier { get; set; }
 
         /// <summary>

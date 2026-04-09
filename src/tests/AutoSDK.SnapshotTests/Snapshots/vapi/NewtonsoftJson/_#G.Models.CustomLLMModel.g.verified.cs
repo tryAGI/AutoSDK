@@ -39,6 +39,7 @@ namespace G
         /// This is the provider that will be used for the model. Any service, including your own server, that is compatible with the OpenAI API can be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomLLMModelProviderJsonConverter))]
         public global::G.CustomLLMModelProvider Provider { get; set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace G
         /// Default is `variable`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadataSendMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomLLMModelMetadataSendModeJsonConverter))]
         public global::G.CustomLLMModelMetadataSendMode? MetadataSendMode { get; set; }
 
         /// <summary>

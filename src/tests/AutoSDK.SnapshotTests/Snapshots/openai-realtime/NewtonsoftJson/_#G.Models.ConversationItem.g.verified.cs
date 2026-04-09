@@ -19,24 +19,28 @@ namespace G
         /// The object type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationItemObjectJsonConverter))]
         public global::G.ConversationItemObject? Object { get; set; }
 
         /// <summary>
         /// The type of the item.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationItemTypeJsonConverter))]
         public global::G.ConversationItemType? Type { get; set; }
 
         /// <summary>
         /// The status of the item.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationItemStatusJsonConverter))]
         public global::G.ConversationItemStatus? Status { get; set; }
 
         /// <summary>
         /// The role of the message sender.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationItemRoleJsonConverter))]
         public global::G.ConversationItemRole? Role { get; set; }
 
         /// <summary>

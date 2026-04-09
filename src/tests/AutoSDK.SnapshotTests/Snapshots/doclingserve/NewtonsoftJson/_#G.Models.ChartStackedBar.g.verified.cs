@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("values", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<byte[]> Values { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>> Values { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace G
         /// <param name="values"></param>
         public ChartStackedBar(
             global::System.Collections.Generic.IList<string> label,
-            global::System.Collections.Generic.IList<byte[]> values)
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>> values)
         {
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));

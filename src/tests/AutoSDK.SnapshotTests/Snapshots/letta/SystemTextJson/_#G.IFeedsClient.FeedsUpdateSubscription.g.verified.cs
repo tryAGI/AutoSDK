@@ -12,6 +12,7 @@ namespace G
         /// <param name="feedId"></param>
         /// <param name="subscriptionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedsUpdateSubscriptionResponse> FeedsUpdateSubscriptionAsync(
@@ -19,6 +20,7 @@ namespace G
             string subscriptionId,
 
             global::G.FeedsUpdateSubscriptionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Subscription<br/>
@@ -29,6 +31,7 @@ namespace G
         /// <param name="cronSchedule"></param>
         /// <param name="promptTemplate"></param>
         /// <param name="disabled"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedsUpdateSubscriptionResponse> FeedsUpdateSubscriptionAsync(
@@ -37,6 +40,7 @@ namespace G
             string? cronSchedule = default,
             string? promptTemplate = default,
             bool? disabled = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

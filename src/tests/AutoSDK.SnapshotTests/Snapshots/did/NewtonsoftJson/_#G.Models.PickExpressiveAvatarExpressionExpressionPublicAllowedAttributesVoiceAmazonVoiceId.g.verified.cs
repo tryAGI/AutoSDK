@@ -100,7 +100,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Léa")]
-        L_a,
+        Léa,
         /// <summary>
         /// 
         /// </summary>
@@ -162,7 +162,7 @@ namespace G
                 PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Kimberly => "Kimberly",
                 PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Lucia => "Lucia",
                 PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Lupe => "Lupe",
-                PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.L_a => "Léa",
+                PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Léa => "Léa",
                 PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Matthew => "Matthew",
                 PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Olivia => "Olivia",
                 PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Salli => "Salli",
@@ -196,7 +196,7 @@ namespace G
                 "Kimberly" => PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Kimberly,
                 "Lucia" => PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Lucia,
                 "Lupe" => PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Lupe,
-                "Léa" => PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.L_a,
+                "Léa" => PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Léa,
                 "Matthew" => PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Matthew,
                 "Olivia" => PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Olivia,
                 "Salli" => PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceAmazonVoiceId.Salli,

@@ -39,6 +39,7 @@ namespace G
         /// The object type, which is always `chat.completion`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionObjectJsonConverter))]
         public global::G.ChatCompletionObject Object { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace G
         /// parameter.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service_tier")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionServiceTierJsonConverter))]
         public global::G.ChatCompletionServiceTier? ServiceTier { get; set; }
 
         /// <summary>

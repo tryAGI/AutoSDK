@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScheduledMessagesScheduleAgentMessageRequestMessageRoleJsonConverter))]
         public global::G.ScheduledMessagesScheduleAgentMessageRequestMessageRole Role { get; set; } = default!;
 
         /// <summary>
@@ -43,6 +44,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScheduledMessagesScheduleAgentMessageRequestMessageTypeJsonConverter))]
         public global::G.ScheduledMessagesScheduleAgentMessageRequestMessageType? Type { get; set; }
 
         /// <summary>

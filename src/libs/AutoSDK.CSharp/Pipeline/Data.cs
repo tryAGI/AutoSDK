@@ -190,7 +190,14 @@ public static class Data
                     {
                         if (tag.Name != null && knownTagNames.Add(tag.Name))
                         {
-                            allTags.Add(new OpenApiTag { Name = tag.Name, Description = tag.Description });
+                            allTags.Add(new OpenApiTag
+                            {
+                                Name = tag.Name,
+                                Description = tag.Description,
+                                Summary = tag.Summary,
+                                Parent = tag.Parent,
+                                Kind = tag.Kind,
+                            });
                         }
                     }
                 }
@@ -498,6 +505,17 @@ public static class Data
             .SelectMany(CreateEndPoints)
             .ToImmutableArray();
 
+        var authorizationsByIdentity = AuthorizationHelpers.CreateResolvedAuthorizationMap(
+            (openApiDocument.Security ?? [])
+            .SelectMany(requirement => requirement.OrderBy(
+                x => x.Key.Reference?.Id ?? x.Key.Name ?? x.Key.Scheme ?? string.Empty,
+                StringComparer.Ordinal))
+            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, csharpSettings, csharpGlobalSettings))
+            .Concat(methods.SelectMany(x => x.Authorizations)));
+        methods = methods
+            .Select(method => AuthorizationHelpers.NormalizeEndPoint(method, authorizationsByIdentity))
+            .ToImmutableArray();
+
         if (settings.GenerateCli)
         {
             foreach (var group in methods
@@ -508,12 +526,8 @@ public static class Data
             }
         }
         
-        var authorizations = openApiDocument.Security!
-            .SelectMany(requirement => requirement.OrderBy(x => x.Key.Name ?? string.Empty, StringComparer.Ordinal))
-            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, csharpSettings, csharpGlobalSettings))
-            .Concat(methods.SelectMany(x => x.Authorizations))
-            .GroupBy(x => x.FriendlyName)
-            .Select(g => g.First())
+        var authorizations = authorizationsByIdentity
+            .Values
             .ToArray();
         var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
 
@@ -521,8 +535,7 @@ public static class Data
         // Enum converters
         foreach (var x in enums)
         {
-            if (x.Style == ModelStyle.Enumeration &&
-                !x.Settings.UsesNewtonsoftJson())
+            if (x.Style == ModelStyle.Enumeration)
             {
                 convertersBuilder.Add($"global::{x.Namespace}.JsonConverters.{x.ClassName}JsonConverter");
                 convertersBuilder.Add($"global::{x.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter");
@@ -616,7 +629,7 @@ public static class Data
                                 CSharpTypeRaw = CSharpClientNameGenerator.Generate(tag),
                                 GeneratedNamespace = settings.Namespace,
                             }).WithCSharpComputedValues(),
-                            Summary = (!string.IsNullOrWhiteSpace(tag.DisplayName) ? tag.DisplayName : tag.Description)?.ClearForXml() ?? string.Empty,
+                            Summary = tag.DocumentationSummary.ClearForXml(),
                         }).WithCSharpParameterName())
                     ]
                     : [],
@@ -870,6 +883,17 @@ public static class Data
             .SelectMany(CreateEndPoints)
             .ToImmutableArray();
 
+        var authorizationsByIdentity = AuthorizationHelpers.CreateResolvedAuthorizationMap(
+            (openApiDocument.Security ?? [])
+            .SelectMany(requirement => requirement.OrderBy(
+                x => x.Key.Reference?.Id ?? x.Key.Name ?? x.Key.Scheme ?? string.Empty,
+                StringComparer.Ordinal))
+            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
+            .Concat(methods.SelectMany(x => x.Authorizations)));
+        methods = methods
+            .Select(method => AuthorizationHelpers.NormalizeEndPoint(method, authorizationsByIdentity))
+            .ToImmutableArray();
+
         if (settings.GenerateCli)
         {
             foreach (var group in methods
@@ -881,20 +905,15 @@ public static class Data
             }
         }
 
-        var authorizations = openApiDocument.Security!
-            .SelectMany(requirement => requirement.OrderBy(x => x.Key.Name ?? string.Empty, StringComparer.Ordinal))
-            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
-            .Concat(methods.SelectMany(x => x.Authorizations))
-            .GroupBy(x => x.FriendlyName)
-            .Select(g => g.First())
+        var authorizations = authorizationsByIdentity
+            .Values
             .ToArray();
         var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
 
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
         foreach (var value in enums)
         {
-            if (value.Style == ModelStyle.Enumeration &&
-                !value.Settings.UsesNewtonsoftJson())
+            if (value.Style == ModelStyle.Enumeration)
             {
                 convertersBuilder.Add($"global::{value.Namespace}.JsonConverters.{value.ClassName}JsonConverter");
                 convertersBuilder.Add($"global::{value.Namespace}.JsonConverters.{value.ClassName}NullableJsonConverter");
@@ -987,7 +1006,7 @@ public static class Data
                                 CSharpTypeRaw = CSharpClientNameGenerator.Generate(tag),
                                 GeneratedNamespace = settings.Namespace,
                             }).WithCSharpComputedValues(),
-                            Summary = (!string.IsNullOrWhiteSpace(tag.DisplayName) ? tag.DisplayName : tag.Description)?.ClearForXml() ?? string.Empty,
+                            Summary = tag.DocumentationSummary.ClearForXml(),
                         }).WithCSharpParameterName())
                     ]
                     : [],
@@ -1197,11 +1216,11 @@ public static class Data
             .ToArray();
 
         var hasJson = responseContentTypes.Any(static contentType =>
-            contentType.Contains("application/json", StringComparison.OrdinalIgnoreCase));
-        var hasNdjson = responseContentTypes.Any(static contentType =>
-            contentType.Contains("application/x-ndjson", StringComparison.OrdinalIgnoreCase));
+            contentType.IsJsonMimeType() && !contentType.IsSequentialJsonMimeType());
+        var hasSequentialJson = responseContentTypes.Any(static contentType =>
+            contentType.IsSequentialJsonMimeType());
         var hasSse = responseContentTypes.Any(static contentType =>
-            contentType.Contains("text/event-stream", StringComparison.OrdinalIgnoreCase));
+            contentType.IsServerSentEventsMimeType());
 
         var endPoints = new List<EndPoint>();
 
@@ -1228,7 +1247,7 @@ public static class Data
 
         if (fernStreaming != null &&
             !hasSse &&
-            !hasNdjson)
+            !hasSequentialJson)
         {
             endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
                 operation,
@@ -1244,7 +1263,7 @@ public static class Data
             endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
                 operation,
                 preferredMimeType: "application/json",
-                forcedRequestStreamValue: hasNdjson || hasSse ? false : null,
+                forcedRequestStreamValue: hasSequentialJson || hasSse ? false : null,
                 successResponseOverride: fernStreaming?.RegularResponseOverride));
         }
 
@@ -1255,7 +1274,7 @@ public static class Data
                 preferredMimeType: "text/event-stream",
                 methodNameSuffix: GetStreamMethodSuffix(
                     hasRegularJsonVariant: hasJson,
-                    hasAnotherStreamingVariant: hasNdjson,
+                    hasAnotherStreamingVariant: hasSequentialJson,
                     streamFormat: StreamFormat.ServerSentEvents),
                 forcedRequestStreamValue: hasJson ? true : null,
                 successResponseOverride: fernStreaming?.StreamResponseOverride,
@@ -1265,7 +1284,7 @@ public static class Data
                 streamTerminator: fernStreaming?.Terminator));
         }
 
-        if (hasNdjson)
+        if (hasSequentialJson)
         {
             endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
                 operation,
@@ -1295,18 +1314,18 @@ public static class Data
         StreamFormat streamFormat)
     {
         if (streamFormat == StreamFormat.ServerSentEvents &&
-            responseContentTypes.Any(static x => x.Contains("text/event-stream", StringComparison.OrdinalIgnoreCase)))
+            responseContentTypes.Any(static x => x.IsServerSentEventsMimeType()))
         {
             return "text/event-stream";
         }
 
         if (streamFormat == StreamFormat.Ndjson &&
-            responseContentTypes.Any(static x => x.Contains("application/x-ndjson", StringComparison.OrdinalIgnoreCase)))
+            responseContentTypes.Any(static x => x.IsSequentialJsonMimeType()))
         {
-            return "application/x-ndjson";
+            return responseContentTypes.First(static x => x.IsSequentialJsonMimeType()).NormalizeMimeType();
         }
 
-        if (responseContentTypes.Any(static x => x.Contains("application/json", StringComparison.OrdinalIgnoreCase)))
+        if (responseContentTypes.Any(static x => x.IsJsonMimeType() && !x.IsSequentialJsonMimeType()))
         {
             return "application/json";
         }
@@ -1378,6 +1397,25 @@ public static class Data
             FileNameWithoutExtension = $"{method.Settings.Namespace}.{className}.{method.NotAsyncMethodName}",
             InterfaceFileNameWithoutExtension = $"{method.Settings.Namespace}.I{className}.{method.NotAsyncMethodName}",
         };
+    }
+
+    private static string CreateServerSummary(OpenApiServer? server)
+    {
+        var name = server?.Name?.Trim();
+        var description = server?.Description?.Trim();
+
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            return description?.ClearForXml() ?? string.Empty;
+        }
+
+        if (string.IsNullOrWhiteSpace(description) ||
+            string.Equals(name, description, StringComparison.OrdinalIgnoreCase))
+        {
+            return name!.ClearForXml();
+        }
+
+        return $"{name}. {description}".ClearForXml();
     }
 
     /// <summary>

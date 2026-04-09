@@ -37,6 +37,7 @@ namespace G
         /// The type of citation which indicates what part of the response the citation is for.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCitationTypeJsonConverter))]
         public global::G.ChatCitationType? Type { get; set; }
 
         /// <summary>

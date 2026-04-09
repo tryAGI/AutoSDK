@@ -13,12 +13,14 @@ namespace G
         /// AiSecret id
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AISecret> PatchAiSecretIdAsync(
             global::System.Guid aiSecretId,
 
             global::G.PatchAISecret request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Partially update ai_secret<br/>
@@ -33,6 +35,7 @@ namespace G
         /// <param name="type"></param>
         /// <param name="metadata"></param>
         /// <param name="secret"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AISecret> PatchAiSecretIdAsync(
@@ -41,6 +44,7 @@ namespace G
             string? type = default,
             global::System.Collections.Generic.Dictionary<string, object?>? metadata = default,
             string? secret = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

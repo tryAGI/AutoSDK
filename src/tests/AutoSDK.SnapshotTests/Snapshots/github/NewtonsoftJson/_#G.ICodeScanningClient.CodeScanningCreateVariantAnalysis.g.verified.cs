@@ -16,6 +16,7 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CodeScanningVariantAnalysis> CodeScanningCreateVariantAnalysisAsync(
@@ -23,6 +24,7 @@ namespace G
             string repo,
 
             global::G.CodeScanningCreateVariantAnalysisRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a CodeQL variant analysis<br/>
@@ -49,6 +51,7 @@ namespace G
         /// <param name="repositoryOwners">
         /// List of organization or user names whose repositories the query should be run against. Precisely one property from `repositories`, `repository_lists` and `repository_owners` is required.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CodeScanningVariantAnalysis> CodeScanningCreateVariantAnalysisAsync(
@@ -59,6 +62,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? repositories = default,
             global::System.Collections.Generic.IList<string>? repositoryLists = default,
             global::System.Collections.Generic.IList<string>? repositoryOwners = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

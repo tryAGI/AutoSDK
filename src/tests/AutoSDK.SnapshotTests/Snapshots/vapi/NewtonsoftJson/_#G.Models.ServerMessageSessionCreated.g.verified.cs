@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "session.created" is sent when a new session is created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageSessionCreatedTypeJsonConverter))]
         public global::G.ServerMessageSessionCreatedType Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Current state of the collection. `Green` - all good. `Yellow` - optimization is running, 'Grey' - optimizations are possible but not triggered, `Red` - some operations failed and was not recovered
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CollectionStatusJsonConverter))]
         public global::G.CollectionStatus Status { get; set; } = default!;
 
         /// <summary>

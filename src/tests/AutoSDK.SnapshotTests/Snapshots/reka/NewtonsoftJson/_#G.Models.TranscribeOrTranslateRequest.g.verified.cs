@@ -26,6 +26,7 @@ namespace G
         /// Target language for translation. When omitted, only transcription is performed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscribeOrTranslateRequestTargetLanguageJsonConverter))]
         public global::G.TranscribeOrTranslateRequestTargetLanguage? TargetLanguage { get; set; }
 
         /// <summary>

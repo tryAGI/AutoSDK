@@ -10,12 +10,14 @@ namespace G
         /// Parses and executes workflow specification, injecting runtime parameters from request body. This endpoint is deprecated and will be removed end of Q2 2024.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.WorkflowInferenceResponse> InferFromWorkflowInferWorkflowsPostAsync(
 
             global::G.WorkflowSpecificationInferenceRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// [LEGACY] Endpoint to run workflow specification provided in payload<br/>
@@ -42,6 +44,7 @@ namespace G
         /// Reserved, used internally by Roboflow to distinguish between preview and non-preview runs<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -53,6 +56,7 @@ namespace G
             bool? enableProfiling = default,
             string? workflowId = default,
             bool? isPreview = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

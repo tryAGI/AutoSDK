@@ -15,6 +15,7 @@ namespace G
         /// <param name="entityId"></param>
         /// <param name="fileName"></param>
         /// <param name="mimeType"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> DownloadAttachmentAsync(
@@ -24,6 +25,7 @@ namespace G
             string fileName,
             string mimeType,
             string? workspaceName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

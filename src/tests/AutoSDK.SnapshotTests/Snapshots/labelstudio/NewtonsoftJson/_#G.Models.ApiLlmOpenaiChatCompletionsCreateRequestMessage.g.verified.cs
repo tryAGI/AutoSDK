@@ -19,6 +19,7 @@ namespace G
         /// The role of the message author
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiLlmOpenaiChatCompletionsCreateRequestMessageRoleJsonConverter))]
         public global::G.ApiLlmOpenaiChatCompletionsCreateRequestMessageRole Role { get; set; } = default!;
 
         /// <summary>

@@ -13,198 +13,231 @@ namespace G
         /// Formatting options for Abbreviations
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("abbreviations")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneAbbreviationsJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneAbbreviations? Abbreviations { get; set; }
 
         /// <summary>
         /// Formatting options for Addressing Non Binary People
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("addressing_non_binary_people")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneAddressingNonBinaryPeopleJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneAddressingNonBinaryPeople? AddressingNonBinaryPeople { get; set; }
 
         /// <summary>
         /// Formatting options for Addressing The Reader
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("addressing_the_reader")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneAddressingTheReaderJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneAddressingTheReader? AddressingTheReader { get; set; }
 
         /// <summary>
         /// Formatting options for Anglicisms
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("anglicisms")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneAnglicismsJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneAnglicisms? Anglicisms { get; set; }
 
         /// <summary>
         /// Formatting options for Binary Representation Of Gender
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("binary_representation_of_gender")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneBinaryRepresentationOfGenderJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneBinaryRepresentationOfGender? BinaryRepresentationOfGender { get; set; }
 
         /// <summary>
         /// Formatting options for Complex Sentences
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("complex_sentences")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneComplexSentencesJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneComplexSentences? ComplexSentences { get; set; }
 
         /// <summary>
         /// Formatting options for Country Names
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("country_names")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneCountryNamesJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneCountryNames? CountryNames { get; set; }
 
         /// <summary>
         /// Formatting options for Declarative Endings
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("declarative_endings")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneDeclarativeEndingsJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneDeclarativeEndings? DeclarativeEndings { get; set; }
 
         /// <summary>
         /// Formatting options for Default First Person Pronoun
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_first_person_pronoun")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneDefaultFirstPersonPronounJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneDefaultFirstPersonPronoun? DefaultFirstPersonPronoun { get; set; }
 
         /// <summary>
         /// Formatting options for Default Second Person Pronoun
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_second_person_pronoun")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneDefaultSecondPersonPronounJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneDefaultSecondPersonPronoun? DefaultSecondPersonPronoun { get; set; }
 
         /// <summary>
         /// Formatting options for Directional Language
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("directional_language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneDirectionalLanguageJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneDirectionalLanguage? DirectionalLanguage { get; set; }
 
         /// <summary>
         /// Formatting options for Double Negatives
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("double_negatives")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneDoubleNegativesJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneDoubleNegatives? DoubleNegatives { get; set; }
 
         /// <summary>
         /// Formatting options for Formality
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("formality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneFormalityJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneFormality? Formality { get; set; }
 
         /// <summary>
         /// Formatting options for Gender Neutral Language Readability
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gender_neutral_language_readability")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneGenderNeutralLanguageReadabilityJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneGenderNeutralLanguageReadability? GenderNeutralLanguageReadability { get; set; }
 
         /// <summary>
         /// Formatting options for Gender Unspecified
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gender_unspecified")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneGenderUnspecifiedJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneGenderUnspecified? GenderUnspecified { get; set; }
 
         /// <summary>
         /// Formatting options for Gender Unspecified Or Mixed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gender_unspecified_or_mixed")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneGenderUnspecifiedOrMixedJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneGenderUnspecifiedOrMixed? GenderUnspecifiedOrMixed { get; set; }
 
         /// <summary>
         /// Formatting options for Idioms Colloquialisms And Culture Specific References
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("idioms_colloquialisms_and_culture_specific_references")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneIdiomsColloquialismsAndCultureSpecificReferencesJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneIdiomsColloquialismsAndCultureSpecificReferences? IdiomsColloquialismsAndCultureSpecificReferences { get; set; }
 
         /// <summary>
         /// Formatting options for Inflected Words Masculine Noun Agreement
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inflected_words_masculine_noun_agreement")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneInflectedWordsMasculineNounAgreementJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneInflectedWordsMasculineNounAgreement? InflectedWordsMasculineNounAgreement { get; set; }
 
         /// <summary>
         /// Formatting options for Instructions Style
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("instructions_style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneInstructionsStyleJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneInstructionsStyle? InstructionsStyle { get; set; }
 
         /// <summary>
         /// Formatting options for Mixing Styles
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mixing_styles")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneMixingStylesJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneMixingStyles? MixingStyles { get; set; }
 
         /// <summary>
         /// Formatting options for Modal Verbs
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modal_verbs")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneModalVerbsJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneModalVerbs? ModalVerbs { get; set; }
 
         /// <summary>
         /// Formatting options for Personal Vs Impersonal Style
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("personal_vs_impersonal_style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndTonePersonalVsImpersonalStyleJsonConverter))]
         public global::G.ConfiguredRulesStyleAndTonePersonalVsImpersonalStyle? PersonalVsImpersonalStyle { get; set; }
 
         /// <summary>
         /// Formatting options for Positive Vs Negative Language
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("positive_vs_negative_language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndTonePositiveVsNegativeLanguageJsonConverter))]
         public global::G.ConfiguredRulesStyleAndTonePositiveVsNegativeLanguage? PositiveVsNegativeLanguage { get; set; }
 
         /// <summary>
         /// Formatting options for Proximity Agreement
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("proximity_agreement")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneProximityAgreementJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneProximityAgreement? ProximityAgreement { get; set; }
 
         /// <summary>
         /// Formatting options for Reader Action Required
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reader_action_required")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneReaderActionRequiredJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneReaderActionRequired? ReaderActionRequired { get; set; }
 
         /// <summary>
         /// Formatting options for Redundant Introductory Phrases
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("redundant_introductory_phrases")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneRedundantIntroductoryPhrasesJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneRedundantIntroductoryPhrases? RedundantIntroductoryPhrases { get; set; }
 
         /// <summary>
         /// Formatting options for Redundant Phrases
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("redundant_phrases")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneRedundantPhrasesJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneRedundantPhrases? RedundantPhrases { get; set; }
 
         /// <summary>
         /// Formatting options for Referring To Non Binary People
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("referring_to_non_binary_people")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneReferringToNonBinaryPeopleJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneReferringToNonBinaryPeople? ReferringToNonBinaryPeople { get; set; }
 
         /// <summary>
         /// Formatting options for Short Vs Long Words
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("short_vs_long_words")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneShortVsLongWordsJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneShortVsLongWords? ShortVsLongWords { get; set; }
 
         /// <summary>
         /// Formatting options for Simple Words And Sentences
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("simple_words_and_sentences")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneSimpleWordsAndSentencesJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneSimpleWordsAndSentences? SimpleWordsAndSentences { get; set; }
 
         /// <summary>
         /// Formatting options for Text Position References
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_position_references")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneTextPositionReferencesJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneTextPositionReferences? TextPositionReferences { get; set; }
 
         /// <summary>
         /// Formatting options for Tone
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tone")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneToneJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneTone? Tone { get; set; }
 
         /// <summary>
         /// Formatting options for Verbal Vs Nominal Style
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verbal_vs_nominal_style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesStyleAndToneVerbalVsNominalStyleJsonConverter))]
         public global::G.ConfiguredRulesStyleAndToneVerbalVsNominalStyle? VerbalVsNominalStyle { get; set; }
 
         /// <summary>

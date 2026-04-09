@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("platform", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TrackShareRequestPlatformJsonConverter))]
         public global::G.TrackShareRequestPlatform Platform { get; set; } = default!;
 
         /// <summary>

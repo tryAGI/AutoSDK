@@ -9,11 +9,13 @@ namespace G
         /// Query Runs
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListRunsResponse> QueryRunsAsync(
 
             global::G.BodyParamsForRunSchema request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Query Runs
@@ -53,6 +55,7 @@ namespace G
         /// <param name="skipPrevCursor">
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListRunsResponse> QueryRunsAsync(
@@ -80,6 +83,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.RunSelect>? select = default,
             global::G.RunDateOrder? order = default,
             bool? skipPrevCursor = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

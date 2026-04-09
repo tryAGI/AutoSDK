@@ -13,6 +13,7 @@ namespace G
         /// Specifies which types of repository this security configuration is applied to by default.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_for_new_repos")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewReposJsonConverter))]
         public global::G.CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos? DefaultForNewRepos { get; set; }
 
         /// <summary>

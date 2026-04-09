@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("component_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DoclingComponentTypeJsonConverter))]
         public global::G.DoclingComponentType ComponentType { get; set; } = default!;
 
         /// <summary>

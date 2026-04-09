@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> Files { get; set; } = default!;
+        public global::System.Collections.Generic.IList<byte[]> Files { get; set; } = default!;
 
         /// <summary>
         /// If true, the output will include both the chunks and the converted document.<br/>
@@ -27,6 +27,7 @@ namespace G
         /// Default Value: inbody
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TargetNameJsonConverter))]
         public global::G.TargetName? TargetType { get; set; }
 
         /// <summary>
@@ -41,6 +42,7 @@ namespace G
         /// Default Value: embedded
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("convert_image_export_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageRefModeJsonConverter))]
         public global::G.ImageRefMode? ConvertImageExportMode { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace G
         /// Default Value: easyocr
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("convert_ocr_engine")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OcrEnginesEnumJsonConverter))]
         public global::G.OcrEnginesEnum? ConvertOcrEngine { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace G
         /// Default Value: docling_parse
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("convert_pdf_backend")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PdfBackendJsonConverter))]
         public global::G.PdfBackend? ConvertPdfBackend { get; set; }
 
         /// <summary>
@@ -82,6 +86,7 @@ namespace G
         /// Default Value: accurate
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("convert_table_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TableFormerModeJsonConverter))]
         public global::G.TableFormerMode? ConvertTableMode { get; set; }
 
         /// <summary>
@@ -96,6 +101,7 @@ namespace G
         /// Default Value: standard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("convert_pipeline")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProcessingPipelineJsonConverter))]
         public global::G.ProcessingPipeline? ConvertPipeline { get; set; }
 
         /// <summary>
@@ -103,7 +109,7 @@ namespace G
         /// Default Value: [1, 9223372036854775807L]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("convert_page_range")]
-        public byte[]? ConvertPageRange { get; set; }
+        public global::System.Collections.Generic.IList<int>? ConvertPageRange { get; set; }
 
         /// <summary>
         /// The timeout for processing each document, in seconds.<br/>
@@ -436,7 +442,7 @@ namespace G
         /// Default Value: false
         /// </param>
         public BodyChunkFilesWithHierarchicalChunkerV1ChunkHierarchicalFilePost(
-            global::System.Collections.Generic.IList<string> files,
+            global::System.Collections.Generic.IList<byte[]> files,
             bool? includeConvertedDoc,
             global::G.TargetName? targetType,
             global::System.Collections.Generic.IList<global::G.InputFormat>? convertFromFormats,
@@ -449,7 +455,7 @@ namespace G
             global::G.TableFormerMode? convertTableMode,
             bool? convertTableCellMatching,
             global::G.ProcessingPipeline? convertPipeline,
-            byte[]? convertPageRange,
+            global::System.Collections.Generic.IList<int>? convertPageRange,
             double? convertDocumentTimeout,
             bool? convertAbortOnError,
             bool? convertDoTableStructure,

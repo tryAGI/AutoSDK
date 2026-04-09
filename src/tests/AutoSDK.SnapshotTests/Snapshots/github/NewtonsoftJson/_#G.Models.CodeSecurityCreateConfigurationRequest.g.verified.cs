@@ -26,6 +26,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("advanced_security")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestAdvancedSecurityJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestAdvancedSecurity? AdvancedSecurity { get; set; }
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace G
         /// Default Value: enabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependency_graph")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestDependencyGraphJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestDependencyGraph? DependencyGraph { get; set; }
 
         /// <summary>
@@ -40,6 +42,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependency_graph_autosubmit_action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitActionJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction? DependencyGraphAutosubmitAction { get; set; }
 
         /// <summary>
@@ -53,6 +56,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_alerts")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestDependabotAlertsJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestDependabotAlerts? DependabotAlerts { get; set; }
 
         /// <summary>
@@ -60,6 +64,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_security_updates")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestDependabotSecurityUpdatesJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates? DependabotSecurityUpdates { get; set; }
 
         /// <summary>
@@ -67,6 +72,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_scanning_default_setup")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetupJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup? CodeScanningDefaultSetup { get; set; }
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestSecretScanningJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestSecretScanning? SecretScanning { get; set; }
 
         /// <summary>
@@ -81,6 +88,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_push_protection")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestSecretScanningPushProtectionJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestSecretScanningPushProtection? SecretScanningPushProtection { get; set; }
 
         /// <summary>
@@ -88,6 +96,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_validity_checks")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestSecretScanningValidityChecksJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks? SecretScanningValidityChecks { get; set; }
 
         /// <summary>
@@ -95,6 +104,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_non_provider_patterns")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatternsJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns? SecretScanningNonProviderPatterns { get; set; }
 
         /// <summary>
@@ -102,6 +112,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private_vulnerability_reporting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReportingJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting? PrivateVulnerabilityReporting { get; set; }
 
         /// <summary>
@@ -109,6 +120,7 @@ namespace G
         /// Default Value: enforced
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enforcement")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestEnforcementJsonConverter))]
         public global::G.CodeSecurityCreateConfigurationRequestEnforcement? Enforcement { get; set; }
 
         /// <summary>

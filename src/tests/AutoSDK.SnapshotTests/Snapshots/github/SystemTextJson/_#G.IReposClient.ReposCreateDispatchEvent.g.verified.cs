@@ -15,6 +15,7 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ReposCreateDispatchEventAsync(
@@ -22,6 +23,7 @@ namespace G
             string repo,
 
             global::G.ReposCreateDispatchEventRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a repository dispatch event<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="clientPayload">
         /// JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task ReposCreateDispatchEventAsync(
@@ -45,6 +48,7 @@ namespace G
             string repo,
             string eventType,
             object? clientPayload = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

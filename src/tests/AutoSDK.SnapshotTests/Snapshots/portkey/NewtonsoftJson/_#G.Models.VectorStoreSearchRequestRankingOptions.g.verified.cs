@@ -13,6 +13,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ranker")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreSearchRequestRankingOptionsRankerJsonConverter))]
         public global::G.VectorStoreSearchRequestRankingOptionsRanker? Ranker { get; set; }
 
         /// <summary>

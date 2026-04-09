@@ -14,12 +14,14 @@ namespace G
         /// Example: trs_LX9uJKBinWWr
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostToolRouterSessionBySessionIdProxyExecuteResponse> PostToolRouterSessionBySessionIdProxyExecuteAsync(
             string? sessionId,
 
             global::G.PostToolRouterSessionBySessionIdProxyExecuteRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Execute proxy request within a tool router session<br/>
@@ -53,6 +55,7 @@ namespace G
         /// Example: [{"name":"x-api-key","value":"abc123def456","type":"header"}, {"name":"filter","value":"active","type":"query"}]
         /// </param>
         /// <param name="customConnectionData"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostToolRouterSessionBySessionIdProxyExecuteResponse> PostToolRouterSessionBySessionIdProxyExecuteAsync(
@@ -64,6 +67,7 @@ namespace G
             global::G.AnyOf<global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestBinaryBodyVariant1, global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestBinaryBodyVariant2>? binaryBody = default,
             global::System.Collections.Generic.IList<global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestParameter>? parameters = default,
             global::G.OneOf<global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestCustomConnectionDataVariant1, global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestCustomConnectionDataVariant2, global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestCustomConnectionDataVariant3, global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestCustomConnectionDataVariant4, global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestCustomConnectionDataVariant5, global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestCustomConnectionDataVariant6, global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestCustomConnectionDataVariant7, global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestCustomConnectionDataVariant8, global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestCustomConnectionDataVariant9, global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestCustomConnectionDataVariant10, global::G.PostToolRouterSessionBySessionIdProxyExecuteRequestCustomConnectionDataVariant11>? customConnectionData = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

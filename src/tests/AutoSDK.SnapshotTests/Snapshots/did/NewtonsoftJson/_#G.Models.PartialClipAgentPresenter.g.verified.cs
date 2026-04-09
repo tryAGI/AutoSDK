@@ -13,6 +13,7 @@ namespace G
         /// Presenter type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PartialClipAgentPresenterTypeJsonConverter))]
         public global::G.PartialClipAgentPresenterType? Type { get; set; }
 
         /// <summary>

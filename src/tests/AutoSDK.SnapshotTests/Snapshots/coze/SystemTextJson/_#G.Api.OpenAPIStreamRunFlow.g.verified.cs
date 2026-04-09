@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_OpenAPIStreamRunFlowSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_OpenAPIStreamRunFlowSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_OpenAPIStreamRunFlowSecurityRequirement0,
+            };
         partial void PrepareOpenAPIStreamRunFlowArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.OpenAPIStreamRunFlowRequest request);
@@ -27,11 +46,13 @@ namespace G
         /// {"0":{"ops":[{"insert":"执行已发布的工作流，响应方式为流式响应。 \n"},{"attributes":{"anchor":"2fef0d34","lmkr":"1","heading":"h2"},"insert":"*"},{"insert":"接口说明 \n"},{"insert":"调用 API 执行工作流时，对于支持流式输出的工作流，往往需要使用流式响应方式接收响应数据，例如实时展示工作流的输出信息、呈现打字机效果等。 \n"},{"insert":"在流式响应中，服务端不会一次性发送所有数据，而是以数据流的形式逐条发送数据给客户端，数据流中包含工作流执行过程中触发的各种事件（event），直至处理完毕或处理中断。处理结束后，服务端会通过 event: Done 事件提示工作流执行完毕。各个事件的说明可参考"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/docs/developer_guides/workflow_stream_run#970775c1\",\"linkId\":\"c77ImUSDhY\",\"newTab\":true}"},"insert":"返回结果"},{"insert":"。 \n"},{"attributes":{"zoneId":"yH60O7s0y7","zoneType":"Z","type":"tip","title":"说明","border":"#bacefd","background":"#f0f4ff","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"},{"attributes":{"anchor":"37a5ac1f","lmkr":"1","heading":"h2"},"insert":"*"},{"insert":"限制说明\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"此接口为同步接口，如果工作流整体或某些节点运行超时，Bot 可能无法提供符合预期的回复。同步执行时，工作流整体超时时间限制可参考"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/docs/guides/workflow_limits\",\"linkId\":\"jCTdLPCnbs\",\"newTab\":true}"},"insert":"工作流使用限制"},{"insert":"。 \n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"attributes":{"zoneId":"kv7Sy9XJ2C","zoneType":"Z","type":"tip","title":"说明","border":"#bacefd","background":"#f0f4ff","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"}],"zoneId":"0","zoneType":"Z"},"yH60O7s0y7":{"ops":[{"insert":"目前支持流式响应的工作流节点包括"},{"attributes":{"bold":"true"},"insert":"输出节点"},{"insert":"、"},{"attributes":{"bold":"true"},"insert":"问答节点"},{"insert":"和"},{"attributes":{"bold":"true"},"insert":"开启了流式输出的结束节点"},{"insert":"。对于不包含这些节点的工作流，可以使用"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/docs/developer_guides/workflow_run\",\"linkId\":\"ohOkmqNIMy\",\"newTab\":true}"},"insert":"执行工作流"},{"insert":"接口一次性接收响应数据。 \n"}],"zoneId":"yH60O7s0y7","zoneType":"Z"},"kv7Sy9XJ2C":{"ops":[{"attributes":{"lmkr":"1","list":"bullet1"},"insert":"*"},{"insert":"通过 API 方式执行工作流前，应确认此工作流已发布，执行从未发布过的工作流时会返回错误码 4200。创建并发布工作流的操作可参考"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/docs/guides/use_workflow\",\"linkId\":\"y9NDHF6qip\",\"newTab\":true}"},"insert":"使用工作流"},{"insert":"。 \n"},{"attributes":{"lmkr":"1","list":"bullet1"},"insert":"*"},{"insert":"调用此 API 之前，应先在扣子平台中试运行此工作流。\n"},{"attributes":{"list":"bullet2","lmkr":"1"},"insert":"*"},{"insert":"如果试运行时需要关联智能体，则调用此 API 执行工作流时，也需要指定 bot_id。通常情况下，执行存在数据库节点、变量节点等节点的工作流需要关联智能体。\n"},{"attributes":{"lmkr":"1","list":"bullet2"},"insert":"*"},{"insert":"执行应用中的工作流时，需要指定 app_id。\n"},{"attributes":{"lmkr":"1","list":"bullet2"},"insert":"*"},{"insert":"请勿同时指定 bot_id 和 app_id，否则 API 会报错 4000，表示请求参数错误。\n"},{"attributes":{"lmkr":"1","list":"bullet1"},"insert":"*"},{"insert":"工作流支持的请求大小上限为 20MB，包括输入参数以及运行期间产生的消息历史等所有相关数据。\n"},{"attributes":{"lmkr":"1","list":"bullet1"},"insert":"*"},{"insert":"此接口为同步接口，如果工作流整体或某些节点运行超时，智能体可能无法提供符合预期的回复，建议将工作流的执行时间控制在 5 分钟以内。同步执行时，工作流整体超时时间限制可参考"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/guides/workflow_limits\",\"linkId\":\"O7UYVmychs\",\"newTab\":true}"},"insert":"工作流使用限制"},{"insert":"。\n"}],"zoneId":"kv7Sy9XJ2C","zoneType":"Z"}}
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OpenAPIStreamRunFlowResponse> OpenAPIStreamRunFlowAsync(
 
             global::G.OpenAPIStreamRunFlowRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -42,142 +63,327 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
-            var __pathBuilder = new global::G.PathBuilder(
-                path: "/v1/workflow/stream_run",
-                baseUri: HttpClient.BaseAddress); 
-            var __path = __pathBuilder.ToString();
-            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_OpenAPIStreamRunFlowSecurityRequirements,
+                operationName: "OpenAPIStreamRunFlowAsync");
+
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: true);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: "/v1/workflow/stream_run",
+                                baseUri: HttpClient.BaseAddress);
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
-            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
-            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
+                foreach (var __authorization in __authorizations)
                 {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
-            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
-            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                content: __httpRequestContentBody,
-                encoding: global::System.Text.Encoding.UTF8,
-                mediaType: "application/json");
-            __httpRequest.Content = __httpRequestContent;
-
-            PrepareRequest(
-                client: HttpClient,
-                request: __httpRequest);
-            PrepareOpenAPIStreamRunFlowRequest(
-                httpClient: HttpClient,
-                httpRequestMessage: __httpRequest,
-                request: request);
-
-            using var __response = await HttpClient.SendAsync(
-                request: __httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
-
-            ProcessResponse(
-                client: HttpClient,
-                response: __response);
-            ProcessOpenAPIStreamRunFlowResponse(
-                httpClient: HttpClient,
-                httpResponseMessage: __response);
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessOpenAPIStreamRunFlowResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-
-                    return
-                        global::G.OpenAPIStreamRunFlowResponse.FromJson(__content, JsonSerializerOptions) ??
-                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                }
-                catch (global::System.Exception __ex)
-                {
-                    throw new global::G.ApiException(
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
+                    if (__authorization.Type == "Http" ||
+                        __authorization.Type == "OAuth2")
                     {
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
+                        __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                            scheme: __authorization.Name,
+                            parameter: __authorization.Value);
+                    }
+                    else if (__authorization.Type == "ApiKey" &&
+                             __authorization.Location == "Header")
+                    {
+                        __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                    }
                 }
-            }
-            else
-            {
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                    using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                        cancellationToken
-#endif
-                    ).ConfigureAwait(false);
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
+                            __httpRequest.Content = __httpRequestContent;
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
 
-                    return
-                        await global::G.OpenAPIStreamRunFlowResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
-                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                }
-                catch (global::System.Exception __ex)
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareOpenAPIStreamRunFlowRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    request: request);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
                 {
-                    string? __content = null;
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "OpenAPIStreamRunFlow",
+                                methodName: "OpenAPIStreamRunFlowAsync",
+                                pathTemplate: "\"/v1/workflow/stream_run\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
-                        __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                            cancellationToken
-#endif
-                        ).ConfigureAwait(false);
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                     }
-                    catch (global::System.Exception)
+                    catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "OpenAPIStreamRunFlow",
+                                methodName: "OpenAPIStreamRunFlowAsync",
+                                pathTemplate: "\"/v1/workflow/stream_run\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
                     }
 
-                    throw new global::G.ApiException(
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "OpenAPIStreamRunFlow",
+                                methodName: "OpenAPIStreamRunFlowAsync",
+                                pathTemplate: "\"/v1/workflow/stream_run\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
                 }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessOpenAPIStreamRunFlowResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "OpenAPIStreamRunFlow",
+                                methodName: "OpenAPIStreamRunFlowAsync",
+                                pathTemplate: "\"/v1/workflow/stream_run\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "OpenAPIStreamRunFlow",
+                                methodName: "OpenAPIStreamRunFlowAsync",
+                                pathTemplate: "\"/v1/workflow/stream_run\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+
+                            if (__effectiveReadResponseAsString)
+                            {
+                                var __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                ProcessResponseContent(
+                                    client: HttpClient,
+                                    response: __response,
+                                    content: ref __content);
+                                ProcessOpenAPIStreamRunFlowResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
+
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+
+                                    return
+                                        global::G.OpenAPIStreamRunFlowResponse.FromJson(__content, JsonSerializerOptions) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    return
+                                        await global::G.OpenAPIStreamRunFlowResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    string? __content = null;
+                                    try
+                                    {
+                                        __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                            __effectiveCancellationToken
+                #endif
+                                        ).ConfigureAwait(false);
+                                    }
+                                    catch (global::System.Exception)
+                                    {
+                                    }
+
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
             }
         }
         /// <summary>
@@ -205,6 +411,7 @@ namespace G
         /// <param name="workflowVersion">
         /// 资源库工作流版本，只有运行工作流为资源库内工作流时可以传值，不传默认使用最新版本
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OpenAPIStreamRunFlowResponse> OpenAPIStreamRunFlowAsync(
@@ -215,6 +422,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? ext = default,
             object? parameters = default,
             string? workflowVersion = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.OpenAPIStreamRunFlowRequest
@@ -230,6 +438,7 @@ namespace G
 
             return await OpenAPIStreamRunFlowAsync(
                 request: __request,
+                requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }

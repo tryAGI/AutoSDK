@@ -13,6 +13,7 @@ namespace G
         /// This is the tag for the token. It represents its scope.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TokenTagJsonConverter))]
         public global::G.TokenTag? Tag { get; set; }
 
         /// <summary>

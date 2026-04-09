@@ -26,6 +26,7 @@ namespace G
         /// The status of your transcript. Possible values are queued, processing, completed, or error.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptStatusJsonConverter))]
         public global::G.TranscriptStatus Status { get; set; } = default!;
 
         /// <summary>

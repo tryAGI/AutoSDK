@@ -33,6 +33,7 @@ namespace G
         /// Default Value: cost_effective
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtractConfigurationTierJsonConverter))]
         public global::G.ExtractConfigurationTier? Tier { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace G
         /// Default Value: per_doc
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extraction_target")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtractConfigurationExtractionTargetJsonConverter))]
         public global::G.ExtractConfigurationExtractionTarget? ExtractionTarget { get; set; }
 
         /// <summary>

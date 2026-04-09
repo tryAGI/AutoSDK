@@ -43,6 +43,7 @@ namespace G
         /// Default Value: chat
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatPromptTypeJsonConverter))]
         public global::G.ChatPromptType? Type { get; set; }
 
         /// <summary>

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class MetricsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListPipelineTriggerChartRecordsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListPipelineTriggerChartRecordsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListPipelineTriggerChartRecordsSecurityRequirement0,
+            };
         partial void PrepareListPipelineTriggerChartRecordsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? aggregationWindow,
@@ -46,13 +65,19 @@ namespace G
                 aggregationWindow: ref aggregationWindow,
                 filter: ref filter);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListPipelineTriggerChartRecordsSecurityRequirements,
+                operationName: "ListPipelineTriggerChartRecordsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/metrics/vdp/pipeline/charts",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("aggregationWindow", aggregationWindow?.ToString())
                 .AddOptionalParameter("filter", filter) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -62,7 +87,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

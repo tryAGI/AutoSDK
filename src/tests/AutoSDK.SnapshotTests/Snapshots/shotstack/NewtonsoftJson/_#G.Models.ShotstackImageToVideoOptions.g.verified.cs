@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ShotstackImageToVideoOptionsType.ImageToVideo</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ShotstackImageToVideoOptionsTypeJsonConverter))]
         public global::G.ShotstackImageToVideoOptionsType Type { get; set; } = global::G.ShotstackImageToVideoOptionsType.ImageToVideo;
 
         /// <summary>

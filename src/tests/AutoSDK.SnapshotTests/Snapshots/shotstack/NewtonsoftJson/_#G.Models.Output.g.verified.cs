@@ -22,6 +22,7 @@ namespace G
         /// </summary>
         /// <example>mp4</example>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputFormatJsonConverter))]
         public global::G.OutputFormat Format { get; set; } = default!;
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// </summary>
         /// <example>hd</example>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputResolutionJsonConverter))]
         public global::G.OutputResolution? Resolution { get; set; }
 
         /// <summary>
@@ -51,6 +53,7 @@ namespace G
         /// </summary>
         /// <example>16:9</example>
         [global::Newtonsoft.Json.JsonProperty("aspectRatio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputAspectRatioJsonConverter))]
         public global::G.OutputAspectRatio? AspectRatio { get; set; }
 
         /// <summary>
@@ -89,6 +92,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scaleTo")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputScaleToJsonConverter))]
         public global::G.OutputScaleTo? ScaleTo { get; set; }
 
         /// <summary>
@@ -103,6 +107,7 @@ namespace G
         /// </summary>
         /// <example>medium</example>
         [global::Newtonsoft.Json.JsonProperty("quality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputQualityJsonConverter))]
         public global::G.OutputQuality? Quality { get; set; }
 
         /// <summary>

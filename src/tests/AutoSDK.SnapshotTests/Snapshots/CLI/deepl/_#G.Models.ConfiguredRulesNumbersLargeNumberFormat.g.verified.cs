@@ -36,11 +36,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        UseKoreanWords___WithSpace,
+        UseKoreanWords만억조WithSpace,
         /// <summary>
         /// 
         /// </summary>
-        UseKoreanWords___WithoutSpace,
+        UseKoreanWords만억조WithoutSpace,
     }
 
     /// <summary>
@@ -61,8 +61,8 @@ namespace G
                 ConfiguredRulesNumbersLargeNumberFormat.UseChineseCharactersForTenThousandsAndHundredMillions => "use_chinese_characters_for_ten_thousands_and_hundred_millions",
                 ConfiguredRulesNumbersLargeNumberFormat.UseCommaToSeparateLargeNumbersIntoUnitsOfThreeExceptForCalendarYears => "use_comma_to_separate_large_numbers_into_units_of_three_except_for_calendar_years",
                 ConfiguredRulesNumbersLargeNumberFormat.UseKanjiForTrillionsHundredMillionsAndTenThousands => "use_kanji_for_trillions_hundred_millions_and_ten_thousands",
-                ConfiguredRulesNumbersLargeNumberFormat.UseKoreanWords___WithSpace => "use_korean_words_만_억_조_with_space",
-                ConfiguredRulesNumbersLargeNumberFormat.UseKoreanWords___WithoutSpace => "use_korean_words_만_억_조_without_space",
+                ConfiguredRulesNumbersLargeNumberFormat.UseKoreanWords만억조WithSpace => "use_korean_words_만_억_조_with_space",
+                ConfiguredRulesNumbersLargeNumberFormat.UseKoreanWords만억조WithoutSpace => "use_korean_words_만_억_조_without_space",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -79,8 +79,8 @@ namespace G
                 "use_chinese_characters_for_ten_thousands_and_hundred_millions" => ConfiguredRulesNumbersLargeNumberFormat.UseChineseCharactersForTenThousandsAndHundredMillions,
                 "use_comma_to_separate_large_numbers_into_units_of_three_except_for_calendar_years" => ConfiguredRulesNumbersLargeNumberFormat.UseCommaToSeparateLargeNumbersIntoUnitsOfThreeExceptForCalendarYears,
                 "use_kanji_for_trillions_hundred_millions_and_ten_thousands" => ConfiguredRulesNumbersLargeNumberFormat.UseKanjiForTrillionsHundredMillionsAndTenThousands,
-                "use_korean_words_만_억_조_with_space" => ConfiguredRulesNumbersLargeNumberFormat.UseKoreanWords___WithSpace,
-                "use_korean_words_만_억_조_without_space" => ConfiguredRulesNumbersLargeNumberFormat.UseKoreanWords___WithoutSpace,
+                "use_korean_words_만_억_조_with_space" => ConfiguredRulesNumbersLargeNumberFormat.UseKoreanWords만억조WithSpace,
+                "use_korean_words_만_억_조_without_space" => ConfiguredRulesNumbersLargeNumberFormat.UseKoreanWords만억조WithoutSpace,
                 _ => null,
             };
         }

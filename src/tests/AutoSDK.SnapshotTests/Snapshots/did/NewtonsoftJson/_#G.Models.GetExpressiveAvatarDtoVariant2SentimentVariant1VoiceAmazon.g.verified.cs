@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonTypeJsonConverter))]
         public global::G.GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonType Type { get; set; }
 
         /// <summary>
@@ -21,6 +22,7 @@ namespace G
         /// </summary>
         /// <example>Joanna</example>
         [global::Newtonsoft.Json.JsonProperty("voice_id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceIdJsonConverter))]
         public global::G.GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId VoiceId { get; set; } = default!;
 
         /// <summary>

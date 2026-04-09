@@ -32,6 +32,7 @@ namespace G
         /// Sentiment
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sentiment", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SentimentJsonConverter))]
         public global::G.Sentiment Sentiment { get; set; } = default!;
 
         /// <summary>

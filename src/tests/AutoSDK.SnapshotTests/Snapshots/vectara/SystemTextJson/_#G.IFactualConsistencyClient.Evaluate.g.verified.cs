@@ -42,6 +42,7 @@ namespace G
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EvaluateFactualConsistencyResponse> EvaluateAsync(
@@ -49,6 +50,7 @@ namespace G
             global::G.EvaluateFactualConsistencyRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Evaluate factual consistency<br/>
@@ -95,6 +97,7 @@ namespace G
         /// <param name="sourceTexts">
         /// The source documents or text snippets against which to evaluate factual consistency.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EvaluateFactualConsistencyResponse> EvaluateAsync(
@@ -103,6 +106,7 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::G.EvaluateFactualConsistencyRequestModelParameters? modelParameters = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

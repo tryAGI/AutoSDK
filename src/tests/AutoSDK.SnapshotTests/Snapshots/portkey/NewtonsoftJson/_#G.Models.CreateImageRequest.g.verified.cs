@@ -42,6 +42,7 @@ namespace G
         /// </summary>
         /// <example>standard</example>
         [global::Newtonsoft.Json.JsonProperty("quality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageRequestQualityJsonConverter))]
         public global::G.CreateImageRequestQuality? Quality { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// </summary>
         /// <example>url</example>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageRequestResponseFormatJsonConverter))]
         public global::G.CreateImageRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
@@ -60,6 +62,7 @@ namespace G
         /// </summary>
         /// <example>1024x1024</example>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageRequestSizeJsonConverter))]
         public global::G.CreateImageRequestSize? Size { get; set; }
 
         /// <summary>
@@ -69,6 +72,7 @@ namespace G
         /// </summary>
         /// <example>vivid</example>
         [global::Newtonsoft.Json.JsonProperty("style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageRequestStyleJsonConverter))]
         public global::G.CreateImageRequestStyle? Style { get; set; }
 
         /// <summary>

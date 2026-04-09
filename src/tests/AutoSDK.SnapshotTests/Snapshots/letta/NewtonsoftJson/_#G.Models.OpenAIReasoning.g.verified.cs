@@ -14,6 +14,7 @@ namespace G
         /// Default Value: minimal
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIReasoningReasoningEffortJsonConverter))]
         public global::G.OpenAIReasoningReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>

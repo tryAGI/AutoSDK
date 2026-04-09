@@ -122,6 +122,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service_tier")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateResponseRequestServiceTierJsonConverter))]
         public global::G.CreateResponseRequestServiceTier? ServiceTier { get; set; }
 
         /// <summary>
@@ -129,6 +130,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateResponseRequestTruncationJsonConverter))]
         public global::G.CreateResponseRequestTruncation? Truncation { get; set; }
 
         /// <summary>

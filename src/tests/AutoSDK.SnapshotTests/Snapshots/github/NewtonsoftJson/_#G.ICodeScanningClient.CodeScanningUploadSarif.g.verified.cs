@@ -35,6 +35,7 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CodeScanningSarifsReceipt> CodeScanningUploadSarifAsync(
@@ -42,6 +43,7 @@ namespace G
             string repo,
 
             global::G.CodeScanningUploadSarifRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload an analysis as SARIF data<br/>
@@ -98,6 +100,7 @@ namespace G
         /// Whether the SARIF file will be validated according to the code scanning specifications.<br/>
         /// This parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CodeScanningSarifsReceipt> CodeScanningUploadSarifAsync(
@@ -110,6 +113,7 @@ namespace G
             global::System.DateTime? startedAt = default,
             string? toolName = default,
             bool? validate = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

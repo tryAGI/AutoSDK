@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetInternalActionExecutionLogByIdResponseStepTypeJsonConverter))]
         public global::G.GetInternalActionExecutionLogByIdResponseStepType Type { get; set; } = default!;
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetInternalActionExecutionLogByIdResponseStepStatusJsonConverter))]
         public global::G.GetInternalActionExecutionLogByIdResponseStepStatus Status { get; set; } = default!;
 
         /// <summary>

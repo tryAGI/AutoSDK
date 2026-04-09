@@ -25,6 +25,7 @@ namespace G
         /// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodespacesCreateOrUpdateOrgSecretRequestVisibilityJsonConverter))]
         public global::G.CodespacesCreateOrUpdateOrgSecretRequestVisibility Visibility { get; set; } = default!;
 
         /// <summary>

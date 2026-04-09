@@ -13,12 +13,14 @@ namespace G
         /// This is the aggregation operation you want to perform.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operation", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnalyticsOperationOperationJsonConverter))]
         public global::G.AnalyticsOperationOperation Operation { get; set; } = default!;
 
         /// <summary>
         /// This is the columns you want to perform the aggregation operation on.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("column", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnalyticsOperationColumnJsonConverter))]
         public global::G.AnalyticsOperationColumn Column { get; set; } = default!;
 
         /// <summary>

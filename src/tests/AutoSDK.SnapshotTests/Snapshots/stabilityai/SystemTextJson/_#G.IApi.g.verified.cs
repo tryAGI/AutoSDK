@@ -46,23 +46,28 @@ namespace G
         public bool ReadResponseAsString { get; set; }
 
         /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::G.AutoSDKClientOptions Options { get; }
+
+        /// <summary>
         /// 
         /// </summary>
         global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; }
 
 
         /// <summary>
-        /// Enumerate available engines
+        /// Enumerate available engines.
         /// </summary>
         public V1EnginesClient V1Engines { get; }
 
         /// <summary>
-        /// Generate images from text, existing images, or both
+        /// Generate images from text, existing images, or both.
         /// </summary>
         public V1GenerationClient V1Generation { get; }
 
         /// <summary>
-        /// Manage your Stability.ai account, and view account/organization balances
+        /// Manage your Stability.ai account, and view account/organization balances.
         /// </summary>
         public V1UserClient V1User { get; }
 

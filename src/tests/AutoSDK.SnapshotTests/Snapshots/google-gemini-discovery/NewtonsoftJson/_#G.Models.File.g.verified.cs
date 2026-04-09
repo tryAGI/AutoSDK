@@ -88,12 +88,14 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileStateJsonConverter))]
         public global::G.FileState? State { get; set; }
 
         /// <summary>
         /// Source of the File.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileSourceJsonConverter))]
         public global::G.FileSource? Source { get; set; }
 
         /// <summary>

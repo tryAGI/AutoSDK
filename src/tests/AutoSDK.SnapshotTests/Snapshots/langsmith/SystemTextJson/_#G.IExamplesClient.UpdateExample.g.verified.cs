@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="exampleId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateExampleAsync(
             global::System.Guid exampleId,
 
             global::G.ExampleUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Example<br/>
@@ -32,6 +34,7 @@ namespace G
         /// <param name="overwrite">
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateExampleAsync(
@@ -43,6 +46,7 @@ namespace G
             object? metadata = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
             bool? overwrite = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

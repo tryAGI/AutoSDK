@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="workflowId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenAPIToggleCollaborationModeResponse> OpenAPIToggleCollaborationModeAsync(
             string workflowId,
 
             global::G.OpenAPIToggleCollaborationModeRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 开启或关闭工作流多人协作<br/>
@@ -24,11 +26,13 @@ namespace G
         /// </summary>
         /// <param name="workflowId"></param>
         /// <param name="collaborationMode"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenAPIToggleCollaborationModeResponse> OpenAPIToggleCollaborationModeAsync(
             string workflowId,
             global::G.OpenAPIToggleCollaborationModeRequestCollaborationMode? collaborationMode = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

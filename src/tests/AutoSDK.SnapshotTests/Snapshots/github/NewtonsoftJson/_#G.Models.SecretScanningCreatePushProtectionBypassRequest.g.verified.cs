@@ -13,6 +13,7 @@ namespace G
         /// The reason for bypassing push protection.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reason", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretScanningPushProtectionBypassReasonJsonConverter))]
         public global::G.SecretScanningPushProtectionBypassReason Reason { get; set; } = default!;
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.HeyGenGeneratedAssetProvider.Heygen</default>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HeyGenGeneratedAssetProviderJsonConverter))]
         public global::G.HeyGenGeneratedAssetProvider Provider { get; set; } = global::G.HeyGenGeneratedAssetProvider.Heygen;
 
         /// <summary>

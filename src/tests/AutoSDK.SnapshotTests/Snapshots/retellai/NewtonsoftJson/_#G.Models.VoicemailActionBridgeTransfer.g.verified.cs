@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <example>bridge_transfer</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoicemailActionBridgeTransferTypeJsonConverter))]
         public global::G.VoicemailActionBridgeTransferType Type { get; set; }
 
         /// <summary>

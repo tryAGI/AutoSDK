@@ -13,6 +13,7 @@ namespace G
         /// AWS region where Bedrock is configured.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateAnthropicBedrockCredentialDTORegionJsonConverter))]
         public global::G.UpdateAnthropicBedrockCredentialDTORegion? Region { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImportJobStatusResultDiscriminatorStatusJsonConverter))]
         public global::G.ImportJobStatusResultDiscriminatorStatus? Status { get; set; }
 
         /// <summary>

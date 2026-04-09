@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaInvalidRequestErrorType.InvalidRequestError</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaInvalidRequestErrorTypeJsonConverter))]
         public global::G.BetaInvalidRequestErrorType Type { get; set; } = global::G.BetaInvalidRequestErrorType.InvalidRequestError;
 
         /// <summary>

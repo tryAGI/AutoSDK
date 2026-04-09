@@ -17,6 +17,7 @@ namespace G
         /// - `ERROR_TOXIC` - the model generated a reply that was deemed toxic
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatStreamEndEventY8gq2xFinishReasonJsonConverter))]
         public global::G.ChatStreamEndEventY8gq2xFinishReason FinishReason { get; set; } = default!;
 
         /// <summary>

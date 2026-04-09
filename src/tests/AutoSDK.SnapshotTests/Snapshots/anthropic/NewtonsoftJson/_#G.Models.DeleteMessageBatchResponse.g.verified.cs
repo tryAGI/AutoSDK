@@ -22,6 +22,7 @@ namespace G
         /// </summary>
         /// <default>global::G.DeleteMessageBatchResponseType.MessageBatchDeleted</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeleteMessageBatchResponseTypeJsonConverter))]
         public global::G.DeleteMessageBatchResponseType Type { get; set; } = global::G.DeleteMessageBatchResponseType.MessageBatchDeleted;
 
         /// <summary>

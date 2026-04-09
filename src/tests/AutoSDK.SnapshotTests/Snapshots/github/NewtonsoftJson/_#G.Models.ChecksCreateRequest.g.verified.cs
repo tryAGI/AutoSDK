@@ -38,6 +38,7 @@ namespace G
         /// Default Value: queued
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChecksCreateRequestStatusJsonConverter))]
         public global::G.ChecksCreateRequestStatus? Status { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChecksCreateRequestConclusionJsonConverter))]
         public global::G.ChecksCreateRequestConclusion? Conclusion { get; set; }
 
         /// <summary>

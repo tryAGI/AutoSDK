@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("direction", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationHistorySIPTrunkingPhoneCallModelDirectionJsonConverter))]
         public global::G.ConversationHistorySIPTrunkingPhoneCallModelDirection Direction { get; set; } = default!;
 
         /// <summary>

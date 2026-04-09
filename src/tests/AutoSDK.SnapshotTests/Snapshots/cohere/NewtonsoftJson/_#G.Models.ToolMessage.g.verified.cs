@@ -13,6 +13,7 @@ namespace G
         /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatRoleJsonConverter))]
         public global::G.ChatRole Role { get; set; } = default!;
 
         /// <summary>

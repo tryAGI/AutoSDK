@@ -19,6 +19,7 @@ namespace G
         /// </summary>
         /// <default>global::G.HtmlAssetType.Html</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HtmlAssetTypeJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.HtmlAssetType Type { get; set; } = global::G.HtmlAssetType.Html;
 
@@ -79,6 +80,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("position")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HtmlAssetPositionJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.HtmlAssetPosition? Position { get; set; }
 

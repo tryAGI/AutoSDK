@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -48,7 +49,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        agent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TemplatesCreateTemplateNoProjectRequestVariant1>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateNoProjectRequestVariant1> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant1).Name}");
+                        agent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,7 +64,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        agentFile = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TemplatesCreateTemplateNoProjectRequestVariant2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateNoProjectRequestVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant2).Name}");
+                        agentFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -76,7 +81,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    agent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TemplatesCreateTemplateNoProjectRequestVariant1>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateNoProjectRequestVariant1> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant1).Name}");
+                    agent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -87,7 +94,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    agentFile = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TemplatesCreateTemplateNoProjectRequestVariant2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateNoProjectRequestVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant2).Name}");
+                    agentFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -112,15 +121,20 @@ namespace G.JsonConverters
             global::G.TemplatesCreateTemplateNoProjectRequest value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsAgent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Agent, typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant1), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateNoProjectRequestVariant1?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant1).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Agent!, typeInfo);
             }
             else if (value.IsAgentFile)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentFile, typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateNoProjectRequestVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentFile!, typeInfo);
             }
         }
     }

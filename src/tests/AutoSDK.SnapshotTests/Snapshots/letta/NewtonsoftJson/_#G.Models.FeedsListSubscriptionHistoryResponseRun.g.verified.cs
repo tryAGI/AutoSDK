@@ -19,12 +19,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FeedsListSubscriptionHistoryResponseRunTypeJsonConverter))]
         public global::G.FeedsListSubscriptionHistoryResponseRunType Type { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FeedsListSubscriptionHistoryResponseRunStatusJsonConverter))]
         public global::G.FeedsListSubscriptionHistoryResponseRunStatus Status { get; set; } = default!;
 
         /// <summary>

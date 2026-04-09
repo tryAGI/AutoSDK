@@ -19,6 +19,7 @@ namespace G
         /// The format of the public key.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpkiPemPublicKeyConfigFormatJsonConverter))]
         public global::G.SpkiPemPublicKeyConfigFormat Format { get; set; }
 
         /// <summary>

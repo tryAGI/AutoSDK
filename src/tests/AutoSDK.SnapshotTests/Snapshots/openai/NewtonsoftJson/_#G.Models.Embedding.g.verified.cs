@@ -25,6 +25,7 @@ namespace G
         /// The object type, which is always "embedding".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingObjectJsonConverter))]
         public global::G.EmbeddingObject Object { get; set; }
 
         /// <summary>

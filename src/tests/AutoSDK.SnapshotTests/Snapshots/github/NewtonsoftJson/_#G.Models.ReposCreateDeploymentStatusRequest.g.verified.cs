@@ -13,6 +13,7 @@ namespace G
         /// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposCreateDeploymentStatusRequestStateJsonConverter))]
         public global::G.ReposCreateDeploymentStatusRequestState State { get; set; } = default!;
 
         /// <summary>

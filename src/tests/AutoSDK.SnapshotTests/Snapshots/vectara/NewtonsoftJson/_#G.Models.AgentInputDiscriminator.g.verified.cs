@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentInputDiscriminatorTypeJsonConverter))]
         public global::G.AgentInputDiscriminatorType? Type { get; set; }
 
         /// <summary>

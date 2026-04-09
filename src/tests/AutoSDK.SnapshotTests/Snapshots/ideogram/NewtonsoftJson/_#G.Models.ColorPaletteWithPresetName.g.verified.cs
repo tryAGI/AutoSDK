@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>PASTEL</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ColorPalettePresetNameJsonConverter))]
         public global::G.ColorPalettePresetName Name { get; set; } = default!;
 
         /// <summary>

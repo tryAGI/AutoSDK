@@ -280,6 +280,87 @@ paths:
     }
 
     [TestMethod]
+    public void OpenApi32MediaTypeItemSchema_SseResponse_UsesStreamedItemType()
+    {
+        var settings = DefaultSettings;
+        var data = AutoSDK.Generation.Data.Prepare(((@"openapi: 3.2.0
+info:
+  title: Test
+  version: 1.0.0
+components:
+  schemas:
+    StreamChunk:
+      type: object
+      properties:
+        delta:
+          type: string
+  mediaTypes:
+    StreamChunkSse:
+      itemSchema:
+        $ref: '#/components/schemas/StreamChunk'
+paths:
+  /events:
+    get:
+      operationId: streamEvents
+      responses:
+        '200':
+          description: OK
+          content:
+            text/event-stream:
+              $ref: '#/components/mediaTypes/StreamChunkSse'
+", settings), GlobalSettings: settings));
+        var endPoint = data.Methods.Single();
+
+        endPoint.StreamFormat.Should().Be(StreamFormat.ServerSentEvents);
+        endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability.Should().Be("global::G.StreamChunk");
+
+        var generatedCode = Sources.GenerateEndPoint(endPoint);
+
+        generatedCode.Should().Contain("IAsyncEnumerable<global::G.StreamChunk> StreamEventsAsync(");
+        generatedCode.Should().Contain("SseParser");
+    }
+
+    [TestMethod]
+    public void OpenApi32SequentialJson_ArraySchema_UsesArrayItemTypeForStreaming()
+    {
+        var settings = DefaultSettings;
+        var data = AutoSDK.Generation.Data.Prepare(((@"openapi: 3.2.0
+info:
+  title: Test
+  version: 1.0.0
+components:
+  schemas:
+    StreamChunk:
+      type: object
+      properties:
+        delta:
+          type: string
+paths:
+  /records:
+    get:
+      operationId: streamRecords
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json-seq:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StreamChunk'
+", settings), GlobalSettings: settings));
+        var endPoint = data.Methods.Single();
+
+        endPoint.StreamFormat.Should().Be(StreamFormat.Ndjson);
+        endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability.Should().Be("global::G.StreamChunk");
+
+        var generatedCode = Sources.GenerateEndPoint(endPoint);
+
+        generatedCode.Should().Contain("IAsyncEnumerable<global::G.StreamChunk> StreamRecordsAsync(");
+        generatedCode.Should().Contain("if (__character == '\\u001e')");
+    }
+
+    [TestMethod]
     public void ErrorResponse_StreamPath_PopulatesResponseBody()
     {
         var endPoint = LoadEndPoint(@"openapi: 3.0.1

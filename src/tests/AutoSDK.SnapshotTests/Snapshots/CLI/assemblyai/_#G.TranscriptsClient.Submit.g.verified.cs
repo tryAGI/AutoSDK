@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TranscriptsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_SubmitSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_SubmitSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_SubmitSecurityRequirement0,
+            };
         partial void PrepareSubmitArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.TranscriptParams request);
@@ -40,9 +59,15 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SubmitSecurityRequirements,
+                operationName: "SubmitAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/transcript",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -52,7 +77,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

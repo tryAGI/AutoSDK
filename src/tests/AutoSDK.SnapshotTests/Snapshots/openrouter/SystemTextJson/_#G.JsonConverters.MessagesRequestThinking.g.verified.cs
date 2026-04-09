@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -48,7 +49,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        messagesRequestThinking0 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessagesRequestThinking0>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking0> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking0).Name}");
+                        messagesRequestThinking0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,7 +64,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        messagesRequestThinking1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessagesRequestThinking1>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking1> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking1).Name}");
+                        messagesRequestThinking1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +79,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        messagesRequestThinking2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessagesRequestThinking2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking2).Name}");
+                        messagesRequestThinking2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -89,7 +96,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    messagesRequestThinking0 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessagesRequestThinking0>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking0> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking0).Name}");
+                    messagesRequestThinking0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -100,7 +109,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    messagesRequestThinking1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessagesRequestThinking1>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking1> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking1).Name}");
+                    messagesRequestThinking1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -111,7 +122,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    messagesRequestThinking2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MessagesRequestThinking2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking2).Name}");
+                    messagesRequestThinking2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -138,19 +151,26 @@ namespace G.JsonConverters
             global::G.MessagesRequestThinking value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsMessagesRequestThinking0)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking0, typeof(global::G.MessagesRequestThinking0), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking0?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking0).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking0!, typeInfo);
             }
             else if (value.IsMessagesRequestThinking1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking1, typeof(global::G.MessagesRequestThinking1), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking1?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking1).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking1!, typeInfo);
             }
             else if (value.IsMessagesRequestThinking2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking2, typeof(global::G.MessagesRequestThinking2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestThinking2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestThinking2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestThinking2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestThinking2!, typeInfo);
             }
         }
     }

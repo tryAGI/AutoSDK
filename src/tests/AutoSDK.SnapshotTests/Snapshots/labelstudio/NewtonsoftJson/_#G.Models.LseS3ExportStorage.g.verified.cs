@@ -147,6 +147,7 @@ namespace G
         /// * `completed_with_errors` - Completed with errors
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StatusC5aEnumJsonConverter))]
         public global::G.StatusC5aEnum? Status { get; set; }
 
         /// <summary>

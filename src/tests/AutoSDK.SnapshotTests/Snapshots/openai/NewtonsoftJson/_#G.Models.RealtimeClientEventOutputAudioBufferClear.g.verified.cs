@@ -23,6 +23,7 @@ namespace G
         /// The event type, must be `output_audio_buffer.clear`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventOutputAudioBufferClearTypeJsonConverter))]
         public global::G.RealtimeClientEventOutputAudioBufferClearType Type { get; set; }
 
         /// <summary>

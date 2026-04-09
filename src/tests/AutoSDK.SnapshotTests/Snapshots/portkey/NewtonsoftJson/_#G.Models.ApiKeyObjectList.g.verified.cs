@@ -20,6 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiKeyObjectListObjectJsonConverter))]
         public global::G.ApiKeyObjectListObject? Object { get; set; }
 
         /// <summary>

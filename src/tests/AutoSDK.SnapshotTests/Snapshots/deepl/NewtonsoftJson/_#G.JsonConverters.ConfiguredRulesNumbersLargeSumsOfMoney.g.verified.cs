@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.ConfiguredRulesNumbersLargeSumsOfMoney.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ConfiguredRulesNumbersLargeSumsOfMoneyJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.ConfiguredRulesNumbersLargeSumsOfMoney>
+    {
+        /// <inheritdoc />
+        public override global::G.ConfiguredRulesNumbersLargeSumsOfMoney ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.ConfiguredRulesNumbersLargeSumsOfMoney existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.ConfiguredRulesNumbersLargeSumsOfMoneyExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.ConfiguredRulesNumbersLargeSumsOfMoney)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.ConfiguredRulesNumbersLargeSumsOfMoney);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.ConfiguredRulesNumbersLargeSumsOfMoney value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.ConfiguredRulesNumbersLargeSumsOfMoneyExtensions.ToValueString(value));
+        }
+    }
+}

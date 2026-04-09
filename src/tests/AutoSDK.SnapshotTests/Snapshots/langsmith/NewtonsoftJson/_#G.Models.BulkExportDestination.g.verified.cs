@@ -13,6 +13,7 @@ namespace G
         /// Default Value: s3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("destination_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BulkExportDestinationTypeJsonConverter))]
         public global::G.BulkExportDestinationType? DestinationType { get; set; }
 
         /// <summary>

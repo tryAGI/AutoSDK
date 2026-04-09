@@ -14,6 +14,7 @@ namespace G
         /// Default Value: en
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("preset")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StopwordConfigPresetJsonConverter))]
         public global::G.StopwordConfigPreset? Preset { get; set; }
 
         /// <summary>

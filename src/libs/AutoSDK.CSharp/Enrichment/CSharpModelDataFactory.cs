@@ -88,6 +88,8 @@ public static class CSharpModelDataFactory
             .Where(static x => x.IsRequired)
             .ToImmutableArray();
         var modelNamespace = context.GetGeneratedNamespace();
+        var isEnum = context.Schema.IsEnum();
+        var isOpenEnum = isEnum && context.Schema.IsOpenEnum();
 
         var className = context.Id;
         var externalClassName = context.Settings.NamingConvention switch
@@ -105,11 +107,12 @@ public static class CSharpModelDataFactory
             Parents: boxedParents,
             Namespace: modelNamespace,
             Settings: context.Settings.ToEmitterSettings(),
-            Style: context.Schema.IsEnum() ? ModelStyle.Enumeration : context.Settings.ModelStyle,
+            Style: isEnum ? ModelStyle.Enumeration : context.Settings.ModelStyle,
             Properties: GetVisibleProperties(context),
-            EnumValues: context.Schema.IsEnum()
+            EnumValues: isEnum
                 ? ToImmutablePropertyDataArray(context.ComputeEnum())
                 : [],
+            IsOpenEnum: isOpenEnum,
             Summary: context.Schema.GetSummary(),
             Description: context.Schema.Description ?? string.Empty,
             IsDeprecated: context.Schema.IsDeprecated(),

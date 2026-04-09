@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always 'chat.completion'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionResponseObjectJsonConverter))]
         public global::G.CreateChatCompletionResponseObject Object { get; set; }
 
         /// <summary>

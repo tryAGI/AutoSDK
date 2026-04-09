@@ -13,6 +13,7 @@ namespace G
         /// The status of the classify job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StatusEnumJsonConverter))]
         public global::G.StatusEnum Status { get; set; } = default!;
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace G
         /// Default Value: FAST
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassifyModeJsonConverter))]
         public global::G.ClassifyMode? Mode { get; set; }
 
         /// <summary>

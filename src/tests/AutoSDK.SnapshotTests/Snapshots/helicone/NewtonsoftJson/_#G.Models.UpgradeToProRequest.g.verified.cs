@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ui_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpgradeToProRequestUiModeJsonConverter))]
         public global::G.UpgradeToProRequestUiMode? UiMode { get; set; }
 
         /// <summary>

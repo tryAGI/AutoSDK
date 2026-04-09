@@ -25,6 +25,7 @@ namespace G
         /// Supported sizes for AI image generation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditImageGetLayersVariant2ImageImageFromPromptSizeJsonConverter))]
         public global::G.EditImageGetLayersVariant2ImageImageFromPromptSize? Size { get; set; }
 
         /// <summary>

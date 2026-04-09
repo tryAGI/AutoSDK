@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("system_tool_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SystemToolConfigInputParamsDiscriminatorSystemToolTypeJsonConverter))]
         public global::G.SystemToolConfigInputParamsDiscriminatorSystemToolType? SystemToolType { get; set; }
 
         /// <summary>

@@ -10,11 +10,13 @@ namespace G
         /// Create a new experiment. If there is an existing experiment in the project with the same name as the one specified in the request, will return the existing experiment unmodified
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Experiment> PostExperimentAsync(
 
             global::G.CreateExperiment request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create experiment<br/>
@@ -53,6 +55,7 @@ namespace G
         /// <param name="ensureNew">
         /// Normally, creating an experiment with the same name as an existing experiment will return the existing one un-modified. But if `ensure_new` is true, registration will generate a new experiment with a unique name in case of a conflict.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Experiment> PostExperimentAsync(
@@ -67,6 +70,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, object?>? metadata = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             bool? ensureNew = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -19,6 +19,7 @@ namespace G
         /// The type of layout element.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LayoutElementTypeJsonConverter))]
         public global::G.LayoutElementType? Type { get; set; }
 
         /// <summary>

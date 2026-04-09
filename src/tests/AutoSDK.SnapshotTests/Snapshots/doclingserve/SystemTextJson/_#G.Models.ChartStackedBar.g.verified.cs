@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("values")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<byte[]> Values { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>> Values { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,7 +45,7 @@ namespace G
 #endif
         public ChartStackedBar(
             global::System.Collections.Generic.IList<string> label,
-            global::System.Collections.Generic.IList<byte[]> values)
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>> values)
         {
             this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
             this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));

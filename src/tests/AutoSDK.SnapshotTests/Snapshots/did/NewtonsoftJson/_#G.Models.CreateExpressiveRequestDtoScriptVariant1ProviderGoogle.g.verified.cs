@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateExpressiveRequestDtoScriptVariant1ProviderGoogleTypeJsonConverter))]
         public global::G.CreateExpressiveRequestDtoScriptVariant1ProviderGoogleType Type { get; set; }
 
         /// <summary>

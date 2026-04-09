@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("in")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetWalletPackageResponseItemInJsonConverter))]
         public global::G.GetWalletPackageResponseItemIn? In { get; set; }
 
         /// <summary>

@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "dtmf" for DTMF tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateDtmfToolDTOTypeJsonConverter))]
         public global::G.CreateDtmfToolDTOType Type { get; set; }
 
         /// <summary>

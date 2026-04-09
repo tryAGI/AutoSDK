@@ -31,11 +31,13 @@ namespace G
         /// This endpoint is rate-limited and usage is tracked against your API quota.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> ExportAuditLogEventsAsync(
 
             global::G.AuditLogsExportRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Export audit log events as CSV<br/>
@@ -63,11 +65,13 @@ namespace G
         /// This endpoint is rate-limited and usage is tracked against your API quota.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<byte[]>> ExportAuditLogEventsAsResponseAsync(
 
             global::G.AuditLogsExportRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Export audit log events as CSV<br/>
@@ -115,6 +119,7 @@ namespace G
         /// <param name="targetId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<byte[]> ExportAuditLogEventsAsync(
@@ -125,6 +130,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? actions = default,
             global::System.Collections.Generic.IList<string>? actorIds = default,
             string? targetId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

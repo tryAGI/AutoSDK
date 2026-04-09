@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>livekit</example>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LivekitSmartEndpointingPlanProviderJsonConverter))]
         public global::G.LivekitSmartEndpointingPlanProvider Provider { get; set; } = default!;
 
         /// <summary>

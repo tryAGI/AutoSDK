@@ -100,6 +100,21 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
             : $" = {property.DefaultValue};";
     }
 
+    private static string GeneratePropertyConverterAttribute(
+        IJsonSerializer jsonSerializer,
+        EmitterSettings settings,
+        PropertyData property)
+    {
+        if (settings.UsesNewtonsoftJson() &&
+            !property.Type.IsEnum &&
+            !property.Type.IsUnixTimestamp)
+        {
+            return string.Empty;
+        }
+
+        return jsonSerializer.GenerateConverterAttribute(property.ConverterType);
+    }
+
     private static bool HasDeprecatedTypeReferences(ModelData modelData)
     {
         for (var i = 0; i < modelData.Properties.Length; i++)
@@ -297,7 +312,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         {property.Example?.ToXmlDocumentationExample(level: 8)}
         {GenerateValidationAttributes(modelData, property)}
         {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
-        {jsonSerializer.GenerateConverterAttribute(property.ConverterType)}
+        {GeneratePropertyConverterAttribute(jsonSerializer, modelData.Settings, property)}
         {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}
         {(modelData.IsDeprecated || (property.Type is { IsDeprecated: true, IsAnyOfLike: false } && !property.IsRequired) ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This property marked as deprecated.")}\")]" : TrimmedLine)}
         public{(inheritedPropertyNames.Contains(property.Name) ? " new" : string.Empty)}{(property.IsRequired ? requiredKeyword : string.Empty)} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}

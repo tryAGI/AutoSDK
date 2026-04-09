@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <example>center</example>
         [global::Newtonsoft.Json.JsonProperty("horizontal")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichTextAlignmentHorizontalJsonConverter))]
         public global::G.RichTextAlignmentHorizontal? Horizontal { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// </summary>
         /// <example>middle</example>
         [global::Newtonsoft.Json.JsonProperty("vertical")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichTextAlignmentVerticalJsonConverter))]
         public global::G.RichTextAlignmentVertical? Vertical { get; set; }
 
         /// <summary>

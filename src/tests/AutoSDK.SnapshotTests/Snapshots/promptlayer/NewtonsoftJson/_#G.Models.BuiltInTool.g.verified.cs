@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BuiltInToolTypeJsonConverter))]
         public global::G.BuiltInToolType Type { get; set; } = default!;
 
         /// <summary>

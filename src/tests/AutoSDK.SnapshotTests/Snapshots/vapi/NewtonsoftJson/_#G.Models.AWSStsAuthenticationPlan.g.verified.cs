@@ -13,6 +13,7 @@ namespace G
         /// This is the type of authentication plan
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AWSStsAuthenticationPlanTypeJsonConverter))]
         public global::G.AWSStsAuthenticationPlanType Type { get; set; }
 
         /// <summary>

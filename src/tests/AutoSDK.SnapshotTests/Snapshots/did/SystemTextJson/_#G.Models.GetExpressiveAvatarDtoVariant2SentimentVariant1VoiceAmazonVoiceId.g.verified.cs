@@ -81,7 +81,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        L_a,
+        Léa,
         /// <summary>
         /// 
         /// </summary>
@@ -137,7 +137,7 @@ namespace G
                 GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Kimberly => "Kimberly",
                 GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Lucia => "Lucia",
                 GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Lupe => "Lupe",
-                GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.L_a => "Léa",
+                GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Léa => "Léa",
                 GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Matthew => "Matthew",
                 GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Olivia => "Olivia",
                 GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Salli => "Salli",
@@ -171,7 +171,7 @@ namespace G
                 "Kimberly" => GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Kimberly,
                 "Lucia" => GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Lucia,
                 "Lupe" => GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Lupe,
-                "Léa" => GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.L_a,
+                "Léa" => GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Léa,
                 "Matthew" => GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Matthew,
                 "Olivia" => GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Olivia,
                 "Salli" => GetExpressiveAvatarDtoVariant2SentimentVariant1VoiceAmazonVoiceId.Salli,

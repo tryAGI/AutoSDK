@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLiveStopRecordingAckMessageEvent.LiveStopRecording</default>
         /// <example>live.stop_recording</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLiveStopRecordingAckMessageEventJsonConverter))]
         public global::G.CallbackLiveStopRecordingAckMessageEvent Event { get; set; } = global::G.CallbackLiveStopRecordingAckMessageEvent.LiveStopRecording;
 
         /// <summary>

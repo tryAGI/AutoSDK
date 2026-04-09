@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LettaToolReturnContentUnionDiscriminatorTypeJsonConverter))]
         public global::G.LettaToolReturnContentUnionDiscriminatorType? Type { get; set; }
 
         /// <summary>

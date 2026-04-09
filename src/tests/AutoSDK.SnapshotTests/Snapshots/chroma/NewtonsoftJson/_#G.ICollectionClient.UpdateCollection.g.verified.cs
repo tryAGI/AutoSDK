@@ -13,6 +13,7 @@ namespace G
         /// <param name="database"></param>
         /// <param name="collectionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -24,6 +25,7 @@ namespace G
             string collectionId,
 
             global::G.UpdateCollectionPayload request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update collection<br/>
@@ -35,6 +37,7 @@ namespace G
         /// <param name="newConfiguration"></param>
         /// <param name="newMetadata"></param>
         /// <param name="newName"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateCollectionResponse> UpdateCollectionAsync(
@@ -44,6 +47,7 @@ namespace G
             global::G.OneOf<object, global::G.UpdateCollectionConfiguration>? newConfiguration = default,
             global::G.OneOf<object, global::G.HashMap>? newMetadata = default,
             string? newName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

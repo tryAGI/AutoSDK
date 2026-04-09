@@ -19,6 +19,7 @@ public record struct EndPoint(
     EndPointResponse SuccessResponse,
     EquatableArray<EndPointResponse> ErrorResponses,
     EquatableArray<Authorization> Authorizations,
+    EquatableArray<AuthorizationRequirementSet> AuthorizationRequirements,
     EquatableArray<MethodParameter> QueryParameters,
     System.Net.Http.HttpMethod HttpMethod,
     ContentType ContentType,

@@ -10,11 +10,13 @@ namespace G
         /// UpdateResourceAndData
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateResourceAndDataAsync(
 
             global::G.UpdateResourceAndDataRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// UpdateResourceAndData<br/>
@@ -27,6 +29,7 @@ namespace G
         /// <param name="fileURL"></param>
         /// <param name="length"></param>
         /// <param name="isLocked"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateResourceAndDataAsync(
@@ -37,6 +40,7 @@ namespace G
             string fileURL,
             int length,
             bool isLocked,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

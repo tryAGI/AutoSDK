@@ -33,6 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_selection")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InstallationTokenRepositorySelectionJsonConverter))]
         public global::G.InstallationTokenRepositorySelection? RepositorySelection { get; set; }
 
         /// <summary>

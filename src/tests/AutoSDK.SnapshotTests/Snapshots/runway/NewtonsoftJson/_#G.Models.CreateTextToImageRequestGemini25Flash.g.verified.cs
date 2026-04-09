@@ -19,6 +19,7 @@ namespace G
         /// The resolution of the output image.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ratio", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextToImageRequestGemini25FlashRatioJsonConverter))]
         public global::G.CreateTextToImageRequestGemini25FlashRatio Ratio { get; set; } = default!;
 
         /// <summary>

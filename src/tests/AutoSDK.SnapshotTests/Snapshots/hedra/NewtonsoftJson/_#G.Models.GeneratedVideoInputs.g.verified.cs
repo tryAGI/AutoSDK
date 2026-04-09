@@ -43,7 +43,7 @@ namespace G
         /// Normalized coordinates for speaker position(s). A single point for single-speaker; a list for multi-speaker (one per speaker, same length as audio_id list).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bounding_box_target")]
-        public global::G.AnyOf<byte[], global::System.Collections.Generic.IList<byte[]>, object>? BoundingBoxTarget { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, object>? BoundingBoxTarget { get; set; }
 
         /// <summary>
         /// For motion control models: 'video' matches reference video orientation (better for complex motions, max 30s), 'image' preserves character image orientation (better for camera movements, max 10s).
@@ -116,7 +116,7 @@ namespace G
             string? resolution,
             string? aspectRatio,
             int? durationMs,
-            global::G.AnyOf<byte[], global::System.Collections.Generic.IList<byte[]>, object>? boundingBoxTarget,
+            global::G.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, object>? boundingBoxTarget,
             global::G.GeneratedVideoInputsCharacterOrientation2? characterOrientation,
             bool? enhancePrompt,
             global::System.Collections.Generic.IList<global::G.VideoShot>? multiPrompt,

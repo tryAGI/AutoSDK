@@ -22,6 +22,7 @@ namespace G
         /// `opus`, or `pcm16`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionRequestVariant2AudioFormatJsonConverter))]
         public global::G.CreateChatCompletionRequestVariant2AudioFormat Format { get; set; } = default!;
 
         /// <summary>

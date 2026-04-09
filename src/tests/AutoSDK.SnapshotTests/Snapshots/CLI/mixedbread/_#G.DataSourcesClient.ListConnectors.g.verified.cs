@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DataSourcesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListConnectorsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListConnectorsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListConnectorsSecurityRequirement0,
+            };
         partial void PrepareListConnectorsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid dataSourceId,
@@ -76,6 +95,12 @@ namespace G
                 before: ref before,
                 includeTotal: ref includeTotal);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListConnectorsSecurityRequirements,
+                operationName: "ListConnectorsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/data_sources/{dataSourceId}/connectors",
                 baseUri: HttpClient.BaseAddress); 
@@ -84,7 +109,7 @@ namespace G
                 .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before)
                 .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -94,7 +119,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -10,11 +10,13 @@ namespace G
         /// Create a new organization and corresponding workspace.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AppSchemasTenant> CreateTenantAsync(
 
             global::G.TenantCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Tenant<br/>
@@ -27,6 +29,7 @@ namespace G
         /// <param name="isPersonal">
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AppSchemasTenant> CreateTenantAsync(
@@ -35,6 +38,7 @@ namespace G
             global::System.Guid? organizationId = default,
             string? tenantHandle = default,
             bool? isPersonal = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

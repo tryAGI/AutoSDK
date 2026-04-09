@@ -13,6 +13,7 @@ namespace G
         /// File format of the file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("documentType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateDocumentRequestVariant1DocumentTypeJsonConverter))]
         public global::G.CreateDocumentRequestVariant1DocumentType DocumentType { get; set; } = default!;
 
         /// <summary>

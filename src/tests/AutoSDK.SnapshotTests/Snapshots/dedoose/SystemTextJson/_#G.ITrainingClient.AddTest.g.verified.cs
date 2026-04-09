@@ -10,11 +10,13 @@ namespace G
         /// AddTest
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> AddTestAsync(
 
             global::G.AddTestRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// AddTest<br/>
@@ -27,6 +29,7 @@ namespace G
         /// <param name="createdUserId"></param>
         /// <param name="exIds"></param>
         /// <param name="tagIds"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> AddTestAsync(
@@ -37,6 +40,7 @@ namespace G
             global::System.Guid createdUserId,
             global::System.Collections.Generic.IList<string> exIds,
             global::System.Collections.Generic.IList<string> tagIds,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

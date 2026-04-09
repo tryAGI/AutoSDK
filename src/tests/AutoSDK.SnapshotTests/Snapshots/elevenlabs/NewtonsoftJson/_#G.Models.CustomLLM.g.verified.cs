@@ -44,6 +44,7 @@ namespace G
         /// Default Value: chat_completions
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("api_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomLLMAPITypeJsonConverter))]
         public global::G.CustomLLMAPIType? ApiType { get; set; }
 
         /// <summary>

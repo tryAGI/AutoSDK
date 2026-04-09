@@ -13,12 +13,14 @@ namespace G
         /// This is the type of the scorer, which must be AI.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TestSuiteRunScorerAITypeJsonConverter))]
         public global::G.TestSuiteRunScorerAIType Type { get; set; }
 
         /// <summary>
         /// This is the result of the test suite.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TestSuiteRunScorerAIResultJsonConverter))]
         public global::G.TestSuiteRunScorerAIResult Result { get; set; } = default!;
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaResponseRedactedThinkingBlockType.RedactedThinking</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaResponseRedactedThinkingBlockTypeJsonConverter))]
         public global::G.BetaResponseRedactedThinkingBlockType Type { get; set; } = global::G.BetaResponseRedactedThinkingBlockType.RedactedThinking;
 
         /// <summary>

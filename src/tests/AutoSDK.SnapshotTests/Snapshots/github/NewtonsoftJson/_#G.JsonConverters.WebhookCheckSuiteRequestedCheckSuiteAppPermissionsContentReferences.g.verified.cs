@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferencesJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences>
+    {
+        /// <inheritdoc />
+        public override global::G.WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferencesExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferences value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.WebhookCheckSuiteRequestedCheckSuiteAppPermissionsContentReferencesExtensions.ToValueString(value));
+        }
+    }
+}

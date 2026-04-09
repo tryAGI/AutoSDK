@@ -21,6 +21,7 @@ namespace G
         /// This is the result of a tool call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolCallResultMessageRoleJsonConverter))]
         public global::G.ToolCallResultMessageRole Role { get; set; }
 
         /// <summary>

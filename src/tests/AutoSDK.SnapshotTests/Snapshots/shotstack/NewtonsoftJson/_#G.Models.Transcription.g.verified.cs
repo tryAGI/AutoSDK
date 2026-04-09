@@ -18,6 +18,7 @@ namespace G
         /// </summary>
         /// <example>vtt</example>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptionFormatJsonConverter))]
         public global::G.TranscriptionFormat? Format { get; set; }
 
         /// <summary>

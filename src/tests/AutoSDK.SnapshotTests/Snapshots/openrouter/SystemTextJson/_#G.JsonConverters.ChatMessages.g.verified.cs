@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -71,7 +72,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        chatSystemMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatSystemMessage>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatSystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatSystemMessage> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatSystemMessage).Name}");
+                        chatSystemMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -84,7 +87,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        chatUserMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatUserMessage>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatUserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatUserMessage> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatUserMessage).Name}");
+                        chatUserMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -97,7 +102,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        chatDeveloperMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatDeveloperMessage>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatDeveloperMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatDeveloperMessage> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatDeveloperMessage).Name}");
+                        chatDeveloperMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -110,7 +117,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        chatAssistantMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatAssistantMessage>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAssistantMessage> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAssistantMessage).Name}");
+                        chatAssistantMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -123,7 +132,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        chatToolMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatToolMessage>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolMessage> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolMessage).Name}");
+                        chatToolMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -138,7 +149,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    chatSystemMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatSystemMessage>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatSystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatSystemMessage> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatSystemMessage).Name}");
+                    chatSystemMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -149,7 +162,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    chatUserMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatUserMessage>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatUserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatUserMessage> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatUserMessage).Name}");
+                    chatUserMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -160,7 +175,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    chatDeveloperMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatDeveloperMessage>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatDeveloperMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatDeveloperMessage> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatDeveloperMessage).Name}");
+                    chatDeveloperMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -171,7 +188,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    chatAssistantMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatAssistantMessage>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAssistantMessage> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAssistantMessage).Name}");
+                    chatAssistantMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -182,7 +201,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    chatToolMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatToolMessage>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolMessage> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolMessage).Name}");
+                    chatToolMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -213,27 +234,38 @@ namespace G.JsonConverters
             global::G.ChatMessages value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsChatSystemMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatSystemMessage, typeof(global::G.ChatSystemMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatSystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatSystemMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatSystemMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatSystemMessage!, typeInfo);
             }
             else if (value.IsChatUserMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatUserMessage, typeof(global::G.ChatUserMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatUserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatUserMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatUserMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatUserMessage!, typeInfo);
             }
             else if (value.IsChatDeveloperMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatDeveloperMessage, typeof(global::G.ChatDeveloperMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatDeveloperMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatDeveloperMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatDeveloperMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatDeveloperMessage!, typeInfo);
             }
             else if (value.IsChatAssistantMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatAssistantMessage, typeof(global::G.ChatAssistantMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAssistantMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAssistantMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatAssistantMessage!, typeInfo);
             }
             else if (value.IsChatToolMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatToolMessage, typeof(global::G.ChatToolMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatToolMessage!, typeInfo);
             }
         }
     }

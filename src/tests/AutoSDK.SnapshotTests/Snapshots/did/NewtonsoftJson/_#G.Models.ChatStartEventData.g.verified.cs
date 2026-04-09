@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatStartEventDataEventTypeJsonConverter))]
         public global::G.ChatStartEventDataEventType EventType { get; set; }
 
         /// <summary>

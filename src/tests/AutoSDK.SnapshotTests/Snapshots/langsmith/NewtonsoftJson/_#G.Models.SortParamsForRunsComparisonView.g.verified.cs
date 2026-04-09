@@ -19,6 +19,7 @@ namespace G
         /// Default Value: DESC
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sort_order")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortParamsForRunsComparisonViewSortOrderJsonConverter))]
         public global::G.SortParamsForRunsComparisonViewSortOrder? SortOrder { get; set; }
 
         /// <summary>

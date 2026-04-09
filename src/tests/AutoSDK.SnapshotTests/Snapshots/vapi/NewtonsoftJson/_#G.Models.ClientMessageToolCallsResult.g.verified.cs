@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "tool-calls-result" is sent to forward the result of a tool call to the client.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageToolCallsResultTypeJsonConverter))]
         public global::G.ClientMessageToolCallsResultType Type { get; set; }
 
         /// <summary>

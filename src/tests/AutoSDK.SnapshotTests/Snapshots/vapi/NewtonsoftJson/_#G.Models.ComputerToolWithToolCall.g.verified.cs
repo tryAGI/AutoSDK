@@ -20,12 +20,14 @@ namespace G
         /// The type of tool. "computer" for Computer tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerToolWithToolCallTypeJsonConverter))]
         public global::G.ComputerToolWithToolCallType Type { get; set; }
 
         /// <summary>
         /// The sub type of tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerToolWithToolCallSubTypeJsonConverter))]
         public global::G.ComputerToolWithToolCallSubType SubType { get; set; }
 
         /// <summary>
@@ -52,6 +54,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ComputerToolWithToolCallName.Computer</default>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerToolWithToolCallNameJsonConverter))]
         public global::G.ComputerToolWithToolCallName Name { get; set; } = global::G.ComputerToolWithToolCallName.Computer;
 
         /// <summary>

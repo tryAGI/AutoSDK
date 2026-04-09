@@ -19,6 +19,7 @@ namespace G
         /// When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("grouping_strategy", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleMergeQueueParametersGroupingStrategyJsonConverter))]
         public global::G.RepositoryRuleMergeQueueParametersGroupingStrategy GroupingStrategy { get; set; } = default!;
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// Method to use when merging changes from queued pull requests.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_method", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleMergeQueueParametersMergeMethodJsonConverter))]
         public global::G.RepositoryRuleMergeQueueParametersMergeMethod MergeMethod { get; set; } = default!;
 
         /// <summary>

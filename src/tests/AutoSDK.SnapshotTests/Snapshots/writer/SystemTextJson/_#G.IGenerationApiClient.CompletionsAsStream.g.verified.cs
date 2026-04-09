@@ -10,6 +10,7 @@ namespace G
         /// Generate text completions using the specified model and prompt. This endpoint is useful for text generation tasks that don't require conversational context.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -18,9 +19,10 @@ namespace G
         ///  --header "Content-Type: application/json" \<br/>
         /// --data-raw '{"model":"palmyra-x-003-instruct","prompt":"Write me a short SEO article about camping gear","max_tokens":150,"temperature":0.7,"top_p":0.9,"stop":["."],"best_of":1,"random_seed":42,"stream":false}'
         /// </remarks>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.StreamingData>> CompletionsAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamingData> CompletionsAsStreamAsync(
 
             global::G.CompletionsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Text generation<br/>
@@ -50,9 +52,10 @@ namespace G
         /// <param name="randomSeed">
         /// A seed used to initialize the random number generator for the model, ensuring reproducibility of the output when the same inputs are provided.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.StreamingData>> CompletionsAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamingData> CompletionsAsStreamAsync(
             string model,
             string prompt,
             long? maxTokens = default,
@@ -61,6 +64,7 @@ namespace G
             global::G.OneOf<global::System.Collections.Generic.IList<string>, string>? stop = default,
             int? bestOf = default,
             int? randomSeed = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

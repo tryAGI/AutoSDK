@@ -200,6 +200,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sampling")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SamplingDe5EnumJsonConverter))]
         public global::G.SamplingDe5Enum? Sampling { get; set; }
 
         /// <summary>
@@ -243,6 +244,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("skip_queue")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SkipQueueEnumJsonConverter))]
         public global::G.SkipQueueEnum? SkipQueue { get; set; }
 
         /// <summary>

@@ -36,38 +36,43 @@ namespace G
         public bool ReadResponseAsString { get; set; }
 
         /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::G.AutoSDKClientOptions Options { get; }
+
+        /// <summary>
         /// 
         /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }
 
 
         /// <summary>
-        /// Account information and billing
+        /// Account information and billing.
         /// </summary>
         public AccountClient Account { get; }
 
         /// <summary>
-        /// Create and manage batch call campaigns
+        /// Create and manage batch call campaigns.
         /// </summary>
         public BatchesClient Batches { get; }
 
         /// <summary>
-        /// Send, manage, and analyze AI phone calls
+        /// Send, manage, and analyze AI phone calls.
         /// </summary>
         public CallsClient Calls { get; }
 
         /// <summary>
-        /// Phone number management (inbound/outbound)
+        /// Phone number management (inbound/outbound).
         /// </summary>
         public NumbersClient Numbers { get; }
 
         /// <summary>
-        /// Conversational pathway CRUD operations
+        /// Conversational pathway CRUD operations.
         /// </summary>
         public PathwaysClient Pathways { get; }
 
         /// <summary>
-        /// Voice listing and management
+        /// Voice listing and management.
         /// </summary>
         public VoicesClient Voices { get; }
 

@@ -13,6 +13,7 @@ namespace G
         /// The model identifier.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("llm", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LlmJsonConverter))]
         public global::G.Llm Llm { get; set; } = default!;
 
         /// <summary>

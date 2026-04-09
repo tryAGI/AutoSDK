@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.OpenAiGeneratedAssetProvider.Openai</default>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAiGeneratedAssetProviderJsonConverter))]
         public global::G.OpenAiGeneratedAssetProvider Provider { get; set; } = global::G.OpenAiGeneratedAssetProvider.Openai;
 
         /// <summary>

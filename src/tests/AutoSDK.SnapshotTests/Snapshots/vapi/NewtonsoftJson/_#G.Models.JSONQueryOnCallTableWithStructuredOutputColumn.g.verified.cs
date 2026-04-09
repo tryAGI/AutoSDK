@@ -15,12 +15,14 @@ namespace G
         /// </summary>
         /// <example>vapiql-json</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnTypeJsonConverter))]
         public global::G.JSONQueryOnCallTableWithStructuredOutputColumnType Type { get; set; }
 
         /// <summary>
         /// This is the table that will be queried.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("table")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnTableJsonConverter))]
         public global::G.JSONQueryOnCallTableWithStructuredOutputColumnTable Table { get; set; }
 
         /// <summary>
@@ -37,6 +39,7 @@ namespace G
         /// </summary>
         /// <example>artifact.structuredOutputs[OutputID]</example>
         [global::Newtonsoft.Json.JsonProperty("column")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnColumnJsonConverter))]
         public global::G.JSONQueryOnCallTableWithStructuredOutputColumnColumn Column { get; set; }
 
         /// <summary>
@@ -48,6 +51,7 @@ namespace G
         /// </summary>
         /// <example>count</example>
         [global::Newtonsoft.Json.JsonProperty("operation", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnOperationJsonConverter))]
         public global::G.JSONQueryOnCallTableWithStructuredOutputColumnOperation Operation { get; set; } = default!;
 
         /// <summary>

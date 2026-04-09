@@ -32,12 +32,14 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RetentionRulePublicLevelJsonConverter))]
         public global::G.RetentionRulePublicLevel? Level { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retention", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RetentionRulePublicRetentionJsonConverter))]
         public global::G.RetentionRulePublicRetention Retention { get; set; } = default!;
 
         /// <summary>

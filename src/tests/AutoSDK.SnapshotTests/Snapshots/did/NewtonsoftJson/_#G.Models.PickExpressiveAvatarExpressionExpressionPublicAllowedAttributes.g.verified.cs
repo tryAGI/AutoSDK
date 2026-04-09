@@ -27,6 +27,7 @@ namespace G
         /// </summary>
         /// <example>happy</example>
         [global::Newtonsoft.Json.JsonProperty("sentiment", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesSentimentJsonConverter))]
         public global::G.PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesSentiment Sentiment { get; set; } = default!;
 
         /// <summary>

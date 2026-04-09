@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptVariant2TypeJsonConverter))]
         public global::G.PromptVariant2Type? Type { get; set; }
 
         /// <summary>

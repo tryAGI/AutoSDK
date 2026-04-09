@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.RefusalContentType.Refusal</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RefusalContentTypeJsonConverter))]
         public global::G.RefusalContentType Type { get; set; } = global::G.RefusalContentType.Refusal;
 
         /// <summary>

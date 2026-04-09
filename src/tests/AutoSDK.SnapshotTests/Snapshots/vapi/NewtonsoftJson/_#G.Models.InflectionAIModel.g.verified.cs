@@ -39,12 +39,14 @@ namespace G
         /// This is the name of the model. Ex. cognitivecomputations/dolphin-mixtral-8x7b
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InflectionAIModelModelJsonConverter))]
         public global::G.InflectionAIModelModel Model { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InflectionAIModelProviderJsonConverter))]
         public global::G.InflectionAIModelProvider Provider { get; set; }
 
         /// <summary>

@@ -49,6 +49,7 @@ namespace G
         /// Status of a fine-tune
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuneStatusJsonConverter))]
         public global::G.FineTuneStatus Status { get; set; } = default!;
 
         /// <summary>

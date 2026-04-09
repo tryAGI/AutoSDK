@@ -19,6 +19,7 @@ namespace G
         /// File format of the animated result
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTalkStreamRequestConfigVariant1ResultFormat2JsonConverter))]
         public global::G.CreateTalkStreamRequestConfigVariant1ResultFormat2? ResultFormat { get; set; }
 
         /// <summary>

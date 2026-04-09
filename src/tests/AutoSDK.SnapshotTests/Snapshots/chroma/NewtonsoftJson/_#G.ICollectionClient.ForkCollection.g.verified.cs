@@ -13,6 +13,7 @@ namespace G
         /// <param name="database"></param>
         /// <param name="collectionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -24,6 +25,7 @@ namespace G
             string collectionId,
 
             global::G.ForkCollectionPayload request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Fork collection<br/>
@@ -33,6 +35,7 @@ namespace G
         /// <param name="database"></param>
         /// <param name="collectionId"></param>
         /// <param name="newName"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Collection> ForkCollectionAsync(
@@ -40,6 +43,7 @@ namespace G
             string database,
             string collectionId,
             string newName,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

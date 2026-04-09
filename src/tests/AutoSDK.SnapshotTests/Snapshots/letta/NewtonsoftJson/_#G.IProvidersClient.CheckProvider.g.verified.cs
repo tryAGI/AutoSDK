@@ -10,11 +10,13 @@ namespace G
         /// Verify the API key and additional parameters for a provider.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> CheckProviderAsync(
 
             global::G.ProviderCheck request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Check Provider<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="apiVersion">
         /// API version used for requests to the provider.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> CheckProviderAsync(
@@ -47,6 +50,7 @@ namespace G
             string? region = default,
             string? baseUrl = default,
             string? apiVersion = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

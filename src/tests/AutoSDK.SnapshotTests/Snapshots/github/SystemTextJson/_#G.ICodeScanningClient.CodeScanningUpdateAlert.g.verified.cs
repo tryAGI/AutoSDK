@@ -17,6 +17,7 @@ namespace G
         /// Included only in responses
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CodeScanningAlert> CodeScanningUpdateAlertAsync(
@@ -25,6 +26,7 @@ namespace G
             int alertNumber,
 
             global::G.CodeScanningUpdateAlertRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a code scanning alert<br/>
@@ -46,6 +48,7 @@ namespace G
         /// <param name="dismissedComment">
         /// The dismissal comment associated with the dismissal of the alert.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CodeScanningAlert> CodeScanningUpdateAlertAsync(
@@ -55,6 +58,7 @@ namespace G
             global::G.CodeScanningAlertSetState state,
             global::G.CodeScanningAlertDismissedReason? dismissedReason = default,
             string? dismissedComment = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

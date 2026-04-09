@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_SessionsGetDebugSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-BB-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_SessionsGetDebugSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_SessionsGetDebugSecurityRequirement0,
+            };
         partial void PrepareSessionsGetDebugArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -38,9 +57,15 @@ namespace G
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SessionsGetDebugSecurityRequirements,
+                operationName: "SessionsGetDebugAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/sessions/{id}/debug",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -50,7 +75,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

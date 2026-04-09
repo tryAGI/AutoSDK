@@ -15,6 +15,7 @@ namespace G
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PerceptionEncoderCompareResponse> PeComparePerceptionEncoderComparePostAsync(
@@ -23,6 +24,7 @@ namespace G
             string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Perception Encoder Compare<br/>
@@ -64,6 +66,7 @@ namespace G
         /// The type of prompt, one of 'image' or 'text'<br/>
         /// Default Value: text
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PerceptionEncoderCompareResponse> PeComparePerceptionEncoderComparePostAsync(
@@ -83,6 +86,7 @@ namespace G
             string? modelId = default,
             string? subjectType = default,
             string? promptType = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

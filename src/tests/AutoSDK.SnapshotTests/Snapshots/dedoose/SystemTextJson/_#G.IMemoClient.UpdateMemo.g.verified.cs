@@ -10,11 +10,13 @@ namespace G
         /// UpdateMemo
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MemoAndLinks> UpdateMemoAsync(
 
             global::G.UpdateMemoRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// UpdateMemo<br/>
@@ -23,12 +25,14 @@ namespace G
         /// <param name="memo"></param>
         /// <param name="folderIds"></param>
         /// <param name="linkedObjects"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MemoAndLinks> UpdateMemoAsync(
             global::G.Memo memo,
             global::System.Collections.Generic.IList<global::System.Guid> folderIds,
             global::G.MemoLinkedObjects linkedObjects,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "session.deleted" is sent when a session is deleted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageSessionDeletedTypeJsonConverter))]
         public global::G.ClientMessageSessionDeletedType Type { get; set; }
 
         /// <summary>

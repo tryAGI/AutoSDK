@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomAuthOauth2ConfigTypeJsonConverter))]
         public global::G.CustomAuthOauth2ConfigType Type { get; set; }
 
         /// <summary>

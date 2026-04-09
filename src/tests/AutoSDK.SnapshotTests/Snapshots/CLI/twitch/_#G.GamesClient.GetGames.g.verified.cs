@@ -6,6 +6,25 @@ namespace G
 {
     public partial class GamesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetGamesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "OAuth2",
+                        Location = "Header",
+                        Name = "",
+                        FriendlyName = "OAuth2",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetGamesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetGamesSecurityRequirement0,
+            };
         partial void PrepareGetGamesArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<string>? id,
@@ -52,6 +71,12 @@ namespace G
                 name: name,
                 igdbId: igdbId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetGamesSecurityRequirements,
+                operationName: "GetGamesAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/games",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +84,7 @@ namespace G
                 .AddOptionalParameter("id", id, delimiter: ",", explode: true)
                 .AddOptionalParameter("name", name, delimiter: ",", explode: true)
                 .AddOptionalParameter("igdb_id", igdbId, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -69,7 +94,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -99,7 +124,7 @@ namespace G
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 

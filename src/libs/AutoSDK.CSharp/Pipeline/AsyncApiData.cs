@@ -733,6 +733,7 @@ public static class AsyncApiData
                 IsDeprecated: false,
                 Summary: summary,
                 Description: description,
+                ContentType: null,
                 ConverterType: type.ConverterType,
                 Properties: properties,
                 HasSchemaDefault: false,
@@ -875,6 +876,7 @@ public static class AsyncApiData
 
             authorizations.Add(CSharpAuthorizationFactory.Create(
                 friendlyName: friendlyName,
+                schemeId: kvp.Key,
                 type: securitySchemeType,
                 parameterLocation: paramLocation,
                 parameters: parameters.ToImmutableArray().AsEquatableArray(),
@@ -883,7 +885,9 @@ public static class AsyncApiData
                 settings: settings,
                 globalSettings: globalSettings,
                 flows: ImmutableArray<OAuthFlow>.Empty.AsEquatableArray(),
-                openIdConnectUrl: string.Empty));
+                openIdConnectUrl: string.Empty,
+                oAuth2MetadataUrl: string.Empty,
+                isDeprecated: false));
         }
 
         return authorizations.ToArray();
@@ -1387,9 +1391,7 @@ public static class AsyncApiData
         CSharpSettings settings)
     {
         return enums
-            .Where(x =>
-                x.Style == ModelStyle.Enumeration &&
-                !x.Settings.UsesNewtonsoftJson())
+            .Where(x => x.Style == ModelStyle.Enumeration)
             .SelectMany(x => new[]
             {
                 $"global::{x.Namespace}.JsonConverters.{x.ClassName}JsonConverter",

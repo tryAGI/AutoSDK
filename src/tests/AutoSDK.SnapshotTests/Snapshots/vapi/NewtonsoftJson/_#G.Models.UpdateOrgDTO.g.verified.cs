@@ -37,6 +37,7 @@ namespace G
         /// This is the channel of the org. There is the cluster the API traffic for the org will be directed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("channel")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateOrgDTOChannelJsonConverter))]
         public global::G.UpdateOrgDTOChannel? Channel { get; set; }
 
         /// <summary>

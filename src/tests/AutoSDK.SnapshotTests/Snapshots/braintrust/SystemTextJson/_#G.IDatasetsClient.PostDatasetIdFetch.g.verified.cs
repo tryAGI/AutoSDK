@@ -13,12 +13,14 @@ namespace G
         /// Dataset id
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FetchDatasetEventsResponse> PostDatasetIdFetchAsync(
             global::System.Guid datasetId,
 
             global::G.FetchEventsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Fetch dataset (POST form)<br/>
@@ -50,6 +52,7 @@ namespace G
         /// Retrieve a snapshot of events from a past time<br/>
         /// The version id is essentially a filter on the latest event transaction id. You can use the `max_xact_id` returned by a past fetch as the version to reproduce that exact fetch.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FetchDatasetEventsResponse> PostDatasetIdFetchAsync(
@@ -59,6 +62,7 @@ namespace G
             string? maxXactId = default,
             string? maxRootSpanId = default,
             string? version = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

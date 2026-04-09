@@ -73,6 +73,7 @@ namespace G
         /// Strategy used to ingest the file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StoreFileParsingStrategyJsonConverter))]
         public global::G.StoreFileParsingStrategy Mode { get; set; } = default!;
 
         /// <summary>

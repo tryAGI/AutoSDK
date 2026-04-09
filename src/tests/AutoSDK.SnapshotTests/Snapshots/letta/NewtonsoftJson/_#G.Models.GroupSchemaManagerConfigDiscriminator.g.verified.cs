@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manager_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GroupSchemaManagerConfigDiscriminatorManagerTypeJsonConverter))]
         public global::G.GroupSchemaManagerConfigDiscriminatorManagerType? ManagerType { get; set; }
 
         /// <summary>

@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>>> CreateChatCompletionsAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>> CreateChatCompletionsAsStreamAsync(
 
             global::G.ChatCompletionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -46,7 +46,7 @@ namespace G
         /// <param name="functionCall"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>>> CreateChatCompletionsAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>> CreateChatCompletionsAsStreamAsync(
             string? model = default,
             global::System.Collections.Generic.IList<global::G.Message>? messages = default,
             double? temperature = default,

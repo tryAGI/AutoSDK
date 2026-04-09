@@ -13,6 +13,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detectedLanguage")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LanguageBCP47JsonConverter))]
         public global::G.LanguageBCP47? DetectedLanguage { get; set; }
 
         /// <summary>

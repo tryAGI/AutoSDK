@@ -115,6 +115,7 @@ namespace G
         /// The status of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SubscriptionStatusTypeJsonConverter))]
         public global::G.SubscriptionStatusType Status { get; set; } = default!;
 
         /// <summary>

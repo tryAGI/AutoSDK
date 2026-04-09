@@ -27,6 +27,7 @@ namespace G
         /// @default 'wav;l16'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("recordingFormat")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ArtifactPlanRecordingFormatJsonConverter))]
         public global::G.ArtifactPlanRecordingFormat? RecordingFormat { get; set; }
 
         /// <summary>

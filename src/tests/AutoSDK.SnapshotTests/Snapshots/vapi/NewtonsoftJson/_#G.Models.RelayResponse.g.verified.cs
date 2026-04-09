@@ -13,6 +13,7 @@ namespace G
         /// The status of the relay request
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RelayResponseStatusJsonConverter))]
         public global::G.RelayResponseStatus Status { get; set; } = default!;
 
         /// <summary>

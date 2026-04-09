@@ -21,6 +21,7 @@ namespace G
         /// Example: customer_support_chat
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentSession> UpdateAsync(
@@ -30,6 +31,7 @@ namespace G
             global::G.UpdateAgentSessionRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update agent session<br/>
@@ -66,6 +68,7 @@ namespace G
         /// Time-to-idle in minutes for the session. If no events occur in the session for this duration, the session will be automatically deleted. If set to 0, the session will not expire.<br/>
         /// Example: 60
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentSession> UpdateAsync(
@@ -78,6 +81,7 @@ namespace G
             object? metadata = default,
             bool? enabled = default,
             long? ttiMinutes = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -22,6 +22,7 @@ namespace G
         /// The event type, must be `rate_limits.updated`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventRateLimitsUpdatedTypeJsonConverter))]
         public global::G.RealtimeServerEventRateLimitsUpdatedType Type { get; set; }
 
         /// <summary>

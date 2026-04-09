@@ -19,12 +19,14 @@ namespace G
         /// The target of the ruleset
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposUpdateRepoRulesetRequestTargetJsonConverter))]
         public global::G.ReposUpdateRepoRulesetRequestTarget? Target { get; set; }
 
         /// <summary>
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enforcement")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleEnforcementJsonConverter))]
         public global::G.RepositoryRuleEnforcement? Enforcement { get; set; }
 
         /// <summary>

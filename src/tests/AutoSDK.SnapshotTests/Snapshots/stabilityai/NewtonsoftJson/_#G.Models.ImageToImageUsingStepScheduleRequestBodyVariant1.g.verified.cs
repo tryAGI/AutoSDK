@@ -51,6 +51,7 @@ namespace G
         /// Default Value: IMAGE_STRENGTH
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("init_image_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InitImageModeJsonConverter))]
         public global::G.InitImageMode? InitImageMode { get; set; }
 
         /// <summary>

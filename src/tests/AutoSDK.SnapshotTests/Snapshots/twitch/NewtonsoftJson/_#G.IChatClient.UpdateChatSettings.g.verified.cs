@@ -19,6 +19,7 @@ namespace G
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateChatSettingsResponse> UpdateChatSettingsAsync(
@@ -26,6 +27,7 @@ namespace G
             string moderatorId,
 
             global::G.UpdateChatSettingsBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Updates the broadcaster’s chat settings.<br/>
@@ -89,6 +91,7 @@ namespace G
         ///   <br/>
         /// Set to **true** if the broadcaster allows only unique messages; otherwise, **false**. The default is **false**.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateChatSettingsResponse> UpdateChatSettingsAsync(
@@ -103,6 +106,7 @@ namespace G
             int? slowModeWaitTime = default,
             bool? subscriberMode = default,
             bool? uniqueChatMode = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

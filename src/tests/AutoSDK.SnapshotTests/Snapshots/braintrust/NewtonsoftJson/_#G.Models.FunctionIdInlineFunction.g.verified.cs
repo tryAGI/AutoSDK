@@ -26,6 +26,7 @@ namespace G
         /// Default Value: scorer
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionTypeEnumJsonConverter))]
         public global::G.FunctionTypeEnum? FunctionType { get; set; }
 
         /// <summary>

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GenerateAsStreamSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GenerateAsStreamSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GenerateAsStreamSecurityRequirement0,
+            };
         partial void PrepareGenerateAsStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? xClientName,
@@ -65,9 +84,15 @@ namespace G
                 xClientName: ref xClientName,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GenerateAsStreamSecurityRequirements,
+                operationName: "GenerateAsStreamAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/generate",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -77,7 +102,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -163,6 +188,7 @@ namespace G
                 cancellationToken
 #endif
             ).ConfigureAwait(false);
+
             using var __reader = new global::System.IO.StreamReader(__stream);
 
             while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)

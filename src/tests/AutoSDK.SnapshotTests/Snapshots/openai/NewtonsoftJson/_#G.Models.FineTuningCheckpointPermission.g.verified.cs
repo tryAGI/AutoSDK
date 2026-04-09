@@ -19,6 +19,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the permission was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// The object type, which is always "checkpoint.permission".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuningCheckpointPermissionObjectJsonConverter))]
         public global::G.FineTuningCheckpointPermissionObject Object { get; set; }
 
         /// <summary>

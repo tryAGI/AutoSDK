@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.APIErrorType.ApiError</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.APIErrorTypeJsonConverter))]
         public global::G.APIErrorType Type { get; set; } = global::G.APIErrorType.ApiError;
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// Status of the batch job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TestCaseBatchJobStatusJsonConverter))]
         public global::G.TestCaseBatchJobStatus Status { get; set; } = default!;
 
         /// <summary>

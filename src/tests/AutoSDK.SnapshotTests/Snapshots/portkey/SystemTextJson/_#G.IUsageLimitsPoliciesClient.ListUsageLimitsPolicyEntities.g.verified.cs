@@ -14,6 +14,7 @@ namespace G
         /// <param name="search"></param>
         /// <param name="pageSize"></param>
         /// <param name="currentPage"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UsageLimitsPolicyEntityListResponse> ListUsageLimitsPolicyEntitiesAsync(
@@ -22,6 +23,7 @@ namespace G
             string? search = default,
             int? pageSize = default,
             int? currentPage = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -42,7 +42,7 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>, object>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>, object>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>, object>),
-            typeof(global::G.JsonConverters.AnyOfJsonConverter<byte[], global::System.Collections.Generic.IList<byte[]>, object>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, object>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.AssetType?, global::G.GenerationType?, object>),
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),

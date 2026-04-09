@@ -39,6 +39,7 @@ namespace G
         /// The status of the parsing job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StatusEnumJsonConverter))]
         public global::G.StatusEnum Status { get; set; } = default!;
 
         /// <summary>

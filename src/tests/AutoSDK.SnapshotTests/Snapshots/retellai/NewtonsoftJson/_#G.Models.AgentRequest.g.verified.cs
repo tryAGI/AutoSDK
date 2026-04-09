@@ -43,6 +43,7 @@ namespace G
         /// Select the voice model used for the selected voice. Each provider has a set of available voice models. Set to null to remove voice model selection, and default ones will apply. Check out dashboard for more details of each voice model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentRequestVoiceModelJsonConverter))]
         public global::G.AgentRequestVoiceModel? VoiceModel { get; set; }
 
         /// <summary>
@@ -99,6 +100,7 @@ namespace G
         /// </summary>
         /// <example>calm</example>
         [global::Newtonsoft.Json.JsonProperty("voice_emotion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentRequestVoiceEmotionJsonConverter))]
         public global::G.AgentRequestVoiceEmotion? VoiceEmotion { get; set; }
 
         /// <summary>
@@ -168,6 +170,7 @@ namespace G
         /// Set to `null` to remove ambient sound from this agent.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ambient_sound")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentRequestAmbientSoundJsonConverter))]
         public global::G.AgentRequestAmbientSound? AmbientSound { get; set; }
 
         /// <summary>
@@ -184,6 +187,7 @@ namespace G
         /// </summary>
         /// <example>en-US</example>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentRequestLanguageJsonConverter))]
         public global::G.AgentRequestLanguage? Language { get; set; }
 
         /// <summary>
@@ -227,6 +231,7 @@ namespace G
         /// </summary>
         /// <example>everything</example>
         [global::Newtonsoft.Json.JsonProperty("data_storage_setting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentRequestDataStorageSettingJsonConverter))]
         public global::G.AgentRequestDataStorageSetting? DataStorageSetting { get; set; }
 
         /// <summary>
@@ -325,6 +330,7 @@ namespace G
         /// Available LLM models for agents.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("post_call_analysis_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NullableLLMModelJsonConverter))]
         public global::G.NullableLLMModel? PostCallAnalysisModel { get; set; }
 
         /// <summary>
@@ -373,6 +379,7 @@ namespace G
         /// </summary>
         /// <example>fast</example>
         [global::Newtonsoft.Json.JsonProperty("stt_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentRequestSttModeJsonConverter))]
         public global::G.AgentRequestSttMode? SttMode { get; set; }
 
         /// <summary>
@@ -387,6 +394,7 @@ namespace G
         /// </summary>
         /// <example>general</example>
         [global::Newtonsoft.Json.JsonProperty("vocab_specialization")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentRequestVocabSpecializationJsonConverter))]
         public global::G.AgentRequestVocabSpecialization? VocabSpecialization { get; set; }
 
         /// <summary>
@@ -409,6 +417,7 @@ namespace G
         /// </summary>
         /// <example>noise-cancellation</example>
         [global::Newtonsoft.Json.JsonProperty("denoising_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentRequestDenoisingModeJsonConverter))]
         public global::G.AgentRequestDenoisingMode? DenoisingMode { get; set; }
 
         /// <summary>

@@ -9,11 +9,13 @@ namespace G
         /// Chat Classifications
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ClassificationResponse> ChatClassificationsV1ChatClassificationsPostAsync(
 
             global::G.ChatClassificationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Chat Classifications
@@ -22,11 +24,13 @@ namespace G
         /// <param name="input">
         /// Chat to classify
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ClassificationResponse> ChatClassificationsV1ChatClassificationsPostAsync(
             string model,
             global::G.ChatClassificationRequestInputs input,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

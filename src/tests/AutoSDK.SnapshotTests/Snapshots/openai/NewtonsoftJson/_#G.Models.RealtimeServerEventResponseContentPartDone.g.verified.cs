@@ -20,6 +20,7 @@ namespace G
         /// The event type, must be `response.content_part.done`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventResponseContentPartDoneTypeJsonConverter))]
         public global::G.RealtimeServerEventResponseContentPartDoneType Type { get; set; }
 
         /// <summary>

@@ -28,6 +28,7 @@ namespace G
         /// The status of your transcript. Possible values are queued, processing, completed, or error.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptStatusJsonConverter))]
         public global::G.TranscriptStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -226,6 +227,7 @@ namespace G
         /// The replacement logic for detected PII, can be "entity_name" or "hash". See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more details.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("redact_pii_sub")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SubstitutionPolicyJsonConverter))]
         public global::G.SubstitutionPolicy? RedactPiiSub { get; set; }
 
         /// <summary>

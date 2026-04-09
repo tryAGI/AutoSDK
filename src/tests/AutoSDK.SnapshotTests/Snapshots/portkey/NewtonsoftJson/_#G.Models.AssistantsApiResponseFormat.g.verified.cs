@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <example>json_object</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssistantsApiResponseFormatTypeJsonConverter))]
         public global::G.AssistantsApiResponseFormatType? Type { get; set; }
 
         /// <summary>

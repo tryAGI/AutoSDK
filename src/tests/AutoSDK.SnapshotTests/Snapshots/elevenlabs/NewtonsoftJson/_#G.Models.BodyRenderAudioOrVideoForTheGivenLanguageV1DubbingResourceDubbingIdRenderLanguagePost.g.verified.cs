@@ -13,6 +13,7 @@ namespace G
         /// The type of the render. One of ['mp4', 'aac', 'mp3', 'wav', 'aaf', 'tracks_zip', 'clips_zip']
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("render_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RenderType2JsonConverter))]
         public global::G.RenderType2 RenderType { get; set; } = default!;
 
         /// <summary>

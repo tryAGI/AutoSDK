@@ -84,6 +84,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finetune_loss")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MultiSeriesForecastFinetuneLossJsonConverter))]
         public global::G.MultiSeriesForecastFinetuneLoss? FinetuneLoss { get; set; }
 
         /// <summary>

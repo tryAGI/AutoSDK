@@ -48,6 +48,7 @@ namespace G
         /// If the number of outcomes is two, the color is BLUE for the first outcome and PINK for the second outcome. If there are more than two outcomes, the color is BLUE for all outcomes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("color", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PredictionOutcomeColorJsonConverter))]
         public global::G.PredictionOutcomeColor Color { get; set; } = default!;
 
         /// <summary>

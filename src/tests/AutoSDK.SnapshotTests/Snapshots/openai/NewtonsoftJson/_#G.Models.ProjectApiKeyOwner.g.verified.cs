@@ -13,6 +13,7 @@ namespace G
         /// `user` or `service_account`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectApiKeyOwnerTypeJsonConverter))]
         public global::G.ProjectApiKeyOwnerType? Type { get; set; }
 
         /// <summary>

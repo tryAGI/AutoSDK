@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetGroupResponseTranslationTranscriptionVersionJsonConverter))]
         public global::G.GetGroupResponseTranslationTranscriptionVersion Version { get; set; } = default!;
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.EvalListObject.List</default>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalListObjectJsonConverter))]
         public global::G.EvalListObject Object { get; set; } = global::G.EvalListObject.List;
 
         /// <summary>

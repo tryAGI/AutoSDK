@@ -22,6 +22,7 @@ namespace G
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.BetaCountMessageTokensResponse> BetaMessagesCountTokensPostAsync(
@@ -29,6 +30,7 @@ namespace G
             global::G.BetaCountMessageTokensParams request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Count tokens in a Message<br/>
@@ -158,6 +160,7 @@ namespace G
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.BetaCountMessageTokensResponse> BetaMessagesCountTokensPostAsync(
@@ -171,6 +174,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.BetaTool, global::G.BetaComputerUseTool20241022, global::G.BetaBashTool20241022, global::G.BetaTextEditor20241022, global::G.BetaComputerUseTool20250124, global::G.BetaBashTool20250124, global::G.BetaTextEditor20250124>>? tools = default,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.BetaRequestTextBlock>>? system = default,
             global::G.BetaThinkingConfigParam? thinking = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

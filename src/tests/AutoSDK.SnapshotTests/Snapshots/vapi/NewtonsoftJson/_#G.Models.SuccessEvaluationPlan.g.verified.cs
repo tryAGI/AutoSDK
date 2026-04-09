@@ -23,6 +23,7 @@ namespace G
         /// Default is 'PassFail'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rubric")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SuccessEvaluationPlanRubricJsonConverter))]
         public global::G.SuccessEvaluationPlanRubric? Rubric { get; set; }
 
         /// <summary>

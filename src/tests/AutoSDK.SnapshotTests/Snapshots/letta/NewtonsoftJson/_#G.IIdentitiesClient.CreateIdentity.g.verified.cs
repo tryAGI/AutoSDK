@@ -14,6 +14,7 @@ namespace G
         /// The project slug to associate with the identity (cloud only).
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -21,6 +22,7 @@ namespace G
 
             global::G.IdentityCreate request,
             string? xProject = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Identity
@@ -43,6 +45,7 @@ namespace G
         /// <param name="properties">
         /// List of properties associated with the identity.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -53,6 +56,7 @@ namespace G
             string? xProject = default,
             string? projectId = default,
             global::System.Collections.Generic.IList<global::G.IdentityProperty>? properties = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

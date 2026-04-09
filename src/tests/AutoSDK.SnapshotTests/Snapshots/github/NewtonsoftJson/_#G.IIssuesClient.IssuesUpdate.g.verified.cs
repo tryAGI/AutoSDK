@@ -18,6 +18,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="issueNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Issue> IssuesUpdateAsync(
@@ -26,6 +27,7 @@ namespace G
             int issueNumber,
 
             global::G.IssuesUpdateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an issue<br/>
@@ -62,6 +64,7 @@ namespace G
         /// <param name="assignees">
         /// Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Issue> IssuesUpdateAsync(
@@ -76,6 +79,7 @@ namespace G
             global::G.OneOf<string, int?>? milestone = default,
             global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.IssuesUpdateRequestLabel>>? labels = default,
             global::System.Collections.Generic.IList<string>? assignees = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

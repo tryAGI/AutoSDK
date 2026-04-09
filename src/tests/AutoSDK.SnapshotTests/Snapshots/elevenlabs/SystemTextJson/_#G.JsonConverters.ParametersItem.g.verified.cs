@@ -13,31 +13,42 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WhatsAppTemplateHeaderComponentParamsParameterDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateHeaderComponentParamsParameterDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateHeaderComponentParamsParameterDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WhatsAppTemplateHeaderComponentParamsParameterDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.WhatsAppTemplateTextParam? text = default;
             if (discriminator?.Type == global::G.WhatsAppTemplateHeaderComponentParamsParameterDiscriminatorType.Text)
             {
-                text = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WhatsAppTemplateTextParam>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateTextParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateTextParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WhatsAppTemplateTextParam)}");
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.WhatsAppTemplateImageParam? image = default;
             if (discriminator?.Type == global::G.WhatsAppTemplateHeaderComponentParamsParameterDiscriminatorType.Image)
             {
-                image = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WhatsAppTemplateImageParam>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateImageParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateImageParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WhatsAppTemplateImageParam)}");
+                image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.WhatsAppTemplateDocumentParam? document = default;
             if (discriminator?.Type == global::G.WhatsAppTemplateHeaderComponentParamsParameterDiscriminatorType.Document)
             {
-                document = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WhatsAppTemplateDocumentParam>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateDocumentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateDocumentParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WhatsAppTemplateDocumentParam)}");
+                document = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.WhatsAppTemplateLocationParam? location = default;
             if (discriminator?.Type == global::G.WhatsAppTemplateHeaderComponentParamsParameterDiscriminatorType.Location)
             {
-                location = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WhatsAppTemplateLocationParam>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateLocationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateLocationParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WhatsAppTemplateLocationParam)}");
+                location = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.ParametersItem(
@@ -60,23 +71,32 @@ namespace G.JsonConverters
             global::G.ParametersItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsText)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeof(global::G.WhatsAppTemplateTextParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateTextParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateTextParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WhatsAppTemplateTextParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
             else if (value.IsImage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeof(global::G.WhatsAppTemplateImageParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateImageParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateImageParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WhatsAppTemplateImageParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
             }
             else if (value.IsDocument)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document, typeof(global::G.WhatsAppTemplateDocumentParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateDocumentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateDocumentParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WhatsAppTemplateDocumentParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document!, typeInfo);
             }
             else if (value.IsLocation)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Location, typeof(global::G.WhatsAppTemplateLocationParam), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WhatsAppTemplateLocationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WhatsAppTemplateLocationParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WhatsAppTemplateLocationParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Location!, typeInfo);
             }
         }
     }

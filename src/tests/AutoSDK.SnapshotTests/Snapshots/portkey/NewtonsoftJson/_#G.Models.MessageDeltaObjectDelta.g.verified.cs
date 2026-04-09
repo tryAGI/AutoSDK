@@ -13,6 +13,7 @@ namespace G
         /// The entity that produced the message. One of `user` or `assistant`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaObjectDeltaRoleJsonConverter))]
         public global::G.MessageDeltaObjectDeltaRole? Role { get; set; }
 
         /// <summary>

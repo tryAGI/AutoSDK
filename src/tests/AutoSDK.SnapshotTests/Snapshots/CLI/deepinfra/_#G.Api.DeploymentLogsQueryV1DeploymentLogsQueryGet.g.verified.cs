@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeploymentLogsQueryV1DeploymentLogsQueryGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeploymentLogsQueryV1DeploymentLogsQueryGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeploymentLogsQueryV1DeploymentLogsQueryGetSecurityRequirement0,
+            };
         partial void PrepareDeploymentLogsQueryV1DeploymentLogsQueryGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string deployId,
@@ -80,6 +99,12 @@ namespace G
                 limit: ref limit,
                 xiApiKey: ref xiApiKey);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeploymentLogsQueryV1DeploymentLogsQueryGetSecurityRequirements,
+                operationName: "DeploymentLogsQueryV1DeploymentLogsQueryGetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/deployment_logs/query",
                 baseUri: HttpClient.BaseAddress); 
@@ -89,7 +114,7 @@ namespace G
                 .AddOptionalParameter("from", from)
                 .AddOptionalParameter("to", to)
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -99,7 +124,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

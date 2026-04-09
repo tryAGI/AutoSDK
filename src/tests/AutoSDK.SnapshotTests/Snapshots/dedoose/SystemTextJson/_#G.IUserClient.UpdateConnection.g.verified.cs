@@ -10,11 +10,13 @@ namespace G
         /// UpdateConnection
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<bool> UpdateConnectionAsync(
 
             global::G.UpdateConnectionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// UpdateConnection<br/>
@@ -23,12 +25,14 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="connectionKey"></param>
         /// <param name="projectId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<bool> UpdateConnectionAsync(
             global::System.Guid connectionKey,
             global::System.Guid? userId = default,
             global::System.Guid? projectId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RequestDocumentBlockCacheControlVariant1DiscriminatorTypeJsonConverter))]
         public global::G.RequestDocumentBlockCacheControlVariant1DiscriminatorType? Type { get; set; }
 
         /// <summary>

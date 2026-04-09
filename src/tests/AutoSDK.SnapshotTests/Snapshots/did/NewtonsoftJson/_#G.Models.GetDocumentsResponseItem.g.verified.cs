@@ -13,12 +13,14 @@ namespace G
         /// File format of the file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("documentType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetDocumentsResponseItemDocumentTypeJsonConverter))]
         public global::G.GetDocumentsResponseItemDocumentType DocumentType { get; set; } = default!;
 
         /// <summary>
         /// Type of object
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetDocumentsResponseItemTypeJsonConverter))]
         public global::G.GetDocumentsResponseItemType Type { get; set; } = default!;
 
         /// <summary>
@@ -43,6 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetDocumentsResponseItemStatusJsonConverter))]
         public global::G.GetDocumentsResponseItemStatus Status { get; set; } = default!;
 
         /// <summary>

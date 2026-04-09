@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TranscriptsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListSecurityRequirement0,
+            };
         partial void PrepareListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref long? limit,
@@ -82,6 +101,12 @@ namespace G
                 afterId: ref afterId,
                 throttledOnly: ref throttledOnly);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListSecurityRequirements,
+                operationName: "ListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/transcript",
                 baseUri: HttpClient.BaseAddress); 
@@ -92,7 +117,7 @@ namespace G
                 .AddOptionalParameter("before_id", beforeId?.ToString())
                 .AddOptionalParameter("after_id", afterId?.ToString())
                 .AddOptionalParameter("throttled_only", throttledOnly?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -102,7 +127,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

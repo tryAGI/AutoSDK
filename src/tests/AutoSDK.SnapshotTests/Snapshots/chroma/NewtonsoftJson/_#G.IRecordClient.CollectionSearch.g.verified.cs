@@ -13,6 +13,7 @@ namespace G
         /// <param name="database"></param>
         /// <param name="collectionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -25,6 +26,7 @@ namespace G
             string collectionId,
 
             global::G.SearchRequestPayload request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search records<br/>
@@ -37,6 +39,7 @@ namespace G
         /// Specifies whether to include unindexed data in the search results.
         /// </param>
         /// <param name="searches"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.SearchResponse> CollectionSearchAsync(
@@ -45,6 +48,7 @@ namespace G
             string collectionId,
             global::System.Collections.Generic.IList<global::G.SearchPayload> searches,
             global::G.ReadLevel? readLevel = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

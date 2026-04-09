@@ -13,6 +13,7 @@ namespace G
         /// Click on an element
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeOptionsActionClickTypeJsonConverter))]
         public global::G.ScrapeOptionsActionClickType Type { get; set; }
 
         /// <summary>

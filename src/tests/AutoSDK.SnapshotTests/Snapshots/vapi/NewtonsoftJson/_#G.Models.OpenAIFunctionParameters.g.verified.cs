@@ -13,6 +13,7 @@ namespace G
         /// This must be set to 'object'. It instructs the model to return a JSON object containing the function call properties.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIFunctionParametersTypeJsonConverter))]
         public global::G.OpenAIFunctionParametersType Type { get; set; }
 
         /// <summary>

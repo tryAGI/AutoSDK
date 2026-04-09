@@ -10,11 +10,13 @@ namespace G
         /// Create a new API key for the authenticated user. [Management key](/docs/guides/overview/auth/management-api-keys) required.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ApiKeysCreateKeysResponse201> CreateKeysAsync(
 
             global::G.CreateKeysRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new API key<br/>
@@ -35,6 +37,7 @@ namespace G
         /// <param name="expiresAt">
         /// Optional ISO 8601 UTC timestamp when the API key should expire. Must be UTC, other timezones will be rejected
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ApiKeysCreateKeysResponse201> CreateKeysAsync(
@@ -43,6 +46,7 @@ namespace G
             global::G.OneOf<global::G.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset = default,
             bool? includeByokInLimit = default,
             global::System.DateTime? expiresAt = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

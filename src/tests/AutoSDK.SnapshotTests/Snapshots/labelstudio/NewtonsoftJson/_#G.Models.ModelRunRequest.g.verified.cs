@@ -47,6 +47,7 @@ namespace G
         /// * `Sample` - Sample
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_subset")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectSubsetEnumJsonConverter))]
         public global::G.ProjectSubsetEnum? ProjectSubset { get; set; }
 
         /// <summary>

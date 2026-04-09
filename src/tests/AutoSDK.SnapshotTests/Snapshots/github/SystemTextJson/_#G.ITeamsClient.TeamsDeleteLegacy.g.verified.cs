@@ -13,11 +13,13 @@ namespace G
         /// If you are an organization owner, deleting a parent team will delete all of its child teams as well.
         /// </summary>
         /// <param name="teamId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task TeamsDeleteLegacyAsync(
             int teamId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

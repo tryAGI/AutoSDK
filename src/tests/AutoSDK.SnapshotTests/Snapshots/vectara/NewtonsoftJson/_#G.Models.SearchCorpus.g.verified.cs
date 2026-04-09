@@ -36,6 +36,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("semantics")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchSemanticsJsonConverter))]
         public global::G.SearchSemantics? Semantics { get; set; }
 
         /// <summary>

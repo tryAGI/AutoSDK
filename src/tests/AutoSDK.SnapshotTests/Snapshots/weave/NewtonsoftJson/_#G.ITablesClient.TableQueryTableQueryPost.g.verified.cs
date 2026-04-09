@@ -9,11 +9,13 @@ namespace G
         /// Table Query
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TableQueryRes> TableQueryTableQueryPostAsync(
 
             global::G.TableQueryReq request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Table Query
@@ -36,6 +38,7 @@ namespace G
         /// <param name="sortBy">
         /// List of fields to sort by. Fields can be dot-separated to access dictionary values. No sorting uses the default table order (insertion order).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TableQueryRes> TableQueryTableQueryPostAsync(
@@ -45,6 +48,7 @@ namespace G
             int? limit = default,
             int? offset = default,
             global::System.Collections.Generic.IList<global::G.SortBy>? sortBy = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

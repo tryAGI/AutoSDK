@@ -12,12 +12,14 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RunnerGroupsOrg> ActionsCreateSelfHostedRunnerGroupForOrgAsync(
             string org,
 
             global::G.ActionsCreateSelfHostedRunnerGroupForOrgRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a self-hosted runner group for an organization<br/>
@@ -49,6 +51,7 @@ namespace G
         /// <param name="selectedWorkflows">
         /// List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RunnerGroupsOrg> ActionsCreateSelfHostedRunnerGroupForOrgAsync(
@@ -60,6 +63,7 @@ namespace G
             bool? allowsPublicRepositories = default,
             bool? restrictedToWorkflows = default,
             global::System.Collections.Generic.IList<string>? selectedWorkflows = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

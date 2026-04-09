@@ -37,6 +37,7 @@ namespace G
         /// The baseline permission that all organization members have on this project
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_permission")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectsUpdateRequestOrganizationPermissionJsonConverter))]
         public global::G.ProjectsUpdateRequestOrganizationPermission? OrganizationPermission { get; set; }
 
         /// <summary>

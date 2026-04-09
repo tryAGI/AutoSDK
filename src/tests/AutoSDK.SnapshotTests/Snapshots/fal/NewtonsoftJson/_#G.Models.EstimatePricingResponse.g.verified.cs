@@ -14,6 +14,7 @@ namespace G
         /// The type of estimate that was performed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("estimate_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EstimatePricingResponseEstimateTypeJsonConverter))]
         public global::G.EstimatePricingResponseEstimateType EstimateType { get; set; } = default!;
 
         /// <summary>

@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// Production server
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.mistral.ai";
+        public const string DefaultBaseUrl = "https://api.mistral.ai/";
 
         private bool _disposeHttpClient = true;
 
@@ -32,6 +32,9 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -239,90 +242,90 @@ namespace G
 
 
         /// <summary>
-        /// Agents
+        /// Agents. Agents API.
         /// </summary>
-        public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations)
+        public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Batch
+        /// Batch. Batch API.
         /// </summary>
-        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
+        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Chat
+        /// Chat. Chat Completion API.
         /// </summary>
-        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
+        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Classifiers
+        /// Classifiers. Classifiers API.
         /// </summary>
-        public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations)
+        public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Embeddings
+        /// Embeddings. Embeddings API.
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations)
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Files
+        /// Files. Files API.
         /// </summary>
-        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
+        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// FIM
+        /// FIM. Fill-in-the-middle API.
         /// </summary>
-        public FimClient Fim => new FimClient(HttpClient, authorizations: Authorizations)
+        public FimClient Fim => new FimClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Fine Tuning
+        /// Fine Tuning. Fine-tuning API.
         /// </summary>
-        public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations)
+        public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Models
+        /// Models. Model Management API.
         /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
+        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// OCR API
+        /// OCR API.
         /// </summary>
-        public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations)
+        public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -341,11 +344,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

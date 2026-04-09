@@ -13,6 +13,7 @@ namespace G
         /// The type of media you wish to use. This parameter is required for media queries. For example, to perform an image-based search, set this parameter to `image`. Use `query_text` together with this parameter when you want to perform a composed image+text search.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query_media_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaTypeJsonConverter))]
         public global::G.SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaType? QueryMediaType { get; set; }
 
         /// <summary>
@@ -101,6 +102,7 @@ namespace G
         /// Default Value: clip
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("group_by")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchPostRequestBodyContentMultipartFormDataSchemaGroupByJsonConverter))]
         public global::G.SearchPostRequestBodyContentMultipartFormDataSchemaGroupBy? GroupBy { get; set; }
 
         /// <summary>
@@ -112,6 +114,7 @@ namespace G
         /// Default Value: low
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("threshold")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ThresholdSearchJsonConverter))]
         public global::G.ThresholdSearch? Threshold { get; set; }
 
         /// <summary>
@@ -126,6 +129,7 @@ namespace G
         /// Default Value: score
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sort_option")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchPostRequestBodyContentMultipartFormDataSchemaSortOptionJsonConverter))]
         public global::G.SearchPostRequestBodyContentMultipartFormDataSchemaSortOption? SortOption { get; set; }
 
         /// <summary>
@@ -134,6 +138,7 @@ namespace G
         /// Default Value: or
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchPostRequestBodyContentMultipartFormDataSchemaOperatorJsonConverter))]
         public global::G.SearchPostRequestBodyContentMultipartFormDataSchemaOperator? Operator { get; set; }
 
         /// <summary>

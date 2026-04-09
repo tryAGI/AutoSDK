@@ -15,12 +15,14 @@ namespace G
         /// </summary>
         /// <default>global::G.ComputerUsePreviewToolType.ComputerUsePreview</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerUsePreviewToolTypeJsonConverter))]
         public global::G.ComputerUsePreviewToolType Type { get; set; } = global::G.ComputerUsePreviewToolType.ComputerUsePreview;
 
         /// <summary>
         /// The type of computer environment to control.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environment", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerUsePreviewToolEnvironmentJsonConverter))]
         public global::G.ComputerUsePreviewToolEnvironment Environment { get; set; } = default!;
 
         /// <summary>

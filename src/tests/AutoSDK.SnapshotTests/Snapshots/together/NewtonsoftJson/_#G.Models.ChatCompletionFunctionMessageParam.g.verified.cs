@@ -14,6 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionFunctionMessageParamRoleJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.ChatCompletionFunctionMessageParamRole Role { get; set; }
 
