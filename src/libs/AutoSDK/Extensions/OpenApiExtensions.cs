@@ -1934,7 +1934,7 @@ info:
 
             foreach (var operation in pathItem.Operations?.Values ?? Enumerable.Empty<OpenApiOperation>())
             {
-                operation.Security = new List<OpenApiSecurityRequirement>();
+                operation.Security = null;
                 SuppressMatchingSecurityParameters(operation.Parameters, matchers);
             }
         }
