@@ -81,7 +81,7 @@ public static partial class Sources
         var title = GetSnippetTitle(operation);
         var description = string.IsNullOrWhiteSpace(operation.Operation.Description)
             ? "Generated from OpenAPI examples."
-            : operation.Operation.Description.Trim();
+            : operation.Operation.Description?.Trim() ?? "Generated from OpenAPI examples.";
         var slug = Slugify(operation.Operation.OperationId ?? title);
         var operationId = operation.Operation.OperationId ?? operation.MethodName;
 
@@ -239,9 +239,10 @@ public static partial class Sources
         var responseExample = TryGetFirstSuccessResponseExample(operation.Operation);
         if (!string.IsNullOrWhiteSpace(responseExample))
         {
+            var normalizedResponseExample = NormalizeSnippetNewlines(responseExample!);
             builder.AppendLine();
             builder.AppendLine("// Example response:");
-            foreach (var line in NormalizeSnippetNewlines(responseExample).Split('\n'))
+            foreach (var line in normalizedResponseExample.Split('\n'))
             {
                 builder.Append("// ");
                 builder.AppendLine(line);
@@ -422,7 +423,7 @@ public static partial class Sources
 
         if (!string.IsNullOrWhiteSpace(text))
         {
-            exampleText = text;
+            exampleText = text!;
             return true;
         }
 
@@ -651,9 +652,12 @@ public static partial class Sources
         var summary = !string.IsNullOrWhiteSpace(operation.Operation.Summary)
             ? operation.Operation.Summary
             : operation.Operation.Description;
-        return !string.IsNullOrWhiteSpace(summary)
-            ? summary.Trim()
-            : $"{operation.OperationType.Method.ToUpperInvariant()} {operation.OperationPath}";
+        if (string.IsNullOrWhiteSpace(summary))
+        {
+            return $"{operation.OperationType.Method.ToUpperInvariant()} {operation.OperationPath}";
+        }
+
+        return summary!.Trim();
     }
 
     private static string Slugify(string value)
@@ -670,11 +674,11 @@ public static partial class Sources
 
     private static string ToVerbatimStringLiteral(string value)
     {
-        return "@\"" + NormalizeSnippetNewlines(value).Replace("\"", "\"\"", StringComparison.Ordinal) + "\"";
+        return "@\"" + NormalizeSnippetNewlines(value).Replace("\"", "\"\"") + "\"";
     }
 
     private static string NormalizeSnippetNewlines(string value)
     {
-        return value.Replace("\r\n", "\n", StringComparison.Ordinal);
+        return value.Replace("\r\n", "\n");
     }
 }
