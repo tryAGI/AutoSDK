@@ -297,9 +297,10 @@ public static partial class Sources
                 sb.Append("# RequestBody: ").AppendLine(FormatRuntimeExpression(responseLink.Link.RequestBody));
             }
 
-            if (!string.IsNullOrWhiteSpace(responseLink.Link.Server?.Url))
+            var serverUrl = responseLink.Link.Server?.Url;
+            if (!string.IsNullOrWhiteSpace(serverUrl))
             {
-                sb.Append("# Server: ").AppendLine(responseLink.Link.Server.Url);
+                sb.Append("# Server: ").AppendLine(serverUrl);
             }
         }
 
