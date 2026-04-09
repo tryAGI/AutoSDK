@@ -29,7 +29,8 @@ public record struct MethodParameter(
     bool HasSchemaDefault,
     string ParameterDefaultValue,
     bool ProducesDeprecationWarning,
-    string DisableDeprecationWarningIfRequired)
+    string DisableDeprecationWarningIfRequired,
+    bool IsIdempotencyHeader = false)
 {
     public static MethodParameter Default => new(
         Id: string.Empty,
@@ -56,5 +57,6 @@ public record struct MethodParameter(
         HasSchemaDefault: false,
         ParameterDefaultValue: "default",
         ProducesDeprecationWarning: false,
-        DisableDeprecationWarningIfRequired: " ");
+        DisableDeprecationWarningIfRequired: " ",
+        IsIdempotencyHeader: false);
 }

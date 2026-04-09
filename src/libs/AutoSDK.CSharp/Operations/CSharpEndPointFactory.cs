@@ -5,6 +5,7 @@ using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Naming.Clients;
 using AutoSDK.Naming.Parameters;
+using AutoSDK.Naming.Properties;
 using AutoSDK.Serialization.Form;
 using AutoSDK.TypeMapping;
 using Microsoft.OpenApi;
@@ -132,6 +133,7 @@ public static class CSharpEndPointFactory
             }).WithCSharpParameterNames().WithCSharpComputedValues());
         }
 
+        ApplyIdempotencyHeaders(operation, parameters);
         DeduplicateMethodParameterNames(parameters);
 
         var preparedPath = operation.OperationPath.PreparePath(parameters);
@@ -355,6 +357,152 @@ public static class CSharpEndPointFactory
             GeneratedNamespace = settings.Namespace,
             SubTypes = ImmutableArray.Create(itemType.Box()).AsEquatableArray(),
         }).WithCSharpComputedValues();
+    }
+
+    private static void ApplyIdempotencyHeaders(
+        OperationContext operation,
+        List<MethodParameter> parameters)
+    {
+        PromoteKnownIdempotencyHeaderParameters(parameters, operation.Settings);
+
+        if (!OpenApiExtensions.IsIdempotentOperation(operation.Operation.Extensions))
+        {
+            return;
+        }
+
+        var configuredHeaders = operation.DocumentIdempotencyHeaders;
+        if (configuredHeaders.Count == 0)
+        {
+            configuredHeaders = [new IdempotencyHeader("Idempotency-Key", "idempotencyKey")];
+        }
+
+        foreach (var header in configuredHeaders)
+        {
+            var existingIndex = parameters.FindIndex(x =>
+                x.Location == ParameterLocation.Header &&
+                string.Equals(x.Id, header.HeaderName, StringComparison.OrdinalIgnoreCase));
+
+            if (existingIndex >= 0)
+            {
+                parameters[existingIndex] = PromoteToIdempotencyHeader(parameters[existingIndex], operation.Settings, header.ParameterName);
+                continue;
+            }
+
+            parameters.Add(CreateSyntheticIdempotencyHeader(operation.Settings, header));
+        }
+    }
+
+    private static void PromoteKnownIdempotencyHeaderParameters(
+        List<MethodParameter> parameters,
+        Settings settings)
+    {
+        for (var i = 0; i < parameters.Count; i++)
+        {
+            var parameter = parameters[i];
+            if (parameter.Location != ParameterLocation.Header ||
+                parameter.IsIdempotencyHeader ||
+                !IsStringParameter(parameter) ||
+                !IsKnownIdempotencyHeaderName(parameter.Id))
+            {
+                continue;
+            }
+
+            parameters[i] = PromoteToIdempotencyHeader(parameter, settings, parameter.Name);
+        }
+    }
+
+    private static MethodParameter PromoteToIdempotencyHeader(
+        MethodParameter parameter,
+        Settings settings,
+        string parameterName)
+    {
+        var type = MakeNullableStringType(parameter.Type, settings);
+        var summary = string.IsNullOrWhiteSpace(parameter.Summary)
+            ? "Optional idempotency key. When omitted, the SDK generates one for this request."
+            : parameter.Summary;
+
+        return (parameter with
+        {
+            Name = NormalizeIdempotencyParameterName(parameterName, settings),
+            Type = type,
+            IsRequired = false,
+            DefaultValue = null,
+            Summary = summary,
+            Description = string.IsNullOrWhiteSpace(parameter.Description)
+                ? summary
+                : parameter.Description,
+            IsIdempotencyHeader = true,
+        }).WithCSharpParameterNames().WithCSharpComputedValues();
+    }
+
+    private static MethodParameter CreateSyntheticIdempotencyHeader(
+        Settings settings,
+        IdempotencyHeader header)
+    {
+        var normalizedName = NormalizeIdempotencyParameterName(header.ParameterName, settings);
+        var summary = "Optional idempotency key. When omitted, the SDK generates one for this request.";
+
+        return (MethodParameter.Default with
+        {
+            Id = header.HeaderName,
+            Name = normalizedName,
+            Type = MakeNullableStringType(TypeData.Default, settings),
+            IsRequired = false,
+            Location = ParameterLocation.Header,
+            Settings = settings.ToEmitterSettings(),
+            Summary = summary,
+            Description = summary,
+            IsIdempotencyHeader = true,
+        }).WithCSharpParameterNames().WithCSharpComputedValues();
+    }
+
+    private static TypeData MakeNullableStringType(TypeData type, Settings settings)
+    {
+        var rawType = string.IsNullOrWhiteSpace(type.CSharpTypeWithoutNullability)
+            ? "string"
+            : type.CSharpTypeWithoutNullability;
+
+        return (type with
+        {
+            CSharpTypeRaw = rawType,
+            CSharpTypeNullability = true,
+            Namespace = string.IsNullOrWhiteSpace(type.Namespace)
+                ? "System"
+                : type.Namespace,
+            GeneratedNamespace = string.IsNullOrWhiteSpace(type.GeneratedNamespace)
+                ? settings.Namespace
+                : type.GeneratedNamespace,
+        }).WithCSharpComputedValues();
+    }
+
+    private static bool IsStringParameter(MethodParameter parameter)
+    {
+        return string.Equals(parameter.Type.CSharpTypeWithoutNullability, "string", StringComparison.Ordinal);
+    }
+
+    private static bool IsKnownIdempotencyHeaderName(string headerName)
+    {
+        var normalized = NormalizeHeaderName(headerName);
+        return normalized.Contains("idempotencykey", StringComparison.Ordinal);
+    }
+
+    private static string NormalizeHeaderName(string value)
+    {
+        return new string(value
+            .Where(char.IsLetterOrDigit)
+            .Select(char.ToLowerInvariant)
+            .ToArray());
+    }
+
+    private static string NormalizeIdempotencyParameterName(string value, Settings settings)
+    {
+        var name = value.ToPropertyName();
+        name = CSharpPropertyNameGenerator.HandleWordSeparators(name);
+        return CSharpPropertyNameGenerator.SanitizeName(
+            name,
+            settings.ClsCompliantEnumPrefix,
+            true,
+            settings.IdentifierCharacterSet);
     }
 
     private static string GetCodeSamplesRemarks(OpenApiOperation operation)

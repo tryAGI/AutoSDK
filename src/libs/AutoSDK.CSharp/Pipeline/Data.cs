@@ -602,6 +602,7 @@ public static class Data
             .OrderBy(m => m.Tag.SafeName, StringComparer.Ordinal)
             .ThenBy(m => m.NotAsyncMethodName, StringComparer.Ordinal)
             .ToImmutableArray();
+        var hasIdempotencySupport = methods.Any(static method => method.Parameters.Any(static parameter => parameter.IsIdempotencyHeader));
         var resolvedIncludedTags = activeIncludedTags
             .Select(tag => resolvedIncludedTagsMap[tag.Name!])
             .OrderBy(tag => tag.SafeName, StringComparer.Ordinal)
@@ -631,7 +632,8 @@ public static class Data
                 Settings: csharpSettings,
                 GlobalSettings: csharpGlobalSettings,
                 Converters: converters,
-                HasOAuth2Support: hasOAuth2Support)] : [];
+                HasOAuth2Support: hasOAuth2Support,
+                HasIdempotencySupport: hasIdempotencySupport)] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
             clients = clients.Concat(
@@ -648,7 +650,8 @@ public static class Data
                         Settings: csharpSettings,
                         GlobalSettings: csharpGlobalSettings,
                         Converters: [],
-                        HasOAuth2Support: hasOAuth2Support)))
+                        HasOAuth2Support: hasOAuth2Support,
+                        HasIdempotencySupport: hasIdempotencySupport)))
                 .ToArray();
         }
         
@@ -970,6 +973,7 @@ public static class Data
             .Select(tag => resolvedIncludedTagsMap[tag.Name!])
             .OrderBy(tag => tag.SafeName, StringComparer.Ordinal)
             .ToArray();
+        var hasIdempotencySupport = methods.Any(static method => method.Parameters.Any(static parameter => parameter.IsIdempotencyHeader));
 
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors
             ? [new Client(
@@ -997,7 +1001,8 @@ public static class Data
                 Settings: settings,
                 GlobalSettings: globalSettings,
                 Converters: converters,
-                HasOAuth2Support: hasOAuth2Support)]
+                HasOAuth2Support: hasOAuth2Support,
+                HasIdempotencySupport: hasIdempotencySupport)]
             : [];
 
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
@@ -1015,7 +1020,8 @@ public static class Data
                         Settings: settings,
                         GlobalSettings: globalSettings,
                         Converters: [],
-                        HasOAuth2Support: hasOAuth2Support)))
+                        HasOAuth2Support: hasOAuth2Support,
+                        HasIdempotencySupport: hasIdempotencySupport)))
                 .ToArray();
         }
 

@@ -17,6 +17,7 @@ public class OperationContext(
     
     public IReadOnlyCollection<SchemaContext> Schemas { get; set; } = [];
     public IList<OpenApiSecurityRequirement> GlobalSecurityRequirements { get; set; } = [];
+    public IReadOnlyList<IdempotencyHeader> DocumentIdempotencyHeaders { get; set; } = [];
     
     public HashSet<string> Tags { get; set; } = [];
     public Tag Tag { get; set; } = Tag.Empty;

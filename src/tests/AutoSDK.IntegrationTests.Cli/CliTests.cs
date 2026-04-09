@@ -260,6 +260,54 @@ public class CliTests
     }
 
     [TestMethod]
+    public async Task Generate_WithFernIdempotencyHeaders_EmitsFirstClassSdkSupport()
+    {
+        const string spec = """
+                            openapi: 3.0.3
+                            info:
+                              title: Idempotency
+                              version: 1.0.0
+                            x-fern-idempotency-headers:
+                              - header: Idempotency-Key
+                                name: idempotency_key
+                            paths:
+                              /charges:
+                                post:
+                                  operationId: createCharge
+                                  x-fern-idempotent: true
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: object
+                                            properties:
+                                              id:
+                                                type: string
+                            """;
+
+        await GenerateFromContentAsync(
+            fileName: "idempotency.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "Generated.Idempotency",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedFiles = Directory.GetFiles(outputDirectory, "*.cs", SearchOption.AllDirectories);
+                generatedFiles.Should().NotBeEmpty();
+
+                var combinedSource = string.Join(
+                    Environment.NewLine,
+                    await Task.WhenAll(generatedFiles.Select(path => File.ReadAllTextAsync(path))));
+
+                combinedSource.Should().Contain("CreateIdempotencyKey");
+                combinedSource.Should().Contain("string? idempotencyKey = default");
+                combinedSource.Should().Contain("TryAddWithoutValidation(\"Idempotency-Key\", __idempotencyKey)");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_BufModuleInput_ScaffoldsGrpcClientProject()
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());

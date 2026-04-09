@@ -2444,6 +2444,49 @@ info:
         return GetExperimentalStageFromSummary(operation.Summary);
     }
 
+    public static IReadOnlyList<IdempotencyHeader> GetDocumentIdempotencyHeaders(
+        IDictionary<string, IOpenApiExtension>? extensions)
+    {
+        if (!(extensions?.TryGetValue("x-fern-idempotency-headers", out var extension) ?? false) ||
+            TryGetExtensionJsonNode(extension) is not JsonArray headersArray ||
+            headersArray.Count == 0)
+        {
+            return [];
+        }
+
+        var headers = new List<IdempotencyHeader>(headersArray.Count);
+        foreach (var item in headersArray)
+        {
+            switch (item)
+            {
+                case JsonValue value when value.TryGetValue<string>(out var headerValue) &&
+                                          !string.IsNullOrWhiteSpace(headerValue):
+                    headers.Add(new IdempotencyHeader(
+                        headerValue,
+                        headerValue));
+                    break;
+
+                case JsonObject headerObject
+                    when TryGetJsonObjectString(headerObject, out var headerName, "header") &&
+                         !string.IsNullOrWhiteSpace(headerName):
+                    headers.Add(new IdempotencyHeader(
+                        headerName,
+                        TryGetJsonObjectString(headerObject, out var parameterName, "name") &&
+                        !string.IsNullOrWhiteSpace(parameterName)
+                            ? parameterName
+                            : headerName));
+                    break;
+            }
+        }
+
+        return headers;
+    }
+
+    public static bool IsIdempotentOperation(IDictionary<string, IOpenApiExtension>? extensions)
+    {
+        return GetExtensionBooleanValue(extensions, "x-fern-idempotent");
+    }
+
     public static bool TryGetOperationGroupNameOverride(
         IDictionary<string, IOpenApiExtension>? extensions,
         out string value)

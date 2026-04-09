@@ -45,6 +45,10 @@ namespace {client.Settings.Namespace}
 #if DEBUG
             = true;
 #endif
+{(client.HasIdempotencySupport ? @"
+
+        /// <inheritdoc/>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; } = () => global::System.Guid.NewGuid().ToString(""D"");" : TrimmedLine)}
 {(client.HasOAuth2Support ? $@"
 
         internal global::{client.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Coordinator AutoSDKOAuth2State {{ get; set; }} = new global::{client.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Coordinator();" : TrimmedLine)}
@@ -64,6 +68,7 @@ namespace {client.Settings.Namespace}
         public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(HttpClient, authorizations: Authorizations)
         {{
             ReadResponseAsString = ReadResponseAsString,
+            {(client.HasIdempotencySupport ? "CreateIdempotencyKey = CreateIdempotencyKey," : TrimmedLine)}
             {(hasOptions
                 ? "JsonSerializerOptions = JsonSerializerOptions,"
                 : "JsonSerializerContext = JsonSerializerContext,")}
@@ -159,6 +164,11 @@ namespace {client.Settings.Namespace}
         /// ensuring <see cref=""ApiException.ResponseBody""/> is populated.
         /// </summary>
         public bool ReadResponseAsString {{ get; set; }}
+
+{(client.HasIdempotencySupport ? @"        /// <summary>
+        /// Creates idempotency keys for generated idempotent requests when the caller does not provide one.
+        /// </summary>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; }" : TrimmedLine)}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions

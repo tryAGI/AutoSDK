@@ -35,6 +35,11 @@ public static partial class Sources
         return false;
     }
 
+    private static IEnumerable<MethodParameter> GetIdempotencyParameters(EndPoint endPoint)
+    {
+        return endPoint.Parameters.Where(static x => x.IsIdempotencyHeader);
+    }
+
     public static string GenerateEndPoint(
         EndPoint endPoint,
         CancellationToken cancellationToken = default)
@@ -413,16 +418,17 @@ namespace {endPoint.Settings.Namespace}
             }}" : TrimmedLine)}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
 {endPoint.Parameters
-    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
+    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true, IsIdempotencyHeader: false })
     .Select(x => $@"
             __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? ".ToValueString()" : ".ToString()")});").Inject()}
 {endPoint.Parameters
-    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false })
+    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false, IsIdempotencyHeader: false })
     .Select(x => $@"
             if ({x.ParameterName} != default)
             {{
                 __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
             }}").Inject()}
+{GenerateIdempotencyHeaderHandling(endPoint)}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
 {GenerateCookieParameterHandling(endPoint)}
  
@@ -563,6 +569,24 @@ namespace {endPoint.Settings.Namespace}
             urlEncode: false,
             localNamePrefix: parameter.ParameterName,
             settings: settings);
+    }
+
+    private static string GenerateIdempotencyHeaderHandling(EndPoint endPoint)
+    {
+        var parameters = GetIdempotencyParameters(endPoint).ToArray();
+        if (parameters.Length == 0)
+        {
+            return TrimmedLine;
+        }
+
+        return parameters
+            .Select(x => $@"
+            var __{x.ParameterName} = global::System.String.IsNullOrWhiteSpace({x.ParameterName})
+                ? CreateIdempotencyKey()
+                : {x.ParameterName};
+            __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", __{x.ParameterName});")
+            .Inject()
+            .RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     private static string GenerateQueryStringParameterHandling(

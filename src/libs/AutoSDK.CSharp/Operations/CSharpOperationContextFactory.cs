@@ -15,6 +15,7 @@ public static class CSharpOperationContextFactory
         System.Net.Http.HttpMethod operationType,
         IReadOnlyList<SchemaContext>? operationSchemas,
         IList<OpenApiSecurityRequirement> globalSecurityRequirements,
+        IReadOnlyList<IdempotencyHeader>? documentIdempotencyHeaders = null,
         IReadOnlyDictionary<string, Tag>? resolvedTags = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
@@ -47,6 +48,7 @@ public static class CSharpOperationContextFactory
             Schemas = operationSchemas ?? (IReadOnlyCollection<SchemaContext>)[],
             Tags = tags,
             GlobalSecurityRequirements = globalSecurityRequirements,
+            DocumentIdempotencyHeaders = documentIdempotencyHeaders ?? [],
             Tag = GetOperationTag(operation, settings, firstTag, resolvedTags),
         };
         context.MethodName = context.GetMethodName();
