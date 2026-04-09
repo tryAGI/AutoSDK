@@ -7,6 +7,7 @@ public static partial class Sources
 {
     public static string GenerateOptionsSupport(
         CSharpSettings settings,
+        bool includePollingSupport = false,
         CancellationToken cancellationToken = default)
     {
         return $@"
@@ -117,49 +118,7 @@ namespace {settings.Namespace}
         public global::System.TimeSpan? Delay {{ get; set; }}
     }}
 
-    /// <summary>
-    /// Optional overrides for generated polling helper methods.
-    /// </summary>
-    public sealed class AutoSDKPollingOptions
-    {{
-        /// <summary>
-        /// Optional delay before the first poll attempt.
-        /// </summary>
-        public global::System.TimeSpan? InitialDelay {{ get; set; }}
-
-        /// <summary>
-        /// Optional delay between poll attempts.
-        /// </summary>
-        public global::System.TimeSpan? Interval {{ get; set; }}
-
-        /// <summary>
-        /// Optional maximum number of poll attempts.
-        /// </summary>
-        public int? MaxAttempts {{ get; set; }}
-    }}
-
-    /// <summary>
-    /// Raised when a generated polling helper matches a failure criterion or exhausts its attempts.
-    /// </summary>
-    public sealed class AutoSDKPollingException : global::System.Exception
-    {{
-        /// <summary>
-        /// Initializes a new instance of the <see cref=""AutoSDKPollingException""/> class.
-        /// </summary>
-        public AutoSDKPollingException(
-            string message,
-            global::{settings.Namespace}.AutoSDKHttpResponse? response = null,
-            global::System.Exception? innerException = null)
-            : base(message, innerException)
-        {{
-            Response = response;
-        }}
-
-        /// <summary>
-        /// Gets the last successful HTTP response observed by the polling helper.
-        /// </summary>
-        public global::{settings.Namespace}.AutoSDKHttpResponse? Response {{ get; }}
-    }}
+{(includePollingSupport ? GeneratePollingOptionsSurface(settings) : TrimmedLine)}
 
     /// <summary>
     /// Runtime hook interface for generated SDK lifecycle events.
@@ -291,6 +250,283 @@ namespace {settings.Namespace}
         public global::System.Threading.CancellationToken CancellationToken {{ get; set; }}
     }}
 
+{(includePollingSupport ? GeneratePollingRuntimeSupport(settings) : TrimmedLine)}
+
+    internal static class AutoSDKRequestOptionsSupport
+    {{
+        internal static global::{settings.Namespace}.AutoSDKHookContext CreateHookContext(
+            string operationId,
+            string methodName,
+            string pathTemplate,
+            string httpMethod,
+            global::System.Uri? baseUri,
+            global::System.Net.Http.HttpRequestMessage request,
+            global::System.Net.Http.HttpResponseMessage? response,
+            global::System.Exception? exception,
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
+            int attempt,
+            int maxAttempts,
+            bool willRetry,
+            global::System.Threading.CancellationToken cancellationToken)
+        {{
+            return new global::{settings.Namespace}.AutoSDKHookContext
+            {{
+                OperationId = operationId ?? string.Empty,
+                MethodName = methodName ?? string.Empty,
+                PathTemplate = pathTemplate ?? string.Empty,
+                HttpMethod = httpMethod ?? string.Empty,
+                BaseUri = baseUri,
+                Request = request,
+                Response = response,
+                Exception = exception,
+                ClientOptions = clientOptions,
+                RequestOptions = requestOptions,
+                Attempt = attempt,
+                MaxAttempts = maxAttempts,
+                WillRetry = willRetry,
+                CancellationToken = cancellationToken,
+            }};
+        }}
+
+        internal static global::System.Threading.Tasks.Task OnBeforeRequestAsync(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKHookContext context)
+        {{
+            return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnBeforeRequestAsync(hookContext), context);
+        }}
+
+        internal static global::System.Threading.Tasks.Task OnAfterSuccessAsync(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKHookContext context)
+        {{
+            return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnAfterSuccessAsync(hookContext), context);
+        }}
+
+        internal static global::System.Threading.Tasks.Task OnAfterErrorAsync(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKHookContext context)
+        {{
+            return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnAfterErrorAsync(hookContext), context);
+        }}
+
+        internal static bool GetReadResponseAsString(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
+            bool fallbackValue)
+        {{
+            return requestOptions?.ReadResponseAsString ??
+                   clientOptions.ReadResponseAsString ??
+                   fallbackValue;
+        }}
+
+        internal static global::System.Threading.CancellationTokenSource? CreateTimeoutCancellationTokenSource(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
+            global::System.Threading.CancellationToken cancellationToken)
+        {{
+            var timeout = requestOptions?.Timeout ?? clientOptions.Timeout;
+            if (!timeout.HasValue || timeout.Value <= global::System.TimeSpan.Zero)
+            {{
+                return null;
+            }}
+
+            var cancellationTokenSource = global::System.Threading.CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            cancellationTokenSource.CancelAfter(timeout.Value);
+            return cancellationTokenSource;
+        }}
+
+        internal static int GetMaxAttempts(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
+            bool supportsRetry)
+        {{
+            if (!supportsRetry)
+            {{
+                return 1;
+            }}
+
+            var maxAttempts = requestOptions?.Retry?.MaxAttempts ??
+                              clientOptions.Retry?.MaxAttempts ??
+                              1;
+            return maxAttempts < 1 ? 1 : maxAttempts;
+        }}
+
+        internal static async global::System.Threading.Tasks.Task DelayBeforeRetryAsync(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
+            global::System.Threading.CancellationToken cancellationToken)
+        {{
+            var delay = requestOptions?.Retry?.Delay ??
+                        clientOptions.Retry?.Delay;
+            if (!delay.HasValue || delay.Value <= global::System.TimeSpan.Zero)
+            {{
+                return;
+            }}
+
+            await global::System.Threading.Tasks.Task.Delay(delay.Value, cancellationToken).ConfigureAwait(false);
+        }}
+
+        internal static bool ShouldRetryStatusCode(
+            global::System.Net.HttpStatusCode statusCode)
+        {{
+            return (int)statusCode switch
+            {{
+                408 => true,
+                429 => true,
+                500 => true,
+                502 => true,
+                503 => true,
+                504 => true,
+                _ => false,
+            }};
+        }}
+
+        internal static string AppendQueryParameters(
+            string path,
+            global::System.Collections.Generic.Dictionary<string, string> clientParameters,
+            global::System.Collections.Generic.Dictionary<string, string>? requestParameters)
+        {{
+            var hasClientParameters = clientParameters != null && clientParameters.Count > 0;
+            var hasRequestParameters = requestParameters != null && requestParameters.Count > 0;
+            if (!hasClientParameters && !hasRequestParameters)
+            {{
+                return path;
+            }}
+
+            var builder = new global::System.Text.StringBuilder(path ?? string.Empty);
+            var hasQuery = builder.ToString().Contains(""?"", global::System.StringComparison.Ordinal);
+            AppendParameters(builder, clientParameters, ref hasQuery);
+            AppendParameters(builder, requestParameters, ref hasQuery);
+            return builder.ToString();
+        }}
+
+        internal static void ApplyHeaders(
+            global::System.Net.Http.HttpRequestMessage request,
+            global::System.Collections.Generic.Dictionary<string, string> clientHeaders,
+            global::System.Collections.Generic.Dictionary<string, string>? requestHeaders)
+        {{
+            ApplyHeadersCore(request, clientHeaders);
+            ApplyHeadersCore(request, requestHeaders);
+        }}
+
+        private static void AppendParameters(
+            global::System.Text.StringBuilder builder,
+            global::System.Collections.Generic.Dictionary<string, string>? parameters,
+            ref bool hasQuery)
+        {{
+            if (parameters == null || parameters.Count == 0)
+            {{
+                return;
+            }}
+
+            foreach (var parameter in parameters)
+            {{
+                builder.Append(hasQuery ? '&' : '?');
+                builder.Append(global::System.Uri.EscapeDataString(parameter.Key));
+                builder.Append('=');
+                builder.Append(global::System.Uri.EscapeDataString(parameter.Value ?? string.Empty));
+                hasQuery = true;
+            }}
+        }}
+
+        private static void ApplyHeadersCore(
+            global::System.Net.Http.HttpRequestMessage request,
+            global::System.Collections.Generic.Dictionary<string, string>? headers)
+        {{
+            if (headers == null || headers.Count == 0)
+            {{
+                return;
+            }}
+
+            foreach (var header in headers)
+            {{
+                request.Headers.Remove(header.Key);
+                request.Content?.Headers.Remove(header.Key);
+
+                if (!request.Headers.TryAddWithoutValidation(header.Key, header.Value ?? string.Empty) &&
+                    request.Content != null)
+                {{
+                    request.Content.Headers.TryAddWithoutValidation(header.Key, header.Value ?? string.Empty);
+                }}
+            }}
+        }}
+
+        private static async global::System.Threading.Tasks.Task InvokeHooksAsync(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::System.Func<global::{settings.Namespace}.IAutoSDKHook, global::{settings.Namespace}.AutoSDKHookContext, global::System.Threading.Tasks.Task> callback,
+            global::{settings.Namespace}.AutoSDKHookContext context)
+        {{
+            if (clientOptions.Hooks == null || clientOptions.Hooks.Count == 0)
+            {{
+                return;
+            }}
+
+            foreach (var hook in clientOptions.Hooks)
+            {{
+                if (hook == null)
+                {{
+                    continue;
+                }}
+
+                await callback(hook, context).ConfigureAwait(false);
+            }}
+        }}
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GeneratePollingOptionsSurface(CSharpSettings settings)
+    {
+        return $@"
+    /// <summary>
+    /// Optional overrides for generated polling helper methods.
+    /// </summary>
+    public sealed class AutoSDKPollingOptions
+    {{
+        /// <summary>
+        /// Optional delay before the first poll attempt.
+        /// </summary>
+        public global::System.TimeSpan? InitialDelay {{ get; set; }}
+
+        /// <summary>
+        /// Optional delay between poll attempts.
+        /// </summary>
+        public global::System.TimeSpan? Interval {{ get; set; }}
+
+        /// <summary>
+        /// Optional maximum number of poll attempts.
+        /// </summary>
+        public int? MaxAttempts {{ get; set; }}
+    }}
+
+    /// <summary>
+    /// Raised when a generated polling helper matches a failure criterion or exhausts its attempts.
+    /// </summary>
+    public sealed class AutoSDKPollingException : global::System.Exception
+    {{
+        /// <summary>
+        /// Initializes a new instance of the <see cref=""AutoSDKPollingException""/> class.
+        /// </summary>
+        public AutoSDKPollingException(
+            string message,
+            global::{settings.Namespace}.AutoSDKHttpResponse? response = null,
+            global::System.Exception? innerException = null)
+            : base(message, innerException)
+        {{
+            Response = response;
+        }}
+
+        /// <summary>
+        /// Gets the last successful HTTP response observed by the polling helper.
+        /// </summary>
+        public global::{settings.Namespace}.AutoSDKHttpResponse? Response {{ get; }}
+    }}";
+    }
+
+    private static string GeneratePollingRuntimeSupport(CSharpSettings settings)
+    {
+        return $@"
     internal readonly struct AutoSDKResolvedPollingOptions
     {{
         public AutoSDKResolvedPollingOptions(
@@ -607,229 +843,6 @@ namespace {settings.Namespace}
             wireValue = method.Invoke(null, new[] {{ value }}) as string;
             return wireValue != null;
         }}
-    }}
-
-    internal static class AutoSDKRequestOptionsSupport
-    {{
-        internal static global::{settings.Namespace}.AutoSDKHookContext CreateHookContext(
-            string operationId,
-            string methodName,
-            string pathTemplate,
-            string httpMethod,
-            global::System.Uri? baseUri,
-            global::System.Net.Http.HttpRequestMessage request,
-            global::System.Net.Http.HttpResponseMessage? response,
-            global::System.Exception? exception,
-            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
-            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
-            int attempt,
-            int maxAttempts,
-            bool willRetry,
-            global::System.Threading.CancellationToken cancellationToken)
-        {{
-            return new global::{settings.Namespace}.AutoSDKHookContext
-            {{
-                OperationId = operationId ?? string.Empty,
-                MethodName = methodName ?? string.Empty,
-                PathTemplate = pathTemplate ?? string.Empty,
-                HttpMethod = httpMethod ?? string.Empty,
-                BaseUri = baseUri,
-                Request = request,
-                Response = response,
-                Exception = exception,
-                ClientOptions = clientOptions,
-                RequestOptions = requestOptions,
-                Attempt = attempt,
-                MaxAttempts = maxAttempts,
-                WillRetry = willRetry,
-                CancellationToken = cancellationToken,
-            }};
-        }}
-
-        internal static global::System.Threading.Tasks.Task OnBeforeRequestAsync(
-            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
-            global::{settings.Namespace}.AutoSDKHookContext context)
-        {{
-            return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnBeforeRequestAsync(hookContext), context);
-        }}
-
-        internal static global::System.Threading.Tasks.Task OnAfterSuccessAsync(
-            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
-            global::{settings.Namespace}.AutoSDKHookContext context)
-        {{
-            return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnAfterSuccessAsync(hookContext), context);
-        }}
-
-        internal static global::System.Threading.Tasks.Task OnAfterErrorAsync(
-            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
-            global::{settings.Namespace}.AutoSDKHookContext context)
-        {{
-            return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnAfterErrorAsync(hookContext), context);
-        }}
-
-        internal static bool GetReadResponseAsString(
-            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
-            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
-            bool fallbackValue)
-        {{
-            return requestOptions?.ReadResponseAsString ??
-                   clientOptions.ReadResponseAsString ??
-                   fallbackValue;
-        }}
-
-        internal static global::System.Threading.CancellationTokenSource? CreateTimeoutCancellationTokenSource(
-            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
-            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
-            global::System.Threading.CancellationToken cancellationToken)
-        {{
-            var timeout = requestOptions?.Timeout ?? clientOptions.Timeout;
-            if (!timeout.HasValue || timeout.Value <= global::System.TimeSpan.Zero)
-            {{
-                return null;
-            }}
-
-            var cancellationTokenSource = global::System.Threading.CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
-            cancellationTokenSource.CancelAfter(timeout.Value);
-            return cancellationTokenSource;
-        }}
-
-        internal static int GetMaxAttempts(
-            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
-            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
-            bool supportsRetry)
-        {{
-            if (!supportsRetry)
-            {{
-                return 1;
-            }}
-
-            var maxAttempts = requestOptions?.Retry?.MaxAttempts ??
-                              clientOptions.Retry?.MaxAttempts ??
-                              1;
-            return maxAttempts < 1 ? 1 : maxAttempts;
-        }}
-
-        internal static async global::System.Threading.Tasks.Task DelayBeforeRetryAsync(
-            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
-            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
-            global::System.Threading.CancellationToken cancellationToken)
-        {{
-            var delay = requestOptions?.Retry?.Delay ??
-                        clientOptions.Retry?.Delay;
-            if (!delay.HasValue || delay.Value <= global::System.TimeSpan.Zero)
-            {{
-                return;
-            }}
-
-            await global::System.Threading.Tasks.Task.Delay(delay.Value, cancellationToken).ConfigureAwait(false);
-        }}
-
-        internal static bool ShouldRetryStatusCode(
-            global::System.Net.HttpStatusCode statusCode)
-        {{
-            return (int)statusCode switch
-            {{
-                408 => true,
-                429 => true,
-                500 => true,
-                502 => true,
-                503 => true,
-                504 => true,
-                _ => false,
-            }};
-        }}
-
-        internal static string AppendQueryParameters(
-            string path,
-            global::System.Collections.Generic.Dictionary<string, string> clientParameters,
-            global::System.Collections.Generic.Dictionary<string, string>? requestParameters)
-        {{
-            var hasClientParameters = clientParameters != null && clientParameters.Count > 0;
-            var hasRequestParameters = requestParameters != null && requestParameters.Count > 0;
-            if (!hasClientParameters && !hasRequestParameters)
-            {{
-                return path;
-            }}
-
-            var builder = new global::System.Text.StringBuilder(path ?? string.Empty);
-            var hasQuery = builder.ToString().Contains(""?"", global::System.StringComparison.Ordinal);
-            AppendParameters(builder, clientParameters, ref hasQuery);
-            AppendParameters(builder, requestParameters, ref hasQuery);
-            return builder.ToString();
-        }}
-
-        internal static void ApplyHeaders(
-            global::System.Net.Http.HttpRequestMessage request,
-            global::System.Collections.Generic.Dictionary<string, string> clientHeaders,
-            global::System.Collections.Generic.Dictionary<string, string>? requestHeaders)
-        {{
-            ApplyHeadersCore(request, clientHeaders);
-            ApplyHeadersCore(request, requestHeaders);
-        }}
-
-        private static void AppendParameters(
-            global::System.Text.StringBuilder builder,
-            global::System.Collections.Generic.Dictionary<string, string>? parameters,
-            ref bool hasQuery)
-        {{
-            if (parameters == null || parameters.Count == 0)
-            {{
-                return;
-            }}
-
-            foreach (var parameter in parameters)
-            {{
-                builder.Append(hasQuery ? '&' : '?');
-                builder.Append(global::System.Uri.EscapeDataString(parameter.Key));
-                builder.Append('=');
-                builder.Append(global::System.Uri.EscapeDataString(parameter.Value ?? string.Empty));
-                hasQuery = true;
-            }}
-        }}
-
-        private static void ApplyHeadersCore(
-            global::System.Net.Http.HttpRequestMessage request,
-            global::System.Collections.Generic.Dictionary<string, string>? headers)
-        {{
-            if (headers == null || headers.Count == 0)
-            {{
-                return;
-            }}
-
-            foreach (var header in headers)
-            {{
-                request.Headers.Remove(header.Key);
-                request.Content?.Headers.Remove(header.Key);
-
-                if (!request.Headers.TryAddWithoutValidation(header.Key, header.Value ?? string.Empty) &&
-                    request.Content != null)
-                {{
-                    request.Content.Headers.TryAddWithoutValidation(header.Key, header.Value ?? string.Empty);
-                }}
-            }}
-        }}
-
-        private static async global::System.Threading.Tasks.Task InvokeHooksAsync(
-            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
-            global::System.Func<global::{settings.Namespace}.IAutoSDKHook, global::{settings.Namespace}.AutoSDKHookContext, global::System.Threading.Tasks.Task> callback,
-            global::{settings.Namespace}.AutoSDKHookContext context)
-        {{
-            if (clientOptions.Hooks == null || clientOptions.Hooks.Count == 0)
-            {{
-                return;
-            }}
-
-            foreach (var hook in clientOptions.Hooks)
-            {{
-                if (hook == null)
-                {{
-                    continue;
-                }}
-
-                await callback(hook, context).ConfigureAwait(false);
-            }}
-        }}
-    }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }}";
     }
 }

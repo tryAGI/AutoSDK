@@ -67,7 +67,7 @@ public class PollingGenerationTests
         var method = data.Methods.Single();
         var methodSource = Sources.Method(method).Text;
         var interfaceSource = Sources.MethodInterface(method).Text;
-        var supportSource = Sources.OptionsSupport(settings).Text;
+        var supportSource = Sources.OptionsSupport(settings, includePollingSupport: true).Text;
 
         methodSource.Should().Contain("GetJobWaitForCompletedAsync(");
         methodSource.Should().Contain("await GetJobAsResponseAsync(");

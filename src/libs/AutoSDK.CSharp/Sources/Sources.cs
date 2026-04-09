@@ -409,11 +409,15 @@ public static partial class Sources
 
     public static FileWithName OptionsSupport(
         CSharpSettings settings,
+        bool includePollingSupport = false,
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
             Name: $"{settings.Namespace}.OptionsSupport.g.cs",
-            Text: GenerateOptionsSupport(settings, cancellationToken: cancellationToken));
+            Text: GenerateOptionsSupport(
+                settings,
+                includePollingSupport: includePollingSupport,
+                cancellationToken: cancellationToken));
     }
 
     public static FileWithName SecuritySupport(

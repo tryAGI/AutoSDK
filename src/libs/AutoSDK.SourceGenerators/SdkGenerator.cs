@@ -52,7 +52,10 @@ public class SdkGenerator : IIncrementalGenerator
             .AddSource(context);
         supportData
             .SelectAndReportExceptions((x, c) => ShouldGenerateOptionsSupport(x.Right)
-                ? Sources.OptionsSupport(x.Left, c)
+                ? Sources.OptionsSupport(
+                    x.Left,
+                    includePollingSupport: ShouldGeneratePollingSupport(x.Right),
+                    cancellationToken: c)
                 : FileWithName.Empty
                 .AsFileWithName(), context, Id)
             .AddSource(context);
@@ -230,6 +233,11 @@ public class SdkGenerator : IIncrementalGenerator
         return data.Any(static x =>
             !x.Methods.IsEmpty ||
             !x.Clients.IsEmpty);
+    }
+
+    private static bool ShouldGeneratePollingSupport(ImmutableArray<AutoSDK.Models.Data> data)
+    {
+        return data.Any(static x => x.Methods.Any(static y => !y.PollingOperations.IsEmpty));
     }
 
     private static bool ShouldGenerateSecuritySupport(ImmutableArray<AutoSDK.Models.Data> data)
