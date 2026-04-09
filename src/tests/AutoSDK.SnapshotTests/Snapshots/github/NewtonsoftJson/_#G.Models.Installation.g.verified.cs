@@ -27,6 +27,7 @@ namespace G
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_selection", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InstallationRepositorySelectionJsonConverter))]
         public global::G.InstallationRepositorySelection RepositorySelection { get; set; } = default!;
 
         /// <summary>

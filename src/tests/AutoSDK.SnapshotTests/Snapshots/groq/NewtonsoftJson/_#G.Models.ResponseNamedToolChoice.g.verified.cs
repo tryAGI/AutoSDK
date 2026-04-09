@@ -13,6 +13,7 @@ namespace G
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseNamedToolChoiceTypeJsonConverter))]
         public global::G.ResponseNamedToolChoiceType Type { get; set; }
 
         /// <summary>

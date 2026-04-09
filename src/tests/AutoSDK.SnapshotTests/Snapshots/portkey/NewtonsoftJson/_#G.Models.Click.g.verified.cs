@@ -16,12 +16,14 @@ namespace G
         /// </summary>
         /// <default>global::G.ClickType.Click</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClickTypeJsonConverter))]
         public global::G.ClickType Type { get; set; } = global::G.ClickType.Click;
 
         /// <summary>
         /// Indicates which mouse button was pressed during the click. One of `left`, `right`, `wheel`, `back`, or `forward`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("button", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClickButtonJsonConverter))]
         public global::G.ClickButton Button { get; set; } = default!;
 
         /// <summary>

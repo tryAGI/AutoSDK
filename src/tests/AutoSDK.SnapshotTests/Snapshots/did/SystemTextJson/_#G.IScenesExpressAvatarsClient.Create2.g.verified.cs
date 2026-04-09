@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="xApiKeyExternal"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Create2Response> Create2Async(
 
             global::G.Create2Request request,
             string? xApiKeyExternal = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Scene
@@ -46,6 +48,7 @@ namespace G
         /// <param name="background">
         /// Background color of the scene result, can only be used for avatars with green screen background
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Create2Response> Create2Async(
@@ -58,6 +61,7 @@ namespace G
             string? resultUrl = default,
             global::G.Create2RequestConfig? config = default,
             global::G.Create2RequestBackground? background = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

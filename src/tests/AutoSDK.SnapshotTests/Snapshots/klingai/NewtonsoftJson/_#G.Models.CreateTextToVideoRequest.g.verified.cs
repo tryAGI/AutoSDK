@@ -14,6 +14,7 @@ namespace G
         /// Default Value: kling-v1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextToVideoRequestModelNameJsonConverter))]
         public global::G.CreateTextToVideoRequestModelName? ModelName { get; set; }
 
         /// <summary>
@@ -40,6 +41,7 @@ namespace G
         /// Default Value: std
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextToVideoRequestModeJsonConverter))]
         public global::G.CreateTextToVideoRequestMode? Mode { get; set; }
 
         /// <summary>
@@ -47,6 +49,7 @@ namespace G
         /// Default Value: 16:9
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("aspect_ratio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextToVideoRequestAspectRatioJsonConverter))]
         public global::G.CreateTextToVideoRequestAspectRatio? AspectRatio { get; set; }
 
         /// <summary>
@@ -54,6 +57,7 @@ namespace G
         /// Default Value: 5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("duration")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextToVideoRequestDurationJsonConverter))]
         public global::G.CreateTextToVideoRequestDuration? Duration { get; set; }
 
         /// <summary>
@@ -61,6 +65,7 @@ namespace G
         /// Default Value: off
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sound")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextToVideoRequestSoundJsonConverter))]
         public global::G.CreateTextToVideoRequestSound? Sound { get; set; }
 
         /// <summary>

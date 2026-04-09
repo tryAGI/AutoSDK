@@ -55,6 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptOpenAIInvocationParametersContentReasoningEffortJsonConverter))]
         public global::G.PromptOpenAIInvocationParametersContentReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>

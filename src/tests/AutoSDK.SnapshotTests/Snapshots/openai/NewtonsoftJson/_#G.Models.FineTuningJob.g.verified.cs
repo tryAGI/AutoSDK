@@ -19,6 +19,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the fine-tuning job was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the fine-tuning job was finished. The value will be null if the fine-tuning job is still running.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finished_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? FinishedAt { get; set; }
 
         /// <summary>
@@ -55,6 +57,7 @@ namespace G
         /// The object type, which is always "fine_tuning.job".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuningJobObjectJsonConverter))]
         public global::G.FineTuningJobObject Object { get; set; }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace G
         /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuningJobStatusJsonConverter))]
         public global::G.FineTuningJobStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -109,6 +113,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the fine-tuning job is estimated to finish. The value will be null if the fine-tuning job is not running.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("estimated_finish")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? EstimatedFinish { get; set; }
 
         /// <summary>

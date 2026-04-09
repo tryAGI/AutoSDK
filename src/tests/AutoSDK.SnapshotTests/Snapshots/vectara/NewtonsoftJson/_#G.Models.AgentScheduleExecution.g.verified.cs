@@ -40,6 +40,7 @@ namespace G
         /// Outcome of this attempt.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentScheduleExecutionStatusJsonConverter))]
         public global::G.AgentScheduleExecutionStatus Status { get; set; } = default!;
 
         /// <summary>

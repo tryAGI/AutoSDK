@@ -29,12 +29,14 @@ namespace G
         /// Entity responsible for managing the toolkits
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("managed_by")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostToolkitsMultiRequestManagedByJsonConverter))]
         public global::G.PostToolkitsMultiRequestManagedBy? ManagedBy { get; set; }
 
         /// <summary>
         /// Determines how toolkits should be sorted in the response
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sort_by")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostToolkitsMultiRequestSortByJsonConverter))]
         public global::G.PostToolkitsMultiRequestSortBy? SortBy { get; set; }
 
         /// <summary>

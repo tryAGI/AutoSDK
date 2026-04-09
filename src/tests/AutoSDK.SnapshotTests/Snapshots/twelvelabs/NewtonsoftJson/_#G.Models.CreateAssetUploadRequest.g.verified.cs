@@ -19,6 +19,7 @@ namespace G
         /// The type of asset you want to upload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAssetUploadRequestTypeJsonConverter))]
         public global::G.CreateAssetUploadRequestType Type { get; set; }
 
         /// <summary>

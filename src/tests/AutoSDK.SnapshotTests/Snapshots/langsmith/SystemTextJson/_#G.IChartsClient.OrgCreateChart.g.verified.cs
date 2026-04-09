@@ -10,11 +10,13 @@ namespace G
         /// Create a new chart.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartResponse> OrgCreateChartAsync(
 
             global::G.CustomChartCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Org Create Chart<br/>
@@ -30,6 +32,7 @@ namespace G
         /// <param name="sectionId"></param>
         /// <param name="metadata"></param>
         /// <param name="commonFilters"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartResponse> OrgCreateChartAsync(
@@ -41,6 +44,7 @@ namespace G
             global::System.Guid? sectionId = default,
             object? metadata = default,
             global::G.CustomChartSeriesFilters2? commonFilters = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

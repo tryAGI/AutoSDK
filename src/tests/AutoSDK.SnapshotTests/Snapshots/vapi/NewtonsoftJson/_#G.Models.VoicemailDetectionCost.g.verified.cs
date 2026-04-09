@@ -13,6 +13,7 @@ namespace G
         /// This is the type of cost, always 'voicemail-detection' for this class.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoicemailDetectionCostTypeJsonConverter))]
         public global::G.VoicemailDetectionCostType Type { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// This is the provider that was used to detect the voicemail.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoicemailDetectionCostProviderJsonConverter))]
         public global::G.VoicemailDetectionCostProvider Provider { get; set; } = default!;
 
         /// <summary>

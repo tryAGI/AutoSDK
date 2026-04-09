@@ -22,6 +22,7 @@ namespace G
         /// Default Value: base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranslationModelEnumJsonConverter))]
         public global::G.TranslationModelEnum? Model { get; set; }
 
         /// <summary>

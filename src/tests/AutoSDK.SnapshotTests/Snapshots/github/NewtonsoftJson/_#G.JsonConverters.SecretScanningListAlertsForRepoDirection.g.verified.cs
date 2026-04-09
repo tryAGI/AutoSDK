@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.SecretScanningListAlertsForRepoDirection.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class SecretScanningListAlertsForRepoDirectionJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.SecretScanningListAlertsForRepoDirection>
+    {
+        /// <inheritdoc />
+        public override global::G.SecretScanningListAlertsForRepoDirection ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.SecretScanningListAlertsForRepoDirection existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.SecretScanningListAlertsForRepoDirectionExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.SecretScanningListAlertsForRepoDirection)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.SecretScanningListAlertsForRepoDirection);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.SecretScanningListAlertsForRepoDirection value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.SecretScanningListAlertsForRepoDirectionExtensions.ToValueString(value));
+        }
+    }
+}

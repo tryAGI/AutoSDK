@@ -19,12 +19,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("turn_taking_patience")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationalFlowLayerTurnTakingPatienceJsonConverter))]
         public global::G.ConversationalFlowLayerTurnTakingPatience? TurnTakingPatience { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("replica_interruptibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationalFlowLayerReplicaInterruptibilityJsonConverter))]
         public global::G.ConversationalFlowLayerReplicaInterruptibility? ReplicaInterruptibility { get; set; }
 
         /// <summary>

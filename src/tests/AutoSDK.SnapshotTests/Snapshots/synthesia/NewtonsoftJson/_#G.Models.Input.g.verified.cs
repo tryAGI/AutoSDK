@@ -50,6 +50,7 @@ namespace G
         /// Language code should be in the format: `en-US`, where the first two characters represent language and the second two-character represent the country.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scriptLanguage")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputScriptLanguageJsonConverter))]
         public global::G.InputScriptLanguage? ScriptLanguage { get; set; }
 
         /// <summary>
@@ -68,6 +69,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transition")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputTransitionJsonConverter))]
         public global::G.InputTransition? Transition { get; set; }
 
         /// <summary>

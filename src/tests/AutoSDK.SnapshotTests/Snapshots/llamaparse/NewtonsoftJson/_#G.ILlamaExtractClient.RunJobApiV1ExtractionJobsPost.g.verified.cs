@@ -13,6 +13,7 @@ namespace G
         /// </param>
         /// <param name="session"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExtractJob> RunJobApiV1ExtractionJobsPostAsync(
@@ -20,6 +21,7 @@ namespace G
             global::G.ExtractJobCreate request,
             bool? fromUi = default,
             string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Run Job
@@ -46,6 +48,7 @@ namespace G
         /// <param name="configOverride">
         /// The config to override the extraction agent's config with
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExtractJob> RunJobApiV1ExtractionJobsPostAsync(
@@ -57,6 +60,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.WebhookConfiguration>? webhookConfigurations = default,
             global::G.AnyOf<object, string, object>? dataSchemaOverride = default,
             global::G.ExtractConfig? configOverride = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

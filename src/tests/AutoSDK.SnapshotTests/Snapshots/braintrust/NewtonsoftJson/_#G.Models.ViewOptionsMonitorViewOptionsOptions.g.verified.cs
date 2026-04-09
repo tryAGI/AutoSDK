@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("spanType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ViewOptionsMonitorViewOptionsOptionsSpanTypeJsonConverter))]
         public global::G.ViewOptionsMonitorViewOptionsOptionsSpanType? SpanType { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ViewOptionsMonitorViewOptionsOptionsTypeJsonConverter))]
         public global::G.ViewOptionsMonitorViewOptionsOptionsType? Type { get; set; }
 
         /// <summary>

@@ -33,6 +33,7 @@ namespace G
         /// </summary>
         /// <example>adaptive</example>
         [global::Newtonsoft.Json.JsonProperty("videoDuration")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AddLocalesToDubbingProjectRequestVideoDurationJsonConverter))]
         public global::G.AddLocalesToDubbingProjectRequestVideoDuration? VideoDuration { get; set; }
 
         /// <summary>
@@ -42,6 +43,7 @@ namespace G
         /// </summary>
         /// <example>private</example>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AddLocalesToDubbingProjectRequestVisibilityJsonConverter))]
         public global::G.AddLocalesToDubbingProjectRequestVisibility? Visibility { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmptyObject> CodeScanningUpdateDefaultSetupAsync(
@@ -20,6 +21,7 @@ namespace G
             string repo,
 
             global::G.CodeScanningDefaultSetupUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a code scanning default setup configuration<br/>
@@ -37,6 +39,7 @@ namespace G
         /// <param name="languages">
         /// CodeQL languages to be analyzed.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmptyObject> CodeScanningUpdateDefaultSetupAsync(
@@ -45,6 +48,7 @@ namespace G
             global::G.CodeScanningDefaultSetupUpdateState? state = default,
             global::G.CodeScanningDefaultSetupUpdateQuerySuite? querySuite = default,
             global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupUpdateLanguage>? languages = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbedResponseDiscriminatorResponseTypeJsonConverter))]
         public global::G.EmbedResponseDiscriminatorResponseType? ResponseType { get; set; }
 
         /// <summary>

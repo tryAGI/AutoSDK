@@ -53,6 +53,7 @@ namespace G
         /// The provider type for OpenAI
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateSecretRequestVariant2OpenAIConfigurationProviderJsonConverter))]
         public global::G.UpdateSecretRequestVariant2OpenAIConfigurationProvider? Provider { get; set; }
 
         /// <summary>

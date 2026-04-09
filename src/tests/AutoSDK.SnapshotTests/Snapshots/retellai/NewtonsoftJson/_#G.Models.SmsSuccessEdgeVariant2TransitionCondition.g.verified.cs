@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SmsSuccessEdgeVariant2TransitionConditionTypeJsonConverter))]
         public global::G.SmsSuccessEdgeVariant2TransitionConditionType Type { get; set; }
 
         /// <summary>
         /// Must be "sent successfully" for SMS success edge
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SmsSuccessEdgeVariant2TransitionConditionPromptJsonConverter))]
         public global::G.SmsSuccessEdgeVariant2TransitionConditionPrompt Prompt { get; set; }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// This is the provider to use for voicemail detection.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoogleVoicemailDetectionPlanProviderJsonConverter))]
         public global::G.GoogleVoicemailDetectionPlanProvider Provider { get; set; }
 
         /// <summary>
@@ -40,6 +41,7 @@ namespace G
         /// @default 'audio' (audio detection)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoogleVoicemailDetectionPlanTypeJsonConverter))]
         public global::G.GoogleVoicemailDetectionPlanType? Type { get; set; }
 
         /// <summary>

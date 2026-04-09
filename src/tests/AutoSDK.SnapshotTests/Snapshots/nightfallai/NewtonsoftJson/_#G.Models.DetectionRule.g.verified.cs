@@ -25,6 +25,7 @@ namespace G
         /// ANY = logical OR, ALL = logical AND
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("logicalOp", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LogicalOpJsonConverter))]
         public global::G.LogicalOp LogicalOp { get; set; } = default!;
 
         /// <summary>

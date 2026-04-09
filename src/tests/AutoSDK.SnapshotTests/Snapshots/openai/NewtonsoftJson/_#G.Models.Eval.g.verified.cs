@@ -22,6 +22,7 @@ namespace G
         /// </summary>
         /// <default>global::G.EvalObject.Eval</default>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalObjectJsonConverter))]
         public global::G.EvalObject Object { get; set; } = global::G.EvalObject.Eval;
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the eval was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>

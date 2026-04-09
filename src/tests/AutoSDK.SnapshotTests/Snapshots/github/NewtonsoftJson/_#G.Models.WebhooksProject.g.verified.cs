@@ -73,6 +73,7 @@ namespace G
         /// State of the project; either 'open' or 'closed'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhooksProjectStateJsonConverter))]
         public global::G.WebhooksProjectState State { get; set; } = default!;
 
         /// <summary>

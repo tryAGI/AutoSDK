@@ -22,6 +22,7 @@ namespace G
         /// </summary>
         /// <example>CONTENT_FILTERED</example>
         [global::Newtonsoft.Json.JsonProperty("finishReason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageFinishReasonJsonConverter))]
         public global::G.ImageFinishReason? FinishReason { get; set; }
 
         /// <summary>

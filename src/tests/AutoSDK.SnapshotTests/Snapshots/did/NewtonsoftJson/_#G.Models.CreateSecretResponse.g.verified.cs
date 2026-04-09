@@ -25,6 +25,7 @@ namespace G
         /// Authentication types supported by the secrets service
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSecretResponseTypeJsonConverter))]
         public global::G.CreateSecretResponseType Type { get; set; } = default!;
 
         /// <summary>

@@ -9,11 +9,13 @@ namespace G
         /// Create a new web call
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.V2WebCallResponse> CreateWebCallAsync(
 
             global::G.CreateWebCallRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new web call
@@ -44,6 +46,7 @@ namespace G
         /// Start the conversation in this state (stage). Must be a valid state name in the agent's Retell LLM. Only applicable when the agent uses Retell LLM with states. Ignored for conversation-flow agents.<br/>
         /// Example: information_collection
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.V2WebCallResponse> CreateWebCallAsync(
@@ -54,6 +57,7 @@ namespace G
             object? retellLlmDynamicVariables = default,
             string? currentNodeId = default,
             string? currentState = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

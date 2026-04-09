@@ -67,6 +67,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ToolCallSoundBehavior.Auto</default>
         [global::Newtonsoft.Json.JsonProperty("tool_call_sound_behavior", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolCallSoundBehaviorJsonConverter))]
         public global::G.ToolCallSoundBehavior ToolCallSoundBehavior { get; set; } = default!;
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ToolErrorHandlingMode.Auto</default>
         [global::Newtonsoft.Json.JsonProperty("tool_error_handling_mode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolErrorHandlingModeJsonConverter))]
         public global::G.ToolErrorHandlingMode ToolErrorHandlingMode { get; set; } = default!;
 
         /// <summary>
@@ -91,6 +93,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ToolExecutionMode.Immediate</default>
         [global::Newtonsoft.Json.JsonProperty("execution_mode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolExecutionModeJsonConverter))]
         public global::G.ToolExecutionMode ExecutionMode { get; set; } = default!;
 
         /// <summary>

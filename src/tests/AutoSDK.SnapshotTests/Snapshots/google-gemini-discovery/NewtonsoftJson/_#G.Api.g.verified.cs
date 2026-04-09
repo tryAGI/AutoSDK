@@ -32,10 +32,151 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.GenerateContentRequestServiceTierJsonConverter(),
+
+                    new global::G.JsonConverters.GenerateContentRequestServiceTierNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionResponseSchedulingJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionResponseSchedulingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExecutableCodeLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.ExecutableCodeLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CodeExecutionResultOutcomeJsonConverter(),
+
+                    new global::G.JsonConverters.CodeExecutionResultOutcomeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolResponseToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolResponseToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionDeclarationBehaviorJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionDeclarationBehaviorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SchemaTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SchemaTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DynamicRetrievalConfigModeJsonConverter(),
+
+                    new global::G.JsonConverters.DynamicRetrievalConfigModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerUseEnvironmentJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerUseEnvironmentNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionCallingConfigModeJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionCallingConfigModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SafetySettingCategoryJsonConverter(),
+
+                    new global::G.JsonConverters.SafetySettingCategoryNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SafetySettingThresholdJsonConverter(),
+
+                    new global::G.JsonConverters.SafetySettingThresholdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GenerationConfigResponseModalitieJsonConverter(),
+
+                    new global::G.JsonConverters.GenerationConfigResponseModalitieNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GenerationConfigMediaResolutionJsonConverter(),
+
+                    new global::G.JsonConverters.GenerationConfigMediaResolutionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ThinkingConfigThinkingLevelJsonConverter(),
+
+                    new global::G.JsonConverters.ThinkingConfigThinkingLevelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CandidateFinishReasonJsonConverter(),
+
+                    new global::G.JsonConverters.CandidateFinishReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SafetyRatingCategoryJsonConverter(),
+
+                    new global::G.JsonConverters.SafetyRatingCategoryNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SafetyRatingProbabilityJsonConverter(),
+
+                    new global::G.JsonConverters.SafetyRatingProbabilityNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UrlMetadataUrlRetrievalStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UrlMetadataUrlRetrievalStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PromptFeedbackBlockReasonJsonConverter(),
+
+                    new global::G.JsonConverters.PromptFeedbackBlockReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ModalityTokenCountModalityJsonConverter(),
+
+                    new global::G.JsonConverters.ModalityTokenCountModalityNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ModelStatusModelStageJsonConverter(),
+
+                    new global::G.JsonConverters.ModelStatusModelStageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EmbedContentRequestTaskTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EmbedContentRequestTaskTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GenerateContentBatchStateJsonConverter(),
+
+                    new global::G.JsonConverters.GenerateContentBatchStateNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EmbedContentBatchStateJsonConverter(),
+
+                    new global::G.JsonConverters.EmbedContentBatchStateNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FileStateJsonConverter(),
+
+                    new global::G.JsonConverters.FileStateNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FileSourceJsonConverter(),
+
+                    new global::G.JsonConverters.FileSourceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GeneratedFileStateJsonConverter(),
+
+                    new global::G.JsonConverters.GeneratedFileStateNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TunedModelStateJsonConverter(),
+
+                    new global::G.JsonConverters.TunedModelStateNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PermissionGranteeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PermissionGranteeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PermissionRoleJsonConverter(),
+
+                    new global::G.JsonConverters.PermissionRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DocumentStateJsonConverter(),
+
+                    new global::G.JsonConverters.DocumentStateNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
@@ -51,11 +192,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>cron</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CronScheduleConfigurationTypeJsonConverter))]
         public global::G.CronScheduleConfigurationType Type { get; set; }
 
         /// <summary>

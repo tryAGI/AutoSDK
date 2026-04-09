@@ -25,6 +25,7 @@ namespace G
         /// The source of the repository property. Defaults to 'custom' if not specified.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetConditionsRepositoryPropertySpecSourceJsonConverter))]
         public global::G.RepositoryRulesetConditionsRepositoryPropertySpecSource? Source { get; set; }
 
         /// <summary>

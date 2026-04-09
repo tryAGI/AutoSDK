@@ -13,6 +13,7 @@ namespace G
         /// The language detected in the source text. It reflects the value of the `source_lang` parameter, when specified.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detected_source_language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SourceLanguageJsonConverter))]
         public global::G.SourceLanguage? DetectedSourceLanguage { get; set; }
 
         /// <summary>

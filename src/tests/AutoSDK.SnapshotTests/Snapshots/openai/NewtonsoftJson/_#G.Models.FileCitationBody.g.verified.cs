@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.FileCitationBodyType.FileCitation</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileCitationBodyTypeJsonConverter))]
         public global::G.FileCitationBodyType Type { get; set; } = global::G.FileCitationBodyType.FileCitation;
 
         /// <summary>

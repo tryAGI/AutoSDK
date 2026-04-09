@@ -12,6 +12,7 @@ namespace G
         /// <param name="dataSinkId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DataSink> UpdateDataSinkApiV1DataSinksDataSinkIdPutAsync(
@@ -19,6 +20,7 @@ namespace G
 
             global::G.DataSinkUpdate request,
             string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Data Sink<br/>
@@ -33,6 +35,7 @@ namespace G
         /// <param name="component">
         /// Component that implements the data sink
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DataSink> UpdateDataSinkApiV1DataSinksDataSinkIdPutAsync(
@@ -41,6 +44,7 @@ namespace G
             string? session = default,
             string? name = default,
             global::G.AnyOf<object, global::G.CloudPineconeVectorStore, global::G.CloudPostgresVectorStore, global::G.CloudQdrantVectorStore, global::G.CloudAzureAISearchVectorStore, global::G.CloudMongoDBAtlasVectorSearch, global::G.CloudMilvusVectorStore, global::G.CloudAstraDBVectorStore, object>? component = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

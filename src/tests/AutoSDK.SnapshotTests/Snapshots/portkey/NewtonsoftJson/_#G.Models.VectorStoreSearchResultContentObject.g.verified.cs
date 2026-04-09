@@ -13,6 +13,7 @@ namespace G
         /// The type of content.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreSearchResultContentObjectTypeJsonConverter))]
         public global::G.VectorStoreSearchResultContentObjectType Type { get; set; }
 
         /// <summary>

@@ -10,11 +10,13 @@ namespace G
         /// Create or update a tool
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Tool> UpsertToolAsync(
 
             global::G.ToolCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upsert Tool<br/>
@@ -56,6 +58,7 @@ namespace G
         /// If set to True, then this tool will potentially be executed concurrently with other tools. Default False.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Tool> UpsertToolAsync(
@@ -70,6 +73,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.NpmRequirement>? npmRequirements = default,
             bool? defaultRequiresApproval = default,
             bool? enableParallelExecution = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

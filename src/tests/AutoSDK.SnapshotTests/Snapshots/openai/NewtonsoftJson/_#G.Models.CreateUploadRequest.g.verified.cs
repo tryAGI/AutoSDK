@@ -20,6 +20,7 @@ namespace G
         /// See the [documentation on File purposes](/docs/api-reference/files/create#files-create-purpose).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateUploadRequestPurposeJsonConverter))]
         public global::G.CreateUploadRequestPurpose Purpose { get; set; } = default!;
 
         /// <summary>

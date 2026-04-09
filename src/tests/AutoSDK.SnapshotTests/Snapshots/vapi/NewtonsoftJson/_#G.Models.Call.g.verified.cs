@@ -15,6 +15,7 @@ namespace G
         /// This is the type of call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallTypeJsonConverter))]
         public global::G.CallType? Type { get; set; }
 
         /// <summary>
@@ -34,6 +35,7 @@ namespace G
         /// Only relevant for `outboundPhoneCall` and `inboundPhoneCall` type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("phoneCallProvider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallPhoneCallProviderJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.CallPhoneCallProvider? PhoneCallProvider { get; set; }
 
@@ -42,18 +44,21 @@ namespace G
         /// Only relevant for `outboundPhoneCall` and `inboundPhoneCall` type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("phoneCallTransport")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallPhoneCallTransportJsonConverter))]
         public global::G.CallPhoneCallTransport? PhoneCallTransport { get; set; }
 
         /// <summary>
         /// This is the status of the call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallStatusJsonConverter))]
         public global::G.CallStatus? Status { get; set; }
 
         /// <summary>
         /// This is the explanation for how the call ended.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("endedReason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallEndedReasonJsonConverter))]
         public global::G.CallEndedReason? EndedReason { get; set; }
 
         /// <summary>

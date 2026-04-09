@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextIndexTypeJsonConverter))]
         public global::G.TextIndexType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tokenizer")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TokenizerTypeJsonConverter))]
         public global::G.TokenizerType? Tokenizer { get; set; }
 
         /// <summary>

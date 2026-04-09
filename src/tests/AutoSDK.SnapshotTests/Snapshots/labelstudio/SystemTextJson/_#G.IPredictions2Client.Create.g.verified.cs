@@ -10,11 +10,13 @@ namespace G
         /// Create a prediction for a specific task.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Prediction> CreateAsync(
 
             global::G.ApiPredictionsCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create prediction<br/>
@@ -35,6 +37,7 @@ namespace G
         /// <param name="task">
         /// Task ID for which the prediction is created
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Prediction> CreateAsync(
@@ -42,6 +45,7 @@ namespace G
             global::System.Collections.Generic.IList<object>? result = default,
             double? score = default,
             int? task = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

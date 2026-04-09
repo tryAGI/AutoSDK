@@ -19,6 +19,7 @@ namespace G
         /// - Workflow continues with the response
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolNodeTypeJsonConverter))]
         public global::G.ToolNodeType Type { get; set; }
 
         /// <summary>

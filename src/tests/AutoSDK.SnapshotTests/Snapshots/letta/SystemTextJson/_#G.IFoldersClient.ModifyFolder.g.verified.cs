@@ -13,12 +13,14 @@ namespace G
         /// The ID of the source in the format 'source-&lt;uuid4&gt;'
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Folder> ModifyFolderAsync(
             string folderId,
 
             global::G.SourceUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Modify Folder<br/>
@@ -42,6 +44,7 @@ namespace G
         /// <param name="embeddingConfig">
         /// The embedding configuration used by the source.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Folder> ModifyFolderAsync(
@@ -51,6 +54,7 @@ namespace G
             string? instructions = default,
             object? metadata = default,
             global::G.EmbeddingConfig? embeddingConfig = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// The class of error encountered.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ErrorCodeJsonConverter))]
         public global::G.ErrorCode Type { get; set; } = default!;
 
         /// <summary>

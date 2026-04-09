@@ -37,6 +37,7 @@ namespace G
         /// </summary>
         /// <example>en</example>
         [global::Newtonsoft.Json.JsonProperty("source_lang")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GlossarySourceLanguageJsonConverter))]
         public global::G.GlossarySourceLanguage? SourceLang { get; set; }
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace G
         /// </summary>
         /// <example>de</example>
         [global::Newtonsoft.Json.JsonProperty("target_lang")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GlossaryTargetLanguageJsonConverter))]
         public global::G.GlossaryTargetLanguage? TargetLang { get; set; }
 
         /// <summary>

@@ -72,6 +72,7 @@ namespace G
         /// * `Sample` - Sample
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_subset")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectSubsetEnumJsonConverter))]
         public global::G.ProjectSubsetEnum? ProjectSubset { get; set; }
 
         /// <summary>
@@ -79,6 +80,7 @@ namespace G
         /// </summary>
         /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelRunStatusEnumJsonConverter))]
         public global::G.ModelRunStatusEnum Status { get; set; } = default!;
 
         /// <summary>

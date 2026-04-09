@@ -15,6 +15,7 @@ namespace G
         /// <param name="teamSlug"></param>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task TeamsAddOrUpdateProjectPermissionsInOrgAsync(
@@ -23,6 +24,7 @@ namespace G
             int projectId,
 
             global::G.TeamsAddOrUpdateProjectPermissionsInOrgRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add or update team project permissions<br/>
@@ -36,6 +38,7 @@ namespace G
         /// <param name="permission">
         /// The permission to grant to the team for this project. Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task TeamsAddOrUpdateProjectPermissionsInOrgAsync(
@@ -43,6 +46,7 @@ namespace G
             string teamSlug,
             int projectId,
             global::G.TeamsAddOrUpdateProjectPermissionsInOrgRequestPermission? permission = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

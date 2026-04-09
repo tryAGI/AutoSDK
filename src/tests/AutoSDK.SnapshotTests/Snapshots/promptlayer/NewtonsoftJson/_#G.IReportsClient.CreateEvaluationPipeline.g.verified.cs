@@ -10,11 +10,13 @@ namespace G
         /// Creates a new evaluation pipeline (report) with optional evaluation columns and custom scoring.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateEvaluationPipelineResponse> CreateEvaluationPipelineAsync(
 
             global::G.CreateEvaluationPipelineRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Evaluation Pipeline<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="scoreConfiguration">
         /// Optional custom scoring logic configuration.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateEvaluationPipelineResponse> CreateEvaluationPipelineAsync(
@@ -47,6 +50,7 @@ namespace G
             int? datasetVersionNumber = default,
             global::System.Collections.Generic.IList<global::G.CreateEvaluationPipelineRequestColumn>? columns = default,
             global::G.CreateEvaluationPipelineRequestScoreConfiguration? scoreConfiguration = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

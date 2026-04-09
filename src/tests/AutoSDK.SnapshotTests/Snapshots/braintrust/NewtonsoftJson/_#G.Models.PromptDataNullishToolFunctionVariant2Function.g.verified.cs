@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptDataNullishToolFunctionVariant2FunctionTypeJsonConverter))]
         public global::G.PromptDataNullishToolFunctionVariant2FunctionType Type { get; set; }
 
         /// <summary>

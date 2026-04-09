@@ -10,6 +10,7 @@ namespace G
         /// Performs name entity recognition on the supplied text accepting a maximum of 35000 words.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -21,6 +22,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.TextToGraphResponse> CreateToolsTextToGraphAsync(
 
             global::G.TextToGraphRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Text-to-graph<br/>
@@ -29,10 +31,12 @@ namespace G
         /// <param name="text">
         /// The text to convert into a graph structure. Maximum of 35,000 words.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TextToGraphResponse> CreateToolsTextToGraphAsync(
             string text,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

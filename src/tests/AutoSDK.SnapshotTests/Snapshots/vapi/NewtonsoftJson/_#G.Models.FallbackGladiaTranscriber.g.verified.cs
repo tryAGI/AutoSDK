@@ -13,30 +13,35 @@ namespace G
         /// This is the transcription provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackGladiaTranscriberProviderJsonConverter))]
         public global::G.FallbackGladiaTranscriberProvider Provider { get; set; }
 
         /// <summary>
         /// This is the Gladia model that will be used. Default is 'fast'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackGladiaTranscriberModelJsonConverter))]
         public global::G.FallbackGladiaTranscriberModel? Model { get; set; }
 
         /// <summary>
         /// Defines how the transcription model detects the audio language. Default value is 'automatic single language'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("languageBehaviour")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackGladiaTranscriberLanguageBehaviourJsonConverter))]
         public global::G.FallbackGladiaTranscriberLanguageBehaviour? LanguageBehaviour { get; set; }
 
         /// <summary>
         /// Defines the language to use for the transcription. Required when languageBehaviour is 'manual'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackGladiaTranscriberLanguageJsonConverter))]
         public global::G.FallbackGladiaTranscriberLanguage? Language { get; set; }
 
         /// <summary>
         /// Defines the languages to use for the transcription. Required when languageBehaviour is 'manual'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("languages")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackGladiaTranscriberLanguagesJsonConverter))]
         public global::G.FallbackGladiaTranscriberLanguages? Languages { get; set; }
 
         /// <summary>
@@ -109,6 +114,7 @@ namespace G
         /// </summary>
         /// <example>us-west</example>
         [global::Newtonsoft.Json.JsonProperty("region")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackGladiaTranscriberRegionJsonConverter))]
         public global::G.FallbackGladiaTranscriberRegion? Region { get; set; }
 
         /// <summary>

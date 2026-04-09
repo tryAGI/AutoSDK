@@ -79,6 +79,7 @@ namespace G
         /// Call progression status
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("queue_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallDetailsQueueStatusJsonConverter))]
         public global::G.CallDetailsQueueStatus? QueueStatus { get; set; }
 
         /// <summary>
@@ -103,6 +104,7 @@ namespace G
         /// Who answered the call
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("answered_by")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallDetailsAnsweredByJsonConverter))]
         public global::G.CallDetailsAnsweredBy? AnsweredBy { get; set; }
 
         /// <summary>
@@ -139,6 +141,7 @@ namespace G
         /// Who ended the call
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("call_ended_by")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallDetailsCallEndedByJsonConverter))]
         public global::G.CallDetailsCallEndedBy? CallEndedBy { get; set; }
 
         /// <summary>
@@ -187,6 +190,7 @@ namespace G
         /// Final call status
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallDetailsStatusJsonConverter))]
         public global::G.CallDetailsStatus? Status { get; set; }
 
         /// <summary>

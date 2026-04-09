@@ -17,6 +17,7 @@ namespace G
         /// Default Value: pat
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthTypeEnumJsonConverter))]
         public global::G.AuthTypeEnum? AuthType { get; set; }
 
         /// <summary>
@@ -139,6 +140,7 @@ namespace G
         /// * `completed_with_errors` - Completed with errors
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StatusC5aEnumJsonConverter))]
         public global::G.StatusC5aEnum? Status { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Must be 'committed_transcript'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CommittedTranscriptPayloadMessageTypeJsonConverter))]
         public global::G.CommittedTranscriptPayloadMessageType MessageType { get; set; }
 
         /// <summary>

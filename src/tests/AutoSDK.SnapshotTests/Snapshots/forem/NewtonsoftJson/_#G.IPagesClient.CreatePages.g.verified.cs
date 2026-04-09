@@ -10,11 +10,13 @@ namespace G
         /// This endpoint allows the client to create a new page.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CreatePagesAsync(
 
             global::G.CreatePagesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// pages<br/>
@@ -42,6 +44,7 @@ namespace G
         /// Controls what kind of layout the page is rendered in<br/>
         /// Default Value: contained
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreatePagesAsync(
@@ -52,6 +55,7 @@ namespace G
             string? bodyJson = default,
             bool? isTopLevelPath = default,
             global::G.CreatePagesRequestTemplate? template = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// Match only calls with specific arguments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolMockInputMatchRuleVariant2TypeJsonConverter))]
         public global::G.ToolMockInputMatchRuleVariant2Type Type { get; set; }
 
         /// <summary>

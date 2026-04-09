@@ -14,6 +14,7 @@ namespace G
         /// If not provided, defaults to group by day.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("step")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InsightTimeRangeWithStepStepJsonConverter))]
         public global::G.InsightTimeRangeWithStepStep? Step { get; set; }
 
         /// <summary>

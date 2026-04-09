@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "assistant-request" is sent to fetch assistant configuration for an incoming call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageAssistantRequestTypeJsonConverter))]
         public global::G.ServerMessageAssistantRequestType Type { get; set; }
 
         /// <summary>

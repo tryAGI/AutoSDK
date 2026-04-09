@@ -23,6 +23,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferDestinationSipTypeJsonConverter))]
         public global::G.TransferDestinationSipType Type { get; set; }
 
         /// <summary>

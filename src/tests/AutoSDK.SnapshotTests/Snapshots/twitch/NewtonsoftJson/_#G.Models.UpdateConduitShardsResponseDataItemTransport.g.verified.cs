@@ -16,6 +16,7 @@ namespace G
         /// * websocket
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateConduitShardsResponseDataItemTransportMethodJsonConverter))]
         public global::G.UpdateConduitShardsResponseDataItemTransportMethod Method { get; set; } = default!;
 
         /// <summary>

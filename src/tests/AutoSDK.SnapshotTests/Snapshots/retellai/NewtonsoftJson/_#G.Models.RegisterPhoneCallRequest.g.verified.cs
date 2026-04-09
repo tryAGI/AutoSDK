@@ -53,6 +53,7 @@ namespace G
         /// </summary>
         /// <example>inbound</example>
         [global::Newtonsoft.Json.JsonProperty("direction")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RegisterPhoneCallRequestDirectionJsonConverter))]
         public global::G.RegisterPhoneCallRequestDirection? Direction { get; set; }
 
         /// <summary>

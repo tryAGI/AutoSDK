@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fixedConfidence", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfidenceJsonConverter))]
         public global::G.Confidence FixedConfidence { get; set; } = default!;
 
         /// <summary>

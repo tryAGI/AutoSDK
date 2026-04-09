@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.Create2RequestScriptTextProviderAmazonTypeJsonConverter))]
         public global::G.Create2RequestScriptTextProviderAmazonType Type { get; set; }
 
         /// <summary>
@@ -21,6 +22,7 @@ namespace G
         /// </summary>
         /// <example>Joanna</example>
         [global::Newtonsoft.Json.JsonProperty("voice_id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.Create2RequestScriptTextProviderAmazonVoiceIdJsonConverter))]
         public global::G.Create2RequestScriptTextProviderAmazonVoiceId VoiceId { get; set; } = default!;
 
         /// <summary>

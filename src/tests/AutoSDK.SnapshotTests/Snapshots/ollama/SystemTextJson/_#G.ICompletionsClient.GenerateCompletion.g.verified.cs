@@ -10,11 +10,13 @@ namespace G
         /// The final response object will include statistics and additional data from the request.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateCompletionResponse> GenerateCompletionAsync(
 
             global::G.GenerateCompletionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate a response for a given prompt with a provided model.<br/>
@@ -67,6 +69,7 @@ namespace G
         /// - If set to 0, the model will be unloaded immediately once finished.<br/>
         /// - If not set, the model will stay loaded for 5 minutes by default
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateCompletionResponse> GenerateCompletionAsync(
@@ -82,6 +85,7 @@ namespace G
             bool? raw = default,
             bool? stream = default,
             int? keepAlive = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

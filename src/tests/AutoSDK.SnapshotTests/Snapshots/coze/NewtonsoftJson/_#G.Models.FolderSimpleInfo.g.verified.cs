@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("folder_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FolderTypeJsonConverter))]
         public global::G.FolderType? FolderType { get; set; }
 
         /// <summary>

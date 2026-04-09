@@ -44,6 +44,7 @@ namespace G
         /// Expected response format from the model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseFormatJsonConverter))]
         public global::G.ResponseFormat ResponseFormat { get; set; } = default!;
 
         /// <summary>

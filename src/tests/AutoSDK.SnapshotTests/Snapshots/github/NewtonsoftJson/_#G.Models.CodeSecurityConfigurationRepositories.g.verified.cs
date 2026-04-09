@@ -13,6 +13,7 @@ namespace G
         /// The attachment status of the code security configuration on the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityConfigurationRepositoriesStatusJsonConverter))]
         public global::G.CodeSecurityConfigurationRepositoriesStatus? Status { get; set; }
 
         /// <summary>

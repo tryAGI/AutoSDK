@@ -13,6 +13,7 @@ namespace G
         /// The model provider for the transfer assistant
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferAssistantModelProviderJsonConverter))]
         public global::G.TransferAssistantModelProvider Provider { get; set; } = default!;
 
         /// <summary>

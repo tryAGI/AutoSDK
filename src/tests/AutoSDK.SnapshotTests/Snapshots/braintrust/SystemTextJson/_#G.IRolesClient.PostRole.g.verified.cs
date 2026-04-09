@@ -10,11 +10,13 @@ namespace G
         /// Create a new role. If there is an existing role with the same name as the one specified in the request, will return the existing role unmodified
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Role> PostRoleAsync(
 
             global::G.CreateRole request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create role<br/>
@@ -36,6 +38,7 @@ namespace G
         /// <param name="orgName">
         /// For nearly all users, this parameter should be unnecessary. But in the rare case that your API key belongs to multiple organizations, you may specify the name of the organization the role belongs in.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Role> PostRoleAsync(
@@ -44,6 +47,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.CreateRoleMemberPermission>? memberPermissions = default,
             global::System.Collections.Generic.IList<global::System.Guid>? memberRoles = default,
             string? orgName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

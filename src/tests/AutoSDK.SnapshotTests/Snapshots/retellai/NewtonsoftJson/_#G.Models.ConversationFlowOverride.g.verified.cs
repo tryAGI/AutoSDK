@@ -51,6 +51,7 @@ namespace G
         /// </summary>
         /// <example>agent</example>
         [global::Newtonsoft.Json.JsonProperty("start_speaker")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationFlowOverrideStartSpeakerJsonConverter))]
         public global::G.ConversationFlowOverrideStartSpeaker? StartSpeaker { get; set; }
 
         /// <summary>

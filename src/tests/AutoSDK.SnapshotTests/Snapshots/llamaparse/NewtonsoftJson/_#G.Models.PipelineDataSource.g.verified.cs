@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfigurableDataSourceNamesJsonConverter))]
         public global::G.ConfigurableDataSourceNames SourceType { get; set; } = default!;
 
         /// <summary>

@@ -21,6 +21,7 @@ namespace G
         /// The event type, must be `session.created`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventSessionCreatedTypeJsonConverter))]
         public global::G.RealtimeServerEventSessionCreatedType Type { get; set; }
 
         /// <summary>

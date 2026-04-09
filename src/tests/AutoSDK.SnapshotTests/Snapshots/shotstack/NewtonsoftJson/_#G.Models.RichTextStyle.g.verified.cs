@@ -43,6 +43,7 @@ namespace G
         /// </summary>
         /// <example>uppercase</example>
         [global::Newtonsoft.Json.JsonProperty("textTransform")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichTextStyleTextTransformJsonConverter))]
         public global::G.RichTextStyleTextTransform? TextTransform { get; set; }
 
         /// <summary>
@@ -52,6 +53,7 @@ namespace G
         /// </summary>
         /// <example>underline</example>
         [global::Newtonsoft.Json.JsonProperty("textDecoration")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichTextStyleTextDecorationJsonConverter))]
         public global::G.RichTextStyleTextDecoration? TextDecoration { get; set; }
 
         /// <summary>

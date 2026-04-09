@@ -19,6 +19,7 @@ namespace G
         /// Lifecycle status of an avatar training workflow.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostTrainingResponseItemStatusJsonConverter))]
         public global::G.PostTrainingResponseItemStatus Status { get; set; } = default!;
 
         /// <summary>

@@ -13,12 +13,14 @@ namespace G
         /// The desired state of code scanning default setup.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeScanningDefaultSetupUpdateStateJsonConverter))]
         public global::G.CodeScanningDefaultSetupUpdateState? State { get; set; }
 
         /// <summary>
         /// CodeQL query suite to be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query_suite")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeScanningDefaultSetupUpdateQuerySuiteJsonConverter))]
         public global::G.CodeScanningDefaultSetupUpdateQuerySuite? QuerySuite { get; set; }
 
         /// <summary>

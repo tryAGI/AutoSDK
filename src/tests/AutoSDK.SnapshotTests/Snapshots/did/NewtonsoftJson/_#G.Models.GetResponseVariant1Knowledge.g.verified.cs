@@ -21,6 +21,7 @@ namespace G
         /// The provider of the knowledge base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetResponseVariant1KnowledgeProviderJsonConverter))]
         public global::G.GetResponseVariant1KnowledgeProvider? Provider { get; set; }
 
         /// <summary>

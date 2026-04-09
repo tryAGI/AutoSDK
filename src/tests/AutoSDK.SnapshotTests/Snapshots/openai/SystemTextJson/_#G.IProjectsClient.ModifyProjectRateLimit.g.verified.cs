@@ -11,6 +11,7 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="rateLimitId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProjectRateLimit> ModifyProjectRateLimitAsync(
@@ -18,6 +19,7 @@ namespace G
             string rateLimitId,
 
             global::G.ProjectRateLimitUpdateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Updates a project rate limit.
@@ -42,6 +44,7 @@ namespace G
         /// <param name="batch1DayMaxInputTokens">
         /// The maximum batch input tokens per day. Only relevant for certain models.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProjectRateLimit> ModifyProjectRateLimitAsync(
@@ -53,6 +56,7 @@ namespace G
             long? maxAudioMegabytesPer1Minute = default,
             int? maxRequestsPer1Day = default,
             int? batch1DayMaxInputTokens = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

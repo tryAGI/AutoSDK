@@ -10,11 +10,13 @@ namespace G
         /// Create multiple vector representations of the given input texts. One vector representation for each token in the input text.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ColbertModelEmbeddingsOutput> CreateMultiVectorV1MultiVectorPostAsync(
 
             global::G.TextEmbeddingAPIInput request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Multi Vector<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="dimensions">
         /// Dimensions of the vectors to be returned. Only valid for v2 colbert models. Defaults to 128
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ColbertModelEmbeddingsOutput> CreateMultiVectorV1MultiVectorPostAsync(
@@ -46,6 +49,7 @@ namespace G
             global::G.TextEmbeddingAPIInputInputType? inputType = default,
             global::G.AnyOf<global::G.TextEmbeddingAPIInputEmbeddingType?, global::System.Collections.Generic.IList<global::G.TextEmbeddingAPIInputEmbeddingTypeItem>>? embeddingType = default,
             int? dimensions = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

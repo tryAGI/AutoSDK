@@ -19,6 +19,7 @@ namespace G
         /// The object type, which is always `organization.project`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectObjectJsonConverter))]
         public global::G.ProjectObject Object { get; set; }
 
         /// <summary>
@@ -31,18 +32,21 @@ namespace G
         /// The Unix timestamp (in seconds) of when the project was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the project was archived or `null`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? ArchivedAt { get; set; }
 
         /// <summary>
         /// `active` or `archived`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectStatusJsonConverter))]
         public global::G.ProjectStatus Status { get; set; } = default!;
 
         /// <summary>

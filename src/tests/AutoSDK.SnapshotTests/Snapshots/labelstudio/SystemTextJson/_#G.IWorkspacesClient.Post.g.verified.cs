@@ -17,12 +17,14 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ApiWorkspacesMembershipsBulkCreateResponse> PostAsync(
             int id,
 
             global::G.WorkspaceMemberBulkAssignRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Bulk assign workspace members<br/>
@@ -44,6 +46,7 @@ namespace G
         /// <param name="included">
         /// Included user IDs
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ApiWorkspacesMembershipsBulkCreateResponse> PostAsync(
@@ -51,6 +54,7 @@ namespace G
             bool all,
             global::System.Collections.Generic.IList<int>? excluded = default,
             global::System.Collections.Generic.IList<int>? included = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

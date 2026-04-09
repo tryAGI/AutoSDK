@@ -13,6 +13,7 @@ namespace G
         /// Default Value: exa-research
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResearchCreateRequestDtoClassModelJsonConverter))]
         public global::G.ResearchCreateRequestDtoClassModel? Model { get; set; }
 
         /// <summary>

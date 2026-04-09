@@ -10,6 +10,7 @@ namespace G
         /// Find similar links to the link provided. Optionally get contents.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -24,14 +25,17 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.FindSimilarResponse> FindSimilarAsync(
 
             global::G.AllOf<global::G.FindSimilarRequest2, global::G.CommonRequest> request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Find similar links<br/>
         /// Find similar links to the link provided. Optionally get contents.
         /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FindSimilarResponse> FindSimilarAsync(
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

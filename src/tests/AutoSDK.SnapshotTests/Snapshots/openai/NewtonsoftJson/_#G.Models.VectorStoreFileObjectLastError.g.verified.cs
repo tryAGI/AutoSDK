@@ -13,6 +13,7 @@ namespace G
         /// One of `server_error` or `rate_limit_exceeded`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreFileObjectLastErrorCodeJsonConverter))]
         public global::G.VectorStoreFileObjectLastErrorCode Code { get; set; } = default!;
 
         /// <summary>

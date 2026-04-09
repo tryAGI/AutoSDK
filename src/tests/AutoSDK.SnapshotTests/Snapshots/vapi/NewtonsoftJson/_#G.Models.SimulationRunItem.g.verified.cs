@@ -31,6 +31,7 @@ namespace G
         /// This is the current status of the run.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SimulationRunItemStatusJsonConverter))]
         public global::G.SimulationRunItemStatus Status { get; set; } = default!;
 
         /// <summary>

@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SnowballTypeJsonConverter))]
         public global::G.SnowballType Type { get; set; }
 
         /// <summary>
         /// Languages supported by snowball stemmer.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SnowballLanguageJsonConverter))]
         public global::G.SnowballLanguage Language { get; set; } = default!;
 
         /// <summary>

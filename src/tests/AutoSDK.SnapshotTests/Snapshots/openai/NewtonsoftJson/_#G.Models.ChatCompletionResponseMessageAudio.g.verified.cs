@@ -22,6 +22,7 @@ namespace G
         /// conversations.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset ExpiresAt { get; set; } = default!;
 
         /// <summary>

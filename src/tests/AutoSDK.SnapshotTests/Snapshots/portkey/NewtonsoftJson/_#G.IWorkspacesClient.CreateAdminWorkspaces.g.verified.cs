@@ -9,21 +9,25 @@ namespace G
         /// Create Workspace
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Workspace> CreateAdminWorkspacesAsync(
 
             global::G.CreateAdminWorkspacesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Workspace
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Workspace>> CreateAdminWorkspacesAsResponseAsync(
 
             global::G.CreateAdminWorkspacesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Workspace
@@ -34,6 +38,7 @@ namespace G
         /// <param name="users"></param>
         /// <param name="usageLimits"></param>
         /// <param name="rateLimits"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Workspace> CreateAdminWorkspacesAsync(
@@ -43,6 +48,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? users = default,
             global::System.Collections.Generic.IList<global::G.UsageLimits>? usageLimits = default,
             global::System.Collections.Generic.IList<global::G.RateLimits>? rateLimits = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

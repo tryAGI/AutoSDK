@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetDeepResearchStatusResponseDataStatusJsonConverter))]
         public global::G.GetDeepResearchStatusResponseDataStatus? Status { get; set; }
 
         /// <summary>

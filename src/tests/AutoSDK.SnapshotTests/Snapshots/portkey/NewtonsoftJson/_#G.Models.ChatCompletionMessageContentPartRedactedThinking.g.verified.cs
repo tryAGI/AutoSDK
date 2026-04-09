@@ -13,6 +13,7 @@ namespace G
         /// The type of the content part.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionMessageContentPartRedactedThinkingTypeJsonConverter))]
         public global::G.ChatCompletionMessageContentPartRedactedThinkingType Type { get; set; }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DiscussionAuthorAssociationJsonConverter))]
         public global::G.DiscussionAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
@@ -111,6 +112,7 @@ namespace G
         /// `transferring` means that the discussion is being transferred from another repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DiscussionStateJsonConverter))]
         public global::G.DiscussionState State { get; set; } = default!;
 
         /// <summary>
@@ -119,6 +121,7 @@ namespace G
         /// </summary>
         /// <example>resolved</example>
         [global::Newtonsoft.Json.JsonProperty("state_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DiscussionStateReasonJsonConverter))]
         public global::G.DiscussionStateReason? StateReason { get; set; }
 
         /// <summary>

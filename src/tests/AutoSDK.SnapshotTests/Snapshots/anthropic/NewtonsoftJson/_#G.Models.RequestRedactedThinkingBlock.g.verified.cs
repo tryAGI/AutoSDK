@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RequestRedactedThinkingBlockTypeJsonConverter))]
         public global::G.RequestRedactedThinkingBlockType Type { get; set; }
 
         /// <summary>

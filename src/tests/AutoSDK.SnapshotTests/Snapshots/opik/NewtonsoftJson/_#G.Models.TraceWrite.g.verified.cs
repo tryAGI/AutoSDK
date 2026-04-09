@@ -91,6 +91,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TraceWriteSourceJsonConverter))]
         public global::G.TraceWriteSource? Source { get; set; }
 
         /// <summary>

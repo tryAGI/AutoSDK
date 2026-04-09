@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListFineTuningJobCheckpointsResponseObjectJsonConverter))]
         public global::G.ListFineTuningJobCheckpointsResponseObject Object { get; set; }
 
         /// <summary>

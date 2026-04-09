@@ -51,6 +51,7 @@ namespace G
         /// State of the release asset.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReleaseAssetStateJsonConverter))]
         public global::G.ReleaseAssetState State { get; set; } = default!;
 
         /// <summary>

@@ -11,11 +11,13 @@ namespace G
         /// Returns an upload ID, chunk size, and other metadata needed to upload file chunks.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.InitFileUploadResponse> InitFileUploadAsync(
 
             global::G.InitFileUploadRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Initialize a file upload session<br/>
@@ -23,10 +25,12 @@ namespace G
         /// Returns an upload ID, chunk size, and other metadata needed to upload file chunks.
         /// </summary>
         /// <param name="fileSizeBytes"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.InitFileUploadResponse> InitFileUploadAsync(
             long fileSizeBytes,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

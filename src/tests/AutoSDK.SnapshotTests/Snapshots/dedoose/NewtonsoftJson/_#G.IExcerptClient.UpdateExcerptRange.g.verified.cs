@@ -10,11 +10,13 @@ namespace G
         /// UpdateExcerptRange
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Excerpt> UpdateExcerptRangeAsync(
 
             global::G.UpdateExcerptRangeRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// UpdateExcerptRange<br/>
@@ -26,6 +28,7 @@ namespace G
         /// <param name="newStart"></param>
         /// <param name="newEnd"></param>
         /// <param name="updatedTextURI"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Excerpt> UpdateExcerptRangeAsync(
@@ -35,6 +38,7 @@ namespace G
             int newStart,
             int newEnd,
             string updatedTextURI,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

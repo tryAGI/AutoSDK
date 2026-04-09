@@ -13,6 +13,7 @@ namespace G
         /// Default Value: output_media
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputMediaContentTypeJsonConverter))]
         public global::G.OutputMediaContentType? Type { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// Default Value: image
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputMediaContentMediaTypeJsonConverter))]
         public global::G.OutputMediaContentMediaType? MediaType { get; set; }
 
         /// <summary>

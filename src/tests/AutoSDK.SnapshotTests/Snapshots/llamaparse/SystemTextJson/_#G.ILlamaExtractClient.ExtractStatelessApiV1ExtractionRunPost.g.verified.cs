@@ -14,6 +14,7 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExtractJob> ExtractStatelessApiV1ExtractionRunPostAsync(
@@ -22,6 +23,7 @@ namespace G
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Extract Stateless<br/>
@@ -49,6 +51,7 @@ namespace G
         /// <param name="file">
         /// The file data with base64 content and MIME type
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExtractJob> ExtractStatelessApiV1ExtractionRunPostAsync(
@@ -61,6 +64,7 @@ namespace G
             global::System.Guid? fileId = default,
             string? text = default,
             global::G.FileData? file = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

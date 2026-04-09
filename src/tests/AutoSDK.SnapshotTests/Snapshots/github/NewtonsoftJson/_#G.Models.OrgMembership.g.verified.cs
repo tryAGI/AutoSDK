@@ -22,6 +22,7 @@ namespace G
         /// </summary>
         /// <example>active</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrgMembershipStateJsonConverter))]
         public global::G.OrgMembershipState State { get; set; } = default!;
 
         /// <summary>
@@ -30,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>admin</example>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrgMembershipRoleJsonConverter))]
         public global::G.OrgMembershipRole Role { get; set; } = default!;
 
         /// <summary>

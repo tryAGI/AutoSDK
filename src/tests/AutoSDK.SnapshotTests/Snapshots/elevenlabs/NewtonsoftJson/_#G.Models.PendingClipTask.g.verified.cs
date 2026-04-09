@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PendingClipTaskTypeJsonConverter))]
         public global::G.PendingClipTaskType Type { get; set; } = default!;
 
         /// <summary>

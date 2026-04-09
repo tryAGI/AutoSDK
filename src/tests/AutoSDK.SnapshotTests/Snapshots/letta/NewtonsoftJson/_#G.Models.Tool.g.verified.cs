@@ -20,6 +20,7 @@ namespace G
         /// Default Value: custom
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolTypeJsonConverter))]
         public global::G.ToolType? ToolType { get; set; }
 
         /// <summary>

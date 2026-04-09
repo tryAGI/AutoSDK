@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetModelResponseTypeJsonConverter))]
         public global::G.GetModelResponseType Type { get; set; } = default!;
 
         /// <summary>
@@ -43,12 +44,14 @@ namespace G
         /// Default Value: full
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("train_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetModelResponseTrainModeJsonConverter))]
         public global::G.GetModelResponseTrainMode? TrainMode { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetModelResponseStateJsonConverter))]
         public global::G.GetModelResponseState State { get; set; } = default!;
 
         /// <summary>
@@ -85,6 +88,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetModelResponseVisibilityJsonConverter))]
         public global::G.GetModelResponseVisibility Visibility { get; set; } = default!;
 
         /// <summary>

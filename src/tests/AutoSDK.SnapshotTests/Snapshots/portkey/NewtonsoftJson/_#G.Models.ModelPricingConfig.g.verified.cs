@@ -25,6 +25,7 @@ namespace G
         /// Currency code (always USD)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("currency")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelPricingConfigCurrencyJsonConverter))]
         public global::G.ModelPricingConfigCurrency? Currency { get; set; }
 
         /// <summary>

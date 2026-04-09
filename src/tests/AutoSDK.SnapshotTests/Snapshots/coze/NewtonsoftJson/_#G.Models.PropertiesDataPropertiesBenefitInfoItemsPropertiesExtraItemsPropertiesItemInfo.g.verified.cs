@@ -25,6 +25,7 @@ namespace G
         /// 资源使用策略
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("strategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PropertiesDataPropertiesBenefitInfoItemsPropertiesExtraItemsPropertiesItemInfoStrategyJsonConverter))]
         public global::G.PropertiesDataPropertiesBenefitInfoItemsPropertiesExtraItemsPropertiesItemInfoStrategy? Strategy { get; set; }
 
         /// <summary>

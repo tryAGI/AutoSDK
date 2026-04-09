@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BillingErrorType.BillingError</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BillingErrorTypeJsonConverter))]
         public global::G.BillingErrorType Type { get; set; } = global::G.BillingErrorType.BillingError;
 
         /// <summary>

@@ -115,6 +115,7 @@ namespace G
         /// Current status of the batch run
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvaluationRunStatusJsonConverter))]
         public global::G.EvaluationRunStatus? Status { get; set; }
 
         /// <summary>

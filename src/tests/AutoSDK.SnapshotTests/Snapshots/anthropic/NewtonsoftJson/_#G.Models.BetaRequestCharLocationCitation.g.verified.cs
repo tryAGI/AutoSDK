@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaRequestCharLocationCitationTypeJsonConverter))]
         public global::G.BetaRequestCharLocationCitationType Type { get; set; }
 
         /// <summary>

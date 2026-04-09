@@ -22,6 +22,7 @@ namespace G
         /// Default Value: PER_DOC
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extraction_target")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtractTargetJsonConverter))]
         public global::G.ExtractTarget? ExtractionTarget { get; set; }
 
         /// <summary>
@@ -29,6 +30,7 @@ namespace G
         /// Default Value: PREMIUM
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extraction_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtractModeJsonConverter))]
         public global::G.ExtractMode? ExtractionMode { get; set; }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace G
         /// Default Value: PAGE
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chunk_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DocumentChunkModeJsonConverter))]
         public global::G.DocumentChunkMode? ChunkMode { get; set; }
 
         /// <summary>

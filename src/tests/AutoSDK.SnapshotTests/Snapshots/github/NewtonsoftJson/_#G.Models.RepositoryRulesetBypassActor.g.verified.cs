@@ -19,6 +19,7 @@ namespace G
         /// The type of actor that can bypass a ruleset.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actor_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetBypassActorActorTypeJsonConverter))]
         public global::G.RepositoryRulesetBypassActorActorType ActorType { get; set; } = default!;
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace G
         /// Default Value: always
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bypass_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetBypassActorBypassModeJsonConverter))]
         public global::G.RepositoryRulesetBypassActorBypassMode? BypassMode { get; set; }
 
         /// <summary>

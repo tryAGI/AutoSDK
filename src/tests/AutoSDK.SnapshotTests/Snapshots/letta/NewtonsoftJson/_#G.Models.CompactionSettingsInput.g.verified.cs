@@ -48,6 +48,7 @@ namespace G
         /// Default Value: sliding_window
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompactionSettingsInputModeJsonConverter))]
         public global::G.CompactionSettingsInputMode? Mode { get; set; }
 
         /// <summary>

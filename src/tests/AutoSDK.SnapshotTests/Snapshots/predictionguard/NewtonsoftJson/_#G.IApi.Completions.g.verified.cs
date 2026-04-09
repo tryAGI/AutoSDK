@@ -10,11 +10,13 @@ namespace G
         /// Retrieve text completions based on the provided input.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CompletionsResponse200> CompletionsAsync(
 
             global::G.CompletionsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Completions<br/>
@@ -58,6 +60,7 @@ namespace G
         /// <param name="input">
         /// Options to affect the input of the request.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CompletionsResponse200> CompletionsAsync(
@@ -75,6 +78,7 @@ namespace G
             int? topK = default,
             global::G.CompletionsPostRequestBodyContentApplicationJsonSchemaOutput? output = default,
             global::G.CompletionsPostRequestBodyContentApplicationJsonSchemaInput? input = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

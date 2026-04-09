@@ -13,6 +13,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhooksCommentAuthorAssociationJsonConverter))]
         public global::G.WebhooksCommentAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>

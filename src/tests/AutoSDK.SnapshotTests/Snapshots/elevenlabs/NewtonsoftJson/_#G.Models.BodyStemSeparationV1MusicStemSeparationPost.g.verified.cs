@@ -26,6 +26,7 @@ namespace G
         /// Default Value: six_stems_v1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stem_variation_id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyStemSeparationV1MusicStemSeparationPostStemVariationIdJsonConverter))]
         public global::G.BodyStemSeparationV1MusicStemSeparationPostStemVariationId? StemVariationId { get; set; }
 
         /// <summary>

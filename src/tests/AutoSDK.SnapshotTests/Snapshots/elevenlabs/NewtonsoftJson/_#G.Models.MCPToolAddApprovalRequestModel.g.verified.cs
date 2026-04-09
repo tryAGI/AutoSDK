@@ -32,6 +32,7 @@ namespace G
         /// Default Value: requires_approval
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("approval_policy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPToolApprovalPolicyJsonConverter))]
         public global::G.MCPToolApprovalPolicy? ApprovalPolicy { get; set; }
 
         /// <summary>

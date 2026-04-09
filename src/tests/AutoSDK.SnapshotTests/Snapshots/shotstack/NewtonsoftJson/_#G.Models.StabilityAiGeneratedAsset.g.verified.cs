@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.StabilityAiGeneratedAssetProvider.StabilityAi</default>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StabilityAiGeneratedAssetProviderJsonConverter))]
         public global::G.StabilityAiGeneratedAssetProvider Provider { get; set; } = global::G.StabilityAiGeneratedAssetProvider.StabilityAi;
 
         /// <summary>

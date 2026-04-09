@@ -17,6 +17,7 @@ namespace G
         /// Example: tol_python_function_123
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TestToolResponse> TestAsync(
@@ -25,6 +26,7 @@ namespace G
             global::G.TestToolRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Test Lambda tool<br/>
@@ -45,6 +47,7 @@ namespace G
         /// Maximum execution time in seconds. If not specified, uses the tool's configured timeout.<br/>
         /// Example: 10
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TestToolResponse> TestAsync(
@@ -53,6 +56,7 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             int? timeoutSeconds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

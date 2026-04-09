@@ -13,6 +13,7 @@ namespace G
         /// The object type that the ACL applies to
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AclObjectTypeJsonConverter))]
         public global::G.AclObjectType ObjectType { get; set; } = default!;
 
         /// <summary>

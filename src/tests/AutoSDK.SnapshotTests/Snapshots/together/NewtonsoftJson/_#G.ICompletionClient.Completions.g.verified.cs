@@ -10,11 +10,13 @@ namespace G
         /// Query a language, code, or image model.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CompletionResponse> CompletionsAsync(
 
             global::G.CompletionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create completion<br/>
@@ -78,6 +80,7 @@ namespace G
         /// Seed value for reproducibility.<br/>
         /// Example: 42
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CompletionResponse> CompletionsAsync(
@@ -98,6 +101,7 @@ namespace G
             float? frequencyPenalty = default,
             global::System.Collections.Generic.Dictionary<string, float>? logitBias = default,
             int? seed = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

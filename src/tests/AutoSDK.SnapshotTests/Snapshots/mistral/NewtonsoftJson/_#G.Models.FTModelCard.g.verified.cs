@@ -79,6 +79,7 @@ namespace G
         /// Default Value: fine-tuned
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FTModelCardTypeJsonConverter))]
         public global::G.FTModelCardType? Type { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sourceType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DocumentTypeJsonConverter))]
         public global::G.DocumentType SourceType { get; set; } = default!;
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summaryMethod")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummaryMethodJsonConverter))]
         public global::G.SummaryMethod? SummaryMethod { get; set; }
 
         /// <summary>

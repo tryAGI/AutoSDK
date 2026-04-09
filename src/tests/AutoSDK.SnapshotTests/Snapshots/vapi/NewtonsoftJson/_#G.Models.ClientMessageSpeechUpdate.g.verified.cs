@@ -19,18 +19,21 @@ namespace G
         /// This is the type of the message. "speech-update" is sent whenever assistant or user start or stop speaking.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageSpeechUpdateTypeJsonConverter))]
         public global::G.ClientMessageSpeechUpdateType Type { get; set; }
 
         /// <summary>
         /// This is the status of the speech update.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageSpeechUpdateStatusJsonConverter))]
         public global::G.ClientMessageSpeechUpdateStatus Status { get; set; } = default!;
 
         /// <summary>
         /// This is the role which the speech update is for.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageSpeechUpdateRoleJsonConverter))]
         public global::G.ClientMessageSpeechUpdateRole Role { get; set; } = default!;
 
         /// <summary>

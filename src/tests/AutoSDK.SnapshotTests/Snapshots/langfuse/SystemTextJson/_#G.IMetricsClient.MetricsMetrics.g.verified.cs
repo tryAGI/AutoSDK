@@ -93,10 +93,12 @@ namespace G
         /// - `auto` bins the data into approximately 50 buckets based on the time range
         /// </summary>
         /// <param name="query"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MetricsV2Response> MetricsMetricsAsync(
             string query,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

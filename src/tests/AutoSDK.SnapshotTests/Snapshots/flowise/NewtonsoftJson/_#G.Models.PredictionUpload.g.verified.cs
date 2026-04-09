@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>file</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PredictionUploadTypeJsonConverter))]
         public global::G.PredictionUploadType? Type { get; set; }
 
         /// <summary>
@@ -39,6 +40,7 @@ namespace G
         /// </summary>
         /// <example>image/png</example>
         [global::Newtonsoft.Json.JsonProperty("mime")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PredictionUploadMimeJsonConverter))]
         public global::G.PredictionUploadMime? Mime { get; set; }
 
         /// <summary>

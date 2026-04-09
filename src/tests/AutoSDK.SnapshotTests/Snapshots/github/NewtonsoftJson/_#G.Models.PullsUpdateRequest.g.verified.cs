@@ -25,6 +25,7 @@ namespace G
         /// State of this Pull Request. Either `open` or `closed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PullsUpdateRequestStateJsonConverter))]
         public global::G.PullsUpdateRequestState? State { get; set; }
 
         /// <summary>

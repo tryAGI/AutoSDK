@@ -43,6 +43,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retrieval_strategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationalRagConfigRetrievalStrategyJsonConverter))]
         public global::G.ConversationalRagConfigRetrievalStrategy? RetrievalStrategy { get; set; }
 
         /// <summary>

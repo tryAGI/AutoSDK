@@ -19,6 +19,7 @@ namespace G
         /// `Acknowledged` - Request is saved to WAL and will be process in a queue. `Completed` - Request is completed, changes are actual. `WaitTimeout` - Request is waiting for timeout.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateStatusJsonConverter))]
         public global::G.UpdateStatus Status { get; set; } = default!;
 
         /// <summary>

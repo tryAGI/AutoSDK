@@ -15,11 +15,13 @@ namespace G
         /// See the full documentation for detailed configuration requirements for each column type.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddReportColumnResponse> AddReportColumnAsync(
 
             global::G.AddReportColumnRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add Column to Evaluation Pipeline<br/>
@@ -45,6 +47,7 @@ namespace G
         /// <param name="position">
         /// Optional position for the column. If not specified, the column is added at the end. Cannot overwrite dataset columns.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddReportColumnResponse> AddReportColumnAsync(
@@ -53,6 +56,7 @@ namespace G
             string name,
             object configuration,
             int? position = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

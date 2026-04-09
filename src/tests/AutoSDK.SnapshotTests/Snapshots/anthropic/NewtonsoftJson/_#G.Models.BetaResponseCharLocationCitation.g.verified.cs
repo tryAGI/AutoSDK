@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaResponseCharLocationCitationType.CharLocation</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaResponseCharLocationCitationTypeJsonConverter))]
         public global::G.BetaResponseCharLocationCitationType Type { get; set; } = global::G.BetaResponseCharLocationCitationType.CharLocation;
 
         /// <summary>

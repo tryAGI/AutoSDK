@@ -13,12 +13,14 @@ namespace G
         /// This is the provider of the model (`groq`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalGroqModelProviderJsonConverter))]
         public global::G.EvalGroqModelProvider Provider { get; set; }
 
         /// <summary>
         /// This is the name of the model. Ex. gpt-4o
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalGroqModelModelJsonConverter))]
         public global::G.EvalGroqModelModel Model { get; set; } = default!;
 
         /// <summary>

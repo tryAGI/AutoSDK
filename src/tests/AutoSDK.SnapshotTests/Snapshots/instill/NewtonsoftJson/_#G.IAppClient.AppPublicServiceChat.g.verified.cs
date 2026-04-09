@@ -14,6 +14,7 @@ namespace G
         /// <param name="namespaceId"></param>
         /// <param name="appId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatResponse> AppPublicServiceChatAsync(
@@ -21,6 +22,7 @@ namespace G
             string appId,
 
             global::G.ChatBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Chat<br/>
@@ -34,6 +36,7 @@ namespace G
         /// <param name="conversationUid"></param>
         /// <param name="message"></param>
         /// <param name="topK"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatResponse> AppPublicServiceChatAsync(
@@ -43,6 +46,7 @@ namespace G
             string conversationUid,
             string message,
             long? topK = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

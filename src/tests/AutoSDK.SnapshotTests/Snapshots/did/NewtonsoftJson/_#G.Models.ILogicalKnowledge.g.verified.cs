@@ -15,6 +15,7 @@ namespace G
         /// Type of object to be stored
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ILogicalKnowledgeTypeJsonConverter))]
         public global::G.ILogicalKnowledgeType Type { get; set; } = default!;
 
         /// <summary>

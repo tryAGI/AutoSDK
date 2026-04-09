@@ -13,6 +13,7 @@ namespace G
         /// This is a tool call invocation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolCallInvocationUtteranceRoleJsonConverter))]
         public global::G.ToolCallInvocationUtteranceRole Role { get; set; }
 
         /// <summary>

@@ -11,11 +11,13 @@ namespace G
         /// plus English with options for formal, colloquial, and code-mixed styles.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TranslateResponse> TranslateTextAsync(
 
             global::G.TranslateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Translate text between languages<br/>
@@ -48,6 +50,7 @@ namespace G
         /// Format of numerals in the output<br/>
         /// Default Value: international
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TranslateResponse> TranslateTextAsync(
@@ -59,6 +62,7 @@ namespace G
             global::G.TranslateRequestModel? model = default,
             global::G.TranslateRequestOutputScript? outputScript = default,
             global::G.TranslateRequestNumeralsFormat? numeralsFormat = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningEffortEnumJsonConverter))]
         public global::G.ReasoningEffortEnum? Effort { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summary")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningSummaryVerbosityEnumJsonConverter))]
         public global::G.ReasoningSummaryVerbosityEnum? Summary { get; set; }
 
         /// <summary>

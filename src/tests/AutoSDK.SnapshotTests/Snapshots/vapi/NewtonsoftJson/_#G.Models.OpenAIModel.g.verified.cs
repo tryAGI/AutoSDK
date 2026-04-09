@@ -39,6 +39,7 @@ namespace G
         /// This is the provider that will be used for the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIModelProviderJsonConverter))]
         public global::G.OpenAIModelProvider Provider { get; set; }
 
         /// <summary>
@@ -48,6 +49,7 @@ namespace G
         /// @default undefined
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIModelModelJsonConverter))]
         public global::G.OpenAIModelModel Model { get; set; } = default!;
 
         /// <summary>
@@ -65,6 +67,7 @@ namespace G
         /// @default `strip-unsupported-validation`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("toolStrictCompatibilityMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIModelToolStrictCompatibilityModeJsonConverter))]
         public global::G.OpenAIModelToolStrictCompatibilityMode? ToolStrictCompatibilityMode { get; set; }
 
         /// <summary>
@@ -75,6 +78,7 @@ namespace G
         /// @default undefined (uses API default which is 'in_memory')
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("promptCacheRetention")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIModelPromptCacheRetentionJsonConverter))]
         public global::G.OpenAIModelPromptCacheRetention? PromptCacheRetention { get; set; }
 
         /// <summary>

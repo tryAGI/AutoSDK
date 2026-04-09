@@ -20,12 +20,14 @@ namespace G
         /// The type of tool. "textEditor" for Text Editor tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextEditorToolTypeJsonConverter))]
         public global::G.TextEditorToolType Type { get; set; }
 
         /// <summary>
         /// The sub type of tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextEditorToolSubTypeJsonConverter))]
         public global::G.TextEditorToolSubType SubType { get; set; }
 
         /// <summary>
@@ -149,6 +151,7 @@ namespace G
         /// </summary>
         /// <default>global::G.TextEditorToolName.StrReplaceEditor</default>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextEditorToolNameJsonConverter))]
         public global::G.TextEditorToolName Name { get; set; } = global::G.TextEditorToolName.StrReplaceEditor;
 
         /// <summary>

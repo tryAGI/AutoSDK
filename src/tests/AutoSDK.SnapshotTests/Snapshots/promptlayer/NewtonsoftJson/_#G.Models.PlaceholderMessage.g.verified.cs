@@ -19,6 +19,7 @@ namespace G
         /// Default Value: f-string
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PlaceholderMessageTemplateFormatJsonConverter))]
         public global::G.PlaceholderMessageTemplateFormat? TemplateFormat { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// Default Value: placeholder
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PlaceholderMessageRoleJsonConverter))]
         public global::G.PlaceholderMessageRole? Role { get; set; }
 
         /// <summary>

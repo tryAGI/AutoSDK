@@ -13,6 +13,7 @@ namespace G
         /// The current status of this source, indicating whether it affects queries.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1SourceStatsStatusJsonConverter))]
         public global::G.UltravoxV1SourceStatsStatus? Status { get; set; }
 
         /// <summary>

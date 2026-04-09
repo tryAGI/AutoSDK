@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("on")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SimulationHookCallStartedOnJsonConverter))]
         public global::G.SimulationHookCallStartedOn On { get; set; }
 
         /// <summary>

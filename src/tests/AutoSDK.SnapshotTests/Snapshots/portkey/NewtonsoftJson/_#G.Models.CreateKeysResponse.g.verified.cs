@@ -28,6 +28,7 @@ namespace G
         /// </summary>
         /// <example>api-key</example>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateKeysResponseObjectJsonConverter))]
         public global::G.CreateKeysResponseObject? Object { get; set; }
 
         /// <summary>

@@ -10,11 +10,13 @@ namespace G
         /// Generate images by combining multiple reference images.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTaskResponse> CreateMultiImageGenerationAsync(
 
             global::G.CreateMultiImageGenerationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create multi-image generation task<br/>
@@ -39,6 +41,7 @@ namespace G
         /// <param name="callbackUrl">
         /// URL to receive webhook callback when task completes.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTaskResponse> CreateMultiImageGenerationAsync(
@@ -48,6 +51,7 @@ namespace G
             global::G.CreateMultiImageGenerationRequestAspectRatio? aspectRatio = default,
             int? n = default,
             string? callbackUrl = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

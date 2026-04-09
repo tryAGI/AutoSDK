@@ -19,6 +19,7 @@ namespace G
         /// Language code (BCP-47) for text normalization
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_language_code", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextToSpeechRequestTargetLanguageCodeJsonConverter))]
         public global::G.TextToSpeechRequestTargetLanguageCode TargetLanguageCode { get; set; } = default!;
 
         /// <summary>
@@ -26,12 +27,14 @@ namespace G
         /// Default Value: bulbul:v3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextToSpeechRequestModelJsonConverter))]
         public global::G.TextToSpeechRequestModel? Model { get; set; }
 
         /// <summary>
         /// Speaker voice (default: shubh for v3, anushka for v2)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speaker")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextToSpeechRequestSpeakerJsonConverter))]
         public global::G.TextToSpeechRequestSpeaker? Speaker { get; set; }
 
         /// <summary>
@@ -67,12 +70,14 @@ namespace G
         /// Default Value: 24000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speech_sample_rate")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextToSpeechRequestSpeechSampleRateJsonConverter))]
         public global::G.TextToSpeechRequestSpeechSampleRate? SpeechSampleRate { get; set; }
 
         /// <summary>
         /// Output audio format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_audio_codec")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextToSpeechRequestOutputAudioCodecJsonConverter))]
         public global::G.TextToSpeechRequestOutputAudioCodec? OutputAudioCodec { get; set; }
 
         /// <summary>

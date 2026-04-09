@@ -13,6 +13,7 @@ namespace G
         /// The type of content fragment. Must be `image_url` for image fragments.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageFragmentTypeJsonConverter))]
         public global::G.ImageFragmentType Type { get; set; }
 
         /// <summary>

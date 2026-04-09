@@ -17,6 +17,7 @@ namespace G
         /// </summary>
         /// <example>assistant_id</example>
         [global::Newtonsoft.Json.JsonProperty("column", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterStringTypeColumnOnCallTableColumnJsonConverter))]
         public global::G.FilterStringTypeColumnOnCallTableColumn Column { get; set; } = default!;
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace G
         /// </summary>
         /// <example>"=" or "!="</example>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterStringTypeColumnOnCallTableOperatorJsonConverter))]
         public global::G.FilterStringTypeColumnOnCallTableOperator Operator { get; set; } = default!;
 
         /// <summary>

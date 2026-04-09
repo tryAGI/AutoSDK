@@ -15,6 +15,7 @@ namespace G
         /// Type discriminator
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SimulationRunSuiteEntryTypeJsonConverter))]
         public global::G.SimulationRunSuiteEntryType Type { get; set; }
 
         /// <summary>

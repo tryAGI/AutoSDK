@@ -22,12 +22,14 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackVapiVoiceProviderJsonConverter))]
         public global::G.FallbackVapiVoiceProvider Provider { get; set; }
 
         /// <summary>
         /// The voices provided by Vapi
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voiceId", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackVapiVoiceVoiceIdJsonConverter))]
         public global::G.FallbackVapiVoiceVoiceId VoiceId { get; set; } = default!;
 
         /// <summary>

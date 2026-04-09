@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.EvalControllerGetPaginatedSortOrder.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class EvalControllerGetPaginatedSortOrderJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.EvalControllerGetPaginatedSortOrder>
+    {
+        /// <inheritdoc />
+        public override global::G.EvalControllerGetPaginatedSortOrder ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.EvalControllerGetPaginatedSortOrder existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.EvalControllerGetPaginatedSortOrderExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.EvalControllerGetPaginatedSortOrder)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.EvalControllerGetPaginatedSortOrder);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.EvalControllerGetPaginatedSortOrder value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.EvalControllerGetPaginatedSortOrderExtensions.ToValueString(value));
+        }
+    }
+}

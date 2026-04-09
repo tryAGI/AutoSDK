@@ -27,6 +27,7 @@ namespace G
         /// The event type, must be `conversation.item.created`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventConversationItemCreatedTypeJsonConverter))]
         public global::G.RealtimeServerEventConversationItemCreatedType Type { get; set; }
 
         /// <summary>

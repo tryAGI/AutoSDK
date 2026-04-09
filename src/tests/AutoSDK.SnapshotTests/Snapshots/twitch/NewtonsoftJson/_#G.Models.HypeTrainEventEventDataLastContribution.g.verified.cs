@@ -23,6 +23,7 @@ namespace G
         /// * OTHER — Covers other contribution methods not listed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HypeTrainEventEventDataLastContributionTypeJsonConverter))]
         public global::G.HypeTrainEventEventDataLastContributionType Type { get; set; } = default!;
 
         /// <summary>

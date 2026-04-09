@@ -13,12 +13,14 @@ namespace G
         /// Group id
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Group> PatchGroupIdAsync(
             global::System.Guid groupId,
 
             global::G.PatchGroup request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Partially update group<br/>
@@ -45,6 +47,7 @@ namespace G
         /// <param name="removeMemberGroups">
         /// A list of group IDs to remove from the group's inheriting-from set
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Group> PatchGroupIdAsync(
@@ -55,6 +58,7 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? removeMemberUsers = default,
             global::System.Collections.Generic.IList<global::System.Guid>? addMemberGroups = default,
             global::System.Collections.Generic.IList<global::System.Guid>? removeMemberGroups = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -32,6 +32,7 @@ namespace G
         /// Default Value: body
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_layer")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ContentLayerJsonConverter))]
         public global::G.ContentLayer? ContentLayer { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// Default Value: unspecified
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("label")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GroupLabelJsonConverter))]
         public global::G.GroupLabel? Label { get; set; }
 
         /// <summary>

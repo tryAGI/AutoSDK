@@ -14,6 +14,7 @@ namespace G
         /// Default Value: none
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ParallelThinkingConfigModeJsonConverter))]
         public global::G.ParallelThinkingConfigMode? Mode { get; set; }
 
         /// <summary>

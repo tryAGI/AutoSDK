@@ -13,6 +13,7 @@ namespace G
         /// Auth method
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiMlPartialUpdateRequestAuthMethodJsonConverter))]
         public global::G.ApiMlPartialUpdateRequestAuthMethod? AuthMethod { get; set; }
 
         /// <summary>

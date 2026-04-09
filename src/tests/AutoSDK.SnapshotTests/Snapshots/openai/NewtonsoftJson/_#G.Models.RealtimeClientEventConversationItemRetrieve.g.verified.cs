@@ -22,6 +22,7 @@ namespace G
         /// The event type, must be `conversation.item.retrieve`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventConversationItemRetrieveTypeJsonConverter))]
         public global::G.RealtimeClientEventConversationItemRetrieveType Type { get; set; }
 
         /// <summary>

@@ -18,6 +18,7 @@ namespace G
         /// <param name="segmentByUser"></param>
         /// <param name="start"></param>
         /// <param name="tz"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.KPIDetailResponse> ApiAnalyticsKpisRetrieve2Async(
@@ -30,6 +31,7 @@ namespace G
             string? segmentByTime = default,
             bool? segmentByUser = default,
             global::System.DateTime? start = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

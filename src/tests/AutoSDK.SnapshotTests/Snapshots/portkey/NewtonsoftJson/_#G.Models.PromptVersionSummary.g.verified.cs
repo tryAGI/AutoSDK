@@ -55,12 +55,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptVersionSummaryStatusJsonConverter))]
         public global::G.PromptVersionSummaryStatus? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptVersionSummaryObjectJsonConverter))]
         public global::G.PromptVersionSummaryObject? Object { get; set; }
 
         /// <summary>

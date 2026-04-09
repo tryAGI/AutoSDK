@@ -13,6 +13,7 @@ namespace G
         /// <param name="shardId"></param>
         /// <param name="wait"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RecoverShardFromSnapshotResponse> RecoverShardFromSnapshotAsync(
@@ -21,6 +22,7 @@ namespace G
 
             global::G.ShardSnapshotRecover request,
             bool? wait = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Recover from a snapshot<br/>
@@ -41,6 +43,7 @@ namespace G
         /// Optional API key used when fetching the snapshot from a remote URL.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RecoverShardFromSnapshotResponse> RecoverShardFromSnapshotAsync(
@@ -51,6 +54,7 @@ namespace G
             global::G.SnapshotPriority? priority = default,
             string? checksum = default,
             string? apiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

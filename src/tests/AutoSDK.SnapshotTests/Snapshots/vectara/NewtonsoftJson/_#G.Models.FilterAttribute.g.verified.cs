@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>document</example>
         [global::Newtonsoft.Json.JsonProperty("level", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterAttributeLevelJsonConverter))]
         public global::G.FilterAttributeLevel Level { get; set; } = default!;
 
         /// <summary>
@@ -46,6 +47,7 @@ namespace G
         /// </summary>
         /// <example>text</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterAttributeTypeJsonConverter))]
         public global::G.FilterAttributeType Type { get; set; } = default!;
 
         /// <summary>

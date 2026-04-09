@@ -105,6 +105,7 @@ namespace G
         /// Status of the template build
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("buildStatus", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TemplateBuildStatusJsonConverter))]
         public global::G.TemplateBuildStatus BuildStatus { get; set; } = default!;
 
         /// <summary>

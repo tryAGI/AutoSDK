@@ -25,6 +25,7 @@ namespace G
         /// The type of the principal: user, group, or service account (under 'key').
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ShareOptionResponseModelTypeJsonConverter))]
         public global::G.ShareOptionResponseModelType Type { get; set; } = default!;
 
         /// <summary>

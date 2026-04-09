@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResearchOperationDtoClassVariant2TypeJsonConverter))]
         public global::G.ResearchOperationDtoClassVariant2Type Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("searchType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResearchOperationDtoClassVariant2SearchTypeJsonConverter))]
         public global::G.ResearchOperationDtoClassVariant2SearchType SearchType { get; set; } = default!;
 
         /// <summary>

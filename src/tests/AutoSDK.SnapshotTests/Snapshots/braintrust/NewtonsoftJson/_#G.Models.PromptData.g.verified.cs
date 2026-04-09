@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptDataTemplateFormatJsonConverter))]
         public global::G.PromptDataTemplateFormat? TemplateFormat { get; set; }
 
         /// <summary>

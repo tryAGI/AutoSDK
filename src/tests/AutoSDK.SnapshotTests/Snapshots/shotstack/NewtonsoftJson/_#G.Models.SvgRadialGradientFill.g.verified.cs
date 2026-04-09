@@ -14,6 +14,7 @@ namespace G
         /// The fill type - set to `radial` for a radial gradient fill.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgRadialGradientFillTypeJsonConverter))]
         public global::G.SvgRadialGradientFillType Type { get; set; }
 
         /// <summary>

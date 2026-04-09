@@ -19,6 +19,7 @@ namespace G
         /// Default Value: streamable_http
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPServerTypeJsonConverter))]
         public global::G.MCPServerType? Type { get; set; }
 
         /// <summary>

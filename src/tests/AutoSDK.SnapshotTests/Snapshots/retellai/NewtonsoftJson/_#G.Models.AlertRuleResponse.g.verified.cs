@@ -31,6 +31,7 @@ namespace G
         /// The metric type being monitored.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metric_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertMetricTypeJsonConverter))]
         public global::G.AlertMetricType? MetricType { get; set; }
 
         /// <summary>
@@ -43,6 +44,7 @@ namespace G
         /// Whether threshold is absolute or relative to previous period.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("threshold_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertRuleResponseThresholdTypeJsonConverter))]
         public global::G.AlertRuleResponseThresholdType? ThresholdType { get; set; }
 
         /// <summary>
@@ -55,18 +57,21 @@ namespace G
         /// Comparison operator for the threshold.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comparator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertRuleResponseComparatorJsonConverter))]
         public global::G.AlertRuleResponseComparator? Comparator { get; set; }
 
         /// <summary>
         /// How often the metric is evaluated.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("frequency")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertRuleResponseFrequencyJsonConverter))]
         public global::G.AlertRuleResponseFrequency? Frequency { get; set; }
 
         /// <summary>
         /// Time window for metric evaluation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("window")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertRuleResponseWindowJsonConverter))]
         public global::G.AlertRuleResponseWindow? Window { get; set; }
 
         /// <summary>

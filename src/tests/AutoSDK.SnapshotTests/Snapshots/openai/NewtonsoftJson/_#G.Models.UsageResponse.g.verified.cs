@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UsageResponseObjectJsonConverter))]
         public global::G.UsageResponseObject Object { get; set; }
 
         /// <summary>

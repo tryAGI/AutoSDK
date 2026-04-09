@@ -13,6 +13,7 @@ namespace G
         /// The type of security threat to filter.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptInjectionSecurityFilterTypeJsonConverter))]
         public global::G.PromptInjectionSecurityFilterType Type { get; set; }
 
         /// <summary>

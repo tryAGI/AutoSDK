@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeBundleLocationVariant3TypeJsonConverter))]
         public global::G.CodeBundleLocationVariant3Type Type { get; set; }
 
         /// <summary>

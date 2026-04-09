@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ranker")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileSearchServerToolRankingOptionsRankerJsonConverter))]
         public global::G.FileSearchServerToolRankingOptionsRanker? Ranker { get; set; }
 
         /// <summary>

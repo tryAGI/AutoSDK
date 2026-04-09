@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "language-change-detected" is sent when the transcriber is automatically switched based on the detected language.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageLanguageChangeDetectedTypeJsonConverter))]
         public global::G.ServerMessageLanguageChangeDetectedType Type { get; set; }
 
         /// <summary>

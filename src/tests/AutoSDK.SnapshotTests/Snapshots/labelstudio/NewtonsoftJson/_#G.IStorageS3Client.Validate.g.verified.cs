@@ -10,11 +10,13 @@ namespace G
         /// Validate a specific S3 export storage connection.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ValidateAsync(
 
             global::G.ApiStoragesExportS3ValidateCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Validate export storage<br/>
@@ -60,6 +62,7 @@ namespace G
         /// <param name="title">
         /// Storage title
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task ValidateAsync(
@@ -76,6 +79,7 @@ namespace G
             string? regionName = default,
             string? s3Endpoint = default,
             string? title = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

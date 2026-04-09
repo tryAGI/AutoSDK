@@ -13,12 +13,14 @@ namespace G
         /// This is the type of cost, always 'analysis' for this class.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnalysisCostTypeJsonConverter))]
         public global::G.AnalysisCostType Type { get; set; }
 
         /// <summary>
         /// This is the type of analysis performed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("analysisType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnalysisCostAnalysisTypeJsonConverter))]
         public global::G.AnalysisCostAnalysisType AnalysisType { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Enum for feedback types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FeedbackTypeJsonConverter))]
         public global::G.FeedbackType Type { get; set; } = default!;
 
         /// <summary>

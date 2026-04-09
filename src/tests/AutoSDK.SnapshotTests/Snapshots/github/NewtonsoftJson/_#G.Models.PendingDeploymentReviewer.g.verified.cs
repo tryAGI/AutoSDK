@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>User</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeploymentReviewerTypeJsonConverter))]
         public global::G.DeploymentReviewerType? Type { get; set; }
 
         /// <summary>

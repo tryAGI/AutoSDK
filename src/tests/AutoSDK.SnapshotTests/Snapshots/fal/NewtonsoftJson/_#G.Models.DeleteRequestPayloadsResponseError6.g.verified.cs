@@ -13,6 +13,7 @@ namespace G
         /// The category of error that occurred
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeleteRequestPayloadsResponseErrorType6JsonConverter))]
         public global::G.DeleteRequestPayloadsResponseErrorType6 Type { get; set; } = default!;
 
         /// <summary>

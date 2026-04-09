@@ -13,12 +13,14 @@ namespace G
         /// The Unix timestamp (in seconds) of when the certificate becomes valid.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("valid_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? ValidAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the certificate expires.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? ExpiresAt { get; set; }
 
         /// <summary>

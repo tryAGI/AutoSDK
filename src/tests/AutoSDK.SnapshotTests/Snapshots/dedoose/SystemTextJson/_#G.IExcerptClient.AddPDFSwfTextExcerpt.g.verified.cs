@@ -10,11 +10,13 @@ namespace G
         /// AddPDFSwfTextExcerpt
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExcerptWithTagApps> AddPDFSwfTextExcerptAsync(
 
             global::G.AddPDFSwfTextExcerptRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// AddPDFSwfTextExcerpt<br/>
@@ -28,6 +30,7 @@ namespace G
         /// <param name="end"></param>
         /// <param name="text"></param>
         /// <param name="tagApps"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExcerptWithTagApps> AddPDFSwfTextExcerptAsync(
@@ -39,6 +42,7 @@ namespace G
             int end,
             string text,
             global::System.Collections.Generic.IList<global::G.TagAppSimple> tagApps,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

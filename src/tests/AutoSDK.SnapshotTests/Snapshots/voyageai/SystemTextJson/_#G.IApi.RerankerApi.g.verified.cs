@@ -10,11 +10,13 @@ namespace G
         /// Voyage reranker endpoint receives as input a query, a list of documents, and other arguments such as the model name, and returns a response containing the reranking results.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RerankerApiResponse> RerankerApiAsync(
 
             global::G.RerankerApiRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Rerankers<br/>
@@ -41,6 +43,7 @@ namespace G
         /// Whether to truncate the input to satisfy the "context length limit" on the query and the documents. Defaults to `true`. &lt;ul&gt; &lt;li&gt; If `true`,  the query and documents will be truncated to fit within the context length limit, before processed by the reranker model. &lt;/li&gt; &lt;li&gt; If `false`, an error will be raised when the query exceeds 4000 tokens for `rerank-2`; 2000 tokens `rerank-2-lite` and `rerank-1`; and 1000 tokens for `rerank-lite-1`, or the sum of the number of tokens in the query and the number of tokens in any single document exceeds 16000 for `rerank-2`; 8000 for `rerank-2-lite` and `rerank-1`; and 4000 for `rerank-lite-1`. &lt;/li&gt; &lt;/ul&gt;<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RerankerApiResponse> RerankerApiAsync(
@@ -50,6 +53,7 @@ namespace G
             int? topK = default,
             bool? returnDocuments = default,
             bool? truncation = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

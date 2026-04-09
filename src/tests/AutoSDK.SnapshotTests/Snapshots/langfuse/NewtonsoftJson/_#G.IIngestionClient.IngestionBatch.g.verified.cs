@@ -20,11 +20,13 @@ namespace G
         /// - The API does not return a 4xx status code for input errors. Instead, it responds with a 207 status code, which includes a list of the encountered errors.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.IngestionResponse> IngestionBatchAsync(
 
             global::G.IngestionBatchRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// **Legacy endpoint for batch ingestion for Langfuse Observability.**<br/>
@@ -46,11 +48,13 @@ namespace G
         /// <param name="metadata">
         /// Optional. Metadata field used by the Langfuse SDKs for debugging.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.IngestionResponse> IngestionBatchAsync(
             global::System.Collections.Generic.IList<global::G.IngestionEvent> batch,
             object? metadata = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

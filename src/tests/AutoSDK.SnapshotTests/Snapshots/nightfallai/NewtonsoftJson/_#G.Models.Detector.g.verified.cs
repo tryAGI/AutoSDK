@@ -26,6 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("minConfidence", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfidenceJsonConverter))]
         public global::G.Confidence MinConfidence { get; set; } = default!;
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detectorType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DetectorTypeJsonConverter))]
         public global::G.DetectorType DetectorType { get; set; } = default!;
 
         /// <summary>

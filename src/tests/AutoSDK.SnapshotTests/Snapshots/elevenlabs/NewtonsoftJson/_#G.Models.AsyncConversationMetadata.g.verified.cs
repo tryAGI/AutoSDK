@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delivery_status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AsyncConversationMetadataDeliveryStatusJsonConverter))]
         public global::G.AsyncConversationMetadataDeliveryStatus DeliveryStatus { get; set; } = default!;
 
         /// <summary>

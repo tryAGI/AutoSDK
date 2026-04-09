@@ -65,6 +65,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_call_sound_behavior")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolCallSoundBehaviorJsonConverter))]
         public global::G.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
 
         /// <summary>
@@ -72,12 +73,14 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_error_handling_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolErrorHandlingModeJsonConverter))]
         public global::G.ToolErrorHandlingMode? ToolErrorHandlingMode { get; set; }
 
         /// <summary>
         /// The type of MCP tool
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("integration_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IntegrationTypeJsonConverter))]
         public global::G.IntegrationType IntegrationType { get; set; } = default!;
 
         /// <summary>
@@ -91,6 +94,7 @@ namespace G
         /// Default Value: require_approval_all
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("approval_policy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPApprovalPolicyJsonConverter))]
         public global::G.MCPApprovalPolicy? ApprovalPolicy { get; set; }
 
         /// <summary>
@@ -128,6 +132,7 @@ namespace G
         /// Default Value: immediate
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolExecutionModeJsonConverter))]
         public global::G.ToolExecutionMode? ExecutionMode { get; set; }
 
         /// <summary>

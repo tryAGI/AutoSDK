@@ -45,6 +45,7 @@ namespace G
         /// </summary>
         /// <example>webhook</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetTriggersTypesBySlugResponseTypeJsonConverter))]
         public global::G.GetTriggersTypesBySlugResponseType Type { get; set; } = default!;
 
         /// <summary>

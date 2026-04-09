@@ -13,6 +13,7 @@ namespace G
         /// Always `image`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter))]
         public global::G.RunStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; }
 
         /// <summary>

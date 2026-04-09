@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SesameVoiceProviderJsonConverter))]
         public global::G.SesameVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -34,6 +35,7 @@ namespace G
         /// This is the model that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SesameVoiceModelJsonConverter))]
         public global::G.SesameVoiceModel Model { get; set; }
 
         /// <summary>

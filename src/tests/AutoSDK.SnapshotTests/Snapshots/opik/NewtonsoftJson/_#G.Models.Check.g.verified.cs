@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CheckNameJsonConverter))]
         public global::G.CheckName? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CheckResultJsonConverter))]
         public global::G.CheckResult? Result { get; set; }
 
         /// <summary>

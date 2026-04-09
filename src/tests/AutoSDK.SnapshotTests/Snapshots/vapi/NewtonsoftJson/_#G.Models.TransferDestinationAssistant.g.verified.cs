@@ -23,6 +23,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferDestinationAssistantTypeJsonConverter))]
         public global::G.TransferDestinationAssistantType Type { get; set; }
 
         /// <summary>
@@ -99,6 +100,7 @@ namespace G
         /// @default 'rolling-history'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transferMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferDestinationAssistantTransferModeJsonConverter))]
         public global::G.TransferDestinationAssistantTransferMode? TransferMode { get; set; }
 
         /// <summary>

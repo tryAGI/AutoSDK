@@ -27,6 +27,7 @@ namespace G
         /// </summary>
         /// <example>single_select</example>
         [global::Newtonsoft.Json.JsonProperty("value_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomPropertyValueTypeJsonConverter))]
         public global::G.CustomPropertyValueType ValueType { get; set; } = default!;
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace G
         /// </summary>
         /// <example>org_actors</example>
         [global::Newtonsoft.Json.JsonProperty("values_editable_by")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomPropertyValuesEditableByJsonConverter))]
         public global::G.CustomPropertyValuesEditableBy? ValuesEditableBy { get; set; }
 
         /// <summary>

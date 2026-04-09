@@ -32,6 +32,7 @@ namespace G
         /// </summary>
         /// <example>float</example>
         [global::Newtonsoft.Json.JsonProperty("encoding_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEmbeddingRequestEncodingFormatJsonConverter))]
         public global::G.CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; }
 
         /// <summary>

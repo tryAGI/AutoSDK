@@ -16,6 +16,7 @@ namespace G
         /// <default>global::G.WebhookLiveStartSessionPayloadEvent.LiveStartSession</default>
         /// <example>live.start_session</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookLiveStartSessionPayloadEventJsonConverter))]
         public global::G.WebhookLiveStartSessionPayloadEvent Event { get; set; } = global::G.WebhookLiveStartSessionPayloadEvent.LiveStartSession;
 
         /// <summary>

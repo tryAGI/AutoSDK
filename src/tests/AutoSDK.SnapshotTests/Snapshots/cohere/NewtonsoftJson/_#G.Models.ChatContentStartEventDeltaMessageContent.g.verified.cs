@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatContentStartEventDeltaMessageContentTypeJsonConverter))]
         public global::G.ChatContentStartEventDeltaMessageContentType? Type { get; set; }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("overlap")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FaceSquareOverlapJsonConverter))]
         public global::G.FaceSquareOverlap? Overlap { get; set; }
 
         /// <summary>

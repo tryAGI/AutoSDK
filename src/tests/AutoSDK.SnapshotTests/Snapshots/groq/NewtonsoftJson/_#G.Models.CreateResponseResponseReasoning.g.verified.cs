@@ -13,6 +13,7 @@ namespace G
         /// The reasoning effort level used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateResponseResponseReasoningEffortJsonConverter))]
         public global::G.CreateResponseResponseReasoningEffort? Effort { get; set; }
 
         /// <summary>

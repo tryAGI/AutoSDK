@@ -19,6 +19,7 @@ namespace G
         /// 情感，可选值 [none,happy,angry,sad,neutral]，默认 none
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("emotion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublicAudioSpeechRequestEmotionJsonConverter))]
         public global::G.PublicAudioSpeechRequestEmotion? Emotion { get; set; }
 
         /// <summary>
@@ -43,6 +44,7 @@ namespace G
         /// 音频编码格式，wav / pcm / ogg_opus / mp3，默认为 mp3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublicAudioSpeechRequestResponseFormatJsonConverter))]
         public global::G.PublicAudioSpeechRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>

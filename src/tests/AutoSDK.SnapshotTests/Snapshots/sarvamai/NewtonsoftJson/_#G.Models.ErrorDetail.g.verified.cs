@@ -25,6 +25,7 @@ namespace G
         /// Error code
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ErrorDetailCodeJsonConverter))]
         public global::G.ErrorDetailCode? Code { get; set; }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DubbingOutputLanguageJsonConverter))]
         public global::G.DubbingOutputLanguage Language { get; set; } = default!;
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace G
         /// Default Value: complete
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DubbedAssetCompleteStatusJsonConverter))]
         public global::G.DubbedAssetCompleteStatus? Status { get; set; }
 
         /// <summary>
@@ -45,6 +47,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createdAt")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? CreatedAt { get; set; }
 
         /// <summary>
@@ -52,12 +55,14 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lastUpdatedAt")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? LastUpdatedAt { get; set; }
 
         /// <summary>
         /// Describes the visibility settings of the video.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DubbedAssetCompleteVisibilityJsonConverter))]
         public global::G.DubbedAssetCompleteVisibility Visibility { get; set; } = default!;
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeleteThreadResponseObjectJsonConverter))]
         public global::G.DeleteThreadResponseObject Object { get; set; }
 
         /// <summary>

@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PreviewWebSearchServerToolTypeJsonConverter))]
         public global::G.PreviewWebSearchServerToolType Type { get; set; }
 
         /// <summary>
         /// Size of the search context for web search tools
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search_context_size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchContextSizeEnumJsonConverter))]
         public global::G.SearchContextSizeEnum? SearchContextSize { get; set; }
 
         /// <summary>
@@ -31,6 +33,7 @@ namespace G
         /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("engine")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PreviewWebSearchServerToolEngineJsonConverter))]
         public global::G.PreviewWebSearchServerToolEngine? Engine { get; set; }
 
         /// <summary>

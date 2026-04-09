@@ -14,6 +14,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="issueNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task IssuesLockAsync(
@@ -22,6 +23,7 @@ namespace G
             int issueNumber,
 
             global::G.IssuesLockRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Lock an issue<br/>
@@ -38,6 +40,7 @@ namespace G
         ///  * `resolved`  <br/>
         ///  * `spam`
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task IssuesLockAsync(
@@ -45,6 +48,7 @@ namespace G
             string repo,
             int issueNumber,
             global::G.IssuesLockRequestLockReason? lockReason = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

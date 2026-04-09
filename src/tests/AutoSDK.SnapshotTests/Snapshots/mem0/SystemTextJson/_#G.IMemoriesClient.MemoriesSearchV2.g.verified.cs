@@ -9,11 +9,13 @@ namespace G
         /// Search memories based on a query and filters.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MemoriesSearchV2ResponseItem>> MemoriesSearchV2Async(
 
             global::G.MemorySearchInputV2 request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search memories based on a query and filters.
@@ -57,6 +59,7 @@ namespace G
         /// <param name="projectId">
         /// The unique identifier of the project associated with the memory.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MemoriesSearchV2ResponseItem>> MemoriesSearchV2Async(
@@ -71,6 +74,7 @@ namespace G
             double? threshold = default,
             string? orgId = default,
             string? projectId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PipelineStateJsonConverter))]
         public global::G.PipelineState State { get; set; } = default!;
 
         /// <summary>

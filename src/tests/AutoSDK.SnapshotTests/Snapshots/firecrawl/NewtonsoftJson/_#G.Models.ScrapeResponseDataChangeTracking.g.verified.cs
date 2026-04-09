@@ -19,12 +19,14 @@ namespace G
         /// The result of the comparison between the two page versions. 'new' means this page did not exist before, 'same' means content has not changed, 'changed' means content has changed, 'removed' means the page was removed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("changeStatus")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeResponseDataChangeTrackingChangeStatusJsonConverter))]
         public global::G.ScrapeResponseDataChangeTrackingChangeStatus? ChangeStatus { get; set; }
 
         /// <summary>
         /// The visibility of the current page/URL. 'visible' means the URL was discovered through an organic route (links or sitemap), 'hidden' means the URL was discovered through memory from previous crawls.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeResponseDataChangeTrackingVisibilityJsonConverter))]
         public global::G.ScrapeResponseDataChangeTrackingVisibility? Visibility { get; set; }
 
         /// <summary>

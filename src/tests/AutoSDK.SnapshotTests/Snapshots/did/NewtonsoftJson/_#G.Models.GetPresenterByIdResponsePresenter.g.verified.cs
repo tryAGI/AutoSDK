@@ -107,6 +107,7 @@ namespace G
         /// The status of the presenter
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetPresenterByIdResponsePresenterStatusJsonConverter))]
         public global::G.GetPresenterByIdResponsePresenterStatus? Status { get; set; }
 
         /// <summary>

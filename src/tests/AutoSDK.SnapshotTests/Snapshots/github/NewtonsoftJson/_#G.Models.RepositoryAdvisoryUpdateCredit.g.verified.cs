@@ -19,6 +19,7 @@ namespace G
         /// The type of credit the user is receiving.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecurityAdvisoryCreditTypesJsonConverter))]
         public global::G.SecurityAdvisoryCreditTypes Type { get; set; } = default!;
 
         /// <summary>

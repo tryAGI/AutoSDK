@@ -13,18 +13,21 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CartesiaTranscriberProviderJsonConverter))]
         public global::G.CartesiaTranscriberProvider Provider { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CartesiaTranscriberModelJsonConverter))]
         public global::G.CartesiaTranscriberModel? Model { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CartesiaTranscriberLanguageJsonConverter))]
         public global::G.CartesiaTranscriberLanguage? Language { get; set; }
 
         /// <summary>

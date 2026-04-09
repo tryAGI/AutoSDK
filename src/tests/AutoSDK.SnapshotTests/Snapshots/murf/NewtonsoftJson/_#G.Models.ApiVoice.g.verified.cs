@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gender")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiVoiceGenderJsonConverter))]
         public global::G.ApiVoiceGender? Gender { get; set; }
 
         /// <summary>

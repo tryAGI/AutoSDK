@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant2ActionJsonConverter))]
         public global::G.WebhookPullRequestReviewRequestRemovedVariant2Action Action { get; set; }
 
         /// <summary>

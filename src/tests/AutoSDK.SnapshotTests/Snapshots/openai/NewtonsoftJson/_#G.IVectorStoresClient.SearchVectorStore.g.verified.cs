@@ -12,12 +12,14 @@ namespace G
         /// Example: vs_abc123
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.VectorStoreSearchResultsPage> SearchVectorStoreAsync(
             string vectorStoreId,
 
             global::G.VectorStoreSearchRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
@@ -42,6 +44,7 @@ namespace G
         /// <param name="rankingOptions">
         /// Ranking options for search.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.VectorStoreSearchResultsPage> SearchVectorStoreAsync(
@@ -51,6 +54,7 @@ namespace G
             int? maxNumResults = default,
             global::G.OneOf<global::G.ComparisonFilter, global::G.CompoundFilter>? filters = default,
             global::G.VectorStoreSearchRequestRankingOptions? rankingOptions = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

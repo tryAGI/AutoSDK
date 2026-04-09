@@ -13,6 +13,7 @@ namespace G
         /// The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposUpdateInvitationRequestPermissionsJsonConverter))]
         public global::G.ReposUpdateInvitationRequestPermissions? Permissions { get; set; }
 
         /// <summary>

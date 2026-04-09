@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("terminate_plan")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAPIEndReturnTypeJsonConverter))]
         public global::G.OpenAPIEndReturnType? TerminatePlan { get; set; }
 
         /// <summary>

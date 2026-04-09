@@ -43,6 +43,7 @@ namespace G
         /// Sort order (ascending or descending)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sort_order")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalStatusPageConfigSortOrderJsonConverter))]
         public global::G.EvalStatusPageConfigSortOrder? SortOrder { get; set; }
 
         /// <summary>

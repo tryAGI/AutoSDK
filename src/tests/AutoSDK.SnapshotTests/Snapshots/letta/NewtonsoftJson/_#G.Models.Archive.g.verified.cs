@@ -50,6 +50,7 @@ namespace G
         /// Default Value: native
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vector_db_provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorDBProviderJsonConverter))]
         public global::G.VectorDBProvider? VectorDbProvider { get; set; }
 
         /// <summary>

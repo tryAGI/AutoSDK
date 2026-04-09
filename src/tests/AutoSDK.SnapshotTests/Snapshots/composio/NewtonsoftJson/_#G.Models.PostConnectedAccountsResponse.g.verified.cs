@@ -27,6 +27,7 @@ namespace G
         /// DEPRECATED: This field will be removed in a future version
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostConnectedAccountsResponseStatusJsonConverter))]
         public global::G.PostConnectedAccountsResponseStatus Status { get; set; } = default!;
 
         /// <summary>

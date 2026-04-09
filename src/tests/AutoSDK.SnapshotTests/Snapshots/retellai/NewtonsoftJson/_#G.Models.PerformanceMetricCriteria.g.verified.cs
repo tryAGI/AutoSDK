@@ -19,6 +19,7 @@ namespace G
         /// Comparison operator for filtering
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("op", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PerformanceMetricCriteriaOpJsonConverter))]
         public global::G.PerformanceMetricCriteriaOp Op { get; set; } = default!;
 
         /// <summary>

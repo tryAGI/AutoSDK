@@ -16,6 +16,7 @@ namespace G
         /// Type of noise reduction. `near_field` is for close-talking microphones such as headphones, `far_field` is for far-field microphones such as laptop or conference room microphones.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeSessionInputAudioNoiseReductionTypeJsonConverter))]
         public global::G.RealtimeSessionInputAudioNoiseReductionType? Type { get; set; }
 
         /// <summary>

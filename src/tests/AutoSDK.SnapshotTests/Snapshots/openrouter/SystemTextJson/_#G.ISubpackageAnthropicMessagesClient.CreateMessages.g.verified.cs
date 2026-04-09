@@ -10,11 +10,13 @@ namespace G
         /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MessagesResult> CreateMessagesAsync(
 
             global::G.MessagesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a message<br/>
@@ -58,6 +60,7 @@ namespace G
         /// <param name="speed">
         /// Controls output generation speed. When set to `fast`, uses a higher-speed inference configuration at premium pricing. Defaults to `standard` when omitted.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MessagesResult> CreateMessagesAsync(
@@ -85,6 +88,7 @@ namespace G
             global::G.MessagesRequestTrace? trace = default,
             global::System.Collections.Generic.IList<string>? models = default,
             global::G.MessagesRequestSpeed? speed = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -29,6 +29,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("autoGenerate")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpsertVideoTranslationsApiRequestAutoGenerateJsonConverter))]
         public global::G.UpsertVideoTranslationsApiRequestAutoGenerate? AutoGenerate { get; set; }
 
         /// <summary>

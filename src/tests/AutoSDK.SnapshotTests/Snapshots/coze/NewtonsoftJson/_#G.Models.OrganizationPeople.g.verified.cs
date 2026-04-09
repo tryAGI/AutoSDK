@@ -31,12 +31,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_role_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrganizationPeopleOrganizationRoleTypeJsonConverter))]
         public global::G.OrganizationPeopleOrganizationRoleType? OrganizationRoleType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("people_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrganizationPeoplePeopleTypeJsonConverter))]
         public global::G.OrganizationPeoplePeopleType? PeopleType { get; set; }
 
         /// <summary>

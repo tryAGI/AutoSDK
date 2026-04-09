@@ -13,6 +13,7 @@ namespace G
         /// This is the type of action - must be "message.add"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageAddHookActionTypeJsonConverter))]
         public global::G.MessageAddHookActionType Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The services to be chosen for calculating the API credit cost.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PricingCalculatorServicesJsonConverter))]
         public global::G.PricingCalculatorServices? Service { get; set; }
 
         /// <summary>

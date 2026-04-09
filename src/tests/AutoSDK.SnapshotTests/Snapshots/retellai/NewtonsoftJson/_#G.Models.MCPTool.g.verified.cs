@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPToolTypeJsonConverter))]
         public global::G.MCPToolType Type { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace G
         /// Type of execution message. "prompt" means the agent will use execution_message_description as a prompt to generate the message. "static_text" means the agent will speak the execution_message_description directly. Defaults to "prompt".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_message_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPToolExecutionMessageTypeJsonConverter))]
         public global::G.MCPToolExecutionMessageType? ExecutionMessageType { get; set; }
 
         /// <summary>

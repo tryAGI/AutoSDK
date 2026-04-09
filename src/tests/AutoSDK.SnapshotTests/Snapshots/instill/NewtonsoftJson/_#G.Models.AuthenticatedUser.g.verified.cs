@@ -93,6 +93,7 @@ namespace G
         /// Onboarding Status.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("onboardingStatus")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OnboardingStatusJsonConverter))]
         public global::G.OnboardingStatus? OnboardingStatus { get; set; }
 
         /// <summary>

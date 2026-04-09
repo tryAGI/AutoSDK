@@ -31,6 +31,9 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -1169,7 +1172,7 @@ namespace G
         /// <summary>
         /// Authentication configuration management.
         /// </summary>
-        public AuthConfigsClient AuthConfigs => new AuthConfigsClient(HttpClient, authorizations: Authorizations)
+        public AuthConfigsClient AuthConfigs => new AuthConfigsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1178,7 +1181,7 @@ namespace G
         /// <summary>
         /// Authentication related endpoints.
         /// </summary>
-        public AuthenticationClient Authentication => new AuthenticationClient(HttpClient, authorizations: Authorizations)
+        public AuthenticationClient Authentication => new AuthenticationClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1187,7 +1190,7 @@ namespace G
         /// <summary>
         /// CLI integration endpoints.
         /// </summary>
-        public CliClient Cli => new CliClient(HttpClient, authorizations: Authorizations)
+        public CliClient Cli => new CliClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1196,7 +1199,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CliAuthenticationClient CliAuthentication => new CliAuthenticationClient(HttpClient, authorizations: Authorizations)
+        public CliAuthenticationClient CliAuthentication => new CliAuthenticationClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1205,7 +1208,7 @@ namespace G
         /// <summary>
         /// Connected account management.
         /// </summary>
-        public ConnectedAccountsClient ConnectedAccounts => new ConnectedAccountsClient(HttpClient, authorizations: Authorizations)
+        public ConnectedAccountsClient ConnectedAccounts => new ConnectedAccountsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1214,7 +1217,7 @@ namespace G
         /// <summary>
         /// File management.
         /// </summary>
-        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
+        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1223,7 +1226,7 @@ namespace G
         /// <summary>
         /// Logging and monitoring.
         /// </summary>
-        public LogsClient Logs => new LogsClient(HttpClient, authorizations: Authorizations)
+        public LogsClient Logs => new LogsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1232,7 +1235,7 @@ namespace G
         /// <summary>
         /// MCP server management.
         /// </summary>
-        public McpClient Mcp => new McpClient(HttpClient, authorizations: Authorizations)
+        public McpClient Mcp => new McpClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1241,7 +1244,7 @@ namespace G
         /// <summary>
         /// Endpoints to help with migration from v1 to v3.
         /// </summary>
-        public MigrationClient Migration => new MigrationClient(HttpClient, authorizations: Authorizations)
+        public MigrationClient Migration => new MigrationClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1250,7 +1253,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public OrganizationManagementClient OrganizationManagement => new OrganizationManagementClient(HttpClient, authorizations: Authorizations)
+        public OrganizationManagementClient OrganizationManagement => new OrganizationManagementClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1259,7 +1262,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations)
+        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1268,7 +1271,7 @@ namespace G
         /// <summary>
         /// (Labs) Tool router endpoints.
         /// </summary>
-        public ToolRouterClient ToolRouter => new ToolRouterClient(HttpClient, authorizations: Authorizations)
+        public ToolRouterClient ToolRouter => new ToolRouterClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1277,7 +1280,7 @@ namespace G
         /// <summary>
         /// Toolkit and tool management.
         /// </summary>
-        public ToolkitsClient Toolkits => new ToolkitsClient(HttpClient, authorizations: Authorizations)
+        public ToolkitsClient Toolkits => new ToolkitsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1286,7 +1289,7 @@ namespace G
         /// <summary>
         /// Tool execution endpoints.
         /// </summary>
-        public ToolsClient Tools => new ToolsClient(HttpClient, authorizations: Authorizations)
+        public ToolsClient Tools => new ToolsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1295,7 +1298,7 @@ namespace G
         /// <summary>
         /// Trigger management and execution.
         /// </summary>
-        public TriggersClient Triggers => new TriggersClient(HttpClient, authorizations: Authorizations)
+        public TriggersClient Triggers => new TriggersClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1304,7 +1307,7 @@ namespace G
         /// <summary>
         /// Webhook configuration.
         /// </summary>
-        public WebhooksClient Webhooks => new WebhooksClient(HttpClient, authorizations: Authorizations)
+        public WebhooksClient Webhooks => new WebhooksClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1323,11 +1326,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

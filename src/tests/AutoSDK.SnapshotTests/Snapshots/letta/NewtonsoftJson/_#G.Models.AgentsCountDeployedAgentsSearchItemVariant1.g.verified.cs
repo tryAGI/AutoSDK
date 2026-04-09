@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("field")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentsCountDeployedAgentsSearchItemVariant1FieldJsonConverter))]
         public global::G.AgentsCountDeployedAgentsSearchItemVariant1Field Field { get; set; }
 
         /// <summary>

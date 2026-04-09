@@ -27,6 +27,7 @@ namespace G
         /// Default Value: rank_fusion
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merging_strategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MergingStrategyJsonConverter))]
         public global::G.MergingStrategy? MergingStrategy { get; set; }
 
         /// <summary>

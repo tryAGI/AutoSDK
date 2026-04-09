@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the test, which must be voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TestSuiteTestVoiceTypeJsonConverter))]
         public global::G.TestSuiteTestVoiceType Type { get; set; }
 
         /// <summary>

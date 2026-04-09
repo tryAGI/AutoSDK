@@ -590,6 +590,7 @@ namespace G
         /// </summary>
         /// <example>PR_TITLE</example>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_title")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FullRepositorySquashMergeCommitTitleJsonConverter))]
         public global::G.FullRepositorySquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
@@ -601,6 +602,7 @@ namespace G
         /// </summary>
         /// <example>PR_BODY</example>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_message")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FullRepositorySquashMergeCommitMessageJsonConverter))]
         public global::G.FullRepositorySquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
@@ -611,6 +613,7 @@ namespace G
         /// </summary>
         /// <example>PR_TITLE</example>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_title")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FullRepositoryMergeCommitTitleJsonConverter))]
         public global::G.FullRepositoryMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
@@ -622,6 +625,7 @@ namespace G
         /// </summary>
         /// <example>PR_BODY</example>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_message")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FullRepositoryMergeCommitMessageJsonConverter))]
         public global::G.FullRepositoryMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>

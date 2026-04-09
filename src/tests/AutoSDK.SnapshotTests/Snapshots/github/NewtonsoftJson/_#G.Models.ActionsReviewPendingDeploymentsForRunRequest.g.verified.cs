@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>approved</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ActionsReviewPendingDeploymentsForRunRequestStateJsonConverter))]
         public global::G.ActionsReviewPendingDeploymentsForRunRequestState State { get; set; } = default!;
 
         /// <summary>

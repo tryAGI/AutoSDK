@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("from")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookProjectsV2StatusUpdateEditedChangesStatusFromJsonConverter))]
         public global::G.WebhookProjectsV2StatusUpdateEditedChangesStatusFrom? From { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("to")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookProjectsV2StatusUpdateEditedChangesStatusToJsonConverter))]
         public global::G.WebhookProjectsV2StatusUpdateEditedChangesStatusTo? To { get; set; }
 
         /// <summary>

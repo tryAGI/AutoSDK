@@ -49,6 +49,7 @@ namespace G
         /// Default Value: TextClassification
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("skill_name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SkillNameEnumJsonConverter))]
         public global::G.SkillNameEnum? SkillName { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// The type of element (e.g., paragraph, table, figure, heading).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DocumentElementTypeJsonConverter))]
         public global::G.DocumentElementType? Type { get; set; }
 
         /// <summary>

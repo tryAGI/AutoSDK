@@ -34,6 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tokenizer")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TokenizerTypeJsonConverter))]
         public global::G.TokenizerType? Tokenizer { get; set; }
 
         /// <summary>

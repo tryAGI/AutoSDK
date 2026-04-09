@@ -14,12 +14,14 @@ namespace G
         /// </summary>
         /// <param name="clientId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Authorization> AppsScopeTokenAsync(
             string clientId,
 
             global::G.AppsScopeTokenRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a scoped access token<br/>
@@ -52,6 +54,7 @@ namespace G
         /// The permissions granted to the user access token.<br/>
         /// Example: {"contents":"read","issues":"read","deployments":"write","single_file":"read"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Authorization> AppsScopeTokenAsync(
@@ -62,6 +65,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? repositories = default,
             global::System.Collections.Generic.IList<int>? repositoryIds = default,
             global::G.AppPermissions? permissions = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -19,6 +19,7 @@ namespace G
         /// The type of item to reference. Always `item_reference`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ItemReferenceTypeJsonConverter))]
         public global::G.ItemReferenceType Type { get; set; }
 
         /// <summary>

@@ -14,11 +14,13 @@ namespace G
         ///     ApiKeyCreated: The response containing the details of the created API key.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ApiKeyCreated> CreateApiKeyAsync(
 
             global::G.ApiKeyCreateParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create API key<br/>
@@ -38,12 +40,14 @@ namespace G
         /// <param name="expiresAt">
         /// Optional expiration datetime
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ApiKeyCreated> CreateApiKeyAsync(
             string? name = default,
             global::System.Collections.Generic.IList<global::G.Scope>? scope = default,
             global::System.DateTime? expiresAt = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

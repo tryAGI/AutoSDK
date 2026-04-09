@@ -16,6 +16,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="checkRunId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CheckRun> ChecksUpdateAsync(
@@ -24,6 +25,7 @@ namespace G
             int checkRunId,
 
             global::G.ChecksUpdateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a check run<br/>
@@ -63,6 +65,7 @@ namespace G
         /// <param name="actions">
         /// Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/rest/guides/using-the-rest-api-to-interact-with-checks#check-runs-and-requested-actions)."
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CheckRun> ChecksUpdateAsync(
@@ -78,6 +81,7 @@ namespace G
             global::System.DateTime? completedAt = default,
             global::G.ChecksUpdateRequestOutput? output = default,
             global::System.Collections.Generic.IList<global::G.ChecksUpdateRequestAction>? actions = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pipeline_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreatePersonaRequestPipelineModeJsonConverter))]
         public global::G.CreatePersonaRequestPipelineMode? PipelineMode { get; set; }
 
         /// <summary>

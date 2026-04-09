@@ -14,12 +14,14 @@ namespace G
         /// </summary>
         /// <param name="xOverrideEmbeddingModel"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ImportedAgentsResponse> ImportAgentAsync(
 
             global::G.BodyImportAgent request,
             string? xOverrideEmbeddingModel = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Import Agent<br/>
@@ -49,6 +51,7 @@ namespace G
         /// <param name="model">
         /// Model handle to override the agent's default model. This allows the imported agent to use a different model while keeping other defaults (e.g., context size) from the original configuration.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ImportedAgentsResponse> ImportAgentAsync(
@@ -61,6 +64,7 @@ namespace G
             string? name = default,
             string? embedding = default,
             string? model = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

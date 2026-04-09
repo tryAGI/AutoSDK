@@ -22,6 +22,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateResearchRequestModelJsonConverter))]
         public global::G.CreateResearchRequestModel? Model { get; set; }
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace G
         /// Default Value: numbered
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("citation_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateResearchRequestCitationFormatJsonConverter))]
         public global::G.CreateResearchRequestCitationFormat? CitationFormat { get; set; }
 
         /// <summary>

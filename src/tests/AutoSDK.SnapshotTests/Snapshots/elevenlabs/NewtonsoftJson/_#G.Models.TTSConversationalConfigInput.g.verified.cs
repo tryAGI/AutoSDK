@@ -14,6 +14,7 @@ namespace G
         /// Default Value: eleven_flash_v2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TTSConversationalModelJsonConverter))]
         public global::G.TTSConversationalModel? ModelId { get; set; }
 
         /// <summary>
@@ -47,6 +48,7 @@ namespace G
         /// Default Value: pcm_16000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("agent_output_audio_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TTSOutputFormatJsonConverter))]
         public global::G.TTSOutputFormat? AgentOutputAudioFormat { get; set; }
 
         /// <summary>
@@ -82,6 +84,7 @@ namespace G
         /// Default Value: system_prompt
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text_normalisation_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextNormalisationTypeJsonConverter))]
         public global::G.TextNormalisationType? TextNormalisationType { get; set; }
 
         /// <summary>

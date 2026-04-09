@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("in")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTtsResponseItemInJsonConverter))]
         public global::G.CreateTtsResponseItemIn? In { get; set; }
 
         /// <summary>

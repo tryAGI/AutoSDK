@@ -30,6 +30,7 @@ namespace G
         /// Default Value: direct_member
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrgsCreateInvitationRequestRoleJsonConverter))]
         public global::G.OrgsCreateInvitationRequestRole? Role { get; set; }
 
         /// <summary>

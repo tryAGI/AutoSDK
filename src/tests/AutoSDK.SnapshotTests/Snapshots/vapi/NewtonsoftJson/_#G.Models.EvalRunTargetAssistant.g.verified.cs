@@ -30,6 +30,7 @@ namespace G
         /// </summary>
         /// <example>assistant</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalRunTargetAssistantTypeJsonConverter))]
         public global::G.EvalRunTargetAssistantType Type { get; set; }
 
         /// <summary>

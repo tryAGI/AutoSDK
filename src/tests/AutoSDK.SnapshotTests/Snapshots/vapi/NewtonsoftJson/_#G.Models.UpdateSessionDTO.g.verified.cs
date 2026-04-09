@@ -19,6 +19,7 @@ namespace G
         /// This is the new status for the session.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateSessionDTOStatusJsonConverter))]
         public global::G.UpdateSessionDTOStatus? Status { get; set; }
 
         /// <summary>

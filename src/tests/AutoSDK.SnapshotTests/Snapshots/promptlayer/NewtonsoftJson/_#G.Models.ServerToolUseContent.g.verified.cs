@@ -13,6 +13,7 @@ namespace G
         /// Default Value: server_tool_use
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerToolUseContentTypeJsonConverter))]
         public global::G.ServerToolUseContentType? Type { get; set; }
 
         /// <summary>

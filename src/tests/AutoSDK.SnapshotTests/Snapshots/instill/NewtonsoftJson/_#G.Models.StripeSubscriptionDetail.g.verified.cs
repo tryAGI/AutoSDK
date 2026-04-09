@@ -56,6 +56,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StripeSubscriptionDetailStatusJsonConverter))]
         public global::G.StripeSubscriptionDetailStatus? Status { get; set; }
 
         /// <summary>

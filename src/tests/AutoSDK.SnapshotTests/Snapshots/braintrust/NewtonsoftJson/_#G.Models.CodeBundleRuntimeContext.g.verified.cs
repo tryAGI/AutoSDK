@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("runtime", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeBundleRuntimeContextRuntimeJsonConverter))]
         public global::G.CodeBundleRuntimeContextRuntime Runtime { get; set; } = default!;
 
         /// <summary>

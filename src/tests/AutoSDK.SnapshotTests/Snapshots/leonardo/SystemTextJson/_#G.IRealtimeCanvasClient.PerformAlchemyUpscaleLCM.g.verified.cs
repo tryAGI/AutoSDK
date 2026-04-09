@@ -10,11 +10,13 @@ namespace G
         /// This endpoint will perform Alchemy Upscale on a LCM image
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PerformAlchemyUpscaleLCMResponse> PerformAlchemyUpscaleLCMAsync(
 
             global::G.PerformAlchemyUpscaleLCMRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Perform Alchemy Upscale on a LCM image<br/>
@@ -54,6 +56,7 @@ namespace G
         /// <param name="refineStrength">
         /// Must be a float between 0.5 and 0.9.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PerformAlchemyUpscaleLCMResponse> PerformAlchemyUpscaleLCMAsync(
@@ -69,6 +72,7 @@ namespace G
             int? seed = default,
             bool? refineCreative = default,
             double? refineStrength = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

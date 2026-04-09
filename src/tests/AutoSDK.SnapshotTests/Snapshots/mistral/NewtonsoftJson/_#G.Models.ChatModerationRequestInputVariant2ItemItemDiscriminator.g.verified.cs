@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatModerationRequestInputVariant2ItemItemDiscriminatorRoleJsonConverter))]
         public global::G.ChatModerationRequestInputVariant2ItemItemDiscriminatorRole? Role { get; set; }
 
         /// <summary>

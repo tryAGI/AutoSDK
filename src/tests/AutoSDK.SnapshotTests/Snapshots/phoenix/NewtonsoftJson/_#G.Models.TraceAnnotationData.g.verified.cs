@@ -19,6 +19,7 @@ namespace G
         /// The kind of annotator used for the annotation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("annotator_kind", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TraceAnnotationDataAnnotatorKindJsonConverter))]
         public global::G.TraceAnnotationDataAnnotatorKind AnnotatorKind { get; set; } = default!;
 
         /// <summary>

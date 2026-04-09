@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="environmentId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Environment> UpdateEnvironmentAsync(
             global::System.Guid environmentId,
 
             global::G.PatchEnvironment request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Partially update environment
@@ -30,6 +32,7 @@ namespace G
         /// <param name="description">
         /// Textual description of the environment
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Environment> UpdateEnvironmentAsync(
@@ -37,6 +40,7 @@ namespace G
             string? name = default,
             string? slug = default,
             string? description = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

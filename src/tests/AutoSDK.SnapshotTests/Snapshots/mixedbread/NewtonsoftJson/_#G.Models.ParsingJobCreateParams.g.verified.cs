@@ -26,6 +26,7 @@ namespace G
         /// Default Value: page
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChunkingStrategyJsonConverter))]
         public global::G.ChunkingStrategy? ChunkingStrategy { get; set; }
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace G
         /// Default Value: markdown
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("return_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReturnFormatJsonConverter))]
         public global::G.ReturnFormat? ReturnFormat { get; set; }
 
         /// <summary>
@@ -40,6 +42,7 @@ namespace G
         /// Default Value: high_quality
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModeJsonConverter))]
         public global::G.Mode? Mode { get; set; }
 
         /// <summary>

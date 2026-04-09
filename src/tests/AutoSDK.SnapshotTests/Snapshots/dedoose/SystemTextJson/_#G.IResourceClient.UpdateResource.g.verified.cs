@@ -10,11 +10,13 @@ namespace G
         /// UpdateResource
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Resource> UpdateResourceAsync(
 
             global::G.UpdateResourceRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// UpdateResource<br/>
@@ -24,6 +26,7 @@ namespace G
         /// <param name="resourceId"></param>
         /// <param name="title"></param>
         /// <param name="description"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Resource> UpdateResourceAsync(
@@ -31,6 +34,7 @@ namespace G
             global::System.Guid resourceId,
             string title,
             string description,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

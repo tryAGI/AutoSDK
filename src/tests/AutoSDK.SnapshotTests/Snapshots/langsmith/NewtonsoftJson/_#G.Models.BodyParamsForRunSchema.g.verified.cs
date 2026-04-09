@@ -146,6 +146,7 @@ namespace G
         /// Default Value: desc
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("order")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunDateOrderJsonConverter))]
         public global::G.RunDateOrder? Order { get; set; }
 
         /// <summary>

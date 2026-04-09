@@ -20,6 +20,7 @@ namespace G
         /// Default Value: HEALTHY
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NodeStatusStatusJsonConverter))]
         public global::G.NodeStatusStatus? Status { get; set; }
 
         /// <summary>

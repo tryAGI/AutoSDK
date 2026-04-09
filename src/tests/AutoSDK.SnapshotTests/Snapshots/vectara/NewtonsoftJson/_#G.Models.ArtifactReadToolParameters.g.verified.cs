@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>raw</example>
         [global::Newtonsoft.Json.JsonProperty("encoding")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ArtifactReadToolParametersEncodingJsonConverter))]
         public global::G.ArtifactReadToolParametersEncoding? Encoding { get; set; }
 
         /// <summary>

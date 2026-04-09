@@ -41,6 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetExpressivesResponseExpressiveStatusJsonConverter))]
         public global::G.GetExpressivesResponseExpressiveStatus Status { get; set; } = default!;
 
         /// <summary>

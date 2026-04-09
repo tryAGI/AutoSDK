@@ -51,6 +51,7 @@ namespace G
         /// </summary>
         /// <example>registered</example>
         [global::Newtonsoft.Json.JsonProperty("call_status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.V2CallBaseCallStatusJsonConverter))]
         public global::G.V2CallBaseCallStatus CallStatus { get; set; } = default!;
 
         /// <summary>
@@ -89,6 +90,7 @@ namespace G
         /// </summary>
         /// <example>everything</example>
         [global::Newtonsoft.Json.JsonProperty("data_storage_setting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.V2CallBaseDataStorageSettingJsonConverter))]
         public global::G.V2CallBaseDataStorageSetting? DataStorageSetting { get; set; }
 
         /// <summary>
@@ -229,6 +231,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disconnection_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DisconnectionReason4JsonConverter))]
         public global::G.DisconnectionReason4? DisconnectionReason { get; set; }
 
         /// <summary>

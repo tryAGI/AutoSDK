@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used. Use `custom-voice` for providers that are not natively supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomVoiceProviderJsonConverter))]
         public global::G.CustomVoiceProvider Provider { get; set; }
 
         /// <summary>

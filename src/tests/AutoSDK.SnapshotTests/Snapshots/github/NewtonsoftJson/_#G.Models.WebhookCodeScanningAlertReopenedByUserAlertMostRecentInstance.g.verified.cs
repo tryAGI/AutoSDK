@@ -61,6 +61,7 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceStateJsonConverter))]
         public global::G.WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceState State { get; set; } = default!;
 
         /// <summary>

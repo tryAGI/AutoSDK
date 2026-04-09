@@ -15,11 +15,13 @@ namespace G
         /// <param name="permissionId">
         /// Example: cp_zc4Q7MP6XxulcVzj4MZdwsAB
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeleteFineTuningCheckpointPermissionResponse> DeleteCheckpointPermissionAsync(
             string fineTunedModelCheckpoint,
             string permissionId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

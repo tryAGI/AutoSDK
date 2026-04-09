@@ -31,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>elevenlabs</example>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceResponseProviderJsonConverter))]
         public global::G.VoiceResponseProvider Provider { get; set; } = default!;
 
         /// <summary>
@@ -47,6 +48,7 @@ namespace G
         /// </summary>
         /// <example>male</example>
         [global::Newtonsoft.Json.JsonProperty("gender", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceResponseGenderJsonConverter))]
         public global::G.VoiceResponseGender Gender { get; set; } = default!;
 
         /// <summary>

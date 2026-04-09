@@ -13,12 +13,14 @@ namespace G
         /// Required. The category for this setting.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("category")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SafetySettingCategoryJsonConverter))]
         public global::G.SafetySettingCategory? Category { get; set; }
 
         /// <summary>
         /// Required. Controls the probability threshold at which harm is blocked.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("threshold")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SafetySettingThresholdJsonConverter))]
         public global::G.SafetySettingThreshold? Threshold { get; set; }
 
         /// <summary>

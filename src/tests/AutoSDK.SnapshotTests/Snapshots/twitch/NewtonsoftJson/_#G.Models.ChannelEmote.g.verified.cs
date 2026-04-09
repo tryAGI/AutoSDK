@@ -43,6 +43,7 @@ namespace G
         /// * subscriptions — A custom subscriber emote.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("emote_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChannelEmoteEmoteTypeJsonConverter))]
         public global::G.ChannelEmoteEmoteType EmoteType { get; set; } = default!;
 
         /// <summary>

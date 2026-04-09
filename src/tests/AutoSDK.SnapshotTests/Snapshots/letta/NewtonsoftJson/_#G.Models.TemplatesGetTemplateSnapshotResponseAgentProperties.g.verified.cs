@@ -55,12 +55,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verbosity_level")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TemplatesGetTemplateSnapshotResponseAgentPropertiesVerbosityLevelJsonConverter))]
         public global::G.TemplatesGetTemplateSnapshotResponseAgentPropertiesVerbosityLevel? VerbosityLevel { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TemplatesGetTemplateSnapshotResponseAgentPropertiesReasoningEffortJsonConverter))]
         public global::G.TemplatesGetTemplateSnapshotResponseAgentPropertiesReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>

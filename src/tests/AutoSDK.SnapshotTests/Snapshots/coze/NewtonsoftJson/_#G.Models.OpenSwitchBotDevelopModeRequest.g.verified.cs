@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("collaboration_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenSwitchBotDevelopModeRequestCollaborationModeJsonConverter))]
         public global::G.OpenSwitchBotDevelopModeRequestCollaborationMode? CollaborationMode { get; set; }
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// The shape type - set to `circle`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgCircleShapeTypeJsonConverter))]
         public global::G.SvgCircleShapeType Type { get; set; }
 
         /// <summary>

@@ -102,6 +102,7 @@ namespace G
         ///  Deprecated. Prefer `firstSpeakerSettings`. If both are set, they must match.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("firstSpeaker")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1StartCallRequestFirstSpeakerJsonConverter))]
         public global::G.UltravoxV1StartCallRequestFirstSpeaker? FirstSpeaker { get; set; }
 
         /// <summary>
@@ -115,6 +116,7 @@ namespace G
         ///  Defaults to voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("initialOutputMedium")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1StartCallRequestInitialOutputMediumJsonConverter))]
         public global::G.UltravoxV1StartCallRequestInitialOutputMedium? InitialOutputMedium { get; set; }
 
         /// <summary>

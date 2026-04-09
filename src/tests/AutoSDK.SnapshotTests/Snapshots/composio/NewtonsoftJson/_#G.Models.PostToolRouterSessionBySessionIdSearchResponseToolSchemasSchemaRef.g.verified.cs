@@ -13,6 +13,7 @@ namespace G
         /// Tool to call
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostToolRouterSessionBySessionIdSearchResponseToolSchemasSchemaRefToolJsonConverter))]
         public global::G.PostToolRouterSessionBySessionIdSearchResponseToolSchemasSchemaRefTool Tool { get; set; }
 
         /// <summary>

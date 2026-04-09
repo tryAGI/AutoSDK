@@ -21,6 +21,7 @@ namespace G
         /// The target language code to dub the audio to (e.g., "es" for Spanish, "fr" for French).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("targetLang", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateVoiceDubbingRequestElevenVoiceDubbingTargetLangJsonConverter))]
         public global::G.CreateVoiceDubbingRequestElevenVoiceDubbingTargetLang TargetLang { get; set; } = default!;
 
         /// <summary>

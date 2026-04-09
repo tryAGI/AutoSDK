@@ -43,6 +43,7 @@ namespace G
         /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_audio_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeResponseCreateParamsOutputAudioFormatJsonConverter))]
         public global::G.RealtimeResponseCreateParamsOutputAudioFormat? OutputAudioFormat { get; set; }
 
         /// <summary>

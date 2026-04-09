@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("clip_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StudioClipReferenceClipTypeJsonConverter))]
         public global::G.StudioClipReferenceClipType ClipType { get; set; } = default!;
 
         /// <summary>

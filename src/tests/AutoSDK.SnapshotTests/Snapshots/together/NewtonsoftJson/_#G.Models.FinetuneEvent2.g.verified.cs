@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuneEventObject2JsonConverter))]
         public global::G.FineTuneEventObject2 Object { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuneEventLevelJsonConverter))]
         public global::G.FineTuneEventLevel? Level { get; set; }
 
         /// <summary>
@@ -37,6 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuneEventType2JsonConverter))]
         public global::G.FineTuneEventType2 Type { get; set; } = default!;
 
         /// <summary>

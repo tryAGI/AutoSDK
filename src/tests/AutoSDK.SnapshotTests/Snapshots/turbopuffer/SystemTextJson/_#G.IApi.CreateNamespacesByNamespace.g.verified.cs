@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="namespace"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.WriteResult> CreateNamespacesByNamespaceAsync(
             string @namespace,
 
             global::G.Write request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create, update, or delete documents.
@@ -68,6 +70,7 @@ namespace G
         /// <param name="disableBackpressure">
         /// Disables write throttling (HTTP 429 responses) during high-volume ingestion.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.WriteResult> CreateNamespacesByNamespaceAsync(
@@ -90,6 +93,7 @@ namespace G
             bool? returnAffectedIds = default,
             global::G.Encryption2? encryption = default,
             bool? disableBackpressure = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

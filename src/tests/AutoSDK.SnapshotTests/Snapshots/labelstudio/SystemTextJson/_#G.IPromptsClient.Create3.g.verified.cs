@@ -18,6 +18,7 @@ namespace G
         /// <param name="promptId"></param>
         /// <param name="versionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ModelRun> Create3Async(
@@ -25,6 +26,7 @@ namespace G
             int versionId,
 
             global::G.ModelRunRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Run prompt inference<br/>
@@ -57,6 +59,7 @@ namespace G
         /// <param name="totalCorrectPredictions"></param>
         /// <param name="totalPredictions"></param>
         /// <param name="totalTasks"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ModelRun> Create3Async(
@@ -71,6 +74,7 @@ namespace G
             int? totalCorrectPredictions = default,
             int? totalPredictions = default,
             int? totalTasks = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

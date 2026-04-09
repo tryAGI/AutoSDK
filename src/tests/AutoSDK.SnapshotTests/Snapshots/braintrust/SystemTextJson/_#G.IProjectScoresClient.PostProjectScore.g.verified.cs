@@ -10,11 +10,13 @@ namespace G
         /// Create a new project_score. If there is an existing project_score in the project with the same name as the one specified in the request, will return the existing project_score unmodified
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProjectScore> PostProjectScoreAsync(
 
             global::G.CreateProjectScore request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create project_score<br/>
@@ -34,6 +36,7 @@ namespace G
         /// </param>
         /// <param name="categories"></param>
         /// <param name="config"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProjectScore> PostProjectScoreAsync(
@@ -43,6 +46,7 @@ namespace G
             string? description = default,
             global::G.ProjectScoreCategories? categories = default,
             global::G.ProjectScoreConfig? config = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

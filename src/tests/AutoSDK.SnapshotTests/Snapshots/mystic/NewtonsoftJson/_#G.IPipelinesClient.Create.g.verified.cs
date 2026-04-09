@@ -10,11 +10,13 @@ namespace G
         /// Upload a new pipeline.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PipelineGet> CreateAsync(
 
             global::G.PipelineCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create<br/>
@@ -30,6 +32,7 @@ namespace G
         /// <param name="description"></param>
         /// <param name="readme"></param>
         /// <param name="extras"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PipelineGet> CreateAsync(
@@ -43,6 +46,7 @@ namespace G
             string? description = default,
             string? readme = default,
             object? extras = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

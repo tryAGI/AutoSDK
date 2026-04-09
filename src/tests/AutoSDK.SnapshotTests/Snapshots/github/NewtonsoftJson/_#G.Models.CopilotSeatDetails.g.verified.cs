@@ -61,6 +61,7 @@ namespace G
         /// The Copilot plan of the organization, or the parent enterprise, when applicable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("plan_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CopilotSeatDetailsPlanTypeJsonConverter))]
         public global::G.CopilotSeatDetailsPlanType? PlanType { get; set; }
 
         /// <summary>

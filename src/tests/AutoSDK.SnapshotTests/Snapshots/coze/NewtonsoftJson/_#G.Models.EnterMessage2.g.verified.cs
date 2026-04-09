@@ -19,6 +19,7 @@ namespace G
         /// text, card, object_string
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnterMessage2ContentTypeJsonConverter))]
         public global::G.EnterMessage2ContentType? ContentType { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// user / assistant
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnterMessage2RoleJsonConverter))]
         public global::G.EnterMessage2Role Role { get; set; } = default!;
 
         /// <summary>
@@ -39,6 +41,7 @@ namespace G
         ///  不支持用户输入使用：follow_up，knowledge，verbose，answer
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnterMessage2TypeJsonConverter))]
         public global::G.EnterMessage2Type Type { get; set; } = default!;
 
         /// <summary>

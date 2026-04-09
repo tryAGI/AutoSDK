@@ -25,6 +25,7 @@ namespace G
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionMessageToolCallChunkTypeJsonConverter))]
         public global::G.ChatCompletionMessageToolCallChunkType? Type { get; set; }
 
         /// <summary>

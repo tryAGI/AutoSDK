@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompactionSettingsOutputModelSettingsVariant1DiscriminatorProviderTypeJsonConverter))]
         public global::G.CompactionSettingsOutputModelSettingsVariant1DiscriminatorProviderType? ProviderType { get; set; }
 
         /// <summary>

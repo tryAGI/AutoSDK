@@ -19,12 +19,14 @@ namespace G
         /// The type of credit the user is receiving.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecurityAdvisoryCreditTypesJsonConverter))]
         public global::G.SecurityAdvisoryCreditTypes Type { get; set; } = default!;
 
         /// <summary>
         /// The state of the user's acceptance of the credit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryAdvisoryCreditStateJsonConverter))]
         public global::G.RepositoryAdvisoryCreditState State { get; set; } = default!;
 
         /// <summary>

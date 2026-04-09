@@ -13,6 +13,7 @@ namespace G
         /// The role of the messages author, in this case `tool`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestToolMessageRoleJsonConverter))]
         public global::G.ChatCompletionRequestToolMessageRole Role { get; set; }
 
         /// <summary>

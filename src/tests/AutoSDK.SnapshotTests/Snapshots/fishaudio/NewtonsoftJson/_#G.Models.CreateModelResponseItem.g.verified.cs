@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("in")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateModelResponseItemInJsonConverter))]
         public global::G.CreateModelResponseItemIn? In { get; set; }
 
         /// <summary>

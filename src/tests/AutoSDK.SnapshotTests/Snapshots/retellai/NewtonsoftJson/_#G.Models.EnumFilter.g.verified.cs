@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnumFilterTypeJsonConverter))]
         public global::G.EnumFilterType Type { get; set; }
 
         /// <summary>
         /// in: value is one of the listed values
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("op")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnumFilterOpJsonConverter))]
         public global::G.EnumFilterOp Op { get; set; }
 
         /// <summary>

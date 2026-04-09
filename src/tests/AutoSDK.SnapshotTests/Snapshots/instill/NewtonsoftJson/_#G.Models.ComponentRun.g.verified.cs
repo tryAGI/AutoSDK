@@ -28,6 +28,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunStatusJsonConverter))]
         public global::G.RunStatus? Status { get; set; }
 
         /// <summary>

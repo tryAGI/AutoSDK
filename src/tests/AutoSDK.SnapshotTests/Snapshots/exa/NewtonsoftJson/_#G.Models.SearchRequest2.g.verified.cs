@@ -32,6 +32,7 @@ namespace G
         /// </summary>
         /// <example>auto</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchRequestTypeJsonConverter))]
         public global::G.SearchRequestType? Type { get; set; }
 
         /// <summary>
@@ -40,6 +41,7 @@ namespace G
         /// </summary>
         /// <example>research paper</example>
         [global::Newtonsoft.Json.JsonProperty("category")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchRequestCategoryJsonConverter))]
         public global::G.SearchRequestCategory? Category { get; set; }
 
         /// <summary>

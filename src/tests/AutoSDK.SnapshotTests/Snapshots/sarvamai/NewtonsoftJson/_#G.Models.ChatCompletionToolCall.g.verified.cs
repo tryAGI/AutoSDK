@@ -19,6 +19,7 @@ namespace G
         /// The type of tool call
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionToolCallTypeJsonConverter))]
         public global::G.ChatCompletionToolCallType Type { get; set; }
 
         /// <summary>

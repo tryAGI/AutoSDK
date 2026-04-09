@@ -25,6 +25,7 @@ namespace G
         /// Condition type for label filtering
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("condition_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerlessLogsHistoryRequestItemConditionTypeJsonConverter))]
         public global::G.ServerlessLogsHistoryRequestItemConditionType? ConditionType { get; set; }
 
         /// <summary>

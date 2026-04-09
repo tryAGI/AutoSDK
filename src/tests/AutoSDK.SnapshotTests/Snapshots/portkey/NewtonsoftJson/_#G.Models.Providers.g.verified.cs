@@ -33,6 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProvidersStatusJsonConverter))]
         public global::G.ProvidersStatus? Status { get; set; }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProvidersObjectJsonConverter))]
         public global::G.ProvidersObject? Object { get; set; }
 
         /// <summary>

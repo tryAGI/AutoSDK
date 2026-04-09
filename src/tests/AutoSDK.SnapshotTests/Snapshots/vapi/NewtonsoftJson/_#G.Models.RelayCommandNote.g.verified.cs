@@ -13,6 +13,7 @@ namespace G
         /// The type of relay command
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RelayCommandNoteTypeJsonConverter))]
         public global::G.RelayCommandNoteType Type { get; set; }
 
         /// <summary>

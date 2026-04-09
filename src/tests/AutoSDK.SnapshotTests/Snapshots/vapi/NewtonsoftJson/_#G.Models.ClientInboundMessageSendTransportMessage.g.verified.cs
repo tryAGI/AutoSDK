@@ -13,6 +13,7 @@ namespace G
         /// This is the type of the message. Send "send-transport-message" to send a transport-specific message during the call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientInboundMessageSendTransportMessageTypeJsonConverter))]
         public global::G.ClientInboundMessageSendTransportMessageType Type { get; set; }
 
         /// <summary>

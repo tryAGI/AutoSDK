@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.MultiSeriesForecastFinetuneLoss.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class MultiSeriesForecastFinetuneLossJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.MultiSeriesForecastFinetuneLoss>
+    {
+        /// <inheritdoc />
+        public override global::G.MultiSeriesForecastFinetuneLoss ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.MultiSeriesForecastFinetuneLoss existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.MultiSeriesForecastFinetuneLossExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.MultiSeriesForecastFinetuneLoss)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.MultiSeriesForecastFinetuneLoss);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.MultiSeriesForecastFinetuneLoss value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.MultiSeriesForecastFinetuneLossExtensions.ToValueString(value));
+        }
+    }
+}

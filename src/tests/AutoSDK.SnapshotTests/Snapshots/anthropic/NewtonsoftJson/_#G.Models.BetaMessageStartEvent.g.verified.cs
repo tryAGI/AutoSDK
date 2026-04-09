@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaMessageStartEventType.MessageStart</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaMessageStartEventTypeJsonConverter))]
         public global::G.BetaMessageStartEventType Type { get; set; } = global::G.BetaMessageStartEventType.MessageStart;
 
         /// <summary>

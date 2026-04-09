@@ -14,6 +14,7 @@ namespace G
         /// The shape type - set to `ellipse`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgEllipseShapeTypeJsonConverter))]
         public global::G.SvgEllipseShapeType Type { get; set; }
 
         /// <summary>

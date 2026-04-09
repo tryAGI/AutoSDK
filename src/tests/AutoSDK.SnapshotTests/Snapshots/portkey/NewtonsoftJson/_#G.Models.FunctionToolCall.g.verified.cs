@@ -20,6 +20,7 @@ namespace G
         /// The type of the function tool call. Always `function_call`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionToolCallTypeJsonConverter))]
         public global::G.FunctionToolCallType Type { get; set; }
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace G
         /// `incomplete`. Populated when items are returned via API.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionToolCallStatusJsonConverter))]
         public global::G.FunctionToolCallStatus? Status { get; set; }
 
         /// <summary>

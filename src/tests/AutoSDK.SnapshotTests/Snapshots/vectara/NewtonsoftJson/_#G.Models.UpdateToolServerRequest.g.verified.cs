@@ -47,6 +47,7 @@ namespace G
         /// </summary>
         /// <example>sse</example>
         [global::Newtonsoft.Json.JsonProperty("transport")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolServerTransportJsonConverter))]
         public global::G.ToolServerTransport? Transport { get; set; }
 
         /// <summary>

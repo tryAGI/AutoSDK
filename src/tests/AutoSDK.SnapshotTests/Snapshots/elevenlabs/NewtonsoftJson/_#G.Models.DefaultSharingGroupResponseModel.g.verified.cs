@@ -19,6 +19,7 @@ namespace G
         /// The permission level to grant to the group
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission_level", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DefaultSharingGroupResponseModelPermissionLevelJsonConverter))]
         public global::G.DefaultSharingGroupResponseModelPermissionLevel PermissionLevel { get; set; } = default!;
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentConfigValueWriteTypeJsonConverter))]
         public global::G.AgentConfigValueWriteType Type { get; set; } = default!;
 
         /// <summary>

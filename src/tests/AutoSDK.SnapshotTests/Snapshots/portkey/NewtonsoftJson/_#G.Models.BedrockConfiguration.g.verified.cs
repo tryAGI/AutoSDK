@@ -13,6 +13,7 @@ namespace G
         /// AWS authentication type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("aws_auth_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BedrockConfigurationAwsAuthTypeJsonConverter))]
         public global::G.BedrockConfigurationAwsAuthType AwsAuthType { get; set; } = default!;
 
         /// <summary>

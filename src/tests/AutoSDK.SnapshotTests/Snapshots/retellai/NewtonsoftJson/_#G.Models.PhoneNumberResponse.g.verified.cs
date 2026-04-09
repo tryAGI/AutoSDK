@@ -25,6 +25,7 @@ namespace G
         /// </summary>
         /// <example>retell-twilio</example>
         [global::Newtonsoft.Json.JsonProperty("phone_number_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PhoneNumberResponsePhoneNumberTypeJsonConverter))]
         public global::G.PhoneNumberResponsePhoneNumberType PhoneNumberType { get; set; } = default!;
 
         /// <summary>

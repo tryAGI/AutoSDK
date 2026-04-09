@@ -30,6 +30,7 @@ namespace G
         /// </param>
         /// <param name="checkSuiteId"></param>
         /// <param name="headSha"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ActionsListWorkflowRunsForRepoResponse> ActionsListWorkflowRunsForRepoAsync(
@@ -45,6 +46,7 @@ namespace G
             bool? excludePullRequests = default,
             int? checkSuiteId = default,
             string? headSha = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List workflow runs for a repository<br/>
@@ -71,6 +73,7 @@ namespace G
         /// </param>
         /// <param name="checkSuiteId"></param>
         /// <param name="headSha"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ActionsListWorkflowRunsForRepoResponse>> ActionsListWorkflowRunsForRepoAsResponseAsync(
@@ -86,6 +89,7 @@ namespace G
             bool? excludePullRequests = default,
             int? checkSuiteId = default,
             string? headSha = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

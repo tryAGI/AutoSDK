@@ -12,11 +12,13 @@ namespace G
         /// Supports tool calling, streaming, and reasoning effort control.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatCompletionResponse> CreateChatCompletionAsync(
 
             global::G.ChatCompletionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a chat completion<br/>
@@ -76,6 +78,7 @@ namespace G
         /// <param name="toolChoice">
         /// Controls tool invocation: none, auto, required
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatCompletionResponse> CreateChatCompletionAsync(
@@ -94,6 +97,7 @@ namespace G
             bool? wikiGrounding = default,
             global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? tools = default,
             global::G.ChatCompletionRequestToolChoice? toolChoice = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

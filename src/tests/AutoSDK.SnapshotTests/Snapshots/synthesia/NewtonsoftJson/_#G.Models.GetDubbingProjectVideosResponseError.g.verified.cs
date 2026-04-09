@@ -20,12 +20,14 @@ namespace G
         /// Default Value: error
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetDubbingProjectVideosResponseErrorStatusJsonConverter))]
         public global::G.GetDubbingProjectVideosResponseErrorStatus? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("errorCode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublicApiImportedAndDubbedVideosErrorCodeJsonConverter))]
         public global::G.PublicApiImportedAndDubbedVideosErrorCode ErrorCode { get; set; } = default!;
 
         /// <summary>

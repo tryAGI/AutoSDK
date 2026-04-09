@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "handoff-destination-request" is sent when the model is requesting handoff but destination is unknown.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageHandoffDestinationRequestTypeJsonConverter))]
         public global::G.ServerMessageHandoffDestinationRequestType Type { get; set; }
 
         /// <summary>

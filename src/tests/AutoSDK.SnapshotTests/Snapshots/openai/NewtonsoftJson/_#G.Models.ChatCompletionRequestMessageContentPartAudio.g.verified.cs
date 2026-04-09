@@ -13,6 +13,7 @@ namespace G
         /// The type of the content part. Always `input_audio`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestMessageContentPartAudioTypeJsonConverter))]
         public global::G.ChatCompletionRequestMessageContentPartAudioType Type { get; set; }
 
         /// <summary>

@@ -65,12 +65,14 @@ namespace G
         /// </summary>
         /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GlobalAdvisoryTypeJsonConverter))]
         public global::G.GlobalAdvisoryType Type { get; set; } = default!;
 
         /// <summary>
         /// The severity of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GlobalAdvisorySeverityJsonConverter))]
         public global::G.GlobalAdvisorySeverity Severity { get; set; } = default!;
 
         /// <summary>

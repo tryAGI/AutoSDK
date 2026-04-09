@@ -28,6 +28,7 @@ namespace G
         /// Default Value: 16:9
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("aspectRatio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoResponseAspectRatioJsonConverter))]
         public global::G.VideoResponseAspectRatio? AspectRatio { get; set; }
 
         /// <summary>
@@ -58,6 +59,7 @@ namespace G
         /// soundtrack option is supported for backward compatibility. You should use the templates functionality for rich videos.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("soundtrack")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoResponseSoundtrackJsonConverter))]
         public global::G.VideoResponseSoundtrack? Soundtrack { get; set; }
 
         /// <summary>
@@ -86,6 +88,7 @@ namespace G
         /// Default Value: private
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoResponseVisibilityJsonConverter))]
         public global::G.VideoResponseVisibility? Visibility { get; set; }
 
         /// <summary>
@@ -122,6 +125,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoResponseStatusJsonConverter))]
         public global::G.VideoResponseStatus? Status { get; set; }
 
         /// <summary>

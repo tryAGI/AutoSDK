@@ -15,6 +15,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="secretName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task DependabotSetSelectedReposForOrgSecretAsync(
@@ -22,6 +23,7 @@ namespace G
             string secretName,
 
             global::G.DependabotSetSelectedReposForOrgSecretRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set selected repositories for an organization secret<br/>
@@ -35,12 +37,14 @@ namespace G
         /// <param name="selectedRepositoryIds">
         /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Set selected repositories for an organization secret](https://docs.github.com/rest/dependabot/secrets#set-selected-repositories-for-an-organization-secret) and [Remove selected repository from an organization secret](https://docs.github.com/rest/dependabot/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task DependabotSetSelectedReposForOrgSecretAsync(
             string org,
             string secretName,
             global::System.Collections.Generic.IList<int> selectedRepositoryIds,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

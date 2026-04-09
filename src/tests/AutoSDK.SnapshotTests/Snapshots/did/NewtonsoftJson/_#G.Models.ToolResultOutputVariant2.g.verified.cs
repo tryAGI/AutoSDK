@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolResultOutputVariant2TypeJsonConverter))]
         public global::G.ToolResultOutputVariant2Type Type { get; set; }
 
         /// <summary>

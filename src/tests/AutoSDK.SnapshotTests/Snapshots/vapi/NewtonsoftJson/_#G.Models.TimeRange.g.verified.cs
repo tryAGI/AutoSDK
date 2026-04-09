@@ -14,6 +14,7 @@ namespace G
         /// If not provided, defaults to returning for the entire time range.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("step")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TimeRangeStepJsonConverter))]
         public global::G.TimeRangeStep? Step { get; set; }
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// * `BASIC_AUTH` - Basic Auth
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthMethodEnumJsonConverter))]
         public global::G.AuthMethodEnum? AuthMethod { get; set; }
 
         /// <summary>
@@ -78,6 +79,7 @@ namespace G
         /// * `PR` - Predicting
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StateEnumJsonConverter))]
         public global::G.StateEnum? State { get; set; }
 
         /// <summary>

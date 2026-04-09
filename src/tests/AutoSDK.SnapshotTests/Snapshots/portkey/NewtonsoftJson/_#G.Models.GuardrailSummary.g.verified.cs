@@ -43,6 +43,7 @@ namespace G
         /// Current status of the guardrail
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GuardrailSummaryStatusJsonConverter))]
         public global::G.GuardrailSummaryStatus? Status { get; set; }
 
         /// <summary>

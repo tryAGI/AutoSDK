@@ -26,6 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retention", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RetentionRuleWriteRetentionJsonConverter))]
         public global::G.RetentionRuleWriteRetention Retention { get; set; } = default!;
 
         /// <summary>

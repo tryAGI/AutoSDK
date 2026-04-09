@@ -19,6 +19,7 @@ namespace G
         /// The type of the provider.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProviderTypeJsonConverter))]
         public global::G.ProviderType ProviderType { get; set; } = default!;
 
         /// <summary>

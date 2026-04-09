@@ -81,6 +81,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScoreDataTypeJsonConverter))]
         public global::G.ScoreDataType? DataType { get; set; }
 
         /// <summary>

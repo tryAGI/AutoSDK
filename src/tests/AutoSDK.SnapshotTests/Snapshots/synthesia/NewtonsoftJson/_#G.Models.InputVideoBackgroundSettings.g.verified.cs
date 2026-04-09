@@ -20,6 +20,7 @@ namespace G
         /// Default Value: freeze
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shortBackgroundContentMatchMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputVideoBackgroundSettingsShortBackgroundContentMatchModeJsonConverter))]
         public global::G.InputVideoBackgroundSettingsShortBackgroundContentMatchMode? ShortBackgroundContentMatchMode { get; set; }
 
         /// <summary>
@@ -27,6 +28,7 @@ namespace G
         /// Default Value: trim
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("longBackgroundContentMatchMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputVideoBackgroundSettingsLongBackgroundContentMatchModeJsonConverter))]
         public global::G.InputVideoBackgroundSettingsLongBackgroundContentMatchMode? LongBackgroundContentMatchMode { get; set; }
 
         /// <summary>

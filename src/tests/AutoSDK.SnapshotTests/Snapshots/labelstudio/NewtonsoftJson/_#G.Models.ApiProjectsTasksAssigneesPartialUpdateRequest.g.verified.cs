@@ -13,6 +13,7 @@ namespace G
         /// Assignment type. Use AN for annotate or RE for review.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiProjectsTasksAssigneesPartialUpdateRequestTypeJsonConverter))]
         public global::G.ApiProjectsTasksAssigneesPartialUpdateRequestType Type { get; set; } = default!;
 
         /// <summary>

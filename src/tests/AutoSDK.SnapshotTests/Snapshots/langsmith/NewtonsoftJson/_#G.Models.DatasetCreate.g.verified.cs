@@ -68,6 +68,7 @@ namespace G
         /// Default Value: kv
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DataTypeJsonConverter))]
         public global::G.DataType? DataType { get; set; }
 
         /// <summary>

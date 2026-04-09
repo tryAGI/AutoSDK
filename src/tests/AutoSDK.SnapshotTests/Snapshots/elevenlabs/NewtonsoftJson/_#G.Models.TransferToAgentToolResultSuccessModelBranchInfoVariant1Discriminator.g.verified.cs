@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("branch_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferToAgentToolResultSuccessModelBranchInfoVariant1DiscriminatorBranchReasonJsonConverter))]
         public global::G.TransferToAgentToolResultSuccessModelBranchInfoVariant1DiscriminatorBranchReason? BranchReason { get; set; }
 
         /// <summary>

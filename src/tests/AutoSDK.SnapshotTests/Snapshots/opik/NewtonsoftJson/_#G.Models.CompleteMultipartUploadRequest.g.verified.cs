@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("entity_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompleteMultipartUploadRequestEntityTypeJsonConverter))]
         public global::G.CompleteMultipartUploadRequestEntityType EntityType { get; set; } = default!;
 
         /// <summary>

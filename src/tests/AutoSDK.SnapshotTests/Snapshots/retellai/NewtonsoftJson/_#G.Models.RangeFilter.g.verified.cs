@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RangeFilterTypeJsonConverter))]
         public global::G.RangeFilterType Type { get; set; }
 
         /// <summary>
         /// bt: between
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("op")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RangeFilterOpJsonConverter))]
         public global::G.RangeFilterOp Op { get; set; }
 
         /// <summary>

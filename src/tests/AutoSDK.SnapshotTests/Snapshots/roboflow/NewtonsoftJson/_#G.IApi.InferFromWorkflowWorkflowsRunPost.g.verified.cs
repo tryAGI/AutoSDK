@@ -10,11 +10,13 @@ namespace G
         /// Parses and executes workflow specification, injecting runtime parameters from request body.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.WorkflowInferenceResponse> InferFromWorkflowWorkflowsRunPostAsync(
 
             global::G.WorkflowSpecificationInferenceRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Endpoint to run workflow specification provided in payload<br/>
@@ -41,6 +43,7 @@ namespace G
         /// Reserved, used internally by Roboflow to distinguish between preview and non-preview runs<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.WorkflowInferenceResponse> InferFromWorkflowWorkflowsRunPostAsync(
@@ -51,6 +54,7 @@ namespace G
             bool? enableProfiling = default,
             string? workflowId = default,
             bool? isPreview = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

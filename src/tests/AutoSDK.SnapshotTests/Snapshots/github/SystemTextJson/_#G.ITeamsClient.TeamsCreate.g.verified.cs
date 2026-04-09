@@ -12,12 +12,14 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TeamFull> TeamsCreateAsync(
             string org,
 
             global::G.TeamsCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a team<br/>
@@ -60,6 +62,7 @@ namespace G
         /// <param name="parentTeamId">
         /// The ID of a team to set as the parent team.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TeamFull> TeamsCreateAsync(
@@ -72,6 +75,7 @@ namespace G
             global::G.TeamsCreateRequestNotificationSetting? notificationSetting = default,
             global::G.TeamsCreateRequestPermission? permission = default,
             int? parentTeamId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

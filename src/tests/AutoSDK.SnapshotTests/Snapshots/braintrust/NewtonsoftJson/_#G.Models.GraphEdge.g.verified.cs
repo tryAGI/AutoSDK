@@ -25,6 +25,7 @@ namespace G
         /// The purpose of the edge
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraphEdgePurposeJsonConverter))]
         public global::G.GraphEdgePurpose Purpose { get; set; } = default!;
 
         /// <summary>

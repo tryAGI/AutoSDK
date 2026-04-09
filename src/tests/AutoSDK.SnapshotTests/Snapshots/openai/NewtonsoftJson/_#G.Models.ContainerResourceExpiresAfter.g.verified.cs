@@ -15,6 +15,7 @@ namespace G
         /// The reference point for the expiration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("anchor")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ContainerResourceExpiresAfterAnchorJsonConverter))]
         public global::G.ContainerResourceExpiresAfterAnchor? Anchor { get; set; }
 
         /// <summary>

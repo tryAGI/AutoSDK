@@ -20,6 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferCallToolTypeJsonConverter))]
         public global::G.TransferCallToolType Type { get; set; }
 
         /// <summary>

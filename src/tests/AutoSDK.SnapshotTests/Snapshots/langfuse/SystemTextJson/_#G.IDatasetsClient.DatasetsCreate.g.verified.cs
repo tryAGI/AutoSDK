@@ -9,11 +9,13 @@ namespace G
         /// Create a dataset
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Dataset> DatasetsCreateAsync(
 
             global::G.CreateDatasetRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a dataset
@@ -27,6 +29,7 @@ namespace G
         /// <param name="expectedOutputSchema">
         /// JSON Schema for validating dataset item expected outputs. When set, all new and existing dataset items will be validated against this schema.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Dataset> DatasetsCreateAsync(
@@ -35,6 +38,7 @@ namespace G
             object? metadata = default,
             object? inputSchema = default,
             object? expectedOutputSchema = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

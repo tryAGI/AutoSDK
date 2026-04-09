@@ -19,6 +19,7 @@ namespace G
         /// Default Value: batch
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BatchJobOutObjectJsonConverter))]
         public global::G.BatchJobOutObject? Object { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BatchJobStatusJsonConverter))]
         public global::G.BatchJobStatus Status { get; set; } = default!;
 
         /// <summary>

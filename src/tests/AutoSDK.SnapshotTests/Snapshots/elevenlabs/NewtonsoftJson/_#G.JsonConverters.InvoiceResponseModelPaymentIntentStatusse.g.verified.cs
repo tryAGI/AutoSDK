@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.InvoiceResponseModelPaymentIntentStatusse.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class InvoiceResponseModelPaymentIntentStatusseJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.InvoiceResponseModelPaymentIntentStatusse>
+    {
+        /// <inheritdoc />
+        public override global::G.InvoiceResponseModelPaymentIntentStatusse ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.InvoiceResponseModelPaymentIntentStatusse existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.InvoiceResponseModelPaymentIntentStatusseExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.InvoiceResponseModelPaymentIntentStatusse)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.InvoiceResponseModelPaymentIntentStatusse);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.InvoiceResponseModelPaymentIntentStatusse value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.InvoiceResponseModelPaymentIntentStatusseExtensions.ToValueString(value));
+        }
+    }
+}

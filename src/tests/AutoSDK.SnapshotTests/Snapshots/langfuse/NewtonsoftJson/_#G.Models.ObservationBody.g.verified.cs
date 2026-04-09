@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ObservationTypeJsonConverter))]
         public global::G.ObservationType Type { get; set; } = default!;
 
         /// <summary>
@@ -97,6 +98,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ObservationLevelJsonConverter))]
         public global::G.ObservationLevel? Level { get; set; }
 
         /// <summary>

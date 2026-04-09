@@ -63,6 +63,7 @@ namespace G
         /// Default Value: completed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StoreStatusJsonConverter))]
         public global::G.StoreStatus? Status { get; set; }
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>interval</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IntervalScheduleConfigurationTypeJsonConverter))]
         public global::G.IntervalScheduleConfigurationType Type { get; set; }
 
         /// <summary>

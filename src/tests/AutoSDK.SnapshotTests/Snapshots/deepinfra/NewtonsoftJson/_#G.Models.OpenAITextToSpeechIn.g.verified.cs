@@ -32,6 +32,7 @@ namespace G
         /// Default Value: wav
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TtsResponseFormatJsonConverter))]
         public global::G.TtsResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>

@@ -65,6 +65,7 @@ namespace G
         /// Default Value: word
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tokenization")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TokenizationJsonConverter))]
         public global::G.Tokenization? Tokenization { get; set; }
 
         /// <summary>

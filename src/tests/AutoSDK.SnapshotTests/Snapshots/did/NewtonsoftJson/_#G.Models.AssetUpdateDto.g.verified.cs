@@ -13,6 +13,7 @@ namespace G
         /// MIME type of the asset
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mime_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssetUpdateDtoMimeTypeJsonConverter))]
         public global::G.AssetUpdateDtoMimeType MimeType { get; set; } = default!;
 
         /// <summary>

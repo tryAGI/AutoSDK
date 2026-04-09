@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>mcp</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolServerTypeJsonConverter))]
         public global::G.ToolServerType Type { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace G
         /// </summary>
         /// <example>sse</example>
         [global::Newtonsoft.Json.JsonProperty("transport", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolServerTransportJsonConverter))]
         public global::G.ToolServerTransport Transport { get; set; } = default!;
 
         /// <summary>

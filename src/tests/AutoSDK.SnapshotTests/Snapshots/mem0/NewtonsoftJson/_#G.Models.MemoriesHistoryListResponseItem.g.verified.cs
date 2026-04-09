@@ -49,6 +49,7 @@ namespace G
         /// The type of event that occurred
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MemoriesHistoryListResponseItemEventJsonConverter))]
         public global::G.MemoriesHistoryListResponseItemEvent Event { get; set; } = default!;
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace G
         /// <param name="eventType">
         /// The type of event to list
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.StoreEventListResponse> ListStoreEventsAsync(
@@ -51,6 +52,7 @@ namespace G
             bool? includeTotal = default,
             global::System.DateTime? filterBefore = default,
             global::System.DateTime? filterAfter = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

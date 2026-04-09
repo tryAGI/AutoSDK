@@ -11,11 +11,13 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FullRepository> ReposCreateForAuthenticatedUserAsync(
 
             global::G.ReposCreateForAuthenticatedUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a repository for the authenticated user<br/>
@@ -23,11 +25,13 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.FullRepository>> ReposCreateForAuthenticatedUserAsResponseAsync(
 
             global::G.ReposCreateForAuthenticatedUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a repository for the authenticated user<br/>
@@ -142,6 +146,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FullRepository> ReposCreateForAuthenticatedUserAsync(
@@ -168,6 +173,7 @@ namespace G
             global::G.ReposCreateForAuthenticatedUserRequestMergeCommitMessage? mergeCommitMessage = default,
             bool? hasDownloads = default,
             bool? isTemplate = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

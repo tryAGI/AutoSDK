@@ -29,6 +29,7 @@ namespace G
         /// This is to use numbers bought on Vonage.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VonagePhoneNumberProviderJsonConverter))]
         public global::G.VonagePhoneNumberProvider Provider { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace G
         /// This is the status of the phone number.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VonagePhoneNumberStatusJsonConverter))]
         public global::G.VonagePhoneNumberStatus? Status { get; set; }
 
         /// <summary>

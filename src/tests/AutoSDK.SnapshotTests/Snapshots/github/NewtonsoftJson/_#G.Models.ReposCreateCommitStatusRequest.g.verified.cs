@@ -13,6 +13,7 @@ namespace G
         /// The state of the status.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposCreateCommitStatusRequestStateJsonConverter))]
         public global::G.ReposCreateCommitStatusRequestState State { get; set; } = default!;
 
         /// <summary>

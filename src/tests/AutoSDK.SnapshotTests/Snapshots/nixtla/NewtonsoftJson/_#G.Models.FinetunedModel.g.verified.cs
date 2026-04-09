@@ -49,6 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("loss", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FinetunedModelLossJsonConverter))]
         public global::G.FinetunedModelLoss Loss { get; set; } = default!;
 
         /// <summary>

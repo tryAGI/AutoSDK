@@ -63,6 +63,7 @@ namespace G
         /// * BITS\_IN\_EXTENSION
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("product_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtensionTransactionProductTypeJsonConverter))]
         public global::G.ExtensionTransactionProductType ProductType { get; set; }
 
         /// <summary>

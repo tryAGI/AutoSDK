@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunStepStreamEventVariant2EventJsonConverter))]
         public global::G.RunStepStreamEventVariant2Event Event { get; set; }
 
         /// <summary>

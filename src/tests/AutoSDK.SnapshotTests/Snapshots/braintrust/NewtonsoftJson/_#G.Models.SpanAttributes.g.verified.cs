@@ -19,6 +19,7 @@ namespace G
         /// Type of the span, for display purposes only
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpanTypeJsonConverter))]
         public global::G.SpanType? Type { get; set; }
 
         /// <summary>

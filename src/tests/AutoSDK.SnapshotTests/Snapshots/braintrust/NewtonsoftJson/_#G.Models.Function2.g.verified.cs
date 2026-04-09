@@ -31,6 +31,7 @@ namespace G
         /// A literal 'p' which identifies the object as a project prompt
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("log_id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionLogIdJsonConverter))]
         public global::G.FunctionLogId LogId { get; set; }
 
         /// <summary>
@@ -85,6 +86,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionTypeEnumNullishJsonConverter))]
         public global::G.FunctionTypeEnumNullish? FunctionType { get; set; }
 
         /// <summary>

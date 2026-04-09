@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextContentTypeJsonConverter))]
         public global::G.TextContentType Type { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextContentLanguageJsonConverter))]
         public global::G.TextContentLanguage Language { get; set; } = default!;
 
         /// <summary>

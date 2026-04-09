@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetItemPublicSourceJsonConverter))]
         public global::G.DatasetItemPublicSource Source { get; set; } = default!;
 
         /// <summary>

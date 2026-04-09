@@ -39,6 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkspaceWithUsersDefaultsObjectJsonConverter))]
         public global::G.WorkspaceWithUsersDefaultsObject? Object { get; set; }
 
         /// <summary>

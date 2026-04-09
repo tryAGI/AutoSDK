@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>web_call</example>
         [global::Newtonsoft.Json.JsonProperty("call_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.V2WebCallResponseVariant1CallTypeJsonConverter))]
         public global::G.V2WebCallResponseVariant1CallType CallType { get; set; }
 
         /// <summary>

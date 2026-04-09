@@ -16,6 +16,7 @@ namespace G
         /// <default>global::G.AudioChunkActionType.AudioChunk</default>
         /// <example>audio_chunk</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioChunkActionTypeJsonConverter))]
         public global::G.AudioChunkActionType Type { get; set; } = global::G.AudioChunkActionType.AudioChunk;
 
         /// <summary>

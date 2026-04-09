@@ -19,6 +19,7 @@ namespace G
         /// Status of the test case job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TestCaseJobStatusJsonConverter))]
         public global::G.TestCaseJobStatus Status { get; set; } = default!;
 
         /// <summary>

@@ -55,6 +55,7 @@ namespace G
         /// Identifies which area of site layout the ad can appear in
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("placement_area", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DisplayAdPlacementAreaJsonConverter))]
         public global::G.DisplayAdPlacementArea PlacementArea { get; set; } = default!;
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace G
         /// Specifies an group of users to show this ad to (only works with logged-in users)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("audience_segment_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DisplayAdAudienceSegmentTypeJsonConverter))]
         public global::G.DisplayAdAudienceSegmentType? AudienceSegmentType { get; set; }
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace G
         /// Default Value: all
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("display_to")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DisplayAdDisplayToJsonConverter))]
         public global::G.DisplayAdDisplayTo? DisplayTo { get; set; }
 
         /// <summary>
@@ -90,6 +93,7 @@ namespace G
         /// Default Value: in_house
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type_of")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DisplayAdTypeOfJsonConverter))]
         public global::G.DisplayAdTypeOf? TypeOf { get; set; }
 
         /// <summary>

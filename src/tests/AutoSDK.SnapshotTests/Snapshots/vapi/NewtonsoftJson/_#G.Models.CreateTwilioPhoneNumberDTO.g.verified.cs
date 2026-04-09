@@ -29,6 +29,7 @@ namespace G
         /// This is to use numbers bought on Twilio.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTwilioPhoneNumberDTOProviderJsonConverter))]
         public global::G.CreateTwilioPhoneNumberDTOProvider Provider { get; set; }
 
         /// <summary>

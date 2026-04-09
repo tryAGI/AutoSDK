@@ -17,6 +17,7 @@ namespace G
         /// </summary>
         /// <example>created_at</example>
         [global::Newtonsoft.Json.JsonProperty("column", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterDateTypeColumnOnCallTableColumnJsonConverter))]
         public global::G.FilterDateTypeColumnOnCallTableColumn Column { get; set; } = default!;
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace G
         /// </summary>
         /// <example>"=" or "&gt;" or "&lt;" or "&gt;=" or "&lt;="</example>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterDateTypeColumnOnCallTableOperatorJsonConverter))]
         public global::G.FilterDateTypeColumnOnCallTableOperator Operator { get; set; } = default!;
 
         /// <summary>

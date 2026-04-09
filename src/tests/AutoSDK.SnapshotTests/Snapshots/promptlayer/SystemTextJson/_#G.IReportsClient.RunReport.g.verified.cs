@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="reportId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RunReportResponse> RunReportAsync(
             int reportId,
 
             global::G.RunReportRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Run Full Evaluation
@@ -30,6 +32,7 @@ namespace G
         /// <param name="refreshDataset">
         /// Whether to refresh the dataset before running the report. Only applicable for dynamic datasets.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RunReportResponse> RunReportAsync(
@@ -37,6 +40,7 @@ namespace G
             string name,
             int? datasetId = default,
             bool? refreshDataset = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

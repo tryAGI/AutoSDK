@@ -37,24 +37,28 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssetStateJsonConverter))]
         public global::G.AssetState? State { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssetTypeJsonConverter))]
         public global::G.AssetType? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("origin")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BuildMethodJsonConverter))]
         public global::G.BuildMethod? Origin { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileSourceJsonConverter))]
         public global::G.FileSource? Source { get; set; }
 
         /// <summary>

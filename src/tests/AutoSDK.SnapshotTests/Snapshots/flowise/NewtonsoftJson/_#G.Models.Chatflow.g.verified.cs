@@ -87,6 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatflowTypeJsonConverter))]
         public global::G.ChatflowType? Type { get; set; }
 
         /// <summary>

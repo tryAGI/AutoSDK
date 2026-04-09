@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ResponseThinkingBlockType.Thinking</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseThinkingBlockTypeJsonConverter))]
         public global::G.ResponseThinkingBlockType Type { get; set; } = global::G.ResponseThinkingBlockType.Thinking;
 
         /// <summary>

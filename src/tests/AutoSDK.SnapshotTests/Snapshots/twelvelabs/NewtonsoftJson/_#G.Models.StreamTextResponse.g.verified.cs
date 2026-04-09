@@ -13,6 +13,7 @@ namespace G
         /// This field is always set to `text_generation` for this event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StreamTextResponseEventTypeJsonConverter))]
         public global::G.StreamTextResponseEventType EventType { get; set; }
 
         /// <summary>

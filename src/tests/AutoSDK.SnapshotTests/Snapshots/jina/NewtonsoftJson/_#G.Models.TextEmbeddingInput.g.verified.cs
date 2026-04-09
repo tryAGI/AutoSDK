@@ -46,6 +46,7 @@ namespace G
         /// - "separation": Specifies that the embedding is used for clustering.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("task")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextEmbeddingInputTaskJsonConverter))]
         public global::G.TextEmbeddingInputTask? Task { get; set; }
 
         /// <summary>

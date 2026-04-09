@@ -21,6 +21,7 @@ namespace G
         /// - If you want to wait longer while customer is speaking numbers, you can set a longer timeout.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BothCustomEndpointingRuleTypeJsonConverter))]
         public global::G.BothCustomEndpointingRuleType Type { get; set; }
 
         /// <summary>

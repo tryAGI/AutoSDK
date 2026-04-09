@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>[GDPR, HEALTH_INFORMATION, HIPAA_SAFE_HARBOR, QUEBEC_PRIVACY_ACT, EMAIL_ADDRESS, NAME, PHONE_NUMBER]</example>
         [global::Newtonsoft.Json.JsonProperty("entity_types", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PiiRedactionEntityTypeEnumJsonConverter))]
         public global::G.PiiRedactionEntityTypeEnum EntityTypes { get; set; } = default!;
 
         /// <summary>
@@ -23,6 +24,7 @@ namespace G
         /// </summary>
         /// <example>MARKER</example>
         [global::Newtonsoft.Json.JsonProperty("processed_text_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PiiRedactionConfigDTOProcessedTextTypeJsonConverter))]
         public global::G.PiiRedactionConfigDTOProcessedTextType ProcessedTextType { get; set; } = default!;
 
         /// <summary>

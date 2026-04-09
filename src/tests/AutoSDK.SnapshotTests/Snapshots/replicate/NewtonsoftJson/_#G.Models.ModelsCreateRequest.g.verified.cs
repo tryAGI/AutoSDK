@@ -61,6 +61,7 @@ namespace G
         /// Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelsCreateRequestVisibilityJsonConverter))]
         public global::G.ModelsCreateRequestVisibility Visibility { get; set; } = default!;
 
         /// <summary>
