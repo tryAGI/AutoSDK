@@ -297,7 +297,8 @@ namespace G
 
                 for (var i = authorizations.Count - 1; i >= 0; i--)
                 {
-                    if (authorizations[i].Type == "OAuth2")
+                    if (authorizations[i].Type == "OAuth2" &&
+                        authorizations[i].SchemeId == "OAuth2")
                     {
                         authorizations.RemoveAt(i);
                     }
@@ -311,6 +312,7 @@ namespace G
                 authorizations.Add(new global::G.EndPointAuthorization
                 {
                     Type = "OAuth2",
+                    SchemeId = "OAuth2",
                     Location = "Header",
                     Name = string.IsNullOrWhiteSpace(token.TokenType) ? "Bearer" : token.TokenType,
                     Value = token.AccessToken,

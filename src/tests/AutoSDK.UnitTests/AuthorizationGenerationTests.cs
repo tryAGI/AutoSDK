@@ -128,6 +128,84 @@ public class AuthorizationGenerationTests
     }
 
     [TestMethod]
+    public void GenerateAuthorization_OpenIdConnect_EmitsDiscoveryUrlAndBearerHelpers()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: OIDC Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - oidc: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                oidc:
+                                  type: openIdConnect
+                                  openIdConnectUrl: https://example.com/.well-known/openid-configuration
+                            """;
+
+        var authorization = GetSingleAuthorization(yaml);
+        var content = Sources.Authorization(authorization).Text;
+        var interfaceContent = Sources.AuthorizationInterface(authorization).Text;
+
+        authorization.FriendlyName.Should().Be("OpenIdConnect");
+        authorization.SchemeId.Should().Be("Oidc");
+        authorization.OpenIdConnectUrl.Should().Be("https://example.com/.well-known/openid-configuration");
+        content.Should().Contain("public string OpenIdConnectDiscoveryUrl => \"https://example.com/.well-known/openid-configuration\"");
+        content.Should().Contain("public void AuthorizeUsingOpenIdConnect(");
+        content.Should().Contain("AuthorizeUsingOpenIdConnect(accessToken, \"Bearer\")");
+        content.Should().Contain("Type = \"OpenIdConnect\"");
+        content.Should().Contain("SchemeId = \"Oidc\"");
+        content.Should().Contain("Location = \"Header\"");
+        content.Should().Contain("Name = tokenType");
+        interfaceContent.Should().Contain("public string OpenIdConnectDiscoveryUrl { get; }");
+    }
+
+    [TestMethod]
+    public void GenerateAuthorization_MutualTls_EmitsMarkerAndCertificateHelpers()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: mTLS Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - mtlsAuth: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                mtlsAuth:
+                                  type: mutualTLS
+                            """;
+
+        var authorization = GetSingleAuthorization(yaml);
+        var content = Sources.Authorization(authorization).Text;
+        var interfaceContent = Sources.AuthorizationInterface(authorization).Text;
+
+        authorization.FriendlyName.Should().Be("MutualTls");
+        authorization.SchemeId.Should().Be("MtlsAuth");
+        content.Should().Contain("public void AuthorizeUsingMutualTls()");
+        content.Should().Contain("Type = \"MutualTLS\"");
+        content.Should().Contain("SchemeId = \"MtlsAuth\"");
+        content.Should().Contain("public void ConfigureMutualTlsClientCertificate(");
+        content.Should().Contain("ClientCertificateOption.Manual");
+        interfaceContent.Should().Contain("public void ConfigureMutualTlsClientCertificate(");
+    }
+
+    [TestMethod]
     public void GenerateAuthorization_ReplacesOnlyMatchingScheme()
     {
         const string yaml = """
@@ -414,6 +492,44 @@ public class AuthorizationGenerationTests
 
         data.Authorizations.Should().ContainSingle(x => x.Type == SecuritySchemeType.OAuth2);
         data.Clients.Should().ContainSingle(x => x.Id == "MainConstructor" && x.HasOAuth2Support);
+    }
+
+    [TestMethod]
+    public void Prepare_WithMutualTls_GeneratesOwnedHttpClientHandlerSupport()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: mTLS Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - mtlsAuth: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                mtlsAuth:
+                                  type: mutualTLS
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateSdk = true,
+            GenerateConstructors = true,
+        };
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+        var mainClient = data.Clients.Should().ContainSingle(x => x.Id == "MainConstructor").Subject;
+
+        mainClient.HasMutualTlsSupport.Should().BeTrue();
+        var content = Sources.Client(mainClient).Text;
+        content.Should().Contain("private readonly global::System.Net.Http.HttpClientHandler? _ownedHttpClientHandler;");
+        content.Should().Contain("_ownedHttpClientHandler = new global::System.Net.Http.HttpClientHandler();");
     }
 
     [TestMethod]

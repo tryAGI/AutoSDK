@@ -15,6 +15,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "",
+                        SchemeId = "NoAuth",
                         Location = "",
                         Name = "",
                         FriendlyName = "NoAuth",

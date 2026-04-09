@@ -23,6 +23,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "",
+                SchemeId = "DeveloperKey",
                 Location = "",
                 Name = "",
                 Value = "",

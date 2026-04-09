@@ -17,6 +17,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "PortkeyKey",
                         Location = "Header",
                         Name = "x-portkey-api-key",
                         FriendlyName = "PortkeyKey",
@@ -24,6 +25,7 @@ namespace G
                     new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "VirtualKey",
                         Location = "Header",
                         Name = "x-portkey-virtual-key",
                         FriendlyName = "VirtualKey",
@@ -38,6 +40,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "PortkeyKey",
                         Location = "Header",
                         Name = "x-portkey-api-key",
                         FriendlyName = "PortkeyKey",
@@ -45,6 +48,7 @@ namespace G
                     new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "ProviderName",
                         Location = "Header",
                         Name = "x-portkey-provider",
                         FriendlyName = "ProviderName",
@@ -52,6 +56,7 @@ namespace G
                     new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "Http",
+                        SchemeId = "ProviderAuth",
                         Location = "Header",
                         Name = "Bearer",
                         FriendlyName = "Bearer",
@@ -66,6 +71,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "PortkeyKey",
                         Location = "Header",
                         Name = "x-portkey-api-key",
                         FriendlyName = "PortkeyKey",
@@ -73,6 +79,7 @@ namespace G
                     new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "Config",
                         Location = "Header",
                         Name = "x-portkey-config",
                         FriendlyName = "Config",
@@ -87,6 +94,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "PortkeyKey",
                         Location = "Header",
                         Name = "x-portkey-api-key",
                         FriendlyName = "PortkeyKey",
@@ -94,6 +102,7 @@ namespace G
                     new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "CustomHost",
                         Location = "Header",
                         Name = "x-portkey-custom-host",
                         FriendlyName = "CustomHost",
@@ -101,6 +110,7 @@ namespace G
                     new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "ProviderName",
                         Location = "Header",
                         Name = "x-portkey-provider",
                         FriendlyName = "ProviderName",
@@ -108,6 +118,7 @@ namespace G
                     new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "Http",
+                        SchemeId = "ProviderAuth",
                         Location = "Header",
                         Name = "Bearer",
                         FriendlyName = "Bearer",
@@ -209,10 +220,12 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
+            var __cookies = new global::System.Collections.Generic.List<string>();
             foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
                 {
                     __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
                         scheme: __authorization.Name,
@@ -223,6 +236,17 @@ namespace G
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Cookie")
+                {
+                    var __cookieValue = global::System.Uri.EscapeDataString(__authorization.Value);
+                    __cookies.Add($"{__authorization.Name}={__cookieValue}");
+                }
+            }
+
+            if (__cookies.Count > 0)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
             }
 
             if (xPortkeyTraceId != default)

@@ -15,6 +15,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "ApiKeyAuth",
                         Location = "Header",
                         Name = "X-API-Key",
                         FriendlyName = "ApiKeyAuth",
@@ -29,6 +30,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "Http",
+                        SchemeId = "AccessTokenAuth",
                         Location = "Header",
                         Name = "Bearer",
                         FriendlyName = "Bearer",
@@ -43,6 +45,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "Supabase2TeamAuth",
                         Location = "Header",
                         Name = "X-Supabase-Team",
                         FriendlyName = "Supabase2TeamAuth",
@@ -50,6 +53,7 @@ namespace G
                     new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "Supabase1TokenAuth",
                         Location = "Header",
                         Name = "X-Supabase-Token",
                         FriendlyName = "Supabase1TokenAuth",
@@ -107,10 +111,12 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
+            var __cookies = new global::System.Collections.Generic.List<string>();
             foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
                 {
                     __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
                         scheme: __authorization.Name,
@@ -121,6 +127,17 @@ namespace G
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Cookie")
+                {
+                    var __cookieValue = global::System.Uri.EscapeDataString(__authorization.Value);
+                    __cookies.Add($"{__authorization.Name}={__cookieValue}");
+                }
+            }
+
+            if (__cookies.Count > 0)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
             }
 
             PrepareRequest(

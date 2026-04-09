@@ -394,12 +394,16 @@ namespace {endPoint.Settings.Namespace}
 #endif
 {(endPoint.Authorizations.Any(x => x is
     { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Header } or
+    { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Cookie } or
     { Type: SecuritySchemeType.Http } or
-    { Type: SecuritySchemeType.OAuth2 }) ? @$"
+    { Type: SecuritySchemeType.OAuth2 } or
+    { Type: SecuritySchemeType.OpenIdConnect }) ? @$"
+            var __cookies = new global::System.Collections.Generic.List<string>();
             foreach (var __authorization in {(endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations")})
             {{
                 if (__authorization.Type == ""{SecuritySchemeType.Http:G}"" ||
-                    __authorization.Type == ""{SecuritySchemeType.OAuth2:G}"")
+                    __authorization.Type == ""{SecuritySchemeType.OAuth2:G}"" ||
+                    __authorization.Type == ""{SecuritySchemeType.OpenIdConnect:G}"")
                 {{
                     __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
                         scheme: __authorization.Name,
@@ -410,6 +414,17 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }}
+                else if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
+                         __authorization.Location == ""{ParameterLocation.Cookie:G}"")
+                {{
+                    var __cookieValue = global::System.Uri.EscapeDataString(__authorization.Value);
+                    __cookies.Add($""{{__authorization.Name}}={{__cookieValue}}"");
+                }}
+            }}
+
+            if (__cookies.Count > 0)
+            {{
+                __httpRequest.Headers.TryAddWithoutValidation(""Cookie"", string.Join(""; "", __cookies));
             }}" : TrimmedLine)}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
 {endPoint.Parameters

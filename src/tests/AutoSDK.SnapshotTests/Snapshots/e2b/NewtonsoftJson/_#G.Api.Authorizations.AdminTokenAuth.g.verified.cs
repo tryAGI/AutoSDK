@@ -26,6 +26,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "AdminTokenAuth",
                 Location = "Header",
                 Name = "X-Admin-Token",
                 Value = apiKey,

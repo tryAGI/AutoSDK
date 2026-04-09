@@ -26,6 +26,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "PortkeyKey",
                 Location = "Header",
                 Name = "x-portkey-api-key",
                 Value = apiKey,

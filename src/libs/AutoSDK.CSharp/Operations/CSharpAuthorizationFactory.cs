@@ -25,6 +25,7 @@ public static class CSharpAuthorizationFactory
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Cookie) => "ApiKeyInCookie",
             (SecuritySchemeType.OAuth2, _, _) => "OAuth2",
             (SecuritySchemeType.OpenIdConnect, _, _) => "OpenIdConnect",
+            (SecuritySchemeType.MutualTLS, _, _) => "MutualTls",
             _ => scheme.Name?.ToPropertyName() ?? scheme.Scheme?.ToPropertyName() ?? "Authorization",
         };
         string[] parameters = (scheme.Type, scheme.Scheme?.ToUpperInvariant(), scheme.In) switch
@@ -35,6 +36,7 @@ public static class CSharpAuthorizationFactory
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => ["apiKey"],
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => ["apiKey"],
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Cookie) => ["apiKey"],
+            (SecuritySchemeType.OpenIdConnect, _, _) => ["accessToken"],
             _ => [],
         };
 
@@ -50,6 +52,7 @@ public static class CSharpAuthorizationFactory
                 (SecuritySchemeType.Http, _) => ParameterLocation.Header,
                 (SecuritySchemeType.OAuth2, _) => ParameterLocation.Header,
                 (SecuritySchemeType.OpenIdConnect, _) => ParameterLocation.Header,
+                (SecuritySchemeType.MutualTLS, _) => null,
                 _ => scheme.In,
             },
             parameters: parameters.ToImmutableArray().AsEquatableArray(),

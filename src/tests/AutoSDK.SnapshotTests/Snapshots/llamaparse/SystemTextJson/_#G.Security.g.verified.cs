@@ -3,20 +3,22 @@
 
 namespace G
 {
-    public sealed class EndPointAuthorizationRequirement
+    internal sealed class EndPointAuthorizationRequirement
     {
-        public string Type { get; set; } = string.Empty;
+        internal string Type { get; set; } = string.Empty;
 
-        public string Location { get; set; } = string.Empty;
+        internal string SchemeId { get; set; } = string.Empty;
 
-        public string Name { get; set; } = string.Empty;
+        internal string Location { get; set; } = string.Empty;
 
-        public string FriendlyName { get; set; } = string.Empty;
+        internal string Name { get; set; } = string.Empty;
+
+        internal string FriendlyName { get; set; } = string.Empty;
     }
 
-    public sealed class EndPointSecurityRequirement
+    internal sealed class EndPointSecurityRequirement
     {
-        public global::System.Collections.Generic.IReadOnlyList<EndPointAuthorizationRequirement> Authorizations { get; set; } =
+        internal global::System.Collections.Generic.IReadOnlyList<EndPointAuthorizationRequirement> Authorizations { get; set; } =
             global::System.Array.Empty<EndPointAuthorizationRequirement>();
     }
 
@@ -98,7 +100,18 @@ namespace G
 
             return requiredAuthorization.Type switch
             {
-                "OAuth2" => true,
+                "OAuth2" => string.Equals(
+                    availableAuthorization.SchemeId,
+                    requiredAuthorization.SchemeId,
+                    global::System.StringComparison.Ordinal),
+                "OpenIdConnect" => string.Equals(
+                    availableAuthorization.SchemeId,
+                    requiredAuthorization.SchemeId,
+                    global::System.StringComparison.Ordinal),
+                "MutualTLS" => string.Equals(
+                    availableAuthorization.SchemeId,
+                    requiredAuthorization.SchemeId,
+                    global::System.StringComparison.Ordinal),
                 "Http" => string.Equals(
                     availableAuthorization.Name,
                     requiredAuthorization.Name,

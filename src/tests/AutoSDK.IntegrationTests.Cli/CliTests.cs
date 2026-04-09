@@ -1051,6 +1051,95 @@ paths:
     }
 
     [TestMethod]
+    public async Task Generate_WithRemainingOfficialSecuritySchemes_BuildsAndEmitsSupport()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Official Security Schemes
+  version: 1.0.0
+paths:
+  /cookie:
+    get:
+      operationId: getCookie
+      security:
+        - cookieAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+  /oidc:
+    get:
+      operationId: getOidc
+      security:
+        - oidc: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+  /mtls:
+    get:
+      operationId: getMutualTls
+      security:
+        - mtlsAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: session
+    oidc:
+      type: openIdConnect
+      openIdConnectUrl: https://example.com/.well-known/openid-configuration
+    mtlsAuth:
+      type: mutualTLS
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "official-security-schemes.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "OfficialSecurity",
+            clientClassName: "OfficialSecurityClient",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("TryAddWithoutValidation(\"Cookie\", string.Join(\"; \", __cookies))");
+                content.Should().Contain("public string OpenIdConnectDiscoveryUrl => \"https://example.com/.well-known/openid-configuration\"");
+                content.Should().Contain("__authorization.Type == \"OpenIdConnect\"");
+                content.Should().Contain("public void AuthorizeUsingMutualTls()");
+                content.Should().Contain("public void ConfigureMutualTlsClientCertificate(");
+                content.Should().Contain("_ownedHttpClientHandler = new global::System.Net.Http.HttpClientHandler();");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithDuplicateQueryParameterNames_Builds()
     {
         const string spec = """

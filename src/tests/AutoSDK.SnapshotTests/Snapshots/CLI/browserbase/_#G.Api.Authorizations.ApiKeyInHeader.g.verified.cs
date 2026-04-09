@@ -26,6 +26,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "BrowserbaseAuth",
                 Location = "Header",
                 Name = "X-BB-API-Key",
                 Value = apiKey,

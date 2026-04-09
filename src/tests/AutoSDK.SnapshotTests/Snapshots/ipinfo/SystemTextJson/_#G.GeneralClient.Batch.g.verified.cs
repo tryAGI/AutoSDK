@@ -15,6 +15,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "Http",
+                        SchemeId = "BasicAuth",
                         Location = "Header",
                         Name = "Basic",
                         FriendlyName = "Basic",
@@ -29,6 +30,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "Http",
+                        SchemeId = "BearerAuth",
                         Location = "Header",
                         Name = "Bearer",
                         FriendlyName = "Bearer",
@@ -43,6 +45,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "ApiKeyAuth",
                         Location = "Query",
                         Name = "token",
                         FriendlyName = "ApiKeyInQuery",
@@ -117,10 +120,12 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
+            var __cookies = new global::System.Collections.Generic.List<string>();
             foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
                 {
                     __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
                         scheme: __authorization.Name,
@@ -131,6 +136,17 @@ namespace G
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Cookie")
+                {
+                    var __cookieValue = global::System.Uri.EscapeDataString(__authorization.Value);
+                    __cookies.Add($"{__authorization.Name}={__cookieValue}");
+                }
+            }
+
+            if (__cookies.Count > 0)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
             }
             var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(

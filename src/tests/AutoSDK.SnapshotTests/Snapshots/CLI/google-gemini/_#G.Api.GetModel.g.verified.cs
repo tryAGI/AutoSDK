@@ -15,6 +15,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "ApiKey",
                         Location = "Query",
                         Name = "key",
                         FriendlyName = "ApiKeyInQuery",

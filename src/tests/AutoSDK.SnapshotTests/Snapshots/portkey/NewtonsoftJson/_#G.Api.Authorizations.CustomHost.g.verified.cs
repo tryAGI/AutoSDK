@@ -26,6 +26,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "CustomHost",
                 Location = "Header",
                 Name = "x-portkey-custom-host",
                 Value = apiKey,

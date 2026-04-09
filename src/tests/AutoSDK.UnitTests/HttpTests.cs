@@ -359,6 +359,35 @@ components:
     }
 
     [TestMethod]
+    public void ApiKeyInCookie_EmitsCookieHeader()
+    {
+        var (operations, _) = LoadSpec(@"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /secure:
+    get:
+      operationId: getSecure
+      responses:
+        '200':
+          description: OK
+security:
+  - ApiKeyAuth: []
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: cookie
+      name: session
+");
+
+        var result = Sources.GenerateHttpRequest(operations[0]);
+
+        result.Should().Contain("Cookie: session={{api_key}}");
+    }
+
+    [TestMethod]
     public void ExplicitEmptyOperationSecurity_DoesNotInheritGlobalHttpAuth()
     {
         var (operations, _) = LoadSpec(@"openapi: 3.0.1
