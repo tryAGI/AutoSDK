@@ -53,7 +53,7 @@ public static class OpenApiEnumExtensions
             if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
             {
                 return context.TypeData.IsOpenEnum
-                    ? $"{context.TypeData.CSharpTypeWithoutNullability}.FromValue({defaultString.ToCSharpStringLiteral()})"
+                    ? $"{context.TypeData.CSharpTypeWithoutNullability}.FromValue({defaultString!.ToCSharpStringLiteral()})"
                     : string.Empty;
             }
 
