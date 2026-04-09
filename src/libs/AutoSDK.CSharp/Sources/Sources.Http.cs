@@ -32,6 +32,34 @@ public static partial class Sources
         return sb.ToString().TrimStart('\n', '\r');
     }
 
+    public static string GenerateWebhookHttpFile(
+        IReadOnlyList<OperationContext> operations)
+    {
+        operations = operations ?? throw new ArgumentNullException(nameof(operations));
+
+        if (operations.Count == 0)
+        {
+            return string.Empty;
+        }
+
+        var sb = new StringBuilder();
+
+        foreach (var operation in operations
+                     .OrderBy(x => x.OperationPath, StringComparer.Ordinal)
+                     .ThenBy(x => x.OperationType.Method, StringComparer.Ordinal))
+        {
+            AppendAsyncInteractionDocumentation(
+                sb,
+                label: "WEBHOOK",
+                name: operation.OperationPath,
+                target: null,
+                method: operation.OperationType.Method.ToUpperInvariant(),
+                operation: operation.Operation);
+        }
+
+        return sb.ToString().TrimStart('\n', '\r');
+    }
+
     public static string GenerateHttpRequest(OperationContext operation)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
@@ -95,26 +123,9 @@ public static partial class Sources
         }
 
         // Request body handling
-        var hasBody = op.RequestBody?.Content is { Count: > 0 };
-        string? contentType = null;
-        IOpenApiSchema? bodySchema = null;
-
-        if (hasBody)
+        if (GetPreferredRequestContent(op) is { } preferredContent)
         {
-            var content = op.RequestBody!.Content!;
-            if (content.TryGetValue("application/json", out var jsonMedia))
-            {
-                contentType = "application/json";
-                bodySchema = jsonMedia.Schema;
-            }
-            else
-            {
-                var first = content.First();
-                contentType = first.Key;
-                bodySchema = first.Value.Schema;
-            }
-
-            sb.Append("Content-Type: ").AppendLine(contentType);
+            sb.Append("Content-Type: ").AppendLine(preferredContent.ContentType);
         }
 
         // Accept header
@@ -128,7 +139,7 @@ public static partial class Sources
         sb.AppendLine();
 
         // JSON body
-        if (bodySchema != null && contentType == "application/json")
+        if (GetPreferredRequestContent(op) is { ContentType: "application/json", Schema: { } bodySchema })
         {
             var body = GenerateJsonBody(bodySchema);
             if (!string.IsNullOrWhiteSpace(body))
@@ -137,6 +148,9 @@ public static partial class Sources
                 sb.AppendLine();
             }
         }
+
+        AppendLinkDocumentation(sb, op);
+        AppendCallbackDocumentation(sb, op);
 
         return sb.ToString();
     }
@@ -212,6 +226,202 @@ public static partial class Sources
 
         // Fall back to variable placeholder
         return "{{" + parameter.Name + "}}";
+    }
+
+    private static (string ContentType, IOpenApiSchema? Schema)? GetPreferredRequestContent(OpenApiOperation operation)
+    {
+        var content = operation.RequestBody?.Content;
+        if (content is not { Count: > 0 })
+        {
+            return null;
+        }
+
+        if (content.TryGetValue("application/json", out var jsonMedia))
+        {
+            return ("application/json", jsonMedia.Schema);
+        }
+
+        var first = content.First();
+        return (first.Key, first.Value.Schema);
+    }
+
+    private static void AppendLinkDocumentation(StringBuilder sb, OpenApiOperation operation)
+    {
+        var responseLinks = (operation.Responses ?? [])
+            .Where(static x => x.Value.Links is { Count: > 0 })
+            .SelectMany(x => x.Value.Links!
+                .OrderBy(link => link.Key, StringComparer.Ordinal)
+                .Select(link => (StatusCode: x.Key, Name: link.Key, Link: link.Value)))
+            .ToArray();
+        if (responseLinks.Length == 0)
+        {
+            return;
+        }
+
+        sb.AppendLine("## Links");
+        foreach (var responseLink in responseLinks)
+        {
+            sb.Append("# ")
+                .Append(responseLink.StatusCode)
+                .Append('.')
+                .AppendLine(responseLink.Name);
+
+            if (!string.IsNullOrWhiteSpace(responseLink.Link.Description))
+            {
+                sb.Append("# Description: ").AppendLine(responseLink.Link.Description);
+            }
+
+            if (!string.IsNullOrWhiteSpace(responseLink.Link.OperationId))
+            {
+                sb.Append("# OperationId: ").AppendLine(responseLink.Link.OperationId);
+            }
+
+            if (responseLink.Link.OperationRef != null)
+            {
+                sb.Append("# OperationRef: ").AppendLine(responseLink.Link.OperationRef.ToString());
+            }
+
+            if (responseLink.Link.Parameters != null)
+            {
+                foreach (var parameter in responseLink.Link.Parameters.OrderBy(x => x.Key, StringComparer.Ordinal))
+                {
+                    sb.Append("# Parameters.")
+                        .Append(parameter.Key)
+                        .Append(": ")
+                        .AppendLine(FormatRuntimeExpression(parameter.Value));
+                }
+            }
+
+            if (responseLink.Link.RequestBody != null)
+            {
+                sb.Append("# RequestBody: ").AppendLine(FormatRuntimeExpression(responseLink.Link.RequestBody));
+            }
+
+            if (!string.IsNullOrWhiteSpace(responseLink.Link.Server?.Url))
+            {
+                sb.Append("# Server: ").AppendLine(responseLink.Link.Server.Url);
+            }
+        }
+
+        sb.AppendLine();
+    }
+
+    private static void AppendCallbackDocumentation(StringBuilder sb, OpenApiOperation operation)
+    {
+        var callbacks = operation.Callbacks;
+        if (callbacks == null || callbacks.Count == 0)
+        {
+            return;
+        }
+
+        sb.AppendLine("## Callbacks");
+        foreach (var callback in callbacks.OrderBy(x => x.Key, StringComparer.Ordinal))
+        {
+            var pathItems = callback.Value.PathItems;
+            if (pathItems == null)
+            {
+                continue;
+            }
+
+            foreach (var pathItem in pathItems.OrderBy(x => x.Key.ToString(), StringComparer.Ordinal))
+            {
+                var callbackOperations = pathItem.Value.Operations;
+                if (callbackOperations == null)
+                {
+                    continue;
+                }
+
+                foreach (var callbackOperation in callbackOperations.OrderBy(x => x.Key.Method, StringComparer.Ordinal))
+                {
+                    AppendAsyncInteractionDocumentation(
+                        sb,
+                        label: "CALLBACK",
+                        name: callback.Key,
+                        target: pathItem.Key.ToString(),
+                        method: callbackOperation.Key.Method.ToUpperInvariant(),
+                        operation: callbackOperation.Value);
+                }
+            }
+        }
+    }
+
+    private static void AppendAsyncInteractionDocumentation(
+        StringBuilder sb,
+        string label,
+        string? name,
+        string? target,
+        string method,
+        OpenApiOperation operation)
+    {
+        var summary = !string.IsNullOrWhiteSpace(operation.Summary)
+            ? operation.Summary
+            : operation.Description;
+        var title = !string.IsNullOrWhiteSpace(summary)
+            ? summary
+            : !string.IsNullOrWhiteSpace(target)
+                ? string.Concat(method, " ", target)
+                : method;
+
+        sb.Append("### [")
+            .Append(label)
+            .Append("] ")
+            .AppendLine(title);
+
+        if (!string.IsNullOrWhiteSpace(name))
+        {
+            sb.Append("# Name: ").AppendLine(name);
+        }
+
+        if (!string.IsNullOrWhiteSpace(target))
+        {
+            sb.Append("# Target: ").AppendLine(target);
+        }
+
+        if (!string.IsNullOrWhiteSpace(operation.OperationId))
+        {
+            sb.Append("# OperationId: ").AppendLine(operation.OperationId);
+        }
+
+        sb.Append("# Method: ").AppendLine(method);
+
+        if (GetPreferredRequestContent(operation) is { } preferredContent)
+        {
+            sb.Append("# Content-Type: ").AppendLine(preferredContent.ContentType);
+        }
+
+        var acceptTypes = GetHttpAcceptTypes(operation);
+        if (!string.IsNullOrEmpty(acceptTypes))
+        {
+            sb.Append("# Accept: ").AppendLine(acceptTypes);
+        }
+
+        if (GetPreferredRequestContent(operation) is { ContentType: "application/json", Schema: { } bodySchema })
+        {
+            var body = GenerateJsonBody(bodySchema);
+            if (!string.IsNullOrWhiteSpace(body))
+            {
+                sb.AppendLine();
+                sb.AppendLine(body);
+            }
+        }
+
+        sb.AppendLine();
+        sb.AppendLine();
+    }
+
+    private static string FormatRuntimeExpression(RuntimeExpressionAnyWrapper? value)
+    {
+        if (value?.Expression != null)
+        {
+            return value.Expression.ToString();
+        }
+
+        if (value?.Any != null)
+        {
+            return value.Any.ToJsonString();
+        }
+
+        return string.Empty;
     }
 
     private static IList<OpenApiSecurityRequirement> GetEffectiveSecurityRequirements(

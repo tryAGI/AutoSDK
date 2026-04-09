@@ -104,6 +104,7 @@ internal sealed class HttpCommand : Command
         var openApiDocument = yaml.GetOpenApiDocument(settings);
         var schemas = openApiDocument.GetSchemas(settings);
         var operations = openApiDocument.GetOperations(settings, globalSettings: settings, schemas);
+        var webhookOperations = openApiDocument.GetWebhookOperations(settings, globalSettings: settings, schemas);
 
         // Extract security schemes from document components
         var securitySchemes = (openApiDocument.Components?.SecuritySchemes?.Values ?? [])
@@ -141,6 +142,12 @@ internal sealed class HttpCommand : Command
             {
                 httpFiles.Add(file);
             }
+        }
+
+        var webhooksFile = Sources.WebhooksHttpFile(webhookOperations);
+        if (!webhooksFile.IsEmpty)
+        {
+            httpFiles.Add(webhooksFile);
         }
 
         Directory.CreateDirectory(output);

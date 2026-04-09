@@ -37,6 +37,9 @@ autosdk generate openapi.yaml \
 It will generate the code in the "Generated" subdirectory.  
 It also will include polyfills for .Net Framework/.Net Standard TargetFrameworks.
 
+## HTTP Artifacts
+`autosdk http` emits executable request files for regular OpenAPI path operations. It also surfaces response links and callbacks as commented documentation blocks next to the owning operation, and writes root-level OpenAPI webhooks to `webhooks.http` as inbound contract documentation instead of outbound client calls.
+
 ## Source generator
 - Install the package
 ```bash
