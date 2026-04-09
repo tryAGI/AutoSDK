@@ -67,7 +67,7 @@ public static class OpenApiExtensions
             throw new NotSupportedException(SpecFormatDetector.GrpcProtoPipelineNotSupportedMessage);
         }
 
-        yamlOrJson = NormalizeOpenApi31NumericExclusiveBounds(yamlOrJson);
+        yamlOrJson = NormalizeOpenApi31CompatibilityKeywords(yamlOrJson);
 
         var readerSettings = new OpenApiReaderSettings
         {
@@ -478,7 +478,7 @@ info:
         return true;
     }
 
-    private static string NormalizeOpenApi31NumericExclusiveBounds(string text)
+    private static string NormalizeOpenApi31CompatibilityKeywords(string text)
     {
         if (TryNormalizeOpenApi31Json(text, out var normalizedText) ||
             TryNormalizeOpenApi31Yaml(text, out normalizedText))
@@ -506,8 +506,15 @@ info:
         }
 
         if (root is not JsonObject rootObject ||
-            !IsOpenApi31Document(rootObject) ||
-            !NormalizeNumericExclusiveBounds(rootObject))
+            !IsOpenApi31Document(rootObject))
+        {
+            return false;
+        }
+
+        var unsupportedKeywords = new List<string>();
+        var changed = NormalizeOpenApi31Keywords(rootObject, "#", unsupportedKeywords);
+        ThrowOnUnsupportedOpenApi31Keywords(unsupportedKeywords);
+        if (!changed)
         {
             return false;
         }
@@ -524,8 +531,15 @@ info:
 
         if (!TryDeserializeYamlAsJsonObject(text, out var rootObject) ||
             rootObject == null ||
-            !IsOpenApi31Document(rootObject) ||
-            !NormalizeNumericExclusiveBounds(rootObject))
+            !IsOpenApi31Document(rootObject))
+        {
+            return false;
+        }
+
+        var unsupportedKeywords = new List<string>();
+        var changed = NormalizeOpenApi31Keywords(rootObject, "#", unsupportedKeywords);
+        ThrowOnUnsupportedOpenApi31Keywords(unsupportedKeywords);
+        if (!changed)
         {
             return false;
         }
@@ -578,39 +592,490 @@ info:
         return rootObject["openapi"]?.ToString()?.StartsWith("3.1", StringComparison.Ordinal) == true;
     }
 
-    private static bool NormalizeNumericExclusiveBounds(JsonNode? node)
+    private static void ThrowOnUnsupportedOpenApi31Keywords(List<string> unsupportedKeywords)
+    {
+        if (unsupportedKeywords.Count == 0)
+        {
+            return;
+        }
+
+        throw new AggregateException(unsupportedKeywords.Select(static message => new InvalidOperationException(message)));
+    }
+
+    private static bool NormalizeOpenApi31Keywords(
+        JsonNode? node,
+        string path,
+        List<string> unsupportedKeywords)
     {
         return node switch
         {
-            JsonObject jsonObject => NormalizeNumericExclusiveBounds(jsonObject),
-            JsonArray jsonArray => NormalizeNumericExclusiveBounds(jsonArray),
+            JsonObject jsonObject => NormalizeOpenApi31Keywords(jsonObject, path, unsupportedKeywords),
+            JsonArray jsonArray => NormalizeOpenApi31Keywords(jsonArray, path, unsupportedKeywords),
             _ => false,
         };
     }
 
-    private static bool NormalizeNumericExclusiveBounds(JsonObject jsonObject)
+    private static bool NormalizeOpenApi31Keywords(
+        JsonObject jsonObject,
+        string path,
+        List<string> unsupportedKeywords)
     {
         var changed = NormalizeExclusiveMinimum(jsonObject);
         changed |= NormalizeExclusiveMaximum(jsonObject);
+        changed |= NormalizeOpenApi31SchemaKeywords(jsonObject, path, unsupportedKeywords);
 
         foreach (var property in jsonObject.ToList())
         {
-            changed |= NormalizeNumericExclusiveBounds(property.Value);
+            if (ShouldSkipOpenApi31KeywordTraversal(property.Key))
+            {
+                continue;
+            }
+
+            changed |= NormalizeOpenApi31Keywords(
+                property.Value,
+                AppendJsonPointer(path, property.Key),
+                unsupportedKeywords);
         }
 
         return changed;
     }
 
-    private static bool NormalizeNumericExclusiveBounds(JsonArray jsonArray)
+    private static bool NormalizeOpenApi31Keywords(
+        JsonArray jsonArray,
+        string path,
+        List<string> unsupportedKeywords)
     {
         var changed = false;
 
-        foreach (var item in jsonArray)
+        for (var i = 0; i < jsonArray.Count; i++)
         {
-            changed |= NormalizeNumericExclusiveBounds(item);
+            changed |= NormalizeOpenApi31Keywords(
+                jsonArray[i],
+                AppendJsonPointer(path, i.ToString(CultureInfo.InvariantCulture)),
+                unsupportedKeywords);
         }
 
         return changed;
+    }
+
+    private static bool NormalizeOpenApi31SchemaKeywords(
+        JsonObject jsonObject,
+        string path,
+        List<string> unsupportedKeywords)
+    {
+        if (!LooksLikeSchemaObject(jsonObject, path))
+        {
+            return false;
+        }
+
+        var changed = false;
+
+        changed |= MoveKeywordToExtension(jsonObject, "propertyNames");
+        changed |= MoveKeywordToExtension(jsonObject, "dependentRequired");
+        changed |= MoveKeywordToExtension(jsonObject, "dependentSchemas");
+        changed |= NormalizeContentEncodingKeyword(jsonObject);
+        changed |= NormalizeContentMediaTypeKeyword(jsonObject);
+        changed |= MoveKeywordToExtension(jsonObject, "contentSchema");
+        changed |= NormalizeUnevaluatedPropertiesKeyword(jsonObject, path, unsupportedKeywords);
+        changed |= NormalizeUnevaluatedItemsKeyword(jsonObject);
+        changed |= NormalizePrefixItemsKeyword(jsonObject);
+        changed |= NormalizeBooleanItemsKeyword(jsonObject);
+        changed |= NormalizePatternPropertiesKeyword(jsonObject, path, unsupportedKeywords);
+
+        TrackUnsupportedOpenApi31Keyword(
+            jsonObject,
+            path,
+            unsupportedKeywords,
+            "contains",
+            "AutoSDK cannot translate array contains constraints into the current model pipeline yet.");
+        TrackUnsupportedOpenApi31Keyword(
+            jsonObject,
+            path,
+            unsupportedKeywords,
+            "minContains",
+            "AutoSDK cannot translate array contains constraints into the current model pipeline yet.");
+        TrackUnsupportedOpenApi31Keyword(
+            jsonObject,
+            path,
+            unsupportedKeywords,
+            "maxContains",
+            "AutoSDK cannot translate array contains constraints into the current model pipeline yet.");
+
+        return changed;
+    }
+
+    private static bool NormalizeContentEncodingKeyword(JsonObject jsonObject)
+    {
+        var changed = false;
+        if (TryGetStringValue(jsonObject["contentEncoding"], out var contentEncoding) &&
+            !HasFormat(jsonObject))
+        {
+            switch (contentEncoding)
+            {
+                case "base64":
+                case "base64url":
+                    jsonObject["type"] ??= "string";
+                    jsonObject["format"] = "byte";
+                    changed = true;
+                    break;
+                case "binary":
+                    jsonObject["type"] ??= "string";
+                    jsonObject["format"] = "binary";
+                    changed = true;
+                    break;
+            }
+        }
+
+        return MoveKeywordToExtension(jsonObject, "contentEncoding") || changed;
+    }
+
+    private static bool NormalizeContentMediaTypeKeyword(JsonObject jsonObject)
+    {
+        var changed = false;
+        if (TryGetStringValue(jsonObject["contentMediaType"], out var contentMediaType) &&
+            contentMediaType != null &&
+            IsBinaryContentMediaType(contentMediaType) &&
+            !HasFormat(jsonObject))
+        {
+            jsonObject["type"] ??= "string";
+            jsonObject["format"] = "binary";
+            changed = true;
+        }
+
+        return MoveKeywordToExtension(jsonObject, "contentMediaType") || changed;
+    }
+
+    private static bool NormalizeUnevaluatedPropertiesKeyword(
+        JsonObject jsonObject,
+        string path,
+        List<string> unsupportedKeywords)
+    {
+        if (!jsonObject.TryGetPropertyValue("unevaluatedProperties", out var unevaluatedPropertiesNode))
+        {
+            return false;
+        }
+
+        if (TryGetBooleanValue(unevaluatedPropertiesNode, out var allowUnevaluatedProperties) &&
+            allowUnevaluatedProperties)
+        {
+            return MoveKeywordToExtension(jsonObject, "unevaluatedProperties");
+        }
+
+        if (jsonObject.TryGetPropertyValue("additionalProperties", out var additionalPropertiesNode))
+        {
+            if (JsonNode.DeepEquals(additionalPropertiesNode, unevaluatedPropertiesNode))
+            {
+                return MoveKeywordToExtension(jsonObject, "unevaluatedProperties");
+            }
+
+            TrackUnsupportedOpenApi31Keyword(
+                jsonObject,
+                path,
+                unsupportedKeywords,
+                "unevaluatedProperties",
+                "AutoSDK cannot reconcile it with an existing additionalProperties schema automatically.");
+            return false;
+        }
+
+        if (!CanMapUnevaluatedPropertiesToAdditionalProperties(jsonObject))
+        {
+            TrackUnsupportedOpenApi31Keyword(
+                jsonObject,
+                path,
+                unsupportedKeywords,
+                "unevaluatedProperties",
+                "AutoSDK only auto-maps this keyword when the schema does not rely on composition or regex-based property evaluation.");
+            return false;
+        }
+
+        var changed = false;
+        jsonObject["additionalProperties"] = unevaluatedPropertiesNode?.DeepClone();
+        changed = true;
+        changed |= MoveKeywordToExtension(jsonObject, "unevaluatedProperties");
+        return changed;
+    }
+
+    private static bool NormalizeUnevaluatedItemsKeyword(JsonObject jsonObject)
+    {
+        if (!jsonObject.TryGetPropertyValue("unevaluatedItems", out var unevaluatedItemsNode))
+        {
+            return false;
+        }
+
+        var changed = false;
+        if (TryGetBooleanValue(unevaluatedItemsNode, out var allowUnevaluatedItems))
+        {
+            if (!allowUnevaluatedItems)
+            {
+                if (jsonObject["prefixItems"] is JsonArray prefixItems &&
+                    jsonObject["maxItems"] == null)
+                {
+                    jsonObject["maxItems"] = prefixItems.Count;
+                    changed = true;
+                }
+                else if (jsonObject["items"] == null &&
+                         jsonObject["maxItems"] == null)
+                {
+                    jsonObject["maxItems"] = 0;
+                    changed = true;
+                }
+            }
+        }
+        else if (jsonObject["items"] == null)
+        {
+            jsonObject["items"] = unevaluatedItemsNode?.DeepClone();
+            changed = true;
+        }
+
+        return MoveKeywordToExtension(jsonObject, "unevaluatedItems") || changed;
+    }
+
+    private static bool NormalizePrefixItemsKeyword(JsonObject jsonObject)
+    {
+        if (jsonObject["prefixItems"] is not JsonArray prefixItems)
+        {
+            return false;
+        }
+
+        var itemCandidates = new JsonArray();
+        foreach (var prefixItem in prefixItems)
+        {
+            itemCandidates.Add(prefixItem?.DeepClone());
+        }
+
+        var closeTuple = false;
+        if (jsonObject.TryGetPropertyValue("items", out var itemsNode))
+        {
+            if (TryGetBooleanValue(itemsNode, out var allowAdditionalItems))
+            {
+                closeTuple = !allowAdditionalItems;
+            }
+            else
+            {
+                itemCandidates.Add(itemsNode?.DeepClone());
+            }
+        }
+
+        if (jsonObject.TryGetPropertyValue("additionalItems", out var additionalItemsNode))
+        {
+            if (TryGetBooleanValue(additionalItemsNode, out var allowAdditionalTupleItems))
+            {
+                closeTuple |= !allowAdditionalTupleItems;
+            }
+            else
+            {
+                itemCandidates.Add(additionalItemsNode?.DeepClone());
+            }
+        }
+
+        JsonNode? replacementItems = itemCandidates.Count switch
+        {
+            0 => null,
+            1 => itemCandidates[0]?.DeepClone(),
+            _ => new JsonObject
+            {
+                ["anyOf"] = itemCandidates.DeepClone(),
+            },
+        };
+
+        var changed = false;
+        if (replacementItems != null)
+        {
+            jsonObject["items"] = replacementItems;
+            changed = true;
+        }
+
+        if (closeTuple &&
+            jsonObject["maxItems"] == null)
+        {
+            jsonObject["maxItems"] = prefixItems.Count;
+            changed = true;
+        }
+
+        changed |= jsonObject.Remove("prefixItems");
+        changed |= jsonObject.Remove("additionalItems");
+        return changed;
+    }
+
+    private static bool NormalizeBooleanItemsKeyword(JsonObject jsonObject)
+    {
+        if (jsonObject.ContainsKey("prefixItems") ||
+            !TryGetBooleanValue(jsonObject["items"], out var allowItems))
+        {
+            return false;
+        }
+
+        var changed = false;
+        if (!allowItems &&
+            jsonObject["maxItems"] == null)
+        {
+            jsonObject["maxItems"] = 0;
+            changed = true;
+        }
+
+        return jsonObject.Remove("items") || changed;
+    }
+
+    private static bool NormalizePatternPropertiesKeyword(
+        JsonObject jsonObject,
+        string path,
+        List<string> unsupportedKeywords)
+    {
+        if (jsonObject["patternProperties"] is not JsonObject patternProperties)
+        {
+            return false;
+        }
+
+        if (patternProperties.Count == 1 &&
+            patternProperties.FirstOrDefault() is var patternProperty &&
+            IsMatchAllPattern(patternProperty.Key) &&
+            !jsonObject.ContainsKey("additionalProperties"))
+        {
+            jsonObject["additionalProperties"] = patternProperty.Value?.DeepClone();
+            var changed = true;
+            changed |= MoveKeywordToExtension(jsonObject, "patternProperties");
+            return changed;
+        }
+
+        TrackUnsupportedOpenApi31Keyword(
+            jsonObject,
+            path,
+            unsupportedKeywords,
+            "patternProperties",
+            "AutoSDK cannot model regex-keyed object maps beyond a catch-all pattern yet.");
+        return false;
+    }
+
+    private static bool MoveKeywordToExtension(
+        JsonObject jsonObject,
+        string keyword)
+    {
+        if (!jsonObject.TryGetPropertyValue(keyword, out var keywordValue))
+        {
+            return false;
+        }
+
+        jsonObject[GetTrackedKeywordExtensionName(keyword)] = keywordValue?.DeepClone();
+        return jsonObject.Remove(keyword);
+    }
+
+    private static string GetTrackedKeywordExtensionName(string keyword)
+    {
+        return "x-autosdk-json-schema-" + keyword;
+    }
+
+    private static void TrackUnsupportedOpenApi31Keyword(
+        JsonObject jsonObject,
+        string path,
+        List<string> unsupportedKeywords,
+        string keyword,
+        string detail)
+    {
+        if (!jsonObject.ContainsKey(keyword))
+        {
+            return;
+        }
+
+        var message =
+            $"OpenAPI 3.1 keyword '{keyword}' is not supported yet at {path}. {detail} " +
+            "Simplify the schema or use an OpenAPI override before generation.";
+        if (!unsupportedKeywords.Contains(message))
+        {
+            unsupportedKeywords.Add(message);
+        }
+    }
+
+    private static bool CanMapUnevaluatedPropertiesToAdditionalProperties(JsonObject jsonObject)
+    {
+        return !jsonObject.ContainsKey("allOf") &&
+               !jsonObject.ContainsKey("anyOf") &&
+               !jsonObject.ContainsKey("oneOf") &&
+               !jsonObject.ContainsKey("not") &&
+               !jsonObject.ContainsKey("if") &&
+               !jsonObject.ContainsKey("then") &&
+               !jsonObject.ContainsKey("else") &&
+               !jsonObject.ContainsKey("patternProperties") &&
+               !jsonObject.ContainsKey("dependentSchemas");
+    }
+
+    private static bool HasFormat(JsonObject jsonObject)
+    {
+        return TryGetStringValue(jsonObject["format"], out _);
+    }
+
+    private static bool IsBinaryContentMediaType(string mediaType)
+    {
+        return mediaType.StartsWith("application/octet-stream", StringComparison.OrdinalIgnoreCase) ||
+               mediaType.StartsWith("image/", StringComparison.OrdinalIgnoreCase) ||
+               mediaType.StartsWith("audio/", StringComparison.OrdinalIgnoreCase) ||
+               mediaType.StartsWith("video/", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool IsMatchAllPattern(string pattern)
+    {
+        return string.Equals(pattern, ".*", StringComparison.Ordinal) ||
+               string.Equals(pattern, "^.*$", StringComparison.Ordinal) ||
+               string.Equals(pattern, "^[\\s\\S]*$", StringComparison.Ordinal);
+    }
+
+    private static bool ShouldSkipOpenApi31KeywordTraversal(string propertyName)
+    {
+        return propertyName.StartsWith("x-", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static string AppendJsonPointer(string path, string segment)
+    {
+        return path + "/" + segment.Replace("~", "~0").Replace("/", "~1");
+    }
+
+    private static bool LooksLikeSchemaObject(
+        JsonObject jsonObject,
+        string path)
+    {
+        return path.EndsWith("/schema", StringComparison.Ordinal) ||
+               path.EndsWith("/items", StringComparison.Ordinal) ||
+               path.EndsWith("/additionalProperties", StringComparison.Ordinal) ||
+               path.EndsWith("/not", StringComparison.Ordinal) ||
+               jsonObject.ContainsKey("$ref") ||
+               jsonObject.ContainsKey("type") ||
+               jsonObject.ContainsKey("properties") ||
+               jsonObject.ContainsKey("allOf") ||
+               jsonObject.ContainsKey("oneOf") ||
+               jsonObject.ContainsKey("anyOf") ||
+               jsonObject.ContainsKey("items") ||
+               jsonObject.ContainsKey("additionalProperties") ||
+               jsonObject.ContainsKey("patternProperties") ||
+               jsonObject.ContainsKey("propertyNames") ||
+               jsonObject.ContainsKey("prefixItems") ||
+               jsonObject.ContainsKey("unevaluatedProperties") ||
+               jsonObject.ContainsKey("unevaluatedItems") ||
+               jsonObject.ContainsKey("contentEncoding") ||
+               jsonObject.ContainsKey("contentMediaType") ||
+               jsonObject.ContainsKey("contentSchema") ||
+               jsonObject.ContainsKey("dependentRequired") ||
+               jsonObject.ContainsKey("dependentSchemas") ||
+               jsonObject.ContainsKey("contains") ||
+               jsonObject.ContainsKey("minContains") ||
+               jsonObject.ContainsKey("maxContains");
+    }
+
+    private static bool TryGetBooleanValue(
+        JsonNode? node,
+        out bool value)
+    {
+        value = default;
+        return node is JsonValue jsonValue &&
+               jsonValue.TryGetValue(out value);
+    }
+
+    private static bool TryGetStringValue(
+        JsonNode? node,
+        out string? value)
+    {
+        value = null;
+        return node is JsonValue jsonValue &&
+               jsonValue.TryGetValue(out value) &&
+               !string.IsNullOrWhiteSpace(value);
     }
 
     private static bool NormalizeExclusiveMinimum(JsonObject jsonObject)
