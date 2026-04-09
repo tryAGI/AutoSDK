@@ -12,6 +12,7 @@ public record struct ModelData(
     ModelStyle Style,
     ImmutableArray<PropertyData> Properties,
     ImmutableArray<PropertyData> EnumValues,
+    bool IsOpenEnum,
     string Summary,
     string Description,
     bool IsDeprecated,

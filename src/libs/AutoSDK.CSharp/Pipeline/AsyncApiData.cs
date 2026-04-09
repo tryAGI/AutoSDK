@@ -1391,9 +1391,7 @@ public static class AsyncApiData
         CSharpSettings settings)
     {
         return enums
-            .Where(x =>
-                x.Style == ModelStyle.Enumeration &&
-                !x.Settings.UsesNewtonsoftJson())
+            .Where(x => x.Style == ModelStyle.Enumeration)
             .SelectMany(x => new[]
             {
                 $"global::{x.Namespace}.JsonConverters.{x.ClassName}JsonConverter",

@@ -210,8 +210,7 @@ public static partial class Sources
         ModelData data,
         CancellationToken cancellationToken = default)
     {
-        if (data.Style != ModelStyle.Enumeration ||
-            data.Settings.UsesNewtonsoftJson())
+        if (data.Style != ModelStyle.Enumeration)
         {
             return FileWithName.Empty;
         }
@@ -225,8 +224,7 @@ public static partial class Sources
         ModelData data,
         CancellationToken cancellationToken = default)
     {
-        if (data.Style != ModelStyle.Enumeration ||
-            data.Settings.UsesNewtonsoftJson())
+        if (data.Style != ModelStyle.Enumeration)
         {
             return FileWithName.Empty;
         }

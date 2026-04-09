@@ -535,8 +535,7 @@ public static class Data
         // Enum converters
         foreach (var x in enums)
         {
-            if (x.Style == ModelStyle.Enumeration &&
-                !x.Settings.UsesNewtonsoftJson())
+            if (x.Style == ModelStyle.Enumeration)
             {
                 convertersBuilder.Add($"global::{x.Namespace}.JsonConverters.{x.ClassName}JsonConverter");
                 convertersBuilder.Add($"global::{x.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter");
@@ -902,8 +901,7 @@ public static class Data
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
         foreach (var value in enums)
         {
-            if (value.Style == ModelStyle.Enumeration &&
-                !value.Settings.UsesNewtonsoftJson())
+            if (value.Style == ModelStyle.Enumeration)
             {
                 convertersBuilder.Add($"global::{value.Namespace}.JsonConverters.{value.ClassName}JsonConverter");
                 convertersBuilder.Add($"global::{value.Namespace}.JsonConverters.{value.ClassName}NullableJsonConverter");
