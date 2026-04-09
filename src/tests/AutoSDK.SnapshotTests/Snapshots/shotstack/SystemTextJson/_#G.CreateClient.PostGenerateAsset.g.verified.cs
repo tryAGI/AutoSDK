@@ -6,6 +6,25 @@ namespace G
 {
     public partial class CreateClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostGenerateAssetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PostGenerateAssetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PostGenerateAssetSecurityRequirement0,
+            };
         partial void PreparePostGenerateAssetArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.GeneratedAsset request);
@@ -42,6 +61,12 @@ namespace G
             PreparePostGenerateAssetArguments(
                 httpClient: HttpClient,
                 request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostGenerateAssetSecurityRequirements,
+                operationName: "PostGenerateAssetAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/create/v1/assets",

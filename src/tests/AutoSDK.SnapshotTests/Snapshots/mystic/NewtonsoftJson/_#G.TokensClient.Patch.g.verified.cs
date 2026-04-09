@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TokensClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PatchSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PatchSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PatchSecurityRequirement0,
+            };
         partial void PreparePatchArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string tokenId,
@@ -46,6 +65,12 @@ namespace G
                 httpClient: HttpClient,
                 tokenId: ref tokenId,
                 request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PatchSecurityRequirements,
+                operationName: "PatchAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/tokens/{tokenId}",

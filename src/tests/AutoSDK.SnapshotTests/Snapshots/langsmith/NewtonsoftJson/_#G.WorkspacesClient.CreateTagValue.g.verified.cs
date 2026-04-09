@@ -6,6 +6,55 @@ namespace G
 {
     public partial class WorkspacesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateTagValueSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateTagValueSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateTagValueSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateTagValueSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateTagValueSecurityRequirement0,
+                s_CreateTagValueSecurityRequirement1,
+                s_CreateTagValueSecurityRequirement2,
+            };
         partial void PrepareCreateTagValueArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid tagKeyId,
@@ -46,6 +95,12 @@ namespace G
                 tagKeyId: ref tagKeyId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateTagValueSecurityRequirements,
+                operationName: "CreateTagValueAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/workspaces/current/tag-keys/{tagKeyId}/tag-values",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +113,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

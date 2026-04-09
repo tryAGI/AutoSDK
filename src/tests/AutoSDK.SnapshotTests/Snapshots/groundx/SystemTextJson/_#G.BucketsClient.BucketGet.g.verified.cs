@@ -6,6 +6,25 @@ namespace G
 {
     public partial class BucketsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_BucketGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_BucketGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_BucketGetSecurityRequirement0,
+            };
         partial void PrepareBucketGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int bucketId);
@@ -40,6 +59,12 @@ namespace G
                 httpClient: HttpClient,
                 bucketId: ref bucketId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_BucketGetSecurityRequirements,
+                operationName: "BucketGetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/bucket/{bucketId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -52,7 +77,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

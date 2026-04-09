@@ -6,6 +6,25 @@ namespace G
 {
     public partial class EvalsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateEvalRunSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateEvalRunSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateEvalRunSecurityRequirement0,
+            };
         partial void PrepareCreateEvalRunArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string evalId,
@@ -46,6 +65,12 @@ namespace G
                 evalId: ref evalId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateEvalRunSecurityRequirements,
+                operationName: "CreateEvalRunAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/evals/{evalId}/runs",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

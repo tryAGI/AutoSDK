@@ -6,6 +6,25 @@ namespace G
 {
     public partial class UsersClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetAdminUsersSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetAdminUsersSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetAdminUsersSecurityRequirement0,
+            };
         partial void PrepareGetAdminUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? xPortkeyApiKey,
@@ -87,6 +106,12 @@ namespace G
                 role: ref role,
                 email: ref email);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAdminUsersSecurityRequirements,
+                operationName: "GetAdminUsersAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/admin/users",
                 baseUri: HttpClient.BaseAddress); 
@@ -105,7 +130,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

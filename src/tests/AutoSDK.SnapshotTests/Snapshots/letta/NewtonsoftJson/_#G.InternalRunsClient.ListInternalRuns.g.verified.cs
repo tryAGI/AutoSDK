@@ -8,6 +8,25 @@ namespace G
 {
     public partial class InternalRunsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListInternalRunsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListInternalRunsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListInternalRunsSecurityRequirement0,
+            };
         partial void PrepareListInternalRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? runId,
@@ -210,6 +229,12 @@ namespace G
                 startDate: startDate,
                 endDate: endDate);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListInternalRunsSecurityRequirements,
+                operationName: "ListInternalRunsAsync");
+
             var stepCountOperatorValue = stepCountOperator switch
             {
                 global::G.ComparisonOperator.Eq => "eq",
@@ -267,7 +292,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

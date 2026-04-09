@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DatasetClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateDatasetRowSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateDatasetRowSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateDatasetRowSecurityRequirement0,
+            };
         partial void PrepareCreateDatasetRowArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
@@ -51,6 +70,12 @@ namespace G
                 promptVersionId: ref promptVersionId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateDatasetRowSecurityRequirements,
+                operationName: "CreateDatasetRowAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/experiment/dataset/{datasetId}/version/{promptVersionId}/row/new",
                 baseUri: HttpClient.BaseAddress); 
@@ -63,7 +88,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

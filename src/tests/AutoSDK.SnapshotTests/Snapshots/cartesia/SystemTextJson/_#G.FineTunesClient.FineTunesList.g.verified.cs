@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FineTunesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_FineTunesListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_FineTunesListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_FineTunesListSecurityRequirement0,
+            };
         partial void PrepareFineTunesListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.FineTunesListCartesiaVersion cartesiaVersion,
@@ -55,6 +74,12 @@ namespace G
                 startingAfter: ref startingAfter,
                 endingBefore: ref endingBefore);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_FineTunesListSecurityRequirements,
+                operationName: "FineTunesListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/fine-tunes/",
                 baseUri: HttpClient.BaseAddress); 
@@ -72,7 +97,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

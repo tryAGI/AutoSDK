@@ -6,6 +6,25 @@ namespace G
 {
     public partial class OrganizationManagementClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetOrgConsumerConnectedToolkitsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-user-api-key",
+                        FriendlyName = "UserApiKeyAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetOrgConsumerConnectedToolkitsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetOrgConsumerConnectedToolkitsSecurityRequirement0,
+            };
         partial void PrepareGetOrgConsumerConnectedToolkitsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string userId,
@@ -56,6 +75,12 @@ namespace G
                 xUserApiKey: ref xUserApiKey,
                 xOrgId: ref xOrgId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetOrgConsumerConnectedToolkitsSecurityRequirements,
+                operationName: "GetOrgConsumerConnectedToolkitsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v3/org/consumer/connected_toolkits",
                 baseUri: HttpClient.BaseAddress); 
@@ -71,7 +96,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

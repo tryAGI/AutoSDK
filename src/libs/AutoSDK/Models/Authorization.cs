@@ -6,6 +6,7 @@ namespace AutoSDK.Models;
 public record struct Authorization(
     string FriendlyName,
     string MethodName,
+    string SchemeId,
     SecuritySchemeType? Type,
     ParameterLocation? In,
     EquatableArray<string> Parameters,

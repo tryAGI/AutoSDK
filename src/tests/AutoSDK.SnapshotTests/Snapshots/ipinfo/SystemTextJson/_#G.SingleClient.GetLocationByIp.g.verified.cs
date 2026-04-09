@@ -6,6 +6,55 @@ namespace G
 {
     public partial class SingleClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetLocationByIpSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetLocationByIpSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetLocationByIpSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "token",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetLocationByIpSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetLocationByIpSecurityRequirement0,
+                s_GetLocationByIpSecurityRequirement1,
+                s_GetLocationByIpSecurityRequirement2,
+            };
         partial void PrepareGetLocationByIpArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string ip);
@@ -39,10 +88,16 @@ namespace G
                 httpClient: HttpClient,
                 ip: ref ip);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetLocationByIpSecurityRequirements,
+                operationName: "GetLocationByIpAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/{ip}/loc",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
@@ -59,7 +114,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

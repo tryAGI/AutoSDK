@@ -429,7 +429,7 @@ public static partial class Sources
         OperationContext operation)
     {
         var opSecurity = operation.Operation.Security;
-        if (opSecurity is { Count: > 0 })
+        if (opSecurity != null)
         {
             return opSecurity;
         }

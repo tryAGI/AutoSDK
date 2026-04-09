@@ -6,6 +6,34 @@ namespace G
 {
     public partial class ProjectTagsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetProjectTagIdSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetProjectTagIdSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetProjectTagIdSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetProjectTagIdSecurityRequirement0,
+                s_GetProjectTagIdSecurityRequirement1,
+            };
         partial void PrepareGetProjectTagIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid projectTagId);
@@ -41,6 +69,12 @@ namespace G
                 httpClient: HttpClient,
                 projectTagId: ref projectTagId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetProjectTagIdSecurityRequirements,
+                operationName: "GetProjectTagIdAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/project_tag/{projectTagId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,7 +87,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

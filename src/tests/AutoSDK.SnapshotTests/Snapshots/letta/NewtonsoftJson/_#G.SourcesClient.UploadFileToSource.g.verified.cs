@@ -6,6 +6,25 @@ namespace G
 {
     public partial class SourcesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_UploadFileToSourceSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_UploadFileToSourceSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_UploadFileToSourceSecurityRequirement0,
+            };
         partial void PrepareUploadFileToSourceArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string sourceId,
@@ -65,6 +84,12 @@ namespace G
                 name: ref name,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UploadFileToSourceSecurityRequirements,
+                operationName: "UploadFileToSourceAsync");
+
             var duplicateHandlingValue = duplicateHandling switch
             {
                 global::G.DuplicateFileHandling.Skip => "skip",
@@ -89,7 +114,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

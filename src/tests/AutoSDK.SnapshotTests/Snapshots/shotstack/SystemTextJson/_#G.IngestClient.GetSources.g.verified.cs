@@ -6,6 +6,25 @@ namespace G
 {
     public partial class IngestClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSourcesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetSourcesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetSourcesSecurityRequirement0,
+            };
         partial void PrepareGetSourcesArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetSourcesRequest(
@@ -34,6 +53,12 @@ namespace G
                 client: HttpClient);
             PrepareGetSourcesArguments(
                 httpClient: HttpClient);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSourcesSecurityRequirements,
+                operationName: "GetSourcesAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/ingest/v1/sources",

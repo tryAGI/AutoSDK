@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DocumentsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DocumentLookupSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DocumentLookupSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DocumentLookupSecurityRequirement0,
+            };
         partial void PrepareDocumentLookupArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id,
@@ -74,6 +93,12 @@ namespace G
                 status: ref status,
                 nextToken: ref nextToken);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DocumentLookupSecurityRequirements,
+                operationName: "DocumentLookupAsync");
+
             var sortValue = sort switch
             {
                 global::G.Sort.Name => "name",
@@ -115,7 +140,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

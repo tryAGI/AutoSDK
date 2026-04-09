@@ -6,6 +6,25 @@ namespace G
 {
     public partial class CollectionsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PutCollectionsByCollectionIdSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PutCollectionsByCollectionIdSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PutCollectionsByCollectionIdSecurityRequirement0,
+            };
         partial void PreparePutCollectionsByCollectionIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionId,
@@ -70,6 +89,12 @@ namespace G
                 collectionId: ref collectionId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PutCollectionsByCollectionIdSecurityRequirements,
+                operationName: "PutCollectionsByCollectionIdAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/collections/{collectionId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -82,7 +107,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

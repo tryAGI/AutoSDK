@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TokensClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteSecurityRequirement0,
+            };
         partial void PrepareDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string tokenId);
@@ -33,6 +52,12 @@ namespace G
             PrepareDeleteArguments(
                 httpClient: HttpClient,
                 tokenId: ref tokenId);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteSecurityRequirements,
+                operationName: "DeleteAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/tokens/{tokenId}",

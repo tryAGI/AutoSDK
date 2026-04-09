@@ -6,6 +6,47 @@ namespace G
 {
     public partial class SandboxesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateSandboxesBySandboxIDTimeoutSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateSandboxesBySandboxIDTimeoutSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Team",
+                        FriendlyName = "Supabase2TeamAuth",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Token",
+                        FriendlyName = "Supabase1TokenAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateSandboxesBySandboxIDTimeoutSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateSandboxesBySandboxIDTimeoutSecurityRequirement0,
+                s_CreateSandboxesBySandboxIDTimeoutSecurityRequirement1,
+            };
         partial void PrepareCreateSandboxesBySandboxIDTimeoutArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string sandboxID,
@@ -41,6 +82,12 @@ namespace G
                 sandboxID: ref sandboxID,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateSandboxesBySandboxIDTimeoutSecurityRequirements,
+                operationName: "CreateSandboxesBySandboxIDTimeoutAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/sandboxes/{sandboxID}/timeout",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,7 +100,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

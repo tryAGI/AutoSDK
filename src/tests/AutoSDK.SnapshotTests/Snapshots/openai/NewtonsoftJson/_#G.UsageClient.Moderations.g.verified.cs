@@ -6,6 +6,25 @@ namespace G
 {
     public partial class UsageClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ModerationsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ModerationsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ModerationsSecurityRequirement0,
+            };
         partial void PrepareModerationsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int startTime,
@@ -85,6 +104,12 @@ namespace G
                 limit: ref limit,
                 page: ref page);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ModerationsSecurityRequirements,
+                operationName: "ModerationsAsync");
+
             var bucketWidthValue = bucketWidth switch
             {
                 global::G.UsageModerationsBucketWidth.x1m => "1m",
@@ -116,7 +141,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

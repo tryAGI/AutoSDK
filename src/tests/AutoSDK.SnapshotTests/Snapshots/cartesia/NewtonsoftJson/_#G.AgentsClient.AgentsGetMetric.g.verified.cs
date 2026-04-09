@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AgentsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_AgentsGetMetricSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_AgentsGetMetricSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_AgentsGetMetricSecurityRequirement0,
+            };
         partial void PrepareAgentsGetMetricArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.AgentsGetMetricCartesiaVersion cartesiaVersion,
@@ -46,6 +65,12 @@ namespace G
                 cartesiaVersion: ref cartesiaVersion,
                 metricId: ref metricId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_AgentsGetMetricSecurityRequirements,
+                operationName: "AgentsGetMetricAsync");
+
             var cartesiaVersionValue = cartesiaVersion switch
             {
                 global::G.AgentsGetMetricCartesiaVersion.x20240610 => "2024-06-10",
@@ -66,7 +91,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

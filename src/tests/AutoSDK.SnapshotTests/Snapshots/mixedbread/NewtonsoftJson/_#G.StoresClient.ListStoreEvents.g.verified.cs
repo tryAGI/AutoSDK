@@ -6,6 +6,25 @@ namespace G
 {
     public partial class StoresClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListStoreEventsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListStoreEventsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListStoreEventsSecurityRequirement0,
+            };
         partial void PrepareListStoreEventsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.AnyOf<string, global::System.Guid?> storeIdentifier,
@@ -97,6 +116,12 @@ namespace G
                 filterAfter: filterAfter,
                 eventType: ref eventType);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListStoreEventsSecurityRequirements,
+                operationName: "ListStoreEventsAsync");
+
             var eventTypeValue = eventType switch
             {
                 global::G.ListStoreEventsEventType.Ingestion => "ingestion",
@@ -124,7 +149,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

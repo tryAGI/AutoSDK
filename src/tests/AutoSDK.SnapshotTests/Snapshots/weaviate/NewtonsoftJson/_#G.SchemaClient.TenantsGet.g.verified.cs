@@ -6,6 +6,34 @@ namespace G
 {
     public partial class SchemaClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_TenantsGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_TenantsGetSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "OAuth2",
+                        Location = "Header",
+                        Name = "",
+                        FriendlyName = "OAuth2",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_TenantsGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_TenantsGetSecurityRequirement0,
+                s_TenantsGetSecurityRequirement1,
+            };
         partial void PrepareTenantsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string className,
@@ -46,6 +74,12 @@ namespace G
                 className: ref className,
                 consistency: ref consistency);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_TenantsGetSecurityRequirements,
+                operationName: "TenantsGetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/schema/{className}/tenants",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +92,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -93,7 +127,7 @@ namespace G
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 

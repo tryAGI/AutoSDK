@@ -6,6 +6,34 @@ namespace G
 {
     public partial class ViewsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetViewSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetViewSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetViewSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetViewSecurityRequirement0,
+                s_GetViewSecurityRequirement1,
+            };
         partial void PrepareGetViewArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
@@ -92,6 +120,12 @@ namespace G
                 objectType: ref objectType,
                 objectId: ref objectId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetViewSecurityRequirements,
+                operationName: "GetViewAsync");
+
             var viewTypeValue = viewType switch
             {
                 global::G.ViewType.Projects => "projects",
@@ -150,7 +184,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

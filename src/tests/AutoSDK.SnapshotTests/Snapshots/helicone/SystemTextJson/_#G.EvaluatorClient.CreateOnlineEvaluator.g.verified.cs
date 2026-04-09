@@ -6,6 +6,25 @@ namespace G
 {
     public partial class EvaluatorClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateOnlineEvaluatorSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateOnlineEvaluatorSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateOnlineEvaluatorSecurityRequirement0,
+            };
         partial void PrepareCreateOnlineEvaluatorArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string evaluatorId,
@@ -46,6 +65,12 @@ namespace G
                 evaluatorId: ref evaluatorId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateOnlineEvaluatorSecurityRequirements,
+                operationName: "CreateOnlineEvaluatorAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/evaluator/{evaluatorId}/onlineEvaluators",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

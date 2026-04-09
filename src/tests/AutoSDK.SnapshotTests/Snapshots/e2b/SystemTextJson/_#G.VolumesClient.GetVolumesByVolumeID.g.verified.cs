@@ -6,6 +6,47 @@ namespace G
 {
     public partial class VolumesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetVolumesByVolumeIDSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetVolumesByVolumeIDSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Team",
+                        FriendlyName = "Supabase2TeamAuth",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Token",
+                        FriendlyName = "Supabase1TokenAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetVolumesByVolumeIDSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetVolumesByVolumeIDSecurityRequirement0,
+                s_GetVolumesByVolumeIDSecurityRequirement1,
+            };
         partial void PrepareGetVolumesByVolumeIDArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string volumeID);
@@ -38,6 +79,12 @@ namespace G
                 httpClient: HttpClient,
                 volumeID: ref volumeID);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetVolumesByVolumeIDSecurityRequirements,
+                operationName: "GetVolumesByVolumeIDAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/volumes/{volumeID}",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +97,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

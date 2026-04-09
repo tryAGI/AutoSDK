@@ -6,6 +6,25 @@ namespace G
 {
     public partial class MetricsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetAverageTokensPerRequestSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetAverageTokensPerRequestSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetAverageTokensPerRequestSecurityRequirement0,
+            };
         partial void PrepareGetAverageTokensPerRequestArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.MetricsFilterBody request);
@@ -41,6 +60,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAverageTokensPerRequestSecurityRequirements,
+                operationName: "GetAverageTokensPerRequestAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/metrics/averageTokensPerRequest",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,7 +78,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

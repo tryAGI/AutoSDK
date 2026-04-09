@@ -8,6 +8,25 @@ namespace G
 {
     public partial class JobsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListActiveJobsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListActiveJobsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListActiveJobsSecurityRequirement0,
+            };
         partial void PrepareListActiveJobsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? sourceId,
@@ -74,6 +93,12 @@ namespace G
                 limit: limit,
                 ascending: ref ascending);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListActiveJobsSecurityRequirements,
+                operationName: "ListActiveJobsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/jobs/active",
                 baseUri: HttpClient.BaseAddress); 
@@ -93,7 +118,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

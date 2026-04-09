@@ -875,6 +875,7 @@ public static class AsyncApiData
 
             authorizations.Add(CSharpAuthorizationFactory.Create(
                 friendlyName: friendlyName,
+                schemeId: kvp.Key,
                 type: securitySchemeType,
                 parameterLocation: paramLocation,
                 parameters: parameters.ToImmutableArray().AsEquatableArray(),

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class SubpackageGuardrailsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListGuardrailMemberAssignmentsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListGuardrailMemberAssignmentsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListGuardrailMemberAssignmentsSecurityRequirement0,
+            };
         partial void PrepareListGuardrailMemberAssignmentsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid id,
@@ -49,6 +68,12 @@ namespace G
                 offset: ref offset,
                 limit: ref limit);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListGuardrailMemberAssignmentsSecurityRequirements,
+                operationName: "ListGuardrailMemberAssignmentsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/guardrails/{id}/assignments/members",
                 baseUri: HttpClient.BaseAddress); 
@@ -65,7 +90,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

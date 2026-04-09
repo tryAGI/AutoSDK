@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ScoresClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ScoresGetManySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ScoresGetManySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ScoresGetManySecurityRequirement0,
+            };
         partial void PrepareScoresGetManyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -138,6 +157,12 @@ namespace G
                 fields: ref fields,
                 filter: ref filter);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ScoresGetManySecurityRequirements,
+                operationName: "ScoresGetManyAsync");
+
             var sourceValue = source switch
             {
                 global::G.ScoreSource.Annotation => "ANNOTATION",
@@ -188,7 +213,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

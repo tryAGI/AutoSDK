@@ -6,6 +6,55 @@ namespace G
 {
     public partial class WorkspacesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListWorkspacesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListWorkspacesSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Organization-Id",
+                        FriendlyName = "OrganizationId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListWorkspacesSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListWorkspacesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListWorkspacesSecurityRequirement0,
+                s_ListWorkspacesSecurityRequirement1,
+                s_ListWorkspacesSecurityRequirement2,
+            };
         partial void PrepareListWorkspacesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? includeDeleted);
@@ -41,6 +90,12 @@ namespace G
                 httpClient: HttpClient,
                 includeDeleted: ref includeDeleted);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListWorkspacesSecurityRequirements,
+                operationName: "ListWorkspacesAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/workspaces",
                 baseUri: HttpClient.BaseAddress); 
@@ -56,7 +111,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

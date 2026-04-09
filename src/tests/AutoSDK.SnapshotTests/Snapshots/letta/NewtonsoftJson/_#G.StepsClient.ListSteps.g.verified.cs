@@ -6,6 +6,25 @@ namespace G
 {
     public partial class StepsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListStepsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListStepsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListStepsSecurityRequirement0,
+            };
         partial void PrepareListStepsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? before,
@@ -142,6 +161,12 @@ namespace G
                 projectId: ref projectId,
                 xProject: ref xProject);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListStepsSecurityRequirements,
+                operationName: "ListStepsAsync");
+
             var orderValue = order switch
             {
                 global::G.ListStepsOrder.Asc => "asc",
@@ -176,7 +201,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

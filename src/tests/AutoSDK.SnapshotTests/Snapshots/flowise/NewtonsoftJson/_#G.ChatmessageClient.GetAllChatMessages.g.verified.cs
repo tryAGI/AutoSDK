@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ChatmessageClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetAllChatMessagesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetAllChatMessagesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetAllChatMessagesSecurityRequirement0,
+            };
         partial void PrepareGetAllChatMessagesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id,
@@ -90,6 +109,12 @@ namespace G
                 feedback: ref feedback,
                 feedbackType: ref feedbackType);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAllChatMessagesSecurityRequirements,
+                operationName: "GetAllChatMessagesAsync");
+
             var chatTypeValue = chatType switch
             {
                 global::G.GetAllChatMessagesChatType.Internal => "INTERNAL",
@@ -131,7 +156,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

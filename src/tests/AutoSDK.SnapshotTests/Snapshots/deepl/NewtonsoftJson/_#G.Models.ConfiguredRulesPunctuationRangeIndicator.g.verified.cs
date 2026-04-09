@@ -84,12 +84,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="use_japanese_word_から")]
-        UseJapaneseWord__,
+        UseJapaneseWordから,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="use_korean_words_부터_까지")]
-        UseKoreanWords____,
+        UseKoreanWords부터까지,
         /// <summary>
         /// 
         /// </summary>
@@ -128,8 +128,8 @@ namespace G
                 ConfiguredRulesPunctuationRangeIndicator.UseHyphenWithoutSpaceOnEitherSide => "use_hyphen_without_space_on_either_side",
                 ConfiguredRulesPunctuationRangeIndicator.UseHyphenWithoutSpaces => "use_hyphen_without_spaces",
                 ConfiguredRulesPunctuationRangeIndicator.UseItalianWordsDaA => "use_italian_words_da_a",
-                ConfiguredRulesPunctuationRangeIndicator.UseJapaneseWord__ => "use_japanese_word_から",
-                ConfiguredRulesPunctuationRangeIndicator.UseKoreanWords____ => "use_korean_words_부터_까지",
+                ConfiguredRulesPunctuationRangeIndicator.UseJapaneseWordから => "use_japanese_word_から",
+                ConfiguredRulesPunctuationRangeIndicator.UseKoreanWords부터까지 => "use_korean_words_부터_까지",
                 ConfiguredRulesPunctuationRangeIndicator.UseSpanishWordsDeA => "use_spanish_words_de_a",
                 ConfiguredRulesPunctuationRangeIndicator.UseTilde => "use_tilde",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -156,8 +156,8 @@ namespace G
                 "use_hyphen_without_space_on_either_side" => ConfiguredRulesPunctuationRangeIndicator.UseHyphenWithoutSpaceOnEitherSide,
                 "use_hyphen_without_spaces" => ConfiguredRulesPunctuationRangeIndicator.UseHyphenWithoutSpaces,
                 "use_italian_words_da_a" => ConfiguredRulesPunctuationRangeIndicator.UseItalianWordsDaA,
-                "use_japanese_word_から" => ConfiguredRulesPunctuationRangeIndicator.UseJapaneseWord__,
-                "use_korean_words_부터_까지" => ConfiguredRulesPunctuationRangeIndicator.UseKoreanWords____,
+                "use_japanese_word_から" => ConfiguredRulesPunctuationRangeIndicator.UseJapaneseWordから,
+                "use_korean_words_부터_까지" => ConfiguredRulesPunctuationRangeIndicator.UseKoreanWords부터까지,
                 "use_spanish_words_de_a" => ConfiguredRulesPunctuationRangeIndicator.UseSpanishWordsDeA,
                 "use_tilde" => ConfiguredRulesPunctuationRangeIndicator.UseTilde,
                 _ => null,

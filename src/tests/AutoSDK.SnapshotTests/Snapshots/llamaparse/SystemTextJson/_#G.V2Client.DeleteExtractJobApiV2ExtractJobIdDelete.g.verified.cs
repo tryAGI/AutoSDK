@@ -6,6 +6,25 @@ namespace G
 {
     public partial class V2Client
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteExtractJobApiV2ExtractJobIdDeleteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteExtractJobApiV2ExtractJobIdDeleteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteExtractJobApiV2ExtractJobIdDeleteSecurityRequirement0,
+            };
         partial void PrepareDeleteExtractJobApiV2ExtractJobIdDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string jobId,
@@ -54,6 +73,12 @@ namespace G
                 organizationId: organizationId,
                 session: ref session);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteExtractJobApiV2ExtractJobIdDeleteSecurityRequirements,
+                operationName: "DeleteExtractJobApiV2ExtractJobIdDeleteAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v2/extract/{jobId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -70,7 +95,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

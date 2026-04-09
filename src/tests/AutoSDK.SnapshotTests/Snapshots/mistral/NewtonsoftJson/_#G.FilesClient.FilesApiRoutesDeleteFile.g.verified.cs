@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FilesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_FilesApiRoutesDeleteFileSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_FilesApiRoutesDeleteFileSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_FilesApiRoutesDeleteFileSecurityRequirement0,
+            };
         partial void PrepareFilesApiRoutesDeleteFileArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid fileId);
@@ -39,6 +58,12 @@ namespace G
                 httpClient: HttpClient,
                 fileId: ref fileId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_FilesApiRoutesDeleteFileSecurityRequirements,
+                operationName: "FilesApiRoutesDeleteFileAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/files/{fileId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +76,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

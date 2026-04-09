@@ -128,6 +128,130 @@ public class AuthorizationGenerationTests
     }
 
     [TestMethod]
+    public void GenerateAuthorization_ReplacesOnlyMatchingScheme()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Header Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - access-token: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                access-token:
+                                  type: apiKey
+                                  in: header
+                                  name: access-token
+                            """;
+
+        var authorization = GetSingleAuthorization(yaml);
+        var content = Sources.Authorization(authorization).Text;
+
+        content.Should().NotContain("Authorizations.Clear();");
+        content.Should().Contain("for (var i = Authorizations.Count - 1; i >= 0; i--)");
+        content.Should().Contain("__authorization.Type == \"ApiKey\"");
+        content.Should().Contain("__authorization.Location == \"Header\"");
+        content.Should().Contain("__authorization.Name == \"access-token\"");
+    }
+
+    [TestMethod]
+    public void Prepare_PreservesDistinctApiKeyRequirements_ForAndSemantics()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Composite Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - apiKeyAuth: []
+                                      appIdAuth: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                apiKeyAuth:
+                                  type: apiKey
+                                  in: header
+                                  name: X-API-Key
+                                appIdAuth:
+                                  type: apiKey
+                                  in: header
+                                  name: X-App-Id
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateSdk = true,
+            GenerateConstructors = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+
+        data.Authorizations.Select(x => x.FriendlyName)
+            .Should()
+            .Equal("ApiKeyAuth", "AppIdAuth");
+
+        var endPoint = data.Methods.Should().ContainSingle().Subject;
+        endPoint.AuthorizationRequirements.Should().ContainSingle();
+        endPoint.AuthorizationRequirements[0].Authorizations.Select(x => x.FriendlyName)
+            .Should()
+            .Equal("ApiKeyAuth", "AppIdAuth");
+
+        var methodSource = Sources.Method(endPoint).Text;
+        methodSource.Should().Contain("EndPointSecurityResolver.ResolveAuthorizations");
+        methodSource.Should().Contain("foreach (var __authorization in __authorizations)");
+    }
+
+    [TestMethod]
+    public void Prepare_ExplicitEmptyOperationSecurity_DoesNotInheritDocumentRequirements()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Public Ping
+                              version: 1.0.0
+                            security:
+                              - bearerAuth: []
+                            paths:
+                              /ping:
+                                get:
+                                  operationId: getPing
+                                  security: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                bearerAuth:
+                                  type: http
+                                  scheme: bearer
+                            """;
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)DefaultSettings), (CSharpSettings)DefaultSettings));
+        var endPoint = data.Methods.Should().ContainSingle().Subject;
+
+        endPoint.Authorizations.Should().BeEmpty();
+        endPoint.AuthorizationRequirements.Should().BeEmpty();
+
+        var methodSource = Sources.Method(endPoint).Text;
+        methodSource.Should().NotContain("EndPointSecurityResolver.ResolveAuthorizations");
+        methodSource.Should().NotContain("AutoSDKOAuth2Helpers.SendAsync");
+        methodSource.Should().NotContain("foreach (var __authorization in");
+    }
+
+    [TestMethod]
     public void GenerateAuthorization_OAuth2AuthorizationCode_GeneratesAuthorizationCodeHelpers()
     {
         const string yaml = """

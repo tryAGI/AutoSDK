@@ -6,6 +6,55 @@ namespace G
 {
     public partial class DatasetsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ReadDatasetsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ReadDatasetsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ReadDatasetsSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ReadDatasetsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ReadDatasetsSecurityRequirement0,
+                s_ReadDatasetsSecurityRequirement1,
+                s_ReadDatasetsSecurityRequirement2,
+            };
         partial void PrepareReadDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
@@ -93,6 +142,12 @@ namespace G
                 sortByDesc: ref sortByDesc,
                 tagValueId: tagValueId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ReadDatasetsSecurityRequirements,
+                operationName: "ReadDatasetsAsync");
+
             var sortByValue = sortBy switch
             {
                 global::G.SortByDatasetColumn.Name => "name",
@@ -126,7 +181,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

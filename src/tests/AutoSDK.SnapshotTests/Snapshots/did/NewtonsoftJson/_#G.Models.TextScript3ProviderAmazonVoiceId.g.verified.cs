@@ -100,7 +100,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Léa")]
-        L_a,
+        Léa,
         /// <summary>
         /// 
         /// </summary>
@@ -162,7 +162,7 @@ namespace G
                 TextScript3ProviderAmazonVoiceId.Kimberly => "Kimberly",
                 TextScript3ProviderAmazonVoiceId.Lucia => "Lucia",
                 TextScript3ProviderAmazonVoiceId.Lupe => "Lupe",
-                TextScript3ProviderAmazonVoiceId.L_a => "Léa",
+                TextScript3ProviderAmazonVoiceId.Léa => "Léa",
                 TextScript3ProviderAmazonVoiceId.Matthew => "Matthew",
                 TextScript3ProviderAmazonVoiceId.Olivia => "Olivia",
                 TextScript3ProviderAmazonVoiceId.Salli => "Salli",
@@ -196,7 +196,7 @@ namespace G
                 "Kimberly" => TextScript3ProviderAmazonVoiceId.Kimberly,
                 "Lucia" => TextScript3ProviderAmazonVoiceId.Lucia,
                 "Lupe" => TextScript3ProviderAmazonVoiceId.Lupe,
-                "Léa" => TextScript3ProviderAmazonVoiceId.L_a,
+                "Léa" => TextScript3ProviderAmazonVoiceId.Léa,
                 "Matthew" => TextScript3ProviderAmazonVoiceId.Matthew,
                 "Olivia" => TextScript3ProviderAmazonVoiceId.Olivia,
                 "Salli" => TextScript3ProviderAmazonVoiceId.Salli,

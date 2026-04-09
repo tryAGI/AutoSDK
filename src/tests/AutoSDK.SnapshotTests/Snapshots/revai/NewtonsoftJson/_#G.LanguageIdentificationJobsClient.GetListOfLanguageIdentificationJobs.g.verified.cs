@@ -6,6 +6,25 @@ namespace G
 {
     public partial class LanguageIdentificationJobsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetListOfLanguageIdentificationJobsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetListOfLanguageIdentificationJobsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetListOfLanguageIdentificationJobsSecurityRequirement0,
+            };
         partial void PrepareGetListOfLanguageIdentificationJobsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
@@ -44,6 +63,12 @@ namespace G
                 limit: ref limit,
                 startingAfter: ref startingAfter);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetListOfLanguageIdentificationJobsSecurityRequirements,
+                operationName: "GetListOfLanguageIdentificationJobsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/languageid/v1/jobs",
                 baseUri: HttpClient.BaseAddress); 
@@ -60,7 +85,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

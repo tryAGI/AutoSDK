@@ -13,76 +13,105 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LettaStreamingResponseDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaStreamingResponseDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaStreamingResponseDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LettaStreamingResponseDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.SystemMessage? systemMessage = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.SystemMessage)
             {
-                systemMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SystemMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SystemMessage)}");
+                systemMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.UserMessage? userMessage = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.UserMessage)
             {
-                userMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UserMessage)}");
+                userMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ReasoningMessage? hiddenReasoningMessage1 = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.HiddenReasoningMessage)
             {
-                hiddenReasoningMessage1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ReasoningMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ReasoningMessage)}");
+                hiddenReasoningMessage1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.HiddenReasoningMessage? hiddenReasoningMessage2 = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.HiddenReasoningMessage)
             {
-                hiddenReasoningMessage2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.HiddenReasoningMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HiddenReasoningMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HiddenReasoningMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.HiddenReasoningMessage)}");
+                hiddenReasoningMessage2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ToolCallMessage? toolCallMessage = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.ToolCallMessage)
             {
-                toolCallMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolCallMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolCallMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolCallMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolCallMessage)}");
+                toolCallMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ToolReturnMessage? toolReturnMessage = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.ToolReturnMessage)
             {
-                toolReturnMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolReturnMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolReturnMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolReturnMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolReturnMessage)}");
+                toolReturnMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.AssistantMessage? assistantMessage = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.AssistantMessage)
             {
-                assistantMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AssistantMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AssistantMessage)}");
+                assistantMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ApprovalRequestMessage? approvalRequestMessage = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.ApprovalRequestMessage)
             {
-                approvalRequestMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ApprovalRequestMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ApprovalRequestMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ApprovalRequestMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ApprovalRequestMessage)}");
+                approvalRequestMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ApprovalResponseMessage? approvalResponseMessage = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.ApprovalResponseMessage)
             {
-                approvalResponseMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ApprovalResponseMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ApprovalResponseMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ApprovalResponseMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ApprovalResponseMessage)}");
+                approvalResponseMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.LettaPing? ping = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.Ping)
             {
-                ping = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LettaPing>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaPing), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaPing> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LettaPing)}");
+                ping = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.LettaErrorMessage? errorMessage = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.ErrorMessage)
             {
-                errorMessage = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LettaErrorMessage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaErrorMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaErrorMessage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LettaErrorMessage)}");
+                errorMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.LettaStopReason? stopReason = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.StopReason)
             {
-                stopReason = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LettaStopReason>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaStopReason), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaStopReason> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LettaStopReason)}");
+                stopReason = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.LettaUsageStatistics? usageStatistics = default;
             if (discriminator?.MessageType == global::G.LettaStreamingResponseDiscriminatorMessageType.UsageStatistics)
             {
-                usageStatistics = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LettaUsageStatistics>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaUsageStatistics), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaUsageStatistics> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LettaUsageStatistics)}");
+                usageStatistics = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.LettaStreamingResponse(
@@ -123,59 +152,86 @@ namespace G.JsonConverters
             global::G.LettaStreamingResponse value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsSystemMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemMessage, typeof(global::G.SystemMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SystemMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemMessage!, typeInfo);
             }
             else if (value.IsUserMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserMessage, typeof(global::G.UserMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserMessage!, typeInfo);
             }
             else if (value.IsHiddenReasoningMessage1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HiddenReasoningMessage1, typeof(global::G.ReasoningMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HiddenReasoningMessage1!, typeInfo);
             }
             else if (value.IsHiddenReasoningMessage2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HiddenReasoningMessage2, typeof(global::G.HiddenReasoningMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HiddenReasoningMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HiddenReasoningMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HiddenReasoningMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HiddenReasoningMessage2!, typeInfo);
             }
             else if (value.IsToolCallMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCallMessage, typeof(global::G.ToolCallMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolCallMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolCallMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolCallMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCallMessage!, typeInfo);
             }
             else if (value.IsToolReturnMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolReturnMessage, typeof(global::G.ToolReturnMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolReturnMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolReturnMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolReturnMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolReturnMessage!, typeInfo);
             }
             else if (value.IsAssistantMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantMessage, typeof(global::G.AssistantMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantMessage!, typeInfo);
             }
             else if (value.IsApprovalRequestMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApprovalRequestMessage, typeof(global::G.ApprovalRequestMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ApprovalRequestMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ApprovalRequestMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ApprovalRequestMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApprovalRequestMessage!, typeInfo);
             }
             else if (value.IsApprovalResponseMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApprovalResponseMessage, typeof(global::G.ApprovalResponseMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ApprovalResponseMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ApprovalResponseMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ApprovalResponseMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApprovalResponseMessage!, typeInfo);
             }
             else if (value.IsPing)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ping, typeof(global::G.LettaPing), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaPing), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaPing?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaPing).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ping!, typeInfo);
             }
             else if (value.IsErrorMessage)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ErrorMessage, typeof(global::G.LettaErrorMessage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaErrorMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaErrorMessage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaErrorMessage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ErrorMessage!, typeInfo);
             }
             else if (value.IsStopReason)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StopReason, typeof(global::G.LettaStopReason), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaStopReason), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaStopReason?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaStopReason).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StopReason!, typeInfo);
             }
             else if (value.IsUsageStatistics)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UsageStatistics, typeof(global::G.LettaUsageStatistics), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaUsageStatistics), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaUsageStatistics?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaUsageStatistics).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UsageStatistics!, typeInfo);
             }
         }
     }

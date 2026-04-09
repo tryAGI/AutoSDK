@@ -6,6 +6,25 @@ namespace G
 {
     public partial class V1GenerationClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_MaskingSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_MaskingSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_MaskingSecurityRequirement0,
+            };
         partial void PrepareMaskingArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string engineId,
@@ -138,6 +157,12 @@ namespace G
                 organization: ref organization,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_MaskingSecurityRequirements,
+                operationName: "MaskingAsync");
+
             var acceptValue = accept switch
             {
                 global::G.MaskingAccept.ApplicationJson => "application/json",
@@ -156,7 +181,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

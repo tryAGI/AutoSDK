@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ClearClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ClearConvertersV1ClearConvertersGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ClearConvertersV1ClearConvertersGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ClearConvertersV1ClearConvertersGetSecurityRequirement0,
+            };
         partial void PrepareClearConvertersV1ClearConvertersGetArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareClearConvertersV1ClearConvertersGetRequest(
@@ -32,6 +51,12 @@ namespace G
                 client: HttpClient);
             PrepareClearConvertersV1ClearConvertersGetArguments(
                 httpClient: HttpClient);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ClearConvertersV1ClearConvertersGetSecurityRequirements,
+                operationName: "ClearConvertersV1ClearConvertersGetAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/clear/converters",

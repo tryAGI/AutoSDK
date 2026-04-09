@@ -8,6 +8,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_EditImageGet2SecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_EditImageGet2SecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_EditImageGet2SecurityRequirement0,
+            };
         partial void PrepareEditImageGet2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? apiKey,
@@ -70,6 +89,12 @@ namespace G
                 imageUrl: ref imageUrl,
                 conceptUrl: ref conceptUrl);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_EditImageGet2SecurityRequirements,
+                operationName: "EditImageGet2Async");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/render",
                 baseUri: HttpClient.BaseAddress); 
@@ -88,7 +113,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

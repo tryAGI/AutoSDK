@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ArchivesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ModifyArchiveSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ModifyArchiveSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ModifyArchiveSecurityRequirement0,
+            };
         partial void PrepareModifyArchiveArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string archiveId,
@@ -49,6 +68,12 @@ namespace G
                 archiveId: ref archiveId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ModifyArchiveSecurityRequirements,
+                operationName: "ModifyArchiveAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/archives/{archiveId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -61,7 +86,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -14,7 +14,16 @@ namespace G
             username = username ?? throw new global::System.ArgumentNullException(nameof(username));
             password = password ?? throw new global::System.ArgumentNullException(nameof(password));
 
-            Authorizations.Clear();
+            for (var i = Authorizations.Count - 1; i >= 0; i--)
+            {
+                var __authorization = Authorizations[i];
+                if (__authorization.Type == "Http" &&
+                    __authorization.Name == "Basic")
+                {
+                    Authorizations.RemoveAt(i);
+                }
+            }
+
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "Http",

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DocumentStoreClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteDocumentStoreFileChunkSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteDocumentStoreFileChunkSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteDocumentStoreFileChunkSecurityRequirement0,
+            };
         partial void PrepareDeleteDocumentStoreFileChunkArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string storeId,
@@ -44,6 +63,12 @@ namespace G
                 loaderId: ref loaderId,
                 chunkId: ref chunkId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteDocumentStoreFileChunkSecurityRequirements,
+                operationName: "DeleteDocumentStoreFileChunkAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/document-store/chunks/{storeId}/{loaderId}/{chunkId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -56,7 +81,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

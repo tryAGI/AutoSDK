@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_V2CrossValidationSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_V2CrossValidationSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_V2CrossValidationSecurityRequirement0,
+            };
         partial void PrepareV2CrossValidationArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.CrossValidationInput request);
@@ -42,6 +61,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_V2CrossValidationSecurityRequirements,
+                operationName: "V2CrossValidationAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/cross_validation",
                 baseUri: HttpClient.BaseAddress); 
@@ -54,7 +79,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ScimClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ScimGetServiceProviderConfigSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ScimGetServiceProviderConfigSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ScimGetServiceProviderConfigSecurityRequirement0,
+            };
         partial void PrepareScimGetServiceProviderConfigArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareScimGetServiceProviderConfigRequest(
@@ -33,6 +52,12 @@ namespace G
             PrepareScimGetServiceProviderConfigArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ScimGetServiceProviderConfigSecurityRequirements,
+                operationName: "ScimGetServiceProviderConfigAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/public/scim/ServiceProviderConfig",
                 baseUri: HttpClient.BaseAddress); 
@@ -45,7 +70,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

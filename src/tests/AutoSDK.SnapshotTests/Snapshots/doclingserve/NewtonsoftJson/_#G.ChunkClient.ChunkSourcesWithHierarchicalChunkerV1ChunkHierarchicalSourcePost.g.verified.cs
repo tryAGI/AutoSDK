@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ChunkClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ChunkSourcesWithHierarchicalChunkerV1ChunkHierarchicalSourcePostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ChunkSourcesWithHierarchicalChunkerV1ChunkHierarchicalSourcePostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ChunkSourcesWithHierarchicalChunkerV1ChunkHierarchicalSourcePostSecurityRequirement0,
+            };
         partial void PrepareChunkSourcesWithHierarchicalChunkerV1ChunkHierarchicalSourcePostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.HierarchicalChunkerOptionsDocumentsRequest request);
@@ -40,6 +59,12 @@ namespace G
             PrepareChunkSourcesWithHierarchicalChunkerV1ChunkHierarchicalSourcePostArguments(
                 httpClient: HttpClient,
                 request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ChunkSourcesWithHierarchicalChunkerV1ChunkHierarchicalSourcePostSecurityRequirements,
+                operationName: "ChunkSourcesWithHierarchicalChunkerV1ChunkHierarchicalSourcePostAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/chunk/hierarchical/source",

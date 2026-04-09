@@ -6,6 +6,40 @@ namespace G
 {
     public partial class VoicesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CloneVoiceSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CloneVoiceSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CloneVoiceSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CloneVoiceSecurityRequirement0,
+                s_CloneVoiceSecurityRequirement1,
+            };
         partial void PrepareCloneVoiceArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.CloneVoiceRequest request);
@@ -43,6 +77,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CloneVoiceSecurityRequirements,
+                operationName: "CloneVoiceAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/tts/voices",
                 baseUri: HttpClient.BaseAddress); 
@@ -55,7 +95,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

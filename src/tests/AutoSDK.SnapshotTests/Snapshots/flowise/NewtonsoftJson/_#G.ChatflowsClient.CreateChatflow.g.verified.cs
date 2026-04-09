@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ChatflowsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateChatflowSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateChatflowSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateChatflowSecurityRequirement0,
+            };
         partial void PrepareCreateChatflowArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.Chatflow request);
@@ -42,6 +61,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateChatflowSecurityRequirements,
+                operationName: "CreateChatflowAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/chatflows",
                 baseUri: HttpClient.BaseAddress); 
@@ -54,7 +79,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

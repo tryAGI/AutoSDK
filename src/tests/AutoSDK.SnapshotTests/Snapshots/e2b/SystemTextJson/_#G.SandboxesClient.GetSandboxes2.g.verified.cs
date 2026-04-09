@@ -6,6 +6,47 @@ namespace G
 {
     public partial class SandboxesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSandboxes2SecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSandboxes2SecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Team",
+                        FriendlyName = "Supabase2TeamAuth",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Token",
+                        FriendlyName = "Supabase1TokenAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetSandboxes2SecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetSandboxes2SecurityRequirement0,
+                s_GetSandboxes2SecurityRequirement1,
+            };
         partial void PrepareGetSandboxes2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? metadata,
@@ -55,6 +96,12 @@ namespace G
                 nextToken: ref nextToken,
                 limit: ref limit);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSandboxes2SecurityRequirements,
+                operationName: "GetSandboxes2Async");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/sandboxes",
                 baseUri: HttpClient.BaseAddress); 
@@ -73,7 +120,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

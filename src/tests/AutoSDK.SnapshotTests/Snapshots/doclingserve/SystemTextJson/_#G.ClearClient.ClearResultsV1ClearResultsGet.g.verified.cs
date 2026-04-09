@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ClearClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ClearResultsV1ClearResultsGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ClearResultsV1ClearResultsGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ClearResultsV1ClearResultsGetSecurityRequirement0,
+            };
         partial void PrepareClearResultsV1ClearResultsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref double? olderThen);
@@ -39,6 +58,12 @@ namespace G
             PrepareClearResultsV1ClearResultsGetArguments(
                 httpClient: HttpClient,
                 olderThen: ref olderThen);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ClearResultsV1ClearResultsGetSecurityRequirements,
+                operationName: "ClearResultsV1ClearResultsGetAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/clear/results",

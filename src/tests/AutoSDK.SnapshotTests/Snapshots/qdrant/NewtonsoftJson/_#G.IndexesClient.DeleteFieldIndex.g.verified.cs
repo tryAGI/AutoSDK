@@ -6,6 +6,49 @@ namespace G
 {
     public partial class IndexesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteFieldIndexSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteFieldIndexSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteFieldIndexSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteFieldIndexSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteFieldIndexSecurityRequirement0,
+                s_DeleteFieldIndexSecurityRequirement1,
+                s_DeleteFieldIndexSecurityRequirement2,
+            };
         partial void PrepareDeleteFieldIndexArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -64,6 +107,12 @@ namespace G
                 ordering: ref ordering,
                 timeout: ref timeout);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteFieldIndexSecurityRequirements,
+                operationName: "DeleteFieldIndexAsync");
+
             var orderingValue = ordering switch
             {
                 global::G.WriteOrdering.Weak => "weak",
@@ -88,7 +137,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

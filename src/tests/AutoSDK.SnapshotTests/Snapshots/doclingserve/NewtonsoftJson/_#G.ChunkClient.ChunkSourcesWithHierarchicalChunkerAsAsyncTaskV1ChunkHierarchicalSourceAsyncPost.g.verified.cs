@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ChunkClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ChunkSourcesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalSourceAsyncPostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ChunkSourcesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalSourceAsyncPostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ChunkSourcesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalSourceAsyncPostSecurityRequirement0,
+            };
         partial void PrepareChunkSourcesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalSourceAsyncPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.HierarchicalChunkerOptionsDocumentsRequest request);
@@ -40,6 +59,12 @@ namespace G
             PrepareChunkSourcesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalSourceAsyncPostArguments(
                 httpClient: HttpClient,
                 request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ChunkSourcesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalSourceAsyncPostSecurityRequirements,
+                operationName: "ChunkSourcesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalSourceAsyncPostAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/chunk/hierarchical/source/async",

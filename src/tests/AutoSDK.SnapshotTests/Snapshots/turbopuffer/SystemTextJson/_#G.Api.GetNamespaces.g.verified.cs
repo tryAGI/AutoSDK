@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetNamespacesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetNamespacesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetNamespacesSecurityRequirement0,
+            };
         partial void PrepareGetNamespacesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
@@ -48,6 +67,12 @@ namespace G
                 prefix: ref prefix,
                 pageSize: ref pageSize);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetNamespacesSecurityRequirements,
+                operationName: "GetNamespacesAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/namespaces",
                 baseUri: HttpClient.BaseAddress); 
@@ -65,7 +90,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

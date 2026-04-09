@@ -6,6 +6,119 @@ namespace G
 {
     public partial class BatchClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListBatchesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-virtual-key",
+                        FriendlyName = "VirtualKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListBatchesSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-provider",
+                        FriendlyName = "ProviderName",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListBatchesSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-config",
+                        FriendlyName = "Config",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListBatchesSecurityRequirement3 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-custom-host",
+                        FriendlyName = "CustomHost",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-provider",
+                        FriendlyName = "ProviderName",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListBatchesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListBatchesSecurityRequirement0,
+                s_ListBatchesSecurityRequirement1,
+                s_ListBatchesSecurityRequirement2,
+                s_ListBatchesSecurityRequirement3,
+            };
         partial void PrepareListBatchesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? after,
@@ -45,6 +158,12 @@ namespace G
                 after: ref after,
                 limit: ref limit);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListBatchesSecurityRequirements,
+                operationName: "ListBatchesAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/batches",
                 baseUri: HttpClient.BaseAddress); 
@@ -61,7 +180,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

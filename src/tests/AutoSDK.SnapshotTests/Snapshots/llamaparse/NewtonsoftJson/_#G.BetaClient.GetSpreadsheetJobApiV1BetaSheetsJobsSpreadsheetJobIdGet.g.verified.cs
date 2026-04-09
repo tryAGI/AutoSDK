@@ -6,6 +6,25 @@ namespace G
 {
     public partial class BetaClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSpreadsheetJobApiV1BetaSheetsJobsSpreadsheetJobIdGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetSpreadsheetJobApiV1BetaSheetsJobsSpreadsheetJobIdGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetSpreadsheetJobApiV1BetaSheetsJobsSpreadsheetJobIdGetSecurityRequirement0,
+            };
         partial void PrepareGetSpreadsheetJobApiV1BetaSheetsJobsSpreadsheetJobIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string spreadsheetJobId,
@@ -64,6 +83,12 @@ namespace G
                 organizationId: organizationId,
                 session: ref session);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSpreadsheetJobApiV1BetaSheetsJobsSpreadsheetJobIdGetSecurityRequirements,
+                operationName: "GetSpreadsheetJobApiV1BetaSheetsJobsSpreadsheetJobIdGetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/beta/sheets/jobs/{spreadsheetJobId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -81,7 +106,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

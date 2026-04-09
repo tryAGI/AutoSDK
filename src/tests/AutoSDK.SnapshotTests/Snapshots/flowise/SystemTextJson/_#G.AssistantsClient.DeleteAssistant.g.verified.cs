@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AssistantsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteAssistantSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteAssistantSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteAssistantSecurityRequirement0,
+            };
         partial void PrepareDeleteAssistantArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -34,6 +53,12 @@ namespace G
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteAssistantSecurityRequirements,
+                operationName: "DeleteAssistantAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/assistants/{id}",
                 baseUri: HttpClient.BaseAddress); 
@@ -46,7 +71,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

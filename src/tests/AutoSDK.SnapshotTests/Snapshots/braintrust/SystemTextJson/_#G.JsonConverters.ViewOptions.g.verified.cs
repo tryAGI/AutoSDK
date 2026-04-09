@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -64,7 +65,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        monitorViewOptions = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ViewOptionsMonitorViewOptions>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ViewOptionsMonitorViewOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ViewOptionsMonitorViewOptions> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ViewOptionsMonitorViewOptions).Name}");
+                        monitorViewOptions = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -77,7 +80,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        tableViewOptions = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ViewOptionsTableViewOptions>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ViewOptionsTableViewOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ViewOptionsTableViewOptions> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ViewOptionsTableViewOptions).Name}");
+                        tableViewOptions = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -90,7 +95,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        viewOptionsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<object>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                        viewOptionsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -105,7 +112,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    monitorViewOptions = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ViewOptionsMonitorViewOptions>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ViewOptionsMonitorViewOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ViewOptionsMonitorViewOptions> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ViewOptionsMonitorViewOptions).Name}");
+                    monitorViewOptions = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -116,7 +125,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    tableViewOptions = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ViewOptionsTableViewOptions>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ViewOptionsTableViewOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ViewOptionsTableViewOptions> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ViewOptionsTableViewOptions).Name}");
+                    tableViewOptions = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -127,7 +138,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    viewOptionsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<object>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                    viewOptionsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -154,19 +167,26 @@ namespace G.JsonConverters
             global::G.ViewOptions value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsMonitorViewOptions)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MonitorViewOptions, typeof(global::G.ViewOptionsMonitorViewOptions), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ViewOptionsMonitorViewOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ViewOptionsMonitorViewOptions?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ViewOptionsMonitorViewOptions).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MonitorViewOptions!, typeInfo);
             }
             else if (value.IsTableViewOptions)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TableViewOptions, typeof(global::G.ViewOptionsTableViewOptions), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ViewOptionsTableViewOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ViewOptionsTableViewOptions?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ViewOptionsTableViewOptions).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TableViewOptions!, typeInfo);
             }
             else if (value.IsViewOptionsVariant3)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ViewOptionsVariant3, typeof(object), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ViewOptionsVariant3!, typeInfo);
             }
         }
     }

@@ -6,6 +6,40 @@ namespace G
 {
     public partial class CloudClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListCredentialsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListCredentialsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListCredentialsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListCredentialsSecurityRequirement0,
+                s_ListCredentialsSecurityRequirement1,
+            };
         partial void PrepareListCredentialsArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareListCredentialsRequest(
@@ -34,6 +68,12 @@ namespace G
             PrepareListCredentialsArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListCredentialsSecurityRequirements,
+                operationName: "ListCredentialsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/cloud/credentials",
                 baseUri: HttpClient.BaseAddress); 
@@ -46,7 +86,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

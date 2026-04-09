@@ -6,6 +6,34 @@ namespace G
 {
     public partial class EnvironmentsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetEnvironmentSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetEnvironmentSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetEnvironmentSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetEnvironmentSecurityRequirement0,
+                s_GetEnvironmentSecurityRequirement1,
+            };
         partial void PrepareGetEnvironmentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid environmentId);
@@ -38,6 +66,12 @@ namespace G
                 httpClient: HttpClient,
                 environmentId: ref environmentId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetEnvironmentSecurityRequirements,
+                operationName: "GetEnvironmentAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/environment/{environmentId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +84,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

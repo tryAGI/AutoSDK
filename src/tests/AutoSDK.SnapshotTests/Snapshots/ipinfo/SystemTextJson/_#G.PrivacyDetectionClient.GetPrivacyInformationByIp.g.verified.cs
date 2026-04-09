@@ -6,6 +6,55 @@ namespace G
 {
     public partial class PrivacyDetectionClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetPrivacyInformationByIpSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetPrivacyInformationByIpSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetPrivacyInformationByIpSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "token",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetPrivacyInformationByIpSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetPrivacyInformationByIpSecurityRequirement0,
+                s_GetPrivacyInformationByIpSecurityRequirement1,
+                s_GetPrivacyInformationByIpSecurityRequirement2,
+            };
         partial void PrepareGetPrivacyInformationByIpArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string ip);
@@ -39,10 +88,16 @@ namespace G
                 httpClient: HttpClient,
                 ip: ref ip);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetPrivacyInformationByIpSecurityRequirements,
+                operationName: "GetPrivacyInformationByIpAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/{ip}/privacy",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
@@ -59,7 +114,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ModelClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ModelPublicServiceListModelDefinitionsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ModelPublicServiceListModelDefinitionsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ModelPublicServiceListModelDefinitionsSecurityRequirement0,
+            };
         partial void PrepareModelPublicServiceListModelDefinitionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? pageSize,
@@ -49,6 +68,12 @@ namespace G
                 pageToken: ref pageToken,
                 view: ref view);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ModelPublicServiceListModelDefinitionsSecurityRequirements,
+                operationName: "ModelPublicServiceListModelDefinitionsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1alpha/model-definitions",
                 baseUri: HttpClient.BaseAddress); 
@@ -66,7 +91,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

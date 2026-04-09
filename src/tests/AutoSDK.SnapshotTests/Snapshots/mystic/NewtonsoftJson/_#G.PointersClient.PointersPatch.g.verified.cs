@@ -6,6 +6,40 @@ namespace G
 {
     public partial class PointersClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PointersPatchSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PointersPatchSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PointersPatchSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PointersPatchSecurityRequirement0,
+                s_PointersPatchSecurityRequirement1,
+            };
         partial void PreparePointersPatchArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string pointer,
@@ -47,6 +81,12 @@ namespace G
                 pointer: ref pointer,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PointersPatchSecurityRequirements,
+                operationName: "PointersPatchAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/pointers/{pointer}",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +99,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ServeClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetAssetByRenderIdSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetAssetByRenderIdSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetAssetByRenderIdSecurityRequirement0,
+            };
         partial void PrepareGetAssetByRenderIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -41,6 +60,12 @@ namespace G
             PrepareGetAssetByRenderIdArguments(
                 httpClient: HttpClient,
                 id: ref id);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAssetByRenderIdSecurityRequirements,
+                operationName: "GetAssetByRenderIdAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/serve/v1/assets/render/{id}",

@@ -6,6 +6,49 @@ namespace G
 {
     public partial class PointsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeletePayloadSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeletePayloadSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeletePayloadSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeletePayloadSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeletePayloadSecurityRequirement0,
+                s_DeletePayloadSecurityRequirement1,
+                s_DeletePayloadSecurityRequirement2,
+            };
         partial void PrepareDeletePayloadArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -67,6 +110,12 @@ namespace G
                 timeout: ref timeout,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeletePayloadSecurityRequirements,
+                operationName: "DeletePayloadAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/collections/{collectionName}/points/payload/delete",
                 baseUri: HttpClient.BaseAddress); 
@@ -84,7 +133,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

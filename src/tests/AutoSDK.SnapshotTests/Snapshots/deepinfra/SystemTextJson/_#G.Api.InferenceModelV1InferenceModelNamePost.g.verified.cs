@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_InferenceModelV1InferenceModelNamePostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_InferenceModelV1InferenceModelNamePostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_InferenceModelV1InferenceModelNamePostSecurityRequirement0,
+            };
         partial void PrepareInferenceModelV1InferenceModelNamePostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string modelName,
@@ -60,6 +79,12 @@ namespace G
                 userAgent: ref userAgent,
                 xiApiKey: ref xiApiKey);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_InferenceModelV1InferenceModelNamePostSecurityRequirements,
+                operationName: "InferenceModelV1InferenceModelNamePostAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/inference/{modelName}",
                 baseUri: HttpClient.BaseAddress); 
@@ -75,7 +100,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

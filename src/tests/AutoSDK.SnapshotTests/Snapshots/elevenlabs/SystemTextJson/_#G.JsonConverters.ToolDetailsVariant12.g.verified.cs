@@ -13,31 +13,42 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConversationHistoryTranscriptToolCallCommonModelOutputToolDetailsVariant1Discriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTranscriptToolCallCommonModelOutputToolDetailsVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTranscriptToolCallCommonModelOutputToolDetailsVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConversationHistoryTranscriptToolCallCommonModelOutputToolDetailsVariant1Discriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.ConversationHistoryTranscriptToolCallWebhookDetails? webhook = default;
             if (discriminator?.Type == global::G.ConversationHistoryTranscriptToolCallCommonModelOutputToolDetailsVariant1DiscriminatorType.Webhook)
             {
-                webhook = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConversationHistoryTranscriptToolCallWebhookDetails>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTranscriptToolCallWebhookDetails), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTranscriptToolCallWebhookDetails> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConversationHistoryTranscriptToolCallWebhookDetails)}");
+                webhook = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ConversationHistoryTranscriptToolCallClientDetails? client = default;
             if (discriminator?.Type == global::G.ConversationHistoryTranscriptToolCallCommonModelOutputToolDetailsVariant1DiscriminatorType.Client)
             {
-                client = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConversationHistoryTranscriptToolCallClientDetails>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTranscriptToolCallClientDetails), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTranscriptToolCallClientDetails> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConversationHistoryTranscriptToolCallClientDetails)}");
+                client = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ConversationHistoryTranscriptToolCallMCPDetails? mcp = default;
             if (discriminator?.Type == global::G.ConversationHistoryTranscriptToolCallCommonModelOutputToolDetailsVariant1DiscriminatorType.Mcp)
             {
-                mcp = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConversationHistoryTranscriptToolCallMCPDetails>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTranscriptToolCallMCPDetails), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTranscriptToolCallMCPDetails> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConversationHistoryTranscriptToolCallMCPDetails)}");
+                mcp = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails? apiIntegrationWebhook = default;
             if (discriminator?.Type == global::G.ConversationHistoryTranscriptToolCallCommonModelOutputToolDetailsVariant1DiscriminatorType.ApiIntegrationWebhook)
             {
-                apiIntegrationWebhook = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails)}");
+                apiIntegrationWebhook = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.ToolDetailsVariant12(
@@ -60,23 +71,32 @@ namespace G.JsonConverters
             global::G.ToolDetailsVariant12 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsWebhook)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Webhook, typeof(global::G.ConversationHistoryTranscriptToolCallWebhookDetails), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTranscriptToolCallWebhookDetails), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTranscriptToolCallWebhookDetails?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationHistoryTranscriptToolCallWebhookDetails).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Webhook!, typeInfo);
             }
             else if (value.IsClient)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Client, typeof(global::G.ConversationHistoryTranscriptToolCallClientDetails), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTranscriptToolCallClientDetails), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTranscriptToolCallClientDetails?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationHistoryTranscriptToolCallClientDetails).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Client!, typeInfo);
             }
             else if (value.IsMcp)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp, typeof(global::G.ConversationHistoryTranscriptToolCallMCPDetails), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTranscriptToolCallMCPDetails), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTranscriptToolCallMCPDetails?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationHistoryTranscriptToolCallMCPDetails).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp!, typeInfo);
             }
             else if (value.IsApiIntegrationWebhook)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiIntegrationWebhook, typeof(global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiIntegrationWebhook!, typeInfo);
             }
         }
     }

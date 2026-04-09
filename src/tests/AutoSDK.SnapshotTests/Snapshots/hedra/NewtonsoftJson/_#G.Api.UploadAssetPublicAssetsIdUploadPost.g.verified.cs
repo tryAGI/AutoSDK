@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_UploadAssetPublicAssetsIdUploadPostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_UploadAssetPublicAssetsIdUploadPostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_UploadAssetPublicAssetsIdUploadPostSecurityRequirement0,
+            };
         partial void PrepareUploadAssetPublicAssetsIdUploadPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid id,
@@ -46,6 +65,12 @@ namespace G
                 id: ref id,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UploadAssetPublicAssetsIdUploadPostSecurityRequirements,
+                operationName: "UploadAssetPublicAssetsIdUploadPostAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/public/assets/{id}/upload",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -77,9 +102,15 @@ namespace G
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{id}"),
                 name: "\"id\"");
+            var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.File}"),
-                name: "\"file\"");
+                content: __contentFile,
+                name: "\"file\"",
+                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+            if (__contentFile.Headers.ContentDisposition != null)
+            {
+                __contentFile.Headers.ContentDisposition.FileNameStar = null;
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
@@ -230,16 +261,19 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="file"></param>
+        /// <param name="filename"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Asset> UploadAssetPublicAssetsIdUploadPostAsync(
             global::System.Guid id,
-            string file,
+            byte[] file,
+            string filename,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyUploadAssetPublicAssetsIdUploadPost
             {
                 File = file,
+                Filename = filename,
             };
 
             return await UploadAssetPublicAssetsIdUploadPostAsync(

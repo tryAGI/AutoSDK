@@ -6,6 +6,25 @@ namespace G
 {
     public partial class RequestClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PutPropertySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PutPropertySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PutPropertySecurityRequirement0,
+            };
         partial void PreparePutPropertyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string requestId,
@@ -46,6 +65,12 @@ namespace G
                 requestId: ref requestId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PutPropertySecurityRequirements,
+                operationName: "PutPropertyAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/request/{requestId}/property",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

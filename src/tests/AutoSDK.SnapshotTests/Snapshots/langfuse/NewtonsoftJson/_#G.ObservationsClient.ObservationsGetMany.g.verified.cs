@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ObservationsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ObservationsGetManySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ObservationsGetManySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ObservationsGetManySecurityRequirement0,
+            };
         partial void PrepareObservationsGetManyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? fields,
@@ -132,6 +151,12 @@ namespace G
                 version: ref version,
                 filter: ref filter);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ObservationsGetManySecurityRequirements,
+                operationName: "ObservationsGetManyAsync");
+
             var levelValue = level switch
             {
                 global::G.ObservationLevel.Debug => "DEBUG",
@@ -170,7 +195,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

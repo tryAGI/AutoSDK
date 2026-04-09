@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ProjectsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ProjectsGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ProjectsGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ProjectsGetSecurityRequirement0,
+            };
         partial void PrepareProjectsGetArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareProjectsGetRequest(
@@ -33,6 +52,12 @@ namespace G
             PrepareProjectsGetArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ProjectsGetSecurityRequirements,
+                operationName: "ProjectsGetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/public/projects",
                 baseUri: HttpClient.BaseAddress); 
@@ -45,7 +70,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

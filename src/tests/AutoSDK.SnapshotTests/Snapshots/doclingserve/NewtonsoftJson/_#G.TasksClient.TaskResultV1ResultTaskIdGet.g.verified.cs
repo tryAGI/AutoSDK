@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TasksClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_TaskResultV1ResultTaskIdGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_TaskResultV1ResultTaskIdGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_TaskResultV1ResultTaskIdGetSecurityRequirement0,
+            };
         partial void PrepareTaskResultV1ResultTaskIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string taskId);
@@ -37,6 +56,12 @@ namespace G
             PrepareTaskResultV1ResultTaskIdGetArguments(
                 httpClient: HttpClient,
                 taskId: ref taskId);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_TaskResultV1ResultTaskIdGetSecurityRequirements,
+                operationName: "TaskResultV1ResultTaskIdGetAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/result/{taskId}",

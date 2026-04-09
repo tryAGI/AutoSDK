@@ -498,6 +498,17 @@ public static class Data
             .SelectMany(CreateEndPoints)
             .ToImmutableArray();
 
+        var authorizationsByIdentity = AuthorizationHelpers.CreateResolvedAuthorizationMap(
+            (openApiDocument.Security ?? [])
+            .SelectMany(requirement => requirement.OrderBy(
+                x => x.Key.Reference?.Id ?? x.Key.Name ?? x.Key.Scheme ?? string.Empty,
+                StringComparer.Ordinal))
+            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, csharpSettings, csharpGlobalSettings))
+            .Concat(methods.SelectMany(x => x.Authorizations)));
+        methods = methods
+            .Select(method => AuthorizationHelpers.NormalizeEndPoint(method, authorizationsByIdentity))
+            .ToImmutableArray();
+
         if (settings.GenerateCli)
         {
             foreach (var group in methods
@@ -508,12 +519,8 @@ public static class Data
             }
         }
         
-        var authorizations = openApiDocument.Security!
-            .SelectMany(requirement => requirement.OrderBy(x => x.Key.Name ?? string.Empty, StringComparer.Ordinal))
-            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, csharpSettings, csharpGlobalSettings))
-            .Concat(methods.SelectMany(x => x.Authorizations))
-            .GroupBy(x => x.FriendlyName)
-            .Select(g => g.First())
+        var authorizations = authorizationsByIdentity
+            .Values
             .ToArray();
         var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
 
@@ -858,6 +865,17 @@ public static class Data
             .SelectMany(CreateEndPoints)
             .ToImmutableArray();
 
+        var authorizationsByIdentity = AuthorizationHelpers.CreateResolvedAuthorizationMap(
+            (openApiDocument.Security ?? [])
+            .SelectMany(requirement => requirement.OrderBy(
+                x => x.Key.Reference?.Id ?? x.Key.Name ?? x.Key.Scheme ?? string.Empty,
+                StringComparer.Ordinal))
+            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
+            .Concat(methods.SelectMany(x => x.Authorizations)));
+        methods = methods
+            .Select(method => AuthorizationHelpers.NormalizeEndPoint(method, authorizationsByIdentity))
+            .ToImmutableArray();
+
         if (settings.GenerateCli)
         {
             foreach (var group in methods
@@ -869,12 +887,8 @@ public static class Data
             }
         }
 
-        var authorizations = openApiDocument.Security!
-            .SelectMany(requirement => requirement.OrderBy(x => x.Key.Name ?? string.Empty, StringComparer.Ordinal))
-            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
-            .Concat(methods.SelectMany(x => x.Authorizations))
-            .GroupBy(x => x.FriendlyName)
-            .Select(g => g.First())
+        var authorizations = authorizationsByIdentity
+            .Values
             .ToArray();
         var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
 

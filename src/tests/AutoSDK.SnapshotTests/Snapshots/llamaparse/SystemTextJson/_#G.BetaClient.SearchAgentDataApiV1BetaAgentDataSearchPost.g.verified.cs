@@ -6,6 +6,25 @@ namespace G
 {
     public partial class BetaClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_SearchAgentDataApiV1BetaAgentDataSearchPostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_SearchAgentDataApiV1BetaAgentDataSearchPostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_SearchAgentDataApiV1BetaAgentDataSearchPostSecurityRequirement0,
+            };
         partial void PrepareSearchAgentDataApiV1BetaAgentDataSearchPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Guid? projectId,
@@ -57,6 +76,12 @@ namespace G
                 session: ref session,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SearchAgentDataApiV1BetaAgentDataSearchPostSecurityRequirements,
+                operationName: "SearchAgentDataApiV1BetaAgentDataSearchPostAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/beta/agent-data/:search",
                 baseUri: HttpClient.BaseAddress); 
@@ -73,7 +98,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

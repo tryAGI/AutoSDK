@@ -6,6 +6,47 @@ namespace G
 {
     public partial class AuthClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTeamsByTeamIDMetricsMaxSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTeamsByTeamIDMetricsMaxSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Team",
+                        FriendlyName = "Supabase2TeamAuth",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Token",
+                        FriendlyName = "Supabase1TokenAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetTeamsByTeamIDMetricsMaxSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetTeamsByTeamIDMetricsMaxSecurityRequirement0,
+                s_GetTeamsByTeamIDMetricsMaxSecurityRequirement1,
+            };
         partial void PrepareGetTeamsByTeamIDMetricsMaxArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string teamID,
@@ -55,6 +96,12 @@ namespace G
                 end: ref end,
                 metric: ref metric);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetTeamsByTeamIDMetricsMaxSecurityRequirements,
+                operationName: "GetTeamsByTeamIDMetricsMaxAsync");
+
             var metricValue = metric switch
             {
                 global::G.GetTeamsMetricsMaxMetric.ConcurrentSandboxes => "concurrent_sandboxes",
@@ -78,7 +125,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

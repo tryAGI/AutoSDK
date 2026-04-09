@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Prompts2Client
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CompatibleProjectsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CompatibleProjectsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CompatibleProjectsSecurityRequirement0,
+            };
         partial void PrepareCompatibleProjectsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? ordering,
@@ -56,6 +75,12 @@ namespace G
                 pageSize: ref pageSize,
                 projectType: ref projectType);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CompatibleProjectsSecurityRequirements,
+                operationName: "CompatibleProjectsAsync");
+
             var projectTypeValue = projectType switch
             {
                 global::G.ApiPromptsCompatibleProjectsListProjectType.NamedEntityRecognition => "NamedEntityRecognition",
@@ -80,7 +105,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,55 @@ namespace G
 {
     public partial class OrgsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateOrganizationRolesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateOrganizationRolesSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Organization-Id",
+                        FriendlyName = "OrganizationId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateOrganizationRolesSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateOrganizationRolesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateOrganizationRolesSecurityRequirement0,
+                s_CreateOrganizationRolesSecurityRequirement1,
+                s_CreateOrganizationRolesSecurityRequirement2,
+            };
         partial void PrepareCreateOrganizationRolesArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.CreateRoleRequest request);
@@ -41,6 +90,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateOrganizationRolesSecurityRequirements,
+                operationName: "CreateOrganizationRolesAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/orgs/current/roles",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,7 +108,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

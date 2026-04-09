@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ParsingClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ScreenshotApiV1ParsingScreenshotPostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ScreenshotApiV1ParsingScreenshotPostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ScreenshotApiV1ParsingScreenshotPostSecurityRequirement0,
+            };
         partial void PrepareScreenshotApiV1ParsingScreenshotPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Guid? organizationId,
@@ -56,6 +75,12 @@ namespace G
                 session: ref session,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ScreenshotApiV1ParsingScreenshotPostSecurityRequirements,
+                operationName: "ScreenshotApiV1ParsingScreenshotPostAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/parsing/screenshot",
                 baseUri: HttpClient.BaseAddress); 
@@ -72,7 +97,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

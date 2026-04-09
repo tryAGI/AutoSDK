@@ -6,6 +6,55 @@ namespace G
 {
     public partial class PlaygroundSettingsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListPlaygroundSettingsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListPlaygroundSettingsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListPlaygroundSettingsSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListPlaygroundSettingsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListPlaygroundSettingsSecurityRequirement0,
+                s_ListPlaygroundSettingsSecurityRequirement1,
+                s_ListPlaygroundSettingsSecurityRequirement2,
+            };
         partial void PrepareListPlaygroundSettingsArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareListPlaygroundSettingsRequest(
@@ -34,6 +83,12 @@ namespace G
             PrepareListPlaygroundSettingsArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListPlaygroundSettingsSecurityRequirements,
+                operationName: "ListPlaygroundSettingsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/playground-settings",
                 baseUri: HttpClient.BaseAddress); 
@@ -46,7 +101,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

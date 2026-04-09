@@ -6,6 +6,49 @@ namespace G
 {
     public partial class ServiceClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ReadyzSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ReadyzSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ReadyzSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ReadyzSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ReadyzSecurityRequirement0,
+                s_ReadyzSecurityRequirement1,
+                s_ReadyzSecurityRequirement2,
+            };
         partial void PrepareReadyzArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareReadyzRequest(
@@ -34,6 +77,12 @@ namespace G
             PrepareReadyzArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ReadyzSecurityRequirements,
+                operationName: "ReadyzAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/readyz",
                 baseUri: HttpClient.BaseAddress); 
@@ -46,7 +95,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

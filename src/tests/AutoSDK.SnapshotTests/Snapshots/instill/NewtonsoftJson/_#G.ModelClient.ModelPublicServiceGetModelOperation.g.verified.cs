@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ModelClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ModelPublicServiceGetModelOperationSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ModelPublicServiceGetModelOperationSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ModelPublicServiceGetModelOperationSecurityRequirement0,
+            };
         partial void PrepareModelPublicServiceGetModelOperationArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string operationId,
@@ -45,6 +64,12 @@ namespace G
                 operationId: ref operationId,
                 view: ref view);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ModelPublicServiceGetModelOperationSecurityRequirements,
+                operationName: "ModelPublicServiceGetModelOperationAsync");
+
             var viewValue = view switch
             {
                 global::G.ModelPublicServiceGetModelOperationView.ViewBasic => "VIEW_BASIC",
@@ -66,7 +91,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

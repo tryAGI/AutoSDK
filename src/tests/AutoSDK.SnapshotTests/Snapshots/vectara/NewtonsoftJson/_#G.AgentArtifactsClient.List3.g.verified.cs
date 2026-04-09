@@ -6,6 +6,40 @@ namespace G
 {
     public partial class AgentArtifactsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_List3SecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_List3SecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "OAuth2",
+                        Location = "Header",
+                        Name = "",
+                        FriendlyName = "OAuth2",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_List3SecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_List3SecurityRequirement0,
+                s_List3SecurityRequirement1,
+            };
         partial void PrepareList3Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? requestTimeout,
@@ -86,6 +120,12 @@ namespace G
                 sortBy: ref sortBy,
                 orderBy: ref orderBy);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_List3SecurityRequirements,
+                operationName: "List3Async");
+
             var sortByValue = sortBy switch
             {
                 global::G.ListSessionArtifactsSortBy.CreatedAt => "created_at",
@@ -116,7 +156,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -161,7 +201,7 @@ namespace G
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 

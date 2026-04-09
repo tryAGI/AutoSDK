@@ -34,8 +34,8 @@ namespace G
         /// Formatting options for Accents In Verbs Conjugated Like French Word Céder
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("accents_in_verbs_conjugated_like_french_word_céder")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDerJsonConverter))]
-        public global::G.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDer? AccentsInVerbsConjugatedLikeFrenchWordC_der { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéderJsonConverter))]
+        public global::G.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéder? AccentsInVerbsConjugatedLikeFrenchWordCéder { get; set; }
 
         /// <summary>
         /// Formatting options for Accents With Subject Verb Inversion
@@ -223,7 +223,7 @@ namespace G
         /// <param name="accentsAndCedillas">
         /// Formatting options for Accents And Cedillas
         /// </param>
-        /// <param name="accentsInVerbsConjugatedLikeFrenchWordC_der">
+        /// <param name="accentsInVerbsConjugatedLikeFrenchWordCéder">
         /// Formatting options for Accents In Verbs Conjugated Like French Word Céder
         /// </param>
         /// <param name="accentsWithSubjectVerbInversion">
@@ -305,7 +305,7 @@ namespace G
             global::G.ConfiguredRulesSpellingAndGrammarAbbreviatingFrenchWordNumero? abbreviatingFrenchWordNumero,
             global::G.ConfiguredRulesSpellingAndGrammarAbbreviationUsage? abbreviationUsage,
             global::G.ConfiguredRulesSpellingAndGrammarAccentsAndCedillas? accentsAndCedillas,
-            global::G.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDer? accentsInVerbsConjugatedLikeFrenchWordC_der,
+            global::G.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéder? accentsInVerbsConjugatedLikeFrenchWordCéder,
             global::G.ConfiguredRulesSpellingAndGrammarAccentsWithSubjectVerbInversion? accentsWithSubjectVerbInversion,
             global::G.ConfiguredRulesSpellingAndGrammarActivePassiveVoice? activePassiveVoice,
             global::G.ConfiguredRulesSpellingAndGrammarAllCaps? allCaps,
@@ -334,7 +334,7 @@ namespace G
             this.AbbreviatingFrenchWordNumero = abbreviatingFrenchWordNumero;
             this.AbbreviationUsage = abbreviationUsage;
             this.AccentsAndCedillas = accentsAndCedillas;
-            this.AccentsInVerbsConjugatedLikeFrenchWordC_der = accentsInVerbsConjugatedLikeFrenchWordC_der;
+            this.AccentsInVerbsConjugatedLikeFrenchWordCéder = accentsInVerbsConjugatedLikeFrenchWordCéder;
             this.AccentsWithSubjectVerbInversion = accentsWithSubjectVerbInversion;
             this.ActivePassiveVoice = activePassiveVoice;
             this.AllCaps = allCaps;

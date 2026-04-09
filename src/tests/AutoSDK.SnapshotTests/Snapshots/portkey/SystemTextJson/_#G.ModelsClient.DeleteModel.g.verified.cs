@@ -6,6 +6,119 @@ namespace G
 {
     public partial class ModelsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteModelSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-virtual-key",
+                        FriendlyName = "VirtualKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteModelSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-provider",
+                        FriendlyName = "ProviderName",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteModelSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-config",
+                        FriendlyName = "Config",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteModelSecurityRequirement3 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-custom-host",
+                        FriendlyName = "CustomHost",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-provider",
+                        FriendlyName = "ProviderName",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteModelSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteModelSecurityRequirement0,
+                s_DeleteModelSecurityRequirement1,
+                s_DeleteModelSecurityRequirement2,
+                s_DeleteModelSecurityRequirement3,
+            };
         partial void PrepareDeleteModelArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string model);
@@ -40,6 +153,12 @@ namespace G
                 httpClient: HttpClient,
                 model: ref model);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteModelSecurityRequirements,
+                operationName: "DeleteModelAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/models/{model}",
                 baseUri: HttpClient.BaseAddress); 
@@ -52,7 +171,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

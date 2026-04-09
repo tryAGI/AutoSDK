@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TrainingClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_AddTestSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_AddTestSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_AddTestSecurityRequirement0,
+            };
         partial void PrepareAddTestArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.AddTestRequest request);
@@ -42,6 +61,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_AddTestSecurityRequirements,
+                operationName: "AddTestAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/training/addtest",
                 baseUri: HttpClient.BaseAddress); 
@@ -54,7 +79,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

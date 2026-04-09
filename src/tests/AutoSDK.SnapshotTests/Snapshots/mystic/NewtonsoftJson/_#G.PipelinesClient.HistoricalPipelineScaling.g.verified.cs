@@ -6,6 +6,40 @@ namespace G
 {
     public partial class PipelinesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_HistoricalPipelineScalingSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_HistoricalPipelineScalingSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_HistoricalPipelineScalingSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_HistoricalPipelineScalingSecurityRequirement0,
+                s_HistoricalPipelineScalingSecurityRequirement1,
+            };
         partial void PrepareHistoricalPipelineScalingArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string pipelineId,
@@ -70,6 +104,12 @@ namespace G
                 intervalUnit: ref intervalUnit,
                 intervalValue: ref intervalValue);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_HistoricalPipelineScalingSecurityRequirements,
+                operationName: "HistoricalPipelineScalingAsync");
+
             var intervalUnitValue = intervalUnit switch
             {
                 global::G.DurationUnit.Seconds => "seconds",
@@ -99,7 +139,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

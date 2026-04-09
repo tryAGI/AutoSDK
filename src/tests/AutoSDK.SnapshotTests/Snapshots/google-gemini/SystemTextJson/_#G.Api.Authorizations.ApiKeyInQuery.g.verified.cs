@@ -12,7 +12,17 @@ namespace G
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            Authorizations.Clear();
+            for (var i = Authorizations.Count - 1; i >= 0; i--)
+            {
+                var __authorization = Authorizations[i];
+                if (__authorization.Type == "ApiKey" &&
+                    __authorization.Location == "Query" &&
+                    __authorization.Name == "key")
+                {
+                    Authorizations.RemoveAt(i);
+                }
+            }
+
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "ApiKey",

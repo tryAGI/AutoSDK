@@ -6,6 +6,25 @@ namespace G
 {
     public partial class PreRecordedV2Client
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PreRecordedControllerGetPreRecordedJobsV2SecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-gladia-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PreRecordedControllerGetPreRecordedJobsV2SecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PreRecordedControllerGetPreRecordedJobsV2SecurityRequirement0,
+            };
         partial void PreparePreRecordedControllerGetPreRecordedJobsV2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? offset,
@@ -82,6 +101,12 @@ namespace G
                 status: status,
                 customMetadata: customMetadata);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PreRecordedControllerGetPreRecordedJobsV2SecurityRequirements,
+                operationName: "PreRecordedControllerGetPreRecordedJobsV2Async");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/pre-recorded",
                 baseUri: HttpClient.BaseAddress); 
@@ -103,7 +128,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class InferenceClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetSecurityRequirement0,
+            };
         partial void PrepareInferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareInferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetRequest(
@@ -35,6 +54,12 @@ namespace G
             PrepareInferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetSecurityRequirements,
+                operationName: "InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/inference/router/openrouter/models",
                 baseUri: HttpClient.BaseAddress); 
@@ -47,7 +72,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

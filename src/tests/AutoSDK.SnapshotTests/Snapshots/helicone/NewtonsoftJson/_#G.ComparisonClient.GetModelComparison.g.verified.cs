@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ComparisonClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetModelComparisonSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetModelComparisonSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetModelComparisonSecurityRequirement0,
+            };
         partial void PrepareGetModelComparisonArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::G.ModelsToCompare> request);
@@ -41,6 +60,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetModelComparisonSecurityRequirements,
+                operationName: "GetModelComparisonAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/public/compare/models",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,7 +78,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

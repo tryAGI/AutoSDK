@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ChatV3AsStreamSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ChatV3AsStreamSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ChatV3AsStreamSecurityRequirement0,
+            };
         partial void PrepareChatV3AsStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? conversationId,
@@ -58,6 +77,12 @@ namespace G
                 conversationId: ref conversationId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ChatV3AsStreamSecurityRequirements,
+                operationName: "ChatV3AsStreamAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v3/chat",
                 baseUri: HttpClient.BaseAddress); 
@@ -73,7 +98,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

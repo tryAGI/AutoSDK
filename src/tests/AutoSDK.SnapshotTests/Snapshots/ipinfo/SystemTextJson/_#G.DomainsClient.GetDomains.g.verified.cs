@@ -6,6 +6,55 @@ namespace G
 {
     public partial class DomainsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetDomainsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetDomainsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetDomainsSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "token",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetDomainsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetDomainsSecurityRequirement0,
+                s_GetDomainsSecurityRequirement1,
+                s_GetDomainsSecurityRequirement2,
+            };
         partial void PrepareGetDomainsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string ip,
@@ -51,10 +100,16 @@ namespace G
                 page: ref page,
                 limit: ref limit);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetDomainsSecurityRequirements,
+                operationName: "GetDomainsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/domains/{ip}",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
@@ -75,7 +130,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

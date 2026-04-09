@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FilesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListFilesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListFilesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListFilesSecurityRequirement0,
+            };
         partial void PrepareListFilesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -63,6 +82,12 @@ namespace G
                 sortBy: ref sortBy,
                 order: ref order);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListFilesSecurityRequirements,
+                operationName: "ListFilesAsync");
+
             var typeValue = type switch
             {
                 global::G.ListFilesType.Prompt => "prompt",
@@ -99,7 +124,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

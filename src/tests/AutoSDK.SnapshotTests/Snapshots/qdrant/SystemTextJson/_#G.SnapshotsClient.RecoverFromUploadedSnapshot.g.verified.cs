@@ -6,6 +6,49 @@ namespace G
 {
     public partial class SnapshotsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_RecoverFromUploadedSnapshotSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_RecoverFromUploadedSnapshotSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_RecoverFromUploadedSnapshotSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_RecoverFromUploadedSnapshotSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_RecoverFromUploadedSnapshotSecurityRequirement0,
+                s_RecoverFromUploadedSnapshotSecurityRequirement1,
+                s_RecoverFromUploadedSnapshotSecurityRequirement2,
+            };
         partial void PrepareRecoverFromUploadedSnapshotArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -65,6 +108,12 @@ namespace G
                 checksum: ref checksum,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RecoverFromUploadedSnapshotSecurityRequirements,
+                operationName: "RecoverFromUploadedSnapshotAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/collections/{collectionName}/snapshots/upload",
                 baseUri: HttpClient.BaseAddress); 
@@ -82,7 +131,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

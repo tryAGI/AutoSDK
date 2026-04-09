@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ScimClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ScimListUsersSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ScimListUsersSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ScimListUsersSecurityRequirement0,
+            };
         partial void PrepareScimListUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? filter,
@@ -48,6 +67,12 @@ namespace G
                 startIndex: ref startIndex,
                 count: ref count);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ScimListUsersSecurityRequirements,
+                operationName: "ScimListUsersAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/public/scim/Users",
                 baseUri: HttpClient.BaseAddress); 
@@ -65,7 +90,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ExtractionsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateExtractionJobSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateExtractionJobSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateExtractionJobSecurityRequirement0,
+            };
         partial void PrepareCreateExtractionJobArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.ExtractJobCreateParams request);
@@ -46,6 +65,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateExtractionJobSecurityRequirements,
+                operationName: "CreateExtractionJobAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/extractions/jobs",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class HealthClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_HealthGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_HealthGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_HealthGetSecurityRequirement0,
+            };
         partial void PrepareHealthGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string service);
@@ -39,6 +58,12 @@ namespace G
                 httpClient: HttpClient,
                 service: ref service);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_HealthGetSecurityRequirements,
+                operationName: "HealthGetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/health/{service}",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +76,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

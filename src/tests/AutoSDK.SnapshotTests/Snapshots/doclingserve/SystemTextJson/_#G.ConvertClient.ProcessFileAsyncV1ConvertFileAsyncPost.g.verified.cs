@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ConvertClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ProcessFileAsyncV1ConvertFileAsyncPostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ProcessFileAsyncV1ConvertFileAsyncPostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ProcessFileAsyncV1ConvertFileAsyncPostSecurityRequirement0,
+            };
         partial void PrepareProcessFileAsyncV1ConvertFileAsyncPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.BodyProcessFileAsyncV1ConvertFileAsyncPost request);
@@ -41,6 +60,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ProcessFileAsyncV1ConvertFileAsyncPostSecurityRequirements,
+                operationName: "ProcessFileAsyncV1ConvertFileAsyncPostAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/convert/file/async",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,9 +78,18 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Files, x => x))}]"),
-                name: "\"files\"");
+            for (var __iFiles = 0; __iFiles < request.Files.Count; __iFiles++)
+            {
+                var __contentFiles = new global::System.Net.Http.ByteArrayContent(request.Files[__iFiles]);
+                __httpRequestContent.Add(
+                    content: __contentFiles,
+                    name: "\"files\"",
+                    fileName: $"\"file{__iFiles}.bin\"");
+                if (__contentFiles.Headers.ContentDisposition != null)
+                {
+                    __contentFiles.Headers.ContentDisposition.FileNameStar = null;
+                }
+            }
             if (request.TargetType != default)
             {
 
@@ -144,7 +178,7 @@ namespace G
             {
 
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.PageRange}"),
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.PageRange, x => x))}]"),
                     name: "\"page_range\"");
             } 
             if (request.DocumentTimeout != default)
@@ -609,7 +643,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TaskStatusResponse> ProcessFileAsyncV1ConvertFileAsyncPostAsync(
-            global::System.Collections.Generic.IList<string> files,
+            global::System.Collections.Generic.IList<byte[]> files,
             global::G.TargetName? targetType = default,
             global::System.Collections.Generic.IList<global::G.InputFormat>? fromFormats = default,
             global::System.Collections.Generic.IList<global::G.OutputFormat>? toFormats = default,
@@ -622,7 +656,7 @@ namespace G
             global::G.TableFormerMode? tableMode = default,
             bool? tableCellMatching = default,
             global::G.ProcessingPipeline? pipeline = default,
-            byte[]? pageRange = default,
+            global::System.Collections.Generic.IList<int>? pageRange = default,
             double? documentTimeout = default,
             bool? abortOnError = default,
             bool? doTableStructure = default,

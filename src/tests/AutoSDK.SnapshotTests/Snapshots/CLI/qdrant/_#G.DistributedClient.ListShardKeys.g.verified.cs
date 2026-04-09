@@ -6,6 +6,49 @@ namespace G
 {
     public partial class DistributedClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListShardKeysSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListShardKeysSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListShardKeysSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListShardKeysSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListShardKeysSecurityRequirement0,
+                s_ListShardKeysSecurityRequirement1,
+                s_ListShardKeysSecurityRequirement2,
+            };
         partial void PrepareListShardKeysArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName);
@@ -38,6 +81,12 @@ namespace G
                 httpClient: HttpClient,
                 collectionName: ref collectionName);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListShardKeysSecurityRequirements,
+                operationName: "ListShardKeysAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/collections/{collectionName}/shards",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +99,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

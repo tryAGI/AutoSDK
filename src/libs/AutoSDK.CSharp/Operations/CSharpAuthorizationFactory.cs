@@ -40,6 +40,10 @@ public static class CSharpAuthorizationFactory
 
         return Create(
             friendlyName: friendlyName,
+            schemeId: scheme.Reference?.Id ??
+                      scheme.Name ??
+                      scheme.Scheme ??
+                      friendlyName,
             type: scheme.Type,
             parameterLocation: (scheme.Type, scheme.Scheme?.ToUpperInvariant()) switch
             {
@@ -77,6 +81,7 @@ public static class CSharpAuthorizationFactory
 
     public static Authorization Create(
         string friendlyName,
+        string schemeId,
         SecuritySchemeType? type,
         ParameterLocation? parameterLocation,
         EquatableArray<string> parameters,
@@ -88,10 +93,12 @@ public static class CSharpAuthorizationFactory
         string openIdConnectUrl)
     {
         friendlyName = NormalizeFriendlyName(friendlyName, settings);
+        schemeId = NormalizeFriendlyName(schemeId, settings);
 
         return new Authorization(
             FriendlyName: friendlyName,
             MethodName: $"AuthorizeUsing{friendlyName}",
+            SchemeId: schemeId,
             Type: type,
             In: parameterLocation,
             Parameters: parameters,
@@ -103,7 +110,7 @@ public static class CSharpAuthorizationFactory
             OpenIdConnectUrl: openIdConnectUrl);
     }
 
-    private static string NormalizeFriendlyName(
+    internal static string NormalizeFriendlyName(
         string friendlyName,
         CSharpSettings settings)
     {

@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schema", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Schema { get; set; } = default!;
+        public object SchemaDefinition { get; set; } = default!;
 
         /// <summary>
         /// Default Value: false
@@ -43,20 +43,20 @@ namespace G
         /// Initializes a new instance of the <see cref="JsonSchema" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="schema"></param>
+        /// <param name="schemaDefinition"></param>
         /// <param name="description"></param>
         /// <param name="strict">
         /// Default Value: false
         /// </param>
         public JsonSchema(
             string name,
-            object schema,
+            object schemaDefinition,
             string? description,
             bool? strict)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
-            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
+            this.SchemaDefinition = schemaDefinition ?? throw new global::System.ArgumentNullException(nameof(schemaDefinition));
             this.Strict = strict;
         }
 

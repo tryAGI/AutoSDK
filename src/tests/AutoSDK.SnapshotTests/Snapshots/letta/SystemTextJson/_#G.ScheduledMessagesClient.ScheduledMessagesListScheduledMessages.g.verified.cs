@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ScheduledMessagesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ScheduledMessagesListScheduledMessagesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ScheduledMessagesListScheduledMessagesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ScheduledMessagesListScheduledMessagesSecurityRequirement0,
+            };
         partial void PrepareScheduledMessagesListScheduledMessagesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
@@ -49,6 +68,12 @@ namespace G
                 limit: ref limit,
                 after: ref after);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ScheduledMessagesListScheduledMessagesSecurityRequirements,
+                operationName: "ScheduledMessagesListScheduledMessagesAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/agents/{agentId}/schedule",
                 baseUri: HttpClient.BaseAddress); 
@@ -65,7 +90,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

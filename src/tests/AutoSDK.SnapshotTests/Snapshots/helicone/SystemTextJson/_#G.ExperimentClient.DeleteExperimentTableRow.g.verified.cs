@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ExperimentClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteExperimentTableRowSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteExperimentTableRowSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteExperimentTableRowSecurityRequirement0,
+            };
         partial void PrepareDeleteExperimentTableRowArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string experimentTableId,
@@ -43,6 +62,12 @@ namespace G
                 experimentTableId: ref experimentTableId,
                 rowIndex: ref rowIndex);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteExperimentTableRowSecurityRequirements,
+                operationName: "DeleteExperimentTableRowAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/experiment/table/{experimentTableId}/row/{rowIndex}",
                 baseUri: HttpClient.BaseAddress); 
@@ -55,7 +80,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

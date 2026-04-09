@@ -6,6 +6,49 @@ namespace G
 {
     public partial class PointsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_BatchUpdateSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_BatchUpdateSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_BatchUpdateSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_BatchUpdateSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_BatchUpdateSecurityRequirement0,
+                s_BatchUpdateSecurityRequirement1,
+                s_BatchUpdateSecurityRequirement2,
+            };
         partial void PrepareBatchUpdateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -67,6 +110,12 @@ namespace G
                 timeout: ref timeout,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_BatchUpdateSecurityRequirements,
+                operationName: "BatchUpdateAsync");
+
             var orderingValue = ordering switch
             {
                 global::G.WriteOrdering.Weak => "weak",
@@ -91,7 +140,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

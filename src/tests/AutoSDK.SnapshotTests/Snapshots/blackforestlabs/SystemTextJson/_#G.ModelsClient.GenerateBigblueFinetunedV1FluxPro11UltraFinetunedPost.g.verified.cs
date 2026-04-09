@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ModelsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostSecurityRequirement0,
+            };
         partial void PrepareGenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.FinetuneFluxUltraInput request);
@@ -42,6 +61,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostSecurityRequirements,
+                operationName: "GenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/flux-pro-1.1-ultra-finetuned",
                 baseUri: HttpClient.BaseAddress); 
@@ -54,7 +79,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

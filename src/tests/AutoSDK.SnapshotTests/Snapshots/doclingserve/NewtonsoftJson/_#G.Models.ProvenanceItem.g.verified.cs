@@ -28,7 +28,7 @@ namespace G
         /// Character span (0-indexed)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("charspan", Required = global::Newtonsoft.Json.Required.Always)]
-        public byte[] Charspan { get; set; } = default!;
+        public global::System.Collections.Generic.IList<int> Charspan { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,7 +51,7 @@ namespace G
         public ProvenanceItem(
             int pageNo,
             global::G.BoundingBox bbox,
-            byte[] charspan)
+            global::System.Collections.Generic.IList<int> charspan)
         {
             this.PageNo = pageNo;
             this.Bbox = bbox ?? throw new global::System.ArgumentNullException(nameof(bbox));

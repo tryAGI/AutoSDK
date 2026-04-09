@@ -38,7 +38,7 @@ namespace G
         /// Optional list of file IDs to filter chunks by (inclusion filter)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_ids")]
-        public global::G.AnyOf<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>? FileIds { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>? FileIds { get; set; }
 
         /// <summary>
         /// Search configuration options
@@ -88,7 +88,7 @@ namespace G
             string? query,
             int? topK,
             global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>? filters,
-            global::G.AnyOf<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>? fileIds,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>? fileIds,
             global::G.StoreChunkSearchOptions? searchOptions,
             global::System.Collections.Generic.IList<string>? facets)
         {

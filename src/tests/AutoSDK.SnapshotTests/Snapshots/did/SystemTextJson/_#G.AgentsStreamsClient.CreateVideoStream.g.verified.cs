@@ -6,6 +6,40 @@ namespace G
 {
     public partial class AgentsStreamsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateVideoStreamSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateVideoStreamSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateVideoStreamSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateVideoStreamSecurityRequirement0,
+                s_CreateVideoStreamSecurityRequirement1,
+            };
         partial void PrepareCreateVideoStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
@@ -51,6 +85,12 @@ namespace G
                 streamId: ref streamId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateVideoStreamSecurityRequirements,
+                operationName: "CreateVideoStreamAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/agents/{agentId}/streams/{streamId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -63,7 +103,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

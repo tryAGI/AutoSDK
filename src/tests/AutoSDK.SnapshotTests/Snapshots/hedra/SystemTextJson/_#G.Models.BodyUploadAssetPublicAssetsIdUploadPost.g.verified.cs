@@ -14,7 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string File { get; set; }
+        public required byte[] File { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Filename { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,13 +33,16 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyUploadAssetPublicAssetsIdUploadPost" /> class.
         /// </summary>
         /// <param name="file"></param>
+        /// <param name="filename"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BodyUploadAssetPublicAssetsIdUploadPost(
-            string file)
+            byte[] file,
+            string filename)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
         }
 
         /// <summary>

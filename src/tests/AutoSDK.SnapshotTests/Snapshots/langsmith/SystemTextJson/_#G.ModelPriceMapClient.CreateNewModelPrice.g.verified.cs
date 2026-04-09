@@ -6,6 +6,55 @@ namespace G
 {
     public partial class ModelPriceMapClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateNewModelPriceSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateNewModelPriceSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateNewModelPriceSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateNewModelPriceSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateNewModelPriceSecurityRequirement0,
+                s_CreateNewModelPriceSecurityRequirement1,
+                s_CreateNewModelPriceSecurityRequirement2,
+            };
         partial void PrepareCreateNewModelPriceArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.ModelPriceMapCreateSchema request);
@@ -41,6 +90,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateNewModelPriceSecurityRequirements,
+                operationName: "CreateNewModelPriceAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/model-price-map",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,7 +108,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

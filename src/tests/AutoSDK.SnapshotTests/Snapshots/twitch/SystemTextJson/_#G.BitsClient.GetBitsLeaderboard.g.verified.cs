@@ -6,6 +6,25 @@ namespace G
 {
     public partial class BitsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetBitsLeaderboardSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "OAuth2",
+                        Location = "Header",
+                        Name = "",
+                        FriendlyName = "OAuth2",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetBitsLeaderboardSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetBitsLeaderboardSecurityRequirement0,
+            };
         partial void PrepareGetBitsLeaderboardArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? count,
@@ -56,6 +75,12 @@ namespace G
                 startedAt: ref startedAt,
                 userId: ref userId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetBitsLeaderboardSecurityRequirements,
+                operationName: "GetBitsLeaderboardAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/bits/leaderboard",
                 baseUri: HttpClient.BaseAddress); 
@@ -74,7 +99,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -105,7 +130,7 @@ namespace G
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 

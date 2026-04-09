@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TranscriptClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTranscriptSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetTranscriptSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetTranscriptSecurityRequirement0,
+            };
         partial void PrepareGetTranscriptArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.GetTranscriptAccept? accept,
@@ -46,6 +65,12 @@ namespace G
                 accept: ref accept,
                 id: ref id);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetTranscriptSecurityRequirements,
+                operationName: "GetTranscriptAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/speechtotext/v1/jobs/{id}/transcript",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -13,21 +13,28 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConversationHistoryMetadataCommonModelPhoneCallVariant1Discriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryMetadataCommonModelPhoneCallVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryMetadataCommonModelPhoneCallVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConversationHistoryMetadataCommonModelPhoneCallVariant1Discriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.ConversationHistoryTwilioPhoneCallModel? twilio = default;
             if (discriminator?.Type == global::G.ConversationHistoryMetadataCommonModelPhoneCallVariant1DiscriminatorType.Twilio)
             {
-                twilio = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConversationHistoryTwilioPhoneCallModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTwilioPhoneCallModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTwilioPhoneCallModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConversationHistoryTwilioPhoneCallModel)}");
+                twilio = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ConversationHistorySIPTrunkingPhoneCallModel? sipTrunking = default;
             if (discriminator?.Type == global::G.ConversationHistoryMetadataCommonModelPhoneCallVariant1DiscriminatorType.SipTrunking)
             {
-                sipTrunking = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConversationHistorySIPTrunkingPhoneCallModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistorySIPTrunkingPhoneCallModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistorySIPTrunkingPhoneCallModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConversationHistorySIPTrunkingPhoneCallModel)}");
+                sipTrunking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.PhoneCallVariant1(
@@ -46,15 +53,20 @@ namespace G.JsonConverters
             global::G.PhoneCallVariant1 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsTwilio)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Twilio, typeof(global::G.ConversationHistoryTwilioPhoneCallModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTwilioPhoneCallModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTwilioPhoneCallModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationHistoryTwilioPhoneCallModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Twilio!, typeInfo);
             }
             else if (value.IsSipTrunking)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipTrunking, typeof(global::G.ConversationHistorySIPTrunkingPhoneCallModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistorySIPTrunkingPhoneCallModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistorySIPTrunkingPhoneCallModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationHistorySIPTrunkingPhoneCallModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipTrunking!, typeInfo);
             }
         }
     }

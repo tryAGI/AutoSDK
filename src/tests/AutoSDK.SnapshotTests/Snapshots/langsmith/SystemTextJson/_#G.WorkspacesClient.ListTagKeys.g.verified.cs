@@ -6,6 +6,55 @@ namespace G
 {
     public partial class WorkspacesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListTagKeysSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListTagKeysSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListTagKeysSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListTagKeysSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListTagKeysSecurityRequirement0,
+                s_ListTagKeysSecurityRequirement1,
+                s_ListTagKeysSecurityRequirement2,
+            };
         partial void PrepareListTagKeysArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareListTagKeysRequest(
@@ -33,6 +82,12 @@ namespace G
             PrepareListTagKeysArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListTagKeysSecurityRequirements,
+                operationName: "ListTagKeysAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/workspaces/current/tag-keys",
                 baseUri: HttpClient.BaseAddress); 
@@ -45,7 +100,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

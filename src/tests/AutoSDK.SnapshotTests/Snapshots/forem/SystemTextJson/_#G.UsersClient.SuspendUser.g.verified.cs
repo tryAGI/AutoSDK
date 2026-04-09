@@ -6,6 +6,25 @@ namespace G
 {
     public partial class UsersClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_SuspendUserSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_SuspendUserSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_SuspendUserSecurityRequirement0,
+            };
         partial void PrepareSuspendUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id);
@@ -39,6 +58,12 @@ namespace G
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SuspendUserSecurityRequirements,
+                operationName: "SuspendUserAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/users/{id}/suspend",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +76,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

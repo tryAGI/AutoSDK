@@ -6,6 +6,25 @@ namespace G
 {
     public partial class HeliconeSqlClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSavedQuerySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetSavedQuerySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetSavedQuerySecurityRequirement0,
+            };
         partial void PrepareGetSavedQueryArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string queryId);
@@ -39,6 +58,12 @@ namespace G
                 httpClient: HttpClient,
                 queryId: ref queryId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSavedQuerySecurityRequirements,
+                operationName: "GetSavedQueryAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/helicone-sql/saved-query/{queryId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +76,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

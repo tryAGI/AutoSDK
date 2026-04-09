@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DatasetsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DatasetsListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DatasetsListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DatasetsListSecurityRequirement0,
+            };
         partial void PrepareDatasetsListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -43,6 +62,12 @@ namespace G
                 page: ref page,
                 limit: ref limit);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DatasetsListSecurityRequirements,
+                operationName: "DatasetsListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/public/v2/datasets",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +84,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

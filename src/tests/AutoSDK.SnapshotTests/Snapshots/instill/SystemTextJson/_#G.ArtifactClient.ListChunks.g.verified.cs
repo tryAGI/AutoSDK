@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ArtifactClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListChunksSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListChunksSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListChunksSecurityRequirement0,
+            };
         partial void PrepareListChunksArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string namespaceId,
@@ -54,6 +73,12 @@ namespace G
                 fileUid: ref fileUid,
                 chunkUids: chunkUids);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListChunksSecurityRequirements,
+                operationName: "ListChunksAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}/chunks",
                 baseUri: HttpClient.BaseAddress); 
@@ -70,7 +95,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FeedsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_FeedsGetMessageSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_FeedsGetMessageSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_FeedsGetMessageSecurityRequirement0,
+            };
         partial void PrepareFeedsGetMessageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string feedId,
@@ -44,6 +63,12 @@ namespace G
                 feedId: ref feedId,
                 messageId: ref messageId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_FeedsGetMessageSecurityRequirements,
+                operationName: "FeedsGetMessageAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/feeds/{feedId}/messages/{messageId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -56,7 +81,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

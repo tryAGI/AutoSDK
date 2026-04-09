@@ -6,6 +6,25 @@ namespace G
 {
     public partial class EditClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostTemplateRenderSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PostTemplateRenderSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PostTemplateRenderSecurityRequirement0,
+            };
         partial void PreparePostTemplateRenderArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.TemplateRender request);
@@ -43,6 +62,12 @@ namespace G
             PreparePostTemplateRenderArguments(
                 httpClient: HttpClient,
                 request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostTemplateRenderSecurityRequirements,
+                operationName: "PostTemplateRenderAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/edit/v1/templates/render",

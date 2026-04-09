@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TextTo3dClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateTextTo3DTaskSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateTextTo3DTaskSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateTextTo3DTaskSecurityRequirement0,
+            };
         partial void PrepareCreateTextTo3DTaskArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.CreateTextTo3DTaskRequest request);
@@ -39,6 +58,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateTextTo3DTaskSecurityRequirements,
+                operationName: "CreateTextTo3DTaskAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/openapi/v2/text-to-3d",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +76,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

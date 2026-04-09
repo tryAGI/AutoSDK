@@ -6,6 +6,25 @@ namespace G
 {
     public partial class KeysClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteApiKeySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteApiKeySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteApiKeySecurityRequirement0,
+            };
         partial void PrepareDeleteApiKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string keyId,
@@ -61,6 +80,12 @@ namespace G
                 keyId: ref keyId,
                 idempotencyKey: ref idempotencyKey);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteApiKeySecurityRequirements,
+                operationName: "DeleteApiKeyAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/keys/{keyId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -73,7 +98,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

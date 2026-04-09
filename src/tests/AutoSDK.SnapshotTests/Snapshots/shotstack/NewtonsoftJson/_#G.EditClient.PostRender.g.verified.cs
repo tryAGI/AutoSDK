@@ -8,6 +8,25 @@ namespace G
 {
     public partial class EditClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostRenderSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PostRenderSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PostRenderSecurityRequirement0,
+            };
         partial void PreparePostRenderArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.Edit request);
@@ -54,6 +73,12 @@ namespace G
             PreparePostRenderArguments(
                 httpClient: HttpClient,
                 request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostRenderSecurityRequirements,
+                operationName: "PostRenderAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/edit/v1/render",

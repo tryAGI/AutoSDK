@@ -6,6 +6,25 @@ namespace G
 {
     public partial class PersonalizedVideoClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PersonalizedVideoAddContactSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Api-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PersonalizedVideoAddContactSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PersonalizedVideoAddContactSecurityRequirement0,
+            };
         partial void PreparePersonalizedVideoAddContactArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.PersonalizedVideoAddContactRequest request);
@@ -37,6 +56,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PersonalizedVideoAddContactSecurityRequirements,
+                operationName: "PersonalizedVideoAddContactAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/personalized_video/add_contact",
                 baseUri: HttpClient.BaseAddress); 
@@ -49,7 +74,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,34 @@ namespace G
 {
     public partial class SpanIframesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PatchSpanIframeIdSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PatchSpanIframeIdSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PatchSpanIframeIdSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PatchSpanIframeIdSecurityRequirement0,
+                s_PatchSpanIframeIdSecurityRequirement1,
+            };
         partial void PreparePatchSpanIframeIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid spanIframeId,
@@ -49,6 +77,12 @@ namespace G
                 spanIframeId: ref spanIframeId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PatchSpanIframeIdSecurityRequirements,
+                operationName: "PatchSpanIframeIdAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/span_iframe/{spanIframeId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -61,7 +95,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

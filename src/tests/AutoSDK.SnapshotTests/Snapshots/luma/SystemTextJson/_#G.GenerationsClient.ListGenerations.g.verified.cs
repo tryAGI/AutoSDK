@@ -6,6 +6,25 @@ namespace G
 {
     public partial class GenerationsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListGenerationsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListGenerationsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListGenerationsSecurityRequirement0,
+            };
         partial void PrepareListGenerationsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
@@ -48,6 +67,12 @@ namespace G
                 limit: ref limit,
                 offset: ref offset);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListGenerationsSecurityRequirements,
+                operationName: "ListGenerationsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/generations",
                 baseUri: HttpClient.BaseAddress); 
@@ -64,7 +89,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class EventSubClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateEventsubSubscriptionSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "OAuth2",
+                        Location = "Header",
+                        Name = "",
+                        FriendlyName = "OAuth2",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateEventsubSubscriptionSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateEventsubSubscriptionSecurityRequirement0,
+            };
         partial void PrepareCreateEventsubSubscriptionArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.CreateEventSubSubscriptionBody request);
@@ -46,6 +65,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateEventsubSubscriptionSecurityRequirements,
+                operationName: "CreateEventsubSubscriptionAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/eventsub/subscriptions",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -92,7 +117,7 @@ namespace G
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 

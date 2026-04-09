@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetBillingInfoSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "OAuth2",
+                        Location = "Header",
+                        Name = "",
+                        FriendlyName = "OAuth2",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetBillingInfoSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetBillingInfoSecurityRequirement0,
+            };
         partial void PrepareGetBillingInfoArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetBillingInfoRequest(
@@ -28,6 +47,12 @@ namespace G
             PrepareGetBillingInfoArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetBillingInfoSecurityRequirements,
+                operationName: "GetBillingInfoAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/billing_info",
                 baseUri: HttpClient.BaseAddress); 
@@ -40,7 +65,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -67,7 +92,7 @@ namespace G
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 

@@ -100,7 +100,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Léa")]
-        L_a,
+        Léa,
         /// <summary>
         /// 
         /// </summary>
@@ -162,7 +162,7 @@ namespace G
                 GetPresentersResponsePresenterVoiceAmazonVoiceId.Kimberly => "Kimberly",
                 GetPresentersResponsePresenterVoiceAmazonVoiceId.Lucia => "Lucia",
                 GetPresentersResponsePresenterVoiceAmazonVoiceId.Lupe => "Lupe",
-                GetPresentersResponsePresenterVoiceAmazonVoiceId.L_a => "Léa",
+                GetPresentersResponsePresenterVoiceAmazonVoiceId.Léa => "Léa",
                 GetPresentersResponsePresenterVoiceAmazonVoiceId.Matthew => "Matthew",
                 GetPresentersResponsePresenterVoiceAmazonVoiceId.Olivia => "Olivia",
                 GetPresentersResponsePresenterVoiceAmazonVoiceId.Salli => "Salli",
@@ -196,7 +196,7 @@ namespace G
                 "Kimberly" => GetPresentersResponsePresenterVoiceAmazonVoiceId.Kimberly,
                 "Lucia" => GetPresentersResponsePresenterVoiceAmazonVoiceId.Lucia,
                 "Lupe" => GetPresentersResponsePresenterVoiceAmazonVoiceId.Lupe,
-                "Léa" => GetPresentersResponsePresenterVoiceAmazonVoiceId.L_a,
+                "Léa" => GetPresentersResponsePresenterVoiceAmazonVoiceId.Léa,
                 "Matthew" => GetPresentersResponsePresenterVoiceAmazonVoiceId.Matthew,
                 "Olivia" => GetPresentersResponsePresenterVoiceAmazonVoiceId.Olivia,
                 "Salli" => GetPresentersResponsePresenterVoiceAmazonVoiceId.Salli,

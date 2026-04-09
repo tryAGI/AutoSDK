@@ -6,6 +6,25 @@ namespace G
 {
     public partial class McpServersCapabilitiesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_McpServerCapabilitiesListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_McpServerCapabilitiesListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_McpServerCapabilitiesListSecurityRequirement0,
+            };
         partial void PrepareMcpServerCapabilitiesListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -57,6 +76,12 @@ namespace G
                 type: ref type,
                 mcpServerId: ref mcpServerId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_McpServerCapabilitiesListSecurityRequirements,
+                operationName: "McpServerCapabilitiesListAsync");
+
             var typeValue = type switch
             {
                 global::G.McpServerCapabilitiesListType.Tool => "tool",
@@ -82,7 +107,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

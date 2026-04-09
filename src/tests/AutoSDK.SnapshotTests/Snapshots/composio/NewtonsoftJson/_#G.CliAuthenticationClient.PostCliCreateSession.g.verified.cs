@@ -6,6 +6,25 @@ namespace G
 {
     public partial class CliAuthenticationClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostCliCreateSessionSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "NoAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PostCliCreateSessionSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PostCliCreateSessionSecurityRequirement0,
+            };
         partial void PreparePostCliCreateSessionArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.PostCliCreateSessionRequest request);
@@ -41,6 +60,12 @@ namespace G
             PreparePostCliCreateSessionArguments(
                 httpClient: HttpClient,
                 request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostCliCreateSessionSecurityRequirements,
+                operationName: "PostCliCreateSessionAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v3/cli/create-session",

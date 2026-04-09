@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ChatClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListChatCompletionsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListChatCompletionsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListChatCompletionsSecurityRequirement0,
+            };
         partial void PrepareListChatCompletionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? model,
@@ -69,6 +88,12 @@ namespace G
                 limit: ref limit,
                 order: ref order);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListChatCompletionsSecurityRequirements,
+                operationName: "ListChatCompletionsAsync");
+
             var orderValue = order switch
             {
                 global::G.ListChatCompletionsOrder.Asc => "asc",
@@ -94,7 +119,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

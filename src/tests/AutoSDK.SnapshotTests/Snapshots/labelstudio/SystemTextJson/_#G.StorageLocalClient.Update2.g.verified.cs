@@ -6,6 +6,25 @@ namespace G
 {
     public partial class StorageLocalClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_Update2SecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_Update2SecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_Update2SecurityRequirement0,
+            };
         partial void PrepareUpdate2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id,
@@ -47,6 +66,12 @@ namespace G
                 id: ref id,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_Update2SecurityRequirements,
+                operationName: "Update2Async");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/storages/localfiles/{id}",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +84,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

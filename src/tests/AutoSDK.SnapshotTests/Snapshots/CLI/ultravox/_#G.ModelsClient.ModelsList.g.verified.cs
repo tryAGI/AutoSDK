@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ModelsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ModelsListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ModelsListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ModelsListSecurityRequirement0,
+            };
         partial void PrepareModelsListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
@@ -43,6 +62,12 @@ namespace G
                 cursor: ref cursor,
                 pageSize: ref pageSize);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ModelsListSecurityRequirements,
+                operationName: "ModelsListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/models",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +84,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

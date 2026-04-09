@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DisplayAdsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PutDisplayAdsByIdUnpublishSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PutDisplayAdsByIdUnpublishSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PutDisplayAdsByIdUnpublishSecurityRequirement0,
+            };
         partial void PreparePutDisplayAdsByIdUnpublishArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id);
@@ -34,6 +53,12 @@ namespace G
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PutDisplayAdsByIdUnpublishSecurityRequirements,
+                operationName: "PutDisplayAdsByIdUnpublishAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/display_ads/{id}/unpublish",
                 baseUri: HttpClient.BaseAddress); 
@@ -46,7 +71,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

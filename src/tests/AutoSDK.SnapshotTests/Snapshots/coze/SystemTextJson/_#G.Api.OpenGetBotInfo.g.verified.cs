@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_OpenGetBotInfoSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_OpenGetBotInfoSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_OpenGetBotInfoSecurityRequirement0,
+            };
         partial void PrepareOpenGetBotInfoArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? isPublished,
@@ -44,6 +63,12 @@ namespace G
                 isPublished: ref isPublished,
                 botId: ref botId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_OpenGetBotInfoSecurityRequirements,
+                operationName: "OpenGetBotInfoAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/bots/{botId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +84,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

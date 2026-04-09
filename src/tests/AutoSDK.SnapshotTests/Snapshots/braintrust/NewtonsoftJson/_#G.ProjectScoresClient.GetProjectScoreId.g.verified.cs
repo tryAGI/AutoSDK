@@ -6,6 +6,34 @@ namespace G
 {
     public partial class ProjectScoresClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetProjectScoreIdSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetProjectScoreIdSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetProjectScoreIdSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetProjectScoreIdSecurityRequirement0,
+                s_GetProjectScoreIdSecurityRequirement1,
+            };
         partial void PrepareGetProjectScoreIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid projectScoreId);
@@ -41,6 +69,12 @@ namespace G
                 httpClient: HttpClient,
                 projectScoreId: ref projectScoreId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetProjectScoreIdSecurityRequirements,
+                operationName: "GetProjectScoreIdAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/project_score/{projectScoreId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,7 +87,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

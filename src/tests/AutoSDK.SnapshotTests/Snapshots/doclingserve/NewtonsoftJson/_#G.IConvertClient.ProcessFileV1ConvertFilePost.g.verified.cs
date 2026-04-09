@@ -158,7 +158,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ConvertDocumentResponse, global::G.PresignedUrlConvertDocumentResponse>> ProcessFileV1ConvertFilePostAsync(
-            global::System.Collections.Generic.IList<string> files,
+            global::System.Collections.Generic.IList<byte[]> files,
             global::G.TargetName? targetType = default,
             global::System.Collections.Generic.IList<global::G.InputFormat>? fromFormats = default,
             global::System.Collections.Generic.IList<global::G.OutputFormat>? toFormats = default,
@@ -171,7 +171,7 @@ namespace G
             global::G.TableFormerMode? tableMode = default,
             bool? tableCellMatching = default,
             global::G.ProcessingPipeline? pipeline = default,
-            byte[]? pageRange = default,
+            global::System.Collections.Generic.IList<int>? pageRange = default,
             double? documentTimeout = default,
             bool? abortOnError = default,
             bool? doTableStructure = default,

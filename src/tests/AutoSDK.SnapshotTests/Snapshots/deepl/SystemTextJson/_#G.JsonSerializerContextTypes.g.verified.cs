@@ -469,7 +469,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCDer? Type110 { get; set; }
+        public global::G.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéder? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>

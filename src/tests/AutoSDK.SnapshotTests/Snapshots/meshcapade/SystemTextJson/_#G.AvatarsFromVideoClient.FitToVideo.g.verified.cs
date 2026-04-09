@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AvatarsFromVideoClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_FitToVideoSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_FitToVideoSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_FitToVideoSecurityRequirement0,
+            };
         partial void PrepareFitToVideoArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid assetID,
@@ -46,6 +65,12 @@ namespace G
                 assetID: ref assetID,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_FitToVideoSecurityRequirements,
+                operationName: "FitToVideoAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/avatars/{assetID}/fit-to-video",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

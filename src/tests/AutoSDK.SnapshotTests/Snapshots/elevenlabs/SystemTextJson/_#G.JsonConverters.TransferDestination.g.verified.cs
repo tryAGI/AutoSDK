@@ -13,31 +13,42 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WorkflowPhoneNumberNodeModelInputTransferDestinationDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowPhoneNumberNodeModelInputTransferDestinationDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowPhoneNumberNodeModelInputTransferDestinationDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WorkflowPhoneNumberNodeModelInputTransferDestinationDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.PhoneNumberTransferDestination? phone = default;
             if (discriminator?.Type == global::G.WorkflowPhoneNumberNodeModelInputTransferDestinationDiscriminatorType.Phone)
             {
-                phone = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PhoneNumberTransferDestination>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PhoneNumberTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PhoneNumberTransferDestination> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PhoneNumberTransferDestination)}");
+                phone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.SIPUriTransferDestination? sipUri = default;
             if (discriminator?.Type == global::G.WorkflowPhoneNumberNodeModelInputTransferDestinationDiscriminatorType.SipUri)
             {
-                sipUri = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SIPUriTransferDestination>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SIPUriTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SIPUriTransferDestination> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SIPUriTransferDestination)}");
+                sipUri = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.PhoneNumberDynamicVariableTransferDestination? phoneDynamicVariable = default;
             if (discriminator?.Type == global::G.WorkflowPhoneNumberNodeModelInputTransferDestinationDiscriminatorType.PhoneDynamicVariable)
             {
-                phoneDynamicVariable = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PhoneNumberDynamicVariableTransferDestination>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PhoneNumberDynamicVariableTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PhoneNumberDynamicVariableTransferDestination> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PhoneNumberDynamicVariableTransferDestination)}");
+                phoneDynamicVariable = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.SIPUriDynamicVariableTransferDestination? sipUriDynamicVariable = default;
             if (discriminator?.Type == global::G.WorkflowPhoneNumberNodeModelInputTransferDestinationDiscriminatorType.SipUriDynamicVariable)
             {
-                sipUriDynamicVariable = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SIPUriDynamicVariableTransferDestination>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SIPUriDynamicVariableTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SIPUriDynamicVariableTransferDestination> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SIPUriDynamicVariableTransferDestination)}");
+                sipUriDynamicVariable = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.TransferDestination(
@@ -60,23 +71,32 @@ namespace G.JsonConverters
             global::G.TransferDestination value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsPhone)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phone, typeof(global::G.PhoneNumberTransferDestination), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PhoneNumberTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PhoneNumberTransferDestination?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PhoneNumberTransferDestination).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phone!, typeInfo);
             }
             else if (value.IsSipUri)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipUri, typeof(global::G.SIPUriTransferDestination), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SIPUriTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SIPUriTransferDestination?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SIPUriTransferDestination).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipUri!, typeInfo);
             }
             else if (value.IsPhoneDynamicVariable)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PhoneDynamicVariable, typeof(global::G.PhoneNumberDynamicVariableTransferDestination), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PhoneNumberDynamicVariableTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PhoneNumberDynamicVariableTransferDestination?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PhoneNumberDynamicVariableTransferDestination).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PhoneDynamicVariable!, typeInfo);
             }
             else if (value.IsSipUriDynamicVariable)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipUriDynamicVariable, typeof(global::G.SIPUriDynamicVariableTransferDestination), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SIPUriDynamicVariableTransferDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SIPUriDynamicVariableTransferDestination?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SIPUriDynamicVariableTransferDestination).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipUriDynamicVariable!, typeInfo);
             }
         }
     }

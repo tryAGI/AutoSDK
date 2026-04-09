@@ -13,56 +13,77 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AgentStateToolRulesVariant1ItemDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentStateToolRulesVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentStateToolRulesVariant1ItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AgentStateToolRulesVariant1ItemDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.ChildToolRule? constrainChildTools = default;
             if (discriminator?.Type == global::G.AgentStateToolRulesVariant1ItemDiscriminatorType.ConstrainChildTools)
             {
-                constrainChildTools = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChildToolRule>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChildToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChildToolRule> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChildToolRule)}");
+                constrainChildTools = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.InitToolRule? runFirst = default;
             if (discriminator?.Type == global::G.AgentStateToolRulesVariant1ItemDiscriminatorType.RunFirst)
             {
-                runFirst = global::System.Text.Json.JsonSerializer.Deserialize<global::G.InitToolRule>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InitToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InitToolRule> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.InitToolRule)}");
+                runFirst = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TerminalToolRule? exitLoop = default;
             if (discriminator?.Type == global::G.AgentStateToolRulesVariant1ItemDiscriminatorType.ExitLoop)
             {
-                exitLoop = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TerminalToolRule>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TerminalToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TerminalToolRule> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TerminalToolRule)}");
+                exitLoop = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ConditionalToolRule? conditional = default;
             if (discriminator?.Type == global::G.AgentStateToolRulesVariant1ItemDiscriminatorType.Conditional)
             {
-                conditional = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConditionalToolRule>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConditionalToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConditionalToolRule> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConditionalToolRule)}");
+                conditional = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ContinueToolRule? continueLoop = default;
             if (discriminator?.Type == global::G.AgentStateToolRulesVariant1ItemDiscriminatorType.ContinueLoop)
             {
-                continueLoop = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ContinueToolRule>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContinueToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContinueToolRule> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ContinueToolRule)}");
+                continueLoop = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RequiredBeforeExitToolRule? requiredBeforeExit = default;
             if (discriminator?.Type == global::G.AgentStateToolRulesVariant1ItemDiscriminatorType.RequiredBeforeExit)
             {
-                requiredBeforeExit = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RequiredBeforeExitToolRule>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequiredBeforeExitToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequiredBeforeExitToolRule> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequiredBeforeExitToolRule)}");
+                requiredBeforeExit = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MaxCountPerStepToolRule? maxCountPerStep = default;
             if (discriminator?.Type == global::G.AgentStateToolRulesVariant1ItemDiscriminatorType.MaxCountPerStep)
             {
-                maxCountPerStep = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MaxCountPerStepToolRule>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MaxCountPerStepToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MaxCountPerStepToolRule> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MaxCountPerStepToolRule)}");
+                maxCountPerStep = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ParentToolRule? parentLastTool = default;
             if (discriminator?.Type == global::G.AgentStateToolRulesVariant1ItemDiscriminatorType.ParentLastTool)
             {
-                parentLastTool = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ParentToolRule>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ParentToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ParentToolRule> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ParentToolRule)}");
+                parentLastTool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RequiresApprovalToolRule? requiresApproval = default;
             if (discriminator?.Type == global::G.AgentStateToolRulesVariant1ItemDiscriminatorType.RequiresApproval)
             {
-                requiresApproval = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RequiresApprovalToolRule>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequiresApprovalToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequiresApprovalToolRule> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequiresApprovalToolRule)}");
+                requiresApproval = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.ToolRulesVariant1Item(
@@ -95,43 +116,62 @@ namespace G.JsonConverters
             global::G.ToolRulesVariant1Item value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsConstrainChildTools)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConstrainChildTools, typeof(global::G.ChildToolRule), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChildToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChildToolRule?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChildToolRule).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConstrainChildTools!, typeInfo);
             }
             else if (value.IsRunFirst)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunFirst, typeof(global::G.InitToolRule), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InitToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InitToolRule?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InitToolRule).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunFirst!, typeInfo);
             }
             else if (value.IsExitLoop)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExitLoop, typeof(global::G.TerminalToolRule), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TerminalToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TerminalToolRule?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TerminalToolRule).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExitLoop!, typeInfo);
             }
             else if (value.IsConditional)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Conditional, typeof(global::G.ConditionalToolRule), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConditionalToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConditionalToolRule?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConditionalToolRule).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Conditional!, typeInfo);
             }
             else if (value.IsContinueLoop)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContinueLoop, typeof(global::G.ContinueToolRule), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContinueToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContinueToolRule?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContinueToolRule).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContinueLoop!, typeInfo);
             }
             else if (value.IsRequiredBeforeExit)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiredBeforeExit, typeof(global::G.RequiredBeforeExitToolRule), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequiredBeforeExitToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequiredBeforeExitToolRule?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequiredBeforeExitToolRule).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiredBeforeExit!, typeInfo);
             }
             else if (value.IsMaxCountPerStep)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxCountPerStep, typeof(global::G.MaxCountPerStepToolRule), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MaxCountPerStepToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MaxCountPerStepToolRule?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MaxCountPerStepToolRule).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxCountPerStep!, typeInfo);
             }
             else if (value.IsParentLastTool)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ParentLastTool, typeof(global::G.ParentToolRule), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ParentToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ParentToolRule?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ParentToolRule).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ParentLastTool!, typeInfo);
             }
             else if (value.IsRequiresApproval)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiresApproval, typeof(global::G.RequiresApprovalToolRule), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequiresApprovalToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequiresApprovalToolRule?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequiresApprovalToolRule).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiresApproval!, typeInfo);
             }
         }
     }

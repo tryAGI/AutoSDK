@@ -6,6 +6,40 @@ namespace G
 {
     public partial class LogsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetRunLogsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetRunLogsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetRunLogsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetRunLogsSecurityRequirement0,
+                s_GetRunLogsSecurityRequirement1,
+            };
         partial void PrepareGetRunLogsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string runId);
@@ -39,6 +73,12 @@ namespace G
                 httpClient: HttpClient,
                 runId: ref runId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetRunLogsSecurityRequirements,
+                operationName: "GetRunLogsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/logs/run/{runId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +91,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,40 @@ namespace G
 {
     public partial class MetricsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_TopPipelinesUsageSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_TopPipelinesUsageSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_TopPipelinesUsageSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_TopPipelinesUsageSecurityRequirement0,
+                s_TopPipelinesUsageSecurityRequirement1,
+            };
         partial void PrepareTopPipelinesUsageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? numPipelines,
@@ -69,6 +103,12 @@ namespace G
                 intervalUnit: ref intervalUnit,
                 intervalValue: ref intervalValue);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_TopPipelinesUsageSecurityRequirements,
+                operationName: "TopPipelinesUsageAsync");
+
             var intervalUnitValue = intervalUnit switch
             {
                 global::G.DurationUnit.Seconds => "seconds",
@@ -98,7 +138,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

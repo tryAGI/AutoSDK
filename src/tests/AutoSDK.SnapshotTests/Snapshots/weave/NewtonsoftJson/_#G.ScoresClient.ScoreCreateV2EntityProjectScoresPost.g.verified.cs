@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ScoresClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ScoreCreateV2EntityProjectScoresPostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ScoreCreateV2EntityProjectScoresPostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ScoreCreateV2EntityProjectScoresPostSecurityRequirement0,
+            };
         partial void PrepareScoreCreateV2EntityProjectScoresPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string entity,
@@ -52,6 +71,12 @@ namespace G
                 project: ref project,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ScoreCreateV2EntityProjectScoresPostSecurityRequirements,
+                operationName: "ScoreCreateV2EntityProjectScoresPostAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/{entity}/{project}/scores",
                 baseUri: HttpClient.BaseAddress); 
@@ -64,7 +89,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
