@@ -96,7 +96,7 @@ namespace G
                 .AddOptionalParameter("state", state)
                 .AddOptionalParameter("error", error)
                 .AddOptionalParameter("error_description", errorDescription) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

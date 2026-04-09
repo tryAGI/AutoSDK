@@ -110,7 +110,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("as_of", asOf?.ToString())
                 .AddOptionalParameter("tag", tag) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

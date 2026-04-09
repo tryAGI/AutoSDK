@@ -138,7 +138,7 @@ namespace G
                 .AddOptionalParameter("optional_fields", optionalFields, delimiter: ",", explode: true)
                 .AddOptionalParameter("text_separator", textSeparator)
                 .AddOptionalParameter("csv_delimiter", csvDelimiter) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

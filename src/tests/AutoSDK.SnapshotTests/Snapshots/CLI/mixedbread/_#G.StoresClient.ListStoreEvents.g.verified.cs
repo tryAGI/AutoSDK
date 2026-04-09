@@ -133,7 +133,7 @@ namespace G
                 .AddOptionalParameter("filter_before", filterBefore?.ToString())
                 .AddOptionalParameter("filter_after", filterAfter?.ToString())
                 .AddRequiredParameter("event_type", eventType.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

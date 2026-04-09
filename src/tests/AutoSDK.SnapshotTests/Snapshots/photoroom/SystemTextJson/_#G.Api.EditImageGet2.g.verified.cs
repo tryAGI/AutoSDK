@@ -103,7 +103,7 @@ namespace G
                 .AddRequiredParameter("templateId", templateId)
                 .AddOptionalParameter("imageUrl", imageUrl)
                 .AddOptionalParameter("conceptUrl", conceptUrl) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

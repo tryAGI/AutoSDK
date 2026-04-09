@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Retrieve transcription results<br/>
+    /// Retrieve transcription results.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// Rev.ai API
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.rev.ai";
+        public const string DefaultBaseUrl = "https://api.rev.ai/";
 
         private bool _disposeHttpClient = true;
 

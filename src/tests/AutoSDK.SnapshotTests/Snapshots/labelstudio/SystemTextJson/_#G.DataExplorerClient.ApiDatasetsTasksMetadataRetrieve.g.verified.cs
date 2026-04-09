@@ -77,7 +77,7 @@ namespace G
                 .AddOptionalParameter("candidate_task_id", candidateTaskId)
                 .AddOptionalParameter("dataset", dataset?.ToString())
                 .AddOptionalParameter("vectordb_id", vectordbId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

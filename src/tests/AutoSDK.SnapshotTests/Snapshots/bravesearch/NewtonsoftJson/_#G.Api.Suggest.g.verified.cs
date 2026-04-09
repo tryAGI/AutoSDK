@@ -76,7 +76,7 @@ namespace G
                 .AddOptionalParameter("search_lang", searchLang)
                 .AddOptionalParameter("count", count?.ToString())
                 .AddOptionalParameter("rich", rich?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -126,7 +126,7 @@ namespace G
                 .AddOptionalParameter("wait", wait?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("priority", priority?.ToValueString())
                 .AddOptionalParameter("checksum", checksum) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

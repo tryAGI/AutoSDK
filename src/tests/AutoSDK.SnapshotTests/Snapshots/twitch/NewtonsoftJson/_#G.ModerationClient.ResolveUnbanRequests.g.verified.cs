@@ -96,7 +96,7 @@ namespace G
                 .AddRequiredParameter("unban_request_id", unbanRequestId)
                 .AddRequiredParameter("status", status)
                 .AddOptionalParameter("resolution_text", resolutionText) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),

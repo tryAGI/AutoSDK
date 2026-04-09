@@ -76,7 +76,7 @@ namespace G
             __pathBuilder
                 .AddRequiredParameter("workflow_version_execution_id", workflowVersionExecutionId.ToString()!)
                 .AddOptionalParameter("return_all_outputs", returnAllOutputs?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

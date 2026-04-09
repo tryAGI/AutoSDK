@@ -86,7 +86,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("summarize_scores", summarizeScores?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("comparison_experiment_id", comparisonExperimentId?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -93,7 +93,7 @@ namespace G
                 .AddOptionalParameter("connector_id", connectorId)
                 .AddRequiredParameter("connector_uid", connectorUid)
                 .AddOptionalParameter("keywords", keywords, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

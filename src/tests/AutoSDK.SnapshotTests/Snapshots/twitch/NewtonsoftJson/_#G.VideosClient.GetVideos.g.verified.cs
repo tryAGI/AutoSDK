@@ -149,7 +149,7 @@ namespace G
                 .AddOptionalParameter("first", first)
                 .AddOptionalParameter("after", after)
                 .AddOptionalParameter("before", before) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

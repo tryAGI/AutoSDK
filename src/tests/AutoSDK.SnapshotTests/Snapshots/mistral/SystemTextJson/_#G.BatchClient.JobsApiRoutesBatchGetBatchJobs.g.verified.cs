@@ -111,7 +111,7 @@ namespace G
                 .AddOptionalParameter("created_after", createdAfter?.ToString())
                 .AddOptionalParameter("created_by_me", createdByMe?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("status", status?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

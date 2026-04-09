@@ -103,7 +103,7 @@ namespace G
                 .AddOptionalParameter("source", source?.ToString())
                 .AddOptionalParameter("search", search)
                 .AddOptionalParameter("purpose", purpose?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Chat completion operations<br/>
+    /// Chat completion operations.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// Reka API
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.reka.ai";
+        public const string DefaultBaseUrl = "https://api.reka.ai/";
 
         private bool _disposeHttpClient = true;
 

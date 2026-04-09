@@ -126,7 +126,7 @@ namespace G
                 .AddOptionalParameter("graph_id", graphId?.ToString())
                 .AddOptionalParameter("status", status?.ToValueString())
                 .AddOptionalParameter("file_types", fileTypes) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

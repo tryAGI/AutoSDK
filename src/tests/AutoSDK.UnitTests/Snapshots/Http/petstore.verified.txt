@@ -10,13 +10,36 @@
 GET {{host}}/pets?limit={{limit}}
 Accept: application/json
 
+## Responses
+# 200
+# Description: A paged array of pets
+# Content-Type: application/json
+# default
+# Description: unexpected error
+# Content-Type: application/json
+
 ### Create a pet
 # @name createPets
 POST {{host}}/pets
 Accept: application/json
 
+## Responses
+# 201
+# Description: Null response
+# default
+# Description: unexpected error
+# Content-Type: application/json
+
 ### Info for a specific pet
 # @name showPetById
 GET {{host}}/pets/{{petId}}
 Accept: application/json
+
+## Responses
+# 200
+# Description: Expected response to a valid request
+# Content-Type: application/json
+# default
+# Description: unexpected error
+# Content-Type: application/json
 

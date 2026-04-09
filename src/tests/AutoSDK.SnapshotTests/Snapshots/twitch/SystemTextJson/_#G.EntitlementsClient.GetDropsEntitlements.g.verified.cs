@@ -113,7 +113,7 @@ namespace G
                 .AddOptionalParameter("fulfillment_status", fulfillmentStatus?.ToValueString())
                 .AddOptionalParameter("after", after)
                 .AddOptionalParameter("first", first?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

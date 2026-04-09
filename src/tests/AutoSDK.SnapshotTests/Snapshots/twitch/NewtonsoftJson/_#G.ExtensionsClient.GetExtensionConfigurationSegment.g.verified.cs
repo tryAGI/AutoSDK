@@ -91,7 +91,7 @@ namespace G
                 .AddOptionalParameter("broadcaster_id", broadcasterId)
                 .AddRequiredParameter("extension_id", extensionId)
                 .AddRequiredParameter("segment", segment.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

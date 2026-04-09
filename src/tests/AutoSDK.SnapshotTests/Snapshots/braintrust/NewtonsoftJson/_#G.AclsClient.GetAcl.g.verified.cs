@@ -205,7 +205,7 @@ namespace G
                 .AddOptionalParameter("permission", permission?.ToValueString())
                 .AddOptionalParameter("restrict_object_type", restrictObjectType?.ToValueString())
                 .AddOptionalParameter("role_id", roleId?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

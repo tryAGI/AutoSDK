@@ -86,7 +86,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("type", type?.ToValueString())
                 .AddOptionalParameter("users", users) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

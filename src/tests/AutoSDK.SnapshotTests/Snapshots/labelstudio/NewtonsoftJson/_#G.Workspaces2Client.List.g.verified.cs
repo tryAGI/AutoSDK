@@ -93,7 +93,7 @@ namespace G
                 .AddOptionalParameter("is_archived", isArchived?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("is_personal", isPersonal?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("ordering", ordering) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

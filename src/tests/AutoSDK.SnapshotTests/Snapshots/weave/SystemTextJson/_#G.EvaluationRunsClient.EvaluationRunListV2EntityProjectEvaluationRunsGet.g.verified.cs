@@ -48,11 +48,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessEvaluationRunListV2EntityProjectEvaluationRunsGetResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Evaluation Run List<br/>
         /// List evaluation runs.
@@ -76,7 +71,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.EvaluationRunReadRes>> EvaluationRunListV2EntityProjectEvaluationRunsGetAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.EvaluationRunReadRes> EvaluationRunListV2EntityProjectEvaluationRunsGetAsync(
             string entity,
             string project,
             global::System.Collections.Generic.IList<string>? evaluations = default,
@@ -84,7 +79,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? evaluationRunIds = default,
             int? limit = default,
             int? offset = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
@@ -113,7 +108,7 @@ namespace G
                 .AddOptionalParameter("evaluation_run_ids", evaluationRunIds?.ToString())
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -155,7 +150,7 @@ namespace G
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
@@ -164,38 +159,32 @@ namespace G
             ProcessEvaluationRunListV2EntityProjectEvaluationRunsGetResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Validation Error
-            if ((int)__response.StatusCode == 422)
+
+            try
             {
-                string? __content_422 = null;
-                global::System.Exception? __exception_422 = null;
-                global::G.HTTPValidationError? __value_422 = null;
+                __response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException __ex)
+            {
+                string? __content = null;
                 try
                 {
-                    if (ReadResponseAsString)
-                    {
-                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
-                    }
-                    else
-                    {
-                        __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
-                    }
+                    __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                        cancellationToken
+#endif
+                    ).ConfigureAwait(false);
                 }
-                catch (global::System.Exception __ex)
+                catch (global::System.Exception)
                 {
-                    __exception_422 = __ex;
                 }
 
-                throw new global::G.ApiException<global::G.HTTPValidationError>(
-                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_422,
+                throw new global::G.ApiException(
+                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
                     statusCode: __response.StatusCode)
                 {
-                    ResponseBody = __content_422,
-                    ResponseObject = __value_422,
+                    ResponseBody = __content,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -203,88 +192,35 @@ namespace G
                 };
             }
 
-            if (ReadResponseAsString)
+            using var __stream = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                cancellationToken
+#endif
+            ).ConfigureAwait(false);
+
+            using var __reader = new global::System.IO.StreamReader(__stream);
+
+            while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {
-                var __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessEvaluationRunListV2EntityProjectEvaluationRunsGetResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
+                var __content = await __reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
+                if (global::System.String.IsNullOrWhiteSpace(__content))
                 {
-                    __response.EnsureSuccessStatusCode();
+                    continue;
+                }
 
-                    return
-                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.EvaluationRunReadRes>?>(__content, JsonSerializerOptions) ??
-                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                }
-                catch (global::System.Exception __ex)
-                {
-                    throw new global::G.ApiException(
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
-                }
-            }
-            else
-            {
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                    using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                        cancellationToken
-#endif
-                    ).ConfigureAwait(false);
+                var __streamedResponse = global::G.EvaluationRunReadRes.FromJson(__content, JsonSerializerOptions) ??
+                                       throw new global::G.ApiException(
+                                           message: $"Response deserialization failed for \"{__content}\" ",
+                                           statusCode: __response.StatusCode)
+                                       {
+                                           ResponseBody = __content,
+                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                               __response.Headers,
+                                               h => h.Key,
+                                               h => h.Value),
+                                       };
 
-                    return
-                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.EvaluationRunReadRes>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
-                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                }
-                catch (global::System.Exception __ex)
-                {
-                    string? __content = null;
-                    try
-                    {
-                        __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                            cancellationToken
-#endif
-                        ).ConfigureAwait(false);
-                    }
-                    catch (global::System.Exception)
-                    {
-                    }
-
-                    throw new global::G.ApiException(
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
-                }
+                yield return __streamedResponse;
             }
         }
     }

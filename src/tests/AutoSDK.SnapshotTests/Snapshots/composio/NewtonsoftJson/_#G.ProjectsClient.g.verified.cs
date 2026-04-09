@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// PRODUCTION API
         /// </summary>
-        public const string DefaultBaseUrl = "https://backend.composio.dev";
+        public const string DefaultBaseUrl = "https://backend.composio.dev/";
 
         private bool _disposeHttpClient = true;
 

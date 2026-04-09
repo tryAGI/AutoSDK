@@ -92,7 +92,7 @@ namespace G
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/generate",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -188,6 +188,7 @@ namespace G
                 cancellationToken
 #endif
             ).ConfigureAwait(false);
+
             using var __reader = new global::System.IO.StreamReader(__stream);
 
             while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)

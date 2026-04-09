@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// DeepL API Pro
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.deepl.com";
+        public const string DefaultBaseUrl = "https://api.deepl.com/";
 
         private bool _disposeHttpClient = true;
 

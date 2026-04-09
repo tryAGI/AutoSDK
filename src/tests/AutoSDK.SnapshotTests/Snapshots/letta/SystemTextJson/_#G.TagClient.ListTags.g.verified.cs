@@ -124,7 +124,7 @@ namespace G
                 .AddOptionalParameter("order_by", orderBy)
                 .AddOptionalParameter("query_text", queryText)
                 .AddOptionalParameter("name", name) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

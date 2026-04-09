@@ -83,7 +83,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("id", id, delimiter: ",", explode: true)
                 .AddOptionalParameter("login", login, delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

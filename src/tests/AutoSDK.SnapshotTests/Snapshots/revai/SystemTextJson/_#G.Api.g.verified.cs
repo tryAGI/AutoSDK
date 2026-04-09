@@ -15,7 +15,7 @@ namespace G
         /// <summary>
         /// Rev.ai API
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.rev.ai";
+        public const string DefaultBaseUrl = "https://api.rev.ai/";
 
         private bool _disposeHttpClient = true;
 
@@ -74,7 +74,7 @@ namespace G
 
 
         /// <summary>
-        /// Account information
+        /// Account information.
         /// </summary>
         public AccountClient Account => new AccountClient(HttpClient, authorizations: Authorizations)
         {
@@ -83,7 +83,7 @@ namespace G
         };
 
         /// <summary>
-        /// Retrieve caption output (SRT/VTT)
+        /// Retrieve caption output (SRT/VTT).
         /// </summary>
         public CaptionsClient Captions => new CaptionsClient(HttpClient, authorizations: Authorizations)
         {
@@ -92,7 +92,7 @@ namespace G
         };
 
         /// <summary>
-        /// Language identification from audio
+        /// Language identification from audio.
         /// </summary>
         public LanguageIdentificationJobsClient LanguageIdentificationJobs => new LanguageIdentificationJobsClient(HttpClient, authorizations: Authorizations)
         {
@@ -101,7 +101,7 @@ namespace G
         };
 
         /// <summary>
-        /// Retrieve language identification results
+        /// Retrieve language identification results.
         /// </summary>
         public LanguageIdentificationResultsClient LanguageIdentificationResults => new LanguageIdentificationResultsClient(HttpClient, authorizations: Authorizations)
         {
@@ -110,7 +110,7 @@ namespace G
         };
 
         /// <summary>
-        /// Sentiment analysis on text or transcripts
+        /// Sentiment analysis on text or transcripts.
         /// </summary>
         public SentimentAnalysisJobsClient SentimentAnalysisJobs => new SentimentAnalysisJobsClient(HttpClient, authorizations: Authorizations)
         {
@@ -119,7 +119,7 @@ namespace G
         };
 
         /// <summary>
-        /// Retrieve sentiment analysis results
+        /// Retrieve sentiment analysis results.
         /// </summary>
         public SentimentAnalysisResultsClient SentimentAnalysisResults => new SentimentAnalysisResultsClient(HttpClient, authorizations: Authorizations)
         {
@@ -128,7 +128,7 @@ namespace G
         };
 
         /// <summary>
-        /// Topic extraction from text or transcripts
+        /// Topic extraction from text or transcripts.
         /// </summary>
         public TopicExtractionJobsClient TopicExtractionJobs => new TopicExtractionJobsClient(HttpClient, authorizations: Authorizations)
         {
@@ -137,7 +137,7 @@ namespace G
         };
 
         /// <summary>
-        /// Retrieve topic extraction results
+        /// Retrieve topic extraction results.
         /// </summary>
         public TopicExtractionResultsClient TopicExtractionResults => new TopicExtractionResultsClient(HttpClient, authorizations: Authorizations)
         {
@@ -146,7 +146,7 @@ namespace G
         };
 
         /// <summary>
-        /// Retrieve transcription results
+        /// Retrieve transcription results.
         /// </summary>
         public TranscriptClient Transcript => new TranscriptClient(HttpClient, authorizations: Authorizations)
         {
@@ -155,7 +155,7 @@ namespace G
         };
 
         /// <summary>
-        /// Async speech-to-text transcription
+        /// Async speech-to-text transcription.
         /// </summary>
         public TranscriptionJobsClient TranscriptionJobs => new TranscriptionJobsClient(HttpClient, authorizations: Authorizations)
         {

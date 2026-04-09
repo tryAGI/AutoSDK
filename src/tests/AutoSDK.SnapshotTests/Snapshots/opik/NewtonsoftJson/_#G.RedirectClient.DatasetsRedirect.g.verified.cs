@@ -51,7 +51,7 @@ namespace G
                 .AddRequiredParameter("dataset_id", datasetId.ToString()!)
                 .AddOptionalParameter("workspace_name", workspaceName)
                 .AddRequiredParameter("path", path) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

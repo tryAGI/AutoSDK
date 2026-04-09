@@ -128,7 +128,7 @@ namespace G
                 .AddRequiredParameter("end", end.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddRequiredParameter("interval_unit", intervalUnit.ToValueString())
                 .AddRequiredParameter("interval_value", intervalValue.ToString()!) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

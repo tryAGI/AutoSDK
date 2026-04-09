@@ -113,7 +113,7 @@ namespace G
                 .AddOptionalParameter("freshness", freshness)
                 .AddOptionalParameter("spellcheck", spellcheck?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("extra_snippets", extraSnippets?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

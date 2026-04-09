@@ -112,7 +112,7 @@ namespace G
                 .AddOptionalParameter("use_legacy_format", useLegacyFormat?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("conversation_id", conversationId)
                 .AddOptionalParameter("scrub_messages", scrubMessages?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

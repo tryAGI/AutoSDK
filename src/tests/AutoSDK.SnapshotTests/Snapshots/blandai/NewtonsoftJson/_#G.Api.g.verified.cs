@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// Production API
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.bland.ai";
+        public const string DefaultBaseUrl = "https://api.bland.ai/";
 
         private bool _disposeHttpClient = true;
 
@@ -39,7 +39,7 @@ namespace G
 
 
         /// <summary>
-        /// Account information and billing
+        /// Account information and billing.
         /// </summary>
         public AccountClient Account => new AccountClient(HttpClient, authorizations: Authorizations)
         {
@@ -48,7 +48,7 @@ namespace G
         };
 
         /// <summary>
-        /// Create and manage batch call campaigns
+        /// Create and manage batch call campaigns.
         /// </summary>
         public BatchesClient Batches => new BatchesClient(HttpClient, authorizations: Authorizations)
         {
@@ -57,7 +57,7 @@ namespace G
         };
 
         /// <summary>
-        /// Send, manage, and analyze AI phone calls
+        /// Send, manage, and analyze AI phone calls.
         /// </summary>
         public CallsClient Calls => new CallsClient(HttpClient, authorizations: Authorizations)
         {
@@ -66,7 +66,7 @@ namespace G
         };
 
         /// <summary>
-        /// Phone number management (inbound/outbound)
+        /// Phone number management (inbound/outbound).
         /// </summary>
         public NumbersClient Numbers => new NumbersClient(HttpClient, authorizations: Authorizations)
         {
@@ -75,7 +75,7 @@ namespace G
         };
 
         /// <summary>
-        /// Conversational pathway CRUD operations
+        /// Conversational pathway CRUD operations.
         /// </summary>
         public PathwaysClient Pathways => new PathwaysClient(HttpClient, authorizations: Authorizations)
         {
@@ -84,7 +84,7 @@ namespace G
         };
 
         /// <summary>
-        /// Voice listing and management
+        /// Voice listing and management.
         /// </summary>
         public VoicesClient Voices => new VoicesClient(HttpClient, authorizations: Authorizations)
         {

@@ -80,7 +80,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("after_sequence", afterSequence)
                 .AddOptionalParameter("limit", limit) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

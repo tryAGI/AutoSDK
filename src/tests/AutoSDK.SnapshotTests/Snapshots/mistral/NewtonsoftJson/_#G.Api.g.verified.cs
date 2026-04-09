@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// Production server
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.mistral.ai";
+        public const string DefaultBaseUrl = "https://api.mistral.ai/";
 
         private bool _disposeHttpClient = true;
 
@@ -39,7 +39,7 @@ namespace G
 
 
         /// <summary>
-        /// Agents
+        /// Agents. Agents API.
         /// </summary>
         public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations)
         {
@@ -48,7 +48,7 @@ namespace G
         };
 
         /// <summary>
-        /// Batch
+        /// Batch. Batch API.
         /// </summary>
         public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
         {
@@ -57,7 +57,7 @@ namespace G
         };
 
         /// <summary>
-        /// Chat
+        /// Chat. Chat Completion API.
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
         {
@@ -66,7 +66,7 @@ namespace G
         };
 
         /// <summary>
-        /// Classifiers
+        /// Classifiers. Classifiers API.
         /// </summary>
         public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations)
         {
@@ -75,7 +75,7 @@ namespace G
         };
 
         /// <summary>
-        /// Embeddings
+        /// Embeddings. Embeddings API.
         /// </summary>
         public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations)
         {
@@ -84,7 +84,7 @@ namespace G
         };
 
         /// <summary>
-        /// Files
+        /// Files. Files API.
         /// </summary>
         public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
         {
@@ -93,7 +93,7 @@ namespace G
         };
 
         /// <summary>
-        /// FIM
+        /// FIM. Fill-in-the-middle API.
         /// </summary>
         public FimClient Fim => new FimClient(HttpClient, authorizations: Authorizations)
         {
@@ -102,7 +102,7 @@ namespace G
         };
 
         /// <summary>
-        /// Fine Tuning
+        /// Fine Tuning. Fine-tuning API.
         /// </summary>
         public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations)
         {
@@ -111,7 +111,7 @@ namespace G
         };
 
         /// <summary>
-        /// Models
+        /// Models. Model Management API.
         /// </summary>
         public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
@@ -120,7 +120,7 @@ namespace G
         };
 
         /// <summary>
-        /// OCR API
+        /// OCR API.
         /// </summary>
         public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations)
         {

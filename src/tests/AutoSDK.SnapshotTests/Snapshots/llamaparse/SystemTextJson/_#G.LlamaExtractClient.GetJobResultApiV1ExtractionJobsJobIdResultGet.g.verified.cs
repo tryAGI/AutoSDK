@@ -84,7 +84,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("project_id", projectId?.ToString())
                 .AddOptionalParameter("organization_id", organizationId?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -109,6 +109,17 @@ namespace G
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+            var __cookies = new global::System.Collections.Generic.List<string>();
+            var __session = session;
+            if (__session is not null)
+            {
+                __cookies.Add($"session={__session.ToString() ?? string.Empty}");
+            }
+            if (__cookies.Count > 0)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
+            }
+
 
             PrepareRequest(
                 client: HttpClient,

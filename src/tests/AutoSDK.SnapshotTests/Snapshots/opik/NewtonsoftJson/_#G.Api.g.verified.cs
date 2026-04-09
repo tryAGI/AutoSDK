@@ -61,7 +61,7 @@ namespace G
 
 
         /// <summary>
-        /// Agent configuration management
+        /// Agent configuration management.
         /// </summary>
         public AgentConfigsClient AgentConfigs => new AgentConfigsClient(HttpClient, authorizations: Authorizations)
         {
@@ -70,7 +70,7 @@ namespace G
         };
 
         /// <summary>
-        /// Alert resources
+        /// Alert resources.
         /// </summary>
         public AlertsClient Alerts => new AlertsClient(HttpClient, authorizations: Authorizations)
         {
@@ -79,7 +79,7 @@ namespace G
         };
 
         /// <summary>
-        /// Private annotation queue operations
+        /// Private annotation queue operations.
         /// </summary>
         public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(HttpClient, authorizations: Authorizations)
         {
@@ -88,7 +88,7 @@ namespace G
         };
 
         /// <summary>
-        /// Assistant Sidebar configuration
+        /// Assistant Sidebar configuration.
         /// </summary>
         public AssistantSidebarsClient AssistantSidebars => new AssistantSidebarsClient(HttpClient, authorizations: Authorizations)
         {
@@ -97,7 +97,7 @@ namespace G
         };
 
         /// <summary>
-        /// Attachments related resources
+        /// Attachments related resources.
         /// </summary>
         public AttachmentsClient Attachments => new AttachmentsClient(HttpClient, authorizations: Authorizations)
         {
@@ -106,7 +106,7 @@ namespace G
         };
 
         /// <summary>
-        /// Automation rule evaluators resource
+        /// Automation rule evaluators resource.
         /// </summary>
         public AutomationRuleEvaluatorsClient AutomationRuleEvaluators => new AutomationRuleEvaluatorsClient(HttpClient, authorizations: Authorizations)
         {
@@ -115,7 +115,7 @@ namespace G
         };
 
         /// <summary>
-        /// Chat Completions related resources
+        /// Chat Completions related resources.
         /// </summary>
         public ChatCompletionsClient ChatCompletions => new ChatCompletionsClient(HttpClient, authorizations: Authorizations)
         {
@@ -124,7 +124,7 @@ namespace G
         };
 
         /// <summary>
-        /// Access check resources
+        /// Access check resources.
         /// </summary>
         public CheckClient Check => new CheckClient(HttpClient, authorizations: Authorizations)
         {
@@ -133,7 +133,7 @@ namespace G
         };
 
         /// <summary>
-        /// Workspace Dashboard resources
+        /// Workspace Dashboard resources.
         /// </summary>
         public DashboardsClient Dashboards => new DashboardsClient(HttpClient, authorizations: Authorizations)
         {
@@ -142,7 +142,7 @@ namespace G
         };
 
         /// <summary>
-        /// Dataset resources
+        /// Dataset resources.
         /// </summary>
         public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations)
         {
@@ -151,7 +151,7 @@ namespace G
         };
 
         /// <summary>
-        /// Experiment resources
+        /// Experiment resources.
         /// </summary>
         public ExperimentsClient Experiments => new ExperimentsClient(HttpClient, authorizations: Authorizations)
         {
@@ -160,7 +160,7 @@ namespace G
         };
 
         /// <summary>
-        /// Feedback definitions related resources
+        /// Feedback definitions related resources.
         /// </summary>
         public FeedbackDefinitionsClient FeedbackDefinitions => new FeedbackDefinitionsClient(HttpClient, authorizations: Authorizations)
         {
@@ -169,7 +169,7 @@ namespace G
         };
 
         /// <summary>
-        /// Guardrails related resources
+        /// Guardrails related resources.
         /// </summary>
         public GuardrailsClient Guardrails => new GuardrailsClient(HttpClient, authorizations: Authorizations)
         {
@@ -178,7 +178,7 @@ namespace G
         };
 
         /// <summary>
-        /// Insights View resources
+        /// Insights View resources.
         /// </summary>
         public InsightsViewsClient InsightsViews => new InsightsViewsClient(HttpClient, authorizations: Authorizations)
         {
@@ -187,7 +187,7 @@ namespace G
         };
 
         /// <summary>
-        /// LLM model registry resources
+        /// LLM model registry resources.
         /// </summary>
         public LlmModelsClient LlmModels => new LlmModelsClient(HttpClient, authorizations: Authorizations)
         {
@@ -196,7 +196,7 @@ namespace G
         };
 
         /// <summary>
-        /// LLM Provider Key
+        /// LLM Provider Key.
         /// </summary>
         public LlmProviderKeyClient LlmProviderKey => new LlmProviderKeyClient(HttpClient, authorizations: Authorizations)
         {
@@ -205,7 +205,7 @@ namespace G
         };
 
         /// <summary>
-        /// Manual evaluation resources for traces, threads, and spans
+        /// Manual evaluation resources for traces, threads, and spans.
         /// </summary>
         public ManualEvaluationClient ManualEvaluation => new ManualEvaluationClient(HttpClient, authorizations: Authorizations)
         {
@@ -223,7 +223,7 @@ namespace G
         };
 
         /// <summary>
-        /// Ollie pod state persistence
+        /// Ollie pod state persistence.
         /// </summary>
         public OllieStateClient OllieState => new OllieStateClient(HttpClient, authorizations: Authorizations)
         {
@@ -232,7 +232,7 @@ namespace G
         };
 
         /// <summary>
-        /// Resource to ingest Traces and Spans via OpenTelemetry
+        /// Resource to ingest Traces and Spans via OpenTelemetry.
         /// </summary>
         public OpenTelemetryIngestionClient OpenTelemetryIngestion => new OpenTelemetryIngestionClient(HttpClient, authorizations: Authorizations)
         {
@@ -241,7 +241,7 @@ namespace G
         };
 
         /// <summary>
-        /// Optimization resources
+        /// Optimization resources.
         /// </summary>
         public OptimizationsClient Optimizations => new OptimizationsClient(HttpClient, authorizations: Authorizations)
         {
@@ -250,7 +250,7 @@ namespace G
         };
 
         /// <summary>
-        /// Project related resources
+        /// Project related resources.
         /// </summary>
         public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations)
         {
@@ -259,7 +259,7 @@ namespace G
         };
 
         /// <summary>
-        /// Prompt resources
+        /// Prompt resources.
         /// </summary>
         public PromptsClient Prompts => new PromptsClient(HttpClient, authorizations: Authorizations)
         {
@@ -268,7 +268,7 @@ namespace G
         };
 
         /// <summary>
-        /// Redirects for SDK generated links
+        /// Redirects for SDK generated links.
         /// </summary>
         public RedirectClient Redirect => new RedirectClient(HttpClient, authorizations: Authorizations)
         {
@@ -277,7 +277,7 @@ namespace G
         };
 
         /// <summary>
-        /// Data retention rule management
+        /// Data retention rule management.
         /// </summary>
         public RetentionRulesClient RetentionRules => new RetentionRulesClient(HttpClient, authorizations: Authorizations)
         {
@@ -286,7 +286,7 @@ namespace G
         };
 
         /// <summary>
-        /// Local runner management endpoints
+        /// Local runner management endpoints.
         /// </summary>
         public RunnersClient Runners => new RunnersClient(HttpClient, authorizations: Authorizations)
         {
@@ -295,7 +295,7 @@ namespace G
         };
 
         /// <summary>
-        /// Service Toggles resources
+        /// Service Toggles resources.
         /// </summary>
         public ServiceTogglesClient ServiceToggles => new ServiceTogglesClient(HttpClient, authorizations: Authorizations)
         {
@@ -304,7 +304,7 @@ namespace G
         };
 
         /// <summary>
-        /// Span related resources
+        /// Span related resources.
         /// </summary>
         public SpansClient Spans => new SpansClient(HttpClient, authorizations: Authorizations)
         {
@@ -313,7 +313,7 @@ namespace G
         };
 
         /// <summary>
-        /// System usage related resource
+        /// System usage related resource.
         /// </summary>
         public SystemUsageClient SystemUsage => new SystemUsageClient(HttpClient, authorizations: Authorizations)
         {
@@ -322,7 +322,7 @@ namespace G
         };
 
         /// <summary>
-        /// Trace related resources
+        /// Trace related resources.
         /// </summary>
         public TracesClient Traces => new TracesClient(HttpClient, authorizations: Authorizations)
         {
@@ -331,7 +331,7 @@ namespace G
         };
 
         /// <summary>
-        /// Welcome wizard tracking resources
+        /// Welcome wizard tracking resources.
         /// </summary>
         public WelcomeWizardClient WelcomeWizard => new WelcomeWizardClient(HttpClient, authorizations: Authorizations)
         {
@@ -340,7 +340,7 @@ namespace G
         };
 
         /// <summary>
-        /// Workspace permissions related resources
+        /// Workspace permissions related resources.
         /// </summary>
         public WorkspacePermissionsClient WorkspacePermissions => new WorkspacePermissionsClient(HttpClient, authorizations: Authorizations)
         {
@@ -349,7 +349,7 @@ namespace G
         };
 
         /// <summary>
-        /// Workspace related resources
+        /// Workspace related resources.
         /// </summary>
         public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, authorizations: Authorizations)
         {

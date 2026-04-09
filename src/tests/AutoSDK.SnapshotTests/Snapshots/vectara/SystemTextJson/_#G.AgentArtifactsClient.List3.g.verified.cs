@@ -134,7 +134,7 @@ namespace G
                 .AddOptionalParameter("page_key", pageKey)
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                 .AddOptionalParameter("order_by", orderBy?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

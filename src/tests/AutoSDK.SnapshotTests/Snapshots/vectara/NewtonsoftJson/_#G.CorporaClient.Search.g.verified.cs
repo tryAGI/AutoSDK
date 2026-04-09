@@ -139,7 +139,7 @@ namespace G
                 .AddOptionalParameter("offset", offset?.ToString())
                 .AddOptionalParameter("save_history", saveHistory?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("intelligent_query_rewriting", intelligentQueryRewriting?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -75,7 +75,7 @@ namespace G
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/update-chat/{chatId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),

@@ -80,7 +80,7 @@ namespace G
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("sort", sort?.ToString())
                 .AddOptionalParameter("sort_direction", sortDirection) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

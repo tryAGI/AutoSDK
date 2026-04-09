@@ -59,7 +59,7 @@ namespace G
                 .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("cursor", cursor)
                 .AddOptionalParameter("redelivery", redelivery?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

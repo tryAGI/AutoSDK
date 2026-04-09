@@ -925,7 +925,7 @@ namespace G
                 .AddOptionalParameter("virtualModel.quality", virtualModelQuality?.ToValueString())
                 .AddOptionalParameter("virtualModel.scene", virtualModelScene?.ToString())
                 .AddOptionalParameter("virtualModel.size", virtualModelSize?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -106,7 +106,7 @@ namespace G
                 .AddOptionalParameter("has_comment", hasComment?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("has_score", hasScore?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("level", level?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

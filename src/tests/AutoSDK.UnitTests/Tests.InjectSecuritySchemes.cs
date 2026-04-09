@@ -299,8 +299,7 @@ paths:
         document.Security!.Should().ContainSingle();
         document.Security[0].Keys.Single().Scheme.Should().Be("Bearer");
 
-        operation.Security.Should().NotBeNull();
-        operation.Security!.Should().BeEmpty();
+        operation.Security.Should().BeNull();
         operation.Parameters.Should().ContainSingle();
         operation.Parameters![0].Name.Should().Be("keep");
     }

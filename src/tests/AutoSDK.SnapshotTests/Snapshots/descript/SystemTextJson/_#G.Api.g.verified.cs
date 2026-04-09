@@ -161,7 +161,7 @@ namespace G
         /// ```<br/>
         /// &lt;meta property="descript:partner" content="9121bf3a-60fe-4a31-ad59-ed32df610cc3" /&gt;<br/>
         /// &lt;meta property="descript:source" content="409148bd-81aa-4af6-a9c3-29b761506f3a" /&gt;<br/>
-        /// ```
+        /// ```.
         /// </summary>
         public ExportFromDescriptClient ExportFromDescript => new ExportFromDescriptClient(HttpClient, authorizations: Authorizations)
         {

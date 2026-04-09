@@ -122,7 +122,7 @@ namespace G
         public GitClient Git { get; }
 
         /// <summary>
-        /// View gitignore templates
+        /// View gitignore templates.
         /// </summary>
         public GitignoreClient Gitignore { get; }
 
@@ -142,7 +142,7 @@ namespace G
         public LicensesClient Licenses { get; }
 
         /// <summary>
-        /// Render GitHub flavored markdown
+        /// Render GitHub flavored markdown.
         /// </summary>
         public MarkdownClient Markdown { get; }
 
@@ -182,7 +182,7 @@ namespace G
         public PullsClient Pulls { get; }
 
         /// <summary>
-        /// Check your current rate limit status
+        /// Check your current rate limit status.
         /// </summary>
         public RateLimitClient RateLimit { get; }
 

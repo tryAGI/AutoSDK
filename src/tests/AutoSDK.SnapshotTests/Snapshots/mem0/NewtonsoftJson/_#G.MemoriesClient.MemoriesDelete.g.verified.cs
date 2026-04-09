@@ -104,7 +104,7 @@ namespace G
                 .AddOptionalParameter("metadata", metadata?.ToString())
                 .AddOptionalParameter("org_id", orgId)
                 .AddOptionalParameter("project_id", projectId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

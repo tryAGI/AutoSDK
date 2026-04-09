@@ -118,7 +118,7 @@ namespace G
                 .AddOptionalParameter("max_xact_id", maxXactId)
                 .AddOptionalParameter("max_root_span_id", maxRootSpanId)
                 .AddOptionalParameter("version", version) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

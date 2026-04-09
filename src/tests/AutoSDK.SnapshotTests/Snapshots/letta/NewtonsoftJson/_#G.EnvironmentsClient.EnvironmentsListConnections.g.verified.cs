@@ -87,7 +87,7 @@ namespace G
                 .AddOptionalParameter("after", after)
                 .AddOptionalParameter("userId", userId)
                 .AddOptionalParameter("onlineOnly", onlineOnly) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

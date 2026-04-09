@@ -67,7 +67,7 @@ namespace G
                 .AddOptionalParameter("metadata_key", metadataKey)
                 .AddOptionalParameter("prompt_id", promptId?.ToString())
                 .AddOptionalParameter("filter_group", filterGroup) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

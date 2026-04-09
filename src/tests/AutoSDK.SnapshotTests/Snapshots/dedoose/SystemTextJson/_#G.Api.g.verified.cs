@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// Production
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.dedoose.com";
+        public const string DefaultBaseUrl = "https://api.dedoose.com/";
 
         private bool _disposeHttpClient = true;
 

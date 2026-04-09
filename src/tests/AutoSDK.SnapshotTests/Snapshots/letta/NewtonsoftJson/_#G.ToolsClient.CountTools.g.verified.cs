@@ -127,7 +127,7 @@ namespace G
                 .AddOptionalParameter("exclude_tool_types", excludeToolTypes?.ToString())
                 .AddOptionalParameter("return_only_letta_tools", returnOnlyLettaTools?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("exclude_letta_tools", excludeLettaTools?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

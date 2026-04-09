@@ -66,7 +66,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("embedding_option", embeddingOption, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                 .AddOptionalParameter("transcription", transcription?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

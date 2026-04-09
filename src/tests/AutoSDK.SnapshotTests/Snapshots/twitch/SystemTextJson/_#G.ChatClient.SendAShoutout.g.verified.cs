@@ -81,7 +81,7 @@ namespace G
                 .AddRequiredParameter("from_broadcaster_id", fromBroadcasterId)
                 .AddRequiredParameter("to_broadcaster_id", toBroadcasterId)
                 .AddRequiredParameter("moderator_id", moderatorId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

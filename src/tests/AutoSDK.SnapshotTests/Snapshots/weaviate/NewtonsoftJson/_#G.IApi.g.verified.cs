@@ -61,7 +61,7 @@ namespace G
         public BatchClient Batch { get; }
 
         /// <summary>
-        /// Perform classification operations
+        /// Perform classification operations.
         /// </summary>
         public ClassificationsClient Classifications { get; }
 

@@ -660,6 +660,84 @@ public class ExtensionParsingTests
     }
 
     [TestMethod]
+    public void OpenApi32TagMetadata_IsPreservedAndUsedInDocumentationSummary()
+    {
+        const string yaml = """
+                            openapi: 3.2.0
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            tags:
+                              - name: admin
+                                summary: Administrative endpoints
+                              - name: users
+                                x-displayName: User Management
+                                summary: Administrative user operations
+                                kind: nav
+                                parent: admin
+                            paths:
+                              /users:
+                                get:
+                                  operationId: listUsers
+                                  tags:
+                                    - users
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GroupByTags = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        var usersTag = data.Tags.FirstOrDefault(t => t.SafeName == "Users");
+        usersTag.DisplayName.Should().Be("User Management");
+        usersTag.Summary.Should().Be("Administrative user operations");
+        usersTag.ParentName.Should().Be("admin");
+        usersTag.Kind.Should().Be("nav");
+        usersTag.DocumentationSummary.Should().Contain("User Management");
+        usersTag.DocumentationSummary.Should().Contain("Administrative user operations");
+        usersTag.DocumentationSummary.Should().Contain("Parent tag: admin");
+        usersTag.DocumentationSummary.Should().Contain("Kind: nav");
+    }
+
+    [TestMethod]
+    public void OpenApi32ServerName_IsUsedForBaseUrlSummary()
+    {
+        const string yaml = """
+                            openapi: 3.2.0
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            servers:
+                              - name: Primary API
+                                url: https://api.example.com/v1
+                                description: Production environment
+                            paths:
+                              /users:
+                                get:
+                                  operationId: listUsers
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Clients.Should().ContainSingle();
+        data.Clients[0].BaseUrlSummary.Should().Be("Primary API. Production environment");
+    }
+
+    [TestMethod]
     public void XCodeSamples_ExtractedAsRemarks()
     {
         const string json = """

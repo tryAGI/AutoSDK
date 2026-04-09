@@ -75,7 +75,7 @@ namespace G
                 .AddOptionalParameter("size", size?.ToString())
                 .AddOptionalParameter("name", name)
                 .AddOptionalParameter("type", type?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

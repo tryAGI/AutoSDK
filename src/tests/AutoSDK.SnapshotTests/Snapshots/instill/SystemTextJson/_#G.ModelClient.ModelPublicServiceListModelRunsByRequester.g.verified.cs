@@ -111,7 +111,7 @@ namespace G
                 .AddOptionalParameter("start", start?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("stop", stop?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddRequiredParameter("requesterId", requesterId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

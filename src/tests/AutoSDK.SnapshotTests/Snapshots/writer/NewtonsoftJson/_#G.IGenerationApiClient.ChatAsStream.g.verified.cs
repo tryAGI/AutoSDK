@@ -18,7 +18,7 @@ namespace G
         ///  --header "Content-Type: application/json" \<br/>
         /// --data-raw '{"model":"palmyra-x5","messages":[{"content":"Write a memo summarizing this earnings report.","role":"user"}]}'
         /// </remarks>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.ChatCompletionChunk>> ChatAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatCompletionChunk> ChatAsStreamAsync(
 
             global::G.ChatRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -70,7 +70,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.ChatCompletionChunk>> ChatAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatCompletionChunk> ChatAsStreamAsync(
             string model,
             global::System.Collections.Generic.IList<global::G.ChatMessage> messages,
             int? maxTokens = default,

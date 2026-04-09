@@ -87,7 +87,7 @@ namespace G
                 .AddOptionalParameter("annotation", annotation?.ToString())
                 .AddOptionalParameter("annotation__task__project", annotationTaskProject?.ToString())
                 .AddOptionalParameter("ordering", ordering) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Send, manage, and analyze AI phone calls<br/>
+    /// Send, manage, and analyze AI phone calls.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

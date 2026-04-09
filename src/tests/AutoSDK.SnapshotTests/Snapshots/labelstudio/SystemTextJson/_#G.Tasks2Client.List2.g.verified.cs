@@ -132,7 +132,7 @@ namespace G
                 .AddOptionalParameter("review", review?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("selectedItems", selectedItems)
                 .AddOptionalParameter("view", view?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

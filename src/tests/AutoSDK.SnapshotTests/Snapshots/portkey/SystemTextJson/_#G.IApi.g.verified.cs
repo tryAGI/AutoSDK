@@ -202,7 +202,7 @@ namespace G
         public McpServersUserAccessClient McpServersUserAccess { get; }
 
         /// <summary>
-        /// Model pricing configurations for 2300+ LLMs across 40+ providers
+        /// Model pricing configurations for 2300+ LLMs across 40+ providers.
         /// </summary>
         public ModelPricingClient ModelPricing { get; }
 
@@ -232,12 +232,12 @@ namespace G
         public ProvidersClient Providers { get; }
 
         /// <summary>
-        /// Manage rate limits policies to control request or token rates
+        /// Manage rate limits policies to control request or token rates.
         /// </summary>
         public RateLimitsPoliciesClient RateLimitsPolicies { get; }
 
         /// <summary>
-        /// WebSocket proxy for provider Realtime APIs
+        /// WebSocket proxy for provider Realtime APIs.
         /// </summary>
         public RealtimeClient Realtime { get; }
 
@@ -252,7 +252,7 @@ namespace G
         public SecretReferencesClient SecretReferences { get; }
 
         /// <summary>
-        /// Manage usage limits policies to control total usage over time
+        /// Manage usage limits policies to control total usage over time.
         /// </summary>
         public UsageLimitsPoliciesClient UsageLimitsPolicies { get; }
 

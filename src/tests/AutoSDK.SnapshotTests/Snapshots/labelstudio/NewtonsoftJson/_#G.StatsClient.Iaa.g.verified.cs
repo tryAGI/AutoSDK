@@ -102,7 +102,7 @@ namespace G
                 .AddOptionalParameter("per_label", perLabel?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("std", std?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("task", task) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

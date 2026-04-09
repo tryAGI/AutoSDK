@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.instill.tech";
+        public const string DefaultBaseUrl = "https://api.instill.tech/";
 
         private bool _disposeHttpClient = true;
 

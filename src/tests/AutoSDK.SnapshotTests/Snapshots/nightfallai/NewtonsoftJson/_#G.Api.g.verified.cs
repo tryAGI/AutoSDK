@@ -15,7 +15,7 @@ namespace G
         /// <summary>
         /// Nightfall AI Production API
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.nightfall.ai";
+        public const string DefaultBaseUrl = "https://api.nightfall.ai/";
 
         private bool _disposeHttpClient = true;
 
@@ -40,7 +40,7 @@ namespace G
 
 
         /// <summary>
-        /// Upload and scan files for sensitive data
+        /// Upload and scan files for sensitive data.
         /// </summary>
         public FileScanningClient FileScanning => new FileScanningClient(HttpClient, authorizations: Authorizations)
         {
@@ -49,7 +49,7 @@ namespace G
         };
 
         /// <summary>
-        /// Scan text for sensitive data (PII, PHI, PCI, secrets, credentials)
+        /// Scan text for sensitive data (PII, PHI, PCI, secrets, credentials).
         /// </summary>
         public ScanningClient Scanning => new ScanningClient(HttpClient, authorizations: Authorizations)
         {

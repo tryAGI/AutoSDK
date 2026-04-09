@@ -52,7 +52,7 @@ namespace G
         ///  --header "Content-Type: application/json" \<br/>
         /// --data-raw '{"inputs":[{"id": "Image ID", "value": ["12345"]}]}'
         /// </remarks>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.GenerateApplicationResponseChunk>> GenerateContentAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateApplicationResponseChunk> GenerateContentAsStreamAsync(
             global::System.Guid applicationId,
 
             global::G.GenerateApplicationRequest request,
@@ -80,7 +80,7 @@ namespace G
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/applications/{applicationId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -180,7 +180,7 @@ namespace G
                     yield break;
                 }
 
-                var __streamedResponse = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.GenerateApplicationResponseChunk>?>(__content, JsonSerializerOptions) ??
+                var __streamedResponse = global::G.GenerateApplicationResponseChunk.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::G.ApiException(
                                            message: $"Response deserialization failed for \"{__content}\" ",
                                            statusCode: __response.StatusCode)
@@ -203,7 +203,7 @@ namespace G
         /// <param name="inputs"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.GenerateApplicationResponseChunk>> GenerateContentAsStreamAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateApplicationResponseChunk> GenerateContentAsStreamAsync(
             global::System.Guid applicationId,
             global::System.Collections.Generic.IList<global::G.GenerateApplicationInput> inputs,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)

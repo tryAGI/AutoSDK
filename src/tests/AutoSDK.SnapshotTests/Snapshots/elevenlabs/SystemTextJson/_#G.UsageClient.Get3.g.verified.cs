@@ -105,7 +105,7 @@ namespace G
                 .AddOptionalParameter("aggregation_interval", aggregationInterval?.ToValueString())
                 .AddOptionalParameter("aggregation_bucket_size", aggregationBucketSize?.ToString())
                 .AddOptionalParameter("metric", metric?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

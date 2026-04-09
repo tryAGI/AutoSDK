@@ -203,7 +203,7 @@ namespace G
                 .AddOptionalParameter("traceTags", traceTags, delimiter: ",", explode: true)
                 .AddOptionalParameter("fields", fields)
                 .AddOptionalParameter("filter", filter) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

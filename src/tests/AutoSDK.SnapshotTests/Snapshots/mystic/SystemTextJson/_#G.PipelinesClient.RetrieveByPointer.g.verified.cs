@@ -115,7 +115,7 @@ namespace G
                 .AddOptionalParameter("include_extras", includeExtras?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("pipeline_id", pipelineId)
                 .AddOptionalParameter("pipeline_id_or_pointer", pipelineIdOrPointer) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

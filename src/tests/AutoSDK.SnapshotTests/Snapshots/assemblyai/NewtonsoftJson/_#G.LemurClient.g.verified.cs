@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// AssemblyAI API
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.assemblyai.com";
+        public const string DefaultBaseUrl = "https://api.assemblyai.com/";
 
         private bool _disposeHttpClient = true;
 

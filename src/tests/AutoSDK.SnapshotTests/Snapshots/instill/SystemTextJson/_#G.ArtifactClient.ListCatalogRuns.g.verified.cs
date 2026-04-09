@@ -97,7 +97,7 @@ namespace G
                 .AddOptionalParameter("pageSize", pageSize?.ToString())
                 .AddOptionalParameter("filter", filter)
                 .AddOptionalParameter("orderBy", orderBy) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

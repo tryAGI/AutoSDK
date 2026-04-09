@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Endpoints to help with migration from v1 to v3<br/>
+    /// Endpoints to help with migration from v1 to v3.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>

@@ -179,7 +179,7 @@ namespace G
                 .AddOptionalParameter("connected_account_ids", connectedAccountIds, delimiter: ",", explode: true)
                 .AddOptionalParameter("order_by", orderBy?.ToValueString())
                 .AddOptionalParameter("order_direction", orderDirection?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

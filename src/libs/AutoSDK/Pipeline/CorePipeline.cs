@@ -152,6 +152,9 @@ public static class CorePipeline
                             {
                                 Name = tag.Name,
                                 Description = tag.Description,
+                                Summary = tag.Summary,
+                                Parent = tag.Parent,
+                                Kind = tag.Kind,
                             });
                         }
                     }

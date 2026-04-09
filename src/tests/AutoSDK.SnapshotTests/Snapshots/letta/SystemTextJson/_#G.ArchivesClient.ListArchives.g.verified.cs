@@ -122,7 +122,7 @@ namespace G
                 .AddOptionalParameter("order_by", orderBy)
                 .AddOptionalParameter("name", name)
                 .AddOptionalParameter("agent_id", agentId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

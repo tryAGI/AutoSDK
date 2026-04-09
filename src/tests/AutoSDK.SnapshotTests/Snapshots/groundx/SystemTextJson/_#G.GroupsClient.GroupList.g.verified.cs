@@ -76,7 +76,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("n", n?.ToString())
                 .AddOptionalParameter("nextToken", nextToken) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://trace.wandb.ai";
+        public const string DefaultBaseUrl = "https://trace.wandb.ai/";
 
         private bool _disposeHttpClient = true;
 

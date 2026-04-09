@@ -166,7 +166,7 @@ namespace G
                 .AddOptionalParameter("assistant_message_tool_name", assistantMessageToolName)
                 .AddOptionalParameter("assistant_message_tool_kwarg", assistantMessageToolKwarg)
                 .AddOptionalParameter("include_err", includeErr?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -89,7 +89,7 @@ namespace G
                 .AddOptionalParameter("user_id", userId, delimiter: ",", explode: true)
                 .AddOptionalParameter("first", first)
                 .AddOptionalParameter("after", after) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

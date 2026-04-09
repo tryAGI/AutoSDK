@@ -79,7 +79,7 @@ namespace G
             __pathBuilder
                 .AddOptionalParameter("skip_create", skipCreate?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("include_deleted", includeDeleted?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

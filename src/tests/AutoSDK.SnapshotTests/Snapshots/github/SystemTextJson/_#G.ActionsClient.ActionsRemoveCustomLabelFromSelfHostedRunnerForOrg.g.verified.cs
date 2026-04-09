@@ -56,7 +56,7 @@ namespace G
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/orgs/{org}/actions/runners/{runnerId}/labels/{name}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,

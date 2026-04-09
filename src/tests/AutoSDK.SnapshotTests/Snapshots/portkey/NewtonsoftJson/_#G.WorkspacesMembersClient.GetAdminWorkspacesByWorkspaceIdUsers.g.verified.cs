@@ -102,7 +102,7 @@ namespace G
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("role", role?.ToValueString())
                 .AddOptionalParameter("email", email) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Enumerate available engines<br/>
+    /// Enumerate available engines.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.stability.ai";
+        public const string DefaultBaseUrl = "https://api.stability.ai/";
 
         private bool _disposeHttpClient = true;
 

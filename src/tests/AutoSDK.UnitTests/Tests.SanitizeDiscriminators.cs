@@ -79,4 +79,44 @@ public class SanitizeDiscriminatorsTests
         schema.Discriminator.Mapping.Should().ContainSingle();
         schema.Discriminator.Mapping.Keys.Should().Contain("car");
     }
+
+    [TestMethod]
+    public void PreserveDefaultMapping_WhenDanglingMappingsAreRemoved()
+    {
+        var document = new OpenApiDocument
+        {
+            Components = new OpenApiComponents
+            {
+                Schemas = new Dictionary<string, IOpenApiSchema>
+                {
+                    ["Vehicle"] = new OpenApiSchema
+                    {
+                        Type = JsonSchemaType.Object,
+                        Discriminator = new OpenApiDiscriminator
+                        {
+                            PropertyName = "kind",
+                            Mapping = new Dictionary<string, OpenApiSchemaReference>
+                            {
+                                ["boat"] = new("Boat", null, string.Empty),
+                            },
+                            DefaultMapping = new OpenApiSchemaReference("FallbackVehicle", null, string.Empty),
+                        },
+                    },
+                    ["FallbackVehicle"] = new OpenApiSchema
+                    {
+                        Type = JsonSchemaType.Object,
+                    },
+                },
+            },
+        };
+
+        document.SanitizeDiscriminators();
+
+        var schema = (OpenApiSchema)document.Components.Schemas["Vehicle"];
+        schema.Discriminator.Should().NotBeNull();
+        schema.Discriminator!.PropertyName.Should().Be("kind");
+        schema.Discriminator.Mapping.Should().BeNull();
+        schema.Discriminator.DefaultMapping.Should().NotBeNull();
+        schema.Discriminator.DefaultMapping!.Reference.Id.Should().Be("FallbackVehicle");
+    }
 }

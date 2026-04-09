@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.e2b.app";
+        public const string DefaultBaseUrl = "https://api.e2b.app/";
 
         private bool _disposeHttpClient = true;
 

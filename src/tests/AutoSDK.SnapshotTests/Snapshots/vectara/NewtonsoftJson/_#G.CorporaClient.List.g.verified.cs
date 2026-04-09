@@ -115,7 +115,7 @@ namespace G
                 .AddOptionalParameter("filter", filter)
                 .AddOptionalParameter("corpus_id", corpusId, delimiter: ",", explode: true)
                 .AddOptionalParameter("page_key", pageKey) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

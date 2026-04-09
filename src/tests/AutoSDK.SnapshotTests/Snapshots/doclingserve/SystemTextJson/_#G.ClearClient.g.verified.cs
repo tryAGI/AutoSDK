@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "http://localhost:5001";
+        public const string DefaultBaseUrl = "http://localhost:5001/";
 
         private bool _disposeHttpClient = true;
 

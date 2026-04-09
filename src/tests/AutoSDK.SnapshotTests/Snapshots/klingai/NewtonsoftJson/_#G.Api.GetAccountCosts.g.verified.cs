@@ -81,7 +81,7 @@ namespace G
                 .AddRequiredParameter("start_time", startTime.ToString()!)
                 .AddRequiredParameter("end_time", endTime.ToString()!)
                 .AddOptionalParameter("resource_pack_name", resourcePackName) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

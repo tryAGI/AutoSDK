@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://example.com";
+        public const string DefaultBaseUrl = "https://example.com/";
 
         private bool _disposeHttpClient = true;
 

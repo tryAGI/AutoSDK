@@ -124,7 +124,7 @@ namespace G
                 .AddOptionalParameter("cursor", cursor)
                 .AddOptionalParameter("include_spans", includeSpans?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("session_identifier", sessionIdentifier?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

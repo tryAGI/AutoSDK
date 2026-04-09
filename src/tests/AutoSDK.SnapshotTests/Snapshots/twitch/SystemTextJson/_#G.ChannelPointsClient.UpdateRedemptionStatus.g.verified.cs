@@ -91,7 +91,7 @@ namespace G
                 .AddRequiredParameter("id", id, delimiter: ",", explode: true)
                 .AddRequiredParameter("broadcaster_id", broadcasterId)
                 .AddRequiredParameter("reward_id", rewardId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),

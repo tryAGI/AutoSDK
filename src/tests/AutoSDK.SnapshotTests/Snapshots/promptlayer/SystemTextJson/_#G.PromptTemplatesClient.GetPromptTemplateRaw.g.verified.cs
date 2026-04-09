@@ -79,7 +79,7 @@ namespace G
                 .AddOptionalParameter("label", label)
                 .AddOptionalParameter("resolve_snippets", resolveSnippets?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("include_llm_kwargs", includeLlmKwargs?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

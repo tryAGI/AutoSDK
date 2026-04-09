@@ -123,7 +123,7 @@ namespace G
                 .AddOptionalParameter("order", order?.ToValueString())
                 .AddOptionalParameter("order_by", orderBy)
                 .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

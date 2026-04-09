@@ -47,12 +47,12 @@ namespace G
         public GenerateClient Generate { get; }
 
         /// <summary>
-        /// Content related to managing API account and API access
+        /// Content related to managing API account and API access.
         /// </summary>
         public ManageClient Manage { get; }
 
         /// <summary>
-        /// Operations related to understanding visual content
+        /// Operations related to understanding visual content.
         /// </summary>
         public VisionClient Vision { get; }
 

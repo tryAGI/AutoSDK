@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.murf.ai";
+        public const string DefaultBaseUrl = "https://api.murf.ai/";
 
         private bool _disposeHttpClient = true;
 

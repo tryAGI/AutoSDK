@@ -104,7 +104,7 @@ namespace G
             __pathBuilder
                 .AddRequiredParameter("resource_type", resourceType.ToValueString())
                 .AddRequiredParameter("resource_id", resourceId.ToString()!) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

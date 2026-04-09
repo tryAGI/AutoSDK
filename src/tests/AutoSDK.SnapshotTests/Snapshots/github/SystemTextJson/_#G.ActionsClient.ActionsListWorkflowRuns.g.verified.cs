@@ -183,7 +183,7 @@ namespace G
                 .AddOptionalParameter("exclude_pull_requests", excludePullRequests?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("check_suite_id", checkSuiteId?.ToString())
                 .AddOptionalParameter("head_sha", headSha) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Information about API usage and value ranges<br/>
+    /// Information about API usage and value ranges.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// DeepL API Pro
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.deepl.com";
+        public const string DefaultBaseUrl = "https://api.deepl.com/";
 
         private bool _disposeHttpClient = true;
 
