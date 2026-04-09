@@ -103,7 +103,8 @@ public static class CSharpSchemaDataFactory
         }
 
         var type = context.TypeData;
-        if (parameter.In == ParameterLocation.Query &&
+        if ((parameter.In == ParameterLocation.Query ||
+             parameter.In == ParameterLocation.QueryString) &&
             (context.IsClass || context.ResolvedReference?.IsClass == true))
         {
             var props = (context.ResolvedReference?.ClassData ?? context.ClassData)?.Properties;
@@ -160,6 +161,7 @@ public static class CSharpSchemaDataFactory
                 context.Parameter?.Description ??
                 context.Schema.Description ??
                 string.Empty,
+            ContentType: context.ContentType,
             ConverterType: type.ConverterType,
             Properties: context.ClassData?.Properties ?? [],
             HasSchemaDefault: false,

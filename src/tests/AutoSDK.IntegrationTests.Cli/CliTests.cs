@@ -1051,6 +1051,84 @@ paths:
     }
 
     [TestMethod]
+    public async Task Generate_WithOpenApi32QueryStringCookieAndAdditionalOperations_BuildsAndEmitsSupport()
+    {
+        const string spec = """
+openapi: 3.2.0
+info:
+  title: OpenApi32
+  version: 1.0.0
+servers:
+  - url: https://example.com
+paths:
+  /search:
+    query:
+      operationId: querySearch
+      parameters:
+        - in: querystring
+          name: filters
+          required: false
+          content:
+            application/x-www-form-urlencoded:
+              schema:
+                type: object
+                properties:
+                  q:
+                    type: string
+                  page:
+                    type: integer
+      responses:
+        '200':
+          description: OK
+    additionalOperations:
+      purge:
+        operationId: purgeSearch
+        responses:
+          '204':
+            description: Purged
+  /cookies:
+    get:
+      operationId: getCookies
+      parameters:
+        - in: cookie
+          name: prefs
+          style: cookie
+          schema:
+            type: object
+            properties:
+              theme:
+                type: string
+              pageSize:
+                type: integer
+      responses:
+        '200':
+          description: OK
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "openapi32-parameters.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "OpenApi32",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("method: new global::System.Net.Http.HttpMethod(\"QUERY\")");
+                content.Should().Contain("method: new global::System.Net.Http.HttpMethod(\"purge\")");
+                content.Should().Contain("__pathBuilder = __pathBuilder.AddRawQueryString(string.Join(\"&\", __queryStringSegments_filters));");
+                content.Should().Contain("__queryStringSegments_filters.Add(\"q=\" + global::System.Uri.EscapeDataString(__filters_Q.ToString() ?? string.Empty));");
+                content.Should().Contain("__queryStringSegments_filters.Add(\"page=\" + global::System.Uri.EscapeDataString(__filters_Page.ToString() ?? string.Empty));");
+                content.Should().Contain("__httpRequest.Headers.TryAddWithoutValidation(\"Cookie\", string.Join(\"; \", __cookies));");
+                content.Should().Contain("__cookies.Add($\"theme={__prefs_Theme.ToString() ?? string.Empty}\")");
+                content.Should().Contain("__cookies.Add($\"pageSize={__prefs_PageSize.ToString() ?? string.Empty}\")");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithDuplicateQueryParameterNames_Builds()
     {
         const string spec = """
