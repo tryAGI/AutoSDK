@@ -52,7 +52,9 @@ public static class OpenApiEnumExtensions
             var @enum = context.ComputeEnum();
             if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
             {
-                return string.Empty;
+                return context.TypeData.IsOpenEnum
+                    ? $"{context.TypeData.CSharpTypeWithoutNullability}.FromValue({defaultString.ToCSharpStringLiteral()})"
+                    : string.Empty;
             }
 
             return context.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
@@ -63,10 +65,16 @@ public static class OpenApiEnumExtensions
                 .Where(x => x.Hint is Hint.AnyOf)
                 .First(x => x.Schema.Enum?.Any() ?? false);
             var @enum = enumChildContext.ComputeEnum();
-            var value = @enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result) ? result.Name : "";
+            var defaultEnumValue = context.Schema.Default.GetString() ?? string.Empty;
+            var value = @enum.TryGetValue(defaultEnumValue, out var result) ? result.Name : "";
 
             if (string.IsNullOrWhiteSpace(value))
             {
+                if (enumChildContext.TypeData.IsOpenEnum && !string.IsNullOrWhiteSpace(defaultEnumValue))
+                {
+                    return $"{enumChildContext.TypeData.CSharpTypeWithoutNullability}.FromValue({defaultEnumValue.ToCSharpStringLiteral()})";
+                }
+
                 if (context.Children
                     .Where(x => x.Hint is Hint.AnyOf)
                     .Any(x => x.Schema.Type == Microsoft.OpenApi.JsonSchemaType.String))
@@ -91,7 +99,10 @@ public static class OpenApiEnumExtensions
             var @enum = enumChildContext.ComputeEnum();
             if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
             {
-                return string.Empty;
+                var defaultEnumValue = context.Schema.Default.GetString() ?? string.Empty;
+                return enumChildContext.TypeData.IsOpenEnum && !string.IsNullOrWhiteSpace(defaultEnumValue)
+                    ? $"{enumChildContext.TypeData.CSharpTypeWithoutNullability}.FromValue({defaultEnumValue.ToCSharpStringLiteral()})"
+                    : string.Empty;
             }
 
             return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
@@ -104,7 +115,10 @@ public static class OpenApiEnumExtensions
             var @enum = enumChildContext.ComputeEnum();
             if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
             {
-                return string.Empty;
+                var defaultEnumValue = context.Schema.Default.GetString() ?? string.Empty;
+                return enumChildContext.TypeData.IsOpenEnum && !string.IsNullOrWhiteSpace(defaultEnumValue)
+                    ? $"{enumChildContext.TypeData.CSharpTypeWithoutNullability}.FromValue({defaultEnumValue.ToCSharpStringLiteral()})"
+                    : string.Empty;
             }
 
             return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;

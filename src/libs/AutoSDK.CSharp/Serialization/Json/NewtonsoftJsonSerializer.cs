@@ -1,3 +1,4 @@
+using AutoSDK.Extensions;
 using AutoSDK.Models;
 
 namespace AutoSDK.Serialization.Json;
@@ -29,12 +30,25 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
     
     public string CreateDefaultSettings(IReadOnlyList<string> converters)
     {
-        return "new global::Newtonsoft.Json.JsonSerializerSettings()";
+        return @$"new global::Newtonsoft.Json.JsonSerializerSettings
+            {{
+                Converters =
+                {{
+{converters.Select(x => @$"
+                    new {x}(),
+").Inject()}
+                }}
+            }}";
     }
 
     public string GenerateConverterAttribute(string type)
     {
-        return string.Empty;
+        if (string.IsNullOrWhiteSpace(type))
+        {
+            return string.Empty;
+        }
+
+        return $"[global::Newtonsoft.Json.JsonConverter(typeof({type}))]";
     }
 
     public string GenerateSerializeCall(TypeData type, string jsonSerializerContext)

@@ -204,6 +204,108 @@ public class ExtensionParsingTests
     }
 
     [TestMethod]
+    public void XSpeakeasyUnknownValues_Allow_MarksEnumAsOpen()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                Status:
+                                  type: string
+                                  x-speakeasy-unknown-values: allow
+                                  enum:
+                                    - active
+                                    - inactive
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        var enumType = data.Enums.FirstOrDefault(e => e.ClassName == "Status");
+        enumType.Should().NotBe(default);
+        enumType.IsOpenEnum.Should().BeTrue();
+    }
+
+    [TestMethod]
+    public void XSpeakeasyUnknownValues_Disallow_LeavesEnumClosed()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                Status:
+                                  type: string
+                                  x-speakeasy-unknown-values: disallow
+                                  enum:
+                                    - active
+                                    - inactive
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        var enumType = data.Enums.FirstOrDefault(e => e.ClassName == "Status");
+        enumType.Should().NotBe(default);
+        enumType.IsOpenEnum.Should().BeFalse();
+    }
+
+    [TestMethod]
+    public void XFernEnum_ForwardCompatible_MarksEnumAsOpen()
+    {
+        const string json = """
+                            {
+                              "openapi": "3.0.1",
+                              "info": { "title": "Test", "version": "1.0.0" },
+                              "paths": {},
+                              "components": {
+                                "schemas": {
+                                  "Status": {
+                                    "type": "string",
+                                    "enum": ["active", "inactive"],
+                                    "x-fern-enum": {
+                                      "forwardCompatible": true,
+                                      "active": {
+                                        "description": "Currently active",
+                                        "casing": {
+                                          "pascal": "Active"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((json, settings), GlobalSettings: settings));
+
+        var enumType = data.Enums.FirstOrDefault(e => e.ClassName == "Status");
+        enumType.Should().NotBe(default);
+        enumType.IsOpenEnum.Should().BeTrue();
+    }
+
+    [TestMethod]
     public void SymbolicEnumValues_UseReadableEnumMemberNames()
     {
         const string yaml = """
