@@ -89,39 +89,39 @@ public static partial class Sources
             TryCreateGeneratedCSharpSnippet(operation, method, out var csharpCode, out var setup))
         {
             return new GeneratedSdkSnippetDocument(
-                Order: order,
-                Title: title,
-                Slug: slug,
-                Description: description,
-                Language: "csharp",
-                Code: csharpCode,
-                Format: "sdk",
-                OperationId: operationId,
-                Setup: setup);
+                order,
+                title,
+                slug,
+                description,
+                "csharp",
+                csharpCode,
+                "sdk",
+                operationId,
+                setup);
         }
 
         if (TryGetPreferredCodeSample(operation.Operation, out var codeSample))
         {
             return new GeneratedSdkSnippetDocument(
-                Order: order,
-                Title: title,
-                Slug: slug,
-                Description: description,
-                Language: "csharp",
-                Code: codeSample,
-                Format: "sdk",
-                OperationId: operationId);
+                order,
+                title,
+                slug,
+                description,
+                "csharp",
+                codeSample,
+                "sdk",
+                operationId);
         }
 
         return new GeneratedSdkSnippetDocument(
-            Order: order,
-            Title: title,
-            Slug: slug,
-            Description: description,
-            Language: "http",
-            Code: GenerateHttpRequest(operation).TrimEnd(),
-            Format: "http",
-            OperationId: operationId);
+            order,
+            title,
+            slug,
+            description,
+            "http",
+            GenerateHttpRequest(operation).TrimEnd(),
+            "http",
+            operationId);
     }
 
     private static bool TryCreateGeneratedCSharpSnippet(

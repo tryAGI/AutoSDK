@@ -325,15 +325,15 @@ public sealed class DocsSyncTests
                     new GeneratedSdkSnippetManifest(
                     [
                         new GeneratedSdkSnippetDocument(
-                            Order: 1,
-                            Title: "Upload File",
-                            Slug: "upload-file",
-                            Description: "Uses the generated HTTP fallback snippet.",
-                            Language: "http",
-                            Code: "POST {{host}}/uploads",
-                            Format: "http",
-                            OperationId: "uploadFile",
-                            Setup: "This example uses the generated HTTP request snippet.")
+                            1,
+                            "Upload File",
+                            "upload-file",
+                            "Uses the generated HTTP fallback snippet.",
+                            "http",
+                            "POST {{host}}/uploads",
+                            "http",
+                            "uploadFile",
+                            "This example uses the generated HTTP request snippet.")
                     ]),
                     new JsonSerializerOptions
                     {
