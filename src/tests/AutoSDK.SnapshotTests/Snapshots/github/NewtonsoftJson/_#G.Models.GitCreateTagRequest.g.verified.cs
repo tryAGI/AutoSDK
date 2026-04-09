@@ -31,6 +31,7 @@ namespace G
         /// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GitCreateTagRequestTypeJsonConverter))]
         public global::G.GitCreateTagRequestType Type { get; set; } = default!;
 
         /// <summary>

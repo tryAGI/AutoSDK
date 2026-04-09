@@ -24,6 +24,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestReviewComment> PullsCreateReviewCommentAsync(
@@ -32,6 +33,7 @@ namespace G
             int pullNumber,
 
             global::G.PullsCreateReviewCommentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a review comment for a pull request<br/>
@@ -50,6 +52,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PullRequestReviewComment>> PullsCreateReviewCommentAsResponseAsync(
@@ -58,6 +61,7 @@ namespace G
             int pullNumber,
 
             global::G.PullsCreateReviewCommentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a review comment for a pull request<br/>
@@ -103,6 +107,7 @@ namespace G
         /// <param name="subjectType">
         /// The level at which the comment is targeted.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestReviewComment> PullsCreateReviewCommentAsync(
@@ -118,6 +123,7 @@ namespace G
             global::G.PullsCreateReviewCommentRequestStartSide? startSide = default,
             int? inReplyTo = default,
             global::G.PullsCreateReviewCommentRequestSubjectType? subjectType = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

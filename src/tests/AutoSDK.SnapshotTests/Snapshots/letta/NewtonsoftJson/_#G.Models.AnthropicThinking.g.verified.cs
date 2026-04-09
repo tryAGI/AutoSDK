@@ -14,6 +14,7 @@ namespace G
         /// Default Value: enabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnthropicThinkingTypeJsonConverter))]
         public global::G.AnthropicThinkingType? Type { get; set; }
 
         /// <summary>

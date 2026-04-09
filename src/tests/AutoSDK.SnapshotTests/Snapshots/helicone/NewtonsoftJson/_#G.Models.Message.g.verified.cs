@@ -85,6 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageTypeJsonConverter))]
         public global::G.MessageType? Type { get; set; }
 
         /// <summary>
@@ -157,6 +158,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageType2JsonConverter))]
         public global::G.MessageType2 Type2 { get; set; } = default!;
 
         /// <summary>

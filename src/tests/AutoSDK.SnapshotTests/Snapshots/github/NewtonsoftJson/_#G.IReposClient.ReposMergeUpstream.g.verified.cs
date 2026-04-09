@@ -12,6 +12,7 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MergedUpstream> ReposMergeUpstreamAsync(
@@ -19,6 +20,7 @@ namespace G
             string repo,
 
             global::G.ReposMergeUpstreamRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Sync a fork branch with the upstream repository<br/>
@@ -29,12 +31,14 @@ namespace G
         /// <param name="branch">
         /// The name of the branch which should be updated to match upstream.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MergedUpstream> ReposMergeUpstreamAsync(
             string owner,
             string repo,
             string branch,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

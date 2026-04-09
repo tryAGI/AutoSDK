@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("errorCode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FeedsBackfillSubscriptionResponseErrorCodeJsonConverter))]
         public global::G.FeedsBackfillSubscriptionResponseErrorCode ErrorCode { get; set; } = default!;
 
         /// <summary>

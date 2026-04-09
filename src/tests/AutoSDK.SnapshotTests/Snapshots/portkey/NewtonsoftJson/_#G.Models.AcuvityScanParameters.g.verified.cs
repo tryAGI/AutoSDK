@@ -105,6 +105,7 @@ namespace G
         /// Default Value: english
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language_values")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AcuvityScanParametersLanguageValuesJsonConverter))]
         public global::G.AcuvityScanParametersLanguageValues? LanguageValues { get; set; }
 
         /// <summary>

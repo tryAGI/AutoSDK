@@ -13,6 +13,7 @@ namespace G
         /// This is the provider of the model (`openai`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalOpenAIModelProviderJsonConverter))]
         public global::G.EvalOpenAIModelProvider Provider { get; set; }
 
         /// <summary>
@@ -21,6 +22,7 @@ namespace G
         /// This is helpful when you are required to comply with Data Residency rules. Learn more about Azure regions here https://azure.microsoft.com/en-us/explore/global-infrastructure/data-residency/.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalOpenAIModelModelJsonConverter))]
         public global::G.EvalOpenAIModelModel Model { get; set; } = default!;
 
         /// <summary>

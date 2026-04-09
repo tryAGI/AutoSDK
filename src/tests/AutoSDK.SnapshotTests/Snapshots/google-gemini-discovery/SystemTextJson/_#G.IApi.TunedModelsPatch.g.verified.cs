@@ -11,6 +11,7 @@ namespace G
         /// <param name="tunedModelsId"></param>
         /// <param name="updateMask"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TunedModel> TunedModelsPatchAsync(
@@ -18,6 +19,7 @@ namespace G
 
             global::G.TunedModel request,
             string? updateMask = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Updates a tuned model.
@@ -51,6 +53,7 @@ namespace G
         /// <param name="readerProjectNumbers">
         /// Optional. List of project numbers that have read access to the tuned model.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TunedModel> TunedModelsPatchAsync(
@@ -65,6 +68,7 @@ namespace G
             int? topK = default,
             global::G.TuningTask? tuningTask = default,
             global::System.Collections.Generic.IList<string>? readerProjectNumbers = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

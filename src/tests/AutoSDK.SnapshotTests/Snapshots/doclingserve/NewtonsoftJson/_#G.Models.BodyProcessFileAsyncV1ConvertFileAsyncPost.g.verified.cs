@@ -13,12 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> Files { get; set; } = default!;
+        public global::System.Collections.Generic.IList<byte[]> Files { get; set; } = default!;
 
         /// <summary>
         /// Default Value: inbody
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TargetNameJsonConverter))]
         public global::G.TargetName? TargetType { get; set; }
 
         /// <summary>
@@ -40,6 +41,7 @@ namespace G
         /// Default Value: embedded
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image_export_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageRefModeJsonConverter))]
         public global::G.ImageRefMode? ImageExportMode { get; set; }
 
         /// <summary>
@@ -61,6 +63,7 @@ namespace G
         /// Default Value: easyocr
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ocr_engine")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OcrEnginesEnumJsonConverter))]
         public global::G.OcrEnginesEnum? OcrEngine { get; set; }
 
         /// <summary>
@@ -74,6 +77,7 @@ namespace G
         /// Default Value: docling_parse
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pdf_backend")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PdfBackendJsonConverter))]
         public global::G.PdfBackend? PdfBackend { get; set; }
 
         /// <summary>
@@ -81,6 +85,7 @@ namespace G
         /// Default Value: accurate
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("table_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TableFormerModeJsonConverter))]
         public global::G.TableFormerMode? TableMode { get; set; }
 
         /// <summary>
@@ -95,6 +100,7 @@ namespace G
         /// Default Value: standard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pipeline")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProcessingPipelineJsonConverter))]
         public global::G.ProcessingPipeline? Pipeline { get; set; }
 
         /// <summary>
@@ -102,7 +108,7 @@ namespace G
         /// Default Value: [1, 9223372036854775807L]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("page_range")]
-        public byte[]? PageRange { get; set; }
+        public global::System.Collections.Generic.IList<int>? PageRange { get; set; }
 
         /// <summary>
         /// The timeout for processing each document, in seconds.<br/>
@@ -412,7 +418,7 @@ namespace G
         /// Custom configuration for layout model. Use this to specify a non-default kind with its options. The 'kind' field in the config dict determines which layout implementation to use. If not specified, uses the default kind with preset configuration.
         /// </param>
         public BodyProcessFileAsyncV1ConvertFileAsyncPost(
-            global::System.Collections.Generic.IList<string> files,
+            global::System.Collections.Generic.IList<byte[]> files,
             global::G.TargetName? targetType,
             global::System.Collections.Generic.IList<global::G.InputFormat>? fromFormats,
             global::System.Collections.Generic.IList<global::G.OutputFormat>? toFormats,
@@ -425,7 +431,7 @@ namespace G
             global::G.TableFormerMode? tableMode,
             bool? tableCellMatching,
             global::G.ProcessingPipeline? pipeline,
-            byte[]? pageRange,
+            global::System.Collections.Generic.IList<int>? pageRange,
             double? documentTimeout,
             bool? abortOnError,
             bool? doTableStructure,

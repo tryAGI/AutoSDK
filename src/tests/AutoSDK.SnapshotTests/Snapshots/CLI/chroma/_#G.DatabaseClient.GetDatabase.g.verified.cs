@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DatabaseClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetDatabaseSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-chroma-token",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetDatabaseSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetDatabaseSecurityRequirement0,
+            };
         partial void PrepareGetDatabaseArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string tenant,
@@ -44,9 +63,15 @@ namespace G
                 tenant: ref tenant,
                 database: ref database);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetDatabaseSecurityRequirements,
+                operationName: "GetDatabaseAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v2/tenants/{tenant}/databases/{database}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -56,7 +81,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FinetuningClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListTrainingStepMetricsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListTrainingStepMetricsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListTrainingStepMetricsSecurityRequirement0,
+            };
         partial void PrepareListTrainingStepMetricsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string finetunedModelId,
@@ -53,13 +72,19 @@ namespace G
                 pageToken: ref pageToken,
                 xClientName: ref xClientName);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListTrainingStepMetricsSecurityRequirements,
+                operationName: "ListTrainingStepMetricsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/finetuning/finetuned-models/{finetunedModelId}/training-step-metrics",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("page_size", pageSize?.ToString())
                 .AddOptionalParameter("page_token", pageToken) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -69,7 +94,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

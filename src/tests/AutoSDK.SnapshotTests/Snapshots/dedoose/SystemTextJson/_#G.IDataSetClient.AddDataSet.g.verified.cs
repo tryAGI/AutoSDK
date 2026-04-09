@@ -10,11 +10,13 @@ namespace G
         /// AddDataSet
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DataSetVO> AddDataSetAsync(
 
             global::G.AddDataSetRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// AddDataSet<br/>
@@ -35,6 +37,7 @@ namespace G
         /// <param name="resourceIds"></param>
         /// <param name="tagIds"></param>
         /// <param name="excludedExcerptIds"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DataSetVO> AddDataSetAsync(
@@ -53,6 +56,7 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid> resourceIds,
             global::System.Collections.Generic.IList<global::System.Guid> tagIds,
             global::System.Collections.Generic.IList<global::System.Guid> excludedExcerptIds,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

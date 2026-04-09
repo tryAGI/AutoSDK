@@ -9,11 +9,13 @@ namespace G
         /// Clone a voice from audio files
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.VoiceResponse> CloneVoiceAsync(
 
             global::G.CloneVoiceRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Clone a voice from audio files
@@ -27,12 +29,14 @@ namespace G
         /// <param name="voiceProvider">
         /// Voice provider to use for cloning.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.VoiceResponse> CloneVoiceAsync(
             global::System.Collections.Generic.IList<byte[]> files,
             string voiceName,
             global::G.CloneVoiceRequestVoiceProvider voiceProvider,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

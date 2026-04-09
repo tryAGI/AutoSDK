@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.OverloadedErrorType.OverloadedError</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OverloadedErrorTypeJsonConverter))]
         public global::G.OverloadedErrorType Type { get; set; } = global::G.OverloadedErrorType.OverloadedError;
 
         /// <summary>

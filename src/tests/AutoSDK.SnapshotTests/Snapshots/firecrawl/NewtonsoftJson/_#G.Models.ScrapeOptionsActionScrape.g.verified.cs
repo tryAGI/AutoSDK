@@ -13,6 +13,7 @@ namespace G
         /// Scrape the current page content, returns the url and the html.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeOptionsActionScrapeTypeJsonConverter))]
         public global::G.ScrapeOptionsActionScrapeType Type { get; set; }
 
         /// <summary>

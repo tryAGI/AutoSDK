@@ -39,6 +39,7 @@ namespace G
         /// The status of the connection
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetConnectedAccountsByNanoidResponseStatusJsonConverter))]
         public global::G.GetConnectedAccountsByNanoidResponseStatus Status { get; set; } = default!;
 
         /// <summary>

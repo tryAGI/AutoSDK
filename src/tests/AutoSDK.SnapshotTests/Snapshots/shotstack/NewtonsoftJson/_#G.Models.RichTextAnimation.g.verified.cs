@@ -22,6 +22,7 @@ namespace G
         /// </summary>
         /// <example>shift</example>
         [global::Newtonsoft.Json.JsonProperty("preset", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichTextAnimationPresetJsonConverter))]
         public global::G.RichTextAnimationPreset Preset { get; set; } = default!;
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace G
         /// </summary>
         /// <example>character</example>
         [global::Newtonsoft.Json.JsonProperty("style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichTextAnimationStyleJsonConverter))]
         public global::G.RichTextAnimationStyle? Style { get; set; }
 
         /// <summary>
@@ -51,6 +53,7 @@ namespace G
         /// </summary>
         /// <example>up</example>
         [global::Newtonsoft.Json.JsonProperty("direction")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichTextAnimationDirectionJsonConverter))]
         public global::G.RichTextAnimationDirection? Direction { get; set; }
 
         /// <summary>

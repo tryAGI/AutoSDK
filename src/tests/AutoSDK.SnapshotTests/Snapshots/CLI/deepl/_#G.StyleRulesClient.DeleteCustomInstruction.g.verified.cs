@@ -6,6 +6,25 @@ namespace G
 {
     public partial class StyleRulesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteCustomInstructionSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteCustomInstructionSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteCustomInstructionSecurityRequirement0,
+            };
         partial void PrepareDeleteCustomInstructionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string styleId,
@@ -38,9 +57,15 @@ namespace G
                 styleId: ref styleId,
                 instructionId: ref instructionId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteCustomInstructionSecurityRequirements,
+                operationName: "DeleteCustomInstructionAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v3/style_rules/{styleId}/custom_instructions/{instructionId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -50,7 +75,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

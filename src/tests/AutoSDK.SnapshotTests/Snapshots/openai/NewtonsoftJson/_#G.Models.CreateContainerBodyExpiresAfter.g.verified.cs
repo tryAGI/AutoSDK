@@ -13,6 +13,7 @@ namespace G
         /// Time anchor for the expiration time. Currently only 'last_active_at' is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("anchor")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateContainerBodyExpiresAfterAnchorJsonConverter))]
         public global::G.CreateContainerBodyExpiresAfterAnchor Anchor { get; set; }
 
         /// <summary>

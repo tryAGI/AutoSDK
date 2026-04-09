@@ -19,6 +19,7 @@ namespace G
         /// The status of the tool call
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LettaSchemasMessageToolReturnInputStatusJsonConverter))]
         public global::G.LettaSchemasMessageToolReturnInputStatus Status { get; set; } = default!;
 
         /// <summary>

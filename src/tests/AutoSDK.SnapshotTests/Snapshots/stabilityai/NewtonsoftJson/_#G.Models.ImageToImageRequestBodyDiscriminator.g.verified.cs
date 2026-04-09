@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("init_image_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageToImageRequestBodyDiscriminatorInitImageModeJsonConverter))]
         public global::G.ImageToImageRequestBodyDiscriminatorInitImageMode? InitImageMode { get; set; }
 
         /// <summary>

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class VdpClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PipelinePublicServiceListPipelineRunsByRequesterSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PipelinePublicServiceListPipelineRunsByRequesterSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PipelinePublicServiceListPipelineRunsByRequesterSecurityRequirement0,
+            };
         partial void PreparePipelinePublicServiceListPipelineRunsByRequesterArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -75,6 +94,12 @@ namespace G
                 requesterId: ref requesterId,
                 instillRequesterUid: ref instillRequesterUid);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PipelinePublicServiceListPipelineRunsByRequesterSecurityRequirements,
+                operationName: "PipelinePublicServiceListPipelineRunsByRequesterAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1beta/dashboard/pipelines/runs",
                 baseUri: HttpClient.BaseAddress); 
@@ -86,7 +111,7 @@ namespace G
                 .AddOptionalParameter("start", start?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("stop", stop?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddRequiredParameter("requesterId", requesterId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -96,7 +121,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

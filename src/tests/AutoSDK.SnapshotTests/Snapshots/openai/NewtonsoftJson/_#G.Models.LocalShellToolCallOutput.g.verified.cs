@@ -13,6 +13,7 @@ namespace G
         /// The type of the local shell tool call output. Always `local_shell_call_output`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LocalShellToolCallOutputTypeJsonConverter))]
         public global::G.LocalShellToolCallOutputType Type { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// The status of the item. One of `in_progress`, `completed`, or `incomplete`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LocalShellToolCallOutputStatusJsonConverter))]
         public global::G.LocalShellToolCallOutputStatus? Status { get; set; }
 
         /// <summary>

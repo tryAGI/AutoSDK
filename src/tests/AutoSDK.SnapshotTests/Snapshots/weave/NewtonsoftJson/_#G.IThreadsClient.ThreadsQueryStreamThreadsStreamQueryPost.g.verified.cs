@@ -9,11 +9,13 @@ namespace G
         /// Threads Query Stream
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> ThreadsQueryStreamThreadsStreamQueryPostAsync(
 
             global::G.ThreadsQueryReq request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Threads Query Stream
@@ -33,6 +35,7 @@ namespace G
         /// <param name="sortBy">
         /// Sorting criteria for the threads. Supported fields: 'thread_id', 'turn_count', 'start_time', 'last_updated', 'p50_turn_duration_ms', 'p99_turn_duration_ms'.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> ThreadsQueryStreamThreadsStreamQueryPostAsync(
@@ -41,6 +44,7 @@ namespace G
             int? limit = default,
             int? offset = default,
             global::System.Collections.Generic.IList<global::G.SortBy>? sortBy = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

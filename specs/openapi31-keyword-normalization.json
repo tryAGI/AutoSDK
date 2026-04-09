@@ -1,0 +1,72 @@
+{
+  "openapi": "3.1.0",
+  "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
+  "info": {
+    "title": "OpenAPI31 Keywords",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Payload": {
+        "type": "object",
+        "unevaluatedProperties": false,
+        "propertyNames": {
+          "pattern": "^[a-z_]+$"
+        },
+        "dependentRequired": {
+          "blob": [
+            "file"
+          ]
+        },
+        "dependentSchemas": {
+          "json_payload": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "properties": {
+          "blob": {
+            "contentEncoding": "base64"
+          },
+          "file": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream"
+          },
+          "csv": {
+            "type": "string",
+            "contentMediaType": "text/csv"
+          },
+          "json_payload": {
+            "type": "string",
+            "contentMediaType": "application/json",
+            "contentSchema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "pair": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "unevaluatedItems": false
+          }
+        }
+      }
+    }
+  }
+}

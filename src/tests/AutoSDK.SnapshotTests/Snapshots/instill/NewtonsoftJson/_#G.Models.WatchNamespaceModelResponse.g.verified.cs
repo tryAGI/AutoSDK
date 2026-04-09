@@ -14,6 +14,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StateJsonConverter))]
         public global::G.State? State { get; set; }
 
         /// <summary>

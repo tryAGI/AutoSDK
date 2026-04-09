@@ -16,11 +16,13 @@ namespace G
         /// <param name="passageId">
         /// The ID of the passage in the format 'passage-&lt;uuid4&gt;'
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task DeletePassageFromArchiveAsync(
             string archiveId,
             string passageId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

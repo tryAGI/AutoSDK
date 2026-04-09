@@ -25,6 +25,7 @@ namespace G
         /// Reason the model stopped generating
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionChoiceFinishReasonJsonConverter))]
         public global::G.ChatCompletionChoiceFinishReason? FinishReason { get; set; }
 
         /// <summary>

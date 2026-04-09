@@ -123,7 +123,7 @@ internal sealed class HttpCommand : Command
         var servers = (openApiDocument.Servers ?? []).ToList();
 
         // Generate environment file
-        var envFile = Sources.HttpEnvironmentFile(servers, securitySchemes);
+        var envFile = Sources.HttpEnvironmentFile(servers, securitySchemes, openApiDocument.Self);
 
         // Generate .http files grouped by tag
         var httpFiles = new List<FileWithName>();

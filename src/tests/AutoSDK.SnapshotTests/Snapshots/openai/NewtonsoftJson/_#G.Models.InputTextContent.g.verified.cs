@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.InputTextContentType.InputText</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputTextContentTypeJsonConverter))]
         public global::G.InputTextContentType Type { get; set; } = global::G.InputTextContentType.InputText;
 
         /// <summary>

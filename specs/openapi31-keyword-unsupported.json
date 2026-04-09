@@ -1,0 +1,27 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OpenAPI31 Unsupported Keywords",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "RegexMap": {
+        "type": "object",
+        "patternProperties": {
+          "^x-": {
+            "type": "string"
+          }
+        }
+      },
+      "FilteredArray": {
+        "type": "array",
+        "contains": {
+          "type": "string"
+        },
+        "minContains": 1
+      }
+    }
+  }
+}

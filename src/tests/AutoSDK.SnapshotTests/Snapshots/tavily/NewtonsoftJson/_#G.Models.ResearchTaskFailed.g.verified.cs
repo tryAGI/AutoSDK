@@ -21,6 +21,7 @@ namespace G
         /// The current status of the research task.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResearchTaskFailedStatusJsonConverter))]
         public global::G.ResearchTaskFailedStatus Status { get; set; }
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.UrlCitationBodyType.UrlCitation</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UrlCitationBodyTypeJsonConverter))]
         public global::G.UrlCitationBodyType Type { get; set; } = global::G.UrlCitationBodyType.UrlCitation;
 
         /// <summary>

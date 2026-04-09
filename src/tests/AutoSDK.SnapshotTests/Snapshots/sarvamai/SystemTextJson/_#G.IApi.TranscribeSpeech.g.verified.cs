@@ -12,11 +12,13 @@ namespace G
         /// Audio files up to 30 seconds for synchronous processing.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.SpeechToTextResponse> TranscribeSpeechAsync(
 
             global::G.TranscribeSpeechRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Transcribe speech to text<br/>
@@ -44,6 +46,7 @@ namespace G
         /// <param name="inputAudioCodec">
         /// Required for PCM format files
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.SpeechToTextResponse> TranscribeSpeechAsync(
@@ -53,6 +56,7 @@ namespace G
             global::G.TranscribeSpeechRequestMode? mode = default,
             global::G.TranscribeSpeechRequestLanguageCode? languageCode = default,
             global::G.TranscribeSpeechRequestInputAudioCodec? inputAudioCodec = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

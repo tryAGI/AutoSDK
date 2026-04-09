@@ -36,6 +36,7 @@ namespace G
         /// Default Value: standard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quality_preset")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyCreatePodcastV1StudioPodcastsPostQualityPresetJsonConverter))]
         public global::G.BodyCreatePodcastV1StudioPodcastsPostQualityPreset? QualityPreset { get; set; }
 
         /// <summary>
@@ -46,6 +47,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("duration_scale")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyCreatePodcastV1StudioPodcastsPostDurationScaleJsonConverter))]
         public global::G.BodyCreatePodcastV1StudioPodcastsPostDurationScale? DurationScale { get; set; }
 
         /// <summary>

@@ -12,11 +12,13 @@ namespace G
         /// Max 2500 characters per request (v3).
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TextToSpeechResponse> ConvertTextToSpeechAsync(
 
             global::G.TextToSpeechRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Convert text to speech<br/>
@@ -67,6 +69,7 @@ namespace G
         /// <param name="dictId">
         /// Custom pronunciation dictionary ID. v3 only.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TextToSpeechResponse> ConvertTextToSpeechAsync(
@@ -82,6 +85,7 @@ namespace G
             global::G.TextToSpeechRequestOutputAudioCodec? outputAudioCodec = default,
             bool? enablePreprocessing = default,
             string? dictId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

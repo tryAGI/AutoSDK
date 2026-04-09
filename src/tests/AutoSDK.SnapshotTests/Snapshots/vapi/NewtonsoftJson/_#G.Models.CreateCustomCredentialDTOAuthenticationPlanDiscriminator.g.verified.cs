@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateCustomCredentialDTOAuthenticationPlanDiscriminatorTypeJsonConverter))]
         public global::G.CreateCustomCredentialDTOAuthenticationPlanDiscriminatorType? Type { get; set; }
 
         /// <summary>

@@ -17,6 +17,7 @@ namespace G
         /// For `object`, you can define the properties of the object using the `properties` property.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JsonSchemaTypeJsonConverter))]
         public global::G.JsonSchemaType Type { get; set; } = default!;
 
         /// <summary>
@@ -49,6 +50,7 @@ namespace G
         /// OpenAI documentation: https://platform.openai.com/docs/guides/structured-outputs?api-mode=chat&amp;type-restrictions=string-restrictions
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JsonSchemaFormatJsonConverter))]
         public global::G.JsonSchemaFormat? Format { get; set; }
 
         /// <summary>

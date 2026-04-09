@@ -36,6 +36,11 @@ namespace G
         public bool ReadResponseAsString { get; set; }
 
         /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::G.AutoSDKClientOptions Options { get; }
+
+        /// <summary>
         /// 
         /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }
@@ -47,12 +52,12 @@ namespace G
         public GenerateClient Generate { get; }
 
         /// <summary>
-        /// Content related to managing API account and API access
+        /// Content related to managing API account and API access.
         /// </summary>
         public ManageClient Manage { get; }
 
         /// <summary>
-        /// Operations related to understanding visual content
+        /// Operations related to understanding visual content.
         /// </summary>
         public VisionClient Vision { get; }
 

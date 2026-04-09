@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAzureCredentialDTOProviderJsonConverter))]
         public global::G.CreateAzureCredentialDTOProvider Provider { get; set; }
 
         /// <summary>
@@ -21,12 +22,14 @@ namespace G
         /// </summary>
         /// <default>global::G.CreateAzureCredentialDTOService.Speech</default>
         [global::Newtonsoft.Json.JsonProperty("service", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAzureCredentialDTOServiceJsonConverter))]
         public global::G.CreateAzureCredentialDTOService Service { get; set; } = default!;
 
         /// <summary>
         /// This is the region of the Azure resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAzureCredentialDTORegionJsonConverter))]
         public global::G.CreateAzureCredentialDTORegion? Region { get; set; }
 
         /// <summary>

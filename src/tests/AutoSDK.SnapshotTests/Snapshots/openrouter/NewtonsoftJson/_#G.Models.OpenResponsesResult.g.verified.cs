@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BaseResponsesResultObjectJsonConverter))]
         public global::G.BaseResponsesResultObject Object { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIResponsesResponseStatusJsonConverter))]
         public global::G.OpenAIResponsesResponseStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -205,6 +207,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TruncationEnumJsonConverter))]
         public global::G.TruncationEnum? Truncation { get; set; }
 
         /// <summary>

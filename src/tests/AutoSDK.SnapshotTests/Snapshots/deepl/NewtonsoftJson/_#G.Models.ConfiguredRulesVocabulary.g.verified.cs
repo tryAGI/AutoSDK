@@ -13,12 +13,14 @@ namespace G
         /// Formatting options for Abbreviations
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("abbreviations")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesVocabularyAbbreviationsJsonConverter))]
         public global::G.ConfiguredRulesVocabularyAbbreviations? Abbreviations { get; set; }
 
         /// <summary>
         /// Formatting options for Loanwords
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("loanwords")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesVocabularyLoanwordsJsonConverter))]
         public global::G.ConfiguredRulesVocabularyLoanwords? Loanwords { get; set; }
 
         /// <summary>

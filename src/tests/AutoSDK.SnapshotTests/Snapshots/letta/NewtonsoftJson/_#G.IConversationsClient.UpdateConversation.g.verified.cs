@@ -13,12 +13,14 @@ namespace G
         /// The ID of the conv in the format 'conv-&lt;uuid4&gt;'
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Conversation> UpdateConversationAsync(
             string conversationId,
 
             global::G.UpdateConversation request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Conversation<br/>
@@ -36,6 +38,7 @@ namespace G
         /// <param name="modelSettings">
         /// The model settings for this conversation (overrides agent's model settings).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Conversation> UpdateConversationAsync(
@@ -43,6 +46,7 @@ namespace G
             string? summary = default,
             string? model = default,
             global::G.ModelSettingsVariant19? modelSettings = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// The type of the function call. Always `function_call`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputFunctionCallTypeJsonConverter))]
         public global::G.ResponseOutputFunctionCallType Type { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// The status of the function call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputFunctionCallStatusJsonConverter))]
         public global::G.ResponseOutputFunctionCallStatus? Status { get; set; }
 
         /// <summary>

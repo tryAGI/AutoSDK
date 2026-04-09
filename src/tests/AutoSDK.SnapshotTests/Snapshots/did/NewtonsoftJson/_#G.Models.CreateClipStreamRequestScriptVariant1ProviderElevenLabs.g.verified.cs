@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsTypeJsonConverter))]
         public global::G.CreateClipStreamRequestScriptVariant1ProviderElevenLabsType Type { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// Use `external-private` together with the `x-api-key-external` for your own ElevenLabs voices.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsAccessJsonConverter))]
         public global::G.CreateClipStreamRequestScriptVariant1ProviderElevenLabsAccess? Access { get; set; }
 
         /// <summary>

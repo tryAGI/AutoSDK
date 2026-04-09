@@ -19,6 +19,7 @@ namespace G
         /// New status (should be 'cancelled')
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BatchJobStatusJsonConverter))]
         public global::G.BatchJobStatus Status { get; set; } = default!;
 
         /// <summary>

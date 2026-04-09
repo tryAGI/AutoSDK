@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always 'response.image_generation_call.partial_image'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseImageGenCallPartialImageEventTypeJsonConverter))]
         public global::G.ResponseImageGenCallPartialImageEventType Type { get; set; }
 
         /// <summary>

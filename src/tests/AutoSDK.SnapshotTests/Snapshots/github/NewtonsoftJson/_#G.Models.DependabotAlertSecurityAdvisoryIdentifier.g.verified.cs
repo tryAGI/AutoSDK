@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertSecurityAdvisoryIdentifierTypeJsonConverter))]
         public global::G.DependabotAlertSecurityAdvisoryIdentifierType Type { get; set; } = default!;
 
         /// <summary>

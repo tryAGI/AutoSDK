@@ -13,12 +13,14 @@ namespace G
         /// The status of web connector URL processing.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebConnectorUrlStatusJsonConverter))]
         public global::G.WebConnectorUrlStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The type of error that can occur during web connector URL processing.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebConnectorUrlErrorTypeJsonConverter))]
         public global::G.WebConnectorUrlErrorType? ErrorType { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Default Value: wandb
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WandbIntegrationOutTypeJsonConverter))]
         public global::G.WandbIntegrationOutType? Type { get; set; }
 
         /// <summary>

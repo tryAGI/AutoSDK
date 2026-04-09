@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TemplatesGetTemplateSnapshotResponseAgentToolRuleVariant9TypeJsonConverter))]
         public global::G.TemplatesGetTemplateSnapshotResponseAgentToolRuleVariant9Type? Type { get; set; }
 
         /// <summary>

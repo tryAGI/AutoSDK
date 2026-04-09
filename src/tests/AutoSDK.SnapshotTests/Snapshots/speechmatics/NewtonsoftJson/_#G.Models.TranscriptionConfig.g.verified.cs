@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operating_point")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OperatingPointJsonConverter))]
         public global::G.OperatingPoint? OperatingPoint { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace G
         ///             into a single transcript.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("diarization")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptionConfigDiarizationJsonConverter))]
         public global::G.TranscriptionConfigDiarization? Diarization { get; set; }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace G
         /// Whether or not to enable flexible endpointing and allow the entity to continue to be spoken.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_delay_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptionConfigMaxDelayModeJsonConverter))]
         public global::G.TranscriptionConfigMaxDelayMode? MaxDelayMode { get; set; }
 
         /// <summary>

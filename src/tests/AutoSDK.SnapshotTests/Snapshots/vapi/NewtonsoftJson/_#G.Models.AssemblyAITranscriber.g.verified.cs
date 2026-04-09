@@ -15,12 +15,14 @@ namespace G
         /// This is the transcription provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssemblyAITranscriberProviderJsonConverter))]
         public global::G.AssemblyAITranscriberProvider Provider { get; set; }
 
         /// <summary>
         /// This is the language that will be set for the transcription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssemblyAITranscriberLanguageJsonConverter))]
         public global::G.AssemblyAITranscriberLanguage? Language { get; set; }
 
         /// <summary>
@@ -99,6 +101,7 @@ namespace G
         /// @default 'universal-streaming-english'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speechModel")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssemblyAITranscriberSpeechModelJsonConverter))]
         public global::G.AssemblyAITranscriberSpeechModel? SpeechModel { get; set; }
 
         /// <summary>

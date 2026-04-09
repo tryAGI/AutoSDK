@@ -17,12 +17,14 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.LseProject> CreateProjectFromTemplateAsync(
             int id,
 
             global::G.ApiProjectTemplatesCreateProjectCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Create project from template<br/>
@@ -44,6 +46,7 @@ namespace G
         /// <param name="workspaceId">
         /// A unique integer value identifying the workspace in which to create the project.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.LseProject> CreateProjectFromTemplateAsync(
@@ -51,6 +54,7 @@ namespace G
             string title,
             int workspaceId,
             string? description = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

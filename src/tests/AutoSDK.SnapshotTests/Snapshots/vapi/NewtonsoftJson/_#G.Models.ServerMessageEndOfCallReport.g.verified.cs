@@ -19,12 +19,14 @@ namespace G
         /// This is the type of the message. "end-of-call-report" is sent when the call ends and post-processing is complete.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageEndOfCallReportTypeJsonConverter))]
         public global::G.ServerMessageEndOfCallReportType Type { get; set; }
 
         /// <summary>
         /// This is the reason the call ended. This can also be found at `call.endedReason` on GET /call/:id.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("endedReason", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageEndOfCallReportEndedReasonJsonConverter))]
         public global::G.ServerMessageEndOfCallReportEndedReason EndedReason { get; set; } = default!;
 
         /// <summary>

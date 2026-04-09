@@ -13,6 +13,7 @@ namespace G
         /// The type of the file path. Always `file_path`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilePathTypeJsonConverter))]
         public global::G.FilePathType Type { get; set; }
 
         /// <summary>

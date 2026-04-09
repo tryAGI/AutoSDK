@@ -24,7 +24,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.StreamingData>> response,
+            global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamingData> response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(

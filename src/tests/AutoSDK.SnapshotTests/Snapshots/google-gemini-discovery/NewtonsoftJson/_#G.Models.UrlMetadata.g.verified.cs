@@ -19,6 +19,7 @@ namespace G
         /// Status of the url retrieval.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("urlRetrievalStatus")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UrlMetadataUrlRetrievalStatusJsonConverter))]
         public global::G.UrlMetadataUrlRetrievalStatus? UrlRetrievalStatus { get; set; }
 
         /// <summary>

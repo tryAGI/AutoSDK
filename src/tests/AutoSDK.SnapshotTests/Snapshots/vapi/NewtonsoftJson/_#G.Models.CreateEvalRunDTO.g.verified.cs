@@ -28,6 +28,7 @@ namespace G
         /// </summary>
         /// <example>eval</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEvalRunDTOTypeJsonConverter))]
         public global::G.CreateEvalRunDTOType Type { get; set; }
 
         /// <summary>

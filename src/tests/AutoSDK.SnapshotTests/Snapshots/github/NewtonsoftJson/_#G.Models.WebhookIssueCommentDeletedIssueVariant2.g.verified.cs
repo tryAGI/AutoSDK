@@ -139,6 +139,7 @@ namespace G
         /// State of the issue; either 'open' or 'closed'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssueCommentDeletedIssueVariant2StateJsonConverter))]
         public global::G.WebhookIssueCommentDeletedIssueVariant2State State { get; set; } = default!;
 
         /// <summary>

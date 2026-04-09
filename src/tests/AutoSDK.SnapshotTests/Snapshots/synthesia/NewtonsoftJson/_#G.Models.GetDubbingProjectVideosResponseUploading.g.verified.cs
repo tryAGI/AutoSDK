@@ -20,6 +20,7 @@ namespace G
         /// Default Value: uploading
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetDubbingProjectVideosResponseUploadingStatusJsonConverter))]
         public global::G.GetDubbingProjectVideosResponseUploadingStatus? Status { get; set; }
 
         /// <summary>

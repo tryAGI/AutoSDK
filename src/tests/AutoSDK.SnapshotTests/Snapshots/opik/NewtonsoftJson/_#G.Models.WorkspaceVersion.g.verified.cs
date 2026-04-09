@@ -17,6 +17,7 @@ namespace G
         /// 'version_2' = new project-first navigation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("opik_version")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkspaceVersionOpikVersionJsonConverter))]
         public global::G.WorkspaceVersionOpikVersion? OpikVersion { get; set; }
 
         /// <summary>

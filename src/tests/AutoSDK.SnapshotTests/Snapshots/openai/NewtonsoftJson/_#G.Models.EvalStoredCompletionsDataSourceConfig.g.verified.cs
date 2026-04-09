@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.EvalStoredCompletionsDataSourceConfigType.StoredCompletions</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalStoredCompletionsDataSourceConfigTypeJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.EvalStoredCompletionsDataSourceConfigType Type { get; set; } = global::G.EvalStoredCompletionsDataSourceConfigType.StoredCompletions;
 

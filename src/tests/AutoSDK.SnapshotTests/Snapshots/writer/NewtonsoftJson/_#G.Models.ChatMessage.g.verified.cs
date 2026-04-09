@@ -19,6 +19,7 @@ namespace G
         /// The role of the chat message. You can provide a system prompt by setting the role to `system`, or specify that a message is the result of a [tool call](https://dev.writer.com/home/tool-calling) by setting the role to `tool`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatMessageRequestRoleJsonConverter))]
         public global::G.ChatMessageRequestRole Role { get; set; } = default!;
 
         /// <summary>

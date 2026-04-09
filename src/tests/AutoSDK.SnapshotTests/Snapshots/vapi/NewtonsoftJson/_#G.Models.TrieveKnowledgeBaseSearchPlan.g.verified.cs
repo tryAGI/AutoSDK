@@ -31,6 +31,7 @@ namespace G
         /// This is the search method used when searching for relevant chunks from the vector store.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("searchType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TrieveKnowledgeBaseSearchPlanSearchTypeJsonConverter))]
         public global::G.TrieveKnowledgeBaseSearchPlanSearchType SearchType { get; set; } = default!;
 
         /// <summary>

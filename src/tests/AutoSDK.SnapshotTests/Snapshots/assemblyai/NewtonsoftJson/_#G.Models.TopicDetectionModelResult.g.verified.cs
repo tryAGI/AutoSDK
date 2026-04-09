@@ -15,6 +15,7 @@ namespace G
         /// Either success, or unavailable in the rare case that the model failed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioIntelligenceModelStatusJsonConverter))]
         public global::G.AudioIntelligenceModelStatus Status { get; set; } = default!;
 
         /// <summary>

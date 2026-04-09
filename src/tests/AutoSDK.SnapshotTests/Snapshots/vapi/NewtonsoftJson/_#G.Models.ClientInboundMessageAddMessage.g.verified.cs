@@ -13,6 +13,7 @@ namespace G
         /// This is the type of the message. Send "add-message" message to add a message to the conversation history.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientInboundMessageAddMessageTypeJsonConverter))]
         public global::G.ClientInboundMessageAddMessageType Type { get; set; }
 
         /// <summary>

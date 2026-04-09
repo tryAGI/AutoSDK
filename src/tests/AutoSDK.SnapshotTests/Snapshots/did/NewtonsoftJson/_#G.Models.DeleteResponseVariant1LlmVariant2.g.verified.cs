@@ -22,6 +22,7 @@ namespace G
         /// - Assistant: Uses general model knowledge only
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeleteResponseVariant1LlmVariant2TemplateJsonConverter))]
         public global::G.DeleteResponseVariant1LlmVariant2Template? Template { get; set; }
 
         /// <summary>

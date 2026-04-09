@@ -20,6 +20,7 @@ namespace G
         /// The status of the transcript. Either completed or error.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptReadyStatusJsonConverter))]
         public global::G.TranscriptReadyStatus Status { get; set; } = default!;
 
         /// <summary>

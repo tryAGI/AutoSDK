@@ -67,6 +67,7 @@ namespace G
         /// </summary>
         /// <example>closed</example>
         [global::Newtonsoft.Json.JsonProperty("privacy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamFullPrivacyJsonConverter))]
         public global::G.TeamFullPrivacy? Privacy { get; set; }
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace G
         /// </summary>
         /// <example>notifications_enabled</example>
         [global::Newtonsoft.Json.JsonProperty("notification_setting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamFullNotificationSettingJsonConverter))]
         public global::G.TeamFullNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>

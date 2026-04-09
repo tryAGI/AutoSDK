@@ -6,6 +6,25 @@ namespace G
 {
     public partial class VdpClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PipelinePublicServiceListNamespacePipelineReleasesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PipelinePublicServiceListNamespacePipelineReleasesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PipelinePublicServiceListNamespacePipelineReleasesSecurityRequirement0,
+            };
         partial void PreparePipelinePublicServiceListNamespacePipelineReleasesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string namespaceId,
@@ -70,6 +89,12 @@ namespace G
                 filter: ref filter,
                 showDeleted: ref showDeleted);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PipelinePublicServiceListNamespacePipelineReleasesSecurityRequirements,
+                operationName: "PipelinePublicServiceListNamespacePipelineReleasesAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1beta/namespaces/{namespaceId}/pipelines/{pipelineId}/releases",
                 baseUri: HttpClient.BaseAddress); 
@@ -79,7 +104,7 @@ namespace G
                 .AddOptionalParameter("view", view?.ToValueString())
                 .AddOptionalParameter("filter", filter)
                 .AddOptionalParameter("showDeleted", showDeleted?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -89,7 +114,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

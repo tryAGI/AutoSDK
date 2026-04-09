@@ -31,12 +31,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("objectType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnnotationQueueObjectTypeJsonConverter))]
         public global::G.AnnotationQueueObjectType ObjectType { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnnotationQueueStatusJsonConverter))]
         public global::G.AnnotationQueueStatus Status { get; set; } = default!;
 
         /// <summary>

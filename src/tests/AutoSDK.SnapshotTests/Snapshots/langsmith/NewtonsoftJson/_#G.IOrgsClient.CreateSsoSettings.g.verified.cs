@@ -10,11 +10,13 @@ namespace G
         /// Create SSO provider settings for the current organization.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.SSOProvider> CreateSsoSettingsAsync(
 
             global::G.SSOSettingsCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Sso Settings<br/>
@@ -25,6 +27,7 @@ namespace G
         /// <param name="metadataXml"></param>
         /// <param name="metadataUrl"></param>
         /// <param name="attributeMapping"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.SSOProvider> CreateSsoSettingsAsync(
@@ -33,6 +36,7 @@ namespace G
             string? metadataXml = default,
             string? metadataUrl = default,
             global::System.Collections.Generic.Dictionary<string, string>? attributeMapping = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="xiApiKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeploymentOut> DeployCreateLlmDeployLlmPostAsync(
 
             global::G.DeployLLMIn request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Deploy Create Llm
@@ -37,6 +39,7 @@ namespace G
         /// </param>
         /// <param name="hf"></param>
         /// <param name="settings"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeploymentOut> DeployCreateLlmDeployLlmPostAsync(
@@ -47,6 +50,7 @@ namespace G
             int? maxBatchSize = default,
             global::G.HFWeights? hf = default,
             global::G.ScaleSettings? settings = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

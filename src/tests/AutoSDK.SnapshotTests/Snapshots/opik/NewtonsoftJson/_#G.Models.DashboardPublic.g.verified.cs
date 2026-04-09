@@ -43,12 +43,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DashboardPublicTypeJsonConverter))]
         public global::G.DashboardPublicType? Type { get; set; }
 
         /// <summary>
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DashboardPublicScopeJsonConverter))]
         public global::G.DashboardPublicScope? Scope { get; set; }
 
         /// <summary>

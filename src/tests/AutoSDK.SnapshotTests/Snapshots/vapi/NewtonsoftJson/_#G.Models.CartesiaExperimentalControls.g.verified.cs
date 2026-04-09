@@ -20,6 +20,7 @@ namespace G
         /// </summary>
         /// <example>[happiness:high]</example>
         [global::Newtonsoft.Json.JsonProperty("emotion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CartesiaExperimentalControlsEmotionJsonConverter))]
         public global::G.CartesiaExperimentalControlsEmotion? Emotion { get; set; }
 
         /// <summary>

@@ -18,6 +18,7 @@ namespace G
         /// <param name="contentType"></param>
         /// <param name="contentEncoding"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OtlpExportTraceServiceResponse> IngestOtlpTracesAsync(
@@ -25,6 +26,7 @@ namespace G
 
             global::G.OtlpExportTraceServiceRequest request,
             global::G.IngestOtlpTracesContentEncoding? contentEncoding = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Ingest Traces (OTLP)<br/>
@@ -41,12 +43,14 @@ namespace G
         /// <param name="resourceSpans">
         /// An array of ResourceSpans. Each element describes spans from a single instrumented resource.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OtlpExportTraceServiceResponse> IngestOtlpTracesAsync(
             global::G.IngestOtlpTracesContentType contentType,
             global::G.IngestOtlpTracesContentEncoding? contentEncoding = default,
             global::System.Collections.Generic.IList<global::G.OtlpExportTraceServiceRequestResourceSpan>? resourceSpans = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -24,6 +24,7 @@ namespace G
         /// * `member_performance` - Member Performance
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dashboard_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DashboardTypeEnumJsonConverter))]
         public global::G.DashboardTypeEnum? DashboardType { get; set; }
 
         /// <summary>

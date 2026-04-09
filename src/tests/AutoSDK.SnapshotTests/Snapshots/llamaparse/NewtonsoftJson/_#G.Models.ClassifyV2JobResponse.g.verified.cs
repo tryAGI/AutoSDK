@@ -43,12 +43,14 @@ namespace G
         /// Current job status: PENDING, RUNNING, COMPLETED, or FAILED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassifyV2JobResponseStatusJsonConverter))]
         public global::G.ClassifyV2JobResponseStatus Status { get; set; } = default!;
 
         /// <summary>
         /// Whether the input was a file or parse job (FILE or PARSE_JOB)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("document_input_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassifyV2JobResponseDocumentInputTypeJsonConverter))]
         public global::G.ClassifyV2JobResponseDocumentInputType DocumentInputType { get; set; } = default!;
 
         /// <summary>

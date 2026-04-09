@@ -85,6 +85,7 @@ namespace G
         /// The state of the milestone.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssueCommentDeletedIssueIssue1MilestoneStateJsonConverter))]
         public global::G.WebhookIssueCommentDeletedIssueIssue1MilestoneState State { get; set; } = default!;
 
         /// <summary>

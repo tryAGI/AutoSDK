@@ -19,6 +19,7 @@ namespace G
         /// Whether the validator passed or failed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("validatorStatus", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ValidationSummaryValidatorStatusJsonConverter))]
         public global::G.ValidationSummaryValidatorStatus ValidatorStatus { get; set; } = default!;
 
         /// <summary>

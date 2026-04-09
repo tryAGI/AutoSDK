@@ -43,6 +43,7 @@ namespace G
         /// Type of the test or entity
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TestTypeJsonConverter))]
         public global::G.TestType Type { get; set; } = default!;
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace G
         /// Default Value: test
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("entity_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentTestEntityTypeJsonConverter))]
         public global::G.AgentTestEntityType? EntityType { get; set; }
 
         /// <summary>

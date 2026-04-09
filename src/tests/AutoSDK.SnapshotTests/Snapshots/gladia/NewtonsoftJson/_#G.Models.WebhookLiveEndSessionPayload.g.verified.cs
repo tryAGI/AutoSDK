@@ -16,6 +16,7 @@ namespace G
         /// <default>global::G.WebhookLiveEndSessionPayloadEvent.LiveEndSession</default>
         /// <example>live.end_session</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookLiveEndSessionPayloadEventJsonConverter))]
         public global::G.WebhookLiveEndSessionPayloadEvent Event { get; set; } = global::G.WebhookLiveEndSessionPayloadEvent.LiveEndSession;
 
         /// <summary>

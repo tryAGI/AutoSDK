@@ -13,6 +13,7 @@ namespace G
         /// Authentication mode for Azure AI
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("azure_auth_mode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AzureAIConfigurationAzureAuthModeJsonConverter))]
         public global::G.AzureAIConfigurationAzureAuthMode AzureAuthMode { get; set; } = default!;
 
         /// <summary>

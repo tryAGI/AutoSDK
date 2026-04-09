@@ -107,6 +107,7 @@ namespace G
         /// </summary>
         /// <example>open</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PullRequestStateJsonConverter))]
         public global::G.PullRequestState State { get; set; } = default!;
 
         /// <summary>
@@ -239,6 +240,7 @@ namespace G
         /// </summary>
         /// <example>OWNER</example>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>

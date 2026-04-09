@@ -57,6 +57,7 @@ namespace G
         /// </summary>
         /// <example>en</example>
         [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptionLanguageCodeEnumJsonConverter))]
         public global::G.TranscriptionLanguageCodeEnum Language { get; set; } = default!;
 
         /// <summary>

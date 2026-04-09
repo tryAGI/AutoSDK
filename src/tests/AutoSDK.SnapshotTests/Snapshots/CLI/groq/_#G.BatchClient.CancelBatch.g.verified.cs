@@ -6,6 +6,25 @@ namespace G
 {
     public partial class BatchClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CancelBatchSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CancelBatchSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CancelBatchSecurityRequirement0,
+            };
         partial void PrepareCancelBatchArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string batchId);
@@ -38,9 +57,15 @@ namespace G
                 httpClient: HttpClient,
                 batchId: ref batchId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CancelBatchSecurityRequirements,
+                operationName: "CancelBatchAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/openai/v1/batches/{batchId}/cancel",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -50,7 +75,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

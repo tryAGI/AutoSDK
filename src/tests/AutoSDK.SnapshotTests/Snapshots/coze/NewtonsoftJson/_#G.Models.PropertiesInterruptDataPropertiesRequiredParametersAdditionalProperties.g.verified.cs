@@ -43,6 +43,7 @@ namespace G
         /// 参数类型，来源于OpenAPIParamType
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PropertiesInterruptDataPropertiesRequiredParametersAdditionalPropertiesTypeJsonConverter))]
         public global::G.PropertiesInterruptDataPropertiesRequiredParametersAdditionalPropertiesType? Type { get; set; }
 
         /// <summary>

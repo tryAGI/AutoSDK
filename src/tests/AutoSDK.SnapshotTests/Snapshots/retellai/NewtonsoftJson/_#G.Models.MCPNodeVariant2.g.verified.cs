@@ -13,6 +13,7 @@ namespace G
         /// Type of the node
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPNodeVariant2TypeJsonConverter))]
         public global::G.MCPNodeVariant2Type Type { get; set; }
 
         /// <summary>

@@ -19,12 +19,14 @@ namespace G
         /// The object type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseObjectJsonConverter))]
         public global::G.ResponseObject? Object { get; set; }
 
         /// <summary>
         /// The status of the response.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseStatusJsonConverter))]
         public global::G.ResponseStatus? Status { get; set; }
 
         /// <summary>

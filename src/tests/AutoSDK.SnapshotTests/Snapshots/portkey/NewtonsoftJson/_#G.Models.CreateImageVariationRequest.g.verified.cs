@@ -46,6 +46,7 @@ namespace G
         /// </summary>
         /// <example>url</example>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageVariationRequestResponseFormatJsonConverter))]
         public global::G.CreateImageVariationRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace G
         /// </summary>
         /// <example>1024x1024</example>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageVariationRequestSizeJsonConverter))]
         public global::G.CreateImageVariationRequestSize? Size { get; set; }
 
         /// <summary>

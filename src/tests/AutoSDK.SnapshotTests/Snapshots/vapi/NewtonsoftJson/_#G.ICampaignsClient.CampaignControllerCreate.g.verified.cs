@@ -9,11 +9,13 @@ namespace G
         /// Create Campaign
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Campaign> CampaignControllerCreateAsync(
 
             global::G.CreateCampaignDTO request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Campaign
@@ -43,6 +45,7 @@ namespace G
         /// <param name="customers">
         /// These are the customers that will be called in the campaign. Required if dialPlan is not provided.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Campaign> CampaignControllerCreateAsync(
@@ -54,6 +57,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.DialPlanEntry>? dialPlan = default,
             global::G.SchedulePlan? schedulePlan = default,
             global::System.Collections.Generic.IList<global::G.CreateCustomerDTO>? customers = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

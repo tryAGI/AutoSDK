@@ -22,6 +22,12 @@ public static class CSharpPropertyNameGenerator
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         var propertyName = context.PropertyName ?? throw new InvalidOperationException("Property name or parameter name is required.");
+        if (context.Settings.UseExtensionNaming &&
+            OpenApiExtensions.TryGetPropertyNameOverride(context.Schema.Extensions, out var propertyNameOverride) &&
+            !string.IsNullOrWhiteSpace(propertyNameOverride))
+        {
+            propertyName = propertyNameOverride;
+        }
 
         var name = propertyName.ToPropertyName();
 

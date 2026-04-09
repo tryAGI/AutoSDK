@@ -29,6 +29,7 @@ namespace G
         /// Default Value: ==
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterOperatorJsonConverter))]
         public global::G.FilterOperator? Operator { get; set; }
 
         /// <summary>

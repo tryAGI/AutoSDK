@@ -55,12 +55,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhooksTeam1ParentPrivacyJsonConverter))]
         public global::G.WebhooksTeam1ParentPrivacy Privacy { get; set; } = default!;
 
         /// <summary>
         /// Whether team members will receive notifications when their team is @mentioned
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("notification_setting", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhooksTeam1ParentNotificationSettingJsonConverter))]
         public global::G.WebhooksTeam1ParentNotificationSetting NotificationSetting { get; set; } = default!;
 
         /// <summary>

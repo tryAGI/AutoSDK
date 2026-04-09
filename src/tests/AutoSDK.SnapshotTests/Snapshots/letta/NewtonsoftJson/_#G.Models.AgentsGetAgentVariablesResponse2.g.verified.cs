@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentsGetAgentVariablesResponseMessageJsonConverter))]
         public global::G.AgentsGetAgentVariablesResponseMessage Message { get; set; }
 
         /// <summary>

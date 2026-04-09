@@ -13,12 +13,14 @@ namespace G
         /// This is the provider of the model (`anthropic-bedrock`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkflowAnthropicBedrockModelProviderJsonConverter))]
         public global::G.WorkflowAnthropicBedrockModelProvider Provider { get; set; }
 
         /// <summary>
         /// This is the specific model that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkflowAnthropicBedrockModelModelJsonConverter))]
         public global::G.WorkflowAnthropicBedrockModelModel Model { get; set; } = default!;
 
         /// <summary>

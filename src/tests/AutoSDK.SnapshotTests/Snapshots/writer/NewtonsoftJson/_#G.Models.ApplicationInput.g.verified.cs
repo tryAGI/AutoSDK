@@ -19,6 +19,7 @@ namespace G
         /// Type of input field determining its behavior and validation rules.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApplicationInputTypeJsonConverter))]
         public global::G.ApplicationInputType InputType { get; set; } = default!;
 
         /// <summary>

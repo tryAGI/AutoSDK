@@ -12,6 +12,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="milestoneNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Milestone> IssuesUpdateMilestoneAsync(
@@ -20,6 +21,7 @@ namespace G
             int milestoneNumber,
 
             global::G.IssuesUpdateMilestoneRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a milestone
@@ -40,6 +42,7 @@ namespace G
         /// <param name="dueOn">
         /// The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Milestone> IssuesUpdateMilestoneAsync(
@@ -50,6 +53,7 @@ namespace G
             global::G.IssuesUpdateMilestoneRequestState? state = default,
             string? description = default,
             global::System.DateTime? dueOn = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

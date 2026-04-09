@@ -17,6 +17,7 @@ namespace G
         /// </summary>
         /// <example>audio/ogg; codecs=opus</example>
         [global::Newtonsoft.Json.JsonProperty("source_media_content_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceMediaContentTypeJsonConverter))]
         public global::G.VoiceMediaContentType SourceMediaContentType { get; set; } = default!;
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace G
         /// </summary>
         /// <example>en</example>
         [global::Newtonsoft.Json.JsonProperty("source_language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceSourceLanguageJsonConverter))]
         public global::G.VoiceSourceLanguage? SourceLanguage { get; set; }
 
         /// <summary>
@@ -37,6 +39,7 @@ namespace G
         /// </summary>
         /// <example>auto</example>
         [global::Newtonsoft.Json.JsonProperty("source_language_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceSourceLanguageModeJsonConverter))]
         public global::G.VoiceSourceLanguageMode? SourceLanguageMode { get; set; }
 
         /// <summary>
@@ -67,6 +70,7 @@ namespace G
         /// </summary>
         /// <example>formal</example>
         [global::Newtonsoft.Json.JsonProperty("formality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceFormalityJsonConverter))]
         public global::G.VoiceFormality? Formality { get; set; }
 
         /// <summary>

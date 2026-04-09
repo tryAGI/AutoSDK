@@ -35,6 +35,7 @@ namespace G
         /// Default Value: vector
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vector_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PGVectorVectorTypeJsonConverter))]
         public global::G.PGVectorVectorType? VectorType { get; set; }
 
         /// <summary>
@@ -42,6 +43,7 @@ namespace G
         /// Default Value: cosine
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("distance_method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PGVectorDistanceMethodJsonConverter))]
         public global::G.PGVectorDistanceMethod? DistanceMethod { get; set; }
 
         /// <summary>

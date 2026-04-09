@@ -35,6 +35,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClipPresenterDtoVoiceOpenAITypeJsonConverter))]
         public global::G.ClipPresenterDtoVoiceOpenAIType Type { get; set; }
 
         /// <summary>

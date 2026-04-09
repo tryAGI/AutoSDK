@@ -16,6 +16,7 @@ namespace G
         /// Default Value: bm25
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SparseModelTypeJsonConverter))]
         public global::G.SparseModelType? ModelType { get; set; }
 
         /// <summary>

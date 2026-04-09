@@ -109,6 +109,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_visibility_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExperimentItemCompareTraceVisibilityModeJsonConverter))]
         public global::G.ExperimentItemCompareTraceVisibilityMode? TraceVisibilityMode { get; set; }
 
         /// <summary>
@@ -127,6 +128,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExperimentItemCompareStatusJsonConverter))]
         public global::G.ExperimentItemCompareStatus? Status { get; set; }
 
         /// <summary>

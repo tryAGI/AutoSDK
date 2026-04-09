@@ -19,6 +19,7 @@ namespace G
         /// Type of segment
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segment_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SegmentTypeJsonConverter))]
         public global::G.SegmentType SegmentType { get; set; } = default!;
 
         /// <summary>

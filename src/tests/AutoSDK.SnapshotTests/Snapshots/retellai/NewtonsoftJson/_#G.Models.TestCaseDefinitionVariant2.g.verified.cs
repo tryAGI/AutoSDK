@@ -19,6 +19,7 @@ namespace G
         /// Type of test case definition
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TestCaseDefinitionVariant2TypeJsonConverter))]
         public global::G.TestCaseDefinitionVariant2Type Type { get; set; }
 
         /// <summary>

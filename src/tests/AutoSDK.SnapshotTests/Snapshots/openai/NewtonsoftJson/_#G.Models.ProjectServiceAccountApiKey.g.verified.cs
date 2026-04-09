@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `organization.project.service_account.api_key`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectServiceAccountApiKeyObjectJsonConverter))]
         public global::G.ProjectServiceAccountApiKeyObject Object { get; set; }
 
         /// <summary>

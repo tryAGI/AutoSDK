@@ -21,12 +21,14 @@ namespace G
         /// </summary>
         /// <param name="uuid"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnalyticsView> ApiAnalyticsViewsPartialUpdateAsync(
             global::System.Guid uuid,
 
             global::G.PatchedAnalyticsViewRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// CRUD endpoints for per-user analytics saved views.<br/>
@@ -49,6 +51,7 @@ namespace G
         /// </param>
         /// <param name="filters"></param>
         /// <param name="name"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnalyticsView> ApiAnalyticsViewsPartialUpdateAsync(
@@ -56,6 +59,7 @@ namespace G
             global::G.DashboardTypeEnum? dashboardType = default,
             object? filters = default,
             string? name = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

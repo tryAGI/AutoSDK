@@ -48,6 +48,7 @@ namespace G
         /// <default>global::G.StopRecordingAckMessageType.StopRecording</default>
         /// <example>stop_recording</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StopRecordingAckMessageTypeJsonConverter))]
         public global::G.StopRecordingAckMessageType Type { get; set; } = global::G.StopRecordingAckMessageType.StopRecording;
 
         /// <summary>

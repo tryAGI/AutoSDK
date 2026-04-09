@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.ActionsDefaultWorkflowPermissions.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ActionsDefaultWorkflowPermissionsJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.ActionsDefaultWorkflowPermissions>
+    {
+        /// <inheritdoc />
+        public override global::G.ActionsDefaultWorkflowPermissions ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.ActionsDefaultWorkflowPermissions existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.ActionsDefaultWorkflowPermissionsExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.ActionsDefaultWorkflowPermissions)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.ActionsDefaultWorkflowPermissions);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.ActionsDefaultWorkflowPermissions value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.ActionsDefaultWorkflowPermissionsExtensions.ToValueString(value));
+        }
+    }
+}

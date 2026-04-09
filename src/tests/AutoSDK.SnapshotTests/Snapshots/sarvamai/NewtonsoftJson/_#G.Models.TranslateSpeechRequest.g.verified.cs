@@ -26,18 +26,21 @@ namespace G
         /// Default Value: saaras:v3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranslateSpeechRequestModelJsonConverter))]
         public global::G.TranslateSpeechRequestModel? Model { get; set; }
 
         /// <summary>
         /// Language of the audio (BCP-47)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language_code")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranslateSpeechRequestLanguageCodeJsonConverter))]
         public global::G.TranslateSpeechRequestLanguageCode? LanguageCode { get; set; }
 
         /// <summary>
         /// Required for PCM format files
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_audio_codec")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranslateSpeechRequestInputAudioCodecJsonConverter))]
         public global::G.TranslateSpeechRequestInputAudioCodec? InputAudioCodec { get; set; }
 
         /// <summary>

@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -45,7 +46,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0).Name}");
+                        embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -58,7 +61,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1).Name}");
+                        embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -73,7 +78,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0).Name}");
+                    embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -84,7 +91,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1).Name}");
+                    embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -109,15 +118,20 @@ namespace G.JsonConverters
             global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0, typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0!, typeInfo);
             }
             else if (value.IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1, typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1!, typeInfo);
             }
         }
     }

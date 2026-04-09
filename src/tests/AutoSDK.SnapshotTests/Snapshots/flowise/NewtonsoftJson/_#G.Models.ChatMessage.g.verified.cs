@@ -21,6 +21,7 @@ namespace G
         /// </summary>
         /// <example>apiMessage</example>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatMessageRoleJsonConverter))]
         public global::G.ChatMessageRole? Role { get; set; }
 
         /// <summary>
@@ -78,6 +79,7 @@ namespace G
         /// </summary>
         /// <example>INTERNAL</example>
         [global::Newtonsoft.Json.JsonProperty("chatType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatMessageChatTypeJsonConverter))]
         public global::G.ChatMessageChatType? ChatType { get; set; }
 
         /// <summary>

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TranscriptsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetParagraphsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetParagraphsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetParagraphsSecurityRequirement0,
+            };
         partial void PrepareGetParagraphsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string transcriptId);
@@ -39,9 +58,15 @@ namespace G
                 httpClient: HttpClient,
                 transcriptId: ref transcriptId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetParagraphsSecurityRequirements,
+                operationName: "GetParagraphsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/transcript/{transcriptId}/paragraphs",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -51,7 +76,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

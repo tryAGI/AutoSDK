@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetItemFilterOperatorJsonConverter))]
         public global::G.DatasetItemFilterOperator? Operator { get; set; }
 
         /// <summary>

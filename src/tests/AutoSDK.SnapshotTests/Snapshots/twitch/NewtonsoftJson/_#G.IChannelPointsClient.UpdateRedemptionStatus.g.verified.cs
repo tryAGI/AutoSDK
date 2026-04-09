@@ -15,6 +15,7 @@ namespace G
         /// <param name="broadcasterId"></param>
         /// <param name="rewardId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateRedemptionStatusResponse> UpdateRedemptionStatusAsync(
@@ -23,6 +24,7 @@ namespace G
             string rewardId,
 
             global::G.UpdateRedemptionStatusBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Updates a redemption’s status.<br/>
@@ -41,6 +43,7 @@ namespace G
         ///   <br/>
         /// Setting the status to CANCELED refunds the user’s channel points.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateRedemptionStatusResponse> UpdateRedemptionStatusAsync(
@@ -48,6 +51,7 @@ namespace G
             string broadcasterId,
             string rewardId,
             global::G.UpdateRedemptionStatusBodyStatus status,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

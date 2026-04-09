@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Project> ProjectsUpdateAsync(
             int projectId,
 
             global::G.ProjectsUpdateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a project<br/>
@@ -41,6 +43,7 @@ namespace G
         /// <param name="private">
         /// Whether or not this project can be seen by everyone.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Project> ProjectsUpdateAsync(
@@ -50,6 +53,7 @@ namespace G
             string? state = default,
             global::G.ProjectsUpdateRequestOrganizationPermission? organizationPermission = default,
             bool? @private = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

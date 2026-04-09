@@ -13,6 +13,7 @@ namespace G
         /// The type of the MCP server. Can be http
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostToolRouterSessionResponseMcpTypeJsonConverter))]
         public global::G.PostToolRouterSessionResponseMcpType Type { get; set; }
 
         /// <summary>

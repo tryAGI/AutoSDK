@@ -10,11 +10,13 @@ namespace G
         /// Create a new function. If there is an existing function in the project with the same slug as the one specified in the request, will return the existing function unmodified
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Function2> PostFunctionAsync(
 
             global::G.CreateFunction request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create function<br/>
@@ -44,6 +46,7 @@ namespace G
         /// <param name="functionSchema">
         /// JSON schema for the function's parameters and return type
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Function2> PostFunctionAsync(
@@ -57,6 +60,7 @@ namespace G
             global::G.FunctionTypeEnumNullish? functionType = default,
             global::G.CreateFunctionOrigin? origin = default,
             global::G.CreateFunctionFunctionSchema? functionSchema = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

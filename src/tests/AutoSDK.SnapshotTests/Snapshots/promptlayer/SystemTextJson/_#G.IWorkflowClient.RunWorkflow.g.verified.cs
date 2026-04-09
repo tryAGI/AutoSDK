@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="workflowName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RunWorkflowResponse> RunWorkflowAsync(
             string workflowName,
 
             global::G.RunWorkflow request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Run Workflow
@@ -38,6 +40,7 @@ namespace G
         /// If set to `true`, all outputs from the workflow execution will be returned.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RunWorkflowResponse> RunWorkflowAsync(
@@ -47,6 +50,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             object? inputVariables = default,
             bool? returnAllOutputs = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

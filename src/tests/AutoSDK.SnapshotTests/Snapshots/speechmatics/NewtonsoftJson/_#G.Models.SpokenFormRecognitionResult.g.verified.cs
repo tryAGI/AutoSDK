@@ -31,6 +31,7 @@ namespace G
         /// What kind of object this is. See #/Definitions/RecognitionResult for definitions of the enums.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpokenFormRecognitionResultTypeJsonConverter))]
         public global::G.SpokenFormRecognitionResultType Type { get; set; } = default!;
 
         /// <summary>

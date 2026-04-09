@@ -6,6 +6,25 @@ namespace G
 {
     public partial class CorporaClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CorporaSourcesDocumentsRetrieveSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CorporaSourcesDocumentsRetrieveSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CorporaSourcesDocumentsRetrieveSecurityRequirement0,
+            };
         partial void PrepareCorporaSourcesDocumentsRetrieveArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid corpusId,
@@ -48,9 +67,15 @@ namespace G
                 documentId: ref documentId,
                 sourceId: ref sourceId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CorporaSourcesDocumentsRetrieveSecurityRequirements,
+                operationName: "CorporaSourcesDocumentsRetrieveAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/corpora/{corpusId}/sources/{sourceId}/documents/{documentId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -60,7 +85,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

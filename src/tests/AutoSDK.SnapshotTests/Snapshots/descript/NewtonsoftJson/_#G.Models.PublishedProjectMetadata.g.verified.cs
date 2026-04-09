@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>video</example>
         [global::Newtonsoft.Json.JsonProperty("publish_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublishedProjectMetadataPublishTypeJsonConverter))]
         public global::G.PublishedProjectMetadataPublishType PublishType { get; set; } = default!;
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// </summary>
         /// <example>unlisted</example>
         [global::Newtonsoft.Json.JsonProperty("privacy", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublishedProjectMetadataPrivacyJsonConverter))]
         public global::G.PublishedProjectMetadataPrivacy Privacy { get; set; } = default!;
 
         /// <summary>

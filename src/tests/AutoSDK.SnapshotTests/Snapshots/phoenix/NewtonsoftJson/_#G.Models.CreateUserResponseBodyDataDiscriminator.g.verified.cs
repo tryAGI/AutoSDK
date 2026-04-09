@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateUserResponseBodyDataDiscriminatorAuthMethodJsonConverter))]
         public global::G.CreateUserResponseBodyDataDiscriminatorAuthMethod? AuthMethod { get; set; }
 
         /// <summary>

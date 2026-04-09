@@ -19,6 +19,7 @@ namespace G
         /// activity status of the tenant's shard. Optional for creating tenant (implicit `ACTIVE`) and required for updating tenant. For creation, allowed values are `ACTIVE` - tenant is fully active and `INACTIVE` - tenant is inactive; no actions can be performed on tenant, tenant's files are stored locally. For updating, `ACTIVE`, `INACTIVE` and also `OFFLOADED` - as INACTIVE, but files are stored on cloud storage. The following values are read-only and are set by the server for internal use: `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("activityStatus")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TenantActivityStatusJsonConverter))]
         public global::G.TenantActivityStatus? ActivityStatus { get; set; }
 
         /// <summary>

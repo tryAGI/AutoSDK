@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioDataPayloadMessageTypeJsonConverter))]
         public global::G.AudioDataPayloadMessageType MessageType { get; set; }
 
         /// <summary>

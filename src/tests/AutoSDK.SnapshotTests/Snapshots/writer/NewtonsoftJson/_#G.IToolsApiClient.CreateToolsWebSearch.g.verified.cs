@@ -10,6 +10,7 @@ namespace G
         /// Search the web for information about a given query and return relevant results with source URLs.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -21,6 +22,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.WebSearchResponse> CreateToolsWebSearchAsync(
 
             global::G.WebSearchRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Web search<br/>
@@ -76,6 +78,7 @@ namespace G
         /// Enables streaming of search results as they become available.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.WebSearchResponse> CreateToolsWebSearchAsync(
@@ -92,6 +95,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? excludeDomains = default,
             global::G.WebSearchRequestCountry? country = default,
             bool? stream = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

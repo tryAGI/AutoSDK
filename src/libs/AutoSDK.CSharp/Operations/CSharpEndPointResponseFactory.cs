@@ -1,4 +1,5 @@
 using AutoSDK.Extensions;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.TypeMapping;
 using Microsoft.OpenApi;
@@ -31,7 +32,7 @@ public static class CSharpEndPointResponseFactory
 
         if (preferredMimeType != null)
         {
-            var filtered = responses.Where(x => x.MimeType.Contains(preferredMimeType)).ToArray();
+            var filtered = responses.Where(x => x.MimeType.IsMimeType(preferredMimeType)).ToArray();
             if (filtered.Length > 0)
             {
                 responses = filtered;
@@ -39,10 +40,18 @@ public static class CSharpEndPointResponseFactory
         }
 
         var response = responses.First();
+        var usesItemSchemaForStream =
+            response.MediaType.ItemSchema != null &&
+            (response.MimeType.IsSequentialJsonMimeType() || response.MimeType.IsServerSentEventsMimeType());
         var responseContext = operation.Schemas.FirstOrDefault(x =>
-            x.Hint == Hint.Response &&
-            x.ResponseStatusCode == response.StatusCode &&
-            (x.ContentType == null || x.ContentType == response.MimeType));
+                x.Hint == Hint.Response &&
+                x.ResponseStatusCode == response.StatusCode &&
+                (x.ContentType == null || x.ContentType == response.MimeType) &&
+                x.IsMediaTypeItemSchema == usesItemSchemaForStream) ??
+            operation.Schemas.FirstOrDefault(x =>
+                x.Hint == Hint.Response &&
+                x.ResponseStatusCode == response.StatusCode &&
+                (x.ContentType == null || x.ContentType == response.MimeType));
         var isBinaryResponse = response.MimeType.IsBinaryResponseMimeType() ||
                                responseContext?.TypeData.CSharpTypeWithoutNullability == "byte[]" ||
                                responseContext?.TypeData.IsBinary == true;
@@ -59,6 +68,12 @@ public static class CSharpEndPointResponseFactory
             }).WithCSharpComputedValues(),
             _ => responseContext?.TypeData,
         };
+        if ((response.MimeType.IsSequentialJsonMimeType() || response.MimeType.IsServerSentEventsMimeType()) &&
+            responseType is { IsArray: true, SubTypes.Length: > 0 })
+        {
+            responseType = responseType.Value.SubTypes[0].Unbox<TypeData>();
+        }
+
         if (responseType?.CSharpTypeWithoutNullability == "object")
         {
             contentType = ContentType.String;

@@ -25,6 +25,7 @@ namespace G
         /// </summary>
         /// <default>global::G.MessageType.Message</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageTypeJsonConverter))]
         public global::G.MessageType Type { get; set; } = global::G.MessageType.Message;
 
         /// <summary>
@@ -34,6 +35,7 @@ namespace G
         /// </summary>
         /// <default>global::G.MessageRole.Assistant</default>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageRoleJsonConverter))]
         public global::G.MessageRole Role { get; set; } = global::G.MessageRole.Assistant;
 
         /// <summary>

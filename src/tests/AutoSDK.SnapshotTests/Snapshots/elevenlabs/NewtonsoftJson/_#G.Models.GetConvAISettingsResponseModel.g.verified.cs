@@ -38,6 +38,7 @@ namespace G
         /// Default Value: standard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_livekit_stack")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LivekitStackTypeJsonConverter))]
         public global::G.LivekitStackType? DefaultLivekitStack { get; set; }
 
         /// <summary>

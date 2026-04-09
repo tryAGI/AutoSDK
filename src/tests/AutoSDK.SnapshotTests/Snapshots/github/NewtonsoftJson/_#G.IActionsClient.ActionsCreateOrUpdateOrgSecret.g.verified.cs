@@ -15,6 +15,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="secretName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmptyObject> ActionsCreateOrUpdateOrgSecretAsync(
@@ -22,6 +23,7 @@ namespace G
             string secretName,
 
             global::G.ActionsCreateOrUpdateOrgSecretRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create or update an organization secret<br/>
@@ -44,6 +46,7 @@ namespace G
         /// <param name="selectedRepositoryIds">
         /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/actions/secrets#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/actions/secrets#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/actions/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmptyObject> ActionsCreateOrUpdateOrgSecretAsync(
@@ -53,6 +56,7 @@ namespace G
             string? encryptedValue = default,
             string? keyId = default,
             global::System.Collections.Generic.IList<int>? selectedRepositoryIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

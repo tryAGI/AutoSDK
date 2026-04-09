@@ -13,6 +13,7 @@ namespace G
         /// Default Value: apply_patch_call
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApplyPatchCallContentTypeJsonConverter))]
         public global::G.ApplyPatchCallContentType? Type { get; set; }
 
         /// <summary>

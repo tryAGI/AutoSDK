@@ -30,6 +30,7 @@ namespace G
         /// State of the membership.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MembershipStateJsonConverter))]
         public global::G.MembershipState State { get; set; } = default!;
 
         /// <summary>

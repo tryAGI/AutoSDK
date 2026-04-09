@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<byte[]> Ids { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> Ids { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CostCreateRes(
-            global::System.Collections.Generic.IList<byte[]> ids)
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> ids)
         {
             this.Ids = ids ?? throw new global::System.ArgumentNullException(nameof(ids));
         }

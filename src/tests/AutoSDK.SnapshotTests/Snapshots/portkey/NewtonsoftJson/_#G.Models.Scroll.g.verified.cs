@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ScrollType.Scroll</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrollTypeJsonConverter))]
         public global::G.ScrollType Type { get; set; } = global::G.ScrollType.Scroll;
 
         /// <summary>

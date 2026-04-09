@@ -13,6 +13,7 @@ namespace G
         /// This is the type of cost, always 'chat' for this class.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCostTypeJsonConverter))]
         public global::G.ChatCostType Type { get; set; }
 
         /// <summary>

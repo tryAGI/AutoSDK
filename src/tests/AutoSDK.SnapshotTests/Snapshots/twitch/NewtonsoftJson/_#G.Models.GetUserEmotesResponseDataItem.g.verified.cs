@@ -29,6 +29,7 @@ namespace G
         /// * **subscriptions** — A subscriber emote.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("emote_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetUserEmotesResponseDataItemEmoteTypeJsonConverter))]
         public global::G.GetUserEmotesResponseDataItemEmoteType EmoteType { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The type of tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraphToolTypeJsonConverter))]
         public global::G.GraphToolType Type { get; set; }
 
         /// <summary>

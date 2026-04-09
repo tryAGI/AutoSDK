@@ -52,6 +52,7 @@ namespace G
         /// integration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MethodJsonConverter))]
         public global::G.Method Method { get; set; } = default!;
 
         /// <summary>
@@ -90,6 +91,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("view")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PipelineV1betaViewJsonConverter))]
         public global::G.PipelineV1betaView? View { get; set; }
 
         /// <summary>

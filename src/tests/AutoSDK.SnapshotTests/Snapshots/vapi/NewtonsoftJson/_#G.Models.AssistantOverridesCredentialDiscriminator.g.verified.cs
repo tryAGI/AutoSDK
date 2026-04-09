@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssistantOverridesCredentialDiscriminatorProviderJsonConverter))]
         public global::G.AssistantOverridesCredentialDiscriminatorProvider? Provider { get; set; }
 
         /// <summary>

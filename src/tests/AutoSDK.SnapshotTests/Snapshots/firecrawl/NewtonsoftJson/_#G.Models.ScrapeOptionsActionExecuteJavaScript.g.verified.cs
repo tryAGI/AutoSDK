@@ -13,6 +13,7 @@ namespace G
         /// Execute JavaScript code on the page
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeOptionsActionExecuteJavaScriptTypeJsonConverter))]
         public global::G.ScrapeOptionsActionExecuteJavaScriptType Type { get; set; }
 
         /// <summary>

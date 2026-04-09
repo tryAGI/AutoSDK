@@ -45,6 +45,11 @@ namespace G
         public bool ReadResponseAsString { get; set; }
 
         /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::G.AutoSDKClientOptions Options { get; }
+
+        /// <summary>
         /// 
         /// </summary>
         global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; }
@@ -61,7 +66,7 @@ namespace G
         public BatchClient Batch { get; }
 
         /// <summary>
-        /// Perform classification operations
+        /// Perform classification operations.
         /// </summary>
         public ClassificationsClient Classifications { get; }
 

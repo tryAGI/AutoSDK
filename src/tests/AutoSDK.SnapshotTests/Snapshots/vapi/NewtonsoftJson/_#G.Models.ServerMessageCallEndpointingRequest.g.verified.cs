@@ -40,6 +40,7 @@ namespace G
         /// }
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageCallEndpointingRequestTypeJsonConverter))]
         public global::G.ServerMessageCallEndpointingRequestType Type { get; set; }
 
         /// <summary>

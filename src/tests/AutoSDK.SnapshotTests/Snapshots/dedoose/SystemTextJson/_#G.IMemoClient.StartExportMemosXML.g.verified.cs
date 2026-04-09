@@ -10,11 +10,13 @@ namespace G
         /// StartExportMemosXML
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> StartExportMemosXMLAsync(
 
             global::G.StartExportMemosXMLRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// StartExportMemosXML<br/>
@@ -27,6 +29,7 @@ namespace G
         /// <param name="excerptsSelection"></param>
         /// <param name="descriptorsSelection"></param>
         /// <param name="symKey"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> StartExportMemosXMLAsync(
@@ -37,6 +40,7 @@ namespace G
             int excerptsSelection,
             int descriptorsSelection,
             string symKey,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

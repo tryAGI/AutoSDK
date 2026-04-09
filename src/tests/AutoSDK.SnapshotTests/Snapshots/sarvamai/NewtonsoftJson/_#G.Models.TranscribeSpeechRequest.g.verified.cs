@@ -26,6 +26,7 @@ namespace G
         /// Default Value: saarika:v2.5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscribeSpeechRequestModelJsonConverter))]
         public global::G.TranscribeSpeechRequestModel? Model { get; set; }
 
         /// <summary>
@@ -33,18 +34,21 @@ namespace G
         /// Default Value: transcribe
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscribeSpeechRequestModeJsonConverter))]
         public global::G.TranscribeSpeechRequestMode? Mode { get; set; }
 
         /// <summary>
         /// Language of the audio (BCP-47). Optional for saarika:v2.5.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language_code")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscribeSpeechRequestLanguageCodeJsonConverter))]
         public global::G.TranscribeSpeechRequestLanguageCode? LanguageCode { get; set; }
 
         /// <summary>
         /// Required for PCM format files
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_audio_codec")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscribeSpeechRequestInputAudioCodecJsonConverter))]
         public global::G.TranscribeSpeechRequestInputAudioCodec? InputAudioCodec { get; set; }
 
         /// <summary>

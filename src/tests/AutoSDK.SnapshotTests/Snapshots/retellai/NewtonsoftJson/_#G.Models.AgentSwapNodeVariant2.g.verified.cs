@@ -13,6 +13,7 @@ namespace G
         /// Type of the node
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentSwapNodeVariant2TypeJsonConverter))]
         public global::G.AgentSwapNodeVariant2Type Type { get; set; }
 
         /// <summary>
@@ -31,12 +32,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("post_call_analysis_setting", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostCallAnalysisSettingJsonConverter))]
         public global::G.PostCallAnalysisSetting PostCallAnalysisSetting { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("webhook_setting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentSwapWebhookSettingJsonConverter))]
         public global::G.AgentSwapWebhookSetting? WebhookSetting { get; set; }
 
         /// <summary>

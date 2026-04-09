@@ -13,26 +13,35 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ImageContentSourceDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageContentSourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageContentSourceDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageContentSourceDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.UrlImage? url = default;
             if (discriminator?.Type == global::G.ImageContentSourceDiscriminatorType.Url)
             {
-                url = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UrlImage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UrlImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UrlImage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UrlImage)}");
+                url = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.Base64Image? base64 = default;
             if (discriminator?.Type == global::G.ImageContentSourceDiscriminatorType.Base64)
             {
-                base64 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.Base64Image>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Base64Image), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Base64Image> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.Base64Image)}");
+                base64 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.LettaImage? letta = default;
             if (discriminator?.Type == global::G.ImageContentSourceDiscriminatorType.Letta)
             {
-                letta = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LettaImage>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaImage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LettaImage)}");
+                letta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.Source(
@@ -53,19 +62,26 @@ namespace G.JsonConverters
             global::G.Source value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsUrl)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Url, typeof(global::G.UrlImage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UrlImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UrlImage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UrlImage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Url!, typeInfo);
             }
             else if (value.IsBase64)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base64, typeof(global::G.Base64Image), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Base64Image), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Base64Image?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Base64Image).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base64!, typeInfo);
             }
             else if (value.IsLetta)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Letta, typeof(global::G.LettaImage), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaImage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaImage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Letta!, typeInfo);
             }
         }
     }

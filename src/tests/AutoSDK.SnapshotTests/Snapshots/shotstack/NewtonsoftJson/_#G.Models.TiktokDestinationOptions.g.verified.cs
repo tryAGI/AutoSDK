@@ -24,6 +24,7 @@ namespace G
         /// Default Value: private
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacyLevel")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TiktokDestinationOptionsPrivacyLevelJsonConverter))]
         public global::G.TiktokDestinationOptionsPrivacyLevel? PrivacyLevel { get; set; }
 
         /// <summary>

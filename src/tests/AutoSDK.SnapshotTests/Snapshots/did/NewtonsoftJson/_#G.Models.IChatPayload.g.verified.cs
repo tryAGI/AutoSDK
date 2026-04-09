@@ -35,6 +35,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chatMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IChatPayloadChatModeJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.IChatPayloadChatMode? ChatMode { get; set; }
 

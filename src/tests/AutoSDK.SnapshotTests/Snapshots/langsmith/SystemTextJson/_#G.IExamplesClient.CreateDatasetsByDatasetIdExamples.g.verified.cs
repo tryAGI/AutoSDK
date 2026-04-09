@@ -11,11 +11,13 @@ namespace G
         /// Each form part contains either JSON-encoded data or binary attachment files associated with an example.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateDatasetsByDatasetIdExamplesAsync(
 
             global::G.CreateDatasetsExamplesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload Examples<br/>
@@ -46,6 +48,7 @@ namespace G
         /// <param name="x_exampleId_Attachments_name_name">
         /// File attachment named {name}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreateDatasetsByDatasetIdExamplesAsync(
@@ -57,6 +60,7 @@ namespace G
             string? x_exampleId_Outputsname = default,
             byte[]? x_exampleId_Attachments_name_ = default,
             string? x_exampleId_Attachments_name_name = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

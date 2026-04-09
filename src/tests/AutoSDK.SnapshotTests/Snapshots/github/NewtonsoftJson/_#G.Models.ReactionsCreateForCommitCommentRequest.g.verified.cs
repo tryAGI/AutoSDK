@@ -13,6 +13,7 @@ namespace G
         /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the commit comment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReactionsCreateForCommitCommentRequestContentJsonConverter))]
         public global::G.ReactionsCreateForCommitCommentRequestContent Content { get; set; } = default!;
 
         /// <summary>

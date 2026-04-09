@@ -20,6 +20,7 @@ namespace G
         /// The current status of the connected account (e.g., active, pending, failed)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostConnectedAccountsByNanoidRefreshResponseStatusJsonConverter))]
         public global::G.PostConnectedAccountsByNanoidRefreshResponseStatus Status { get; set; } = default!;
 
         /// <summary>

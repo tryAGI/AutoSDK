@@ -15,12 +15,14 @@ namespace G
         /// The ID of the agent in the format 'agent-&lt;uuid4&gt;'
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentState> ModifyAgentAsync(
             string agentId,
 
             global::G.UpdateAgent request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Modify Agent<br/>
@@ -122,6 +124,7 @@ namespace G
         /// <param name="hidden">
         /// If set to True, the agent will be hidden.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentState> ModifyAgentAsync(
@@ -157,6 +160,7 @@ namespace G
             int? maxFilesOpen = default,
             int? perFileViewWindowCharLimit = default,
             bool? hidden = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -36,58 +36,63 @@ namespace G
         public bool ReadResponseAsString { get; set; }
 
         /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::G.AutoSDKClientOptions Options { get; }
+
+        /// <summary>
         /// 
         /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }
 
 
         /// <summary>
-        /// Agents
+        /// Agents. Agents API.
         /// </summary>
         public AgentsClient Agents { get; }
 
         /// <summary>
-        /// Batch
+        /// Batch. Batch API.
         /// </summary>
         public BatchClient Batch { get; }
 
         /// <summary>
-        /// Chat
+        /// Chat. Chat Completion API.
         /// </summary>
         public ChatClient Chat { get; }
 
         /// <summary>
-        /// Classifiers
+        /// Classifiers. Classifiers API.
         /// </summary>
         public ClassifiersClient Classifiers { get; }
 
         /// <summary>
-        /// Embeddings
+        /// Embeddings. Embeddings API.
         /// </summary>
         public EmbeddingsClient Embeddings { get; }
 
         /// <summary>
-        /// Files
+        /// Files. Files API.
         /// </summary>
         public FilesClient Files { get; }
 
         /// <summary>
-        /// FIM
+        /// FIM. Fill-in-the-middle API.
         /// </summary>
         public FimClient Fim { get; }
 
         /// <summary>
-        /// Fine Tuning
+        /// Fine Tuning. Fine-tuning API.
         /// </summary>
         public FineTuningClient FineTuning { get; }
 
         /// <summary>
-        /// Models
+        /// Models. Model Management API.
         /// </summary>
         public ModelsClient Models { get; }
 
         /// <summary>
-        /// OCR API
+        /// OCR API.
         /// </summary>
         public OcrClient Ocr { get; }
 

@@ -13,6 +13,7 @@ namespace G
         /// The content type ("text", "audio").
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventResponseContentPartAddedPartTypeJsonConverter))]
         public global::G.RealtimeServerEventResponseContentPartAddedPartType? Type { get; set; }
 
         /// <summary>

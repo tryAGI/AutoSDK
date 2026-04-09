@@ -46,6 +46,7 @@ namespace G
         /// The language that the given voice should speak the transcript in. For valid options, see [Models](/build-with-cartesia/tts-models).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SupportedLanguageJsonConverter))]
         public global::G.SupportedLanguage? Language { get; set; }
 
         /// <summary>
@@ -56,6 +57,7 @@ namespace G
         /// Default Value: normal
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speed")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelSpeedJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.ModelSpeed? Speed { get; set; }
 

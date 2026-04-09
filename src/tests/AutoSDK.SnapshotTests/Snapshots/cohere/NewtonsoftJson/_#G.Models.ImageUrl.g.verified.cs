@@ -19,6 +19,7 @@ namespace G
         /// Controls the level of detail in image processing. `"auto"` is the default and lets the system choose, `"low"` is faster but less detailed, and `"high"` preserves maximum detail. You can save tokens and speed up responses by using detail: `"low"`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageUrlDetailJsonConverter))]
         public global::G.ImageUrlDetail? Detail { get; set; }
 
         /// <summary>

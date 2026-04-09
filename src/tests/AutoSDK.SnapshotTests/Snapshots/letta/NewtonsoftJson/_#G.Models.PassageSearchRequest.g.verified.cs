@@ -38,6 +38,7 @@ namespace G
         /// Default Value: any
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag_match_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PassageSearchRequestTagMatchModeJsonConverter))]
         public global::G.PassageSearchRequestTagMatchMode? TagMatchMode { get; set; }
 
         /// <summary>

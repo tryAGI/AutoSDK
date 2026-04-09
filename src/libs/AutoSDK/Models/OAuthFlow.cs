@@ -11,6 +11,8 @@ public record struct OAuthFlow(
     EquatableArray<string> Scopes
 )
 {
+    public string DeviceAuthorizationUrl { get; set; } = string.Empty;
+
     public static OAuthFlow FromOpenApiSecurityScheme(
         string type,
         OpenApiOAuthFlow flow,
@@ -41,6 +43,9 @@ public record struct OAuthFlow(
             RefreshUrl: flow.RefreshUrl?.ToString() ?? string.Empty,
             Scopes: (flow.Scopes?.Select(x => x.Key).ToArray() ?? [])
                 .ToImmutableArray()
-                .AsEquatableArray());
+                .AsEquatableArray())
+        {
+            DeviceAuthorizationUrl = flow.DeviceAuthorizationUrl?.ToString() ?? string.Empty,
+        };
     }
 }

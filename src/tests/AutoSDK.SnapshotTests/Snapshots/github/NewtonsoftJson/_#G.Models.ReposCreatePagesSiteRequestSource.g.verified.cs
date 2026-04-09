@@ -20,6 +20,7 @@ namespace G
         /// Default Value: /
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("path")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposCreatePagesSiteRequestSourcePathJsonConverter))]
         public global::G.ReposCreatePagesSiteRequestSourcePath? Path { get; set; }
 
         /// <summary>

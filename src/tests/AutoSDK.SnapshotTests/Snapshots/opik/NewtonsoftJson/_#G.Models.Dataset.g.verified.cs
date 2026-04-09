@@ -37,12 +37,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetTypeJsonConverter))]
         public global::G.DatasetType? Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetVisibilityJsonConverter))]
         public global::G.DatasetVisibility? Visibility { get; set; }
 
         /// <summary>
@@ -127,6 +129,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetStatusJsonConverter))]
         public global::G.DatasetStatus? Status { get; set; }
 
         /// <summary>

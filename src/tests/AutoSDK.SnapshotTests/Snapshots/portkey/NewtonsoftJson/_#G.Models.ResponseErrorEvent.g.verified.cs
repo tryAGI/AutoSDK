@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `error`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseErrorEventTypeJsonConverter))]
         public global::G.ResponseErrorEventType Type { get; set; }
 
         /// <summary>

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ResearchControllerGetResearchSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ResearchControllerGetResearchSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ResearchControllerGetResearchSecurityRequirement0,
+            };
         partial void PrepareResearchControllerGetResearchArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string researchId,
@@ -49,13 +68,19 @@ namespace G
                 stream: ref stream,
                 events: ref events);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ResearchControllerGetResearchSecurityRequirements,
+                operationName: "ResearchControllerGetResearchAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/research/v1/{researchId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("stream", stream)
                 .AddRequiredParameter("events", events) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -65,7 +90,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

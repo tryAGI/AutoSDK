@@ -168,6 +168,65 @@ paths:
     }
 
     [TestMethod]
+    public void OpenApi32Request_UsesPreferredExamplesAndResponseSummary()
+    {
+        var (operations, _) = LoadSpec(@"openapi: 3.2.0
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /items:
+    post:
+      operationId: createItem
+      summary: Create an item
+      parameters:
+        - name: filter
+          in: query
+          schema:
+            type: string
+          examples:
+            requestFilter:
+              serializedValue: status:open
+      requestBody:
+        required: true
+        content:
+          application/json:
+            examples:
+              createItem:
+                dataValue:
+                  name: widget
+                  count: 3
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                count:
+                  type: integer
+      responses:
+        '201':
+          summary: Created response
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+");
+
+        var result = Sources.GenerateHttpRequest(operations[0]);
+
+        result.Should().Contain("POST {{host}}/items?filter=status:open");
+        result.Should().Contain("\"name\": \"widget\"");
+        result.Should().Contain("\"count\": 3");
+        result.Should().Contain("## Responses");
+        result.Should().Contain("# Summary: Created response");
+        result.Should().Contain("# Content-Type: application/json");
+    }
+
+    [TestMethod]
     public void PathParams_ConvertedToHttpVariables()
     {
         var (operations, _) = LoadSpec(@"openapi: 3.0.1
@@ -359,6 +418,35 @@ components:
     }
 
     [TestMethod]
+    public void ExplicitEmptyOperationSecurity_DoesNotInheritGlobalHttpAuth()
+    {
+        var (operations, _) = LoadSpec(@"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+security:
+  - BearerAuth: []
+paths:
+  /public:
+    get:
+      operationId: getPublic
+      security: []
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+");
+
+        var result = Sources.GenerateHttpRequest(operations[0]);
+
+        result.Should().NotContain("Authorization: Bearer {{token}}");
+    }
+
+    [TestMethod]
     public void NoRequestBody_NoContentType()
     {
         var (operations, _) = LoadSpec(@"openapi: 3.0.1
@@ -473,6 +561,59 @@ paths:
         result.Should().Contain("\"host\": \"https://us.example.com/v1\"");
         result.Should().NotContain("{region}");
         result.Should().NotContain("{version}");
+    }
+
+    [TestMethod]
+    public void EnvFile_OpenApi32ServerName_PrefersNameOverDescription()
+    {
+        var (_, document) = LoadSpec(@"openapi: 3.2.0
+info:
+  title: Test
+  version: 1.0.0
+servers:
+  - name: Primary API
+    url: https://api.example.com/v1
+    description: Production
+paths:
+  /ping:
+    get:
+      operationId: ping
+      responses:
+        '200':
+          description: OK
+");
+
+        var servers = (document.Servers ?? []).ToList();
+        var result = Sources.GenerateHttpEnvironmentFile(servers, []);
+
+        result.Should().Contain("\"primary-api\"");
+        result.Should().NotContain("\"production\":");
+    }
+
+    [TestMethod]
+    public void EnvFile_RelativeServerUrl_UsesDocumentSelf()
+    {
+        var (_, document) = LoadSpec(@"openapi: 3.2.0
+info:
+  title: Test
+  version: 1.0.0
+servers:
+  - url: ../v2
+paths:
+  /ping:
+    get:
+      operationId: ping
+      responses:
+        '200':
+          description: OK
+");
+
+        document.Self = new Uri("https://example.com/specs/openapi.yaml", UriKind.Absolute);
+
+        var servers = (document.Servers ?? []).ToList();
+        var result = Sources.GenerateHttpEnvironmentFile(servers, [], document.Self);
+
+        result.Should().Contain("\"host\": \"https://example.com/v2\"");
     }
 
     [TestMethod]

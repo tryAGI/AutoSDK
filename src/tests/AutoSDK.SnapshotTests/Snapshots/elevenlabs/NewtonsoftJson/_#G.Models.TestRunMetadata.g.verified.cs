@@ -31,6 +31,7 @@ namespace G
         /// Default Value: llm
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("test_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TestRunMetadataTestTypeJsonConverter))]
         public global::G.TestRunMetadataTestType? TestType { get; set; }
 
         /// <summary>

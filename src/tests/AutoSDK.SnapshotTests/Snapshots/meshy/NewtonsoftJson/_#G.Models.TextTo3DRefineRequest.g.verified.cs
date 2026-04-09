@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextTo3DRefineRequestModeJsonConverter))]
         public global::G.TextTo3DRefineRequestMode Mode { get; set; }
 
         /// <summary>
@@ -44,6 +45,7 @@ namespace G
         /// Default Value: latest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ai_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AiModelJsonConverter))]
         public global::G.AiModel? AiModel { get; set; }
 
         /// <summary>
@@ -75,6 +77,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("origin_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OriginAtJsonConverter))]
         public global::G.OriginAt? OriginAt { get; set; }
 
         /// <summary>

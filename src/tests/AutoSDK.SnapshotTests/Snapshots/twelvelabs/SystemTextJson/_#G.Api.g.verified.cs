@@ -31,6 +31,9 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -175,7 +178,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAssetsClient SubpackageAssets => new SubpackageAssetsClient(HttpClient, authorizations: Authorizations)
+        public SubpackageAssetsClient SubpackageAssets => new SubpackageAssetsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -184,7 +187,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEmbedClient SubpackageEmbed => new SubpackageEmbedClient(HttpClient, authorizations: Authorizations)
+        public SubpackageEmbedClient SubpackageEmbed => new SubpackageEmbedClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -193,7 +196,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEmbedSubpackageEmbedTasksClient SubpackageEmbedSubpackageEmbedTasks => new SubpackageEmbedSubpackageEmbedTasksClient(HttpClient, authorizations: Authorizations)
+        public SubpackageEmbedSubpackageEmbedTasksClient SubpackageEmbedSubpackageEmbedTasks => new SubpackageEmbedSubpackageEmbedTasksClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -202,7 +205,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEmbedSubpackageEmbedV2Client SubpackageEmbedSubpackageEmbedV2 => new SubpackageEmbedSubpackageEmbedV2Client(HttpClient, authorizations: Authorizations)
+        public SubpackageEmbedSubpackageEmbedV2Client SubpackageEmbedSubpackageEmbedV2 => new SubpackageEmbedSubpackageEmbedV2Client(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -211,7 +214,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEmbedSubpackageEmbedV2SubpackageEmbedV2TasksClient SubpackageEmbedSubpackageEmbedV2SubpackageEmbedV2Tasks => new SubpackageEmbedSubpackageEmbedV2SubpackageEmbedV2TasksClient(HttpClient, authorizations: Authorizations)
+        public SubpackageEmbedSubpackageEmbedV2SubpackageEmbedV2TasksClient SubpackageEmbedSubpackageEmbedV2SubpackageEmbedV2Tasks => new SubpackageEmbedSubpackageEmbedV2SubpackageEmbedV2TasksClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -220,7 +223,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEntityCollectionsClient SubpackageEntityCollections => new SubpackageEntityCollectionsClient(HttpClient, authorizations: Authorizations)
+        public SubpackageEntityCollectionsClient SubpackageEntityCollections => new SubpackageEntityCollectionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -229,7 +232,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEntityCollectionsSubpackageEntityCollectionsEntitiesClient SubpackageEntityCollectionsSubpackageEntityCollectionsEntities => new SubpackageEntityCollectionsSubpackageEntityCollectionsEntitiesClient(HttpClient, authorizations: Authorizations)
+        public SubpackageEntityCollectionsSubpackageEntityCollectionsEntitiesClient SubpackageEntityCollectionsSubpackageEntityCollectionsEntities => new SubpackageEntityCollectionsSubpackageEntityCollectionsEntitiesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -238,7 +241,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageIndexesClient SubpackageIndexes => new SubpackageIndexesClient(HttpClient, authorizations: Authorizations)
+        public SubpackageIndexesClient SubpackageIndexes => new SubpackageIndexesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -247,7 +250,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageIndexesSubpackageIndexesIndexedAssetsClient SubpackageIndexesSubpackageIndexesIndexedAssets => new SubpackageIndexesSubpackageIndexesIndexedAssetsClient(HttpClient, authorizations: Authorizations)
+        public SubpackageIndexesSubpackageIndexesIndexedAssetsClient SubpackageIndexesSubpackageIndexesIndexedAssets => new SubpackageIndexesSubpackageIndexesIndexedAssetsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -256,7 +259,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageIndexesSubpackageIndexesVideosClient SubpackageIndexesSubpackageIndexesVideos => new SubpackageIndexesSubpackageIndexesVideosClient(HttpClient, authorizations: Authorizations)
+        public SubpackageIndexesSubpackageIndexesVideosClient SubpackageIndexesSubpackageIndexesVideos => new SubpackageIndexesSubpackageIndexesVideosClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -265,7 +268,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageMultipartUploadClient SubpackageMultipartUpload => new SubpackageMultipartUploadClient(HttpClient, authorizations: Authorizations)
+        public SubpackageMultipartUploadClient SubpackageMultipartUpload => new SubpackageMultipartUploadClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -274,7 +277,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageSearchClient SubpackageSearch => new SubpackageSearchClient(HttpClient, authorizations: Authorizations)
+        public SubpackageSearchClient SubpackageSearch => new SubpackageSearchClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -283,7 +286,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTasksClient SubpackageTasks => new SubpackageTasksClient(HttpClient, authorizations: Authorizations)
+        public SubpackageTasksClient SubpackageTasks => new SubpackageTasksClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -292,7 +295,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTasksSubpackageTasksTransfersClient SubpackageTasksSubpackageTasksTransfers => new SubpackageTasksSubpackageTasksTransfersClient(HttpClient, authorizations: Authorizations)
+        public SubpackageTasksSubpackageTasksTransfersClient SubpackageTasksSubpackageTasksTransfers => new SubpackageTasksSubpackageTasksTransfersClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -311,11 +314,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

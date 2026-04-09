@@ -17,6 +17,7 @@ namespace G
         /// Example: customer_support
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Agent> UpdateAsync(
@@ -25,6 +26,7 @@ namespace G
             global::G.UpdateAgentRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update agent<br/>
@@ -89,6 +91,7 @@ namespace G
         /// Set a key's value to null to delete that step.<br/>
         /// Example: {"sales_handler":{"instructions":[{"type":"inline","template":"Handle sales inquiries"}]}}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Agent> UpdateAsync(
@@ -107,6 +110,7 @@ namespace G
             global::G.CompactionConfig? compaction = default,
             global::G.ToolOutputOffloadingConfiguration? toolOutputOffloading = default,
             global::System.Collections.Generic.Dictionary<string, global::G.UpdateAgentStep>? steps = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

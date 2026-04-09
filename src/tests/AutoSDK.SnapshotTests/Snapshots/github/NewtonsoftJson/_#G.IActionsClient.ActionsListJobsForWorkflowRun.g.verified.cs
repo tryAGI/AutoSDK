@@ -24,6 +24,7 @@ namespace G
         /// <param name="page">
         /// Default Value: 1
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ActionsListJobsForWorkflowRunResponse> ActionsListJobsForWorkflowRunAsync(
@@ -33,6 +34,7 @@ namespace G
             global::G.ActionsListJobsForWorkflowRunFilter? filter = default,
             int? perPage = default,
             int? page = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List jobs for a workflow run<br/>
@@ -53,6 +55,7 @@ namespace G
         /// <param name="page">
         /// Default Value: 1
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ActionsListJobsForWorkflowRunResponse>> ActionsListJobsForWorkflowRunAsResponseAsync(
@@ -62,6 +65,7 @@ namespace G
             global::G.ActionsListJobsForWorkflowRunFilter? filter = default,
             int? perPage = default,
             int? page = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

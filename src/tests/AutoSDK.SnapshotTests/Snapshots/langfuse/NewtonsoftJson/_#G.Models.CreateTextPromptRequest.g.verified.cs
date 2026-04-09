@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextPromptTypeJsonConverter))]
         public global::G.CreateTextPromptType? Type { get; set; }
 
         /// <summary>

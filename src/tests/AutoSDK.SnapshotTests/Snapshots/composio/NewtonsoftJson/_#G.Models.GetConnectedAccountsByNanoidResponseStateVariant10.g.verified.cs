@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("authScheme")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetConnectedAccountsByNanoidResponseStateVariant10AuthSchemeJsonConverter))]
         public global::G.GetConnectedAccountsByNanoidResponseStateVariant10AuthScheme AuthScheme { get; set; }
 
         /// <summary>

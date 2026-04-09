@@ -29,6 +29,7 @@ namespace G
         /// </summary>
         /// <example>direct</example>
         [global::Newtonsoft.Json.JsonProperty("relationship")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependencyRelationshipJsonConverter))]
         public global::G.DependencyRelationship? Relationship { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// </summary>
         /// <example>runtime</example>
         [global::Newtonsoft.Json.JsonProperty("scope")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependencyScopeJsonConverter))]
         public global::G.DependencyScope? Scope { get; set; }
 
         /// <summary>

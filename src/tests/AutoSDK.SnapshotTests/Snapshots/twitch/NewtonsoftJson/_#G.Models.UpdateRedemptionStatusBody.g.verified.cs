@@ -18,6 +18,7 @@ namespace G
         /// Setting the status to CANCELED refunds the user’s channel points.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateRedemptionStatusBodyStatusJsonConverter))]
         public global::G.UpdateRedemptionStatusBodyStatus Status { get; set; } = default!;
 
         /// <summary>

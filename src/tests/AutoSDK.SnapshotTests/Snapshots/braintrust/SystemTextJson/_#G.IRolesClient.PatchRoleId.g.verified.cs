@@ -13,12 +13,14 @@ namespace G
         /// Role id
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Role> PatchRoleIdAsync(
             global::System.Guid roleId,
 
             global::G.PatchRole request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Partially update role<br/>
@@ -45,6 +47,7 @@ namespace G
         /// <param name="removeMemberRoles">
         /// A list of role IDs to remove from the role's inheriting-from set
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Role> PatchRoleIdAsync(
@@ -55,6 +58,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.PatchRoleRemoveMemberPermission>? removeMemberPermissions = default,
             global::System.Collections.Generic.IList<global::System.Guid>? addMemberRoles = default,
             global::System.Collections.Generic.IList<global::System.Guid>? removeMemberRoles = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

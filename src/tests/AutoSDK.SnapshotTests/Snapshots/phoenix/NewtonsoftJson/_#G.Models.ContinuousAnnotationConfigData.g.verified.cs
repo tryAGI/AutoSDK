@@ -32,6 +32,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("optimization_direction", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OptimizationDirectionJsonConverter))]
         public global::G.OptimizationDirection OptimizationDirection { get; set; } = default!;
 
         /// <summary>

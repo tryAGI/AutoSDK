@@ -13,12 +13,14 @@ namespace G
         /// This is the transport type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VapiSipTransportMessageTransportJsonConverter))]
         public global::G.VapiSipTransportMessageTransport Transport { get; set; }
 
         /// <summary>
         /// This is the SIP verb to use. Must be one of INFO, MESSAGE, or NOTIFY.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sipVerb", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VapiSipTransportMessageSipVerbJsonConverter))]
         public global::G.VapiSipTransportMessageSipVerb SipVerb { get; set; } = default!;
 
         /// <summary>

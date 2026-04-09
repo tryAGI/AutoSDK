@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "voice-input" is sent when a generation is requested from voice provider.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageVoiceInputTypeJsonConverter))]
         public global::G.ServerMessageVoiceInputType Type { get; set; }
 
         /// <summary>

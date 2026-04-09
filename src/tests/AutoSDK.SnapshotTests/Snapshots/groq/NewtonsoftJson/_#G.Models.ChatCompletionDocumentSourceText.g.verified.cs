@@ -13,6 +13,7 @@ namespace G
         /// Identifies this document source as inline text.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionDocumentSourceTextTypeJsonConverter))]
         public global::G.ChatCompletionDocumentSourceTextType Type { get; set; }
 
         /// <summary>

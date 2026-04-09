@@ -31,6 +31,7 @@ namespace G
         /// Aspect ratio of the output image.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("aspect_ratio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateMultiImageGenerationRequestAspectRatioJsonConverter))]
         public global::G.CreateMultiImageGenerationRequestAspectRatio? AspectRatio { get; set; }
 
         /// <summary>

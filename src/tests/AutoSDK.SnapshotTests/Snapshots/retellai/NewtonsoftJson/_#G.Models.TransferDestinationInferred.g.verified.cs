@@ -13,6 +13,7 @@ namespace G
         /// The type of transfer destination.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferDestinationInferredTypeJsonConverter))]
         public global::G.TransferDestinationInferredType Type { get; set; }
 
         /// <summary>

@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -47,7 +48,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        responseOutputText = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponseOutputText>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseOutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseOutputText> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseOutputText).Name}");
+                        responseOutputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -60,7 +63,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        openAIResponsesRefusalContent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.OpenAIResponsesRefusalContent>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIResponsesRefusalContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIResponsesRefusalContent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAIResponsesRefusalContent).Name}");
+                        openAIResponsesRefusalContent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -75,7 +80,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    responseOutputText = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResponseOutputText>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseOutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseOutputText> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseOutputText).Name}");
+                    responseOutputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -86,7 +93,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    openAIResponsesRefusalContent = global::System.Text.Json.JsonSerializer.Deserialize<global::G.OpenAIResponsesRefusalContent>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIResponsesRefusalContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIResponsesRefusalContent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAIResponsesRefusalContent).Name}");
+                    openAIResponsesRefusalContent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -111,15 +120,20 @@ namespace G.JsonConverters
             global::G.OutputMessageContentItems value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsResponseOutputText)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputText, typeof(global::G.ResponseOutputText), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseOutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseOutputText?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseOutputText).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputText!, typeInfo);
             }
             else if (value.IsOpenAIResponsesRefusalContent)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIResponsesRefusalContent, typeof(global::G.OpenAIResponsesRefusalContent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIResponsesRefusalContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIResponsesRefusalContent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAIResponsesRefusalContent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIResponsesRefusalContent!, typeInfo);
             }
         }
     }

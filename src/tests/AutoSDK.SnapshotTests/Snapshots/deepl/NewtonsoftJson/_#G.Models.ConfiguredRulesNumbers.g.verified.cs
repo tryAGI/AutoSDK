@@ -13,150 +13,175 @@ namespace G
         /// Formatting options for Approximate Numbers
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("approximate_numbers")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersApproximateNumbersJsonConverter))]
         public global::G.ConfiguredRulesNumbersApproximateNumbers? ApproximateNumbers { get; set; }
 
         /// <summary>
         /// Formatting options for Currency Format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("currency_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersCurrencyFormatJsonConverter))]
         public global::G.ConfiguredRulesNumbersCurrencyFormat? CurrencyFormat { get; set; }
 
         /// <summary>
         /// Formatting options for Decimal Numbers Less Than One
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("decimal_numbers_less_than_one")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersDecimalNumbersLessThanOneJsonConverter))]
         public global::G.ConfiguredRulesNumbersDecimalNumbersLessThanOne? DecimalNumbersLessThanOne { get; set; }
 
         /// <summary>
         /// Formatting options for Decimal Separator
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("decimal_separator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersDecimalSeparatorJsonConverter))]
         public global::G.ConfiguredRulesNumbersDecimalSeparator? DecimalSeparator { get; set; }
 
         /// <summary>
         /// Formatting options for Dimensions Separator
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dimensions_separator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersDimensionsSeparatorJsonConverter))]
         public global::G.ConfiguredRulesNumbersDimensionsSeparator? DimensionsSeparator { get; set; }
 
         /// <summary>
         /// Formatting options for Equation Formula Reference
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("equation_formula_reference")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersEquationFormulaReferenceJsonConverter))]
         public global::G.ConfiguredRulesNumbersEquationFormulaReference? EquationFormulaReference { get; set; }
 
         /// <summary>
         /// Formatting options for Kanji Numbers
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("kanji_numbers")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersKanjiNumbersJsonConverter))]
         public global::G.ConfiguredRulesNumbersKanjiNumbers? KanjiNumbers { get; set; }
 
         /// <summary>
         /// Formatting options for Large Number Format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("large_number_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersLargeNumberFormatJsonConverter))]
         public global::G.ConfiguredRulesNumbersLargeNumberFormat? LargeNumberFormat { get; set; }
 
         /// <summary>
         /// Formatting options for Large Sums Of Money
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("large_sums_of_money")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersLargeSumsOfMoneyJsonConverter))]
         public global::G.ConfiguredRulesNumbersLargeSumsOfMoney? LargeSumsOfMoney { get; set; }
 
         /// <summary>
         /// Formatting options for Large Sums Of Money Format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("large_sums_of_money_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersLargeSumsOfMoneyFormatJsonConverter))]
         public global::G.ConfiguredRulesNumbersLargeSumsOfMoneyFormat? LargeSumsOfMoneyFormat { get; set; }
 
         /// <summary>
         /// Formatting options for List Of Measurements With Units
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("list_of_measurements_with_units")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersListOfMeasurementsWithUnitsJsonConverter))]
         public global::G.ConfiguredRulesNumbersListOfMeasurementsWithUnits? ListOfMeasurementsWithUnits { get; set; }
 
         /// <summary>
         /// Formatting options for Mathematical Expression Spacing
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mathematical_expression_spacing")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersMathematicalExpressionSpacingJsonConverter))]
         public global::G.ConfiguredRulesNumbersMathematicalExpressionSpacing? MathematicalExpressionSpacing { get; set; }
 
         /// <summary>
         /// Formatting options for Number Format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("number_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersNumberFormatJsonConverter))]
         public global::G.ConfiguredRulesNumbersNumberFormat? NumberFormat { get; set; }
 
         /// <summary>
         /// Formatting options for Number Separator
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("number_separator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersNumberSeparatorJsonConverter))]
         public global::G.ConfiguredRulesNumbersNumberSeparator? NumberSeparator { get; set; }
 
         /// <summary>
         /// Formatting options for Numbers Of 5 Digits Or More
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("numbers_of_5_digits_or_more")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersNumbersOf5DigitsOrMoreJsonConverter))]
         public global::G.ConfiguredRulesNumbersNumbersOf5DigitsOrMore? NumbersOf5DigitsOrMore { get; set; }
 
         /// <summary>
         /// Formatting options for Numbers Up To 4 Digits
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("numbers_up_to_4_digits")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersNumbersUpTo4DigitsJsonConverter))]
         public global::G.ConfiguredRulesNumbersNumbersUpTo4Digits? NumbersUpTo4Digits { get; set; }
 
         /// <summary>
         /// Formatting options for Percentage Format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("percentage_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersPercentageFormatJsonConverter))]
         public global::G.ConfiguredRulesNumbersPercentageFormat? PercentageFormat { get; set; }
 
         /// <summary>
         /// Formatting options for Reference To Symbol
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_to_symbol")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersReferenceToSymbolJsonConverter))]
         public global::G.ConfiguredRulesNumbersReferenceToSymbol? ReferenceToSymbol { get; set; }
 
         /// <summary>
         /// Formatting options for Spelling Out Units
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("spelling_out_units")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersSpellingOutUnitsJsonConverter))]
         public global::G.ConfiguredRulesNumbersSpellingOutUnits? SpellingOutUnits { get; set; }
 
         /// <summary>
         /// Formatting options for Temperature Format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersTemperatureFormatJsonConverter))]
         public global::G.ConfiguredRulesNumbersTemperatureFormat? TemperatureFormat { get; set; }
 
         /// <summary>
         /// Formatting options for Thousands Separator
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("thousands_separator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersThousandsSeparatorJsonConverter))]
         public global::G.ConfiguredRulesNumbersThousandsSeparator? ThousandsSeparator { get; set; }
 
         /// <summary>
         /// Formatting options for Units Of Measure Spacing
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("units_of_measure_spacing")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersUnitsOfMeasureSpacingJsonConverter))]
         public global::G.ConfiguredRulesNumbersUnitsOfMeasureSpacing? UnitsOfMeasureSpacing { get; set; }
 
         /// <summary>
         /// Formatting options for Use Of Hiragana And Kanji
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_of_hiragana_and_kanji")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersUseOfHiraganaAndKanjiJsonConverter))]
         public global::G.ConfiguredRulesNumbersUseOfHiraganaAndKanji? UseOfHiraganaAndKanji { get; set; }
 
         /// <summary>
         /// Formatting options for Writing Numbers
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("writing_numbers")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersWritingNumbersJsonConverter))]
         public global::G.ConfiguredRulesNumbersWritingNumbers? WritingNumbers { get; set; }
 
         /// <summary>
         /// Formatting options for Zero Format
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("zero_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesNumbersZeroFormatJsonConverter))]
         public global::G.ConfiguredRulesNumbersZeroFormat? ZeroFormat { get; set; }
 
         /// <summary>

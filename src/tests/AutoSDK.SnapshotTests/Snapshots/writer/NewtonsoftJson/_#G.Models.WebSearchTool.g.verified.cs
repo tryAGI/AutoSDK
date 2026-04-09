@@ -13,6 +13,7 @@ namespace G
         /// The type of tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchToolTypeJsonConverter))]
         public global::G.WebSearchToolType Type { get; set; }
 
         /// <summary>

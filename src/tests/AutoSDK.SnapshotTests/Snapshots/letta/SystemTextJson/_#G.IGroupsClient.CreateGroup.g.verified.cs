@@ -15,6 +15,7 @@ namespace G
         /// The project slug to associate with the group (cloud only).
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -22,6 +23,7 @@ namespace G
 
             global::G.GroupCreate request,
             string? xProject = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Group<br/>
@@ -41,6 +43,7 @@ namespace G
         /// <param name="hidden">
         /// If set to True, the group will be hidden.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -51,6 +54,7 @@ namespace G
             global::G.ManagerConfig? managerConfig = default,
             string? projectId = default,
             bool? hidden = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

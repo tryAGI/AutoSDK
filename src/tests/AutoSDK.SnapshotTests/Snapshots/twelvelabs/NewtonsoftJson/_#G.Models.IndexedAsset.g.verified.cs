@@ -37,6 +37,7 @@ namespace G
         /// The status of the indexing task.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IndexedAssetStatusJsonConverter))]
         public global::G.IndexedAssetStatus? Status { get; set; }
 
         /// <summary>

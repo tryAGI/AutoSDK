@@ -10,11 +10,13 @@ namespace G
         /// Generates a Model Control Protocol (MCP) URL for an existing server with custom query parameters. The URL includes user-specific parameters and configuration flags that control the behavior of the MCP connection.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostMcpServersGenerateResponse> PostMcpServersGenerateAsync(
 
             global::G.PostMcpServersGenerateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate MCP URL with custom parameters<br/>
@@ -37,6 +39,7 @@ namespace G
         /// List of connected account identifiers<br/>
         /// Example: [account_1, account_2, account_3]
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostMcpServersGenerateResponse> PostMcpServersGenerateAsync(
@@ -44,6 +47,7 @@ namespace G
             bool? managedAuthByComposio = default,
             global::System.Collections.Generic.IList<string>? userIds = default,
             global::System.Collections.Generic.IList<string>? connectedAccountIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

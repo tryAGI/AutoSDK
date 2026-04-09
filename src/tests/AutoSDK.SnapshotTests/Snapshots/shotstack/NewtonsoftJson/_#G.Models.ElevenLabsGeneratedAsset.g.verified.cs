@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ElevenLabsGeneratedAssetProvider.Elevenlabs</default>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ElevenLabsGeneratedAssetProviderJsonConverter))]
         public global::G.ElevenLabsGeneratedAssetProvider Provider { get; set; } = global::G.ElevenLabsGeneratedAssetProvider.Elevenlabs;
 
         /// <summary>

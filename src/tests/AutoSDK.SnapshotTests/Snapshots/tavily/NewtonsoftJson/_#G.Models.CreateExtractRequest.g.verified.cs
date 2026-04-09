@@ -33,6 +33,7 @@ namespace G
         /// Default Value: basic
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extract_depth")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateExtractRequestExtractDepthJsonConverter))]
         public global::G.CreateExtractRequestExtractDepth? ExtractDepth { get; set; }
 
         /// <summary>
@@ -54,6 +55,7 @@ namespace G
         /// Default Value: markdown
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateExtractRequestFormatJsonConverter))]
         public global::G.CreateExtractRequestFormat? Format { get; set; }
 
         /// <summary>

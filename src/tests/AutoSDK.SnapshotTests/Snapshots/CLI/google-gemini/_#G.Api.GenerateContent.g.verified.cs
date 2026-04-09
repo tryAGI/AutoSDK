@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GenerateContentSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "key",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GenerateContentSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GenerateContentSecurityRequirement0,
+            };
         partial void PrepareGenerateContentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string modelId,
@@ -48,17 +67,23 @@ namespace G
                 modelId: ref modelId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GenerateContentSecurityRequirements,
+                operationName: "GenerateContentAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/models/{modelId}:generateContent",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
                 {
                     __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                 }
-            } 
+            }
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

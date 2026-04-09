@@ -61,6 +61,7 @@ namespace G
         /// The permission level on this resource
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissionOnResource")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ElevenLabsPronunciationDictionaryPermissionOnResourceJsonConverter))]
         public global::G.ElevenLabsPronunciationDictionaryPermissionOnResource? PermissionOnResource { get; set; }
 
         /// <summary>

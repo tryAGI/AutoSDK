@@ -16,12 +16,14 @@ namespace G
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MessageBatch> MessageBatchesPostAsync(
 
             global::G.CreateMessageBatchParams request,
             string? anthropicVersion = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Message Batch<br/>
@@ -36,11 +38,13 @@ namespace G
         /// <param name="requests">
         /// List of requests for prompt completion. Each is an individual request to create a Message.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MessageBatch> MessageBatchesPostAsync(
             global::System.Collections.Generic.IList<global::G.MessageBatchIndividualRequestParams> requests,
             string? anthropicVersion = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

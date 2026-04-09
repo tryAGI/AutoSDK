@@ -13,6 +13,7 @@ namespace G
         /// This is the event that triggers this hook
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("on")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallHookCallEndingOnJsonConverter))]
         public global::G.CallHookCallEndingOn On { get; set; }
 
         /// <summary>

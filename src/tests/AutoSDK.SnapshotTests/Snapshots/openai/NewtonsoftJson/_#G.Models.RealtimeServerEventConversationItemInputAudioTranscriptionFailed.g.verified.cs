@@ -22,6 +22,7 @@ namespace G
         /// `conversation.item.input_audio_transcription.failed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventConversationItemInputAudioTranscriptionFailedTypeJsonConverter))]
         public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailedType Type { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// * UPDATE\_FAILED — The update failed. These are considered transient errors and the request should be retried later.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DropsEntitlementUpdatedStatusJsonConverter))]
         public global::G.DropsEntitlementUpdatedStatus Status { get; set; } = default!;
 
         /// <summary>

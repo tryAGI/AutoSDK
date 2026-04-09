@@ -40,6 +40,10 @@ public static class CSharpAuthorizationFactory
 
         return Create(
             friendlyName: friendlyName,
+            schemeId: scheme.Reference?.Id ??
+                      scheme.Name ??
+                      scheme.Scheme ??
+                      friendlyName,
             type: scheme.Type,
             parameterLocation: (scheme.Type, scheme.Scheme?.ToUpperInvariant()) switch
             {
@@ -67,16 +71,22 @@ public static class CSharpAuthorizationFactory
                     scheme.Flows?.AuthorizationCode != null
                         ? OAuthFlow.FromOpenApiSecurityScheme(nameof(OpenApiOAuthFlows.AuthorizationCode), scheme.Flows.AuthorizationCode!)
                         : null,
+                    scheme.Flows?.DeviceAuthorization != null
+                        ? OAuthFlow.FromOpenApiSecurityScheme(nameof(OpenApiOAuthFlows.DeviceAuthorization), scheme.Flows.DeviceAuthorization!)
+                        : null,
                 }
                 .Where(x => x != null)
                 .Select(x => x!.Value)
                 .ToImmutableArray()
                 .AsEquatableArray(),
-            openIdConnectUrl: scheme.OpenIdConnectUrl?.ToString() ?? string.Empty);
+            openIdConnectUrl: scheme.OpenIdConnectUrl?.ToString() ?? string.Empty,
+            oAuth2MetadataUrl: scheme.OAuth2MetadataUrl?.ToString() ?? string.Empty,
+            isDeprecated: scheme.Deprecated);
     }
 
     public static Authorization Create(
         string friendlyName,
+        string schemeId,
         SecuritySchemeType? type,
         ParameterLocation? parameterLocation,
         EquatableArray<string> parameters,
@@ -85,13 +95,17 @@ public static class CSharpAuthorizationFactory
         CSharpSettings settings,
         CSharpSettings globalSettings,
         EquatableArray<OAuthFlow> flows,
-        string openIdConnectUrl)
+        string openIdConnectUrl,
+        string oAuth2MetadataUrl,
+        bool isDeprecated)
     {
         friendlyName = NormalizeFriendlyName(friendlyName, settings);
+        schemeId = NormalizeFriendlyName(schemeId, settings);
 
         return new Authorization(
             FriendlyName: friendlyName,
             MethodName: $"AuthorizeUsing{friendlyName}",
+            SchemeId: schemeId,
             Type: type,
             In: parameterLocation,
             Parameters: parameters,
@@ -100,10 +114,14 @@ public static class CSharpAuthorizationFactory
             Settings: settings,
             GlobalSettings: globalSettings,
             Flows: flows,
-            OpenIdConnectUrl: openIdConnectUrl);
+            OpenIdConnectUrl: openIdConnectUrl)
+        {
+            OAuth2MetadataUrl = oAuth2MetadataUrl,
+            IsDeprecated = isDeprecated,
+        };
     }
 
-    private static string NormalizeFriendlyName(
+    internal static string NormalizeFriendlyName(
         string friendlyName,
         CSharpSettings settings)
     {

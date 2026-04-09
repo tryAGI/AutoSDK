@@ -27,6 +27,7 @@ namespace G
         /// <default>global::G.LambdaToolVariant2Language.Python</default>
         /// <example>python</example>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LambdaToolVariant2LanguageJsonConverter))]
         public global::G.LambdaToolVariant2Language Language { get; set; } = global::G.LambdaToolVariant2Language.Python;
 
         /// <summary>

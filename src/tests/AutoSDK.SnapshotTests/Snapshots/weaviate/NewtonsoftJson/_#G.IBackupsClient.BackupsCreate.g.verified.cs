@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.BackupCreateResponse> BackupsCreateAsync(
             string backend,
 
             global::G.BackupCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Start a backup process<br/>
@@ -35,6 +37,7 @@ namespace G
         /// <param name="exclude">
         /// List of collections to exclude from the backup creation process. If not set, all collections are included. Cannot be used together with `include`.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.BackupCreateResponse> BackupsCreateAsync(
@@ -43,6 +46,7 @@ namespace G
             global::G.BackupConfig? config = default,
             global::System.Collections.Generic.IList<string>? include = default,
             global::System.Collections.Generic.IList<string>? exclude = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -23,6 +23,7 @@ namespace G
         /// * global
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segment", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SetExtensionConfigurationSegmentBodySegmentJsonConverter))]
         public global::G.SetExtensionConfigurationSegmentBodySegment Segment { get; set; } = default!;
 
         /// <summary>

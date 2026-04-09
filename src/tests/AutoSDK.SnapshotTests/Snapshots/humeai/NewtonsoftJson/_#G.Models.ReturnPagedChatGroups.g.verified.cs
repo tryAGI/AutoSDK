@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pagination_direction")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReturnPagedChatGroupsPaginationDirectionJsonConverter))]
         public global::G.ReturnPagedChatGroupsPaginationDirection? PaginationDirection { get; set; }
 
         /// <summary>

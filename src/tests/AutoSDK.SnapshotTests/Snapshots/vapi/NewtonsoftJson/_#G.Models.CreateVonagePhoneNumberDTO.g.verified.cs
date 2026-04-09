@@ -29,6 +29,7 @@ namespace G
         /// This is to use numbers bought on Vonage.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateVonagePhoneNumberDTOProviderJsonConverter))]
         public global::G.CreateVonagePhoneNumberDTOProvider Provider { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeleteRetellLLMResponseStatusJsonConverter))]
         public global::G.DeleteRetellLLMResponseStatus? Status { get; set; }
 
         /// <summary>

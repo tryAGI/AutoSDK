@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentSwapToolTypeJsonConverter))]
         public global::G.AgentSwapToolType Type { get; set; }
 
         /// <summary>
@@ -55,18 +56,21 @@ namespace G
         /// Type of execution message. "prompt" means the agent will use execution_message_description as a prompt to generate the message. "static_text" means the agent will speak the execution_message_description directly. Defaults to "prompt".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_message_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentSwapToolExecutionMessageTypeJsonConverter))]
         public global::G.AgentSwapToolExecutionMessageType? ExecutionMessageType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("post_call_analysis_setting", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostCallAnalysisSettingJsonConverter))]
         public global::G.PostCallAnalysisSetting PostCallAnalysisSetting { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("webhook_setting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentSwapWebhookSettingJsonConverter))]
         public global::G.AgentSwapWebhookSetting? WebhookSetting { get; set; }
 
         /// <summary>

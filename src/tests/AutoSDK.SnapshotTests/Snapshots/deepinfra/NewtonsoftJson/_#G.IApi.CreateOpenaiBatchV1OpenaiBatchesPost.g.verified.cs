@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="xiApiKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenAIBatch> CreateOpenaiBatchV1OpenaiBatchesPostAsync(
 
             global::G.OpenAIBatchesIn request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Openai Batch
@@ -33,6 +35,7 @@ namespace G
         /// <param name="metadata">
         /// Optional metadata to be stored with the batch.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenAIBatch> CreateOpenaiBatchV1OpenaiBatchesPostAsync(
@@ -41,6 +44,7 @@ namespace G
             string? xiApiKey = default,
             string completionWindow = "24h",
             object? metadata = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

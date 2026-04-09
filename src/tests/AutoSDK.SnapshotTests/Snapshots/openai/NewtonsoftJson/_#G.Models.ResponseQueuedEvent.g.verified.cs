@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always 'response.queued'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseQueuedEventTypeJsonConverter))]
         public global::G.ResponseQueuedEventType Type { get; set; }
 
         /// <summary>

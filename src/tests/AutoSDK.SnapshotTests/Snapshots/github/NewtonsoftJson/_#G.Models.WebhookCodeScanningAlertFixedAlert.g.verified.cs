@@ -31,6 +31,7 @@ namespace G
         /// The reason for dismissing or closing the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertFixedAlertDismissedReasonJsonConverter))]
         public global::G.WebhookCodeScanningAlertFixedAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertFixedAlertStateJsonConverter))]
         public global::G.WebhookCodeScanningAlertFixedAlertState State { get; set; }
 
         /// <summary>

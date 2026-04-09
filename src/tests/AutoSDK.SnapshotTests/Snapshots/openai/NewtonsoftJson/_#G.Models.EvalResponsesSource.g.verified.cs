@@ -13,6 +13,7 @@ namespace G
         /// The type of run data source. Always `responses`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalResponsesSourceTypeJsonConverter))]
         public global::G.EvalResponsesSourceType Type { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace G
         /// Default Value: medium
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningEffortJsonConverter))]
         public global::G.ReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>

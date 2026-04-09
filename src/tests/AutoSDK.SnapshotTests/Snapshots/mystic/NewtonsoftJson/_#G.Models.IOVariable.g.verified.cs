@@ -13,6 +13,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_io_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunIOTypeJsonConverter))]
         public global::G.RunIOType RunIoType { get; set; } = default!;
 
         /// <summary>

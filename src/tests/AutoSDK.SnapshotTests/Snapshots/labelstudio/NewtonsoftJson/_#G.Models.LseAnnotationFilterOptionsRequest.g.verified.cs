@@ -22,6 +22,7 @@ namespace G
         /// * `None` - None
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reviewed")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReviewedEnumJsonConverter))]
         public global::G.ReviewedEnum? Reviewed { get; set; }
 
         /// <summary>

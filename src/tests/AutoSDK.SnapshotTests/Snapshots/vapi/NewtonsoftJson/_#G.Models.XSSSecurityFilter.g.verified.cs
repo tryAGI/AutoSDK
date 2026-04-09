@@ -13,6 +13,7 @@ namespace G
         /// The type of security threat to filter.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.XSSSecurityFilterTypeJsonConverter))]
         public global::G.XSSSecurityFilterType Type { get; set; }
 
         /// <summary>

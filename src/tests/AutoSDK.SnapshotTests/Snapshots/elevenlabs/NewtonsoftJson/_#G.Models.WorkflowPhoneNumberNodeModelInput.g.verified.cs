@@ -43,6 +43,7 @@ namespace G
         /// Default Value: conference
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transfer_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferTypeEnumJsonConverter))]
         public global::G.TransferTypeEnum? TransferType { get; set; }
 
         /// <summary>

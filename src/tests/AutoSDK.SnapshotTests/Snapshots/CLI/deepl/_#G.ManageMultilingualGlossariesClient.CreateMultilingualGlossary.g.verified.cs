@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ManageMultilingualGlossariesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateMultilingualGlossarySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateMultilingualGlossarySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateMultilingualGlossarySecurityRequirement0,
+            };
         partial void PrepareCreateMultilingualGlossaryArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.CreateMultilingualGlossaryParameters request);
@@ -60,9 +79,15 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateMultilingualGlossarySecurityRequirements,
+                operationName: "CreateMultilingualGlossaryAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v3/glossaries",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -72,7 +97,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

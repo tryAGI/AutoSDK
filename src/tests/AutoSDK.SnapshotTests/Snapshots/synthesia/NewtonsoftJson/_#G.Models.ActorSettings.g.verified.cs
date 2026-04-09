@@ -20,6 +20,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("horizontalAlign")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ActorSettingsHorizontalAlignJsonConverter))]
         public global::G.ActorSettingsHorizontalAlign? HorizontalAlign { get; set; }
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace G
         /// `rectangular` style corresponds to the "Full body" avatar style in STUDIO. `circular style corresponds to the "Circle" avatar style in STUDIO. The position of circular avatar is fixed to the center of the video both vertically and horizontally, and can't be changed. With scale 1.0, circular avatar will cover total height of the video. Use circular style, if you need to make a round cutout of the avatar to integrate into e.g. screen recording app
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ActorSettingsStyleJsonConverter))]
         public global::G.ActorSettingsStyle Style { get; set; } = default!;
 
         /// <summary>

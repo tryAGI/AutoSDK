@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.EvalRunObject.EvalRun</default>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalRunObjectJsonConverter))]
         public global::G.EvalRunObject Object { get; set; } = global::G.EvalRunObject.EvalRun;
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// Unix timestamp (in seconds) when the evaluation run was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>

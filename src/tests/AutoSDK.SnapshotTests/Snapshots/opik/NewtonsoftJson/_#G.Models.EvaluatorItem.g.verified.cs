@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvaluatorItemTypeJsonConverter))]
         public global::G.EvaluatorItemType Type { get; set; } = default!;
 
         /// <summary>

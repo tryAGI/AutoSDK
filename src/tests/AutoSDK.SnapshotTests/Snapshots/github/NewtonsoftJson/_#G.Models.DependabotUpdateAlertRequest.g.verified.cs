@@ -14,12 +14,14 @@ namespace G
         /// A `dismissed_reason` must be provided when setting the state to `dismissed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependabotUpdateAlertRequestStateJsonConverter))]
         public global::G.DependabotUpdateAlertRequestState State { get; set; } = default!;
 
         /// <summary>
         /// **Required when `state` is `dismissed`.** A reason for dismissing the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependabotUpdateAlertRequestDismissedReasonJsonConverter))]
         public global::G.DependabotUpdateAlertRequestDismissedReason? DismissedReason { get; set; }
 
         /// <summary>

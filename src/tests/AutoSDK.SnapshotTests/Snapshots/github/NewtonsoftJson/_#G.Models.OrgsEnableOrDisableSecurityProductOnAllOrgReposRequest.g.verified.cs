@@ -14,6 +14,7 @@ namespace G
         /// If you don't specify any `query_suite` in your request, the preferred query suite of the organization will be applied.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query_suite")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuiteJsonConverter))]
         public global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite? QuerySuite { get; set; }
 
         /// <summary>

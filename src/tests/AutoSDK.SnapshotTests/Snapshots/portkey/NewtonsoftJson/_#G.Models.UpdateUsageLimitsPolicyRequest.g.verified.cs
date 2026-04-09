@@ -31,6 +31,7 @@ namespace G
         /// Reset period. Set to null to remove periodic reset.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("periodic_reset")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateUsageLimitsPolicyRequestPeriodicResetJsonConverter))]
         public global::G.UpdateUsageLimitsPolicyRequestPeriodicReset? PeriodicReset { get; set; }
 
         /// <summary>

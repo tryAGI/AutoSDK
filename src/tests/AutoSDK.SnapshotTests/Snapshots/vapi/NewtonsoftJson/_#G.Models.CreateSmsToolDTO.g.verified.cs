@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "sms" for Twilio SMS sending tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSmsToolDTOTypeJsonConverter))]
         public global::G.CreateSmsToolDTOType Type { get; set; }
 
         /// <summary>

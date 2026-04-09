@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.SvgSolidFillType.Solid</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgSolidFillTypeJsonConverter))]
         public global::G.SvgSolidFillType Type { get; set; } = global::G.SvgSolidFillType.Solid;
 
         /// <summary>

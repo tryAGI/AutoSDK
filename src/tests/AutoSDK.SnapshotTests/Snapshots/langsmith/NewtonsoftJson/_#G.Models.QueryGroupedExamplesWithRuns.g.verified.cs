@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("group_by", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GroupExampleRunsByFieldJsonConverter))]
         public global::G.GroupExampleRunsByField GroupBy { get; set; } = default!;
 
         /// <summary>

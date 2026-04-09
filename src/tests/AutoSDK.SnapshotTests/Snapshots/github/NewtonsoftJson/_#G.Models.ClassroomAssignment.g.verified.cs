@@ -39,6 +39,7 @@ namespace G
         /// </summary>
         /// <example>individual</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassroomAssignmentTypeJsonConverter))]
         public global::G.ClassroomAssignmentType Type { get; set; } = default!;
 
         /// <summary>

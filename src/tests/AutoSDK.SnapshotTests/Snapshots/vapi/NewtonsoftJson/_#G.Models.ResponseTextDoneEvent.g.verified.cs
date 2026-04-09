@@ -39,6 +39,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ResponseTextDoneEventType.ResponseOutputTextDone</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseTextDoneEventTypeJsonConverter))]
         public global::G.ResponseTextDoneEventType Type { get; set; } = global::G.ResponseTextDoneEventType.ResponseOutputTextDone;
 
         /// <summary>

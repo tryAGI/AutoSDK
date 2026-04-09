@@ -19,6 +19,7 @@ namespace G
         /// Default Value: model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompletionFTModelOutObjectJsonConverter))]
         public global::G.CompletionFTModelOutObject? Object { get; set; }
 
         /// <summary>
@@ -85,6 +86,7 @@ namespace G
         /// Default Value: completion
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompletionFTModelOutModelTypeJsonConverter))]
         public global::G.CompletionFTModelOutModelType? ModelType { get; set; }
 
         /// <summary>

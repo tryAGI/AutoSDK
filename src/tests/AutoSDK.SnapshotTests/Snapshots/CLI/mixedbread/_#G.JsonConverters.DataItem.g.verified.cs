@@ -13,21 +13,28 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.StoreEventListResponseDataItemDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StoreEventListResponseDataItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StoreEventListResponseDataItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StoreEventListResponseDataItemDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.StoreIngestionEvent? ingestion = default;
             if (discriminator?.Type == global::G.StoreEventListResponseDataItemDiscriminatorType.Ingestion)
             {
-                ingestion = global::System.Text.Json.JsonSerializer.Deserialize<global::G.StoreIngestionEvent>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StoreIngestionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StoreIngestionEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StoreIngestionEvent)}");
+                ingestion = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.StoreSearchEvent? search = default;
             if (discriminator?.Type == global::G.StoreEventListResponseDataItemDiscriminatorType.Search)
             {
-                search = global::System.Text.Json.JsonSerializer.Deserialize<global::G.StoreSearchEvent>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StoreSearchEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StoreSearchEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StoreSearchEvent)}");
+                search = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.DataItem(
@@ -46,15 +53,20 @@ namespace G.JsonConverters
             global::G.DataItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsIngestion)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ingestion, typeof(global::G.StoreIngestionEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StoreIngestionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StoreIngestionEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StoreIngestionEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ingestion!, typeInfo);
             }
             else if (value.IsSearch)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Search, typeof(global::G.StoreSearchEvent), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StoreSearchEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StoreSearchEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StoreSearchEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Search!, typeInfo);
             }
         }
     }

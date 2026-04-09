@@ -14,12 +14,14 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task UpdateChannelGuestStarSettingsAsync(
             string broadcasterId,
 
             global::G.UpdateChannelGuestStarSettingsBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.<br/>
@@ -49,6 +51,7 @@ namespace G
         /// <param name="regenerateBrowserSources">
         /// Flag determining if Guest Star should regenerate the auth token associated with the channel’s browser sources. Providing a true value for this will immediately invalidate all browser sources previously configured in your streaming software.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task UpdateChannelGuestStarSettingsAsync(
@@ -58,6 +61,7 @@ namespace G
             bool? isBrowserSourceAudioEnabled = default,
             global::G.UpdateChannelGuestStarSettingsBodyGroupLayout? groupLayout = default,
             bool? regenerateBrowserSources = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

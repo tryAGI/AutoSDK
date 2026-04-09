@@ -19,6 +19,7 @@ namespace G
         /// Type of scoring used for this report
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("score_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetReportScoreResponseScoreScoreTypeJsonConverter))]
         public global::G.GetReportScoreResponseScoreScoreType ScoreType { get; set; } = default!;
 
         /// <summary>

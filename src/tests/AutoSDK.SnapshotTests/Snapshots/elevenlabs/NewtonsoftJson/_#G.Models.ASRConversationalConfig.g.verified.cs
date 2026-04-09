@@ -14,6 +14,7 @@ namespace G
         /// Default Value: high
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ASRQualityJsonConverter))]
         public global::G.ASRQuality? Quality { get; set; }
 
         /// <summary>
@@ -21,6 +22,7 @@ namespace G
         /// Default Value: elevenlabs
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ASRProviderJsonConverter))]
         public global::G.ASRProvider? Provider { get; set; }
 
         /// <summary>
@@ -28,6 +30,7 @@ namespace G
         /// Default Value: pcm_16000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_input_audio_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ASRInputFormatJsonConverter))]
         public global::G.ASRInputFormat? UserInputAudioFormat { get; set; }
 
         /// <summary>

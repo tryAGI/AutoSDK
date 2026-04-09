@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LastMileConfigFormVariant2Variant1TypeJsonConverter))]
         public global::G.LastMileConfigFormVariant2Variant1Type Type { get; set; } = default!;
 
         /// <summary>

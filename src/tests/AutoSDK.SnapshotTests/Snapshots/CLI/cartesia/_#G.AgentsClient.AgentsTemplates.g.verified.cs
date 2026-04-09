@@ -6,6 +6,40 @@ namespace G
 {
     public partial class AgentsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_AgentsTemplatesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_AgentsTemplatesSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_AgentsTemplatesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_AgentsTemplatesSecurityRequirement0,
+                s_AgentsTemplatesSecurityRequirement1,
+            };
         partial void PrepareAgentsTemplatesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.AgentsTemplatesCartesiaVersion cartesiaVersion);
@@ -41,9 +75,15 @@ namespace G
                 httpClient: HttpClient,
                 cartesiaVersion: ref cartesiaVersion);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_AgentsTemplatesSecurityRequirements,
+                operationName: "AgentsTemplatesAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/agents/templates",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -53,7 +93,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

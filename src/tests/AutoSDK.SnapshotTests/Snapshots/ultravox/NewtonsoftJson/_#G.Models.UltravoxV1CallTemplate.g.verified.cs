@@ -37,6 +37,7 @@ namespace G
         /// The medium initially used for calls by default. Defaults to voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("initialOutputMedium")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1CallTemplateInitialOutputMediumJsonConverter))]
         public global::G.UltravoxV1CallTemplateInitialOutputMedium? InitialOutputMedium { get; set; }
 
         /// <summary>

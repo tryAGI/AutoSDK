@@ -13,6 +13,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="hookId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Hook> ReposUpdateWebhookAsync(
@@ -21,6 +22,7 @@ namespace G
             int hookId,
 
             global::G.ReposUpdateWebhookRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a repository webhook<br/>
@@ -46,6 +48,7 @@ namespace G
         /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Hook> ReposUpdateWebhookAsync(
@@ -57,6 +60,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? addEvents = default,
             global::System.Collections.Generic.IList<string>? removeEvents = default,
             bool? active = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -57,6 +57,7 @@ namespace G
         /// </summary>
         /// <default>global::G.PageTemplate.Contained</default>
         [global::Newtonsoft.Json.JsonProperty("template", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PageTemplateJsonConverter))]
         public global::G.PageTemplate Template { get; set; } = default!;
 
         /// <summary>

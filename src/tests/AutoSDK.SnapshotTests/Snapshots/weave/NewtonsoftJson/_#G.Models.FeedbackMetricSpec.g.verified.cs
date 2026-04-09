@@ -20,6 +20,7 @@ namespace G
         /// Default Value: numeric
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FeedbackMetricSpecValueTypeJsonConverter))]
         public global::G.FeedbackMetricSpecValueType? ValueType { get; set; }
 
         /// <summary>

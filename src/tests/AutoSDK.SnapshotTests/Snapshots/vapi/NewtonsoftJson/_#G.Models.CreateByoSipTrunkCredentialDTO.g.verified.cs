@@ -13,6 +13,7 @@ namespace G
         /// This can be used to bring your own SIP trunks or to connect to a Carrier.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateByoSipTrunkCredentialDTOProviderJsonConverter))]
         public global::G.CreateByoSipTrunkCredentialDTOProvider? Provider { get; set; }
 
         /// <summary>

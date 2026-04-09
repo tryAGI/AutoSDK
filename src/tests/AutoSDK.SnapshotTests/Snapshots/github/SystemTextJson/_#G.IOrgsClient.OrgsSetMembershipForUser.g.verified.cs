@@ -17,6 +17,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="username"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OrgMembership> OrgsSetMembershipForUserAsync(
@@ -24,6 +25,7 @@ namespace G
             string username,
 
             global::G.OrgsSetMembershipForUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set organization membership for a user<br/>
@@ -42,12 +44,14 @@ namespace G
         ///  * `member` - The user will become a non-owner member of the organization.<br/>
         /// Default Value: member
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OrgMembership> OrgsSetMembershipForUserAsync(
             string org,
             string username,
             global::G.OrgsSetMembershipForUserRequestRole? role = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

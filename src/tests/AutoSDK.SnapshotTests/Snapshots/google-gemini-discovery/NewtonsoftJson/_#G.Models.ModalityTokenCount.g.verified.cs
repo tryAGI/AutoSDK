@@ -13,6 +13,7 @@ namespace G
         /// The modality associated with this token count.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModalityTokenCountModalityJsonConverter))]
         public global::G.ModalityTokenCountModality? Modality { get; set; }
 
         /// <summary>

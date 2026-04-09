@@ -68,6 +68,7 @@ namespace G
         ///  - AUTO_PRESERVE_ORDER: Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_truncation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatRequestPromptTruncationJsonConverter))]
         public global::G.ChatRequestPromptTruncation? PromptTruncation { get; set; }
 
         /// <summary>
@@ -111,6 +112,7 @@ namespace G
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("citation_quality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatRequestCitationQualityJsonConverter))]
         public global::G.ChatRequestCitationQuality? CitationQuality { get; set; }
 
         /// <summary>
@@ -254,6 +256,7 @@ namespace G
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("safety_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatRequestSafetyModeJsonConverter))]
         public global::G.ChatRequestSafetyMode? SafetyMode { get; set; }
 
         /// <summary>

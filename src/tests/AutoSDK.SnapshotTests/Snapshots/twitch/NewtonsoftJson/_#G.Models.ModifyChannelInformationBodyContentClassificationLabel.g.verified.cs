@@ -19,6 +19,7 @@ namespace G
         /// * ProfanityVulgarity
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModifyChannelInformationBodyContentClassificationLabelIdJsonConverter))]
         public global::G.ModifyChannelInformationBodyContentClassificationLabelId Id { get; set; } = default!;
 
         /// <summary>

@@ -14,12 +14,14 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CodeSecurityDetachConfigurationAsync(
             string org,
 
             global::G.CodeSecurityDetachConfigurationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Detach configurations from repositories<br/>
@@ -32,11 +34,13 @@ namespace G
         /// <param name="selectedRepositoryIds">
         /// An array of repository IDs to detach from configurations.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CodeSecurityDetachConfigurationAsync(
             string org,
             global::System.Collections.Generic.IList<int>? selectedRepositoryIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

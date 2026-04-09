@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OAuth2AuthenticationPlanTypeJsonConverter))]
         public global::G.OAuth2AuthenticationPlanType Type { get; set; }
 
         /// <summary>

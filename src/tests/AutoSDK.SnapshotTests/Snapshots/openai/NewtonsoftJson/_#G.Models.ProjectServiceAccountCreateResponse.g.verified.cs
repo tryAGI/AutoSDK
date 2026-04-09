@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectServiceAccountCreateResponseObjectJsonConverter))]
         public global::G.ProjectServiceAccountCreateResponseObject Object { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// Service accounts can only have one role of type `member`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectServiceAccountCreateResponseRoleJsonConverter))]
         public global::G.ProjectServiceAccountCreateResponseRole Role { get; set; }
 
         /// <summary>

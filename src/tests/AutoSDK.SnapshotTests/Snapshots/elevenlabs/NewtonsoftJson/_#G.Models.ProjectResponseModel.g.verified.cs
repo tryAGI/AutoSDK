@@ -141,12 +141,14 @@ namespace G
         /// The state of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectResponseModelStateJsonConverter))]
         public global::G.ProjectResponseModelState State { get; set; } = default!;
 
         /// <summary>
         /// The access level of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_level", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectResponseModelAccessLevelJsonConverter))]
         public global::G.ProjectResponseModelAccessLevel AccessLevel { get; set; } = default!;
 
         /// <summary>

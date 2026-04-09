@@ -13,12 +13,14 @@ namespace G
         /// The ID of the tool in the format 'tool-&lt;uuid4&gt;'
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Tool> ModifyToolAsync(
             string toolId,
 
             global::G.ToolUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Modify Tool<br/>
@@ -64,6 +66,7 @@ namespace G
         /// If set to True, then this tool will potentially be executed concurrently with other tools. Default False.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Tool> ModifyToolAsync(
@@ -80,6 +83,7 @@ namespace G
             object? metadata = default,
             bool? defaultRequiresApproval = default,
             bool? enableParallelExecution = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

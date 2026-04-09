@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("alert_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertWriteAlertTypeJsonConverter))]
         public global::G.AlertWriteAlertType? AlertType { get; set; }
 
         /// <summary>

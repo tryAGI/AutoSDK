@@ -32,6 +32,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InviteRole2JsonConverter))]
         public global::G.InviteRole2? Role { get; set; }
 
         /// <summary>
@@ -56,6 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InviteStatusJsonConverter))]
         public global::G.InviteStatus? Status { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding_model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingModelEnumJsonConverter))]
         public global::G.EmbeddingModelEnum EmbeddingModel { get; set; } = default!;
 
         /// <summary>

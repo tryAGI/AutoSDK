@@ -13,31 +13,42 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.UnitTestToolCallParameterEvalDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UnitTestToolCallParameterEvalDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UnitTestToolCallParameterEvalDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UnitTestToolCallParameterEvalDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.LLMParameterEvaluationStrategy? llm = default;
             if (discriminator?.Type == global::G.UnitTestToolCallParameterEvalDiscriminatorType.Llm)
             {
-                llm = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LLMParameterEvaluationStrategy>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMParameterEvaluationStrategy> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LLMParameterEvaluationStrategy)}");
+                llm = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RegexParameterEvaluationStrategy? regex = default;
             if (discriminator?.Type == global::G.UnitTestToolCallParameterEvalDiscriminatorType.Regex)
             {
-                regex = global::System.Text.Json.JsonSerializer.Deserialize<global::G.RegexParameterEvaluationStrategy>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RegexParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RegexParameterEvaluationStrategy> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RegexParameterEvaluationStrategy)}");
+                regex = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ExactParameterEvaluationStrategy? exact = default;
             if (discriminator?.Type == global::G.UnitTestToolCallParameterEvalDiscriminatorType.Exact)
             {
-                exact = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ExactParameterEvaluationStrategy>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExactParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExactParameterEvaluationStrategy> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ExactParameterEvaluationStrategy)}");
+                exact = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MatchAnythingParameterEvaluationStrategy? anything = default;
             if (discriminator?.Type == global::G.UnitTestToolCallParameterEvalDiscriminatorType.Anything)
             {
-                anything = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MatchAnythingParameterEvaluationStrategy>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchAnythingParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchAnythingParameterEvaluationStrategy> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MatchAnythingParameterEvaluationStrategy)}");
+                anything = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.Eval(
@@ -60,23 +71,32 @@ namespace G.JsonConverters
             global::G.Eval value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsLlm)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm, typeof(global::G.LLMParameterEvaluationStrategy), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMParameterEvaluationStrategy?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMParameterEvaluationStrategy).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm!, typeInfo);
             }
             else if (value.IsRegex)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Regex, typeof(global::G.RegexParameterEvaluationStrategy), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RegexParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RegexParameterEvaluationStrategy?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RegexParameterEvaluationStrategy).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Regex!, typeInfo);
             }
             else if (value.IsExact)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Exact, typeof(global::G.ExactParameterEvaluationStrategy), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExactParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExactParameterEvaluationStrategy?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExactParameterEvaluationStrategy).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Exact!, typeInfo);
             }
             else if (value.IsAnything)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anything, typeof(global::G.MatchAnythingParameterEvaluationStrategy), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchAnythingParameterEvaluationStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchAnythingParameterEvaluationStrategy?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchAnythingParameterEvaluationStrategy).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anything!, typeInfo);
             }
         }
     }

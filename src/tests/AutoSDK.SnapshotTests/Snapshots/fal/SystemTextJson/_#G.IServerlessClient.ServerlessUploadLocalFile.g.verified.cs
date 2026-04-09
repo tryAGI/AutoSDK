@@ -19,6 +19,7 @@ namespace G
         /// Example: false
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<bool> ServerlessUploadLocalFileAsync(
@@ -26,6 +27,7 @@ namespace G
 
             global::G.ServerlessUploadLocalFileRequest request,
             bool? unzip = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload local file (multipart/form-data)<br/>
@@ -43,12 +45,14 @@ namespace G
         /// <param name="fileUpload">
         /// Binary file content
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<bool> ServerlessUploadLocalFileAsync(
             string targetPath,
             bool? unzip = default,
             object? fileUpload = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

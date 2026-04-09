@@ -163,6 +163,7 @@ namespace G
         /// <param name="virtualModelSize">
         /// Default Value: PORTRAIT_HD_3_2
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> EditImageGetAsync(
@@ -243,6 +244,7 @@ namespace G
             global::G.EditImageGetVirtualModelQuality? virtualModelQuality = default,
             global::G.AnyOf<global::G.EditImageGetVirtualModelSceneVariant1, global::G.EditImageGetVirtualModelSceneVariant2>? virtualModelScene = default,
             global::G.EditImageGetVirtualModelSize? virtualModelSize = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Image Editing v2 (Plus plan)<br/>
@@ -402,6 +404,7 @@ namespace G
         /// <param name="virtualModelSize">
         /// Default Value: PORTRAIT_HD_3_2
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<byte[]>> EditImageGetAsResponseAsync(
@@ -482,6 +485,7 @@ namespace G
             global::G.EditImageGetVirtualModelQuality? virtualModelQuality = default,
             global::G.AnyOf<global::G.EditImageGetVirtualModelSceneVariant1, global::G.EditImageGetVirtualModelSceneVariant2>? virtualModelScene = default,
             global::G.EditImageGetVirtualModelSize? virtualModelSize = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

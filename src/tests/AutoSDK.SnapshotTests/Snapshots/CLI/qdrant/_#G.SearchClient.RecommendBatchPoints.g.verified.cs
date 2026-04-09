@@ -6,6 +6,49 @@ namespace G
 {
     public partial class SearchClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_RecommendBatchPointsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_RecommendBatchPointsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_RecommendBatchPointsSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_RecommendBatchPointsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_RecommendBatchPointsSecurityRequirement0,
+                s_RecommendBatchPointsSecurityRequirement1,
+                s_RecommendBatchPointsSecurityRequirement2,
+            };
         partial void PrepareRecommendBatchPointsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -66,13 +109,19 @@ namespace G
                 timeout: ref timeout,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RecommendBatchPointsSecurityRequirements,
+                operationName: "RecommendBatchPointsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/collections/{collectionName}/points/recommend/batch",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("consistency", consistency?.ToString())
                 .AddOptionalParameter("timeout", timeout?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -82,7 +131,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

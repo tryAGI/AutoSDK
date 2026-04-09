@@ -85,6 +85,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("apply_text_normalization")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyTextToSpeechFullApplyTextNormalizationJsonConverter))]
         public global::G.BodyTextToSpeechFullApplyTextNormalization? ApplyTextNormalization { get; set; }
 
         /// <summary>

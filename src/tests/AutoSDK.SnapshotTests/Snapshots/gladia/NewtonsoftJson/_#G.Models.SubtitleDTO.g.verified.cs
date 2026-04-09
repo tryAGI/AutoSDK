@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>srt</example>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SubtitlesFormatEnumJsonConverter))]
         public global::G.SubtitlesFormatEnum Format { get; set; } = default!;
 
         /// <summary>

@@ -354,12 +354,14 @@ namespace G
         /// The default value for a merge commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_message")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitMessageJsonConverter))]
         public global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
         /// The default value for a merge commit message title.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_title")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitTitleJsonConverter))]
         public global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
@@ -477,6 +479,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_message")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitMessageJsonConverter))]
         public global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
@@ -485,6 +488,7 @@ namespace G
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_title")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitTitleJsonConverter))]
         public global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
@@ -582,6 +586,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestUnlabeledPullRequestHeadRepoVisibilityJsonConverter))]
         public global::G.WebhookPullRequestUnlabeledPullRequestHeadRepoVisibility Visibility { get; set; } = default!;
 
         /// <summary>

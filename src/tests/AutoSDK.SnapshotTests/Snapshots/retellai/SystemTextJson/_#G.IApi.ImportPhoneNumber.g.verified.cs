@@ -11,11 +11,13 @@ namespace G
         /// Import a phone number from custom telephony &amp; Bind agents
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PhoneNumberResponse> ImportPhoneNumberAsync(
 
             global::G.ImportPhoneNumberRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Import a phone number from custom telephony &amp; Bind agents
@@ -66,6 +68,7 @@ namespace G
         /// Outbound transport protocol to update for the phone number. Valid values are "TLS", "TCP" and "UDP". Default is "TCP".<br/>
         /// Example: TCP
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PhoneNumberResponse> ImportPhoneNumberAsync(
@@ -81,6 +84,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? allowedInboundCountryList = default,
             global::System.Collections.Generic.IList<string>? allowedOutboundCountryList = default,
             string? transport = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

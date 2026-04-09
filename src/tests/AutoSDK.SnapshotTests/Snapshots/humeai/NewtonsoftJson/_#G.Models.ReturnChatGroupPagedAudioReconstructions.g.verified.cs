@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pagination_direction")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReturnChatGroupPagedAudioReconstructionsPaginationDirectionJsonConverter))]
         public global::G.ReturnChatGroupPagedAudioReconstructionsPaginationDirection? PaginationDirection { get; set; }
 
         /// <summary>

@@ -152,16 +152,16 @@ public static class CorePipeline
                             {
                                 Name = tag.Name,
                                 Description = tag.Description,
+                                Summary = tag.Summary,
+                                Parent = tag.Parent,
+                                Kind = tag.Kind,
                             });
                         }
                     }
                 }
 
                 if (settings.UseExtensionNaming &&
-                    OpenApiExtensions.TryGetExtensionStringValue(
-                        operation.Extensions,
-                        "x-fern-sdk-group-name",
-                        out var groupName) &&
+                    OpenApiExtensions.TryGetOperationGroupNameOverride(operation.Extensions, out var groupName) &&
                     !string.IsNullOrWhiteSpace(groupName) &&
                     knownTagNames.Add(groupName))
                 {

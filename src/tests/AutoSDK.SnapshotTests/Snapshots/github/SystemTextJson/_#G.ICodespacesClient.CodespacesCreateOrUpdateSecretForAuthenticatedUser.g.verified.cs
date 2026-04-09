@@ -14,12 +14,14 @@ namespace G
         /// </summary>
         /// <param name="secretName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmptyObject> CodespacesCreateOrUpdateSecretForAuthenticatedUserAsync(
             string secretName,
 
             global::G.CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create or update a secret for the authenticated user<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="selectedRepositoryIds">
         /// An array of repository ids that can access the user secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret), [Set selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#set-selected-repositories-for-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-repository-from-a-user-secret) endpoints.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmptyObject> CodespacesCreateOrUpdateSecretForAuthenticatedUserAsync(
@@ -45,6 +48,7 @@ namespace G
             string keyId,
             string? encryptedValue = default,
             global::System.Collections.Generic.IList<global::G.AnyOf<int?, string>>? selectedRepositoryIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

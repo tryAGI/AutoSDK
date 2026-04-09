@@ -19,6 +19,7 @@ namespace G
         /// The role of the messages author, in this case `assistant`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuneChatCompletionRequestAssistantMessageRoleJsonConverter))]
         public global::G.FineTuneChatCompletionRequestAssistantMessageRole Role { get; set; }
 
         /// <summary>

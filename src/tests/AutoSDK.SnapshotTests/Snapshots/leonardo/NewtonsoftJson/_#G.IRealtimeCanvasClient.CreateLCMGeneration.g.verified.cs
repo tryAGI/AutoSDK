@@ -10,11 +10,13 @@ namespace G
         /// This endpoint will generate a LCM image generation.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateLCMGenerationResponse> CreateLCMGenerationAsync(
 
             global::G.CreateLCMGenerationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create LCM Generation<br/>
@@ -48,6 +50,7 @@ namespace G
         /// Default Value: 512
         /// </param>
         /// <param name="seed"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateLCMGenerationResponse> CreateLCMGenerationAsync(
@@ -61,6 +64,7 @@ namespace G
             int? width = default,
             int? height = default,
             int? seed = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

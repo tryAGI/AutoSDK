@@ -14,6 +14,7 @@ namespace G
         /// </param>
         /// <param name="tenant"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.BatchDeleteResponse> BatchObjectsDeleteAsync(
@@ -21,6 +22,7 @@ namespace G
             global::G.BatchDelete request,
             global::G.BatchObjectsDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Batch delete objects.<br/>
@@ -41,6 +43,7 @@ namespace G
         /// If true, the call will show which objects would be matched using the specified filter without deleting any objects. &lt;br/&gt;&lt;br/&gt;Depending on the configured verbosity, you will either receive a count of affected objects, or a list of IDs.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.BatchDeleteResponse> BatchObjectsDeleteAsync(
@@ -49,6 +52,7 @@ namespace G
             global::G.BatchDeleteMatch? match = default,
             global::G.BatchDeleteOutput? output = default,
             bool? dryRun = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -31,6 +31,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetExportJobPublicStatusJsonConverter))]
         public global::G.DatasetExportJobPublicStatus? Status { get; set; }
 
         /// <summary>

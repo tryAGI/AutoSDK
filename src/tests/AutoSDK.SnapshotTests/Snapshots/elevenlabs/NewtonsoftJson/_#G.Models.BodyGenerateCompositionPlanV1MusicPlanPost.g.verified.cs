@@ -32,6 +32,7 @@ namespace G
         /// Default Value: music_v1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyGenerateCompositionPlanV1MusicPlanPostModelIdJsonConverter))]
         public global::G.BodyGenerateCompositionPlanV1MusicPlanPostModelId? ModelId { get; set; }
 
         /// <summary>

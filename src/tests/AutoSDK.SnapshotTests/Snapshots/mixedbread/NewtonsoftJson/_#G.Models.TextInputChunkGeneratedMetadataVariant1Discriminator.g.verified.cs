@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextInputChunkGeneratedMetadataVariant1DiscriminatorTypeJsonConverter))]
         public global::G.TextInputChunkGeneratedMetadataVariant1DiscriminatorType? Type { get; set; }
 
         /// <summary>

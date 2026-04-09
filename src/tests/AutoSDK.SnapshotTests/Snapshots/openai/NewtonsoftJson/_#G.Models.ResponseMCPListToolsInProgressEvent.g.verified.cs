@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always 'response.mcp_list_tools.in_progress'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseMCPListToolsInProgressEventTypeJsonConverter))]
         public global::G.ResponseMCPListToolsInProgressEventType Type { get; set; }
 
         /// <summary>

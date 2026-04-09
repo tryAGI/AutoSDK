@@ -25,6 +25,7 @@ namespace G
         /// Voice provider to use for cloning.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice_provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CloneVoiceRequestVoiceProviderJsonConverter))]
         public global::G.CloneVoiceRequestVoiceProvider VoiceProvider { get; set; } = default!;
 
         /// <summary>

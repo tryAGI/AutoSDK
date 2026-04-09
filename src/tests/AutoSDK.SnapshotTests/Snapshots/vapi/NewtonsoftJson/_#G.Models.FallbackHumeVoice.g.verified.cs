@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackHumeVoiceProviderJsonConverter))]
         public global::G.FallbackHumeVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -30,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>octave2</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackHumeVoiceModelJsonConverter))]
         public global::G.FallbackHumeVoiceModel? Model { get; set; }
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaContentBlockDeltaEventType.ContentBlockDelta</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaContentBlockDeltaEventTypeJsonConverter))]
         public global::G.BetaContentBlockDeltaEventType Type { get; set; } = global::G.BetaContentBlockDeltaEventType.ContentBlockDelta;
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.GenerationReferenceType.Generation</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerationReferenceTypeJsonConverter))]
         public global::G.GenerationReferenceType Type { get; set; } = global::G.GenerationReferenceType.Generation;
 
         /// <summary>

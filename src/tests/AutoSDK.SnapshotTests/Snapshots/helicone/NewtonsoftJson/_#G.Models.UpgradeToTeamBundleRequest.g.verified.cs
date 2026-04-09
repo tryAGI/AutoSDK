@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ui_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpgradeToTeamBundleRequestUiModeJsonConverter))]
         public global::G.UpgradeToTeamBundleRequestUiMode? UiMode { get; set; }
 
         /// <summary>

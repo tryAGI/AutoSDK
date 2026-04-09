@@ -50,6 +50,7 @@ namespace G
         /// </summary>
         /// <example>underline</example>
         [global::Newtonsoft.Json.JsonProperty("textDecoration")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichCaptionActiveFontTextDecorationJsonConverter))]
         public global::G.RichCaptionActiveFontTextDecoration? TextDecoration { get; set; }
 
         /// <summary>

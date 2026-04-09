@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "transfer-destination-request" is sent when the model is requesting transfer but destination is unknown.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageTransferDestinationRequestTypeJsonConverter))]
         public global::G.ServerMessageTransferDestinationRequestType Type { get; set; }
 
         /// <summary>

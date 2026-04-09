@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ArtifactClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetObjectUploadURLSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetObjectUploadURLSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetObjectUploadURLSecurityRequirement0,
+            };
         partial void PrepareGetObjectUploadURLArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string namespaceId,
@@ -59,6 +78,12 @@ namespace G
                 lastModifiedTime: ref lastModifiedTime,
                 objectExpireDays: ref objectExpireDays);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetObjectUploadURLSecurityRequirements,
+                operationName: "GetObjectUploadURLAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1alpha/namespaces/{namespaceId}/object-upload-url",
                 baseUri: HttpClient.BaseAddress); 
@@ -67,7 +92,7 @@ namespace G
                 .AddOptionalParameter("urlExpireDays", urlExpireDays?.ToString())
                 .AddOptionalParameter("lastModifiedTime", lastModifiedTime?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 .AddOptionalParameter("objectExpireDays", objectExpireDays?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -77,7 +102,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

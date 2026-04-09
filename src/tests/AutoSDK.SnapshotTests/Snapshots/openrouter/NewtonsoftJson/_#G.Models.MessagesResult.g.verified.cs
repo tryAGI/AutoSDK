@@ -19,12 +19,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BaseMessagesResultTypeJsonConverter))]
         public global::G.BaseMessagesResultType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BaseMessagesResultRoleJsonConverter))]
         public global::G.BaseMessagesResultRole Role { get; set; }
 
         /// <summary>
@@ -67,6 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessagesResultProviderJsonConverter))]
         public global::G.MessagesResultProvider? Provider { get; set; }
 
         /// <summary>

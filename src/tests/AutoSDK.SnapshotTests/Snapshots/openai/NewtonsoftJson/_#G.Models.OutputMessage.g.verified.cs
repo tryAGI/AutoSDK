@@ -19,12 +19,14 @@ namespace G
         /// The type of the output message. Always `message`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputMessageTypeJsonConverter))]
         public global::G.OutputMessageType Type { get; set; }
 
         /// <summary>
         /// The role of the output message. Always `assistant`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputMessageRoleJsonConverter))]
         public global::G.OutputMessageRole Role { get; set; }
 
         /// <summary>
@@ -38,6 +40,7 @@ namespace G
         /// `incomplete`. Populated when input items are returned via API.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputMessageStatusJsonConverter))]
         public global::G.OutputMessageStatus Status { get; set; } = default!;
 
         /// <summary>

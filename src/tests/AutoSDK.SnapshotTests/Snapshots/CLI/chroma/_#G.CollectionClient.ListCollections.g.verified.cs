@@ -6,6 +6,25 @@ namespace G
 {
     public partial class CollectionClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListCollectionsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-chroma-token",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListCollectionsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListCollectionsSecurityRequirement0,
+            };
         partial void PrepareListCollectionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string tenant,
@@ -57,13 +76,19 @@ namespace G
                 limit: ref limit,
                 offset: ref offset);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListCollectionsSecurityRequirements,
+                operationName: "ListCollectionsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v2/tenants/{tenant}/databases/{database}/collections",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -73,7 +98,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

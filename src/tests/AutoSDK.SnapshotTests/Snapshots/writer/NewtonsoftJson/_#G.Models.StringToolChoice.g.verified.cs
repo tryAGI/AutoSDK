@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StringToolChoiceOptionsJsonConverter))]
         public global::G.StringToolChoiceOptions Value { get; set; } = default!;
 
         /// <summary>

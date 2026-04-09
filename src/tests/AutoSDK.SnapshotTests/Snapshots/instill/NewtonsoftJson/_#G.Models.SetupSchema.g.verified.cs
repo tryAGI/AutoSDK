@@ -15,6 +15,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MethodJsonConverter))]
         public global::G.Method? Method { get; set; }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fileType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileTypeJsonConverter))]
         public global::G.FileType? FileType { get; set; }
 
         /// <summary>
@@ -43,6 +44,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fileProcessStatus")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileProcessStatusJsonConverter))]
         public global::G.FileProcessStatus? FileProcessStatus { get; set; }
 
         /// <summary>

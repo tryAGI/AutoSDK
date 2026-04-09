@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "metadata" is sent to forward metadata to the client.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageMetadataTypeJsonConverter))]
         public global::G.ClientMessageMetadataType Type { get; set; }
 
         /// <summary>

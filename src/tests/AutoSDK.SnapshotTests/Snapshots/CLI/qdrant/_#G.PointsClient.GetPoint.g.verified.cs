@@ -6,6 +6,49 @@ namespace G
 {
     public partial class PointsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetPointSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetPointSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetPointSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetPointSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetPointSecurityRequirement0,
+                s_GetPointSecurityRequirement1,
+                s_GetPointSecurityRequirement2,
+            };
         partial void PrepareGetPointArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -59,12 +102,18 @@ namespace G
                 id: ref id,
                 consistency: ref consistency);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetPointSecurityRequirements,
+                operationName: "GetPointAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/collections/{collectionName}/points/{id}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("consistency", consistency?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -74,7 +123,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

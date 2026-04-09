@@ -33,6 +33,7 @@ namespace G
         /// Comparison operators for pricing tier conditions
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PricingTierOperatorJsonConverter))]
         public global::G.PricingTierOperator Operator { get; set; } = default!;
 
         /// <summary>

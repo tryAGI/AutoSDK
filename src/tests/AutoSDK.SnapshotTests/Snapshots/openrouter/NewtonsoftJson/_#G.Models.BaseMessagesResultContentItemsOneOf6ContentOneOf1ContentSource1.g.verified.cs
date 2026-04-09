@@ -19,12 +19,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSourceOneOf1MediaTypeJsonConverter))]
         public global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSourceOneOf1MediaType MediaType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSourceOneOf1TypeJsonConverter))]
         public global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSourceOneOf1Type Type { get; set; }
 
         /// <summary>

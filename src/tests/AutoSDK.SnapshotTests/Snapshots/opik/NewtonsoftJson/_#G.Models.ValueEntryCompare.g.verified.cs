@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ValueEntryCompareSourceJsonConverter))]
         public global::G.ValueEntryCompareSource? Source { get; set; }
 
         /// <summary>

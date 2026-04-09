@@ -10,11 +10,13 @@ namespace G
         /// UnlinkObject
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UnlinkObjectAsync(
 
             global::G.UnlinkObjectRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// UnlinkObject<br/>
@@ -26,6 +28,7 @@ namespace G
         /// <param name="excerptId"></param>
         /// <param name="descriptorId"></param>
         /// <param name="tagId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> UnlinkObjectAsync(
@@ -35,6 +38,7 @@ namespace G
             global::System.Guid excerptId,
             global::System.Guid descriptorId,
             global::System.Guid tagId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

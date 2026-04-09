@@ -17,6 +17,7 @@ namespace G
         /// <param name="securityProduct"></param>
         /// <param name="enablement"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -26,6 +27,7 @@ namespace G
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement enablement,
 
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Enable or disable a security feature for an organization<br/>
@@ -42,6 +44,7 @@ namespace G
         /// CodeQL query suite to be used. If you specify the `query_suite` parameter, the default setup will be configured with this query suite only on all repositories that didn't have default setup already configured. It will not change the query suite on repositories that already have default setup configured.<br/>
         /// If you don't specify any `query_suite` in your request, the preferred query suite of the organization will be applied.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -50,6 +53,7 @@ namespace G
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct securityProduct,
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement enablement,
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite? querySuite = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

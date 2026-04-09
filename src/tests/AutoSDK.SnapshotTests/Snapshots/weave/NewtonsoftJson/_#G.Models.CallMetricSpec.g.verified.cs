@@ -13,6 +13,7 @@ namespace G
         /// Metric to aggregate.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metric", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallMetricSpecMetricJsonConverter))]
         public global::G.CallMetricSpecMetric Metric { get; set; } = default!;
 
         /// <summary>

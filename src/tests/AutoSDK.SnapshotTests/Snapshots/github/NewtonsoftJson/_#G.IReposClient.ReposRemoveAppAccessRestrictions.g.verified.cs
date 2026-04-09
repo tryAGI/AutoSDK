@@ -14,6 +14,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="branch"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Integration>> ReposRemoveAppAccessRestrictionsAsync(
@@ -22,6 +23,7 @@ namespace G
             string branch,
 
             global::G.ReposRemoveAppAccessRestrictionsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Remove app access restrictions<br/>
@@ -34,6 +36,7 @@ namespace G
         /// <param name="apps">
         /// The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Integration>> ReposRemoveAppAccessRestrictionsAsync(
@@ -41,6 +44,7 @@ namespace G
             string repo,
             string branch,
             global::System.Collections.Generic.IList<string> apps,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

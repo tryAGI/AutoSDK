@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnnotationQueueWriteScopeJsonConverter))]
         public global::G.AnnotationQueueWriteScope Scope { get; set; } = default!;
 
         /// <summary>

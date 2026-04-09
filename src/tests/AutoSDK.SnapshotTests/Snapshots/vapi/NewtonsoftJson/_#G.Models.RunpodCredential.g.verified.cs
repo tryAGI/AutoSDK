@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunpodCredentialProviderJsonConverter))]
         public global::G.RunpodCredentialProvider Provider { get; set; }
 
         /// <summary>

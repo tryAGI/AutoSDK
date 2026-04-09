@@ -14,6 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.QaViewFilterScoreRangeTypeJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.QaViewFilterScoreRangeType? Type { get; set; }
 
@@ -28,6 +29,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("op", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.QaViewFilterScoreRangeOpJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.QaViewFilterScoreRangeOp Op { get; set; } = default!;
 

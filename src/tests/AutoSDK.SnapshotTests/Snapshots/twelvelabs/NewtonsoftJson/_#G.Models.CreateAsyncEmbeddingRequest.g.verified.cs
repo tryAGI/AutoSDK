@@ -16,6 +16,7 @@ namespace G
         /// - `video`: Video content
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAsyncEmbeddingRequestInputTypeJsonConverter))]
         public global::G.CreateAsyncEmbeddingRequestInputType InputType { get; set; } = default!;
 
         /// <summary>
@@ -24,6 +25,7 @@ namespace G
         /// </summary>
         /// <default>global::G.CreateAsyncEmbeddingRequestModelName.Marengo30</default>
         [global::Newtonsoft.Json.JsonProperty("model_name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAsyncEmbeddingRequestModelNameJsonConverter))]
         public global::G.CreateAsyncEmbeddingRequestModelName ModelName { get; set; } = global::G.CreateAsyncEmbeddingRequestModelName.Marengo30;
 
         /// <summary>

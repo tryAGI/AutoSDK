@@ -56,19 +56,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByArabicNumerals,
+        Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumerals,
         /// <summary>
         /// 
         /// </summary>
-        Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByArabicNumeralsWithChineseWord_ForHours,
+        Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumeralsWithChineseWord点ForHours,
         /// <summary>
         /// 
         /// </summary>
-        Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByArabicNumeralsWithChineseWords_And_ForHoursAndMinutes,
+        Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumeralsWithChineseWords时And分ForHoursAndMinutes,
         /// <summary>
         /// 
         /// </summary>
-        Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByChineseNumbersWithChineseWords_And_ForHoursAndMinutes,
+        Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByChineseNumbersWithChineseWords时And分ForHoursAndMinutes,
         /// <summary>
         /// 
         /// </summary>
@@ -76,7 +76,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Use12HourClockWithKoreanWords_And_,
+        Use12HourClockWithKoreanWords시And분,
         /// <summary>
         /// 
         /// </summary>
@@ -104,7 +104,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Use24HourClockWithKoreanWords_And_,
+        Use24HourClockWithKoreanWords시And분,
         /// <summary>
         /// 
         /// </summary>
@@ -154,19 +154,19 @@ namespace G
                 ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndUppercaseAmOrPmWithPeriodsExceptUseNoonAndMidnightInsteadOf12AmAnd12Pm => "use_12_hour_clock_and_uppercase_am_or_pm_with_periods_except_use_noon_and_midnight_instead_of_12_am_and_12_pm",
                 ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndUppercaseAmOrPmWithoutPeriods => "use_12_hour_clock_and_uppercase_am_or_pm_without_periods",
                 ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndUppercaseAmOrPmWithoutPeriodsExceptUseNoonAndMidnightInsteadOf12AmAnd12Pm => "use_12_hour_clock_and_uppercase_am_or_pm_without_periods_except_use_noon_and_midnight_instead_of_12_am_and_12_pm",
-                ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByArabicNumerals => "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals",
-                ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByArabicNumeralsWithChineseWord_ForHours => "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals_with_chinese_word_点_for_hours",
-                ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByArabicNumeralsWithChineseWords_And_ForHoursAndMinutes => "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals_with_chinese_words_时_and_分_for_hours_and_minutes",
-                ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByChineseNumbersWithChineseWords_And_ForHoursAndMinutes => "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_chinese_numbers_with_chinese_words_时_and_分_for_hours_and_minutes",
+                ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumerals => "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals",
+                ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumeralsWithChineseWord点ForHours => "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals_with_chinese_word_点_for_hours",
+                ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumeralsWithChineseWords时And分ForHoursAndMinutes => "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals_with_chinese_words_时_and_分_for_hours_and_minutes",
+                ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByChineseNumbersWithChineseWords时And分ForHoursAndMinutes => "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_chinese_numbers_with_chinese_words_时_and_分_for_hours_and_minutes",
                 ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithArabicNumeralsAndColon => "use_12_hour_clock_with_arabic_numerals_and_colon",
-                ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithKoreanWords_And_ => "use_12_hour_clock_with_korean_words_시_and_분",
+                ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithKoreanWords시And분 => "use_12_hour_clock_with_korean_words_시_and_분",
                 ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithoutLeadingZeroOrMinutesForFullHoursUseColonAsSeparatorAndLowercaseAmOrPmWithoutPeriods => "use_12_hour_clock_without_leading_zero_or_minutes_for_full_hours_use_colon_as_separator_and_lowercase_am_or_pm_without_periods",
                 ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithoutLeadingZeroOrMinutesForFullHoursUseColonAsSeparatorAndUppercaseAmOrPmWithoutPeriods => "use_12_hour_clock_without_leading_zero_or_minutes_for_full_hours_use_colon_as_separator_and_uppercase_am_or_pm_without_periods",
                 ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithoutLeadingZeroUsePeriodAsSeparatorAndLowercaseAmOrPmWithPeriodsAndSpaces => "use_12_hour_clock_without_leading_zero_use_period_as_separator_and_lowercase_am_or_pm_with_periods_and_spaces",
                 ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClock => "use_24_hour_clock",
                 ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClockWithArabicNumeralsAndColon => "use_24_hour_clock_with_arabic_numerals_and_colon",
                 ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClockWithColonAsSeparator => "use_24_hour_clock_with_colon_as_separator",
-                ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClockWithKoreanWords_And_ => "use_24_hour_clock_with_korean_words_시_and_분",
+                ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClockWithKoreanWords시And분 => "use_24_hour_clock_with_korean_words_시_and_분",
                 ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClockWithPeriodAsSeparator => "use_24_hour_clock_with_period_as_separator",
                 ConfiguredRulesDatesAndTimesTimeFormat.UseHhColonMmGermanWordUhrWithLeadingZerosForSingleDigitHours => "use_hh_colon_mm_german_word_uhr_with_leading_zeros_for_single_digit_hours",
                 ConfiguredRulesDatesAndTimesTimeFormat.UseHhColonMmGermanWordUhrWithoutLeadingZerosForSingleDigitHours => "use_hh_colon_mm_german_word_uhr_without_leading_zeros_for_single_digit_hours",
@@ -194,19 +194,19 @@ namespace G
                 "use_12_hour_clock_and_uppercase_am_or_pm_with_periods_except_use_noon_and_midnight_instead_of_12_am_and_12_pm" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndUppercaseAmOrPmWithPeriodsExceptUseNoonAndMidnightInsteadOf12AmAnd12Pm,
                 "use_12_hour_clock_and_uppercase_am_or_pm_without_periods" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndUppercaseAmOrPmWithoutPeriods,
                 "use_12_hour_clock_and_uppercase_am_or_pm_without_periods_except_use_noon_and_midnight_instead_of_12_am_and_12_pm" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndUppercaseAmOrPmWithoutPeriodsExceptUseNoonAndMidnightInsteadOf12AmAnd12Pm,
-                "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByArabicNumerals,
-                "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals_with_chinese_word_点_for_hours" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByArabicNumeralsWithChineseWord_ForHours,
-                "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals_with_chinese_words_时_and_分_for_hours_and_minutes" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByArabicNumeralsWithChineseWords_And_ForHoursAndMinutes,
-                "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_chinese_numbers_with_chinese_words_时_and_分_for_hours_and_minutes" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord__Or__OrChineseWord__Or__FollowedByChineseNumbersWithChineseWords_And_ForHoursAndMinutes,
+                "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumerals,
+                "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals_with_chinese_word_点_for_hours" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumeralsWithChineseWord点ForHours,
+                "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_arabic_numerals_with_chinese_words_时_and_分_for_hours_and_minutes" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByArabicNumeralsWithChineseWords时And分ForHoursAndMinutes,
+                "use_12_hour_clock_and_write_chinese_word_上午_or_下午_or_chinese_word_早上_or_晚上_followed_by_chinese_numbers_with_chinese_words_时_and_分_for_hours_and_minutes" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockAndWriteChineseWord上午Or下午OrChineseWord早上Or晚上FollowedByChineseNumbersWithChineseWords时And分ForHoursAndMinutes,
                 "use_12_hour_clock_with_arabic_numerals_and_colon" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithArabicNumeralsAndColon,
-                "use_12_hour_clock_with_korean_words_시_and_분" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithKoreanWords_And_,
+                "use_12_hour_clock_with_korean_words_시_and_분" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithKoreanWords시And분,
                 "use_12_hour_clock_without_leading_zero_or_minutes_for_full_hours_use_colon_as_separator_and_lowercase_am_or_pm_without_periods" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithoutLeadingZeroOrMinutesForFullHoursUseColonAsSeparatorAndLowercaseAmOrPmWithoutPeriods,
                 "use_12_hour_clock_without_leading_zero_or_minutes_for_full_hours_use_colon_as_separator_and_uppercase_am_or_pm_without_periods" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithoutLeadingZeroOrMinutesForFullHoursUseColonAsSeparatorAndUppercaseAmOrPmWithoutPeriods,
                 "use_12_hour_clock_without_leading_zero_use_period_as_separator_and_lowercase_am_or_pm_with_periods_and_spaces" => ConfiguredRulesDatesAndTimesTimeFormat.Use12HourClockWithoutLeadingZeroUsePeriodAsSeparatorAndLowercaseAmOrPmWithPeriodsAndSpaces,
                 "use_24_hour_clock" => ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClock,
                 "use_24_hour_clock_with_arabic_numerals_and_colon" => ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClockWithArabicNumeralsAndColon,
                 "use_24_hour_clock_with_colon_as_separator" => ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClockWithColonAsSeparator,
-                "use_24_hour_clock_with_korean_words_시_and_분" => ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClockWithKoreanWords_And_,
+                "use_24_hour_clock_with_korean_words_시_and_분" => ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClockWithKoreanWords시And분,
                 "use_24_hour_clock_with_period_as_separator" => ConfiguredRulesDatesAndTimesTimeFormat.Use24HourClockWithPeriodAsSeparator,
                 "use_hh_colon_mm_german_word_uhr_with_leading_zeros_for_single_digit_hours" => ConfiguredRulesDatesAndTimesTimeFormat.UseHhColonMmGermanWordUhrWithLeadingZerosForSingleDigitHours,
                 "use_hh_colon_mm_german_word_uhr_without_leading_zeros_for_single_digit_hours" => ConfiguredRulesDatesAndTimesTimeFormat.UseHhColonMmGermanWordUhrWithoutLeadingZerosForSingleDigitHours,

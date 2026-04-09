@@ -36,6 +36,11 @@ namespace G
         public bool ReadResponseAsString { get; set; }
 
         /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::G.AutoSDKClientOptions Options { get; }
+
+        /// <summary>
         /// 
         /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }
@@ -92,13 +97,13 @@ namespace G
         public ManageMultilingualGlossariesClient ManageMultilingualGlossaries { get; }
 
         /// <summary>
-        /// Information about API usage and value ranges
+        /// Information about API usage and value ranges.
         /// </summary>
         public MetaInformationClient MetaInformation { get; }
 
         /// <summary>
         /// The `rephrase` endpoint  is used to make corrections and adjustments to texts based on style or tone.<br/>
-        /// For more details, visit [this documentation page](https://developers.deepl.com/docs/api-reference/improve-text)
+        /// For more details, visit [this documentation page](https://developers.deepl.com/docs/api-reference/improve-text).
         /// </summary>
         public RephraseTextClient RephraseText { get; }
 

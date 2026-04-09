@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("adapter", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LlmAdapterJsonConverter))]
         public global::G.LlmAdapter Adapter { get; set; } = default!;
 
         /// <summary>

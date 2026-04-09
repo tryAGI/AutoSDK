@@ -19,6 +19,7 @@ namespace G
         /// Type of internal tags, build from payload Distance function types used to compare vectors
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("distance", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DistanceJsonConverter))]
         public global::G.Distance Distance { get; set; } = default!;
 
         /// <summary>

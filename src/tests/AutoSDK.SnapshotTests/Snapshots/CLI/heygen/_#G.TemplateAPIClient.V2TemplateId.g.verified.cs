@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TemplateApiClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_V2TemplateIdSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Api-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_V2TemplateIdSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_V2TemplateIdSecurityRequirement0,
+            };
         partial void PrepareV2TemplateIdArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareV2TemplateIdRequest(
@@ -29,9 +48,15 @@ namespace G
             PrepareV2TemplateIdArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_V2TemplateIdSecurityRequirements,
+                operationName: "V2TemplateIdAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/template/<id>",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -41,7 +66,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

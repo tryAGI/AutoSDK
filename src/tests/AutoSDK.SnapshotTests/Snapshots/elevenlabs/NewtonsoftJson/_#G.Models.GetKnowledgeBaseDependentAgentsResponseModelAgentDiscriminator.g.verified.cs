@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetKnowledgeBaseDependentAgentsResponseModelAgentDiscriminatorTypeJsonConverter))]
         public global::G.GetKnowledgeBaseDependentAgentsResponseModelAgentDiscriminatorType? Type { get; set; }
 
         /// <summary>

@@ -14,12 +14,14 @@ namespace G
         /// Default Value: speech
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateAzureCredentialDTOServiceJsonConverter))]
         public global::G.UpdateAzureCredentialDTOService? Service { get; set; }
 
         /// <summary>
         /// This is the region of the Azure resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateAzureCredentialDTORegionJsonConverter))]
         public global::G.UpdateAzureCredentialDTORegion? Region { get; set; }
 
         /// <summary>

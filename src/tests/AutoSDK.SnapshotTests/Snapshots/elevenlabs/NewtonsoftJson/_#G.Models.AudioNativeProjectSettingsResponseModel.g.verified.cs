@@ -68,6 +68,7 @@ namespace G
         /// Default Value: ready
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioNativeProjectSettingsResponseModelStatusJsonConverter))]
         public global::G.AudioNativeProjectSettingsResponseModelStatus? Status { get; set; }
 
         /// <summary>

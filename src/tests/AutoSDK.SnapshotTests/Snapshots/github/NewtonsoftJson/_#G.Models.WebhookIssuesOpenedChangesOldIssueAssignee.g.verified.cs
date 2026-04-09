@@ -127,6 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesOpenedChangesOldIssueAssigneeTypeJsonConverter))]
         public global::G.WebhookIssuesOpenedChangesOldIssueAssigneeType? Type { get; set; }
 
         /// <summary>

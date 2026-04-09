@@ -49,6 +49,7 @@ namespace G
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_selection")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthenticationTokenRepositorySelectionJsonConverter))]
         public global::G.AuthenticationTokenRepositorySelection? RepositorySelection { get; set; }
 
         /// <summary>

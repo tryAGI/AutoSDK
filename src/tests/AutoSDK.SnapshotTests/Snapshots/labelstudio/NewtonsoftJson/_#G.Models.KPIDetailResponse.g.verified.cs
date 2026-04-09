@@ -56,6 +56,7 @@ namespace G
         /// * `project_matrix` - project_matrix
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segmentation", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SegmentationEnumJsonConverter))]
         public global::G.SegmentationEnum Segmentation { get; set; } = default!;
 
         /// <summary>

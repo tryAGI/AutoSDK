@@ -16,7 +16,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AnyOf<string, global::System.Guid?>> storeIdentifiers,
             int? topK,
             global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>? filters,
-            global::G.AnyOf<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>? fileIds,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>? fileIds,
             global::G.StoreChunkSearchOptions? searchOptions,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
@@ -49,7 +49,7 @@ namespace G
             Description = @"Optional filter conditions",
         };
 
-        private global::System.CommandLine.Option<global::G.AnyOf<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>?> FileIds { get; } = new(
+        private global::System.CommandLine.Option<global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>?> FileIds { get; } = new(
             name: "fileIds")
         {
             Description = @"Optional list of file IDs to filter chunks by (inclusion filter)",

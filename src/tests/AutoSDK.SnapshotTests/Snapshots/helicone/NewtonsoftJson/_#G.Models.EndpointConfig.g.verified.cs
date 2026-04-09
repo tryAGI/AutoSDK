@@ -61,6 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gatewayMapping")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyMappingTypeJsonConverter))]
         public global::G.BodyMappingType? GatewayMapping { get; set; }
 
         /// <summary>

@@ -128,6 +128,7 @@ public partial class Tests
         generatedSources.Should().Contain("G.Polyfills.g.cs");
         generatedSources.Should().Contain("G.Exceptions.g.cs");
         generatedSources.Should().Contain("G.PathBuilder.g.cs");
+        generatedSources.Should().Contain("G.OptionsSupport.g.cs");
         generatedSources.Should().Contain("G.JsonConverters.UnixTimestamp.g.cs");
     }
 }

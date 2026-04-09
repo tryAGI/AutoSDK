@@ -81,7 +81,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        L_a,
+        Léa,
         /// <summary>
         /// 
         /// </summary>
@@ -137,7 +137,7 @@ namespace G
                 ScriptVariant1ProviderAmazonVoiceId.Kimberly => "Kimberly",
                 ScriptVariant1ProviderAmazonVoiceId.Lucia => "Lucia",
                 ScriptVariant1ProviderAmazonVoiceId.Lupe => "Lupe",
-                ScriptVariant1ProviderAmazonVoiceId.L_a => "Léa",
+                ScriptVariant1ProviderAmazonVoiceId.Léa => "Léa",
                 ScriptVariant1ProviderAmazonVoiceId.Matthew => "Matthew",
                 ScriptVariant1ProviderAmazonVoiceId.Olivia => "Olivia",
                 ScriptVariant1ProviderAmazonVoiceId.Salli => "Salli",
@@ -171,7 +171,7 @@ namespace G
                 "Kimberly" => ScriptVariant1ProviderAmazonVoiceId.Kimberly,
                 "Lucia" => ScriptVariant1ProviderAmazonVoiceId.Lucia,
                 "Lupe" => ScriptVariant1ProviderAmazonVoiceId.Lupe,
-                "Léa" => ScriptVariant1ProviderAmazonVoiceId.L_a,
+                "Léa" => ScriptVariant1ProviderAmazonVoiceId.Léa,
                 "Matthew" => ScriptVariant1ProviderAmazonVoiceId.Matthew,
                 "Olivia" => ScriptVariant1ProviderAmazonVoiceId.Olivia,
                 "Salli" => ScriptVariant1ProviderAmazonVoiceId.Salli,

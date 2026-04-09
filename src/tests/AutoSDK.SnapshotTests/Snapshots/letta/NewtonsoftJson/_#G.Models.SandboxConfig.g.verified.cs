@@ -43,6 +43,7 @@ namespace G
         /// The type of sandbox.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SandboxTypeJsonConverter))]
         public global::G.SandboxType? Type { get; set; }
 
         /// <summary>

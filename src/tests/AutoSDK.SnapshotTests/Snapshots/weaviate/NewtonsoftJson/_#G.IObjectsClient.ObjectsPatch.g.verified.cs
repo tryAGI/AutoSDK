@@ -14,6 +14,7 @@ namespace G
         /// Default Value: QUORUM
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -22,6 +23,7 @@ namespace G
 
             global::G.Object request,
             global::G.ObjectsPatchConsistencyLevel? consistencyLevel = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an object using patch semantics.<br/>
@@ -61,6 +63,7 @@ namespace G
         /// <param name="additional">
         /// (Response only) Additional meta information about a single object.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -77,6 +80,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<float>>? vectors = default,
             string? tenant = default,
             global::System.Collections.Generic.Dictionary<string, object>? additional = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

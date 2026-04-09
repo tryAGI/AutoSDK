@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScheduledMessagesScheduleAgentMessageRequestScheduleVariant1TypeJsonConverter))]
         public global::G.ScheduledMessagesScheduleAgentMessageRequestScheduleVariant1Type? Type { get; set; }
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestMergeResult> PullsMergeAsync(
@@ -22,6 +23,7 @@ namespace G
             int pullNumber,
 
             global::G.PullsMergeRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Merge a pull request<br/>
@@ -43,6 +45,7 @@ namespace G
         /// <param name="mergeMethod">
         /// The merge method to use.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestMergeResult> PullsMergeAsync(
@@ -53,6 +56,7 @@ namespace G
             string? commitMessage = default,
             string? sha = default,
             global::G.PullsMergeRequestMergeMethod? mergeMethod = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

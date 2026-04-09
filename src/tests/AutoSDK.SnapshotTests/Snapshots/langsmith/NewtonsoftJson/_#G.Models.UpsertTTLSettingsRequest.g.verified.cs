@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_trace_tier", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TraceTierJsonConverter))]
         public global::G.TraceTier DefaultTraceTier { get; set; } = default!;
 
         /// <summary>

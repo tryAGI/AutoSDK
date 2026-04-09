@@ -36,23 +36,28 @@ namespace G
         public bool ReadResponseAsString { get; set; }
 
         /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::G.AutoSDKClientOptions Options { get; }
+
+        /// <summary>
         /// 
         /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }
 
 
         /// <summary>
-        /// Chat completion operations
+        /// Chat completion operations.
         /// </summary>
         public ChatClient Chat { get; }
 
         /// <summary>
-        /// Model management operations
+        /// Model management operations.
         /// </summary>
         public ModelsClient Models { get; }
 
         /// <summary>
-        /// Speech transcription and translation operations
+        /// Speech transcription and translation operations.
         /// </summary>
         public SpeechClient Speech { get; }
 

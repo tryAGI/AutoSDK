@@ -38,6 +38,7 @@ namespace G
         /// Default Value: std
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAvatarRequestModeJsonConverter))]
         public global::G.CreateAvatarRequestMode? Mode { get; set; }
 
         /// <summary>

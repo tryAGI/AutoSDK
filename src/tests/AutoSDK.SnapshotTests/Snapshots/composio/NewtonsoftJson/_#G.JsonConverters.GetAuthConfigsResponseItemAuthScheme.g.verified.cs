@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.GetAuthConfigsResponseItemAuthScheme.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class GetAuthConfigsResponseItemAuthSchemeJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.GetAuthConfigsResponseItemAuthScheme>
+    {
+        /// <inheritdoc />
+        public override global::G.GetAuthConfigsResponseItemAuthScheme ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.GetAuthConfigsResponseItemAuthScheme existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.GetAuthConfigsResponseItemAuthSchemeExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.GetAuthConfigsResponseItemAuthScheme)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.GetAuthConfigsResponseItemAuthScheme);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.GetAuthConfigsResponseItemAuthScheme value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.GetAuthConfigsResponseItemAuthSchemeExtensions.ToValueString(value));
+        }
+    }
+}

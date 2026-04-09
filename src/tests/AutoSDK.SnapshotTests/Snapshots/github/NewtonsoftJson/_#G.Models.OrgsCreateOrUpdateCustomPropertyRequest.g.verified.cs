@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>single_select</example>
         [global::Newtonsoft.Json.JsonProperty("value_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrgsCreateOrUpdateCustomPropertyRequestValueTypeJsonConverter))]
         public global::G.OrgsCreateOrUpdateCustomPropertyRequestValueType ValueType { get; set; } = default!;
 
         /// <summary>

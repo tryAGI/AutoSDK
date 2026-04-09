@@ -15,6 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PatchAuthConfigsByNanoidRequestVariant1TypeJsonConverter))]
         public global::G.PatchAuthConfigsByNanoidRequestVariant1Type Type { get; set; }
 
         /// <summary>

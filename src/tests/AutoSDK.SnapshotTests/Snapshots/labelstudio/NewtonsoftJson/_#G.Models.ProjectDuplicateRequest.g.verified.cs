@@ -21,6 +21,7 @@ namespace G
         /// * `settings,data` - Settings and tasks
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModeEnumJsonConverter))]
         public global::G.ModeEnum Mode { get; set; } = default!;
 
         /// <summary>

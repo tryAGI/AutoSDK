@@ -17,6 +17,7 @@ namespace G
         /// * `markdown` - Formatted as `[text_pattern](url_pattern)`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CitationParametersStyleJsonConverter))]
         public global::G.CitationParametersStyle? Style { get; set; }
 
         /// <summary>

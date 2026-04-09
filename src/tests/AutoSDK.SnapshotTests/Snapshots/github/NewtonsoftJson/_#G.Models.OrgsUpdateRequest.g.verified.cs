@@ -70,6 +70,7 @@ namespace G
         /// Default Value: read
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_repository_permission")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrgsUpdateRequestDefaultRepositoryPermissionJsonConverter))]
         public global::G.OrgsUpdateRequestDefaultRepositoryPermission? DefaultRepositoryPermission { get; set; }
 
         /// <summary>
@@ -102,6 +103,7 @@ namespace G
         /// **Note:** This parameter is deprecated and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("members_allowed_repository_creation_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrgsUpdateRequestMembersAllowedRepositoryCreationTypeJsonConverter))]
         public global::G.OrgsUpdateRequestMembersAllowedRepositoryCreationType? MembersAllowedRepositoryCreationType { get; set; }
 
         /// <summary>

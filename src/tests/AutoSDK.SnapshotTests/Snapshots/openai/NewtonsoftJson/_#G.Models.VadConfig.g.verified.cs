@@ -13,6 +13,7 @@ namespace G
         /// Must be set to `server_vad` to enable manual chunking using server side VAD.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VadConfigTypeJsonConverter))]
         public global::G.VadConfigType Type { get; set; }
 
         /// <summary>

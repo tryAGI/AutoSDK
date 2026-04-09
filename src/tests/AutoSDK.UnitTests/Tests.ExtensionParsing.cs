@@ -204,6 +204,108 @@ public class ExtensionParsingTests
     }
 
     [TestMethod]
+    public void XSpeakeasyUnknownValues_Allow_MarksEnumAsOpen()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                Status:
+                                  type: string
+                                  x-speakeasy-unknown-values: allow
+                                  enum:
+                                    - active
+                                    - inactive
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        var enumType = data.Enums.FirstOrDefault(e => e.ClassName == "Status");
+        enumType.Should().NotBe(default);
+        enumType.IsOpenEnum.Should().BeTrue();
+    }
+
+    [TestMethod]
+    public void XSpeakeasyUnknownValues_Disallow_LeavesEnumClosed()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                Status:
+                                  type: string
+                                  x-speakeasy-unknown-values: disallow
+                                  enum:
+                                    - active
+                                    - inactive
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        var enumType = data.Enums.FirstOrDefault(e => e.ClassName == "Status");
+        enumType.Should().NotBe(default);
+        enumType.IsOpenEnum.Should().BeFalse();
+    }
+
+    [TestMethod]
+    public void XFernEnum_ForwardCompatible_MarksEnumAsOpen()
+    {
+        const string json = """
+                            {
+                              "openapi": "3.0.1",
+                              "info": { "title": "Test", "version": "1.0.0" },
+                              "paths": {},
+                              "components": {
+                                "schemas": {
+                                  "Status": {
+                                    "type": "string",
+                                    "enum": ["active", "inactive"],
+                                    "x-fern-enum": {
+                                      "forwardCompatible": true,
+                                      "active": {
+                                        "description": "Currently active",
+                                        "casing": {
+                                          "pascal": "Active"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((json, settings), GlobalSettings: settings));
+
+        var enumType = data.Enums.FirstOrDefault(e => e.ClassName == "Status");
+        enumType.Should().NotBe(default);
+        enumType.IsOpenEnum.Should().BeTrue();
+    }
+
+    [TestMethod]
     public void SymbolicEnumValues_UseReadableEnumMemberNames()
     {
         const string yaml = """
@@ -660,6 +762,84 @@ public class ExtensionParsingTests
     }
 
     [TestMethod]
+    public void OpenApi32TagMetadata_IsPreservedAndUsedInDocumentationSummary()
+    {
+        const string yaml = """
+                            openapi: 3.2.0
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            tags:
+                              - name: admin
+                                summary: Administrative endpoints
+                              - name: users
+                                x-displayName: User Management
+                                summary: Administrative user operations
+                                kind: nav
+                                parent: admin
+                            paths:
+                              /users:
+                                get:
+                                  operationId: listUsers
+                                  tags:
+                                    - users
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GroupByTags = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        var usersTag = data.Tags.FirstOrDefault(t => t.SafeName == "Users");
+        usersTag.DisplayName.Should().Be("User Management");
+        usersTag.Summary.Should().Be("Administrative user operations");
+        usersTag.ParentName.Should().Be("admin");
+        usersTag.Kind.Should().Be("nav");
+        usersTag.DocumentationSummary.Should().Contain("User Management");
+        usersTag.DocumentationSummary.Should().Contain("Administrative user operations");
+        usersTag.DocumentationSummary.Should().Contain("Parent tag: admin");
+        usersTag.DocumentationSummary.Should().Contain("Kind: nav");
+    }
+
+    [TestMethod]
+    public void OpenApi32ServerName_IsUsedForBaseUrlSummary()
+    {
+        const string yaml = """
+                            openapi: 3.2.0
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            servers:
+                              - name: Primary API
+                                url: https://api.example.com/v1
+                                description: Production environment
+                            paths:
+                              /users:
+                                get:
+                                  operationId: listUsers
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Clients.Should().ContainSingle();
+        data.Clients[0].BaseUrlSummary.Should().Be("Primary API. Production environment");
+    }
+
+    [TestMethod]
     public void XCodeSamples_ExtractedAsRemarks()
     {
         const string json = """
@@ -1098,5 +1278,314 @@ public class ExtensionParsingTests
         // Second "create" method gets a "2" suffix from collision resolution,
         // then tag prefix makes it unique across groups.
         cliNames.Should().Contain("ConnectorsCreate2Command");
+    }
+
+    [TestMethod]
+    public void XSpeakeasyIgnore_SkipsOperations_WhenUseExtensionNamingEnabled()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths:
+                              /hidden:
+                                get:
+                                  operationId: getHidden
+                                  x-speakeasy-ignore: true
+                                  responses:
+                                    '200':
+                                      description: OK
+                              /visible:
+                                get:
+                                  operationId: getVisible
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            UseExtensionNaming = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Methods.Should().HaveCount(1);
+        data.Methods[0].Id.Should().Be("GetVisible");
+    }
+
+    [TestMethod]
+    public void XSpeakeasyNameOverride_UsedForMethodNames_WhenExtensionNamingEnabled()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths:
+                              /messages:
+                                post:
+                                  operationId: createMessage
+                                  x-speakeasy-name-override: send_message
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            UseExtensionNaming = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Methods.Should().HaveCount(1);
+        data.Methods[0].Id.Should().Be("SendMessage");
+    }
+
+    [TestMethod]
+    public void XSpeakeasyGroup_OverridesTag_WhenExtensionNamingEnabled()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths:
+                              /messages:
+                                post:
+                                  operationId: createMessage
+                                  tags:
+                                    - DefaultTag
+                                  x-speakeasy-group: messages
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            GroupByTags = true,
+            UseExtensionNaming = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Methods.Should().HaveCount(1);
+        data.Methods[0].ClassName.Should().Contain("Messages");
+        data.Tags.Select(x => x.SafeName).Should().Contain("Messages");
+    }
+
+    [TestMethod]
+    public void XSpeakeasyNameOverride_UsedForPropertyAndInlineTypeNames_WhenExtensionNamingEnabled()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                JsonSchema:
+                                  type: object
+                                  properties:
+                                    schema:
+                                      type: object
+                                      x-speakeasy-name-override: schema_definition
+                                      properties:
+                                        type:
+                                          type: string
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+            UseExtensionNaming = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        var jsonSchema = data.Classes.First(x => x.ClassName == "JsonSchema");
+        jsonSchema.Properties.First(x => x.Id == "schema").Name.Should().Be("SchemaDefinition");
+        data.Classes.Select(x => x.ClassName).Should().Contain("SchemaDefinition");
+    }
+
+    [TestMethod]
+    public void XSpeakeasyEnumsAndDescriptions_OverrideEnumMetadata_MapFormat()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                Status:
+                                  type: string
+                                  enum:
+                                    - active
+                                    - inactive
+                                  x-speakeasy-enums:
+                                    active: Enabled
+                                    inactive: Disabled
+                                  x-speakeasy-enum-descriptions:
+                                    active: Currently enabled
+                                    inactive: Currently disabled
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        var enumType = data.Enums.First(x => x.ClassName == "Status");
+        enumType.EnumValues.First(x => x.Id == "active").Name.Should().Be("Enabled");
+        enumType.EnumValues.First(x => x.Id == "active").Summary.Should().Contain("Currently enabled");
+        enumType.EnumValues.First(x => x.Id == "inactive").Name.Should().Be("Disabled");
+        enumType.EnumValues.First(x => x.Id == "inactive").Summary.Should().Contain("Currently disabled");
+    }
+
+    [TestMethod]
+    public void XSpeakeasyDeprecationMessage_UsedForSchemas()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                OldModel:
+                                  type: object
+                                  deprecated: true
+                                  x-speakeasy-deprecation-message: Use NewModel instead.
+                                  properties:
+                                    value:
+                                      type: string
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Classes.Should().ContainSingle(x => x.ClassName == "OldModel");
+        data.Classes[0].DeprecationMessage.Should().Be("Use NewModel instead.");
+    }
+
+    [TestMethod]
+    public void XStainlessNaming_CSharpPropertyName_OverridesPropertyName_WhenExtensionNamingEnabled()
+    {
+        const string yaml = """
+                            openapi: 3.1.0
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                FineTune:
+                                  type: object
+                                  properties:
+                                    model_id:
+                                      type: string
+                                      x-stainless-naming:
+                                        csharp:
+                                          property_name: llm_model_id
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+            UseExtensionNaming = true,
+            TargetFramework = "net8.0",
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        var fineTune = data.Classes.First(x => x.ClassName == "FineTune");
+        fineTune.Properties.First(x => x.Id == "model_id").Name.Should().Be("LlmModelId");
+    }
+
+    [TestMethod]
+    public void XStainlessNaming_DotNetTypeName_OverridesModelName_WhenExtensionNamingEnabled()
+    {
+        const string yaml = """
+                            openapi: 3.1.0
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                LegacyPayload:
+                                  type: object
+                                  x-stainless-naming:
+                                    dotnet:
+                                      model_name: response_payload
+                                  properties:
+                                    value:
+                                      type: string
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+            UseExtensionNaming = true,
+            TargetFramework = "net8.0",
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Classes.Select(x => x.ClassName).Should().Contain("ResponsePayload");
+    }
+
+    [TestMethod]
+    public void XStainlessSkip_SkipsOperations_WhenLanguageIncludesDotNet()
+    {
+        const string yaml = """
+                            openapi: 3.1.0
+                            info:
+                              title: Test
+                              version: 1.0.0
+                            paths:
+                              /hidden:
+                                get:
+                                  operationId: getHidden
+                                  x-stainless-skip:
+                                    - dotnet
+                                  responses:
+                                    '200':
+                                      description: OK
+                              /visible:
+                                get:
+                                  operationId: getVisible
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            UseExtensionNaming = true,
+            TargetFramework = "net8.0",
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        data.Methods.Should().HaveCount(1);
+        data.Methods[0].Id.Should().Be("GetVisible");
     }
 }

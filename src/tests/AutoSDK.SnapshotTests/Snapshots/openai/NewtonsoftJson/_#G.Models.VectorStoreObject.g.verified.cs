@@ -19,12 +19,14 @@ namespace G
         /// The object type, which is always `vector_store`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreObjectObjectJsonConverter))]
         public global::G.VectorStoreObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -49,6 +51,7 @@ namespace G
         /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreObjectStatusJsonConverter))]
         public global::G.VectorStoreObjectStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -61,12 +64,14 @@ namespace G
         /// The Unix timestamp (in seconds) for when the vector store will expire.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store was last active.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_active_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? LastActiveAt { get; set; }
 
         /// <summary>

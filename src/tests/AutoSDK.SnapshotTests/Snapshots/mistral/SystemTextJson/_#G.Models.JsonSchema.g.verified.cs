@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Schema { get; set; }
+        public required object SchemaDefinition { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -45,7 +45,7 @@ namespace G
         /// Initializes a new instance of the <see cref="JsonSchema" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="schema"></param>
+        /// <param name="schemaDefinition"></param>
         /// <param name="description"></param>
         /// <param name="strict">
         /// Default Value: false
@@ -55,13 +55,13 @@ namespace G
 #endif
         public JsonSchema(
             string name,
-            object schema,
+            object schemaDefinition,
             string? description,
             bool? strict)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
-            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
+            this.SchemaDefinition = schemaDefinition ?? throw new global::System.ArgumentNullException(nameof(schemaDefinition));
             this.Strict = strict;
         }
 

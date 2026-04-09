@@ -25,12 +25,14 @@ namespace G
         /// Default Value: f-string
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompletionPromptTemplateFormatJsonConverter))]
         public global::G.CompletionPromptTemplateFormat? TemplateFormat { get; set; }
 
         /// <summary>
         /// Default Value: completion
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompletionPromptTypeJsonConverter))]
         public global::G.CompletionPromptType? Type { get; set; }
 
         /// <summary>

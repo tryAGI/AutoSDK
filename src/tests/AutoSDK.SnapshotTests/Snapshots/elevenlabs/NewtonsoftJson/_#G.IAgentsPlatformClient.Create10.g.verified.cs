@@ -16,6 +16,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MCPServerResponseModel> Create10Async(
@@ -23,6 +24,7 @@ namespace G
 
             global::G.MCPToolAddApprovalRequestModel request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Mcp Server Tool Approval<br/>
@@ -47,6 +49,7 @@ namespace G
         /// The tool-level approval policy<br/>
         /// Default Value: requires_approval
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MCPServerResponseModel> Create10Async(
@@ -56,6 +59,7 @@ namespace G
             string? xiApiKey = default,
             object? inputSchema = default,
             global::G.MCPToolApprovalPolicy? approvalPolicy = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionUpdatedEventTypeJsonConverter))]
         public global::G.SessionUpdatedEventType? Type { get; set; }
 
         /// <summary>

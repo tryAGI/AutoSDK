@@ -50,6 +50,7 @@ namespace G
         /// Default Value: contained
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreatePagesRequestTemplateJsonConverter))]
         public global::G.CreatePagesRequestTemplate? Template { get; set; }
 
         /// <summary>

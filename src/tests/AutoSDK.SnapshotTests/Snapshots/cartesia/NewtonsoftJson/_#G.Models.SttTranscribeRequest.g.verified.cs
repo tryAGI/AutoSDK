@@ -31,6 +31,7 @@ namespace G
         /// The language of the input audio in ISO-639-1 format. Defaults to `en`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SttTranscribeRequestLanguageJsonConverter))]
         public global::G.SttTranscribeRequestLanguage? Language { get; set; }
 
         /// <summary>

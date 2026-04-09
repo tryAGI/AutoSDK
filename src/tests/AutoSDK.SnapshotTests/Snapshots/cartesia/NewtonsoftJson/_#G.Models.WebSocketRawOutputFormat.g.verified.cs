@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("container")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSocketRawOutputFormatContainerJsonConverter))]
         public global::G.WebSocketRawOutputFormatContainer Container { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoding", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RawEncodingJsonConverter))]
         public global::G.RawEncoding Encoding { get; set; } = default!;
 
         /// <summary>

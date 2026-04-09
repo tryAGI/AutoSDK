@@ -13,6 +13,7 @@ namespace G
         /// This is to create a new dataset on Trieve.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TrieveKnowledgeBaseCreateTypeJsonConverter))]
         public global::G.TrieveKnowledgeBaseCreateType Type { get; set; }
 
         /// <summary>

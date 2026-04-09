@@ -22,6 +22,7 @@ namespace G
         /// </summary>
         /// <example>gpt-4o</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelIdsResponsesEnumJsonConverter))]
         public global::G.ModelIdsResponsesEnum? Model { get; set; }
 
         /// <summary>
@@ -90,6 +91,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponsePropertiesTruncationJsonConverter))]
         public global::G.ResponsePropertiesTruncation? Truncation { get; set; }
 
         /// <summary>

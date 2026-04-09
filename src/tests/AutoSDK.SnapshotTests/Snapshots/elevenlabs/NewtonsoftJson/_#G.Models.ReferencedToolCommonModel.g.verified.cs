@@ -19,6 +19,7 @@ namespace G
         /// The type of the tool
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReferencedToolCommonModelTypeJsonConverter))]
         public global::G.ReferencedToolCommonModelType Type { get; set; } = default!;
 
         /// <summary>

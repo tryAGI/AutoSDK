@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaAuthenticationErrorType.AuthenticationError</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaAuthenticationErrorTypeJsonConverter))]
         public global::G.BetaAuthenticationErrorType Type { get; set; } = global::G.BetaAuthenticationErrorType.AuthenticationError;
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// The type of the resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resource_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkspaceResourceTypeJsonConverter))]
         public global::G.WorkspaceResourceType ResourceType { get; set; } = default!;
 
         /// <summary>

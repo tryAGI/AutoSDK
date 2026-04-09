@@ -32,6 +32,7 @@ namespace G
         /// <default>global::G.EndRecordingMessageType.EndRecording</default>
         /// <example>end_recording</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EndRecordingMessageTypeJsonConverter))]
         public global::G.EndRecordingMessageType Type { get; set; } = global::G.EndRecordingMessageType.EndRecording;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Type of search to perform.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchRequestVariant2TypeJsonConverter))]
         public global::G.SearchRequestVariant2Type? Type { get; set; }
 
         /// <summary>

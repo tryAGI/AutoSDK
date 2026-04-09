@@ -9,11 +9,13 @@ namespace G
         /// Chunk Sources With Hybridchunker As Async Task
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TaskStatusResponse> ChunkSourcesWithHybridChunkerAsAsyncTaskV1ChunkHybridSourceAsyncPostAsync(
 
             global::G.HybridChunkerOptionsDocumentsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Chunk Sources With Hybridchunker As Async Task
@@ -36,6 +38,7 @@ namespace G
         /// <param name="chunkingOptions">
         /// Options specific to the chunker.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TaskStatusResponse> ChunkSourcesWithHybridChunkerAsAsyncTaskV1ChunkHybridSourceAsyncPostAsync(
@@ -44,6 +47,7 @@ namespace G
             bool? includeConvertedDoc = default,
             global::G.Target3? target = default,
             global::G.HybridChunkerOptions? chunkingOptions = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

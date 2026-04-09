@@ -9,11 +9,13 @@ namespace G
         /// Search and retrieve action execution logs
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostInternalActionExecutionLogsResponse> PostInternalActionExecutionLogsAsync(
 
             global::G.PostInternalActionExecutionLogsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search and retrieve action execution logs
@@ -34,6 +36,7 @@ namespace G
         /// end_time_of_the_logs_in_epoch_time
         /// </param>
         /// <param name="searchParams"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostInternalActionExecutionLogsResponse> PostInternalActionExecutionLogsAsync(
@@ -43,6 +46,7 @@ namespace G
             double? from = default,
             double? to = default,
             global::System.Collections.Generic.IList<global::G.PostInternalActionExecutionLogsRequestSearchParam>? searchParams = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

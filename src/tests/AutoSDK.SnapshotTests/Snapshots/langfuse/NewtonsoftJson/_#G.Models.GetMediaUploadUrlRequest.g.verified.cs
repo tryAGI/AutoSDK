@@ -25,6 +25,7 @@ namespace G
         /// The MIME type of the media record
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contentType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MediaContentTypeJsonConverter))]
         public global::G.MediaContentType ContentType { get; set; } = default!;
 
         /// <summary>

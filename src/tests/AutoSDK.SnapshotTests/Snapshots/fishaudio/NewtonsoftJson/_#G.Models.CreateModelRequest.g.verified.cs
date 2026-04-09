@@ -14,12 +14,14 @@ namespace G
         /// Default Value: public
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateModelRequestVisibilityJsonConverter))]
         public global::G.CreateModelRequestVisibility? Visibility { get; set; }
 
         /// <summary>
         /// Model type, tts is for text to speech
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateModelRequestTypeJsonConverter))]
         public global::G.CreateModelRequestType Type { get; set; }
 
         /// <summary>
@@ -53,6 +55,7 @@ namespace G
         /// Model train mode, for TTS model, fast means model instantly available after creation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("train_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateModelRequestTrainModeJsonConverter))]
         public global::G.CreateModelRequestTrainMode TrainMode { get; set; }
 
         /// <summary>

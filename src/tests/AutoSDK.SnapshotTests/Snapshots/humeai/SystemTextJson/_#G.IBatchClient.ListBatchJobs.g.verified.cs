@@ -15,6 +15,7 @@ namespace G
         /// <param name="timestampMs"></param>
         /// <param name="sortBy"></param>
         /// <param name="direction"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.InferenceJob>> ListBatchJobsAsync(
@@ -24,6 +25,7 @@ namespace G
             long? timestampMs = default,
             global::G.ListBatchJobsSortBy? sortBy = default,
             global::G.ListBatchJobsDirection? direction = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

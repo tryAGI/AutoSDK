@@ -10,11 +10,13 @@ namespace G
         /// Purchase a new phone number for inbound calls ($15/mo subscription).
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.StatusResponse> PurchaseNumberAsync(
 
             global::G.PurchaseNumberRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Purchase Phone Number<br/>
@@ -31,12 +33,14 @@ namespace G
         /// <param name="phoneNumber">
         /// Exact number in E.164 format (overrides area_code if provided)
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.StatusResponse> PurchaseNumberAsync(
             string? areaCode = default,
             global::G.PurchaseNumberRequestCountryCode? countryCode = default,
             string? phoneNumber = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

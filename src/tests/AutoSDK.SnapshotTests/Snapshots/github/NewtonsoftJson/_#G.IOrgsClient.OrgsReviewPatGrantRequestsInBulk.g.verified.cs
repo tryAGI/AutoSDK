@@ -12,12 +12,14 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> OrgsReviewPatGrantRequestsInBulkAsync(
             string org,
 
             global::G.OrgsReviewPatGrantRequestsInBulkRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Review requests to access organization resources with fine-grained personal access tokens<br/>
@@ -34,6 +36,7 @@ namespace G
         /// <param name="reason">
         /// Reason for approving or denying the requests. Max 1024 characters.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> OrgsReviewPatGrantRequestsInBulkAsync(
@@ -41,6 +44,7 @@ namespace G
             global::G.OrgsReviewPatGrantRequestsInBulkRequestAction action,
             global::System.Collections.Generic.IList<int>? patRequestIds = default,
             string? reason = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

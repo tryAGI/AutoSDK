@@ -31,6 +31,7 @@ namespace G
         /// State of the single shard within a replica set.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReplicaStateJsonConverter))]
         public global::G.ReplicaState State { get; set; } = default!;
 
         /// <summary>

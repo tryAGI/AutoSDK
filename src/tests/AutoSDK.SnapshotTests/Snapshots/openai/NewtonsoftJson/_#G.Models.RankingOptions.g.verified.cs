@@ -13,6 +13,7 @@ namespace G
         /// The ranker to use for the file search.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ranker")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RankingOptionsRankerJsonConverter))]
         public global::G.RankingOptionsRanker? Ranker { get; set; }
 
         /// <summary>

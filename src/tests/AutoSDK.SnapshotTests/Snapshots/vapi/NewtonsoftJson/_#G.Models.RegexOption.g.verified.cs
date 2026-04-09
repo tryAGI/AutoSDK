@@ -16,6 +16,7 @@ namespace G
         /// - `multi-line`: Matches across multiple lines.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RegexOptionTypeJsonConverter))]
         public global::G.RegexOptionType Type { get; set; } = default!;
 
         /// <summary>

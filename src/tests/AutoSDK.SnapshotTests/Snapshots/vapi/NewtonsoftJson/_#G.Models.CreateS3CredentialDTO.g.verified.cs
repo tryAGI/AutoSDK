@@ -13,6 +13,7 @@ namespace G
         /// Credential provider. Only allowed value is s3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateS3CredentialDTOProviderJsonConverter))]
         public global::G.CreateS3CredentialDTOProvider Provider { get; set; }
 
         /// <summary>

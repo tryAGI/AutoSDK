@@ -19,6 +19,7 @@ namespace G
         /// The event type, must be `transcription_session.update`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventTranscriptionSessionUpdateTypeJsonConverter))]
         public global::G.RealtimeClientEventTranscriptionSessionUpdateType Type { get; set; }
 
         /// <summary>

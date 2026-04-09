@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.EvalJsonlFileIdSourceType.FileId</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalJsonlFileIdSourceTypeJsonConverter))]
         public global::G.EvalJsonlFileIdSourceType Type { get; set; } = global::G.EvalJsonlFileIdSourceType.FileId;
 
         /// <summary>

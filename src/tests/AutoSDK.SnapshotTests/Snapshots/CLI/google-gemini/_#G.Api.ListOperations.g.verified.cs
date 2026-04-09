@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListOperationsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "key",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListOperationsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListOperationsSecurityRequirement0,
+            };
         partial void PrepareListOperationsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? pageToken,
@@ -48,10 +67,16 @@ namespace G
                 pageSize: ref pageSize,
                 filter: ref filter);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListOperationsSecurityRequirements,
+                operationName: "ListOperationsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/operations",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
@@ -63,7 +88,7 @@ namespace G
                 .AddOptionalParameter("pageToken", pageToken)
                 .AddOptionalParameter("pageSize", pageSize?.ToString())
                 .AddOptionalParameter("filter", filter) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

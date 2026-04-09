@@ -21,6 +21,7 @@ namespace G
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateAutoModSettingsResponse> UpdateAutomodSettingsAsync(
@@ -28,6 +29,7 @@ namespace G
             string moderatorId,
 
             global::G.UpdateAutoModSettingsBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Updates the broadcaster’s AutoMod settings.<br/>
@@ -71,6 +73,7 @@ namespace G
         /// <param name="swearing">
         /// The Automod level for profanity.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateAutoModSettingsResponse> UpdateAutomodSettingsAsync(
@@ -85,6 +88,7 @@ namespace G
             int? sexBasedTerms = default,
             int? sexualitySexOrGender = default,
             int? swearing = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceGoogleTypeJsonConverter))]
         public global::G.PickExpressiveAvatarExpressionExpressionPublicAllowedAttributesVoiceGoogleType Type { get; set; }
 
         /// <summary>

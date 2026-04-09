@@ -21,6 +21,7 @@ namespace G
         /// <param name="csvDelimiter"></param>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetsCreateResponse> CreateAsync(
@@ -35,6 +36,7 @@ namespace G
             string? textSeparator = default,
             string? csvDelimiter = default,
             string? xClientName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Dataset<br/>
@@ -63,6 +65,7 @@ namespace G
         /// <param name="evalDataname">
         /// An optional evaluation file to upload
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetsCreateResponse> CreateAsync(
@@ -79,6 +82,7 @@ namespace G
             string? xClientName = default,
             byte[]? evalData = default,
             string? evalDataname = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

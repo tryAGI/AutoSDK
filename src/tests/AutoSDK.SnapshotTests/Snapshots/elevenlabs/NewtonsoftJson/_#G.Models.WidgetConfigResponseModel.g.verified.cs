@@ -14,6 +14,7 @@ namespace G
         /// Default Value: full
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("variant")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbedVariantJsonConverter))]
         public global::G.EmbedVariant? Variant { get; set; }
 
         /// <summary>
@@ -21,6 +22,7 @@ namespace G
         /// Default Value: bottom-right
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("placement")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WidgetPlacementJsonConverter))]
         public global::G.WidgetPlacement? Placement { get; set; }
 
         /// <summary>
@@ -28,6 +30,7 @@ namespace G
         /// Default Value: never
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expandable")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WidgetExpandableJsonConverter))]
         public global::G.WidgetExpandable? Expandable { get; set; }
 
         /// <summary>
@@ -41,6 +44,7 @@ namespace G
         /// Default Value: none
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WidgetFeedbackModeJsonConverter))]
         public global::G.WidgetFeedbackMode? FeedbackMode { get; set; }
 
         /// <summary>

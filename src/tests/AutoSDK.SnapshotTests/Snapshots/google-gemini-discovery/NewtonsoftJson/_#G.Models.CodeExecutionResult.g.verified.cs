@@ -19,6 +19,7 @@ namespace G
         /// Required. Outcome of the code execution.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outcome")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeExecutionResultOutcomeJsonConverter))]
         public global::G.CodeExecutionResultOutcome? Outcome { get; set; }
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Sam2SegmentationResponse> Sam2SegmentImageSam2SegmentImagePostAsync(
@@ -23,6 +24,7 @@ namespace G
             string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// SAM2 Image Segmentation<br/>
@@ -78,6 +80,7 @@ namespace G
         /// If True, attempts to load previously cached low-resolution logits for the given image and prompt set. This can significantly speed up inference when making multiple similar requests on the same image. This feature is ignored if DISABLE_SAM2_LOGITS_CACHE env variable is set True<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Sam2SegmentationResponse> Sam2SegmentImageSam2SegmentImagePostAsync(
@@ -100,6 +103,7 @@ namespace G
             bool? multimaskOutput = default,
             bool? saveLogitsToCache = default,
             bool? loadLogitsFromCache = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

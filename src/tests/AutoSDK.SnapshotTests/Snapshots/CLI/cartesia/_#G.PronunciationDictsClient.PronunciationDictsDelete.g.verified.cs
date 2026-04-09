@@ -6,6 +6,25 @@ namespace G
 {
     public partial class PronunciationDictsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PronunciationDictsDeleteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PronunciationDictsDeleteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PronunciationDictsDeleteSecurityRequirement0,
+            };
         partial void PreparePronunciationDictsDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.PronunciationDictsDeleteCartesiaVersion cartesiaVersion,
@@ -40,9 +59,15 @@ namespace G
                 cartesiaVersion: ref cartesiaVersion,
                 id: ref id);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PronunciationDictsDeleteSecurityRequirements,
+                operationName: "PronunciationDictsDeleteAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/pronunciation-dicts/{id}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -52,7 +77,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

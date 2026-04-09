@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <example>prompt</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoicemailActionPromptTypeJsonConverter))]
         public global::G.VoicemailActionPromptType Type { get; set; }
 
         /// <summary>

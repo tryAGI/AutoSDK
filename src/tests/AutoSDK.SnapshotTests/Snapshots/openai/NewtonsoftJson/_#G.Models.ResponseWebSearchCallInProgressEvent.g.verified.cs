@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `response.web_search_call.in_progress`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseWebSearchCallInProgressEventTypeJsonConverter))]
         public global::G.ResponseWebSearchCallInProgressEventType Type { get; set; }
 
         /// <summary>

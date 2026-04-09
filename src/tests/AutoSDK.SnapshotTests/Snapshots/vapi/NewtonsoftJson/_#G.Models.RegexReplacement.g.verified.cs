@@ -19,6 +19,7 @@ namespace G
         /// - Capitalize the first letter of every sentence: { type: 'regex', regex: '(?&lt;=\\. |^)[a-z]', value: (match) =&gt; match.toUpperCase() }
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RegexReplacementTypeJsonConverter))]
         public global::G.RegexReplacementType Type { get; set; }
 
         /// <summary>

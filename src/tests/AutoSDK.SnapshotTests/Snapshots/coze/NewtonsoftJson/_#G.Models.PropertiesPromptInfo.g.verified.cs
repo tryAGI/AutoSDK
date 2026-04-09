@@ -25,6 +25,7 @@ namespace G
         /// 提示词模式
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PropertiesPromptInfoPromptModeJsonConverter))]
         public global::G.PropertiesPromptInfoPromptMode? PromptMode { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The type of the script.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateClipStreamRequestScriptVariant1TypeJsonConverter))]
         public global::G.CreateClipStreamRequestScriptVariant1Type Type { get; set; }
 
         /// <summary>

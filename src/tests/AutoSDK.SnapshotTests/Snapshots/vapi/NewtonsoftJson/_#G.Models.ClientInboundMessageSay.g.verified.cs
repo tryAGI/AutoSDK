@@ -13,6 +13,7 @@ namespace G
         /// This is the type of the message. Send "say" message to make the assistant say something.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientInboundMessageSayTypeJsonConverter))]
         public global::G.ClientInboundMessageSayType? Type { get; set; }
 
         /// <summary>

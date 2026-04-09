@@ -33,6 +33,7 @@ namespace G
         /// Defines the role users will have over the resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RoleJsonConverter))]
         public global::G.Role? Role { get; set; }
 
         /// <summary>

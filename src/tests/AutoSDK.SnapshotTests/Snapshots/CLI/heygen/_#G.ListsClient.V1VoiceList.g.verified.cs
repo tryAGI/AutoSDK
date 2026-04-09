@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ListsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_V1VoiceListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Api-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_V1VoiceListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_V1VoiceListSecurityRequirement0,
+            };
         partial void PrepareV1VoiceListArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareV1VoiceListRequest(
@@ -29,9 +48,15 @@ namespace G
             PrepareV1VoiceListArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_V1VoiceListSecurityRequirements,
+                operationName: "V1VoiceListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/voice.list",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -41,7 +66,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

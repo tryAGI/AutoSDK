@@ -16,6 +16,7 @@ namespace G
         /// - `dynamic`: Creates segments of variable length that align with scene boundaries. Use this for content-aware segmentation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("strategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoSegmentation0StrategyJsonConverter))]
         public global::G.VideoSegmentation0Strategy Strategy { get; set; }
 
         /// <summary>

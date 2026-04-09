@@ -27,6 +27,7 @@ namespace G
         /// The event type, must be `input_audio_buffer.speech_started`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventInputAudioBufferSpeechStartedTypeJsonConverter))]
         public global::G.RealtimeServerEventInputAudioBufferSpeechStartedType Type { get; set; }
 
         /// <summary>

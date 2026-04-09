@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.SignatureContentBlockDeltaType.SignatureDelta</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SignatureContentBlockDeltaTypeJsonConverter))]
         public global::G.SignatureContentBlockDeltaType Type { get; set; } = global::G.SignatureContentBlockDeltaType.SignatureDelta;
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the test, which must be chat.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTestSuiteTestChatDtoTypeJsonConverter))]
         public global::G.CreateTestSuiteTestChatDtoType Type { get; set; }
 
         /// <summary>

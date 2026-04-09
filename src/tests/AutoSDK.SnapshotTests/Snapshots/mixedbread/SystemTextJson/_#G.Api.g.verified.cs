@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// mixedbread ai production server
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.mixedbread.com";
+        public const string DefaultBaseUrl = "https://api.mixedbread.com/";
 
         private bool _disposeHttpClient = true;
 
@@ -31,6 +31,9 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -196,7 +199,8 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<string>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<object>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?, object>(),
@@ -210,7 +214,8 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<bool?, global::G.ContextualizationConfig>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<bool?, global::G.RerankConfig, object>(),
@@ -218,29 +223,34 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, int?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<bool?, global::G.RerankConfig, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<bool?, global::G.AgenticSearchConfig, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<bool?, global::G.RerankConfig, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<bool?, global::G.AgenticSearchConfig, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.SearchFilter, global::G.SearchFilterCondition>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.NotionDataSourceCreateOrUpdateParams, global::G.LinearDataSourceCreateOrUpdateParams>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.NotionDataSourceCreateOrUpdateParams, global::G.LinearDataSourceCreateOrUpdateParams>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Guid?>(),
@@ -288,7 +298,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AdminClient Admin => new AdminClient(HttpClient, authorizations: Authorizations)
+        public AdminClient Admin => new AdminClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -297,7 +307,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ApiKeysClient ApiKeys => new ApiKeysClient(HttpClient, authorizations: Authorizations)
+        public ApiKeysClient ApiKeys => new ApiKeysClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -306,7 +316,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public BillingClient Billing => new BillingClient(HttpClient, authorizations: Authorizations)
+        public BillingClient Billing => new BillingClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -315,7 +325,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CompletionsClient Completions => new CompletionsClient(HttpClient, authorizations: Authorizations)
+        public CompletionsClient Completions => new CompletionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -324,7 +334,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DataSourcesClient DataSources => new DataSourcesClient(HttpClient, authorizations: Authorizations)
+        public DataSourcesClient DataSources => new DataSourcesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -333,7 +343,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DeprecatedVectorStoresClient DeprecatedVectorStores => new DeprecatedVectorStoresClient(HttpClient, authorizations: Authorizations)
+        public DeprecatedVectorStoresClient DeprecatedVectorStores => new DeprecatedVectorStoresClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -342,7 +352,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ExtractionsClient Extractions => new ExtractionsClient(HttpClient, authorizations: Authorizations)
+        public ExtractionsClient Extractions => new ExtractionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -351,7 +361,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
+        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -360,7 +370,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ParsingClient Parsing => new ParsingClient(HttpClient, authorizations: Authorizations)
+        public ParsingClient Parsing => new ParsingClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -369,7 +379,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SchemasClient Schemas => new SchemasClient(HttpClient, authorizations: Authorizations)
+        public SchemasClient Schemas => new SchemasClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -378,7 +388,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public StoresClient Stores => new StoresClient(HttpClient, authorizations: Authorizations)
+        public StoresClient Stores => new StoresClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -397,11 +407,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

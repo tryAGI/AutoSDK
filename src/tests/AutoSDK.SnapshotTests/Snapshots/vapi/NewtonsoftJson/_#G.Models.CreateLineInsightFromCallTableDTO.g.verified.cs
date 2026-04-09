@@ -20,6 +20,7 @@ namespace G
         /// It is required to be `line` to create a line insight.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateLineInsightFromCallTableDTOTypeJsonConverter))]
         public global::G.CreateLineInsightFromCallTableDTOType Type { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace G
         /// </summary>
         /// <example>[assistant_id]</example>
         [global::Newtonsoft.Json.JsonProperty("groupBy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateLineInsightFromCallTableDTOGroupByJsonConverter))]
         public global::G.CreateLineInsightFromCallTableDTOGroupBy? GroupBy { get; set; }
 
         /// <summary>

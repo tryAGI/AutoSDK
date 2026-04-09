@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "call.deleted" is sent when a call is deleted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageCallDeleteFailedTypeJsonConverter))]
         public global::G.ServerMessageCallDeleteFailedType Type { get; set; }
 
         /// <summary>

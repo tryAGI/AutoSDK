@@ -22,6 +22,7 @@ namespace G
         /// </summary>
         /// <example>EN</example>
         [global::Newtonsoft.Json.JsonProperty("source_lang")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SourceLanguageJsonConverter))]
         public global::G.SourceLanguage? SourceLang { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// </summary>
         /// <example>DE</example>
         [global::Newtonsoft.Json.JsonProperty("target_lang", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TargetLanguageJsonConverter))]
         public global::G.TargetLanguage TargetLang { get; set; } = default!;
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("split_sentences")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SplitSentencesOptionJsonConverter))]
         public global::G.SplitSentencesOption? SplitSentences { get; set; }
 
         /// <summary>
@@ -86,6 +89,7 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("preserve_formatting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PreserveFormattingOptionStrJsonConverter))]
         public global::G.PreserveFormattingOptionStr? PreserveFormatting { get; set; }
 
         /// <summary>
@@ -113,6 +117,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("formality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FormalityJsonConverter))]
         public global::G.Formality? Formality { get; set; }
 
         /// <summary>
@@ -128,6 +133,7 @@ namespace G
         ///   next-gen models, the request will fall back to latency_optimized classic models.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelTypeJsonConverter))]
         public global::G.ModelType? ModelType { get; set; }
 
         /// <summary>
@@ -142,6 +148,7 @@ namespace G
         ///  * `html`: Enable HTML tag handling; see [HTML Handling](https://www.deepl.com/docs-api/html).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag_handling")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TagHandlingOptionJsonConverter))]
         public global::G.TagHandlingOption? TagHandling { get; set; }
 
         /// <summary>
@@ -150,6 +157,7 @@ namespace G
         ///  * `v1`: Traditional algorithm (default until December 2025).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag_handling_version")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TagHandlingVersionOptionJsonConverter))]
         public global::G.TagHandlingVersionOption? TagHandlingVersion { get; set; }
 
         /// <summary>
@@ -182,6 +190,7 @@ namespace G
         /// While this approach is slightly more complicated, it allows for greater control over the structure of the translation output.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outline_detection")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutlineDetectionOptionStrJsonConverter))]
         public global::G.OutlineDetectionOptionStr? OutlineDetection { get; set; }
 
         /// <summary>

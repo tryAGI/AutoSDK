@@ -6,6 +6,49 @@ namespace G
 {
     public partial class ServiceClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_RootSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_RootSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_RootSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_RootSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_RootSecurityRequirement0,
+                s_RootSecurityRequirement1,
+                s_RootSecurityRequirement2,
+            };
         partial void PrepareRootArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareRootRequest(
@@ -34,9 +77,15 @@ namespace G
             PrepareRootArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RootSecurityRequirements,
+                operationName: "RootAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -46,7 +95,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

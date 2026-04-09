@@ -71,6 +71,7 @@ namespace G
         /// * UNFULFILLED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomRewardRedemptionStatusJsonConverter))]
         public global::G.CustomRewardRedemptionStatus Status { get; set; } = default!;
 
         /// <summary>

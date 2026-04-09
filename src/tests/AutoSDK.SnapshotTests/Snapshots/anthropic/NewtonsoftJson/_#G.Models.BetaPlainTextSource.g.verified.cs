@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaPlainTextSourceTypeJsonConverter))]
         public global::G.BetaPlainTextSourceType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaPlainTextSourceMediaTypeJsonConverter))]
         public global::G.BetaPlainTextSourceMediaType MediaType { get; set; }
 
         /// <summary>

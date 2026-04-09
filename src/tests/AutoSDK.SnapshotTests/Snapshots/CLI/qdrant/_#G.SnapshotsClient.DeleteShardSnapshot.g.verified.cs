@@ -6,6 +6,49 @@ namespace G
 {
     public partial class SnapshotsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteShardSnapshotSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteShardSnapshotSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteShardSnapshotSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteShardSnapshotSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteShardSnapshotSecurityRequirement0,
+                s_DeleteShardSnapshotSecurityRequirement1,
+                s_DeleteShardSnapshotSecurityRequirement2,
+            };
         partial void PrepareDeleteShardSnapshotArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -54,12 +97,18 @@ namespace G
                 snapshotName: ref snapshotName,
                 wait: ref wait);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteShardSnapshotSecurityRequirements,
+                operationName: "DeleteShardSnapshotAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/collections/{collectionName}/shards/{shardId}/snapshots/{snapshotName}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("wait", wait?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -69,7 +118,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

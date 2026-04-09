@@ -28,6 +28,7 @@ namespace G
         /// Default Value: 1
         /// </param>
         /// <param name="appId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChecksListForRefResponse> ChecksListForRefAsync(
@@ -40,6 +41,7 @@ namespace G
             int? perPage = default,
             int? page = default,
             int? appId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List check runs for a Git reference<br/>
@@ -64,6 +66,7 @@ namespace G
         /// Default Value: 1
         /// </param>
         /// <param name="appId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChecksListForRefResponse>> ChecksListForRefAsResponseAsync(
@@ -76,6 +79,7 @@ namespace G
             int? perPage = default,
             int? page = default,
             int? appId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

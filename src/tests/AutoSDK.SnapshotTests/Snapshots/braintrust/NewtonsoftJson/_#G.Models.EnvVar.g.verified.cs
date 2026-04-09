@@ -19,6 +19,7 @@ namespace G
         /// The type of the object the environment variable is scoped for
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnvVarObjectType2JsonConverter))]
         public global::G.EnvVarObjectType2 ObjectType { get; set; } = default!;
 
         /// <summary>
@@ -62,6 +63,7 @@ namespace G
         /// Default Value: env_var
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_category")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnvVarSecretCategoryJsonConverter))]
         public global::G.EnvVarSecretCategory? SecretCategory { get; set; }
 
         /// <summary>

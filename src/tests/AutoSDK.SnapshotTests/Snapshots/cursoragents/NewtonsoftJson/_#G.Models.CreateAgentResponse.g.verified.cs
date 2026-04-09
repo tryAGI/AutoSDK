@@ -31,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>CREATING</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAgentResponseStatusJsonConverter))]
         public global::G.CreateAgentResponseStatus Status { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// The GPU you want to run on
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gpu", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeployGPUsJsonConverter))]
         public global::G.DeployGPUs Gpu { get; set; } = default!;
 
         /// <summary>

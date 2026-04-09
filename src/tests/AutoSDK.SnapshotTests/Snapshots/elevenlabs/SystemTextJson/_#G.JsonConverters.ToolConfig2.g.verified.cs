@@ -13,31 +13,42 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolResponseModelToolConfigDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolResponseModelToolConfigDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolResponseModelToolConfigDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolResponseModelToolConfigDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.WebhookToolConfigOutput? webhook = default;
             if (discriminator?.Type == global::G.ToolResponseModelToolConfigDiscriminatorType.Webhook)
             {
-                webhook = global::System.Text.Json.JsonSerializer.Deserialize<global::G.WebhookToolConfigOutput>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebhookToolConfigOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebhookToolConfigOutput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WebhookToolConfigOutput)}");
+                webhook = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ClientToolConfigOutput? client = default;
             if (discriminator?.Type == global::G.ToolResponseModelToolConfigDiscriminatorType.Client)
             {
-                client = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ClientToolConfigOutput>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClientToolConfigOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClientToolConfigOutput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ClientToolConfigOutput)}");
+                client = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.SystemToolConfigOutput? system = default;
             if (discriminator?.Type == global::G.ToolResponseModelToolConfigDiscriminatorType.System)
             {
-                system = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SystemToolConfigOutput>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemToolConfigOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemToolConfigOutput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SystemToolConfigOutput)}");
+                system = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MCPToolConfigOutput? mcp = default;
             if (discriminator?.Type == global::G.ToolResponseModelToolConfigDiscriminatorType.Mcp)
             {
-                mcp = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MCPToolConfigOutput>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPToolConfigOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPToolConfigOutput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MCPToolConfigOutput)}");
+                mcp = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.ToolConfig2(
@@ -60,23 +71,32 @@ namespace G.JsonConverters
             global::G.ToolConfig2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsWebhook)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Webhook, typeof(global::G.WebhookToolConfigOutput), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebhookToolConfigOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebhookToolConfigOutput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebhookToolConfigOutput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Webhook!, typeInfo);
             }
             else if (value.IsClient)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Client, typeof(global::G.ClientToolConfigOutput), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClientToolConfigOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClientToolConfigOutput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClientToolConfigOutput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Client!, typeInfo);
             }
             else if (value.IsSystem)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.System, typeof(global::G.SystemToolConfigOutput), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SystemToolConfigOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SystemToolConfigOutput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SystemToolConfigOutput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.System!, typeInfo);
             }
             else if (value.IsMcp)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp, typeof(global::G.MCPToolConfigOutput), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPToolConfigOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPToolConfigOutput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPToolConfigOutput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp!, typeInfo);
             }
         }
     }

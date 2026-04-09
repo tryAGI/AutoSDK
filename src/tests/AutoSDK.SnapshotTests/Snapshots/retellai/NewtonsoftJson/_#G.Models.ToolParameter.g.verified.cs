@@ -13,6 +13,7 @@ namespace G
         /// Type must be "object" for a JSON Schema object.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolParameterTypeJsonConverter))]
         public global::G.ToolParameterType Type { get; set; }
 
         /// <summary>

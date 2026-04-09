@@ -37,18 +37,23 @@ namespace G
         public bool ReadResponseAsString { get; set; }
 
         /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::G.AutoSDKClientOptions Options { get; }
+
+        /// <summary>
         /// 
         /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }
 
 
         /// <summary>
-        /// Upload and scan files for sensitive data
+        /// Upload and scan files for sensitive data.
         /// </summary>
         public FileScanningClient FileScanning { get; }
 
         /// <summary>
-        /// Scan text for sensitive data (PII, PHI, PCI, secrets, credentials)
+        /// Scan text for sensitive data (PII, PHI, PCI, secrets, credentials).
         /// </summary>
         public ScanningClient Scanning { get; }
 

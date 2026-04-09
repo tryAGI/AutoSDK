@@ -46,6 +46,7 @@ namespace G
         /// - `ready`: The entity is fully processed and can be used in search queries.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EntityStatusJsonConverter))]
         public global::G.EntityStatus? Status { get; set; }
 
         /// <summary>

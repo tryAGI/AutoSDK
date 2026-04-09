@@ -28,6 +28,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ResponseOutputTextType.OutputText</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputTextTypeJsonConverter))]
         public global::G.ResponseOutputTextType Type { get; set; } = global::G.ResponseOutputTextType.OutputText;
 
         /// <summary>

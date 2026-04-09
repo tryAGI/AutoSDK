@@ -15,12 +15,14 @@ namespace G
         /// </summary>
         /// <param name="conversationId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListMessageApiResponse> ListMessageApiAsync(
             string conversationId,
 
             global::G.ListMessageApiRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 查看消息列表<br/>
@@ -46,6 +48,7 @@ namespace G
         /// <param name="order">
         /// 查询顺序  desc倒序 asc正序 TODO 默认倒序
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListMessageApiResponse> ListMessageApiAsync(
@@ -55,6 +58,7 @@ namespace G
             string? chatId = default,
             int? limit = default,
             global::G.ListMessageApiRequestOrder? order = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

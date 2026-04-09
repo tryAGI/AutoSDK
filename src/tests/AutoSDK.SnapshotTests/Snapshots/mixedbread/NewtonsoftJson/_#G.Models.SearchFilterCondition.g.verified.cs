@@ -25,6 +25,7 @@ namespace G
         /// The operator for the condition
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConditionOperatorJsonConverter))]
         public global::G.ConditionOperator Operator { get; set; } = default!;
 
         /// <summary>

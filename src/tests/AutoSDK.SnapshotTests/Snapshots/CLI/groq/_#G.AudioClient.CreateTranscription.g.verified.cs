@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AudioClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateTranscriptionSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateTranscriptionSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateTranscriptionSecurityRequirement0,
+            };
         partial void PrepareCreateTranscriptionArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.CreateTranscriptionRequest request);
@@ -41,9 +60,15 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateTranscriptionSecurityRequirements,
+                operationName: "CreateTranscriptionAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/openai/v1/audio/transcriptions",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -53,7 +78,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

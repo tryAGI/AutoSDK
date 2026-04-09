@@ -19,12 +19,14 @@ namespace G
         /// Completion window for the batch job, `immediate` is only supported with Portkey Managed Batching.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_window", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIBatchJobCompletionWindowJsonConverter))]
         public global::G.OpenAIBatchJobCompletionWindow CompletionWindow { get; set; } = default!;
 
         /// <summary>
         /// Inference endpoint
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("endpoint", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIBatchJobEndpointJsonConverter))]
         public global::G.OpenAIBatchJobEndpoint Endpoint { get; set; } = default!;
 
         /// <summary>

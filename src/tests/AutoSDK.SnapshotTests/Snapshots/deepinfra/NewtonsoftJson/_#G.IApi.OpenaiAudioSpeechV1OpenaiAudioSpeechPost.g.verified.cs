@@ -11,6 +11,7 @@ namespace G
         /// <param name="xDeepinfraSource"></param>
         /// <param name="xiApiKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> OpenaiAudioSpeechV1OpenaiAudioSpeechPostAsync(
@@ -18,6 +19,7 @@ namespace G
             global::G.OpenAITextToSpeechIn request,
             string? xDeepinfraSource = default,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Openai Audio Speech
@@ -44,6 +46,7 @@ namespace G
         /// <param name="extraBody">
         /// Extra body parameters for the model.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> OpenaiAudioSpeechV1OpenaiAudioSpeechPostAsync(
@@ -55,6 +58,7 @@ namespace G
             global::G.TtsResponseFormat? responseFormat = default,
             double? speed = default,
             object? extraBody = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

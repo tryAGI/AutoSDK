@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ApiKeysClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteApiKeySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteApiKeySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteApiKeySecurityRequirement0,
+            };
         partial void PrepareDeleteApiKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid apiKeyId);
@@ -45,9 +64,15 @@ namespace G
                 httpClient: HttpClient,
                 apiKeyId: ref apiKeyId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteApiKeySecurityRequirements,
+                operationName: "DeleteApiKeyAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/api-keys/{apiKeyId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -57,7 +82,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkflowExpressionConditionModelOutputExpressionDiscriminatorTypeJsonConverter))]
         public global::G.WorkflowExpressionConditionModelOutputExpressionDiscriminatorType? Type { get; set; }
 
         /// <summary>

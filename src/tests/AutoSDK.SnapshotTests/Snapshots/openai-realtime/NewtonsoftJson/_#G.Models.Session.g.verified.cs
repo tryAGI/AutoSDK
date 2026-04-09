@@ -19,6 +19,7 @@ namespace G
         /// The object type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionObjectJsonConverter))]
         public global::G.SessionObject? Object { get; set; }
 
         /// <summary>
@@ -43,18 +44,21 @@ namespace G
         /// The voice the model uses to respond.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionVoiceJsonConverter))]
         public global::G.SessionVoice? Voice { get; set; }
 
         /// <summary>
         /// The format of input/output audio.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_audio_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioFormatJsonConverter))]
         public global::G.AudioFormat? InputAudioFormat { get; set; }
 
         /// <summary>
         /// The format of input/output audio.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_audio_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioFormatJsonConverter))]
         public global::G.AudioFormat? OutputAudioFormat { get; set; }
 
         /// <summary>
@@ -79,6 +83,7 @@ namespace G
         /// How the model chooses tools.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionToolChoiceJsonConverter))]
         public global::G.SessionToolChoice? ToolChoice { get; set; }
 
         /// <summary>

@@ -21,6 +21,7 @@ namespace G
         /// Type of job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("job_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImportJobStatusJobTypeJsonConverter))]
         public global::G.ImportJobStatusJobType JobType { get; set; }
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace G
         /// </summary>
         /// <example>stopped</example>
         [global::Newtonsoft.Json.JsonProperty("job_state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImportJobStatusJobStateJsonConverter))]
         public global::G.ImportJobStatusJobState JobState { get; set; } = default!;
 
         /// <summary>

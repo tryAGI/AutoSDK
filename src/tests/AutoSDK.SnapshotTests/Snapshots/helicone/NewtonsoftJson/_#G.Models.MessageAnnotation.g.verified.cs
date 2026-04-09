@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageAnnotationTypeJsonConverter))]
         public global::G.MessageAnnotationType Type { get; set; }
 
         /// <summary>

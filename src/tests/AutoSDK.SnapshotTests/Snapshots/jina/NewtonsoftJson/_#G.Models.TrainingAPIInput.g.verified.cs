@@ -37,6 +37,7 @@ namespace G
         /// Default Value: public
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TrainingAPIInputVisibilityJsonConverter))]
         public global::G.TrainingAPIInputVisibility? Visibility { get; set; }
 
         /// <summary>

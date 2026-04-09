@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>Positive</example>
         [global::Newtonsoft.Json.JsonProperty("user_sentiment")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatAnalysisUserSentimentJsonConverter))]
         public global::G.ChatAnalysisUserSentiment? UserSentiment { get; set; }
 
         /// <summary>

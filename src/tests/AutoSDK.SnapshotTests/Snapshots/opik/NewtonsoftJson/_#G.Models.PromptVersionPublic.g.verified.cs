@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptVersionPublicTypeJsonConverter))]
         public global::G.PromptVersionPublicType? Type { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_structure")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptVersionPublicTemplateStructureJsonConverter))]
         public global::G.PromptVersionPublicTemplateStructure? TemplateStructure { get; set; }
 
         /// <summary>

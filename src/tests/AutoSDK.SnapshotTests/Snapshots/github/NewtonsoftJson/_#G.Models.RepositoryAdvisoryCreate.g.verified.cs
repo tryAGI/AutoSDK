@@ -49,6 +49,7 @@ namespace G
         /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryAdvisoryCreateSeverityJsonConverter))]
         public global::G.RepositoryAdvisoryCreateSeverity? Severity { get; set; }
 
         /// <summary>

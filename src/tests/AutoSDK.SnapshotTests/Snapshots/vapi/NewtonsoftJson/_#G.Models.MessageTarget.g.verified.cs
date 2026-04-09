@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <example>user</example>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageTargetRoleJsonConverter))]
         public global::G.MessageTargetRole? Role { get; set; }
 
         /// <summary>

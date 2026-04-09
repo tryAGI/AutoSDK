@@ -29,6 +29,7 @@ namespace G
         /// This is to bring your own phone numbers from your own SIP trunks or Carriers.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateByoPhoneNumberDTOProviderJsonConverter))]
         public global::G.CreateByoPhoneNumberDTOProvider Provider { get; set; }
 
         /// <summary>

@@ -16,6 +16,7 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.File> UploadFileFromUrlApiV1FilesUploadFromUrlPutAsync(
@@ -24,6 +25,7 @@ namespace G
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload File From Url<br/>
@@ -62,6 +64,7 @@ namespace G
         /// Storage type for the file. Valid values: 'Ephemeral', 'Permanent' (no expiration). If not specified, defaults to permanent storage.<br/>
         /// Default Value: permanent
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.File> UploadFileFromUrlApiV1FilesUploadFromUrlPutAsync(
@@ -76,6 +79,7 @@ namespace G
             bool? followRedirects = default,
             object? resourceInfo = default,
             global::G.AnyOf<global::G.FileCreateFromUrlStorageType?, string>? storageType = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

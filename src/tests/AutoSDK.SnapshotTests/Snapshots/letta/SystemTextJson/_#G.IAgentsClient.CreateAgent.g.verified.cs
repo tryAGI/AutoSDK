@@ -15,12 +15,14 @@ namespace G
         /// The project slug to associate with the agent (cloud only).
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentState> CreateAgentAsync(
 
             global::G.CreateAgentRequest request,
             string? xProject = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Agent<br/>
@@ -116,6 +118,7 @@ namespace G
         /// <param name="perFileViewWindowCharLimit">
         /// The per-file view window character limit for this agent. Setting this too high may exceed the context window, which will break the agent.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentState> CreateAgentAsync(
@@ -148,6 +151,7 @@ namespace G
             string? timezone = default,
             int? maxFilesOpen = default,
             int? perFileViewWindowCharLimit = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

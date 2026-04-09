@@ -80,6 +80,7 @@ namespace G
         /// * INVALID — Something went wrong while determining the state.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PollStatusJsonConverter))]
         public global::G.PollStatus Status { get; set; } = default!;
 
         /// <summary>

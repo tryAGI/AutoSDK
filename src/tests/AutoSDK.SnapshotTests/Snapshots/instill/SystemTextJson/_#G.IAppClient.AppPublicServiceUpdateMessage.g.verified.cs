@@ -14,6 +14,7 @@ namespace G
         /// <param name="conversationId"></param>
         /// <param name="messageUid"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateMessageResponse> AppPublicServiceUpdateMessageAsync(
@@ -23,6 +24,7 @@ namespace G
             string messageUid,
 
             global::G.UpdateMessageBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a message<br/>
@@ -33,6 +35,7 @@ namespace G
         /// <param name="conversationId"></param>
         /// <param name="messageUid"></param>
         /// <param name="content"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateMessageResponse> AppPublicServiceUpdateMessageAsync(
@@ -41,6 +44,7 @@ namespace G
             string conversationId,
             string messageUid,
             string content,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

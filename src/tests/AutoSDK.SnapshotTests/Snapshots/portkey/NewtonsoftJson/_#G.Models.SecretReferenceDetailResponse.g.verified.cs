@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manager_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretReferenceDetailResponseManagerTypeJsonConverter))]
         public global::G.SecretReferenceDetailResponseManagerType? ManagerType { get; set; }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretReferenceDetailResponseStatusJsonConverter))]
         public global::G.SecretReferenceDetailResponseStatus? Status { get; set; }
 
         /// <summary>
@@ -103,6 +105,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretReferenceDetailResponseObjectJsonConverter))]
         public global::G.SecretReferenceDetailResponseObject? Object { get; set; }
 
         /// <summary>

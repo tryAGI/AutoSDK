@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSlackOAuth2AuthorizationCredentialDTOProviderJsonConverter))]
         public global::G.CreateSlackOAuth2AuthorizationCredentialDTOProvider Provider { get; set; }
 
         /// <summary>

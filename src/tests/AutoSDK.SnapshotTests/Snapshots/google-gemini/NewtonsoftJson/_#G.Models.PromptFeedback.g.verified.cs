@@ -19,6 +19,7 @@ namespace G
         /// Optional. If set, the prompt was blocked and no candidates are returned. Rephrase your prompt.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("blockReason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptFeedbackBlockReasonJsonConverter))]
         public global::G.PromptFeedbackBlockReason? BlockReason { get; set; }
 
         /// <summary>

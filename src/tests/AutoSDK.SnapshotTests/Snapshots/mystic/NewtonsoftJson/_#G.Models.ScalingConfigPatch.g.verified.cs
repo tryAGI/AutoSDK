@@ -14,6 +14,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScalingConfigTypeJsonConverter))]
         public global::G.ScalingConfigType? Type { get; set; }
 
         /// <summary>

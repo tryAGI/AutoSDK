@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always 'response.mcp_call.completed'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseMCPCallCompletedEventTypeJsonConverter))]
         public global::G.ResponseMCPCallCompletedEventType Type { get; set; }
 
         /// <summary>

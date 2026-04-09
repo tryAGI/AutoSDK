@@ -8,6 +8,40 @@ namespace G
 {
     public partial class TtsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_TtsBytesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_TtsBytesSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_TtsBytesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_TtsBytesSecurityRequirement0,
+                s_TtsBytesSecurityRequirement1,
+            };
         partial void PrepareTtsBytesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.TtsBytesCartesiaVersion cartesiaVersion,
@@ -50,9 +84,15 @@ namespace G
                 cartesiaVersion: ref cartesiaVersion,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_TtsBytesSecurityRequirements,
+                operationName: "TtsBytesAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/tts/bytes",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -62,7 +102,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

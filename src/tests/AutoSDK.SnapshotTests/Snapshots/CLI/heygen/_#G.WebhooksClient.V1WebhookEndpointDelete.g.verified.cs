@@ -6,6 +6,25 @@ namespace G
 {
     public partial class WebhooksClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_V1WebhookEndpointDeleteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Api-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_V1WebhookEndpointDeleteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_V1WebhookEndpointDeleteSecurityRequirement0,
+            };
         partial void PrepareV1WebhookEndpointDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? endpointId);
@@ -36,12 +55,18 @@ namespace G
                 httpClient: HttpClient,
                 endpointId: ref endpointId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_V1WebhookEndpointDeleteSecurityRequirements,
+                operationName: "V1WebhookEndpointDeleteAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/webhook/endpoint.delete",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("endpoint_id", endpointId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -51,7 +76,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

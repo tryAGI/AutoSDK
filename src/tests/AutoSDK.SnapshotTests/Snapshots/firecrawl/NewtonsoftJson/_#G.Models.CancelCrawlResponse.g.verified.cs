@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <example>cancelled</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CancelCrawlResponseStatusJsonConverter))]
         public global::G.CancelCrawlResponseStatus? Status { get; set; }
 
         /// <summary>

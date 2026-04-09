@@ -13,6 +13,7 @@ namespace G
         /// The category of error that occurred
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateComputeInstanceResponseErrorTypeJsonConverter))]
         public global::G.CreateComputeInstanceResponseErrorType Type { get; set; } = default!;
 
         /// <summary>

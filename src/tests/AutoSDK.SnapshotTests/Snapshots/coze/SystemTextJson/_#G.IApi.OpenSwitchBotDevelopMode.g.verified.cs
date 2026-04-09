@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="botId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenSwitchBotDevelopModeResponse> OpenSwitchBotDevelopModeAsync(
             string botId,
 
             global::G.OpenSwitchBotDevelopModeRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 开启或关闭智能体多人协作<br/>
@@ -24,11 +26,13 @@ namespace G
         /// </summary>
         /// <param name="botId"></param>
         /// <param name="collaborationMode"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenSwitchBotDevelopModeResponse> OpenSwitchBotDevelopModeAsync(
             string botId,
             global::G.OpenSwitchBotDevelopModeRequestCollaborationMode? collaborationMode = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

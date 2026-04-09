@@ -18,6 +18,7 @@ namespace G
         /// Default Value: wav/pcm
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoding")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StreamingSupportedEncodingEnumJsonConverter))]
         public global::G.StreamingSupportedEncodingEnum? Encoding { get; set; }
 
         /// <summary>
@@ -46,6 +47,7 @@ namespace G
         /// Default Value: solaria-1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StreamingSupportedModelsJsonConverter))]
         public global::G.StreamingSupportedModels? Model { get; set; }
 
         /// <summary>

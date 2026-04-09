@@ -13,6 +13,7 @@ namespace G
         /// This is the provider of the model (`custom-llm`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalCustomModelProviderJsonConverter))]
         public global::G.EvalCustomModelProvider Provider { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// This is the current status of the session. Can be either 'active' or 'completed'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSessionDTOStatusJsonConverter))]
         public global::G.CreateSessionDTOStatus? Status { get; set; }
 
         /// <summary>

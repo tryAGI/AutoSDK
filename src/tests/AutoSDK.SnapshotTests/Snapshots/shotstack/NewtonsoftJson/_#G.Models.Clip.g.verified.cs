@@ -39,6 +39,7 @@ namespace G
         ///   &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fit")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClipFitJsonConverter))]
         public global::G.ClipFit? Fit { get; set; }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("position")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClipPositionJsonConverter))]
         public global::G.ClipPosition? Position { get; set; }
 
         /// <summary>
@@ -102,6 +104,7 @@ namespace G
         /// &lt;/ul&gt; The motion effect speed can also be controlled by appending `Fast` or `Slow` to the effect, e.g. `zoomInFast` or `slideRightSlow`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effect")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClipEffectJsonConverter))]
         public global::G.ClipEffect? Effect { get; set; }
 
         /// <summary>
@@ -120,6 +123,7 @@ namespace G
         /// </summary>
         /// <example>greyscale</example>
         [global::Newtonsoft.Json.JsonProperty("filter")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClipFilterJsonConverter))]
         public global::G.ClipFilter? Filter { get; set; }
 
         /// <summary>

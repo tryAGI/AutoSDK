@@ -16,6 +16,7 @@ namespace G
         /// <default>global::G.WebhookLiveStartRecordingPayloadEvent.LiveStartRecording</default>
         /// <example>live.start_recording</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookLiveStartRecordingPayloadEventJsonConverter))]
         public global::G.WebhookLiveStartRecordingPayloadEvent Event { get; set; } = global::G.WebhookLiveStartRecordingPayloadEvent.LiveStartRecording;
 
         /// <summary>

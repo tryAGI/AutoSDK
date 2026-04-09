@@ -133,6 +133,7 @@ namespace G
         /// </summary>
         /// <example>OWNER</example>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
@@ -164,6 +165,7 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("side")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReviewCommentSideJsonConverter))]
         public global::G.ReviewCommentSide? Side { get; set; }
 
         /// <summary>
@@ -171,6 +173,7 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_side")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReviewCommentStartSideJsonConverter))]
         public global::G.ReviewCommentStartSide? StartSide { get; set; }
 
         /// <summary>

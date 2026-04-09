@@ -17,6 +17,7 @@ namespace G
         ///  * `spam`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lock_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IssuesLockRequestLockReasonJsonConverter))]
         public global::G.IssuesLockRequestLockReason? LockReason { get; set; }
 
         /// <summary>

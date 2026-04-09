@@ -10,11 +10,13 @@ namespace G
         /// Returns a list of LLM models and the expected cost for using them based on the provided values.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.LLMUsageCalculatorResponseModel> Calculate2Async(
 
             global::G.LLMUsageCalculatorPublicRequestModel request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Calculate Expected Llm Usage<br/>
@@ -29,12 +31,14 @@ namespace G
         /// <param name="ragEnabled">
         /// Whether RAG is enabled.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.LLMUsageCalculatorResponseModel> Calculate2Async(
             int promptLength,
             int numberOfPages,
             bool ragEnabled,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

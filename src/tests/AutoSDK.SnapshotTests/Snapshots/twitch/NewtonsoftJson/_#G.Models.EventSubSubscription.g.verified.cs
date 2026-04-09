@@ -36,12 +36,14 @@ namespace G
         /// * websocket\_network\_error — The Twitch WebSocket server experienced a network error writing the message to the client.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EventSubSubscriptionStatusJsonConverter))]
         public global::G.EventSubSubscriptionStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The subscription's type. See [Subscription Types](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types#subscription-types).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EventSubSubscriptionTypeJsonConverter))]
         public global::G.EventSubSubscriptionType Type { get; set; } = default!;
 
         /// <summary>

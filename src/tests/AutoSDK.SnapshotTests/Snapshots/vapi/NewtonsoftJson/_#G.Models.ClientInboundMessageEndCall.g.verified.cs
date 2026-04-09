@@ -13,6 +13,7 @@ namespace G
         /// This is the type of the message. Send "end-call" message to end the call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientInboundMessageEndCallTypeJsonConverter))]
         public global::G.ClientInboundMessageEndCallType Type { get; set; }
 
         /// <summary>

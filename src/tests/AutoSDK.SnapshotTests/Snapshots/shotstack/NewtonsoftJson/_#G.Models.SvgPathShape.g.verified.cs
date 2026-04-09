@@ -25,6 +25,7 @@ namespace G
         /// The shape type - set to `path`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgPathShapeTypeJsonConverter))]
         public global::G.SvgPathShapeType Type { get; set; }
 
         /// <summary>

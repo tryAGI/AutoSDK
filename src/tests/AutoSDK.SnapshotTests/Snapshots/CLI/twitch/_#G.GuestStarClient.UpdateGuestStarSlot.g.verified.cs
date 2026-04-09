@@ -69,7 +69,7 @@ namespace G
                 .AddRequiredParameter("session_id", sessionId)
                 .AddRequiredParameter("source_slot_id", sourceSlotId)
                 .AddOptionalParameter("destination_slot_id", destinationSlotId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
