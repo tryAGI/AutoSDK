@@ -1,4 +1,6 @@
+using System.Text.Json;
 using AutoSDK.Docs;
+using AutoSDK.Models;
 
 namespace AutoSDK.UnitTests;
 
@@ -281,6 +283,79 @@ public sealed class DocsSyncTests
             var mkDocs = await File.ReadAllTextAsync(Path.Combine(root, "mkdocs.yml"));
             mkDocs.Should().Contain("examples/valid.md");
             mkDocs.Should().NotContain("commented");
+        }
+        finally
+        {
+            Directory.Delete(root, recursive: true);
+        }
+    }
+
+    [TestMethod]
+    public async Task SyncAsync_GeneratedExamples_MergesLanguageAndSetup()
+    {
+        var root = CreateTempDirectory();
+
+        try
+        {
+            Directory.CreateDirectory(Path.Combine(root, "docs"));
+            Directory.CreateDirectory(Path.Combine(root, "src", "libs", "GeneratedSdk"));
+
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "README.md"),
+                """
+                # GeneratedSdk
+
+                <!-- EXAMPLES:START -->
+                <!-- EXAMPLES:END -->
+                """);
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "mkdocs.yml"),
+                """
+                nav:
+                - Overview: index.md
+                # EXAMPLES:START
+                # EXAMPLES:END
+                """);
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "src", "libs", "GeneratedSdk", "GeneratedSdk.csproj"),
+                "<Project Sdk=\"Microsoft.NET.Sdk\" />");
+            await File.WriteAllTextAsync(
+                Path.Combine(root, "autosdk.generated-examples.json"),
+                JsonSerializer.Serialize(
+                    new GeneratedSdkSnippetManifest(
+                    [
+                        new GeneratedSdkSnippetDocument(
+                            Order: 1,
+                            Title: "Upload File",
+                            Slug: "upload-file",
+                            Description: "Uses the generated HTTP fallback snippet.",
+                            Language: "http",
+                            Code: "POST {{host}}/uploads",
+                            Format: "http",
+                            OperationId: "uploadFile",
+                            Setup: "This example uses the generated HTTP request snippet.")
+                    ]),
+                    new JsonSerializerOptions
+                    {
+                        WriteIndented = true,
+                    }));
+
+            var result = await DocsSynchronizer.SyncAsync(root);
+
+            result.Mode.Should().Be("metadata");
+            result.ExampleCount.Should().Be(1);
+
+            var readme = await File.ReadAllTextAsync(Path.Combine(root, "README.md"));
+            readme.Should().Contain("### Upload File");
+            readme.Should().Contain("```http");
+
+            var examplePage = await File.ReadAllTextAsync(Path.Combine(root, "docs", "examples", "upload-file.md"));
+            examplePage.Should().Contain("This example uses the generated HTTP request snippet.");
+            examplePage.Should().Contain("```http");
+            examplePage.Should().Contain("POST {{host}}/uploads");
+
+            var mkDocs = await File.ReadAllTextAsync(Path.Combine(root, "mkdocs.yml"));
+            mkDocs.Should().Contain("examples/upload-file.md");
         }
         finally
         {

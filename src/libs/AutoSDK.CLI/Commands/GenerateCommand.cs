@@ -464,6 +464,20 @@ internal sealed class GenerateCommand : Command
             }
         }
 
+        if (specFormat == SpecFormat.OpenApi)
+        {
+            var document = yaml.GetOpenApiDocument(settings);
+            var schemas = document.GetSchemas(settings);
+            var operations = document.GetOperations(settings, settings, schemas);
+            var snippetManifest = Sources.SnippetManifest(operations, data.Methods.ToArray());
+            if (!snippetManifest.IsEmpty)
+            {
+                await File.WriteAllTextAsync(
+                    Path.Combine(output, snippetManifest.Name),
+                    snippetManifest.Text).ConfigureAwait(false);
+            }
+        }
+
         if (grpcInputs.Length > 0)
         {
             await ScaffoldMixedModeGrpcInputsAsync(
