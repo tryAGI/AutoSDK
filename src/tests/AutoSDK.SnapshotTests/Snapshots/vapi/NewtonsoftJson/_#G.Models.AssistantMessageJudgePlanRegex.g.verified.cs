@@ -15,6 +15,7 @@ namespace G
         /// @default 'regex'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssistantMessageJudgePlanRegexTypeJsonConverter))]
         public global::G.AssistantMessageJudgePlanRegexType Type { get; set; }
 
         /// <summary>

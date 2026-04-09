@@ -13,6 +13,7 @@ namespace G
         /// Large Language Model provider.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OmitAgentUserDataOrAdvancedSettingsOrEmbedOrAssetsLlmOpenAIProviderJsonConverter))]
         public global::G.OmitAgentUserDataOrAdvancedSettingsOrEmbedOrAssetsLlmOpenAIProvider? Provider { get; set; }
 
         /// <summary>
@@ -28,6 +29,7 @@ namespace G
         /// - Assistant: Uses general model knowledge only
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OmitAgentUserDataOrAdvancedSettingsOrEmbedOrAssetsLlmOpenAITemplateJsonConverter))]
         public global::G.OmitAgentUserDataOrAdvancedSettingsOrEmbedOrAssetsLlmOpenAITemplate? Template { get; set; }
 
         /// <summary>
@@ -50,6 +52,7 @@ namespace G
         /// The model to use
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OmitAgentUserDataOrAdvancedSettingsOrEmbedOrAssetsLlmOpenAIModelJsonConverter))]
         public global::G.OmitAgentUserDataOrAdvancedSettingsOrEmbedOrAssetsLlmOpenAIModel? Model { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Voice provider to add the voice from.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice_provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AddCommunityVoiceRequestVoiceProviderJsonConverter))]
         public global::G.AddCommunityVoiceRequestVoiceProvider? VoiceProvider { get; set; }
 
         /// <summary>

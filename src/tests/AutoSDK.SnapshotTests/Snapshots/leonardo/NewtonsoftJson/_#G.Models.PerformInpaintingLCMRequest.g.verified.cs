@@ -49,6 +49,7 @@ namespace G
         /// The style to generate LCM images with.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LcmGenerationStyleJsonConverter))]
         public global::G.LcmGenerationStyle? Style { get; set; }
 
         /// <summary>

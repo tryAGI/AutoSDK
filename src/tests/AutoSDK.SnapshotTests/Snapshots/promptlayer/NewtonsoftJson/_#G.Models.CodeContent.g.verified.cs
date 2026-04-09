@@ -13,6 +13,7 @@ namespace G
         /// Default Value: code
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeContentTypeJsonConverter))]
         public global::G.CodeContentType? Type { get; set; }
 
         /// <summary>

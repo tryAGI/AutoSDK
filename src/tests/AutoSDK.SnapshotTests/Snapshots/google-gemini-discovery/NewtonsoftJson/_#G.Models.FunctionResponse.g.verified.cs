@@ -43,6 +43,7 @@ namespace G
         /// Optional. Specifies how the response should be scheduled in the conversation. Only applicable to NON_BLOCKING function calls, is ignored otherwise. Defaults to WHEN_IDLE.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scheduling")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionResponseSchedulingJsonConverter))]
         public global::G.FunctionResponseScheduling? Scheduling { get; set; }
 
         /// <summary>

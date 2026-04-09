@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ASTOrOperatorNodeInputChildrenItemDiscriminatorTypeJsonConverter))]
         public global::G.ASTOrOperatorNodeInputChildrenItemDiscriminatorType? Type { get; set; }
 
         /// <summary>

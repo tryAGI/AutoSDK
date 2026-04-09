@@ -15,6 +15,7 @@ namespace G
         /// Type of inference engine to use
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("engine_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VlmEngineTypeJsonConverter))]
         public global::G.VlmEngineType EngineType { get; set; } = default!;
 
         /// <summary>

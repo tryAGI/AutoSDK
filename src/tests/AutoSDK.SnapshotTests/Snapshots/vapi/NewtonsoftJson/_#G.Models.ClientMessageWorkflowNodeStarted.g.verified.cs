@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "workflow.node.started" is sent when the active node changes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageWorkflowNodeStartedTypeJsonConverter))]
         public global::G.ClientMessageWorkflowNodeStartedType Type { get; set; }
 
         /// <summary>

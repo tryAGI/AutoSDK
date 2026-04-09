@@ -21,6 +21,7 @@ namespace G
         /// the authScheme is part of the connection state use it there
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_scheme", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetConnectedAccountsByNanoidResponseAuthConfigAuthSchemeJsonConverter))]
         public global::G.GetConnectedAccountsByNanoidResponseAuthConfigAuthScheme AuthScheme { get; set; } = default!;
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_level", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependentAvailableAgentIdentifierAccessLevelJsonConverter))]
         public global::G.DependentAvailableAgentIdentifierAccessLevel AccessLevel { get; set; } = default!;
 
         /// <summary>

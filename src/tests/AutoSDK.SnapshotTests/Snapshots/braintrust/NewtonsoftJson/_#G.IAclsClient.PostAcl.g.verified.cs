@@ -10,11 +10,13 @@ namespace G
         /// Create a new acl. If there is an existing acl with the same contents as the one specified in the request, will return the existing acl unmodified
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Acl> PostAclAsync(
 
             global::G.AclItem request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create acl<br/>
@@ -42,6 +44,7 @@ namespace G
         /// <param name="roleId">
         /// Id of the role the ACL grants. Exactly one of `permission` and `role_id` will be provided
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Acl> PostAclAsync(
@@ -52,6 +55,7 @@ namespace G
             global::G.Permission? permission = default,
             global::G.AclObjectType? restrictObjectType = default,
             global::System.Guid? roleId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

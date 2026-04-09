@@ -19,6 +19,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the checkpoint was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -49,6 +50,7 @@ namespace G
         /// The object type, which is always "fine_tuning.job.checkpoint".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuningJobCheckpointObjectJsonConverter))]
         public global::G.FineTuningJobCheckpointObject Object { get; set; }
 
         /// <summary>

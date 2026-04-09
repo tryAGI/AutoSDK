@@ -13,6 +13,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="xApiKeyExternal"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -21,6 +22,7 @@ namespace G
 
             global::G.CreateClipStreamRequest2 request,
             string? xApiKeyExternal = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a clip stream
@@ -51,6 +53,7 @@ namespace G
         /// <param name="metadata">
         /// Metadata passed to the clips worker
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -66,6 +69,7 @@ namespace G
             string? name = default,
             string? resultUrl = default,
             object? metadata = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

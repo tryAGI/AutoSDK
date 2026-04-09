@@ -61,6 +61,7 @@ namespace G
         /// The gender of the voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gender")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceLibraryGenderJsonConverter))]
         public global::G.VoiceLibraryGender? Gender { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always 'response.reasoning_summary.delta'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseReasoningSummaryDeltaEventTypeJsonConverter))]
         public global::G.ResponseReasoningSummaryDeltaEventType Type { get; set; }
 
         /// <summary>

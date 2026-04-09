@@ -82,6 +82,7 @@ namespace G
         /// * `Custom` - Custom
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProviderEnumJsonConverter))]
         public global::G.ProviderEnum? Provider { get; set; }
 
         /// <summary>
@@ -90,6 +91,7 @@ namespace G
         /// * `Model` - Model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScopeEnumJsonConverter))]
         public global::G.ScopeEnum? Scope { get; set; }
 
         /// <summary>

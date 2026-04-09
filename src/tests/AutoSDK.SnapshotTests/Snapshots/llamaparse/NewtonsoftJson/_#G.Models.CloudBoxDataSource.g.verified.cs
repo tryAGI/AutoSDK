@@ -25,6 +25,7 @@ namespace G
         /// The type of authentication to use (Developer Token or CCG)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("authentication_mechanism", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BoxAuthMechanismJsonConverter))]
         public global::G.BoxAuthMechanism AuthenticationMechanism { get; set; } = default!;
 
         /// <summary>

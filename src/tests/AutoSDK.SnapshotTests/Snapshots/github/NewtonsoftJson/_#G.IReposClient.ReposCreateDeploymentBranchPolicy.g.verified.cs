@@ -14,6 +14,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="environmentName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeploymentBranchPolicy> ReposCreateDeploymentBranchPolicyAsync(
@@ -22,6 +23,7 @@ namespace G
             string environmentName,
 
             global::G.DeploymentBranchPolicyNamePatternWithType request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a deployment branch policy<br/>
@@ -41,6 +43,7 @@ namespace G
         /// Whether this rule targets a branch or tag<br/>
         /// Example: branch
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeploymentBranchPolicy> ReposCreateDeploymentBranchPolicyAsync(
@@ -49,6 +52,7 @@ namespace G
             string environmentName,
             string name,
             global::G.DeploymentBranchPolicyNamePatternWithTypeType? type = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

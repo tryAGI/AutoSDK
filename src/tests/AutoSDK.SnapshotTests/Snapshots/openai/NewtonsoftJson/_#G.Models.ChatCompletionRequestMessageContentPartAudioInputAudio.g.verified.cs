@@ -19,6 +19,7 @@ namespace G
         /// The format of the encoded audio data. Currently supports "wav" and "mp3".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestMessageContentPartAudioInputAudioFormatJsonConverter))]
         public global::G.ChatCompletionRequestMessageContentPartAudioInputAudioFormat Format { get; set; } = default!;
 
         /// <summary>

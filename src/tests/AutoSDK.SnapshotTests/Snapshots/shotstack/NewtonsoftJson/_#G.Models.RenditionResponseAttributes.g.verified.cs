@@ -30,6 +30,7 @@ namespace G
         /// </summary>
         /// <example>ready</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RenditionResponseAttributesStatusJsonConverter))]
         public global::G.RenditionResponseAttributesStatus? Status { get; set; }
 
         /// <summary>

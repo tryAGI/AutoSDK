@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateCartesiaCredentialDTOProviderJsonConverter))]
         public global::G.CreateCartesiaCredentialDTOProvider Provider { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorTypeJsonConverter))]
         public global::G.AudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? Type { get; set; }
 
         /// <summary>

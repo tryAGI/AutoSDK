@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="modelsId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GenerateContentResponse> ModelsGenerateContentAsync(
             string modelsId,
 
             global::G.GenerateContentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generates a model response given an input `GenerateContentRequest`. Refer to the [text generation guide](https://ai.google.dev/gemini-api/docs/text-generation) for detailed usage information. Input capabilities differ between models, including tuned models. Refer to the [model guide](https://ai.google.dev/gemini-api/docs/models/gemini) and [tuning guide](https://ai.google.dev/gemini-api/docs/model-tuning) for details.
@@ -51,6 +53,7 @@ namespace G
         /// <param name="store">
         /// Optional. Configures the logging behavior for a given request. If set, it takes precedence over the project-level logging config.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GenerateContentResponse> ModelsGenerateContentAsync(
@@ -65,6 +68,7 @@ namespace G
             string? cachedContent = default,
             global::G.GenerateContentRequestServiceTier? serviceTier = default,
             bool? store = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

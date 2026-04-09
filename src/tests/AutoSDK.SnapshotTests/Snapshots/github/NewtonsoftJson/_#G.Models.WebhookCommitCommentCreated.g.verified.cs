@@ -13,6 +13,7 @@ namespace G
         /// The action performed. Can be `created`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookCommitCommentCreatedActionJsonConverter))]
         public global::G.WebhookCommitCommentCreatedAction Action { get; set; }
 
         /// <summary>

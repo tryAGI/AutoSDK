@@ -173,16 +173,289 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.CollectionStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CollectionStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OptimizersStatusEnumJsonConverter(),
+
+                    new global::G.JsonConverters.OptimizersStatusEnumNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DistanceJsonConverter(),
+
+                    new global::G.JsonConverters.DistanceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ScalarTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ScalarTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompressionRatioJsonConverter(),
+
+                    new global::G.JsonConverters.CompressionRatioNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BinaryQuantizationEncodingJsonConverter(),
+
+                    new global::G.JsonConverters.BinaryQuantizationEncodingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BinaryQuantizationQueryEncodingJsonConverter(),
+
+                    new global::G.JsonConverters.BinaryQuantizationQueryEncodingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DatatypeJsonConverter(),
+
+                    new global::G.JsonConverters.DatatypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MultiVectorComparatorJsonConverter(),
+
+                    new global::G.JsonConverters.MultiVectorComparatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShardingMethodJsonConverter(),
+
+                    new global::G.JsonConverters.ShardingMethodNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ModifierJsonConverter(),
+
+                    new global::G.JsonConverters.ModifierNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PayloadSchemaTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PayloadSchemaTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.KeywordIndexTypeJsonConverter(),
+
+                    new global::G.JsonConverters.KeywordIndexTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.IntegerIndexTypeJsonConverter(),
+
+                    new global::G.JsonConverters.IntegerIndexTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FloatIndexTypeJsonConverter(),
+
+                    new global::G.JsonConverters.FloatIndexTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GeoIndexTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GeoIndexTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextIndexTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextIndexTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TokenizerTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TokenizerTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LanguageJsonConverter(),
+
+                    new global::G.JsonConverters.LanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SnowballLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.SnowballLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BoolIndexTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BoolIndexTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DatetimeIndexTypeJsonConverter(),
+
+                    new global::G.JsonConverters.DatetimeIndexTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UuidIndexTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UuidIndexTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RecommendStrategyJsonConverter(),
+
+                    new global::G.JsonConverters.RecommendStrategyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DirectionJsonConverter(),
+
+                    new global::G.JsonConverters.DirectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MaxOptimizationThreadsSettingJsonConverter(),
+
+                    new global::G.JsonConverters.MaxOptimizationThreadsSettingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateModeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClusterStatusVariant1StatusJsonConverter(),
+
+                    new global::G.JsonConverters.ClusterStatusVariant1StatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClusterStatusVariant2StatusJsonConverter(),
+
+                    new global::G.JsonConverters.ClusterStatusVariant2StatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StateRoleJsonConverter(),
+
+                    new global::G.JsonConverters.StateRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ConsensusThreadStatusVariant1ConsensusThreadStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ConsensusThreadStatusVariant1ConsensusThreadStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ConsensusThreadStatusVariant3ConsensusThreadStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ConsensusThreadStatusVariant3ConsensusThreadStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ReplicaStateJsonConverter(),
+
+                    new global::G.JsonConverters.ReplicaStateNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShardTransferMethodJsonConverter(),
+
+                    new global::G.JsonConverters.ShardTransferMethodNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ReshardingDirectionJsonConverter(),
+
+                    new global::G.JsonConverters.ReshardingDirectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CpuEndianJsonConverter(),
+
+                    new global::G.JsonConverters.CpuEndianNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShardStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ShardStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SegmentTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SegmentTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageTypeVariant1JsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageTypeVariant1NullableJsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageTypeVariant2JsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageTypeVariant2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageTypeVariant3JsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageTypeVariant3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageTypeVariant4JsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageTypeVariant4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageTypeVariant5JsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageTypeVariant5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.IndexesVariant1TypeJsonConverter(),
+
+                    new global::G.JsonConverters.IndexesVariant1TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.IndexesVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.IndexesVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageDatatypeJsonConverter(),
+
+                    new global::G.JsonConverters.VectorStorageDatatypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SparseIndexTypeVariant1JsonConverter(),
+
+                    new global::G.JsonConverters.SparseIndexTypeVariant1NullableJsonConverter(),
+
+                    new global::G.JsonConverters.SparseIndexTypeVariant2JsonConverter(),
+
+                    new global::G.JsonConverters.SparseIndexTypeVariant2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.SparseIndexTypeVariant3JsonConverter(),
+
+                    new global::G.JsonConverters.SparseIndexTypeVariant3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.SparseVectorStorageTypeVariant1JsonConverter(),
+
+                    new global::G.JsonConverters.SparseVectorStorageTypeVariant1NullableJsonConverter(),
+
+                    new global::G.JsonConverters.SparseVectorStorageTypeVariant2JsonConverter(),
+
+                    new global::G.JsonConverters.SparseVectorStorageTypeVariant2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.PayloadStorageTypeVariant1TypeJsonConverter(),
+
+                    new global::G.JsonConverters.PayloadStorageTypeVariant1TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PayloadStorageTypeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.PayloadStorageTypeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PayloadStorageTypeVariant3TypeJsonConverter(),
+
+                    new global::G.JsonConverters.PayloadStorageTypeVariant3TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PayloadStorageTypeVariant4TypeJsonConverter(),
+
+                    new global::G.JsonConverters.PayloadStorageTypeVariant4TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TrackerStatusEnumJsonConverter(),
+
+                    new global::G.JsonConverters.TrackerStatusEnumNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShardCleanStatusTelemetryEnumJsonConverter(),
+
+                    new global::G.JsonConverters.ShardCleanStatusTelemetryEnumNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SnapshotPriorityJsonConverter(),
+
+                    new global::G.JsonConverters.SnapshotPriorityNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WriteOrderingJsonConverter(),
+
+                    new global::G.JsonConverters.WriteOrderingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ReadConsistencyTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ReadConsistencyTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FusionJsonConverter(),
+
+                    new global::G.JsonConverters.FusionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SampleJsonConverter(),
+
+                    new global::G.JsonConverters.SampleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DisabledTypeJsonConverter(),
+
+                    new global::G.JsonConverters.DisabledTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SnowballTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SnowballTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
         /// Additional names for existing collections.
         /// </summary>
-        public AliasesClient Aliases => new AliasesClient(HttpClient, authorizations: Authorizations)
+        public AliasesClient Aliases => new AliasesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -191,7 +464,7 @@ namespace G
         /// <summary>
         /// Beta features, do not depend on these yet.
         /// </summary>
-        public BetaClient Beta => new BetaClient(HttpClient, authorizations: Authorizations)
+        public BetaClient Beta => new BetaClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -200,7 +473,7 @@ namespace G
         /// <summary>
         /// Searchable collections of points.
         /// </summary>
-        public CollectionsClient Collections => new CollectionsClient(HttpClient, authorizations: Authorizations)
+        public CollectionsClient Collections => new CollectionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -209,7 +482,7 @@ namespace G
         /// <summary>
         /// Service distributed setup.
         /// </summary>
-        public DistributedClient Distributed => new DistributedClient(HttpClient, authorizations: Authorizations)
+        public DistributedClient Distributed => new DistributedClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -218,7 +491,7 @@ namespace G
         /// <summary>
         /// Indexes for payloads associated with points.
         /// </summary>
-        public IndexesClient Indexes => new IndexesClient(HttpClient, authorizations: Authorizations)
+        public IndexesClient Indexes => new IndexesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -227,7 +500,7 @@ namespace G
         /// <summary>
         /// Float-point vectors with payload.
         /// </summary>
-        public PointsClient Points => new PointsClient(HttpClient, authorizations: Authorizations)
+        public PointsClient Points => new PointsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -236,7 +509,7 @@ namespace G
         /// <summary>
         /// Find points in a collection.
         /// </summary>
-        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations)
+        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -245,7 +518,7 @@ namespace G
         /// <summary>
         /// Qdrant service utilities.
         /// </summary>
-        public ServiceClient Service => new ServiceClient(HttpClient, authorizations: Authorizations)
+        public ServiceClient Service => new ServiceClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -254,7 +527,7 @@ namespace G
         /// <summary>
         /// Storage and collections snapshots.
         /// </summary>
-        public SnapshotsClient Snapshots => new SnapshotsClient(HttpClient, authorizations: Authorizations)
+        public SnapshotsClient Snapshots => new SnapshotsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -273,11 +546,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

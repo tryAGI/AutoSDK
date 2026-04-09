@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PatchProjectAutomationConfigVariant2CredentialsTypeJsonConverter))]
         public global::G.PatchProjectAutomationConfigVariant2CredentialsType Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `organization.project.service_account`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectServiceAccountObjectJsonConverter))]
         public global::G.ProjectServiceAccountObject Object { get; set; }
 
         /// <summary>
@@ -31,12 +32,14 @@ namespace G
         /// `owner` or `member`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectServiceAccountRoleJsonConverter))]
         public global::G.ProjectServiceAccountRole Role { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the service account was created
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>

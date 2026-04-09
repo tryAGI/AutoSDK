@@ -31,6 +31,7 @@ namespace G
         /// The role of the user making the request
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResourceAccessInfoRoleJsonConverter))]
         public global::G.ResourceAccessInfoRole Role { get; set; } = default!;
 
         /// <summary>

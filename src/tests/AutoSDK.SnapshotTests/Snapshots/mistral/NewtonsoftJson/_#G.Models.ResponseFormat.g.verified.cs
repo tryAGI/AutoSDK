@@ -14,6 +14,7 @@ namespace G
         /// Default Value: text
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseFormatsJsonConverter))]
         public global::G.ResponseFormats? Type { get; set; }
 
         /// <summary>

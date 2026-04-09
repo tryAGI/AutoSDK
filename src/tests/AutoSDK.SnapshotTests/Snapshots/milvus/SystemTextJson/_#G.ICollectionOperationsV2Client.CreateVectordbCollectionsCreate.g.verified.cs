@@ -12,6 +12,7 @@ namespace G
         /// <param name="requestTimeout"></param>
         /// <param name="authorization"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.HttpapiGenericRespCustomerCreateIndexResp> CreateVectordbCollectionsCreateAsync(
@@ -19,6 +20,7 @@ namespace G
 
             global::G.CreateVectordbCollectionsCreateRequest request,
             string? authorization = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Collection<br/>
@@ -58,6 +60,7 @@ namespace G
         /// The parameters that apply to the index-building process.
         /// </param>
         /// <param name="params"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.HttpapiGenericRespCustomerCreateIndexResp> CreateVectordbCollectionsCreateAsync(
@@ -74,6 +77,7 @@ namespace G
             global::G.CollectionSchema? schema = default,
             global::System.Collections.Generic.IList<global::G.IndexParam>? indexParams = default,
             global::G.CollectionParams? @params = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

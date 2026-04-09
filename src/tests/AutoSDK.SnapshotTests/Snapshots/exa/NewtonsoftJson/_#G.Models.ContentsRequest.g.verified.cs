@@ -37,6 +37,7 @@ namespace G
         /// </summary>
         /// <example>always</example>
         [global::Newtonsoft.Json.JsonProperty("livecrawl")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ContentsRequestLivecrawlJsonConverter))]
         public global::G.ContentsRequestLivecrawl? Livecrawl { get; set; }
 
         /// <summary>

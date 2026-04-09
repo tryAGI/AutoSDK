@@ -33,6 +33,7 @@ namespace G
         /// Policy type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateRateLimitsPolicyRequestTypeJsonConverter))]
         public global::G.CreateRateLimitsPolicyRequestType Type { get; set; } = default!;
 
         /// <summary>
@@ -42,6 +43,7 @@ namespace G
         /// - `rpd` - Requests/Tokens per day
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("unit", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateRateLimitsPolicyRequestUnitJsonConverter))]
         public global::G.CreateRateLimitsPolicyRequestUnit Unit { get; set; } = default!;
 
         /// <summary>

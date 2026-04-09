@@ -25,6 +25,7 @@ namespace G
         /// The intended purpose of the uploaded file. One of: - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateFileRequestPurposeJsonConverter))]
         public global::G.CreateFileRequestPurpose Purpose { get; set; } = default!;
 
         /// <summary>

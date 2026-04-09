@@ -19,6 +19,7 @@ namespace G
         /// Instruction format type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("instruct_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InstructType2JsonConverter))]
         public global::G.InstructType2 InstructType { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `response.audio.transcript.done`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseAudioTranscriptDoneEventTypeJsonConverter))]
         public global::G.ResponseAudioTranscriptDoneEventType Type { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionFilterBranchOperatorJsonConverter))]
         public global::G.SessionFilterBranchOperator Operator { get; set; } = default!;
 
         /// <summary>

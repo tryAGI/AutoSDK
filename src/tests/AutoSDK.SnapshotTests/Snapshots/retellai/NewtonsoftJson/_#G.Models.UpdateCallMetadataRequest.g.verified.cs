@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>everything_except_pii</example>
         [global::Newtonsoft.Json.JsonProperty("data_storage_setting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateCallMetadataRequestDataStorageSettingJsonConverter))]
         public global::G.UpdateCallMetadataRequestDataStorageSetting? DataStorageSetting { get; set; }
 
         /// <summary>

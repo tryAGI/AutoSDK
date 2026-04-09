@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ShotstackGeneratedAssetProvider.Shotstack</default>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ShotstackGeneratedAssetProviderJsonConverter))]
         public global::G.ShotstackGeneratedAssetProvider Provider { get; set; } = global::G.ShotstackGeneratedAssetProvider.Shotstack;
 
         /// <summary>

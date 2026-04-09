@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GroqModelSettingsResponseFormatVariant1DiscriminatorTypeJsonConverter))]
         public global::G.GroqModelSettingsResponseFormatVariant1DiscriminatorType? Type { get; set; }
 
         /// <summary>

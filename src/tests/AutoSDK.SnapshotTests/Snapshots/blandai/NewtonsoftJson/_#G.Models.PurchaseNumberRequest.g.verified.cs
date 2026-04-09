@@ -21,6 +21,7 @@ namespace G
         /// Default Value: US
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("country_code")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PurchaseNumberRequestCountryCodeJsonConverter))]
         public global::G.PurchaseNumberRequestCountryCode? CountryCode { get; set; }
 
         /// <summary>

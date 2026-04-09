@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -21,6 +22,7 @@ namespace G
             string org,
 
             global::G.CodespacesSetCodespacesAccessUsersRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add users to Codespaces access for an organization<br/>
@@ -33,12 +35,14 @@ namespace G
         /// <param name="selectedUsernames">
         /// The usernames of the organization members whose codespaces be billed to the organization.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task CodespacesSetCodespacesAccessUsersAsync(
             string org,
             global::System.Collections.Generic.IList<string> selectedUsernames,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

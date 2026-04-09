@@ -18,12 +18,14 @@ namespace G
         /// Default Value: 1730898830008L
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FileUploadResponse> V1LibraryUploadAsync(
 
             global::G.BodyV1LibraryUpload request,
             int? requestStartTime = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload Organization File<br/>
@@ -43,6 +45,7 @@ namespace G
         /// <param name="labels"></param>
         /// <param name="publicUrl"></param>
         /// <param name="customConfigs"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FileUploadResponse> V1LibraryUploadAsync(
@@ -53,6 +56,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? labels = default,
             string? publicUrl = default,
             string? customConfigs = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TraceAnnotationSourceJsonConverter))]
         public global::G.TraceAnnotationSource Source { get; set; } = default!;
 
         /// <summary>
@@ -49,6 +50,7 @@ namespace G
         /// The kind of annotator used for the annotation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("annotator_kind", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TraceAnnotationAnnotatorKindJsonConverter))]
         public global::G.TraceAnnotationAnnotatorKind AnnotatorKind { get; set; } = default!;
 
         /// <summary>

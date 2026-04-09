@@ -9,11 +9,13 @@ namespace G
         /// Speech to Text
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateAsrResponse> CreateAsrAsync(
 
             global::G.CreateAsrRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Speech to Text
@@ -32,6 +34,7 @@ namespace G
         /// Whether to return precise timestamps in the text, this will increase the latency in audio shorter than 30 seconds<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateAsrResponse> CreateAsrAsync(
@@ -39,6 +42,7 @@ namespace G
             string audioname,
             string? language = default,
             bool? ignoreTimestamps = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

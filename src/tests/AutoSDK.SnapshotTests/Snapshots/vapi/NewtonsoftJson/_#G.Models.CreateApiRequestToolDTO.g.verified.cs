@@ -20,12 +20,14 @@ namespace G
         /// The type of tool. "apiRequest" for API request tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateApiRequestToolDTOTypeJsonConverter))]
         public global::G.CreateApiRequestToolDTOType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateApiRequestToolDTOMethodJsonConverter))]
         public global::G.CreateApiRequestToolDTOMethod Method { get; set; } = default!;
 
         /// <summary>

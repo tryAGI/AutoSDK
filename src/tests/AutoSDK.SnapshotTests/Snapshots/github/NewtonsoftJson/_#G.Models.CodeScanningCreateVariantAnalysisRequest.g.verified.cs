@@ -13,6 +13,7 @@ namespace G
         /// The language targeted by the CodeQL query
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeScanningVariantAnalysisLanguageJsonConverter))]
         public global::G.CodeScanningVariantAnalysisLanguage Language { get; set; } = default!;
 
         /// <summary>

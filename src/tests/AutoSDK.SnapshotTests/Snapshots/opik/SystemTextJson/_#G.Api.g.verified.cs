@@ -54,6 +54,9 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -483,7 +486,7 @@ namespace G
         /// <summary>
         /// Agent configuration management.
         /// </summary>
-        public AgentConfigsClient AgentConfigs => new AgentConfigsClient(HttpClient, authorizations: Authorizations)
+        public AgentConfigsClient AgentConfigs => new AgentConfigsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -492,7 +495,7 @@ namespace G
         /// <summary>
         /// Alert resources.
         /// </summary>
-        public AlertsClient Alerts => new AlertsClient(HttpClient, authorizations: Authorizations)
+        public AlertsClient Alerts => new AlertsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -501,7 +504,7 @@ namespace G
         /// <summary>
         /// Private annotation queue operations.
         /// </summary>
-        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(HttpClient, authorizations: Authorizations)
+        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -510,7 +513,7 @@ namespace G
         /// <summary>
         /// Assistant Sidebar configuration.
         /// </summary>
-        public AssistantSidebarsClient AssistantSidebars => new AssistantSidebarsClient(HttpClient, authorizations: Authorizations)
+        public AssistantSidebarsClient AssistantSidebars => new AssistantSidebarsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -519,7 +522,7 @@ namespace G
         /// <summary>
         /// Attachments related resources.
         /// </summary>
-        public AttachmentsClient Attachments => new AttachmentsClient(HttpClient, authorizations: Authorizations)
+        public AttachmentsClient Attachments => new AttachmentsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -528,7 +531,7 @@ namespace G
         /// <summary>
         /// Automation rule evaluators resource.
         /// </summary>
-        public AutomationRuleEvaluatorsClient AutomationRuleEvaluators => new AutomationRuleEvaluatorsClient(HttpClient, authorizations: Authorizations)
+        public AutomationRuleEvaluatorsClient AutomationRuleEvaluators => new AutomationRuleEvaluatorsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -537,7 +540,7 @@ namespace G
         /// <summary>
         /// Chat Completions related resources.
         /// </summary>
-        public ChatCompletionsClient ChatCompletions => new ChatCompletionsClient(HttpClient, authorizations: Authorizations)
+        public ChatCompletionsClient ChatCompletions => new ChatCompletionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -546,7 +549,7 @@ namespace G
         /// <summary>
         /// Access check resources.
         /// </summary>
-        public CheckClient Check => new CheckClient(HttpClient, authorizations: Authorizations)
+        public CheckClient Check => new CheckClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -555,7 +558,7 @@ namespace G
         /// <summary>
         /// Workspace Dashboard resources.
         /// </summary>
-        public DashboardsClient Dashboards => new DashboardsClient(HttpClient, authorizations: Authorizations)
+        public DashboardsClient Dashboards => new DashboardsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -564,7 +567,7 @@ namespace G
         /// <summary>
         /// Dataset resources.
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -573,7 +576,7 @@ namespace G
         /// <summary>
         /// Experiment resources.
         /// </summary>
-        public ExperimentsClient Experiments => new ExperimentsClient(HttpClient, authorizations: Authorizations)
+        public ExperimentsClient Experiments => new ExperimentsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -582,7 +585,7 @@ namespace G
         /// <summary>
         /// Feedback definitions related resources.
         /// </summary>
-        public FeedbackDefinitionsClient FeedbackDefinitions => new FeedbackDefinitionsClient(HttpClient, authorizations: Authorizations)
+        public FeedbackDefinitionsClient FeedbackDefinitions => new FeedbackDefinitionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -591,7 +594,7 @@ namespace G
         /// <summary>
         /// Guardrails related resources.
         /// </summary>
-        public GuardrailsClient Guardrails => new GuardrailsClient(HttpClient, authorizations: Authorizations)
+        public GuardrailsClient Guardrails => new GuardrailsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -600,7 +603,7 @@ namespace G
         /// <summary>
         /// Insights View resources.
         /// </summary>
-        public InsightsViewsClient InsightsViews => new InsightsViewsClient(HttpClient, authorizations: Authorizations)
+        public InsightsViewsClient InsightsViews => new InsightsViewsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -609,7 +612,7 @@ namespace G
         /// <summary>
         /// LLM model registry resources.
         /// </summary>
-        public LlmModelsClient LlmModels => new LlmModelsClient(HttpClient, authorizations: Authorizations)
+        public LlmModelsClient LlmModels => new LlmModelsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -618,7 +621,7 @@ namespace G
         /// <summary>
         /// LLM Provider Key.
         /// </summary>
-        public LlmProviderKeyClient LlmProviderKey => new LlmProviderKeyClient(HttpClient, authorizations: Authorizations)
+        public LlmProviderKeyClient LlmProviderKey => new LlmProviderKeyClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -627,7 +630,7 @@ namespace G
         /// <summary>
         /// Manual evaluation resources for traces, threads, and spans.
         /// </summary>
-        public ManualEvaluationClient ManualEvaluation => new ManualEvaluationClient(HttpClient, authorizations: Authorizations)
+        public ManualEvaluationClient ManualEvaluation => new ManualEvaluationClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -636,7 +639,7 @@ namespace G
         /// <summary>
         /// Ollama provider configuration endpoints with OpenAI-compatible API support.
         /// </summary>
-        public OllamaClient Ollama => new OllamaClient(HttpClient, authorizations: Authorizations)
+        public OllamaClient Ollama => new OllamaClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -645,7 +648,7 @@ namespace G
         /// <summary>
         /// Ollie pod state persistence.
         /// </summary>
-        public OllieStateClient OllieState => new OllieStateClient(HttpClient, authorizations: Authorizations)
+        public OllieStateClient OllieState => new OllieStateClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -654,7 +657,7 @@ namespace G
         /// <summary>
         /// Resource to ingest Traces and Spans via OpenTelemetry.
         /// </summary>
-        public OpenTelemetryIngestionClient OpenTelemetryIngestion => new OpenTelemetryIngestionClient(HttpClient, authorizations: Authorizations)
+        public OpenTelemetryIngestionClient OpenTelemetryIngestion => new OpenTelemetryIngestionClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -663,7 +666,7 @@ namespace G
         /// <summary>
         /// Optimization resources.
         /// </summary>
-        public OptimizationsClient Optimizations => new OptimizationsClient(HttpClient, authorizations: Authorizations)
+        public OptimizationsClient Optimizations => new OptimizationsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -672,7 +675,7 @@ namespace G
         /// <summary>
         /// Project related resources.
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations)
+        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -681,7 +684,7 @@ namespace G
         /// <summary>
         /// Prompt resources.
         /// </summary>
-        public PromptsClient Prompts => new PromptsClient(HttpClient, authorizations: Authorizations)
+        public PromptsClient Prompts => new PromptsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -690,7 +693,7 @@ namespace G
         /// <summary>
         /// Redirects for SDK generated links.
         /// </summary>
-        public RedirectClient Redirect => new RedirectClient(HttpClient, authorizations: Authorizations)
+        public RedirectClient Redirect => new RedirectClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -699,7 +702,7 @@ namespace G
         /// <summary>
         /// Data retention rule management.
         /// </summary>
-        public RetentionRulesClient RetentionRules => new RetentionRulesClient(HttpClient, authorizations: Authorizations)
+        public RetentionRulesClient RetentionRules => new RetentionRulesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -708,7 +711,7 @@ namespace G
         /// <summary>
         /// Local runner management endpoints.
         /// </summary>
-        public RunnersClient Runners => new RunnersClient(HttpClient, authorizations: Authorizations)
+        public RunnersClient Runners => new RunnersClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -717,7 +720,7 @@ namespace G
         /// <summary>
         /// Service Toggles resources.
         /// </summary>
-        public ServiceTogglesClient ServiceToggles => new ServiceTogglesClient(HttpClient, authorizations: Authorizations)
+        public ServiceTogglesClient ServiceToggles => new ServiceTogglesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -726,7 +729,7 @@ namespace G
         /// <summary>
         /// Span related resources.
         /// </summary>
-        public SpansClient Spans => new SpansClient(HttpClient, authorizations: Authorizations)
+        public SpansClient Spans => new SpansClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -735,7 +738,7 @@ namespace G
         /// <summary>
         /// System usage related resource.
         /// </summary>
-        public SystemUsageClient SystemUsage => new SystemUsageClient(HttpClient, authorizations: Authorizations)
+        public SystemUsageClient SystemUsage => new SystemUsageClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -744,7 +747,7 @@ namespace G
         /// <summary>
         /// Trace related resources.
         /// </summary>
-        public TracesClient Traces => new TracesClient(HttpClient, authorizations: Authorizations)
+        public TracesClient Traces => new TracesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -753,7 +756,7 @@ namespace G
         /// <summary>
         /// Welcome wizard tracking resources.
         /// </summary>
-        public WelcomeWizardClient WelcomeWizard => new WelcomeWizardClient(HttpClient, authorizations: Authorizations)
+        public WelcomeWizardClient WelcomeWizard => new WelcomeWizardClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -762,7 +765,7 @@ namespace G
         /// <summary>
         /// Workspace permissions related resources.
         /// </summary>
-        public WorkspacePermissionsClient WorkspacePermissions => new WorkspacePermissionsClient(HttpClient, authorizations: Authorizations)
+        public WorkspacePermissionsClient WorkspacePermissions => new WorkspacePermissionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -771,7 +774,7 @@ namespace G
         /// <summary>
         /// Workspace related resources.
         /// </summary>
-        public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, authorizations: Authorizations)
+        public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -790,11 +793,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

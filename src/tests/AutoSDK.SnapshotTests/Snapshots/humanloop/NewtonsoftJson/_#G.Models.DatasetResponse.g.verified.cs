@@ -67,6 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetResponseTypeJsonConverter))]
         public global::G.DatasetResponseType? Type { get; set; }
 
         /// <summary>

@@ -10,11 +10,13 @@ namespace G
         /// This endpoint will generate a SVD motion generation.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateSVDMotionGenerationResponse> CreateSVDMotionGenerationAsync(
 
             global::G.CreateSVDMotionGenerationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create SVD Motion Generation<br/>
@@ -35,6 +37,7 @@ namespace G
         /// <param name="motionStrength">
         /// The motion strength.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateSVDMotionGenerationResponse> CreateSVDMotionGenerationAsync(
@@ -43,6 +46,7 @@ namespace G
             bool? isInitImage = default,
             bool? isVariation = default,
             int? motionStrength = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

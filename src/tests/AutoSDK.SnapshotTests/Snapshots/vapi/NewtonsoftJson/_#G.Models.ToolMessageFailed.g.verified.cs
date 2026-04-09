@@ -26,6 +26,7 @@ namespace G
         /// If this message is provided, only this message will be spoken and the model will not be requested to come up with a response. It's an exclusive OR.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolMessageFailedTypeJsonConverter))]
         public global::G.ToolMessageFailedType Type { get; set; }
 
         /// <summary>

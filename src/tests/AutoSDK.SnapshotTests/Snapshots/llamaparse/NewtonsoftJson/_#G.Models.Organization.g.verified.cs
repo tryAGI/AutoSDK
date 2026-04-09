@@ -38,6 +38,7 @@ namespace G
         /// Default Value: DEFAULT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parse_plan_level")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ParsePlanLevelJsonConverter))]
         public global::G.ParsePlanLevel? ParsePlanLevel { get; set; }
 
         /// <summary>

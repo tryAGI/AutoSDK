@@ -10,11 +10,13 @@ namespace G
         /// AddTagWithParent
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Tag> AddTagWithParentAsync(
 
             global::G.AddTagWithParentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// AddTagWithParent<br/>
@@ -30,6 +32,7 @@ namespace G
         /// <param name="weightDefault"></param>
         /// <param name="allowDecimalWeights"></param>
         /// <param name="color"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Tag> AddTagWithParentAsync(
@@ -43,6 +46,7 @@ namespace G
             double? weightMin = default,
             double? weightMax = default,
             double? weightDefault = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

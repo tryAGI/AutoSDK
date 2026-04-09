@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IncompleteDetailsReasonJsonConverter))]
         public global::G.IncompleteDetailsReason? Reason { get; set; }
 
         /// <summary>

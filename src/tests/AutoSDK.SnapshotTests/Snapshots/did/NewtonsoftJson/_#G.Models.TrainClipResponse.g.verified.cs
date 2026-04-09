@@ -49,6 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gender", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TrainClipResponseGenderJsonConverter))]
         public global::G.TrainClipResponseGender Gender { get; set; } = default!;
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TrainClipResponseStatusJsonConverter))]
         public global::G.TrainClipResponseStatus Status { get; set; } = default!;
 
         /// <summary>

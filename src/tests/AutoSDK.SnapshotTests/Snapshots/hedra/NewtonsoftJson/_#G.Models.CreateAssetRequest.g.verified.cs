@@ -19,6 +19,7 @@ namespace G
         /// The type of the asset.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssetTypeJsonConverter))]
         public global::G.AssetType Type { get; set; } = default!;
 
         /// <summary>

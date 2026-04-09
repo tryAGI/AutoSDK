@@ -17,6 +17,7 @@ namespace G
         /// <param name="teamSlug"></param>
         /// <param name="discussionNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TeamDiscussionComment> TeamsCreateDiscussionCommentInOrgAsync(
@@ -25,6 +26,7 @@ namespace G
             int discussionNumber,
 
             global::G.TeamsCreateDiscussionCommentInOrgRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a discussion comment<br/>
@@ -40,6 +42,7 @@ namespace G
         /// <param name="body">
         /// The discussion comment's body text.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TeamDiscussionComment> TeamsCreateDiscussionCommentInOrgAsync(
@@ -47,6 +50,7 @@ namespace G
             string teamSlug,
             int discussionNumber,
             string body,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

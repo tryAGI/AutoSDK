@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnvironmentsSendMessageRequestMessageVariant1RoleJsonConverter))]
         public global::G.EnvironmentsSendMessageRequestMessageVariant1Role Role { get; set; }
 
         /// <summary>

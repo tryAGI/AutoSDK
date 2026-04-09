@@ -18,6 +18,7 @@ namespace G
         /// </param>
         /// <param name="authorization"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>> V1ChatCompleteAsync(
@@ -25,6 +26,7 @@ namespace G
 
             global::G.LanguageStudioApiServerDataTypesChatChatRequest request,
             int? requestStartTime = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Studio Chat Complete<br/>
@@ -71,6 +73,7 @@ namespace G
         /// <param name="responseFormat">
         /// Default Value: {"type":"text"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>> V1ChatCompleteAsync(
@@ -88,6 +91,7 @@ namespace G
             global::G.MockResponseConfig? mockResponse = default,
             global::System.Collections.Generic.IList<global::G.DocumentSchema>? documents = default,
             global::G.ResponseFormat? responseFormat = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

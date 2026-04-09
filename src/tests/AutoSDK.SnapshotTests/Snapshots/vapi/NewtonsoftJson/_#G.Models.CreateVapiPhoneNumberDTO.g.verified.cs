@@ -29,6 +29,7 @@ namespace G
         /// This is to create free SIP phone numbers on Vapi.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateVapiPhoneNumberDTOProviderJsonConverter))]
         public global::G.CreateVapiPhoneNumberDTOProvider Provider { get; set; }
 
         /// <summary>

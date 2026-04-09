@@ -13,12 +13,14 @@ namespace G
         /// This is the type of cost, always 'vapi' for this class.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VapiCostTypeJsonConverter))]
         public global::G.VapiCostType Type { get; set; }
 
         /// <summary>
         /// This is the sub type of the cost.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VapiCostSubTypeJsonConverter))]
         public global::G.VapiCostSubType SubType { get; set; } = default!;
 
         /// <summary>

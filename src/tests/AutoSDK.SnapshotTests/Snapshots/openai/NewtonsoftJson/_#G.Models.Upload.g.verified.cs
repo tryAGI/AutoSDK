@@ -19,6 +19,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the Upload was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -43,18 +44,21 @@ namespace G
         /// The status of the Upload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UploadStatusJsonConverter))]
         public global::G.UploadStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the Upload will expire.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset ExpiresAt { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always "upload".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UploadObjectJsonConverter))]
         public global::G.UploadObject? Object { get; set; }
 
         /// <summary>

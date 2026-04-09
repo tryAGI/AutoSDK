@@ -13,6 +13,7 @@ namespace G
         /// The type of automation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectAutomationConfigVariant2EventTypeJsonConverter))]
         public global::G.ProjectAutomationConfigVariant2EventType EventType { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// The format to export the results in
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectAutomationConfigVariant2FormatJsonConverter))]
         public global::G.ProjectAutomationConfigVariant2Format Format { get; set; } = default!;
 
         /// <summary>

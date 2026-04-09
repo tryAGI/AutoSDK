@@ -13,6 +13,7 @@ namespace G
         /// Type of the node
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionNodeVariant2TypeJsonConverter))]
         public global::G.FunctionNodeVariant2Type Type { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// Tool type for function nodes
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionNodeVariant2ToolTypeJsonConverter))]
         public global::G.FunctionNodeVariant2ToolType ToolType { get; set; } = default!;
 
         /// <summary>

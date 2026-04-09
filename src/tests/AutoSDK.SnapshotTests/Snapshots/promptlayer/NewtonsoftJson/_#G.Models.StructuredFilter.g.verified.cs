@@ -13,12 +13,14 @@ namespace G
         /// The request log field to filter on.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("field", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StructuredFilterFieldJsonConverter))]
         public global::G.StructuredFilterField Field { get; set; } = default!;
 
         /// <summary>
         /// The comparison operator.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StructuredFilterOperatorJsonConverter))]
         public global::G.StructuredFilterOperator Operator { get; set; } = default!;
 
         /// <summary>

@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.V2RerankResponse> Rerank2Async(
 
             global::G.V2RerankRequest request,
             string? xClientName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Rerank V2 API<br/>
@@ -41,6 +43,7 @@ namespace G
         /// <param name="maxTokensPerDoc">
         /// Defaults to `4096`. Long documents will be automatically truncated to the specified number of tokens.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.V2RerankResponse> Rerank2Async(
@@ -50,6 +53,7 @@ namespace G
             string? xClientName = default,
             int? topN = default,
             int? maxTokensPerDoc = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -27,6 +27,7 @@ namespace G
         /// Whether to check and update file processing status (from the vector db service). If False, will not fetch and update the status, which may lead to performance gains.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -36,6 +37,7 @@ namespace G
             string? after = default,
             bool? includeContent = default,
             bool? checkStatusUpdates = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

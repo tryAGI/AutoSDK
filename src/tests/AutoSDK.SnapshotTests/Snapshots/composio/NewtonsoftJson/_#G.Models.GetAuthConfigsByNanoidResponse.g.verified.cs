@@ -27,6 +27,7 @@ namespace G
         /// The type of the authentication configuration (custom or default)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetAuthConfigsByNanoidResponseTypeJsonConverter))]
         public global::G.GetAuthConfigsByNanoidResponseType Type { get; set; } = default!;
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace G
         /// The authentication scheme used (e.g., OAuth2, API Key, etc.)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_scheme")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetAuthConfigsByNanoidResponseAuthSchemeJsonConverter))]
         public global::G.GetAuthConfigsByNanoidResponseAuthScheme? AuthScheme { get; set; }
 
         /// <summary>
@@ -69,6 +71,7 @@ namespace G
         /// Current status of the authentication configuration
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetAuthConfigsByNanoidResponseStatusJsonConverter))]
         public global::G.GetAuthConfigsByNanoidResponseStatus Status { get; set; } = default!;
 
         /// <summary>

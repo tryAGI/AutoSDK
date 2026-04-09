@@ -127,6 +127,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewRequestedVariant2PullRequestBaseUserTypeJsonConverter))]
         public global::G.WebhookPullRequestReviewRequestedVariant2PullRequestBaseUserType? Type { get; set; }
 
         /// <summary>

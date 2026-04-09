@@ -13,6 +13,7 @@ namespace G
         /// Vertex AI authentication type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vertex_auth_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VertexAIConfigurationVertexAuthTypeJsonConverter))]
         public global::G.VertexAIConfigurationVertexAuthType VertexAuthType { get; set; } = default!;
 
         /// <summary>

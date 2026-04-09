@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RequestToolResultBlockContentVariant2ItemDiscriminatorTypeJsonConverter))]
         public global::G.RequestToolResultBlockContentVariant2ItemDiscriminatorType? Type { get; set; }
 
         /// <summary>

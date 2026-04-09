@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.KpiMetricTypeJsonConverter))]
         public global::G.KpiMetricType? Type { get; set; }
 
         /// <summary>

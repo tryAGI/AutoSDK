@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListMessagesForStepResponseItemDiscriminatorMessageTypeJsonConverter))]
         public global::G.ListMessagesForStepResponseItemDiscriminatorMessageType? MessageType { get; set; }
 
         /// <summary>

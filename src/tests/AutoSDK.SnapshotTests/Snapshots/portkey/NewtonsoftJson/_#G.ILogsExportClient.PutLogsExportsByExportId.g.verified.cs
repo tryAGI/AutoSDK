@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="exportId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateExportResponse> PutLogsExportsByExportIdAsync(
             string exportId,
 
             global::G.PutLogsExportsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a logs export
@@ -24,6 +26,7 @@ namespace G
         /// <param name="workspaceId"></param>
         /// <param name="filters"></param>
         /// <param name="requestedData"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateExportResponse> PutLogsExportsByExportIdAsync(
@@ -31,6 +34,7 @@ namespace G
             global::G.GenerationsFilterSchema filters,
             string? workspaceId = default,
             global::System.Collections.Generic.IList<global::G.LogExportsRequestedDataItem>? requestedData = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -43,6 +43,7 @@ namespace G
         /// The level of the annotation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("annotation_level", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChecksUpdateRequestOutputAnnotationAnnotationLevelJsonConverter))]
         public global::G.ChecksUpdateRequestOutputAnnotationAnnotationLevel AnnotationLevel { get; set; } = default!;
 
         /// <summary>

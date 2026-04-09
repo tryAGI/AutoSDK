@@ -103,6 +103,7 @@ namespace G
         /// * `unknown` - unknown
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompts_status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptsStatusEnumJsonConverter))]
         public global::G.PromptsStatusEnum PromptsStatus { get; set; } = default!;
 
         /// <summary>

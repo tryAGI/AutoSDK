@@ -63,6 +63,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service_tier")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServiceTierJsonConverter))]
         public global::G.ServiceTier? ServiceTier { get; set; }
 
         /// <summary>

@@ -22,6 +22,7 @@ namespace G
         /// * FULFILLED — The developer granted the benefit that the user claimed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fulfillment_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateDropsEntitlementsBodyFulfillmentStatusJsonConverter))]
         public global::G.UpdateDropsEntitlementsBodyFulfillmentStatus? FulfillmentStatus { get; set; }
 
         /// <summary>

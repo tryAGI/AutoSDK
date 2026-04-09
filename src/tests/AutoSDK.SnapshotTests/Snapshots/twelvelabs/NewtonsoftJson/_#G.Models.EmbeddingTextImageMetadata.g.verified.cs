@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingTextImageMetadataInputTypeJsonConverter))]
         public global::G.EmbeddingTextImageMetadataInputType InputType { get; set; }
 
         /// <summary>

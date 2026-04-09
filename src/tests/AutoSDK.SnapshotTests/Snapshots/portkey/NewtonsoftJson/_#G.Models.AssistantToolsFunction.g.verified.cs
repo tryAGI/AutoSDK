@@ -13,6 +13,7 @@ namespace G
         /// The type of tool being defined: `function`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssistantToolsFunctionTypeJsonConverter))]
         public global::G.AssistantToolsFunctionType Type { get; set; }
 
         /// <summary>

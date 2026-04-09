@@ -9,11 +9,13 @@ namespace G
         /// Obj Read
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ObjReadRes> ObjReadObjReadPostAsync(
 
             global::G.ObjReadReq request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Obj Read
@@ -29,6 +31,7 @@ namespace G
         /// If true, tags and aliases are fetched and included in the response.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ObjReadRes> ObjReadObjReadPostAsync(
@@ -37,6 +40,7 @@ namespace G
             string digest,
             bool? metadataOnly = default,
             bool? includeTagsAndAliases = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

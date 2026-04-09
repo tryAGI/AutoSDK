@@ -31,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>mp4</example>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RenditionFormatJsonConverter))]
         public global::G.RenditionFormat? Format { get; set; }
 
         /// <summary>
@@ -49,6 +50,7 @@ namespace G
         /// </summary>
         /// <example>crop</example>
         [global::Newtonsoft.Json.JsonProperty("fit")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RenditionFitJsonConverter))]
         public global::G.RenditionFit? Fit { get; set; }
 
         /// <summary>
@@ -63,6 +65,7 @@ namespace G
         /// </summary>
         /// <example>hd</example>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RenditionResolutionJsonConverter))]
         public global::G.RenditionResolution? Resolution { get; set; }
 
         /// <summary>

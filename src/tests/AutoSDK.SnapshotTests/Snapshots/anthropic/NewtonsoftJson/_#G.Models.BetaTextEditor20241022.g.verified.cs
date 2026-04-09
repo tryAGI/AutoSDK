@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaTextEditor20241022TypeJsonConverter))]
         public global::G.BetaTextEditor20241022Type Type { get; set; }
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace G
         /// This is how the tool will be called by the model and in tool_use blocks.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaTextEditor20241022NameJsonConverter))]
         public global::G.BetaTextEditor20241022Name Name { get; set; }
 
         /// <summary>

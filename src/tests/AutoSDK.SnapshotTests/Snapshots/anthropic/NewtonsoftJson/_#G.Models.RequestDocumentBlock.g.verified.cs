@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RequestDocumentBlockTypeJsonConverter))]
         public global::G.RequestDocumentBlockType Type { get; set; }
 
         /// <summary>

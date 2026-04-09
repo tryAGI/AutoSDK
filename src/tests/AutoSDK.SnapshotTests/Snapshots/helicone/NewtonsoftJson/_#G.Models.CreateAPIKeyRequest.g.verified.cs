@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("key_permissions")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAPIKeyRequestKeyPermissionsJsonConverter))]
         public global::G.CreateAPIKeyRequestKeyPermissions? KeyPermissions { get; set; }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MemoriesCreateResponseItemEventJsonConverter))]
         public global::G.MemoriesCreateResponseItemEvent Event { get; set; } = default!;
 
         /// <summary>

@@ -19,12 +19,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("channel")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListExportRequestsV2ResponseItemChannelJsonConverter))]
         public global::G.ListExportRequestsV2ResponseItemChannel? Channel { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListExportRequestsV2ResponseItemStatusJsonConverter))]
         public global::G.ListExportRequestsV2ResponseItemStatus? Status { get; set; }
 
         /// <summary>

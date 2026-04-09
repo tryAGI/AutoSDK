@@ -12,6 +12,7 @@ namespace G
         /// <param name="workspaceName"></param>
         /// <param name="workflowId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.WorkflowInferenceResponse> InferFromPredefinedWorkflowWorkspaceNameWorkflowsWorkflowIdPostAsync(
@@ -19,6 +20,7 @@ namespace G
             string workflowId,
 
             global::G.PredefinedWorkflowInferenceRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Endpoint to run predefined workflow<br/>
@@ -49,6 +51,7 @@ namespace G
         /// <param name="workflowVersionId">
         /// Specific version of the workflow to fetch. If not provided, the latest version is used.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.WorkflowInferenceResponse> InferFromPredefinedWorkflowWorkspaceNameWorkflowsWorkflowIdPostAsync(
@@ -61,6 +64,7 @@ namespace G
             string? requestWorkflowId = default,
             bool? useCache = default,
             string? workflowVersionId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

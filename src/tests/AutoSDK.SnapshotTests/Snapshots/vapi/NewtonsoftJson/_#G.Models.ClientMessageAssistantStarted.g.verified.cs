@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "assistant.started" is sent when the assistant is started.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageAssistantStartedTypeJsonConverter))]
         public global::G.ClientMessageAssistantStartedType Type { get; set; }
 
         /// <summary>

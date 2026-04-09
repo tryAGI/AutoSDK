@@ -32,16 +32,3833 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.AssemblyAITranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AssemblyAITranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssemblyAITranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.AssemblyAITranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssemblyAITranscriberSpeechModelJsonConverter(),
+
+                    new global::G.JsonConverters.AssemblyAITranscriberSpeechModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AzureSpeechTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AzureSpeechTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AzureSpeechTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.AzureSpeechTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AzureSpeechTranscriberSegmentationStrategyJsonConverter(),
+
+                    new global::G.JsonConverters.AzureSpeechTranscriberSegmentationStrategyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CustomTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberLanguageBehaviourJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberLanguageBehaviourNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberLanguagesJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberLanguagesNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberRegionJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaTranscriberRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SonioxTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SonioxTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SonioxTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.SonioxTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SonioxTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.SonioxTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberOperatingPointJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberOperatingPointNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberRegionJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberNumeralStyleJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsTranscriberNumeralStyleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TalkscriberTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TalkscriberTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TalkscriberTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.TalkscriberTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TalkscriberTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.TalkscriberTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAITranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAITranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAITranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAITranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAITranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAITranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAssemblyAITranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAssemblyAITranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAssemblyAITranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAssemblyAITranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAssemblyAITranscriberSpeechModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAssemblyAITranscriberSpeechModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAzureSpeechTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAzureSpeechTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAzureSpeechTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAzureSpeechTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAzureSpeechTranscriberSegmentationStrategyJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAzureSpeechTranscriberSegmentationStrategyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCustomTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCustomTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberLanguageBehaviourJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberLanguageBehaviourNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberLanguagesJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberLanguagesNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberRegionJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGladiaTranscriberRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSonioxTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSonioxTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSonioxTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSonioxTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSonioxTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSonioxTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberOperatingPointJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberOperatingPointNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberRegionJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberNumeralStyleJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSpeechmaticsTranscriberNumeralStyleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackTalkscriberTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackTalkscriberTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackTalkscriberTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackTalkscriberTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackTalkscriberTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackTalkscriberTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGoogleTranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGoogleTranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGoogleTranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGoogleTranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGoogleTranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackGoogleTranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAITranscriberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAITranscriberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAITranscriberModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAITranscriberModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAITranscriberLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAITranscriberLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LangfuseObservabilityPlanProviderJsonConverter(),
+
+                    new global::G.JsonConverters.LangfuseObservabilityPlanProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextContentTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextContentTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextContentLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.TextContentLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ConditionOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.ConditionOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageStartTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageStartTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageCompleteTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageCompleteTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageCompleteRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageCompleteRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageFailedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageFailedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageDelayedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageDelayedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MessageTargetRoleJsonConverter(),
+
+                    new global::G.JsonConverters.MessageTargetRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RegexConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RegexConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LiquidConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.LiquidConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GroupConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GroupConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GroupConditionOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.GroupConditionOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateDtmfToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateDtmfToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateEndCallToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateEndCallToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVoicemailToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVoicemailToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JsonSchemaTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JsonSchemaTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JsonSchemaFormatJsonConverter(),
+
+                    new global::G.JsonConverters.JsonSchemaFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIFunctionParametersTypeJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIFunctionParametersTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateFunctionToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateFunctionToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGhlToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGhlToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateMakeToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateMakeToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CustomMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationAssistantTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationAssistantTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationAssistantTransferModeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationAssistantTransferModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferAssistantModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TransferAssistantModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RegexOptionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RegexOptionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantCustomEndpointingRuleTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantCustomEndpointingRuleTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomerCustomEndpointingRuleTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CustomerCustomEndpointingRuleTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BothCustomEndpointingRuleTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BothCustomEndpointingRuleTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiSmartEndpointingPlanProviderJsonConverter(),
+
+                    new global::G.JsonConverters.VapiSmartEndpointingPlanProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LivekitSmartEndpointingPlanProviderJsonConverter(),
+
+                    new global::G.JsonConverters.LivekitSmartEndpointingPlanProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomEndpointingModelSmartEndpointingPlanProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CustomEndpointingModelSmartEndpointingPlanProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StartSpeakingPlanSmartEndpointingEnabledJsonConverter(),
+
+                    new global::G.JsonConverters.StartSpeakingPlanSmartEndpointingEnabledNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferAssistantBackgroundSoundJsonConverter(),
+
+                    new global::G.JsonConverters.TransferAssistantBackgroundSoundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferAssistantFirstMessageModeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferAssistantFirstMessageModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferCancelToolUserEditableTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferCancelToolUserEditableTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferSuccessfulToolUserEditableTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferSuccessfulToolUserEditableTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferPlanModeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferPlanModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationNumberTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationNumberTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationSipTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationSipTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTransferCallToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTransferCallToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ContextEngineeringPlanLastNMessagesTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ContextEngineeringPlanLastNMessagesTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ContextEngineeringPlanNoneTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ContextEngineeringPlanNoneTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ContextEngineeringPlanAllTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ContextEngineeringPlanAllTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ContextEngineeringPlanUserAndAssistantMessagesTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ContextEngineeringPlanUserAndAssistantMessagesTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HandoffDestinationAssistantTypeJsonConverter(),
+
+                    new global::G.JsonConverters.HandoffDestinationAssistantTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HandoffDestinationDynamicTypeJsonConverter(),
+
+                    new global::G.JsonConverters.HandoffDestinationDynamicTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HandoffDestinationSquadTypeJsonConverter(),
+
+                    new global::G.JsonConverters.HandoffDestinationSquadTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateHandoffToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateHandoffToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCustomKnowledgeBaseDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCustomKnowledgeBaseDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseProviderJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseModelJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateQueryToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateQueryToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleCalendarCreateEventToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleCalendarCreateEventToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleSheetsRowAppendToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleSheetsRowAppendToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleCalendarCheckAvailabilityToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleCalendarCheckAvailabilityToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSlackSendMessageToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSlackSendMessageToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.McpToolMetadataProtocolJsonConverter(),
+
+                    new global::G.JsonConverters.McpToolMetadataProtocolNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateMcpToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateMcpToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelCalendarAvailabilityToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelCalendarAvailabilityToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelCalendarEventCreateToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelCalendarEventCreateToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelContactCreateToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelContactCreateToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelContactGetToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelContactGetToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnyscaleModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AnyscaleModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicThinkingConfigTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicThinkingConfigTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicBedrockModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicBedrockModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicBedrockModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicBedrockModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CerebrasModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.CerebrasModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CerebrasModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CerebrasModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomLLMModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CustomLLMModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomLLMModelMetadataSendModeJsonConverter(),
+
+                    new global::G.JsonConverters.CustomLLMModelMetadataSendModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepInfraModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.DeepInfraModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepSeekModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.DeepSeekModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepSeekModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.DeepSeekModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GeminiMultimodalLivePrebuiltVoiceConfigVoiceNameJsonConverter(),
+
+                    new global::G.JsonConverters.GeminiMultimodalLivePrebuiltVoiceConfigVoiceNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GroqModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.GroqModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GroqModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GroqModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InflectionAIModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.InflectionAIModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InflectionAIModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.InflectionAIModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIModelFallbackModelJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIModelFallbackModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIModelToolStrictCompatibilityModeJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIModelToolStrictCompatibilityModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIModelPromptCacheRetentionJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIModelPromptCacheRetentionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenRouterModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.OpenRouterModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PerplexityAIModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.PerplexityAIModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TogetherAIModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TogetherAIModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HangupNodeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.HangupNodeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowOpenAIModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowOpenAIModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowOpenAIModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowOpenAIModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowAnthropicModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowAnthropicModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowAnthropicModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowAnthropicModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowAnthropicBedrockModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowAnthropicBedrockModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowAnthropicBedrockModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowAnthropicBedrockModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowGoogleModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowGoogleModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowGoogleModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowGoogleModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowCustomModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowCustomModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowCustomModelMetadataSendModeJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowCustomModelMetadataSendModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ConversationNodeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ConversationNodeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolNodeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolNodeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleVoicemailDetectionPlanProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleVoicemailDetectionPlanProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleVoicemailDetectionPlanTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleVoicemailDetectionPlanTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIVoicemailDetectionPlanProviderJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIVoicemailDetectionPlanProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIVoicemailDetectionPlanTypeJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIVoicemailDetectionPlanTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioVoicemailDetectionPlanProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioVoicemailDetectionPlanProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioVoicemailDetectionPlanVoicemailDetectionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioVoicemailDetectionPlanVoicemailDetectionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiVoicemailDetectionPlanProviderJsonConverter(),
+
+                    new global::G.JsonConverters.VapiVoicemailDetectionPlanProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiVoicemailDetectionPlanTypeJsonConverter(),
+
+                    new global::G.JsonConverters.VapiVoicemailDetectionPlanTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferHookActionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferHookActionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionCallHookActionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionCallHookActionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SayHookActionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SayHookActionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MessageAddHookActionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.MessageAddHookActionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallHookFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CallHookFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallHookCallEndingOnJsonConverter(),
+
+                    new global::G.JsonConverters.CallHookCallEndingOnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallHookAssistantSpeechInterruptedOnJsonConverter(),
+
+                    new global::G.JsonConverters.CallHookAssistantSpeechInterruptedOnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallHookCustomerSpeechInterruptedOnJsonConverter(),
+
+                    new global::G.JsonConverters.CallHookCustomerSpeechInterruptedOnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallHookActionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallHookActionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallHookModelResponseTimeoutOnJsonConverter(),
+
+                    new global::G.JsonConverters.CallHookModelResponseTimeoutOnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AIEdgeConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AIEdgeConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RecordingConsentPlanStayOnLineTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RecordingConsentPlanStayOnLineTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RecordingConsentPlanVerbalTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RecordingConsentPlanVerbalTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SecurityFilterPlanModeJsonConverter(),
+
+                    new global::G.JsonConverters.SecurityFilterPlanModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CompliancePlanRecordingConsentPlanDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CompliancePlanRecordingConsentPlanDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SuccessEvaluationPlanRubricJsonConverter(),
+
+                    new global::G.JsonConverters.SuccessEvaluationPlanRubricNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateStructuredOutputDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateStructuredOutputDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ArtifactPlanRecordingFormatJsonConverter(),
+
+                    new global::G.JsonConverters.ArtifactPlanRecordingFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.KeypadInputPlanDelimitersJsonConverter(),
+
+                    new global::G.JsonConverters.KeypadInputPlanDelimitersNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowUserEditableBackgroundSoundJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowUserEditableBackgroundSoundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowUserEditableCredentialDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowUserEditableCredentialDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowUserEditableVoicemailDetectionJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowUserEditableVoicemailDetectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.VapiModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.XaiModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.XaiModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.XaiModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.XaiModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExactReplacementTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ExactReplacementTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RegexReplacementTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RegexReplacementTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FormatPlanFormattersEnabledItemJsonConverter(),
+
+                    new global::G.JsonConverters.FormatPlanFormattersEnabledItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChunkPlanPunctuationBoundarieJsonConverter(),
+
+                    new global::G.JsonConverters.ChunkPlanPunctuationBoundarieNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AzureVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AzureVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AzureVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.AzureVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaExperimentalControlsSpeedJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaExperimentalControlsSpeedNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaExperimentalControlsEmotionJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaExperimentalControlsEmotionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaVoiceLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaVoiceLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CustomVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WellSaidVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.WellSaidVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WellSaidVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.WellSaidVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HumeVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.HumeVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HumeVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.HumeVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LMNTVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.LMNTVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LMNTVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.LMNTVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LMNTVoiceLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.LMNTVoiceLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NeuphonicVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.NeuphonicVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NeuphonicVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.NeuphonicVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAIVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTVoiceEmotionJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTVoiceEmotionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTVoiceLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTVoiceLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RimeAIVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.RimeAIVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RimeAIVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.RimeAIVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RimeAIVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.RimeAIVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RimeAIVoiceLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.RimeAIVoiceLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SesameVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SesameVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SesameVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.SesameVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmallestAIVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SmallestAIVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmallestAIVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.SmallestAIVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmallestAIVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.SmallestAIVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TavusVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TavusVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TavusVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.TavusVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.VapiVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.VapiVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InworldVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.InworldVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InworldVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.InworldVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InworldVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.InworldVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InworldVoiceLanguageCodeJsonConverter(),
+
+                    new global::G.JsonConverters.InworldVoiceLanguageCodeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MinimaxVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.MinimaxVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MinimaxVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.MinimaxVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MinimaxVoiceRegionJsonConverter(),
+
+                    new global::G.JsonConverters.MinimaxVoiceRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MinimaxVoiceLanguageBoostJsonConverter(),
+
+                    new global::G.JsonConverters.MinimaxVoiceLanguageBoostNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackMinimaxVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackMinimaxVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackMinimaxVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackMinimaxVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackMinimaxVoiceRegionJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackMinimaxVoiceRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackMinimaxVoiceLanguageBoostJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackMinimaxVoiceLanguageBoostNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackWellSaidVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackWellSaidVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackWellSaidVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackWellSaidVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAzureVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAzureVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAzureVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackAzureVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaVoiceLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCartesiaVoiceLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCustomVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackCustomVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackDeepgramVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackElevenLabsVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackHumeVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackHumeVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackHumeVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackHumeVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackLMNTVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackLMNTVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackLMNTVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackLMNTVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackLMNTVoiceLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackLMNTVoiceLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackNeuphonicVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackNeuphonicVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackNeuphonicVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackNeuphonicVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAIVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAIVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAIVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAIVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAIVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackOpenAIVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackPlayHTVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackPlayHTVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackPlayHTVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackPlayHTVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackPlayHTVoiceEmotionJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackPlayHTVoiceEmotionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackPlayHTVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackPlayHTVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackPlayHTVoiceLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackPlayHTVoiceLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackRimeAIVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackRimeAIVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackRimeAIVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackRimeAIVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackRimeAIVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackRimeAIVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackRimeAIVoiceLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackRimeAIVoiceLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSesameVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSesameVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSesameVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSesameVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSmallestAIVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSmallestAIVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSmallestAIVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSmallestAIVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSmallestAIVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackSmallestAIVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackTavusVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackTavusVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackTavusVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackTavusVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackVapiVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackVapiVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackVapiVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackVapiVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackInworldVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackInworldVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackInworldVoiceVoiceIdJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackInworldVoiceVoiceIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackInworldVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackInworldVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackInworldVoiceLanguageCodeJsonConverter(),
+
+                    new global::G.JsonConverters.FallbackInworldVoiceLanguageCodeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransportConfigurationTwilioProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TransportConfigurationTwilioProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransportConfigurationTwilioRecordingChannelsJsonConverter(),
+
+                    new global::G.JsonConverters.TransportConfigurationTwilioRecordingChannelsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAnthropicCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAnthropicCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAnthropicBedrockCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAnthropicBedrockCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAnthropicBedrockCredentialDTORegionJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAnthropicBedrockCredentialDTORegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAnyscaleCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAnyscaleCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssemblyAICredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssemblyAICredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureCredentialDTOServiceJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureCredentialDTOServiceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureCredentialDTORegionJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureCredentialDTORegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureOpenAICredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureOpenAICredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureOpenAICredentialDTORegionJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureOpenAICredentialDTORegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureOpenAICredentialDTOModelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAzureOpenAICredentialDTOModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SipTrunkGatewayOutboundProtocolJsonConverter(),
+
+                    new global::G.JsonConverters.SipTrunkGatewayOutboundProtocolNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateByoSipTrunkCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateByoSipTrunkCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCartesiaCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCartesiaCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCloudflareCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCloudflareCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OAuth2AuthenticationPlanTypeJsonConverter(),
+
+                    new global::G.JsonConverters.OAuth2AuthenticationPlanTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCustomLLMCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCustomLLMCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateDeepgramCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateDeepgramCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateDeepInfraCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateDeepInfraCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateDeepSeekCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateDeepSeekCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateElevenLabsCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateElevenLabsCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGcpCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGcpCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGladiaCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGladiaCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGroqCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGroqCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateLangfuseCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateLangfuseCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateLmntCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateLmntCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateMakeCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateMakeCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateOpenAICredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateOpenAICredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateOpenRouterCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateOpenRouterCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePerplexityAICredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePerplexityAICredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePlayHTCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePlayHTCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateRimeAICredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateRimeAICredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateRunpodCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateRunpodCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateS3CredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateS3CredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SupabaseBucketPlanRegionJsonConverter(),
+
+                    new global::G.JsonConverters.SupabaseBucketPlanRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSupabaseCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSupabaseCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmallestAICredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmallestAICredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTavusCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTavusCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTogetherAICredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTogetherAICredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTwilioCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTwilioCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVonageCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVonageCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebhookCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebhookCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebhookCredentialDTOAuthenticationPlanDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebhookCredentialDTOAuthenticationPlanDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateXAiCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateXAiCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleCalendarOAuth2ClientCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleCalendarOAuth2ClientCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleCalendarOAuth2AuthorizationCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleCalendarOAuth2AuthorizationCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleSheetsOAuth2AuthorizationCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleSheetsOAuth2AuthorizationCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSlackOAuth2AuthorizationCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSlackOAuth2AuthorizationCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateMinimaxCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateMinimaxCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SessionCreatedHookOnJsonConverter(),
+
+                    new global::G.JsonConverters.SessionCreatedHookOnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SQLInjectionSecurityFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SQLInjectionSecurityFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.XSSSecurityFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.XSSSecurityFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SSRFSecurityFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SSRFSecurityFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RCESecurityFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RCESecurityFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PromptInjectionSecurityFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PromptInjectionSecurityFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RegexSecurityFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RegexSecurityFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesFirstMessageModeJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesFirstMessageModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesVoicemailDetectionJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesVoicemailDetectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesClientMessageJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesClientMessageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesServerMessageJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesServerMessageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesBackgroundSoundJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesBackgroundSoundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesCredentialDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantOverridesCredentialDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOFirstMessageModeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOFirstMessageModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOVoicemailDetectionJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOVoicemailDetectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOClientMessageJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOClientMessageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOServerMessageJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOServerMessageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOBackgroundSoundJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOBackgroundSoundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOCredentialDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAssistantDTOCredentialDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantFirstMessageModeJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantFirstMessageModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantVoicemailDetectionJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantVoicemailDetectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantClientMessageJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantClientMessageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantServerMessageJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantServerMessageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantBackgroundSoundJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantBackgroundSoundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantCredentialDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantCredentialDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOFirstMessageModeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOFirstMessageModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOVoicemailDetectionJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOVoicemailDetectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOClientMessageJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOClientMessageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOServerMessageJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOServerMessageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOBackgroundSoundJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOBackgroundSoundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOCredentialDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAssistantDTOCredentialDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowBackgroundSoundJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowBackgroundSoundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowCredentialDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowCredentialDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowVoicemailDetectionJsonConverter(),
+
+                    new global::G.JsonConverters.WorkflowVoicemailDetectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWorkflowDTOBackgroundSoundJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWorkflowDTOBackgroundSoundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWorkflowDTOCredentialDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWorkflowDTOCredentialDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWorkflowDTOVoicemailDetectionJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWorkflowDTOVoicemailDetectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateWorkflowDTOBackgroundSoundJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateWorkflowDTOBackgroundSoundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateWorkflowDTOCredentialDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateWorkflowDTOCredentialDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateWorkflowDTOVoicemailDetectionJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateWorkflowDTOVoicemailDetectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferPhoneNumberHookActionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferPhoneNumberHookActionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SayPhoneNumberHookActionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SayPhoneNumberHookActionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberCallRingingHookFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberCallRingingHookFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberCallRingingHookFilterKeyJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberCallRingingHookFilterKeyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberHookCallRingingOnJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberHookCallRingingOnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberCallEndingHookFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberCallEndingHookFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberCallEndingHookFilterKeyJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberCallEndingHookFilterKeyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberCallEndingHookFilterOneOfItemJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberCallEndingHookFilterOneOfItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberHookCallEndingOnJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberHookCallEndingOnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallPhoneCallProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CallPhoneCallProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallPhoneCallTransportJsonConverter(),
+
+                    new global::G.JsonConverters.CallPhoneCallTransportNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CallStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallEndedReasonJsonConverter(),
+
+                    new global::G.JsonConverters.CallEndedReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeveloperMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.DeveloperMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioSMSChatTransportConversationTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioSMSChatTransportConversationTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioSMSChatTransportTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioSMSChatTransportTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatPaginatedDTOSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatPaginatedDTOSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExportChatDTOColumnsJsonConverter(),
+
+                    new global::G.JsonConverters.ExportChatDTOColumnsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExportChatDTOFormatJsonConverter(),
+
+                    new global::G.JsonConverters.ExportChatDTOFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExportChatDTOSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.ExportChatDTOSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseOutputTextTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseOutputTextTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseOutputMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseOutputMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseOutputMessageStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseOutputMessageStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseOutputMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseOutputMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseObjectObjectJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseObjectObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseObjectStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseObjectStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseTextDeltaEventTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseTextDeltaEventTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseTextDoneEventTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseTextDoneEventTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseCompletedEventTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseCompletedEventTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseErrorEventTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseErrorEventTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CampaignStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CampaignStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CampaignEndedReasonJsonConverter(),
+
+                    new global::G.JsonConverters.CampaignEndedReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCampaignDTOStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCampaignDTOStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RelayTargetAssistantTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RelayTargetAssistantTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RelayTargetSquadTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RelayTargetSquadTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RelayTargetOptionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RelayTargetOptionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RelayCommandSayTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RelayCommandSayTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RelayCommandNoteTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RelayCommandNoteTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RelayCommandOptionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RelayCommandOptionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RelayResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.RelayResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SessionStatusJsonConverter(),
+
+                    new global::G.JsonConverters.SessionStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSessionDTOStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSessionDTOStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateSessionDTOStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateSessionDTOStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetSessionPaginatedDTOSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.GetSessionPaginatedDTOSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExportSessionDTOColumnsJsonConverter(),
+
+                    new global::G.JsonConverters.ExportSessionDTOColumnsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExportSessionDTOFormatJsonConverter(),
+
+                    new global::G.JsonConverters.ExportSessionDTOFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExportSessionDTOSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.ExportSessionDTOSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ByoPhoneNumberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ByoPhoneNumberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ByoPhoneNumberStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ByoPhoneNumberStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioPhoneNumberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioPhoneNumberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioPhoneNumberStatusJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioPhoneNumberStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VonagePhoneNumberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.VonagePhoneNumberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VonagePhoneNumberStatusJsonConverter(),
+
+                    new global::G.JsonConverters.VonagePhoneNumberStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiPhoneNumberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.VapiPhoneNumberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiPhoneNumberStatusJsonConverter(),
+
+                    new global::G.JsonConverters.VapiPhoneNumberStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TelnyxPhoneNumberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TelnyxPhoneNumberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TelnyxPhoneNumberStatusJsonConverter(),
+
+                    new global::G.JsonConverters.TelnyxPhoneNumberStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateByoPhoneNumberDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateByoPhoneNumberDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTwilioPhoneNumberDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTwilioPhoneNumberDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVonagePhoneNumberDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVonagePhoneNumberDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVapiPhoneNumberDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVapiPhoneNumberDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTelnyxPhoneNumberDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTelnyxPhoneNumberDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ApiRequestToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ApiRequestToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ApiRequestToolMethodJsonConverter(),
+
+                    new global::G.JsonConverters.ApiRequestToolMethodNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CodeToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CodeToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DtmfToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.DtmfToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EndCallToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EndCallToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GhlToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GhlToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MakeToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.MakeToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferCallToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferCallToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HandoffToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.HandoffToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OutputToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.OutputToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolNameJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolNameJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolNameJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.QueryToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.QueryToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarCreateEventToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarCreateEventToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleSheetsRowAppendToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleSheetsRowAppendToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarCheckAvailabilityToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarCheckAvailabilityToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SlackSendMessageToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SlackSendMessageToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SmsToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.McpToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.McpToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarAvailabilityToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarAvailabilityToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarEventCreateToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarEventCreateToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactCreateToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactCreateToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactGetToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactGetToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SipRequestToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SipRequestToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SipRequestToolVerbJsonConverter(),
+
+                    new global::G.JsonConverters.SipRequestToolVerbNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateApiRequestToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateApiRequestToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateApiRequestToolDTOMethodJsonConverter(),
+
+                    new global::G.JsonConverters.CreateApiRequestToolDTOMethodNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCodeToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCodeToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateOutputToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateOutputToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBashToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBashToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBashToolDTOSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBashToolDTOSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBashToolDTONameJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBashToolDTONameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateComputerToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateComputerToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateComputerToolDTOSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateComputerToolDTOSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateComputerToolDTONameJsonConverter(),
+
+                    new global::G.JsonConverters.CreateComputerToolDTONameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextEditorToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextEditorToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextEditorToolDTOSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextEditorToolDTOSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextEditorToolDTONameJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextEditorToolDTONameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSipRequestToolDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSipRequestToolDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSipRequestToolDTOVerbJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSipRequestToolDTOVerbNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateApiRequestToolDTOMethodJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateApiRequestToolDTOMethodNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateBashToolDTOSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateBashToolDTOSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateBashToolDTONameJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateBashToolDTONameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateComputerToolDTOSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateComputerToolDTOSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateComputerToolDTONameJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateComputerToolDTONameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTextEditorToolDTOSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTextEditorToolDTOSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTextEditorToolDTONameJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTextEditorToolDTONameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateSipRequestToolDTOVerbJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateSipRequestToolDTOVerbNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FileObjectJsonConverter(),
+
+                    new global::G.JsonConverters.FileObjectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FileStatusJsonConverter(),
+
+                    new global::G.JsonConverters.FileStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TrieveKnowledgeBaseSearchPlanSearchTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TrieveKnowledgeBaseSearchPlanSearchTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TrieveKnowledgeBaseProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TrieveKnowledgeBaseProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomKnowledgeBaseProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CustomKnowledgeBaseProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTrieveKnowledgeBaseDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTrieveKnowledgeBaseDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TrieveKnowledgeBaseCreateTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TrieveKnowledgeBaseCreateTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TrieveKnowledgeBaseImportTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TrieveKnowledgeBaseImportTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StructuredOutputTypeJsonConverter(),
+
+                    new global::G.JsonConverters.StructuredOutputTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateStructuredOutputDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateStructuredOutputDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuitePhoneNumberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuitePhoneNumberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteTestVoiceTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteTestVoiceTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteTestChatTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteTestChatTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestSuiteTestVoiceDtoTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestSuiteTestVoiceDtoTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestSuiteTestChatDtoTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestSuiteTestChatDtoTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestSuiteTestVoiceDtoTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestSuiteTestVoiceDtoTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestSuiteTestChatDtoTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestSuiteTestChatDtoTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteTestScorerAITypeJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteTestScorerAITypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteRunScorerAITypeJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteRunScorerAITypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteRunScorerAIResultJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteRunScorerAIResultNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteRunStatusJsonConverter(),
+
+                    new global::G.JsonConverters.TestSuiteRunStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationHookWebhookActionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationHookWebhookActionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationHookCallStartedOnJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationHookCallStartedOnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationHookCallEndedOnJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationHookCallEndedOnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvaluationPlanItemComparatorJsonConverter(),
+
+                    new global::G.JsonConverters.EvaluationPlanItemComparatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunSimulationEntryTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunSimulationEntryTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunSuiteEntryTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunSuiteEntryTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunTargetAssistantTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunTargetAssistantTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunTargetSquadTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunTargetSquadTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunTransportConfigurationProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunTransportConfigurationProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunStatusJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StructuredOutputEvaluationResultComparatorJsonConverter(),
+
+                    new global::G.JsonConverters.StructuredOutputEvaluationResultComparatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunItemStatusJsonConverter(),
+
+                    new global::G.JsonConverters.SimulationRunItemStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GeneratedScenarioCategoryJsonConverter(),
+
+                    new global::G.JsonConverters.GeneratedScenarioCategoryNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InsightTimeRangeWithStepStepJsonConverter(),
+
+                    new global::G.JsonConverters.InsightTimeRangeWithStepStepNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BarInsightTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BarInsightTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BarInsightGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.BarInsightGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PieInsightTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PieInsightTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PieInsightGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.PieInsightGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LineInsightTypeJsonConverter(),
+
+                    new global::G.JsonConverters.LineInsightTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LineInsightGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.LineInsightGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextInsightTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextInsightTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateBarInsightFromCallTableDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateBarInsightFromCallTableDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateBarInsightFromCallTableDTOGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateBarInsightFromCallTableDTOGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePieInsightFromCallTableDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePieInsightFromCallTableDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePieInsightFromCallTableDTOGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePieInsightFromCallTableDTOGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateLineInsightFromCallTableDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateLineInsightFromCallTableDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateLineInsightFromCallTableDTOGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateLineInsightFromCallTableDTOGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTextInsightFromCallTableDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTextInsightFromCallTableDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBarInsightFromCallTableDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBarInsightFromCallTableDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBarInsightFromCallTableDTOGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBarInsightFromCallTableDTOGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePieInsightFromCallTableDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePieInsightFromCallTableDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePieInsightFromCallTableDTOGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePieInsightFromCallTableDTOGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateLineInsightFromCallTableDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateLineInsightFromCallTableDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateLineInsightFromCallTableDTOGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.CreateLineInsightFromCallTableDTOGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextInsightFromCallTableDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextInsightFromCallTableDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnTableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnTableNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnColumnJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnOperationJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnOperationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithNumberTypeColumnTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithNumberTypeColumnTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithNumberTypeColumnTableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithNumberTypeColumnTableNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithNumberTypeColumnColumnJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithNumberTypeColumnColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithNumberTypeColumnOperationJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithNumberTypeColumnOperationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnTableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnTableNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnColumnJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnOperationJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnCallTableWithStructuredOutputColumnOperationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnEventsTableTypeJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnEventsTableTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnEventsTableTableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnEventsTableTableNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnEventsTableOnJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnEventsTableOnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnEventsTableOperationJsonConverter(),
+
+                    new global::G.JsonConverters.JSONQueryOnEventsTableOperationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStringTypeColumnOnCallTableColumnJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStringTypeColumnOnCallTableColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStringTypeColumnOnCallTableOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStringTypeColumnOnCallTableOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterNumberTypeColumnOnCallTableColumnJsonConverter(),
+
+                    new global::G.JsonConverters.FilterNumberTypeColumnOnCallTableColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterNumberTypeColumnOnCallTableOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.FilterNumberTypeColumnOnCallTableOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterDateTypeColumnOnCallTableColumnJsonConverter(),
+
+                    new global::G.JsonConverters.FilterDateTypeColumnOnCallTableColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterDateTypeColumnOnCallTableOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.FilterDateTypeColumnOnCallTableOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStructuredOutputColumnOnCallTableColumnJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStructuredOutputColumnOnCallTableColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStructuredOutputColumnOnCallTableOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStructuredOutputColumnOnCallTableOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStringArrayTypeColumnOnCallTableColumnJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStringArrayTypeColumnOnCallTableColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStringArrayTypeColumnOnCallTableOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.FilterStringArrayTypeColumnOnCallTableOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterNumberArrayTypeColumnOnCallTableColumnJsonConverter(),
+
+                    new global::G.JsonConverters.FilterNumberArrayTypeColumnOnCallTableColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterNumberArrayTypeColumnOnCallTableOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.FilterNumberArrayTypeColumnOnCallTableOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EventsTableStringConditionOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.EventsTableStringConditionOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EventsTableNumberConditionOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.EventsTableNumberConditionOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EventsTableBooleanConditionOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.EventsTableBooleanConditionOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BarInsightFromCallTableTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BarInsightFromCallTableTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BarInsightFromCallTableGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.BarInsightFromCallTableGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PieInsightFromCallTableTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PieInsightFromCallTableTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PieInsightFromCallTableGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.PieInsightFromCallTableGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LineInsightFromCallTableTypeJsonConverter(),
+
+                    new global::G.JsonConverters.LineInsightFromCallTableTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LineInsightFromCallTableGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.LineInsightFromCallTableGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextInsightFromCallTableTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextInsightFromCallTableTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InsightRunFormatPlanFormatJsonConverter(),
+
+                    new global::G.JsonConverters.InsightRunFormatPlanFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InsightTypeJsonConverter(),
+
+                    new global::G.JsonConverters.InsightTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateEvalDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateEvalDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EvalTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalModelListOptionsProviderJsonConverter(),
+
+                    new global::G.JsonConverters.EvalModelListOptionsProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalUserEditableTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EvalUserEditableTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalAssistantMessageMockRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalAssistantMessageMockRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalSystemMessageMockRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalSystemMessageMockRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalToolResponseMessageMockRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalToolResponseMessageMockRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalUserMessageMockRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalUserMessageMockRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalAssistantMessageEvaluationRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalAssistantMessageEvaluationRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalOpenAIModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.EvalOpenAIModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalOpenAIModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.EvalOpenAIModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalAnthropicModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.EvalAnthropicModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalAnthropicModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.EvalAnthropicModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalGoogleModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.EvalGoogleModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalGoogleModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.EvalGoogleModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalGroqModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.EvalGroqModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalGroqModelModelJsonConverter(),
+
+                    new global::G.JsonConverters.EvalGroqModelModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalCustomModelProviderJsonConverter(),
+
+                    new global::G.JsonConverters.EvalCustomModelProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantMessageJudgePlanAITypeJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantMessageJudgePlanAITypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalToolResponseMessageEvaluationRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatEvalToolResponseMessageEvaluationRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantMessageJudgePlanExactTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantMessageJudgePlanExactTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantMessageJudgePlanRegexTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AssistantMessageJudgePlanRegexTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetEvalPaginatedDTOSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.GetEvalPaginatedDTOSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateEvalDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateEvalDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateEvalRunDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateEvalRunDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunResultStatusJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunResultStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunStatusJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunEndedReasonJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunEndedReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetEvalRunPaginatedDTOSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.GetEvalRunPaginatedDTOSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunTargetAssistantTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunTargetAssistantTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunTargetSquadTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EvalRunTargetSquadTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateOrgDTOChannelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateOrgDTOChannelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SubscriptionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SubscriptionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SubscriptionStatusJsonConverter(),
+
+                    new global::G.JsonConverters.SubscriptionStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SubscriptionMinutesIncludedResetFrequencyJsonConverter(),
+
+                    new global::G.JsonConverters.SubscriptionMinutesIncludedResetFrequencyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OrgChannelJsonConverter(),
+
+                    new global::G.JsonConverters.OrgChannelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateOrgDTOChannelJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateOrgDTOChannelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InviteUserDTORoleJsonConverter(),
+
+                    new global::G.JsonConverters.InviteUserDTORoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateUserRoleDTORoleJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateUserRoleDTORoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTokenDTOTagJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTokenDTOTagNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TokenTagJsonConverter(),
+
+                    new global::G.JsonConverters.TokenTagNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTokenDTOTagJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTokenDTOTagNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicBedrockCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicBedrockCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicBedrockCredentialRegionJsonConverter(),
+
+                    new global::G.JsonConverters.AnthropicBedrockCredentialRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnyscaleCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AnyscaleCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssemblyAICredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AssemblyAICredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AzureCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AzureCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AzureCredentialServiceJsonConverter(),
+
+                    new global::G.JsonConverters.AzureCredentialServiceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AzureCredentialRegionJsonConverter(),
+
+                    new global::G.JsonConverters.AzureCredentialRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AzureOpenAICredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AzureOpenAICredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AzureOpenAICredentialRegionJsonConverter(),
+
+                    new global::G.JsonConverters.AzureOpenAICredentialRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AzureOpenAICredentialModelJsonConverter(),
+
+                    new global::G.JsonConverters.AzureOpenAICredentialModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ByoSipTrunkCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ByoSipTrunkCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CartesiaCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CerebrasCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CerebrasCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CloudflareCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CloudflareCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomLLMCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CustomLLMCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.DeepgramCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepInfraCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.DeepInfraCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeepSeekCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.DeepSeekCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GcpCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GcpCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GladiaCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GroqCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GroqCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HumeCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.HumeCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InflectionAICredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.InflectionAICredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LangfuseCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.LangfuseCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LmntCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.LmntCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MakeCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.MakeCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MistralCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.MistralCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NeuphonicCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.NeuphonicCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAICredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAICredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenRouterCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.OpenRouterCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PerplexityAICredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.PerplexityAICredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.PlayHTCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RimeAICredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.RimeAICredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RunpodCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.RunpodCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WellSaidCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.WellSaidCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.S3CredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.S3CredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmallestAICredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SmallestAICredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SonioxCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SonioxCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SpeechmaticsCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SupabaseCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SupabaseCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TavusCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TavusCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TogetherAICredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TogetherAICredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TrieveCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TrieveCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VonageCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.VonageCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WebhookCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.WebhookCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WebhookCredentialAuthenticationPlanDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.WebhookCredentialAuthenticationPlanDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SpkiPemPublicKeyConfigFormatJsonConverter(),
+
+                    new global::G.JsonConverters.SpkiPemPublicKeyConfigFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublicKeyEncryptionPlanTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PublicKeyEncryptionPlanTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublicKeyEncryptionPlanAlgorithmJsonConverter(),
+
+                    new global::G.JsonConverters.PublicKeyEncryptionPlanAlgorithmNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublicKeyEncryptionPlanPublicKeyDiscriminatorFormatJsonConverter(),
+
+                    new global::G.JsonConverters.PublicKeyEncryptionPlanPublicKeyDiscriminatorFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CustomCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomCredentialAuthenticationPlanDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CustomCredentialAuthenticationPlanDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomCredentialEncryptionPlanDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CustomCredentialEncryptionPlanDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.XAiCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.XAiCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarOAuth2ClientCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarOAuth2ClientCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarOAuth2AuthorizationCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarOAuth2AuthorizationCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleSheetsOAuth2AuthorizationCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleSheetsOAuth2AuthorizationCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SlackOAuth2AuthorizationCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SlackOAuth2AuthorizationCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelMCPCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelMCPCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InworldCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.InworldCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EmailCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.EmailCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SlackWebhookCredentialProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SlackWebhookCredentialProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCerebrasCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCerebrasCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoogleCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateHumeCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateHumeCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateInflectionAICredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateInflectionAICredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateMistralCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateMistralCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateNeuphonicCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateNeuphonicCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWellSaidCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWellSaidCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSonioxCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSonioxCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSpeechmaticsCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSpeechmaticsCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTrieveCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTrieveCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCustomCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCustomCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCustomCredentialDTOAuthenticationPlanDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCustomCredentialDTOAuthenticationPlanDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCustomCredentialDTOEncryptionPlanDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCustomCredentialDTOEncryptionPlanDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelMCPCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateGoHighLevelMCPCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateInworldCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateInworldCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateEmailCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateEmailCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSlackWebhookCredentialDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSlackWebhookCredentialDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAnthropicBedrockCredentialDTORegionJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAnthropicBedrockCredentialDTORegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAzureCredentialDTOServiceJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAzureCredentialDTOServiceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAzureCredentialDTORegionJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAzureCredentialDTORegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAzureOpenAICredentialDTORegionJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAzureOpenAICredentialDTORegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAzureOpenAICredentialDTOModelJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAzureOpenAICredentialDTOModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateWebhookCredentialDTOAuthenticationPlanDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateWebhookCredentialDTOAuthenticationPlanDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCustomCredentialDTOAuthenticationPlanDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCustomCredentialDTOAuthenticationPlanDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCustomCredentialDTOEncryptionPlanDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCustomCredentialDTOEncryptionPlanDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CredentialWebhookDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CredentialWebhookDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CredentialWebhookDTOOperationJsonConverter(),
+
+                    new global::G.JsonConverters.CredentialWebhookDTOOperationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CredentialWebhookDTOAuthModeJsonConverter(),
+
+                    new global::G.JsonConverters.CredentialWebhookDTOAuthModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HMACAuthenticationPlanTypeJsonConverter(),
+
+                    new global::G.JsonConverters.HMACAuthenticationPlanTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HMACAuthenticationPlanAlgorithmJsonConverter(),
+
+                    new global::G.JsonConverters.HMACAuthenticationPlanAlgorithmNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HMACAuthenticationPlanSignatureEncodingJsonConverter(),
+
+                    new global::G.JsonConverters.HMACAuthenticationPlanSignatureEncodingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BearerAuthenticationPlanTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BearerAuthenticationPlanTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AWSIAMCredentialsAuthenticationPlanTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AWSIAMCredentialsAuthenticationPlanTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AWSStsAuthenticationPlanTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AWSStsAuthenticationPlanTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MakeToolProviderDetailsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.MakeToolProviderDetailsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GhlToolProviderDetailsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GhlToolProviderDetailsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionToolProviderDetailsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionToolProviderDetailsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarCreateEventToolProviderDetailsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarCreateEventToolProviderDetailsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleSheetsRowAppendToolProviderDetailsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleSheetsRowAppendToolProviderDetailsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarAvailabilityToolProviderDetailsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarAvailabilityToolProviderDetailsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarEventCreateToolProviderDetailsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarEventCreateToolProviderDetailsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactCreateToolProviderDetailsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactCreateToolProviderDetailsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactGetToolProviderDetailsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactGetToolProviderDetailsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateToolTemplateDTOVisibilityJsonConverter(),
+
+                    new global::G.JsonConverters.CreateToolTemplateDTOVisibilityNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateToolTemplateDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateToolTemplateDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateToolTemplateDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreateToolTemplateDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TemplateVisibilityJsonConverter(),
+
+                    new global::G.JsonConverters.TemplateVisibilityNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TemplateTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TemplateTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TemplateProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TemplateProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateToolTemplateDTOVisibilityJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateToolTemplateDTOVisibilityNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateToolTemplateDTOTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateToolTemplateDTOTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateToolTemplateDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateToolTemplateDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceLibraryGenderJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceLibraryGenderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SyncVoiceLibraryDTOProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SyncVoiceLibraryDTOProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsPronunciationDictionaryPermissionOnResourceJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsPronunciationDictionaryPermissionOnResourceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceResourceNameJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceResourceNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TimeRangeStepJsonConverter(),
+
+                    new global::G.JsonConverters.TimeRangeStepNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnalyticsOperationOperationJsonConverter(),
+
+                    new global::G.JsonConverters.AnalyticsOperationOperationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnalyticsOperationColumnJsonConverter(),
+
+                    new global::G.JsonConverters.AnalyticsOperationColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnalyticsQueryTableJsonConverter(),
+
+                    new global::G.JsonConverters.AnalyticsQueryTableNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnalyticsQueryGroupByItemJsonConverter(),
+
+                    new global::G.JsonConverters.AnalyticsQueryGroupByItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageWorkflowNodeStartedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageWorkflowNodeStartedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageAssistantStartedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageAssistantStartedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageConversationUpdateTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageConversationUpdateTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageHangTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageHangTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageMetadataTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageMetadataTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageModelOutputTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageModelOutputTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSpeechUpdateTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSpeechUpdateTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSpeechUpdateStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSpeechUpdateStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSpeechUpdateRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSpeechUpdateRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageTranscriptTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageTranscriptTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageTranscriptRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageTranscriptRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageTranscriptTranscriptTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageTranscriptTranscriptTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageToolCallsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageToolCallsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageToolCallsResultTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageToolCallsResultTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageTransferUpdateTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageTransferUpdateTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageUserInterruptedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageUserInterruptedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageLanguageChangeDetectedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageLanguageChangeDetectedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageVoiceInputTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageVoiceInputTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageChatCreatedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageChatCreatedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageChatDeletedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageChatDeletedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSessionCreatedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSessionCreatedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSessionUpdatedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSessionUpdatedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSessionDeletedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageSessionDeletedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageCallDeletedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageCallDeletedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageCallDeleteFailedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientMessageCallDeleteFailedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageAssistantRequestTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageAssistantRequestTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageConversationUpdateTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageConversationUpdateTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageEndOfCallReportTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageEndOfCallReportTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageEndOfCallReportEndedReasonJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageEndOfCallReportEndedReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageHandoffDestinationRequestTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageHandoffDestinationRequestTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageHangTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageHangTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageKnowledgeBaseRequestTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageKnowledgeBaseRequestTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageModelOutputTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageModelOutputTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessagePhoneCallControlTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessagePhoneCallControlTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessagePhoneCallControlRequestJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessagePhoneCallControlRequestNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSpeechUpdateTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSpeechUpdateTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSpeechUpdateStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSpeechUpdateStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSpeechUpdateRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSpeechUpdateRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageStatusUpdateTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageStatusUpdateTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageStatusUpdateStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageStatusUpdateStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageStatusUpdateEndedReasonJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageStatusUpdateEndedReasonNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageToolCallsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageToolCallsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageTransferDestinationRequestTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageTransferDestinationRequestTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageTransferUpdateTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageTransferUpdateTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageTranscriptTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageTranscriptTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageTranscriptRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageTranscriptRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageTranscriptTranscriptTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageTranscriptTranscriptTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageUserInterruptedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageUserInterruptedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageLanguageChangeDetectedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageLanguageChangeDetectedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageVoiceInputTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageVoiceInputTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageVoiceRequestTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageVoiceRequestTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageCallEndpointingRequestTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageCallEndpointingRequestTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageChatCreatedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageChatCreatedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageChatDeletedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageChatDeletedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSessionCreatedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSessionCreatedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSessionUpdatedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSessionUpdatedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSessionDeletedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageSessionDeletedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageCallDeletedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageCallDeletedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageCallDeleteFailedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ServerMessageCallDeleteFailedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageAddMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageAddMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageControlTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageControlTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageControlControlJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageControlControlNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageSayTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageSayTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageEndCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageEndCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageTransferTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageTransferTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageSendTransportMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientInboundMessageSendTransportMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransportCostTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransportCostTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransportCostProviderJsonConverter(),
+
+                    new global::G.JsonConverters.TransportCostProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TranscriberCostTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TranscriberCostTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ModelCostTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ModelCostTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceCostTypeJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceCostTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiCostTypeJsonConverter(),
+
+                    new global::G.JsonConverters.VapiCostTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiCostSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.VapiCostSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnalysisCostTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AnalysisCostTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnalysisCostAnalysisTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AnalysisCostAnalysisTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailDetectionCostTypeJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailDetectionCostTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailDetectionCostProviderJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailDetectionCostProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseCostTypeJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseCostTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCostTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCostTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SessionCostTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SessionCostTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GhlToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GhlToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MakeToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.MakeToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolWithToolCallSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolWithToolCallSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolWithToolCallNameJsonConverter(),
+
+                    new global::G.JsonConverters.BashToolWithToolCallNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolWithToolCallSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolWithToolCallSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolWithToolCallNameJsonConverter(),
+
+                    new global::G.JsonConverters.ComputerToolWithToolCallNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolWithToolCallSubTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolWithToolCallSubTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolWithToolCallNameJsonConverter(),
+
+                    new global::G.JsonConverters.TextEditorToolWithToolCallNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarCreateEventToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleCalendarCreateEventToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleSheetsRowAppendToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoogleSheetsRowAppendToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarAvailabilityToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarAvailabilityToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarEventCreateToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelCalendarEventCreateToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactCreateToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactCreateToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactGetToolWithToolCallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GoHighLevelContactGetToolWithToolCallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiSipTransportMessageTransportJsonConverter(),
+
+                    new global::G.JsonConverters.VapiSipTransportMessageTransportNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VapiSipTransportMessageSipVerbJsonConverter(),
+
+                    new global::G.JsonConverters.VapiSipTransportMessageSipVerbNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioTransportMessageTransportJsonConverter(),
+
+                    new global::G.JsonConverters.TwilioTransportMessageTransportNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerCreateRequestDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerCreateRequestDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerUpdateRequestDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerUpdateRequestDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerCreateRequestDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerCreateRequestDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerUpdateRequestDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerUpdateRequestDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerCreateRequestDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerCreateRequestDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerUpdateRequestDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerUpdateRequestDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerPreviewRequestDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerPreviewRequestDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatControllerListChatsSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.ChatControllerListChatsSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CampaignControllerFindAllStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CampaignControllerFindAllStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CampaignControllerFindAllSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.CampaignControllerFindAllSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SessionControllerFindAllPaginatedSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.SessionControllerFindAllPaginatedSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerFindAllPaginatedSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerFindAllPaginatedSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StructuredOutputControllerFindAllSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.StructuredOutputControllerFindAllSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerFindAllSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerFindAllSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalControllerGetPaginatedSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.EvalControllerGetPaginatedSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EvalControllerGetRunsPaginatedSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.EvalControllerGetRunsPaginatedSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ScorecardControllerGetPaginatedSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.ScorecardControllerGetPaginatedSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerCreateProviderResourceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerCreateProviderResourceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerCreateProviderResourceResourceNameJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerCreateProviderResourceResourceNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerGetProviderResourcesPaginatedProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerGetProviderResourcesPaginatedProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerGetProviderResourcesPaginatedResourceNameJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerGetProviderResourcesPaginatedResourceNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerGetProviderResourcesPaginatedSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerGetProviderResourcesPaginatedSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerGetProviderResourceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerGetProviderResourceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerGetProviderResourceResourceNameJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerGetProviderResourceResourceNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerDeleteProviderResourceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerDeleteProviderResourceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerDeleteProviderResourceResourceNameJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerDeleteProviderResourceResourceNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerUpdateProviderResourceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerUpdateProviderResourceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerUpdateProviderResourceResourceNameJsonConverter(),
+
+                    new global::G.JsonConverters.ProviderResourceControllerUpdateProviderResourceResourceNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerCreateResponseDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerCreateResponseDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerFindAllResponseItemDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerFindAllResponseItemDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerFindOneResponseDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerFindOneResponseDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerUpdateResponseDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerUpdateResponseDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerRemoveResponseDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberControllerRemoveResponseDiscriminatorProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerCreateResponseDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerCreateResponseDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerFindAllResponseItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerFindAllResponseItemDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerFindOneResponseDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerFindOneResponseDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerUpdateResponseDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerUpdateResponseDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerRemoveResponseDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolControllerRemoveResponseDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerCreateResponseDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerCreateResponseDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerUpdateResponseDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerUpdateResponseDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerFindOneResponseDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerFindOneResponseDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerRemoveResponseDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.InsightControllerRemoveResponseDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
         /// 
         /// </summary>
-        public AnalyticsClient Analytics => new AnalyticsClient(HttpClient, authorizations: Authorizations)
+        public AnalyticsClient Analytics => new AnalyticsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -50,7 +3867,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AssistantsClient Assistants => new AssistantsClient(HttpClient, authorizations: Authorizations)
+        public AssistantsClient Assistants => new AssistantsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -59,7 +3876,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CallsClient Calls => new CallsClient(HttpClient, authorizations: Authorizations)
+        public CallsClient Calls => new CallsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -68,7 +3885,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CampaignsClient Campaigns => new CampaignsClient(HttpClient, authorizations: Authorizations)
+        public CampaignsClient Campaigns => new CampaignsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -77,7 +3894,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChatsClient Chats => new ChatsClient(HttpClient, authorizations: Authorizations)
+        public ChatsClient Chats => new ChatsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -86,7 +3903,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public EvalClient Eval => new EvalClient(HttpClient, authorizations: Authorizations)
+        public EvalClient Eval => new EvalClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -95,7 +3912,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations)
+        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -104,7 +3921,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public InsightClient Insight => new InsightClient(HttpClient, authorizations: Authorizations)
+        public InsightClient Insight => new InsightClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -113,7 +3930,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ObservabilityScorecardClient ObservabilityScorecard => new ObservabilityScorecardClient(HttpClient, authorizations: Authorizations)
+        public ObservabilityScorecardClient ObservabilityScorecard => new ObservabilityScorecardClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -122,7 +3939,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PhoneNumbersClient PhoneNumbers => new PhoneNumbersClient(HttpClient, authorizations: Authorizations)
+        public PhoneNumbersClient PhoneNumbers => new PhoneNumbersClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -131,7 +3948,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ProviderResourcesClient ProviderResources => new ProviderResourcesClient(HttpClient, authorizations: Authorizations)
+        public ProviderResourcesClient ProviderResources => new ProviderResourcesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -140,7 +3957,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SessionsClient Sessions => new SessionsClient(HttpClient, authorizations: Authorizations)
+        public SessionsClient Sessions => new SessionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -149,7 +3966,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SquadsClient Squads => new SquadsClient(HttpClient, authorizations: Authorizations)
+        public SquadsClient Squads => new SquadsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -158,7 +3975,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public StructuredOutputsClient StructuredOutputs => new StructuredOutputsClient(HttpClient, authorizations: Authorizations)
+        public StructuredOutputsClient StructuredOutputs => new StructuredOutputsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -167,7 +3984,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ToolsClient Tools => new ToolsClient(HttpClient, authorizations: Authorizations)
+        public ToolsClient Tools => new ToolsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -186,11 +4003,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

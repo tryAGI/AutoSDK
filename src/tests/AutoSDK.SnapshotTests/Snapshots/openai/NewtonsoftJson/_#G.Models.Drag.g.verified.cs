@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.DragType.Drag</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DragTypeJsonConverter))]
         public global::G.DragType Type { get; set; } = global::G.DragType.Drag;
 
         /// <summary>

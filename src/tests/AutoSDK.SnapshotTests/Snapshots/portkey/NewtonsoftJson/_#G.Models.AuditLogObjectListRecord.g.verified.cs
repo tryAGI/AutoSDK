@@ -19,6 +19,7 @@ namespace G
         /// HTTP method used for the request
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuditLogObjectListRecordMethodJsonConverter))]
         public global::G.AuditLogObjectListRecordMethod? Method { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace G
         /// Type of user who made the request
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuditLogObjectListRecordUserTypeJsonConverter))]
         public global::G.AuditLogObjectListRecordUserType? UserType { get; set; }
 
         /// <summary>

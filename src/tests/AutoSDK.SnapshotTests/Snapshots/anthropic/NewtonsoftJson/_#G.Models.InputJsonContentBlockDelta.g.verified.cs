@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.InputJsonContentBlockDeltaType.InputJsonDelta</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputJsonContentBlockDeltaTypeJsonConverter))]
         public global::G.InputJsonContentBlockDeltaType Type { get; set; } = global::G.InputJsonContentBlockDeltaType.InputJsonDelta;
 
         /// <summary>

@@ -27,6 +27,7 @@ namespace G
         /// This message is never triggered for async tool calls.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolMessageDelayedTypeJsonConverter))]
         public global::G.ToolMessageDelayedType Type { get; set; }
 
         /// <summary>

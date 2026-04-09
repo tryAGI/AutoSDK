@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chain_id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChargeRequestChainIdJsonConverter))]
         public global::G.CreateChargeRequestChainId ChainId { get; set; } = default!;
 
         /// <summary>

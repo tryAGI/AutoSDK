@@ -43,6 +43,7 @@ namespace G
         /// Status of the document store
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DocumentStoreStatusJsonConverter))]
         public global::G.DocumentStoreStatus? Status { get; set; }
 
         /// <summary>

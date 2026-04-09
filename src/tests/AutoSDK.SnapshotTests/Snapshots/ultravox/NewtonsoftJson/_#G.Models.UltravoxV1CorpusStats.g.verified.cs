@@ -14,6 +14,7 @@ namespace G
         /// The current status of this corpus, indicating whether it is queryable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1CorpusStatsStatusJsonConverter))]
         public global::G.UltravoxV1CorpusStatsStatus? Status { get; set; }
 
         /// <summary>

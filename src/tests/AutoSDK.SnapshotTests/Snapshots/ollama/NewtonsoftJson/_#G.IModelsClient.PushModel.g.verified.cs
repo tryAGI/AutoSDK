@@ -10,11 +10,13 @@ namespace G
         /// Requires registering for ollama.ai and adding a public key first.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.PushModelResponse> PushModelAsync(
 
             global::G.PushModelRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload a model to a model library.<br/>
@@ -39,6 +41,7 @@ namespace G
         /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.PushModelResponse> PushModelAsync(
@@ -47,6 +50,7 @@ namespace G
             string? username = default,
             string? password = default,
             bool? stream = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

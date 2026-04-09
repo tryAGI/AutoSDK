@@ -31,6 +31,7 @@ namespace G
         /// Default Value: private
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TemplateVisibilityJsonConverter))]
         public global::G.TemplateVisibility? Visibility { get; set; }
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace G
         /// </summary>
         /// <default>global::G.TemplateType.Tool</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TemplateTypeJsonConverter))]
         public global::G.TemplateType Type { get; set; } = global::G.TemplateType.Tool;
 
         /// <summary>
@@ -50,6 +52,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TemplateProviderJsonConverter))]
         public global::G.TemplateProvider? Provider { get; set; }
 
         /// <summary>

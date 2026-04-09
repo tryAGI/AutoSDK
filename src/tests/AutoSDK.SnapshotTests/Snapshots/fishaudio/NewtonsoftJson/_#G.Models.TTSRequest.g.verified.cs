@@ -84,6 +84,7 @@ namespace G
         /// Default Value: mp3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TTSRequestFormatJsonConverter))]
         public global::G.TTSRequestFormat? Format { get; set; }
 
         /// <summary>
@@ -112,6 +113,7 @@ namespace G
         /// Default Value: normal
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("latency")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TTSRequestLatencyJsonConverter))]
         public global::G.TTSRequestLatency? Latency { get; set; }
 
         /// <summary>

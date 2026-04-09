@@ -19,6 +19,7 @@ namespace G
         /// Voice to use for audio output.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionConfigVoiceJsonConverter))]
         public global::G.SessionConfigVoice? Voice { get; set; }
 
         /// <summary>

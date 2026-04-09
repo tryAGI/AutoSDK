@@ -103,6 +103,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("queryShape")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ViewOptionsTableViewOptionsQueryShapeJsonConverter))]
         public global::G.ViewOptionsTableViewOptionsQueryShape? QueryShape { get; set; }
 
         /// <summary>

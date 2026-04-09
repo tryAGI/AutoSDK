@@ -31,12 +31,14 @@ namespace G
         /// Default Value: automatic single language
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language_behaviour")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioToTextControllerAudioTranscriptionRequestLanguageBehaviourJsonConverter))]
         public global::G.AudioToTextControllerAudioTranscriptionRequestLanguageBehaviour? LanguageBehaviour { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioToTextControllerAudioTranscriptionRequestLanguageJsonConverter))]
         public global::G.AudioToTextControllerAudioTranscriptionRequestLanguage? Language { get; set; }
 
         /// <summary>
@@ -79,12 +81,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_translation_language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioToTextControllerAudioTranscriptionRequestTargetTranslationLanguageJsonConverter))]
         public global::G.AudioToTextControllerAudioTranscriptionRequestTargetTranslationLanguage? TargetTranslationLanguage { get; set; }
 
         /// <summary>
         /// Default Value: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioToTextControllerAudioTranscriptionRequestOutputFormatJsonConverter))]
         public global::G.AudioToTextControllerAudioTranscriptionRequestOutputFormat? OutputFormat { get; set; }
 
         /// <summary>

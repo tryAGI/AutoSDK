@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessagesRequestPluginsItemsOneOf4IdJsonConverter))]
         public global::G.MessagesRequestPluginsItemsOneOf4Id Id { get; set; }
 
         /// <summary>

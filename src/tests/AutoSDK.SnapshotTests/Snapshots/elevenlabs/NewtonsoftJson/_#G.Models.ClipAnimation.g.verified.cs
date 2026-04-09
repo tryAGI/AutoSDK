@@ -13,6 +13,7 @@ namespace G
         /// Default Value: none
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enter_effect")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClipAnimationEnterEffectJsonConverter))]
         public global::G.ClipAnimationEnterEffect? EnterEffect { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// Default Value: none
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("exit_effect")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClipAnimationExitEffectJsonConverter))]
         public global::G.ClipAnimationExitEffect? ExitEffect { get; set; }
 
         /// <summary>

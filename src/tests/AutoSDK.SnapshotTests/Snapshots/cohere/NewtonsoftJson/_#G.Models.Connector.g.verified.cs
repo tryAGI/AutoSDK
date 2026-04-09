@@ -76,6 +76,7 @@ namespace G
         /// The OAuth status for the user making the request. One of ["valid", "expired", ""]. Empty string (field is omitted) means the user has not authorized the connector yet.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConnectorAuthStatusJsonConverter))]
         public global::G.ConnectorAuthStatus? AuthStatus { get; set; }
 
         /// <summary>

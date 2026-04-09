@@ -66,6 +66,7 @@ namespace G
         /// Default Value: [assistantId, cost, createdAt, customerName, customerNumber, id, messages, name, phoneNumberId, squadId, status, updatedAt]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("columns")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExportSessionDTOColumnsJsonConverter))]
         public global::G.ExportSessionDTOColumns? Columns { get; set; }
 
         /// <summary>
@@ -81,6 +82,7 @@ namespace G
         /// Default Value: csv
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExportSessionDTOFormatJsonConverter))]
         public global::G.ExportSessionDTOFormat? Format { get; set; }
 
         /// <summary>
@@ -105,6 +107,7 @@ namespace G
         /// This is the sort order for pagination. Defaults to 'DESC'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sortOrder")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExportSessionDTOSortOrderJsonConverter))]
         public global::G.ExportSessionDTOSortOrder? SortOrder { get; set; }
 
         /// <summary>

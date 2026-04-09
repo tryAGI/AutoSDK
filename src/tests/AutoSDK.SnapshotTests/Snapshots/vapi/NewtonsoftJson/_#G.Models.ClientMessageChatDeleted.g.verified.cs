@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "chat.deleted" is sent when a chat is deleted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageChatDeletedTypeJsonConverter))]
         public global::G.ClientMessageChatDeletedType Type { get; set; }
 
         /// <summary>

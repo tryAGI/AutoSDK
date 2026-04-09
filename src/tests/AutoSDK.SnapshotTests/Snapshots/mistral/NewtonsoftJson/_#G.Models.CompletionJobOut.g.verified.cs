@@ -25,24 +25,28 @@ namespace G
         /// The name of the model to fine-tune.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuneableModelJsonConverter))]
         public global::G.FineTuneableModel Model { get; set; } = default!;
 
         /// <summary>
         /// The current status of the fine-tuning job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompletionJobOutStatusJsonConverter))]
         public global::G.CompletionJobOutStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The UNIX timestamp (in seconds) for when the fine-tuning job was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modified_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset ModifiedAt { get; set; } = default!;
 
         /// <summary>
@@ -63,6 +67,7 @@ namespace G
         /// Default Value: job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompletionJobOutObjectJsonConverter))]
         public global::G.CompletionJobOutObject? Object { get; set; }
 
         /// <summary>
@@ -100,6 +105,7 @@ namespace G
         /// Default Value: completion
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("job_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompletionJobOutJobTypeJsonConverter))]
         public global::G.CompletionJobOutJobType? JobType { get; set; }
 
         /// <summary>

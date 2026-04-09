@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessagesRequestToolsItemsOneOf0TypeJsonConverter))]
         public global::G.MessagesRequestToolsItemsOneOf0Type? Type { get; set; }
 
         /// <summary>

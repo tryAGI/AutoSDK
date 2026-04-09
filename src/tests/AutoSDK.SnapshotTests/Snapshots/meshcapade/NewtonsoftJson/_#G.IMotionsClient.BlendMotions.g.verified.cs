@@ -9,11 +9,13 @@ namespace G
         /// Blend two or more motions
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AssetResponse> BlendMotionsAsync(
 
             global::G.MotionBlendRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Blend two or more motions
@@ -23,6 +25,7 @@ namespace G
         /// <param name="motions"></param>
         /// <param name="shapeParameters"></param>
         /// <param name="sourceAvatarID"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AssetResponse> BlendMotionsAsync(
@@ -31,6 +34,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.MotionBlendMotion>? motions = default,
             global::System.Collections.Generic.IList<double>? shapeParameters = default,
             string? sourceAvatarID = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

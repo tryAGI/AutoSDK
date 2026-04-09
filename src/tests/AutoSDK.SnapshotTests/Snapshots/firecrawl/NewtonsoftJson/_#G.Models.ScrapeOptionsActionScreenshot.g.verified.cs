@@ -13,6 +13,7 @@ namespace G
         /// Take a screenshot. The links will be in the response's `actions.screenshots` array.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeOptionsActionScreenshotTypeJsonConverter))]
         public global::G.ScrapeOptionsActionScreenshotType Type { get; set; }
 
         /// <summary>

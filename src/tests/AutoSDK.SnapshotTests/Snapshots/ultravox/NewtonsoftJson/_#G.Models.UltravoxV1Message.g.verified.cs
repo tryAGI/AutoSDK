@@ -13,6 +13,7 @@ namespace G
         /// The message's role.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1MessageRoleJsonConverter))]
         public global::G.UltravoxV1MessageRole? Role { get; set; }
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace G
         /// The medium of the message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("medium")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1MessageMediumJsonConverter))]
         public global::G.UltravoxV1MessageMedium? Medium { get; set; }
 
         /// <summary>

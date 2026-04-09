@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PartialAgentClipPresenterVoiceElevenLabsTypeJsonConverter))]
         public global::G.PartialAgentClipPresenterVoiceElevenLabsType Type { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// Use `external-private` together with the `x-api-key-external` for your own ElevenLabs voices.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PartialAgentClipPresenterVoiceElevenLabsAccessJsonConverter))]
         public global::G.PartialAgentClipPresenterVoiceElevenLabsAccess? Access { get; set; }
 
         /// <summary>

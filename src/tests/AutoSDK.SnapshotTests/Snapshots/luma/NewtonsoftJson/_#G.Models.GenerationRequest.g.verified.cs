@@ -13,6 +13,7 @@ namespace G
         /// Default Value: video
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generation_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerationRequestGenerationTypeJsonConverter))]
         public global::G.GenerationRequestGenerationType? GenerationType { get; set; }
 
         /// <summary>
@@ -28,6 +29,7 @@ namespace G
         /// </summary>
         /// <example>16:9</example>
         [global::Newtonsoft.Json.JsonProperty("aspect_ratio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AspectRatioJsonConverter))]
         public global::G.AspectRatio? AspectRatio { get; set; }
 
         /// <summary>

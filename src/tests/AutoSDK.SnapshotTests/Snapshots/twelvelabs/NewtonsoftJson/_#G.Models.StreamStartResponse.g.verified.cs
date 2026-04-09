@@ -13,6 +13,7 @@ namespace G
         /// This field is always set to `stream_start` for this event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StreamStartResponseEventTypeJsonConverter))]
         public global::G.StreamStartResponseEventType EventType { get; set; }
 
         /// <summary>

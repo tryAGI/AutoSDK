@@ -13,12 +13,14 @@ namespace G
         /// The type of the message input. Always set to `message`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseInputMessageTypeJsonConverter))]
         public global::G.ResponseInputMessageType Type { get; set; }
 
         /// <summary>
         /// The role of the message input. One of `user`, `system`, or `developer`. Note: assistant role is not supported with explicit type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseInputMessageRoleJsonConverter))]
         public global::G.ResponseInputMessageRole Role { get; set; } = default!;
 
         /// <summary>
@@ -31,6 +33,7 @@ namespace G
         /// The status of item. Populated when items are returned via API.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseInputMessageStatusJsonConverter))]
         public global::G.ResponseInputMessageStatus? Status { get; set; }
 
         /// <summary>

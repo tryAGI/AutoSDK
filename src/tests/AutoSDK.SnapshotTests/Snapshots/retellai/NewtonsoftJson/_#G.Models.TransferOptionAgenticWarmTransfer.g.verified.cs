@@ -13,6 +13,7 @@ namespace G
         /// The type of the transfer.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferOptionAgenticWarmTransferTypeJsonConverter))]
         public global::G.TransferOptionAgenticWarmTransferType Type { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// The music to play while the caller is being transferred.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("on_hold_music")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferOptionAgenticWarmTransferOnHoldMusicJsonConverter))]
         public global::G.TransferOptionAgenticWarmTransferOnHoldMusic? OnHoldMusic { get; set; }
 
         /// <summary>

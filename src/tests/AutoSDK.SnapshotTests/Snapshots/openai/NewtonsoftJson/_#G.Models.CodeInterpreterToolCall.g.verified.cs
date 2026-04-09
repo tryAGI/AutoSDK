@@ -19,6 +19,7 @@ namespace G
         /// The type of the code interpreter tool call. Always `code_interpreter_call`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeInterpreterToolCallTypeJsonConverter))]
         public global::G.CodeInterpreterToolCallType Type { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// The status of the code interpreter tool call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeInterpreterToolCallStatusJsonConverter))]
         public global::G.CodeInterpreterToolCallStatus Status { get; set; } = default!;
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// An identifier of this scene
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSceneResponseDtoObjectJsonConverter))]
         public global::G.CreateSceneResponseDtoObject Object { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// The status of the scene
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSceneResponseDtoStatusJsonConverter))]
         public global::G.CreateSceneResponseDtoStatus Status { get; set; } = default!;
 
         /// <summary>

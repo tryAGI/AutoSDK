@@ -14,6 +14,7 @@ namespace G
         /// <param name="pageToken"></param>
         /// <param name="includeInputOutput"></param>
         /// <param name="workflowId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenAPIListVersionResponse> OpenAPIListVersionAsync(
@@ -22,6 +23,7 @@ namespace G
             int? pageSize = default,
             string? pageToken = default,
             bool? includeInputOutput = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

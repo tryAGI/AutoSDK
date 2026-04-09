@@ -32,6 +32,7 @@ namespace G
         /// <default>global::G.EndSessionMessageType.EndSession</default>
         /// <example>end_session</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EndSessionMessageTypeJsonConverter))]
         public global::G.EndSessionMessageType Type { get; set; } = global::G.EndSessionMessageType.EndSession;
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// Default Value: kling-v1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageGenerationRequestModelNameJsonConverter))]
         public global::G.CreateImageGenerationRequestModelName? ModelName { get; set; }
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace G
         /// Type of image reference.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image_reference")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageGenerationRequestImageReferenceJsonConverter))]
         public global::G.CreateImageGenerationRequestImageReference? ImageReference { get; set; }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace G
         /// Default Value: 16:9
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("aspect_ratio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageGenerationRequestAspectRatioJsonConverter))]
         public global::G.CreateImageGenerationRequestAspectRatio? AspectRatio { get; set; }
 
         /// <summary>
@@ -73,6 +76,7 @@ namespace G
         /// Default Value: 1k
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageGenerationRequestResolutionJsonConverter))]
         public global::G.CreateImageGenerationRequestResolution? Resolution { get; set; }
 
         /// <summary>

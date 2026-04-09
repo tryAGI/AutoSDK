@@ -16,6 +16,7 @@ namespace G
         /// * `None` - None
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("annotated")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnnotatedEnumJsonConverter))]
         public global::G.AnnotatedEnum? Annotated { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// * `None` - None
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finished")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FinishedEnumJsonConverter))]
         public global::G.FinishedEnum? Finished { get; set; }
 
         /// <summary>
@@ -40,6 +42,7 @@ namespace G
         /// * `None` - None
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reviewed")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReviewedEnumJsonConverter))]
         public global::G.ReviewedEnum? Reviewed { get; set; }
 
         /// <summary>
@@ -49,6 +52,7 @@ namespace G
         /// * `None` - None
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("skipped")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SkippedEnumJsonConverter))]
         public global::G.SkippedEnum? Skipped { get; set; }
 
         /// <summary>

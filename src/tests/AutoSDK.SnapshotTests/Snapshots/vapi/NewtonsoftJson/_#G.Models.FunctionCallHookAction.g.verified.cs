@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "function" for Function tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionCallHookActionTypeJsonConverter))]
         public global::G.FunctionCallHookActionType Type { get; set; }
 
         /// <summary>

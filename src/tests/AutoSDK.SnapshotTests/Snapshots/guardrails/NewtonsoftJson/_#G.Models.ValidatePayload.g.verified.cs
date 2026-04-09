@@ -33,6 +33,7 @@ namespace G
         /// The LLM API to use for validation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("llmApi")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ValidatePayloadLlmApiJsonConverter))]
         public global::G.ValidatePayloadLlmApi? LlmApi { get; set; }
 
         /// <summary>

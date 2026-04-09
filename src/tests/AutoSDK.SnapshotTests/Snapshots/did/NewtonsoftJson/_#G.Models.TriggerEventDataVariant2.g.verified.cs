@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TriggerEventDataVariant2EventTypeJsonConverter))]
         public global::G.TriggerEventDataVariant2EventType EventType { get; set; }
 
         /// <summary>

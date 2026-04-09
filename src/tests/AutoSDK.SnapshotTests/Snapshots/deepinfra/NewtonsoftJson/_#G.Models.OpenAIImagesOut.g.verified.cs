@@ -13,6 +13,7 @@ namespace G
         /// Unix timestamp of when the images were created
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? Created { get; set; }
 
         /// <summary>

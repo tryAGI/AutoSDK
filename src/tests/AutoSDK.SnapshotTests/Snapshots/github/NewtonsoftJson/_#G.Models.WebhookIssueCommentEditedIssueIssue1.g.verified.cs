@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("active_lock_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssueCommentEditedIssueIssue1ActiveLockReasonJsonConverter))]
         public global::G.WebhookIssueCommentEditedIssueIssue1ActiveLockReason? ActiveLockReason { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssueCommentEditedIssueIssue1AuthorAssociationJsonConverter))]
         public global::G.WebhookIssueCommentEditedIssueIssue1AuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
@@ -151,6 +153,7 @@ namespace G
         /// State of the issue; either 'open' or 'closed'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssueCommentEditedIssueIssue1StateJsonConverter))]
         public global::G.WebhookIssueCommentEditedIssueIssue1State? State { get; set; }
 
         /// <summary>

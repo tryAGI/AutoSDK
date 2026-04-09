@@ -19,6 +19,7 @@ namespace G
         /// Language of the code (defaults to PYTHON)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEvaluationPipelineRequestScoreConfigurationCodeLanguageJsonConverter))]
         public global::G.CreateEvaluationPipelineRequestScoreConfigurationCodeLanguage? CodeLanguage { get; set; }
 
         /// <summary>

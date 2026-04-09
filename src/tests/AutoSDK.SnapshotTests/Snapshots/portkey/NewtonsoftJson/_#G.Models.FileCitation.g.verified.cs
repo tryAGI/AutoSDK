@@ -13,6 +13,7 @@ namespace G
         /// The type of the file citation. Always `file_citation`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileCitationTypeJsonConverter))]
         public global::G.FileCitationType Type { get; set; }
 
         /// <summary>

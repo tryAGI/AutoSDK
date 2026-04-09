@@ -13,6 +13,7 @@ namespace G
         /// This is the transcription provider that will be used. Use `custom-transcriber` for providers that are not natively supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomTranscriberProviderJsonConverter))]
         public global::G.CustomTranscriberProvider Provider { get; set; }
 
         /// <summary>

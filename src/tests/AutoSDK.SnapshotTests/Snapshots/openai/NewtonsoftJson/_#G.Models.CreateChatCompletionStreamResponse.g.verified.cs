@@ -28,6 +28,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the chat completion was created. Each chunk has the same timestamp.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset Created { get; set; } = default!;
 
         /// <summary>
@@ -48,6 +49,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service_tier")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServiceTierJsonConverter))]
         public global::G.ServiceTier? ServiceTier { get; set; }
 
         /// <summary>
@@ -61,6 +63,7 @@ namespace G
         /// The object type, which is always `chat.completion.chunk`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter))]
         public global::G.CreateChatCompletionStreamResponseObject Object { get; set; }
 
         /// <summary>

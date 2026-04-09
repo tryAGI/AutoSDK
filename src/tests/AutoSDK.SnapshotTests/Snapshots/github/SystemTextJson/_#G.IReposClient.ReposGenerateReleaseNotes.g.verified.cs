@@ -12,6 +12,7 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ReleaseNotesContent> ReposGenerateReleaseNotesAsync(
@@ -19,6 +20,7 @@ namespace G
             string repo,
 
             global::G.ReposGenerateReleaseNotesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate release notes content for a release<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="configurationFilePath">
         /// Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at '.github/release.yml' or '.github/release.yaml' will be used. If that is not present, the default configuration will be used.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ReleaseNotesContent> ReposGenerateReleaseNotesAsync(
@@ -47,6 +50,7 @@ namespace G
             string? targetCommitish = default,
             string? previousTagName = default,
             string? configurationFilePath = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

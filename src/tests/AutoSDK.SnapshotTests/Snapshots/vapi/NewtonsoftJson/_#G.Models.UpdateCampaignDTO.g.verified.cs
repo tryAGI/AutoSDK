@@ -63,6 +63,7 @@ namespace G
         /// When set to 'ended', it will delete all scheduled calls. Calls in progress will be allowed to complete.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateCampaignDTOStatusJsonConverter))]
         public global::G.UpdateCampaignDTOStatus? Status { get; set; }
 
         /// <summary>

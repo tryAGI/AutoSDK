@@ -17,6 +17,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ChatEvalAssistantMessageMockRole.Assistant</default>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatEvalAssistantMessageMockRoleJsonConverter))]
         public global::G.ChatEvalAssistantMessageMockRole Role { get; set; } = global::G.ChatEvalAssistantMessageMockRole.Assistant;
 
         /// <summary>

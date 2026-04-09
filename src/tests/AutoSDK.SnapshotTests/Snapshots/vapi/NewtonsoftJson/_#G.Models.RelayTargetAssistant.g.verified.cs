@@ -13,6 +13,7 @@ namespace G
         /// The type of relay target
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RelayTargetAssistantTypeJsonConverter))]
         public global::G.RelayTargetAssistantType Type { get; set; }
 
         /// <summary>

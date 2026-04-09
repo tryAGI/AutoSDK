@@ -11,11 +11,13 @@ namespace G
         /// Supports English-Korean (solar-1-mini-translate-enko) and other language pairs.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TranslationResponse> TranslateAsync(
 
             global::G.TranslationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Translate text<br/>
@@ -36,6 +38,7 @@ namespace G
         /// <param name="targetLang">
         /// Target language code (e.g., en, ko, ja).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TranslationResponse> TranslateAsync(
@@ -43,6 +46,7 @@ namespace G
             string text,
             string sourceLang,
             string targetLang,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

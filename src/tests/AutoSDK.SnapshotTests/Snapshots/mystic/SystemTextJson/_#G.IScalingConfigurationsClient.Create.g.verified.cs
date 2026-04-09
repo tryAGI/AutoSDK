@@ -10,11 +10,13 @@ namespace G
         /// Create a scaling configuration for pipelines
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ScalingConfigGet> CreateAsync(
 
             global::G.ScalingConfigCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create<br/>
@@ -31,6 +33,7 @@ namespace G
         /// An enumeration.
         /// </param>
         /// <param name="args"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ScalingConfigGet> CreateAsync(
@@ -39,6 +42,7 @@ namespace G
             int? minimumNodes = default,
             int? maximumNodes = default,
             global::G.ScalingConfigType type = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

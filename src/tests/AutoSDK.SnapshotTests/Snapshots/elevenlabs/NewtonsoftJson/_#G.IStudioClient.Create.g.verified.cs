@@ -16,6 +16,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreatePronunciationDictionaryResponseModel> CreateAsync(
@@ -23,6 +24,7 @@ namespace G
 
             global::G.BodyCreatePronunciationDictionariesV1StudioProjectsProjectIdPronunciationDictionariesPost request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Pronunciation Dictionaries<br/>
@@ -41,6 +43,7 @@ namespace G
         /// This will automatically mark text in this project for reconversion when the new dictionary applies or the old one no longer does.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreatePronunciationDictionaryResponseModel> CreateAsync(
@@ -48,6 +51,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.PronunciationDictionaryVersionLocatorDBModel> pronunciationDictionaryLocators,
             string? xiApiKey = default,
             bool? invalidateAffectedText = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

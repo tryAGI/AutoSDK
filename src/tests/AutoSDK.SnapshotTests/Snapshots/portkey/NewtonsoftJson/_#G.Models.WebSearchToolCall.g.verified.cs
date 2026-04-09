@@ -20,12 +20,14 @@ namespace G
         /// The type of the web search tool call. Always `web_search_call`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchToolCallTypeJsonConverter))]
         public global::G.WebSearchToolCallType Type { get; set; }
 
         /// <summary>
         /// The status of the web search tool call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchToolCallStatusJsonConverter))]
         public global::G.WebSearchToolCallStatus Status { get; set; } = default!;
 
         /// <summary>

@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="dubbingProjectId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddLocalesToDubbingProjectResponse> PutDubbingByDubbingProjectIdAsync(
             global::System.Guid dubbingProjectId,
 
             global::G.AddLocalesToDubbingProjectRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add locales to a a dubbing project (original imported video)<br/>
@@ -42,6 +44,7 @@ namespace G
         /// Default Value: private<br/>
         /// Example: private
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddLocalesToDubbingProjectResponse> PutDubbingByDubbingProjectIdAsync(
@@ -50,6 +53,7 @@ namespace G
             bool? lipsyncEnabled = default,
             global::G.AddLocalesToDubbingProjectRequestVideoDuration? videoDuration = default,
             global::G.AddLocalesToDubbingProjectRequestVisibility? visibility = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

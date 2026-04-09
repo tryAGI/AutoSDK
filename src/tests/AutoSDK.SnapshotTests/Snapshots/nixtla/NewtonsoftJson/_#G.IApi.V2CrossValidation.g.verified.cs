@@ -10,11 +10,13 @@ namespace G
         /// Perform Cross Validation for multiple series
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CrossValidationOutput> V2CrossValidationAsync(
 
             global::G.CrossValidationInput request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Foundational Time Series Model Multi Series Cross Validation<br/>
@@ -66,6 +68,7 @@ namespace G
         /// Fine-tune the model in each window. If `False`, only fine-tunes on the first window. Only used if `finetune_steps` &gt; 0.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CrossValidationOutput> V2CrossValidationAsync(
@@ -83,6 +86,7 @@ namespace G
             int? stepSize = default,
             global::System.Collections.Generic.IList<int>? histExog = default,
             bool? refit = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

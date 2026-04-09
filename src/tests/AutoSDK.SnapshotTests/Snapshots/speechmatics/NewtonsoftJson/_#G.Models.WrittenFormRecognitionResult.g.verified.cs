@@ -31,6 +31,7 @@ namespace G
         /// What kind of object this is. See #/Definitions/RecognitionResult for definitions of the enums.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WrittenFormRecognitionResultTypeJsonConverter))]
         public global::G.WrittenFormRecognitionResultType Type { get; set; }
 
         /// <summary>

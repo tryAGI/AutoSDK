@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessagesRequestToolsItemsOneOf1CacheControlTypeJsonConverter))]
         public global::G.MessagesRequestToolsItemsOneOf1CacheControlType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ttl")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessagesRequestToolsItemsOneOf1CacheControlTtlJsonConverter))]
         public global::G.MessagesRequestToolsItemsOneOf1CacheControlTtl? Ttl { get; set; }
 
         /// <summary>

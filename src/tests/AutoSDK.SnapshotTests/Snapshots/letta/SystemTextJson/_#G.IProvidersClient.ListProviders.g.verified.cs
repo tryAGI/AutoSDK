@@ -33,6 +33,7 @@ namespace G
         /// <param name="providerType">
         /// Filter providers by type
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Provider>> ListProvidersAsync(
@@ -43,6 +44,7 @@ namespace G
             string? orderBy = default,
             string? name = default,
             global::G.ProviderType? providerType = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

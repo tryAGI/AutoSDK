@@ -81,6 +81,7 @@ namespace G
         /// </summary>
         /// <example>not_planned</example>
         [global::Newtonsoft.Json.JsonProperty("state_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IssueStateReasonJsonConverter))]
         public global::G.IssueStateReason? StateReason { get; set; }
 
         /// <summary>
@@ -221,6 +222,7 @@ namespace G
         /// </summary>
         /// <example>OWNER</example>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// <default>global::G.CallbackTranscriptionSuccessPayloadEvent.TranscriptionSuccess</default>
         /// <example>transcription.success</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackTranscriptionSuccessPayloadEventJsonConverter))]
         public global::G.CallbackTranscriptionSuccessPayloadEvent Event { get; set; } = global::G.CallbackTranscriptionSuccessPayloadEvent.TranscriptionSuccess;
 
         /// <summary>

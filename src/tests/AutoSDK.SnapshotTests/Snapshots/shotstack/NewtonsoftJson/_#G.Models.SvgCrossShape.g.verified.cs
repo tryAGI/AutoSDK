@@ -14,6 +14,7 @@ namespace G
         /// The shape type - set to `cross`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgCrossShapeTypeJsonConverter))]
         public global::G.SvgCrossShapeType Type { get; set; }
 
         /// <summary>

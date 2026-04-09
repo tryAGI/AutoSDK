@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>video/mp4</example>
         [global::Newtonsoft.Json.JsonProperty("contentType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAssetRequestContentTypeJsonConverter))]
         public global::G.CreateAssetRequestContentType ContentType { get; set; } = default!;
 
         /// <summary>

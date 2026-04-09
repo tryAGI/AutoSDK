@@ -25,6 +25,7 @@ namespace G
         /// The type of tool. "gohighlevel.calendar.availability.check" for GoHighLevel Calendar availability check tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoHighLevelCalendarAvailabilityToolProviderDetailsTypeJsonConverter))]
         public global::G.GoHighLevelCalendarAvailabilityToolProviderDetailsType Type { get; set; }
 
         /// <summary>

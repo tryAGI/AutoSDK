@@ -33,6 +33,7 @@ namespace G
         /// The type of the provider
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProviderTypeJsonConverter))]
         public global::G.ProviderType ProviderType { get; set; } = default!;
 
         /// <summary>
@@ -52,6 +53,7 @@ namespace G
         /// Deprecated: Use 'provider_type' field instead. The endpoint type for the embedding model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding_endpoint_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingModelEmbeddingEndpointTypeJsonConverter))]
         public global::G.EmbeddingModelEmbeddingEndpointType EmbeddingEndpointType { get; set; } = default!;
 
         /// <summary>

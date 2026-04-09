@@ -34,6 +34,7 @@ namespace G
         /// </summary>
         /// <example>neutral</example>
         [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SimpleCheckSuiteConclusionJsonConverter))]
         public global::G.SimpleCheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>
@@ -88,6 +89,7 @@ namespace G
         /// </summary>
         /// <example>completed</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SimpleCheckSuiteStatusJsonConverter))]
         public global::G.SimpleCheckSuiteStatus? Status { get; set; }
 
         /// <summary>

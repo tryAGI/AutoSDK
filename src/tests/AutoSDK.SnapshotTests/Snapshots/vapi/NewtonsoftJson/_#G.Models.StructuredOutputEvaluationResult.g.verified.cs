@@ -38,6 +38,7 @@ namespace G
         /// This is the comparison operator used for evaluation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comparator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StructuredOutputEvaluationResultComparatorJsonConverter))]
         public global::G.StructuredOutputEvaluationResultComparator Comparator { get; set; } = default!;
 
         /// <summary>

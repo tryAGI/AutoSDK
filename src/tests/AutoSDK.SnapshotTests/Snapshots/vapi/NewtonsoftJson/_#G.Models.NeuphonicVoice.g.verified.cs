@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NeuphonicVoiceProviderJsonConverter))]
         public global::G.NeuphonicVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -36,6 +37,7 @@ namespace G
         /// </summary>
         /// <example>neu_fast</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NeuphonicVoiceModelJsonConverter))]
         public global::G.NeuphonicVoiceModel? Model { get; set; }
 
         /// <summary>

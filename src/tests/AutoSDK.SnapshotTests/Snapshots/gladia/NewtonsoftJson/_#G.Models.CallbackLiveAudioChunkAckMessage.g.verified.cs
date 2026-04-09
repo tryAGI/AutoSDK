@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLiveAudioChunkAckMessageEvent.LiveAudioChunk</default>
         /// <example>live.audio_chunk</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLiveAudioChunkAckMessageEventJsonConverter))]
         public global::G.CallbackLiveAudioChunkAckMessageEvent Event { get; set; } = global::G.CallbackLiveAudioChunkAckMessageEvent.LiveAudioChunk;
 
         /// <summary>

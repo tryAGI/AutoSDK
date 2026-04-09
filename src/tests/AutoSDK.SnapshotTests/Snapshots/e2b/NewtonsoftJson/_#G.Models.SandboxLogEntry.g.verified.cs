@@ -25,6 +25,7 @@ namespace G
         /// State of the sandbox
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LogLevelJsonConverter))]
         public global::G.LogLevel Level { get; set; } = default!;
 
         /// <summary>

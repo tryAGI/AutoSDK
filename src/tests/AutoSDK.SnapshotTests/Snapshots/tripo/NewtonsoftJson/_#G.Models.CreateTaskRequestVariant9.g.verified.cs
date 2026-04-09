@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTaskRequestVariant9TypeJsonConverter))]
         public global::G.CreateTaskRequestVariant9Type Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTaskRequestVariant9FormatJsonConverter))]
         public global::G.CreateTaskRequestVariant9Format Format { get; set; } = default!;
 
         /// <summary>
@@ -67,6 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("texture_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTaskRequestVariant9TextureFormatJsonConverter))]
         public global::G.CreateTaskRequestVariant9TextureFormat? TextureFormat { get; set; }
 
         /// <summary>

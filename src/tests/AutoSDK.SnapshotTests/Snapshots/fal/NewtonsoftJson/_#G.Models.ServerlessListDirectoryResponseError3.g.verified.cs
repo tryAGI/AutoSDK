@@ -13,6 +13,7 @@ namespace G
         /// The category of error that occurred
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerlessListDirectoryResponseErrorType3JsonConverter))]
         public global::G.ServerlessListDirectoryResponseErrorType3 Type { get; set; } = default!;
 
         /// <summary>

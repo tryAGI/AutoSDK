@@ -20,6 +20,7 @@ namespace G
         /// The sub type of tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateBashToolDTOSubTypeJsonConverter))]
         public global::G.UpdateBashToolDTOSubType? SubType { get; set; }
 
         /// <summary>
@@ -118,6 +119,7 @@ namespace G
         /// Default Value: bash
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateBashToolDTONameJsonConverter))]
         public global::G.UpdateBashToolDTOName? Name { get; set; }
 
         /// <summary>

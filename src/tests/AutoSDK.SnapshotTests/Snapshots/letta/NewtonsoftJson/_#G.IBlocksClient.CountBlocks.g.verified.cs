@@ -30,6 +30,7 @@ namespace G
         /// <param name="projectId">
         /// Search blocks by project id
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<int> CountBlocksAsync(
@@ -39,6 +40,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? tags = default,
             bool? matchAllTags = default,
             string? projectId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

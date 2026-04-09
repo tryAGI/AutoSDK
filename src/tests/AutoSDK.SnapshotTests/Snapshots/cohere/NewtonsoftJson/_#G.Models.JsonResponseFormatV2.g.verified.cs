@@ -14,6 +14,7 @@ namespace G
         /// When set to `"json_object"`, the model's output will be a valid JSON Object.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseFormatTypeV2JsonConverter))]
         public global::G.ResponseFormatTypeV2 Type { get; set; } = default!;
 
         /// <summary>

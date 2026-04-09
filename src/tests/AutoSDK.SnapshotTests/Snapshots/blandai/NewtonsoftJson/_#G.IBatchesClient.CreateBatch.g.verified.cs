@@ -10,11 +10,13 @@ namespace G
         /// Create a batch of AI phone calls. Each call inherits global settings unless overridden per call object.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DataResponseBatchId> CreateBatchAsync(
 
             global::G.CreateBatchRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Batch<br/>
@@ -33,6 +35,7 @@ namespace G
         /// <param name="statusWebhook">
         /// URL receiving POST updates at each lifecycle phase
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DataResponseBatchId> CreateBatchAsync(
@@ -40,6 +43,7 @@ namespace G
             object global,
             string? description = default,
             string? statusWebhook = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

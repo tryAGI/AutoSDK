@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `response.code_interpreter_call_code.delta`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseCodeInterpreterCallCodeDeltaEventTypeJsonConverter))]
         public global::G.ResponseCodeInterpreterCallCodeDeltaEventType Type { get; set; }
 
         /// <summary>

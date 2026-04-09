@@ -37,6 +37,7 @@ namespace G
         /// Enum for custom chart types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chart_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomChartTypeJsonConverter))]
         public global::G.CustomChartType ChartType { get; set; } = default!;
 
         /// <summary>

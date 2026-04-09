@@ -68,12 +68,14 @@ namespace G
         /// The result of the rule evaluations for rules with the `active` enforcement status.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RuleSuiteResult2JsonConverter))]
         public global::G.RuleSuiteResult2? Result { get; set; }
 
         /// <summary>
         /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("evaluation_result")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RuleSuiteEvaluationResult2JsonConverter))]
         public global::G.RuleSuiteEvaluationResult2? EvaluationResult { get; set; }
 
         /// <summary>

@@ -13,12 +13,14 @@ namespace G
         /// This is the provider of the model (`google`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkflowGoogleModelProviderJsonConverter))]
         public global::G.WorkflowGoogleModelProvider Provider { get; set; }
 
         /// <summary>
         /// This is the name of the model. Ex. cognitivecomputations/dolphin-mixtral-8x7b
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkflowGoogleModelModelJsonConverter))]
         public global::G.WorkflowGoogleModelModel Model { get; set; } = default!;
 
         /// <summary>

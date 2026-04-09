@@ -49,6 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetScenesResponseDtoSceneStatusJsonConverter))]
         public global::G.GetScenesResponseDtoSceneStatus Status { get; set; } = default!;
 
         /// <summary>

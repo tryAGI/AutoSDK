@@ -34,6 +34,7 @@ namespace G
         /// Default Value: neither
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MediaFormatJsonConverter))]
         public global::G.MediaFormat? Format { get; set; }
 
         /// <summary>

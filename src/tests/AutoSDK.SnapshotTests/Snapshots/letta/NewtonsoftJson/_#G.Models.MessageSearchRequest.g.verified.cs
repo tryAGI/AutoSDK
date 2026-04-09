@@ -20,6 +20,7 @@ namespace G
         /// Default Value: hybrid
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageSearchRequestSearchModeJsonConverter))]
         public global::G.MessageSearchRequestSearchMode? SearchMode { get; set; }
 
         /// <summary>

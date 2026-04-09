@@ -10,11 +10,13 @@ namespace G
         /// Start a new cloud agent to work on your repository
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateAgentResponse> CreateAgentAsync(
 
             global::G.CreateAgentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Launch an agent<br/>
@@ -28,6 +30,7 @@ namespace G
         /// <param name="source"></param>
         /// <param name="target"></param>
         /// <param name="webhook"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateAgentResponse> CreateAgentAsync(
@@ -36,6 +39,7 @@ namespace G
             string? model = default,
             global::G.CreateAgentRequestTarget? target = default,
             global::G.CreateAgentRequestWebhook? webhook = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

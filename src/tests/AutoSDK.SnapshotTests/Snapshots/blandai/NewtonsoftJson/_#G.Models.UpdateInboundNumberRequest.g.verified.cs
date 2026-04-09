@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateInboundNumberRequestModelJsonConverter))]
         public global::G.UpdateInboundNumberRequestModel? Model { get; set; }
 
         /// <summary>
@@ -49,6 +50,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("background_track")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateInboundNumberRequestBackgroundTrackJsonConverter))]
         public global::G.UpdateInboundNumberRequestBackgroundTrack? BackgroundTrack { get; set; }
 
         /// <summary>

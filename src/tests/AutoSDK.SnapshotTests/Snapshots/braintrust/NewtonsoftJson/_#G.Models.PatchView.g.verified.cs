@@ -13,6 +13,7 @@ namespace G
         /// The object type that the ACL applies to
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AclObjectTypeJsonConverter))]
         public global::G.AclObjectType ObjectType { get; set; } = default!;
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// Type of object that the view corresponds to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("view_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PatchViewViewTypeJsonConverter))]
         public global::G.PatchViewViewType? ViewType { get; set; }
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// Check https://supabase.com/docs/guides/platform/regions for up to date regions
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SupabaseBucketPlanRegionJsonConverter))]
         public global::G.SupabaseBucketPlanRegion Region { get; set; } = default!;
 
         /// <summary>

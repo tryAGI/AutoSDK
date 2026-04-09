@@ -13,6 +13,7 @@ namespace G
         /// Credential provider. Only allowed value is cloudflare
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateCloudflareCredentialDTOProviderJsonConverter))]
         public global::G.CreateCloudflareCredentialDTOProvider Provider { get; set; }
 
         /// <summary>

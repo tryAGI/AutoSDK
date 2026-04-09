@@ -13,6 +13,7 @@ namespace G
         /// The type of the reasoning output. Always `reasoning`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputReasoningTypeJsonConverter))]
         public global::G.ResponseOutputReasoningType Type { get; set; }
 
         /// <summary>

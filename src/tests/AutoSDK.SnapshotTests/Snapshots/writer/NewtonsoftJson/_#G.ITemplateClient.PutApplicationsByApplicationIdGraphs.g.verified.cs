@@ -11,6 +11,7 @@ namespace G
         /// </summary>
         /// <param name="applicationId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -23,6 +24,7 @@ namespace G
             string applicationId,
 
             global::G.ApplicationGraphIdsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Associate graphs<br/>
@@ -32,11 +34,13 @@ namespace G
         /// <param name="graphIds">
         /// A list of Knowledge Graph IDs to associate with the application. Note that this will replace the existing list of Knowledge Graphs associated with the application, not add to it.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ApplicationGraphsResponse> PutApplicationsByApplicationIdGraphsAsync(
             string applicationId,
             global::System.Collections.Generic.IList<global::System.Guid> graphIds,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

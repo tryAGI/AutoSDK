@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CartesiaVoiceProviderJsonConverter))]
         public global::G.CartesiaVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -36,6 +37,7 @@ namespace G
         /// </summary>
         /// <example>sonic-english</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CartesiaVoiceModelJsonConverter))]
         public global::G.CartesiaVoiceModel? Model { get; set; }
 
         /// <summary>
@@ -44,6 +46,7 @@ namespace G
         /// </summary>
         /// <example>en</example>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CartesiaVoiceLanguageJsonConverter))]
         public global::G.CartesiaVoiceLanguage? Language { get; set; }
 
         /// <summary>

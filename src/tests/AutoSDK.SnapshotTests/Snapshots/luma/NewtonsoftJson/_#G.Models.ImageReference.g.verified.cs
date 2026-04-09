@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ImageReferenceType.Image</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageReferenceTypeJsonConverter))]
         public global::G.ImageReferenceType Type { get; set; } = global::G.ImageReferenceType.Image;
 
         /// <summary>

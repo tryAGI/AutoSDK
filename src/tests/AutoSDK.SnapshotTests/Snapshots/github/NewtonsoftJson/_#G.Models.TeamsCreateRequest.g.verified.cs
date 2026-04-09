@@ -44,6 +44,7 @@ namespace G
         /// Default for child team: `closed`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamsCreateRequestPrivacyJsonConverter))]
         public global::G.TeamsCreateRequestPrivacy? Privacy { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace G
         /// Default: `notifications_enabled`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("notification_setting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamsCreateRequestNotificationSettingJsonConverter))]
         public global::G.TeamsCreateRequestNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
@@ -60,6 +62,7 @@ namespace G
         /// Default Value: pull
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamsCreateRequestPermissionJsonConverter))]
         public global::G.TeamsCreateRequestPermission? Permission { get; set; }
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>wrong_tool_slug</example>
         [global::Newtonsoft.Json.JsonProperty("failure_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostCliCodactFailuresRequestFailureTypeJsonConverter))]
         public global::G.PostCliCodactFailuresRequestFailureType FailureType { get; set; } = default!;
 
         /// <summary>

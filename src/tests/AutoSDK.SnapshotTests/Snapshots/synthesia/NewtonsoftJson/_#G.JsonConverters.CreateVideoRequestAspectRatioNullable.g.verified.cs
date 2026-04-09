@@ -1,0 +1,73 @@
+﻿//HintName: G.JsonConverters.CreateVideoRequestAspectRatioNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class CreateVideoRequestAspectRatioNullableJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.CreateVideoRequestAspectRatio?>
+    {
+        /// <inheritdoc />
+        public override global::G.CreateVideoRequestAspectRatio? ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.CreateVideoRequestAspectRatio? existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.CreateVideoRequestAspectRatioExtensions.ToEnum(stringValue);
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.CreateVideoRequestAspectRatio)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.CreateVideoRequestAspectRatio?);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.CreateVideoRequestAspectRatio? value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNull();
+            }
+            else
+            {
+                writer.WriteValue(global::G.CreateVideoRequestAspectRatioExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

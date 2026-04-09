@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BlobStorageIntegrationTypeJsonConverter))]
         public global::G.BlobStorageIntegrationType Type { get; set; } = default!;
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("exportFrequency", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BlobStorageExportFrequencyJsonConverter))]
         public global::G.BlobStorageExportFrequency ExportFrequency { get; set; } = default!;
 
         /// <summary>
@@ -79,12 +81,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fileType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BlobStorageIntegrationFileTypeJsonConverter))]
         public global::G.BlobStorageIntegrationFileType FileType { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("exportMode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BlobStorageExportModeJsonConverter))]
         public global::G.BlobStorageExportMode ExportMode { get; set; } = default!;
 
         /// <summary>

@@ -17,11 +17,13 @@ namespace G
         /// - empty values explicitly clear the field
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task UpdatePromptVersionsAsync(
 
             global::G.PromptVersionBatchUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update prompt versions<br/>
@@ -49,12 +51,14 @@ namespace G
         /// - false: Replace all existing tags with new tags (default behaviour if not provided)<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task UpdatePromptVersionsAsync(
             global::System.Collections.Generic.IList<global::System.Guid> ids,
             global::G.PromptVersionUpdate update,
             bool? mergeTags = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

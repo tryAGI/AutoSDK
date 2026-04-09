@@ -30,6 +30,7 @@ namespace G
         /// - `ERROR`: An error occurred during the encoding process
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HlsObjectStatusJsonConverter))]
         public global::G.HlsObjectStatus? Status { get; set; }
 
         /// <summary>

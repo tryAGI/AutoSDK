@@ -19,6 +19,7 @@ namespace G
         /// Default Value: reference
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReferenceChunkTypeJsonConverter))]
         public global::G.ReferenceChunkType? Type { get; set; }
 
         /// <summary>

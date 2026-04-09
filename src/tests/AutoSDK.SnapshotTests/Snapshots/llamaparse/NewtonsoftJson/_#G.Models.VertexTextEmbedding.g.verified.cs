@@ -46,6 +46,7 @@ namespace G
         /// Default Value: retrieval
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embed_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VertexEmbeddingModeJsonConverter))]
         public global::G.VertexEmbeddingMode? EmbedMode { get; set; }
 
         /// <summary>

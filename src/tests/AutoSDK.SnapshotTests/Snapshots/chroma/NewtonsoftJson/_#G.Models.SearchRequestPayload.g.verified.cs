@@ -13,6 +13,7 @@ namespace G
         /// Specifies whether to include unindexed data in the search results.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("read_level")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReadLevelJsonConverter))]
         public global::G.ReadLevel? ReadLevel { get; set; }
 
         /// <summary>

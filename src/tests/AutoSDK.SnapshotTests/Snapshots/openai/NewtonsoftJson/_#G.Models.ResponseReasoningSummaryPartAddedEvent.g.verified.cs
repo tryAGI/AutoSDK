@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `response.reasoning_summary_part.added`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseReasoningSummaryPartAddedEventTypeJsonConverter))]
         public global::G.ResponseReasoningSummaryPartAddedEventType Type { get; set; }
 
         /// <summary>

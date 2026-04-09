@@ -76,6 +76,7 @@ namespace G
         /// </summary>
         /// <example>ready</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssetResponseAttributesStatusJsonConverter))]
         public global::G.AssetResponseAttributesStatus Status { get; set; } = default!;
 
         /// <summary>

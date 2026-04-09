@@ -13,6 +13,7 @@ namespace G
         /// GraphCellLabel.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("label", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraphCellLabelJsonConverter))]
         public global::G.GraphCellLabel Label { get; set; } = default!;
 
         /// <summary>

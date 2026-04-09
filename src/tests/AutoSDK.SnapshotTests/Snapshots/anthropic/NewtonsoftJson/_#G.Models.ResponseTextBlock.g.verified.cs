@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ResponseTextBlockType.Text</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseTextBlockTypeJsonConverter))]
         public global::G.ResponseTextBlockType Type { get; set; } = global::G.ResponseTextBlockType.Text;
 
         /// <summary>

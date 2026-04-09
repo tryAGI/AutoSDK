@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ContentDirectoryItemTypeJsonConverter))]
         public global::G.ContentDirectoryItemType Type { get; set; } = default!;
 
         /// <summary>

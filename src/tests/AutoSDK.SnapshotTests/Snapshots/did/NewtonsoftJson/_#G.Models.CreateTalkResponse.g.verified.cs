@@ -37,6 +37,7 @@ namespace G
         /// The status of the talk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTalkResponseStatusJsonConverter))]
         public global::G.CreateTalkResponseStatus Status { get; set; } = default!;
 
         /// <summary>

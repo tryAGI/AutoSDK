@@ -20,6 +20,7 @@ namespace G
         /// <param name="teamSlug"></param>
         /// <param name="username"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TeamMembership> TeamsAddOrUpdateMembershipForUserInOrgAsync(
@@ -28,6 +29,7 @@ namespace G
             string username,
 
             global::G.TeamsAddOrUpdateMembershipForUserInOrgRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add or update team membership for a user<br/>
@@ -47,6 +49,7 @@ namespace G
         /// The role that this user should have in the team.<br/>
         /// Default Value: member
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TeamMembership> TeamsAddOrUpdateMembershipForUserInOrgAsync(
@@ -54,6 +57,7 @@ namespace G
             string teamSlug,
             string username,
             global::G.TeamsAddOrUpdateMembershipForUserInOrgRequestRole? role = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

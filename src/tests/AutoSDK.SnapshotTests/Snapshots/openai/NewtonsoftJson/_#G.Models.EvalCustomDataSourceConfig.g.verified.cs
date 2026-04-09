@@ -18,6 +18,7 @@ namespace G
         /// </summary>
         /// <default>global::G.EvalCustomDataSourceConfigType.Custom</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalCustomDataSourceConfigTypeJsonConverter))]
         public global::G.EvalCustomDataSourceConfigType Type { get; set; } = global::G.EvalCustomDataSourceConfigType.Custom;
 
         /// <summary>

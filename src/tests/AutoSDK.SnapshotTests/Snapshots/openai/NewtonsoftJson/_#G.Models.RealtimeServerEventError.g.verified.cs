@@ -21,6 +21,7 @@ namespace G
         /// The event type, must be `error`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventErrorTypeJsonConverter))]
         public global::G.RealtimeServerEventErrorType Type { get; set; }
 
         /// <summary>

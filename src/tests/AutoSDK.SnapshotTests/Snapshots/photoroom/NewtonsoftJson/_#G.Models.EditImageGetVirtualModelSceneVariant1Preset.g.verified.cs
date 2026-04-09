@@ -13,6 +13,7 @@ namespace G
         /// Name of the preset scene.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditImageGetVirtualModelSceneVariant1PresetNameJsonConverter))]
         public global::G.EditImageGetVirtualModelSceneVariant1PresetName Name { get; set; } = default!;
 
         /// <summary>

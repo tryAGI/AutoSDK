@@ -10,11 +10,13 @@ namespace G
         /// Create a new feed in a project
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedsCreateFeedResponse> FeedsCreateFeedAsync(
 
             global::G.FeedsCreateFeedRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Feed<br/>
@@ -23,12 +25,14 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedsCreateFeedResponse> FeedsCreateFeedAsync(
             string projectId,
             string name,
             string? description = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

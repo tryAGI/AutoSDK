@@ -21,12 +21,14 @@ namespace G
         /// The native or third party provider that generated the asset, `shotstack`, `elevenlabs`, `heygen` or `d-id`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GeneratedAssetResponseAttributesProviderJsonConverter))]
         public global::G.GeneratedAssetResponseAttributesProvider Provider { get; set; } = default!;
 
         /// <summary>
         /// The type of service used to generate the asset, `text-to-speech` or `text-to-avatar`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GeneratedAssetResponseAttributesTypeJsonConverter))]
         public global::G.GeneratedAssetResponseAttributesType Type { get; set; } = default!;
 
         /// <summary>
@@ -49,6 +51,7 @@ namespace G
         /// </summary>
         /// <example>done</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GeneratedAssetResponseAttributesStatusJsonConverter))]
         public global::G.GeneratedAssetResponseAttributesStatus Status { get; set; } = default!;
 
         /// <summary>

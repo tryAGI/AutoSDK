@@ -35,6 +35,7 @@ namespace G
         /// - `resharding_stream_records` - Shard transfer for resharding: stream all records in batches until all points are transferred.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ShardTransferMethodJsonConverter))]
         public global::G.ShardTransferMethod Method { get; set; } = default!;
 
         /// <summary>

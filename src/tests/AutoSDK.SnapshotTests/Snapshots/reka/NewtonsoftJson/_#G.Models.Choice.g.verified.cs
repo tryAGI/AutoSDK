@@ -25,6 +25,7 @@ namespace G
         /// The reason the model stopped generating tokens.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChoiceFinishReasonJsonConverter))]
         public global::G.ChoiceFinishReason? FinishReason { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ThinkingConfigEnabledTypeJsonConverter))]
         public global::G.ThinkingConfigEnabledType Type { get; set; }
 
         /// <summary>

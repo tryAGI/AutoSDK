@@ -21,6 +21,7 @@ namespace G
         /// </summary>
         /// <default>global::G.CaptionAssetType.Caption</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CaptionAssetTypeJsonConverter))]
         public global::G.CaptionAssetType Type { get; set; } = global::G.CaptionAssetType.Caption;
 
         /// <summary>

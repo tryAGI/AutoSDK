@@ -12,6 +12,7 @@ namespace G
         /// <param name="feedId"></param>
         /// <param name="subscriptionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedsBackfillSubscriptionResponse> FeedsBackfillSubscriptionAsync(
@@ -19,6 +20,7 @@ namespace G
             string subscriptionId,
 
             global::G.FeedsBackfillSubscriptionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Backfill Subscription<br/>
@@ -28,6 +30,7 @@ namespace G
         /// <param name="subscriptionId"></param>
         /// <param name="fromSequence"></param>
         /// <param name="toSequence"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedsBackfillSubscriptionResponse> FeedsBackfillSubscriptionAsync(
@@ -35,6 +38,7 @@ namespace G
             string subscriptionId,
             double? fromSequence = default,
             double? toSequence = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

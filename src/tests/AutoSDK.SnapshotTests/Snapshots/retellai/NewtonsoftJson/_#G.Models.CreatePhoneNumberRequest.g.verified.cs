@@ -105,6 +105,7 @@ namespace G
         /// </summary>
         /// <example>twilio</example>
         [global::Newtonsoft.Json.JsonProperty("number_provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreatePhoneNumberRequestNumberProviderJsonConverter))]
         public global::G.CreatePhoneNumberRequestNumberProvider? NumberProvider { get; set; }
 
         /// <summary>
@@ -113,6 +114,7 @@ namespace G
         /// </summary>
         /// <example>US</example>
         [global::Newtonsoft.Json.JsonProperty("country_code")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreatePhoneNumberRequestCountryCodeJsonConverter))]
         public global::G.CreatePhoneNumberRequestCountryCode? CountryCode { get; set; }
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// Default Value: medium
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatGPTOAuthReasoningReasoningEffortJsonConverter))]
         public global::G.ChatGPTOAuthReasoningReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>

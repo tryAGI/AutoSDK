@@ -54,6 +54,7 @@ namespace G
         /// Default Value: strong
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("table_merge_sensitivity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpreadsheetParsingConfigTableMergeSensitivityJsonConverter))]
         public global::G.SpreadsheetParsingConfigTableMergeSensitivity? TableMergeSensitivity { get; set; }
 
         /// <summary>

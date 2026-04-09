@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookMembershipRemovedActionJsonConverter))]
         public global::G.WebhookMembershipRemovedAction Action { get; set; }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace G
         /// The scope of the membership. Currently, can only be `team`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookMembershipRemovedScopeJsonConverter))]
         public global::G.WebhookMembershipRemovedScope Scope { get; set; } = default!;
 
         /// <summary>

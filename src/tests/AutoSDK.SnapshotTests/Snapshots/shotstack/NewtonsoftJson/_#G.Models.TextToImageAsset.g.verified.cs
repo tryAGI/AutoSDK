@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.TextToImageAssetType.TextToImage</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextToImageAssetTypeJsonConverter))]
         public global::G.TextToImageAssetType Type { get; set; } = global::G.TextToImageAssetType.TextToImage;
 
         /// <summary>

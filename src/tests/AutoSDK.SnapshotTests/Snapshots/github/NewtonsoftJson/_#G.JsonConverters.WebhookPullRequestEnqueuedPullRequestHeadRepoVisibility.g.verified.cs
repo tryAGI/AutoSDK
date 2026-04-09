@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.WebhookPullRequestEnqueuedPullRequestHeadRepoVisibility.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class WebhookPullRequestEnqueuedPullRequestHeadRepoVisibilityJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.WebhookPullRequestEnqueuedPullRequestHeadRepoVisibility>
+    {
+        /// <inheritdoc />
+        public override global::G.WebhookPullRequestEnqueuedPullRequestHeadRepoVisibility ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.WebhookPullRequestEnqueuedPullRequestHeadRepoVisibility existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.WebhookPullRequestEnqueuedPullRequestHeadRepoVisibilityExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.WebhookPullRequestEnqueuedPullRequestHeadRepoVisibility)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.WebhookPullRequestEnqueuedPullRequestHeadRepoVisibility);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.WebhookPullRequestEnqueuedPullRequestHeadRepoVisibility value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.WebhookPullRequestEnqueuedPullRequestHeadRepoVisibilityExtensions.ToValueString(value));
+        }
+    }
+}

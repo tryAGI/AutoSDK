@@ -13,6 +13,7 @@ namespace G
         /// Always `text`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageRequestContentTextObjectTypeJsonConverter))]
         public global::G.MessageRequestContentTextObjectType Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Model ID to use for completion
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestModelJsonConverter))]
         public global::G.ChatCompletionRequestModel Model { get; set; } = default!;
 
         /// <summary>
@@ -85,6 +86,7 @@ namespace G
         /// Level of reasoning effort
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestReasoningEffortJsonConverter))]
         public global::G.ChatCompletionRequestReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
@@ -104,6 +106,7 @@ namespace G
         /// Controls tool invocation: none, auto, required
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestToolChoiceJsonConverter))]
         public global::G.ChatCompletionRequestToolChoice? ToolChoice { get; set; }
 
         /// <summary>

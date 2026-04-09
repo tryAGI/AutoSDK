@@ -38,6 +38,7 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeScanningAlertStateJsonConverter))]
         public global::G.CodeScanningAlertState? State { get; set; }
 
         /// <summary>

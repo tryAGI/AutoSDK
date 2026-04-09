@@ -9,11 +9,13 @@ namespace G
         /// Create Chat (OpenAI Compatible)
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OneOf<global::G.ResponseObject, global::G.ResponseTextDeltaEvent, global::G.ResponseTextDoneEvent, global::G.ResponseCompletedEvent, global::G.ResponseErrorEvent>> ChatControllerCreateOpenAIChatAsync(
 
             global::G.OpenAIResponsesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Chat (OpenAI Compatible)
@@ -61,6 +63,7 @@ namespace G
         /// If sessionId is provided without transport fields, uses existing session data.<br/>
         /// Cannot specify both sessionId and transport fields (phoneNumberId/customer) together.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OneOf<global::G.ResponseObject, global::G.ResponseTextDeltaEvent, global::G.ResponseTextDoneEvent, global::G.ResponseCompletedEvent, global::G.ResponseErrorEvent>> ChatControllerCreateOpenAIChatAsync(
@@ -75,6 +78,7 @@ namespace G
             bool? stream = default,
             string? previousChatId = default,
             global::G.TwilioSMSChatTransport? transport = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

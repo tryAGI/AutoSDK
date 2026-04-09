@@ -16,6 +16,7 @@ namespace G
         /// - If listing, activating, or deactivating certificates for a project, the object type is `organization.project.certificate`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CertificateObjectJsonConverter))]
         public global::G.CertificateObject Object { get; set; } = default!;
 
         /// <summary>
@@ -34,6 +35,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the certificate was uploaded.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>

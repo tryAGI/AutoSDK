@@ -9,11 +9,13 @@ namespace G
         /// Create Eval Run
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> EvalControllerRunAsync(
 
             global::G.CreateEvalRunDTO request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Eval Run
@@ -33,6 +35,7 @@ namespace G
         /// This is the id of the eval that will be run.<br/>
         /// Example: 123e4567-e89b-12d3-a456-426614174000
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> EvalControllerRunAsync(
@@ -40,6 +43,7 @@ namespace G
             global::G.CreateEvalDTO? eval = default,
             global::G.CreateEvalRunDTOType type = default,
             string? evalId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

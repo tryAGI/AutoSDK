@@ -62,6 +62,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncate")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerateRequestTruncateJsonConverter))]
         public global::G.GenerateRequestTruncate? Truncate { get; set; }
 
         /// <summary>
@@ -146,6 +147,7 @@ namespace G
         /// Default Value: NONE
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("return_likelihoods")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerateRequestReturnLikelihoodsJsonConverter))]
         public global::G.GenerateRequestReturnLikelihoods? ReturnLikelihoods { get; set; }
 
         /// <summary>

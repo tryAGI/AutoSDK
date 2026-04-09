@@ -10,11 +10,13 @@ namespace G
         /// Query a chat model.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatCompletionStream> ChatCompletionsAsStreamAsync(
 
             global::G.ChatCompletionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create chat completion<br/>
@@ -87,6 +89,7 @@ namespace G
         /// The name of the moderation model used to validate tokens. Choose from the available moderation models found [here](https://docs.together.ai/docs/inference-models#moderation-models).<br/>
         /// Example: safety_model_name
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatCompletionStream> ChatCompletionsAsStreamAsync(
@@ -111,6 +114,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ToolsPart>? tools = default,
             global::G.OneOf<string, global::G.ToolChoice2>? toolChoice = default,
             string? safetyModel = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

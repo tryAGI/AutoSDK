@@ -73,6 +73,7 @@ namespace G
         /// Operating system for stealth mode. Valid values: windows, mac, linux, mobile, tablet
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("os")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionsCreateRequestBrowserSettingsOsJsonConverter))]
         public global::G.SessionsCreateRequestBrowserSettingsOs? Os { get; set; }
 
         /// <summary>

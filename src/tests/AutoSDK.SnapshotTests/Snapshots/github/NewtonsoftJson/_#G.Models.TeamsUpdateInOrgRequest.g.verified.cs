@@ -30,6 +30,7 @@ namespace G
         ///  * `closed` - visible to all members of this organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamsUpdateInOrgRequestPrivacyJsonConverter))]
         public global::G.TeamsUpdateInOrgRequestPrivacy? Privacy { get; set; }
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace G
         ///  * `notifications_disabled` - no one receives notifications.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("notification_setting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamsUpdateInOrgRequestNotificationSettingJsonConverter))]
         public global::G.TeamsUpdateInOrgRequestNotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>
@@ -45,6 +47,7 @@ namespace G
         /// Default Value: pull
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamsUpdateInOrgRequestPermissionJsonConverter))]
         public global::G.TeamsUpdateInOrgRequestPermission? Permission { get; set; }
 
         /// <summary>

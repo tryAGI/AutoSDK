@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "make" for Make tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MakeToolTypeJsonConverter))]
         public global::G.MakeToolType Type { get; set; }
 
         /// <summary>

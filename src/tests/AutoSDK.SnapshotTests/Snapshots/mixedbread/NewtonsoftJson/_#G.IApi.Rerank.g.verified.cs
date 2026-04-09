@@ -14,11 +14,13 @@ namespace G
         ///     RerankResponse: The reranked documents for the input query.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RerankResponse> RerankAsync(
 
             global::G.RerankParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Rerank different kind of documents for a given query<br/>
@@ -53,6 +55,7 @@ namespace G
         /// Wether or not to rewrite the query before passing it to the reranking model<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RerankResponse> RerankAsync(
@@ -63,6 +66,7 @@ namespace G
             int? topK = default,
             bool? returnInput = default,
             bool? rewriteQuery = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

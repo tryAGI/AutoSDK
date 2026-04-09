@@ -13,6 +13,7 @@ namespace G
         /// The ID or name of the vector store
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -20,6 +21,7 @@ namespace G
             global::G.AnyOf<string, global::System.Guid?> vectorStoreIdentifier,
 
             global::G.MetadataCursorPagination request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// [DEPRECATED] List vector store files with metadata filter<br/>
@@ -48,6 +50,7 @@ namespace G
         /// <param name="metadataFilter">
         /// Metadata filter to apply to the query
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -59,6 +62,7 @@ namespace G
             bool? includeTotal = default,
             global::System.Collections.Generic.IList<global::G.StoreFileStatus>? statuses = default,
             global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>? metadataFilter = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

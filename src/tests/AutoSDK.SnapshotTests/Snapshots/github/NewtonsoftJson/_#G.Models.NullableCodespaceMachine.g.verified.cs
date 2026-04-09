@@ -63,6 +63,7 @@ namespace G
         /// </summary>
         /// <example>ready</example>
         [global::Newtonsoft.Json.JsonProperty("prebuild_availability")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NullableCodespaceMachinePrebuildAvailabilityJsonConverter))]
         public global::G.NullableCodespaceMachinePrebuildAvailability? PrebuildAvailability { get; set; }
 
         /// <summary>

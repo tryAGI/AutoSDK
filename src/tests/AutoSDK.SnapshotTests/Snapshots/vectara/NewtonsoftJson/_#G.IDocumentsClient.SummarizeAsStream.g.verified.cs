@@ -59,6 +59,7 @@ namespace G
         /// </param>
         /// <param name="documentId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.SummarizeDocumentStreamedResponse> SummarizeAsStreamAsync(
@@ -68,6 +69,7 @@ namespace G
             global::G.SummarizeDocumentRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Summarize a document<br/>
@@ -137,6 +139,7 @@ namespace G
         /// Indicates whether the response should be streamed or not.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.SummarizeDocumentStreamedResponse> SummarizeAsStreamAsync(
@@ -148,6 +151,7 @@ namespace G
             string? promptTemplate = default,
             object? modelParameters = default,
             bool? streamResponse = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

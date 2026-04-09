@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <example>EN</example>
         [global::Newtonsoft.Json.JsonProperty("source_lang")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SourceLanguageJsonConverter))]
         public global::G.SourceLanguage? SourceLang { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// </summary>
         /// <example>DE</example>
         [global::Newtonsoft.Json.JsonProperty("target_lang", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TargetLanguageJsonConverter))]
         public global::G.TargetLanguage TargetLang { get; set; } = default!;
 
         /// <summary>
@@ -80,6 +82,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("formality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FormalityJsonConverter))]
         public global::G.Formality? Formality { get; set; }
 
         /// <summary>

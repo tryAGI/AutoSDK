@@ -25,6 +25,7 @@ namespace G
         /// Webhook payload version
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetWebhookSubscriptionsResponseItemVersionJsonConverter))]
         public global::G.GetWebhookSubscriptionsResponseItemVersion Version { get; set; } = default!;
 
         /// <summary>

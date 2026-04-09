@@ -10,11 +10,13 @@ namespace G
         /// Initiates the generation of a user migration archive.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Migration> MigrationsStartForAuthenticatedUserAsync(
 
             global::G.MigrationsStartForAuthenticatedUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Start a user migration<br/>
@@ -54,6 +56,7 @@ namespace G
         /// Example: [repositories]
         /// </param>
         /// <param name="repositories"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Migration> MigrationsStartForAuthenticatedUserAsync(
@@ -66,6 +69,7 @@ namespace G
             bool? excludeOwnerProjects = default,
             bool? orgMetadataOnly = default,
             global::System.Collections.Generic.IList<global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem>? exclude = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

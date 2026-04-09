@@ -20,6 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateApiRequestToolDTOMethodJsonConverter))]
         public global::G.UpdateApiRequestToolDTOMethod? Method { get; set; }
 
         /// <summary>

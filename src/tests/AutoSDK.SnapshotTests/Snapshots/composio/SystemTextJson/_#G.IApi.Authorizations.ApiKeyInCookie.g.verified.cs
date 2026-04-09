@@ -10,6 +10,7 @@ namespace G
         /// Authorize using ApiKey authentication.
         /// </summary>
         /// <param name="apiKey"></param>
+
         public void AuthorizeUsingApiKeyInCookie(
             string apiKey);
     }

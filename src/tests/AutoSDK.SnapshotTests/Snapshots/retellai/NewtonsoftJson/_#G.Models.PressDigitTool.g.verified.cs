@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PressDigitToolTypeJsonConverter))]
         public global::G.PressDigitToolType Type { get; set; }
 
         /// <summary>

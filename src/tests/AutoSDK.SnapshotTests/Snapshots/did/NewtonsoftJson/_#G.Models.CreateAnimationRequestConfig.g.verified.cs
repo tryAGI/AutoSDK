@@ -45,6 +45,7 @@ namespace G
         /// the file format of the animated video result
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAnimationRequestConfigResultFormatJsonConverter))]
         public global::G.CreateAnimationRequestConfigResultFormat? ResultFormat { get; set; }
 
         /// <summary>

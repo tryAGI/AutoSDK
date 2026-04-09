@@ -18,6 +18,7 @@ namespace G
         /// </summary>
         /// <default>global::G.EvalLogsDataSourceConfigType.Logs</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalLogsDataSourceConfigTypeJsonConverter))]
         public global::G.EvalLogsDataSourceConfigType Type { get; set; } = global::G.EvalLogsDataSourceConfigType.Logs;
 
         /// <summary>

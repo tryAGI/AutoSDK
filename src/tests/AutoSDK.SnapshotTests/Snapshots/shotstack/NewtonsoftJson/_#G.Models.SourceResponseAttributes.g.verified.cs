@@ -53,6 +53,7 @@ namespace G
         /// </summary>
         /// <example>ready</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SourceResponseAttributesStatusJsonConverter))]
         public global::G.SourceResponseAttributesStatus? Status { get; set; }
 
         /// <summary>

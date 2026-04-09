@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("overlap")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InitTalkStreamRequestFaceOverlapJsonConverter))]
         public global::G.InitTalkStreamRequestFaceOverlap? Overlap { get; set; }
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.SucceededResultType.Succeeded</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SucceededResultTypeJsonConverter))]
         public global::G.SucceededResultType Type { get; set; } = global::G.SucceededResultType.Succeeded;
 
         /// <summary>

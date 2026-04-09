@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>collaborators_only</example>
         [global::Newtonsoft.Json.JsonProperty("limit", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InteractionGroupJsonConverter))]
         public global::G.InteractionGroup Limit { get; set; } = default!;
 
         /// <summary>

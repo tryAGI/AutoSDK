@@ -14,12 +14,14 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OrgHook> OrgsCreateWebhookAsync(
             string org,
 
             global::G.OrgsCreateWebhookRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an organization webhook<br/>
@@ -30,12 +32,14 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.OrgHook>> OrgsCreateWebhookAsResponseAsync(
             string org,
 
             global::G.OrgsCreateWebhookRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an organization webhook<br/>
@@ -59,6 +63,7 @@ namespace G
         /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OrgHook> OrgsCreateWebhookAsync(
@@ -67,6 +72,7 @@ namespace G
             global::G.OrgsCreateWebhookRequestConfig config,
             global::System.Collections.Generic.IList<string>? events = default,
             bool? active = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

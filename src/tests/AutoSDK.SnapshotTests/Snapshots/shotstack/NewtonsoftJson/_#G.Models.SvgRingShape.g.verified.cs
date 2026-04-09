@@ -14,6 +14,7 @@ namespace G
         /// The shape type - set to `ring`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgRingShapeTypeJsonConverter))]
         public global::G.SvgRingShapeType Type { get; set; }
 
         /// <summary>

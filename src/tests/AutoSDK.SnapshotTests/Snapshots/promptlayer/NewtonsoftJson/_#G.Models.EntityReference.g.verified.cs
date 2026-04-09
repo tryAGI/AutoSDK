@@ -19,6 +19,7 @@ namespace G
         /// The type of entity. SNIPPET is a pseudo-entity type representing completion-type prompts.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EntityTypeJsonConverter))]
         public global::G.EntityType Type { get; set; } = default!;
 
         /// <summary>

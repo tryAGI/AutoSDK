@@ -19,12 +19,14 @@ namespace G
         /// Default Value: error
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranslationStatusApiItemErrorStatusJsonConverter))]
         public global::G.TranslationStatusApiItemErrorStatus? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("errorCode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranslationStatusApiItemErrorErrorCodeJsonConverter))]
         public global::G.TranslationStatusApiItemErrorErrorCode ErrorCode { get; set; } = default!;
 
         /// <summary>

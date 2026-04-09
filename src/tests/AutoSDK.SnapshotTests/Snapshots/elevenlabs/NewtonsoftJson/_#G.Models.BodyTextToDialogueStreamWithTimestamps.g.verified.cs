@@ -51,6 +51,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("apply_text_normalization")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyTextToDialogueStreamWithTimestampsApplyTextNormalizationJsonConverter))]
         public global::G.BodyTextToDialogueStreamWithTimestampsApplyTextNormalization? ApplyTextNormalization { get; set; }
 
         /// <summary>

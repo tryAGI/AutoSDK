@@ -14,6 +14,7 @@ namespace G
         /// The type of the MCP tool. Always `mcp`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPToolTypeJsonConverter))]
         public global::G.MCPToolType Type { get; set; }
 
         /// <summary>

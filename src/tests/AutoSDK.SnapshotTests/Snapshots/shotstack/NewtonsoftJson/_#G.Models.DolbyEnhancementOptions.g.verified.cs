@@ -25,6 +25,7 @@ namespace G
         /// </summary>
         /// <example>studio</example>
         [global::Newtonsoft.Json.JsonProperty("preset", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DolbyEnhancementOptionsPresetJsonConverter))]
         public global::G.DolbyEnhancementOptionsPreset Preset { get; set; } = default!;
 
         /// <summary>

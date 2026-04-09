@@ -20,6 +20,7 @@ namespace G
         /// Where the parameter is used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("location")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1StaticParameterLocationJsonConverter))]
         public global::G.UltravoxV1StaticParameterLocation? Location { get; set; }
 
         /// <summary>

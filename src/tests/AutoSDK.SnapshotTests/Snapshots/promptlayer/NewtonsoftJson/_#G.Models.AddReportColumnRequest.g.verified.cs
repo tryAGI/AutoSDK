@@ -19,6 +19,7 @@ namespace G
         /// The type of evaluation or transformation this column performs. Must be one of the supported column types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("column_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AddReportColumnRequestColumnTypeJsonConverter))]
         public global::G.AddReportColumnRequestColumnType ColumnType { get; set; } = default!;
 
         /// <summary>

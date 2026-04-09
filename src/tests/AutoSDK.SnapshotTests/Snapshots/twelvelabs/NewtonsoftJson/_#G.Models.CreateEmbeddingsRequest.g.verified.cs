@@ -20,6 +20,7 @@ namespace G
         /// - `multi_input`: Creates a single embedding from up to 10 images. You can optionally include text to provide context. To reference specific images in your text, use placeholders in the following format: `&lt;@name&gt;`, where `name` matches the `name` field of a media source
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEmbeddingsRequestInputTypeJsonConverter))]
         public global::G.CreateEmbeddingsRequestInputType InputType { get; set; } = default!;
 
         /// <summary>
@@ -28,6 +29,7 @@ namespace G
         /// </summary>
         /// <default>global::G.CreateEmbeddingsRequestModelName.Marengo30</default>
         [global::Newtonsoft.Json.JsonProperty("model_name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEmbeddingsRequestModelNameJsonConverter))]
         public global::G.CreateEmbeddingsRequestModelName ModelName { get; set; } = global::G.CreateEmbeddingsRequestModelName.Marengo30;
 
         /// <summary>

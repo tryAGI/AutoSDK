@@ -19,18 +19,21 @@ namespace G
         /// This is the type of the message. "status-update" is sent whenever the `call.status` changes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageStatusUpdateTypeJsonConverter))]
         public global::G.ServerMessageStatusUpdateType Type { get; set; }
 
         /// <summary>
         /// This is the status of the call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageStatusUpdateStatusJsonConverter))]
         public global::G.ServerMessageStatusUpdateStatus Status { get; set; } = default!;
 
         /// <summary>
         /// This is the reason the call ended. This is only sent if the status is "ended".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("endedReason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageStatusUpdateEndedReasonJsonConverter))]
         public global::G.ServerMessageStatusUpdateEndedReason? EndedReason { get; set; }
 
         /// <summary>

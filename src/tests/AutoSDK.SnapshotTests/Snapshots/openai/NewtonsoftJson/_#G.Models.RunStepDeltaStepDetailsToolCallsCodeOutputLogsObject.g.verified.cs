@@ -19,6 +19,7 @@ namespace G
         /// Always `logs`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
         public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
 
         /// <summary>

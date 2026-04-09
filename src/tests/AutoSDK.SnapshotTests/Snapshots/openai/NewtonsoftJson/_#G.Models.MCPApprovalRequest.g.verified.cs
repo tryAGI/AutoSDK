@@ -13,6 +13,7 @@ namespace G
         /// The type of the item. Always `mcp_approval_request`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPApprovalRequestTypeJsonConverter))]
         public global::G.MCPApprovalRequestType Type { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// Whether to approve or reject deployment to the specified environments.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReviewCustomGatesStateRequiredStateJsonConverter))]
         public global::G.ReviewCustomGatesStateRequiredState State { get; set; } = default!;
 
         /// <summary>

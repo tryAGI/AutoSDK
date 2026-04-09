@@ -13,6 +13,7 @@ namespace G
         /// Always `message_creation`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunStepDetailsMessageCreationObjectTypeJsonConverter))]
         public global::G.RunStepDetailsMessageCreationObjectType Type { get; set; }
 
         /// <summary>

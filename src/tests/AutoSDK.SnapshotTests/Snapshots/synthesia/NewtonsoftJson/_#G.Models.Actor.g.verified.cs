@@ -16,6 +16,7 @@ namespace G
         /// SERVICE: An internal service (e.g., "rendering_service", "dubbing_service")
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ActorTypeJsonConverter))]
         public global::G.ActorType Type { get; set; } = default!;
 
         /// <summary>

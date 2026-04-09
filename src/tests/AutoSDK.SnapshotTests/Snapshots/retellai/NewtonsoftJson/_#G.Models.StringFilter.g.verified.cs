@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StringFilterTypeJsonConverter))]
         public global::G.StringFilterType Type { get; set; }
 
         /// <summary>
         /// eq: equal, ne: not equal, sw: starts with, ew: ends with, co: contains
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("op", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StringFilterOpJsonConverter))]
         public global::G.StringFilterOp Op { get; set; } = default!;
 
         /// <summary>

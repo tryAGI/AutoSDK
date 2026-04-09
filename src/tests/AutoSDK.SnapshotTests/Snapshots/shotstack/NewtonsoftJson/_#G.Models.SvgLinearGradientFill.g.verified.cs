@@ -14,6 +14,7 @@ namespace G
         /// The fill type - set to `linear` for a linear gradient fill.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgLinearGradientFillTypeJsonConverter))]
         public global::G.SvgLinearGradientFillType Type { get; set; }
 
         /// <summary>

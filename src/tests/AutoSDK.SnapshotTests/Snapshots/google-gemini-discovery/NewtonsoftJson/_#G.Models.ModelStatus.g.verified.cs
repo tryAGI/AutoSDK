@@ -13,6 +13,7 @@ namespace G
         /// The stage of the underlying model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modelStage")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelStatusModelStageJsonConverter))]
         public global::G.ModelStatusModelStage? ModelStage { get; set; }
 
         /// <summary>

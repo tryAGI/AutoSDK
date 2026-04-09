@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>collaborators_only</example>
         [global::Newtonsoft.Json.JsonProperty("limit", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InteractionGroupJsonConverter))]
         public global::G.InteractionGroup Limit { get; set; } = default!;
 
         /// <summary>
@@ -23,6 +24,7 @@ namespace G
         /// </summary>
         /// <example>one_month</example>
         [global::Newtonsoft.Json.JsonProperty("expiry")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InteractionExpiryJsonConverter))]
         public global::G.InteractionExpiry? Expiry { get; set; }
 
         /// <summary>

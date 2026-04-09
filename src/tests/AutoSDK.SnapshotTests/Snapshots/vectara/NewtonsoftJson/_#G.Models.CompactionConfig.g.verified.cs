@@ -47,6 +47,7 @@ namespace G
         /// Default Value: include_outputs
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_event_policy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompactionConfigToolEventPolicyJsonConverter))]
         public global::G.CompactionConfigToolEventPolicy? ToolEventPolicy { get; set; }
 
         /// <summary>

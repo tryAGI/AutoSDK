@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnvironmentsSendMessageRequestMessageVariant2ApprovalVariant1TypeJsonConverter))]
         public global::G.EnvironmentsSendMessageRequestMessageVariant2ApprovalVariant1Type? Type { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnvironmentsSendMessageRequestMessageVariant2ApprovalVariant1StatusJsonConverter))]
         public global::G.EnvironmentsSendMessageRequestMessageVariant2ApprovalVariant1Status Status { get; set; } = default!;
 
         /// <summary>

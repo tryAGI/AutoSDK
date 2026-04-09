@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "conversation-update" is sent when an update is committed to the conversation history.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageConversationUpdateTypeJsonConverter))]
         public global::G.ClientMessageConversationUpdateType Type { get; set; }
 
         /// <summary>

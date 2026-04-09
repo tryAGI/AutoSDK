@@ -13,6 +13,7 @@ namespace G
         /// This is the protocol used for MCP communication. Defaults to Streamable HTTP.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("protocol")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpToolMetadataProtocolJsonConverter))]
         public global::G.McpToolMetadataProtocol? Protocol { get; set; }
 
         /// <summary>

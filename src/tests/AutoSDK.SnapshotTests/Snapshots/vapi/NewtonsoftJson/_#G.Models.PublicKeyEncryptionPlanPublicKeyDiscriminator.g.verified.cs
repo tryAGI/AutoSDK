@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublicKeyEncryptionPlanPublicKeyDiscriminatorFormatJsonConverter))]
         public global::G.PublicKeyEncryptionPlanPublicKeyDiscriminatorFormat? Format { get; set; }
 
         /// <summary>

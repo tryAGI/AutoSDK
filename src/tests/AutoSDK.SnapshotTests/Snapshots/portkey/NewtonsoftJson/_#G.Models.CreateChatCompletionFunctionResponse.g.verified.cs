@@ -25,6 +25,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the chat completion was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset Created { get; set; } = default!;
 
         /// <summary>
@@ -44,6 +45,7 @@ namespace G
         /// The object type, which is always `chat.completion`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionFunctionResponseObjectJsonConverter))]
         public global::G.CreateChatCompletionFunctionResponseObject Object { get; set; }
 
         /// <summary>

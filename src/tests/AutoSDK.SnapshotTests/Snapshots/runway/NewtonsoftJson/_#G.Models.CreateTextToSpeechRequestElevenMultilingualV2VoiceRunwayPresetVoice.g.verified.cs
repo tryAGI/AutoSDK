@@ -20,6 +20,7 @@ namespace G
         /// The preset voice ID to use for the generated speech.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("presetId", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextToSpeechRequestElevenMultilingualV2VoiceRunwayPresetVoicePresetIdJsonConverter))]
         public global::G.CreateTextToSpeechRequestElevenMultilingualV2VoiceRunwayPresetVoicePresetId PresetId { get; set; } = default!;
 
         /// <summary>

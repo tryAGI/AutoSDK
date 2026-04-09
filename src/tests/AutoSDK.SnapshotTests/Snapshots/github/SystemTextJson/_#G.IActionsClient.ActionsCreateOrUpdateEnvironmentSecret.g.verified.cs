@@ -17,6 +17,7 @@ namespace G
         /// <param name="environmentName"></param>
         /// <param name="secretName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmptyObject> ActionsCreateOrUpdateEnvironmentSecretAsync(
@@ -26,6 +27,7 @@ namespace G
             string secretName,
 
             global::G.ActionsCreateOrUpdateEnvironmentSecretRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create or update an environment secret<br/>
@@ -44,6 +46,7 @@ namespace G
         /// <param name="keyId">
         /// ID of the key you used to encrypt the secret.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmptyObject> ActionsCreateOrUpdateEnvironmentSecretAsync(
@@ -53,6 +56,7 @@ namespace G
             string secretName,
             string encryptedValue,
             string keyId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

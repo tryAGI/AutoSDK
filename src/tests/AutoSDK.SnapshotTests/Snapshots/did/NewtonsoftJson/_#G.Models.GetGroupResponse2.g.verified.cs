@@ -49,6 +49,7 @@ namespace G
         /// The status of the group
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetGroupResponseStatus2JsonConverter))]
         public global::G.GetGroupResponseStatus2 Status { get; set; } = default!;
 
         /// <summary>

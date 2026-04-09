@@ -37,6 +37,7 @@ namespace G
         /// </summary>
         /// <example>PICTURE</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EngineTypeJsonConverter))]
         public global::G.EngineType Type { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PatchOrganizationMembersOutputStatusJsonConverter))]
         public global::G.PatchOrganizationMembersOutputStatus Status { get; set; }
 
         /// <summary>

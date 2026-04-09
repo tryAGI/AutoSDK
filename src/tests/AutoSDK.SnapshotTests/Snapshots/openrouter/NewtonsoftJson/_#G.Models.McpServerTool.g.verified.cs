@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpServerToolTypeJsonConverter))]
         public global::G.McpServerToolType Type { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("connector_id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpServerToolConnectorIdJsonConverter))]
         public global::G.McpServerToolConnectorId? ConnectorId { get; set; }
 
         /// <summary>

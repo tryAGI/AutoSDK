@@ -21,6 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("to", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConvertSpecToJsonConverter))]
         public global::G.ConvertSpecTo To { get; set; } = default!;
 
         /// <summary>

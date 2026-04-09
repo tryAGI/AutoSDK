@@ -33,6 +33,7 @@ namespace G
         /// Visibility of a secret
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrganizationActionsSecretVisibilityJsonConverter))]
         public global::G.OrganizationActionsSecretVisibility Visibility { get; set; } = default!;
 
         /// <summary>

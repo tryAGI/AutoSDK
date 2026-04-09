@@ -9,11 +9,13 @@ namespace G
         /// Create Dataset Version from Filter Params
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateDatasetVersionFromFilterParamsResponse> CreateDatasetVersionFromFilterParamsAsync(
 
             global::G.CreateDatasetVersionFromFilterParamsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Dataset Version from Filter Params
@@ -51,6 +53,7 @@ namespace G
         /// <param name="scores">
         /// Filter by score ranges
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateDatasetVersionFromFilterParamsResponse> CreateDatasetVersionFromFilterParamsAsync(
@@ -65,6 +68,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? tags = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::System.Collections.Generic.Dictionary<string, global::G.CreateDatasetVersionFromFilterParamsRequestScores2>? scores = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

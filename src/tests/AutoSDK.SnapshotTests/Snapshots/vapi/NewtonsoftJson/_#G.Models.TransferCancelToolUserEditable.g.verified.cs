@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "transferCancel" for Transfer Cancel tool. This tool can only be used during warm-transfer-experimental by the transfer assistant to cancel an ongoing transfer and return the call back to the original assistant when the transfer cannot be completed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferCancelToolUserEditableTypeJsonConverter))]
         public global::G.TransferCancelToolUserEditableType Type { get; set; }
 
         /// <summary>

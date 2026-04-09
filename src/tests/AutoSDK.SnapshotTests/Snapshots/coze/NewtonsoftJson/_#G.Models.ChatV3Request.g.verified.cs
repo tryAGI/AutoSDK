@@ -67,6 +67,7 @@ namespace G
         /// 发布状态：published_online / unpublished_draft。默认 published_online；不传等同 published_online
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("publish_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatV3RequestPublishStatusJsonConverter))]
         public global::G.ChatV3RequestPublishStatus? PublishStatus { get; set; }
 
         /// <summary>

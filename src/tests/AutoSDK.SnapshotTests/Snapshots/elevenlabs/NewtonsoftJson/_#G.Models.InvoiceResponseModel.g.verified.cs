@@ -49,6 +49,7 @@ namespace G
         /// The Unix timestamp of the next payment attempt. -1 when there is no next payment attempt.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("next_payment_attempt_unix", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset NextPaymentAttemptUnix { get; set; } = default!;
 
         /// <summary>

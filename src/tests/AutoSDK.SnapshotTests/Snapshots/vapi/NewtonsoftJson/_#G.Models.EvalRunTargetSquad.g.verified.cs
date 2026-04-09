@@ -30,6 +30,7 @@ namespace G
         /// </summary>
         /// <example>squad</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalRunTargetSquadTypeJsonConverter))]
         public global::G.EvalRunTargetSquadType Type { get; set; }
 
         /// <summary>

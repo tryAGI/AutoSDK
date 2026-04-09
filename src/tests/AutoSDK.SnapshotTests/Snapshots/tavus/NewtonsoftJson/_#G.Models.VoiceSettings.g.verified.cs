@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speed")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceSettingsSpeedJsonConverter))]
         public global::G.VoiceSettingsSpeed? Speed { get; set; }
 
         /// <summary>

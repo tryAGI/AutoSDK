@@ -25,6 +25,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LogItemLevelJsonConverter))]
         public global::G.LogItemLevel? Level { get; set; }
 
         /// <summary>

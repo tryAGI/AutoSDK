@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PayloadStorageTypeVariant4TypeJsonConverter))]
         public global::G.PayloadStorageTypeVariant4Type Type { get; set; }
 
         /// <summary>

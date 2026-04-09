@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookInstallationRepositoriesAddedActionJsonConverter))]
         public global::G.WebhookInstallationRepositoriesAddedAction Action { get; set; }
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace G
         /// Describe whether all repositories have been selected or there's a selection involved
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_selection", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhooksRepositorySelectionJsonConverter))]
         public global::G.WebhooksRepositorySelection RepositorySelection { get; set; } = default!;
 
         /// <summary>

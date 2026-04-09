@@ -16,6 +16,7 @@ namespace G
         /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ParseV2ParametersTierJsonConverter))]
         public global::G.ParseV2ParametersTier Tier { get; set; } = default!;
 
         /// <summary>

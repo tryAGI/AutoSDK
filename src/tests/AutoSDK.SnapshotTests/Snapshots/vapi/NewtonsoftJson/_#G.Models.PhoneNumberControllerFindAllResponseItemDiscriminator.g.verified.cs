@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PhoneNumberControllerFindAllResponseItemDiscriminatorProviderJsonConverter))]
         public global::G.PhoneNumberControllerFindAllResponseItemDiscriminatorProvider? Provider { get; set; }
 
         /// <summary>

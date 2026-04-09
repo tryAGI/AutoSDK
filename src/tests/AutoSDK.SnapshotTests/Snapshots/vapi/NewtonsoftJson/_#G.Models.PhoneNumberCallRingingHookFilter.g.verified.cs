@@ -13,12 +13,14 @@ namespace G
         /// This is the type of filter - matches when the specified field starts with any of the given prefixes
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PhoneNumberCallRingingHookFilterTypeJsonConverter))]
         public global::G.PhoneNumberCallRingingHookFilterType Type { get; set; }
 
         /// <summary>
         /// The field to check. Currently only "number" (the caller's phone number) is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("key")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PhoneNumberCallRingingHookFilterKeyJsonConverter))]
         public global::G.PhoneNumberCallRingingHookFilterKey Key { get; set; }
 
         /// <summary>

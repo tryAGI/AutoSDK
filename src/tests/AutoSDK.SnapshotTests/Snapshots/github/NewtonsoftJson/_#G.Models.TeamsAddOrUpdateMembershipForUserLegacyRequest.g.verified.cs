@@ -14,6 +14,7 @@ namespace G
         /// Default Value: member
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamsAddOrUpdateMembershipForUserLegacyRequestRoleJsonConverter))]
         public global::G.TeamsAddOrUpdateMembershipForUserLegacyRequestRole? Role { get; set; }
 
         /// <summary>

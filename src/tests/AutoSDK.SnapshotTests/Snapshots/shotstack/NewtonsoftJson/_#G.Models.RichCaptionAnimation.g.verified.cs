@@ -26,6 +26,7 @@ namespace G
         /// <default>global::G.RichCaptionAnimationStyle.Highlight</default>
         /// <example>highlight</example>
         [global::Newtonsoft.Json.JsonProperty("style", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichCaptionAnimationStyleJsonConverter))]
         public global::G.RichCaptionAnimationStyle Style { get; set; } = default!;
 
         /// <summary>
@@ -35,6 +36,7 @@ namespace G
         /// </summary>
         /// <example>up</example>
         [global::Newtonsoft.Json.JsonProperty("direction")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichCaptionAnimationDirectionJsonConverter))]
         public global::G.RichCaptionAnimationDirection? Direction { get; set; }
 
         /// <summary>

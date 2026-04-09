@@ -13,6 +13,7 @@ namespace G
         /// Type of target
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SimulationRunTargetAssistantTypeJsonConverter))]
         public global::G.SimulationRunTargetAssistantType Type { get; set; }
 
         /// <summary>

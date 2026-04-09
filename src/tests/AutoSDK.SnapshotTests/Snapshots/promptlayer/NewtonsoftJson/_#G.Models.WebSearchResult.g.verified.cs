@@ -13,6 +13,7 @@ namespace G
         /// Default Value: web_search_result
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchResultTypeJsonConverter))]
         public global::G.WebSearchResultType? Type { get; set; }
 
         /// <summary>

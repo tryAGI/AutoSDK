@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ToolMessageRole.Tool</default>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolMessageRoleJsonConverter))]
         public global::G.ToolMessageRole Role { get; set; } = global::G.ToolMessageRole.Tool;
 
         /// <summary>

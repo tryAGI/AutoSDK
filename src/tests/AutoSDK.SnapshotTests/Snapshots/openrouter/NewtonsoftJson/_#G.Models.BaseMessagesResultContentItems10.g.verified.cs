@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BaseMessagesResultContentItemsOneOf10TypeJsonConverter))]
         public global::G.BaseMessagesResultContentItemsOneOf10Type Type { get; set; }
 
         /// <summary>

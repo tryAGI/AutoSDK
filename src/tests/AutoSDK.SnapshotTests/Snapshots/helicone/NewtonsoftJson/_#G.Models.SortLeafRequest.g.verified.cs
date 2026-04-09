@@ -19,72 +19,84 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_created_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? CacheCreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("latency")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? Latency { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_active")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? LastActive { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_tokens")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? TotalTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_tokens")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? CompletionTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_tokens")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? PromptTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? UserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? BodyModel { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_cached")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? IsCached { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("request_prompt")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? RequestPrompt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_text")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? ResponseText { get; set; }
 
         /// <summary>
@@ -103,12 +115,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cost")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? Cost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("time_to_first_token")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? TimeToFirstToken { get; set; }
 
         /// <summary>

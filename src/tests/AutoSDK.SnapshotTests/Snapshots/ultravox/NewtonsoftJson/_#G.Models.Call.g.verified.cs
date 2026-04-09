@@ -63,6 +63,7 @@ namespace G
         /// </summary>
         /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("firstSpeaker")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FirstSpeakerEnumJsonConverter))]
         public global::G.FirstSpeakerEnum FirstSpeaker { get; set; } = default!;
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace G
         /// </summary>
         /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("initialOutputMedium")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InitialOutputMediumEnumJsonConverter))]
         public global::G.InitialOutputMediumEnum InitialOutputMedium { get; set; } = default!;
 
         /// <summary>

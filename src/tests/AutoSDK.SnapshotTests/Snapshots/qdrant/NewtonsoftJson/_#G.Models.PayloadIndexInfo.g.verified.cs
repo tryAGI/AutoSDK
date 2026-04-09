@@ -13,6 +13,7 @@ namespace G
         /// All possible names of payload types
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PayloadSchemaTypeJsonConverter))]
         public global::G.PayloadSchemaType DataType { get; set; } = default!;
 
         /// <summary>

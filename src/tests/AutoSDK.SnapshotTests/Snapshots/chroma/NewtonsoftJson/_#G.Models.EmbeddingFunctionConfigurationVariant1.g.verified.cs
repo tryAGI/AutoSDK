@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingFunctionConfigurationVariant1TypeJsonConverter))]
         public global::G.EmbeddingFunctionConfigurationVariant1Type Type { get; set; }
 
         /// <summary>

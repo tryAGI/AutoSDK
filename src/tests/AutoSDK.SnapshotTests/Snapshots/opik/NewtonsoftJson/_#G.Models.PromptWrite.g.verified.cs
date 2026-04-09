@@ -61,6 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptWriteTypeJsonConverter))]
         public global::G.PromptWriteType? Type { get; set; }
 
         /// <summary>
@@ -68,6 +69,7 @@ namespace G
         /// Default Value: text
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_structure")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptWriteTemplateStructureJsonConverter))]
         public global::G.PromptWriteTemplateStructure? TemplateStructure { get; set; }
 
         /// <summary>

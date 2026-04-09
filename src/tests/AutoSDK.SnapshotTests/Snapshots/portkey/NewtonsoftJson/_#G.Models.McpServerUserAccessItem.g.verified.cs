@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("connection_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpServerUserAccessItemConnectionStatusJsonConverter))]
         public global::G.McpServerUserAccessItemConnectionStatus? ConnectionStatus { get; set; }
 
         /// <summary>

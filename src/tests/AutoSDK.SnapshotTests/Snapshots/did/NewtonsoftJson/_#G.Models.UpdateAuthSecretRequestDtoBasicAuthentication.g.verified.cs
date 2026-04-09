@@ -13,6 +13,7 @@ namespace G
         /// The authentication type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateAuthSecretRequestDtoBasicAuthenticationTypeJsonConverter))]
         public global::G.UpdateAuthSecretRequestDtoBasicAuthenticationType? Type { get; set; }
 
         /// <summary>

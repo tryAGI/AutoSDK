@@ -48,6 +48,7 @@ namespace G
         /// The type of Git ref object deleted in the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ref_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookDeleteRefTypeJsonConverter))]
         public global::G.WebhookDeleteRefType RefType { get; set; } = default!;
 
         /// <summary>

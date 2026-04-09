@@ -27,6 +27,7 @@ namespace G
         /// </summary>
         /// <example>ephemeral</example>
         [global::Newtonsoft.Json.JsonProperty("session_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SubAgentSessionModeJsonConverter))]
         public global::G.SubAgentSessionMode? SessionMode { get; set; }
 
         /// <summary>

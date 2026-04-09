@@ -9,11 +9,13 @@ namespace G
         /// Create a model
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Model> ModelsCreateAsync(
 
             global::G.CreateModelRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a model
@@ -60,6 +62,7 @@ namespace G
         /// <param name="tokenizerConfig">
         /// Optional. Configuration for the selected tokenizer. Needs to be JSON. See docs for more details.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Model> ModelsCreateAsync(
@@ -73,6 +76,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.PricingTierInput>? pricingTiers = default,
             string? tokenizerId = default,
             object? tokenizerConfig = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -113,6 +113,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PipelineVisibilityJsonConverter))]
         public global::G.PipelineVisibility? Visibility { get; set; }
 
         /// <summary>

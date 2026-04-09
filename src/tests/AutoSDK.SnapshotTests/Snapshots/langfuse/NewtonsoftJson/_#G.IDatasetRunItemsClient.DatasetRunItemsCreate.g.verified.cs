@@ -9,11 +9,13 @@ namespace G
         /// Create a dataset run item
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetRunItem> DatasetRunItemsCreateAsync(
 
             global::G.CreateDatasetRunItemRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a dataset run item
@@ -39,6 +41,7 @@ namespace G
         /// <param name="createdAt">
         /// Optional timestamp to set the createdAt field of the dataset run item. If not provided or null, defaults to current timestamp.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetRunItem> DatasetRunItemsCreateAsync(
@@ -50,6 +53,7 @@ namespace G
             string? traceId = default,
             global::System.DateTime? datasetVersion = default,
             global::System.DateTime? createdAt = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

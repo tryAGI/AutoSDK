@@ -30,6 +30,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MembershipStateJsonConverter))]
         public global::G.MembershipState? State { get; set; }
 
         /// <summary>

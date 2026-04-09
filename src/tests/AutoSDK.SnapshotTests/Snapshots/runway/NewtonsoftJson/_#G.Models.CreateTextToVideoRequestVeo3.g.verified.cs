@@ -26,6 +26,7 @@ namespace G
         /// The resolution of the output video.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ratio", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextToVideoRequestVeo3RatioJsonConverter))]
         public global::G.CreateTextToVideoRequestVeo3Ratio Ratio { get; set; } = default!;
 
         /// <summary>

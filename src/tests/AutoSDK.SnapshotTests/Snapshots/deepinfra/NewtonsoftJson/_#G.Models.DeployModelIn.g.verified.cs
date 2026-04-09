@@ -14,6 +14,7 @@ namespace G
         /// Default Value: cnt
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelProviderJsonConverter))]
         public global::G.ModelProvider? Provider { get; set; }
 
         /// <summary>

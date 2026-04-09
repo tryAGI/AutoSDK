@@ -20,6 +20,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SIPTrunkTransportEnumJsonConverter))]
         public global::G.SIPTrunkTransportEnum? Transport { get; set; }
 
         /// <summary>
@@ -27,6 +28,7 @@ namespace G
         /// Default Value: allowed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_encryption")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SIPMediaEncryptionEnumJsonConverter))]
         public global::G.SIPMediaEncryptionEnum? MediaEncryption { get; set; }
 
         /// <summary>
