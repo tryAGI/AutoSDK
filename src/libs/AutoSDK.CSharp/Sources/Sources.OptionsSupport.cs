@@ -47,6 +47,24 @@ namespace {settings.Namespace}
         /// Overrides the client-wide response buffering mode when set.
         /// </summary>
         public bool? ReadResponseAsString {{ get; set; }}
+
+        /// <summary>
+        /// Reusable hooks invoked for every generated SDK request.
+        /// </summary>
+        public global::System.Collections.Generic.List<global::{settings.Namespace}.IAutoSDKHook> Hooks {{ get; }} =
+            new global::System.Collections.Generic.List<global::{settings.Namespace}.IAutoSDKHook>();
+
+        /// <summary>
+        /// Registers a hook for all requests issued by this client.
+        /// </summary>
+        /// <param name=""hook""></param>
+        /// <returns>The current options instance.</returns>
+        public global::{settings.Namespace}.AutoSDKClientOptions AddHook(
+            global::{settings.Namespace}.IAutoSDKHook hook)
+        {{
+            Hooks.Add(hook ?? throw new global::System.ArgumentNullException(nameof(hook)));
+            return this;
+        }}
     }}
 
     /// <summary>
@@ -99,8 +117,194 @@ namespace {settings.Namespace}
         public global::System.TimeSpan? Delay {{ get; set; }}
     }}
 
+    /// <summary>
+    /// Runtime hook interface for generated SDK lifecycle events.
+    /// </summary>
+    public interface IAutoSDKHook
+    {{
+        /// <summary>
+        /// Runs before a request is sent.
+        /// </summary>
+        /// <param name=""context""></param>
+        global::System.Threading.Tasks.Task OnBeforeRequestAsync(
+            global::{settings.Namespace}.AutoSDKHookContext context);
+
+        /// <summary>
+        /// Runs after a successful HTTP response is received.
+        /// </summary>
+        /// <param name=""context""></param>
+        global::System.Threading.Tasks.Task OnAfterSuccessAsync(
+            global::{settings.Namespace}.AutoSDKHookContext context);
+
+        /// <summary>
+        /// Runs after an error response or transport failure is observed.
+        /// </summary>
+        /// <param name=""context""></param>
+        global::System.Threading.Tasks.Task OnAfterErrorAsync(
+            global::{settings.Namespace}.AutoSDKHookContext context);
+    }}
+
+    /// <summary>
+    /// Convenience base type for request hooks with no-op defaults.
+    /// </summary>
+    public abstract class AutoSDKHook : global::{settings.Namespace}.IAutoSDKHook
+    {{
+        /// <inheritdoc />
+        public virtual global::System.Threading.Tasks.Task OnBeforeRequestAsync(
+            global::{settings.Namespace}.AutoSDKHookContext context)
+        {{
+            return global::System.Threading.Tasks.Task.CompletedTask;
+        }}
+
+        /// <inheritdoc />
+        public virtual global::System.Threading.Tasks.Task OnAfterSuccessAsync(
+            global::{settings.Namespace}.AutoSDKHookContext context)
+        {{
+            return global::System.Threading.Tasks.Task.CompletedTask;
+        }}
+
+        /// <inheritdoc />
+        public virtual global::System.Threading.Tasks.Task OnAfterErrorAsync(
+            global::{settings.Namespace}.AutoSDKHookContext context)
+        {{
+            return global::System.Threading.Tasks.Task.CompletedTask;
+        }}
+    }}
+
+    /// <summary>
+    /// Runtime metadata passed to generated SDK hooks.
+    /// </summary>
+    public sealed class AutoSDKHookContext
+    {{
+        /// <summary>
+        /// The source OpenAPI operation id or generated fallback id.
+        /// </summary>
+        public string OperationId {{ get; set; }} = string.Empty;
+
+        /// <summary>
+        /// The generated C# method name.
+        /// </summary>
+        public string MethodName {{ get; set; }} = string.Empty;
+
+        /// <summary>
+        /// The OpenAPI path template for the operation.
+        /// </summary>
+        public string PathTemplate {{ get; set; }} = string.Empty;
+
+        /// <summary>
+        /// The HTTP method used for the request.
+        /// </summary>
+        public string HttpMethod {{ get; set; }} = string.Empty;
+
+        /// <summary>
+        /// The client's resolved base URI.
+        /// </summary>
+        public global::System.Uri? BaseUri {{ get; set; }}
+
+        /// <summary>
+        /// The outgoing HTTP request for the current attempt.
+        /// </summary>
+        public global::System.Net.Http.HttpRequestMessage Request {{ get; set; }} = null!;
+
+        /// <summary>
+        /// The HTTP response when one was received.
+        /// </summary>
+        public global::System.Net.Http.HttpResponseMessage? Response {{ get; set; }}
+
+        /// <summary>
+        /// The transport or processing exception when one was observed.
+        /// </summary>
+        public global::System.Exception? Exception {{ get; set; }}
+
+        /// <summary>
+        /// The client-wide runtime options.
+        /// </summary>
+        public global::{settings.Namespace}.AutoSDKClientOptions ClientOptions {{ get; set; }} = null!;
+
+        /// <summary>
+        /// The per-request runtime options.
+        /// </summary>
+        public global::{settings.Namespace}.AutoSDKRequestOptions? RequestOptions {{ get; set; }}
+
+        /// <summary>
+        /// The current attempt number, starting at 1.
+        /// </summary>
+        public int Attempt {{ get; set; }}
+
+        /// <summary>
+        /// The total number of attempts allowed for this request.
+        /// </summary>
+        public int MaxAttempts {{ get; set; }}
+
+        /// <summary>
+        /// Indicates whether the generated client will retry after this hook invocation.
+        /// </summary>
+        public bool WillRetry {{ get; set; }}
+
+        /// <summary>
+        /// The effective cancellation token for the current request attempt.
+        /// </summary>
+        public global::System.Threading.CancellationToken CancellationToken {{ get; set; }}
+    }}
+
     internal static class AutoSDKRequestOptionsSupport
     {{
+        internal static global::{settings.Namespace}.AutoSDKHookContext CreateHookContext(
+            string operationId,
+            string methodName,
+            string pathTemplate,
+            string httpMethod,
+            global::System.Uri? baseUri,
+            global::System.Net.Http.HttpRequestMessage request,
+            global::System.Net.Http.HttpResponseMessage? response,
+            global::System.Exception? exception,
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
+            int attempt,
+            int maxAttempts,
+            bool willRetry,
+            global::System.Threading.CancellationToken cancellationToken)
+        {{
+            return new global::{settings.Namespace}.AutoSDKHookContext
+            {{
+                OperationId = operationId ?? string.Empty,
+                MethodName = methodName ?? string.Empty,
+                PathTemplate = pathTemplate ?? string.Empty,
+                HttpMethod = httpMethod ?? string.Empty,
+                BaseUri = baseUri,
+                Request = request,
+                Response = response,
+                Exception = exception,
+                ClientOptions = clientOptions,
+                RequestOptions = requestOptions,
+                Attempt = attempt,
+                MaxAttempts = maxAttempts,
+                WillRetry = willRetry,
+                CancellationToken = cancellationToken,
+            }};
+        }}
+
+        internal static global::System.Threading.Tasks.Task OnBeforeRequestAsync(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKHookContext context)
+        {{
+            return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnBeforeRequestAsync(hookContext), context);
+        }}
+
+        internal static global::System.Threading.Tasks.Task OnAfterSuccessAsync(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKHookContext context)
+        {{
+            return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnAfterSuccessAsync(hookContext), context);
+        }}
+
+        internal static global::System.Threading.Tasks.Task OnAfterErrorAsync(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::{settings.Namespace}.AutoSDKHookContext context)
+        {{
+            return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnAfterErrorAsync(hookContext), context);
+        }}
+
         internal static bool GetReadResponseAsString(
             global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
             global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
@@ -240,6 +444,27 @@ namespace {settings.Namespace}
                 {{
                     request.Content.Headers.TryAddWithoutValidation(header.Key, header.Value ?? string.Empty);
                 }}
+            }}
+        }}
+
+        private static async global::System.Threading.Tasks.Task InvokeHooksAsync(
+            global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
+            global::System.Func<global::{settings.Namespace}.IAutoSDKHook, global::{settings.Namespace}.AutoSDKHookContext, global::System.Threading.Tasks.Task> callback,
+            global::{settings.Namespace}.AutoSDKHookContext context)
+        {{
+            if (clientOptions.Hooks == null || clientOptions.Hooks.Count == 0)
+            {{
+                return;
+            }}
+
+            foreach (var hook in clientOptions.Hooks)
+            {{
+                if (hook == null)
+                {{
+                    continue;
+                }}
+
+                await callback(hook, context).ConfigureAwait(false);
             }}
         }}
     }}

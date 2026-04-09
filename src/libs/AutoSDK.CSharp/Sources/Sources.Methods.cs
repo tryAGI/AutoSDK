@@ -288,6 +288,37 @@ namespace {endPoint.Settings.Namespace}
                 cancellationToken: {cancellationTokenVariableName})";
     }
 
+    private static string GenerateHookInvocation(
+        EndPoint endPoint,
+        string methodName,
+        string helperMethodName,
+        string requestVariableName,
+        string responseExpression,
+        string exceptionExpression,
+        string attemptExpression,
+        string maxAttemptsExpression,
+        string willRetryExpression,
+        string cancellationTokenVariableName)
+    {
+        return $@"await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.{helperMethodName}Async(
+                            clientOptions: Options,
+                            context: global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: {endPoint.Id.ToCSharpStringLiteral()},
+                                methodName: {methodName.ToCSharpStringLiteral()},
+                                pathTemplate: {endPoint.Path.ToCSharpStringLiteral()},
+                                httpMethod: {endPoint.HttpMethod.Method.ToCSharpStringLiteral()},
+                                baseUri: BaseUri,
+                                request: {requestVariableName}!,
+                                response: {responseExpression},
+                                exception: {exceptionExpression},
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: {attemptExpression},
+                                maxAttempts: {maxAttemptsExpression},
+                                willRetry: {willRetryExpression},
+                                cancellationToken: {cancellationTokenVariableName})).ConfigureAwait(false);";
+    }
+
     private static string GetSuccessResponseBodyType(EndPoint endPoint)
     {
         if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
@@ -341,6 +372,61 @@ namespace {endPoint.Settings.Namespace}
         var cancellationTokenAttribute = endPoint.EnumerableStream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
+        var beforeRequestHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnBeforeRequest",
+            requestVariableName: "__httpRequest",
+            responseExpression: "null",
+            exceptionExpression: "null",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterSuccessHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterSuccess",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attemptNumber",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterRetryableStatusHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "true",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterErrorStatusHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attemptNumber",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterExceptionHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "null",
+            exceptionExpression: "__exception",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "__willRetry",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
         var body = isInterface
             ? ";"
             : !returnResponseWrapper && ShouldGenerateResponseWrapperMethod(endPoint)
@@ -478,17 +564,27 @@ namespace {endPoint.Settings.Namespace}
 
             global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
             global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
             try
             {{
                 for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
                 {{
+                    __attemptNumber = __attempt;
                     __httpRequest = __CreateHttpRequest();
+                    {beforeRequestHook}
                     try
                     {{
                         __response = await {sendExpression}.ConfigureAwait(false);
                     }}
-                    catch (global::System.Net.Http.HttpRequestException) when (__attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested)
+                    catch (global::System.Net.Http.HttpRequestException __exception)
                     {{
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        {afterExceptionHook}
+                        if (!__willRetry)
+                        {{
+                            throw;
+                        }}
+
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
@@ -502,6 +598,7 @@ namespace {endPoint.Settings.Namespace}
                         __attempt < __maxAttempts &&
                         global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {{
+                        {afterRetryableStatusHook}
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
@@ -532,6 +629,14 @@ namespace {endPoint.Settings.Namespace}
                 Process{endPoint.NotAsyncMethodName}Response(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {{
+                    {afterSuccessHook}
+                }}
+                else
+                {{
+                    {afterErrorStatusHook}
+                }}
 {GenerateResponse(endPoint, wrapSuccessResponse: returnResponseWrapper, cancellationTokenVariableName: "__effectiveCancellationToken", readResponseAsStringExpression: "__effectiveReadResponseAsString").AddIndent(4)}
 {(endPoint.RawStream ? @"
                 }

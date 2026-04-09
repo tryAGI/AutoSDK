@@ -54,6 +54,10 @@ public class RequestOptionsGenerationTests
         supportSource.Should().Contain("public sealed class AutoSDKClientOptions");
         supportSource.Should().Contain("public sealed class AutoSDKRequestOptions");
         supportSource.Should().Contain("public sealed class AutoSDKRetryOptions");
+        supportSource.Should().Contain("public interface IAutoSDKHook");
+        supportSource.Should().Contain("public sealed class AutoSDKHookContext");
+        supportSource.Should().Contain("public global::System.Collections.Generic.List<global::G.IAutoSDKHook> Hooks { get; }");
+        supportSource.Should().Contain("public global::G.AutoSDKClientOptions AddHook(");
     }
 
     [TestMethod]
@@ -96,6 +100,10 @@ public class RequestOptionsGenerationTests
         methodSource.Should().Contain("AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(");
         methodSource.Should().Contain("AutoSDKRequestOptionsSupport.GetMaxAttempts(");
         methodSource.Should().Contain("AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode)");
+        methodSource.Should().Contain("AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(");
+        methodSource.Should().Contain("AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(");
+        methodSource.Should().Contain("AutoSDKRequestOptionsSupport.OnAfterErrorAsync(");
+        methodSource.Should().Contain("AutoSDKRequestOptionsSupport.CreateHookContext(");
         methodSource.Should().Contain("if (__effectiveReadResponseAsString)");
     }
 }
