@@ -6,6 +6,70 @@ namespace G
 {
     public partial class ToolRouterClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostToolRouterSessionBySessionIdExecuteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostToolRouterSessionBySessionIdExecuteSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-user-api-key",
+                        FriendlyName = "UserApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostToolRouterSessionBySessionIdExecuteSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "authToken",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostToolRouterSessionBySessionIdExecuteSecurityRequirement3 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "WorkbenchAccessKey",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PostToolRouterSessionBySessionIdExecuteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PostToolRouterSessionBySessionIdExecuteSecurityRequirement0,
+                s_PostToolRouterSessionBySessionIdExecuteSecurityRequirement1,
+                s_PostToolRouterSessionBySessionIdExecuteSecurityRequirement2,
+                s_PostToolRouterSessionBySessionIdExecuteSecurityRequirement3,
+            };
         partial void PreparePostToolRouterSessionBySessionIdExecuteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? sessionId,
@@ -50,6 +114,12 @@ namespace G
                 sessionId: ref sessionId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostToolRouterSessionBySessionIdExecuteSecurityRequirements,
+                operationName: "PostToolRouterSessionBySessionIdExecuteAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v3/tool_router/session/{sessionId}/execute",
                 baseUri: HttpClient.BaseAddress); 
@@ -62,7 +132,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

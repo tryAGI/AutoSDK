@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ServeClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostServeAssetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PostServeAssetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PostServeAssetSecurityRequirement0,
+            };
         partial void PreparePostServeAssetArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.Transfer request);
@@ -43,6 +62,12 @@ namespace G
             PreparePostServeAssetArguments(
                 httpClient: HttpClient,
                 request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostServeAssetSecurityRequirements,
+                operationName: "PostServeAssetAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/serve/v1/assets",

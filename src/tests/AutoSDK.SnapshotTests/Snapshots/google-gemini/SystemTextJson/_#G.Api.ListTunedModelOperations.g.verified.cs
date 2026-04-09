@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListTunedModelOperationsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "key",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListTunedModelOperationsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListTunedModelOperationsSecurityRequirement0,
+            };
         partial void PrepareListTunedModelOperationsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string tunedModelId,
@@ -53,10 +72,16 @@ namespace G
                 filter: ref filter,
                 pageToken: ref pageToken);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListTunedModelOperationsSecurityRequirements,
+                operationName: "ListTunedModelOperationsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/tunedModels/{tunedModelId}/operations",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")

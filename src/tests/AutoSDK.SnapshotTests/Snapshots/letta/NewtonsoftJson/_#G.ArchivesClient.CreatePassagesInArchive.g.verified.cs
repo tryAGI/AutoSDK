@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ArchivesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreatePassagesInArchiveSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreatePassagesInArchiveSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreatePassagesInArchiveSecurityRequirement0,
+            };
         partial void PrepareCreatePassagesInArchiveArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string archiveId,
@@ -50,6 +69,12 @@ namespace G
                 archiveId: ref archiveId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreatePassagesInArchiveSecurityRequirements,
+                operationName: "CreatePassagesInArchiveAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/archives/{archiveId}/passages/batch",
                 baseUri: HttpClient.BaseAddress); 
@@ -62,7 +87,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

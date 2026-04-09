@@ -6,6 +6,55 @@ namespace G
 {
     public partial class ChartsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_OrgUpdateChartSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_OrgUpdateChartSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Organization-Id",
+                        FriendlyName = "OrganizationId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_OrgUpdateChartSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_OrgUpdateChartSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_OrgUpdateChartSecurityRequirement0,
+                s_OrgUpdateChartSecurityRequirement1,
+                s_OrgUpdateChartSecurityRequirement2,
+            };
         partial void PrepareOrgUpdateChartArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid chartId,
@@ -47,6 +96,12 @@ namespace G
                 chartId: ref chartId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_OrgUpdateChartSecurityRequirements,
+                operationName: "OrgUpdateChartAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/org-charts/{chartId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +114,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

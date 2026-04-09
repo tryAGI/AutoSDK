@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ProviderResourcesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ProviderResourceControllerUpdateProviderResourceSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ProviderResourceControllerUpdateProviderResourceSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ProviderResourceControllerUpdateProviderResourceSecurityRequirement0,
+            };
         partial void PrepareProviderResourceControllerUpdateProviderResourceArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.ProviderResourceControllerUpdateProviderResourceProvider provider,
@@ -48,6 +67,12 @@ namespace G
                 resourceName: ref resourceName,
                 id: ref id);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ProviderResourceControllerUpdateProviderResourceSecurityRequirements,
+                operationName: "ProviderResourceControllerUpdateProviderResourceAsync");
+
             var providerValue = provider switch
             {
                 global::G.ProviderResourceControllerUpdateProviderResourceProvider.x11labs => "11labs",
@@ -71,7 +96,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

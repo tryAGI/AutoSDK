@@ -6,6 +6,25 @@ namespace G
 {
     public partial class EditClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTemplatesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetTemplatesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetTemplatesSecurityRequirement0,
+            };
         partial void PrepareGetTemplatesArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetTemplatesRequest(
@@ -34,6 +53,12 @@ namespace G
                 client: HttpClient);
             PrepareGetTemplatesArguments(
                 httpClient: HttpClient);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetTemplatesSecurityRequirements,
+                operationName: "GetTemplatesAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/edit/v1/templates",

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class StoresClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_SearchStoreChunksSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_SearchStoreChunksSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_SearchStoreChunksSecurityRequirement0,
+            };
         partial void PrepareSearchStoreChunksArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.StoreChunkSearchParams request);
@@ -64,6 +83,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SearchStoreChunksSecurityRequirements,
+                operationName: "SearchStoreChunksAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/stores/search",
                 baseUri: HttpClient.BaseAddress); 
@@ -76,7 +101,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -292,7 +317,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AnyOf<string, global::System.Guid?>> storeIdentifiers,
             int? topK = default,
             global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>? filters = default,
-            global::G.AnyOf<byte[], global::System.Collections.Generic.IList<global::System.Guid>, object>? fileIds = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>? fileIds = default,
             global::G.StoreChunkSearchOptions? searchOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

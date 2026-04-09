@@ -6,6 +6,40 @@ namespace G
 {
     public partial class AudiosClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_UploadAnAudioSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_UploadAnAudioSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_UploadAnAudioSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_UploadAnAudioSecurityRequirement0,
+                s_UploadAnAudioSecurityRequirement1,
+            };
         partial void PrepareUploadAnAudioArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.UploadAnAudioRequest request);
@@ -47,6 +81,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UploadAnAudioSecurityRequirements,
+                operationName: "UploadAnAudioAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/audios",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +99,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,40 @@ namespace G
 {
     public partial class AgentsStreamsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateChatSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateChatSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateChatSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateChatSecurityRequirement0,
+                s_CreateChatSecurityRequirement1,
+            };
         partial void PrepareCreateChatArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
@@ -47,6 +81,12 @@ namespace G
                 agentId: ref agentId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateChatSecurityRequirements,
+                operationName: "CreateChatAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/agents/{agentId}/chat",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +99,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

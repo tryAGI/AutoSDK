@@ -6,6 +6,25 @@ namespace G
 {
     public partial class PredictionsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PredictionDeleteV2EntityProjectPredictionsDeleteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PredictionDeleteV2EntityProjectPredictionsDeleteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PredictionDeleteV2EntityProjectPredictionsDeleteSecurityRequirement0,
+            };
         partial void PreparePredictionDeleteV2EntityProjectPredictionsDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string entity,
@@ -51,6 +70,12 @@ namespace G
                 project: ref project,
                 predictionIds: predictionIds);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PredictionDeleteV2EntityProjectPredictionsDeleteSecurityRequirements,
+                operationName: "PredictionDeleteV2EntityProjectPredictionsDeleteAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/{entity}/{project}/predictions",
                 baseUri: HttpClient.BaseAddress); 
@@ -66,7 +91,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -13,71 +13,98 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1Discriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1Discriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.EndCallToolResultModel? endCallSuccess = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.EndCallSuccess)
             {
-                endCallSuccess = global::System.Text.Json.JsonSerializer.Deserialize<global::G.EndCallToolResultModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EndCallToolResultModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EndCallToolResultModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.EndCallToolResultModel)}");
+                endCallSuccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.LanguageDetectionToolResultModel? languageDetectionSuccess = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.LanguageDetectionSuccess)
             {
-                languageDetectionSuccess = global::System.Text.Json.JsonSerializer.Deserialize<global::G.LanguageDetectionToolResultModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LanguageDetectionToolResultModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LanguageDetectionToolResultModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LanguageDetectionToolResultModel)}");
+                languageDetectionSuccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TransferToAgentToolResultSuccessModel? transferToAgentSuccess = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.TransferToAgentSuccess)
             {
-                transferToAgentSuccess = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TransferToAgentToolResultSuccessModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToAgentToolResultSuccessModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToAgentToolResultSuccessModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TransferToAgentToolResultSuccessModel)}");
+                transferToAgentSuccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TransferToAgentToolResultErrorModel? transferToAgentError = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.TransferToAgentError)
             {
-                transferToAgentError = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TransferToAgentToolResultErrorModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToAgentToolResultErrorModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToAgentToolResultErrorModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TransferToAgentToolResultErrorModel)}");
+                transferToAgentError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TransferToNumberResultTwilioSuccessModel? transferToNumberTwilioSuccess = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.TransferToNumberTwilioSuccess)
             {
-                transferToNumberTwilioSuccess = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TransferToNumberResultTwilioSuccessModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToNumberResultTwilioSuccessModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToNumberResultTwilioSuccessModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TransferToNumberResultTwilioSuccessModel)}");
+                transferToNumberTwilioSuccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TransferToNumberResultSipSuccessModel? transferToNumberSipSuccess = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.TransferToNumberSipSuccess)
             {
-                transferToNumberSipSuccess = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TransferToNumberResultSipSuccessModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToNumberResultSipSuccessModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToNumberResultSipSuccessModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TransferToNumberResultSipSuccessModel)}");
+                transferToNumberSipSuccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TransferToNumberResultErrorModel? transferToNumberError = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.TransferToNumberError)
             {
-                transferToNumberError = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TransferToNumberResultErrorModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToNumberResultErrorModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToNumberResultErrorModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TransferToNumberResultErrorModel)}");
+                transferToNumberError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.SkipTurnToolResponseModel? skipTurnSuccess = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.SkipTurnSuccess)
             {
-                skipTurnSuccess = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SkipTurnToolResponseModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SkipTurnToolResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SkipTurnToolResponseModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SkipTurnToolResponseModel)}");
+                skipTurnSuccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.PlayDTMFResultSuccessModel? playDtmfSuccess = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.PlayDtmfSuccess)
             {
-                playDtmfSuccess = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PlayDTMFResultSuccessModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PlayDTMFResultSuccessModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PlayDTMFResultSuccessModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PlayDTMFResultSuccessModel)}");
+                playDtmfSuccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.PlayDTMFResultErrorModel? playDtmfError = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.PlayDtmfError)
             {
-                playDtmfError = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PlayDTMFResultErrorModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PlayDTMFResultErrorModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PlayDTMFResultErrorModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PlayDTMFResultErrorModel)}");
+                playDtmfError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.VoiceMailDetectionResultSuccessModel? voicemailDetectionSuccess = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.VoicemailDetectionSuccess)
             {
-                voicemailDetectionSuccess = global::System.Text.Json.JsonSerializer.Deserialize<global::G.VoiceMailDetectionResultSuccessModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoiceMailDetectionResultSuccessModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoiceMailDetectionResultSuccessModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.VoiceMailDetectionResultSuccessModel)}");
+                voicemailDetectionSuccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TestToolResultModel? testingToolResult = default;
             if (discriminator?.ResultType == global::G.ConversationHistoryTranscriptSystemToolResultCommonModelOutputResultVariant1DiscriminatorResultType.TestingToolResult)
             {
-                testingToolResult = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TestToolResultModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TestToolResultModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TestToolResultModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TestToolResultModel)}");
+                testingToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.ResultVariant12(
@@ -116,55 +143,80 @@ namespace G.JsonConverters
             global::G.ResultVariant12 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsEndCallSuccess)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EndCallSuccess, typeof(global::G.EndCallToolResultModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EndCallToolResultModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EndCallToolResultModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EndCallToolResultModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EndCallSuccess!, typeInfo);
             }
             else if (value.IsLanguageDetectionSuccess)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LanguageDetectionSuccess, typeof(global::G.LanguageDetectionToolResultModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LanguageDetectionToolResultModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LanguageDetectionToolResultModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LanguageDetectionToolResultModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LanguageDetectionSuccess!, typeInfo);
             }
             else if (value.IsTransferToAgentSuccess)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToAgentSuccess, typeof(global::G.TransferToAgentToolResultSuccessModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToAgentToolResultSuccessModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToAgentToolResultSuccessModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferToAgentToolResultSuccessModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToAgentSuccess!, typeInfo);
             }
             else if (value.IsTransferToAgentError)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToAgentError, typeof(global::G.TransferToAgentToolResultErrorModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToAgentToolResultErrorModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToAgentToolResultErrorModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferToAgentToolResultErrorModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToAgentError!, typeInfo);
             }
             else if (value.IsTransferToNumberTwilioSuccess)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToNumberTwilioSuccess, typeof(global::G.TransferToNumberResultTwilioSuccessModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToNumberResultTwilioSuccessModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToNumberResultTwilioSuccessModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferToNumberResultTwilioSuccessModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToNumberTwilioSuccess!, typeInfo);
             }
             else if (value.IsTransferToNumberSipSuccess)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToNumberSipSuccess, typeof(global::G.TransferToNumberResultSipSuccessModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToNumberResultSipSuccessModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToNumberResultSipSuccessModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferToNumberResultSipSuccessModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToNumberSipSuccess!, typeInfo);
             }
             else if (value.IsTransferToNumberError)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToNumberError, typeof(global::G.TransferToNumberResultErrorModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferToNumberResultErrorModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferToNumberResultErrorModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferToNumberResultErrorModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferToNumberError!, typeInfo);
             }
             else if (value.IsSkipTurnSuccess)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SkipTurnSuccess, typeof(global::G.SkipTurnToolResponseModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SkipTurnToolResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SkipTurnToolResponseModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SkipTurnToolResponseModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SkipTurnSuccess!, typeInfo);
             }
             else if (value.IsPlayDtmfSuccess)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PlayDtmfSuccess, typeof(global::G.PlayDTMFResultSuccessModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PlayDTMFResultSuccessModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PlayDTMFResultSuccessModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PlayDTMFResultSuccessModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PlayDtmfSuccess!, typeInfo);
             }
             else if (value.IsPlayDtmfError)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PlayDtmfError, typeof(global::G.PlayDTMFResultErrorModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PlayDTMFResultErrorModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PlayDTMFResultErrorModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PlayDTMFResultErrorModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PlayDtmfError!, typeInfo);
             }
             else if (value.IsVoicemailDetectionSuccess)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoicemailDetectionSuccess, typeof(global::G.VoiceMailDetectionResultSuccessModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoiceMailDetectionResultSuccessModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoiceMailDetectionResultSuccessModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoiceMailDetectionResultSuccessModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoicemailDetectionSuccess!, typeInfo);
             }
             else if (value.IsTestingToolResult)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TestingToolResult, typeof(global::G.TestToolResultModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TestToolResultModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TestToolResultModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TestToolResultModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TestingToolResult!, typeInfo);
             }
         }
     }

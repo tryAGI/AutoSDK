@@ -6,6 +6,25 @@ namespace G
 {
     public partial class IngestClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostSourceSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PostSourceSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PostSourceSecurityRequirement0,
+            };
         partial void PreparePostSourceArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.Source request);
@@ -43,6 +62,12 @@ namespace G
             PreparePostSourceArguments(
                 httpClient: HttpClient,
                 request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostSourceSecurityRequirements,
+                operationName: "PostSourceAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/ingest/v1/sources",

@@ -81,7 +81,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        L_a,
+        Léa,
         /// <summary>
         /// 
         /// </summary>
@@ -137,7 +137,7 @@ namespace G
                 GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Kimberly => "Kimberly",
                 GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Lucia => "Lucia",
                 GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Lupe => "Lupe",
-                GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.L_a => "Léa",
+                GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Léa => "Léa",
                 GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Matthew => "Matthew",
                 GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Olivia => "Olivia",
                 GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Salli => "Salli",
@@ -171,7 +171,7 @@ namespace G
                 "Kimberly" => GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Kimberly,
                 "Lucia" => GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Lucia,
                 "Lupe" => GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Lupe,
-                "Léa" => GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.L_a,
+                "Léa" => GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Léa,
                 "Matthew" => GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Matthew,
                 "Olivia" => GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Olivia,
                 "Salli" => GetAvatars1ResponseAvatarSentimentVariant1VoiceAmazonVoiceId.Salli,

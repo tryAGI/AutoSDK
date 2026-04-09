@@ -6,6 +6,25 @@ namespace G
 {
     public partial class MemoriesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_MemoriesListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_MemoriesListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_MemoriesListSecurityRequirement0,
+            };
         partial void PrepareMemoriesListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? userId,
@@ -103,6 +122,12 @@ namespace G
                 startDate: ref startDate,
                 endDate: ref endDate);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_MemoriesListSecurityRequirements,
+                operationName: "MemoriesListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/memories/",
                 baseUri: HttpClient.BaseAddress); 
@@ -131,7 +156,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

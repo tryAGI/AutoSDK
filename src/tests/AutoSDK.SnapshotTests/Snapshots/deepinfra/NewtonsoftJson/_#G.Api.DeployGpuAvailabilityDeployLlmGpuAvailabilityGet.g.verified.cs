@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeployGpuAvailabilityDeployLlmGpuAvailabilityGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeployGpuAvailabilityDeployLlmGpuAvailabilityGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeployGpuAvailabilityDeployLlmGpuAvailabilityGetSecurityRequirement0,
+            };
         partial void PrepareDeployGpuAvailabilityDeployLlmGpuAvailabilityGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? source,
@@ -48,6 +67,12 @@ namespace G
                 baseModel: ref baseModel,
                 xiApiKey: ref xiApiKey);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeployGpuAvailabilityDeployLlmGpuAvailabilityGetSecurityRequirements,
+                operationName: "DeployGpuAvailabilityDeployLlmGpuAvailabilityGetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/deploy/llm/gpu_availability",
                 baseUri: HttpClient.BaseAddress); 
@@ -64,7 +89,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

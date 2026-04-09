@@ -13,21 +13,28 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetAgentSummariesRouteResponseDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetAgentSummariesRouteResponseDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetAgentSummariesRouteResponseDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetAgentSummariesRouteResponseDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.AgentSummaryBatchSuccessfulResponseModel? success = default;
             if (discriminator?.Status == global::G.GetAgentSummariesRouteResponseDiscriminatorStatus.Success)
             {
-                success = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AgentSummaryBatchSuccessfulResponseModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentSummaryBatchSuccessfulResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentSummaryBatchSuccessfulResponseModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AgentSummaryBatchSuccessfulResponseModel)}");
+                success = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.BatchFailureResponseModel? failure = default;
             if (discriminator?.Status == global::G.GetAgentSummariesRouteResponseDiscriminatorStatus.Failure)
             {
-                failure = global::System.Text.Json.JsonSerializer.Deserialize<global::G.BatchFailureResponseModel>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BatchFailureResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BatchFailureResponseModel> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BatchFailureResponseModel)}");
+                failure = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.GetAgentSummariesRouteResponse2(
@@ -46,15 +53,20 @@ namespace G.JsonConverters
             global::G.GetAgentSummariesRouteResponse2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsSuccess)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Success, typeof(global::G.AgentSummaryBatchSuccessfulResponseModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentSummaryBatchSuccessfulResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentSummaryBatchSuccessfulResponseModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentSummaryBatchSuccessfulResponseModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Success!, typeInfo);
             }
             else if (value.IsFailure)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Failure, typeof(global::G.BatchFailureResponseModel), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BatchFailureResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BatchFailureResponseModel?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BatchFailureResponseModel).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Failure!, typeInfo);
             }
         }
     }

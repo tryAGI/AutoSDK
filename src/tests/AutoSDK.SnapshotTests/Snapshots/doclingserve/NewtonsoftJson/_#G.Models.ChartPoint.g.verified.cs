@@ -16,7 +16,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
-        public byte[] Value { get; set; } = default!;
+        public global::System.Collections.Generic.IList<double> Value { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace G
         /// </summary>
         /// <param name="value"></param>
         public ChartPoint(
-            byte[] value)
+            global::System.Collections.Generic.IList<double> value)
         {
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
         }

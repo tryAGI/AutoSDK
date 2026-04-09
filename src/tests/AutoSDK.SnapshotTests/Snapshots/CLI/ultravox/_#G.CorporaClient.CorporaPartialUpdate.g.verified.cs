@@ -6,6 +6,25 @@ namespace G
 {
     public partial class CorporaClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CorporaPartialUpdateSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CorporaPartialUpdateSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CorporaPartialUpdateSecurityRequirement0,
+            };
         partial void PrepareCorporaPartialUpdateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid corpusId,
@@ -46,6 +65,12 @@ namespace G
                 corpusId: ref corpusId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CorporaPartialUpdateSecurityRequirements,
+                operationName: "CorporaPartialUpdateAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/corpora/{corpusId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AnalyticsGroupsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetAnalyticsGroupsMetadataByMetadataKeySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetAnalyticsGroupsMetadataByMetadataKeySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetAnalyticsGroupsMetadataByMetadataKeySecurityRequirement0,
+            };
         partial void PrepareGetAnalyticsGroupsMetadataByMetadataKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string metadataKey,
@@ -255,6 +274,12 @@ namespace G
                 spanId: ref spanId,
                 promptSlug: ref promptSlug);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAnalyticsGroupsMetadataByMetadataKeySecurityRequirements,
+                operationName: "GetAnalyticsGroupsMetadataByMetadataKeyAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/analytics/groups/metadata/{metadataKey}",
                 baseUri: HttpClient.BaseAddress); 
@@ -293,7 +318,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

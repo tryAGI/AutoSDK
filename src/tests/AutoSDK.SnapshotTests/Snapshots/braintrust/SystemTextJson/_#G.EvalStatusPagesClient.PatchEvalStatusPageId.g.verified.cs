@@ -6,6 +6,34 @@ namespace G
 {
     public partial class EvalStatusPagesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PatchEvalStatusPageIdSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PatchEvalStatusPageIdSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PatchEvalStatusPageIdSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PatchEvalStatusPageIdSecurityRequirement0,
+                s_PatchEvalStatusPageIdSecurityRequirement1,
+            };
         partial void PreparePatchEvalStatusPageIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid evalStatusPageId,
@@ -49,6 +77,12 @@ namespace G
                 evalStatusPageId: ref evalStatusPageId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PatchEvalStatusPageIdSecurityRequirements,
+                operationName: "PatchEvalStatusPageIdAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/eval_status_page/{evalStatusPageId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -61,7 +95,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

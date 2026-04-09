@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DatasetsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DatasetsDeleteRunSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DatasetsDeleteRunSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DatasetsDeleteRunSecurityRequirement0,
+            };
         partial void PrepareDatasetsDeleteRunArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetName,
@@ -43,6 +62,12 @@ namespace G
                 datasetName: ref datasetName,
                 runName: ref runName);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DatasetsDeleteRunSecurityRequirements,
+                operationName: "DatasetsDeleteRunAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/public/datasets/{datasetName}/runs/{runName}",
                 baseUri: HttpClient.BaseAddress); 
@@ -55,7 +80,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

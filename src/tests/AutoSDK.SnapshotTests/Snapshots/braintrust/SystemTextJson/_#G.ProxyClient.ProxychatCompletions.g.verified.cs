@@ -6,6 +6,34 @@ namespace G
 {
     public partial class ProxyClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ProxychatCompletionsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ProxychatCompletionsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ProxychatCompletionsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ProxychatCompletionsSecurityRequirement0,
+                s_ProxychatCompletionsSecurityRequirement1,
+            };
         partial void PrepareProxychatCompletionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             object request);
@@ -42,6 +70,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ProxychatCompletionsSecurityRequirements,
+                operationName: "ProxychatCompletionsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/proxy/chat/completions",
                 baseUri: HttpClient.BaseAddress); 
@@ -54,7 +88,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Prompts2Client
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_BatchFailedPredictionsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_BatchFailedPredictionsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_BatchFailedPredictionsSecurityRequirement0,
+            };
         partial void PrepareBatchFailedPredictionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? numFailedPredictions,
@@ -53,6 +72,12 @@ namespace G
                 numFailedPredictions: ref numFailedPredictions,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_BatchFailedPredictionsSecurityRequirements,
+                operationName: "BatchFailedPredictionsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/model-run/batch-failed-predictions",
                 baseUri: HttpClient.BaseAddress); 
@@ -68,7 +93,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

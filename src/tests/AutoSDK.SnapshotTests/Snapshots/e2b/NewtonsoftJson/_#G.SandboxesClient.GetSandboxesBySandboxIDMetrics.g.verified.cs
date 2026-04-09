@@ -6,6 +6,47 @@ namespace G
 {
     public partial class SandboxesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSandboxesBySandboxIDMetricsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSandboxesBySandboxIDMetricsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Team",
+                        FriendlyName = "Supabase2TeamAuth",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Token",
+                        FriendlyName = "Supabase1TokenAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetSandboxesBySandboxIDMetricsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetSandboxesBySandboxIDMetricsSecurityRequirement0,
+                s_GetSandboxesBySandboxIDMetricsSecurityRequirement1,
+            };
         partial void PrepareGetSandboxesBySandboxIDMetricsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string sandboxID,
@@ -50,6 +91,12 @@ namespace G
                 start: ref start,
                 end: ref end);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSandboxesBySandboxIDMetricsSecurityRequirements,
+                operationName: "GetSandboxesBySandboxIDMetricsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/sandboxes/{sandboxID}/metrics",
                 baseUri: HttpClient.BaseAddress); 
@@ -66,7 +113,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

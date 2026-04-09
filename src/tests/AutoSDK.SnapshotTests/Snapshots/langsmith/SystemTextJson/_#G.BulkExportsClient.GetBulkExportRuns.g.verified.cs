@@ -6,6 +6,55 @@ namespace G
 {
     public partial class BulkExportsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetBulkExportRunsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetBulkExportRunsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetBulkExportRunsSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetBulkExportRunsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetBulkExportRunsSecurityRequirement0,
+                s_GetBulkExportRunsSecurityRequirement1,
+                s_GetBulkExportRunsSecurityRequirement2,
+            };
         partial void PrepareGetBulkExportRunsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid bulkExportId);
@@ -39,6 +88,12 @@ namespace G
                 httpClient: HttpClient,
                 bulkExportId: ref bulkExportId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetBulkExportRunsSecurityRequirements,
+                operationName: "GetBulkExportRunsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/bulk-exports/{bulkExportId}/runs",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +106,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

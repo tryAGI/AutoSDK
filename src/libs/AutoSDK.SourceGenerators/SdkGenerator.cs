@@ -51,6 +51,12 @@ public class SdkGenerator : IIncrementalGenerator
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         supportData
+            .SelectAndReportExceptions((x, c) => ShouldGenerateSecuritySupport(x.Right)
+                ? Sources.SecuritySupport(x.Left, c)
+                : FileWithName.Empty
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        supportData
             .SelectAndReportExceptions((x, c) => ShouldGenerateUnixTimestampJsonConverter(x.Right)
                 ? Sources.UnixTimestampJsonConverter(x.Left, c)
                 : FileWithName.Empty
@@ -211,6 +217,11 @@ public class SdkGenerator : IIncrementalGenerator
             !x.Methods.IsEmpty ||
             !x.Clients.IsEmpty ||
             !x.WebSocketClients.IsEmpty);
+    }
+
+    private static bool ShouldGenerateSecuritySupport(ImmutableArray<AutoSDK.Models.Data> data)
+    {
+        return data.Any(static x => !x.Authorizations.IsEmpty);
     }
 
     private static bool ShouldGenerateUnixTimestampJsonConverter(ImmutableArray<AutoSDK.Models.Data> data)

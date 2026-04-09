@@ -6,6 +6,55 @@ namespace G
 {
     public partial class OrgsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetCompanyInfoSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetCompanyInfoSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Organization-Id",
+                        FriendlyName = "OrganizationId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetCompanyInfoSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetCompanyInfoSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetCompanyInfoSecurityRequirement0,
+                s_GetCompanyInfoSecurityRequirement1,
+                s_GetCompanyInfoSecurityRequirement2,
+            };
         partial void PrepareGetCompanyInfoArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetCompanyInfoRequest(
@@ -33,6 +82,12 @@ namespace G
             PrepareGetCompanyInfoArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetCompanyInfoSecurityRequirements,
+                operationName: "GetCompanyInfoAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/orgs/current/business-info",
                 baseUri: HttpClient.BaseAddress); 
@@ -45,7 +100,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

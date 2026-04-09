@@ -6,6 +6,25 @@ namespace G
 {
     public partial class PipelinesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_OwnedOrUsedSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_OwnedOrUsedSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_OwnedOrUsedSecurityRequirement0,
+            };
         partial void PrepareOwnedOrUsedArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareOwnedOrUsedRequest(
@@ -33,6 +52,12 @@ namespace G
                 client: HttpClient);
             PrepareOwnedOrUsedArguments(
                 httpClient: HttpClient);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_OwnedOrUsedSecurityRequirements,
+                operationName: "OwnedOrUsedAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/pipelines/owned-or-used",

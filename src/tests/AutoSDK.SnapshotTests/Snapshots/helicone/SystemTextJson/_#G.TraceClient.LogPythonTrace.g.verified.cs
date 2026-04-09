@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TraceClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_LogPythonTraceSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_LogPythonTraceSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_LogPythonTraceSecurityRequirement0,
+            };
         partial void PrepareLogPythonTraceArguments(
             global::System.Net.Http.HttpClient httpClient,
             object request);
@@ -36,6 +55,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_LogPythonTraceSecurityRequirements,
+                operationName: "LogPythonTraceAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/trace/log-python",
                 baseUri: HttpClient.BaseAddress); 
@@ -48,7 +73,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

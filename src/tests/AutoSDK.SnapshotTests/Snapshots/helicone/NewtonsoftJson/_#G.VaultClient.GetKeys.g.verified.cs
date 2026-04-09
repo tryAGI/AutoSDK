@@ -6,6 +6,25 @@ namespace G
 {
     public partial class VaultClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetKeysSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetKeysSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetKeysSecurityRequirement0,
+            };
         partial void PrepareGetKeysArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetKeysRequest(
@@ -33,6 +52,12 @@ namespace G
             PrepareGetKeysArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetKeysSecurityRequirements,
+                operationName: "GetKeysAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/vault/keys",
                 baseUri: HttpClient.BaseAddress); 
@@ -45,7 +70,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

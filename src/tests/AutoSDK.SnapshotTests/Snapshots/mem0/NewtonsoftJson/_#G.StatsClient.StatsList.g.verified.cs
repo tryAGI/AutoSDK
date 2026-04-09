@@ -6,6 +6,25 @@ namespace G
 {
     public partial class StatsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_StatsListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_StatsListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_StatsListSecurityRequirement0,
+            };
         partial void PrepareStatsListArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareStatsListRequest(
@@ -32,6 +51,12 @@ namespace G
             PrepareStatsListArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_StatsListSecurityRequirements,
+                operationName: "StatsListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/stats/",
                 baseUri: HttpClient.BaseAddress); 
@@ -44,7 +69,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DatasetsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ApiDatasetsViewsResetDestroySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ApiDatasetsViewsResetDestroySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ApiDatasetsViewsResetDestroySecurityRequirement0,
+            };
         partial void PrepareApiDatasetsViewsResetDestroyArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareApiDatasetsViewsResetDestroyRequest(
@@ -29,6 +48,12 @@ namespace G
             PrepareApiDatasetsViewsResetDestroyArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ApiDatasetsViewsResetDestroySecurityRequirements,
+                operationName: "ApiDatasetsViewsResetDestroyAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/datasets/views/reset/",
                 baseUri: HttpClient.BaseAddress); 
@@ -41,7 +66,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class PageScreenshotsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GenerateFilePageScreenshotPresignedUrlApiV1FilesIdPageScreenshotsPageIndexPresignedUrlPostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GenerateFilePageScreenshotPresignedUrlApiV1FilesIdPageScreenshotsPageIndexPresignedUrlPostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GenerateFilePageScreenshotPresignedUrlApiV1FilesIdPageScreenshotsPageIndexPresignedUrlPostSecurityRequirement0,
+            };
         partial void PrepareGenerateFilePageScreenshotPresignedUrlApiV1FilesIdPageScreenshotsPageIndexPresignedUrlPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid id,
@@ -61,6 +80,12 @@ namespace G
                 organizationId: organizationId,
                 session: ref session);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GenerateFilePageScreenshotPresignedUrlApiV1FilesIdPageScreenshotsPageIndexPresignedUrlPostSecurityRequirements,
+                operationName: "GenerateFilePageScreenshotPresignedUrlApiV1FilesIdPageScreenshotsPageIndexPresignedUrlPostAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/files/{id}/page_screenshots/{pageIndex}/presigned_url",
                 baseUri: HttpClient.BaseAddress); 
@@ -77,7 +102,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

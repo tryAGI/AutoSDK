@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DeletedCallsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeletedCallsListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeletedCallsListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeletedCallsListSecurityRequirement0,
+            };
         partial void PrepareDeletedCallsListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
@@ -78,6 +97,12 @@ namespace G
                 toDate: ref toDate,
                 voiceId: ref voiceId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeletedCallsListSecurityRequirements,
+                operationName: "DeletedCallsListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/deleted_calls",
                 baseUri: HttpClient.BaseAddress); 
@@ -101,7 +126,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

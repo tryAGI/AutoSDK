@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -93,7 +94,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        prompt = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FunctionDataNullishPrompt>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishPrompt> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishPrompt).Name}");
+                        prompt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -106,7 +109,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        code = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FunctionDataNullishCode>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishCode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishCode> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishCode).Name}");
+                        code = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -119,7 +124,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        graph = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GraphData>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphData> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphData).Name}");
+                        graph = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -132,7 +139,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        remoteEval = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FunctionDataNullishRemoteEval>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishRemoteEval), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishRemoteEval> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishRemoteEval).Name}");
+                        remoteEval = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -145,7 +154,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        global = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FunctionDataNullishGlobal>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishGlobal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishGlobal> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishGlobal).Name}");
+                        global = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -158,7 +169,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        facet = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FacetData>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FacetData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FacetData> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FacetData).Name}");
+                        facet = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -171,7 +184,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        batchedFacet = global::System.Text.Json.JsonSerializer.Deserialize<global::G.BatchedFacetData>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BatchedFacetData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BatchedFacetData> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BatchedFacetData).Name}");
+                        batchedFacet = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -184,7 +199,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        parameters = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FunctionDataNullishParameters>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishParameters> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishParameters).Name}");
+                        parameters = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -197,7 +214,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        functionDataNullishVariant9 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AllOf<global::G.TopicMapData, object>>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.TopicMapData, object>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.TopicMapData, object>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.TopicMapData, object>).Name}");
+                        functionDataNullishVariant9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -210,7 +229,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        functionDataNullishVariant10 = global::System.Text.Json.JsonSerializer.Deserialize<object>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                        functionDataNullishVariant10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -225,7 +246,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    prompt = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FunctionDataNullishPrompt>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishPrompt> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishPrompt).Name}");
+                    prompt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -236,7 +259,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    code = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FunctionDataNullishCode>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishCode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishCode> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishCode).Name}");
+                    code = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -247,7 +272,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    graph = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GraphData>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphData> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphData).Name}");
+                    graph = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -258,7 +285,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    remoteEval = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FunctionDataNullishRemoteEval>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishRemoteEval), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishRemoteEval> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishRemoteEval).Name}");
+                    remoteEval = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -269,7 +298,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    global = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FunctionDataNullishGlobal>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishGlobal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishGlobal> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishGlobal).Name}");
+                    global = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -280,7 +311,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    facet = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FacetData>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FacetData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FacetData> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FacetData).Name}");
+                    facet = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -291,7 +324,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    batchedFacet = global::System.Text.Json.JsonSerializer.Deserialize<global::G.BatchedFacetData>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BatchedFacetData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BatchedFacetData> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BatchedFacetData).Name}");
+                    batchedFacet = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -302,7 +337,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    parameters = global::System.Text.Json.JsonSerializer.Deserialize<global::G.FunctionDataNullishParameters>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishParameters> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishParameters).Name}");
+                    parameters = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -313,7 +350,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    functionDataNullishVariant9 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AllOf<global::G.TopicMapData, object>>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.TopicMapData, object>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.TopicMapData, object>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.TopicMapData, object>).Name}");
+                    functionDataNullishVariant9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -324,7 +363,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    functionDataNullishVariant10 = global::System.Text.Json.JsonSerializer.Deserialize<object>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                    functionDataNullishVariant10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -365,47 +406,68 @@ namespace G.JsonConverters
             global::G.FunctionDataNullish value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsPrompt)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Prompt, typeof(global::G.FunctionDataNullishPrompt), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishPrompt?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishPrompt).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Prompt!, typeInfo);
             }
             else if (value.IsCode)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Code, typeof(global::G.FunctionDataNullishCode), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishCode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishCode?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishCode).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Code!, typeInfo);
             }
             else if (value.IsGraph)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Graph, typeof(global::G.GraphData), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphData?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphData).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Graph!, typeInfo);
             }
             else if (value.IsRemoteEval)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RemoteEval, typeof(global::G.FunctionDataNullishRemoteEval), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishRemoteEval), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishRemoteEval?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishRemoteEval).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RemoteEval!, typeInfo);
             }
             else if (value.IsGlobal)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Global, typeof(global::G.FunctionDataNullishGlobal), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishGlobal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishGlobal?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishGlobal).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Global!, typeInfo);
             }
             else if (value.IsFacet)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Facet, typeof(global::G.FacetData), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FacetData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FacetData?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FacetData).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Facet!, typeInfo);
             }
             else if (value.IsBatchedFacet)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BatchedFacet, typeof(global::G.BatchedFacetData), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BatchedFacetData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BatchedFacetData?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BatchedFacetData).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BatchedFacet!, typeInfo);
             }
             else if (value.IsParameters)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Parameters, typeof(global::G.FunctionDataNullishParameters), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataNullishParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataNullishParameters?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataNullishParameters).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Parameters!, typeInfo);
             }
             else if (value.IsFunctionDataNullishVariant9)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionDataNullishVariant9, typeof(global::G.AllOf<global::G.TopicMapData, object>), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.TopicMapData, object>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.TopicMapData, object>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.TopicMapData, object>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionDataNullishVariant9!.Value, typeInfo);
             }
             else if (value.IsFunctionDataNullishVariant10)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionDataNullishVariant10, typeof(object), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionDataNullishVariant10!, typeInfo);
             }
         }
     }

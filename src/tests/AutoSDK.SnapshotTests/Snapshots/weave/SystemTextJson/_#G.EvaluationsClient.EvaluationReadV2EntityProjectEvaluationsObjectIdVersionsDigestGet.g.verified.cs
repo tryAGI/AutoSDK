@@ -6,6 +6,25 @@ namespace G
 {
     public partial class EvaluationsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_EvaluationReadV2EntityProjectEvaluationsObjectIdVersionsDigestGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_EvaluationReadV2EntityProjectEvaluationsObjectIdVersionsDigestGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_EvaluationReadV2EntityProjectEvaluationsObjectIdVersionsDigestGetSecurityRequirement0,
+            };
         partial void PrepareEvaluationReadV2EntityProjectEvaluationsObjectIdVersionsDigestGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string entity,
@@ -54,6 +73,12 @@ namespace G
                 objectId: ref objectId,
                 digest: ref digest);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_EvaluationReadV2EntityProjectEvaluationsObjectIdVersionsDigestGetSecurityRequirements,
+                operationName: "EvaluationReadV2EntityProjectEvaluationsObjectIdVersionsDigestGetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/{entity}/{project}/evaluations/{objectId}/versions/{digest}",
                 baseUri: HttpClient.BaseAddress); 
@@ -66,7 +91,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

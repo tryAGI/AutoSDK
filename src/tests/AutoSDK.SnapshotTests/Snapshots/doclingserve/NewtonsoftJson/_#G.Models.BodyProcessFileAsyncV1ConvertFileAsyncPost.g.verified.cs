@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> Files { get; set; } = default!;
+        public global::System.Collections.Generic.IList<byte[]> Files { get; set; } = default!;
 
         /// <summary>
         /// Default Value: inbody
@@ -102,7 +102,7 @@ namespace G
         /// Default Value: [1, 9223372036854775807L]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("page_range")]
-        public byte[]? PageRange { get; set; }
+        public global::System.Collections.Generic.IList<int>? PageRange { get; set; }
 
         /// <summary>
         /// The timeout for processing each document, in seconds.<br/>
@@ -412,7 +412,7 @@ namespace G
         /// Custom configuration for layout model. Use this to specify a non-default kind with its options. The 'kind' field in the config dict determines which layout implementation to use. If not specified, uses the default kind with preset configuration.
         /// </param>
         public BodyProcessFileAsyncV1ConvertFileAsyncPost(
-            global::System.Collections.Generic.IList<string> files,
+            global::System.Collections.Generic.IList<byte[]> files,
             global::G.TargetName? targetType,
             global::System.Collections.Generic.IList<global::G.InputFormat>? fromFormats,
             global::System.Collections.Generic.IList<global::G.OutputFormat>? toFormats,
@@ -425,7 +425,7 @@ namespace G
             global::G.TableFormerMode? tableMode,
             bool? tableCellMatching,
             global::G.ProcessingPipeline? pipeline,
-            byte[]? pageRange,
+            global::System.Collections.Generic.IList<int>? pageRange,
             double? documentTimeout,
             bool? abortOnError,
             bool? doTableStructure,

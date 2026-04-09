@@ -171,7 +171,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Andr_s,
+        Andrés,
         /// <summary>
         /// 
         /// </summary>
@@ -239,7 +239,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        In_s,
+        Inês,
         /// <summary>
         /// 
         /// </summary>
@@ -299,7 +299,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        L_a,
+        Léa,
         /// <summary>
         /// 
         /// </summary>
@@ -331,7 +331,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        R_mi,
+        Rémi,
         /// <summary>
         /// 
         /// </summary>
@@ -379,7 +379,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Vit_ria,
+        Vitória,
         /// <summary>
         /// 
         /// </summary>
@@ -400,7 +400,7 @@ namespace G
             {
                 ShotstackTextToSpeechOptionsVoice.Adriano => "Adriano",
                 ShotstackTextToSpeechOptionsVoice.Amy => "Amy",
-                ShotstackTextToSpeechOptionsVoice.Andr_s => "Andrés",
+                ShotstackTextToSpeechOptionsVoice.Andrés => "Andrés",
                 ShotstackTextToSpeechOptionsVoice.Aria => "Aria",
                 ShotstackTextToSpeechOptionsVoice.Arlet => "Arlet",
                 ShotstackTextToSpeechOptionsVoice.Arthur => "Arthur",
@@ -417,7 +417,7 @@ namespace G
                 ShotstackTextToSpeechOptionsVoice.Hiujin => "Hiujin",
                 ShotstackTextToSpeechOptionsVoice.Ida => "Ida",
                 ShotstackTextToSpeechOptionsVoice.Ines => "Ines",
-                ShotstackTextToSpeechOptionsVoice.In_s => "Inês",
+                ShotstackTextToSpeechOptionsVoice.Inês => "Inês",
                 ShotstackTextToSpeechOptionsVoice.Ivy => "Ivy",
                 ShotstackTextToSpeechOptionsVoice.Joanna => "Joanna",
                 ShotstackTextToSpeechOptionsVoice.Joey => "Joey",
@@ -432,7 +432,7 @@ namespace G
                 ShotstackTextToSpeechOptionsVoice.Lisa => "Lisa",
                 ShotstackTextToSpeechOptionsVoice.Lucia => "Lucia",
                 ShotstackTextToSpeechOptionsVoice.Lupe => "Lupe",
-                ShotstackTextToSpeechOptionsVoice.L_a => "Léa",
+                ShotstackTextToSpeechOptionsVoice.Léa => "Léa",
                 ShotstackTextToSpeechOptionsVoice.Matthew => "Matthew",
                 ShotstackTextToSpeechOptionsVoice.Mia => "Mia",
                 ShotstackTextToSpeechOptionsVoice.Niamh => "Niamh",
@@ -440,7 +440,7 @@ namespace G
                 ShotstackTextToSpeechOptionsVoice.Olivia => "Olivia",
                 ShotstackTextToSpeechOptionsVoice.Pedro => "Pedro",
                 ShotstackTextToSpeechOptionsVoice.Ruth => "Ruth",
-                ShotstackTextToSpeechOptionsVoice.R_mi => "Rémi",
+                ShotstackTextToSpeechOptionsVoice.Rémi => "Rémi",
                 ShotstackTextToSpeechOptionsVoice.Salli => "Salli",
                 ShotstackTextToSpeechOptionsVoice.Seoyeon => "Seoyeon",
                 ShotstackTextToSpeechOptionsVoice.Sergio => "Sergio",
@@ -452,7 +452,7 @@ namespace G
                 ShotstackTextToSpeechOptionsVoice.Tomoko => "Tomoko",
                 ShotstackTextToSpeechOptionsVoice.Vicki => "Vicki",
                 ShotstackTextToSpeechOptionsVoice.Vitoria => "Vitoria",
-                ShotstackTextToSpeechOptionsVoice.Vit_ria => "Vitória",
+                ShotstackTextToSpeechOptionsVoice.Vitória => "Vitória",
                 ShotstackTextToSpeechOptionsVoice.Zhiyu => "Zhiyu",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -466,7 +466,7 @@ namespace G
             {
                 "Adriano" => ShotstackTextToSpeechOptionsVoice.Adriano,
                 "Amy" => ShotstackTextToSpeechOptionsVoice.Amy,
-                "Andrés" => ShotstackTextToSpeechOptionsVoice.Andr_s,
+                "Andrés" => ShotstackTextToSpeechOptionsVoice.Andrés,
                 "Aria" => ShotstackTextToSpeechOptionsVoice.Aria,
                 "Arlet" => ShotstackTextToSpeechOptionsVoice.Arlet,
                 "Arthur" => ShotstackTextToSpeechOptionsVoice.Arthur,
@@ -483,7 +483,7 @@ namespace G
                 "Hiujin" => ShotstackTextToSpeechOptionsVoice.Hiujin,
                 "Ida" => ShotstackTextToSpeechOptionsVoice.Ida,
                 "Ines" => ShotstackTextToSpeechOptionsVoice.Ines,
-                "Inês" => ShotstackTextToSpeechOptionsVoice.In_s,
+                "Inês" => ShotstackTextToSpeechOptionsVoice.Inês,
                 "Ivy" => ShotstackTextToSpeechOptionsVoice.Ivy,
                 "Joanna" => ShotstackTextToSpeechOptionsVoice.Joanna,
                 "Joey" => ShotstackTextToSpeechOptionsVoice.Joey,
@@ -498,7 +498,7 @@ namespace G
                 "Lisa" => ShotstackTextToSpeechOptionsVoice.Lisa,
                 "Lucia" => ShotstackTextToSpeechOptionsVoice.Lucia,
                 "Lupe" => ShotstackTextToSpeechOptionsVoice.Lupe,
-                "Léa" => ShotstackTextToSpeechOptionsVoice.L_a,
+                "Léa" => ShotstackTextToSpeechOptionsVoice.Léa,
                 "Matthew" => ShotstackTextToSpeechOptionsVoice.Matthew,
                 "Mia" => ShotstackTextToSpeechOptionsVoice.Mia,
                 "Niamh" => ShotstackTextToSpeechOptionsVoice.Niamh,
@@ -506,7 +506,7 @@ namespace G
                 "Olivia" => ShotstackTextToSpeechOptionsVoice.Olivia,
                 "Pedro" => ShotstackTextToSpeechOptionsVoice.Pedro,
                 "Ruth" => ShotstackTextToSpeechOptionsVoice.Ruth,
-                "Rémi" => ShotstackTextToSpeechOptionsVoice.R_mi,
+                "Rémi" => ShotstackTextToSpeechOptionsVoice.Rémi,
                 "Salli" => ShotstackTextToSpeechOptionsVoice.Salli,
                 "Seoyeon" => ShotstackTextToSpeechOptionsVoice.Seoyeon,
                 "Sergio" => ShotstackTextToSpeechOptionsVoice.Sergio,
@@ -518,7 +518,7 @@ namespace G
                 "Tomoko" => ShotstackTextToSpeechOptionsVoice.Tomoko,
                 "Vicki" => ShotstackTextToSpeechOptionsVoice.Vicki,
                 "Vitoria" => ShotstackTextToSpeechOptionsVoice.Vitoria,
-                "Vitória" => ShotstackTextToSpeechOptionsVoice.Vit_ria,
+                "Vitória" => ShotstackTextToSpeechOptionsVoice.Vitória,
                 "Zhiyu" => ShotstackTextToSpeechOptionsVoice.Zhiyu,
                 _ => null,
             };

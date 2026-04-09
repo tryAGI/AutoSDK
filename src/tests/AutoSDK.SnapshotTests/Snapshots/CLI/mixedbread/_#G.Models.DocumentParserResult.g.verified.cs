@@ -42,7 +42,7 @@ namespace G
         /// List of (width, height) tuples for each page
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_sizes")]
-        public global::System.Collections.Generic.IList<byte[]>? PageSizes { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? PageSizes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,7 +76,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ElementType> elementTypes,
             global::System.Collections.Generic.IList<global::G.Chunk> chunks,
             global::G.ChunkingStrategy chunkingStrategy,
-            global::System.Collections.Generic.IList<byte[]>? pageSizes)
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? pageSizes)
         {
             this.ChunkingStrategy = chunkingStrategy;
             this.ReturnFormat = returnFormat;

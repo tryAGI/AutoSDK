@@ -6,6 +6,25 @@ namespace G
 {
     public partial class MemoriesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_MemoriesHistoryListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_MemoriesHistoryListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_MemoriesHistoryListSecurityRequirement0,
+            };
         partial void PrepareMemoriesHistoryListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid memoryId);
@@ -38,6 +57,12 @@ namespace G
                 httpClient: HttpClient,
                 memoryId: ref memoryId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_MemoriesHistoryListSecurityRequirements,
+                operationName: "MemoriesHistoryListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/memories/{memoryId}/history/",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +75,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

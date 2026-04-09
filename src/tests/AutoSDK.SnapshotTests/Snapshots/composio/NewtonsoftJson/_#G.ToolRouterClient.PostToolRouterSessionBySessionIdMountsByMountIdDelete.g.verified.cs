@@ -6,6 +6,55 @@ namespace G
 {
     public partial class ToolRouterClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostToolRouterSessionBySessionIdMountsByMountIdDeleteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostToolRouterSessionBySessionIdMountsByMountIdDeleteSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-user-api-key",
+                        FriendlyName = "UserApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostToolRouterSessionBySessionIdMountsByMountIdDeleteSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "authToken",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PostToolRouterSessionBySessionIdMountsByMountIdDeleteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PostToolRouterSessionBySessionIdMountsByMountIdDeleteSecurityRequirement0,
+                s_PostToolRouterSessionBySessionIdMountsByMountIdDeleteSecurityRequirement1,
+                s_PostToolRouterSessionBySessionIdMountsByMountIdDeleteSecurityRequirement2,
+            };
         partial void PreparePostToolRouterSessionBySessionIdMountsByMountIdDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string sessionId,
@@ -58,6 +107,12 @@ namespace G
                 mountId: ref mountId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostToolRouterSessionBySessionIdMountsByMountIdDeleteSecurityRequirements,
+                operationName: "PostToolRouterSessionBySessionIdMountsByMountIdDeleteAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v3/tool_router/session/{sessionId}/mounts/{mountId}/delete",
                 baseUri: HttpClient.BaseAddress); 
@@ -70,7 +125,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

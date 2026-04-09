@@ -13,7 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file", Required = global::Newtonsoft.Json.Required.Always)]
-        public string File { get; set; } = default!;
+        public byte[] File { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("filename", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Filename { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -25,10 +31,13 @@ namespace G
         /// Initializes a new instance of the <see cref="BodyUploadAssetPublicAssetsIdUploadPost" /> class.
         /// </summary>
         /// <param name="file"></param>
+        /// <param name="filename"></param>
         public BodyUploadAssetPublicAssetsIdUploadPost(
-            string file)
+            byte[] file,
+            string filename)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
         }
 
         /// <summary>

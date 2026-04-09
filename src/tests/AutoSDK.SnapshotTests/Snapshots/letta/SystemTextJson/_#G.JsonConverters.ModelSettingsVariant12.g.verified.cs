@@ -13,76 +13,105 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.CompactionSettingsInputModelSettingsVariant1Discriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompactionSettingsInputModelSettingsVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompactionSettingsInputModelSettingsVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CompactionSettingsInputModelSettingsVariant1Discriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.OpenAIModelSettings? openai = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.Openai)
             {
-                openai = global::System.Text.Json.JsonSerializer.Deserialize<global::G.OpenAIModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OpenAIModelSettings)}");
+                openai = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.AnthropicModelSettings? anthropic = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.Anthropic)
             {
-                anthropic = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AnthropicModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnthropicModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnthropicModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AnthropicModelSettings)}");
+                anthropic = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.GoogleAIModelSettings? googleAi = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.GoogleAi)
             {
-                googleAi = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GoogleAIModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GoogleAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GoogleAIModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GoogleAIModelSettings)}");
+                googleAi = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.GoogleVertexModelSettings? googleVertex = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.GoogleVertex)
             {
-                googleVertex = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GoogleVertexModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GoogleVertexModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GoogleVertexModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GoogleVertexModelSettings)}");
+                googleVertex = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.AzureModelSettings? azure = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.Azure)
             {
-                azure = global::System.Text.Json.JsonSerializer.Deserialize<global::G.AzureModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AzureModelSettings)}");
+                azure = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.XAIModelSettings? xai = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.Xai)
             {
-                xai = global::System.Text.Json.JsonSerializer.Deserialize<global::G.XAIModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.XAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.XAIModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.XAIModelSettings)}");
+                xai = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ZAIModelSettings? zai = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.Zai)
             {
-                zai = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ZAIModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ZAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ZAIModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ZAIModelSettings)}");
+                zai = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.GroqModelSettings? groq = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.Groq)
             {
-                groq = global::System.Text.Json.JsonSerializer.Deserialize<global::G.GroqModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GroqModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GroqModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GroqModelSettings)}");
+                groq = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.DeepseekModelSettings? deepseek = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.Deepseek)
             {
-                deepseek = global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeepseekModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeepseekModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeepseekModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DeepseekModelSettings)}");
+                deepseek = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TogetherModelSettings? together = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.Together)
             {
-                together = global::System.Text.Json.JsonSerializer.Deserialize<global::G.TogetherModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TogetherModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TogetherModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TogetherModelSettings)}");
+                together = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.BedrockModelSettings? bedrock = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.Bedrock)
             {
-                bedrock = global::System.Text.Json.JsonSerializer.Deserialize<global::G.BedrockModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BedrockModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BedrockModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BedrockModelSettings)}");
+                bedrock = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.OpenRouterModelSettings? openrouter = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.Openrouter)
             {
-                openrouter = global::System.Text.Json.JsonSerializer.Deserialize<global::G.OpenRouterModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenRouterModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenRouterModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OpenRouterModelSettings)}");
+                openrouter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ChatGPTOAuthModelSettings? chatgptOauth = default;
             if (discriminator?.ProviderType == global::G.CompactionSettingsInputModelSettingsVariant1DiscriminatorProviderType.ChatgptOauth)
             {
-                chatgptOauth = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ChatGPTOAuthModelSettings>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatGPTOAuthModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatGPTOAuthModelSettings> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatGPTOAuthModelSettings)}");
+                chatgptOauth = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.ModelSettingsVariant12(
@@ -123,59 +152,86 @@ namespace G.JsonConverters
             global::G.ModelSettingsVariant12 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsOpenai)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openai, typeof(global::G.OpenAIModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAIModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openai!, typeInfo);
             }
             else if (value.IsAnthropic)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anthropic, typeof(global::G.AnthropicModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnthropicModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnthropicModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnthropicModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Anthropic!, typeInfo);
             }
             else if (value.IsGoogleAi)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleAi, typeof(global::G.GoogleAIModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GoogleAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GoogleAIModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GoogleAIModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleAi!, typeInfo);
             }
             else if (value.IsGoogleVertex)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleVertex, typeof(global::G.GoogleVertexModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GoogleVertexModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GoogleVertexModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GoogleVertexModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GoogleVertex!, typeInfo);
             }
             else if (value.IsAzure)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Azure, typeof(global::G.AzureModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Azure!, typeInfo);
             }
             else if (value.IsXai)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Xai, typeof(global::G.XAIModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.XAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.XAIModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.XAIModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Xai!, typeInfo);
             }
             else if (value.IsZai)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Zai, typeof(global::G.ZAIModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ZAIModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ZAIModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ZAIModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Zai!, typeInfo);
             }
             else if (value.IsGroq)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Groq, typeof(global::G.GroqModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GroqModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GroqModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GroqModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Groq!, typeInfo);
             }
             else if (value.IsDeepseek)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Deepseek, typeof(global::G.DeepseekModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeepseekModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeepseekModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeepseekModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Deepseek!, typeInfo);
             }
             else if (value.IsTogether)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Together, typeof(global::G.TogetherModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TogetherModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TogetherModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TogetherModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Together!, typeInfo);
             }
             else if (value.IsBedrock)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bedrock, typeof(global::G.BedrockModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BedrockModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BedrockModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BedrockModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bedrock!, typeInfo);
             }
             else if (value.IsOpenrouter)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openrouter, typeof(global::G.OpenRouterModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenRouterModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenRouterModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenRouterModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openrouter!, typeInfo);
             }
             else if (value.IsChatgptOauth)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatgptOauth, typeof(global::G.ChatGPTOAuthModelSettings), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatGPTOAuthModelSettings), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatGPTOAuthModelSettings?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatGPTOAuthModelSettings).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatgptOauth!, typeInfo);
             }
         }
     }

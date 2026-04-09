@@ -6,6 +6,25 @@ namespace G
 {
     public partial class EvaluationRunsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_EvaluationRunDeleteV2EntityProjectEvaluationRunsDeleteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_EvaluationRunDeleteV2EntityProjectEvaluationRunsDeleteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_EvaluationRunDeleteV2EntityProjectEvaluationRunsDeleteSecurityRequirement0,
+            };
         partial void PrepareEvaluationRunDeleteV2EntityProjectEvaluationRunsDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string entity,
@@ -51,6 +70,12 @@ namespace G
                 project: ref project,
                 evaluationRunIds: evaluationRunIds);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_EvaluationRunDeleteV2EntityProjectEvaluationRunsDeleteSecurityRequirements,
+                operationName: "EvaluationRunDeleteV2EntityProjectEvaluationRunsDeleteAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/{entity}/{project}/evaluation_runs",
                 baseUri: HttpClient.BaseAddress); 
@@ -66,7 +91,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

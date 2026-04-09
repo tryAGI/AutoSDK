@@ -6,6 +6,25 @@ namespace G
 {
     public partial class PageFiguresClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListFilePagesFiguresApiV1FilesIdPageFiguresGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListFilePagesFiguresApiV1FilesIdPageFiguresGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListFilePagesFiguresApiV1FilesIdPageFiguresGetSecurityRequirement0,
+            };
         partial void PrepareListFilePagesFiguresApiV1FilesIdPageFiguresGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid id,
@@ -54,6 +73,12 @@ namespace G
                 organizationId: organizationId,
                 session: ref session);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListFilePagesFiguresApiV1FilesIdPageFiguresGetSecurityRequirements,
+                operationName: "ListFilePagesFiguresApiV1FilesIdPageFiguresGetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/files/{id}/page-figures",
                 baseUri: HttpClient.BaseAddress); 
@@ -70,7 +95,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

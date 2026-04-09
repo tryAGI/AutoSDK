@@ -6,6 +6,25 @@ namespace G
 {
     public partial class EditClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ProbeSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ProbeSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ProbeSecurityRequirement0,
+            };
         partial void PrepareProbeArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string url);
@@ -41,6 +60,12 @@ namespace G
             PrepareProbeArguments(
                 httpClient: HttpClient,
                 url: ref url);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ProbeSecurityRequirements,
+                operationName: "ProbeAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/edit/v1/probe/{url}",

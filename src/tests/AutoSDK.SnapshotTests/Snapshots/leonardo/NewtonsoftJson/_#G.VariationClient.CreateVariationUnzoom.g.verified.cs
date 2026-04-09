@@ -6,6 +6,25 @@ namespace G
 {
     public partial class VariationClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateVariationUnzoomSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateVariationUnzoomSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateVariationUnzoomSecurityRequirement0,
+            };
         partial void PrepareCreateVariationUnzoomArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.CreateVariationUnzoomRequest request);
@@ -42,6 +61,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateVariationUnzoomSecurityRequirements,
+                operationName: "CreateVariationUnzoomAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/variations/unzoom",
                 baseUri: HttpClient.BaseAddress); 
@@ -54,7 +79,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

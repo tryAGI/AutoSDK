@@ -109,6 +109,7 @@ namespace G
                     new global::G.JsonConverters.Target2JsonConverter(),
                     new global::G.JsonConverters.SourcesItem3JsonConverter(),
                     new global::G.JsonConverters.Target3JsonConverter(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string, int?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.VlmConvertOptions, object, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.PictureDescriptionVlmEngineOptions, object, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.CodeFormulaVlmOptions, object, object>(),

@@ -6,6 +6,40 @@ namespace G
 {
     public partial class TokensClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ValidateSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ValidateSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ValidateSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ValidateSecurityRequirement0,
+                s_ValidateSecurityRequirement1,
+            };
         partial void PrepareValidateArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareValidateRequest(
@@ -29,6 +63,12 @@ namespace G
             PrepareValidateArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ValidateSecurityRequirements,
+                operationName: "ValidateAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/tokens/validate",
                 baseUri: HttpClient.BaseAddress); 
@@ -41,7 +81,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

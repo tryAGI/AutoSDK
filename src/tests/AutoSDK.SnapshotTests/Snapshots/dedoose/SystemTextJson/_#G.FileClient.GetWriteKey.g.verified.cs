@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FileClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetWriteKeySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetWriteKeySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetWriteKeySecurityRequirement0,
+            };
         partial void PrepareGetWriteKeyArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetWriteKeyRequest(
@@ -34,6 +53,12 @@ namespace G
             PrepareGetWriteKeyArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetWriteKeySecurityRequirements,
+                operationName: "GetWriteKeyAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/file/getwritekey",
                 baseUri: HttpClient.BaseAddress); 
@@ -46,7 +71,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

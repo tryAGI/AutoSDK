@@ -6,6 +6,40 @@ namespace G
 {
     public partial class PipelinesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_RetrieveReadmeSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_RetrieveReadmeSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_RetrieveReadmeSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_RetrieveReadmeSecurityRequirement0,
+                s_RetrieveReadmeSecurityRequirement1,
+            };
         partial void PrepareRetrieveReadmeArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string pipelineId,
@@ -49,6 +83,12 @@ namespace G
                 pointer: ref pointer,
                 pipelineIdOrPointer: ref pipelineIdOrPointer);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RetrieveReadmeSecurityRequirements,
+                operationName: "RetrieveReadmeAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/pipelines/{pipelineId}/readme",
                 baseUri: HttpClient.BaseAddress); 
@@ -65,7 +105,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

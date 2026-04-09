@@ -6,6 +6,25 @@ namespace G
 {
     public partial class PromptPartialsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetPromptPartialVersionsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetPromptPartialVersionsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetPromptPartialVersionsSecurityRequirement0,
+            };
         partial void PrepareGetPromptPartialVersionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string promptPartialId);
@@ -38,6 +57,12 @@ namespace G
                 httpClient: HttpClient,
                 promptPartialId: ref promptPartialId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetPromptPartialVersionsSecurityRequirements,
+                operationName: "GetPromptPartialVersionsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/prompts/partials/{promptPartialId}/versions",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +75,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

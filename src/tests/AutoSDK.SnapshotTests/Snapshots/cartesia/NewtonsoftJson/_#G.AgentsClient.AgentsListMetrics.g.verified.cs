@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AgentsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_AgentsListMetricsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_AgentsListMetricsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_AgentsListMetricsSecurityRequirement0,
+            };
         partial void PrepareAgentsListMetricsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.AgentsListMetricsCartesiaVersion cartesiaVersion,
@@ -51,6 +70,12 @@ namespace G
                 startingAfter: ref startingAfter,
                 limit: ref limit);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_AgentsListMetricsSecurityRequirements,
+                operationName: "AgentsListMetricsAsync");
+
             var cartesiaVersionValue = cartesiaVersion switch
             {
                 global::G.AgentsListMetricsCartesiaVersion.x20240610 => "2024-06-10",
@@ -75,7 +100,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

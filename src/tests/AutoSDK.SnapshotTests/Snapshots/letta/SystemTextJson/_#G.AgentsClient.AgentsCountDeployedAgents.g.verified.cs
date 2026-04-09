@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AgentsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_AgentsCountDeployedAgentsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_AgentsCountDeployedAgentsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_AgentsCountDeployedAgentsSecurityRequirement0,
+            };
         partial void PrepareAgentsCountDeployedAgentsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.AgentsCountDeployedAgentsSearchItemVariant1, global::G.AgentsCountDeployedAgentsSearchItemVariant2, global::G.AgentsCountDeployedAgentsSearchItemVariant3, global::G.AgentsCountDeployedAgentsSearchItemVariant4, global::G.AgentsCountDeployedAgentsSearchItemVariant5, global::G.AgentsCountDeployedAgentsSearchItemVariant6>>? search,
@@ -49,6 +68,12 @@ namespace G
                 projectId: ref projectId,
                 combinator: ref combinator);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_AgentsCountDeployedAgentsSecurityRequirements,
+                operationName: "AgentsCountDeployedAgentsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/agents/search/count",
                 baseUri: HttpClient.BaseAddress); 
@@ -66,7 +91,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

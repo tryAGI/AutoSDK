@@ -6,6 +6,34 @@ namespace G
 {
     public partial class ProjectsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteProjectIdSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteProjectIdSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteProjectIdSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteProjectIdSecurityRequirement0,
+                s_DeleteProjectIdSecurityRequirement1,
+            };
         partial void PrepareDeleteProjectIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid projectId);
@@ -41,6 +69,12 @@ namespace G
                 httpClient: HttpClient,
                 projectId: ref projectId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteProjectIdSecurityRequirements,
+                operationName: "DeleteProjectIdAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/project/{projectId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,7 +87,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

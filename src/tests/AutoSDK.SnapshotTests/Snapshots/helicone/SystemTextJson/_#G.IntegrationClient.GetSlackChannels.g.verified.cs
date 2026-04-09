@@ -6,6 +6,25 @@ namespace G
 {
     public partial class IntegrationClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetSlackChannelsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetSlackChannelsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetSlackChannelsSecurityRequirement0,
+            };
         partial void PrepareGetSlackChannelsArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetSlackChannelsRequest(
@@ -33,6 +52,12 @@ namespace G
             PrepareGetSlackChannelsArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSlackChannelsSecurityRequirements,
+                operationName: "GetSlackChannelsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/integration/slack/channels",
                 baseUri: HttpClient.BaseAddress); 
@@ -45,7 +70,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

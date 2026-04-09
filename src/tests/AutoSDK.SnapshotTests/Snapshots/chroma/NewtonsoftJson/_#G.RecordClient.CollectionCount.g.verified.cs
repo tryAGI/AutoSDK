@@ -6,6 +6,25 @@ namespace G
 {
     public partial class RecordClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CollectionCountSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-chroma-token",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CollectionCountSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CollectionCountSecurityRequirement0,
+            };
         partial void PrepareCollectionCountArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string tenant,
@@ -57,6 +76,12 @@ namespace G
                 collectionId: ref collectionId,
                 readLevel: ref readLevel);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CollectionCountSecurityRequirements,
+                operationName: "CollectionCountAsync");
+
             var readLevelValue = readLevel switch
             {
                 global::G.ReadLevel.IndexAndWal => "index_and_wal",
@@ -78,7 +103,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

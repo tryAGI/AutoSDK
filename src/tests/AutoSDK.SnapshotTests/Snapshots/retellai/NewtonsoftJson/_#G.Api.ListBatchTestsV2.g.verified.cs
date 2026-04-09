@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListBatchTestsV2SecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListBatchTestsV2SecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListBatchTestsV2SecurityRequirement0,
+            };
         partial void PrepareListBatchTestsV2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.ListBatchTestsV2Type type,
@@ -65,6 +84,12 @@ namespace G
                 limit: ref limit,
                 paginationKey: ref paginationKey);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListBatchTestsV2SecurityRequirements,
+                operationName: "ListBatchTestsV2Async");
+
             var typeValue = type switch
             {
                 global::G.ListBatchTestsV2Type.RetellLlm => "retell-llm",
@@ -91,7 +116,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_EditImageGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_EditImageGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_EditImageGetSecurityRequirement0,
+            };
         partial void PrepareEditImageGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.EditImageGetBackgroundBlurMode? backgroundBlurMode,
@@ -819,6 +838,12 @@ namespace G
                 virtualModelScene: ref virtualModelScene,
                 virtualModelSize: ref virtualModelSize);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_EditImageGetSecurityRequirements,
+                operationName: "EditImageGetAsync");
+
             var backgroundBlurModeValue = backgroundBlurMode switch
             {
                 global::G.EditImageGetBackgroundBlurMode.Gaussian => "gaussian",
@@ -1074,7 +1099,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

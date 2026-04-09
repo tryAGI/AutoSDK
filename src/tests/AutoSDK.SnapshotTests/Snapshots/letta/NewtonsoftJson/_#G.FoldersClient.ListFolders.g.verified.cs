@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FoldersClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListFoldersSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListFoldersSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListFoldersSecurityRequirement0,
+            };
         partial void PrepareListFoldersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? before,
@@ -79,6 +98,12 @@ namespace G
                 orderBy: ref orderBy,
                 name: ref name);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListFoldersSecurityRequirements,
+                operationName: "ListFoldersAsync");
+
             var orderValue = order switch
             {
                 global::G.ListFoldersOrder.Asc => "asc",
@@ -105,7 +130,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

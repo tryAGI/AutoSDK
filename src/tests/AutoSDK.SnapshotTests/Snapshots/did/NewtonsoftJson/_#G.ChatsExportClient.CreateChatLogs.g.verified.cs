@@ -6,6 +6,40 @@ namespace G
 {
     public partial class ChatsExportClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateChatLogsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateChatLogsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateChatLogsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateChatLogsSecurityRequirement0,
+                s_CreateChatLogsSecurityRequirement1,
+            };
         partial void PrepareCreateChatLogsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.AllOf<global::G.CreateChatLogsRequestVariant1, global::G.CreateChatLogsRequestVariant2> request);
@@ -42,6 +76,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateChatLogsSecurityRequirements,
+                operationName: "CreateChatLogsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/agents/chats/exports",
                 baseUri: HttpClient.BaseAddress); 
@@ -54,7 +94,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

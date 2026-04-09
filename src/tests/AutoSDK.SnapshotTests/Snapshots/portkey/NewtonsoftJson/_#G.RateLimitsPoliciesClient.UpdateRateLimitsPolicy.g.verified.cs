@@ -6,6 +6,25 @@ namespace G
 {
     public partial class RateLimitsPoliciesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_UpdateRateLimitsPolicySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_UpdateRateLimitsPolicySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_UpdateRateLimitsPolicySecurityRequirement0,
+            };
         partial void PrepareUpdateRateLimitsPolicyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid rateLimitsPolicyId,
@@ -70,6 +89,12 @@ namespace G
                 rateLimitsPolicyId: ref rateLimitsPolicyId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpdateRateLimitsPolicySecurityRequirements,
+                operationName: "UpdateRateLimitsPolicyAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/policies/rate-limits/{rateLimitsPolicyId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -82,7 +107,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

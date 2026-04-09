@@ -6,6 +6,25 @@ namespace G
 {
     public partial class EvaluatorClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteEvaluatorSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteEvaluatorSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteEvaluatorSecurityRequirement0,
+            };
         partial void PrepareDeleteEvaluatorArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string evaluatorId);
@@ -38,6 +57,12 @@ namespace G
                 httpClient: HttpClient,
                 evaluatorId: ref evaluatorId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteEvaluatorSecurityRequirements,
+                operationName: "DeleteEvaluatorAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/evaluator/{evaluatorId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +75,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

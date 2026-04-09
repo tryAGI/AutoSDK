@@ -6,6 +6,25 @@ namespace G
 {
     public partial class LogsExportClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateLogsExportsByExportIdStartSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateLogsExportsByExportIdStartSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateLogsExportsByExportIdStartSecurityRequirement0,
+            };
         partial void PrepareCreateLogsExportsByExportIdStartArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string exportId);
@@ -38,6 +57,12 @@ namespace G
                 httpClient: HttpClient,
                 exportId: ref exportId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateLogsExportsByExportIdStartSecurityRequirements,
+                operationName: "CreateLogsExportsByExportIdStartAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/logs/exports/{exportId}/start",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +75,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

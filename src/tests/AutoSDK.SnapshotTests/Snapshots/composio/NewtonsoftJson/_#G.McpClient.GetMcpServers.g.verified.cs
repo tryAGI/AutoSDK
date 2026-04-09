@@ -6,6 +6,55 @@ namespace G
 {
     public partial class McpClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetMcpServersSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetMcpServersSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-user-api-key",
+                        FriendlyName = "UserApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetMcpServersSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "authToken",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetMcpServersSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetMcpServersSecurityRequirement0,
+                s_GetMcpServersSecurityRequirement1,
+                s_GetMcpServersSecurityRequirement2,
+            };
         partial void PrepareGetMcpServersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? name,
@@ -88,6 +137,12 @@ namespace G
                 pageNo: ref pageNo,
                 limit: ref limit);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetMcpServersSecurityRequirements,
+                operationName: "GetMcpServersAsync");
+
             var orderByValue = orderBy switch
             {
                 global::G.GetMcpServersOrderBy.CreatedAt => "created_at",
@@ -121,7 +176,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

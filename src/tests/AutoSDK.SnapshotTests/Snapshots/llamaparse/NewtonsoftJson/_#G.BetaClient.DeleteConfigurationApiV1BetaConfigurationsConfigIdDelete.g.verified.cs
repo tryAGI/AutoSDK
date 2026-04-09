@@ -6,6 +6,25 @@ namespace G
 {
     public partial class BetaClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteConfigurationApiV1BetaConfigurationsConfigIdDeleteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteConfigurationApiV1BetaConfigurationsConfigIdDeleteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteConfigurationApiV1BetaConfigurationsConfigIdDeleteSecurityRequirement0,
+            };
         partial void PrepareDeleteConfigurationApiV1BetaConfigurationsConfigIdDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string configId,
@@ -49,6 +68,12 @@ namespace G
                 organizationId: organizationId,
                 session: ref session);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteConfigurationApiV1BetaConfigurationsConfigIdDeleteSecurityRequirements,
+                operationName: "DeleteConfigurationApiV1BetaConfigurationsConfigIdDeleteAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/beta/configurations/{configId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -65,7 +90,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ChunkClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ChunkFilesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalFileAsyncPostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ChunkFilesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalFileAsyncPostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ChunkFilesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalFileAsyncPostSecurityRequirement0,
+            };
         partial void PrepareChunkFilesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalFileAsyncPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.BodyChunkFilesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalFileAsyncPost request);
@@ -41,6 +60,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ChunkFilesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalFileAsyncPostSecurityRequirements,
+                operationName: "ChunkFilesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalFileAsyncPostAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/chunk/hierarchical/file/async",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,9 +78,18 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Files, x => x))}]"),
-                name: "\"files\"");
+            for (var __iFiles = 0; __iFiles < request.Files.Count; __iFiles++)
+            {
+                var __contentFiles = new global::System.Net.Http.ByteArrayContent(request.Files[__iFiles]);
+                __httpRequestContent.Add(
+                    content: __contentFiles,
+                    name: "\"files\"",
+                    fileName: $"\"file{__iFiles}.bin\"");
+                if (__contentFiles.Headers.ContentDisposition != null)
+                {
+                    __contentFiles.Headers.ContentDisposition.FileNameStar = null;
+                }
+            }
             if (request.IncludeConvertedDoc != default)
             {
 
@@ -144,7 +178,7 @@ namespace G
             {
 
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ConvertPageRange}"),
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.ConvertPageRange, x => x))}]"),
                     name: "\"convert_page_range\"");
             } 
             if (request.ConvertDocumentTimeout != default)
@@ -632,7 +666,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TaskStatusResponse> ChunkFilesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalFileAsyncPostAsync(
-            global::System.Collections.Generic.IList<string> files,
+            global::System.Collections.Generic.IList<byte[]> files,
             bool? includeConvertedDoc = default,
             global::G.TargetName? targetType = default,
             global::System.Collections.Generic.IList<global::G.InputFormat>? convertFromFormats = default,
@@ -645,7 +679,7 @@ namespace G
             global::G.TableFormerMode? convertTableMode = default,
             bool? convertTableCellMatching = default,
             global::G.ProcessingPipeline? convertPipeline = default,
-            byte[]? convertPageRange = default,
+            global::System.Collections.Generic.IList<int>? convertPageRange = default,
             double? convertDocumentTimeout = default,
             bool? convertAbortOnError = default,
             bool? convertDoTableStructure = default,

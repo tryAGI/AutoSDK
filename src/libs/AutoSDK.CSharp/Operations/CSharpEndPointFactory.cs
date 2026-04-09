@@ -39,17 +39,12 @@ public static class CSharpEndPointFactory
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
-        var authorizations = (operation.Operation.Security ?? [])
-            .SelectMany(x => x)
-            .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, operation.Settings, operation.GlobalSettings))
+        var authorizationRequirements = AuthorizationHelpers.CreateRequirementSets(operation);
+        var authorizations = authorizationRequirements
+            .SelectMany(static x => x.Authorizations)
+            .GroupBy(AuthorizationHelpers.GetIdentity, StringComparer.Ordinal)
+            .Select(static x => x.First())
             .ToImmutableArray();
-        if (authorizations.Length == 0)
-        {
-            authorizations = operation.GlobalSecurityRequirements
-                .SelectMany(x => x)
-                .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, operation.Settings, operation.GlobalSettings))
-                .ToImmutableArray();
-        }
 
         var parameters = operation.Schemas
             .Where(x => x is { Hint: Hint.Parameter, ParameterData: not null })
@@ -178,6 +173,7 @@ public static class CSharpEndPointFactory
             SuccessResponse: successResponse,
             ErrorResponses: responses.Where(x => !x.Is2XX).ToImmutableArray(),
             Authorizations: authorizations,
+            AuthorizationRequirements: authorizationRequirements,
             QueryParameters: queryParameters.ToImmutableArray(),
             HttpMethod: operation.OperationType,
             ContentType: successResponse.ContentType,

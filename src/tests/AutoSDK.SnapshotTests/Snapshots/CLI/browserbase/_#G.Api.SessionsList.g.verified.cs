@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_SessionsListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-BB-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_SessionsListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_SessionsListSecurityRequirement0,
+            };
         partial void PrepareSessionsListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.SessionsListStatus? status,
@@ -43,6 +62,12 @@ namespace G
                 status: ref status,
                 q: ref q);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SessionsListSecurityRequirements,
+                operationName: "SessionsListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/sessions",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +84,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

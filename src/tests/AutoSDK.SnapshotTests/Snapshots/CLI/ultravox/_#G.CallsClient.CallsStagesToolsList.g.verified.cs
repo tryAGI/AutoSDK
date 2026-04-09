@@ -6,6 +6,25 @@ namespace G
 {
     public partial class CallsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CallsStagesToolsListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CallsStagesToolsListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CallsStagesToolsListSecurityRequirement0,
+            };
         partial void PrepareCallsStagesToolsListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid callId,
@@ -43,6 +62,12 @@ namespace G
                 callId: ref callId,
                 callStageId: ref callStageId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CallsStagesToolsListSecurityRequirements,
+                operationName: "CallsStagesToolsListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/calls/{callId}/stages/{callStageId}/tools",
                 baseUri: HttpClient.BaseAddress); 
@@ -55,7 +80,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AgentsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_AgentsCreateSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_AgentsCreateSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_AgentsCreateSecurityRequirement0,
+            };
         partial void PrepareAgentsCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.CreateAgent request);
@@ -41,6 +60,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_AgentsCreateSecurityRequirements,
+                operationName: "AgentsCreateAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/agents/",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,7 +78,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("range")]
-        public byte[]? Range { get; set; }
+        public global::System.Collections.Generic.IList<int>? Range { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,7 +34,7 @@ namespace G
         /// <param name="range"></param>
         public FineRef(
             string x_ref,
-            byte[]? range)
+            global::System.Collections.Generic.IList<int>? range)
         {
             this.x_ref = x_ref ?? throw new global::System.ArgumentNullException(nameof(x_ref));
             this.Range = range;

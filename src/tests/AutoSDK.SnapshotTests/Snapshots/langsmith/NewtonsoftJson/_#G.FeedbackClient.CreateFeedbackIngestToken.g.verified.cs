@@ -6,6 +6,55 @@ namespace G
 {
     public partial class FeedbackClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateFeedbackIngestTokenSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateFeedbackIngestTokenSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateFeedbackIngestTokenSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateFeedbackIngestTokenSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateFeedbackIngestTokenSecurityRequirement0,
+                s_CreateFeedbackIngestTokenSecurityRequirement1,
+                s_CreateFeedbackIngestTokenSecurityRequirement2,
+            };
         partial void PrepareCreateFeedbackIngestTokenArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.AnyOf<global::G.FeedbackIngestTokenCreateSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenCreateSchema>> request);
@@ -40,6 +89,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateFeedbackIngestTokenSecurityRequirements,
+                operationName: "CreateFeedbackIngestTokenAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/feedback/tokens",
                 baseUri: HttpClient.BaseAddress); 
@@ -52,7 +107,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

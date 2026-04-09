@@ -6,6 +6,40 @@ namespace G
 {
     public partial class MigrationClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetMigrationGetNanoidSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetMigrationGetNanoidSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-user-api-key",
+                        FriendlyName = "UserApiKeyAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetMigrationGetNanoidSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetMigrationGetNanoidSecurityRequirement0,
+                s_GetMigrationGetNanoidSecurityRequirement1,
+            };
         partial void PrepareGetMigrationGetNanoidArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid uuid,
@@ -56,6 +90,12 @@ namespace G
                 type: ref type,
                 xApiKey: ref xApiKey);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetMigrationGetNanoidSecurityRequirements,
+                operationName: "GetMigrationGetNanoidAsync");
+
             var typeValue = type switch
             {
                 global::G.GetMigrationGetNanoidType.ConnectedAccount => "CONNECTED_ACCOUNT",
@@ -79,7 +119,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

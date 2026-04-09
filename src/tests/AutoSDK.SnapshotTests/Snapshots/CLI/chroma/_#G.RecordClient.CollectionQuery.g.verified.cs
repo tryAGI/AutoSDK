@@ -6,6 +6,25 @@ namespace G
 {
     public partial class RecordClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CollectionQuerySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-chroma-token",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CollectionQuerySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CollectionQuerySecurityRequirement0,
+            };
         partial void PrepareCollectionQueryArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string tenant,
@@ -68,6 +87,12 @@ namespace G
                 offset: ref offset,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CollectionQuerySecurityRequirements,
+                operationName: "CollectionQueryAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v2/tenants/{tenant}/databases/{database}/collections/{collectionId}/query",
                 baseUri: HttpClient.BaseAddress); 
@@ -84,7 +109,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

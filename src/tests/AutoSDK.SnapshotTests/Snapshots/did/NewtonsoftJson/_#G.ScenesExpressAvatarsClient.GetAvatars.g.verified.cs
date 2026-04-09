@@ -6,6 +6,40 @@ namespace G
 {
     public partial class ScenesExpressAvatarsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetAvatarsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetAvatarsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetAvatarsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetAvatarsSecurityRequirement0,
+                s_GetAvatarsSecurityRequirement1,
+            };
         partial void PrepareGetAvatarsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref double? limit,
@@ -45,6 +79,12 @@ namespace G
                 limit: ref limit,
                 token: ref token);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAvatarsSecurityRequirements,
+                operationName: "GetAvatarsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/scenes/avatars",
                 baseUri: HttpClient.BaseAddress); 
@@ -61,7 +101,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

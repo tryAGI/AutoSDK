@@ -6,6 +6,55 @@ namespace G
 {
     public partial class ConnectedAccountsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetConnectedAccountsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetConnectedAccountsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-user-api-key",
+                        FriendlyName = "UserApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetConnectedAccountsSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "authToken",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetConnectedAccountsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetConnectedAccountsSecurityRequirement0,
+                s_GetConnectedAccountsSecurityRequirement1,
+                s_GetConnectedAccountsSecurityRequirement2,
+            };
         partial void PrepareGetConnectedAccountsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<string>? toolkitSlugs,
@@ -99,6 +148,12 @@ namespace G
                 orderBy: ref orderBy,
                 orderDirection: ref orderDirection);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetConnectedAccountsSecurityRequirements,
+                operationName: "GetConnectedAccountsAsync");
+
             var orderByValue = orderBy switch
             {
                 global::G.GetConnectedAccountsOrderBy.CreatedAt => "created_at",
@@ -134,7 +189,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

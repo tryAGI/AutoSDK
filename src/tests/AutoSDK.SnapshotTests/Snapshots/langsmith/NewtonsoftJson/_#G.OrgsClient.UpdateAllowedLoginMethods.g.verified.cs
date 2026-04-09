@@ -6,6 +6,55 @@ namespace G
 {
     public partial class OrgsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_UpdateAllowedLoginMethodsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_UpdateAllowedLoginMethodsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Organization-Id",
+                        FriendlyName = "OrganizationId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_UpdateAllowedLoginMethodsSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_UpdateAllowedLoginMethodsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_UpdateAllowedLoginMethodsSecurityRequirement0,
+                s_UpdateAllowedLoginMethodsSecurityRequirement1,
+                s_UpdateAllowedLoginMethodsSecurityRequirement2,
+            };
         partial void PrepareUpdateAllowedLoginMethodsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.AllowedLoginMethodsUpdate request);
@@ -42,6 +91,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpdateAllowedLoginMethodsSecurityRequirements,
+                operationName: "UpdateAllowedLoginMethodsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/orgs/current/login-methods",
                 baseUri: HttpClient.BaseAddress); 
@@ -54,7 +109,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

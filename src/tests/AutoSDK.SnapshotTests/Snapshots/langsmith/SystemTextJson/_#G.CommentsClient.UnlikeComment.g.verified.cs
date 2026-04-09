@@ -6,6 +6,55 @@ namespace G
 {
     public partial class CommentsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_UnlikeCommentSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_UnlikeCommentSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_UnlikeCommentSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_UnlikeCommentSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_UnlikeCommentSecurityRequirement0,
+                s_UnlikeCommentSecurityRequirement1,
+                s_UnlikeCommentSecurityRequirement2,
+            };
         partial void PrepareUnlikeCommentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
@@ -48,6 +97,12 @@ namespace G
                 repo: ref repo,
                 parentCommentId: ref parentCommentId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UnlikeCommentSecurityRequirements,
+                operationName: "UnlikeCommentAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/comments/{owner}/{repo}/{parentCommentId}/like",
                 baseUri: HttpClient.BaseAddress); 
@@ -60,7 +115,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

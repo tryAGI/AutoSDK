@@ -74,7 +74,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="use_historical_eras_and_write_numbers_in_chinese_followed_by_chinese_word_公元前_or_公元后_with_arabic_numerals_in_parentheses")]
-        UseHistoricalErasAndWriteNumbersInChineseFollowedByChineseWord___Or___WithArabicNumeralsInParentheses,
+        UseHistoricalErasAndWriteNumbersInChineseFollowedByChineseWord公元前Or公元后WithArabicNumeralsInParentheses,
         /// <summary>
         /// 
         /// </summary>
@@ -109,12 +109,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="use_yyyy_chinese_word_年_mm_chinese_word_月_dd_chinese_word_日_with_chinese_numbers")]
-        UseYyyyChineseWord_MmChineseWord_DdChineseWord_WithChineseNumbers,
+        UseYyyyChineseWord年MmChineseWord月DdChineseWord日WithChineseNumbers,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="use_yyyy_chinese_word_年_mm_chinese_word_月_dd_chinese_word_日_without_leading_zero_for_single_digit_months_and_days")]
-        UseYyyyChineseWord_MmChineseWord_DdChineseWord_WithoutLeadingZeroForSingleDigitMonthsAndDays,
+        UseYyyyChineseWord年MmChineseWord月DdChineseWord日WithoutLeadingZeroForSingleDigitMonthsAndDays,
         /// <summary>
         /// 
         /// </summary>
@@ -129,7 +129,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="use_yyyy_korean word_년_space_mm_korean word_월_space_dd_korean word_일_without_leading_zero_for_single_digit_days_and_months")]
-        UseYyyyKoreanWord_SpaceMmKoreanWord_SpaceDdKoreanWord_WithoutLeadingZeroForSingleDigitDaysAndMonths,
+        UseYyyyKoreanWord년SpaceMmKoreanWord월SpaceDdKoreanWord일WithoutLeadingZeroForSingleDigitDaysAndMonths,
         /// <summary>
         /// 
         /// </summary>
@@ -176,18 +176,18 @@ namespace G
                 ConfiguredRulesDatesAndTimesDateFormat.UseDdSpaceSpelledOutMonthSpaceYyyyAndUseSpanishWordSeptiembreForNinthMonth => "use_dd_space_spelled_out_month_space_yyyy_and_use_spanish_word_septiembre_for_ninth_month",
                 ConfiguredRulesDatesAndTimesDateFormat.UseDdSpaceSpelledOutMonthSpaceYyyyAndUseSpanishWordSetiembreForNinthMonth => "use_dd_space_spelled_out_month_space_yyyy_and_use_spanish_word_setiembre_for_ninth_month",
                 ConfiguredRulesDatesAndTimesDateFormat.UseDdSpaceSpelledOutMonthSpaceYyyyWithoutLeadingZerosForSingleDigitDays => "use_dd_space_spelled_out_month_space_yyyy_without_leading_zeros_for_single_digit_days",
-                ConfiguredRulesDatesAndTimesDateFormat.UseHistoricalErasAndWriteNumbersInChineseFollowedByChineseWord___Or___WithArabicNumeralsInParentheses => "use_historical_eras_and_write_numbers_in_chinese_followed_by_chinese_word_公元前_or_公元后_with_arabic_numerals_in_parentheses",
+                ConfiguredRulesDatesAndTimesDateFormat.UseHistoricalErasAndWriteNumbersInChineseFollowedByChineseWord公元前Or公元后WithArabicNumeralsInParentheses => "use_historical_eras_and_write_numbers_in_chinese_followed_by_chinese_word_公元前_or_公元后_with_arabic_numerals_in_parentheses",
                 ConfiguredRulesDatesAndTimesDateFormat.UseMmSlashDdSlashYyyyWithLeadingZerosForSingleDigitDaysAndMonths => "use_mm_slash_dd_slash_yyyy_with_leading_zeros_for_single_digit_days_and_months",
                 ConfiguredRulesDatesAndTimesDateFormat.UseNumeralsOnlyWithLeadingZeroForSingleDigits => "use_numerals_only_with_leading_zero_for_single_digits",
                 ConfiguredRulesDatesAndTimesDateFormat.UseNumeralsOnlyWithoutLeadingZeroForSingleDigits => "use_numerals_only_without_leading_zero_for_single_digits",
                 ConfiguredRulesDatesAndTimesDateFormat.UseSpelledOutMonthSpaceDdCommaSpaceYyyyAndUseSpanishWordSeptiembreForNinthMonth => "use_spelled_out_month_space_dd_comma_space_yyyy_and_use_spanish_word_septiembre_for_ninth_month",
                 ConfiguredRulesDatesAndTimesDateFormat.UseSpelledOutMonthSpaceDdCommaSpaceYyyyWithoutLeadingZerosForSingleDigitDays => "use_spelled_out_month_space_dd_comma_space_yyyy_without_leading_zeros_for_single_digit_days",
                 ConfiguredRulesDatesAndTimesDateFormat.UseTraditionalCalendarSystemWithChineseNumbers => "use_traditional_calendar_system_with_chinese_numbers",
-                ConfiguredRulesDatesAndTimesDateFormat.UseYyyyChineseWord_MmChineseWord_DdChineseWord_WithChineseNumbers => "use_yyyy_chinese_word_年_mm_chinese_word_月_dd_chinese_word_日_with_chinese_numbers",
-                ConfiguredRulesDatesAndTimesDateFormat.UseYyyyChineseWord_MmChineseWord_DdChineseWord_WithoutLeadingZeroForSingleDigitMonthsAndDays => "use_yyyy_chinese_word_年_mm_chinese_word_月_dd_chinese_word_日_without_leading_zero_for_single_digit_months_and_days",
+                ConfiguredRulesDatesAndTimesDateFormat.UseYyyyChineseWord年MmChineseWord月DdChineseWord日WithChineseNumbers => "use_yyyy_chinese_word_年_mm_chinese_word_月_dd_chinese_word_日_with_chinese_numbers",
+                ConfiguredRulesDatesAndTimesDateFormat.UseYyyyChineseWord年MmChineseWord月DdChineseWord日WithoutLeadingZeroForSingleDigitMonthsAndDays => "use_yyyy_chinese_word_年_mm_chinese_word_月_dd_chinese_word_日_without_leading_zero_for_single_digit_months_and_days",
                 ConfiguredRulesDatesAndTimesDateFormat.UseYyyyHyphenMmHyphenDdWithLeadingZeroForSingleDigitDaysAndMonths => "use_yyyy_hyphen_mm_hyphen_dd_with_leading_zero_for_single_digit_days_and_months",
                 ConfiguredRulesDatesAndTimesDateFormat.UseYyyyHyphenMmHyphenDdWithLeadingZerosForSingleDigitDaysAndMonths => "use_yyyy_hyphen_mm_hyphen_dd_with_leading_zeros_for_single_digit_days_and_months",
-                ConfiguredRulesDatesAndTimesDateFormat.UseYyyyKoreanWord_SpaceMmKoreanWord_SpaceDdKoreanWord_WithoutLeadingZeroForSingleDigitDaysAndMonths => "use_yyyy_korean word_년_space_mm_korean word_월_space_dd_korean word_일_without_leading_zero_for_single_digit_days_and_months",
+                ConfiguredRulesDatesAndTimesDateFormat.UseYyyyKoreanWord년SpaceMmKoreanWord월SpaceDdKoreanWord일WithoutLeadingZeroForSingleDigitDaysAndMonths => "use_yyyy_korean word_년_space_mm_korean word_월_space_dd_korean word_일_without_leading_zero_for_single_digit_days_and_months",
                 ConfiguredRulesDatesAndTimesDateFormat.UseYyyyPeriodMmPeriodDd => "use_yyyy_period_mm_period_dd",
                 ConfiguredRulesDatesAndTimesDateFormat.UseYyyyPeriodSpaceMmPeriodSpaceDdPeriodSpaceWithoutLeadingZeroForSingleDigitDaysAndMonths => "use_yyyy_period_space_mm_period_space_dd_period_space_without_leading_zero_for_single_digit_days_and_months",
                 ConfiguredRulesDatesAndTimesDateFormat.UseYyyySlashMmSlashDd => "use_yyyy_slash_mm_slash_dd",
@@ -214,18 +214,18 @@ namespace G
                 "use_dd_space_spelled_out_month_space_yyyy_and_use_spanish_word_septiembre_for_ninth_month" => ConfiguredRulesDatesAndTimesDateFormat.UseDdSpaceSpelledOutMonthSpaceYyyyAndUseSpanishWordSeptiembreForNinthMonth,
                 "use_dd_space_spelled_out_month_space_yyyy_and_use_spanish_word_setiembre_for_ninth_month" => ConfiguredRulesDatesAndTimesDateFormat.UseDdSpaceSpelledOutMonthSpaceYyyyAndUseSpanishWordSetiembreForNinthMonth,
                 "use_dd_space_spelled_out_month_space_yyyy_without_leading_zeros_for_single_digit_days" => ConfiguredRulesDatesAndTimesDateFormat.UseDdSpaceSpelledOutMonthSpaceYyyyWithoutLeadingZerosForSingleDigitDays,
-                "use_historical_eras_and_write_numbers_in_chinese_followed_by_chinese_word_公元前_or_公元后_with_arabic_numerals_in_parentheses" => ConfiguredRulesDatesAndTimesDateFormat.UseHistoricalErasAndWriteNumbersInChineseFollowedByChineseWord___Or___WithArabicNumeralsInParentheses,
+                "use_historical_eras_and_write_numbers_in_chinese_followed_by_chinese_word_公元前_or_公元后_with_arabic_numerals_in_parentheses" => ConfiguredRulesDatesAndTimesDateFormat.UseHistoricalErasAndWriteNumbersInChineseFollowedByChineseWord公元前Or公元后WithArabicNumeralsInParentheses,
                 "use_mm_slash_dd_slash_yyyy_with_leading_zeros_for_single_digit_days_and_months" => ConfiguredRulesDatesAndTimesDateFormat.UseMmSlashDdSlashYyyyWithLeadingZerosForSingleDigitDaysAndMonths,
                 "use_numerals_only_with_leading_zero_for_single_digits" => ConfiguredRulesDatesAndTimesDateFormat.UseNumeralsOnlyWithLeadingZeroForSingleDigits,
                 "use_numerals_only_without_leading_zero_for_single_digits" => ConfiguredRulesDatesAndTimesDateFormat.UseNumeralsOnlyWithoutLeadingZeroForSingleDigits,
                 "use_spelled_out_month_space_dd_comma_space_yyyy_and_use_spanish_word_septiembre_for_ninth_month" => ConfiguredRulesDatesAndTimesDateFormat.UseSpelledOutMonthSpaceDdCommaSpaceYyyyAndUseSpanishWordSeptiembreForNinthMonth,
                 "use_spelled_out_month_space_dd_comma_space_yyyy_without_leading_zeros_for_single_digit_days" => ConfiguredRulesDatesAndTimesDateFormat.UseSpelledOutMonthSpaceDdCommaSpaceYyyyWithoutLeadingZerosForSingleDigitDays,
                 "use_traditional_calendar_system_with_chinese_numbers" => ConfiguredRulesDatesAndTimesDateFormat.UseTraditionalCalendarSystemWithChineseNumbers,
-                "use_yyyy_chinese_word_年_mm_chinese_word_月_dd_chinese_word_日_with_chinese_numbers" => ConfiguredRulesDatesAndTimesDateFormat.UseYyyyChineseWord_MmChineseWord_DdChineseWord_WithChineseNumbers,
-                "use_yyyy_chinese_word_年_mm_chinese_word_月_dd_chinese_word_日_without_leading_zero_for_single_digit_months_and_days" => ConfiguredRulesDatesAndTimesDateFormat.UseYyyyChineseWord_MmChineseWord_DdChineseWord_WithoutLeadingZeroForSingleDigitMonthsAndDays,
+                "use_yyyy_chinese_word_年_mm_chinese_word_月_dd_chinese_word_日_with_chinese_numbers" => ConfiguredRulesDatesAndTimesDateFormat.UseYyyyChineseWord年MmChineseWord月DdChineseWord日WithChineseNumbers,
+                "use_yyyy_chinese_word_年_mm_chinese_word_月_dd_chinese_word_日_without_leading_zero_for_single_digit_months_and_days" => ConfiguredRulesDatesAndTimesDateFormat.UseYyyyChineseWord年MmChineseWord月DdChineseWord日WithoutLeadingZeroForSingleDigitMonthsAndDays,
                 "use_yyyy_hyphen_mm_hyphen_dd_with_leading_zero_for_single_digit_days_and_months" => ConfiguredRulesDatesAndTimesDateFormat.UseYyyyHyphenMmHyphenDdWithLeadingZeroForSingleDigitDaysAndMonths,
                 "use_yyyy_hyphen_mm_hyphen_dd_with_leading_zeros_for_single_digit_days_and_months" => ConfiguredRulesDatesAndTimesDateFormat.UseYyyyHyphenMmHyphenDdWithLeadingZerosForSingleDigitDaysAndMonths,
-                "use_yyyy_korean word_년_space_mm_korean word_월_space_dd_korean word_일_without_leading_zero_for_single_digit_days_and_months" => ConfiguredRulesDatesAndTimesDateFormat.UseYyyyKoreanWord_SpaceMmKoreanWord_SpaceDdKoreanWord_WithoutLeadingZeroForSingleDigitDaysAndMonths,
+                "use_yyyy_korean word_년_space_mm_korean word_월_space_dd_korean word_일_without_leading_zero_for_single_digit_days_and_months" => ConfiguredRulesDatesAndTimesDateFormat.UseYyyyKoreanWord년SpaceMmKoreanWord월SpaceDdKoreanWord일WithoutLeadingZeroForSingleDigitDaysAndMonths,
                 "use_yyyy_period_mm_period_dd" => ConfiguredRulesDatesAndTimesDateFormat.UseYyyyPeriodMmPeriodDd,
                 "use_yyyy_period_space_mm_period_space_dd_period_space_without_leading_zero_for_single_digit_days_and_months" => ConfiguredRulesDatesAndTimesDateFormat.UseYyyyPeriodSpaceMmPeriodSpaceDdPeriodSpaceWithoutLeadingZeroForSingleDigitDaysAndMonths,
                 "use_yyyy_slash_mm_slash_dd" => ConfiguredRulesDatesAndTimesDateFormat.UseYyyySlashMmSlashDd,

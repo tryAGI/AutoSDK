@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ProjectsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListProjectsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListProjectsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListProjectsSecurityRequirement0,
+            };
         partial void PrepareListProjectsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
@@ -52,6 +71,12 @@ namespace G
                 after: ref after,
                 includeArchived: ref includeArchived);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListProjectsSecurityRequirements,
+                operationName: "ListProjectsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/organization/projects",
                 baseUri: HttpClient.BaseAddress); 
@@ -69,7 +94,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,62 @@ namespace G
 {
     public partial class TemplatesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTemplatesByTemplateIDBuildsByBuildIDLogsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTemplatesByTemplateIDBuildsByBuildIDLogsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTemplatesByTemplateIDBuildsByBuildIDLogsSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Team",
+                        FriendlyName = "Supabase2TeamAuth",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Token",
+                        FriendlyName = "Supabase1TokenAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetTemplatesByTemplateIDBuildsByBuildIDLogsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetTemplatesByTemplateIDBuildsByBuildIDLogsSecurityRequirement0,
+                s_GetTemplatesByTemplateIDBuildsByBuildIDLogsSecurityRequirement1,
+                s_GetTemplatesByTemplateIDBuildsByBuildIDLogsSecurityRequirement2,
+            };
         partial void PrepareGetTemplatesByTemplateIDBuildsByBuildIDLogsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string templateID,
@@ -76,6 +132,12 @@ namespace G
                 level: ref level,
                 source: ref source);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetTemplatesByTemplateIDBuildsByBuildIDLogsSecurityRequirements,
+                operationName: "GetTemplatesByTemplateIDBuildsByBuildIDLogsAsync");
+
             var directionValue = direction switch
             {
                 global::G.LogsDirection.LogsDirectionForward => "forward",
@@ -115,7 +177,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

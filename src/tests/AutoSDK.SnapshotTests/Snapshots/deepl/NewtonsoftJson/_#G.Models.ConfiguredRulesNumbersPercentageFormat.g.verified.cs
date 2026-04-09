@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="use_chinese_numbers_followed_by_chinese_word_百分之")]
-        UseChineseNumbersFollowedByChineseWord___,
+        UseChineseNumbersFollowedByChineseWord百分之,
         /// <summary>
         /// 
         /// </summary>
@@ -29,12 +29,12 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="use_numerals_followed_by_japanese_word_パーセント_without_space")]
-        UseNumeralsFollowedByJapaneseWord_____WithoutSpace,
+        UseNumeralsFollowedByJapaneseWordパーセントWithoutSpace,
         /// <summary>
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="use_numerals_followed_by_korean_word_퍼센트")]
-        UseNumeralsFollowedByKoreanWord___,
+        UseNumeralsFollowedByKoreanWord퍼센트,
         /// <summary>
         /// 
         /// </summary>
@@ -64,7 +64,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="use_numerals_followed_by_space_then_korean_word_퍼센트")]
-        UseNumeralsFollowedBySpaceThenKoreanWord___,
+        UseNumeralsFollowedBySpaceThenKoreanWord퍼센트,
         /// <summary>
         /// 
         /// </summary>
@@ -105,16 +105,16 @@ namespace G
             return value switch
             {
                 ConfiguredRulesNumbersPercentageFormat.UseArabicNumeralsFollowedByPercentSymbolWithoutSpace => "use_arabic_numerals_followed_by_percent_symbol_without_space",
-                ConfiguredRulesNumbersPercentageFormat.UseChineseNumbersFollowedByChineseWord___ => "use_chinese_numbers_followed_by_chinese_word_百分之",
+                ConfiguredRulesNumbersPercentageFormat.UseChineseNumbersFollowedByChineseWord百分之 => "use_chinese_numbers_followed_by_chinese_word_百分之",
                 ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByFullWidthPercentSymbolWithoutSpace => "use_numerals_followed_by_full_width_percent_symbol_without_space",
-                ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByJapaneseWord_____WithoutSpace => "use_numerals_followed_by_japanese_word_パーセント_without_space",
-                ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByKoreanWord___ => "use_numerals_followed_by_korean_word_퍼센트",
+                ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByJapaneseWordパーセントWithoutSpace => "use_numerals_followed_by_japanese_word_パーセント_without_space",
+                ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByKoreanWord퍼센트 => "use_numerals_followed_by_korean_word_퍼센트",
                 ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByPercentSymbol => "use_numerals_followed_by_percent_symbol",
                 ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenGermanWordProzent => "use_numerals_followed_by_space_then_german_word_prozent",
                 ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenHalfWidthPercentSymbol => "use_numerals_followed_by_space_then_half_width_percent_symbol",
                 ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenItalianWordPerCento => "use_numerals_followed_by_space_then_italian_word_per_cento",
                 ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenItalianWordPercento2 => "use_numerals_followed_by_space_then_italian_word_percento",
-                ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenKoreanWord___ => "use_numerals_followed_by_space_then_korean_word_퍼센트",
+                ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenKoreanWord퍼센트 => "use_numerals_followed_by_space_then_korean_word_퍼센트",
                 ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenPercentSymbol => "use_numerals_followed_by_space_then_percent_symbol",
                 ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenSpellOutPerCent => "use_numerals_followed_by_space_then_spell_out_per_cent",
                 ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenSpellOutPercent2 => "use_numerals_followed_by_space_then_spell_out_percent",
@@ -131,16 +131,16 @@ namespace G
             return value switch
             {
                 "use_arabic_numerals_followed_by_percent_symbol_without_space" => ConfiguredRulesNumbersPercentageFormat.UseArabicNumeralsFollowedByPercentSymbolWithoutSpace,
-                "use_chinese_numbers_followed_by_chinese_word_百分之" => ConfiguredRulesNumbersPercentageFormat.UseChineseNumbersFollowedByChineseWord___,
+                "use_chinese_numbers_followed_by_chinese_word_百分之" => ConfiguredRulesNumbersPercentageFormat.UseChineseNumbersFollowedByChineseWord百分之,
                 "use_numerals_followed_by_full_width_percent_symbol_without_space" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByFullWidthPercentSymbolWithoutSpace,
-                "use_numerals_followed_by_japanese_word_パーセント_without_space" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByJapaneseWord_____WithoutSpace,
-                "use_numerals_followed_by_korean_word_퍼센트" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByKoreanWord___,
+                "use_numerals_followed_by_japanese_word_パーセント_without_space" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByJapaneseWordパーセントWithoutSpace,
+                "use_numerals_followed_by_korean_word_퍼센트" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByKoreanWord퍼센트,
                 "use_numerals_followed_by_percent_symbol" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedByPercentSymbol,
                 "use_numerals_followed_by_space_then_german_word_prozent" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenGermanWordProzent,
                 "use_numerals_followed_by_space_then_half_width_percent_symbol" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenHalfWidthPercentSymbol,
                 "use_numerals_followed_by_space_then_italian_word_per_cento" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenItalianWordPerCento,
                 "use_numerals_followed_by_space_then_italian_word_percento" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenItalianWordPercento2,
-                "use_numerals_followed_by_space_then_korean_word_퍼센트" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenKoreanWord___,
+                "use_numerals_followed_by_space_then_korean_word_퍼센트" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenKoreanWord퍼센트,
                 "use_numerals_followed_by_space_then_percent_symbol" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenPercentSymbol,
                 "use_numerals_followed_by_space_then_spell_out_per_cent" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenSpellOutPerCent,
                 "use_numerals_followed_by_space_then_spell_out_percent" => ConfiguredRulesNumbersPercentageFormat.UseNumeralsFollowedBySpaceThenSpellOutPercent2,

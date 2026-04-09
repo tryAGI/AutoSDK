@@ -6,6 +6,25 @@ namespace G
 {
     public partial class FeedsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_FeedsGetFeedSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_FeedsGetFeedSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_FeedsGetFeedSecurityRequirement0,
+            };
         partial void PrepareFeedsGetFeedArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string feedId);
@@ -39,6 +58,12 @@ namespace G
                 httpClient: HttpClient,
                 feedId: ref feedId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_FeedsGetFeedSecurityRequirements,
+                operationName: "FeedsGetFeedAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/feeds/{feedId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +76,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

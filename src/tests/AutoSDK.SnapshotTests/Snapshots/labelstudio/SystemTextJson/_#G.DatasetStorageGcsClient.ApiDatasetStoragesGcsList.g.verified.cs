@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DatasetStorageGcsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ApiDatasetStoragesGcsListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ApiDatasetStoragesGcsListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ApiDatasetStoragesGcsListSecurityRequirement0,
+            };
         partial void PrepareApiDatasetStoragesGcsListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? dataset,
@@ -44,6 +63,12 @@ namespace G
                 dataset: ref dataset,
                 ordering: ref ordering);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ApiDatasetStoragesGcsListSecurityRequirements,
+                operationName: "ApiDatasetStoragesGcsListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/dataset-storages/gcs/",
                 baseUri: HttpClient.BaseAddress); 
@@ -60,7 +85,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ReplicasClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetReplicaSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetReplicaSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetReplicaSecurityRequirement0,
+            };
         partial void PrepareGetReplicaArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string replicaId);
@@ -39,6 +58,12 @@ namespace G
                 httpClient: HttpClient,
                 replicaId: ref replicaId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetReplicaSecurityRequirements,
+                operationName: "GetReplicaAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/replicas/{replicaId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +76,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

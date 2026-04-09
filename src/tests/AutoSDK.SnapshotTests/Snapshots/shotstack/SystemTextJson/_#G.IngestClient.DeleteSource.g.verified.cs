@@ -6,6 +6,25 @@ namespace G
 {
     public partial class IngestClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteSourceSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteSourceSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteSourceSecurityRequirement0,
+            };
         partial void PrepareDeleteSourceArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -34,6 +53,12 @@ namespace G
             PrepareDeleteSourceArguments(
                 httpClient: HttpClient,
                 id: ref id);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteSourceSecurityRequirements,
+                operationName: "DeleteSourceAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/ingest/v1/sources/{id}",

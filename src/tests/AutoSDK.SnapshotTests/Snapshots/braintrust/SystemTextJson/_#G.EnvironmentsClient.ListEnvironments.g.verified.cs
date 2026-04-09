@@ -6,6 +6,34 @@ namespace G
 {
     public partial class EnvironmentsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListEnvironmentsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListEnvironmentsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListEnvironmentsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListEnvironmentsSecurityRequirement0,
+                s_ListEnvironmentsSecurityRequirement1,
+            };
         partial void PrepareListEnvironmentsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.AnyOf<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>>? ids,
@@ -53,6 +81,12 @@ namespace G
                 name: ref name,
                 orgName: ref orgName);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListEnvironmentsSecurityRequirements,
+                operationName: "ListEnvironmentsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/environment",
                 baseUri: HttpClient.BaseAddress); 
@@ -70,7 +104,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

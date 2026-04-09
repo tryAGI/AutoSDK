@@ -6,6 +6,19 @@ namespace G
 {
     public partial class SchemaClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_SchemaRetrieveSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_SchemaRetrieveSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_SchemaRetrieveSecurityRequirement0,
+            };
         partial void PrepareSchemaRetrieveArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.SchemaRetrieveFormat? format,
@@ -44,6 +57,12 @@ namespace G
                 httpClient: HttpClient,
                 format: ref format,
                 lang: ref lang);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SchemaRetrieveSecurityRequirements,
+                operationName: "SchemaRetrieveAsync");
 
             var formatValue = format switch
             {

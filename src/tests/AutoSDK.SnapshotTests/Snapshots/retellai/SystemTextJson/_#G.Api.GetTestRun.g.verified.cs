@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTestRunSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetTestRunSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetTestRunSecurityRequirement0,
+            };
         partial void PrepareGetTestRunArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string testCaseJobId);
@@ -38,6 +57,12 @@ namespace G
                 httpClient: HttpClient,
                 testCaseJobId: ref testCaseJobId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetTestRunSecurityRequirements,
+                operationName: "GetTestRunAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/get-test-run/{testCaseJobId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +75,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

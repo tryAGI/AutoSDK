@@ -6,6 +6,47 @@ namespace G
 {
     public partial class TagsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTemplatesByTemplateIDTagsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTemplatesByTemplateIDTagsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Team",
+                        FriendlyName = "Supabase2TeamAuth",
+                    },
+                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Token",
+                        FriendlyName = "Supabase1TokenAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetTemplatesByTemplateIDTagsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetTemplatesByTemplateIDTagsSecurityRequirement0,
+                s_GetTemplatesByTemplateIDTagsSecurityRequirement1,
+            };
         partial void PrepareGetTemplatesByTemplateIDTagsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string templateID);
@@ -38,6 +79,12 @@ namespace G
                 httpClient: HttpClient,
                 templateID: ref templateID);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetTemplatesByTemplateIDTagsSecurityRequirements,
+                operationName: "GetTemplatesByTemplateIDTagsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/templates/{templateID}/tags",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +97,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

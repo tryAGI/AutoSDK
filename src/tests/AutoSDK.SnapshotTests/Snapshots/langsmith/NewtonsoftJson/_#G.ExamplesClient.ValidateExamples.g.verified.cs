@@ -6,6 +6,55 @@ namespace G
 {
     public partial class ExamplesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ValidateExamplesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ValidateExamplesSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ValidateExamplesSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ValidateExamplesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ValidateExamplesSecurityRequirement0,
+                s_ValidateExamplesSecurityRequirement1,
+                s_ValidateExamplesSecurityRequirement2,
+            };
         partial void PrepareValidateExamplesArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareValidateExamplesRequest(
@@ -34,6 +83,12 @@ namespace G
             PrepareValidateExamplesArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ValidateExamplesSecurityRequirements,
+                operationName: "ValidateExamplesAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/examples/validate/bulk",
                 baseUri: HttpClient.BaseAddress); 
@@ -46,7 +101,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

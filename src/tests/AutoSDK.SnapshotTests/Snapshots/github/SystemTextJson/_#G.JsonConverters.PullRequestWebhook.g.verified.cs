@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -97,7 +98,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        pullRequest = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PullRequest>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullRequest> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullRequest).Name}");
+                        pullRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -110,7 +113,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        pullRequestWebhookVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PullRequestWebhookVariant2>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullRequestWebhookVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullRequestWebhookVariant2> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullRequestWebhookVariant2).Name}");
+                        pullRequestWebhookVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -125,7 +130,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    pullRequest = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PullRequest>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullRequest> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullRequest).Name}");
+                    pullRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -136,7 +143,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    pullRequestWebhookVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PullRequestWebhookVariant2>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullRequestWebhookVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullRequestWebhookVariant2> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullRequestWebhookVariant2).Name}");
+                    pullRequestWebhookVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -161,15 +170,20 @@ namespace G.JsonConverters
             global::G.PullRequestWebhook value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsPullRequest)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PullRequest, typeof(global::G.PullRequest), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullRequest?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullRequest).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PullRequest!, typeInfo);
             }
             else if (value.IsPullRequestWebhookVariant2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PullRequestWebhookVariant2, typeof(global::G.PullRequestWebhookVariant2), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PullRequestWebhookVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PullRequestWebhookVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PullRequestWebhookVariant2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PullRequestWebhookVariant2!, typeInfo);
             }
         }
     }

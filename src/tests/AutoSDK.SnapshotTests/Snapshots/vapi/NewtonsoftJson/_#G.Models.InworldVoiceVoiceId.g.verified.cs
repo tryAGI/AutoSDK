@@ -140,7 +140,7 @@ namespace G
         /// Alain, Hélène, Mathieu, Étienne
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Hélène")]
-        H_l_ne,
+        Hélène,
         /// <summary>
         /// Yichen, Xiaoyin, Xinyi, Jing
         /// </summary>
@@ -190,7 +190,7 @@ namespace G
         /// Heitor, Maitê
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Maitê")]
-        Mait_,
+        Maitê,
         /// <summary>
         /// Riya, Manoj
         /// </summary>
@@ -350,7 +350,7 @@ namespace G
         /// Alain, Hélène, Mathieu, Étienne
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Étienne")]
-        x_tienne,
+        Étienne,
     }
 
     /// <summary>
@@ -387,7 +387,7 @@ namespace G
                 InworldVoiceVoiceId.Hana => "Hana",
                 InworldVoiceVoiceId.Heitor => "Heitor",
                 InworldVoiceVoiceId.Hyunwoo => "Hyunwoo",
-                InworldVoiceVoiceId.H_l_ne => "Hélène",
+                InworldVoiceVoiceId.Hélène => "Hélène",
                 InworldVoiceVoiceId.Jing => "Jing",
                 InworldVoiceVoiceId.Johanna => "Johanna",
                 InworldVoiceVoiceId.Josef => "Josef",
@@ -397,7 +397,7 @@ namespace G
                 InworldVoiceVoiceId.Lore => "Lore",
                 InworldVoiceVoiceId.Luna => "Luna",
                 InworldVoiceVoiceId.Lupita => "Lupita",
-                InworldVoiceVoiceId.Mait_ => "Maitê",
+                InworldVoiceVoiceId.Maitê => "Maitê",
                 InworldVoiceVoiceId.Manoj => "Manoj",
                 InworldVoiceVoiceId.Mark => "Mark",
                 InworldVoiceVoiceId.Mathieu => "Mathieu",
@@ -429,7 +429,7 @@ namespace G
                 InworldVoiceVoiceId.Yael => "Yael",
                 InworldVoiceVoiceId.Yichen => "Yichen",
                 InworldVoiceVoiceId.Yoona => "Yoona",
-                InworldVoiceVoiceId.x_tienne => "Étienne",
+                InworldVoiceVoiceId.Étienne => "Étienne",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -462,7 +462,7 @@ namespace G
                 "Hana" => InworldVoiceVoiceId.Hana,
                 "Heitor" => InworldVoiceVoiceId.Heitor,
                 "Hyunwoo" => InworldVoiceVoiceId.Hyunwoo,
-                "Hélène" => InworldVoiceVoiceId.H_l_ne,
+                "Hélène" => InworldVoiceVoiceId.Hélène,
                 "Jing" => InworldVoiceVoiceId.Jing,
                 "Johanna" => InworldVoiceVoiceId.Johanna,
                 "Josef" => InworldVoiceVoiceId.Josef,
@@ -472,7 +472,7 @@ namespace G
                 "Lore" => InworldVoiceVoiceId.Lore,
                 "Luna" => InworldVoiceVoiceId.Luna,
                 "Lupita" => InworldVoiceVoiceId.Lupita,
-                "Maitê" => InworldVoiceVoiceId.Mait_,
+                "Maitê" => InworldVoiceVoiceId.Maitê,
                 "Manoj" => InworldVoiceVoiceId.Manoj,
                 "Mark" => InworldVoiceVoiceId.Mark,
                 "Mathieu" => InworldVoiceVoiceId.Mathieu,
@@ -504,7 +504,7 @@ namespace G
                 "Yael" => InworldVoiceVoiceId.Yael,
                 "Yichen" => InworldVoiceVoiceId.Yichen,
                 "Yoona" => InworldVoiceVoiceId.Yoona,
-                "Étienne" => InworldVoiceVoiceId.x_tienne,
+                "Étienne" => InworldVoiceVoiceId.Étienne,
                 _ => null,
             };
         }

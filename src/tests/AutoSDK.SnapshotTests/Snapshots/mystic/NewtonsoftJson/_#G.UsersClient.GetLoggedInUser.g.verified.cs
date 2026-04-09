@@ -6,6 +6,25 @@ namespace G
 {
     public partial class UsersClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetLoggedInUserSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetLoggedInUserSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetLoggedInUserSecurityRequirement0,
+            };
         partial void PrepareGetLoggedInUserArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetLoggedInUserRequest(
@@ -33,6 +52,12 @@ namespace G
                 client: HttpClient);
             PrepareGetLoggedInUserArguments(
                 httpClient: HttpClient);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetLoggedInUserSecurityRequirements,
+                operationName: "GetLoggedInUserAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/users/me",

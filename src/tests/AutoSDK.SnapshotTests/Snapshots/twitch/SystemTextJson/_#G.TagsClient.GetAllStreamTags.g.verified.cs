@@ -8,6 +8,25 @@ namespace G
 {
     public partial class TagsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetAllStreamTagsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "OAuth2",
+                        Location = "Header",
+                        Name = "",
+                        FriendlyName = "OAuth2",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetAllStreamTagsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetAllStreamTagsSecurityRequirement0,
+            };
         partial void PrepareGetAllStreamTagsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<string>? tagId,
@@ -55,6 +74,12 @@ namespace G
                 first: ref first,
                 after: ref after);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAllStreamTagsSecurityRequirements,
+                operationName: "GetAllStreamTagsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/tags/streams",
                 baseUri: HttpClient.BaseAddress); 
@@ -72,7 +97,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -102,7 +127,7 @@ namespace G
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 

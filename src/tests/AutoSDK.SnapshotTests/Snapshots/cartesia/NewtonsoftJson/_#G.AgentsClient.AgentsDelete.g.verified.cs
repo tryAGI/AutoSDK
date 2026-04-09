@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AgentsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_AgentsDeleteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_AgentsDeleteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_AgentsDeleteSecurityRequirement0,
+            };
         partial void PrepareAgentsDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.AgentsDeleteCartesiaVersion cartesiaVersion,
@@ -40,6 +59,12 @@ namespace G
                 cartesiaVersion: ref cartesiaVersion,
                 agentId: ref agentId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_AgentsDeleteSecurityRequirements,
+                operationName: "AgentsDeleteAsync");
+
             var cartesiaVersionValue = cartesiaVersion switch
             {
                 global::G.AgentsDeleteCartesiaVersion.x20240610 => "2024-06-10",
@@ -60,7 +85,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ModerationClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetAutomodSettingsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "OAuth2",
+                        Location = "Header",
+                        Name = "",
+                        FriendlyName = "OAuth2",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetAutomodSettingsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetAutomodSettingsSecurityRequirement0,
+            };
         partial void PrepareGetAutomodSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string broadcasterId,
@@ -46,6 +65,12 @@ namespace G
                 broadcasterId: ref broadcasterId,
                 moderatorId: ref moderatorId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetAutomodSettingsSecurityRequirements,
+                operationName: "GetAutomodSettingsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/moderation/automod/settings",
                 baseUri: HttpClient.BaseAddress); 
@@ -62,7 +87,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -91,7 +116,7 @@ namespace G
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 

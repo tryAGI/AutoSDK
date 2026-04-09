@@ -6,6 +6,34 @@ namespace G
 {
     public partial class OrganizationsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PatchOrganizationIdSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PatchOrganizationIdSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PatchOrganizationIdSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PatchOrganizationIdSecurityRequirement0,
+                s_PatchOrganizationIdSecurityRequirement1,
+            };
         partial void PreparePatchOrganizationIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid organizationId,
@@ -49,6 +77,12 @@ namespace G
                 organizationId: ref organizationId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PatchOrganizationIdSecurityRequirements,
+                operationName: "PatchOrganizationIdAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/organization/{organizationId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -61,7 +95,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

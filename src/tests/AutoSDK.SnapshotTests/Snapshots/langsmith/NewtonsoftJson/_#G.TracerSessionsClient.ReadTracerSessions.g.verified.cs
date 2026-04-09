@@ -6,6 +6,55 @@ namespace G
 {
     public partial class TracerSessionsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ReadTracerSessionsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ReadTracerSessionsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_ReadTracerSessionsSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ReadTracerSessionsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ReadTracerSessionsSecurityRequirement0,
+                s_ReadTracerSessionsSecurityRequirement1,
+                s_ReadTracerSessionsSecurityRequirement2,
+            };
         partial void PrepareReadTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             bool? referenceFree,
@@ -131,6 +180,12 @@ namespace G
                 includeStats: ref includeStats,
                 accept: ref accept);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ReadTracerSessionsSecurityRequirements,
+                operationName: "ReadTracerSessionsAsync");
+
             var sortByValue = sortBy switch
             {
                 global::G.SessionSortableColumns.Name => "name",
@@ -172,7 +227,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

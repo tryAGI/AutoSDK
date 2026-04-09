@@ -81,7 +81,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        L_a,
+        Léa,
         /// <summary>
         /// 
         /// </summary>
@@ -137,7 +137,7 @@ namespace G
                 GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Kimberly => "Kimberly",
                 GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Lucia => "Lucia",
                 GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Lupe => "Lupe",
-                GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.L_a => "Léa",
+                GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Léa => "Léa",
                 GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Matthew => "Matthew",
                 GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Olivia => "Olivia",
                 GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Salli => "Salli",
@@ -171,7 +171,7 @@ namespace G
                 "Kimberly" => GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Kimberly,
                 "Lucia" => GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Lucia,
                 "Lupe" => GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Lupe,
-                "Léa" => GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.L_a,
+                "Léa" => GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Léa,
                 "Matthew" => GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Matthew,
                 "Olivia" => GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Olivia,
                 "Salli" => GetClipsPresentersResponsePresenterVoiceAmazonVoiceId.Salli,

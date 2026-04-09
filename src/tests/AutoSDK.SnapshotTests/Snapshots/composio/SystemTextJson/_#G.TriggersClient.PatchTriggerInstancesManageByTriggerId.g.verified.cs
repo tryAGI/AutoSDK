@@ -6,6 +6,55 @@ namespace G
 {
     public partial class TriggersClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PatchTriggerInstancesManageByTriggerIdSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PatchTriggerInstancesManageByTriggerIdSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-user-api-key",
+                        FriendlyName = "UserApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PatchTriggerInstancesManageByTriggerIdSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "authToken",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PatchTriggerInstancesManageByTriggerIdSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PatchTriggerInstancesManageByTriggerIdSecurityRequirement0,
+                s_PatchTriggerInstancesManageByTriggerIdSecurityRequirement1,
+                s_PatchTriggerInstancesManageByTriggerIdSecurityRequirement2,
+            };
         partial void PreparePatchTriggerInstancesManageByTriggerIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string triggerId,
@@ -49,6 +98,12 @@ namespace G
                 triggerId: ref triggerId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PatchTriggerInstancesManageByTriggerIdSecurityRequirements,
+                operationName: "PatchTriggerInstancesManageByTriggerIdAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v3/trigger_instances/manage/{triggerId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -61,7 +116,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

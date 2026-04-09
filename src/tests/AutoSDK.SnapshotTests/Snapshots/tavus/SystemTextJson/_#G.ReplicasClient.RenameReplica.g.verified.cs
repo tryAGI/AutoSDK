@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ReplicasClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_RenameReplicaSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_RenameReplicaSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_RenameReplicaSecurityRequirement0,
+            };
         partial void PrepareRenameReplicaArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string replicaId,
@@ -47,6 +66,12 @@ namespace G
                 replicaId: ref replicaId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RenameReplicaSecurityRequirements,
+                operationName: "RenameReplicaAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/replicas/{replicaId}/name",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +84,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

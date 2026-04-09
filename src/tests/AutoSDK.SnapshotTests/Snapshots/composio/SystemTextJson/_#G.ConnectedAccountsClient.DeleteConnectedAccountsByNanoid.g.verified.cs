@@ -6,6 +6,55 @@ namespace G
 {
     public partial class ConnectedAccountsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteConnectedAccountsByNanoidSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "authToken",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteConnectedAccountsByNanoidSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteConnectedAccountsByNanoidSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-user-api-key",
+                        FriendlyName = "UserApiKeyAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteConnectedAccountsByNanoidSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteConnectedAccountsByNanoidSecurityRequirement0,
+                s_DeleteConnectedAccountsByNanoidSecurityRequirement1,
+                s_DeleteConnectedAccountsByNanoidSecurityRequirement2,
+            };
         partial void PrepareDeleteConnectedAccountsByNanoidArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string nanoid);
@@ -39,6 +88,12 @@ namespace G
                 httpClient: HttpClient,
                 nanoid: ref nanoid);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteConnectedAccountsByNanoidSecurityRequirements,
+                operationName: "DeleteConnectedAccountsByNanoidAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v3/connected_accounts/{nanoid}",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +106,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

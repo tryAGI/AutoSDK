@@ -6,6 +6,25 @@ namespace G
 {
     public partial class DatasetStorageS3Client
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ApiDatasetStoragesS3SyncCreateSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ApiDatasetStoragesS3SyncCreateSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ApiDatasetStoragesS3SyncCreateSecurityRequirement0,
+            };
         partial void PrepareApiDatasetStoragesS3SyncCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id,
@@ -47,6 +66,12 @@ namespace G
                 id: ref id,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ApiDatasetStoragesS3SyncCreateSecurityRequirements,
+                operationName: "ApiDatasetStoragesS3SyncCreateAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/dataset-storages/s3/{id}/sync/",
                 baseUri: HttpClient.BaseAddress); 
@@ -59,7 +84,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

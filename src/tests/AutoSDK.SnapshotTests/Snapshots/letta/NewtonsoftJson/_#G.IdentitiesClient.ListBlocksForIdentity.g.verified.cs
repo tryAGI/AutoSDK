@@ -6,6 +6,25 @@ namespace G
 {
     public partial class IdentitiesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListBlocksForIdentitySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListBlocksForIdentitySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListBlocksForIdentitySecurityRequirement0,
+            };
         partial void PrepareListBlocksForIdentityArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string identityId,
@@ -80,6 +99,12 @@ namespace G
                 order: ref order,
                 orderBy: ref orderBy);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListBlocksForIdentitySecurityRequirements,
+                operationName: "ListBlocksForIdentityAsync");
+
             var orderValue = order switch
             {
                 global::G.ListBlocksForIdentityOrder.Asc => "asc",
@@ -105,7 +130,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

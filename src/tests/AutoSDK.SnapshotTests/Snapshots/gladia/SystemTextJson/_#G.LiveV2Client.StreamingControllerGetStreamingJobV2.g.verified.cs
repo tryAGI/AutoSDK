@@ -6,6 +6,25 @@ namespace G
 {
     public partial class LiveV2Client
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_StreamingControllerGetStreamingJobV2SecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-gladia-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_StreamingControllerGetStreamingJobV2SecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_StreamingControllerGetStreamingJobV2SecurityRequirement0,
+            };
         partial void PrepareStreamingControllerGetStreamingJobV2Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -40,6 +59,12 @@ namespace G
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_StreamingControllerGetStreamingJobV2SecurityRequirements,
+                operationName: "StreamingControllerGetStreamingJobV2Async");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/live/{id}",
                 baseUri: HttpClient.BaseAddress); 
@@ -52,7 +77,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

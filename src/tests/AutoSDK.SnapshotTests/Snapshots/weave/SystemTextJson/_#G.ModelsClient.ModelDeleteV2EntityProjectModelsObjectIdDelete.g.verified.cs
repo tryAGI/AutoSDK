@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ModelsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ModelDeleteV2EntityProjectModelsObjectIdDeleteSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ModelDeleteV2EntityProjectModelsObjectIdDeleteSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ModelDeleteV2EntityProjectModelsObjectIdDeleteSecurityRequirement0,
+            };
         partial void PrepareModelDeleteV2EntityProjectModelsObjectIdDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string entity,
@@ -56,6 +75,12 @@ namespace G
                 objectId: ref objectId,
                 digests: digests);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ModelDeleteV2EntityProjectModelsObjectIdDeleteSecurityRequirements,
+                operationName: "ModelDeleteV2EntityProjectModelsObjectIdDeleteAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/{entity}/{project}/models/{objectId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -71,7 +96,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

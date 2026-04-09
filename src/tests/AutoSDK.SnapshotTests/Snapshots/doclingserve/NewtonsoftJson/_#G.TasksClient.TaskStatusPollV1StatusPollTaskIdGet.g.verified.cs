@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TasksClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_TaskStatusPollV1StatusPollTaskIdGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_TaskStatusPollV1StatusPollTaskIdGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_TaskStatusPollV1StatusPollTaskIdGetSecurityRequirement0,
+            };
         partial void PrepareTaskStatusPollV1StatusPollTaskIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string taskId,
@@ -45,6 +64,12 @@ namespace G
                 httpClient: HttpClient,
                 taskId: ref taskId,
                 wait: ref wait);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_TaskStatusPollV1StatusPollTaskIdGetSecurityRequirements,
+                operationName: "TaskStatusPollV1StatusPollTaskIdGetAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/status/poll/{taskId}",

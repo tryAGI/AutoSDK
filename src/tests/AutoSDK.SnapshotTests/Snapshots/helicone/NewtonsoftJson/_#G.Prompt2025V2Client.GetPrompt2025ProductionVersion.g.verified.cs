@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Prompt2025V2Client
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetPrompt2025ProductionVersionSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetPrompt2025ProductionVersionSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetPrompt2025ProductionVersionSecurityRequirement0,
+            };
         partial void PrepareGetPrompt2025ProductionVersionArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.GetPrompt2025ProductionVersionRequest2 request);
@@ -41,6 +60,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetPrompt2025ProductionVersionSecurityRequirements,
+                operationName: "GetPrompt2025ProductionVersionAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/prompt-2025/query/production-version",
                 baseUri: HttpClient.BaseAddress); 
@@ -53,7 +78,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

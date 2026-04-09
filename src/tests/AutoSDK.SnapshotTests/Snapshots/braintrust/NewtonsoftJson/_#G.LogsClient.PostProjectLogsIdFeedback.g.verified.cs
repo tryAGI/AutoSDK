@@ -6,6 +6,34 @@ namespace G
 {
     public partial class LogsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostProjectLogsIdFeedbackSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostProjectLogsIdFeedbackSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PostProjectLogsIdFeedbackSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PostProjectLogsIdFeedbackSecurityRequirement0,
+                s_PostProjectLogsIdFeedbackSecurityRequirement1,
+            };
         partial void PreparePostProjectLogsIdFeedbackArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid projectId,
@@ -49,6 +77,12 @@ namespace G
                 projectId: ref projectId,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostProjectLogsIdFeedbackSecurityRequirements,
+                operationName: "PostProjectLogsIdFeedbackAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/project_logs/{projectId}/feedback",
                 baseUri: HttpClient.BaseAddress); 
@@ -61,7 +95,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

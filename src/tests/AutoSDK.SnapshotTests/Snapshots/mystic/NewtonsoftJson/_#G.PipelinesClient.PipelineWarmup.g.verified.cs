@@ -6,6 +6,40 @@ namespace G
 {
     public partial class PipelinesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PipelineWarmupSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PipelineWarmupSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PipelineWarmupSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PipelineWarmupSecurityRequirement0,
+                s_PipelineWarmupSecurityRequirement1,
+            };
         partial void PreparePipelineWarmupArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string pipelineIdOrPointer,
@@ -51,6 +85,12 @@ namespace G
                 pointer: ref pointer,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PipelineWarmupSecurityRequirements,
+                operationName: "PipelineWarmupAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v4/pipelines/{pipelineIdOrPointer}/warmup",
                 baseUri: HttpClient.BaseAddress); 
@@ -67,7 +107,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

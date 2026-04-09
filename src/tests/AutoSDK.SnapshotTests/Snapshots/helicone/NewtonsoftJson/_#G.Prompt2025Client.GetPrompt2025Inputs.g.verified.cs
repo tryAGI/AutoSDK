@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Prompt2025Client
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetPrompt2025InputsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetPrompt2025InputsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetPrompt2025InputsSecurityRequirement0,
+            };
         partial void PrepareGetPrompt2025InputsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string promptId,
@@ -48,6 +67,12 @@ namespace G
                 versionId: ref versionId,
                 requestId: ref requestId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetPrompt2025InputsSecurityRequirements,
+                operationName: "GetPrompt2025InputsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/prompt-2025/id/{promptId}/{versionId}/inputs",
                 baseUri: HttpClient.BaseAddress); 
@@ -63,7 +88,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

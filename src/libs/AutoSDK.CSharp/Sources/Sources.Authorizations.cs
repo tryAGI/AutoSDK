@@ -42,7 +42,15 @@ namespace {authorization.Settings.Namespace}
 {authorization.Parameters.Select(x => $@"
             {x} = {x} ?? throw new global::System.ArgumentNullException(nameof({x}));").Inject()}
 
-            Authorizations.Clear();
+            for (var i = Authorizations.Count - 1; i >= 0; i--)
+            {{
+                var __authorization = Authorizations[i];
+                if ({GetMatchingAuthorizationCondition(authorization, "__authorization")})
+                {{
+                    Authorizations.RemoveAt(i);
+                }}
+            }}
+
             Authorizations.Add(new global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization
             {{
                 Type = ""{authorization.Type:G}"",
@@ -156,6 +164,35 @@ namespace {authorization.Settings.Namespace}
             global::System.Net.Http.HttpClient client);
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GetMatchingAuthorizationCondition(
+        Authorization authorization,
+        string variableName)
+    {
+        var typeCondition = $@"{variableName}.Type == ""{authorization.Type:G}""";
+
+        return authorization.Type switch
+        {
+            SecuritySchemeType.Http => $@"{typeCondition} &&
+                    {variableName}.Name == ""{GetAuthorizationRuntimeName(authorization)}""",
+            SecuritySchemeType.ApiKey => $@"{typeCondition} &&
+                    {variableName}.Location == ""{authorization.In:G}"" &&
+                    {variableName}.Name == ""{authorization.Name}""",
+            _ => typeCondition,
+        };
+    }
+
+    private static string GetAuthorizationRuntimeName(Authorization authorization)
+    {
+        return (authorization.Type, authorization.Scheme.ToUpperInvariant(), authorization.In) switch
+        {
+            (SecuritySchemeType.Http, "BEARER", _) => "Bearer",
+            (SecuritySchemeType.Http, "BASIC", _) => "Basic",
+            (SecuritySchemeType.Http, _, _) => authorization.Scheme,
+            (SecuritySchemeType.ApiKey, _, _) => authorization.Name,
+            _ => string.Empty,
+        };
     }
 
     private static string GenerateOAuth2AuthorizationMembers(Authorization authorization)

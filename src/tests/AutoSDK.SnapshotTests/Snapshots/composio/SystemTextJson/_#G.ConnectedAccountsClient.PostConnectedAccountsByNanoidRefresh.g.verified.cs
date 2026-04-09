@@ -6,6 +6,55 @@ namespace G
 {
     public partial class ConnectedAccountsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostConnectedAccountsByNanoidRefreshSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostConnectedAccountsByNanoidRefreshSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-user-api-key",
+                        FriendlyName = "UserApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_PostConnectedAccountsByNanoidRefreshSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "authToken",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_PostConnectedAccountsByNanoidRefreshSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_PostConnectedAccountsByNanoidRefreshSecurityRequirement0,
+                s_PostConnectedAccountsByNanoidRefreshSecurityRequirement1,
+                s_PostConnectedAccountsByNanoidRefreshSecurityRequirement2,
+            };
         partial void PreparePostConnectedAccountsByNanoidRefreshArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string nanoid,
@@ -52,6 +101,12 @@ namespace G
                 redirectUrl: ref redirectUrl,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PostConnectedAccountsByNanoidRefreshSecurityRequirements,
+                operationName: "PostConnectedAccountsByNanoidRefreshAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v3/connected_accounts/{nanoid}/refresh",
                 baseUri: HttpClient.BaseAddress); 
@@ -67,7 +122,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

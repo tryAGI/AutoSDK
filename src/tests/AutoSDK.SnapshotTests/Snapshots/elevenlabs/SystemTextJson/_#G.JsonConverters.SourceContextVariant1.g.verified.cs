@@ -13,26 +13,35 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::G.ProjectExternalAudioResponseModelSourceContextVariant1Discriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProjectExternalAudioResponseModelSourceContextVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProjectExternalAudioResponseModelSourceContextVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ProjectExternalAudioResponseModelSourceContextVariant1Discriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.SongSourceContext? musicExploreSong1 = default;
             if (discriminator?.SourceType == global::G.ProjectExternalAudioResponseModelSourceContextVariant1DiscriminatorSourceType.MusicExploreSong)
             {
-                musicExploreSong1 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SongSourceContext>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SongSourceContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SongSourceContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SongSourceContext)}");
+                musicExploreSong1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MusicExploreSongSourceContext? musicExploreSong2 = default;
             if (discriminator?.SourceType == global::G.ProjectExternalAudioResponseModelSourceContextVariant1DiscriminatorSourceType.MusicExploreSong)
             {
-                musicExploreSong2 = global::System.Text.Json.JsonSerializer.Deserialize<global::G.MusicExploreSongSourceContext>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MusicExploreSongSourceContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MusicExploreSongSourceContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MusicExploreSongSourceContext)}");
+                musicExploreSong2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.SfxSourceContext? sfx = default;
             if (discriminator?.SourceType == global::G.ProjectExternalAudioResponseModelSourceContextVariant1DiscriminatorSourceType.Sfx)
             {
-                sfx = global::System.Text.Json.JsonSerializer.Deserialize<global::G.SfxSourceContext>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SfxSourceContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SfxSourceContext> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SfxSourceContext)}");
+                sfx = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.SourceContextVariant1(
@@ -53,19 +62,26 @@ namespace G.JsonConverters
             global::G.SourceContextVariant1 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsMusicExploreSong1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MusicExploreSong1, typeof(global::G.SongSourceContext), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SongSourceContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SongSourceContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SongSourceContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MusicExploreSong1!, typeInfo);
             }
             else if (value.IsMusicExploreSong2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MusicExploreSong2, typeof(global::G.MusicExploreSongSourceContext), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MusicExploreSongSourceContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MusicExploreSongSourceContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MusicExploreSongSourceContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MusicExploreSong2!, typeInfo);
             }
             else if (value.IsSfx)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sfx, typeof(global::G.SfxSourceContext), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SfxSourceContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SfxSourceContext?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SfxSourceContext).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sfx!, typeInfo);
             }
         }
     }

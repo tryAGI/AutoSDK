@@ -6,6 +6,55 @@ namespace G
 {
     public partial class OrgsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetCurrentActiveOrgMembersSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetCurrentActiveOrgMembersSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Organization-Id",
+                        FriendlyName = "OrganizationId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetCurrentActiveOrgMembersSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetCurrentActiveOrgMembersSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetCurrentActiveOrgMembersSecurityRequirement0,
+                s_GetCurrentActiveOrgMembersSecurityRequirement1,
+                s_GetCurrentActiveOrgMembersSecurityRequirement2,
+            };
         partial void PrepareGetCurrentActiveOrgMembersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
@@ -68,6 +117,12 @@ namespace G
                 lsUserIds: lsUserIds,
                 userIds: userIds);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetCurrentActiveOrgMembersSecurityRequirements,
+                operationName: "GetCurrentActiveOrgMembersAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v1/orgs/current/members/active",
                 baseUri: HttpClient.BaseAddress); 
@@ -87,7 +142,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

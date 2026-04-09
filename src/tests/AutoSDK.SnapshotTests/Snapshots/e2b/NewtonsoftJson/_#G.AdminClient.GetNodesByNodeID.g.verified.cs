@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AdminClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetNodesByNodeIDSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Admin-Token",
+                        FriendlyName = "AdminTokenAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetNodesByNodeIDSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetNodesByNodeIDSecurityRequirement0,
+            };
         partial void PrepareGetNodesByNodeIDArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string nodeID,
@@ -43,6 +62,12 @@ namespace G
                 nodeID: ref nodeID,
                 clusterID: ref clusterID);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetNodesByNodeIDSecurityRequirements,
+                operationName: "GetNodesByNodeIDAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/nodes/{nodeID}",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

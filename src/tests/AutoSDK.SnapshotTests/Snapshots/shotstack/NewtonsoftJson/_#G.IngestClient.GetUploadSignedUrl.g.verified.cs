@@ -6,6 +6,25 @@ namespace G
 {
     public partial class IngestClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetUploadSignedUrlSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetUploadSignedUrlSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetUploadSignedUrlSecurityRequirement0,
+            };
         partial void PrepareGetUploadSignedUrlArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetUploadSignedUrlRequest(
@@ -45,6 +64,12 @@ namespace G
                 client: HttpClient);
             PrepareGetUploadSignedUrlArguments(
                 httpClient: HttpClient);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetUploadSignedUrlSecurityRequirements,
+                operationName: "GetUploadSignedUrlAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/ingest/v1/upload",

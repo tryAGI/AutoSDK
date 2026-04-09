@@ -6,6 +6,25 @@ namespace G
 {
     public partial class CertificatesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListProjectCertificatesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListProjectCertificatesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListProjectCertificatesSecurityRequirement0,
+            };
         partial void PrepareListProjectCertificatesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
@@ -57,6 +76,12 @@ namespace G
                 after: ref after,
                 order: ref order);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListProjectCertificatesSecurityRequirements,
+                operationName: "ListProjectCertificatesAsync");
+
             var orderValue = order switch
             {
                 global::G.ListProjectCertificatesOrder.Asc => "asc",
@@ -80,7 +105,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

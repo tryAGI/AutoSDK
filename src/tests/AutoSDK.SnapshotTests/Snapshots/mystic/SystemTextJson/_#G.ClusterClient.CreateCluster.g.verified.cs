@@ -6,6 +6,40 @@ namespace G
 {
     public partial class ClusterClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateClusterSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateClusterSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateClusterSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateClusterSecurityRequirement0,
+                s_CreateClusterSecurityRequirement1,
+            };
         partial void PrepareCreateClusterArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareCreateClusterRequest(
@@ -33,6 +67,12 @@ namespace G
             PrepareCreateClusterArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateClusterSecurityRequirements,
+                operationName: "CreateClusterAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/clusters",
                 baseUri: HttpClient.BaseAddress); 
@@ -45,7 +85,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

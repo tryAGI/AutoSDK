@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ManageGlossariesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListGlossaryLanguagesSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListGlossaryLanguagesSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListGlossaryLanguagesSecurityRequirement0,
+            };
         partial void PrepareListGlossaryLanguagesArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareListGlossaryLanguagesRequest(
@@ -49,6 +68,12 @@ namespace G
             PrepareListGlossaryLanguagesArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListGlossaryLanguagesSecurityRequirements,
+                operationName: "ListGlossaryLanguagesAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v2/glossary-language-pairs",
                 baseUri: HttpClient.BaseAddress); 
@@ -61,7 +86,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

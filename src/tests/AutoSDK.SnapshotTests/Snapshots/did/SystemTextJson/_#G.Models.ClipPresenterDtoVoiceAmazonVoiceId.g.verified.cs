@@ -81,7 +81,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        L_a,
+        Léa,
         /// <summary>
         /// 
         /// </summary>
@@ -137,7 +137,7 @@ namespace G
                 ClipPresenterDtoVoiceAmazonVoiceId.Kimberly => "Kimberly",
                 ClipPresenterDtoVoiceAmazonVoiceId.Lucia => "Lucia",
                 ClipPresenterDtoVoiceAmazonVoiceId.Lupe => "Lupe",
-                ClipPresenterDtoVoiceAmazonVoiceId.L_a => "Léa",
+                ClipPresenterDtoVoiceAmazonVoiceId.Léa => "Léa",
                 ClipPresenterDtoVoiceAmazonVoiceId.Matthew => "Matthew",
                 ClipPresenterDtoVoiceAmazonVoiceId.Olivia => "Olivia",
                 ClipPresenterDtoVoiceAmazonVoiceId.Salli => "Salli",
@@ -171,7 +171,7 @@ namespace G
                 "Kimberly" => ClipPresenterDtoVoiceAmazonVoiceId.Kimberly,
                 "Lucia" => ClipPresenterDtoVoiceAmazonVoiceId.Lucia,
                 "Lupe" => ClipPresenterDtoVoiceAmazonVoiceId.Lupe,
-                "Léa" => ClipPresenterDtoVoiceAmazonVoiceId.L_a,
+                "Léa" => ClipPresenterDtoVoiceAmazonVoiceId.Léa,
                 "Matthew" => ClipPresenterDtoVoiceAmazonVoiceId.Matthew,
                 "Olivia" => ClipPresenterDtoVoiceAmazonVoiceId.Olivia,
                 "Salli" => ClipPresenterDtoVoiceAmazonVoiceId.Salli,

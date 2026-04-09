@@ -6,6 +6,40 @@ namespace G
 {
     public partial class CliAuthenticationClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetCliGetSessionSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "authToken",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetCliGetSessionSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "NoAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetCliGetSessionSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetCliGetSessionSecurityRequirement0,
+                s_GetCliGetSessionSecurityRequirement1,
+            };
         partial void PrepareGetCliGetSessionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -41,6 +75,12 @@ namespace G
             PrepareGetCliGetSessionArguments(
                 httpClient: HttpClient,
                 id: ref id);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetCliGetSessionSecurityRequirements,
+                operationName: "GetCliGetSessionAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/v3/cli/get-session",

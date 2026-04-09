@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_CreateDocumentOpenAPISecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_CreateDocumentOpenAPISecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_CreateDocumentOpenAPISecurityRequirement0,
+            };
         partial void PrepareCreateDocumentOpenAPIArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.CreateDocumentOpenAPIAgwJsConv agwJsConv,
@@ -47,6 +66,12 @@ namespace G
                 agwJsConv: ref agwJsConv,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateDocumentOpenAPISecurityRequirements,
+                operationName: "CreateDocumentOpenAPIAsync");
+
             var agwJsConvValue = agwJsConv switch
             {
                 global::G.CreateDocumentOpenAPIAgwJsConv.Str => "str",
@@ -64,7 +89,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

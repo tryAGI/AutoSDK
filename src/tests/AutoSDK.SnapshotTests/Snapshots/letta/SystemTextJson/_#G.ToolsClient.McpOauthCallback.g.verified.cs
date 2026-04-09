@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ToolsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_McpOauthCallbackSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_McpOauthCallbackSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_McpOauthCallbackSecurityRequirement0,
+            };
         partial void PrepareMcpOauthCallbackArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? code,
@@ -63,6 +82,12 @@ namespace G
                 error: ref error,
                 errorDescription: ref errorDescription);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_McpOauthCallbackSecurityRequirements,
+                operationName: "McpOauthCallbackAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/tools/mcp/oauth/callback",
                 baseUri: HttpClient.BaseAddress); 
@@ -81,7 +106,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

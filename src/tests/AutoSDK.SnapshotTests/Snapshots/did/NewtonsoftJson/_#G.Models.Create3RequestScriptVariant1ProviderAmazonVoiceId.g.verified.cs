@@ -100,7 +100,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="Léa")]
-        L_a,
+        Léa,
         /// <summary>
         /// 
         /// </summary>
@@ -162,7 +162,7 @@ namespace G
                 Create3RequestScriptVariant1ProviderAmazonVoiceId.Kimberly => "Kimberly",
                 Create3RequestScriptVariant1ProviderAmazonVoiceId.Lucia => "Lucia",
                 Create3RequestScriptVariant1ProviderAmazonVoiceId.Lupe => "Lupe",
-                Create3RequestScriptVariant1ProviderAmazonVoiceId.L_a => "Léa",
+                Create3RequestScriptVariant1ProviderAmazonVoiceId.Léa => "Léa",
                 Create3RequestScriptVariant1ProviderAmazonVoiceId.Matthew => "Matthew",
                 Create3RequestScriptVariant1ProviderAmazonVoiceId.Olivia => "Olivia",
                 Create3RequestScriptVariant1ProviderAmazonVoiceId.Salli => "Salli",
@@ -196,7 +196,7 @@ namespace G
                 "Kimberly" => Create3RequestScriptVariant1ProviderAmazonVoiceId.Kimberly,
                 "Lucia" => Create3RequestScriptVariant1ProviderAmazonVoiceId.Lucia,
                 "Lupe" => Create3RequestScriptVariant1ProviderAmazonVoiceId.Lupe,
-                "Léa" => Create3RequestScriptVariant1ProviderAmazonVoiceId.L_a,
+                "Léa" => Create3RequestScriptVariant1ProviderAmazonVoiceId.Léa,
                 "Matthew" => Create3RequestScriptVariant1ProviderAmazonVoiceId.Matthew,
                 "Olivia" => Create3RequestScriptVariant1ProviderAmazonVoiceId.Olivia,
                 "Salli" => Create3RequestScriptVariant1ProviderAmazonVoiceId.Salli,

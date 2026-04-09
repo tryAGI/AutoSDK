@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
@@ -46,7 +47,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        chat = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PromptBlockDataChat>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataChat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataChat> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataChat).Name}");
+                        chat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -59,7 +62,9 @@ namespace G.JsonConverters
                 {
                     try
                     {
-                        completion = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PromptBlockDataCompletion>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataCompletion), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataCompletion> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataCompletion).Name}");
+                        completion = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +79,9 @@ namespace G.JsonConverters
             {
                 try
                 {
-                    chat = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PromptBlockDataChat>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataChat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataChat> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataChat).Name}");
+                    chat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -85,7 +92,9 @@ namespace G.JsonConverters
 
                 try
                 {
-                    completion = global::System.Text.Json.JsonSerializer.Deserialize<global::G.PromptBlockDataCompletion>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataCompletion), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataCompletion> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataCompletion).Name}");
+                    completion = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -110,15 +119,20 @@ namespace G.JsonConverters
             global::G.PromptBlockData value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsChat)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat, typeof(global::G.PromptBlockDataChat), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataChat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataChat?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataChat).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat!, typeInfo);
             }
             else if (value.IsCompletion)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion, typeof(global::G.PromptBlockDataCompletion), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataCompletion), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataCompletion?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataCompletion).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion!, typeInfo);
             }
         }
     }

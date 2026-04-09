@@ -6,6 +6,34 @@ namespace G
 {
     public partial class McpServersClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetMcpServerSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetMcpServerSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetMcpServerSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetMcpServerSecurityRequirement0,
+                s_GetMcpServerSecurityRequirement1,
+            };
         partial void PrepareGetMcpServerArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
@@ -78,6 +106,12 @@ namespace G
                 mcpServerName: ref mcpServerName,
                 orgName: ref orgName);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetMcpServerSecurityRequirements,
+                operationName: "GetMcpServerAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/mcp_server",
                 baseUri: HttpClient.BaseAddress); 
@@ -98,7 +132,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

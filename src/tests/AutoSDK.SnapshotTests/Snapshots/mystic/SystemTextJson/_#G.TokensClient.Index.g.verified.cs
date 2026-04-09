@@ -6,6 +6,25 @@ namespace G
 {
     public partial class TokensClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_IndexSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_IndexSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_IndexSecurityRequirement0,
+            };
         partial void PrepareIndexArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? allTeam,
@@ -54,6 +73,12 @@ namespace G
                 allTeam: ref allTeam,
                 skip: ref skip,
                 limit: ref limit);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_IndexSecurityRequirements,
+                operationName: "IndexAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/tokens",

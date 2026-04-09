@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Files { get; set; }
+        public required global::System.Collections.Generic.IList<byte[]> Files { get; set; }
 
         /// <summary>
         /// If true, the output will include both the chunks and the converted document.<br/>
@@ -110,7 +110,7 @@ namespace G
         /// Default Value: [1, 9223372036854775807L]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("convert_page_range")]
-        public byte[]? ConvertPageRange { get; set; }
+        public global::System.Collections.Generic.IList<int>? ConvertPageRange { get; set; }
 
         /// <summary>
         /// The timeout for processing each document, in seconds.<br/>
@@ -446,7 +446,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BodyChunkFilesWithHierarchicalChunkerAsAsyncTaskV1ChunkHierarchicalFileAsyncPost(
-            global::System.Collections.Generic.IList<string> files,
+            global::System.Collections.Generic.IList<byte[]> files,
             bool? includeConvertedDoc,
             global::G.TargetName? targetType,
             global::System.Collections.Generic.IList<global::G.InputFormat>? convertFromFormats,
@@ -459,7 +459,7 @@ namespace G
             global::G.TableFormerMode? convertTableMode,
             bool? convertTableCellMatching,
             global::G.ProcessingPipeline? convertPipeline,
-            byte[]? convertPageRange,
+            global::System.Collections.Generic.IList<int>? convertPageRange,
             double? convertDocumentTimeout,
             bool? convertAbortOnError,
             bool? convertDoTableStructure,

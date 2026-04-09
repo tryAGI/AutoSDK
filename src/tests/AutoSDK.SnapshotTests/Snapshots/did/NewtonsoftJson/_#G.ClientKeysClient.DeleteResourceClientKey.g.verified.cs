@@ -6,6 +6,40 @@ namespace G
 {
     public partial class ClientKeysClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteResourceClientKeySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteResourceClientKeySecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteResourceClientKeySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteResourceClientKeySecurityRequirement0,
+                s_DeleteResourceClientKeySecurityRequirement1,
+            };
         partial void PrepareDeleteResourceClientKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
@@ -39,6 +73,12 @@ namespace G
                 agentId: ref agentId,
                 clientKey: ref clientKey);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteResourceClientKeySecurityRequirements,
+                operationName: "DeleteResourceClientKeyAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/agents/{agentId}/client-keys/{clientKey}",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +91,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

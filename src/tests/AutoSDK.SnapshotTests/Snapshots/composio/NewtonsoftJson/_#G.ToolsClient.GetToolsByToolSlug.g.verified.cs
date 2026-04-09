@@ -6,6 +6,55 @@ namespace G
 {
     public partial class ToolsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetToolsByToolSlugSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetToolsByToolSlugSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-user-api-key",
+                        FriendlyName = "UserApiKeyAuth",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetToolsByToolSlugSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "authToken",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetToolsByToolSlugSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetToolsByToolSlugSecurityRequirement0,
+                s_GetToolsByToolSlugSecurityRequirement1,
+                s_GetToolsByToolSlugSecurityRequirement2,
+            };
         partial void PrepareGetToolsByToolSlugArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string toolSlug,
@@ -49,6 +98,12 @@ namespace G
                 version: ref version,
                 toolkitVersions: ref toolkitVersions);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetToolsByToolSlugSecurityRequirements,
+                operationName: "GetToolsByToolSlugAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v3/tools/{toolSlug}",
                 baseUri: HttpClient.BaseAddress); 
@@ -65,7 +120,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

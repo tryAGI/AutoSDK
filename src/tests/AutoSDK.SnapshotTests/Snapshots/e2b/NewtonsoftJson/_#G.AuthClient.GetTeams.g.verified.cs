@@ -6,6 +6,40 @@ namespace G
 {
     public partial class AuthClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTeamsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTeamsSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Token",
+                        FriendlyName = "Supabase1TokenAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetTeamsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetTeamsSecurityRequirement0,
+                s_GetTeamsSecurityRequirement1,
+            };
         partial void PrepareGetTeamsArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetTeamsRequest(
@@ -33,6 +67,12 @@ namespace G
             PrepareGetTeamsArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetTeamsSecurityRequirements,
+                operationName: "GetTeamsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/teams",
                 baseUri: HttpClient.BaseAddress); 
@@ -45,7 +85,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

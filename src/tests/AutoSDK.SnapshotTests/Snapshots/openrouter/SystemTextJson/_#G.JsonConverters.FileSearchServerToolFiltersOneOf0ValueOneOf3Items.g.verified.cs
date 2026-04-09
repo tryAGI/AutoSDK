@@ -13,7 +13,8 @@ namespace G.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
@@ -28,7 +29,27 @@ namespace G.JsonConverters
             }
 
             var __score0 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score0++;
+                    }
+                }
+            }
             var __score1 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(double), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score1++;
+                    }
+                }
+            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -43,7 +64,9 @@ namespace G.JsonConverters
                     try
                     {
 
-                        fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                        fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -58,7 +81,9 @@ namespace G.JsonConverters
                     try
                     {
 
-                        fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<double>(__rawJson, options);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
+                        fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -74,7 +99,9 @@ namespace G.JsonConverters
                 try
                 {
 
-                    fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                    fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -86,7 +113,9 @@ namespace G.JsonConverters
                 try
                 {
 
-                    fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<double>(__rawJson, options);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
+                    fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -111,15 +140,20 @@ namespace G.JsonConverters
             global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1, typeof(string), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1!, typeInfo);
             }
             else if (value.IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2, typeof(double), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2!.Value, typeInfo);
             }
         }
     }

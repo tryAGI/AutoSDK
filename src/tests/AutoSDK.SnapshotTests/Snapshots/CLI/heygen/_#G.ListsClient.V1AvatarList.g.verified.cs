@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ListsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_V1AvatarListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Api-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_V1AvatarListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_V1AvatarListSecurityRequirement0,
+            };
         partial void PrepareV1AvatarListArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareV1AvatarListRequest(
@@ -29,6 +48,12 @@ namespace G
             PrepareV1AvatarListArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_V1AvatarListSecurityRequirements,
+                operationName: "V1AvatarListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/avatar.list",
                 baseUri: HttpClient.BaseAddress); 
@@ -41,7 +66,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

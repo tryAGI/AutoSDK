@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ids", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<byte[]> Ids { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> Ids { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="ids"></param>
         public CostCreateRes(
-            global::System.Collections.Generic.IList<byte[]> ids)
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> ids)
         {
             this.Ids = ids ?? throw new global::System.ArgumentNullException(nameof(ids));
         }

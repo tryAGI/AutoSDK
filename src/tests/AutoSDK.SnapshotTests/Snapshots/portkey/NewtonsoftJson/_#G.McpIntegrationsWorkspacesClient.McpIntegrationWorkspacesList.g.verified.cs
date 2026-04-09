@@ -6,6 +6,25 @@ namespace G
 {
     public partial class McpIntegrationsWorkspacesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_McpIntegrationWorkspacesListSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-portkey-api-key",
+                        FriendlyName = "PortkeyKey",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_McpIntegrationWorkspacesListSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_McpIntegrationWorkspacesListSecurityRequirement0,
+            };
         partial void PrepareMcpIntegrationWorkspacesListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? version,
@@ -43,6 +62,12 @@ namespace G
                 version: ref version,
                 mcpIntegrationId: ref mcpIntegrationId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_McpIntegrationWorkspacesListSecurityRequirements,
+                operationName: "McpIntegrationWorkspacesListAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/mcp-integrations/{mcpIntegrationId}/workspaces",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

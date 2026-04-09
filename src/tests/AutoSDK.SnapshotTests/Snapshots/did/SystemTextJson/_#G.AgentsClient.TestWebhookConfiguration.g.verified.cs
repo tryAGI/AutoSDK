@@ -6,6 +6,40 @@ namespace G
 {
     public partial class AgentsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_TestWebhookConfigurationSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_TestWebhookConfigurationSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_TestWebhookConfigurationSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_TestWebhookConfigurationSecurityRequirement0,
+                s_TestWebhookConfigurationSecurityRequirement1,
+            };
         partial void PrepareTestWebhookConfigurationArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.TestWebhookConfigurationRequest request);
@@ -44,6 +78,12 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_TestWebhookConfigurationSecurityRequirements,
+                operationName: "TestWebhookConfigurationAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/agents/webhooks/test",
                 baseUri: HttpClient.BaseAddress); 
@@ -56,7 +96,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

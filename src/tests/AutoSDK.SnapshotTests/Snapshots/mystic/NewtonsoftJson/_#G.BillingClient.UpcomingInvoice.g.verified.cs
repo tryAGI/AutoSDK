@@ -6,6 +6,40 @@ namespace G
 {
     public partial class BillingClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_UpcomingInvoiceSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_UpcomingInvoiceSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Cookie",
+                        Name = "access-token",
+                        FriendlyName = "ApiKeyInCookie",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_UpcomingInvoiceSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_UpcomingInvoiceSecurityRequirement0,
+                s_UpcomingInvoiceSecurityRequirement1,
+            };
         partial void PrepareUpcomingInvoiceArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareUpcomingInvoiceRequest(
@@ -33,6 +67,12 @@ namespace G
             PrepareUpcomingInvoiceArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpcomingInvoiceSecurityRequirements,
+                operationName: "UpcomingInvoiceAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v4/billing/upcoming-invoice",
                 baseUri: HttpClient.BaseAddress); 
@@ -45,7 +85,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

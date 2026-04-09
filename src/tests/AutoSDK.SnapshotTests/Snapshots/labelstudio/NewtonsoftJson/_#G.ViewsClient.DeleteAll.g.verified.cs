@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ViewsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteAllSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteAllSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteAllSecurityRequirement0,
+            };
         partial void PrepareDeleteAllArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int project);
@@ -34,6 +53,12 @@ namespace G
                 httpClient: HttpClient,
                 project: ref project);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteAllSecurityRequirements,
+                operationName: "DeleteAllAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/dm/views/reset/",
                 baseUri: HttpClient.BaseAddress); 
@@ -49,7 +74,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

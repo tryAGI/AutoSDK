@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AccessTokensClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteAccessTokensByAccessTokenIDSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Supabase-Token",
+                        FriendlyName = "Supabase1TokenAuth",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteAccessTokensByAccessTokenIDSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteAccessTokensByAccessTokenIDSecurityRequirement0,
+            };
         partial void PrepareDeleteAccessTokensByAccessTokenIDArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string accessTokenID);
@@ -33,6 +52,12 @@ namespace G
                 httpClient: HttpClient,
                 accessTokenID: ref accessTokenID);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteAccessTokensByAccessTokenIDSecurityRequirements,
+                operationName: "DeleteAccessTokensByAccessTokenIDAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/access-tokens/{accessTokenID}",
                 baseUri: HttpClient.BaseAddress); 
@@ -45,7 +70,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

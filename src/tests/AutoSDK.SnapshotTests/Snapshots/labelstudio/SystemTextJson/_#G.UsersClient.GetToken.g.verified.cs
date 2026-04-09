@@ -6,6 +6,25 @@ namespace G
 {
     public partial class UsersClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetTokenSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetTokenSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetTokenSecurityRequirement0,
+            };
         partial void PrepareGetTokenArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetTokenRequest(
@@ -34,6 +53,12 @@ namespace G
             PrepareGetTokenArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetTokenSecurityRequirements,
+                operationName: "GetTokenAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/current-user/token",
                 baseUri: HttpClient.BaseAddress); 
@@ -46,7 +71,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class AwsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_LogsSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_LogsSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_LogsSecurityRequirement0,
+            };
         partial void PrepareLogsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? endDate,
@@ -62,6 +81,12 @@ namespace G
                 limit: ref limit,
                 startDate: ref startDate);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_LogsSecurityRequirements,
+                operationName: "LogsAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/projects/{id}/aws-custom-function-logs",
                 baseUri: HttpClient.BaseAddress); 
@@ -79,7 +104,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

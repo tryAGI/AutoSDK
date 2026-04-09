@@ -6,6 +6,55 @@ namespace G
 {
     public partial class SingleClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetCurrentTimezoneSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetCurrentTimezoneSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetCurrentTimezoneSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "token",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetCurrentTimezoneSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetCurrentTimezoneSecurityRequirement0,
+                s_GetCurrentTimezoneSecurityRequirement1,
+                s_GetCurrentTimezoneSecurityRequirement2,
+            };
         partial void PrepareGetCurrentTimezoneArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetCurrentTimezoneRequest(
@@ -34,10 +83,16 @@ namespace G
             PrepareGetCurrentTimezoneArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetCurrentTimezoneSecurityRequirements,
+                operationName: "GetCurrentTimezoneAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/timezone",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
@@ -54,7 +109,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ScenesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ExportSceneSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ExportSceneSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ExportSceneSecurityRequirement0,
+            };
         partial void PrepareExportSceneArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid assetID,
@@ -46,6 +65,12 @@ namespace G
                 assetID: ref assetID,
                 request: request);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ExportSceneSecurityRequirements,
+                operationName: "ExportSceneAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/scenes/{assetID}/export",
                 baseUri: HttpClient.BaseAddress); 
@@ -58,7 +83,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

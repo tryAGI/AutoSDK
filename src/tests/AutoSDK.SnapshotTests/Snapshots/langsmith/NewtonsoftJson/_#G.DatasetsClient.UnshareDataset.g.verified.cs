@@ -6,6 +6,55 @@ namespace G
 {
     public partial class DatasetsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_UnshareDatasetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_UnshareDatasetSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_UnshareDatasetSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_UnshareDatasetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_UnshareDatasetSecurityRequirement0,
+                s_UnshareDatasetSecurityRequirement1,
+                s_UnshareDatasetSecurityRequirement2,
+            };
         partial void PrepareUnshareDatasetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId);
@@ -39,6 +88,12 @@ namespace G
                 httpClient: HttpClient,
                 datasetId: ref datasetId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UnshareDatasetSecurityRequirements,
+                operationName: "UnshareDatasetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/datasets/{datasetId}/share",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +106,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

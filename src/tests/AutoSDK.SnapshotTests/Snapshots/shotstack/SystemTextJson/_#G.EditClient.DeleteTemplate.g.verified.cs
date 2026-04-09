@@ -6,6 +6,25 @@ namespace G
 {
     public partial class EditClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteTemplateSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteTemplateSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteTemplateSecurityRequirement0,
+            };
         partial void PrepareDeleteTemplateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -34,6 +53,12 @@ namespace G
             PrepareDeleteTemplateArguments(
                 httpClient: HttpClient,
                 id: ref id);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteTemplateSecurityRequirements,
+                operationName: "DeleteTemplateAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/edit/v1/templates/{id}",

@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ChunkClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ChunkSourcesWithHybridChunkerV1ChunkHybridSourcePostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ChunkSourcesWithHybridChunkerV1ChunkHybridSourcePostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ChunkSourcesWithHybridChunkerV1ChunkHybridSourcePostSecurityRequirement0,
+            };
         partial void PrepareChunkSourcesWithHybridChunkerV1ChunkHybridSourcePostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.HybridChunkerOptionsDocumentsRequest request);
@@ -40,6 +59,12 @@ namespace G
             PrepareChunkSourcesWithHybridChunkerV1ChunkHybridSourcePostArguments(
                 httpClient: HttpClient,
                 request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ChunkSourcesWithHybridChunkerV1ChunkHybridSourcePostSecurityRequirements,
+                operationName: "ChunkSourcesWithHybridChunkerV1ChunkHybridSourcePostAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/chunk/hybrid/source",

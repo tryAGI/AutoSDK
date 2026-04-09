@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ImagesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetImageSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetImageSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetImageSecurityRequirement0,
+            };
         partial void PrepareGetImageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid assetID);
@@ -38,6 +57,12 @@ namespace G
                 httpClient: HttpClient,
                 assetID: ref assetID);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetImageSecurityRequirements,
+                operationName: "GetImageAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/images/{assetID}",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +75,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,55 @@ namespace G
 {
     public partial class UsageLimitsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteUsageLimitSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteUsageLimitSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Tenant-Id",
+                        FriendlyName = "TenantId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteUsageLimitSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteUsageLimitSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteUsageLimitSecurityRequirement0,
+                s_DeleteUsageLimitSecurityRequirement1,
+                s_DeleteUsageLimitSecurityRequirement2,
+            };
         partial void PrepareDeleteUsageLimitArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid usageLimitId);
@@ -39,6 +88,12 @@ namespace G
                 httpClient: HttpClient,
                 usageLimitId: ref usageLimitId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteUsageLimitSecurityRequirements,
+                operationName: "DeleteUsageLimitAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/usage-limits/{usageLimitId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +106,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

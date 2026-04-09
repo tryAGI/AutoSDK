@@ -6,6 +6,25 @@ namespace G
 {
     public partial class MediaClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_MediaGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Basic",
+                        FriendlyName = "Basic",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_MediaGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_MediaGetSecurityRequirement0,
+            };
         partial void PrepareMediaGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string mediaId);
@@ -38,6 +57,12 @@ namespace G
                 httpClient: HttpClient,
                 mediaId: ref mediaId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_MediaGetSecurityRequirements,
+                operationName: "MediaGetAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/public/media/{mediaId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +75,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

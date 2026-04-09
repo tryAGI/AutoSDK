@@ -6,6 +6,25 @@ namespace G
 {
     public partial class MultiImageTo3dClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListMultiImageTo3DTasksSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListMultiImageTo3DTasksSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListMultiImageTo3DTasksSecurityRequirement0,
+            };
         partial void PrepareListMultiImageTo3DTasksArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? pageNum,
@@ -52,6 +71,12 @@ namespace G
                 pageSize: ref pageSize,
                 sortBy: ref sortBy);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListMultiImageTo3DTasksSecurityRequirements,
+                operationName: "ListMultiImageTo3DTasksAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/openapi/v1/multi-image-to-3d",
                 baseUri: HttpClient.BaseAddress); 
@@ -69,7 +94,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

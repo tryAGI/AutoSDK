@@ -63,6 +63,7 @@ namespace {endPoint.Settings.Namespace}
 {{
     public partial class {endPoint.ClassName}
     {{
+{(!endPoint.AuthorizationRequirements.IsEmpty ? GenerateSecurityRequirementsField(endPoint) : TrimmedLine)}
         partial void Prepare{endPoint.NotAsyncMethodName}Arguments(
             global::System.Net.Http.HttpClient httpClient{endPoint.Parameters
                 .Where(x => x.Location != null)
@@ -306,7 +307,7 @@ namespace {endPoint.Settings.Namespace}
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: {completionOption},
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken)"
             : $@"HttpClient.SendAsync(
@@ -362,6 +363,12 @@ namespace {endPoint.Settings.Namespace}
                     .Select(x => $@",
                 {x.ParameterName}: {(x.Type.IsReferenceable ? "ref " : "")}{x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                 request: request")});
+{(!endPoint.AuthorizationRequirements.IsEmpty ? $@"
+
+            var __authorizations = global::{endPoint.GlobalSettings.Namespace}.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_{endPoint.NotAsyncMethodName}SecurityRequirements,
+                operationName: ""{endPoint.MethodName}"");" : TrimmedLine)}
 
 {(endPoint.Settings.UsesNewtonsoftJson() ? endPoint.Parameters
     .Where(x => x is { Location: not null, Type.IsEnum: true, Type.IsAnyOfLike: false, Type.EnumValues.Length: > 0 })
@@ -374,7 +381,7 @@ namespace {endPoint.Settings.Namespace}
                 {x.Type.CSharpTypeWithoutNullability}.{y.Property} => ""{y.Value}"",").Inject()}
                 _ => throw new global::System.NotImplementedException(""Enum value not implemented.""),
             }};").Inject() : TrimmedLine)}
-{GeneratePathAndQuery(endPoint)}
+{GeneratePathAndQuery(endPoint, authorizationVariableName: endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations")}
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: {GetHttpMethod(endPoint.HttpMethod)},
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
@@ -389,7 +396,7 @@ namespace {endPoint.Settings.Namespace}
     { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Header } or
     { Type: SecuritySchemeType.Http } or
     { Type: SecuritySchemeType.OAuth2 }) ? @$"
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in {(endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations")})
             {{
                 if (__authorization.Type == ""{SecuritySchemeType.Http:G}"" ||
                     __authorization.Type == ""{SecuritySchemeType.OAuth2:G}"")
@@ -498,7 +505,8 @@ namespace {endPoint.Settings.Namespace}
     }
 
     public static string GeneratePathAndQuery(
-        EndPoint endPoint)
+        EndPoint endPoint,
+        string authorizationVariableName = "Authorizations")
     {
         var code = @$" 
             var __pathBuilder = new global::{endPoint.GlobalSettings.Namespace}.PathBuilder(
@@ -507,7 +515,7 @@ namespace {endPoint.Settings.Namespace}
         if (endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Query }))
         {
             code += $@"
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in {authorizationVariableName})
             {{
                 if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
                     __authorization.Location == ""{ParameterLocation.Query:G}"")

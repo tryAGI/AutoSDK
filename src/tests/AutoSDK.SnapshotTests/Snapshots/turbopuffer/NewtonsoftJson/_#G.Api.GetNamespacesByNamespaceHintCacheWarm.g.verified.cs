@@ -6,6 +6,25 @@ namespace G
 {
     public partial class Api
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_GetNamespacesByNamespaceHintCacheWarmSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_GetNamespacesByNamespaceHintCacheWarmSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_GetNamespacesByNamespaceHintCacheWarmSecurityRequirement0,
+            };
         partial void PrepareGetNamespacesByNamespaceHintCacheWarmArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string @namespace);
@@ -38,6 +57,12 @@ namespace G
                 httpClient: HttpClient,
                 @namespace: ref @namespace);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetNamespacesByNamespaceHintCacheWarmSecurityRequirements,
+                operationName: "GetNamespacesByNamespaceHintCacheWarmAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v1/namespaces/{@namespace}/hint_cache_warm",
                 baseUri: HttpClient.BaseAddress); 
@@ -50,7 +75,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -79,6 +79,7 @@ namespace G
             typeof(global::G.JsonConverters.Target2JsonConverter),
             typeof(global::G.JsonConverters.SourcesItem3JsonConverter),
             typeof(global::G.JsonConverters.Target3JsonConverter),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.VlmConvertOptions, object, object>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.PictureDescriptionVlmEngineOptions, object, object>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.CodeFormulaVlmOptions, object, object>),

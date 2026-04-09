@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ConvertClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ProcessUrlV1ConvertSourcePostSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "",
+                        Location = "",
+                        Name = "",
+                        FriendlyName = "Authorization",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ProcessUrlV1ConvertSourcePostSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ProcessUrlV1ConvertSourcePostSecurityRequirement0,
+            };
         partial void PrepareProcessUrlV1ConvertSourcePostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::G.ConvertDocumentsRequest request);
@@ -40,6 +59,12 @@ namespace G
             PrepareProcessUrlV1ConvertSourcePostArguments(
                 httpClient: HttpClient,
                 request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ProcessUrlV1ConvertSourcePostSecurityRequirements,
+                operationName: "ProcessUrlV1ConvertSourcePostAsync");
 
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/v1/convert/source",

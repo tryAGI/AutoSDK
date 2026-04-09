@@ -6,6 +6,34 @@ namespace G
 {
     public partial class NodesClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_NodesGetSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                { 
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_NodesGetSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "OAuth2",
+                        Location = "Header",
+                        Name = "",
+                        FriendlyName = "OAuth2",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_NodesGetSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_NodesGetSecurityRequirement0,
+                s_NodesGetSecurityRequirement1,
+            };
         partial void PrepareNodesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.NodesGetOutput? output);
@@ -41,6 +69,12 @@ namespace G
                 httpClient: HttpClient,
                 output: ref output);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_NodesGetSecurityRequirements,
+                operationName: "NodesGetAsync");
+
             var outputValue = output switch
             {
                 global::G.NodesGetOutput.Minimal => "minimal",
@@ -62,7 +96,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -90,7 +124,7 @@ namespace G
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 

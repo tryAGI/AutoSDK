@@ -6,6 +6,55 @@ namespace G
 {
     public partial class ChartsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_OrgDeleteSectionSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKey",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_OrgDeleteSectionSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-Organization-Id",
+                        FriendlyName = "OrganizationId",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_OrgDeleteSectionSecurityRequirement2 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_OrgDeleteSectionSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_OrgDeleteSectionSecurityRequirement0,
+                s_OrgDeleteSectionSecurityRequirement1,
+                s_OrgDeleteSectionSecurityRequirement2,
+            };
         partial void PrepareOrgDeleteSectionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sectionId);
@@ -39,6 +88,12 @@ namespace G
                 httpClient: HttpClient,
                 sectionId: ref sectionId);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_OrgDeleteSectionSecurityRequirements,
+                operationName: "OrgDeleteSectionAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/api/v1/org-charts/section/{sectionId}",
                 baseUri: HttpClient.BaseAddress); 
@@ -51,7 +106,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

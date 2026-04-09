@@ -6,6 +6,25 @@ namespace G
 {
     public partial class ServerlessClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ServerlessListDirectorySecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "Authorization",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ServerlessListDirectorySecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ServerlessListDirectorySecurityRequirement0,
+            };
         partial void PrepareServerlessListDirectoryArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string dir);
@@ -42,6 +61,12 @@ namespace G
                 httpClient: HttpClient,
                 dir: ref dir);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ServerlessListDirectorySecurityRequirements,
+                operationName: "ServerlessListDirectoryAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/serverless/files/list/{dir}",
                 baseUri: HttpClient.BaseAddress); 
@@ -54,7 +79,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

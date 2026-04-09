@@ -6,6 +6,25 @@ namespace G
 {
     public partial class StorageClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_ListTypes2SecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_ListTypes2SecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_ListTypes2SecurityRequirement0,
+            };
         partial void PrepareListTypes2Arguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareListTypes2Request(
@@ -34,6 +53,12 @@ namespace G
             PrepareListTypes2Arguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListTypes2SecurityRequirements,
+                operationName: "ListTypes2Async");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: "/api/storages/types",
                 baseUri: HttpClient.BaseAddress); 
@@ -46,7 +71,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,40 @@ namespace G
 {
     public partial class InstructionsClient
     {
+
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteVersionSecurityRequirement0 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "x-api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+
+        private static readonly global::G.EndPointSecurityRequirement s_DeleteVersionSecurityRequirement1 =
+            new global::G.EndPointSecurityRequirement
+            {
+                Authorizations = new global::G.EndPointAuthorizationRequirement[]
+                {                    new global::G.EndPointAuthorizationRequirement
+                    {
+                        Type = "OAuth2",
+                        Location = "Header",
+                        Name = "",
+                        FriendlyName = "OAuth2",
+                    },
+                },
+            };
+        private static readonly global::G.EndPointSecurityRequirement[] s_DeleteVersionSecurityRequirements =
+            new global::G.EndPointSecurityRequirement[]
+            {                s_DeleteVersionSecurityRequirement0,
+                s_DeleteVersionSecurityRequirement1,
+            };
         partial void PrepareDeleteVersionArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? requestTimeout,
@@ -54,6 +88,12 @@ namespace G
                 instructionId: ref instructionId,
                 version: ref version);
 
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteVersionSecurityRequirements,
+                operationName: "DeleteVersionAsync");
+
             var __pathBuilder = new global::G.PathBuilder(
                 path: $"/v2/instructions/{instructionId}/versions/{version}",
                 baseUri: HttpClient.BaseAddress); 
@@ -66,7 +106,7 @@ namespace G
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
@@ -107,7 +147,7 @@ namespace G
                 httpClient: HttpClient,
                 request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                authorizations: Authorizations,
+                authorizations: __authorizations,
                 oAuth2Coordinator: AutoSDKOAuth2State,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
