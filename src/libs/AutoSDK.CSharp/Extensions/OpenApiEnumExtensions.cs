@@ -203,6 +203,18 @@ public static class OpenApiEnumExtensions
             }
         }
 
+        if ((context.Schema.Extensions?.TryGetValue("x-speakeasy-enums", out var speakeasyEnums) ?? false) &&
+            OpenApiExtensions.TryGetExtensionJsonNode(speakeasyEnums) is { } speakeasyEnumsNode)
+        {
+            ApplySpeakeasyEnumNames(speakeasyEnumsNode, @enum);
+        }
+
+        if ((context.Schema.Extensions?.TryGetValue("x-speakeasy-enum-descriptions", out var speakeasyEnumDescriptions) ?? false) &&
+            OpenApiExtensions.TryGetExtensionJsonNode(speakeasyEnumDescriptions) is { } speakeasyEnumDescriptionsNode)
+        {
+            ApplySpeakeasyEnumDescriptions(speakeasyEnumDescriptionsNode, @enum);
+        }
+
         return EnsureUniqueEnumMemberNamesCaseInsensitive(@enum);
     }
 
@@ -389,6 +401,96 @@ public static class OpenApiEnumExtensions
             Name = nameOverride ?? current.Name,
             Summary = descriptionOverride ?? current.Summary,
         };
+    }
+
+    private static void ApplySpeakeasyEnumNames(JsonNode node, Dictionary<string, PropertyData> @enum)
+    {
+        if (node is JsonArray array)
+        {
+            for (var i = 0; i < array.Count && i < @enum.Count; i++)
+            {
+                if (array[i] is not JsonValue value ||
+                    !value.TryGetValue<string>(out var nameOverride) ||
+                    string.IsNullOrWhiteSpace(nameOverride))
+                {
+                    continue;
+                }
+
+                var key = @enum.Keys.ElementAt(i);
+                @enum[key] = @enum[key] with
+                {
+                    Name = nameOverride.ToPropertyName(),
+                };
+            }
+
+            return;
+        }
+
+        if (node is not JsonObject jsonObject)
+        {
+            return;
+        }
+
+        foreach (var kvp in jsonObject)
+        {
+            if (!@enum.TryGetValue(kvp.Key, out var current) ||
+                kvp.Value is not JsonValue value ||
+                !value.TryGetValue<string>(out var nameOverride) ||
+                string.IsNullOrWhiteSpace(nameOverride))
+            {
+                continue;
+            }
+
+            @enum[kvp.Key] = current with
+            {
+                Name = nameOverride.ToPropertyName(),
+            };
+        }
+    }
+
+    private static void ApplySpeakeasyEnumDescriptions(JsonNode node, Dictionary<string, PropertyData> @enum)
+    {
+        if (node is JsonArray array)
+        {
+            for (var i = 0; i < array.Count && i < @enum.Count; i++)
+            {
+                if (array[i] is not JsonValue value ||
+                    !value.TryGetValue<string>(out var descriptionOverride) ||
+                    string.IsNullOrWhiteSpace(descriptionOverride))
+                {
+                    continue;
+                }
+
+                var key = @enum.Keys.ElementAt(i);
+                @enum[key] = @enum[key] with
+                {
+                    Summary = OpenApiExtensions.ClearForXml(descriptionOverride),
+                };
+            }
+
+            return;
+        }
+
+        if (node is not JsonObject jsonObject)
+        {
+            return;
+        }
+
+        foreach (var kvp in jsonObject)
+        {
+            if (!@enum.TryGetValue(kvp.Key, out var current) ||
+                kvp.Value is not JsonValue value ||
+                !value.TryGetValue<string>(out var descriptionOverride) ||
+                string.IsNullOrWhiteSpace(descriptionOverride))
+            {
+                continue;
+            }
+
+            @enum[kvp.Key] = current with
+            {
+                Summary = OpenApiExtensions.ClearForXml(descriptionOverride),
+            };
+        }
     }
 
     private static Dictionary<string, PropertyData> EnsureUniqueEnumMemberNamesCaseInsensitive(

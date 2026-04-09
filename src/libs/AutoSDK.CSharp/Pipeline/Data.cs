@@ -163,7 +163,7 @@ public static class Data
         }
         
         // Find all tags used in operations besides the ones defined in the document.
-        // Also collect ad-hoc group names from x-fern-sdk-group-name extensions in a single pass.
+        // Also collect ad-hoc vendor group names that should materialize as sub-clients.
         var allTags = openApiDocument.Tags!;
         var knownTagNames = new HashSet<string>();
         foreach (var tag in allTags)
@@ -195,10 +195,8 @@ public static class Data
                     }
                 }
 
-                // x-fern-sdk-group-name creates new tags that need sub-client classes, just like regular tags.
                 if (settings.UseExtensionNaming &&
-                    OpenApiExtensions.TryGetExtensionStringValue(
-                        operation.Extensions, "x-fern-sdk-group-name", out var groupName) &&
+                    OpenApiExtensions.TryGetOperationGroupNameOverride(operation.Extensions, out var groupName) &&
                     !string.IsNullOrWhiteSpace(groupName) &&
                     knownTagNames.Add(groupName))
                 {

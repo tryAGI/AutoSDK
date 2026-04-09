@@ -1962,6 +1962,115 @@ info:
         return GetExperimentalStageFromSummary(operation.Summary);
     }
 
+    public static bool TryGetOperationGroupNameOverride(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        out string value)
+    {
+        if (TryGetExtensionString(extensions, "x-fern-sdk-group-name", out value))
+        {
+            return true;
+        }
+
+        if (TryGetExtensionString(extensions, "x-speakeasy-group", out value))
+        {
+            return true;
+        }
+
+        value = string.Empty;
+        return false;
+    }
+
+    public static bool TryGetMethodNameOverride(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        out string value)
+    {
+        if (TryGetExtensionString(extensions, "x-fern-sdk-method-name", out value))
+        {
+            return true;
+        }
+
+        if ((extensions?.TryGetValue("x-oaiMeta", out var oaiMetaExt) ?? false) &&
+            TryGetExtensionJsonNode(oaiMetaExt) is JsonObject oaiMetaObj &&
+            TryGetJsonObjectString(oaiMetaObj, out value, "name"))
+        {
+            return true;
+        }
+
+        if (TryGetExtensionString(extensions, "x-speakeasy-name-override", out value))
+        {
+            return true;
+        }
+
+        return TryGetLanguageSpecificExtensionString(
+            extensions,
+            "x-stainless-naming",
+            out value,
+            "method_name",
+            "name");
+    }
+
+    public static bool TryGetTypeNameOverride(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        out string value)
+    {
+        if (TryGetExtensionString(extensions, "x-fern-type-name", out value))
+        {
+            return true;
+        }
+
+        if (TryGetExtensionString(extensions, "x-speakeasy-name-override", out value))
+        {
+            return true;
+        }
+
+        return TryGetLanguageSpecificExtensionString(
+            extensions,
+            "x-stainless-naming",
+            out value,
+            "model_name",
+            "type_name",
+            "name");
+    }
+
+    public static bool TryGetPropertyNameOverride(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        out string value)
+    {
+        if (TryGetExtensionString(extensions, "x-speakeasy-name-override", out value))
+        {
+            return true;
+        }
+
+        return TryGetLanguageSpecificExtensionString(
+            extensions,
+            "x-stainless-naming",
+            out value,
+            "property_name",
+            "parameter_name",
+            "name");
+    }
+
+    public static bool TryGetParameterNameOverride(
+        IDictionary<string, IOpenApiExtension>? parameterExtensions,
+        IDictionary<string, IOpenApiExtension>? schemaExtensions,
+        out string value)
+    {
+        if (TryGetPropertyNameOverride(parameterExtensions, out value))
+        {
+            return true;
+        }
+
+        return TryGetPropertyNameOverride(schemaExtensions, out value);
+    }
+
+    public static bool ShouldIgnoreOperationForDotNet(IDictionary<string, IOpenApiExtension>? extensions)
+    {
+        return GetExtensionBooleanValue(extensions, "x-fern-ignore") ||
+               GetExtensionBooleanValue(extensions, "x-hidden") ||
+               GetExtensionBooleanValue(extensions, "x-speakeasy-ignore") ||
+               HasLanguageSkipExtension(extensions, "x-stainless-skip");
+    }
+
     public static bool IsDeprecated(this OpenApiOperation operation)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
@@ -1992,6 +2101,11 @@ info:
             return message;
         }
 
+        if (TryGetExtensionString(operation.Extensions, "x-speakeasy-deprecation-message", out message))
+        {
+            return message;
+        }
+
         return string.Empty;
     }
 
@@ -2003,6 +2117,11 @@ info:
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
         if (TryGetExtensionString(schema.Extensions, "x-stainless-deprecation-message", out var message))
+        {
+            return message;
+        }
+
+        if (TryGetExtensionString(schema.Extensions, "x-speakeasy-deprecation-message", out message))
         {
             return message;
         }
@@ -2130,6 +2249,15 @@ info:
         ("Experimental", "Experimental"),
     ];
 
+    private static readonly string[] DotNetLanguageKeys =
+    [
+        "csharp",
+        "c#",
+        "dotnet",
+        ".net",
+        "net",
+    ];
+
     private static string NormalizeExperimentalStage(string? stage)
     {
         var normalized = stage?.Trim() ?? string.Empty;
@@ -2172,6 +2300,67 @@ info:
 
         availability = NormalizeAvailability(rawAvailability);
         return !string.IsNullOrWhiteSpace(availability);
+    }
+
+    private static bool HasLanguageSkipExtension(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        string extensionName)
+    {
+        if (!(extensions?.TryGetValue(extensionName, out var extension) ?? false))
+        {
+            return false;
+        }
+
+        var node = TryGetExtensionJsonNode(extension);
+        if (node is JsonArray array)
+        {
+            foreach (var item in array)
+            {
+                if (item is JsonValue value &&
+                    value.TryGetValue<string>(out var language) &&
+                    DotNetLanguageKeys.Any(x => string.Equals(x, language, StringComparison.OrdinalIgnoreCase)))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        return node is JsonValue singleValue &&
+               singleValue.TryGetValue<string>(out var singleLanguage) &&
+               DotNetLanguageKeys.Any(x => string.Equals(x, singleLanguage, StringComparison.OrdinalIgnoreCase));
+    }
+
+    private static bool TryGetLanguageSpecificExtensionString(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        string extensionName,
+        out string value,
+        params string[] propertyNames)
+    {
+        value = string.Empty;
+
+        if (!(extensions?.TryGetValue(extensionName, out var extension) ?? false) ||
+            TryGetExtensionJsonNode(extension) is not JsonObject extensionObject)
+        {
+            return false;
+        }
+
+        foreach (var languageKey in DotNetLanguageKeys)
+        {
+            if (!TryGetJsonObjectProperty(extensionObject, languageKey, out var languageNode) ||
+                languageNode is not JsonObject languageObject)
+            {
+                continue;
+            }
+
+            if (TryGetJsonObjectString(languageObject, out value, propertyNames))
+            {
+                return true;
+            }
+        }
+
+        return TryGetJsonObjectString(extensionObject, out value, propertyNames);
     }
 
     private static bool TryGetExtensionString(
@@ -2226,6 +2415,50 @@ info:
             return true;
         }
 
+        return false;
+    }
+
+    private static bool TryGetJsonObjectString(
+        JsonObject jsonObject,
+        out string value,
+        params string[] propertyNames)
+    {
+        value = string.Empty;
+
+        foreach (var propertyName in propertyNames)
+        {
+            if (!TryGetJsonObjectProperty(jsonObject, propertyName, out var node) ||
+                node is not JsonValue jsonValue ||
+                !jsonValue.TryGetValue<string>(out var stringValue) ||
+                string.IsNullOrWhiteSpace(stringValue))
+            {
+                continue;
+            }
+
+            value = stringValue;
+            return true;
+        }
+
+        return false;
+    }
+
+    private static bool TryGetJsonObjectProperty(
+        JsonObject jsonObject,
+        string propertyName,
+        out JsonNode? value)
+    {
+        foreach (var kvp in jsonObject)
+        {
+            if (!string.Equals(kvp.Key, propertyName, StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            value = kvp.Value;
+            return value != null;
+        }
+
+        value = null;
         return false;
     }
 

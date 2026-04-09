@@ -7,10 +7,22 @@ namespace AutoSDK.Helpers;
 
 public static class CSharpTraversalTreeHelperExtensions
 {
-    private readonly record struct OperationSchemaDescriptor(
-        string OperationPath,
-        System.Net.Http.HttpMethod OperationType,
-        OpenApiOperation Operation);
+    private readonly struct OperationSchemaDescriptor
+    {
+        public OperationSchemaDescriptor(
+            string operationPath,
+            System.Net.Http.HttpMethod operationType,
+            OpenApiOperation operation)
+        {
+            OperationPath = operationPath;
+            OperationType = operationType;
+            Operation = operation;
+        }
+
+        public string OperationPath { get; }
+        public System.Net.Http.HttpMethod OperationType { get; }
+        public OpenApiOperation Operation { get; }
+    }
 
     public static IReadOnlyList<SchemaContext> GetSchemas(
         this OpenApiDocument openApiDocument,
@@ -95,8 +107,9 @@ public static class CSharpTraversalTreeHelperExtensions
         IEnumerable<OperationSchemaDescriptor> operations,
         CSharpSettings settings)
     {
-        foreach (var (_, _, operation) in operations)
+        foreach (var operationDescriptor in operations)
         {
+            var operation = operationDescriptor.Operation;
             var callbacks = operation.Callbacks;
             if (callbacks == null)
             {
@@ -174,8 +187,11 @@ public static class CSharpTraversalTreeHelperExtensions
         SchemaContextSettings schemaSettings,
         IEnumerable<OperationSchemaDescriptor> operations)
     {
-        foreach (var (operationPath, operationType, operation) in operations)
+        foreach (var operationDescriptor in operations)
         {
+            var operationPath = operationDescriptor.OperationPath;
+            var operationType = operationDescriptor.OperationType;
+            var operation = operationDescriptor.Operation;
             var requestContent = operation.RequestBody?.Content;
             if (requestContent == null)
             {
@@ -207,8 +223,11 @@ public static class CSharpTraversalTreeHelperExtensions
         SchemaContextSettings schemaSettings,
         IEnumerable<OperationSchemaDescriptor> operations)
     {
-        foreach (var (operationPath, operationType, operation) in operations)
+        foreach (var operationDescriptor in operations)
         {
+            var operationPath = operationDescriptor.OperationPath;
+            var operationType = operationDescriptor.OperationType;
+            var operation = operationDescriptor.Operation;
             var parameters = operation.Parameters;
             if (parameters == null)
             {
@@ -240,8 +259,11 @@ public static class CSharpTraversalTreeHelperExtensions
         SchemaContextSettings schemaSettings,
         IEnumerable<OperationSchemaDescriptor> operations)
     {
-        foreach (var (operationPath, operationType, operation) in operations)
+        foreach (var operationDescriptor in operations)
         {
+            var operationPath = operationDescriptor.OperationPath;
+            var operationType = operationDescriptor.OperationType;
+            var operation = operationDescriptor.Operation;
             var parameters = operation.Parameters;
             if (parameters == null)
             {
@@ -282,8 +304,11 @@ public static class CSharpTraversalTreeHelperExtensions
         SchemaContextSettings schemaSettings,
         IEnumerable<OperationSchemaDescriptor> operations)
     {
-        foreach (var (operationPath, operationType, operation) in operations)
+        foreach (var operationDescriptor in operations)
         {
+            var operationPath = operationDescriptor.OperationPath;
+            var operationType = operationDescriptor.OperationType;
+            var operation = operationDescriptor.Operation;
             var responses = operation.Responses;
             if (responses == null)
             {
@@ -324,7 +349,6 @@ public static class CSharpTraversalTreeHelperExtensions
         OpenApiOperation operation)
     {
         return settings.UseExtensionNaming &&
-               (OpenApiExtensions.GetExtensionBooleanValue(operation.Extensions, "x-fern-ignore") ||
-                OpenApiExtensions.GetExtensionBooleanValue(operation.Extensions, "x-hidden"));
+               OpenApiExtensions.ShouldIgnoreOperationForDotNet(operation.Extensions);
     }
 }

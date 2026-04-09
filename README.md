@@ -40,6 +40,19 @@ It also will include polyfills for .Net Framework/.Net Standard TargetFrameworks
 ## HTTP Artifacts
 `autosdk http` emits executable request files for regular OpenAPI path operations. It also surfaces response links and callbacks as commented documentation blocks next to the owning operation, and writes root-level OpenAPI webhooks to `webhooks.http` as inbound contract documentation instead of outbound client calls.
 
+## Vendor Extension Compatibility
+When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
+
+| Concern | Supported today | Intentionally ignored for now |
+| --- | --- | --- |
+| Naming and grouping | `x-fern-sdk-method-name`, `x-fern-sdk-group-name`, `x-fern-type-name`, `x-oaiMeta.name`, `x-speakeasy-name-override`, `x-speakeasy-group`, `x-stainless-naming` for `.NET` / `csharp` names | `x-speakeasy-model-namespace`, non-.NET `x-stainless-naming` blocks |
+| Filtering and deprecation | `x-fern-ignore`, `x-hidden`, `x-speakeasy-ignore`, `x-stainless-skip` when it explicitly targets `.NET`, `x-speakeasy-deprecation-message`, `x-stainless-deprecation-message` | language skips for other ecosystems |
+| Enum metadata | `x-enum-varnames`, `x-enum-descriptions`, `x-fern-enum`, `x-speakeasy-enums`, `x-speakeasy-enum-descriptions` | `x-speakeasy-enum-format` |
+| Examples and docs | `x-codeSamples`, `x-displayName`, `x-label` | language-specific doc overlays such as `x-speakeasy-docs` |
+| Runtime behavior | `x-stainless-const` | pagination, retries, globals, server selection, auth/runtime hints, and liblab config-only metadata |
+
+That split is deliberate: AutoSDK consumes metadata that directly improves generated .NET names, docs, deprecations, and enum surfaces today, while broader runtime features stay tracked as separate issues instead of being silently half-implemented.
+
 ## Source generator
 - Install the package
 ```bash

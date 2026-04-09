@@ -515,5 +515,7 @@
   Error(ref),
   Error(ref),
   Error(ref),
-  Error(ref)
+  Error(ref),
+  TranscriptReadyNotification(ref),
+  RedactedAudioNotification(ref)
 ]

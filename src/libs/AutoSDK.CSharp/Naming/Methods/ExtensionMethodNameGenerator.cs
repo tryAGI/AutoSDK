@@ -1,4 +1,3 @@
-using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
 
@@ -6,8 +5,8 @@ namespace AutoSDK.Naming.Methods;
 
 /// <summary>
 /// Generates method names from OpenAPI x-extensions:
-/// - x-fern-sdk-method-name: Clean, human-chosen method names (used by Cohere, AssemblyAI, ElevenLabs, Vectara)
-/// - x-oaiMeta.name: Method name from OpenAI metadata
+/// - x-fern-sdk-method-name / x-oaiMeta.name: Existing naming hints used by Fern/OpenAI specs
+/// - x-speakeasy-name-override / x-stainless-naming: Cross-vendor naming overrides for .NET SDKs
 /// </summary>
 public class ExtensionMethodNameGenerator : IMethodNameGenerator
 {
@@ -21,23 +20,10 @@ public class ExtensionMethodNameGenerator : IMethodNameGenerator
             return null;
         }
 
-        if (OpenApiExtensions.TryGetExtensionStringValue(
-                extensions, "x-fern-sdk-method-name", out var fernMethodName) &&
-            !string.IsNullOrWhiteSpace(fernMethodName))
+        if (OpenApiExtensions.TryGetMethodNameOverride(extensions, out var methodName) &&
+            !string.IsNullOrWhiteSpace(methodName))
         {
-            return fernMethodName
-                .ToPropertyName()
-                .UseWordSeparator(CSharpMethodNamingSeparators.MethodSeparators);
-        }
-
-        if (extensions.TryGetValue("x-oaiMeta", out var oaiMetaExt) &&
-            OpenApiExtensions.TryGetExtensionJsonNode(oaiMetaExt) is JsonObject oaiMetaObj &&
-            oaiMetaObj.TryGetPropertyValue("name", out var nameNode) &&
-            nameNode is JsonValue nameValue &&
-            nameValue.TryGetValue<string>(out var oaiName) &&
-            !string.IsNullOrWhiteSpace(oaiName))
-        {
-            return oaiName
+            return methodName
                 .ToPropertyName()
                 .UseWordSeparator(CSharpMethodNamingSeparators.MethodSeparators);
         }
