@@ -54,6 +54,7 @@ public class SchemaContext(
     public OpenApiOperation? Operation { get; set; }
     public string? ContentType { get; set; }
     public IOpenApiMediaType? MediaType { get; set; }
+    public bool IsMediaTypeItemSchema { get; set; }
     public IOpenApiParameter? Parameter { get; set; }
     public string? ResponseStatusCode { get; set; }
     public IOpenApiResponse? Response { get; set; }
@@ -324,6 +325,7 @@ public class SchemaContext(
         OpenApiOperation? operation = null,
         string? contentType = null,
         IOpenApiMediaType? mediaType = null,
+        bool isMediaTypeItemSchema = false,
         IOpenApiParameter? parameter = null,
         string? responseStatusCode = null,
         IOpenApiResponse? response = null,
@@ -344,6 +346,7 @@ public class SchemaContext(
             operation,
             contentType,
             mediaType,
+            isMediaTypeItemSchema,
             parameter,
             responseStatusCode,
             response,
@@ -365,6 +368,7 @@ public class SchemaContext(
         OpenApiOperation? operation = null,
         string? contentType = null,
         IOpenApiMediaType? mediaType = null,
+        bool isMediaTypeItemSchema = false,
         IOpenApiParameter? parameter = null,
         string? responseStatusCode = null,
         IOpenApiResponse? response = null,
@@ -379,7 +383,7 @@ public class SchemaContext(
         FromSchemaCore(
             result, schema, settings, referenceIdFactory, schemaIdFactory, parent, componentId, propertyName,
             operationPath, operationType, operation, contentType, mediaType,
-            parameter, responseStatusCode, response, hint, index, depth);
+            isMediaTypeItemSchema, parameter, responseStatusCode, response, hint, index, depth);
         return result;
     }
 
@@ -397,12 +401,13 @@ public class SchemaContext(
         OpenApiOperation? operation,
         string? contentType,
         IOpenApiMediaType? mediaType,
-        IOpenApiParameter? parameter,
-        string? responseStatusCode,
-        IOpenApiResponse? response,
-        Hint? hint,
-        int? index,
-        int depth)
+        bool isMediaTypeItemSchema = false,
+        IOpenApiParameter? parameter = null,
+        string? responseStatusCode = null,
+        IOpenApiResponse? response = null,
+        Hint? hint = null,
+        int? index = null,
+        int depth = 0)
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
@@ -431,6 +436,7 @@ public class SchemaContext(
                 Operation = operation,
                 ContentType = contentType,
                 MediaType = mediaType,
+                IsMediaTypeItemSchema = isMediaTypeItemSchema,
                 Parameter = parameter,
                 ResponseStatusCode = responseStatusCode,
                 Response = response,
@@ -467,6 +473,7 @@ public class SchemaContext(
             Operation = operation,
             ContentType = contentType,
             MediaType = mediaType,
+            IsMediaTypeItemSchema = isMediaTypeItemSchema,
             Parameter = parameter,
             ResponseStatusCode = responseStatusCode,
             Response = response,
@@ -483,6 +490,7 @@ public class SchemaContext(
                 result, schema.Items, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                 propertyName: null, operationPath: null, operationType: null,
                 operation: null, contentType: null, mediaType: null,
+                isMediaTypeItemSchema: false,
                 parameter: null, responseStatusCode: null, response: null,
                 hint: Models.Hint.ArrayItem, index: null, depth: depth + 1);
         }
@@ -492,6 +500,7 @@ public class SchemaContext(
                 result, schema.AdditionalProperties, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                 propertyName: null, operationPath: null, operationType: null,
                 operation: null, contentType: null, mediaType: null,
+                isMediaTypeItemSchema: false,
                 parameter: null, responseStatusCode: null, response: null,
                 hint: Models.Hint.AdditionalProperties, index: null, depth: depth + 1);
         }
@@ -508,6 +517,7 @@ public class SchemaContext(
                         result, property.Value, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                         propertyName: property.Key, operationPath: null, operationType: null,
                         operation: null, contentType: null, mediaType: null,
+                        isMediaTypeItemSchema: false,
                         parameter: null, responseStatusCode: null, response: null,
                         hint: Models.Hint.Property, index: i++, depth: depth + 1);
                 }
@@ -523,6 +533,7 @@ public class SchemaContext(
                     result, item, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                     propertyName: null, operationPath: null, operationType: null,
                     operation: null, contentType: null, mediaType: null,
+                    isMediaTypeItemSchema: false,
                     parameter: null, responseStatusCode: null, response: null,
                     hint: Models.Hint.AnyOf, index: i++, depth: depth + 1);
             }
@@ -536,6 +547,7 @@ public class SchemaContext(
                     result, item, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                     propertyName: null, operationPath: null, operationType: null,
                     operation: null, contentType: null, mediaType: null,
+                    isMediaTypeItemSchema: false,
                     parameter: null, responseStatusCode: null, response: null,
                     hint: Models.Hint.OneOf, index: i++, depth: depth + 1);
             }
@@ -549,6 +561,7 @@ public class SchemaContext(
                     result, item, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                     propertyName: null, operationPath: null, operationType: null,
                     operation: null, contentType: null, mediaType: null,
+                    isMediaTypeItemSchema: false,
                     parameter: null, responseStatusCode: null, response: null,
                     hint: Models.Hint.AllOf, index: i++, depth: depth + 1);
             }
@@ -577,7 +590,7 @@ public class SchemaContext(
                 result, discriminatorSchema, settings, referenceIdFactory, schemaIdFactory, context,
                 componentId: null, propertyName: null, operationPath: null,
                 operationType: null, operation: null, contentType: null,
-                mediaType: null, parameter: null, responseStatusCode: null,
+                mediaType: null, isMediaTypeItemSchema: false, parameter: null, responseStatusCode: null,
                 response: null, hint: Models.Hint.Discriminator, index: null,
                 depth: depth + 1);
         }

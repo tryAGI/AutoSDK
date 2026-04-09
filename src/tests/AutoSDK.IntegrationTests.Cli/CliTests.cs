@@ -1129,6 +1129,86 @@ paths:
     }
 
     [TestMethod]
+    public async Task Generate_WithOpenApi32SequentialMediaTypesAndItemSchema_BuildsAndEmitsStreamingSupport()
+    {
+        const string spec = """
+openapi: 3.2.0
+info:
+  title: OpenApi32Streaming
+  version: 1.0.0
+servers:
+  - url: https://example.com
+components:
+  schemas:
+    StreamChunk:
+      type: object
+      properties:
+        delta:
+          type: string
+  mediaTypes:
+    StreamChunkSequence:
+      itemSchema:
+        $ref: '#/components/schemas/StreamChunk'
+paths:
+  /ingest:
+    post:
+      operationId: ingestChunks
+      requestBody:
+        required: true
+        content:
+          application/jsonl:
+            $ref: '#/components/mediaTypes/StreamChunkSequence'
+      responses:
+        '202':
+          description: Accepted
+  /events:
+    get:
+      operationId: streamEvents
+      responses:
+        '200':
+          description: OK
+          content:
+            text/event-stream:
+              $ref: '#/components/mediaTypes/StreamChunkSequence'
+  /records:
+    get:
+      operationId: streamRecords
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json-seq:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StreamChunk'
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "openapi32-streaming.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "OpenApi32Streaming",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("global::System.Collections.Generic.IList<global::OpenApi32Streaming.StreamChunk> request");
+                content.Should().Contain("var __httpRequestContentBuilder = new global::System.Text.StringBuilder();");
+                content.Should().Contain("foreach (var __requestItem in request)");
+                content.Should().Contain("__httpRequestContentBuilder.Append('\\n');");
+                content.Should().Contain("mediaType: \"application/jsonl\"");
+                content.Should().Contain("IAsyncEnumerable<global::OpenApi32Streaming.StreamChunk> StreamEventsAsync(");
+                content.Should().Contain("SseParser");
+                content.Should().Contain("IAsyncEnumerable<global::OpenApi32Streaming.StreamChunk> StreamRecordsAsync(");
+                content.Should().Contain("if (__character == '\\u001e')");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithDuplicateQueryParameterNames_Builds()
     {
         const string spec = """

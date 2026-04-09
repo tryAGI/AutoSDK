@@ -984,8 +984,8 @@ namespace {endPoint.Settings.Namespace}
 
     private static bool IsJsonMediaType(string mediaType)
     {
-        return !string.IsNullOrWhiteSpace(mediaType) &&
-               mediaType.Contains("json", StringComparison.OrdinalIgnoreCase);
+        return mediaType.IsJsonMimeType() &&
+               !mediaType.IsSequentialJsonMimeType();
     }
 
     private static bool ShouldUseSystemNetHttpJsonForRequest(EndPoint endPoint)
@@ -1197,6 +1197,100 @@ namespace {endPoint.Settings.Namespace}
 
         if (endPoint.StreamFormat == StreamFormat.Ndjson)
         {
+            var isJsonSequence = endPoint.SuccessResponse.MimeType.IsMimeType("application/json-seq");
+            var streamReadLoop = isJsonSequence
+                ? $@"
+            using var __reader = new global::System.IO.StreamReader(__stream);
+            var __contentBuilder = new global::System.Text.StringBuilder();
+            var __characterBuffer = new char[1];
+
+            while (!cancellationToken.IsCancellationRequested)
+            {{
+                var __read = await __reader.ReadAsync(__characterBuffer, 0, 1).ConfigureAwait(false);
+                if (__read == 0)
+                {{
+                    break;
+                }}
+
+                var __character = __characterBuffer[0];
+                if (__character == '\u001e')
+                {{
+                    if (__contentBuilder.Length > 0)
+                    {{
+                        var __content = __contentBuilder.ToString().Trim();
+                        __contentBuilder.Clear();
+                        if (global::System.String.IsNullOrWhiteSpace(__content))
+                        {{
+                            continue;
+                        }}
+
+                        var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                                               throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                                   message: $""Response deserialization failed for \""{{__content}}\"" "",
+                                                   statusCode: __response.StatusCode)
+                                               {{
+                                                   ResponseBody = __content,
+                                                   ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                                       __response.Headers,
+                                                       h => h.Key,
+                                                       h => h.Value),
+                                               }};
+
+                        yield return __streamedResponse;
+                    }}
+
+                    continue;
+                }}
+
+                __contentBuilder.Append(__character);
+            }}
+
+            if (__contentBuilder.Length > 0)
+            {{
+                var __content = __contentBuilder.ToString().Trim();
+                if (!global::System.String.IsNullOrWhiteSpace(__content))
+                {{
+                    var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                                           throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                               message: $""Response deserialization failed for \""{{__content}}\"" "",
+                                               statusCode: __response.StatusCode)
+                                           {{
+                                               ResponseBody = __content,
+                                               ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                                   __response.Headers,
+                                                   h => h.Key,
+                                                   h => h.Value),
+                                           }};
+
+                    yield return __streamedResponse;
+                }}
+            }}"
+                : $@"
+            using var __reader = new global::System.IO.StreamReader(__stream);
+
+            while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)
+            {{
+                var __content = await __reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
+                if (global::System.String.IsNullOrWhiteSpace(__content))
+                {{
+                    continue;
+                }}
+
+                var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                                       throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                           message: $""Response deserialization failed for \""{{__content}}\"" "",
+                                           statusCode: __response.StatusCode)
+                                       {{
+                                           ResponseBody = __content,
+                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                               __response.Headers,
+                                               h => h.Key,
+                                               h => h.Value),
+                                       }};
+
+                yield return __streamedResponse;
+            }}";
+
             return $@"
             try
             {{
@@ -1235,30 +1329,7 @@ namespace {endPoint.Settings.Namespace}
                 cancellationToken
 #endif
             ).ConfigureAwait(false);
-            using var __reader = new global::System.IO.StreamReader(__stream);
-
-            while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)
-            {{
-                var __content = await __reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                if (global::System.String.IsNullOrWhiteSpace(__content))
-                {{
-                    continue;
-                }}
-
-                var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                                       throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
-                                           message: $""Response deserialization failed for \""{{__content}}\"" "",
-                                           statusCode: __response.StatusCode)
-                                       {{
-                                           ResponseBody = __content,
-                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                               __response.Headers,
-                                               h => h.Key,
-                                               h => h.Value),
-                                       }};
-
-                yield return __streamedResponse;
-            }}
+{streamReadLoop}
  ";
         }
 
@@ -1544,6 +1615,11 @@ namespace {endPoint.Settings.Namespace}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
         }
 
+        if (endPoint.RequestMediaType.IsSequentialJsonMimeType())
+        {
+            return GenerateSequentialJsonRequestData(endPoint);
+        }
+
         if (ShouldUseSystemNetHttpJsonForRequest(endPoint))
         {
             return GenerateSystemNetHttpJsonRequestData(endPoint);
@@ -1555,6 +1631,68 @@ namespace {endPoint.Settings.Namespace}
 
         return $@" 
             var __httpRequestContentBody = {requestContent};
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: ""{endPoint.RequestMediaType}"");
+            __httpRequest.Content = __httpRequestContent;
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateSequentialJsonRequestData(
+        EndPoint endPoint)
+    {
+        var isJsonSequence = endPoint.RequestMediaType.IsMimeType("application/json-seq");
+        var itemType = endPoint.RequestType.IsArray && !endPoint.RequestType.SubTypes.IsEmpty
+            ? endPoint.RequestType.SubTypes[0].Unbox<TypeData>()
+            : endPoint.RequestType;
+        var serializedItemExpression = GenerateJsonSerializeExpression(
+            type: itemType,
+            valueExpression: "__requestItem",
+            settings: endPoint.Settings);
+        var appendDelimiter = isJsonSequence
+            ? @"                __httpRequestContentBuilder.Append('\u001e');
+                __httpRequestContentBuilder.Append(__requestItemContent);
+                __httpRequestContentBuilder.Append('\n');"
+            : @"                if (!__httpRequestContentFirst)
+                {
+                    __httpRequestContentBuilder.Append('\n');
+                }
+
+                __httpRequestContentBuilder.Append(__requestItemContent);
+                __httpRequestContentFirst = false;";
+
+        if (endPoint.RequestType.IsArray)
+        {
+            return $@"
+            var __httpRequestContentBuilder = new global::System.Text.StringBuilder();
+            {(isJsonSequence ? string.Empty : "var __httpRequestContentFirst = true;")}
+            foreach (var __requestItem in request)
+            {{
+                var __requestItemContent = {serializedItemExpression};
+{appendDelimiter}
+            }}
+
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBuilder.ToString(),
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: ""{endPoint.RequestMediaType}"");
+            __httpRequest.Content = __httpRequestContent;
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        var singleItemBodyExpression = isJsonSequence
+            ? "\"\\u001e\" + " + GenerateJsonSerializeExpression(
+                type: itemType,
+                valueExpression: "request",
+                settings: endPoint.Settings) + " + \"\\n\""
+            : GenerateJsonSerializeExpression(
+                type: itemType,
+                valueExpression: "request",
+                settings: endPoint.Settings);
+
+        return $@"
+            var __httpRequestContentBody = {singleItemBodyExpression};
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,

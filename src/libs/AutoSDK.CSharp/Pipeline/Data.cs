@@ -1109,11 +1109,11 @@ public static class Data
             .ToArray();
 
         var hasJson = responseContentTypes.Any(static contentType =>
-            contentType.Contains("application/json", StringComparison.OrdinalIgnoreCase));
-        var hasNdjson = responseContentTypes.Any(static contentType =>
-            contentType.Contains("application/x-ndjson", StringComparison.OrdinalIgnoreCase));
+            contentType.IsJsonMimeType() && !contentType.IsSequentialJsonMimeType());
+        var hasSequentialJson = responseContentTypes.Any(static contentType =>
+            contentType.IsSequentialJsonMimeType());
         var hasSse = responseContentTypes.Any(static contentType =>
-            contentType.Contains("text/event-stream", StringComparison.OrdinalIgnoreCase));
+            contentType.IsServerSentEventsMimeType());
 
         var endPoints = new List<EndPoint>();
 
@@ -1140,7 +1140,7 @@ public static class Data
 
         if (fernStreaming != null &&
             !hasSse &&
-            !hasNdjson)
+            !hasSequentialJson)
         {
             endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
                 operation,
@@ -1156,7 +1156,7 @@ public static class Data
             endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
                 operation,
                 preferredMimeType: "application/json",
-                forcedRequestStreamValue: hasNdjson || hasSse ? false : null,
+                forcedRequestStreamValue: hasSequentialJson || hasSse ? false : null,
                 successResponseOverride: fernStreaming?.RegularResponseOverride));
         }
 
@@ -1167,7 +1167,7 @@ public static class Data
                 preferredMimeType: "text/event-stream",
                 methodNameSuffix: GetStreamMethodSuffix(
                     hasRegularJsonVariant: hasJson,
-                    hasAnotherStreamingVariant: hasNdjson,
+                    hasAnotherStreamingVariant: hasSequentialJson,
                     streamFormat: StreamFormat.ServerSentEvents),
                 forcedRequestStreamValue: hasJson ? true : null,
                 successResponseOverride: fernStreaming?.StreamResponseOverride,
@@ -1177,7 +1177,7 @@ public static class Data
                 streamTerminator: fernStreaming?.Terminator));
         }
 
-        if (hasNdjson)
+        if (hasSequentialJson)
         {
             endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
                 operation,
@@ -1207,18 +1207,18 @@ public static class Data
         StreamFormat streamFormat)
     {
         if (streamFormat == StreamFormat.ServerSentEvents &&
-            responseContentTypes.Any(static x => x.Contains("text/event-stream", StringComparison.OrdinalIgnoreCase)))
+            responseContentTypes.Any(static x => x.IsServerSentEventsMimeType()))
         {
             return "text/event-stream";
         }
 
         if (streamFormat == StreamFormat.Ndjson &&
-            responseContentTypes.Any(static x => x.Contains("application/x-ndjson", StringComparison.OrdinalIgnoreCase)))
+            responseContentTypes.Any(static x => x.IsSequentialJsonMimeType()))
         {
-            return "application/x-ndjson";
+            return responseContentTypes.First(static x => x.IsSequentialJsonMimeType()).NormalizeMimeType();
         }
 
-        if (responseContentTypes.Any(static x => x.Contains("application/json", StringComparison.OrdinalIgnoreCase)))
+        if (responseContentTypes.Any(static x => x.IsJsonMimeType() && !x.IsSequentialJsonMimeType()))
         {
             return "application/json";
         }
