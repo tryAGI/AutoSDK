@@ -154,6 +154,10 @@ public static class CSharpPipeline
                     .Concat([Sources.Polyfills(settings, cancellationToken)])
                     .Concat([Sources.Exceptions(settings, cancellationToken)])
                     .Concat([Sources.PathBuilder(settings, cancellationToken)])
+                    .Concat(data.Clients.Any(static x => x.UsesServerSelectionSupport) ||
+                            data.Methods.Any(static x => x.ClientUsesServerSelectionSupport)
+                        ? [Sources.ServerSelectionSupport(settings, cancellationToken)]
+                        : [])
                     .Concat([Sources.OptionsSupport(settings, cancellationToken)])
                     .Concat(!data.Authorizations.IsEmpty
                         ? [Sources.SecuritySupport(settings, cancellationToken)]

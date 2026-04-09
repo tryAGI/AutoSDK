@@ -175,6 +175,10 @@ public static class CSharpEndPointFactory
             OpenApiExtensions.GetExtensionBooleanValue(
                 operation.Operation.Extensions,
                 "x-autosdk-response-wrapper");
+        var servers = CSharpServerFactory.CreateServerOptions(operation.Servers);
+        var primaryServer = servers.Length > 0
+            ? servers[0]
+            : default;
 
         return new EndPoint(
             Id: endPointId,
@@ -187,7 +191,7 @@ public static class CSharpEndPointFactory
             FileNameWithoutExtension: $"{operation.Settings.Namespace}.{className}.{notAsyncMethodName}",
             InterfaceFileNameWithoutExtension: $"{operation.Settings.Namespace}.I{className}.{notAsyncMethodName}",
             Tag: operation.Tag,
-            BaseUrl: string.Empty,
+            BaseUrl: primaryServer.Url ?? string.Empty,
             StreamFormat: streamFormat,
             Path: preparedPath,
             RequestMediaType: requestMediaType,
@@ -201,7 +205,9 @@ public static class CSharpEndPointFactory
             ContentType: successResponse.ContentType,
             Summary: operation.Operation.GetXmlDocumentationSummary(),
             Description: operation.Operation.Description ?? string.Empty,
-            BaseUrlSummary: string.Empty,
+            BaseUrlSummary: operation.Servers.Count > 0
+                ? operation.Servers[0].Description?.ClearForXml() ?? string.Empty
+                : string.Empty,
             CliAction:
                 (OpenApiExtensions.TryGetExtensionStringValue(
                     operation.Operation.Extensions, "x-cli-action", out var cliActionStr)
@@ -220,7 +226,9 @@ public static class CSharpEndPointFactory
                 ? streamTerminator ?? "[DONE]"
                 : string.Empty,
             Remarks: GetCodeSamplesRemarks(operation.Operation),
-            GenerateResponseWrapper: generateResponseWrapper);
+            GenerateResponseWrapper: generateResponseWrapper,
+            Servers: servers,
+            HasServerOverride: operation.HasServerOverride);
     }
 
     private static void DeduplicateMethodParameterNames(List<MethodParameter> parameters)

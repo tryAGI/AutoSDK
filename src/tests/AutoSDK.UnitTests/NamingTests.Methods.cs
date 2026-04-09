@@ -33,6 +33,8 @@ public partial class NamingTests
             operationPath: "/me/slack_id",
             operationType: System.Net.Http.HttpMethod.Get,
             operationSchemas: null,
+            effectiveServers: [],
+            hasServerOverride: false,
             globalSecurityRequirements: []);
         var endPoint = CSharpEndPointFactory.CreateEndPoint(context);
 
@@ -65,6 +67,8 @@ public partial class NamingTests
             operationPath: "/sessions/{session_id}/insights",
             operationType: System.Net.Http.HttpMethod.Get,
             operationSchemas: null,
+            effectiveServers: [],
+            hasServerOverride: false,
             globalSecurityRequirements: []);
         var endPoint = CSharpEndPointFactory.CreateEndPoint(context);
 
