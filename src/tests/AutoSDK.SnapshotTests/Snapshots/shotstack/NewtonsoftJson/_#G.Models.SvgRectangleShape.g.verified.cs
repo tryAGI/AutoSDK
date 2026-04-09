@@ -14,6 +14,7 @@ namespace G
         /// The shape type - set to `rectangle`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgRectangleShapeTypeJsonConverter))]
         public global::G.SvgRectangleShapeType Type { get; set; }
 
         /// <summary>

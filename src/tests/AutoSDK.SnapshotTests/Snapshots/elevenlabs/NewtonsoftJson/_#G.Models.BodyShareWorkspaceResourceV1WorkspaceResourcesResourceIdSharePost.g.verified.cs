@@ -13,12 +13,14 @@ namespace G
         /// Role to update the target principal with.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRoleJsonConverter))]
         public global::G.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole Role { get; set; } = default!;
 
         /// <summary>
         /// Resource type of the target resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resource_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkspaceResourceTypeJsonConverter))]
         public global::G.WorkspaceResourceType ResourceType { get; set; } = default!;
 
         /// <summary>

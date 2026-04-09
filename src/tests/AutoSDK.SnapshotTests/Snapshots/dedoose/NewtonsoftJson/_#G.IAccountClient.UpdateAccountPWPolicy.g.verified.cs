@@ -10,11 +10,13 @@ namespace G
         /// UpdateAccountPWPolicy
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AccountVO> UpdateAccountPWPolicyAsync(
 
             global::G.UpdateAccountPWPolicyRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// UpdateAccountPWPolicy<br/>
@@ -31,6 +33,7 @@ namespace G
         /// <param name="require2Auth"></param>
         /// <param name="relogin2Auth"></param>
         /// <param name="idleTimeoutInMinutes"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AccountVO> UpdateAccountPWPolicyAsync(
@@ -45,6 +48,7 @@ namespace G
             bool require2Auth,
             bool relogin2Auth,
             int idleTimeoutInMinutes,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

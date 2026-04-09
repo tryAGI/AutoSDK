@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TraceThreadFilterWriteOperatorJsonConverter))]
         public global::G.TraceThreadFilterWriteOperator? Operator { get; set; }
 
         /// <summary>

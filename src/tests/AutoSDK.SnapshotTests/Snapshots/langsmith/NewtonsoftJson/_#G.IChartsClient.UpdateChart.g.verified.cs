@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="chartId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartResponse> UpdateChartAsync(
             global::System.Guid chartId,
 
             global::G.CustomChartUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Chart<br/>
@@ -47,6 +49,7 @@ namespace G
         /// <param name="commonFilters">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartResponse> UpdateChartAsync(
@@ -59,6 +62,7 @@ namespace G
             global::G.AnyOf<global::System.Guid?, global::G.Missing>? sectionId = default,
             global::G.AnyOf<object, global::G.Missing, object>? metadata = default,
             global::G.AnyOf<global::G.CustomChartSeriesFilters2, global::G.Missing, object>? commonFilters = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

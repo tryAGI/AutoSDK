@@ -27,12 +27,14 @@ namespace G
         /// </summary>
         /// <default>global::G.ResponseOutputMessageRole.Assistant</default>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputMessageRoleJsonConverter))]
         public global::G.ResponseOutputMessageRole Role { get; set; } = global::G.ResponseOutputMessageRole.Assistant;
 
         /// <summary>
         /// The status of the message
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputMessageStatusJsonConverter))]
         public global::G.ResponseOutputMessageStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -41,6 +43,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ResponseOutputMessageType.Message</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseOutputMessageTypeJsonConverter))]
         public global::G.ResponseOutputMessageType Type { get; set; } = global::G.ResponseOutputMessageType.Message;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The type of annotation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnnotationTypeJsonConverter))]
         public global::G.AnnotationType Type { get; set; } = default!;
 
         /// <summary>

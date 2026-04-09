@@ -73,6 +73,7 @@ namespace G
         /// Operating system for stealth mode. Valid values: windows, mac, linux, mobile, tablet
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("os")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionsInvokeRequestSessionCreateParamsBrowserSettingsOsJsonConverter))]
         public global::G.FunctionsInvokeRequestSessionCreateParamsBrowserSettingsOs? Os { get; set; }
 
         /// <summary>
@@ -80,6 +81,7 @@ namespace G
         /// Default Value: small
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionsInvokeRequestSessionCreateParamsBrowserSettingsSizeJsonConverter))]
         public global::G.FunctionsInvokeRequestSessionCreateParamsBrowserSettingsSize? Size { get; set; }
 
         /// <summary>

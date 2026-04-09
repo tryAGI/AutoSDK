@@ -260,6 +260,64 @@ public class CliTests
     }
 
     [TestMethod]
+    public async Task Generate_WithRequestAndClientOptions_EmitsOptionsSupportAndBuilds()
+    {
+        const string spec = """
+                            openapi: 3.0.3
+                            info:
+                              title: Options
+                              version: 1.0.0
+                            paths:
+                              /search:
+                                get:
+                                  operationId: search
+                                  parameters:
+                                    - in: query
+                                      name: q
+                                      schema:
+                                        type: string
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: object
+                                            properties:
+                                              id:
+                                                type: string
+                            """;
+
+        await GenerateFromContentAsync(
+            fileName: "request-options.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "Generated.Options",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedFiles = Directory.GetFiles(outputDirectory, "*.cs", SearchOption.AllDirectories);
+                generatedFiles.Should().NotBeEmpty();
+
+                var combinedSource = string.Join(
+                    Environment.NewLine,
+                    await Task.WhenAll(generatedFiles.Select(path => File.ReadAllTextAsync(path))));
+
+                combinedSource.Should().Contain("public sealed class AutoSDKClientOptions");
+                combinedSource.Should().Contain("public sealed class AutoSDKRequestOptions");
+                combinedSource.Should().Contain("public interface IAutoSDKHook");
+                combinedSource.Should().Contain("public sealed class AutoSDKHookContext");
+                combinedSource.Should().Contain("global::Generated.Options.AutoSDKClientOptions? options = null");
+                combinedSource.Should().Contain("global::Generated.Options.AutoSDKRequestOptions? requestOptions = default");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.AppendQueryParameters(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.ApplyHeaders(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.GetMaxAttempts(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.OnAfterErrorAsync(");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_BufModuleInput_ScaffoldsGrpcClientProject()
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -1136,6 +1194,164 @@ components:
                 content.Should().Contain("public void AuthorizeUsingMutualTls()");
                 content.Should().Contain("public void ConfigureMutualTlsClientCertificate(");
                 content.Should().Contain("_ownedHttpClientHandler = new global::System.Net.Http.HttpClientHandler();");
+            });
+    }
+
+    [TestMethod]
+    public async Task Generate_WithOpenApi32QueryStringCookieAndAdditionalOperations_BuildsAndEmitsSupport()
+    {
+        const string spec = """
+openapi: 3.2.0
+info:
+  title: OpenApi32
+  version: 1.0.0
+servers:
+  - url: https://example.com
+paths:
+  /search:
+    query:
+      operationId: querySearch
+      parameters:
+        - in: querystring
+          name: filters
+          required: false
+          content:
+            application/x-www-form-urlencoded:
+              schema:
+                type: object
+                properties:
+                  q:
+                    type: string
+                  page:
+                    type: integer
+      responses:
+        '200':
+          description: OK
+    additionalOperations:
+      purge:
+        operationId: purgeSearch
+        responses:
+          '204':
+            description: Purged
+  /cookies:
+    get:
+      operationId: getCookies
+      parameters:
+        - in: cookie
+          name: prefs
+          style: cookie
+          schema:
+            type: object
+            properties:
+              theme:
+                type: string
+              pageSize:
+                type: integer
+      responses:
+        '200':
+          description: OK
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "openapi32-parameters.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "OpenApi32",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("method: new global::System.Net.Http.HttpMethod(\"QUERY\")");
+                content.Should().Contain("method: new global::System.Net.Http.HttpMethod(\"purge\")");
+                content.Should().Contain("__pathBuilder = __pathBuilder.AddRawQueryString(string.Join(\"&\", __queryStringSegments_filters));");
+                content.Should().Contain("__queryStringSegments_filters.Add(\"q=\" + global::System.Uri.EscapeDataString(__filters_Q.ToString() ?? string.Empty));");
+                content.Should().Contain("__queryStringSegments_filters.Add(\"page=\" + global::System.Uri.EscapeDataString(__filters_Page.ToString() ?? string.Empty));");
+                content.Should().Contain("__httpRequest.Headers.TryAddWithoutValidation(\"Cookie\", string.Join(\"; \", __cookies));");
+                content.Should().Contain("__cookies.Add($\"theme={__prefs_Theme.ToString() ?? string.Empty}\")");
+                content.Should().Contain("__cookies.Add($\"pageSize={__prefs_PageSize.ToString() ?? string.Empty}\")");
+            });
+    }
+
+    [TestMethod]
+    public async Task Generate_WithOpenApi32SequentialMediaTypesAndItemSchema_BuildsAndEmitsStreamingSupport()
+    {
+        const string spec = """
+openapi: 3.2.0
+info:
+  title: OpenApi32Streaming
+  version: 1.0.0
+servers:
+  - url: https://example.com
+components:
+  schemas:
+    StreamChunk:
+      type: object
+      properties:
+        delta:
+          type: string
+  mediaTypes:
+    StreamChunkSequence:
+      itemSchema:
+        $ref: '#/components/schemas/StreamChunk'
+paths:
+  /ingest:
+    post:
+      operationId: ingestChunks
+      requestBody:
+        required: true
+        content:
+          application/jsonl:
+            $ref: '#/components/mediaTypes/StreamChunkSequence'
+      responses:
+        '202':
+          description: Accepted
+  /events:
+    get:
+      operationId: streamEvents
+      responses:
+        '200':
+          description: OK
+          content:
+            text/event-stream:
+              $ref: '#/components/mediaTypes/StreamChunkSequence'
+  /records:
+    get:
+      operationId: streamRecords
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json-seq:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StreamChunk'
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "openapi32-streaming.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "OpenApi32Streaming",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("global::System.Collections.Generic.IList<global::OpenApi32Streaming.StreamChunk> request");
+                content.Should().Contain("var __httpRequestContentBuilder = new global::System.Text.StringBuilder();");
+                content.Should().Contain("foreach (var __requestItem in request)");
+                content.Should().Contain("__httpRequestContentBuilder.Append('\\n');");
+                content.Should().Contain("mediaType: \"application/jsonl\"");
+                content.Should().Contain("IAsyncEnumerable<global::OpenApi32Streaming.StreamChunk> StreamEventsAsync(");
+                content.Should().Contain("SseParser");
+                content.Should().Contain("IAsyncEnumerable<global::OpenApi32Streaming.StreamChunk> StreamRecordsAsync(");
+                content.Should().Contain("if (__character == '\\u001e')");
             });
     }
 

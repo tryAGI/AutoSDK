@@ -69,6 +69,7 @@ namespace G
         /// The status of the clip
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetClipsResponseClipStatus2JsonConverter))]
         public global::G.GetClipsResponseClipStatus2 Status { get; set; } = default!;
 
         /// <summary>

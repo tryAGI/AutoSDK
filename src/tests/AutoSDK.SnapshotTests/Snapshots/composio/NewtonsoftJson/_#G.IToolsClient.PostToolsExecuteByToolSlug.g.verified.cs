@@ -17,6 +17,7 @@ namespace G
         /// Example: {"x-custom-header": "value", "authorization": "Bearer token"}
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostToolsExecuteByToolSlugResponse> PostToolsExecuteByToolSlugAsync(
@@ -24,6 +25,7 @@ namespace G
 
             global::G.PostToolsExecuteByToolSlugRequest request,
             string? xLlmGatewayHeaders = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Execute tool<br/>
@@ -62,6 +64,7 @@ namespace G
         /// Natural language description of the task to perform (mutually exclusive with arguments)<br/>
         /// Example: Trigger the main workflow in the octocat/Hello-World repository on the main branch for the production environment
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostToolsExecuteByToolSlugResponse> PostToolsExecuteByToolSlugAsync(
@@ -74,6 +77,7 @@ namespace G
             global::G.OneOf<global::G.PostToolsExecuteByToolSlugRequestCustomConnectionDataVariant1, global::G.PostToolsExecuteByToolSlugRequestCustomConnectionDataVariant2, global::G.PostToolsExecuteByToolSlugRequestCustomConnectionDataVariant3, global::G.PostToolsExecuteByToolSlugRequestCustomConnectionDataVariant4, global::G.PostToolsExecuteByToolSlugRequestCustomConnectionDataVariant5, global::G.PostToolsExecuteByToolSlugRequestCustomConnectionDataVariant6, global::G.PostToolsExecuteByToolSlugRequestCustomConnectionDataVariant7, global::G.PostToolsExecuteByToolSlugRequestCustomConnectionDataVariant8, global::G.PostToolsExecuteByToolSlugRequestCustomConnectionDataVariant9, global::G.PostToolsExecuteByToolSlugRequestCustomConnectionDataVariant10, global::G.PostToolsExecuteByToolSlugRequestCustomConnectionDataVariant11>? customConnectionData = default,
             global::System.Collections.Generic.Dictionary<string, object?>? arguments = default,
             string? text = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

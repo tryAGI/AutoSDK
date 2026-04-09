@@ -19,6 +19,7 @@ namespace G
         /// Set to `REQUEST_RELEASE` to request that the session complete. Use before session's timeout to avoid additional charges.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionsUpdateRequestStatusJsonConverter))]
         public global::G.SessionsUpdateRequestStatus Status { get; set; }
 
         /// <summary>

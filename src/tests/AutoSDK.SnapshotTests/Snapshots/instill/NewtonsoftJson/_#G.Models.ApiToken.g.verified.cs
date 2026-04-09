@@ -70,6 +70,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiTokenStateJsonConverter))]
         public global::G.ApiTokenState? State { get; set; }
 
         /// <summary>

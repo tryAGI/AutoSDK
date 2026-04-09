@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaInputSchemaTypeJsonConverter))]
         public global::G.BetaInputSchemaType Type { get; set; }
 
         /// <summary>

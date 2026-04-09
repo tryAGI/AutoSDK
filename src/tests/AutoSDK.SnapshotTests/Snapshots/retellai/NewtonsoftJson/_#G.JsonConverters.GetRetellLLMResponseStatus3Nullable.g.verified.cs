@@ -1,0 +1,73 @@
+﻿//HintName: G.JsonConverters.GetRetellLLMResponseStatus3Nullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class GetRetellLLMResponseStatus3NullableJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.GetRetellLLMResponseStatus3?>
+    {
+        /// <inheritdoc />
+        public override global::G.GetRetellLLMResponseStatus3? ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.GetRetellLLMResponseStatus3? existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.GetRetellLLMResponseStatus3Extensions.ToEnum(stringValue);
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.GetRetellLLMResponseStatus3)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.GetRetellLLMResponseStatus3?);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.GetRetellLLMResponseStatus3? value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNull();
+            }
+            else
+            {
+                writer.WriteValue(global::G.GetRetellLLMResponseStatus3Extensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

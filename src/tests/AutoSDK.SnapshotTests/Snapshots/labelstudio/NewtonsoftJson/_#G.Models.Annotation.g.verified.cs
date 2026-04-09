@@ -86,6 +86,7 @@ namespace G
         /// * `deleted_review` - Deleted review
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LastActionEnumJsonConverter))]
         public global::G.LastActionEnum? LastAction { get; set; }
 
         /// <summary>

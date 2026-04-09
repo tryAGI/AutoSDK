@@ -66,6 +66,7 @@ namespace G
         /// </summary>
         /// <example>1024x1024</example>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageEditRequestSizeJsonConverter))]
         public global::G.CreateImageEditRequestSize? Size { get; set; }
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace G
         /// </summary>
         /// <example>url</example>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageEditRequestResponseFormatJsonConverter))]
         public global::G.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>

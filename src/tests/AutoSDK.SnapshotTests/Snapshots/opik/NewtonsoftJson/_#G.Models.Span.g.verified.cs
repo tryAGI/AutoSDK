@@ -49,6 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpanTypeJsonConverter))]
         public global::G.SpanType? Type { get; set; }
 
         /// <summary>
@@ -176,6 +177,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpanSourceJsonConverter))]
         public global::G.SpanSource? Source { get; set; }
 
         /// <summary>

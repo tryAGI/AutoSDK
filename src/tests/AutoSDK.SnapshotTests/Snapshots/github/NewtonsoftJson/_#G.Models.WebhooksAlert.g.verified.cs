@@ -109,6 +109,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhooksAlertStateJsonConverter))]
         public global::G.WebhooksAlertState State { get; set; }
 
         /// <summary>

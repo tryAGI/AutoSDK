@@ -13,6 +13,7 @@ namespace G
         /// The type of asset to generate - set to `text-to-speech` for text-to-speech.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ElevenLabsTextToSpeechOptionsTypeJsonConverter))]
         public global::G.ElevenLabsTextToSpeechOptionsType Type { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ElevenLabsTextToSpeechOptionsVoiceJsonConverter))]
         public global::G.ElevenLabsTextToSpeechOptionsVoice Voice { get; set; } = default!;
 
         /// <summary>

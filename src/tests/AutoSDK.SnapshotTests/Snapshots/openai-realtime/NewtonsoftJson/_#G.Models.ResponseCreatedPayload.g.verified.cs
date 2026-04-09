@@ -19,6 +19,7 @@ namespace G
         /// The event type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseCreatedPayloadTypeJsonConverter))]
         public global::G.ResponseCreatedPayloadType Type { get; set; }
 
         /// <summary>

@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="agwJsConv"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListDocumentOpenAPIResponse> ListDocumentOpenAPIAsync(
             global::G.ListDocumentOpenAPIAgwJsConv agwJsConv,
 
             global::G.ListDocumentOpenAPIRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 查看知识库文件列表<br/>
@@ -26,6 +28,7 @@ namespace G
         /// <param name="datasetId"></param>
         /// <param name="page"></param>
         /// <param name="size"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListDocumentOpenAPIResponse> ListDocumentOpenAPIAsync(
@@ -33,6 +36,7 @@ namespace G
             string datasetId,
             int? page = default,
             int? size = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

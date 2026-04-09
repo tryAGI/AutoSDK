@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>ipa</example>
         [global::Newtonsoft.Json.JsonProperty("alphabet", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentRequestPronunciationDictionaryItemAlphabetJsonConverter))]
         public global::G.AgentRequestPronunciationDictionaryItemAlphabet Alphabet { get; set; } = default!;
 
         /// <summary>

@@ -21,6 +21,7 @@ namespace G
         /// This is a state transition.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StateTransitionMessageRoleJsonConverter))]
         public global::G.StateTransitionMessageRole Role { get; set; }
 
         /// <summary>

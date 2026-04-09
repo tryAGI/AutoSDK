@@ -13,6 +13,7 @@ namespace G
         /// Type of the node
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComponentNodeVariant2TypeJsonConverter))]
         public global::G.ComponentNodeVariant2Type Type { get; set; }
 
         /// <summary>
@@ -27,6 +28,7 @@ namespace G
         /// - shared: stored in stand-alone conversation-flow-component table
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("component_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComponentNodeVariant2ComponentTypeJsonConverter))]
         public global::G.ComponentNodeVariant2ComponentType ComponentType { get; set; } = default!;
 
         /// <summary>

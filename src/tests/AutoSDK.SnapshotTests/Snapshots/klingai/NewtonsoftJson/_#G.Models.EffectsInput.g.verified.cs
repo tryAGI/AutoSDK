@@ -19,6 +19,7 @@ namespace G
         /// Effect scene type to apply.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effect_scene", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EffectsInputEffectSceneJsonConverter))]
         public global::G.EffectsInputEffectScene EffectScene { get; set; } = default!;
 
         /// <summary>

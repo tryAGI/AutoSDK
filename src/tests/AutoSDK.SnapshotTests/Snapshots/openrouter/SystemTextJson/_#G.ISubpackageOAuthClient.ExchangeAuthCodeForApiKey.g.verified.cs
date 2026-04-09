@@ -10,11 +10,13 @@ namespace G
         /// Exchange an authorization code from the PKCE flow for a user-controlled API key
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OAuthExchangeAuthCodeForAPIKeyResponse200> ExchangeAuthCodeForApiKeyAsync(
 
             global::G.ExchangeAuthCodeForApiKeyRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Exchange authorization code for API key<br/>
@@ -29,12 +31,14 @@ namespace G
         /// <param name="codeChallengeMethod">
         /// The method used to generate the code challenge
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OAuthExchangeAuthCodeForAPIKeyResponse200> ExchangeAuthCodeForApiKeyAsync(
             string code,
             string? codeVerifier = default,
             global::G.OneOf<global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? codeChallengeMethod = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

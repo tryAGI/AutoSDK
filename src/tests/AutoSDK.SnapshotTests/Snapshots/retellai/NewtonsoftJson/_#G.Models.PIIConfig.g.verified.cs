@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.PIIConfigMode.PostCall</default>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PIIConfigModeJsonConverter))]
         public global::G.PIIConfigMode Mode { get; set; } = global::G.PIIConfigMode.PostCall;
 
         /// <summary>

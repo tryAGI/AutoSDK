@@ -13,6 +13,7 @@ namespace G
         /// The type of the entity
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("entity_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EntityInputEntityTypeJsonConverter))]
         public global::G.EntityInputEntityType EntityType { get; set; } = default!;
 
         /// <summary>

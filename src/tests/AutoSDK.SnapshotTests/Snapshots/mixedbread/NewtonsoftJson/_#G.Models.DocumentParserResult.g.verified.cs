@@ -13,12 +13,14 @@ namespace G
         /// The strategy used for chunking the document
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chunking_strategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChunkingStrategyJsonConverter))]
         public global::G.ChunkingStrategy ChunkingStrategy { get; set; }
 
         /// <summary>
         /// The format of the returned content
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("return_format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReturnFormatJsonConverter))]
         public global::G.ReturnFormat ReturnFormat { get; set; } = default!;
 
         /// <summary>

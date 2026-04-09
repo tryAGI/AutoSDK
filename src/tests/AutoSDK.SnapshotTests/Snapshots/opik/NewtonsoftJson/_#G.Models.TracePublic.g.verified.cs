@@ -159,6 +159,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TracePublicVisibilityModeJsonConverter))]
         public global::G.TracePublicVisibilityMode? VisibilityMode { get; set; }
 
         /// <summary>
@@ -191,6 +192,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TracePublicSourceJsonConverter))]
         public global::G.TracePublicSource? Source { get; set; }
 
         /// <summary>

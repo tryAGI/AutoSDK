@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuningJobEventLevelJsonConverter))]
         public global::G.FineTuningJobEventLevel Level { get; set; } = default!;
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuningJobEventObjectJsonConverter))]
         public global::G.FineTuningJobEventObject Object { get; set; }
 
         /// <summary>

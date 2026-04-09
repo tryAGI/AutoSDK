@@ -13,6 +13,7 @@ namespace G
         /// Press a key on the page
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeOptionsActionPressAKeyTypeJsonConverter))]
         public global::G.ScrapeOptionsActionPressAKeyType Type { get; set; }
 
         /// <summary>

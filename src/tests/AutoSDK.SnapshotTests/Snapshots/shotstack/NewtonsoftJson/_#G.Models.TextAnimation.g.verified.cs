@@ -17,6 +17,7 @@ namespace G
         /// </summary>
         /// <example>typewriter</example>
         [global::Newtonsoft.Json.JsonProperty("preset")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextAnimationPresetJsonConverter))]
         public global::G.TextAnimationPreset Preset { get; set; }
 
         /// <summary>

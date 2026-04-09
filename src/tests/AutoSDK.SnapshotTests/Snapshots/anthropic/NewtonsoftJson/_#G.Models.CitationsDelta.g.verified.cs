@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.CitationsDeltaType.CitationsDelta</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CitationsDeltaTypeJsonConverter))]
         public global::G.CitationsDeltaType Type { get; set; } = global::G.CitationsDeltaType.CitationsDelta;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChoiceFinishReasonJsonConverter))]
         public global::G.ChoiceFinishReason FinishReason { get; set; } = default!;
 
         /// <summary>

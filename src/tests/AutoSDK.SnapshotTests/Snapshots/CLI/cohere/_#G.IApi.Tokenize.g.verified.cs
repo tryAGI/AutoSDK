@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TokenizeResponse> TokenizeAsync(
 
             global::G.TokenizeRequest request,
             string? xClientName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Tokenize<br/>
@@ -24,12 +26,14 @@ namespace G
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TokenizeResponse>> TokenizeAsResponseAsync(
 
             global::G.TokenizeRequest request,
             string? xClientName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Tokenize<br/>
@@ -42,12 +46,14 @@ namespace G
         /// <param name="model">
         /// The input will be tokenized by the tokenizer that is used by this model.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TokenizeResponse> TokenizeAsync(
             string text,
             string model,
             string? xClientName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

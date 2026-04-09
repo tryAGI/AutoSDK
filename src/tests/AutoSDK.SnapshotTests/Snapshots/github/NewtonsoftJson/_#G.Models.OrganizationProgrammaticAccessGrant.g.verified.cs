@@ -25,6 +25,7 @@ namespace G
         /// Type of repository selection requested.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repository_selection", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrganizationProgrammaticAccessGrantRepositorySelectionJsonConverter))]
         public global::G.OrganizationProgrammaticAccessGrantRepositorySelection RepositorySelection { get; set; } = default!;
 
         /// <summary>

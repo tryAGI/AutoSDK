@@ -10,11 +10,13 @@ namespace G
         /// AddProjectEncryptedByUser
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Project> AddProjectEncryptedByUserAsync(
 
             global::G.AddProjectEncryptedByUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// AddProjectEncryptedByUser<br/>
@@ -24,6 +26,7 @@ namespace G
         /// <param name="title"></param>
         /// <param name="decription"></param>
         /// <param name="symKeyHash"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Project> AddProjectEncryptedByUserAsync(
@@ -31,6 +34,7 @@ namespace G
             string title,
             string decription,
             string symKeyHash,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

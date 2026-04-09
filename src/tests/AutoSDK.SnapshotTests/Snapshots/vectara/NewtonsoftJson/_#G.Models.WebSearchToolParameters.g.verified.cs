@@ -31,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>tavily</example>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchToolParametersProviderJsonConverter))]
         public global::G.WebSearchToolParametersProvider? Provider { get; set; }
 
         /// <summary>

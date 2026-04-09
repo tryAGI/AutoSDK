@@ -11,6 +11,7 @@ namespace G
         /// <param name="templateID"></param>
         /// <param name="buildID"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateTemplatesByTemplateIDBuildsByBuildID2Async(
@@ -18,6 +19,7 @@ namespace G
             string buildID,
 
             global::G.TemplateBuildStartV2 request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Start the build
@@ -45,6 +47,7 @@ namespace G
         /// <param name="readyCmd">
         /// Ready check command to execute in the template after the build
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreateTemplatesByTemplateIDBuildsByBuildID2Async(
@@ -57,6 +60,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TemplateStep>? steps = default,
             string? startCmd = default,
             string? readyCmd = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

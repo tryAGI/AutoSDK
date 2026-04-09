@@ -200,20 +200,17 @@ public static class CSharpTraversalTreeHelperExtensions
 
             foreach (var content in requestContent)
             {
-                if (content.Value.Schema == null)
-                {
-                    continue;
-                }
-
-                result.AddRange(SchemaContext.FromSchema(
-                    content.Value.Schema, schemaSettings,
-                    CSharpSchemaNamingFactory.CreateReferenceId,
-                    CSharpSchemaNamingFactory.CreateSchemaId,
-                    parent: null, componentId: null,
-                    propertyName: null, operationPath: operationPath, operationType: operationType,
-                    operation: operation, contentType: content.Key, mediaType: content.Value,
-                    parameter: null, responseStatusCode: null, response: null,
-                    hint: Hint.Request, index: null, depth: 0));
+                AddContentSchemaContexts(
+                    result,
+                    schemaSettings,
+                    operationPath,
+                    operationType,
+                    operation,
+                    content.Key,
+                    content.Value,
+                    responseStatusCode: null,
+                    response: null,
+                    hint: Hint.Request);
             }
         }
     }
@@ -325,22 +322,61 @@ public static class CSharpTraversalTreeHelperExtensions
 
                 foreach (var content in responseContent)
                 {
-                    if (content.Value.Schema == null)
-                    {
-                        continue;
-                    }
-
-                    result.AddRange(SchemaContext.FromSchema(
-                        content.Value.Schema, schemaSettings,
-                        CSharpSchemaNamingFactory.CreateReferenceId,
-                        CSharpSchemaNamingFactory.CreateSchemaId,
-                        parent: null, componentId: null,
-                        propertyName: null, operationPath: operationPath, operationType: operationType,
-                        operation: operation, contentType: content.Key, mediaType: content.Value,
-                        parameter: null, responseStatusCode: response.Key, response: response.Value,
-                        hint: Hint.Response, index: null, depth: 0));
+                    AddContentSchemaContexts(
+                        result,
+                        schemaSettings,
+                        operationPath,
+                        operationType,
+                        operation,
+                        content.Key,
+                        content.Value,
+                        responseStatusCode: response.Key,
+                        response: response.Value,
+                        hint: Hint.Response);
                 }
             }
+        }
+    }
+
+    private static void AddContentSchemaContexts(
+        List<SchemaContext> result,
+        SchemaContextSettings schemaSettings,
+        string operationPath,
+        System.Net.Http.HttpMethod operationType,
+        OpenApiOperation operation,
+        string contentType,
+        IOpenApiMediaType mediaType,
+        string? responseStatusCode,
+        IOpenApiResponse? response,
+        Hint hint)
+    {
+        if (mediaType.Schema != null)
+        {
+            result.AddRange(SchemaContext.FromSchema(
+                mediaType.Schema, schemaSettings,
+                CSharpSchemaNamingFactory.CreateReferenceId,
+                CSharpSchemaNamingFactory.CreateSchemaId,
+                parent: null, componentId: null,
+                propertyName: null, operationPath: operationPath, operationType: operationType,
+                operation: operation, contentType: contentType, mediaType: mediaType,
+                isMediaTypeItemSchema: false,
+                parameter: null, responseStatusCode: responseStatusCode, response: response,
+                hint: hint, index: null, depth: 0));
+        }
+
+        if (mediaType.ItemSchema != null &&
+            (contentType.IsSequentialJsonMimeType() || contentType.IsServerSentEventsMimeType()))
+        {
+            result.AddRange(SchemaContext.FromSchema(
+                mediaType.ItemSchema, schemaSettings,
+                CSharpSchemaNamingFactory.CreateReferenceId,
+                CSharpSchemaNamingFactory.CreateSchemaId,
+                parent: null, componentId: null,
+                propertyName: null, operationPath: operationPath, operationType: operationType,
+                operation: operation, contentType: contentType, mediaType: mediaType,
+                isMediaTypeItemSchema: true,
+                parameter: null, responseStatusCode: responseStatusCode, response: response,
+                hint: hint, index: null, depth: 0));
         }
     }
 

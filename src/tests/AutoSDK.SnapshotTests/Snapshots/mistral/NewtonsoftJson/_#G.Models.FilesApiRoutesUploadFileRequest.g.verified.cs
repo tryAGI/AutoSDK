@@ -41,6 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilePurposeJsonConverter))]
         public global::G.FilePurpose? Purpose { get; set; }
 
         /// <summary>

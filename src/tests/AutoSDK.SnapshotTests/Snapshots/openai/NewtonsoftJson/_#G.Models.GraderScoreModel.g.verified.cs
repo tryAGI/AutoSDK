@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `score_model`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraderScoreModelTypeJsonConverter))]
         public global::G.GraderScoreModelType Type { get; set; }
 
         /// <summary>

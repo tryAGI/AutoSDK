@@ -23,12 +23,14 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaMessageBatchType.MessageBatch</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaMessageBatchTypeJsonConverter))]
         public global::G.BetaMessageBatchType Type { get; set; } = global::G.BetaMessageBatchType.MessageBatch;
 
         /// <summary>
         /// Processing status of the Message Batch.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("processing_status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaMessageBatchProcessingStatusJsonConverter))]
         public global::G.BetaMessageBatchProcessingStatus ProcessingStatus { get; set; } = default!;
 
         /// <summary>

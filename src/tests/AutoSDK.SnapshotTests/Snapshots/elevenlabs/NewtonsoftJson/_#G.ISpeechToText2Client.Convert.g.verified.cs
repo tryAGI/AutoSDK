@@ -17,6 +17,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel, global::G.SpeechToTextWebhookResponseModel>> ConvertAsync(
@@ -24,6 +25,7 @@ namespace G
             global::G.BodySpeechToTextV1SpeechToTextPost request,
             bool? enableLogging = default,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Speech To Text<br/>
@@ -107,6 +109,7 @@ namespace G
         /// A list of keyterms to bias the transcription towards.           The keyterms are words or phrases you want the model to recognise more accurately.           The number of keyterms cannot exceed 100.           The length of each keyterm must be less than 50 characters.           Keyterms can contain at most 5 words (after normalisation).           For example ["hello", "world", "technical term"].           Usage of this parameter will incur additional costs.  <br/>
         /// Default Value: []
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel, global::G.SpeechToTextWebhookResponseModel>> ConvertAsync(
@@ -133,6 +136,7 @@ namespace G
             global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? entityDetection = default,
             bool? noVerbatim = default,
             global::System.Collections.Generic.IList<string>? keyterms = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

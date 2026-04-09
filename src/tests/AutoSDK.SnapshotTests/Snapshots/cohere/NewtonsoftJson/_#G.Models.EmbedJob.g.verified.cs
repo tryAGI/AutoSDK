@@ -25,6 +25,7 @@ namespace G
         /// The status of the embed job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbedJobStatusJsonConverter))]
         public global::G.EmbedJobStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace G
         /// The truncation option used
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncate", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbedJobTruncateJsonConverter))]
         public global::G.EmbedJobTruncate Truncate { get; set; } = default!;
 
         /// <summary>

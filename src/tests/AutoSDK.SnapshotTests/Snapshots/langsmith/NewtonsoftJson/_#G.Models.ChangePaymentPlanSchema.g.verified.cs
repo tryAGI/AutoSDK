@@ -13,6 +13,7 @@ namespace G
         /// Enum for payment plans that the user can change to. Developer plans are permanent and enterprise plans will be changed manually.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChangePaymentPlanReqJsonConverter))]
         public global::G.ChangePaymentPlanReq Tier { get; set; } = default!;
 
         /// <summary>

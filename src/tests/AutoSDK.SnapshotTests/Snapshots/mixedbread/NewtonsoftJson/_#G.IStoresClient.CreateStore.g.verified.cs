@@ -14,11 +14,13 @@ namespace G
         ///     VectorStore: The response containing the created vector store details.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Store> CreateStoreAsync(
 
             global::G.StoreCreateParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a store<br/>
@@ -50,6 +52,7 @@ namespace G
         /// <param name="fileIds">
         /// Optional list of file IDs
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Store> CreateStoreAsync(
@@ -60,6 +63,7 @@ namespace G
             object? metadata = default,
             global::G.StoreConfig2? config = default,
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

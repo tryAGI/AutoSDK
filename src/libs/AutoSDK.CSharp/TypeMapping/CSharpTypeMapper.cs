@@ -23,6 +23,7 @@ public static class CSharpTypeMapper
 
         var schema = context.Schema;
         var isEnum = schema.IsEnum();
+        var isOpenEnum = isEnum && schema.IsOpenEnum();
         var isAnyOf = schema.IsAnyOf();
         var isOneOf = schema.IsOneOf();
         var isAllOf = schema.IsAllOf();
@@ -52,6 +53,7 @@ public static class CSharpTypeMapper
                     IsNullable: schema.IsNullable() || schema.IsNullableAnyOf(),
                     IsArray: false,
                     IsEnum: false,
+                    IsOpenEnum: false,
                     IsBase64: false,
                     IsDate: schema.IsDate(),
                     IsDateTime: schema.IsDateTime(),
@@ -128,6 +130,7 @@ public static class CSharpTypeMapper
                 arrayItemType = (TypeData.Default with
                 {
                     IsEnum = schema.Items != null && schema.Items.IsEnum(),
+                    IsOpenEnum = schema.Items != null && schema.Items.IsOpenEnum(),
                 }).WithCSharpComputedValues();
             }
 
@@ -172,6 +175,7 @@ public static class CSharpTypeMapper
             IsNullable: isNullable,
             IsArray: isArray,
             IsEnum: isEnum,
+            IsOpenEnum: isOpenEnum,
             IsBase64: isBase64,
             IsDate: schema.IsDate(),
             IsDateTime: schema.IsDateTime(),
@@ -255,6 +259,7 @@ public static class CSharpTypeMapper
             CSharpTypeNullability = nullability,
             IsComponent = false,
             IsEnum = false,
+            IsOpenEnum = false,
             AnyOfCount = 0,
             OneOfCount = 0,
             AllOfCount = 0,

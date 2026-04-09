@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// The production server.
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.retellai.com";
+        public const string DefaultBaseUrl = "https://api.retellai.com/";
 
         private bool _disposeHttpClient = true;
 
@@ -31,10 +31,2179 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.AlertMetricTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AlertMetricTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertFilterStatusCodeValueItemJsonConverter(),
+
+                    new global::G.JsonConverters.AlertFilterStatusCodeValueItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertFilterErrorCodeItemJsonConverter(),
+
+                    new global::G.JsonConverters.AlertFilterErrorCodeItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertIncidentResponseThresholdTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AlertIncidentResponseThresholdTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertIncidentResponseComparatorJsonConverter(),
+
+                    new global::G.JsonConverters.AlertIncidentResponseComparatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertIncidentResponseFrequencyJsonConverter(),
+
+                    new global::G.JsonConverters.AlertIncidentResponseFrequencyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertIncidentResponseWindowJsonConverter(),
+
+                    new global::G.JsonConverters.AlertIncidentResponseWindowNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleRequestThresholdTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleRequestThresholdTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleRequestComparatorJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleRequestComparatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleRequestFrequencyJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleRequestFrequencyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleRequestWindowJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleRequestWindowNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleResponseThresholdTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleResponseThresholdTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleResponseComparatorJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleResponseComparatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleResponseFrequencyJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleResponseFrequencyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleResponseWindowJsonConverter(),
+
+                    new global::G.JsonConverters.AlertRuleResponseWindowNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestVoiceModelJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestVoiceModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestVoiceEmotionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestVoiceEmotionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestAmbientSoundJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestAmbientSoundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestWebhookEventJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestWebhookEventNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestDataStorageSettingJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestDataStorageSettingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestPronunciationDictionaryItemAlphabetJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestPronunciationDictionaryItemAlphabetNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestSttModeJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestSttModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestCustomSttConfigProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestCustomSttConfigProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestVocabSpecializationJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestVocabSpecializationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestDenoisingModeJsonConverter(),
+
+                    new global::G.JsonConverters.AgentRequestDenoisingModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentSwapNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.AgentSwapNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentSwapToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AgentSwapToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentSwapToolExecutionMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AgentSwapToolExecutionMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentSwapWebhookSettingJsonConverter(),
+
+                    new global::G.JsonConverters.AgentSwapWebhookSettingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BookAppointmentCalToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BookAppointmentCalToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BooleanAnalysisDataTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BooleanAnalysisDataTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BranchNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.BranchNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BridgeTransferNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.BridgeTransferNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BridgeTransferToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BridgeTransferToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BridgeTransferToolExecutionMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BridgeTransferToolExecutionMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallAnalysisUserSentimentJsonConverter(),
+
+                    new global::G.JsonConverters.CallAnalysisUserSentimentNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CancelTransferNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.CancelTransferNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CancelTransferToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CancelTransferToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CancelTransferToolExecutionMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CancelTransferToolExecutionMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatAgentRequestLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.ChatAgentRequestLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatAgentRequestWebhookEventJsonConverter(),
+
+                    new global::G.JsonConverters.ChatAgentRequestWebhookEventNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatAgentRequestDataStorageSettingJsonConverter(),
+
+                    new global::G.JsonConverters.ChatAgentRequestDataStorageSettingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatAnalysisUserSentimentJsonConverter(),
+
+                    new global::G.JsonConverters.ChatAnalysisUserSentimentNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatResponseChatStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ChatResponseChatStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChatResponseChatTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ChatResponseChatTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CheckAvailabilityCalToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CheckAvailabilityCalToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CohortAggregatedResultGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.CohortAggregatedResultGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CohortFilterStartTimestampVariant1OpJsonConverter(),
+
+                    new global::G.JsonConverters.CohortFilterStartTimestampVariant1OpNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CohortFilterCallDurationFilterOpJsonConverter(),
+
+                    new global::G.JsonConverters.CohortFilterCallDurationFilterOpNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CohortSuccessfulCriteriaTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CohortSuccessfulCriteriaTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CohortSuccessfulCriteriaOpJsonConverter(),
+
+                    new global::G.JsonConverters.CohortSuccessfulCriteriaOpNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ComponentNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.ComponentNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ComponentNodeVariant2ComponentTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ComponentNodeVariant2ComponentTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ConversationFlowOverrideStartSpeakerJsonConverter(),
+
+                    new global::G.JsonConverters.ConversationFlowOverrideStartSpeakerNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ConversationNodeVariant3TypeJsonConverter(),
+
+                    new global::G.JsonConverters.ConversationNodeVariant3TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CustomToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomToolMethodJsonConverter(),
+
+                    new global::G.JsonConverters.CustomToolMethodNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomToolExecutionMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CustomToolExecutionMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CodeToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CodeToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CodeToolExecutionMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CodeToolExecutionMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DTMFUtteranceRoleJsonConverter(),
+
+                    new global::G.JsonConverters.DTMFUtteranceRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StringFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.StringFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StringFilterOpJsonConverter(),
+
+                    new global::G.JsonConverters.StringFilterOpNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NumberFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.NumberFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NumberFilterOpJsonConverter(),
+
+                    new global::G.JsonConverters.NumberFilterOpNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BooleanFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BooleanFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BooleanFilterOpJsonConverter(),
+
+                    new global::G.JsonConverters.BooleanFilterOpNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RangeFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RangeFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RangeFilterOpJsonConverter(),
+
+                    new global::G.JsonConverters.RangeFilterOpNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EnumFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EnumFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EnumFilterOpJsonConverter(),
+
+                    new global::G.JsonConverters.EnumFilterOpNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PresentFilterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PresentFilterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PresentFilterOpJsonConverter(),
+
+                    new global::G.JsonConverters.PresentFilterOpNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallFilterCallStatusValueItemJsonConverter(),
+
+                    new global::G.JsonConverters.CallFilterCallStatusValueItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallFilterCallTypeValueItemJsonConverter(),
+
+                    new global::G.JsonConverters.CallFilterCallTypeValueItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallFilterDirectionValueItemJsonConverter(),
+
+                    new global::G.JsonConverters.CallFilterDirectionValueItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallFilterUserSentimentValueItemJsonConverter(),
+
+                    new global::G.JsonConverters.CallFilterUserSentimentValueItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CallFilterDataStorageSettingValueItemJsonConverter(),
+
+                    new global::G.JsonConverters.CallFilterDataStorageSettingValueItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DayOfWeekJsonConverter(),
+
+                    new global::G.JsonConverters.DayOfWeekNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DisconnectionReason4JsonConverter(),
+
+                    new global::G.JsonConverters.DisconnectionReason4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElseEdgeVariant2TransitionConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ElseEdgeVariant2TransitionConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElseEdgeVariant2TransitionConditionPromptJsonConverter(),
+
+                    new global::G.JsonConverters.ElseEdgeVariant2TransitionConditionPromptNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EndCallToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EndCallToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EndCallToolExecutionMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EndCallToolExecutionMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EndNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.EndNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EnumAnalysisDataTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EnumAnalysisDataTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EquationConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EquationConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EquationConditionOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.EquationConditionOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EquationOperatorJsonConverter(),
+
+                    new global::G.JsonConverters.EquationOperatorNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExtractDynamicVariableToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ExtractDynamicVariableToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExtractDynamicVariablesNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.ExtractDynamicVariablesNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FinetuneExampleUtteranceVariant1RoleJsonConverter(),
+
+                    new global::G.JsonConverters.FinetuneExampleUtteranceVariant1RoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FinetuneExampleUtteranceVariant2RoleJsonConverter(),
+
+                    new global::G.JsonConverters.FinetuneExampleUtteranceVariant2RoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FinetuneExampleUtteranceVariant3RoleJsonConverter(),
+
+                    new global::G.JsonConverters.FinetuneExampleUtteranceVariant3RoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionNodeVariant2ToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionNodeVariant2ToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CodeNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.CodeNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HallucinationTypeJsonConverter(),
+
+                    new global::G.JsonConverters.HallucinationTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseSourceDocumentTypeJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseSourceDocumentTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseSourceTextTypeJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseSourceTextTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseSourceUrlTypeJsonConverter(),
+
+                    new global::G.JsonConverters.KnowledgeBaseSourceUrlTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LLMModelJsonConverter(),
+
+                    new global::G.JsonConverters.LLMModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MCPNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.MCPNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MCPToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.MCPToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MCPToolExecutionMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.MCPToolExecutionMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.MessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ModelChoiceCascadingTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ModelChoiceCascadingTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NaturalnessIssueJsonConverter(),
+
+                    new global::G.JsonConverters.NaturalnessIssueNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NodeInstructionPromptTypeJsonConverter(),
+
+                    new global::G.JsonConverters.NodeInstructionPromptTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NodeInstructionStaticTextTypeJsonConverter(),
+
+                    new global::G.JsonConverters.NodeInstructionStaticTextTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NodeTransitionMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.NodeTransitionMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NodeTransitionUtteranceRoleJsonConverter(),
+
+                    new global::G.JsonConverters.NodeTransitionUtteranceRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NullableLLMModelJsonConverter(),
+
+                    new global::G.JsonConverters.NullableLLMModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NumberAnalysisDataTypeJsonConverter(),
+
+                    new global::G.JsonConverters.NumberAnalysisDataTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PIIConfigModeJsonConverter(),
+
+                    new global::G.JsonConverters.PIIConfigModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PIIConfigCategorieJsonConverter(),
+
+                    new global::G.JsonConverters.PIIConfigCategorieNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GuardrailConfigOutputTopicJsonConverter(),
+
+                    new global::G.JsonConverters.GuardrailConfigOutputTopicNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GuardrailConfigInputTopicJsonConverter(),
+
+                    new global::G.JsonConverters.GuardrailConfigInputTopicNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PerformanceMetricCriteriaOpJsonConverter(),
+
+                    new global::G.JsonConverters.PerformanceMetricCriteriaOpNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberResponsePhoneNumberTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PhoneNumberResponsePhoneNumberTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PostCallAnalysisSettingJsonConverter(),
+
+                    new global::G.JsonConverters.PostCallAnalysisSettingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PressDigitNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.PressDigitNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PressDigitToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PressDigitToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PromptConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PromptConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.QaViewFilterScoreRangeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.QaViewFilterScoreRangeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.QaViewFilterScoreRangeOpJsonConverter(),
+
+                    new global::G.JsonConverters.QaViewFilterScoreRangeOpNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseEngineConversationFlowTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseEngineConversationFlowTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseEngineCustomLmTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseEngineCustomLmTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseEngineRetellLmTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseEngineRetellLmTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RetellLlmOverrideS2sModelJsonConverter(),
+
+                    new global::G.JsonConverters.RetellLlmOverrideS2sModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RetellLlmOverrideStartSpeakerJsonConverter(),
+
+                    new global::G.JsonConverters.RetellLlmOverrideStartSpeakerNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SendSMSToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SendSMSToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsSenderVariant1TypeJsonConverter(),
+
+                    new global::G.JsonConverters.SmsSenderVariant1TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsSenderVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.SmsSenderVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsDestinationVariant1TypeJsonConverter(),
+
+                    new global::G.JsonConverters.SmsDestinationVariant1TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsDestinationVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.SmsDestinationVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SentimentAnalysisDetailVariant1SentimentJsonConverter(),
+
+                    new global::G.JsonConverters.SentimentAnalysisDetailVariant1SentimentNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SentimentAnalysisDetailVariant2SentimentJsonConverter(),
+
+                    new global::G.JsonConverters.SentimentAnalysisDetailVariant2SentimentNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SkipResponseEdgeVariant2TransitionConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SkipResponseEdgeVariant2TransitionConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SkipResponseEdgeVariant2TransitionConditionPromptJsonConverter(),
+
+                    new global::G.JsonConverters.SkipResponseEdgeVariant2TransitionConditionPromptNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlwaysEdgeVariant2TransitionConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AlwaysEdgeVariant2TransitionConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AlwaysEdgeVariant2TransitionConditionPromptJsonConverter(),
+
+                    new global::G.JsonConverters.AlwaysEdgeVariant2TransitionConditionPromptNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsContentInferredTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SmsContentInferredTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsContentPredefinedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SmsContentPredefinedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsFailedEdgeVariant2TransitionConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SmsFailedEdgeVariant2TransitionConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsFailedEdgeVariant2TransitionConditionPromptJsonConverter(),
+
+                    new global::G.JsonConverters.SmsFailedEdgeVariant2TransitionConditionPromptNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.SmsNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsSuccessEdgeVariant2TransitionConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SmsSuccessEdgeVariant2TransitionConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SmsSuccessEdgeVariant2TransitionConditionPromptJsonConverter(),
+
+                    new global::G.JsonConverters.SmsSuccessEdgeVariant2TransitionConditionPromptNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StateTransitionMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.StateTransitionMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StringAnalysisDataTypeJsonConverter(),
+
+                    new global::G.JsonConverters.StringAnalysisDataTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TestCaseBatchJobStatusJsonConverter(),
+
+                    new global::G.JsonConverters.TestCaseBatchJobStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TestCaseDefinitionVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.TestCaseDefinitionVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TestCaseJobStatusJsonConverter(),
+
+                    new global::G.JsonConverters.TestCaseJobStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMockInputMatchRuleVariant1TypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMockInputMatchRuleVariant1TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMockInputMatchRuleVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMockInputMatchRuleVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallInvocationMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallInvocationMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallInvocationUtteranceRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallInvocationUtteranceRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallResultMessageRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallResultMessageRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallResultUtteranceRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ToolCallResultUtteranceRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolParameterTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolParameterTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferCallNodeVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferCallNodeVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferCallToolTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferCallToolTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferCallToolExecutionMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferCallToolExecutionMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationInferredTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationInferredTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationPredefinedTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferDestinationPredefinedTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferFailedEdgeVariant2TransitionConditionTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferFailedEdgeVariant2TransitionConditionTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferFailedEdgeVariant2TransitionConditionPromptJsonConverter(),
+
+                    new global::G.JsonConverters.TransferFailedEdgeVariant2TransitionConditionPromptNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionAgenticWarmTransferTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionAgenticWarmTransferTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionAgenticWarmTransferOnHoldMusicJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionAgenticWarmTransferOnHoldMusicNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionAgenticWarmTransferAgenticTransferConfigActionOnTimeoutJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionAgenticWarmTransferAgenticTransferConfigActionOnTimeoutNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionColdTransferTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionColdTransferTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionColdTransferColdTransferModeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionColdTransferColdTransferModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionWarmTransferTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionWarmTransferTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionWarmTransferOnHoldMusicJsonConverter(),
+
+                    new global::G.JsonConverters.TransferOptionWarmTransferOnHoldMusicNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UtteranceRoleJsonConverter(),
+
+                    new global::G.JsonConverters.UtteranceRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.V2CallBaseCallStatusJsonConverter(),
+
+                    new global::G.JsonConverters.V2CallBaseCallStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.V2CallBaseDataStorageSettingJsonConverter(),
+
+                    new global::G.JsonConverters.V2CallBaseDataStorageSettingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.V2PhoneCallResponseVariant1CallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.V2PhoneCallResponseVariant1CallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.V2PhoneCallResponseVariant1DirectionJsonConverter(),
+
+                    new global::G.JsonConverters.V2PhoneCallResponseVariant1DirectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.V2WebCallResponseVariant1CallTypeJsonConverter(),
+
+                    new global::G.JsonConverters.V2WebCallResponseVariant1CallTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceResponseProviderJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceResponseProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceResponseGenderJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceResponseGenderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailActionBridgeTransferTypeJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailActionBridgeTransferTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailActionHangupTypeJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailActionHangupTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailActionPromptTypeJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailActionPromptTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailActionStaticTextTypeJsonConverter(),
+
+                    new global::G.JsonConverters.VoicemailActionStaticTextTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.IvrActionHangupTypeJsonConverter(),
+
+                    new global::G.JsonConverters.IvrActionHangupTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WarmTransferPromptTypeJsonConverter(),
+
+                    new global::G.JsonConverters.WarmTransferPromptTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WarmTransferStaticMessageTypeJsonConverter(),
+
+                    new global::G.JsonConverters.WarmTransferStaticMessageTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneNumberRequestNumberProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneNumberRequestNumberProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneNumberRequestCountryCodeJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneNumberRequestCountryCodeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceRequestVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceRequestVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AddCommunityVoiceRequestVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AddCommunityVoiceRequestVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SearchCommunityVoiceRequestVoiceProviderJsonConverter(),
+
+                    new global::G.JsonConverters.SearchCommunityVoiceRequestVoiceProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatMetadataRequestDataStorageSettingJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatMetadataRequestDataStorageSettingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsRequestFilterCriteriaCallStatuJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsRequestFilterCriteriaCallStatuNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsRequestFilterCriteriaCallTypeItemJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsRequestFilterCriteriaCallTypeItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsRequestFilterCriteriaDirectionItemJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsRequestFilterCriteriaDirectionItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsRequestFilterCriteriaUserSentimentItemJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsRequestFilterCriteriaUserSentimentItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsRequestSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsRequestSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallRequestDirectionJsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallRequestDirectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCallMetadataRequestDataStorageSettingJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCallMetadataRequestDataStorageSettingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsV2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsV2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsV2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsV2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListChatSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.ListChatSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsV2SortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsV2SortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListPhoneNumbersV2SortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.ListPhoneNumbersV2SortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2SortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2SortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AddKnowledgeBaseSourcesResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.AddKnowledgeBaseSourcesResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AddKnowledgeBaseSourcesResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.AddKnowledgeBaseSourcesResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.AddKnowledgeBaseSourcesResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.AddKnowledgeBaseSourcesResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.AddKnowledgeBaseSourcesResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.AddKnowledgeBaseSourcesResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.AddKnowledgeBaseSourcesResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.AddKnowledgeBaseSourcesResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAgentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAgentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAgentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateAgentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAgentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateAgentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateAgentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateAgentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchCallResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchCallResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchCallResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchCallResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchCallResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchCallResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchCallResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchCallResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchTestResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchTestResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchTestResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchTestResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchTestResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchTestResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchTestResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchTestResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchTestResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.CreateBatchTestResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestCaseDefinitionResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestCaseDefinitionResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestCaseDefinitionResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestCaseDefinitionResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestCaseDefinitionResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestCaseDefinitionResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestCaseDefinitionResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestCaseDefinitionResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestCaseDefinitionResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.CreateTestCaseDefinitionResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteTestCaseDefinitionResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteTestCaseDefinitionResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteTestCaseDefinitionResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteTestCaseDefinitionResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteTestCaseDefinitionResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteTestCaseDefinitionResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteTestCaseDefinitionResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteTestCaseDefinitionResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteTestCaseDefinitionResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteTestCaseDefinitionResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestCaseDefinitionResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestCaseDefinitionResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestCaseDefinitionResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetTestCaseDefinitionResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestCaseDefinitionResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetTestCaseDefinitionResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestCaseDefinitionResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetTestCaseDefinitionResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestCaseDefinitionResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.GetTestCaseDefinitionResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsV2ResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsV2ResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsV2ResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsV2ResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsV2ResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsV2ResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsV2ResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestCaseDefinitionsV2ResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestCaseDefinitionResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestCaseDefinitionResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestCaseDefinitionResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestCaseDefinitionResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestCaseDefinitionResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestCaseDefinitionResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestCaseDefinitionResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestCaseDefinitionResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestCaseDefinitionResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateTestCaseDefinitionResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetBatchTestResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetBatchTestResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetBatchTestResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetBatchTestResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetBatchTestResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetBatchTestResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetBatchTestResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetBatchTestResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetBatchTestResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.GetBatchTestResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsV2ResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsV2ResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsV2ResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsV2ResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsV2ResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsV2ResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsV2ResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.ListBatchTestsV2ResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestRunResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestRunResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestRunResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetTestRunResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestRunResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetTestRunResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestRunResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetTestRunResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetTestRunResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.GetTestRunResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsV2ResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsV2ResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsV2ResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsV2ResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsV2ResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsV2ResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsV2ResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsV2ResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsV2ResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.ListTestRunsV2ResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatAgentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatAgentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatAgentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatAgentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatAgentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatAgentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatAgentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatAgentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatus6JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatCompletionResponseStatus6NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatus6JsonConverter(),
+
+                    new global::G.JsonConverters.CreateChatResponseStatus6NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowComponentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowComponentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowComponentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowComponentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowComponentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowComponentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowComponentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowComponentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowComponentResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowComponentResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.CreateConversationFlowResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateKnowledgeBaseResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateKnowledgeBaseResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateKnowledgeBaseResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateKnowledgeBaseResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateKnowledgeBaseResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateKnowledgeBaseResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateKnowledgeBaseResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateKnowledgeBaseResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateKnowledgeBaseResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.CreateKnowledgeBaseResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneNumberResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneNumberResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneNumberResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneNumberResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneNumberResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneNumberResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateRetellLLMResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateRetellLLMResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateRetellLLMResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateRetellLLMResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateRetellLLMResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateRetellLLMResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatus6JsonConverter(),
+
+                    new global::G.JsonConverters.CreateSmsChatResponseStatus6NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteAgentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteAgentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteAgentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteAgentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteAgentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteAgentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteAgentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteAgentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteChatAgentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteChatAgentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteChatAgentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteChatAgentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteChatAgentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteChatAgentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteChatAgentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteChatAgentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowComponentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowComponentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowComponentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowComponentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowComponentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowComponentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowComponentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowComponentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteConversationFlowResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseSourceResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseSourceResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseSourceResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseSourceResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseSourceResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseSourceResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseSourceResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseSourceResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteKnowledgeBaseResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeletePhoneNumberResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.DeletePhoneNumberResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeletePhoneNumberResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.DeletePhoneNumberResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeletePhoneNumberResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.DeletePhoneNumberResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteRetellLLMResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteRetellLLMResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteRetellLLMResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteRetellLLMResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteRetellLLMResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteRetellLLMResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteRetellLLMResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteRetellLLMResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.EndChatResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.EndChatResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EndChatResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.EndChatResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.EndChatResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.EndChatResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.EndChatResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.EndChatResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentVersionsResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentVersionsResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentVersionsResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentVersionsResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentVersionsResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentVersionsResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentVersionsResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentVersionsResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetAgentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentVersionsResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentVersionsResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentVersionsResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentVersionsResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentVersionsResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentVersionsResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetChatAgentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetChatResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetChatResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetChatResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetChatResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetConcurrencyResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetConcurrencyResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetConcurrencyResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetConcurrencyResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowComponentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowComponentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowComponentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowComponentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowComponentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowComponentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowComponentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowComponentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.GetConversationFlowResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetKnowledgeBaseResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetKnowledgeBaseResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetKnowledgeBaseResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetKnowledgeBaseResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetKnowledgeBaseResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetKnowledgeBaseResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetKnowledgeBaseResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetKnowledgeBaseResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetMCPToolsResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetMCPToolsResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetMCPToolsResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetMCPToolsResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetMCPToolsResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetMCPToolsResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetMCPToolsResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetMCPToolsResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetPhoneNumberResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetPhoneNumberResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetPhoneNumberResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetPhoneNumberResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetPhoneNumberResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetPhoneNumberResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetPhoneNumberResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetPhoneNumberResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetRetellLLMResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetRetellLLMResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetRetellLLMResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetRetellLLMResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetRetellLLMResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetRetellLLMResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetRetellLLMResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetRetellLLMResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetVoiceResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetVoiceResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetVoiceResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetVoiceResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetVoiceResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetVoiceResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetVoiceResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetVoiceResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.CloneVoiceResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.AddCommunityVoiceResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.AddCommunityVoiceResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AddCommunityVoiceResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.AddCommunityVoiceResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.AddCommunityVoiceResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.AddCommunityVoiceResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.AddCommunityVoiceResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.AddCommunityVoiceResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.SearchCommunityVoiceResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.SearchCommunityVoiceResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SearchCommunityVoiceResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.SearchCommunityVoiceResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.SearchCommunityVoiceResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.SearchCommunityVoiceResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.SearchCommunityVoiceResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.SearchCommunityVoiceResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ImportPhoneNumberResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ImportPhoneNumberResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ImportPhoneNumberResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ImportPhoneNumberResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ImportPhoneNumberResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ImportPhoneNumberResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListAgentsResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListAgentsResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListAgentsResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListAgentsResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListChatAgentsResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListChatAgentsResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListChatAgentsResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListChatAgentsResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListChatResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListChatResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListChatResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListChatResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsV2ResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsV2ResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsV2ResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsV2ResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsV2ResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsV2ResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsV2ResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsV2ResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowComponentsResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowsResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowsResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowsResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowsResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowsResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowsResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowsResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.ListConversationFlowsResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListKnowledgeBasesResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListKnowledgeBasesResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListKnowledgeBasesResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListKnowledgeBasesResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListKnowledgeBasesResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListKnowledgeBasesResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListPhoneNumbersV2ResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListPhoneNumbersV2ResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListPhoneNumbersV2ResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListPhoneNumbersV2ResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListPhoneNumbersResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListPhoneNumbersResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListPhoneNumbersResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListPhoneNumbersResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListRetellLLMResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListRetellLLMResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListRetellLLMResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListRetellLLMResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListVoicesResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListVoicesResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListVoicesResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListVoicesResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublishAgentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.PublishAgentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublishAgentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.PublishAgentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublishAgentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.PublishAgentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublishAgentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.PublishAgentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublishAgentResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.PublishAgentResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublishChatAgentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.PublishChatAgentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublishChatAgentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.PublishChatAgentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublishChatAgentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.PublishChatAgentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublishChatAgentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.PublishChatAgentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.PublishChatAgentResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.PublishChatAgentResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAgentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAgentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAgentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAgentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAgentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAgentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAgentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateAgentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatAgentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatAgentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatAgentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatAgentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatAgentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatAgentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatAgentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatAgentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatMetadataResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatMetadataResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatMetadataResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatMetadataResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatMetadataResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatMetadataResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatMetadataResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateChatMetadataResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowComponentResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowComponentResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowComponentResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowComponentResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowComponentResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowComponentResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowComponentResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowComponentResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowComponentResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowComponentResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateConversationFlowResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePhoneNumberResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePhoneNumberResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePhoneNumberResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePhoneNumberResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePhoneNumberResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePhoneNumberResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePhoneNumberResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.UpdatePhoneNumberResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateRetellLLMResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateRetellLLMResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateRetellLLMResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateRetellLLMResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateRetellLLMResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateRetellLLMResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateRetellLLMResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateRetellLLMResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatus6JsonConverter(),
+
+                    new global::G.JsonConverters.CreatePhoneCallResponseStatus6NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatus6JsonConverter(),
+
+                    new global::G.JsonConverters.CreateWebCallResponseStatus6NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteCallResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteCallResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteCallResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteCallResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteCallResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteCallResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.DeleteCallResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.DeleteCallResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetCallResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetCallResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetCallResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.GetCallResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetCallResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.GetCallResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetCallResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.GetCallResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListCallsResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseItemChannelJsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseItemChannelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseItemStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseItemStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.ListExportRequestsV2ResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatus5JsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatus5NullableJsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatus6JsonConverter(),
+
+                    new global::G.JsonConverters.RegisterPhoneCallResponseStatus6NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCallMetadataResponseStatusJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCallMetadataResponseStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCallMetadataResponseStatus2JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCallMetadataResponseStatus2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCallMetadataResponseStatus3JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCallMetadataResponseStatus3NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCallMetadataResponseStatus4JsonConverter(),
+
+                    new global::G.JsonConverters.UpdateCallMetadataResponseStatus4NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
@@ -50,12 +2219,37 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

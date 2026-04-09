@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AutomationRuleEvaluatorWriteActionJsonConverter))]
         public global::G.AutomationRuleEvaluatorWriteAction Action { get; set; }
 
         /// <summary>

@@ -67,6 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAPIVoiceStateJsonConverter))]
         public global::G.OpenAPIVoiceState? State { get; set; }
 
         /// <summary>

@@ -32,6 +32,7 @@ namespace G
         /// <default>global::G.SpeechStartMessageType.SpeechStart</default>
         /// <example>speech_start</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpeechStartMessageTypeJsonConverter))]
         public global::G.SpeechStartMessageType Type { get; set; } = global::G.SpeechStartMessageType.SpeechStart;
 
         /// <summary>

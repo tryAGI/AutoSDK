@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "voicemail" for Voicemail tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoicemailToolTypeJsonConverter))]
         public global::G.VoicemailToolType Type { get; set; }
 
         /// <summary>

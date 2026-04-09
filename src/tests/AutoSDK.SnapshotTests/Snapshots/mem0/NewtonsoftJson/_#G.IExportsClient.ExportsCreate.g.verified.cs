@@ -10,11 +10,13 @@ namespace G
         /// Create a structured export of memories based on a provided schema.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExportsCreateResponse> ExportsCreateAsync(
 
             global::G.ExportsCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an export job with schema<br/>
@@ -32,6 +34,7 @@ namespace G
         /// <param name="projectId">
         /// Filter exports by project ID.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ExportsCreateResponse> ExportsCreateAsync(
@@ -39,6 +42,7 @@ namespace G
             global::G.ExportsCreateRequestFilters? filters = default,
             string? orgId = default,
             string? projectId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

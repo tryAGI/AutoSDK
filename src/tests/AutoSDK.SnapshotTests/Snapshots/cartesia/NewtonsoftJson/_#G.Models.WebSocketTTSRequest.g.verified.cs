@@ -100,6 +100,7 @@ namespace G
         /// Default Value: normal
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speed")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelSpeedJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.ModelSpeed? Speed { get; set; }
 

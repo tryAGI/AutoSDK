@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dubbing_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiCreateProjectRequestDubbingTypeJsonConverter))]
         public global::G.ApiCreateProjectRequestDubbingType DubbingType { get; set; } = default!;
 
         /// <summary>

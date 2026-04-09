@@ -35,6 +35,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentPresenterPhotoAvatarVoiceOpenAIType2JsonConverter))]
         public global::G.AgentPresenterPhotoAvatarVoiceOpenAIType2 Type { get; set; }
 
         /// <summary>

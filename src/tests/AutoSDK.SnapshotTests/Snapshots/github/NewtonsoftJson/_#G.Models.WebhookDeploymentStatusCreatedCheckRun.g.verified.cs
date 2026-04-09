@@ -19,6 +19,7 @@ namespace G
         /// The result of the completed check run. This value will be `null` until the check run has completed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookDeploymentStatusCreatedCheckRunConclusionJsonConverter))]
         public global::G.WebhookDeploymentStatusCreatedCheckRunConclusion? Conclusion { get; set; }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace G
         /// The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookDeploymentStatusCreatedCheckRunStatusJsonConverter))]
         public global::G.WebhookDeploymentStatusCreatedCheckRunStatus Status { get; set; } = default!;
 
         /// <summary>

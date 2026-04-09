@@ -66,6 +66,7 @@ namespace G
         /// </summary>
         /// <example>queued</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CheckRunStatusJsonConverter))]
         public global::G.CheckRunStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace G
         /// </summary>
         /// <example>neutral</example>
         [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CheckRunConclusionJsonConverter))]
         public global::G.CheckRunConclusion? Conclusion { get; set; }
 
         /// <summary>

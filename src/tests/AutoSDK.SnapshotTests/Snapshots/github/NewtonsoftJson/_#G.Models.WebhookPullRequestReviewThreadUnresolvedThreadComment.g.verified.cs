@@ -19,6 +19,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociationJsonConverter))]
         public global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
@@ -133,6 +134,7 @@ namespace G
         /// The side of the first line of the range for a multi-line comment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("side", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewThreadUnresolvedThreadCommentSideJsonConverter))]
         public global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentSide Side { get; set; } = default!;
 
         /// <summary>
@@ -146,12 +148,14 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_side")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewThreadUnresolvedThreadCommentStartSideJsonConverter))]
         public global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentStartSide? StartSide { get; set; }
 
         /// <summary>
         /// The level at which the comment is targeted, can be a diff line or a file.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subject_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectTypeJsonConverter))]
         public global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentSubjectType? SubjectType { get; set; }
 
         /// <summary>

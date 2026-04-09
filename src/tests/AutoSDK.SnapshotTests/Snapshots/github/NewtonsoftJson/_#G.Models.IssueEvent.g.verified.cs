@@ -136,6 +136,7 @@ namespace G
         /// </summary>
         /// <example>OWNER</example>
         [global::Newtonsoft.Json.JsonProperty("author_association")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         public global::G.AuthorAssociation? AuthorAssociation { get; set; }
 
         /// <summary>

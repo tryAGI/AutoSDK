@@ -16,6 +16,7 @@ namespace G
         /// <default>global::G.WebhookTranscriptionCreatedPayloadEvent.TranscriptionCreated</default>
         /// <example>transcription.created</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookTranscriptionCreatedPayloadEventJsonConverter))]
         public global::G.WebhookTranscriptionCreatedPayloadEvent Event { get; set; } = global::G.WebhookTranscriptionCreatedPayloadEvent.TranscriptionCreated;
 
         /// <summary>

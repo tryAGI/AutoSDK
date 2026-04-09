@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>POST</example>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LogRequestMethodJsonConverter))]
         public global::G.LogRequestMethod Method { get; set; } = default!;
 
         /// <summary>

@@ -13,12 +13,14 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddProjectResponseModel> Create2Async(
 
             global::G.BodyCreateStudioProjectV1StudioProjectsPost request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Studio Project<br/>
@@ -190,6 +192,7 @@ namespace G
         /// If true, creates a corresponding read for direct publishing in draft state<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AddProjectResponseModel> Create2Async(
@@ -224,6 +227,7 @@ namespace G
             global::G.BodyCreateStudioProjectV1StudioProjectsPostSourceType2? sourceType = default,
             global::System.Collections.Generic.IList<string>? voiceSettings = default,
             bool? createPublishingRead = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

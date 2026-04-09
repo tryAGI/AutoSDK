@@ -14,6 +14,7 @@ namespace G
         /// Default Value: include
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_uncategorized")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SplitStrategyAllowUncategorizedJsonConverter))]
         public global::G.SplitStrategyAllowUncategorized? AllowUncategorized { get; set; }
 
         /// <summary>

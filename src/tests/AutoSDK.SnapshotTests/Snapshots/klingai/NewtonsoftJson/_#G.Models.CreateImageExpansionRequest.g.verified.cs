@@ -31,6 +31,7 @@ namespace G
         /// Target aspect ratio.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("aspect_ratio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageExpansionRequestAspectRatioJsonConverter))]
         public global::G.CreateImageExpansionRequestAspectRatio? AspectRatio { get; set; }
 
         /// <summary>

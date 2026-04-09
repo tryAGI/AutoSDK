@@ -6,6 +6,7 @@ namespace G
 {
     public sealed partial class Api
     {
+
         /// <inheritdoc/>
         public void AuthorizeUsingApiKey2(
             string apiKey)

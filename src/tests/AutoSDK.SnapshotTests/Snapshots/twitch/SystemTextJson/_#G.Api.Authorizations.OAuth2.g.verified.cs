@@ -7,6 +7,47 @@ namespace G
     public sealed partial class Api
     {
         /// <summary>
+        /// Represents an OAuth2 device authorization response.
+        /// </summary>
+        public sealed class OAuth2DeviceAuthorizationResponse
+        {
+            /// <summary>
+            /// Gets or sets the device code.
+            /// </summary>
+            public string DeviceCode { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets the user code.
+            /// </summary>
+            public string UserCode { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets the verification URI.
+            /// </summary>
+            public string VerificationUri { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets the complete verification URI, if available.
+            /// </summary>
+            public string? VerificationUriComplete { get; set; }
+
+            /// <summary>
+            /// Gets or sets the display message for the end user, if provided.
+            /// </summary>
+            public string? Message { get; set; }
+
+            /// <summary>
+            /// Gets or sets the polling interval.
+            /// </summary>
+            public global::System.TimeSpan? Interval { get; set; }
+
+            /// <summary>
+            /// Gets or sets the expiration time.
+            /// </summary>
+            public global::System.DateTimeOffset? ExpiresAt { get; set; }
+        }
+
+        /// <summary>
         /// Represents an OAuth2 token.
         /// </summary>
         public sealed class OAuth2Token
@@ -442,6 +483,17 @@ namespace G
             Analytics_read_extensions,            Analytics_read_games,            Bits_read,            Channel_manage_ads,            Channel_read_ads,            Channel_manage_broadcast,            Channel_read_charity,            Channel_edit_commercial,            Channel_read_editors,            Channel_manage_extensions,            Channel_read_goals,            Channel_read_guestStar,            Channel_manage_guestStar,            Channel_read_hypeTrain,            Channel_manage_moderators,            Channel_read_polls,            Channel_manage_polls,            Channel_read_predictions,            Channel_manage_predictions,            Channel_manage_raids,            Channel_read_redemptions,            Channel_manage_redemptions,            Channel_manage_schedule,            Channel_read_streamKey,            Channel_read_subscriptions,            Channel_manage_videos,            Channel_read_vips,            Channel_manage_vips,            Clips_edit,            Moderation_read,            Moderator_manage_announcements,            Moderator_manage_automod,            Moderator_read_automodSettings,            Moderator_manage_automodSettings,            Moderator_manage_bannedUsers,            Moderator_read_blockedTerms,            Moderator_manage_blockedTerms,            Moderator_manage_chatMessages,            Moderator_read_chatSettings,            Moderator_manage_chatSettings,            Moderator_read_chatters,            Moderator_read_followers,            Moderator_read_guestStar,            Moderator_manage_guestStar,            Moderator_read_shieldMode,            Moderator_manage_shieldMode,            Moderator_read_shoutouts,            Moderator_manage_shoutouts,            Moderator_read_unbanRequests,            Moderator_manage_unbanRequests,            User_edit,            User_read_blockedUsers,            User_manage_blockedUsers,            User_read_broadcast,            User_manage_chatColor,            User_read_email,            User_read_emotes,            User_read_follows,            User_read_moderatedChannels,            User_read_subscriptions,            User_manage_whispers,            Channel_bot,            Channel_moderate,            Chat_edit,            Chat_read,            User_bot,            User_read_chat,            User_write_chat,            Whispers_read,            Whispers_edit,
         }
         /// <summary>
+        /// Gets the OAuth2 metadata URL declared by the security scheme, if any.
+        /// </summary>
+        public string? OAuth2MetadataUrl => string.IsNullOrWhiteSpace("")
+            ? null
+            : "";
+
+        /// <summary>
+        /// Gets a value indicating whether the OAuth2 security scheme is deprecated.
+        /// </summary>
+        public bool IsOAuth2Deprecated => false;
+        /// <summary>
         /// Gets or sets the OAuth2 token store.
         /// </summary>
         public IOAuth2TokenStore OAuth2TokenStore
@@ -518,6 +570,7 @@ namespace G
         /// Authorize using an OAuth2 access token.
         /// </summary>
         /// <param name="accessToken"></param>
+
         public void AuthorizeUsingOAuth2(
             string accessToken)
         {
@@ -534,6 +587,7 @@ namespace G
         /// Authorize using an OAuth2 token.
         /// </summary>
         /// <param name="token"></param>
+
         public void AuthorizeUsingOAuth2(
             OAuth2Token token)
         {

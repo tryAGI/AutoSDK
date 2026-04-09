@@ -25,12 +25,14 @@ namespace G
         /// The name of the model to fine-tune.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuneableModelJsonConverter))]
         public global::G.FineTuneableModel Model { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassifierDetailedJobOutStatusJsonConverter))]
         public global::G.ClassifierDetailedJobOutStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -61,6 +63,7 @@ namespace G
         /// Default Value: job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassifierDetailedJobOutObjectJsonConverter))]
         public global::G.ClassifierDetailedJobOutObject? Object { get; set; }
 
         /// <summary>
@@ -97,6 +100,7 @@ namespace G
         /// Default Value: classifier
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("job_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassifierDetailedJobOutJobTypeJsonConverter))]
         public global::G.ClassifierDetailedJobOutJobType? JobType { get; set; }
 
         /// <summary>

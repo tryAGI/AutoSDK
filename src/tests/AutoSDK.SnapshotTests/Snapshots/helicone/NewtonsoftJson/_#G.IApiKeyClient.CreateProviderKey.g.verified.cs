@@ -9,11 +9,13 @@ namespace G
         /// 
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.CreateProviderKeyResponseVariant1, global::G.CreateProviderKeyResponseVariant2>> CreateProviderKeyAsync(
 
             global::G.CreateProviderKeyRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
@@ -26,6 +28,7 @@ namespace G
         /// <param name="providerSecretKey"></param>
         /// <param name="providerKey"></param>
         /// <param name="providerName"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.CreateProviderKeyResponseVariant1, global::G.CreateProviderKeyResponseVariant2>> CreateProviderKeyAsync(
@@ -35,6 +38,7 @@ namespace G
             string providerKey,
             string providerName,
             string? providerSecretKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

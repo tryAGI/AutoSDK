@@ -13,6 +13,7 @@ namespace G
         /// The authentication type for the secret.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateBearerAuthSecretRequestDtoTypeJsonConverter))]
         public global::G.CreateBearerAuthSecretRequestDtoType Type { get; set; }
 
         /// <summary>

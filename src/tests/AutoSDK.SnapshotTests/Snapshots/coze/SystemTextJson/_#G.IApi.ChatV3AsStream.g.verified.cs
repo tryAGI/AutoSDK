@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="conversationId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatV3Response2> ChatV3AsStreamAsync(
 
             global::G.ChatV3Request request,
             string? conversationId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 发起对话<br/>
@@ -43,6 +45,7 @@ namespace G
         /// </param>
         /// <param name="shortcutCommand"></param>
         /// <param name="userId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.ChatV3Response2> ChatV3AsStreamAsync(
@@ -59,6 +62,7 @@ namespace G
             object? parameters = default,
             global::G.ChatV3RequestPublishStatus? publishStatus = default,
             global::G.ShortcutCommandDetail? shortcutCommand = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

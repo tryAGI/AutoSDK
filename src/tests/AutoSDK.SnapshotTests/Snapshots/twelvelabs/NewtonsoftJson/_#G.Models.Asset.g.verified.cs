@@ -22,6 +22,7 @@ namespace G
         /// - `url`: Uploaded from a publicly accessible URL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssetMethodJsonConverter))]
         public global::G.AssetMethod? Method { get; set; }
 
         /// <summary>
@@ -32,6 +33,7 @@ namespace G
         /// - `ready`: The asset is ready to use
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssetStatusJsonConverter))]
         public global::G.AssetStatus? Status { get; set; }
 
         /// <summary>

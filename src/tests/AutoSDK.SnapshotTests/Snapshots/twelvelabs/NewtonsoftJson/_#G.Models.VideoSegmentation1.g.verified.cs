@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("strategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoSegmentation1StrategyJsonConverter))]
         public global::G.VideoSegmentation1Strategy Strategy { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// This is the key for Gemini in Google AI Studio. Get it from here: https://aistudio.google.com/app/apikey
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoogleCredentialProviderJsonConverter))]
         public global::G.GoogleCredentialProvider Provider { get; set; }
 
         /// <summary>

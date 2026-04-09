@@ -12,6 +12,7 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="userId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenAPIUpdateOrganizationPeopleResponse> OpenAPIUpdateOrganizationPeopleAsync(
@@ -19,6 +20,7 @@ namespace G
             string userId,
 
             global::G.OpenAPIUpdateOrganizationPeopleRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 修改组织成员的角色<br/>
@@ -27,12 +29,14 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="userId"></param>
         /// <param name="organizationRoleType"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OpenAPIUpdateOrganizationPeopleResponse> OpenAPIUpdateOrganizationPeopleAsync(
             string organizationId,
             string userId,
             global::G.OpenAPIUpdateOrganizationPeopleRequestOrganizationRoleType organizationRoleType,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

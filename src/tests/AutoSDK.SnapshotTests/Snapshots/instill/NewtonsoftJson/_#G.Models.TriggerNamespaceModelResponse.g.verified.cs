@@ -14,6 +14,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("task")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AITaskJsonConverter))]
         public global::G.AITask? Task { get; set; }
 
         /// <summary>

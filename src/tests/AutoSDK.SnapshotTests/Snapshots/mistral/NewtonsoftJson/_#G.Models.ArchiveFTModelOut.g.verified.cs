@@ -19,6 +19,7 @@ namespace G
         /// Default Value: model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ArchiveFTModelOutObjectJsonConverter))]
         public global::G.ArchiveFTModelOutObject? Object { get; set; }
 
         /// <summary>

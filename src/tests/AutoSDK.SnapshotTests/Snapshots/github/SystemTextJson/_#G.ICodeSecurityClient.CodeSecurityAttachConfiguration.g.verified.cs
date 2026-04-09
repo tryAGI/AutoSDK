@@ -15,6 +15,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="configurationId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> CodeSecurityAttachConfigurationAsync(
@@ -22,6 +23,7 @@ namespace G
             int configurationId,
 
             global::G.CodeSecurityAttachConfigurationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Attach a configuration to repositories<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="selectedRepositoryIds">
         /// An array of repository IDs to attach the configuration to. You can only provide a list of repository ids when the `scope` is set to `selected`.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> CodeSecurityAttachConfigurationAsync(
@@ -45,6 +48,7 @@ namespace G
             int configurationId,
             global::G.CodeSecurityAttachConfigurationRequestScope scope,
             global::System.Collections.Generic.IList<int>? selectedRepositoryIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

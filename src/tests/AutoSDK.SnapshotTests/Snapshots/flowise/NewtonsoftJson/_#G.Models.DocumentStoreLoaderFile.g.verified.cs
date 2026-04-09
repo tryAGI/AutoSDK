@@ -37,6 +37,7 @@ namespace G
         /// Status of the file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DocumentStoreLoaderFileStatusJsonConverter))]
         public global::G.DocumentStoreLoaderFileStatus? Status { get; set; }
 
         /// <summary>

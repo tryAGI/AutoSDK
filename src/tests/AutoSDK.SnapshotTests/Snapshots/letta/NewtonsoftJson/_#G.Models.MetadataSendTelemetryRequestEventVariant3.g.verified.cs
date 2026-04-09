@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MetadataSendTelemetryRequestEventVariant3TypeJsonConverter))]
         public global::G.MetadataSendTelemetryRequestEventVariant3Type Type { get; set; }
 
         /// <summary>

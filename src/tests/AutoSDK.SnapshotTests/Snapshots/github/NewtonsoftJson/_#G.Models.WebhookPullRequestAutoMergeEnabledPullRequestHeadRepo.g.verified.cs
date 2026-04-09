@@ -357,6 +357,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_message")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoMergeCommitMessageJsonConverter))]
         public global::G.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoMergeCommitMessage? MergeCommitMessage { get; set; }
 
         /// <summary>
@@ -365,6 +366,7 @@ namespace G
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_title")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoMergeCommitTitleJsonConverter))]
         public global::G.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoMergeCommitTitle? MergeCommitTitle { get; set; }
 
         /// <summary>
@@ -482,6 +484,7 @@ namespace G
         /// - `BLANK` - default to a blank commit message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_message")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoSquashMergeCommitMessageJsonConverter))]
         public global::G.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
@@ -490,6 +493,7 @@ namespace G
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("squash_merge_commit_title")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoSquashMergeCommitTitleJsonConverter))]
         public global::G.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoSquashMergeCommitTitle? SquashMergeCommitTitle { get; set; }
 
         /// <summary>
@@ -587,6 +591,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoVisibilityJsonConverter))]
         public global::G.WebhookPullRequestAutoMergeEnabledPullRequestHeadRepoVisibility Visibility { get; set; } = default!;
 
         /// <summary>

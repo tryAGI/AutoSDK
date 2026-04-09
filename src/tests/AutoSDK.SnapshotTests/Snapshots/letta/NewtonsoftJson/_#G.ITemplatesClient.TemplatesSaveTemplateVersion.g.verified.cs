@@ -12,6 +12,7 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="templateName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TemplatesSaveTemplateVersionResponse> TemplatesSaveTemplateVersionAsync(
@@ -19,6 +20,7 @@ namespace G
             string templateName,
 
             global::G.TemplatesSaveTemplateVersionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Save template version (Cloud-only)<br/>
@@ -44,6 +46,7 @@ namespace G
         /// <param name="message">
         /// A message to describe the changes made in this template version
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TemplatesSaveTemplateVersionResponse> TemplatesSaveTemplateVersionAsync(
@@ -55,6 +58,7 @@ namespace G
             global::G.TemplatesSaveTemplateVersionRequestBlockReconciliationStrategy? blockReconciliationStrategy = default,
             bool? migrateAgents = default,
             string? message = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

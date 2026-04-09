@@ -18,12 +18,14 @@ namespace G
         /// - "say-first-message" - say the first message (this is used when video recording is enabled and the conversation is only started once the client side kicks off the recording)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientInboundMessageControlTypeJsonConverter))]
         public global::G.ClientInboundMessageControlType Type { get; set; }
 
         /// <summary>
         /// This is the control action
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("control", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientInboundMessageControlControlJsonConverter))]
         public global::G.ClientInboundMessageControlControl Control { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Default Value: legacy
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeployTypeJsonConverter))]
         public global::G.DeployType? Type { get; set; }
 
         /// <summary>

@@ -10,11 +10,13 @@ namespace G
         /// Create or replace view. If there is an existing view with the same name as the one specified in the request, will replace the existing view with the provided fields
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.View> PutViewAsync(
 
             global::G.CreateView request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create or replace view<br/>
@@ -44,6 +46,7 @@ namespace G
         /// <param name="deletedAt">
         /// Date of role deletion, or null if the role is still active
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.View> PutViewAsync(
@@ -55,6 +58,7 @@ namespace G
             global::G.ViewOptions? options = default,
             global::System.Guid? userId = default,
             global::System.DateTime? deletedAt = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

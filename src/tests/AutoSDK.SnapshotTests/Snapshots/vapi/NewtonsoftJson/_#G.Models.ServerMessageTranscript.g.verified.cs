@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "transcript" is sent as transcriber outputs partial or final transcript.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageTranscriptTypeJsonConverter))]
         public global::G.ServerMessageTranscriptType Type { get; set; } = default!;
 
         /// <summary>
@@ -62,12 +63,14 @@ namespace G
         /// This is the role for which the transcript is for.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageTranscriptRoleJsonConverter))]
         public global::G.ServerMessageTranscriptRole Role { get; set; } = default!;
 
         /// <summary>
         /// This is the type of the transcript.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transcriptType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageTranscriptTranscriptTypeJsonConverter))]
         public global::G.ServerMessageTranscriptTranscriptType TranscriptType { get; set; } = default!;
 
         /// <summary>

@@ -12,6 +12,7 @@ namespace G
         /// <param name="requestTimeout"></param>
         /// <param name="authorization"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateVectordbPartitionsListResponse> CreateVectordbPartitionsListAsync(
@@ -19,6 +20,7 @@ namespace G
             global::G.CreateVectordbPartitionsListRequest request,
             int? requestTimeout = default,
             string? authorization = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List Partitions<br/>
@@ -32,6 +34,7 @@ namespace G
         /// <param name="collectionName">
         /// The name of the target collection to which the partition belongs.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateVectordbPartitionsListResponse> CreateVectordbPartitionsListAsync(
@@ -39,6 +42,7 @@ namespace G
             string collectionName,
             int? requestTimeout = default,
             string? authorization = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferFailedEdgeVariant2TransitionConditionTypeJsonConverter))]
         public global::G.TransferFailedEdgeVariant2TransitionConditionType Type { get; set; }
 
         /// <summary>
         /// Must be "Transfer failed" for transfer failed edge
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferFailedEdgeVariant2TransitionConditionPromptJsonConverter))]
         public global::G.TransferFailedEdgeVariant2TransitionConditionPrompt Prompt { get; set; }
 
         /// <summary>

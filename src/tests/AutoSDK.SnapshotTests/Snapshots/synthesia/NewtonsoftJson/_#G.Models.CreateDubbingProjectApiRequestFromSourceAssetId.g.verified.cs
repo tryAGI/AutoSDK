@@ -41,6 +41,7 @@ namespace G
         /// </summary>
         /// <example>adaptive</example>
         [global::Newtonsoft.Json.JsonProperty("videoDuration")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateDubbingProjectApiRequestFromSourceAssetIdVideoDurationJsonConverter))]
         public global::G.CreateDubbingProjectApiRequestFromSourceAssetIdVideoDuration? VideoDuration { get; set; }
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace G
         /// </summary>
         /// <example>private</example>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateDubbingProjectApiRequestFromSourceAssetIdVisibilityJsonConverter))]
         public global::G.CreateDubbingProjectApiRequestFromSourceAssetIdVisibility? Visibility { get; set; }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sourceLanguage", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DubbingInputLanguageJsonConverter))]
         public global::G.DubbingInputLanguage SourceLanguage { get; set; } = default!;
 
         /// <summary>

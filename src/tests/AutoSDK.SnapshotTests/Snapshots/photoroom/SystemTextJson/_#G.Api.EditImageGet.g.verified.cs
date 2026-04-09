@@ -352,6 +352,7 @@ namespace G
         /// <param name="virtualModelSize">
         /// Default Value: PORTRAIT_HD_3_2
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> EditImageGetAsync(
@@ -432,6 +433,7 @@ namespace G
             global::G.EditImageGetVirtualModelQuality? virtualModelQuality = default,
             global::G.AnyOf<global::G.EditImageGetVirtualModelSceneVariant1, global::G.EditImageGetVirtualModelSceneVariant2>? virtualModelScene = default,
             global::G.EditImageGetVirtualModelSize? virtualModelSize = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await EditImageGetAsResponseAsync(
@@ -512,6 +514,7 @@ namespace G
                 virtualModelQuality: virtualModelQuality,
                 virtualModelScene: virtualModelScene,
                 virtualModelSize: virtualModelSize,
+                requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
 
@@ -675,6 +678,7 @@ namespace G
         /// <param name="virtualModelSize">
         /// Default Value: PORTRAIT_HD_3_2
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<byte[]>> EditImageGetAsResponseAsync(
@@ -755,6 +759,7 @@ namespace G
             global::G.EditImageGetVirtualModelQuality? virtualModelQuality = default,
             global::G.AnyOf<global::G.EditImageGetVirtualModelSceneVariant1, global::G.EditImageGetVirtualModelSceneVariant2>? virtualModelScene = default,
             global::G.EditImageGetVirtualModelSize? virtualModelSize = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -845,98 +850,117 @@ namespace G
                 securityRequirements: s_EditImageGetSecurityRequirements,
                 operationName: "EditImageGetAsync");
 
-            var __pathBuilder = new global::G.PathBuilder(
-                path: "/v2/edit",
-                baseUri: HttpClient.BaseAddress); 
-            __pathBuilder
-                .AddOptionalParameter("background.blur.mode", backgroundBlurMode?.ToValueString())
-                .AddOptionalParameter("background.blur.radius", backgroundBlurRadius?.ToString())
-                .AddOptionalParameter("background.color", backgroundColor)
-                .AddOptionalParameter("background.expandPrompt", backgroundExpandPrompt?.ToString())
-                .AddOptionalParameter("background.guidance.imageFile", backgroundGuidanceImageFile?.ToString())
-                .AddOptionalParameter("background.guidance.imageUrl", backgroundGuidanceImageUrl)
-                .AddOptionalParameter("background.guidance.scale", backgroundGuidanceScale?.ToString())
-                .AddOptionalParameter("background.imageUrl", backgroundImageUrl)
-                .AddOptionalParameter("background.negativePrompt", backgroundNegativePrompt)
-                .AddOptionalParameter("background.prompt", backgroundPrompt)
-                .AddOptionalParameter("background.scaling", backgroundScaling?.ToValueString())
-                .AddOptionalParameter("background.seed", backgroundSeed?.ToString())
-                .AddOptionalParameter("beautify.mode", beautifyMode?.ToValueString())
-                .AddOptionalParameter("beautify.seed", beautifySeed?.ToString())
-                .AddOptionalParameter("describeAnyChange.mode", describeAnyChangeMode)
-                .AddOptionalParameter("describeAnyChange.prompt", describeAnyChangePrompt)
-                .AddOptionalParameter("describeAnyChange.seed", describeAnyChangeSeed?.ToString())
-                .AddOptionalParameter("editWithAI.mode", editWithAIMode)
-                .AddOptionalParameter("editWithAI.prompt", editWithAIPrompt)
-                .AddOptionalParameter("editWithAI.seed", editWithAISeed?.ToString())
-                .AddOptionalParameter("expand.mode", expandMode)
-                .AddOptionalParameter("expand.seed", expandSeed?.ToString())
-                .AddOptionalParameter("export.dpi", exportDpi?.ToString())
-                .AddOptionalParameter("export.format", exportFormat?.ToValueString())
-                .AddOptionalParameter("flatLay.mode", flatLayMode)
-                .AddOptionalParameter("flatLay.prompt", flatLayPrompt)
-                .AddOptionalParameter("flatLay.size", flatLaySize?.ToValueString())
-                .AddOptionalParameter("ghostMannequin.mode", ghostMannequinMode)
-                .AddOptionalParameter("ghostMannequin.prompt", ghostMannequinPrompt)
-                .AddOptionalParameter("ghostMannequin.size", ghostMannequinSize?.ToValueString())
-                .AddOptionalParameter("horizontalAlignment", horizontalAlignment?.ToValueString())
-                .AddOptionalParameter("ignorePaddingAndSnapOnCroppedSides", ignorePaddingAndSnapOnCroppedSides?.ToString().ToLowerInvariant())
-                .AddOptionalParameter("imageFromPrompt.prompt", imageFromPromptPrompt)
-                .AddOptionalParameter("imageFromPrompt.seed", imageFromPromptSeed?.ToString())
-                .AddOptionalParameter("imageFromPrompt.size", imageFromPromptSize?.ToValueString())
-                .AddOptionalParameter("imageUrl", imageUrl)
-                .AddOptionalParameter("keepExistingAlphaChannel", keepExistingAlphaChannel?.ToValueString())
-                .AddOptionalParameter("layers", layers?.ToString())
-                .AddOptionalParameter("lighting.mode", lightingMode?.ToValueString())
-                .AddOptionalParameter("margin", margin)
-                .AddOptionalParameter("marginBottom", marginBottom)
-                .AddOptionalParameter("marginLeft", marginLeft)
-                .AddOptionalParameter("marginRight", marginRight)
-                .AddOptionalParameter("marginTop", marginTop)
-                .AddOptionalParameter("maxHeight", maxHeight?.ToString())
-                .AddOptionalParameter("maxWidth", maxWidth?.ToString())
-                .AddOptionalParameter("outline.blurRadius", outlineBlurRadius?.ToString())
-                .AddOptionalParameter("outline.color", outlineColor)
-                .AddOptionalParameter("outline.width", outlineWidth?.ToString())
-                .AddOptionalParameter("outputSize", outputSize)
-                .AddOptionalParameter("padding", padding)
-                .AddOptionalParameter("paddingBottom", paddingBottom)
-                .AddOptionalParameter("paddingLeft", paddingLeft)
-                .AddOptionalParameter("paddingRight", paddingRight)
-                .AddOptionalParameter("paddingTop", paddingTop)
-                .AddOptionalParameter("preserveMetadata", preserveMetadata?.ToValueString())
-                .AddOptionalParameter("referenceBox", referenceBox?.ToValueString())
-                .AddOptionalParameter("removeBackground", removeBackground?.ToString().ToLowerInvariant())
-                .AddOptionalParameter("scaling", scaling?.ToValueString())
-                .AddOptionalParameter("segmentation.mode", segmentationMode?.ToValueString())
-                .AddOptionalParameter("segmentation.negativePrompt", segmentationNegativePrompt)
-                .AddOptionalParameter("segmentation.prompt", segmentationPrompt)
-                .AddOptionalParameter("shadow.mode", shadowMode?.ToValueString())
-                .AddOptionalParameter("templateId", templateId?.ToString())
-                .AddOptionalParameter("textRemoval.mode", textRemovalMode?.ToValueString())
-                .AddOptionalParameter("uncrop.mode", uncropMode)
-                .AddOptionalParameter("uncrop.seed", uncropSeed?.ToString())
-                .AddOptionalParameter("upscale.mode", upscaleMode?.ToValueString())
-                .AddOptionalParameter("verticalAlignment", verticalAlignment?.ToValueString())
-                .AddOptionalParameter("virtualModel.additionalProductImages", virtualModelAdditionalProductImages, delimiter: ",", explode: true)
-                .AddOptionalParameter("virtualModel.mode", virtualModelMode)
-                .AddOptionalParameter("virtualModel.model", virtualModelModel?.ToString())
-                .AddOptionalParameter("virtualModel.pose", virtualModelPose?.ToValueString())
-                .AddOptionalParameter("virtualModel.prompt", virtualModelPrompt)
-                .AddOptionalParameter("virtualModel.quality", virtualModelQuality?.ToValueString())
-                .AddOptionalParameter("virtualModel.scene", virtualModelScene?.ToString())
-                .AddOptionalParameter("virtualModel.size", virtualModelSize?.ToValueString()) 
-                ; 
-            var __path = __pathBuilder.ToString();
-            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Get,
-                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: true);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: "/v2/edit",
+                                baseUri: HttpClient.BaseAddress); 
+                            __pathBuilder
+                                .AddOptionalParameter("background.blur.mode", backgroundBlurMode?.ToValueString())
+                                .AddOptionalParameter("background.blur.radius", backgroundBlurRadius?.ToString())
+                                .AddOptionalParameter("background.color", backgroundColor)
+                                .AddOptionalParameter("background.expandPrompt", backgroundExpandPrompt?.ToString())
+                                .AddOptionalParameter("background.guidance.imageFile", backgroundGuidanceImageFile?.ToString())
+                                .AddOptionalParameter("background.guidance.imageUrl", backgroundGuidanceImageUrl)
+                                .AddOptionalParameter("background.guidance.scale", backgroundGuidanceScale?.ToString())
+                                .AddOptionalParameter("background.imageUrl", backgroundImageUrl)
+                                .AddOptionalParameter("background.negativePrompt", backgroundNegativePrompt)
+                                .AddOptionalParameter("background.prompt", backgroundPrompt)
+                                .AddOptionalParameter("background.scaling", backgroundScaling?.ToValueString())
+                                .AddOptionalParameter("background.seed", backgroundSeed?.ToString())
+                                .AddOptionalParameter("beautify.mode", beautifyMode?.ToValueString())
+                                .AddOptionalParameter("beautify.seed", beautifySeed?.ToString())
+                                .AddOptionalParameter("describeAnyChange.mode", describeAnyChangeMode)
+                                .AddOptionalParameter("describeAnyChange.prompt", describeAnyChangePrompt)
+                                .AddOptionalParameter("describeAnyChange.seed", describeAnyChangeSeed?.ToString())
+                                .AddOptionalParameter("editWithAI.mode", editWithAIMode)
+                                .AddOptionalParameter("editWithAI.prompt", editWithAIPrompt)
+                                .AddOptionalParameter("editWithAI.seed", editWithAISeed?.ToString())
+                                .AddOptionalParameter("expand.mode", expandMode)
+                                .AddOptionalParameter("expand.seed", expandSeed?.ToString())
+                                .AddOptionalParameter("export.dpi", exportDpi?.ToString())
+                                .AddOptionalParameter("export.format", exportFormat?.ToValueString())
+                                .AddOptionalParameter("flatLay.mode", flatLayMode)
+                                .AddOptionalParameter("flatLay.prompt", flatLayPrompt)
+                                .AddOptionalParameter("flatLay.size", flatLaySize?.ToValueString())
+                                .AddOptionalParameter("ghostMannequin.mode", ghostMannequinMode)
+                                .AddOptionalParameter("ghostMannequin.prompt", ghostMannequinPrompt)
+                                .AddOptionalParameter("ghostMannequin.size", ghostMannequinSize?.ToValueString())
+                                .AddOptionalParameter("horizontalAlignment", horizontalAlignment?.ToValueString())
+                                .AddOptionalParameter("ignorePaddingAndSnapOnCroppedSides", ignorePaddingAndSnapOnCroppedSides?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("imageFromPrompt.prompt", imageFromPromptPrompt)
+                                .AddOptionalParameter("imageFromPrompt.seed", imageFromPromptSeed?.ToString())
+                                .AddOptionalParameter("imageFromPrompt.size", imageFromPromptSize?.ToValueString())
+                                .AddOptionalParameter("imageUrl", imageUrl)
+                                .AddOptionalParameter("keepExistingAlphaChannel", keepExistingAlphaChannel?.ToValueString())
+                                .AddOptionalParameter("layers", layers?.ToString())
+                                .AddOptionalParameter("lighting.mode", lightingMode?.ToValueString())
+                                .AddOptionalParameter("margin", margin)
+                                .AddOptionalParameter("marginBottom", marginBottom)
+                                .AddOptionalParameter("marginLeft", marginLeft)
+                                .AddOptionalParameter("marginRight", marginRight)
+                                .AddOptionalParameter("marginTop", marginTop)
+                                .AddOptionalParameter("maxHeight", maxHeight?.ToString())
+                                .AddOptionalParameter("maxWidth", maxWidth?.ToString())
+                                .AddOptionalParameter("outline.blurRadius", outlineBlurRadius?.ToString())
+                                .AddOptionalParameter("outline.color", outlineColor)
+                                .AddOptionalParameter("outline.width", outlineWidth?.ToString())
+                                .AddOptionalParameter("outputSize", outputSize)
+                                .AddOptionalParameter("padding", padding)
+                                .AddOptionalParameter("paddingBottom", paddingBottom)
+                                .AddOptionalParameter("paddingLeft", paddingLeft)
+                                .AddOptionalParameter("paddingRight", paddingRight)
+                                .AddOptionalParameter("paddingTop", paddingTop)
+                                .AddOptionalParameter("preserveMetadata", preserveMetadata?.ToValueString())
+                                .AddOptionalParameter("referenceBox", referenceBox?.ToValueString())
+                                .AddOptionalParameter("removeBackground", removeBackground?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("scaling", scaling?.ToValueString())
+                                .AddOptionalParameter("segmentation.mode", segmentationMode?.ToValueString())
+                                .AddOptionalParameter("segmentation.negativePrompt", segmentationNegativePrompt)
+                                .AddOptionalParameter("segmentation.prompt", segmentationPrompt)
+                                .AddOptionalParameter("shadow.mode", shadowMode?.ToValueString())
+                                .AddOptionalParameter("templateId", templateId?.ToString())
+                                .AddOptionalParameter("textRemoval.mode", textRemovalMode?.ToValueString())
+                                .AddOptionalParameter("uncrop.mode", uncropMode)
+                                .AddOptionalParameter("uncrop.seed", uncropSeed?.ToString())
+                                .AddOptionalParameter("upscale.mode", upscaleMode?.ToValueString())
+                                .AddOptionalParameter("verticalAlignment", verticalAlignment?.ToValueString())
+                                .AddOptionalParameter("virtualModel.additionalProductImages", virtualModelAdditionalProductImages, delimiter: ",", explode: true)
+                                .AddOptionalParameter("virtualModel.mode", virtualModelMode)
+                                .AddOptionalParameter("virtualModel.model", virtualModelModel?.ToString())
+                                .AddOptionalParameter("virtualModel.pose", virtualModelPose?.ToValueString())
+                                .AddOptionalParameter("virtualModel.prompt", virtualModelPrompt)
+                                .AddOptionalParameter("virtualModel.quality", virtualModelQuality?.ToValueString())
+                                .AddOptionalParameter("virtualModel.scene", virtualModelScene?.ToString())
+                                .AddOptionalParameter("virtualModel.size", virtualModelSize?.ToValueString()) 
+                                ;
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Get,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
-            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
-            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            var __cookies = new global::System.Collections.Generic.List<string>();
             foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
@@ -951,309 +975,457 @@ namespace G
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Cookie")
-                {
-                    var __cookieValue = global::System.Uri.EscapeDataString(__authorization.Value);
-                    __cookies.Add($"{__authorization.Name}={__cookieValue}");
-                }
+                } 
             }
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
 
-            if (__cookies.Count > 0)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
-            }
-
-            PrepareRequest(
-                client: HttpClient,
-                request: __httpRequest);
-            PrepareEditImageGetRequest(
-                httpClient: HttpClient,
-                httpRequestMessage: __httpRequest,
-                backgroundBlurMode: backgroundBlurMode,
-                backgroundBlurRadius: backgroundBlurRadius,
-                backgroundColor: backgroundColor,
-                backgroundExpandPrompt: backgroundExpandPrompt,
-                backgroundGuidanceImageFile: backgroundGuidanceImageFile,
-                backgroundGuidanceImageUrl: backgroundGuidanceImageUrl,
-                backgroundGuidanceScale: backgroundGuidanceScale,
-                backgroundImageUrl: backgroundImageUrl,
-                backgroundNegativePrompt: backgroundNegativePrompt,
-                backgroundPrompt: backgroundPrompt,
-                backgroundScaling: backgroundScaling,
-                backgroundSeed: backgroundSeed,
-                beautifyMode: beautifyMode,
-                beautifySeed: beautifySeed,
-                describeAnyChangeMode: describeAnyChangeMode,
-                describeAnyChangePrompt: describeAnyChangePrompt,
-                describeAnyChangeSeed: describeAnyChangeSeed,
-                editWithAIMode: editWithAIMode,
-                editWithAIPrompt: editWithAIPrompt,
-                editWithAISeed: editWithAISeed,
-                expandMode: expandMode,
-                expandSeed: expandSeed,
-                exportDpi: exportDpi,
-                exportFormat: exportFormat,
-                flatLayMode: flatLayMode,
-                flatLayPrompt: flatLayPrompt,
-                flatLaySize: flatLaySize,
-                ghostMannequinMode: ghostMannequinMode,
-                ghostMannequinPrompt: ghostMannequinPrompt,
-                ghostMannequinSize: ghostMannequinSize,
-                horizontalAlignment: horizontalAlignment,
-                ignorePaddingAndSnapOnCroppedSides: ignorePaddingAndSnapOnCroppedSides,
-                imageFromPromptPrompt: imageFromPromptPrompt,
-                imageFromPromptSeed: imageFromPromptSeed,
-                imageFromPromptSize: imageFromPromptSize,
-                imageUrl: imageUrl,
-                keepExistingAlphaChannel: keepExistingAlphaChannel,
-                layers: layers,
-                lightingMode: lightingMode,
-                margin: margin,
-                marginBottom: marginBottom,
-                marginLeft: marginLeft,
-                marginRight: marginRight,
-                marginTop: marginTop,
-                maxHeight: maxHeight,
-                maxWidth: maxWidth,
-                outlineBlurRadius: outlineBlurRadius,
-                outlineColor: outlineColor,
-                outlineWidth: outlineWidth,
-                outputSize: outputSize,
-                padding: padding,
-                paddingBottom: paddingBottom,
-                paddingLeft: paddingLeft,
-                paddingRight: paddingRight,
-                paddingTop: paddingTop,
-                preserveMetadata: preserveMetadata,
-                referenceBox: referenceBox,
-                removeBackground: removeBackground,
-                scaling: scaling,
-                segmentationMode: segmentationMode,
-                segmentationNegativePrompt: segmentationNegativePrompt,
-                segmentationPrompt: segmentationPrompt,
-                shadowMode: shadowMode,
-                templateId: templateId,
-                textRemovalMode: textRemovalMode,
-                uncropMode: uncropMode,
-                uncropSeed: uncropSeed,
-                upscaleMode: upscaleMode,
-                verticalAlignment: verticalAlignment,
-                virtualModelAdditionalProductImages: virtualModelAdditionalProductImages,
-                virtualModelMode: virtualModelMode,
-                virtualModelModel: virtualModelModel,
-                virtualModelPose: virtualModelPose,
-                virtualModelPrompt: virtualModelPrompt,
-                virtualModelQuality: virtualModelQuality,
-                virtualModelScene: virtualModelScene,
-                virtualModelSize: virtualModelSize);
-
-            using var __response = await HttpClient.SendAsync(
-                request: __httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
-
-            ProcessResponse(
-                client: HttpClient,
-                response: __response);
-            ProcessEditImageGetResponse(
-                httpClient: HttpClient,
-                httpResponseMessage: __response);
-            // Bad Request
-            if ((int)__response.StatusCode == 400)
-            {
-                string? __content_400 = null;
-                global::System.Exception? __exception_400 = null;
-                global::G.EditImageBadRequest? __value_400 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::G.EditImageBadRequest.FromJson(__content_400, JsonSerializerOptions);
-                    }
-                    else
-                    {
-                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_400 = global::G.EditImageBadRequest.FromJson(__content_400, JsonSerializerOptions);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_400 = __ex;
-                }
-
-                throw new global::G.ApiException<global::G.EditImageBadRequest>(
-                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_400,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_400,
-                    ResponseObject = __value_400,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Payment Required
-            if ((int)__response.StatusCode == 402)
-            {
-                string? __content_402 = null;
-                global::System.Exception? __exception_402 = null;
-                global::G.PaymentError? __value_402 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_402 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_402 = global::G.PaymentError.FromJson(__content_402, JsonSerializerOptions);
-                    }
-                    else
-                    {
-                        __content_402 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_402 = global::G.PaymentError.FromJson(__content_402, JsonSerializerOptions);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_402 = __ex;
-                }
-
-                throw new global::G.ApiException<global::G.PaymentError>(
-                    message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_402,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_402,
-                    ResponseObject = __value_402,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Internal Server Error
-            if ((int)__response.StatusCode == 500)
-            {
-                string? __content_500 = null;
-                global::System.Exception? __exception_500 = null;
-                global::G.UnknownError? __value_500 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::G.UnknownError.FromJson(__content_500, JsonSerializerOptions);
-                    }
-                    else
-                    {
-                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_500 = global::G.UnknownError.FromJson(__content_500, JsonSerializerOptions);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_500 = __ex;
-                }
-
-                throw new global::G.ApiException<global::G.UnknownError>(
-                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_500,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_500,
-                    ResponseObject = __value_500,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsByteArrayAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                ProcessEditImageGetResponseContent(
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareEditImageGetRequest(
                     httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
+                    httpRequestMessage: __httpRequest,
+                    backgroundBlurMode: backgroundBlurMode,
+                    backgroundBlurRadius: backgroundBlurRadius,
+                    backgroundColor: backgroundColor,
+                    backgroundExpandPrompt: backgroundExpandPrompt,
+                    backgroundGuidanceImageFile: backgroundGuidanceImageFile,
+                    backgroundGuidanceImageUrl: backgroundGuidanceImageUrl,
+                    backgroundGuidanceScale: backgroundGuidanceScale,
+                    backgroundImageUrl: backgroundImageUrl,
+                    backgroundNegativePrompt: backgroundNegativePrompt,
+                    backgroundPrompt: backgroundPrompt,
+                    backgroundScaling: backgroundScaling,
+                    backgroundSeed: backgroundSeed,
+                    beautifyMode: beautifyMode,
+                    beautifySeed: beautifySeed,
+                    describeAnyChangeMode: describeAnyChangeMode,
+                    describeAnyChangePrompt: describeAnyChangePrompt,
+                    describeAnyChangeSeed: describeAnyChangeSeed,
+                    editWithAIMode: editWithAIMode,
+                    editWithAIPrompt: editWithAIPrompt,
+                    editWithAISeed: editWithAISeed,
+                    expandMode: expandMode,
+                    expandSeed: expandSeed,
+                    exportDpi: exportDpi,
+                    exportFormat: exportFormat,
+                    flatLayMode: flatLayMode,
+                    flatLayPrompt: flatLayPrompt,
+                    flatLaySize: flatLaySize,
+                    ghostMannequinMode: ghostMannequinMode,
+                    ghostMannequinPrompt: ghostMannequinPrompt,
+                    ghostMannequinSize: ghostMannequinSize,
+                    horizontalAlignment: horizontalAlignment,
+                    ignorePaddingAndSnapOnCroppedSides: ignorePaddingAndSnapOnCroppedSides,
+                    imageFromPromptPrompt: imageFromPromptPrompt,
+                    imageFromPromptSeed: imageFromPromptSeed,
+                    imageFromPromptSize: imageFromPromptSize,
+                    imageUrl: imageUrl,
+                    keepExistingAlphaChannel: keepExistingAlphaChannel,
+                    layers: layers,
+                    lightingMode: lightingMode,
+                    margin: margin,
+                    marginBottom: marginBottom,
+                    marginLeft: marginLeft,
+                    marginRight: marginRight,
+                    marginTop: marginTop,
+                    maxHeight: maxHeight,
+                    maxWidth: maxWidth,
+                    outlineBlurRadius: outlineBlurRadius,
+                    outlineColor: outlineColor,
+                    outlineWidth: outlineWidth,
+                    outputSize: outputSize,
+                    padding: padding,
+                    paddingBottom: paddingBottom,
+                    paddingLeft: paddingLeft,
+                    paddingRight: paddingRight,
+                    paddingTop: paddingTop,
+                    preserveMetadata: preserveMetadata,
+                    referenceBox: referenceBox,
+                    removeBackground: removeBackground,
+                    scaling: scaling,
+                    segmentationMode: segmentationMode,
+                    segmentationNegativePrompt: segmentationNegativePrompt,
+                    segmentationPrompt: segmentationPrompt,
+                    shadowMode: shadowMode,
+                    templateId: templateId,
+                    textRemovalMode: textRemovalMode,
+                    uncropMode: uncropMode,
+                    uncropSeed: uncropSeed,
+                    upscaleMode: upscaleMode,
+                    verticalAlignment: verticalAlignment,
+                    virtualModelAdditionalProductImages: virtualModelAdditionalProductImages,
+                    virtualModelMode: virtualModelMode,
+                    virtualModelModel: virtualModelModel,
+                    virtualModelPose: virtualModelPose,
+                    virtualModelPrompt: virtualModelPrompt,
+                    virtualModelQuality: virtualModelQuality,
+                    virtualModelScene: virtualModelScene,
+                    virtualModelSize: virtualModelSize);
 
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-
-                    return new global::G.AutoSDKHttpResponse<byte[]>(
-                        statusCode: __response.StatusCode,
-                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
-                        body: __content);
-                }
-                catch (global::System.Exception __ex)
-                {
-                    throw new global::G.ApiException(
-                        message: __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
-                }
+                return __httpRequest;
             }
-            else
-            {
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                    var __content = await __response.Content.ReadAsByteArrayAsync(
-#if NET5_0_OR_GREATER
-                        cancellationToken
-#endif
-                    ).ConfigureAwait(false);
 
-                    return new global::G.AutoSDKHttpResponse<byte[]>(
-                        statusCode: __response.StatusCode,
-                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
-                        body: __content);
-                }
-                catch (global::System.Exception __ex)
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
                 {
-                    string? __content = null;
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "EditImageGet",
+                                methodName: "EditImageGetAsync",
+                                pathTemplate: "\"/v2/edit\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
-                        __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                            cancellationToken
-#endif
-                        ).ConfigureAwait(false);
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                     }
-                    catch (global::System.Exception)
+                    catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "EditImageGet",
+                                methodName: "EditImageGetAsync",
+                                pathTemplate: "\"/v2/edit\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
                     }
 
-                    throw new global::G.ApiException(
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "EditImageGet",
+                                methodName: "EditImageGetAsync",
+                                pathTemplate: "\"/v2/edit\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
                 }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessEditImageGetResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "EditImageGet",
+                                methodName: "EditImageGetAsync",
+                                pathTemplate: "\"/v2/edit\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "EditImageGet",
+                                methodName: "EditImageGetAsync",
+                                pathTemplate: "\"/v2/edit\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                            // Bad Request
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::G.EditImageBadRequest? __value_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::G.EditImageBadRequest.FromJson(__content_400, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_400 = global::G.EditImageBadRequest.FromJson(__content_400, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+                                throw new global::G.ApiException<global::G.EditImageBadRequest>(
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_400,
+                                    ResponseObject = __value_400,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Payment Required
+                            if ((int)__response.StatusCode == 402)
+                            {
+                                string? __content_402 = null;
+                                global::System.Exception? __exception_402 = null;
+                                global::G.PaymentError? __value_402 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_402 = global::G.PaymentError.FromJson(__content_402, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_402 = global::G.PaymentError.FromJson(__content_402, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_402 = __ex;
+                                }
+
+                                throw new global::G.ApiException<global::G.PaymentError>(
+                                    message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_402,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_402,
+                                    ResponseObject = __value_402,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Internal Server Error
+                            if ((int)__response.StatusCode == 500)
+                            {
+                                string? __content_500 = null;
+                                global::System.Exception? __exception_500 = null;
+                                global::G.UnknownError? __value_500 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::G.UnknownError.FromJson(__content_500, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::G.UnknownError.FromJson(__content_500, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_500 = __ex;
+                                }
+
+                                throw new global::G.ApiException<global::G.UnknownError>(
+                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_500,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_500,
+                                    ResponseObject = __value_500,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+
+                            if (__effectiveReadResponseAsString)
+                            {
+                                var __content = await __response.Content.ReadAsByteArrayAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                ProcessEditImageGetResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
+
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+
+                                    return new global::G.AutoSDKHttpResponse<byte[]>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        body: __content);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    throw new global::G.ApiException(
+                                        message: __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+                                    var __content = await __response.Content.ReadAsByteArrayAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    return new global::G.AutoSDKHttpResponse<byte[]>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        body: __content);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    string? __content = null;
+                                    try
+                                    {
+                                        __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                            __effectiveCancellationToken
+                #endif
+                                        ).ConfigureAwait(false);
+                                    }
+                                    catch (global::System.Exception)
+                                    {
+                                    }
+
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
             }
         }
     }

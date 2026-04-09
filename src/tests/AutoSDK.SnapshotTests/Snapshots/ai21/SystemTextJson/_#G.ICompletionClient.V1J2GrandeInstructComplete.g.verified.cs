@@ -15,6 +15,7 @@ namespace G
         /// Default Value: 1730898830008L
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> V1J2GrandeInstructCompleteAsync(
@@ -22,6 +23,7 @@ namespace G
             global::G.CompletionBody request,
             string? model = default,
             int? requestStartTime = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// j2-grande-instruct complete
@@ -68,6 +70,7 @@ namespace G
         /// Default Value: {"scale":0.0,"applyToWhitespaces":true,"applyToPunctuations":true,"applyToNumbers":true,"applyToStopwords":true,"applyToEmojis":true}
         /// </param>
         /// <param name="epoch"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> V1J2GrandeInstructCompleteAsync(
@@ -87,6 +90,7 @@ namespace G
             global::G.Penalty? presencePenalty = default,
             global::G.Penalty? countPenalty = default,
             int? epoch = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

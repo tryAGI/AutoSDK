@@ -13,6 +13,7 @@ namespace G
         /// </param>
         /// <param name="priorCallId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Call> CallsCreateAsync(
@@ -20,6 +21,7 @@ namespace G
             global::G.UltravoxV1StartCallRequest request,
             bool? enableGreetingPrompt = default,
             global::System.Guid? priorCallId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
@@ -104,6 +106,7 @@ namespace G
         /// <param name="initialState">
         /// The initial state of the call stage which is readable/writable by tools.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Call> CallsCreateAsync(
@@ -131,6 +134,7 @@ namespace G
             object? experimentalSettings = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             object? initialState = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

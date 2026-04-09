@@ -13,11 +13,13 @@ namespace G
         /// Returns tools ranked by relevance with their search scores.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ToolSearchResult>> SearchToolsAsync(
 
             global::G.ToolSearchRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search Tools<br/>
@@ -43,6 +45,7 @@ namespace G
         /// Maximum number of results to return.<br/>
         /// Default Value: 50
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ToolSearchResult>> SearchToolsAsync(
@@ -51,6 +54,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? toolTypes = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             int? limit = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

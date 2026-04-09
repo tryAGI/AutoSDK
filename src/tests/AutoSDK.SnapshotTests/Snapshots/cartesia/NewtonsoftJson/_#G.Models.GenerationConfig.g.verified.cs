@@ -28,6 +28,7 @@ namespace G
         /// The primary emotions are `neutral`, `calm`, `angry`, `content`, `sad`, `scared`. For more options, see [Prompting Sonic-3](/build-with-cartesia/sonic-3/volume-speed-emotion#emotion-controls-beta).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("emotion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmotionJsonConverter))]
         public global::G.Emotion? Emotion { get; set; }
 
         /// <summary>

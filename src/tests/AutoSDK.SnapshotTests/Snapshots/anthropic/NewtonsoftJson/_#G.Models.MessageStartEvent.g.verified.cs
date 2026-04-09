@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.MessageStartEventType.MessageStart</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageStartEventTypeJsonConverter))]
         public global::G.MessageStartEventType Type { get; set; } = global::G.MessageStartEventType.MessageStart;
 
         /// <summary>

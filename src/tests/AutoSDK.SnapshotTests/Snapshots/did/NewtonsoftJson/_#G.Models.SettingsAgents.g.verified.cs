@@ -31,6 +31,7 @@ namespace G
         /// OpenAI LLM models
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("llm_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SettingsAgentsLlmModelJsonConverter))]
         public global::G.SettingsAgentsLlmModel? LlmModel { get; set; }
 
         /// <summary>

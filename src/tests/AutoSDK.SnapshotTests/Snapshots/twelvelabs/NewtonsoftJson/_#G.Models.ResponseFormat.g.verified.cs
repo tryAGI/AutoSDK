@@ -13,6 +13,7 @@ namespace G
         /// Set this parameter to "json_schema" to receive structured JSON responses.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseFormatTypeJsonConverter))]
         public global::G.ResponseFormatType Type { get; set; }
 
         /// <summary>

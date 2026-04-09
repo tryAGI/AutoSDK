@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>enum</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnumAnalysisDataTypeJsonConverter))]
         public global::G.EnumAnalysisDataType Type { get; set; }
 
         /// <summary>

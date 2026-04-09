@@ -13,6 +13,7 @@ namespace G
         /// This is the transport type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TwilioTransportMessageTransportJsonConverter))]
         public global::G.TwilioTransportMessageTransport Transport { get; set; }
 
         /// <summary>

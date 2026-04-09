@@ -26,6 +26,7 @@ namespace G
         /// </summary>
         /// <example>velocity</example>
         [global::Newtonsoft.Json.JsonProperty("template_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TemplateTypeJsonConverter))]
         public global::G.TemplateType? TemplateType { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateGoogleSheetsOAuth2AuthorizationCredentialDTOProviderJsonConverter))]
         public global::G.CreateGoogleSheetsOAuth2AuthorizationCredentialDTOProvider Provider { get; set; }
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>success</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeleteOrgOwnerProjectByNanoIdResponseStatusJsonConverter))]
         public global::G.DeleteOrgOwnerProjectByNanoIdResponseStatus Status { get; set; }
 
         /// <summary>

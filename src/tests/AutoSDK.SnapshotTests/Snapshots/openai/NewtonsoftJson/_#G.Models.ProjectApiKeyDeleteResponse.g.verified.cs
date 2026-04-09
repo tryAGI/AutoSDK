@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectApiKeyDeleteResponseObjectJsonConverter))]
         public global::G.ProjectApiKeyDeleteResponseObject Object { get; set; }
 
         /// <summary>

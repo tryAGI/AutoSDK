@@ -25,6 +25,7 @@ namespace G
         /// The account type of the creator. Can be a user or an organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeploymentsCreateResponseCurrentReleaseCreatedByTypeJsonConverter))]
         public global::G.DeploymentsCreateResponseCurrentReleaseCreatedByType? Type { get; set; }
 
         /// <summary>

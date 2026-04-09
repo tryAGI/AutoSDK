@@ -32,10 +32,91 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.TaskStatusJsonConverter(),
+
+                    new global::G.JsonConverters.TaskStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant1TypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant1TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant1ModelVersionJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant1ModelVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant2ModelVersionJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant2ModelVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant3TypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant3TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant3ModeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant3ModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant3ModelVersionJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant3ModelVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant4TypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant4TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant5TypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant5TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant6TypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant6TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant7TypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant7TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant7AnimationJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant7AnimationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant8TypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant8TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant8StyleJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant8StyleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant9TypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant9TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant9FormatJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant9FormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant9TextureFormatJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTaskRequestVariant9TextureFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
@@ -51,12 +132,37 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

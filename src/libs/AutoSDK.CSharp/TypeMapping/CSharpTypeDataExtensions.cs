@@ -104,6 +104,7 @@ public static class CSharpTypeDataExtensions
         AddHash(ref hash, type.IsArray);
         AddHash(ref hash, type.IsNullable);
         AddHash(ref hash, type.IsEnum);
+        AddHash(ref hash, type.IsOpenEnum);
         AddHash(ref hash, type.IsBase64);
         AddHash(ref hash, type.IsDate);
         AddHash(ref hash, type.IsDateTime);

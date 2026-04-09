@@ -28,11 +28,12 @@ public static partial class Sources
     public static FileWithName HttpEnvironmentFile(
         IReadOnlyList<OpenApiServer> servers,
         IReadOnlyList<OpenApiSecuritySchemeReference> securitySchemes,
+        Uri? documentSelf = null,
         CancellationToken cancellationToken = default)
     {
         return new FileWithName(
             Name: "http-client.env.json",
-            Text: GenerateHttpEnvironmentFile(servers, securitySchemes));
+            Text: GenerateHttpEnvironmentFile(servers, securitySchemes, documentSelf));
     }
 
     public static FileWithName WebhooksHttpFile(
@@ -209,8 +210,7 @@ public static partial class Sources
         ModelData data,
         CancellationToken cancellationToken = default)
     {
-        if (data.Style != ModelStyle.Enumeration ||
-            data.Settings.UsesNewtonsoftJson())
+        if (data.Style != ModelStyle.Enumeration)
         {
             return FileWithName.Empty;
         }
@@ -224,8 +224,7 @@ public static partial class Sources
         ModelData data,
         CancellationToken cancellationToken = default)
     {
-        if (data.Style != ModelStyle.Enumeration ||
-            data.Settings.UsesNewtonsoftJson())
+        if (data.Style != ModelStyle.Enumeration)
         {
             return FileWithName.Empty;
         }
@@ -406,6 +405,15 @@ public static partial class Sources
         return new FileWithName(
             Name: $"{settings.Namespace}.PathBuilder.g.cs",
             Text: GeneratePathBuilder(settings, cancellationToken: cancellationToken));
+    }
+
+    public static FileWithName OptionsSupport(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.OptionsSupport.g.cs",
+            Text: GenerateOptionsSupport(settings, cancellationToken: cancellationToken));
     }
 
     public static FileWithName SecuritySupport(

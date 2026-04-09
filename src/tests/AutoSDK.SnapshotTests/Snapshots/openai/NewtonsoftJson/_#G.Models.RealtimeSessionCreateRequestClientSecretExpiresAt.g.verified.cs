@@ -14,6 +14,7 @@ namespace G
         /// Default Value: created_at
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("anchor")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeSessionCreateRequestClientSecretExpiresAtAnchorJsonConverter))]
         public global::G.RealtimeSessionCreateRequestClientSecretExpiresAtAnchor? Anchor { get; set; }
 
         /// <summary>

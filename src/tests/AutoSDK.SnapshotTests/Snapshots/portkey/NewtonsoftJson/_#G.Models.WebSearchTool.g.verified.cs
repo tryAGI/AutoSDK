@@ -16,6 +16,7 @@ namespace G
         /// - `web_search_preview_2025_03_11`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchToolTypeJsonConverter))]
         public global::G.WebSearchToolType Type { get; set; } = default!;
 
         /// <summary>
@@ -30,6 +31,7 @@ namespace G
         /// Default Value: medium
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search_context_size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchContextSizeJsonConverter))]
         public global::G.WebSearchContextSize? SearchContextSize { get; set; }
 
         /// <summary>

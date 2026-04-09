@@ -10,11 +10,13 @@ namespace G
         /// Generate a video from an image input with optional prompt guidance.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTaskResponse> CreateImageToVideoAsync(
 
             global::G.CreateImageToVideoRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create image-to-video task<br/>
@@ -72,6 +74,7 @@ namespace G
         /// <param name="externalTaskId">
         /// External task ID for tracking purposes.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTaskResponse> CreateImageToVideoAsync(
@@ -91,6 +94,7 @@ namespace G
             global::G.CameraControl? cameraControl = default,
             string? callbackUrl = default,
             string? externalTaskId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

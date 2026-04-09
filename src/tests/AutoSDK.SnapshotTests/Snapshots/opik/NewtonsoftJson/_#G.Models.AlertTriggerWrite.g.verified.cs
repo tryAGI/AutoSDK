@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AlertTriggerWriteEventTypeJsonConverter))]
         public global::G.AlertTriggerWriteEventType EventType { get; set; } = default!;
 
         /// <summary>

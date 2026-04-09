@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UserObjectJsonConverter))]
         public global::G.UserObject? Object { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UserRoleJsonConverter))]
         public global::G.UserRole? Role { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// Visibility of a runner group. You can select all repositories, select individual repositories, or all private repositories.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ActionsUpdateSelfHostedRunnerGroupForOrgRequestVisibilityJsonConverter))]
         public global::G.ActionsUpdateSelfHostedRunnerGroupForOrgRequestVisibility? Visibility { get; set; }
 
         /// <summary>

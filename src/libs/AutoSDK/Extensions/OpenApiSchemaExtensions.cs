@@ -210,6 +210,19 @@ public static class OpenApiSchemaExtensions
                (schema.Type == null || (schema.Type & JsonSchemaType.String) == JsonSchemaType.String);
     }
 
+    public static bool IsOpenEnum(
+        this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        if (!schema.IsEnum())
+        {
+            return false;
+        }
+
+        return TryGetOpenEnumMode(schema.Extensions, out var isOpen) && isOpen;
+    }
+
     /// <summary>
     /// Checks if the schema has a const value.
     /// In OpenAPI 3.1+, const is used to define a single allowed value.
@@ -233,6 +246,90 @@ public static class OpenApiSchemaExtensions
         }
 
         return false;
+    }
+
+    private static bool TryGetOpenEnumMode(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        out bool isOpen)
+    {
+        bool? mode = null;
+
+        if (TryGetSpeakeasyOpenEnumMode(extensions, out var speakeasyMode))
+        {
+            mode = MergeOpenEnumMode(mode, speakeasyMode);
+        }
+
+        if (TryGetFernOpenEnumMode(extensions, out var fernMode))
+        {
+            mode = MergeOpenEnumMode(mode, fernMode);
+        }
+
+        if (mode.HasValue)
+        {
+            isOpen = mode.Value;
+            return true;
+        }
+
+        isOpen = default;
+        return false;
+    }
+
+    private static bool MergeOpenEnumMode(
+        bool? current,
+        bool candidate)
+    {
+        return current == false || !candidate
+            ? false
+            : true;
+    }
+
+    private static bool TryGetSpeakeasyOpenEnumMode(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        out bool isOpen)
+    {
+        isOpen = default;
+
+        if (extensions?.TryGetValue("x-speakeasy-unknown-values", out var extension) != true ||
+            extension == null)
+        {
+            return false;
+        }
+
+        if (OpenApiExtensions.TryGetExtensionStringValue(extension, out var mode))
+        {
+            if (string.Equals(mode, "allow", StringComparison.OrdinalIgnoreCase))
+            {
+                isOpen = true;
+                return true;
+            }
+
+            if (string.Equals(mode, "disallow", StringComparison.OrdinalIgnoreCase))
+            {
+                isOpen = false;
+                return true;
+            }
+        }
+
+        var node = OpenApiExtensions.TryGetExtensionJsonNode(extension);
+        return node is JsonValue jsonValue &&
+               jsonValue.TryGetValue(out isOpen);
+    }
+
+    private static bool TryGetFernOpenEnumMode(
+        IDictionary<string, IOpenApiExtension>? extensions,
+        out bool isOpen)
+    {
+        isOpen = default;
+
+        if (extensions?.TryGetValue("x-fern-enum", out var extension) != true ||
+            extension == null ||
+            OpenApiExtensions.TryGetExtensionJsonNode(extension) is not JsonObject fernEnumObject ||
+            fernEnumObject["forwardCompatible"] is not JsonValue forwardCompatibleValue)
+        {
+            return false;
+        }
+
+        return forwardCompatibleValue.TryGetValue(out isOpen);
     }
 
     /// <summary>

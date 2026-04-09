@@ -15,12 +15,14 @@ namespace G
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnalyzeResponse200> AnalyzeAsync(
             string xApiKey,
 
             global::G.AnalyzeRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Open-ended analysis<br/>
@@ -62,6 +64,7 @@ namespace G
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnalyzeResponse200> AnalyzeAsync(
@@ -72,6 +75,7 @@ namespace G
             bool? stream = default,
             global::G.ResponseFormat? responseFormat = default,
             int? maxTokens = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

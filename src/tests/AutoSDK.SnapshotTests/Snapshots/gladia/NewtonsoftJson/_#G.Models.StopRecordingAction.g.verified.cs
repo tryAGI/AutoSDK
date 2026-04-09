@@ -16,6 +16,7 @@ namespace G
         /// <default>global::G.StopRecordingActionType.StopRecording</default>
         /// <example>stop_recording</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StopRecordingActionTypeJsonConverter))]
         public global::G.StopRecordingActionType Type { get; set; } = global::G.StopRecordingActionType.StopRecording;
 
         /// <summary>

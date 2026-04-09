@@ -13,168 +13,196 @@ namespace G
         /// Formatting options for Abbreviating French Word Numero
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("abbreviating_french_word_numero")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarAbbreviatingFrenchWordNumeroJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarAbbreviatingFrenchWordNumero? AbbreviatingFrenchWordNumero { get; set; }
 
         /// <summary>
         /// Formatting options for Abbreviation Usage
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("abbreviation_usage")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarAbbreviationUsageJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarAbbreviationUsage? AbbreviationUsage { get; set; }
 
         /// <summary>
         /// Formatting options for Accents And Cedillas
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accents_and_cedillas")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsAndCedillasJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarAccentsAndCedillas? AccentsAndCedillas { get; set; }
 
         /// <summary>
         /// Formatting options for Accents In Verbs Conjugated Like French Word Céder
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accents_in_verbs_conjugated_like_french_word_céder")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéderJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarAccentsInVerbsConjugatedLikeFrenchWordCéder? AccentsInVerbsConjugatedLikeFrenchWordCéder { get; set; }
 
         /// <summary>
         /// Formatting options for Accents With Subject Verb Inversion
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accents_with_subject_verb_inversion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarAccentsWithSubjectVerbInversionJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarAccentsWithSubjectVerbInversion? AccentsWithSubjectVerbInversion { get; set; }
 
         /// <summary>
         /// Formatting options for Active Passive Voice
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("active_passive_voice")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarActivePassiveVoiceJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarActivePassiveVoice? ActivePassiveVoice { get; set; }
 
         /// <summary>
         /// Formatting options for All Caps
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("all_caps")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarAllCapsJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarAllCaps? AllCaps { get; set; }
 
         /// <summary>
         /// Formatting options for Complete Sentences
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("complete_sentences")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarCompleteSentencesJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarCompleteSentences? CompleteSentences { get; set; }
 
         /// <summary>
         /// Formatting options for Compound Nouns
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("compound_nouns")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarCompoundNounsJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarCompoundNouns? CompoundNouns { get; set; }
 
         /// <summary>
         /// Formatting options for Conjunctions
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conjunctions")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarConjunctionsJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarConjunctions? Conjunctions { get; set; }
 
         /// <summary>
         /// Formatting options for Contractions
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contractions")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarContractionsJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarContractions? Contractions { get; set; }
 
         /// <summary>
         /// Formatting options for Established Loanwords
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("established_loanwords")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarEstablishedLoanwordsJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarEstablishedLoanwords? EstablishedLoanwords { get; set; }
 
         /// <summary>
         /// Formatting options for Eszett
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("eszett")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarEszettJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarEszett? Eszett { get; set; }
 
         /// <summary>
         /// Formatting options for Foreign Word Translation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("foreign_word_translation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarForeignWordTranslationJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarForeignWordTranslation? ForeignWordTranslation { get; set; }
 
         /// <summary>
         /// Formatting options for French Verbs Ending In Eler And Eter
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("french_verbs_ending_in_eler_and_eter")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarFrenchVerbsEndingInElerAndEterJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarFrenchVerbsEndingInElerAndEter? FrenchVerbsEndingInElerAndEter { get; set; }
 
         /// <summary>
         /// Formatting options for I And U With Circumflex Accents
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("i_and_u_with_circumflex_accents")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarIAndUWithCircumflexAccentsJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarIAndUWithCircumflexAccents? IAndUWithCircumflexAccents { get; set; }
 
         /// <summary>
         /// Formatting options for Informal Address Pronouns
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("informal_address_pronouns")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarInformalAddressPronounsJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarInformalAddressPronouns? InformalAddressPronouns { get; set; }
 
         /// <summary>
         /// Formatting options for Latin Abbreviations
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("latin_abbreviations")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarLatinAbbreviationsJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarLatinAbbreviations? LatinAbbreviations { get; set; }
 
         /// <summary>
         /// Formatting options for Passive Voice
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("passive_voice")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarPassiveVoiceJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarPassiveVoice? PassiveVoice { get; set; }
 
         /// <summary>
         /// Formatting options for Past Participle Of French Word Laisser Followed By Infinitive
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("past_participle_of_french_word_laisser_followed_by_infinitive")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarPastParticipleOfFrenchWordLaisserFollowedByInfinitiveJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarPastParticipleOfFrenchWordLaisserFollowedByInfinitive? PastParticipleOfFrenchWordLaisserFollowedByInfinitive { get; set; }
 
         /// <summary>
         /// Formatting options for Personal Titles
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("personal_titles")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarPersonalTitlesJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarPersonalTitles? PersonalTitles { get; set; }
 
         /// <summary>
         /// Formatting options for Pluralizing Foreign Words
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pluralizing_foreign_words")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarPluralizingForeignWordsJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarPluralizingForeignWords? PluralizingForeignWords { get; set; }
 
         /// <summary>
         /// Formatting options for Quotation Modification
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quotation_modification")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarQuotationModificationJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarQuotationModification? QuotationModification { get; set; }
 
         /// <summary>
         /// Formatting options for Spanish Word Solo
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("spanish_word_solo")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarSpanishWordSoloJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarSpanishWordSolo? SpanishWordSolo { get; set; }
 
         /// <summary>
         /// Formatting options for Special Characters
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("special_characters")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarSpecialCharactersJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarSpecialCharacters? SpecialCharacters { get; set; }
 
         /// <summary>
         /// Formatting options for Spelled Out Numbers
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("spelled_out_numbers")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarSpelledOutNumbersJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarSpelledOutNumbers? SpelledOutNumbers { get; set; }
 
         /// <summary>
         /// Formatting options for Umlauts
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("umlauts")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarUmlautsJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarUmlauts? Umlauts { get; set; }
 
         /// <summary>
         /// Formatting options for Unestablished Loanwords
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("unestablished_loanwords")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfiguredRulesSpellingAndGrammarUnestablishedLoanwordsJsonConverter))]
         public global::G.ConfiguredRulesSpellingAndGrammarUnestablishedLoanwords? UnestablishedLoanwords { get; set; }
 
         /// <summary>

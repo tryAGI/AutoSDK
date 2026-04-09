@@ -58,12 +58,14 @@ namespace G
         /// </summary>
         /// <example>bezier</example>
         [global::Newtonsoft.Json.JsonProperty("interpolation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TweenInterpolationJsonConverter))]
         public global::G.TweenInterpolation? Interpolation { get; set; }
 
         /// <summary>
         /// The easing function to use for the animation. Easing controls the rate of change of the animated value, allowing for more natural motion by speeding up or slowing down the animation at different points. Only applicable if interpolation is set to `bezier`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("easing")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TweenEasingJsonConverter))]
         public global::G.TweenEasing? Easing { get; set; }
 
         /// <summary>

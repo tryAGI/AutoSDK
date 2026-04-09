@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackOpenAIVoiceProviderJsonConverter))]
         public global::G.FallbackOpenAIVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -35,6 +36,7 @@ namespace G
         /// This is the model that will be used for text-to-speech.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackOpenAIVoiceModelJsonConverter))]
         public global::G.FallbackOpenAIVoiceModel? Model { get; set; }
 
         /// <summary>

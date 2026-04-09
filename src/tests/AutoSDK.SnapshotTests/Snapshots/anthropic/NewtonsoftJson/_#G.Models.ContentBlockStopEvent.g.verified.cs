@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ContentBlockStopEventType.ContentBlockStop</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ContentBlockStopEventTypeJsonConverter))]
         public global::G.ContentBlockStopEventType Type { get; set; } = global::G.ContentBlockStopEventType.ContentBlockStop;
 
         /// <summary>

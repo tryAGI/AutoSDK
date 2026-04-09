@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// Public endpoint
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.browserbase.com";
+        public const string DefaultBaseUrl = "https://api.browserbase.com/";
 
         private bool _disposeHttpClient = true;
 
@@ -32,10 +32,83 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.BrowserbaseProxyConfigTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BrowserbaseProxyConfigTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExternalProxyConfigTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ExternalProxyConfigTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionBuildStatusJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionBuildStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionBuildCauseCodeJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionBuildCauseCodeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InvocationStatusJsonConverter(),
+
+                    new global::G.JsonConverters.InvocationStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.NoneProxyConfigTypeJsonConverter(),
+
+                    new global::G.JsonConverters.NoneProxyConfigTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SessionStatusJsonConverter(),
+
+                    new global::G.JsonConverters.SessionStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SessionRegionJsonConverter(),
+
+                    new global::G.JsonConverters.SessionRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionsInvokeRequestSessionCreateParamsBrowserSettingsOsJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionsInvokeRequestSessionCreateParamsBrowserSettingsOsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionsInvokeRequestSessionCreateParamsBrowserSettingsSizeJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionsInvokeRequestSessionCreateParamsBrowserSettingsSizeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionsInvokeRequestSessionCreateParamsBrowserSettingsExtensionJsonConverter(),
+
+                    new global::G.JsonConverters.FunctionsInvokeRequestSessionCreateParamsBrowserSettingsExtensionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SessionsCreateRequestBrowserSettingsOsJsonConverter(),
+
+                    new global::G.JsonConverters.SessionsCreateRequestBrowserSettingsOsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SessionsCreateRequestRegionJsonConverter(),
+
+                    new global::G.JsonConverters.SessionsCreateRequestRegionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SessionsUpdateRequestStatusJsonConverter(),
+
+                    new global::G.JsonConverters.SessionsUpdateRequestStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SessionsListStatusJsonConverter(),
+
+                    new global::G.JsonConverters.SessionsListStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InvocationsGetResponseCauseCodeJsonConverter(),
+
+                    new global::G.JsonConverters.InvocationsGetResponseCauseCodeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
@@ -51,12 +124,37 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

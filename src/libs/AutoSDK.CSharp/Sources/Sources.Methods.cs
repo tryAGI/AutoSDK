@@ -263,6 +263,62 @@ namespace {endPoint.Settings.Namespace}
         return $"{endPoint.NotAsyncMethodName}AsResponseAsync";
     }
 
+    private static string GetSendExpression(
+        EndPoint endPoint,
+        string requestVariableName,
+        string cancellationTokenVariableName)
+    {
+        var hasOAuth2Authorization = endPoint.Authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
+        var rootClassName = endPoint.Settings.ClassName.Replace(".", string.Empty);
+        var completionOption = $"global::System.Net.Http.HttpCompletionOption.{(endPoint.Stream
+            ? nameof(HttpCompletionOption.ResponseHeadersRead)
+            : nameof(HttpCompletionOption.ResponseContentRead))}";
+
+        return hasOAuth2Authorization
+            ? $@"global::{endPoint.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Helpers.SendAsync(
+                httpClient: HttpClient,
+                request: {requestVariableName},
+                completionOption: {completionOption},
+                authorizations: __authorizations,
+                oAuth2Coordinator: AutoSDKOAuth2State,
+                cancellationToken: {cancellationTokenVariableName})"
+            : $@"HttpClient.SendAsync(
+                request: {requestVariableName},
+                completionOption: {completionOption},
+                cancellationToken: {cancellationTokenVariableName})";
+    }
+
+    private static string GenerateHookInvocation(
+        EndPoint endPoint,
+        string methodName,
+        string helperMethodName,
+        string requestVariableName,
+        string responseExpression,
+        string exceptionExpression,
+        string attemptExpression,
+        string maxAttemptsExpression,
+        string willRetryExpression,
+        string cancellationTokenVariableName)
+    {
+        return $@"await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.{helperMethodName}Async(
+                            clientOptions: Options,
+                            context: global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: {endPoint.Id.ToCSharpStringLiteral()},
+                                methodName: {methodName.ToCSharpStringLiteral()},
+                                pathTemplate: {endPoint.Path.ToCSharpStringLiteral()},
+                                httpMethod: {endPoint.HttpMethod.Method.ToCSharpStringLiteral()},
+                                baseUri: BaseUri,
+                                request: {requestVariableName}!,
+                                response: {responseExpression},
+                                exception: {exceptionExpression},
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: {attemptExpression},
+                                maxAttempts: {maxAttemptsExpression},
+                                willRetry: {willRetryExpression},
+                                cancellationToken: {cancellationTokenVariableName})).ConfigureAwait(false);";
+    }
+
     private static string GetSuccessResponseBodyType(EndPoint endPoint)
     {
         if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
@@ -291,29 +347,14 @@ namespace {endPoint.Settings.Namespace}
                 request: request,")}
 {endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
+                requestOptions: requestOptions,
                 cancellationToken: cancellationToken".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     public static string GenerateMethod(
         EndPoint endPoint, bool isInterface = false, bool returnResponseWrapper = false)
     {
-        var hasOAuth2Authorization = endPoint.Authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
-        var rootClassName = endPoint.Settings.ClassName.Replace(".", string.Empty);
-        var completionOption = $"global::System.Net.Http.HttpCompletionOption.{(endPoint.Stream
-            ? nameof(HttpCompletionOption.ResponseHeadersRead)
-            : nameof(HttpCompletionOption.ResponseContentRead))}";
-        var sendExpression = hasOAuth2Authorization
-            ? $@"global::{endPoint.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Helpers.SendAsync(
-                httpClient: HttpClient,
-                request: __httpRequest,
-                completionOption: {completionOption},
-                authorizations: __authorizations,
-                oAuth2Coordinator: AutoSDKOAuth2State,
-                cancellationToken: cancellationToken)"
-            : $@"HttpClient.SendAsync(
-                request: __httpRequest,
-                completionOption: {completionOption},
-                cancellationToken: cancellationToken)";
+        var sendExpression = GetSendExpression(endPoint, "__httpRequest", "__effectiveCancellationToken");
         var taskType = returnResponseWrapper
             ? $"global::System.Threading.Tasks.Task<{GetResponseWrapperType(endPoint)}>"
             : endPoint.RawStream
@@ -331,11 +372,66 @@ namespace {endPoint.Settings.Namespace}
         var cancellationTokenAttribute = endPoint.EnumerableStream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
+        var beforeRequestHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnBeforeRequest",
+            requestVariableName: "__httpRequest",
+            responseExpression: "null",
+            exceptionExpression: "null",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterSuccessHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterSuccess",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attemptNumber",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterRetryableStatusHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "true",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterErrorStatusHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attemptNumber",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterExceptionHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "null",
+            exceptionExpression: "__exception",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "__willRetry",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
         var body = isInterface
             ? ";"
             : !returnResponseWrapper && ShouldGenerateResponseWrapperMethod(endPoint)
             ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
-                ? @$"
+            ? @$"
         {{
             await {GetResponseWrapperMethodName(endPoint)}(
 {GenerateMethodInvocationArguments(endPoint)}
@@ -381,24 +477,45 @@ namespace {endPoint.Settings.Namespace}
                 {x.Type.CSharpTypeWithoutNullability}.{y.Property} => ""{y.Value}"",").Inject()}
                 _ => throw new global::System.NotImplementedException(""Enum value not implemented.""),
             }};").Inject() : TrimmedLine)}
-{GeneratePathAndQuery(endPoint, authorizationVariableName: endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations")}
-            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: {GetHttpMethod(endPoint.HttpMethod)},
-                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+            using var __timeoutCancellationTokenSource = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: true);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {{
+{GeneratePathAndQuery(endPoint, authorizationVariableName: endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations").AddIndent(4)}
+                __path = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: {GetHttpMethod(endPoint.HttpMethod)},
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
 {           // Use HTTP/3.0 or HTTP/2.0 if available
             // https://learn.microsoft.com/en-us/dotnet/core/extensions/httpclient-http3#httpclient-settings
     TrimmedLine}
-            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
-            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+{(RequiresCookieCollection(endPoint) ? @"
+                var __cookies = new global::System.Collections.Generic.List<string>();" : TrimmedLine)}
 {(endPoint.Authorizations.Any(x => x is
     { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Header } or
     { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Cookie } or
     { Type: SecuritySchemeType.Http } or
     { Type: SecuritySchemeType.OAuth2 } or
     { Type: SecuritySchemeType.OpenIdConnect }) ? @$"
-            var __cookies = new global::System.Collections.Generic.List<string>();
             foreach (var __authorization in {(endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations")})
             {{
                 if (__authorization.Type == ""{SecuritySchemeType.Http:G}"" ||
@@ -413,65 +530,139 @@ namespace {endPoint.Settings.Namespace}
                          __authorization.Location == ""{ParameterLocation.Header:G}"")
                 {{
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }}
+                }}{(HasCookieAuthorizations(endPoint) ? @$"
                 else if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
                          __authorization.Location == ""{ParameterLocation.Cookie:G}"")
                 {{
                     var __cookieValue = global::System.Uri.EscapeDataString(__authorization.Value);
                     __cookies.Add($""{{__authorization.Name}}={{__cookieValue}}"");
-                }}
-            }}
-
-            if (__cookies.Count > 0)
-            {{
-                __httpRequest.Headers.TryAddWithoutValidation(""Cookie"", string.Join(""; "", __cookies));
+                }}" : TrimmedLine)}
             }}" : TrimmedLine)}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
     .Select(x => $@"
-            __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? ".ToValueString()" : ".ToString()")});").Inject()}
+                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? ".ToValueString()" : ".ToString()")});").Inject()}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false })
     .Select(x => $@"
-            if ({x.ParameterName} != default)
-            {{
-                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
-            }}").Inject()}
+                if ({x.ParameterName} != default)
+                {{
+                    __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
+                }}").Inject()}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
+{GenerateCookieParameterHandling(endPoint).AddIndent(4)}
+{GenerateCookieHeaderHandling(endPoint).AddIndent(4)}
  
-{GenerateRequestData(endPoint)}
+{GenerateRequestData(endPoint).AddIndent(4)}
+                global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
 
-            PrepareRequest(
-                client: HttpClient,
-                request: __httpRequest);
-            Prepare{endPoint.NotAsyncMethodName}Request(
-                httpClient: HttpClient,
-                httpRequestMessage: __httpRequest{endPoint.Parameters
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                Prepare{endPoint.NotAsyncMethodName}Request(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest{endPoint.Parameters
                     .Where(x => x.Location != null)
                     .Select(x => $@",
-                {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
-                request: request")});
+                    {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
+                    request: request")});
 
-            {(endPoint.RawStream ? "" : "using ")}var __response = await {sendExpression}.ConfigureAwait(false);
-{(endPoint.RawStream ? @"
+                return __httpRequest;
+            }}
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
             try
-            {" : TrimmedLine)}
+            {{
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {{
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    {beforeRequestHook}
+                    try
+                    {{
+                        __response = await {sendExpression}.ConfigureAwait(false);
+                    }}
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {{
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        {afterExceptionHook}
+                        if (!__willRetry)
+                        {{
+                            throw;
+                        }}
 
-            ProcessResponse(
-                client: HttpClient,
-                response: __response);
-            Process{endPoint.NotAsyncMethodName}Response(
-                httpClient: HttpClient,
-                httpResponseMessage: __response);
-{GenerateResponse(endPoint, wrapSuccessResponse: returnResponseWrapper)}
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }}
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {{
+                        {afterRetryableStatusHook}
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }}
+
+                    break;
+                }}
+
+                if (__response == null)
+                {{
+                    throw new global::System.InvalidOperationException(""No response received."");
+                }}
 {(endPoint.RawStream ? @"
-            }
-            catch
-            {
-                __response.Dispose();
-                throw;
-            }" : TrimmedLine)}
+                try
+                {" : @"
+                using (__response)
+                {")}
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                Process{endPoint.NotAsyncMethodName}Response(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {{
+                    {afterSuccessHook}
+                }}
+                else
+                {{
+                    {afterErrorStatusHook}
+                }}
+{GenerateResponse(endPoint, wrapSuccessResponse: returnResponseWrapper, cancellationTokenVariableName: "__effectiveCancellationToken", readResponseAsStringExpression: "__effectiveReadResponseAsString").AddIndent(4)}
+{(endPoint.RawStream ? @"
+                }
+                catch
+                {
+                    __response.Dispose();
+                    throw;
+                }" : @"
+                }")}
+            }}
+            finally
+            {{
+                __httpRequest?.Dispose();
+            }}
         }}";
 
         return $@" 
@@ -480,6 +671,7 @@ namespace {endPoint.Settings.Namespace}
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @" 
         /// <param name=""request""></param>")}
+        /// <param name=""requestOptions"">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>{(string.IsNullOrWhiteSpace(endPoint.Remarks) ? "" : $@"
         {endPoint.Remarks.ToXmlDocumentationRemarks(level: 8)}")}
@@ -491,6 +683,7 @@ namespace {endPoint.Settings.Namespace}
             {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
 {endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
+            global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
@@ -517,6 +710,398 @@ namespace {endPoint.Settings.Namespace}
         return property.Type.IsAnyOfLike
             ? $"{name}{(property.Type.CSharpTypeNullability ? "?" : "")}.ToString() ?? string.Empty"
             : $"$\"{{{name}{additionalConvert}}}\"";
+    }
+
+    private static string GenerateCookieParameterHandling(
+        EndPoint endPoint)
+    {
+        var cookieParameters = endPoint.Parameters
+            .Where(x => x.Location == ParameterLocation.Cookie)
+            .ToArray();
+        if (cookieParameters.Length == 0)
+        {
+            return TrimmedLine;
+        }
+
+        var builder = new System.Text.StringBuilder();
+        foreach (var parameter in cookieParameters)
+        {
+            builder.AppendLine(GenerateCookieParameterHandling(parameter, endPoint.Settings));
+        }
+
+        return builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static bool RequiresCookieCollection(EndPoint endPoint)
+    {
+        return endPoint.Parameters.Any(x => x.Location == ParameterLocation.Cookie) ||
+               HasCookieAuthorizations(endPoint);
+    }
+
+    private static bool HasCookieAuthorizations(EndPoint endPoint)
+    {
+        return endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Cookie });
+    }
+
+    private static string GenerateCookieHeaderHandling(EndPoint endPoint)
+    {
+        return RequiresCookieCollection(endPoint)
+            ? @"if (__cookies.Count > 0)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation(""Cookie"", string.Join(""; "", __cookies));
+            }"
+            : TrimmedLine;
+    }
+
+    private static string GenerateCookieParameterHandling(
+        MethodParameter parameter,
+        Settings settings)
+    {
+        if (parameter.Properties.Length > 0)
+        {
+            var builder = new System.Text.StringBuilder();
+            foreach (var property in parameter.Properties)
+            {
+                builder.AppendLine(GeneratePropertySegmentAppendStatements(
+                    collectionName: "__cookies",
+                    segmentName: property.Id,
+                    accessExpression: GetParameterPropertyAccessExpression(parameter, property),
+                    type: property.Type,
+                    isNullableLike: IsParameterPropertyNullableLike(parameter, property),
+                    urlEncode: false,
+                    localNamePrefix: $"{parameter.ParameterName}_{property.Name}",
+                    settings: settings));
+            }
+
+            return builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        return GenerateSegmentAppendStatements(
+            collectionName: "__cookies",
+            segmentName: parameter.Id,
+            accessExpression: parameter.ParameterName,
+            type: parameter.Type,
+            isNullableLike: IsNullableLike(parameter.Type),
+            urlEncode: false,
+            localNamePrefix: parameter.ParameterName,
+            settings: settings);
+    }
+
+    private static string GenerateQueryStringParameterHandling(
+        EndPoint endPoint)
+    {
+        var queryStringParameters = endPoint.Parameters
+            .Where(x => x.Location == ParameterLocation.QueryString)
+            .ToArray();
+        if (queryStringParameters.Length == 0)
+        {
+            return TrimmedLine;
+        }
+
+        var builder = new System.Text.StringBuilder();
+        foreach (var parameter in queryStringParameters)
+        {
+            builder.AppendLine(GenerateQueryStringParameterHandling(endPoint, parameter));
+        }
+
+        return builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateQueryStringParameterHandling(
+        EndPoint endPoint,
+        MethodParameter parameter)
+    {
+        if (string.Equals(parameter.ContentType, "application/x-www-form-urlencoded", StringComparison.OrdinalIgnoreCase) &&
+            parameter.Properties.Length > 0)
+        {
+            var segmentsVariableName = $"__queryStringSegments_{parameter.ParameterName}";
+            var builder = new System.Text.StringBuilder();
+            builder.AppendLine("            var " + segmentsVariableName + " = new global::System.Collections.Generic.List<string>();");
+            foreach (var property in parameter.Properties)
+            {
+                builder.AppendLine(GeneratePropertySegmentAppendStatements(
+                    collectionName: segmentsVariableName,
+                    segmentName: property.Id,
+                    accessExpression: GetParameterPropertyAccessExpression(parameter, property),
+                    type: property.Type,
+                    isNullableLike: IsParameterPropertyNullableLike(parameter, property),
+                    urlEncode: true,
+                    localNamePrefix: $"{parameter.ParameterName}_{property.Name}",
+                    settings: endPoint.Settings));
+            }
+
+            builder.AppendLine(
+                "            if (" + segmentsVariableName + @".Count > 0)
+            {
+                __pathBuilder = __pathBuilder.AddRawQueryString(string.Join(""&"", " + segmentsVariableName + @"));
+            }");
+
+            return builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        var serializedValueExpression = GenerateStandaloneQueryStringValueExpression(endPoint, parameter);
+        var code = $@"            var __queryStringValue_{parameter.ParameterName} = {serializedValueExpression};
+            if (!string.IsNullOrWhiteSpace(__queryStringValue_{parameter.ParameterName}))
+            {{
+                __pathBuilder = __pathBuilder.AddRawQueryString(__queryStringValue_{parameter.ParameterName});
+            }}";
+
+        if (!IsNullableLike(parameter.Type))
+        {
+            return code.RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        return $@"            if ({parameter.ParameterName} is not null)
+            {{
+{code.AddIndent(1)}
+            }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateStandaloneQueryStringValueExpression(
+        EndPoint endPoint,
+        MethodParameter parameter)
+    {
+        if (parameter.Type.CSharpTypeWithoutNullability == "string")
+        {
+            return string.Equals(parameter.ContentType, "application/x-www-form-urlencoded", StringComparison.OrdinalIgnoreCase)
+                ? parameter.ParameterName
+                : $"global::System.Uri.EscapeDataString({parameter.ParameterName})";
+        }
+
+        if (string.Equals(parameter.ContentType, "application/x-www-form-urlencoded", StringComparison.OrdinalIgnoreCase))
+        {
+            return GenerateSerializedValueExpression(
+                type: parameter.Type,
+                expression: parameter.ParameterName,
+                isNullableLike: IsNullableLike(parameter.Type),
+                settings: endPoint.Settings);
+        }
+
+        return $"global::System.Uri.EscapeDataString({GenerateJsonSerializeExpression(endPoint, parameter)})";
+    }
+
+    private static string GenerateJsonSerializeExpression(
+        EndPoint endPoint,
+        MethodParameter parameter)
+    {
+        return GenerateJsonSerializeExpression(
+            type: parameter.Type,
+            valueExpression: parameter.ParameterName,
+            settings: endPoint.Settings);
+    }
+
+    private static string GenerateJsonSerializeExpression(
+        TypeData type,
+        string valueExpression,
+        Settings settings)
+    {
+        if (!settings.UsesSystemTextJson())
+        {
+            return type.UsesGeneratedJsonHelpers
+                ? $"{valueExpression}.ToJson(JsonSerializerOptions)"
+                : $"global::Newtonsoft.Json.JsonConvert.SerializeObject({valueExpression}, JsonSerializerOptions)";
+        }
+
+        if (type.UsesGeneratedJsonHelpers)
+        {
+            return settings.HasJsonSerializerContext()
+                ? $"{valueExpression}.ToJson(JsonSerializerContext)"
+                : $"{valueExpression}.ToJson(JsonSerializerOptions)";
+        }
+
+        return settings.HasJsonSerializerContext()
+            ? $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, {valueExpression}.GetType(), JsonSerializerContext)"
+            : $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, JsonSerializerOptions)";
+    }
+
+    private static string GeneratePropertySegmentAppendStatements(
+        string collectionName,
+        string segmentName,
+        string accessExpression,
+        TypeData type,
+        bool isNullableLike,
+        bool urlEncode,
+        string localNamePrefix,
+        Settings settings)
+    {
+        return GenerateSegmentAppendStatements(
+            collectionName: collectionName,
+            segmentName: segmentName,
+            accessExpression: accessExpression,
+            type: type,
+            isNullableLike: isNullableLike,
+            urlEncode: urlEncode,
+            localNamePrefix: localNamePrefix,
+            settings: settings);
+    }
+
+    private static string GenerateSegmentAppendStatements(
+        string collectionName,
+        string segmentName,
+        string accessExpression,
+        TypeData type,
+        bool isNullableLike,
+        bool urlEncode,
+        string localNamePrefix,
+        Settings settings)
+    {
+        if (type.IsArray &&
+            !type.SubTypes.IsEmpty)
+        {
+            var itemType = type.SubTypes[0].Unbox<TypeData>();
+            var collectionVariableName = $"__{localNamePrefix}";
+            var itemVariableName = $"{collectionVariableName}_item";
+            var appendExpression = CreateSegmentAppendExpression(
+                collectionName: collectionName,
+                segmentName: segmentName,
+                valueExpression: GenerateSerializedValueExpression(
+                    type: itemType,
+                    expression: itemVariableName,
+                    isNullableLike: IsNullableLike(itemType),
+                    settings: settings),
+                urlEncode: urlEncode);
+
+            var body = $@"foreach (var {itemVariableName} in {collectionVariableName})
+                {{
+                    {appendExpression};
+                }}";
+            if (!isNullableLike)
+            {
+                return $@"            var {collectionVariableName} = {accessExpression};
+            {body}".RemoveBlankLinesWhereOnlyWhitespaces();
+            }
+
+            return $@"            var {collectionVariableName} = {accessExpression};
+            if ({collectionVariableName} is not null)
+            {{
+{body.AddIndent(1)}
+            }}".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        var localVariableName = $"__{localNamePrefix}";
+        var appendValueExpression = GenerateSerializedValueExpression(
+            type: type,
+            expression: localVariableName,
+            isNullableLike: isNullableLike,
+            settings: settings);
+        var appendStatement = CreateSegmentAppendExpression(
+            collectionName: collectionName,
+            segmentName: segmentName,
+            valueExpression: appendValueExpression,
+            urlEncode: urlEncode);
+        if (!isNullableLike)
+        {
+            return $@"            var {localVariableName} = {accessExpression};
+            {appendStatement};".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        return $@"            var {localVariableName} = {accessExpression};
+            if ({localVariableName} is not null)
+            {{
+                {appendStatement};
+            }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string CreateSegmentAppendExpression(
+        string collectionName,
+        string segmentName,
+        string valueExpression,
+        bool urlEncode)
+    {
+        segmentName = segmentName.Replace("\"", "\\\"");
+
+        return urlEncode
+            ? $"{collectionName}.Add(\"{segmentName}=\" + global::System.Uri.EscapeDataString({valueExpression}))"
+            : $"{collectionName}.Add($\"{segmentName}={{{valueExpression}}}\")";
+    }
+
+    private static string GetParameterPropertyAccessExpression(
+        MethodParameter parameter,
+        PropertyData property)
+    {
+        return parameter.Type.CSharpTypeNullability
+            ? $"{parameter.ParameterName}?.{property.Name}"
+            : $"{parameter.ParameterName}.{property.Name}";
+    }
+
+    private static bool IsParameterPropertyNullableLike(
+        MethodParameter parameter,
+        PropertyData property)
+    {
+        var isLiftedNullable =
+            parameter.Type.CSharpTypeNullability &&
+            property.Type.IsValueType &&
+            !property.Type.CSharpTypeNullability;
+
+        return IsNullableLike(property.Type, isLiftedNullable);
+    }
+
+    private static bool IsNullableLike(
+        TypeData type,
+        bool liftedNullable = false)
+    {
+        return !type.IsValueType ||
+               type.CSharpTypeNullability ||
+               liftedNullable;
+    }
+
+    private static string GenerateSerializedValueExpression(
+        TypeData type,
+        string expression,
+        bool isNullableLike,
+        Settings settings)
+    {
+        if (type.CSharpTypeWithoutNullability == "string")
+        {
+            return isNullableLike
+                ? $"{expression}.ToString() ?? string.Empty"
+                : expression;
+        }
+
+        if (type.IsEnum &&
+            !type.IsAnyOfLike)
+        {
+            var enumExpression = isNullableLike && type.IsValueType
+                ? $"{expression}.Value"
+                : expression;
+            return $"{enumExpression}.ToValueString()";
+        }
+
+        if (type.IsAnyOfLike)
+        {
+            return $"{expression}.ToString() ?? string.Empty";
+        }
+
+        if (type.IsDate)
+        {
+            var dateExpression = isNullableLike && type.IsValueType
+                ? $"{expression}.Value"
+                : expression;
+            return $"{dateExpression}.ToString(\"yyyy-MM-dd\")";
+        }
+
+        if (type.IsDateTime)
+        {
+            var dateTimeExpression = isNullableLike && type.IsValueType
+                ? $"{expression}.Value"
+                : expression;
+            return $"{dateTimeExpression}.ToString(\"yyyy-MM-ddTHH:mm:ssZ\")";
+        }
+
+        if (type.CSharpTypeWithoutNullability == "bool")
+        {
+            var boolExpression = isNullableLike && type.IsValueType
+                ? $"{expression}.Value"
+                : expression;
+            return $"{boolExpression}.ToString().ToLowerInvariant()";
+        }
+
+        if (type.Properties.Length > 0)
+        {
+            return GenerateJsonSerializeExpression(type, expression, settings);
+        }
+
+        return $"{expression}.ToString() ?? string.Empty";
     }
 
     public static string GeneratePathAndQuery(
@@ -576,6 +1161,8 @@ namespace {endPoint.Settings.Namespace}
                 ;";
         }
 
+        code += "\n" + GenerateQueryStringParameterHandling(endPoint);
+
         code += @" 
             var __path = __pathBuilder.ToString();";
 
@@ -619,8 +1206,8 @@ namespace {endPoint.Settings.Namespace}
 
     private static bool IsJsonMediaType(string mediaType)
     {
-        return !string.IsNullOrWhiteSpace(mediaType) &&
-               mediaType.Contains("json", StringComparison.OrdinalIgnoreCase);
+        return mediaType.IsJsonMimeType() &&
+               !mediaType.IsSequentialJsonMimeType();
     }
 
     private static bool ShouldUseSystemNetHttpJsonForRequest(EndPoint endPoint)
@@ -668,21 +1255,23 @@ namespace {endPoint.Settings.Namespace}
     }
 
     private static string GenerateSystemNetHttpJsonReadCall(
-        EndPoint endPoint)
+        EndPoint endPoint,
+        string cancellationTokenVariableName)
     {
         var type = endPoint.SuccessResponse.Type.CSharpTypeWithNullabilityForValueTypes;
 
         if (endPoint.Settings.HasJsonSerializerContext())
         {
-            return $"await global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.ReadFromJsonAsync<{type}>(__response.Content, JsonSerializerContext, cancellationToken).ConfigureAwait(false)";
+            return $"await global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.ReadFromJsonAsync<{type}>(__response.Content, JsonSerializerContext, {cancellationTokenVariableName}).ConfigureAwait(false)";
         }
 
-        return $"await global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.ReadFromJsonAsync<{type}>(__response.Content, JsonSerializerOptions, cancellationToken).ConfigureAwait(false)";
+        return $"await global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.ReadFromJsonAsync<{type}>(__response.Content, JsonSerializerOptions, {cancellationTokenVariableName}).ConfigureAwait(false)";
     }
 
     private static string GenerateUnbufferedSuccessResponseHandling(
         EndPoint endPoint,
-        bool wrapSuccessResponse)
+        bool wrapSuccessResponse,
+        string cancellationTokenVariableName)
     {
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
 
@@ -700,7 +1289,7 @@ namespace {endPoint.Settings.Namespace}
         {
             if (ShouldUseSystemNetHttpJsonForSuccessResponse(endPoint))
             {
-                var readCall = GenerateSystemNetHttpJsonReadCall(endPoint);
+                var readCall = GenerateSystemNetHttpJsonReadCall(endPoint, cancellationTokenVariableName);
 
                 return wrapSuccessResponse
                     ? $@" 
@@ -717,7 +1306,7 @@ namespace {endPoint.Settings.Namespace}
                 ? $@" 
                     using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
 
@@ -727,7 +1316,7 @@ namespace {endPoint.Settings.Namespace}
                 : $@" 
                     using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
 
@@ -748,7 +1337,7 @@ namespace {endPoint.Settings.Namespace}
             _ => "ByteArray",
         }}Async(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
 
@@ -757,7 +1346,9 @@ namespace {endPoint.Settings.Namespace}
 
     public static string GenerateResponse(
         EndPoint endPoint,
-        bool wrapSuccessResponse = false)
+        bool wrapSuccessResponse = false,
+        string cancellationTokenVariableName = "cancellationToken",
+        string readResponseAsStringExpression = "ReadResponseAsString")
     {
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
 
@@ -775,7 +1366,7 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
                 }}
@@ -798,12 +1389,12 @@ namespace {endPoint.Settings.Namespace}
 
             using var __stream = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
-                cancellationToken
+                {cancellationTokenVariableName}
 #endif
             ).ConfigureAwait(false);
 
             await foreach (var __sseEvent in global::System.Net.ServerSentEvents.SseParser
-                .Create(__stream).EnumerateAsync(cancellationToken))
+                .Create(__stream).EnumerateAsync({cancellationTokenVariableName}))
             {{
                 var __content = __sseEvent.Data;
 {(!string.IsNullOrEmpty(endPoint.StreamTerminator)
@@ -832,6 +1423,100 @@ namespace {endPoint.Settings.Namespace}
 
         if (endPoint.StreamFormat == StreamFormat.Ndjson)
         {
+            var isJsonSequence = endPoint.SuccessResponse.MimeType.IsMimeType("application/json-seq");
+            var streamReadLoop = isJsonSequence
+                ? $@"
+            using var __reader = new global::System.IO.StreamReader(__stream);
+            var __contentBuilder = new global::System.Text.StringBuilder();
+            var __characterBuffer = new char[1];
+
+            while (!{cancellationTokenVariableName}.IsCancellationRequested)
+            {{
+                var __read = await __reader.ReadAsync(__characterBuffer, 0, 1).ConfigureAwait(false);
+                if (__read == 0)
+                {{
+                    break;
+                }}
+
+                var __character = __characterBuffer[0];
+                if (__character == '\u001e')
+                {{
+                    if (__contentBuilder.Length > 0)
+                    {{
+                        var __content = __contentBuilder.ToString().Trim();
+                        __contentBuilder.Clear();
+                        if (global::System.String.IsNullOrWhiteSpace(__content))
+                        {{
+                            continue;
+                        }}
+
+                        var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                                               throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                                   message: $""Response deserialization failed for \""{{__content}}\"" "",
+                                                   statusCode: __response.StatusCode)
+                                               {{
+                                                   ResponseBody = __content,
+                                                   ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                                       __response.Headers,
+                                                       h => h.Key,
+                                                       h => h.Value),
+                                               }};
+
+                        yield return __streamedResponse;
+                    }}
+
+                    continue;
+                }}
+
+                __contentBuilder.Append(__character);
+            }}
+
+            if (__contentBuilder.Length > 0)
+            {{
+                var __content = __contentBuilder.ToString().Trim();
+                if (!global::System.String.IsNullOrWhiteSpace(__content))
+                {{
+                    var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                                           throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                               message: $""Response deserialization failed for \""{{__content}}\"" "",
+                                               statusCode: __response.StatusCode)
+                                           {{
+                                               ResponseBody = __content,
+                                               ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                                   __response.Headers,
+                                                   h => h.Key,
+                                                   h => h.Value),
+                                           }};
+
+                    yield return __streamedResponse;
+                }}
+            }}"
+                : $@"
+            using var __reader = new global::System.IO.StreamReader(__stream);
+
+            while (!__reader.EndOfStream && !{cancellationTokenVariableName}.IsCancellationRequested)
+            {{
+                var __content = await __reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
+                if (global::System.String.IsNullOrWhiteSpace(__content))
+                {{
+                    continue;
+                }}
+
+                var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                                       throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                           message: $""Response deserialization failed for \""{{__content}}\"" "",
+                                           statusCode: __response.StatusCode)
+                                       {{
+                                           ResponseBody = __content,
+                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                               __response.Headers,
+                                               h => h.Key,
+                                               h => h.Value),
+                                       }};
+
+                yield return __streamedResponse;
+            }}";
+
             return $@"
             try
             {{
@@ -844,7 +1529,7 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
                 }}
@@ -867,33 +1552,10 @@ namespace {endPoint.Settings.Namespace}
 
             using var __stream = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
-                cancellationToken
+                {cancellationTokenVariableName}
 #endif
             ).ConfigureAwait(false);
-            using var __reader = new global::System.IO.StreamReader(__stream);
-
-            while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)
-            {{
-                var __content = await __reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                if (global::System.String.IsNullOrWhiteSpace(__content))
-                {{
-                    continue;
-                }}
-
-                var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                                       throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
-                                           message: $""Response deserialization failed for \""{{__content}}\"" "",
-                                           statusCode: __response.StatusCode)
-                                       {{
-                                           ResponseBody = __content,
-                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                                               __response.Headers,
-                                               h => h.Key,
-                                               h => h.Value),
-                                       }};
-
-                yield return __streamedResponse;
-            }}
+{streamReadLoop}
  ";
         }
 
@@ -919,15 +1581,15 @@ namespace {endPoint.Settings.Namespace}
                 {x.Type.CSharpTypeWithoutNullability}? __value_{x.StatusCode} = null;" : TrimmedLine)}
                 try
                 {{
-                    if (ReadResponseAsString)
+                    if ({readResponseAsStringExpression})
                     {{
-                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync({cancellationTokenVariableName}).ConfigureAwait(false);
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
                         __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
                     }}
                     else
                     {{
-                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync({cancellationTokenVariableName}).ConfigureAwait(false);
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@"
                         __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
                     }}
@@ -964,7 +1626,7 @@ namespace {endPoint.Settings.Namespace}
 
                 var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
-                    cancellationToken
+                    {cancellationTokenVariableName}
 #endif
                 ).ConfigureAwait(false);
 
@@ -982,7 +1644,7 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
                 }}
@@ -1007,7 +1669,7 @@ namespace {endPoint.Settings.Namespace}
 
         return @$"{errors}
 
-            if (ReadResponseAsString)
+            if ({readResponseAsStringExpression})
             {{
                 var __content = await __response.Content.ReadAs{endPoint.ContentType switch
         {
@@ -1016,7 +1678,7 @@ namespace {endPoint.Settings.Namespace}
             _ => "ByteArray",
         }}Async(
 #if NET5_0_OR_GREATER
-                    cancellationToken
+                    {cancellationTokenVariableName}
 #endif
                 ).ConfigureAwait(false);
 
@@ -1069,7 +1731,7 @@ namespace {endPoint.Settings.Namespace}
                 try
                 {{
                     __response.EnsureSuccessStatusCode();
-{GenerateUnbufferedSuccessResponseHandling(endPoint, wrapSuccessResponse)}
+{GenerateUnbufferedSuccessResponseHandling(endPoint, wrapSuccessResponse, cancellationTokenVariableName)}
                 }}
                 catch (global::System.Exception __ex)
                 {{
@@ -1078,7 +1740,7 @@ namespace {endPoint.Settings.Namespace}
                     {{
                         __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
-                            cancellationToken
+                            {cancellationTokenVariableName}
 #endif
                         ).ConfigureAwait(false);
                     }}
@@ -1114,7 +1776,7 @@ namespace {endPoint.Settings.Namespace}
         if (endPoint.IsMultipartFormData)
         {
             return $@" 
-            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
 {endPoint.Parameters.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
 {
     var isBinaryArray = x.Type.IsArray && !x.Type.SubTypes.IsEmpty && x.Type.SubTypes[0].Unbox<TypeData>().IsBinary;
@@ -1179,6 +1841,11 @@ namespace {endPoint.Settings.Namespace}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
         }
 
+        if (endPoint.RequestMediaType.IsSequentialJsonMimeType())
+        {
+            return GenerateSequentialJsonRequestData(endPoint);
+        }
+
         if (ShouldUseSystemNetHttpJsonForRequest(endPoint))
         {
             return GenerateSystemNetHttpJsonRequestData(endPoint);
@@ -1190,6 +1857,68 @@ namespace {endPoint.Settings.Namespace}
 
         return $@" 
             var __httpRequestContentBody = {requestContent};
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: ""{endPoint.RequestMediaType}"");
+            __httpRequest.Content = __httpRequestContent;
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateSequentialJsonRequestData(
+        EndPoint endPoint)
+    {
+        var isJsonSequence = endPoint.RequestMediaType.IsMimeType("application/json-seq");
+        var itemType = endPoint.RequestType.IsArray && !endPoint.RequestType.SubTypes.IsEmpty
+            ? endPoint.RequestType.SubTypes[0].Unbox<TypeData>()
+            : endPoint.RequestType;
+        var serializedItemExpression = GenerateJsonSerializeExpression(
+            type: itemType,
+            valueExpression: "__requestItem",
+            settings: endPoint.Settings);
+        var appendDelimiter = isJsonSequence
+            ? @"                __httpRequestContentBuilder.Append('\u001e');
+                __httpRequestContentBuilder.Append(__requestItemContent);
+                __httpRequestContentBuilder.Append('\n');"
+            : @"                if (!__httpRequestContentFirst)
+                {
+                    __httpRequestContentBuilder.Append('\n');
+                }
+
+                __httpRequestContentBuilder.Append(__requestItemContent);
+                __httpRequestContentFirst = false;";
+
+        if (endPoint.RequestType.IsArray)
+        {
+            return $@"
+            var __httpRequestContentBuilder = new global::System.Text.StringBuilder();
+            {(isJsonSequence ? string.Empty : "var __httpRequestContentFirst = true;")}
+            foreach (var __requestItem in request)
+            {{
+                var __requestItemContent = {serializedItemExpression};
+{appendDelimiter}
+            }}
+
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBuilder.ToString(),
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: ""{endPoint.RequestMediaType}"");
+            __httpRequest.Content = __httpRequestContent;
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        var singleItemBodyExpression = isJsonSequence
+            ? "\"\\u001e\" + " + GenerateJsonSerializeExpression(
+                type: itemType,
+                valueExpression: "request",
+                settings: endPoint.Settings) + " + \"\\n\""
+            : GenerateJsonSerializeExpression(
+                type: itemType,
+                valueExpression: "request",
+                settings: endPoint.Settings);
+
+        return $@"
+            var __httpRequestContentBody = {singleItemBodyExpression};
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -1255,6 +1984,7 @@ namespace {endPoint.Settings.Namespace}
 {endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
                 request: __request,
+                requestOptions: requestOptions,
                 cancellationToken: cancellationToken){configureAwaitResponse};
 {(endPoint.EnumerableStream ? @"
             
@@ -1270,6 +2000,7 @@ namespace {endPoint.Settings.Namespace}
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {parameters.Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
+        /// <param name=""requestOptions"">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {GenerateEndPointAttributes(endPoint)}
@@ -1282,6 +2013,7 @@ namespace {endPoint.Settings.Namespace}
 {x.DisableDeprecationWarningIfRequired}
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},
 {x.DisableDeprecationWarningIfRequired}".TrimEnd()).Inject()}
+            global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }

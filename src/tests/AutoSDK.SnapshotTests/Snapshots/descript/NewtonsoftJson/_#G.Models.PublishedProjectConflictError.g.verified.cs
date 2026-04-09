@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>conflict</example>
         [global::Newtonsoft.Json.JsonProperty("error")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublishedProjectConflictErrorErrorJsonConverter))]
         public global::G.PublishedProjectConflictErrorError Error { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// </summary>
         /// <example>processing</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublishedProjectConflictErrorStateJsonConverter))]
         public global::G.PublishedProjectConflictErrorState State { get; set; } = default!;
 
         /// <summary>

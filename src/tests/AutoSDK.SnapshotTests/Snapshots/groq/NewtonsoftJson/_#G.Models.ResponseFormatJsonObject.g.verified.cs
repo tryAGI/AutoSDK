@@ -13,6 +13,7 @@ namespace G
         /// The type of response format being defined. Always `json_object`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseFormatJsonObjectTypeJsonConverter))]
         public global::G.ResponseFormatJsonObjectType Type { get; set; }
 
         /// <summary>

@@ -27,6 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VirtualKeysStatusJsonConverter))]
         public global::G.VirtualKeysStatus? Status { get; set; }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VirtualKeysObjectJsonConverter))]
         public global::G.VirtualKeysObject? Object { get; set; }
 
         /// <summary>

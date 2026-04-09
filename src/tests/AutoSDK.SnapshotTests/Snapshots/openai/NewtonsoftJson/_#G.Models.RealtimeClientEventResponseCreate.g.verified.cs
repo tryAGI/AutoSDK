@@ -30,6 +30,7 @@ namespace G
         /// The event type, must be `response.create`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventResponseCreateTypeJsonConverter))]
         public global::G.RealtimeClientEventResponseCreateType Type { get; set; }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExperimentRunSummaryPublicStatusJsonConverter))]
         public global::G.ExperimentRunSummaryPublicStatus? Status { get; set; }
 
         /// <summary>

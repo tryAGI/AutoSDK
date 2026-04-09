@@ -10,11 +10,13 @@ namespace G
         /// Query an embedding model for a given string of text.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbeddingsResponse> EmbeddingsAsync(
 
             global::G.EmbeddingsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create embedding<br/>
@@ -28,11 +30,13 @@ namespace G
         /// <param name="input">
         /// Default Value: Our solar system orbits the Milky Way galaxy at about 515,000 mph
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbeddingsResponse> EmbeddingsAsync(
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>> input,
             string model = "togethercomputer/m2-bert-80M-8k-retrieval",
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

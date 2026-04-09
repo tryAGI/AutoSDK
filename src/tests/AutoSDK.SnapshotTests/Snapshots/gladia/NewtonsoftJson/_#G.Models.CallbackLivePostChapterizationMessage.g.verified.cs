@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLivePostChapterizationMessageEvent.LivePostChapterization</default>
         /// <example>live.post_chapterization</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLivePostChapterizationMessageEventJsonConverter))]
         public global::G.CallbackLivePostChapterizationMessageEvent Event { get; set; } = global::G.CallbackLivePostChapterizationMessageEvent.LivePostChapterization;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("product_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfigurationResponseParametersDiscriminatorProductTypeJsonConverter))]
         public global::G.ConfigurationResponseParametersDiscriminatorProductType? ProductType { get; set; }
 
         /// <summary>

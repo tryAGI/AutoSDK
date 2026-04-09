@@ -13,12 +13,14 @@ namespace G
         /// Function id
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> PostFunctionIdInvokeAsync(
             global::System.Guid functionId,
 
             global::G.InvokeApi request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Invoke function<br/>
@@ -63,6 +65,7 @@ namespace G
         /// <param name="version">
         /// The version of the function
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> PostFunctionIdInvokeAsync(
@@ -79,6 +82,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, global::G.InvokeApiMcpAuth2>? mcpAuth = default,
             global::System.Collections.Generic.Dictionary<string, object?>? overrides = default,
             string? version = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

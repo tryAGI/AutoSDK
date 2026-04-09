@@ -49,6 +49,7 @@ namespace G
         /// When "required", the agent must specify which account to use. Present only when multiple accounts exist.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("account_selection")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuseAccountSelectionJsonConverter))]
         public global::G.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuseAccountSelection? AccountSelection { get; set; }
 
         /// <summary>

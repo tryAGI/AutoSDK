@@ -20,6 +20,9 @@ public static class CSharpTagFactory
             name: tag.Name ?? string.Empty,
             description: tag.Description ?? string.Empty,
             displayName: string.Empty,
+            summary: tag.Summary ?? string.Empty,
+            parentName: tag.Parent?.Name ?? string.Empty,
+            kind: tag.Kind ?? string.Empty,
             settings: settings,
             safeName: safeName);
     }
@@ -44,19 +47,33 @@ public static class CSharpTagFactory
             name: tag.Name ?? string.Empty,
             description: tag.Description ?? string.Empty,
             displayName: displayName,
+            summary: tag.Summary ?? string.Empty,
+            parentName: tag.Parent?.Name ?? string.Empty,
+            kind: tag.Kind ?? string.Empty,
             settings: settings,
             safeName: safeName);
     }
 
     public static Tag Create(string name, CSharpSettings settings)
     {
-        return Create(name, description: string.Empty, displayName: string.Empty, settings, safeName: null);
+        return Create(
+            name,
+            description: string.Empty,
+            displayName: string.Empty,
+            summary: string.Empty,
+            parentName: string.Empty,
+            kind: string.Empty,
+            settings,
+            safeName: null);
     }
 
     private static Tag Create(
         string name,
         string description,
         string displayName,
+        string summary,
+        string parentName,
+        string kind,
         CSharpSettings settings,
         string? safeName)
     {
@@ -66,6 +83,9 @@ public static class CSharpTagFactory
             Name: name,
             Description: description,
             DisplayName: displayName,
+            Summary: summary,
+            ParentName: parentName,
+            Kind: kind,
             GlobalSettings: settings,
             SafeName: safeName,
             SingularizedName: safeName.EndsWith("ies", StringComparison.OrdinalIgnoreCase)

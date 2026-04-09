@@ -16,6 +16,7 @@ namespace G
         /// Default Value: server_vad
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeTranscriptionSessionCreateRequestTurnDetectionTypeJsonConverter))]
         public global::G.RealtimeTranscriptionSessionCreateRequestTurnDetectionType? Type { get; set; }
 
         /// <summary>
@@ -23,6 +24,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("eagerness")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeTranscriptionSessionCreateRequestTurnDetectionEagernessJsonConverter))]
         public global::G.RealtimeTranscriptionSessionCreateRequestTurnDetectionEagerness? Eagerness { get; set; }
 
         /// <summary>

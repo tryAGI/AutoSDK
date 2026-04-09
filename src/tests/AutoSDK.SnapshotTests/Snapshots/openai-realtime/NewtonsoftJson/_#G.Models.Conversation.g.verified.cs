@@ -19,6 +19,7 @@ namespace G
         /// The object type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationObjectJsonConverter))]
         public global::G.ConversationObject? Object { get; set; }
 
         /// <summary>

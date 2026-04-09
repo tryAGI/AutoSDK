@@ -452,6 +452,68 @@ public class AuthorizationGenerationTests
     }
 
     [TestMethod]
+    public void GenerateAuthorization_OpenApi32OAuthDeviceAuthorization_PreservesMetadataAndGeneratesHelpers()
+    {
+        const string yaml = """
+                            openapi: 3.2.0
+                            info:
+                              title: OAuth2 Device Authorization
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - OAuth2: [read, write]
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                OAuth2:
+                                  type: oauth2
+                                  oauth2MetadataUrl: https://example.com/.well-known/oauth-authorization-server
+                                  deprecated: true
+                                  flows:
+                                    deviceAuthorization:
+                                      deviceAuthorizationUrl: https://example.com/oauth/device
+                                      tokenUrl: https://example.com/oauth/token
+                                      refreshUrl: https://example.com/oauth/refresh
+                                      scopes:
+                                        read: Read access
+                                        write: Write access
+                            """;
+
+        var authorization = GetSingleAuthorization(yaml);
+
+        authorization.IsDeprecated.Should().BeTrue();
+        authorization.OAuth2MetadataUrl.Should().Be("https://example.com/.well-known/oauth-authorization-server");
+        authorization.Flows.Should().ContainSingle();
+        authorization.Flows[0].Type.Should().Be(nameof(OpenApiOAuthFlows.DeviceAuthorization));
+        authorization.Flows[0].DeviceAuthorizationUrl.Should().Be("https://example.com/oauth/device");
+
+        var content = Sources.Authorization(authorization).Text;
+        var interfaceContent = Sources.AuthorizationInterface(authorization).Text;
+
+        content.Should().Contain("public string? OAuth2MetadataUrl");
+        content.Should().Contain("https://example.com/.well-known/oauth-authorization-server");
+        content.Should().Contain("public bool IsOAuth2Deprecated => true;");
+        content.Should().Contain("[global::System.Obsolete(\"This security scheme marked as deprecated.\")]");
+        content.Should().Contain("public sealed class OAuth2DeviceAuthorizationResponse");
+        content.Should().Contain("public global::System.Threading.Tasks.Task<OAuth2DeviceAuthorizationResponse> RequestOAuth2DeviceAuthorizationAsync(");
+        content.Should().Contain("https://example.com/oauth/device");
+        content.Should().Contain("public global::System.Threading.Tasks.Task<OAuth2Token> ExchangeOAuth2DeviceCodeForTokenAsync(");
+        content.Should().Contain("\"urn:ietf:params:oauth:grant-type:device_code\"");
+        content.Should().Contain("public global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithDeviceAuthorizationAsync(");
+
+        interfaceContent.Should().Contain("public string? OAuth2MetadataUrl { get; }");
+        interfaceContent.Should().Contain("public bool IsOAuth2Deprecated { get; }");
+        interfaceContent.Should().Contain("public global::System.Threading.Tasks.Task<global::G.Api.OAuth2DeviceAuthorizationResponse> RequestOAuth2DeviceAuthorizationAsync(");
+        interfaceContent.Should().Contain("public global::System.Threading.Tasks.Task<global::G.Api.OAuth2Token> ExchangeOAuth2DeviceCodeForTokenAsync(");
+        interfaceContent.Should().Contain("public global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithDeviceAuthorizationAsync(");
+    }
+
+    [TestMethod]
     public void Prepare_WithOperationLevelOAuth2_GeneratesSharedOAuth2Support()
     {
         const string yaml = """

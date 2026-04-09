@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.nixtla.io";
+        public const string DefaultBaseUrl = "https://api.nixtla.io/";
 
         private bool _disposeHttpClient = true;
 
@@ -32,16 +32,73 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.CrossValidationInputFinetuneLossJsonConverter(),
+
+                    new global::G.JsonConverters.CrossValidationInputFinetuneLossNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FinetuneInputFinetuneLossJsonConverter(),
+
+                    new global::G.JsonConverters.FinetuneInputFinetuneLossNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FinetunedModelLossJsonConverter(),
+
+                    new global::G.JsonConverters.FinetunedModelLossNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ForecastInputFinetuneLossJsonConverter(),
+
+                    new global::G.JsonConverters.ForecastInputFinetuneLossNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MultiSeriesCrossValidationFewshotLoss2JsonConverter(),
+
+                    new global::G.JsonConverters.MultiSeriesCrossValidationFewshotLoss2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.MultiSeriesCrossValidationFinetuneLossJsonConverter(),
+
+                    new global::G.JsonConverters.MultiSeriesCrossValidationFinetuneLossNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MultiSeriesForecastFewshotLoss2JsonConverter(),
+
+                    new global::G.JsonConverters.MultiSeriesForecastFewshotLoss2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.MultiSeriesForecastFinetuneLossJsonConverter(),
+
+                    new global::G.JsonConverters.MultiSeriesForecastFinetuneLossNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OnlineAnomalyInputThresholdMethodJsonConverter(),
+
+                    new global::G.JsonConverters.OnlineAnomalyInputThresholdMethodNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OnlineAnomalyInputFinetuneLossJsonConverter(),
+
+                    new global::G.JsonConverters.OnlineAnomalyInputFinetuneLossNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SingleSeriesForecastFewshotLoss2JsonConverter(),
+
+                    new global::G.JsonConverters.SingleSeriesForecastFewshotLoss2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.SingleSeriesForecastFinetuneLossJsonConverter(),
+
+                    new global::G.JsonConverters.SingleSeriesForecastFinetuneLossNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
         /// 
         /// </summary>
-        public ExcludedClient Excluded => new ExcludedClient(HttpClient, authorizations: Authorizations)
+        public ExcludedClient Excluded => new ExcludedClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -60,12 +117,37 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

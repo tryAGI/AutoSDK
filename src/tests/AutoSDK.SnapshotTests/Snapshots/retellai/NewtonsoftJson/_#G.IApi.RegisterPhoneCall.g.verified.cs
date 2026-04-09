@@ -9,11 +9,13 @@ namespace G
         /// Register a new phone call for custom telephony
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.V2PhoneCallResponse> RegisterPhoneCallAsync(
 
             global::G.RegisterPhoneCallRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Register a new phone call for custom telephony
@@ -48,6 +50,7 @@ namespace G
         /// Add optional dynamic variables in key value pairs of string that injects into your Response Engine prompt and tool description. Only applicable for Response Engine.<br/>
         /// Example: {"customer_name":"John Doe"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.V2PhoneCallResponse> RegisterPhoneCallAsync(
@@ -59,6 +62,7 @@ namespace G
             global::G.RegisterPhoneCallRequestDirection? direction = default,
             object? metadata = default,
             object? retellLlmDynamicVariables = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

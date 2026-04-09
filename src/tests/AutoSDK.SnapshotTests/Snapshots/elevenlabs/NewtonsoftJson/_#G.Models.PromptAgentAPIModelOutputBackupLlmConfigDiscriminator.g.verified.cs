@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("preference")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptAgentAPIModelOutputBackupLlmConfigDiscriminatorPreferenceJsonConverter))]
         public global::G.PromptAgentAPIModelOutputBackupLlmConfigDiscriminatorPreference? Preference { get; set; }
 
         /// <summary>

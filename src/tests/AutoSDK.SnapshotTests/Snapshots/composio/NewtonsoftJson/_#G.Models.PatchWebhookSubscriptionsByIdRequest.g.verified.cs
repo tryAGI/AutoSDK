@@ -25,6 +25,7 @@ namespace G
         /// Webhook payload version
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PatchWebhookSubscriptionsByIdRequestVersionJsonConverter))]
         public global::G.PatchWebhookSubscriptionsByIdRequestVersion? Version { get; set; }
 
         /// <summary>

@@ -16,6 +16,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="ghsaId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RepositoryAdvisory> SecurityAdvisoriesUpdateRepositoryAdvisoryAsync(
@@ -24,6 +25,7 @@ namespace G
             string ghsaId,
 
             global::G.RepositoryAdvisoryUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a repository security advisory<br/>
@@ -68,6 +70,7 @@ namespace G
         /// <param name="collaboratingTeams">
         /// A list of team slugs which have been granted write access to the advisory.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RepositoryAdvisory> SecurityAdvisoriesUpdateRepositoryAdvisoryAsync(
@@ -85,6 +88,7 @@ namespace G
             global::G.RepositoryAdvisoryUpdateState? state = default,
             global::System.Collections.Generic.IList<string>? collaboratingUsers = default,
             global::System.Collections.Generic.IList<string>? collaboratingTeams = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

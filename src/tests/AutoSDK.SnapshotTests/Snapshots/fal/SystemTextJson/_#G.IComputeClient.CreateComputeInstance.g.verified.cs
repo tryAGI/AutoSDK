@@ -36,12 +36,14 @@ namespace G
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateComputeInstanceResponse> CreateComputeInstanceAsync(
 
             global::G.CreateComputeInstanceRequest request,
             string? idempotencyKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Compute Instance<br/>
@@ -85,6 +87,7 @@ namespace G
         /// Sector for InfiniBand configuration (only valid with gpu_8x_h100_sxm5)<br/>
         /// Example: sector_1
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateComputeInstanceResponse> CreateComputeInstanceAsync(
@@ -92,6 +95,7 @@ namespace G
             string sshKey,
             string? idempotencyKey = default,
             global::G.CreateComputeInstanceRequestSector? sector = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

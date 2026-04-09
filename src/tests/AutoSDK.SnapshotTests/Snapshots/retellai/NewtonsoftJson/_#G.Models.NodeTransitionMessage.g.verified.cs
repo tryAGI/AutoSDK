@@ -21,6 +21,7 @@ namespace G
         /// This is a node transition.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NodeTransitionMessageRoleJsonConverter))]
         public global::G.NodeTransitionMessageRole Role { get; set; }
 
         /// <summary>

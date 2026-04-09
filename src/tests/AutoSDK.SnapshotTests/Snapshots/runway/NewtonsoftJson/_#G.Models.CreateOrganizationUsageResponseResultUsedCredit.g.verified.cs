@@ -13,6 +13,7 @@ namespace G
         /// The model that credits were spent on.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateOrganizationUsageResponseResultUsedCreditModelJsonConverter))]
         public global::G.CreateOrganizationUsageResponseResultUsedCreditModel Model { get; set; } = default!;
 
         /// <summary>

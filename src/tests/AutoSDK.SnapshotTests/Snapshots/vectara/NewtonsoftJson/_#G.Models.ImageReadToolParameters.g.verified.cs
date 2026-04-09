@@ -24,6 +24,7 @@ namespace G
         /// </summary>
         /// <example>auto</example>
         [global::Newtonsoft.Json.JsonProperty("detail")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageReadToolParametersDetailJsonConverter))]
         public global::G.ImageReadToolParametersDetail? Detail { get; set; }
 
         /// <summary>

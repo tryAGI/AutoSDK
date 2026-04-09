@@ -13,6 +13,7 @@ namespace G
         /// The type of the property. Must be one of: object, string, integer, number, or array.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateResearchRequestOutputSchemaPropertiesTypeJsonConverter))]
         public global::G.CreateResearchRequestOutputSchemaPropertiesType Type { get; set; } = default!;
 
         /// <summary>

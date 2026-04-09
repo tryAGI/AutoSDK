@@ -13,6 +13,7 @@ namespace G
         /// Transport provider for the simulation run
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SimulationRunTransportConfigurationProviderJsonConverter))]
         public global::G.SimulationRunTransportConfigurationProvider Provider { get; set; } = default!;
 
         /// <summary>

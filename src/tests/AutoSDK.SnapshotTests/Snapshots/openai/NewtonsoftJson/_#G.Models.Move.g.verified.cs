@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.MoveType.Move</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MoveTypeJsonConverter))]
         public global::G.MoveType Type { get; set; } = global::G.MoveType.Move;
 
         /// <summary>

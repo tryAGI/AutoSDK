@@ -19,12 +19,14 @@ namespace G
         /// The Unix timestamp (in seconds) when the model was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset Created { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always "model".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelObjectJsonConverter))]
         public global::G.ModelObject Object { get; set; }
 
         /// <summary>

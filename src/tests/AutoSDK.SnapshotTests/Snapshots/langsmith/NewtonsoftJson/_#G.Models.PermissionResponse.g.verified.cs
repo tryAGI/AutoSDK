@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_scope", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AccessScopeJsonConverter))]
         public global::G.AccessScope AccessScope { get; set; } = default!;
 
         /// <summary>

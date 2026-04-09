@@ -13,6 +13,7 @@ namespace G
         /// This is for supabase storage.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SupabaseCredentialProviderJsonConverter))]
         public global::G.SupabaseCredentialProvider Provider { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomToolFormatOneOf1TypeJsonConverter))]
         public global::G.CustomToolFormatOneOf1Type Type { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("syntax", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomToolFormatOneOf1SyntaxJsonConverter))]
         public global::G.CustomToolFormatOneOf1Syntax Syntax { get; set; } = default!;
 
         /// <summary>

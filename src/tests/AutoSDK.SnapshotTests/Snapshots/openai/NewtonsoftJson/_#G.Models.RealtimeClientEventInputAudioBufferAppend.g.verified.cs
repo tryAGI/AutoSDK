@@ -27,6 +27,7 @@ namespace G
         /// The event type, must be `input_audio_buffer.append`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventInputAudioBufferAppendTypeJsonConverter))]
         public global::G.RealtimeClientEventInputAudioBufferAppendType Type { get; set; }
 
         /// <summary>

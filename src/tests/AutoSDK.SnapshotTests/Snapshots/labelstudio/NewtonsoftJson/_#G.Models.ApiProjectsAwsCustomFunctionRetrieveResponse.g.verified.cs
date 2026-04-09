@@ -19,6 +19,7 @@ namespace G
         /// Deployment status of the Lambda function.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiProjectsAwsCustomFunctionRetrieveResponseStatusJsonConverter))]
         public global::G.ApiProjectsAwsCustomFunctionRetrieveResponseStatus Status { get; set; } = default!;
 
         /// <summary>

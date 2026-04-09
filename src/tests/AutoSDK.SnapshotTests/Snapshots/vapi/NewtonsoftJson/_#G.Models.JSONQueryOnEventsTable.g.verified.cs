@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>vapiql-json</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnEventsTableTypeJsonConverter))]
         public global::G.JSONQueryOnEventsTableType Type { get; set; }
 
         /// <summary>
@@ -22,6 +23,7 @@ namespace G
         /// Must be "events" for event-based insights.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("table")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnEventsTableTableJsonConverter))]
         public global::G.JSONQueryOnEventsTableTable Table { get; set; }
 
         /// <summary>
@@ -30,6 +32,7 @@ namespace G
         /// </summary>
         /// <example>assistant.model.requestFailed</example>
         [global::Newtonsoft.Json.JsonProperty("on", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnEventsTableOnJsonConverter))]
         public global::G.JSONQueryOnEventsTableOn On { get; set; } = default!;
 
         /// <summary>
@@ -40,6 +43,7 @@ namespace G
         /// </summary>
         /// <example>count</example>
         [global::Newtonsoft.Json.JsonProperty("operation", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnEventsTableOperationJsonConverter))]
         public global::G.JSONQueryOnEventsTableOperation Operation { get; set; } = default!;
 
         /// <summary>

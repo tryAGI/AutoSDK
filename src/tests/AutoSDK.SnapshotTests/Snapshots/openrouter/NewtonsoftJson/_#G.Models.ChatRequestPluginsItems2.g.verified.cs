@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatRequestPluginsItemsOneOf2IdJsonConverter))]
         public global::G.ChatRequestPluginsItemsOneOf2Id Id { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// The search engine to use for web search.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("engine")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchEngineJsonConverter))]
         public global::G.WebSearchEngine? Engine { get; set; }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace G
         /// The language targeted by the CodeQL query
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query_language", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeScanningVariantAnalysisLanguageJsonConverter))]
         public global::G.CodeScanningVariantAnalysisLanguage QueryLanguage { get; set; } = default!;
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeScanningVariantAnalysisStatus2JsonConverter))]
         public global::G.CodeScanningVariantAnalysisStatus2 Status { get; set; } = default!;
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace G
         /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("failure_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeScanningVariantAnalysisFailureReasonJsonConverter))]
         public global::G.CodeScanningVariantAnalysisFailureReason? FailureReason { get; set; }
 
         /// <summary>

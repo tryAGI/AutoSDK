@@ -18,6 +18,7 @@ namespace G
         /// <param name="id"></param>
         /// <param name="tagPk"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OrganizationMemberTag> Update2Async(
@@ -25,6 +26,7 @@ namespace G
             int tagPk,
 
             global::G.PatchedOrganizationMemberTagRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Update organization member tag<br/>
@@ -41,12 +43,14 @@ namespace G
         /// <param name="label">
         /// Label
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OrganizationMemberTag> Update2Async(
             int id,
             int tagPk,
             string? label = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

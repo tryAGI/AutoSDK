@@ -39,6 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenRouterModelProviderJsonConverter))]
         public global::G.OpenRouterModelProvider Provider { get; set; }
 
         /// <summary>

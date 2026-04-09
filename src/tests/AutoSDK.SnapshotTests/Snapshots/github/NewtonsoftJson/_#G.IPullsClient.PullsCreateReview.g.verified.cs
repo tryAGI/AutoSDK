@@ -23,6 +23,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestReview> PullsCreateReviewAsync(
@@ -31,6 +32,7 @@ namespace G
             int pullNumber,
 
             global::G.PullsCreateReviewRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a review for a pull request<br/>
@@ -61,6 +63,7 @@ namespace G
         /// <param name="comments">
         /// Use the following table to specify the location, destination, and contents of the draft review comment.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestReview> PullsCreateReviewAsync(
@@ -71,6 +74,7 @@ namespace G
             string? body = default,
             global::G.PullsCreateReviewRequestEvent? @event = default,
             global::System.Collections.Generic.IList<global::G.PullsCreateReviewRequestComment>? comments = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

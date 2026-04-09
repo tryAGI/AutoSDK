@@ -38,6 +38,7 @@ namespace G
         /// Default Value: created
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobStatusJsonConverter))]
         public global::G.JobStatus? Status { get; set; }
 
         /// <summary>
@@ -62,6 +63,7 @@ namespace G
         /// Default Value: batch
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("job_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobTypeJsonConverter))]
         public global::G.JobType? JobType { get; set; }
 
         /// <summary>

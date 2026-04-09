@@ -23,6 +23,7 @@ namespace G
         /// - `failed`: The task failed. The `data` field is `null`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingTaskResponseStatusJsonConverter))]
         public global::G.EmbeddingTaskResponseStatus Status { get; set; } = default!;
 
         /// <summary>

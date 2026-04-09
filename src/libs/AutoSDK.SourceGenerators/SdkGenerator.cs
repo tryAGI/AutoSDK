@@ -50,6 +50,11 @@ public class SdkGenerator : IIncrementalGenerator
                 : FileWithName.Empty
                 .AsFileWithName(), context, Id)
             .AddSource(context);
+        data
+            .Collect()
+            .SelectMany(static (x, _) => GetOptionsSupportSettings(x))
+            .SelectAndReportExceptions((x, c) => Sources.OptionsSupport(x, c), context, Id)
+            .AddSource(context);
         supportData
             .SelectAndReportExceptions((x, c) => ShouldGenerateSecuritySupport(x.Right)
                 ? Sources.SecuritySupport(x.Left, c)
@@ -217,6 +222,23 @@ public class SdkGenerator : IIncrementalGenerator
             !x.Methods.IsEmpty ||
             !x.Clients.IsEmpty ||
             !x.WebSocketClients.IsEmpty);
+    }
+
+    private static bool ShouldGenerateOptionsSupport(ImmutableArray<AutoSDK.Models.Data> data)
+    {
+        return data.Any(static x =>
+            !x.Methods.IsEmpty ||
+            !x.Clients.IsEmpty);
+    }
+
+    private static IEnumerable<CSharpSettings> GetOptionsSupportSettings(ImmutableArray<AutoSDK.Models.Data> data)
+    {
+        return data
+            .Where(static x =>
+                !x.Methods.IsEmpty ||
+                !x.Clients.IsEmpty)
+            .GroupBy(static x => x.Converters.Settings.Namespace, StringComparer.Ordinal)
+            .Select(static x => CSharpSettings.FromSettings(x.First().Converters.Settings));
     }
 
     private static bool ShouldGenerateSecuritySupport(ImmutableArray<AutoSDK.Models.Data> data)

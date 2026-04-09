@@ -64,6 +64,7 @@ namespace G
         /// Default Value: private
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TemplateResponseVisibilityJsonConverter))]
         public global::G.TemplateResponseVisibility? Visibility { get; set; }
 
         /// <summary>

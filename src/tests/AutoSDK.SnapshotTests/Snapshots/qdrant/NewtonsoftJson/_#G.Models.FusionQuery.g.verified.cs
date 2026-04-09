@@ -15,6 +15,7 @@ namespace G
         /// * `rrf` - Reciprocal Rank Fusion (with default parameters) * `dbsf` - Distribution-Based Score Fusion
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fusion", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FusionJsonConverter))]
         public global::G.Fusion Fusion { get; set; } = default!;
 
         /// <summary>

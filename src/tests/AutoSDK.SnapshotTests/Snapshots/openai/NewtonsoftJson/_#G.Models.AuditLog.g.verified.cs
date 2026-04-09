@@ -19,12 +19,14 @@ namespace G
         /// The event type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuditLogEventTypeJsonConverter))]
         public global::G.AuditLogEventType Type { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of the event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effective_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset EffectiveAt { get; set; } = default!;
 
         /// <summary>

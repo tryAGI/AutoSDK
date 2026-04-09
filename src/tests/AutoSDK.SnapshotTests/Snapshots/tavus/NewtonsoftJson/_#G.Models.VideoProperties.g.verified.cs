@@ -19,18 +19,21 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("background_scroll_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoPropertiesBackgroundScrollTypeJsonConverter))]
         public global::G.VideoPropertiesBackgroundScrollType? BackgroundScrollType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("background_scroll_depth")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoPropertiesBackgroundScrollDepthJsonConverter))]
         public global::G.VideoPropertiesBackgroundScrollDepth? BackgroundScrollDepth { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("background_scroll_return")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoPropertiesBackgroundScrollReturnJsonConverter))]
         public global::G.VideoPropertiesBackgroundScrollReturn? BackgroundScrollReturn { get; set; }
 
         /// <summary>

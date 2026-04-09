@@ -13,6 +13,7 @@ namespace G
         /// The type of automation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateProjectAutomationConfigVariant4EventTypeJsonConverter))]
         public global::G.CreateProjectAutomationConfigVariant4EventType EventType { get; set; }
 
         /// <summary>

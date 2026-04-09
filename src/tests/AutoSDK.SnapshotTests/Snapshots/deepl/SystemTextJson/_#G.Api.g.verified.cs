@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// DeepL API Pro
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.deepl.com";
+        public const string DefaultBaseUrl = "https://api.deepl.com/";
 
         private bool _disposeHttpClient = true;
 
@@ -32,6 +32,9 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -423,7 +426,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AdminApiClient AdminApi => new AdminApiClient(HttpClient, authorizations: Authorizations)
+        public AdminApiClient AdminApi => new AdminApiClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -452,7 +455,7 @@ namespace G
         /// - [delete](https://www.deepl.com/docs-api/glossaries/delete-glossary) the existing glossary,<br/>
         /// - [create a new glossary](https://www.deepl.com/docs-api/glossaries/create-glossary) with the same name.
         /// </summary>
-        public ManageGlossariesClient ManageGlossaries => new ManageGlossariesClient(HttpClient, authorizations: Authorizations)
+        public ManageGlossariesClient ManageGlossaries => new ManageGlossariesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -476,16 +479,16 @@ namespace G
         /// Glossaries created via the DeepL API are now unified with glossaries created via the DeepL website and DeepL apps.<br/>
         /// Please only use the v3 glossary API in conjunction with multilingual or edited glossaries from the website.
         /// </summary>
-        public ManageMultilingualGlossariesClient ManageMultilingualGlossaries => new ManageMultilingualGlossariesClient(HttpClient, authorizations: Authorizations)
+        public ManageMultilingualGlossariesClient ManageMultilingualGlossaries => new ManageMultilingualGlossariesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Information about API usage and value ranges
+        /// Information about API usage and value ranges.
         /// </summary>
-        public MetaInformationClient MetaInformation => new MetaInformationClient(HttpClient, authorizations: Authorizations)
+        public MetaInformationClient MetaInformation => new MetaInformationClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -493,9 +496,9 @@ namespace G
 
         /// <summary>
         /// The `rephrase` endpoint  is used to make corrections and adjustments to texts based on style or tone.<br/>
-        /// For more details, visit [this documentation page](https://developers.deepl.com/docs/api-reference/improve-text)
+        /// For more details, visit [this documentation page](https://developers.deepl.com/docs/api-reference/improve-text).
         /// </summary>
-        public RephraseTextClient RephraseText => new RephraseTextClient(HttpClient, authorizations: Authorizations)
+        public RephraseTextClient RephraseText => new RephraseTextClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -508,7 +511,7 @@ namespace G
         /// to the selected formatting and spelling conventions.<br/>
         /// If you encounter issues, please let us know at support@DeepL.com.
         /// </summary>
-        public StyleRulesClient StyleRules => new StyleRulesClient(HttpClient, authorizations: Authorizations)
+        public StyleRulesClient StyleRules => new StyleRulesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -534,7 +537,7 @@ namespace G
         ///   - once the status call reports `done`, [download](https://www.deepl.com/docs-api/documents/download-document) the translated document.<br/>
         /// To learn more about context in DeepL API translations, we recommend [this article](https://www.deepl.com/docs-api/general/working-with-context).
         /// </summary>
-        public TranslateDocumentsClient TranslateDocuments => new TranslateDocumentsClient(HttpClient, authorizations: Authorizations)
+        public TranslateDocumentsClient TranslateDocuments => new TranslateDocumentsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -544,7 +547,7 @@ namespace G
         /// The text-translation API currently consists of a single endpoint, `translate`, which is described below.<br/>
         /// To learn more about context in DeepL API translations, we recommend [this article](https://www.deepl.com/docs-api/general/working-with-context).
         /// </summary>
-        public TranslateTextClient TranslateText => new TranslateTextClient(HttpClient, authorizations: Authorizations)
+        public TranslateTextClient TranslateText => new TranslateTextClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -554,7 +557,7 @@ namespace G
         /// The Voice API provides real-time voice transcription and translation services.<br/>
         /// Use a two-step flow: first request a streaming URL via REST, then establish a WebSocket connection for streaming audio and receiving transcriptions.
         /// </summary>
-        public VoiceAPIClient VoiceAPI => new VoiceAPIClient(HttpClient, authorizations: Authorizations)
+        public VoiceAPIClient VoiceAPI => new VoiceAPIClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -573,12 +576,37 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

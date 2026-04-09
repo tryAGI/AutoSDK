@@ -21,6 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("op", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CohortFilterCallDurationFilterOpJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.CohortFilterCallDurationFilterOp Op { get; set; } = default!;
 

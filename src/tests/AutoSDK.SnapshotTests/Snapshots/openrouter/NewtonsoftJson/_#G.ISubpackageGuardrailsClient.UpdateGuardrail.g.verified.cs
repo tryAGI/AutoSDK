@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GuardrailsUpdateGuardrailResponse200> UpdateGuardrailAsync(
             global::System.Guid id,
 
             global::G.UpdateGuardrailRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a guardrail<br/>
@@ -47,6 +49,7 @@ namespace G
         /// <param name="enforceZdr">
         /// Whether to enforce zero data retention
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GuardrailsUpdateGuardrailResponse200> UpdateGuardrailAsync(
@@ -59,6 +62,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? ignoredProviders = default,
             global::System.Collections.Generic.IList<string>? allowedModels = default,
             bool? enforceZdr = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

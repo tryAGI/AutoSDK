@@ -13,6 +13,7 @@ namespace G
         /// The type of the script.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.Create3RequestScriptVariant2TypeJsonConverter))]
         public global::G.Create3RequestScriptVariant2Type Type { get; set; }
 
         /// <summary>

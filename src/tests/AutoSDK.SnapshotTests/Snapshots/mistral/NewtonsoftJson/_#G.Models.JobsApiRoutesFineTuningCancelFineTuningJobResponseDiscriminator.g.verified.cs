@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("job_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminatorJobTypeJsonConverter))]
         public global::G.JobsApiRoutesFineTuningCancelFineTuningJobResponseDiscriminatorJobType? JobType { get; set; }
 
         /// <summary>

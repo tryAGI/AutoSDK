@@ -10,11 +10,13 @@ namespace G
         /// SubmitProjectChatMessage
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatMessageVO> SubmitProjectChatMessageAsync(
 
             global::G.SubmitProjectChatMessageRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// SubmitProjectChatMessage<br/>
@@ -23,12 +25,14 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="userId"></param>
         /// <param name="message"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatMessageVO> SubmitProjectChatMessageAsync(
             global::System.Guid projectId,
             global::System.Guid userId,
             string message,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

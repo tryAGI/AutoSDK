@@ -15,12 +15,14 @@ namespace G
         /// </summary>
         /// <example>vapiql-json</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnTypeJsonConverter))]
         public global::G.JSONQueryOnCallTableWithStringTypeColumnType Type { get; set; }
 
         /// <summary>
         /// This is the table that will be queried.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("table")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnTableJsonConverter))]
         public global::G.JSONQueryOnCallTableWithStringTypeColumnTable Table { get; set; }
 
         /// <summary>
@@ -38,6 +40,7 @@ namespace G
         /// </summary>
         /// <example>id</example>
         [global::Newtonsoft.Json.JsonProperty("column", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnColumnJsonConverter))]
         public global::G.JSONQueryOnCallTableWithStringTypeColumnColumn Column { get; set; } = default!;
 
         /// <summary>
@@ -47,6 +50,7 @@ namespace G
         /// </summary>
         /// <example>count</example>
         [global::Newtonsoft.Json.JsonProperty("operation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JSONQueryOnCallTableWithStringTypeColumnOperationJsonConverter))]
         public global::G.JSONQueryOnCallTableWithStringTypeColumnOperation Operation { get; set; }
 
         /// <summary>

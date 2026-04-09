@@ -61,6 +61,7 @@ namespace G
         /// Controls how images are rendered in the UI: 'auto' loads images automatically, 'click_to_load' shows a placeholder until clicked, 'blocked' prevents image loading entirely
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image_rendering_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageRenderingModeJsonConverter))]
         public global::G.ImageRenderingMode? ImageRenderingMode { get; set; }
 
         /// <summary>

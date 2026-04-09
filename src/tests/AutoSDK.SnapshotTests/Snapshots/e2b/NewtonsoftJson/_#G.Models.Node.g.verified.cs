@@ -49,6 +49,7 @@ namespace G
         /// Status of the node
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NodeStatusJsonConverter))]
         public global::G.NodeStatus Status { get; set; } = default!;
 
         /// <summary>

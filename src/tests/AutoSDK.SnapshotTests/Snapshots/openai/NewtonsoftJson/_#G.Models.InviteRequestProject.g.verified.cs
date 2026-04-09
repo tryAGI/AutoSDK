@@ -19,6 +19,7 @@ namespace G
         /// Project membership role
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InviteRequestProjectRoleJsonConverter))]
         public global::G.InviteRequestProjectRole Role { get; set; } = default!;
 
         /// <summary>

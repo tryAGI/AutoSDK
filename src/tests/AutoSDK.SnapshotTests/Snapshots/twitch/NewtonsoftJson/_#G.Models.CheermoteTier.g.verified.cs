@@ -27,6 +27,7 @@ namespace G
         /// * 100000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CheermoteTierIdJsonConverter))]
         public global::G.CheermoteTierId Id { get; set; } = default!;
 
         /// <summary>

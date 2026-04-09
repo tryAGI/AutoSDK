@@ -35,6 +35,7 @@ namespace G
         /// Default Value: 10<br/>
         /// Example: 10
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetMcpServersResponse> GetMcpServersAsync(
@@ -45,6 +46,7 @@ namespace G
             global::G.GetMcpServersOrderDirection? orderDirection = default,
             double? pageNo = default,
             double? limit = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

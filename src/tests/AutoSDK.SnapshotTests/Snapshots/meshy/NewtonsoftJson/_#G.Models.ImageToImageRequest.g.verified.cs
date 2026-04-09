@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ai_model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageAiModelJsonConverter))]
         public global::G.ImageAiModel AiModel { get; set; } = default!;
 
         /// <summary>

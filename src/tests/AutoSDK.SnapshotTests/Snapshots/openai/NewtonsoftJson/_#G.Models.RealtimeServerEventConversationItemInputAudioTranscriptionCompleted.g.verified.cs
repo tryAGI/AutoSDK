@@ -28,6 +28,7 @@ namespace G
         /// `conversation.item.input_audio_transcription.completed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedTypeJsonConverter))]
         public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType Type { get; set; }
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace G
         /// <default>global::G.SentimentAnalysisMessageType.SentimentAnalysis</default>
         /// <example>sentiment_analysis</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SentimentAnalysisMessageTypeJsonConverter))]
         public global::G.SentimentAnalysisMessageType Type { get; set; } = global::G.SentimentAnalysisMessageType.SentimentAnalysis;
 
         /// <summary>

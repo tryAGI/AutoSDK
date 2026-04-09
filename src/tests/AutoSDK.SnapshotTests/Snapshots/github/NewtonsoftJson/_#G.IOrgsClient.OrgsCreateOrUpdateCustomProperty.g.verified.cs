@@ -15,6 +15,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="customPropertyName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomProperty> OrgsCreateOrUpdateCustomPropertyAsync(
@@ -22,6 +23,7 @@ namespace G
             string customPropertyName,
 
             global::G.OrgsCreateOrUpdateCustomPropertyRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create or update a custom property for an organization<br/>
@@ -49,6 +51,7 @@ namespace G
         /// An ordered list of the allowed values of the property.<br/>
         /// The property can have up to 200 allowed values.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomProperty> OrgsCreateOrUpdateCustomPropertyAsync(
@@ -59,6 +62,7 @@ namespace G
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? defaultValue = default,
             string? description = default,
             global::System.Collections.Generic.IList<string>? allowedValues = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

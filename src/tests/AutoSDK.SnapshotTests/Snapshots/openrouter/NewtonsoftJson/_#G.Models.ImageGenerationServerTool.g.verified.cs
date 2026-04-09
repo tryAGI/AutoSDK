@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenerationServerToolTypeJsonConverter))]
         public global::G.ImageGenerationServerToolType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("background")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenerationServerToolBackgroundJsonConverter))]
         public global::G.ImageGenerationServerToolBackground? Background { get; set; }
 
         /// <summary>
@@ -37,12 +39,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenerationServerToolModelJsonConverter))]
         public global::G.ImageGenerationServerToolModel? Model { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("moderation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenerationServerToolModerationJsonConverter))]
         public global::G.ImageGenerationServerToolModeration? Moderation { get; set; }
 
         /// <summary>
@@ -55,6 +59,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenerationServerToolOutputFormatJsonConverter))]
         public global::G.ImageGenerationServerToolOutputFormat? OutputFormat { get; set; }
 
         /// <summary>
@@ -67,12 +72,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenerationServerToolQualityJsonConverter))]
         public global::G.ImageGenerationServerToolQuality? Quality { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenerationServerToolSizeJsonConverter))]
         public global::G.ImageGenerationServerToolSize? Size { get; set; }
 
         /// <summary>

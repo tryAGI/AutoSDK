@@ -50,6 +50,7 @@ namespace G
         /// </summary>
         /// <example>round</example>
         [global::Newtonsoft.Json.JsonProperty("lineCap")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgStrokeLineCapJsonConverter))]
         public global::G.SvgStrokeLineCap? LineCap { get; set; }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace G
         /// </summary>
         /// <example>round</example>
         [global::Newtonsoft.Json.JsonProperty("lineJoin")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgStrokeLineJoinJsonConverter))]
         public global::G.SvgStrokeLineJoin? LineJoin { get; set; }
 
         /// <summary>

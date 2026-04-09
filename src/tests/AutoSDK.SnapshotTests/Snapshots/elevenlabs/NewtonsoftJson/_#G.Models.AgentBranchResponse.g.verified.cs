@@ -55,6 +55,7 @@ namespace G
         /// Default Value: writer_perms_required
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("protection_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BranchProtectionStatusJsonConverter))]
         public global::G.BranchProtectionStatus? ProtectionStatus { get; set; }
 
         /// <summary>

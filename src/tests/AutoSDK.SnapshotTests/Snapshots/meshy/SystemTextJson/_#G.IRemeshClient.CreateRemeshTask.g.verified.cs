@@ -9,11 +9,13 @@ namespace G
         /// Create a Remesh task
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTaskResponse> CreateRemeshTaskAsync(
 
             global::G.RemeshRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Remesh task
@@ -44,6 +46,7 @@ namespace G
         /// <param name="convertFormatOnly">
         /// Only convert format, skip remesh processing
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTaskResponse> CreateRemeshTaskAsync(
@@ -56,6 +59,7 @@ namespace G
             bool? autoSize = default,
             global::G.OriginAt? originAt = default,
             bool? convertFormatOnly = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

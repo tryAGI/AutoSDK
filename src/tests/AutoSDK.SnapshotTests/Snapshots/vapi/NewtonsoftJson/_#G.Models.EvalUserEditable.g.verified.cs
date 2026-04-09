@@ -44,6 +44,7 @@ namespace G
         /// </summary>
         /// <example>chat.mockConversation</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalUserEditableTypeJsonConverter))]
         public global::G.EvalUserEditableType Type { get; set; }
 
         /// <summary>

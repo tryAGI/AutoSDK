@@ -23,12 +23,14 @@ namespace G
         /// The type of the item (`message`, `function_call`, `function_call_output`, `item_reference`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeConversationItemWithReferenceTypeJsonConverter))]
         public global::G.RealtimeConversationItemWithReferenceType? Type { get; set; }
 
         /// <summary>
         /// Identifier for the API object being returned - always `realtime.item`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeConversationItemWithReferenceObjectJsonConverter))]
         public global::G.RealtimeConversationItemWithReferenceObject? Object { get; set; }
 
         /// <summary>
@@ -37,6 +39,7 @@ namespace G
         /// `conversation.item.created` event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeConversationItemWithReferenceStatusJsonConverter))]
         public global::G.RealtimeConversationItemWithReferenceStatus? Status { get; set; }
 
         /// <summary>
@@ -44,6 +47,7 @@ namespace G
         /// applicable for `message` items.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeConversationItemWithReferenceRoleJsonConverter))]
         public global::G.RealtimeConversationItemWithReferenceRole? Role { get; set; }
 
         /// <summary>

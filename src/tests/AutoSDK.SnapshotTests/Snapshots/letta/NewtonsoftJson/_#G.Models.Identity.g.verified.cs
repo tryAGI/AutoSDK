@@ -33,6 +33,7 @@ namespace G
         /// The type of the identity.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("identity_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IdentityTypeJsonConverter))]
         public global::G.IdentityType IdentityType { get; set; } = default!;
 
         /// <summary>

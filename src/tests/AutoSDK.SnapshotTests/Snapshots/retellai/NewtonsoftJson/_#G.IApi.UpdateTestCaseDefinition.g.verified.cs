@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="testCaseDefinitionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TestCaseDefinition> UpdateTestCaseDefinitionAsync(
             string testCaseDefinitionId,
 
             global::G.TestCaseDefinitionInput request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a test case definition
@@ -42,6 +44,7 @@ namespace G
         /// <param name="llmModel">
         /// Available LLM models for agents.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TestCaseDefinition> UpdateTestCaseDefinitionAsync(
@@ -53,6 +56,7 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string>? dynamicVariables = default,
             global::System.Collections.Generic.IList<global::G.ToolMock>? toolMocks = default,
             global::G.LLMModel? llmModel = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

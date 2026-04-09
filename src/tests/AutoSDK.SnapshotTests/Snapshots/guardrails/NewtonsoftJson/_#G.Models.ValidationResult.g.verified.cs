@@ -13,6 +13,7 @@ namespace G
         /// Whether validation passed or failed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outcome", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ValidationResultOutcomeJsonConverter))]
         public global::G.ValidationResultOutcome Outcome { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The type of the image generation call. Always `image_generation_call`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenToolCallTypeJsonConverter))]
         public global::G.ImageGenToolCallType Type { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// The status of the image generation call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenToolCallStatusJsonConverter))]
         public global::G.ImageGenToolCallStatus Status { get; set; } = default!;
 
         /// <summary>

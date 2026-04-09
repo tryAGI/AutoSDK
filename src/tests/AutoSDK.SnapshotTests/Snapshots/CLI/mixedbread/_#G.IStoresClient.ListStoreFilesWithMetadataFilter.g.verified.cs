@@ -18,12 +18,14 @@ namespace G
         /// The ID or name of the store
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.StoreFileListResponse> ListStoreFilesWithMetadataFilterAsync(
             global::G.AnyOf<string, global::System.Guid?> storeIdentifier,
 
             global::G.SearchCursorPagination request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List store files with metadata filter<br/>
@@ -60,6 +62,7 @@ namespace G
         /// <param name="q">
         /// Search query for fuzzy matching over name and external_id fields
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.StoreFileListResponse> ListStoreFilesWithMetadataFilterAsync(
@@ -71,6 +74,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.StoreFileStatus>? statuses = default,
             global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>? metadataFilter = default,
             string? q = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

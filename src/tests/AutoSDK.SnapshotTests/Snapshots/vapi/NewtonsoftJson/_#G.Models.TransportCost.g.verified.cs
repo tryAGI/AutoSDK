@@ -13,12 +13,14 @@ namespace G
         /// This is the type of cost, always 'transport' for this class.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransportCostTypeJsonConverter))]
         public global::G.TransportCostType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransportCostProviderJsonConverter))]
         public global::G.TransportCostProvider? Provider { get; set; }
 
         /// <summary>

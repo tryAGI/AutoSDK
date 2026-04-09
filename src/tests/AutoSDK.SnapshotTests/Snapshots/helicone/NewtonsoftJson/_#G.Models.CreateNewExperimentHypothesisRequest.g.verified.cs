@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateNewExperimentHypothesisRequestStatusJsonConverter))]
         public global::G.CreateNewExperimentHypothesisRequestStatus Status { get; set; } = default!;
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.NotFoundErrorType.NotFoundError</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NotFoundErrorTypeJsonConverter))]
         public global::G.NotFoundErrorType Type { get; set; } = global::G.NotFoundErrorType.NotFoundError;
 
         /// <summary>

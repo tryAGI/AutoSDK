@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleRequiredSignaturesTypeJsonConverter))]
         public global::G.RepositoryRuleRequiredSignaturesType Type { get; set; }
 
         /// <summary>

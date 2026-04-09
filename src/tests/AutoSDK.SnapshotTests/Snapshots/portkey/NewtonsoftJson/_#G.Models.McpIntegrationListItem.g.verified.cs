@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpIntegrationListItemTypeJsonConverter))]
         public global::G.McpIntegrationListItemType? Type { get; set; }
 
         /// <summary>
@@ -49,12 +50,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpIntegrationListItemAuthTypeJsonConverter))]
         public global::G.McpIntegrationListItemAuthType? AuthType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpIntegrationListItemTransportJsonConverter))]
         public global::G.McpIntegrationListItemTransport? Transport { get; set; }
 
         /// <summary>

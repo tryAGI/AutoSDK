@@ -19,6 +19,7 @@ namespace G
         /// The object type, which is always `thread.message.delta`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaObjectObjectJsonConverter))]
         public global::G.MessageDeltaObjectObject Object { get; set; }
 
         /// <summary>

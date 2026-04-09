@@ -57,6 +57,7 @@ namespace G
         /// </summary>
         /// <example>trigger</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostInternalTriggerLogsResponseDataItemTypeJsonConverter))]
         public global::G.PostInternalTriggerLogsResponseDataItemType Type { get; set; } = default!;
 
         /// <summary>

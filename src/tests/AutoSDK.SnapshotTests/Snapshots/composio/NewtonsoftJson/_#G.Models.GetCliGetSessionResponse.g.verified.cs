@@ -31,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>pending</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetCliGetSessionResponseStatusJsonConverter))]
         public global::G.GetCliGetSessionResponseStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace G
         /// </summary>
         /// <example>project</example>
         [global::Newtonsoft.Json.JsonProperty("scope")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetCliGetSessionResponseScopeJsonConverter))]
         public global::G.GetCliGetSessionResponseScope? Scope { get; set; }
 
         /// <summary>

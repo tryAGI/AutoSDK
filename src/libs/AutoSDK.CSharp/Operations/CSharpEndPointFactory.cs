@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Naming.Clients;
 using AutoSDK.Naming.Parameters;
@@ -55,11 +56,30 @@ public static class CSharpEndPointFactory
             operation.Operation.RequestBody?.Content ??
             new Dictionary<string, IOpenApiMediaType>();
 
-        var requestContext = operation.Schemas.FirstOrDefault(x => x.Hint == Hint.Request);
-        TypeData? requestType = requestContext?.TypeData;
         var requestMediaType = requestMediaTypes
             .Select(x => x.Key)
             .FirstOrDefault() ?? "application/json";
+        var requestContext = operation.Schemas.FirstOrDefault(x =>
+                x.Hint == Hint.Request &&
+                x.ContentType == requestMediaType &&
+                !x.IsMediaTypeItemSchema) ??
+            operation.Schemas.FirstOrDefault(x =>
+                x.Hint == Hint.Request &&
+                !x.IsMediaTypeItemSchema);
+        var requestItemContext = operation.Schemas.FirstOrDefault(x =>
+                x.Hint == Hint.Request &&
+                x.ContentType == requestMediaType &&
+                x.IsMediaTypeItemSchema) ??
+            operation.Schemas.FirstOrDefault(x =>
+                x.Hint == Hint.Request &&
+                x.IsMediaTypeItemSchema);
+        TypeData? requestType = requestContext?.TypeData;
+        if (requestType == null &&
+            requestItemContext?.TypeData is { CSharpTypeWithoutNullability.Length: > 0 } requestItemType &&
+            (requestMediaType.IsSequentialJsonMimeType() || requestMediaType.IsServerSentEventsMimeType()))
+        {
+            requestType = CreateSequentialCollectionType(requestItemType, operation.Settings);
+        }
 
         if (requestType == null && requestMediaType == "application/octet-stream")
         {
@@ -124,11 +144,13 @@ public static class CSharpEndPointFactory
                 : responses.Any(x => x.IsDefault)
                     ? responses.First(x => x.IsDefault)
                     : EndPointResponse.Default;
-        var streamFormat = preferredMimeType == "text/event-stream"
+        var streamFormat = preferredMimeType.IsServerSentEventsMimeType()
             ? StreamFormat.ServerSentEvents
-            : responses.Any(x => x.MimeType.Contains("application/x-ndjson"))
+            : preferredMimeType.IsSequentialJsonMimeType()
                 ? StreamFormat.Ndjson
-                : responses.Any(x => x.MimeType.Contains("text/event-stream"))
+                : responses.Any(x => x.MimeType.IsSequentialJsonMimeType())
+                    ? StreamFormat.Ndjson
+                    : responses.Any(x => x.MimeType.IsServerSentEventsMimeType())
                     ? StreamFormat.ServerSentEvents
                     : StreamFormat.None;
         if (successResponseOverride is EndPointResponse responseOverride)
@@ -321,6 +343,18 @@ public static class CSharpEndPointFactory
             : !context.Schema.IsEnum()
                 ? context.Children
                 : null;
+    }
+
+    private static TypeData CreateSequentialCollectionType(TypeData itemType, Settings settings)
+    {
+        return (TypeData.Default with
+        {
+            CSharpTypeRaw = $"global::System.Collections.Generic.IList<{itemType.CSharpTypeWithoutNullability}>",
+            IsArray = true,
+            Namespace = "System.Collections.Generic",
+            GeneratedNamespace = settings.Namespace,
+            SubTypes = ImmutableArray.Create(itemType.Box()).AsEquatableArray(),
+        }).WithCSharpComputedValues();
     }
 
     private static string GetCodeSamplesRemarks(OpenApiOperation operation)

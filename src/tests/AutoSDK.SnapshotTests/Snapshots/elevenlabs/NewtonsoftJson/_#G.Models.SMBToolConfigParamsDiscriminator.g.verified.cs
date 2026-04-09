@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("smb_tool_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SMBToolConfigParamsDiscriminatorSmbToolTypeJsonConverter))]
         public global::G.SMBToolConfigParamsDiscriminatorSmbToolType? SmbToolType { get; set; }
 
         /// <summary>

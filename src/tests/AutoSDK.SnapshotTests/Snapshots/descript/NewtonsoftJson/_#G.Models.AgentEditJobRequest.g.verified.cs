@@ -57,6 +57,7 @@ namespace G
         /// Defaults to `none` if not specified.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("team_access")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentEditJobRequestTeamAccessJsonConverter))]
         public global::G.AgentEditJobRequestTeamAccess? TeamAccess { get; set; }
 
         /// <summary>

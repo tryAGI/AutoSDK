@@ -23,6 +23,7 @@ namespace G
         ///  * `error` - an irrecoverable error occurred while translating the document
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetDocumentStatusResponseStatusJsonConverter))]
         public global::G.GetDocumentStatusResponseStatus Status { get; set; } = default!;
 
         /// <summary>

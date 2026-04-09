@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ImageToVideoAssetType.ImageToVideo</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageToVideoAssetTypeJsonConverter))]
         public global::G.ImageToVideoAssetType Type { get; set; } = global::G.ImageToVideoAssetType.ImageToVideo;
 
         /// <summary>
@@ -39,6 +40,7 @@ namespace G
         /// </summary>
         /// <example>16:9</example>
         [global::Newtonsoft.Json.JsonProperty("aspectRatio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageToVideoAssetAspectRatioJsonConverter))]
         public global::G.ImageToVideoAssetAspectRatio? AspectRatio { get; set; }
 
         /// <summary>

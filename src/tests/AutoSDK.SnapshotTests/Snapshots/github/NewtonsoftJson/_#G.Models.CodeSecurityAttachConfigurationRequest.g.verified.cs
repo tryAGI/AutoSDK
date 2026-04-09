@@ -13,6 +13,7 @@ namespace G
         /// The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityAttachConfigurationRequestScopeJsonConverter))]
         public global::G.CodeSecurityAttachConfigurationRequestScope Scope { get; set; } = default!;
 
         /// <summary>

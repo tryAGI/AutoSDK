@@ -16,6 +16,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MCPServerResponseModel> Update8Async(
@@ -23,6 +24,7 @@ namespace G
 
             global::G.MCPServerConfigUpdateRequestModel request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Mcp Server Configuration<br/>
@@ -64,6 +66,7 @@ namespace G
         /// <param name="authConnection">
         /// Optional auth connection to use for authentication with this MCP server
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MCPServerResponseModel> Update8Async(
@@ -79,6 +82,7 @@ namespace G
             bool? disableCompression = default,
             global::G.ConvAISecretLocator? secretToken = default,
             global::G.AuthConnectionLocator? authConnection = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

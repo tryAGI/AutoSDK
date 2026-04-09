@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PaymentPlanTierJsonConverter))]
         public global::G.PaymentPlanTier Tier { get; set; } = default!;
 
         /// <summary>

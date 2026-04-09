@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ChatCompletionMessageListObject.List</default>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionMessageListObjectJsonConverter))]
         public global::G.ChatCompletionMessageListObject Object { get; set; } = global::G.ChatCompletionMessageListObject.List;
 
         /// <summary>

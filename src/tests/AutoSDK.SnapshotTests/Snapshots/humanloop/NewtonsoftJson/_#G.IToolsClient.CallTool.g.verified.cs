@@ -9,11 +9,13 @@ namespace G
         /// Call Tool
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CallToolResponse> CallToolAsync(
 
             global::G.CallToolRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Call Tool
@@ -26,6 +28,7 @@ namespace G
         /// <param name="traceParentId"></param>
         /// <param name="save"></param>
         /// <param name="logId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CallToolResponse> CallToolAsync(
@@ -37,6 +40,7 @@ namespace G
             string? traceParentId = default,
             bool? save = default,
             string? logId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

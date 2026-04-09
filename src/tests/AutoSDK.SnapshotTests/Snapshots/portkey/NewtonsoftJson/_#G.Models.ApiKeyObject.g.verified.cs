@@ -42,6 +42,7 @@ namespace G
         /// </summary>
         /// <example>organisation-service</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiKeyObjectTypeJsonConverter))]
         public global::G.ApiKeyObjectType? Type { get; set; }
 
         /// <summary>
@@ -70,6 +71,7 @@ namespace G
         /// </summary>
         /// <example>active</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiKeyObjectStatusJsonConverter))]
         public global::G.ApiKeyObjectStatus? Status { get; set; }
 
         /// <summary>
@@ -91,6 +93,7 @@ namespace G
         /// </summary>
         /// <example>ui</example>
         [global::Newtonsoft.Json.JsonProperty("creation_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiKeyObjectCreationModeJsonConverter))]
         public global::G.ApiKeyObjectCreationMode? CreationMode { get; set; }
 
         /// <summary>
@@ -143,6 +146,7 @@ namespace G
         /// </summary>
         /// <example>api-key</example>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiKeyObjectObjectJsonConverter))]
         public global::G.ApiKeyObjectObject? Object { get; set; }
 
         /// <summary>

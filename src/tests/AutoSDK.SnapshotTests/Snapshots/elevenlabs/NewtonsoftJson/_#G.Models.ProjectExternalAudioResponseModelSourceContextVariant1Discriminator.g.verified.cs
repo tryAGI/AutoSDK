@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectExternalAudioResponseModelSourceContextVariant1DiscriminatorSourceTypeJsonConverter))]
         public global::G.ProjectExternalAudioResponseModelSourceContextVariant1DiscriminatorSourceType? SourceType { get; set; }
 
         /// <summary>

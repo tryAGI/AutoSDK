@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StreamSentinelDataJsonConverter))]
         public global::G.StreamSentinelData Data { get; set; }
 
         /// <summary>

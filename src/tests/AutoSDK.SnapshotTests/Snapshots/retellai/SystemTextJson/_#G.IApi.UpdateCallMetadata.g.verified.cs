@@ -12,12 +12,14 @@ namespace G
         /// Example: call_a4441234567890777c4a4a123e6
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.V2CallResponse> UpdateCallMetadataAsync(
             string callId,
 
             global::G.UpdateCallMetadataRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update metadata and sensitive data storage settings for an existing call.
@@ -41,6 +43,7 @@ namespace G
         /// Custom attributes for the call<br/>
         /// Example: {"custom_attribute_1":"value1","custom_attribute_2":"value2"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.V2CallResponse> UpdateCallMetadataAsync(
@@ -49,6 +52,7 @@ namespace G
             global::G.UpdateCallMetadataRequestDataStorageSetting? dataStorageSetting = default,
             global::System.Collections.Generic.Dictionary<string, string>? overrideDynamicVariables = default,
             object? customAttributes = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>agent</example>
         [global::Newtonsoft.Json.JsonProperty("job_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentJobStatusJobTypeJsonConverter))]
         public global::G.AgentJobStatusJobType JobType { get; set; }
 
         /// <summary>
@@ -35,6 +36,7 @@ namespace G
         /// </summary>
         /// <example>stopped</example>
         [global::Newtonsoft.Json.JsonProperty("job_state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentJobStatusJobStateJsonConverter))]
         public global::G.AgentJobStatusJobState JobState { get; set; } = default!;
 
         /// <summary>

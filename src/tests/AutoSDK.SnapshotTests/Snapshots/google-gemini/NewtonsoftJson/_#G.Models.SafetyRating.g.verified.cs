@@ -13,12 +13,14 @@ namespace G
         /// Required. The category for this rating.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("category")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SafetyRatingCategoryJsonConverter))]
         public global::G.SafetyRatingCategory? Category { get; set; }
 
         /// <summary>
         /// Required. The probability of harm for this content.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("probability")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SafetyRatingProbabilityJsonConverter))]
         public global::G.SafetyRatingProbability? Probability { get; set; }
 
         /// <summary>

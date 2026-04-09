@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="queueId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> DeleteRunsFromAnnotationQueueAsync(
             global::System.Guid queueId,
 
             global::G.AnnotationQueueBulkDeleteRunsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete Runs From Annotation Queue
@@ -26,6 +28,7 @@ namespace G
         /// </param>
         /// <param name="runIds"></param>
         /// <param name="excludeRunIds"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> DeleteRunsFromAnnotationQueueAsync(
@@ -33,6 +36,7 @@ namespace G
             bool? deleteAll = default,
             global::System.Collections.Generic.IList<global::System.Guid>? runIds = default,
             global::System.Collections.Generic.IList<global::System.Guid>? excludeRunIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

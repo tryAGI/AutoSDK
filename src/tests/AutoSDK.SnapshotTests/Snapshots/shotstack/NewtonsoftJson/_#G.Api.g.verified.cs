@@ -26,7 +26,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.shotstack.io";
+        public const string DefaultBaseUrl = "https://api.shotstack.io/";
 
         private bool _disposeHttpClient = true;
 
@@ -44,16 +44,533 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.EditDiskJsonConverter(),
+
+                    new global::G.JsonConverters.EditDiskNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditInstanceJsonConverter(),
+
+                    new global::G.JsonConverters.EditInstanceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SoundtrackEffectJsonConverter(),
+
+                    new global::G.JsonConverters.SoundtrackEffectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClipFitJsonConverter(),
+
+                    new global::G.JsonConverters.ClipFitNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClipPositionJsonConverter(),
+
+                    new global::G.JsonConverters.ClipPositionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClipEffectJsonConverter(),
+
+                    new global::G.JsonConverters.ClipEffectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClipFilterJsonConverter(),
+
+                    new global::G.JsonConverters.ClipFilterNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssetDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AssetDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VideoAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.VideoAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VideoAssetVolumeEffectJsonConverter(),
+
+                    new global::G.JsonConverters.VideoAssetVolumeEffectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ImageAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ImageAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AudioAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AudioAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AudioAssetEffectJsonConverter(),
+
+                    new global::G.JsonConverters.AudioAssetEffectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShapeAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ShapeAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShapeAssetShapeJsonConverter(),
+
+                    new global::G.JsonConverters.ShapeAssetShapeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LumaAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.LumaAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CaptionAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CaptionAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionActiveFontTextDecorationJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionActiveFontTextDecorationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionActiveStrokeJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionActiveStrokeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionActiveShadowJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionActiveShadowNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionAnimationStyleJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionAnimationStyleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionAnimationDirectionJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionAnimationDirectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextToImageAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextToImageAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ImageToVideoAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ImageToVideoAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ImageToVideoAssetAspectRatioJsonConverter(),
+
+                    new global::G.JsonConverters.ImageToVideoAssetAspectRatioNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextToSpeechAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TextToSpeechAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextToSpeechAssetEffectJsonConverter(),
+
+                    new global::G.JsonConverters.TextToSpeechAssetEffectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HtmlAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.HtmlAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HtmlAssetPositionJsonConverter(),
+
+                    new global::G.JsonConverters.HtmlAssetPositionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TitleAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TitleAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TitleAssetStyleJsonConverter(),
+
+                    new global::G.JsonConverters.TitleAssetStyleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TitleAssetSizeJsonConverter(),
+
+                    new global::G.JsonConverters.TitleAssetSizeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TitleAssetPositionJsonConverter(),
+
+                    new global::G.JsonConverters.TitleAssetPositionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgAssetTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgAssetTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgShapeDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgShapeDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgRectangleShapeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgRectangleShapeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgCircleShapeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgCircleShapeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgEllipseShapeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgEllipseShapeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgLineShapeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgLineShapeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgPolygonShapeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgPolygonShapeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgStarShapeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgStarShapeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgArrowShapeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgArrowShapeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgHeartShapeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgHeartShapeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgCrossShapeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgCrossShapeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgRingShapeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgRingShapeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgPathShapeTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgPathShapeTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgFillDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgFillDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgSolidFillTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgSolidFillTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgLinearGradientFillTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgLinearGradientFillTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgRadialGradientFillTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SvgRadialGradientFillTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgStrokeLineCapJsonConverter(),
+
+                    new global::G.JsonConverters.SvgStrokeLineCapNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SvgStrokeLineJoinJsonConverter(),
+
+                    new global::G.JsonConverters.SvgStrokeLineJoinNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransitionInJsonConverter(),
+
+                    new global::G.JsonConverters.TransitionInNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransitionOutJsonConverter(),
+
+                    new global::G.JsonConverters.TransitionOutNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextAlignmentHorizontalJsonConverter(),
+
+                    new global::G.JsonConverters.TextAlignmentHorizontalNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextAlignmentVerticalJsonConverter(),
+
+                    new global::G.JsonConverters.TextAlignmentVerticalNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextStyleTextTransformJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextStyleTextTransformNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextStyleTextDecorationJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextStyleTextDecorationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextGradientTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextGradientTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAlignmentHorizontalJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAlignmentHorizontalNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAlignmentVerticalJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAlignmentVerticalNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAnimationPresetJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAnimationPresetNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAnimationStyleJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAnimationStyleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAnimationDirectionJsonConverter(),
+
+                    new global::G.JsonConverters.RichTextAnimationDirectionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TweenInterpolationJsonConverter(),
+
+                    new global::G.JsonConverters.TweenInterpolationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TweenEasingJsonConverter(),
+
+                    new global::G.JsonConverters.TweenEasingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OutputFormatJsonConverter(),
+
+                    new global::G.JsonConverters.OutputFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OutputResolutionJsonConverter(),
+
+                    new global::G.JsonConverters.OutputResolutionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OutputAspectRatioJsonConverter(),
+
+                    new global::G.JsonConverters.OutputAspectRatioNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OutputScaleToJsonConverter(),
+
+                    new global::G.JsonConverters.OutputScaleToNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OutputQualityJsonConverter(),
+
+                    new global::G.JsonConverters.OutputQualityNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MuxDestinationOptionsPlaybackPolicyItemJsonConverter(),
+
+                    new global::G.JsonConverters.MuxDestinationOptionsPlaybackPolicyItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VimeoDestinationPrivacyOptionsViewJsonConverter(),
+
+                    new global::G.JsonConverters.VimeoDestinationPrivacyOptionsViewNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VimeoDestinationPrivacyOptionsEmbedJsonConverter(),
+
+                    new global::G.JsonConverters.VimeoDestinationPrivacyOptionsEmbedNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VimeoDestinationPrivacyOptionsCommentsJsonConverter(),
+
+                    new global::G.JsonConverters.VimeoDestinationPrivacyOptionsCommentsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RenditionFormatJsonConverter(),
+
+                    new global::G.JsonConverters.RenditionFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RenditionFitJsonConverter(),
+
+                    new global::G.JsonConverters.RenditionFitNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RenditionResolutionJsonConverter(),
+
+                    new global::G.JsonConverters.RenditionResolutionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TranscriptionFormatJsonConverter(),
+
+                    new global::G.JsonConverters.TranscriptionFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DolbyEnhancementOptionsPresetJsonConverter(),
+
+                    new global::G.JsonConverters.DolbyEnhancementOptionsPresetNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackGeneratedAssetProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackGeneratedAssetProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackGeneratedAssetOptionsDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackTextToSpeechOptionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackTextToSpeechOptionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackTextToSpeechOptionsVoiceJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackTextToSpeechOptionsVoiceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackTextToSpeechOptionsLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackTextToSpeechOptionsLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackTextToImageOptionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackTextToImageOptionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackImageToVideoOptionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackImageToVideoOptionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackTextGeneratorOptionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ShotstackTextGeneratorOptionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DIDGeneratedAssetProviderJsonConverter(),
+
+                    new global::G.JsonConverters.DIDGeneratedAssetProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DIDGeneratedAssetOptionsDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.DIDGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DIDTextToAvatarOptionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.DIDTextToAvatarOptionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DIDTextToAvatarOptionsAvatarJsonConverter(),
+
+                    new global::G.JsonConverters.DIDTextToAvatarOptionsAvatarNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsGeneratedAssetProviderJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsGeneratedAssetProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsGeneratedAssetOptionsDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsTextToSpeechOptionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsTextToSpeechOptionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsTextToSpeechOptionsVoiceJsonConverter(),
+
+                    new global::G.JsonConverters.ElevenLabsTextToSpeechOptionsVoiceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenGeneratedAssetProviderJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenGeneratedAssetProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenGeneratedAssetOptionsDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenTextToAvatarOptionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenTextToAvatarOptionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenTextToAvatarOptionsAvatarJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenTextToAvatarOptionsAvatarNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenTextToAvatarOptionsVoiceJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenTextToAvatarOptionsVoiceNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenTextToAvatarOptionsAvatarStyleJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenTextToAvatarOptionsAvatarStyleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenTextToAvatarOptionsRatioJsonConverter(),
+
+                    new global::G.JsonConverters.HeyGenTextToAvatarOptionsRatioNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAiGeneratedAssetProviderJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAiGeneratedAssetProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAiGeneratedAssetOptionsDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAiGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAiTextGeneratorOptionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAiTextGeneratorOptionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAiTextGeneratorOptionsModelJsonConverter(),
+
+                    new global::G.JsonConverters.OpenAiTextGeneratorOptionsModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StabilityAiGeneratedAssetProviderJsonConverter(),
+
+                    new global::G.JsonConverters.StabilityAiGeneratedAssetProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StabilityAiGeneratedAssetOptionsDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.StabilityAiGeneratedAssetOptionsDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StabilityAiTextToImageOptionsTypeJsonConverter(),
+
+                    new global::G.JsonConverters.StabilityAiTextToImageOptionsTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StabilityAiTextToImageOptionsEngineJsonConverter(),
+
+                    new global::G.JsonConverters.StabilityAiTextToImageOptionsEngineNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StabilityAiTextToImageOptionsStylePresetJsonConverter(),
+
+                    new global::G.JsonConverters.StabilityAiTextToImageOptionsStylePresetNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RenderResponseDataStatusJsonConverter(),
+
+                    new global::G.JsonConverters.RenderResponseDataStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AssetResponseAttributesStatusJsonConverter(),
+
+                    new global::G.JsonConverters.AssetResponseAttributesStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TransferResponseAttributesStatusJsonConverter(),
+
+                    new global::G.JsonConverters.TransferResponseAttributesStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SourceResponseAttributesStatusJsonConverter(),
+
+                    new global::G.JsonConverters.SourceResponseAttributesStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RenditionResponseAttributesStatusJsonConverter(),
+
+                    new global::G.JsonConverters.RenditionResponseAttributesStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GeneratedAssetResponseAttributesProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GeneratedAssetResponseAttributesProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GeneratedAssetResponseAttributesTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GeneratedAssetResponseAttributesTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GeneratedAssetResponseAttributesStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GeneratedAssetResponseAttributesStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TextAnimationPresetJsonConverter(),
+
+                    new global::G.JsonConverters.TextAnimationPresetNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionStyleTextTransformJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionStyleTextTransformNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionStyleTextDecorationJsonConverter(),
+
+                    new global::G.JsonConverters.RichCaptionStyleTextDecorationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TiktokDestinationOptionsPrivacyLevelJsonConverter(),
+
+                    new global::G.JsonConverters.TiktokDestinationOptionsPrivacyLevelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
         /// The Create API generates assets and media files using Generative AI services like text-to-speech and text-to-avatar. A native text-to-speech service is included as well as integrations with third party providers. Third party services include [HeyGen](https://www.heygen.com/) text-to-avatar, [ElevenLabs](https://elevenlabs.io/) text-to-speech and [D-ID](https://www.d-id.com/) text-to-avatar. Assets can be used with the Edit API or downloaded and used independently.
         /// </summary>
-        public CreateClient Create => new CreateClient(HttpClient, authorizations: Authorizations)
+        public CreateClient Create => new CreateClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -62,7 +579,7 @@ namespace G
         /// <summary>
         /// The Edit API is used to edit videos, images and audio files in the cloud using a simple to understand JSON schema. Compose an edit using tracks, clips and assets and add transitions, filters, overlays and text. Finally send the JSON to the Edit API to be rendered.
         /// </summary>
-        public EditClient Edit => new EditClient(HttpClient, authorizations: Authorizations)
+        public EditClient Edit => new EditClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -71,7 +588,7 @@ namespace G
         /// <summary>
         /// The Ingest API lets you upload and store your source footage and user generated content in close proximity to the Edit API. Instead of hosting your own assets or building your own uploader you can use the Ingest API. The Ingest API provides endpoints to fetch and upload files and check their status and URLs. All ingested files are available directly from an S3 bucket URL or via CDN (Serve API).
         /// </summary>
-        public IngestClient Ingest => new IngestClient(HttpClient, authorizations: Authorizations)
+        public IngestClient Ingest => new IngestClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -80,7 +597,7 @@ namespace G
         /// <summary>
         /// Assets generated by the Edit API or uploaded via the Ingest API are sent to the Serve API. The Serve API includes a simple hosting service with a CDN or you can send assets to third party services like AWS S3 or Mux. The Serve API includes endpoints to look up assets, where they are hosted and their status.
         /// </summary>
-        public ServeClient Serve => new ServeClient(HttpClient, authorizations: Authorizations)
+        public ServeClient Serve => new ServeClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -99,12 +616,37 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

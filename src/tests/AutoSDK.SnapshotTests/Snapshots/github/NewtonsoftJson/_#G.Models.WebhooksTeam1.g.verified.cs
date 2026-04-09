@@ -67,12 +67,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhooksTeam1PrivacyJsonConverter))]
         public global::G.WebhooksTeam1Privacy? Privacy { get; set; }
 
         /// <summary>
         /// Whether team members will receive notifications when their team is @mentioned
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("notification_setting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhooksTeam1NotificationSettingJsonConverter))]
         public global::G.WebhooksTeam1NotificationSetting? NotificationSetting { get; set; }
 
         /// <summary>

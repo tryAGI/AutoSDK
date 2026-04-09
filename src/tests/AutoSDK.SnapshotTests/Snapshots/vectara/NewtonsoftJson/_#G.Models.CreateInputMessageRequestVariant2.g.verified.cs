@@ -39,6 +39,7 @@ namespace G
         ///   queued follow-up is processed. This ensures each follow-up gets a full agent loop iteration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("behavior")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputBehaviorJsonConverter))]
         public global::G.InputBehavior? Behavior { get; set; }
 
         /// <summary>

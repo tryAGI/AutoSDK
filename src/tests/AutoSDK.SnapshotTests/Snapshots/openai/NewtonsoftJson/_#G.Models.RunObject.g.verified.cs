@@ -19,12 +19,14 @@ namespace G
         /// The object type, which is always `thread.run`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunObjectObjectJsonConverter))]
         public global::G.RunObjectObject Object { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -43,6 +45,7 @@ namespace G
         /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunObjectStatusJsonConverter))]
         public global::G.RunObjectStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -61,30 +64,35 @@ namespace G
         /// The Unix timestamp (in seconds) for when the run will expire.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? ExpiresAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was started.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("started_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? StartedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was cancelled.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cancelled_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? CancelledAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run failed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("failed_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? FailedAt { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was completed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? CompletedAt { get; set; }
 
         /// <summary>

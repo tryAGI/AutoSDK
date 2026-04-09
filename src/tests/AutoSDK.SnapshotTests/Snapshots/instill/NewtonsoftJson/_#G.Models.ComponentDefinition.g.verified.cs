@@ -66,6 +66,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComponentTypeJsonConverter))]
         public global::G.ComponentType? Type { get; set; }
 
         /// <summary>
@@ -141,6 +142,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("releaseStage")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComponentDefinitionReleaseStageJsonConverter))]
         public global::G.ComponentDefinitionReleaseStage? ReleaseStage { get; set; }
 
         /// <summary>

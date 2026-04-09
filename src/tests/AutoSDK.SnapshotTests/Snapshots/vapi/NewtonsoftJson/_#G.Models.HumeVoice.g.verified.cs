@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HumeVoiceProviderJsonConverter))]
         public global::G.HumeVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -30,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>octave2</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HumeVoiceModelJsonConverter))]
         public global::G.HumeVoiceModel? Model { get; set; }
 
         /// <summary>

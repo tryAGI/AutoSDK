@@ -35,6 +35,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentsTextToSpeechProvidersOpenAITypeJsonConverter))]
         public global::G.AgentsTextToSpeechProvidersOpenAIType Type { get; set; }
 
         /// <summary>

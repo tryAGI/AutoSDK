@@ -19,6 +19,7 @@ namespace G
         /// Action to take if all of the predicted languages are below the confidence threshold
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("low_confidence_action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LanguageIdentificationConfigLowConfidenceActionJsonConverter))]
         public global::G.LanguageIdentificationConfigLowConfidenceAction? LowConfidenceAction { get; set; }
 
         /// <summary>

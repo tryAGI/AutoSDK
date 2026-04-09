@@ -16,6 +16,7 @@ namespace G
         /// * websocket
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EventSubSubscriptionTransportMethodJsonConverter))]
         public global::G.EventSubSubscriptionTransportMethod Method { get; set; } = default!;
 
         /// <summary>

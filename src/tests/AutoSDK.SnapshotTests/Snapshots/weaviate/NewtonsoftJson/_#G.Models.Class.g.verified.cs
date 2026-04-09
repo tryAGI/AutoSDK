@@ -26,6 +26,7 @@ namespace G
         /// Default Value: hnsw
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vectorIndexType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorIndexTypeJsonConverter))]
         public global::G.VectorIndexType? VectorIndexType { get; set; }
 
         /// <summary>
@@ -62,6 +63,7 @@ namespace G
         /// Vectorizer for this collection (e.g. `text2vec-transformers`). This will override any cluster-wide default set by an environment variable. &lt;br/&gt;&lt;br/&gt;If `none`, you must import a vector with each object yourself.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vectorizer")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorizerJsonConverter))]
         public global::G.Vectorizer? Vectorizer { get; set; }
 
         /// <summary>

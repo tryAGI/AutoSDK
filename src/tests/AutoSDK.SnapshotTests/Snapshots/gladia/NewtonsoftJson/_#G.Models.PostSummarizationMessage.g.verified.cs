@@ -40,6 +40,7 @@ namespace G
         /// <default>global::G.PostSummarizationMessageType.PostSummarization</default>
         /// <example>post_summarization</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostSummarizationMessageTypeJsonConverter))]
         public global::G.PostSummarizationMessageType Type { get; set; } = global::G.PostSummarizationMessageType.PostSummarization;
 
         /// <summary>

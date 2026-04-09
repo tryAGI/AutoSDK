@@ -14,6 +14,7 @@ namespace G
         /// When set to `low`, the content moderation system will be less strict about preventing generations that include recognizable public figures.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("publicFigureThreshold")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateCharacterPerformanceRequestActTwoContentModerationPublicFigureThresholdJsonConverter))]
         public global::G.CreateCharacterPerformanceRequestActTwoContentModerationPublicFigureThreshold? PublicFigureThreshold { get; set; }
 
         /// <summary>

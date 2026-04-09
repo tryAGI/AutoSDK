@@ -44,6 +44,7 @@ namespace G
         /// </summary>
         /// <example>completed</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CheckSuiteStatusJsonConverter))]
         public global::G.CheckSuiteStatus? Status { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// </summary>
         /// <example>neutral</example>
         [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CheckSuiteConclusionJsonConverter))]
         public global::G.CheckSuiteConclusion? Conclusion { get; set; }
 
         /// <summary>

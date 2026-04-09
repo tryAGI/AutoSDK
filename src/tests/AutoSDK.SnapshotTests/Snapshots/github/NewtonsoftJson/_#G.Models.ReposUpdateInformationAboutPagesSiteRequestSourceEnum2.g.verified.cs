@@ -19,6 +19,7 @@ namespace G
         /// The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("path", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReposUpdateInformationAboutPagesSiteRequestSourceEnumPathJsonConverter))]
         public global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnumPath Path { get; set; } = default!;
 
         /// <summary>

@@ -20,6 +20,7 @@ namespace G
         /// Whether the tool requires approval before execution
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentState> ModifyApprovalForToolAsync(
@@ -28,6 +29,7 @@ namespace G
 
             global::G.ModifyApprovalRequest request,
             bool? requiresApproval = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Modify Approval For Tool<br/>
@@ -41,12 +43,14 @@ namespace G
         /// <param name="requiresApproval">
         /// Whether the tool requires approval before execution
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentState> ModifyApprovalForToolAsync(
             string toolName,
             string agentId,
             bool? requiresApproval = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

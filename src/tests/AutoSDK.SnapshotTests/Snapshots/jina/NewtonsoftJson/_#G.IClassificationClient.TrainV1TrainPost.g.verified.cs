@@ -10,11 +10,13 @@ namespace G
         /// Rank pairs.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TrainingOutput> TrainV1TrainPostAsync(
 
             global::G.TrainingAPIInput request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Train<br/>
@@ -43,6 +45,7 @@ namespace G
         /// <param name="input">
         /// List of text and images and labels or a single text and image and label to train the classifier
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TrainingOutput> TrainV1TrainPostAsync(
@@ -50,6 +53,7 @@ namespace G
             string? model = default,
             string? classifierId = default,
             global::G.TrainingAPIInputVisibility? visibility = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

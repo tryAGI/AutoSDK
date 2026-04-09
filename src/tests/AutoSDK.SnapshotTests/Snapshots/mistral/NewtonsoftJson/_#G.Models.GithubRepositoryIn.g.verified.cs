@@ -13,6 +13,7 @@ namespace G
         /// Default Value: github
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GithubRepositoryInTypeJsonConverter))]
         public global::G.GithubRepositoryInType? Type { get; set; }
 
         /// <summary>

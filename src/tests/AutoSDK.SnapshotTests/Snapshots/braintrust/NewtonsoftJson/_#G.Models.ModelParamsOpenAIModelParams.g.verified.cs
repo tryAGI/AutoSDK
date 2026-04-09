@@ -97,12 +97,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelParamsOpenAIModelParamsReasoningEffortJsonConverter))]
         public global::G.ModelParamsOpenAIModelParamsReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verbosity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelParamsOpenAIModelParamsVerbosityJsonConverter))]
         public global::G.ModelParamsOpenAIModelParamsVerbosity? Verbosity { get; set; }
 
         /// <summary>

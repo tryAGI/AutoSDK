@@ -15,6 +15,7 @@ namespace G
         /// Default Value: 1730898830008L
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatResponse> V1J2UltraChatAsync(
@@ -22,6 +23,7 @@ namespace G
             global::G.LanguageStudioApiServerDataTypesJ2ChatChatRequest request,
             string? model = default,
             int? requestStartTime = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// j2-ultra chat
@@ -66,6 +68,7 @@ namespace G
         /// <param name="stopSequences">
         /// Default Value: []
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatResponse> V1J2UltraChatAsync(
@@ -83,6 +86,7 @@ namespace G
             double? topP = default,
             int? topKReturn = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

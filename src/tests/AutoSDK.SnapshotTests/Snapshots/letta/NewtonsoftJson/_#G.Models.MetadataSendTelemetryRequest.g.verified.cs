@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MetadataSendTelemetryRequestServiceJsonConverter))]
         public global::G.MetadataSendTelemetryRequestService Service { get; set; }
 
         /// <summary>

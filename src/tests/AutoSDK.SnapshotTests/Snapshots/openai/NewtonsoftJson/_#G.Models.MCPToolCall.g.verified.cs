@@ -13,6 +13,7 @@ namespace G
         /// The type of the item. Always `mcp_call`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPToolCallTypeJsonConverter))]
         public global::G.MCPToolCallType Type { get; set; }
 
         /// <summary>

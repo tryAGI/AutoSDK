@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.LumaAssetType.Luma</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LumaAssetTypeJsonConverter))]
         public global::G.LumaAssetType Type { get; set; } = global::G.LumaAssetType.Luma;
 
         /// <summary>

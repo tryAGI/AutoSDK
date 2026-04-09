@@ -16,6 +16,7 @@ namespace G
         /// * websocket
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateConduitShardsBodyShardTransportMethodJsonConverter))]
         public global::G.UpdateConduitShardsBodyShardTransportMethod? Method { get; set; }
 
         /// <summary>

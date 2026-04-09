@@ -35,6 +35,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ocr")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DocumentParseRequestOcrJsonConverter))]
         public global::G.DocumentParseRequestOcr? Ocr { get; set; }
 
         /// <summary>

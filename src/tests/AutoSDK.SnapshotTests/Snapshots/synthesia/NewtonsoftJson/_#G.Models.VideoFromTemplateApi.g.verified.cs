@@ -64,6 +64,7 @@ namespace G
         /// Default Value: private
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoFromTemplateApiVisibilityJsonConverter))]
         public global::G.VideoFromTemplateApiVisibility? Visibility { get; set; }
 
         /// <summary>

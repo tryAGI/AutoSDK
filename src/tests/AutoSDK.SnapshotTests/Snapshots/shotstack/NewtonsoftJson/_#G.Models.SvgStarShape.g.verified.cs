@@ -15,6 +15,7 @@ namespace G
         /// The shape type - set to `star`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgStarShapeTypeJsonConverter))]
         public global::G.SvgStarShapeType Type { get; set; }
 
         /// <summary>

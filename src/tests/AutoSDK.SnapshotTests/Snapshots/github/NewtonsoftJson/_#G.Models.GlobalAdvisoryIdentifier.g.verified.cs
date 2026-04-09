@@ -13,6 +13,7 @@ namespace G
         /// The type of identifier.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GlobalAdvisoryIdentifierTypeJsonConverter))]
         public global::G.GlobalAdvisoryIdentifierType Type { get; set; } = default!;
 
         /// <summary>

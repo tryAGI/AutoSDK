@@ -14,6 +14,7 @@ namespace G
         /// The shape type - set to `line`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgLineShapeTypeJsonConverter))]
         public global::G.SvgLineShapeType Type { get; set; }
 
         /// <summary>

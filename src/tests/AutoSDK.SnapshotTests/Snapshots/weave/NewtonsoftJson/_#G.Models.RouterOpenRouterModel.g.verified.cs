@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quantization", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RouterOpenRouterModelQuantizationJsonConverter))]
         public global::G.RouterOpenRouterModelQuantization Quantization { get; set; } = default!;
 
         /// <summary>

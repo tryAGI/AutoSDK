@@ -17,6 +17,7 @@ namespace G
         /// Included only in responses
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DependabotAlert> DependabotUpdateAlertAsync(
@@ -25,6 +26,7 @@ namespace G
             int alertNumber,
 
             global::G.DependabotUpdateAlertRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a Dependabot alert<br/>
@@ -47,6 +49,7 @@ namespace G
         /// <param name="dismissedComment">
         /// An optional comment associated with dismissing the alert.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DependabotAlert> DependabotUpdateAlertAsync(
@@ -56,6 +59,7 @@ namespace G
             global::G.DependabotUpdateAlertRequestState state,
             global::G.DependabotUpdateAlertRequestDismissedReason? dismissedReason = default,
             string? dismissedComment = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

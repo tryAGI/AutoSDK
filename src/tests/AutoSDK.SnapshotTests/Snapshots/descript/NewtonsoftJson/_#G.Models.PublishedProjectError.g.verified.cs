@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>not_found</example>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublishedProjectErrorErrorJsonConverter))]
         public global::G.PublishedProjectErrorError Error { get; set; } = default!;
 
         /// <summary>

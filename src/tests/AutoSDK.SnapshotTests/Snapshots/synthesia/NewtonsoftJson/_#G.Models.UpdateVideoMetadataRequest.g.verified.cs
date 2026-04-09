@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateVideoMetadataRequestVisibilityJsonConverter))]
         public global::G.UpdateVideoMetadataRequestVisibility? Visibility { get; set; }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TelephonyProviderJsonConverter))]
         public global::G.TelephonyProvider Provider { get; set; } = default!;
 
         /// <summary>

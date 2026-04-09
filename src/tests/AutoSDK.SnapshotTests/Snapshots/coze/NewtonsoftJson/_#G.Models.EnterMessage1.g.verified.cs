@@ -19,6 +19,7 @@ namespace G
         /// text/card/object_string
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnterMessage1ContentTypeJsonConverter))]
         public global::G.EnterMessage1ContentType? ContentType { get; set; }
 
         /// <summary>
@@ -31,12 +32,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnterMessage1RoleJsonConverter))]
         public global::G.EnterMessage1Role Role { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnterMessage1TypeJsonConverter))]
         public global::G.EnterMessage1Type? Type { get; set; }
 
         /// <summary>

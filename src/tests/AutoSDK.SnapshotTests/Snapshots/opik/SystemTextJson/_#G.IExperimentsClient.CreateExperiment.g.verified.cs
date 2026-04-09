@@ -10,11 +10,13 @@ namespace G
         /// Create experiment
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateExperimentAsync(
 
             global::G.ExperimentWrite request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create experiment<br/>
@@ -41,6 +43,7 @@ namespace G
         /// <param name="datasetVersionId">
         /// ID of the dataset version this experiment is linked to. If not provided at creation, experiment will be automatically linked to the latest version.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreateExperimentAsync(
@@ -59,6 +62,7 @@ namespace G
             global::G.PromptVersionLinkWrite? promptVersion = default,
             global::System.Collections.Generic.IList<global::G.PromptVersionLinkWrite>? promptVersions = default,
             global::System.Guid? datasetVersionId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

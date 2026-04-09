@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InvokeParentSpanParentStructObjectTypeJsonConverter))]
         public global::G.InvokeParentSpanParentStructObjectType ObjectType { get; set; } = default!;
 
         /// <summary>

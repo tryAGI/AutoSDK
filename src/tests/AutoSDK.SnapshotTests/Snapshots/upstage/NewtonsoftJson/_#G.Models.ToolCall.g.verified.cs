@@ -19,6 +19,7 @@ namespace G
         /// The type of the tool call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolCallTypeJsonConverter))]
         public global::G.ToolCallType Type { get; set; }
 
         /// <summary>

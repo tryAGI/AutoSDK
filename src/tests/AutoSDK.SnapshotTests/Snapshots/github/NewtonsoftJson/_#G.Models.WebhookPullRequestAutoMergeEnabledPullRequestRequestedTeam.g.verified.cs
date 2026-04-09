@@ -67,6 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("privacy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamPrivacyJsonConverter))]
         public global::G.WebhookPullRequestAutoMergeEnabledPullRequestRequestedTeamPrivacy? Privacy { get; set; }
 
         /// <summary>

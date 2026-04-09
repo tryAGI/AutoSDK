@@ -12,6 +12,7 @@ namespace G
         /// <param name="entity"></param>
         /// <param name="project"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EvaluationRunCreateRes> EvaluationRunCreateV2EntityProjectEvaluationRunsPostAsync(
@@ -19,6 +20,7 @@ namespace G
             string project,
 
             global::G.EvaluationRunCreateBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Evaluation Run Create<br/>
@@ -32,6 +34,7 @@ namespace G
         /// <param name="model">
         /// Reference to the model (weave:// URI)
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EvaluationRunCreateRes> EvaluationRunCreateV2EntityProjectEvaluationRunsPostAsync(
@@ -39,6 +42,7 @@ namespace G
             string project,
             string evaluation,
             string model,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

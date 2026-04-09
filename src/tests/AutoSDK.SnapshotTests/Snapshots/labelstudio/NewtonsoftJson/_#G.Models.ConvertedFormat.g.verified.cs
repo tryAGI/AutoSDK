@@ -29,6 +29,7 @@ namespace G
         /// * `completed` - Completed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.Status7bfEnumJsonConverter))]
         public global::G.Status7bfEnum? Status { get; set; }
 
         /// <summary>

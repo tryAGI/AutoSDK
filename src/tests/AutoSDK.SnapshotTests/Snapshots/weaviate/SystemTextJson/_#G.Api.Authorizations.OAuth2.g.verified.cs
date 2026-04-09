@@ -7,6 +7,47 @@ namespace G
     public sealed partial class Api
     {
         /// <summary>
+        /// Represents an OAuth2 device authorization response.
+        /// </summary>
+        public sealed class OAuth2DeviceAuthorizationResponse
+        {
+            /// <summary>
+            /// Gets or sets the device code.
+            /// </summary>
+            public string DeviceCode { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets the user code.
+            /// </summary>
+            public string UserCode { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets the verification URI.
+            /// </summary>
+            public string VerificationUri { get; set; } = string.Empty;
+
+            /// <summary>
+            /// Gets or sets the complete verification URI, if available.
+            /// </summary>
+            public string? VerificationUriComplete { get; set; }
+
+            /// <summary>
+            /// Gets or sets the display message for the end user, if provided.
+            /// </summary>
+            public string? Message { get; set; }
+
+            /// <summary>
+            /// Gets or sets the polling interval.
+            /// </summary>
+            public global::System.TimeSpan? Interval { get; set; }
+
+            /// <summary>
+            /// Gets or sets the expiration time.
+            /// </summary>
+            public global::System.DateTimeOffset? ExpiresAt { get; set; }
+        }
+
+        /// <summary>
         /// Represents an OAuth2 token.
         /// </summary>
         public sealed class OAuth2Token
@@ -436,6 +477,17 @@ namespace G
         }
 
         /// <summary>
+        /// Gets the OAuth2 metadata URL declared by the security scheme, if any.
+        /// </summary>
+        public string? OAuth2MetadataUrl => string.IsNullOrWhiteSpace("")
+            ? null
+            : "";
+
+        /// <summary>
+        /// Gets a value indicating whether the OAuth2 security scheme is deprecated.
+        /// </summary>
+        public bool IsOAuth2Deprecated => false;
+        /// <summary>
         /// Gets or sets the OAuth2 token store.
         /// </summary>
         public IOAuth2TokenStore OAuth2TokenStore
@@ -512,6 +564,7 @@ namespace G
         /// Authorize using an OAuth2 access token.
         /// </summary>
         /// <param name="accessToken"></param>
+
         public void AuthorizeUsingOAuth2(
             string accessToken)
         {
@@ -528,6 +581,7 @@ namespace G
         /// Authorize using an OAuth2 token.
         /// </summary>
         /// <param name="token"></param>
+
         public void AuthorizeUsingOAuth2(
             OAuth2Token token)
         {

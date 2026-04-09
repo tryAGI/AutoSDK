@@ -25,6 +25,7 @@ namespace G
         /// The type of tool. "google.calendar.event.create" for Google Calendar tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoogleCalendarCreateEventToolProviderDetailsTypeJsonConverter))]
         public global::G.GoogleCalendarCreateEventToolProviderDetailsType Type { get; set; }
 
         /// <summary>

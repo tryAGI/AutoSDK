@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// Production
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.cartesia.ai";
+        public const string DefaultBaseUrl = "https://api.cartesia.ai/";
 
         private bool _disposeHttpClient = true;
 
@@ -31,16 +31,377 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.AgentCallStatusJsonConverter(),
+
+                    new global::G.JsonConverters.AgentCallStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentMetricResultStatusJsonConverter(),
+
+                    new global::G.JsonConverters.AgentMetricResultStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FineTuneStatusJsonConverter(),
+
+                    new global::G.JsonConverters.FineTuneStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TimestampGranularityJsonConverter(),
+
+                    new global::G.JsonConverters.TimestampGranularityNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingTranscriptionResponseVariant1TypeJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingTranscriptionResponseVariant1TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingTranscriptionResponseVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingTranscriptionResponseVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingTranscriptionResponseVariant3TypeJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingTranscriptionResponseVariant3TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingTranscriptionResponseVariant4TypeJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingTranscriptionResponseVariant4TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.STTEncodingJsonConverter(),
+
+                    new global::G.JsonConverters.STTEncodingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ModelSpeedJsonConverter(),
+
+                    new global::G.JsonConverters.ModelSpeedNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant1TypeJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant1TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant3TypeJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant3TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant4TypeJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant4TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant5TypeJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant5TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant6TypeJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseVariant6TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketRawOutputFormatContainerJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketRawOutputFormatContainerNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EmotionJsonConverter(),
+
+                    new global::G.JsonConverters.EmotionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SupportedLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.SupportedLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OutputFormatRAWOutputFormatContainerJsonConverter(),
+
+                    new global::G.JsonConverters.OutputFormatRAWOutputFormatContainerNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OutputFormatWAVOutputFormatContainerJsonConverter(),
+
+                    new global::G.JsonConverters.OutputFormatWAVOutputFormatContainerNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OutputFormatMP3OutputFormatContainerJsonConverter(),
+
+                    new global::G.JsonConverters.OutputFormatMP3OutputFormatContainerNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SSEOutputFormatContainerJsonConverter(),
+
+                    new global::G.JsonConverters.SSEOutputFormatContainerNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RawEncodingJsonConverter(),
+
+                    new global::G.JsonConverters.RawEncodingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TTSRequestVoiceSpecifierModeJsonConverter(),
+
+                    new global::G.JsonConverters.TTSRequestVoiceSpecifierModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OutputFormatContainerJsonConverter(),
+
+                    new global::G.JsonConverters.OutputFormatContainerNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingResponseVariant1TypeJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingResponseVariant1TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingResponseVariant2TypeJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingResponseVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingResponseVariant3TypeJsonConverter(),
+
+                    new global::G.JsonConverters.StreamingResponseVariant3TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LocalizeTargetLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.LocalizeTargetLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LocalizeEnglishDialectJsonConverter(),
+
+                    new global::G.JsonConverters.LocalizeEnglishDialectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LocalizeFrenchDialectJsonConverter(),
+
+                    new global::G.JsonConverters.LocalizeFrenchDialectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LocalizeSpanishDialectJsonConverter(),
+
+                    new global::G.JsonConverters.LocalizeSpanishDialectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.LocalizePortugueseDialectJsonConverter(),
+
+                    new global::G.JsonConverters.LocalizePortugueseDialectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GenderPresentationJsonConverter(),
+
+                    new global::G.JsonConverters.GenderPresentationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GenderJsonConverter(),
+
+                    new global::G.JsonConverters.GenderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceExpandOptionsJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceExpandOptionsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SttTranscribeRequestLanguageJsonConverter(),
+
+                    new global::G.JsonConverters.SttTranscribeRequestLanguageNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsListCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsListCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsGetCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsGetCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsUpdateCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsUpdateCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsDeleteCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsDeleteCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsTemplatesCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsTemplatesCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsListCallsCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsListCallsCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsGetCallCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsGetCallCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsDownloadCallAudioCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsDownloadCallAudioCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsPhoneNumbersCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsPhoneNumbersCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsListMetricsCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsListMetricsCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsCreateMetricCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsCreateMetricCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsGetMetricCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsGetMetricCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsListMetricResultsCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsListMetricResultsCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsExportMetricResultsCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsExportMetricResultsCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsAddMetricToAgentCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsAddMetricToAgentCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsRemoveMetricFromAgentCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsRemoveMetricFromAgentCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsListDeploymentsCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsListDeploymentsCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsGetDeploymentCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AgentsGetDeploymentCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ApiStatusGetCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.ApiStatusGetCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AuthAccessTokenCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.AuthAccessTokenCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsListCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsListCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsCreateCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsCreateCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsGetCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsGetCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsUpdateCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsUpdateCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsDeleteCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsDeleteCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsListFilesCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsListFilesCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsUploadFileCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsUploadFileCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsDeleteFileCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetsDeleteFileCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FineTunesListCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.FineTunesListCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FineTunesCreateCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.FineTunesCreateCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FineTunesGetCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.FineTunesGetCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FineTunesDeleteCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.FineTunesDeleteCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FineTunesListVoicesCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.FineTunesListVoicesCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InfillBytesCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.InfillBytesCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PronunciationDictsListCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.PronunciationDictsListCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PronunciationDictsCreateCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.PronunciationDictsCreateCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PronunciationDictsGetCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.PronunciationDictsGetCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PronunciationDictsUpdateCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.PronunciationDictsUpdateCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PronunciationDictsDeleteCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.PronunciationDictsDeleteCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SttTranscribeCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.SttTranscribeCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TtsBytesCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.TtsBytesCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TtsSseCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.TtsSseCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceChangerBytesCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceChangerBytesCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceChangerSseCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.VoiceChangerSseCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesListCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesListCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesCloneCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesCloneCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesDeleteCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesDeleteCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesUpdateCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesUpdateCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesGetCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesGetCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesLocalizeCartesiaVersionJsonConverter(),
+
+                    new global::G.JsonConverters.VoicesLocalizeCartesiaVersionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
         /// 
         /// </summary>
-        public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations)
+        public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -49,7 +410,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ApiStatusClient ApiStatus => new ApiStatusClient(HttpClient, authorizations: Authorizations)
+        public ApiStatusClient ApiStatus => new ApiStatusClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -58,7 +419,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AuthClient Auth => new AuthClient(HttpClient, authorizations: Authorizations)
+        public AuthClient Auth => new AuthClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -67,7 +428,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -76,7 +437,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FineTunesClient FineTunes => new FineTunesClient(HttpClient, authorizations: Authorizations)
+        public FineTunesClient FineTunes => new FineTunesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -85,7 +446,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public InfillClient Infill => new InfillClient(HttpClient, authorizations: Authorizations)
+        public InfillClient Infill => new InfillClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -94,7 +455,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PronunciationDictsClient PronunciationDicts => new PronunciationDictsClient(HttpClient, authorizations: Authorizations)
+        public PronunciationDictsClient PronunciationDicts => new PronunciationDictsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -103,7 +464,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SttClient Stt => new SttClient(HttpClient, authorizations: Authorizations)
+        public SttClient Stt => new SttClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -112,7 +473,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TtsClient Tts => new TtsClient(HttpClient, authorizations: Authorizations)
+        public TtsClient Tts => new TtsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -121,7 +482,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VoiceChangerClient VoiceChanger => new VoiceChangerClient(HttpClient, authorizations: Authorizations)
+        public VoiceChangerClient VoiceChanger => new VoiceChangerClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -130,7 +491,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VoicesClient Voices => new VoicesClient(HttpClient, authorizations: Authorizations)
+        public VoicesClient Voices => new VoicesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -149,12 +510,37 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

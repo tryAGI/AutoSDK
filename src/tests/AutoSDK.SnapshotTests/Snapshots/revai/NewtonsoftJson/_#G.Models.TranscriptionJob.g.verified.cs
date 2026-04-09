@@ -21,12 +21,14 @@ namespace G
         /// Current status of the job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptionJobStatusJsonConverter))]
         public global::G.TranscriptionJobStatus? Status { get; set; }
 
         /// <summary>
         /// Type of speech recognition performed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptionJobTypeJsonConverter))]
         public global::G.TranscriptionJobType? Type { get; set; }
 
         /// <summary>
@@ -81,6 +83,7 @@ namespace G
         /// Reason for job failure
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("failure")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptionJobFailureJsonConverter))]
         public global::G.TranscriptionJobFailure? Failure { get; set; }
 
         /// <summary>

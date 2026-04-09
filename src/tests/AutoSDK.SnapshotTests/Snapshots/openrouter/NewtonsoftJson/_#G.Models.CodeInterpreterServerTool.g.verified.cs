@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeInterpreterServerToolTypeJsonConverter))]
         public global::G.CodeInterpreterServerToolType Type { get; set; }
 
         /// <summary>

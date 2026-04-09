@@ -13,6 +13,7 @@ namespace G
         /// <param name="xClientName"></param>
         /// <param name="accepts"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamedChatResponse> ChatAsStreamAsync(
@@ -20,6 +21,7 @@ namespace G
             global::G.ChatRequest request,
             string? xClientName = default,
             global::G.ChatAccepts? accepts = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Chat V1 API<br/>
@@ -194,6 +196,7 @@ namespace G
         /// **Note**: `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.<br/>
         /// Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.StreamedChatResponse> ChatAsStreamAsync(
@@ -223,6 +226,7 @@ namespace G
             bool? forceSingleStep = default,
             global::G.ResponseFormat? responseFormat = default,
             global::G.ChatRequestSafetyMode? safetyMode = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

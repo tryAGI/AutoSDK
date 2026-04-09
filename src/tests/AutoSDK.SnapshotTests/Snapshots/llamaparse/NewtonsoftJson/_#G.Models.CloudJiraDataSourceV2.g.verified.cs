@@ -50,6 +50,7 @@ namespace G
         /// Default Value: 2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("api_version")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CloudJiraDataSourceV2ApiVersionJsonConverter))]
         public global::G.CloudJiraDataSourceV2ApiVersion? ApiVersion { get; set; }
 
         /// <summary>

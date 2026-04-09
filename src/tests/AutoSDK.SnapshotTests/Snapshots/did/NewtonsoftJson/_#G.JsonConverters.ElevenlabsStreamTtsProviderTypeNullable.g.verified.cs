@@ -1,0 +1,73 @@
+﻿//HintName: G.JsonConverters.ElevenlabsStreamTtsProviderTypeNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ElevenlabsStreamTtsProviderTypeNullableJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.ElevenlabsStreamTtsProviderType?>
+    {
+        /// <inheritdoc />
+        public override global::G.ElevenlabsStreamTtsProviderType? ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.ElevenlabsStreamTtsProviderType? existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.ElevenlabsStreamTtsProviderTypeExtensions.ToEnum(stringValue);
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.ElevenlabsStreamTtsProviderType)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.ElevenlabsStreamTtsProviderType?);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.ElevenlabsStreamTtsProviderType? value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNull();
+            }
+            else
+            {
+                writer.WriteValue(global::G.ElevenlabsStreamTtsProviderTypeExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

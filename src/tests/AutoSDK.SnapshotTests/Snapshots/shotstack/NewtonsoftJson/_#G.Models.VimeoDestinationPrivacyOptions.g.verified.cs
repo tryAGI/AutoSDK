@@ -19,6 +19,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("view")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VimeoDestinationPrivacyOptionsViewJsonConverter))]
         public global::G.VimeoDestinationPrivacyOptionsView? View { get; set; }
 
         /// <summary>
@@ -29,6 +30,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embed")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VimeoDestinationPrivacyOptionsEmbedJsonConverter))]
         public global::G.VimeoDestinationPrivacyOptionsEmbed? Embed { get; set; }
 
         /// <summary>
@@ -39,6 +41,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comments")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VimeoDestinationPrivacyOptionsCommentsJsonConverter))]
         public global::G.VimeoDestinationPrivacyOptionsComments? Comments { get; set; }
 
         /// <summary>

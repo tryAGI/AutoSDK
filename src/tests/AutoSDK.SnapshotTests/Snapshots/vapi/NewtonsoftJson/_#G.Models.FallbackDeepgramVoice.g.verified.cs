@@ -22,12 +22,14 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackDeepgramVoiceProviderJsonConverter))]
         public global::G.FallbackDeepgramVoiceProvider Provider { get; set; }
 
         /// <summary>
         /// This is the provider-specific ID that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voiceId", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackDeepgramVoiceVoiceIdJsonConverter))]
         public global::G.FallbackDeepgramVoiceVoiceId VoiceId { get; set; } = default!;
 
         /// <summary>
@@ -36,6 +38,7 @@ namespace G
         /// </summary>
         /// <example>aura-2</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackDeepgramVoiceModelJsonConverter))]
         public global::G.FallbackDeepgramVoiceModel? Model { get; set; }
 
         /// <summary>

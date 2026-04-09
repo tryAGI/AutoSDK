@@ -19,6 +19,7 @@ namespace G
         /// Comparison operator.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EdgeConditionalOperatorJsonConverter))]
         public global::G.EdgeConditionalOperator Operator { get; set; } = default!;
 
         /// <summary>

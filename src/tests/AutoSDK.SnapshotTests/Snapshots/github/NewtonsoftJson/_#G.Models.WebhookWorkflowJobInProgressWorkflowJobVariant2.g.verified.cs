@@ -121,6 +121,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookWorkflowJobInProgressWorkflowJobVariant2StatusJsonConverter))]
         public global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2Status Status { get; set; } = default!;
 
         /// <summary>

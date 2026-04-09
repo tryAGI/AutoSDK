@@ -9,11 +9,13 @@ namespace G
         /// Run Structured Output
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.StructuredOutput> StructuredOutputControllerRunAsync(
 
             global::G.StructuredOutputRunDTO request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Run Structured Output
@@ -35,6 +37,7 @@ namespace G
         /// This is the array of callIds that will be updated with the new structured output value. If preview is true, this array must be provided and contain exactly 1 callId.<br/>
         /// If preview is false, up to 100 callIds may be provided.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.StructuredOutput> StructuredOutputControllerRunAsync(
@@ -42,6 +45,7 @@ namespace G
             bool? previewEnabled = default,
             string? structuredOutputId = default,
             global::G.CreateStructuredOutputDTO? structuredOutput = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

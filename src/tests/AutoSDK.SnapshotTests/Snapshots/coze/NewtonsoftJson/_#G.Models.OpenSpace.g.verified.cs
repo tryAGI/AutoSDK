@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("joined_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpaceMemberJoinedStatusJsonConverter))]
         public global::G.SpaceMemberJoinedStatus? JoinedStatus { get; set; }
 
         /// <summary>

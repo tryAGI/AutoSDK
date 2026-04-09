@@ -33,6 +33,7 @@ namespace G
         /// </summary>
         /// <example>GET</example>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostToolsExecuteProxyRequestMethodJsonConverter))]
         public global::G.PostToolsExecuteProxyRequestMethod Method { get; set; } = default!;
 
         /// <summary>

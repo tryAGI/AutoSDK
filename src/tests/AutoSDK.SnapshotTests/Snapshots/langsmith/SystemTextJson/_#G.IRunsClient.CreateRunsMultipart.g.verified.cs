@@ -17,11 +17,13 @@ namespace G
         /// **Best performance** for high‑volume ingestion.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> CreateRunsMultipartAsync(
 
             global::G.CreateRunsMultipartRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Ingest Runs (Multipart)<br/>
@@ -70,6 +72,7 @@ namespace G
         /// <param name="attachment_runId__filename_name">
         /// Binary attachment linked to run {run_id}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> CreateRunsMultipartAsync(
@@ -85,6 +88,7 @@ namespace G
             string? feedback_runId_name = default,
             byte[]? attachment_runId__filename_ = default,
             string? attachment_runId__filename_name = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

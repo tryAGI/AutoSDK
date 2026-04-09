@@ -13,6 +13,7 @@ namespace G
         /// This is the provider to use for voicemail detection.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TwilioVoicemailDetectionPlanProviderJsonConverter))]
         public global::G.TwilioVoicemailDetectionPlanProvider Provider { get; set; }
 
         /// <summary>

@@ -16,6 +16,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="runId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ActionsReviewCustomGatesForRunAsync(
@@ -24,6 +25,7 @@ namespace G
             int runId,
 
             global::G.AnyOf<global::G.ReviewCustomGatesCommentRequired, global::G.ReviewCustomGatesStateRequired> request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Review custom deployment protection rules for a workflow run<br/>
@@ -35,12 +37,14 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="runId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task ActionsReviewCustomGatesForRunAsync(
             string owner,
             string repo,
             int runId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

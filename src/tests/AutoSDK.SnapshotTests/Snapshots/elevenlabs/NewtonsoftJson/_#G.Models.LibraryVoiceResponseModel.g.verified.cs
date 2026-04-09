@@ -67,6 +67,7 @@ namespace G
         /// The category of the voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("category", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LibraryVoiceResponseModelCategoryJsonConverter))]
         public global::G.LibraryVoiceResponseModelCategory Category { get; set; } = default!;
 
         /// <summary>

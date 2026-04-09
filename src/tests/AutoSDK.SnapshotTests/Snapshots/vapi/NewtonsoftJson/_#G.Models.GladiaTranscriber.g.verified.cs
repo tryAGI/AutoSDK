@@ -13,30 +13,35 @@ namespace G
         /// This is the transcription provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GladiaTranscriberProviderJsonConverter))]
         public global::G.GladiaTranscriberProvider Provider { get; set; }
 
         /// <summary>
         /// This is the Gladia model that will be used. Default is 'fast'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GladiaTranscriberModelJsonConverter))]
         public global::G.GladiaTranscriberModel? Model { get; set; }
 
         /// <summary>
         /// Defines how the transcription model detects the audio language. Default value is 'automatic single language'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("languageBehaviour")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GladiaTranscriberLanguageBehaviourJsonConverter))]
         public global::G.GladiaTranscriberLanguageBehaviour? LanguageBehaviour { get; set; }
 
         /// <summary>
         /// Defines the language to use for the transcription. Required when languageBehaviour is 'manual'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GladiaTranscriberLanguageJsonConverter))]
         public global::G.GladiaTranscriberLanguage? Language { get; set; }
 
         /// <summary>
         /// Defines the languages to use for the transcription. Required when languageBehaviour is 'manual'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("languages")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GladiaTranscriberLanguagesJsonConverter))]
         public global::G.GladiaTranscriberLanguages? Languages { get; set; }
 
         /// <summary>
@@ -109,6 +114,7 @@ namespace G
         /// </summary>
         /// <example>us-west</example>
         [global::Newtonsoft.Json.JsonProperty("region")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GladiaTranscriberRegionJsonConverter))]
         public global::G.GladiaTranscriberRegion? Region { get; set; }
 
         /// <summary>

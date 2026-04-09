@@ -13,6 +13,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbedContentTypeJsonConverter))]
         public global::G.EmbedContentType? Type { get; set; }
 
         /// <summary>

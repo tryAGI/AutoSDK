@@ -14,11 +14,13 @@ namespace G
         /// Requires api_key for authentication.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> WebrtcSessionHeartbeatWebrtcSessionHeartbeatPostAsync(
 
             global::G.WebRTCSessionHeartbeatRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// WebRTC session heartbeat<br/>
@@ -30,11 +32,13 @@ namespace G
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="apiKey"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> WebrtcSessionHeartbeatWebrtcSessionHeartbeatPostAsync(
             string sessionId,
             string apiKey,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

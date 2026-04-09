@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <example>success</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImportSuccessResultStatusJsonConverter))]
         public global::G.ImportSuccessResultStatus Status { get; set; } = default!;
 
         /// <summary>

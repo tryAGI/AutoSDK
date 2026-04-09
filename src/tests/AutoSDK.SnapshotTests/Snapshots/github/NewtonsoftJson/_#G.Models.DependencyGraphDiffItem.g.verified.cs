@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("change_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependencyGraphDiffItemChangeTypeJsonConverter))]
         public global::G.DependencyGraphDiffItemChangeType ChangeType { get; set; } = default!;
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace G
         /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependencyGraphDiffItemScopeJsonConverter))]
         public global::G.DependencyGraphDiffItemScope Scope { get; set; } = default!;
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_strategy", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FeedsUpdateSubscriptionResponseMergeStrategyJsonConverter))]
         public global::G.FeedsUpdateSubscriptionResponseMergeStrategy MergeStrategy { get; set; } = default!;
 
         /// <summary>

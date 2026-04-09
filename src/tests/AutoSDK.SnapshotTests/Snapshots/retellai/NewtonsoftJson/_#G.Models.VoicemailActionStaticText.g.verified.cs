@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <example>static_text</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoicemailActionStaticTextTypeJsonConverter))]
         public global::G.VoicemailActionStaticTextType Type { get; set; }
 
         /// <summary>

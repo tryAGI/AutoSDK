@@ -32,6 +32,9 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -890,7 +893,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AgentsPlatformClient AgentsPlatform => new AgentsPlatformClient(HttpClient, authorizations: Authorizations)
+        public AgentsPlatformClient AgentsPlatform => new AgentsPlatformClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -899,7 +902,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AudioIsolationClient AudioIsolation => new AudioIsolationClient(HttpClient, authorizations: Authorizations)
+        public AudioIsolationClient AudioIsolation => new AudioIsolationClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -908,7 +911,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AudioNativeClient AudioNative => new AudioNativeClient(HttpClient, authorizations: Authorizations)
+        public AudioNativeClient AudioNative => new AudioNativeClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -917,7 +920,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ConversationalAiClient ConversationalAi => new ConversationalAiClient(HttpClient, authorizations: Authorizations)
+        public ConversationalAiClient ConversationalAi => new ConversationalAiClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -926,7 +929,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ConversationalAi2Client ConversationalAi2 => new ConversationalAi2Client(HttpClient, authorizations: Authorizations)
+        public ConversationalAi2Client ConversationalAi2 => new ConversationalAi2Client(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -935,7 +938,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DubbingClient Dubbing => new DubbingClient(HttpClient, authorizations: Authorizations)
+        public DubbingClient Dubbing => new DubbingClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -944,7 +947,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ForcedAlignmentClient ForcedAlignment => new ForcedAlignmentClient(HttpClient, authorizations: Authorizations)
+        public ForcedAlignmentClient ForcedAlignment => new ForcedAlignmentClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -953,7 +956,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public HistoryClient History => new HistoryClient(HttpClient, authorizations: Authorizations)
+        public HistoryClient History => new HistoryClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -962,7 +965,7 @@ namespace G
         /// <summary>
         /// Access the different models of the platform.
         /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
+        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -971,7 +974,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public MusicClient Music => new MusicClient(HttpClient, authorizations: Authorizations)
+        public MusicClient Music => new MusicClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -980,7 +983,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public MusicGenerationClient MusicGeneration => new MusicGenerationClient(HttpClient, authorizations: Authorizations)
+        public MusicGenerationClient MusicGeneration => new MusicGenerationClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -989,7 +992,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PronunciationDictionariesClient PronunciationDictionaries => new PronunciationDictionariesClient(HttpClient, authorizations: Authorizations)
+        public PronunciationDictionariesClient PronunciationDictionaries => new PronunciationDictionariesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -998,7 +1001,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PronunciationDictionaryClient PronunciationDictionary => new PronunciationDictionaryClient(HttpClient, authorizations: Authorizations)
+        public PronunciationDictionaryClient PronunciationDictionary => new PronunciationDictionaryClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1007,7 +1010,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PvcVoicesClient PvcVoices => new PvcVoicesClient(HttpClient, authorizations: Authorizations)
+        public PvcVoicesClient PvcVoices => new PvcVoicesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1016,7 +1019,7 @@ namespace G
         /// <summary>
         /// Access to your samples. A sample is any audio file you attached to a voice. A voice can have one or more samples.
         /// </summary>
-        public SamplesClient Samples => new SamplesClient(HttpClient, authorizations: Authorizations)
+        public SamplesClient Samples => new SamplesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1025,7 +1028,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SingleUseTokenClient SingleUseToken => new SingleUseTokenClient(HttpClient, authorizations: Authorizations)
+        public SingleUseTokenClient SingleUseToken => new SingleUseTokenClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1034,7 +1037,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SpeechToSpeechClient SpeechToSpeech => new SpeechToSpeechClient(HttpClient, authorizations: Authorizations)
+        public SpeechToSpeechClient SpeechToSpeech => new SpeechToSpeechClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1043,7 +1046,7 @@ namespace G
         /// <summary>
         /// Transcribe your audio files with detailed speaker annotations and precise timestamps using our cutting-edge model.
         /// </summary>
-        public SpeechToTextClient SpeechToText => new SpeechToTextClient(HttpClient, authorizations: Authorizations)
+        public SpeechToTextClient SpeechToText => new SpeechToTextClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1052,7 +1055,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SpeechToText2Client SpeechToText2 => new SpeechToText2Client(HttpClient, authorizations: Authorizations)
+        public SpeechToText2Client SpeechToText2 => new SpeechToText2Client(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1061,7 +1064,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public StudioClient Studio => new StudioClient(HttpClient, authorizations: Authorizations)
+        public StudioClient Studio => new StudioClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1070,7 +1073,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToDialogueClient TextToDialogue => new TextToDialogueClient(HttpClient, authorizations: Authorizations)
+        public TextToDialogueClient TextToDialogue => new TextToDialogueClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1079,7 +1082,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToSoundEffectsClient TextToSoundEffects => new TextToSoundEffectsClient(HttpClient, authorizations: Authorizations)
+        public TextToSoundEffectsClient TextToSoundEffects => new TextToSoundEffectsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1088,7 +1091,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToSpeechClient TextToSpeech => new TextToSpeechClient(HttpClient, authorizations: Authorizations)
+        public TextToSpeechClient TextToSpeech => new TextToSpeechClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1097,7 +1100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToVoiceClient TextToVoice => new TextToVoiceClient(HttpClient, authorizations: Authorizations)
+        public TextToVoiceClient TextToVoice => new TextToVoiceClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1106,7 +1109,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TextToVoice2Client TextToVoice2 => new TextToVoice2Client(HttpClient, authorizations: Authorizations)
+        public TextToVoice2Client TextToVoice2 => new TextToVoice2Client(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1115,7 +1118,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UsageClient Usage => new UsageClient(HttpClient, authorizations: Authorizations)
+        public UsageClient Usage => new UsageClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1124,7 +1127,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UserClient User => new UserClient(HttpClient, authorizations: Authorizations)
+        public UserClient User => new UserClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1133,7 +1136,7 @@ namespace G
         /// <summary>
         /// Access to voices created either by you or ElevenLabs.
         /// </summary>
-        public VoicesClient Voices => new VoicesClient(HttpClient, authorizations: Authorizations)
+        public VoicesClient Voices => new VoicesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1142,7 +1145,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public WebhooksClient Webhooks => new WebhooksClient(HttpClient, authorizations: Authorizations)
+        public WebhooksClient Webhooks => new WebhooksClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1151,7 +1154,7 @@ namespace G
         /// <summary>
         /// Access to workspace related endpoints.
         /// </summary>
-        public WorkspaceClient Workspace => new WorkspaceClient(HttpClient, authorizations: Authorizations)
+        public WorkspaceClient Workspace => new WorkspaceClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1170,12 +1173,37 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

@@ -13,6 +13,7 @@ namespace G
         /// Type of proxy. Always 'external' for this config.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExternalProxyConfigTypeJsonConverter))]
         public global::G.ExternalProxyConfigType Type { get; set; }
 
         /// <summary>

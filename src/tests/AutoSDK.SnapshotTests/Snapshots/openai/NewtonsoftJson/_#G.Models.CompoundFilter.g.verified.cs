@@ -13,6 +13,7 @@ namespace G
         /// Type of operation: `and` or `or`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompoundFilterTypeJsonConverter))]
         public global::G.CompoundFilterType Type { get; set; } = default!;
 
         /// <summary>

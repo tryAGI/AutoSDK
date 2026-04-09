@@ -21,12 +21,14 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CheckAutoModStatusResponse> CheckAutomodStatusAsync(
             string broadcasterId,
 
             global::G.CheckAutoModStatusBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Checks whether AutoMod would flag the specified message for review.<br/>
@@ -46,11 +48,13 @@ namespace G
         /// <param name="data">
         /// The list of messages to check. The list must contain at least one message and may contain up to a maximum of 100 messages.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CheckAutoModStatusResponse> CheckAutomodStatusAsync(
             string broadcasterId,
             global::System.Collections.Generic.IList<global::G.CheckAutoModStatusBodyDataItem> data,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

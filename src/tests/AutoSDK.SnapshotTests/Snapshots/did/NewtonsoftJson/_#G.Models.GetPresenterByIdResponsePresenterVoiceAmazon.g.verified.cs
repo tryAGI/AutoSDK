@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetPresenterByIdResponsePresenterVoiceAmazonTypeJsonConverter))]
         public global::G.GetPresenterByIdResponsePresenterVoiceAmazonType Type { get; set; }
 
         /// <summary>
@@ -21,6 +22,7 @@ namespace G
         /// </summary>
         /// <example>Joanna</example>
         [global::Newtonsoft.Json.JsonProperty("voice_id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetPresenterByIdResponsePresenterVoiceAmazonVoiceIdJsonConverter))]
         public global::G.GetPresenterByIdResponsePresenterVoiceAmazonVoiceId VoiceId { get; set; } = default!;
 
         /// <summary>

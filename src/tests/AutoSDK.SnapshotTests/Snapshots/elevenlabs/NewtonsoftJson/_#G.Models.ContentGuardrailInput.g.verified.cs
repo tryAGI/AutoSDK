@@ -13,6 +13,7 @@ namespace G
         /// Default Value: streaming
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GuardrailExecutionModeJsonConverter))]
         public global::G.GuardrailExecutionMode? ExecutionMode { get; set; }
 
         /// <summary>

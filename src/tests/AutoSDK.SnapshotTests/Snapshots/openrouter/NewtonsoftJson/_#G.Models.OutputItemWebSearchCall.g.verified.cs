@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputItemWebSearchCallTypeJsonConverter))]
         public global::G.OutputItemWebSearchCallType Type { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchStatusJsonConverter))]
         public global::G.WebSearchStatus Status { get; set; } = default!;
 
         /// <summary>

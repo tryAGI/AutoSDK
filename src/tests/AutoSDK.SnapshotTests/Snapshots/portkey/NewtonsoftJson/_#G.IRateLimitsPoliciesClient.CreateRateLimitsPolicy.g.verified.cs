@@ -10,11 +10,13 @@ namespace G
         /// Create a new rate limits policy to control the rate of requests or tokens consumed per minute, hour, or day.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreatePolicyResponse> CreateRateLimitsPolicyAsync(
 
             global::G.CreateRateLimitsPolicyRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Rate Limits Policy<br/>
@@ -48,6 +50,7 @@ namespace G
         /// <param name="organisationId">
         /// Organization ID. Required if not using API key authentication.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreatePolicyResponse> CreateRateLimitsPolicyAsync(
@@ -59,6 +62,7 @@ namespace G
             string? name = default,
             string? workspaceId = default,
             global::System.Guid? organisationId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

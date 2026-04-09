@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("errorCode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PipelinesGetPipelineResponseErrorCodeJsonConverter))]
         public global::G.PipelinesGetPipelineResponseErrorCode ErrorCode { get; set; }
 
         /// <summary>

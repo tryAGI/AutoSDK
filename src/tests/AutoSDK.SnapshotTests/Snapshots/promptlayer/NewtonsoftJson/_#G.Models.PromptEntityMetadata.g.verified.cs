@@ -13,6 +13,7 @@ namespace G
         /// The prompt template type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptEntityMetadataTypeJsonConverter))]
         public global::G.PromptEntityMetadataType? Type { get; set; }
 
         /// <summary>

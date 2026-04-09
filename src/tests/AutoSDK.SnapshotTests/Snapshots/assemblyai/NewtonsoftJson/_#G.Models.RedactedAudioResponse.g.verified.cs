@@ -14,6 +14,7 @@ namespace G
         /// The status of the redacted audio
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RedactedAudioStatusJsonConverter))]
         public global::G.RedactedAudioStatus Status { get; set; }
 
         /// <summary>

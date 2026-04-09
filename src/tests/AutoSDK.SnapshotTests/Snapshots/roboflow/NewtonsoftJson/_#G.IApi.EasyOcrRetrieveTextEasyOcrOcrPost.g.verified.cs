@@ -15,6 +15,7 @@ namespace G
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.OCRInferenceResponse, global::System.Collections.Generic.IList<global::G.OCRInferenceResponse>>> EasyOcrRetrieveTextEasyOcrOcrPostAsync(
@@ -23,6 +24,7 @@ namespace G
             string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// EasyOCR OCR response<br/>
@@ -59,6 +61,7 @@ namespace G
         /// Quantized models are smaller and faster, but may be less accurate and won't work correctly on all hardware.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.OCRInferenceResponse, global::System.Collections.Generic.IList<global::G.OCRInferenceResponse>>> EasyOcrRetrieveTextEasyOcrOcrPostAsync(
@@ -77,6 +80,7 @@ namespace G
             string? modelId = default,
             global::System.Collections.Generic.IList<string>? languageCodes = default,
             bool? quantize = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

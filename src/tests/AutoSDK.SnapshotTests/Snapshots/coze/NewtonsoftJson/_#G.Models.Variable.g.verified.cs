@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("channel")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VariableChannelJsonConverter))]
         public global::G.VariableChannel? Channel { get; set; }
 
         /// <summary>

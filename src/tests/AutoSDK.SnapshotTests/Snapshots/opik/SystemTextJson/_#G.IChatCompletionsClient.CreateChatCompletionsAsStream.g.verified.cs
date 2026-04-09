@@ -10,11 +10,13 @@ namespace G
         /// Create chat completions
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>>> CreateChatCompletionsAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>> CreateChatCompletionsAsStreamAsync(
 
             global::G.ChatCompletionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create chat completions<br/>
@@ -44,9 +46,10 @@ namespace G
         /// <param name="serviceTier"></param>
         /// <param name="functions"></param>
         /// <param name="functionCall"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Collections.Generic.IAsyncEnumerable<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>>> CreateChatCompletionsAsStreamAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::G.AnyOf<global::G.ChatCompletionResponse, global::G.ErrorMessage>> CreateChatCompletionsAsStreamAsync(
             string? model = default,
             global::System.Collections.Generic.IList<global::G.Message>? messages = default,
             double? temperature = default,
@@ -71,6 +74,7 @@ namespace G
             string? serviceTier = default,
             global::System.Collections.Generic.IList<global::G.Function>? functions = default,
             global::G.FunctionCall? functionCall = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

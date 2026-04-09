@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("attribute", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunStatsGroupByAttributeJsonConverter))]
         public global::G.RunStatsGroupByAttribute Attribute { get; set; } = default!;
 
         /// <summary>

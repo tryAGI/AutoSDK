@@ -19,6 +19,7 @@ namespace G
         /// The initial status of the embedding task.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbedV2TasksPostResponsesContentApplicationJsonSchemaStatusJsonConverter))]
         public global::G.EmbedV2TasksPostResponsesContentApplicationJsonSchemaStatus Status { get; set; }
 
         /// <summary>

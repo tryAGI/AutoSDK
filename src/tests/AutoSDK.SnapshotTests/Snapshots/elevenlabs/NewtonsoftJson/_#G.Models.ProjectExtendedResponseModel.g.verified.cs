@@ -141,12 +141,14 @@ namespace G
         /// The state of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectExtendedResponseModelStateJsonConverter))]
         public global::G.ProjectExtendedResponseModelState State { get; set; } = default!;
 
         /// <summary>
         /// The access level of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_level", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectExtendedResponseModelAccessLevelJsonConverter))]
         public global::G.ProjectExtendedResponseModelAccessLevel AccessLevel { get; set; } = default!;
 
         /// <summary>
@@ -227,6 +229,7 @@ namespace G
         /// The quality preset level of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quality_preset", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectExtendedResponseModelQualityPresetJsonConverter))]
         public global::G.ProjectExtendedResponseModelQualityPreset QualityPreset { get; set; } = default!;
 
         /// <summary>
@@ -251,6 +254,7 @@ namespace G
         /// Whether text normalization is applied to the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("apply_text_normalization", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectExtendedResponseModelApplyTextNormalizationJsonConverter))]
         public global::G.ProjectExtendedResponseModelApplyTextNormalization ApplyTextNormalization { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ContentBlockSourceTypeJsonConverter))]
         public global::G.ContentBlockSourceType Type { get; set; }
 
         /// <summary>

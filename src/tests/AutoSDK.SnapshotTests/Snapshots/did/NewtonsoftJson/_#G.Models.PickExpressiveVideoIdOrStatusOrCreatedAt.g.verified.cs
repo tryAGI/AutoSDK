@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PickExpressiveVideoIdOrStatusOrCreatedAtStatusJsonConverter))]
         public global::G.PickExpressiveVideoIdOrStatusOrCreatedAtStatus Status { get; set; } = default!;
 
         /// <summary>

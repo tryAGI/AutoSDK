@@ -25,6 +25,7 @@ namespace G
         /// The object type, which is always "list".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEmbeddingResponseObjectJsonConverter))]
         public global::G.CreateEmbeddingResponseObject Object { get; set; }
 
         /// <summary>

@@ -10,11 +10,13 @@ namespace G
         /// Creates a media asset with support for multipart or direct url upload. This endpoint currently supports only the dubbing configuration.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateAssetMultipartUploadResponse> CreateAssetsAsync(
 
             global::G.CreateAssetRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create media asset<br/>
@@ -40,6 +42,7 @@ namespace G
         /// Default Value: Untitled<br/>
         /// Example: Untitled
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateAssetMultipartUploadResponse> CreateAssetsAsync(
@@ -48,6 +51,7 @@ namespace G
             int? contentLength = default,
             string? contentMD5 = default,
             string? title = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

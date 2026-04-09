@@ -19,6 +19,7 @@ namespace G
         /// Always `text`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaContentTextObjectTypeJsonConverter))]
         public global::G.MessageDeltaContentTextObjectType Type { get; set; }
 
         /// <summary>

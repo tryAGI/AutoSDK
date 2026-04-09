@@ -31,6 +31,7 @@ namespace G
         /// Overall status of the report execution
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetReportResponseStatusJsonConverter))]
         public global::G.GetReportResponseStatus Status { get; set; } = default!;
 
         /// <summary>

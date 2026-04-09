@@ -25,6 +25,7 @@ namespace G
         /// Cloud provider where the asset is stored
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cloud_provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssetCloudProviderJsonConverter))]
         public global::G.AssetCloudProvider CloudProvider { get; set; } = default!;
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace G
         /// Current status for this asset lifecycle
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssetStatus2JsonConverter))]
         public global::G.AssetStatus2? Status { get; set; }
 
         /// <summary>

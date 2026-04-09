@@ -47,6 +47,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disk")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditDiskJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.EditDisk? Disk { get; set; }
 
@@ -59,6 +60,7 @@ namespace G
         /// Default Value: s1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("instance")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditInstanceJsonConverter))]
         public global::G.EditInstance? Instance { get; set; }
 
         /// <summary>

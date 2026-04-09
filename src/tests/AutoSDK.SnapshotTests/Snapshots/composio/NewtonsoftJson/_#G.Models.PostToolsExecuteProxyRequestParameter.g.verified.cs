@@ -31,6 +31,7 @@ namespace G
         /// </summary>
         /// <example>header</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostToolsExecuteProxyRequestParameterTypeJsonConverter))]
         public global::G.PostToolsExecuteProxyRequestParameterType Type { get; set; } = default!;
 
         /// <summary>

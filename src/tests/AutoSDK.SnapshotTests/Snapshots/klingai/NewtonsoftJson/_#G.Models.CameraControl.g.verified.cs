@@ -13,6 +13,7 @@ namespace G
         /// Camera control type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CameraControlTypeJsonConverter))]
         public global::G.CameraControlType? Type { get; set; }
 
         /// <summary>

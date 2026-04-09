@@ -44,6 +44,7 @@ namespace G
         /// </summary>
         /// <example>1280:768</example>
         [global::Newtonsoft.Json.JsonProperty("ratio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageToVideoRequestGen3aTurboRatioJsonConverter))]
         public global::G.CreateImageToVideoRequestGen3aTurboRatio? Ratio { get; set; }
 
         /// <summary>

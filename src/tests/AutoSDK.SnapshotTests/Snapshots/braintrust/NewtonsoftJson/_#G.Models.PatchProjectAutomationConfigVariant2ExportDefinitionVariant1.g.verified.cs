@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PatchProjectAutomationConfigVariant2ExportDefinitionVariant1TypeJsonConverter))]
         public global::G.PatchProjectAutomationConfigVariant2ExportDefinitionVariant1Type Type { get; set; }
 
         /// <summary>

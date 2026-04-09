@@ -122,6 +122,7 @@ namespace G
         /// If you do not specify a proxy, Firecrawl will default to basic.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("proxy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeOptionsProxyJsonConverter))]
         public global::G.ScrapeOptionsProxy? Proxy { get; set; }
 
         /// <summary>

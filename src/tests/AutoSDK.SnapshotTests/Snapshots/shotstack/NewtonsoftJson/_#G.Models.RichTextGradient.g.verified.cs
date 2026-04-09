@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <example>linear</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichTextGradientTypeJsonConverter))]
         public global::G.RichTextGradientType? Type { get; set; }
 
         /// <summary>

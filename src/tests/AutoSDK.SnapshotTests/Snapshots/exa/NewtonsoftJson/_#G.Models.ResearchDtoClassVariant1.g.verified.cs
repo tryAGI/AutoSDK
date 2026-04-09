@@ -26,6 +26,7 @@ namespace G
         /// Default Value: exa-research
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResearchDtoClassVariant1ModelJsonConverter))]
         public global::G.ResearchDtoClassVariant1Model? Model { get; set; }
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResearchDtoClassVariant1StatusJsonConverter))]
         public global::G.ResearchDtoClassVariant1Status Status { get; set; }
 
         /// <summary>

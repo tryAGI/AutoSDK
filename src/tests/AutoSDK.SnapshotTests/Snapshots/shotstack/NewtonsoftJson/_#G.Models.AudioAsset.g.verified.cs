@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.AudioAssetType.Audio</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioAssetTypeJsonConverter))]
         public global::G.AudioAssetType Type { get; set; } = global::G.AudioAssetType.Audio;
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effect")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioAssetEffectJsonConverter))]
         public global::G.AudioAssetEffect? Effect { get; set; }
 
         /// <summary>

@@ -18,6 +18,7 @@ namespace G
         /// `developer`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EasyInputMessageRoleJsonConverter))]
         public global::G.EasyInputMessageRole Role { get; set; } = default!;
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// The type of the message input. Always `message`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EasyInputMessageTypeJsonConverter))]
         public global::G.EasyInputMessageType? Type { get; set; }
 
         /// <summary>

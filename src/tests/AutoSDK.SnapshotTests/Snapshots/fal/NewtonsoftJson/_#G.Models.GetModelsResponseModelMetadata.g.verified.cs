@@ -33,6 +33,7 @@ namespace G
         /// 'active' or 'deprecated'. Newest models are surfaced in Explore and may be flagged as 'new/beta' in tags
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetModelsResponseModelMetadataStatusJsonConverter))]
         public global::G.GetModelsResponseModelMetadataStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -81,6 +82,7 @@ namespace G
         /// License type for the model (optional)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("license_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetModelsResponseModelMetadataLicenseTypeJsonConverter))]
         public global::G.GetModelsResponseModelMetadataLicenseType? LicenseType { get; set; }
 
         /// <summary>
@@ -107,6 +109,7 @@ namespace G
         /// Model kind - inference or training (optional)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("kind")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetModelsResponseModelMetadataKindJsonConverter))]
         public global::G.GetModelsResponseModelMetadataKind? Kind { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="releaseId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Release> ReposUpdateReleaseAsync(
@@ -21,6 +22,7 @@ namespace G
             int releaseId,
 
             global::G.ReposUpdateReleaseRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a release<br/>
@@ -54,6 +56,7 @@ namespace G
         /// <param name="discussionCategoryName">
         /// If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. If there is already a discussion linked to the release, this parameter is ignored. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Release> ReposUpdateReleaseAsync(
@@ -68,6 +71,7 @@ namespace G
             bool? prerelease = default,
             global::G.ReposUpdateReleaseRequestMakeLatest? makeLatest = default,
             string? discussionCategoryName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -70,6 +70,7 @@ namespace G
         /// </summary>
         /// <example>isp</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AsnResponseTypeJsonConverter))]
         public global::G.AsnResponseType Type { get; set; } = default!;
 
         /// <summary>

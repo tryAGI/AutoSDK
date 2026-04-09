@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dbIncrement")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TimeIncrementJsonConverter))]
         public global::G.TimeIncrement? DbIncrement { get; set; }
 
         /// <summary>

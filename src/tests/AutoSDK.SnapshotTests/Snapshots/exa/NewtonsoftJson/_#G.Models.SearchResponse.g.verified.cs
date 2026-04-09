@@ -29,6 +29,7 @@ namespace G
         /// </summary>
         /// <example>auto</example>
         [global::Newtonsoft.Json.JsonProperty("searchType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchResponseSearchTypeJsonConverter))]
         public global::G.SearchResponseSearchType? SearchType { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Default Value: image
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generation_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageGenerationRequestGenerationTypeJsonConverter))]
         public global::G.ImageGenerationRequestGenerationType? GenerationType { get; set; }
 
         /// <summary>
@@ -20,6 +21,7 @@ namespace G
         /// Default Value: photon-1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageModelJsonConverter))]
         public global::G.ImageModel? Model { get; set; }
 
         /// <summary>
@@ -35,6 +37,7 @@ namespace G
         /// </summary>
         /// <example>16:9</example>
         [global::Newtonsoft.Json.JsonProperty("aspect_ratio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AspectRatioJsonConverter))]
         public global::G.AspectRatio? AspectRatio { get; set; }
 
         /// <summary>

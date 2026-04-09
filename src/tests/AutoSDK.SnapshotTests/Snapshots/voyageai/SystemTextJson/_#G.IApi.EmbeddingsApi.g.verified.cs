@@ -10,11 +10,13 @@ namespace G
         /// Voyage text embedding endpoint receives as input a string (or a list of strings) and other arguments such as the preferred model name, and returns a response containing a list of embeddings.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbeddingsApiResponse> EmbeddingsApiAsync(
 
             global::G.EmbeddingsApiRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Text embedding models<br/>
@@ -57,6 +59,7 @@ namespace G
         /// &lt;/ul&gt;<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbeddingsApiResponse> EmbeddingsApiAsync(
@@ -67,6 +70,7 @@ namespace G
             int? outputDimension = default,
             global::G.EmbeddingsApiRequestOutputDtype? outputDtype = default,
             global::G.EmbeddingsApiRequestEncodingFormat? encodingFormat = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

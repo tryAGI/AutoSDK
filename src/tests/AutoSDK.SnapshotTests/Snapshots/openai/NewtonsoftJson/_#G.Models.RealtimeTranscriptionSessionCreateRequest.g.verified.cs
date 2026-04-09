@@ -23,6 +23,7 @@ namespace G
         /// Default Value: pcm16
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_audio_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeTranscriptionSessionCreateRequestInputAudioFormatJsonConverter))]
         public global::G.RealtimeTranscriptionSessionCreateRequestInputAudioFormat? InputAudioFormat { get; set; }
 
         /// <summary>

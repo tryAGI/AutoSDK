@@ -22,6 +22,7 @@ namespace G
         /// Default Value: descending
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sort_order")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListCallsRequestSortOrderJsonConverter))]
         public global::G.ListCallsRequestSortOrder? SortOrder { get; set; }
 
         /// <summary>

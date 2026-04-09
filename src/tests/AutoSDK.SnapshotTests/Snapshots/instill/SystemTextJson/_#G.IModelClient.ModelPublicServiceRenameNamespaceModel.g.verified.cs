@@ -13,6 +13,7 @@ namespace G
         /// <param name="namespaceId"></param>
         /// <param name="modelId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RenameNamespaceModelResponse> ModelPublicServiceRenameNamespaceModelAsync(
@@ -20,6 +21,7 @@ namespace G
             string modelId,
 
             global::G.RenameNamespaceModelBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Rename a model<br/>
@@ -32,12 +34,14 @@ namespace G
         /// The new resource ID. This will transform the resource name into<br/>
         /// `namespaces/{namespace.id}/models/{new_model_id}`.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RenameNamespaceModelResponse> ModelPublicServiceRenameNamespaceModelAsync(
             string namespaceId,
             string modelId,
             string newModelId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -19,6 +19,7 @@ namespace G
         /// HTTP method to use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebGetToolParametersMethodJsonConverter))]
         public global::G.WebGetToolParametersMethod? Method { get; set; }
 
         /// <summary>

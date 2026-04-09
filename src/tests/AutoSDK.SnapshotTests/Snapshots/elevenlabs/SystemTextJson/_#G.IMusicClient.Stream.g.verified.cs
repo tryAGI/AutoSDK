@@ -19,6 +19,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> StreamAsync(
@@ -26,6 +27,7 @@ namespace G
             global::G.BodyStreamComposedMusicV1MusicStreamPost request,
             global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Stream Composed Music<br/>
@@ -39,6 +41,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> StreamAsResponseAsync(
@@ -46,6 +49,7 @@ namespace G
             global::G.BodyStreamComposedMusicV1MusicStreamPost request,
             global::G.AllowedOutputFormats? outputFormat = default,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Stream Composed Music<br/>
@@ -89,6 +93,7 @@ namespace G
         /// Whether to store the generated song for inpainting. Only available to enterprise clients with access to the inpainting feature.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> StreamAsync(
@@ -103,6 +108,7 @@ namespace G
             string? finetuneId = default,
             bool? usePhoneticNames = default,
             bool? storeForInpainting = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MinimaxVoiceProviderJsonConverter))]
         public global::G.MinimaxVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -40,6 +41,7 @@ namespace G
         /// </summary>
         /// <example>speech-02-turbo</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MinimaxVoiceModelJsonConverter))]
         public global::G.MinimaxVoiceModel? Model { get; set; }
 
         /// <summary>
@@ -86,12 +88,14 @@ namespace G
         /// Default Value: worldwide
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MinimaxVoiceRegionJsonConverter))]
         public global::G.MinimaxVoiceRegion? Region { get; set; }
 
         /// <summary>
         /// Language hint for MiniMax T2A. Example: yue (Cantonese), zh (Chinese), en (English).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("languageBoost")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MinimaxVoiceLanguageBoostJsonConverter))]
         public global::G.MinimaxVoiceLanguageBoost? LanguageBoost { get; set; }
 
         /// <summary>

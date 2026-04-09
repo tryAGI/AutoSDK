@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("datasetType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NewDatasetParamsDatasetTypeJsonConverter))]
         public global::G.NewDatasetParamsDatasetType DatasetType { get; set; } = default!;
 
         /// <summary>

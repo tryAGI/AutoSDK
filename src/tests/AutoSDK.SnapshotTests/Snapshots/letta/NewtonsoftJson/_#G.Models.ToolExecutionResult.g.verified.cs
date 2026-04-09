@@ -15,6 +15,7 @@ namespace G
         /// The status of the tool execution and return object
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolExecutionResultStatusJsonConverter))]
         public global::G.ToolExecutionResultStatus Status { get; set; } = default!;
 
         /// <summary>

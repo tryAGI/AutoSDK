@@ -10,11 +10,13 @@ namespace G
         /// Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatResult> SendChatCompletionRequestAsync(
 
             global::G.ChatRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a chat completion<br/>
@@ -117,6 +119,7 @@ namespace G
         /// <param name="serviceTier">
         /// The service tier to use for processing this request.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatResult> SendChatCompletionRequestAsync(
@@ -152,6 +155,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChatRequestModalitiesItems>? modalities = default,
             global::G.ChatRequestCacheControl? cacheControl = default,
             global::G.OneOf<global::G.ChatRequestServiceTier?, object>? serviceTier = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

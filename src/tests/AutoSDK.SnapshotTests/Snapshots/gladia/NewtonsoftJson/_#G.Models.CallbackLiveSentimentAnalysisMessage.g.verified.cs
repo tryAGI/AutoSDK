@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLiveSentimentAnalysisMessageEvent.LiveSentimentAnalysis</default>
         /// <example>live.sentiment_analysis</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLiveSentimentAnalysisMessageEventJsonConverter))]
         public global::G.CallbackLiveSentimentAnalysisMessageEvent Event { get; set; } = global::G.CallbackLiveSentimentAnalysisMessageEvent.LiveSentimentAnalysis;
 
         /// <summary>

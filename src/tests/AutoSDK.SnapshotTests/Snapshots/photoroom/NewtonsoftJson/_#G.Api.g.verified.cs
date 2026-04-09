@@ -40,10 +40,159 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.RemoveBackgroundPostParamsFormatJsonConverter(),
+
+                    new global::G.JsonConverters.RemoveBackgroundPostParamsFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RemoveBackgroundPostParamsChannelsJsonConverter(),
+
+                    new global::G.JsonConverters.RemoveBackgroundPostParamsChannelsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RemoveBackgroundPostParamsSizeJsonConverter(),
+
+                    new global::G.JsonConverters.RemoveBackgroundPostParamsSizeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RemoveBackgroundPostParamsCropJsonConverter(),
+
+                    new global::G.JsonConverters.RemoveBackgroundPostParamsCropNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RemoveBackgroundPostParamsDespillJsonConverter(),
+
+                    new global::G.JsonConverters.RemoveBackgroundPostParamsDespillNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetBackgroundBlurModeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetBackgroundBlurModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetBackgroundExpandPromptModeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetBackgroundExpandPromptModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetBackgroundScalingJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetBackgroundScalingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetBeautifyModeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetBeautifyModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetExportFormatJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetExportFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetFlatLaySizeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetFlatLaySizeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetGhostMannequinSizeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetGhostMannequinSizeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetHorizontalAlignmentJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetHorizontalAlignmentNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetImageFromPromptSizeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetImageFromPromptSizeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetKeepExistingAlphaChannelJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetKeepExistingAlphaChannelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageHorizontalAlignmentJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageHorizontalAlignmentNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageImageFromPromptSizeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageImageFromPromptSizeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageRemoveBackgroundJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageRemoveBackgroundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageSegmentationModeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageSegmentationModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageUseForAIBackgroundJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageUseForAIBackgroundNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageVerticalAlignmentJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLayersVariant2ImageVerticalAlignmentNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLightingModeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetLightingModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetPreserveMetadataJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetPreserveMetadataNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetReferenceBoxJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetReferenceBoxNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetScalingJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetScalingNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetSegmentationModeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetSegmentationModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetShadowModeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetShadowModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetTextRemovalModeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetTextRemovalModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetUpscaleModeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetUpscaleModeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVerticalAlignmentJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVerticalAlignmentNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVirtualModelModelVariant1PresetNameJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVirtualModelModelVariant1PresetNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVirtualModelPoseJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVirtualModelPoseNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVirtualModelQualityJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVirtualModelQualityNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVirtualModelSceneVariant1PresetNameJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVirtualModelSceneVariant1PresetNameNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVirtualModelSizeJsonConverter(),
+
+                    new global::G.JsonConverters.EditImageGetVirtualModelSizeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
@@ -59,12 +208,37 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
 
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

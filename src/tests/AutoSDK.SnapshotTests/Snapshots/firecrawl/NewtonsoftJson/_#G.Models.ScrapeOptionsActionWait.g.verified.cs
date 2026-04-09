@@ -13,6 +13,7 @@ namespace G
         /// Wait for a specified amount of milliseconds
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScrapeOptionsActionWaitTypeJsonConverter))]
         public global::G.ScrapeOptionsActionWaitType Type { get; set; }
 
         /// <summary>

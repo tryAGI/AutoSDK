@@ -19,6 +19,7 @@ namespace G
         /// The location of the parameter. Can be 'query' or 'header'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("in", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostToolsExecuteByToolSlugRequestCustomAuthParamsParameterInJsonConverter))]
         public global::G.PostToolsExecuteByToolSlugRequestCustomAuthParamsParameterIn In { get; set; } = default!;
 
         /// <summary>

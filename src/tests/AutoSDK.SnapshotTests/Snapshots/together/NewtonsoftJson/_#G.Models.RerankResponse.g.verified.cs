@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>rerank</example>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RerankResponseObjectJsonConverter))]
         public global::G.RerankResponseObject Object { get; set; }
 
         /// <summary>

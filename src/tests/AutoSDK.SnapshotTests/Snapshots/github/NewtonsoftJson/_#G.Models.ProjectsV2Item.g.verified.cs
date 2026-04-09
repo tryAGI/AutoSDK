@@ -37,6 +37,7 @@ namespace G
         /// The type of content tracked in a project item
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectsV2ItemContentTypeJsonConverter))]
         public global::G.ProjectsV2ItemContentType ContentType { get; set; } = default!;
 
         /// <summary>

@@ -9,11 +9,13 @@ namespace G
         /// Create an Image to 3D task
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTaskResponse> CreateImageTo3DTaskAsync(
 
             global::G.ImageTo3DRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an Image to 3D task
@@ -70,6 +72,7 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="originAt"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTaskResponse> CreateImageTo3DTaskAsync(
@@ -92,6 +95,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TargetFormat3D>? targetFormats = default,
             bool? autoSize = default,
             global::G.OriginAt? originAt = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

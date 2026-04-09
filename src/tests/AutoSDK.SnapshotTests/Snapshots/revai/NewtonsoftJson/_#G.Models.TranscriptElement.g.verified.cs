@@ -13,6 +13,7 @@ namespace G
         /// Type of element
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptElementTypeJsonConverter))]
         public global::G.TranscriptElementType? Type { get; set; }
 
         /// <summary>

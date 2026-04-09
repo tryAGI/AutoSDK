@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ShotstackTextToImageOptionsType.TextToImage</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ShotstackTextToImageOptionsTypeJsonConverter))]
         public global::G.ShotstackTextToImageOptionsType Type { get; set; } = global::G.ShotstackTextToImageOptionsType.TextToImage;
 
         /// <summary>

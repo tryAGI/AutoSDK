@@ -38,6 +38,7 @@ namespace G
         /// The provider of the agent
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentResponseDtoVariant1ProviderJsonConverter))]
         public global::G.AgentResponseDtoVariant1Provider? Provider { get; set; }
 
         /// <summary>

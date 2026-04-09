@@ -20,11 +20,13 @@ namespace G
         /// <param name="connectorId">
         /// The ID of the connector to delete
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DataSourceConnectorDeleted> DeleteConnectorAsync(
             global::System.Guid dataSourceId,
             global::System.Guid connectorId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

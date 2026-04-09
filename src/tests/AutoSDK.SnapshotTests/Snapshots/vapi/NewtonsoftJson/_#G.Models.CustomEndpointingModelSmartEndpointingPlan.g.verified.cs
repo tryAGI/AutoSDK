@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>custom-endpointing-model</example>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomEndpointingModelSmartEndpointingPlanProviderJsonConverter))]
         public global::G.CustomEndpointingModelSmartEndpointingPlanProvider Provider { get; set; } = default!;
 
         /// <summary>

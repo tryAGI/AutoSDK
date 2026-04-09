@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ElseEdgeVariant2TransitionConditionTypeJsonConverter))]
         public global::G.ElseEdgeVariant2TransitionConditionType Type { get; set; }
 
         /// <summary>
         /// Must be "Else" for else edge
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ElseEdgeVariant2TransitionConditionPromptJsonConverter))]
         public global::G.ElseEdgeVariant2TransitionConditionPrompt Prompt { get; set; }
 
         /// <summary>

@@ -61,6 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FlowResponseTypeJsonConverter))]
         public global::G.FlowResponseType? Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="commentId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Reaction> ReactionsCreateForCommitCommentAsync(
@@ -21,6 +22,7 @@ namespace G
             long commentId,
 
             global::G.ReactionsCreateForCommitCommentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create reaction for a commit comment<br/>
@@ -32,6 +34,7 @@ namespace G
         /// <param name="content">
         /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the commit comment.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Reaction> ReactionsCreateForCommitCommentAsync(
@@ -39,6 +42,7 @@ namespace G
             string repo,
             long commentId,
             global::G.ReactionsCreateForCommitCommentRequestContent content,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

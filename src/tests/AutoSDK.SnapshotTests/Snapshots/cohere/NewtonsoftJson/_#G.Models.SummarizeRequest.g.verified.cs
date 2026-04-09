@@ -22,6 +22,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("length")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummarizeRequestLengthJsonConverter))]
         public global::G.SummarizeRequestLength? Length { get; set; }
 
         /// <summary>
@@ -30,6 +31,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummarizeRequestFormatJsonConverter))]
         public global::G.SummarizeRequestFormat? Format { get; set; }
 
         /// <summary>
@@ -45,6 +47,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extractiveness")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummarizeRequestExtractivenessJsonConverter))]
         public global::G.SummarizeRequestExtractiveness? Extractiveness { get; set; }
 
         /// <summary>

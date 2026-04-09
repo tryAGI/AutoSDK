@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPToolConfigOverrideUpdateRequestModelInputOverridesDiscriminatorSourceJsonConverter))]
         public global::G.MCPToolConfigOverrideUpdateRequestModelInputOverridesDiscriminatorSource? Source { get; set; }
 
         /// <summary>

@@ -85,6 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service_tier")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessagesRequestServiceTierJsonConverter))]
         public global::G.MessagesRequestServiceTier? ServiceTier { get; set; }
 
         /// <summary>
@@ -151,6 +152,7 @@ namespace G
         /// Controls output generation speed. When set to `fast`, uses a higher-speed inference configuration at premium pricing. Defaults to `standard` when omitted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speed")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessagesRequestSpeedJsonConverter))]
         public global::G.MessagesRequestSpeed? Speed { get; set; }
 
         /// <summary>

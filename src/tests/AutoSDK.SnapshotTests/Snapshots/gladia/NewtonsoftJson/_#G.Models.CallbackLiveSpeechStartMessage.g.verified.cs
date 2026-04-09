@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLiveSpeechStartMessageEvent.LiveSpeechStart</default>
         /// <example>live.speech_start</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLiveSpeechStartMessageEventJsonConverter))]
         public global::G.CallbackLiveSpeechStartMessageEvent Event { get; set; } = global::G.CallbackLiveSpeechStartMessageEvent.LiveSpeechStart;
 
         /// <summary>

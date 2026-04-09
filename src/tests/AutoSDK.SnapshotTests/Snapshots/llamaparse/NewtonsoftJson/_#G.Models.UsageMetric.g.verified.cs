@@ -25,6 +25,7 @@ namespace G
         /// The event type that is emitted
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UsageMetricEventTypeJsonConverter))]
         public global::G.UsageMetricEventType EventType { get; set; } = default!;
 
         /// <summary>

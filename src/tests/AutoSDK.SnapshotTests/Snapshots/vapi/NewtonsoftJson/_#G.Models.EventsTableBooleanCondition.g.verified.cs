@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>=</example>
         [global::Newtonsoft.Json.JsonProperty("operator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EventsTableBooleanConditionOperatorJsonConverter))]
         public global::G.EventsTableBooleanConditionOperator Operator { get; set; }
 
         /// <summary>

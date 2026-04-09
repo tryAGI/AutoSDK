@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>valid</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TestLambdaToolResponseValidationStatusJsonConverter))]
         public global::G.TestLambdaToolResponseValidationStatus Status { get; set; } = default!;
 
         /// <summary>

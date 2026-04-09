@@ -13,6 +13,7 @@ namespace G
         /// The type of object being deleted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionDeletedObjectJsonConverter))]
         public global::G.ChatCompletionDeletedObject Object { get; set; }
 
         /// <summary>

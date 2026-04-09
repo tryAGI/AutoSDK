@@ -13,6 +13,7 @@ namespace G
         /// Type of instruction
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NodeInstructionPromptTypeJsonConverter))]
         public global::G.NodeInstructionPromptType Type { get; set; }
 
         /// <summary>

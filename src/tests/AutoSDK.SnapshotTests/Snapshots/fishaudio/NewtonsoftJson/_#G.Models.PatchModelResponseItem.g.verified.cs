@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("in")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PatchModelResponseItemInJsonConverter))]
         public global::G.PatchModelResponseItemIn? In { get; set; }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace G
         /// Default Value: triangle
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topology")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TopologyJsonConverter))]
         public global::G.Topology? Topology { get; set; }
 
         /// <summary>
@@ -56,6 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("origin_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OriginAtJsonConverter))]
         public global::G.OriginAt? OriginAt { get; set; }
 
         /// <summary>

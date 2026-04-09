@@ -145,6 +145,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostConnectedAccountsRequestConnectionStateVariant7ValVariant1StatusJsonConverter))]
         public global::G.PostConnectedAccountsRequestConnectionStateVariant7ValVariant1Status Status { get; set; }
 
         /// <summary>

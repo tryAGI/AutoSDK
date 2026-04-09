@@ -23,6 +23,7 @@ namespace G
         /// @default 'blind-transfer'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferPlanModeJsonConverter))]
         public global::G.TransferPlanMode Mode { get; set; } = default!;
 
         /// <summary>

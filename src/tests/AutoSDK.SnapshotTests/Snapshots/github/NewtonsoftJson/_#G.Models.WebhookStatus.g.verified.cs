@@ -103,6 +103,7 @@ namespace G
         /// The new state. Can be `pending`, `success`, `failure`, or `error`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookStatusStateJsonConverter))]
         public global::G.WebhookStatusState State { get; set; } = default!;
 
         /// <summary>

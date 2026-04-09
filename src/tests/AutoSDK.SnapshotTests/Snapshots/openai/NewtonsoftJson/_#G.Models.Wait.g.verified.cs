@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.WaitType.Wait</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WaitTypeJsonConverter))]
         public global::G.WaitType Type { get; set; } = global::G.WaitType.Wait;
 
         /// <summary>

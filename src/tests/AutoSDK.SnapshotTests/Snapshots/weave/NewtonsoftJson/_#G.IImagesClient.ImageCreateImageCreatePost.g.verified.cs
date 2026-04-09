@@ -9,11 +9,13 @@ namespace G
         /// Image Create
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ImageGenerationCreateRes> ImageCreateImageCreatePostAsync(
 
             global::G.ImageGenerationCreateReq request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Image Create
@@ -27,6 +29,7 @@ namespace G
         /// Whether to track this image generation call in the trace server<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ImageGenerationCreateRes> ImageCreateImageCreatePostAsync(
@@ -34,6 +37,7 @@ namespace G
             global::G.ImageGenerationRequestInputs inputs,
             string? wbUserId = default,
             bool? trackLlmCall = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

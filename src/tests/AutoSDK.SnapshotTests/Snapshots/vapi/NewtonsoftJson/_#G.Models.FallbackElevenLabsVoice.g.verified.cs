@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackElevenLabsVoiceProviderJsonConverter))]
         public global::G.FallbackElevenLabsVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -101,6 +102,7 @@ namespace G
         /// </summary>
         /// <example>eleven_turbo_v2_5</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackElevenLabsVoiceModelJsonConverter))]
         public global::G.FallbackElevenLabsVoiceModel? Model { get; set; }
 
         /// <summary>

@@ -20,6 +20,7 @@ namespace G
         /// The sub type of tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateComputerToolDTOSubTypeJsonConverter))]
         public global::G.UpdateComputerToolDTOSubType? SubType { get; set; }
 
         /// <summary>
@@ -118,6 +119,7 @@ namespace G
         /// Default Value: computer
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateComputerToolDTONameJsonConverter))]
         public global::G.UpdateComputerToolDTOName? Name { get; set; }
 
         /// <summary>

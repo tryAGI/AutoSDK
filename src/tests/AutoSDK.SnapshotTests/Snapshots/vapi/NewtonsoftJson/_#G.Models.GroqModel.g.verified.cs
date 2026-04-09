@@ -39,12 +39,14 @@ namespace G
         /// This is the name of the model. Ex. cognitivecomputations/dolphin-mixtral-8x7b
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GroqModelModelJsonConverter))]
         public global::G.GroqModelModel Model { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GroqModelProviderJsonConverter))]
         public global::G.GroqModelProvider Provider { get; set; }
 
         /// <summary>

@@ -45,6 +45,7 @@ namespace G
         /// Default Value: medium
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningEffortJsonConverter))]
         public global::G.ReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>

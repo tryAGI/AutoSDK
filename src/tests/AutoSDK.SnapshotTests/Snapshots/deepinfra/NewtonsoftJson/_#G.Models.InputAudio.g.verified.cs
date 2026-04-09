@@ -19,6 +19,7 @@ namespace G
         /// Default Value: wav
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputAudioFormatJsonConverter))]
         public global::G.InputAudioFormat? Format { get; set; }
 
         /// <summary>

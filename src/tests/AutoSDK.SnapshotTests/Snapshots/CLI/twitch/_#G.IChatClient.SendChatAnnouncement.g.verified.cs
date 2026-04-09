@@ -14,6 +14,7 @@ namespace G
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task SendChatAnnouncementAsync(
@@ -21,6 +22,7 @@ namespace G
             string moderatorId,
 
             global::G.SendChatAnnouncementBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Sends an announcement to the broadcaster’s chat room.<br/>
@@ -44,6 +46,7 @@ namespace G
         ///   <br/>
         /// If `color` is set to _primary_ or is not set, the channel’s accent color is used to highlight the announcement (see **Profile Accent Color** under [profile settings](https://www.twitch.tv/settings/profile), **Channel and Videos**, and **Brand**).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task SendChatAnnouncementAsync(
@@ -51,6 +54,7 @@ namespace G
             string moderatorId,
             string message,
             global::G.SendChatAnnouncementBodyColor? color = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

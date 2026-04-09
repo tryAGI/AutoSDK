@@ -44,6 +44,7 @@ namespace G
         /// Default Value: STARTED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BackupCreateResponseStatusJsonConverter))]
         public global::G.BackupCreateResponseStatus? Status { get; set; }
 
         /// <summary>

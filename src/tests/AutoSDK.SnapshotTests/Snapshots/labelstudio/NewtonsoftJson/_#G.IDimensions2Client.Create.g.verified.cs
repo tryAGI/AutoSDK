@@ -17,12 +17,14 @@ namespace G
         /// </summary>
         /// <param name="projectPk"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Dimension> CreateAsync(
             int projectPk,
 
             global::G.DimensionCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Create dimension<br/>
@@ -59,6 +61,7 @@ namespace G
         /// <param name="order">
         /// Display order within the project
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Dimension> CreateAsync(
@@ -71,6 +74,7 @@ namespace G
             object? metricParams = default,
             string? metricType = default,
             int? order = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

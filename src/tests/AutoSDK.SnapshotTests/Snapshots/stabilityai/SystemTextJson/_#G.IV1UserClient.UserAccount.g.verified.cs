@@ -9,6 +9,7 @@ namespace G
         /// account<br/>
         /// Get information about the account associated with the provided API key
         /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -24,6 +25,7 @@ namespace G
         ///   -H "Authorization: Bearer $STABILITY_API_KEY"
         /// </remarks>
         global::System.Threading.Tasks.Task<global::G.AccountResponseBody> UserAccountAsync(
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
