@@ -1,0 +1,73 @@
+﻿//HintName: G.JsonConverters.GoogleVoicemailDetectionPlanProviderNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class GoogleVoicemailDetectionPlanProviderNullableJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.GoogleVoicemailDetectionPlanProvider?>
+    {
+        /// <inheritdoc />
+        public override global::G.GoogleVoicemailDetectionPlanProvider? ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.GoogleVoicemailDetectionPlanProvider? existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.GoogleVoicemailDetectionPlanProviderExtensions.ToEnum(stringValue);
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.GoogleVoicemailDetectionPlanProvider)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.GoogleVoicemailDetectionPlanProvider?);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.GoogleVoicemailDetectionPlanProvider? value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNull();
+            }
+            else
+            {
+                writer.WriteValue(global::G.GoogleVoicemailDetectionPlanProviderExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

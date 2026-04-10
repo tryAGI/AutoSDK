@@ -13,6 +13,7 @@ namespace G
         /// The approval mode to set for the MCP server
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("approval_policy", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPApprovalPolicyJsonConverter))]
         public global::G.MCPApprovalPolicy ApprovalPolicy { get; set; } = default!;
 
         /// <summary>

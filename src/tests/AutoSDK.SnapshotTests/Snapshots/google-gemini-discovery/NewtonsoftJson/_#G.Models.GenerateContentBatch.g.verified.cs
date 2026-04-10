@@ -72,6 +72,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerateContentBatchStateJsonConverter))]
         public global::G.GenerateContentBatchState? State { get; set; }
 
         /// <summary>

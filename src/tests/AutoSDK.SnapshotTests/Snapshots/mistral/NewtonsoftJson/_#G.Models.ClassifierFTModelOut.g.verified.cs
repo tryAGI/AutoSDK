@@ -19,6 +19,7 @@ namespace G
         /// Default Value: model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassifierFTModelOutObjectJsonConverter))]
         public global::G.ClassifierFTModelOutObject? Object { get; set; }
 
         /// <summary>
@@ -91,6 +92,7 @@ namespace G
         /// Default Value: classifier
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassifierFTModelOutModelTypeJsonConverter))]
         public global::G.ClassifierFTModelOutModelType? ModelType { get; set; }
 
         /// <summary>

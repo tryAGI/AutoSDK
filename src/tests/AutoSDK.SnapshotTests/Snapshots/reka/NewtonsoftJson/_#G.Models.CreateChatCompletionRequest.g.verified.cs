@@ -92,6 +92,7 @@ namespace G
         /// Controls which tool is called by the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionRequestToolChoiceJsonConverter))]
         public global::G.CreateChatCompletionRequestToolChoice? ToolChoice { get; set; }
 
         /// <summary>

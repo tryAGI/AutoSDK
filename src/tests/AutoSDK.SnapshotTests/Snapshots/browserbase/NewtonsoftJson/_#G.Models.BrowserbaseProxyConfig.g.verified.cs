@@ -13,6 +13,7 @@ namespace G
         /// Type of proxy. Always use 'browserbase' for the Browserbase managed proxy network.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BrowserbaseProxyConfigTypeJsonConverter))]
         public global::G.BrowserbaseProxyConfigType Type { get; set; }
 
         /// <summary>

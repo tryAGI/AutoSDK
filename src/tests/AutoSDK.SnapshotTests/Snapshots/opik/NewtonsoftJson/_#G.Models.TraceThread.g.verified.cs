@@ -67,6 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TraceThreadStatusJsonConverter))]
         public global::G.TraceThreadStatus? Status { get; set; }
 
         /// <summary>

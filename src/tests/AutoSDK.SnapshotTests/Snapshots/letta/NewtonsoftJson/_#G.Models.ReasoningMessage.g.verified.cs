@@ -82,6 +82,7 @@ namespace G
         /// Default Value: non_reasoner_model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningMessageSourceJsonConverter))]
         public global::G.ReasoningMessageSource? Source { get; set; }
 
         /// <summary>

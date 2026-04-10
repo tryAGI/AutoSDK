@@ -9,11 +9,13 @@ namespace G
         /// Process Url Async
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TaskStatusResponse> ProcessUrlAsyncV1ConvertSourceAsyncPostAsync(
 
             global::G.ConvertDocumentsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Process Url Async
@@ -25,12 +27,14 @@ namespace G
         /// <param name="target">
         /// Default Value: {"kind":"inbody"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TaskStatusResponse> ProcessUrlAsyncV1ConvertSourceAsyncPostAsync(
             global::System.Collections.Generic.IList<global::G.SourcesItem> sources,
             global::G.ConvertDocumentsRequestOptions? options = default,
             global::G.Target? target = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

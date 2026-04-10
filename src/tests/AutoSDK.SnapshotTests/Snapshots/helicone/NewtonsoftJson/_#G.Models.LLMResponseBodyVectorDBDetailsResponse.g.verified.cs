@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LLMResponseBodyVectorDBDetailsResponseTypeJsonConverter))]
         public global::G.LLMResponseBodyVectorDBDetailsResponseType Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The type of the transfer.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferOptionColdTransferTypeJsonConverter))]
         public global::G.TransferOptionColdTransferType Type { get; set; }
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace G
         /// Default Value: sip_invite
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cold_transfer_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferOptionColdTransferColdTransferModeJsonConverter))]
         public global::G.TransferOptionColdTransferColdTransferMode? ColdTransferMode { get; set; }
 
         /// <summary>

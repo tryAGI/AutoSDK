@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelParamsOpenAIModelParamsToolChoiceFunctionTypeJsonConverter))]
         public global::G.ModelParamsOpenAIModelParamsToolChoiceFunctionType Type { get; set; }
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace G
         /// Default Value: AND
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels_filter_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LibraryAnswerRequestLabelsFilterModeJsonConverter))]
         public global::G.LibraryAnswerRequestLabelsFilterMode? LabelsFilterMode { get; set; }
 
         /// <summary>
@@ -55,18 +56,21 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("answerLength")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnswerLengthJsonConverter))]
         public global::G.AnswerLength? AnswerLength { get; set; }
 
         /// <summary>
         /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModeJsonConverter))]
         public global::G.Mode? Mode { get; set; }
 
         /// <summary>
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retrievalStrategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RetrievalStrategyJsonConverter))]
         public global::G.RetrievalStrategy? RetrievalStrategy { get; set; }
 
         /// <summary>

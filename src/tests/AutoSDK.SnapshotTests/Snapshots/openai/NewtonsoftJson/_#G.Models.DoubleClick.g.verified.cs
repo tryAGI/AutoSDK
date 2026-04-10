@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.DoubleClickType.DoubleClick</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DoubleClickTypeJsonConverter))]
         public global::G.DoubleClickType Type { get; set; } = global::G.DoubleClickType.DoubleClick;
 
         /// <summary>

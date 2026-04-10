@@ -16,11 +16,13 @@ namespace G
         /// Validate a specific Databricks Files import storage connection.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ValidateAsync(
 
             global::G.DatabricksImportStorageRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Validate Databricks import storage<br/>
@@ -123,6 +125,7 @@ namespace G
         /// <param name="volume">
         /// UC volume name
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task ValidateAsync(
@@ -154,6 +157,7 @@ namespace G
             string? traceback = default,
             bool? useBlobUrls = default,
             bool? verifyTls = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

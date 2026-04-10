@@ -9,11 +9,13 @@ namespace G
         /// Create Call
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OneOf<global::G.Call, global::G.CallBatchResponse>> CallControllerCreateAsync(
 
             global::G.CreateCallDTO request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Call
@@ -99,6 +101,7 @@ namespace G
         /// This is the customer that will be called. To call an existing customer, use `customerId` instead.<br/>
         /// Only relevant for `outboundPhoneCall` and `inboundPhoneCall` type.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.OneOf<global::G.Call, global::G.CallBatchResponse>> CallControllerCreateAsync(
@@ -119,6 +122,7 @@ namespace G
             global::G.ImportTwilioPhoneNumberDTO? phoneNumber = default,
             string? customerId = default,
             global::G.CreateCustomerDTO? customer = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

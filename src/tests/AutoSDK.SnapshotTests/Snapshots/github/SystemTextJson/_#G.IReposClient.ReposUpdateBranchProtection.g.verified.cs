@@ -18,6 +18,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="branch"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProtectedBranch> ReposUpdateBranchProtectionAsync(
@@ -26,6 +27,7 @@ namespace G
             string branch,
 
             global::G.ReposUpdateBranchProtectionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update branch protection<br/>
@@ -74,6 +76,7 @@ namespace G
         /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProtectedBranch> ReposUpdateBranchProtectionAsync(
@@ -91,6 +94,7 @@ namespace G
             bool? requiredConversationResolution = default,
             bool? lockBranch = default,
             bool? allowForkSyncing = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -14,12 +14,14 @@ namespace G
         /// Example: trs_LX9uJKBinWWr
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostToolRouterSessionBySessionIdExecuteResponse> PostToolRouterSessionBySessionIdExecuteAsync(
             string? sessionId,
 
             global::G.PostToolRouterSessionBySessionIdExecuteRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Execute a tool within a tool router session<br/>
@@ -42,6 +44,7 @@ namespace G
         /// Account identifier to specify which connected account to use. Use the account ID (e.g. "coup_hurricane_dal_analytical") or an alias. When omitted with a single account, the default is used. When omitted with multiple accounts, an error lists available accounts.<br/>
         /// Example: coup_hurricane_dal_analytical
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostToolRouterSessionBySessionIdExecuteResponse> PostToolRouterSessionBySessionIdExecuteAsync(
@@ -49,6 +52,7 @@ namespace G
             string toolSlug,
             global::System.Collections.Generic.Dictionary<string, object?>? arguments = default,
             string? account = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -12,6 +12,7 @@ namespace G
         /// <param name="tenant"></param>
         /// <param name="database"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -22,6 +23,7 @@ namespace G
             string database,
 
             global::G.CreateCollectionPayload request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create collection<br/>
@@ -34,6 +36,7 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="name"></param>
         /// <param name="schema"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Collection> CreateCollectionAsync(
@@ -44,6 +47,7 @@ namespace G
             bool? getOrCreate = default,
             global::G.OneOf<object, global::G.HashMap>? metadata = default,
             global::G.OneOf<object, global::G.Schema3>? schema = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

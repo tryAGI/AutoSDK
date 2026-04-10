@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.InputImageContentType.InputImage</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputImageContentTypeJsonConverter))]
         public global::G.InputImageContentType Type { get; set; } = global::G.InputImageContentType.InputImage;
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace G
         /// The detail level of the image to be sent to the model. One of `high`, `low`, or `auto`. Defaults to `auto`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputImageContentDetailJsonConverter))]
         public global::G.InputImageContentDetail Detail { get; set; } = default!;
 
         /// <summary>

@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Invocation> FunctionsInvokeAsync(
             global::System.Guid id,
 
             global::G.FunctionsInvokeRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Invoke a Function
@@ -25,12 +27,14 @@ namespace G
         /// JSON object that can be stored in a JSONB column
         /// </param>
         /// <param name="sessionCreateParams"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Invocation> FunctionsInvokeAsync(
             global::System.Guid id,
             object? @params = default,
             global::G.FunctionsInvokeRequestSessionCreateParams? sessionCreateParams = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

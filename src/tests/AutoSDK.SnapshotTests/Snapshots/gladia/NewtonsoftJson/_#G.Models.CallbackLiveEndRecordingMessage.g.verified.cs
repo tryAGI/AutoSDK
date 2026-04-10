@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLiveEndRecordingMessageEvent.LiveEndRecording</default>
         /// <example>live.end_recording</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLiveEndRecordingMessageEventJsonConverter))]
         public global::G.CallbackLiveEndRecordingMessageEvent Event { get; set; } = global::G.CallbackLiveEndRecordingMessageEvent.LiveEndRecording;
 
         /// <summary>

@@ -72,7 +72,7 @@ components:
         var polyfillCode = Sources.Polyfills((CSharpSettings)createPersonMethod.Settings).Text;
 
         createPersonMethodCode.Should().Contain("AutoSdkPolyfills.CreateJsonContent(");
-        getFlagMethodCode.Should().Contain("AutoSdkPolyfills.ReadFromJsonAsync<bool?>(__response.Content, JsonSerializerOptions, cancellationToken)");
+        getFlagMethodCode.Should().Contain("AutoSdkPolyfills.ReadFromJsonAsync<bool?>(__response.Content, JsonSerializerOptions, __effectiveCancellationToken)");
         polyfillCode.Should().Contain("global::System.Net.Http.Json.JsonContent.Create(");
         polyfillCode.Should().Contain("global::System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync");
     }

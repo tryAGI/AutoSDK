@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "tool-calls" is sent to call a tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageToolCallsTypeJsonConverter))]
         public global::G.ClientMessageToolCallsType? Type { get; set; }
 
         /// <summary>

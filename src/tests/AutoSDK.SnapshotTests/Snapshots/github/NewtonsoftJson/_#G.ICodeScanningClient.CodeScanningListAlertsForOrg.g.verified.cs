@@ -38,6 +38,7 @@ namespace G
         /// <param name="severity">
         /// Severity of a code scanning alert.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeScanningOrganizationAlertItems>> CodeScanningListAlertsForOrgAsync(
@@ -52,6 +53,7 @@ namespace G
             global::G.CodeScanningAlertStateQuery? state = default,
             global::G.CodeScanningListAlertsForOrgSort? sort = default,
             global::G.CodeScanningAlertSeverity? severity = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List code scanning alerts for an organization<br/>
@@ -86,6 +88,7 @@ namespace G
         /// <param name="severity">
         /// Severity of a code scanning alert.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.CodeScanningOrganizationAlertItems>>> CodeScanningListAlertsForOrgAsResponseAsync(
@@ -100,6 +103,7 @@ namespace G
             global::G.CodeScanningAlertStateQuery? state = default,
             global::G.CodeScanningListAlertsForOrgSort? sort = default,
             global::G.CodeScanningAlertSeverity? severity = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

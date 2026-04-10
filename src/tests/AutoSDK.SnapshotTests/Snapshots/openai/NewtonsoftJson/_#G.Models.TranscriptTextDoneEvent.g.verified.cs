@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `transcript.text.done`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptTextDoneEventTypeJsonConverter))]
         public global::G.TranscriptTextDoneEventType Type { get; set; }
 
         /// <summary>

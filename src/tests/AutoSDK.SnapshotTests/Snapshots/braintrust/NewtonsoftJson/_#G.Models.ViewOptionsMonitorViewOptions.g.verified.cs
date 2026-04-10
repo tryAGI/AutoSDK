@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("viewType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ViewOptionsMonitorViewOptionsViewTypeJsonConverter))]
         public global::G.ViewOptionsMonitorViewOptionsViewType ViewType { get; set; }
 
         /// <summary>

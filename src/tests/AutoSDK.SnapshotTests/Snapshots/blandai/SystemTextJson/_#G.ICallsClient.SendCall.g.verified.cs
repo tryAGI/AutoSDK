@@ -10,11 +10,13 @@ namespace G
         /// Send an AI phone call with a custom objective and actions. Requires either a `task` (prompt) or `pathway_id`.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.SendCallResponse> SendCallAsync(
 
             global::G.SendCallRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Send Call<br/>
@@ -133,6 +135,7 @@ namespace G
         /// <param name="precallDtmfSequence">
         /// DTMF digits played before call starts (0-9, *,
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.SendCallResponse> SendCallAsync(
@@ -171,6 +174,7 @@ namespace G
             global::System.Collections.Generic.IList<object>? dynamicData = default,
             bool? ignoreButtonPress = default,
             string? precallDtmfSequence = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -18,6 +18,7 @@ namespace G
         /// </summary>
         /// <example>raw</example>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InsightRunFormatPlanFormatJsonConverter))]
         public global::G.InsightRunFormatPlanFormat? Format { get; set; }
 
         /// <summary>

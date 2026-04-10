@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSocketResponseVariant1TypeJsonConverter))]
         public global::G.WebSocketResponseVariant1Type Type { get; set; }
 
         /// <summary>

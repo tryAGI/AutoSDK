@@ -19,6 +19,7 @@ namespace G
         /// LEARNER_GROUP: An LMS learner group (cohort) entity
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TargetTypeJsonConverter))]
         public global::G.TargetType Type { get; set; } = default!;
 
         /// <summary>

@@ -16,6 +16,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("to", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookMemberAddedChangesPermissionToJsonConverter))]
         public global::G.WebhookMemberAddedChangesPermissionTo To { get; set; } = default!;
 
         /// <summary>

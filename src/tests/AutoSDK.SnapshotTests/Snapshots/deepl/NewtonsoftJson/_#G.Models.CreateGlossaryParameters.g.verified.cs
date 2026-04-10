@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>en</example>
         [global::Newtonsoft.Json.JsonProperty("source_lang", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GlossarySourceLanguageJsonConverter))]
         public global::G.GlossarySourceLanguage SourceLang { get; set; } = default!;
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// </summary>
         /// <example>de</example>
         [global::Newtonsoft.Json.JsonProperty("target_lang", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GlossaryTargetLanguageJsonConverter))]
         public global::G.GlossaryTargetLanguage TargetLang { get; set; } = default!;
 
         /// <summary>
@@ -52,6 +54,7 @@ namespace G
         /// <default>global::G.CreateGlossaryParametersEntriesFormat.Tsv</default>
         /// <example>tsv</example>
         [global::Newtonsoft.Json.JsonProperty("entries_format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateGlossaryParametersEntriesFormatJsonConverter))]
         public global::G.CreateGlossaryParametersEntriesFormat EntriesFormat { get; set; } = default!;
 
         /// <summary>

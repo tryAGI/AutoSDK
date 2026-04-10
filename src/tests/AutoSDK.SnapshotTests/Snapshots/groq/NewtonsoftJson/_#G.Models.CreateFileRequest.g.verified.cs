@@ -26,6 +26,7 @@ namespace G
         /// Use "batch" for [Batch API](/docs/api-reference#batches).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateFileRequestPurposeJsonConverter))]
         public global::G.CreateFileRequestPurpose Purpose { get; set; }
 
         /// <summary>

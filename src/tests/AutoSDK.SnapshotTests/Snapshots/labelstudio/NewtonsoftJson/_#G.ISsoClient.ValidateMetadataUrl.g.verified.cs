@@ -16,11 +16,13 @@ namespace G
         /// Validate a SAML metadata URL by fetching it and checking whether it returns valid XML, without saving any settings.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ValidateSamlMetadataUrlResponse> ValidateMetadataUrlAsync(
 
             global::G.ValidateSamlMetadataUrlRequestRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Validate SAML Metadata URL<br/>
@@ -33,10 +35,12 @@ namespace G
         /// Validate a SAML metadata URL by fetching it and checking whether it returns valid XML, without saving any settings.
         /// </summary>
         /// <param name="metadataUrl"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ValidateSamlMetadataUrlResponse> ValidateMetadataUrlAsync(
             string metadataUrl,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

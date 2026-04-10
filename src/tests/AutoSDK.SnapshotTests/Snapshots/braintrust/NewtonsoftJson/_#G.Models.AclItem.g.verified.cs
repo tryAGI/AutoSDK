@@ -15,6 +15,7 @@ namespace G
         /// The object type that the ACL applies to
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AclObjectTypeJsonConverter))]
         public global::G.AclObjectType ObjectType { get; set; } = default!;
 
         /// <summary>
@@ -40,12 +41,14 @@ namespace G
         /// Permissions can be assigned to to objects on an individual basis, or grouped into roles
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PermissionJsonConverter))]
         public global::G.Permission? Permission { get; set; }
 
         /// <summary>
         /// The object type that the ACL applies to
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("restrict_object_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AclObjectTypeJsonConverter))]
         public global::G.AclObjectType? RestrictObjectType { get; set; }
 
         /// <summary>

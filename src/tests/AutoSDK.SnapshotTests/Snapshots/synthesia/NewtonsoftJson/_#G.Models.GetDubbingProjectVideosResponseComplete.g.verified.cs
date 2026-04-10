@@ -20,6 +20,7 @@ namespace G
         /// Default Value: complete
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetDubbingProjectVideosResponseCompleteStatusJsonConverter))]
         public global::G.GetDubbingProjectVideosResponseCompleteStatus? Status { get; set; }
 
         /// <summary>

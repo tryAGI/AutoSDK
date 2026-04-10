@@ -13,12 +13,14 @@ namespace G
         /// The ID of the provider in the format 'provider-&lt;uuid4&gt;'
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Provider> ModifyProviderAsync(
             string providerId,
 
             global::G.ProviderUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Modify Provider<br/>
@@ -42,6 +44,7 @@ namespace G
         /// <param name="apiVersion">
         /// API version used for requests to the provider.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Provider> ModifyProviderAsync(
@@ -51,6 +54,7 @@ namespace G
             string? region = default,
             string? baseUrl = default,
             string? apiVersion = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

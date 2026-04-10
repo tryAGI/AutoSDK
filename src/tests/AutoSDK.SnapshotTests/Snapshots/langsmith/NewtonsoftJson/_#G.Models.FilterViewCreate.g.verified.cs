@@ -43,6 +43,7 @@ namespace G
         /// Default Value: runs
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterViewTypeJsonConverter))]
         public global::G.FilterViewType? Type { get; set; }
 
         /// <summary>

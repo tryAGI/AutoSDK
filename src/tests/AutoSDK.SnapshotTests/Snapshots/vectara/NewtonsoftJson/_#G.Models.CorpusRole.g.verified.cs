@@ -19,6 +19,7 @@ namespace G
         /// The role assigned for this specific corpus.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CorpusRoleRoleJsonConverter))]
         public global::G.CorpusRoleRole Role { get; set; } = default!;
 
         /// <summary>

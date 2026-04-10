@@ -9,11 +9,13 @@ namespace G
         /// Create Session
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Session> SessionControllerCreateAsync(
 
             global::G.CreateSessionDTO request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Session
@@ -62,6 +64,7 @@ namespace G
         /// <param name="phoneNumber">
         /// This is the phone number configuration for this session.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Session> SessionControllerCreateAsync(
@@ -78,6 +81,7 @@ namespace G
             string? customerId = default,
             string? phoneNumberId = default,
             global::G.ImportTwilioPhoneNumberDTO? phoneNumber = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

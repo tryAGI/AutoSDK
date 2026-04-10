@@ -18,12 +18,14 @@ namespace G
         /// The ID of the data source to create a connector for
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DataSourceConnector> CreateConnectorAsync(
             global::System.Guid dataSourceId,
 
             global::G.DataSourceConnectorCreateParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new connector<br/>
@@ -57,6 +59,7 @@ namespace G
         /// - str: Duration string (e.g., '30m', '1h', '2d') or ISO 8601 format (e.g., 'PT30M', 'P1D')<br/>
         /// Valid range: 15 seconds to 30 days
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DataSourceConnector> CreateConnectorAsync(
@@ -66,6 +69,7 @@ namespace G
             bool? triggerSync = default,
             object? metadata = default,
             global::G.AnyOf<int?, string, object>? pollingInterval = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TestWebhookRequestDtoEventTypeJsonConverter))]
         public global::G.TestWebhookRequestDtoEventType EventType { get; set; }
 
         /// <summary>

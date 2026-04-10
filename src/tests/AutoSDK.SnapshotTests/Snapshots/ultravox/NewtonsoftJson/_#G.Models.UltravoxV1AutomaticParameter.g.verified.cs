@@ -19,12 +19,14 @@ namespace G
         /// Where the parameter is used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("location")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1AutomaticParameterLocationJsonConverter))]
         public global::G.UltravoxV1AutomaticParameterLocation? Location { get; set; }
 
         /// <summary>
         /// The value to set for the parameter.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("knownValue")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UltravoxV1AutomaticParameterKnownValueJsonConverter))]
         public global::G.UltravoxV1AutomaticParameterKnownValue? KnownValue { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Available LLM models for agents.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NullableLLMModelJsonConverter))]
         public global::G.NullableLLMModel? Model { get; set; }
 
         /// <summary>
@@ -21,6 +22,7 @@ namespace G
         /// </summary>
         /// <example>gpt-realtime-1.5</example>
         [global::Newtonsoft.Json.JsonProperty("s2s_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RetellLlmOverrideS2sModelJsonConverter))]
         public global::G.RetellLlmOverrideS2sModel? S2sModel { get; set; }
 
         /// <summary>
@@ -63,6 +65,7 @@ namespace G
         /// The speaker who starts the conversation. Required. Must be either 'user' or 'agent'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_speaker")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RetellLlmOverrideStartSpeakerJsonConverter))]
         public global::G.RetellLlmOverrideStartSpeaker? StartSpeaker { get; set; }
 
         /// <summary>

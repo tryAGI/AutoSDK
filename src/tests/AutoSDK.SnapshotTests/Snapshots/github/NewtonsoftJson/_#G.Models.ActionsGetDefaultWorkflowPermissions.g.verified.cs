@@ -13,6 +13,7 @@ namespace G
         /// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_workflow_permissions", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ActionsDefaultWorkflowPermissionsJsonConverter))]
         public global::G.ActionsDefaultWorkflowPermissions DefaultWorkflowPermissions { get; set; } = default!;
 
         /// <summary>

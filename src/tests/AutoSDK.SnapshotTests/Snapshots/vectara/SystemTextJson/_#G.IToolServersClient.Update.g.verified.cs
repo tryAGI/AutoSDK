@@ -15,6 +15,7 @@ namespace G
         /// Example: tsr_rag_search
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ToolServer> UpdateAsync(
@@ -23,6 +24,7 @@ namespace G
             global::G.UpdateToolServerRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update tool server<br/>
@@ -63,6 +65,7 @@ namespace G
         /// <param name="metadata">
         /// Arbitrary metadata associated with the tool server.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ToolServer> UpdateAsync(
@@ -77,6 +80,7 @@ namespace G
             global::G.RemoteAuth? auth = default,
             bool? enabled = default,
             object? metadata = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

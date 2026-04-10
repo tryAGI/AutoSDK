@@ -19,6 +19,7 @@ namespace G
         /// The type of API key. Can be either `user` or `service_account`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuditLogActorApiKeyTypeJsonConverter))]
         public global::G.AuditLogActorApiKeyType? Type { get; set; }
 
         /// <summary>

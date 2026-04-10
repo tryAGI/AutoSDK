@@ -38,6 +38,7 @@ namespace G
         /// Default Value: baseline
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("script")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScriptJsonConverter))]
         public global::G.Script? Script { get; set; }
 
         /// <summary>

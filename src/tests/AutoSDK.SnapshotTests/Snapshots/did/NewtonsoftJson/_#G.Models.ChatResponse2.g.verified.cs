@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chatMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatResponseChatMode2JsonConverter))]
         public global::G.ChatResponseChatMode2? ChatMode { get; set; }
 
         /// <summary>

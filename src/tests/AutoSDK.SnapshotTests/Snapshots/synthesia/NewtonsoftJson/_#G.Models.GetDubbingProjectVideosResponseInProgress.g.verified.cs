@@ -20,6 +20,7 @@ namespace G
         /// Default Value: in_progress
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetDubbingProjectVideosResponseInProgressStatusJsonConverter))]
         public global::G.GetDubbingProjectVideosResponseInProgressStatus? Status { get; set; }
 
         /// <summary>

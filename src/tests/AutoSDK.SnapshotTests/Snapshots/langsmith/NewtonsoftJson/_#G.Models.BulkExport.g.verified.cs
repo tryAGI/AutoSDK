@@ -37,12 +37,14 @@ namespace G
         /// Default Value: Parquet
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BulkExportFormatJsonConverter))]
         public global::G.BulkExportFormat? Format { get; set; }
 
         /// <summary>
         /// Default Value: gzip
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("compression")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BulkExportCompressionJsonConverter))]
         public global::G.BulkExportCompression? Compression { get; set; }
 
         /// <summary>
@@ -61,6 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BulkExportStatusJsonConverter))]
         public global::G.BulkExportStatus Status { get; set; } = default!;
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace G
         /// The role of the author of this message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionResponseMessageRoleJsonConverter))]
         public global::G.ChatCompletionResponseMessageRole Role { get; set; }
 
         /// <summary>

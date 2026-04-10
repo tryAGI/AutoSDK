@@ -13,6 +13,7 @@ namespace G
         /// The action that was performed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookIssuesClosedActionJsonConverter))]
         public global::G.WebhookIssuesClosedAction Action { get; set; }
 
         /// <summary>

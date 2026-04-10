@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionCallOutputItemTypeJsonConverter))]
         public global::G.FunctionCallOutputItemType Type { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolCallStatusEnumJsonConverter))]
         public global::G.ToolCallStatusEnum? Status { get; set; }
 
         /// <summary>

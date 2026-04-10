@@ -13,6 +13,7 @@ namespace G
         /// Type of target
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SimulationRunTargetSquadTypeJsonConverter))]
         public global::G.SimulationRunTargetSquadType Type { get; set; }
 
         /// <summary>

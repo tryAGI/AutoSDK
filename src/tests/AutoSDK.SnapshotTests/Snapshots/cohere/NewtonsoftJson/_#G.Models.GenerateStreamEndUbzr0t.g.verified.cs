@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FinishReasonJsonConverter))]
         public global::G.FinishReason? FinishReason { get; set; }
 
         /// <summary>

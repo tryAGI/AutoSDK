@@ -29,6 +29,7 @@ namespace G
         /// - deny: use only providers which do not collect user data.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_collection")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DataCollectionJsonConverter))]
         public global::G.DataCollection? DataCollection { get; set; }
 
         /// <summary>

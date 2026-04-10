@@ -16,6 +16,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="name"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ActionsSetSelectedReposForOrgVariableAsync(
@@ -23,6 +24,7 @@ namespace G
             string name,
 
             global::G.ActionsSetSelectedReposForOrgVariableRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set selected repositories for an organization variable<br/>
@@ -37,12 +39,14 @@ namespace G
         /// <param name="selectedRepositoryIds">
         /// The IDs of the repositories that can access the organization variable.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task ActionsSetSelectedReposForOrgVariableAsync(
             string org,
             string name,
             global::System.Collections.Generic.IList<int> selectedRepositoryIds,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

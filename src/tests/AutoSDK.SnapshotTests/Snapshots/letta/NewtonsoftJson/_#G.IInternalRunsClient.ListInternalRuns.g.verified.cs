@@ -89,6 +89,7 @@ namespace G
         /// <param name="endDate">
         /// Filter runs created on or before this date (ISO 8601 format).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Run>> ListInternalRunsAsync(
@@ -116,6 +117,7 @@ namespace G
             global::G.ListInternalRunsDurationOperator2? durationOperator = default,
             global::System.DateTime? startDate = default,
             global::System.DateTime? endDate = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -19,6 +19,7 @@ namespace G
         /// 回复模式
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reply_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PropertiesSuggestReplyInfoReplyModeJsonConverter))]
         public global::G.PropertiesSuggestReplyInfoReplyMode? ReplyMode { get; set; }
 
         /// <summary>

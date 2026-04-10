@@ -29,6 +29,7 @@ namespace G
         /// The health status of the service
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HealthServiceStatusJsonConverter))]
         public global::G.HealthServiceStatus Status { get; set; } = default!;
 
         /// <summary>

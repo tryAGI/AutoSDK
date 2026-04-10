@@ -19,6 +19,7 @@ namespace G
         /// Default Value: f-string
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UserMessageTemplateFormatJsonConverter))]
         public global::G.UserMessageTemplateFormat? TemplateFormat { get; set; }
 
         /// <summary>

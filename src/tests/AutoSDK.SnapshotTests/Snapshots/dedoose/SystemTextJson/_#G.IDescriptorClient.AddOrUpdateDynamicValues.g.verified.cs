@@ -10,11 +10,13 @@ namespace G
         /// AddOrUpdateDynamicValues
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> AddOrUpdateDynamicValuesAsync(
 
             global::G.AddOrUpdateDynamicValuesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// AddOrUpdateDynamicValues<br/>
@@ -25,6 +27,7 @@ namespace G
         /// <param name="setId"></param>
         /// <param name="descriptorId"></param>
         /// <param name="values"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> AddOrUpdateDynamicValuesAsync(
@@ -33,6 +36,7 @@ namespace G
             global::System.Guid setId,
             global::System.Guid descriptorId,
             global::System.Collections.Generic.IList<global::G.DynamicDescriptorValueDTO> values,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

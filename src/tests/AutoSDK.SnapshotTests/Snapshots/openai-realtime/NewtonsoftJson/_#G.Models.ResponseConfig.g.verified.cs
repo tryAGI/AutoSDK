@@ -25,12 +25,14 @@ namespace G
         /// The voice the model uses to respond.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseConfigVoiceJsonConverter))]
         public global::G.ResponseConfigVoice? Voice { get; set; }
 
         /// <summary>
         /// The format of input/output audio.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_audio_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AudioFormatJsonConverter))]
         public global::G.AudioFormat? OutputAudioFormat { get; set; }
 
         /// <summary>
@@ -43,6 +45,7 @@ namespace G
         /// How the model chooses tools.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseConfigToolChoiceJsonConverter))]
         public global::G.ResponseConfigToolChoice? ToolChoice { get; set; }
 
         /// <summary>

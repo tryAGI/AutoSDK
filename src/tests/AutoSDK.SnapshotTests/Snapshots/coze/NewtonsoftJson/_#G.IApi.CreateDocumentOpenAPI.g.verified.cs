@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="agwJsConv"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateDocumentOpenAPIResponse> CreateDocumentOpenAPIAsync(
             global::G.CreateDocumentOpenAPIAgwJsConv agwJsConv,
 
             global::G.CreateDocumentOpenAPIRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 创建知识库文件<br/>
@@ -29,6 +31,7 @@ namespace G
         /// 表格类型一次只能创建一个待创建的文档信息
         /// </param>
         /// <param name="formatType"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateDocumentOpenAPIResponse> CreateDocumentOpenAPIAsync(
@@ -37,6 +40,7 @@ namespace G
             string datasetId,
             global::System.Collections.Generic.IList<global::G.DocumentBase> documentBases,
             int formatType,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

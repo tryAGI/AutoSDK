@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="tunedModelId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Operation> TunedModelsCreateAsync(
 
             global::G.TunedModel request,
             string? tunedModelId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Creates a tuned model. Check intermediate tuning progress (if any) through the [google.longrunning.Operations] service. Access status and results through the Operations service. Example: GET /v1/tunedModels/az2mb0bpw6i/operations/000-111-222
@@ -48,6 +50,7 @@ namespace G
         /// <param name="readerProjectNumbers">
         /// Optional. List of project numbers that have read access to the tuned model.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Operation> TunedModelsCreateAsync(
@@ -61,6 +64,7 @@ namespace G
             int? topK = default,
             global::G.TuningTask? tuningTask = default,
             global::System.Collections.Generic.IList<string>? readerProjectNumbers = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

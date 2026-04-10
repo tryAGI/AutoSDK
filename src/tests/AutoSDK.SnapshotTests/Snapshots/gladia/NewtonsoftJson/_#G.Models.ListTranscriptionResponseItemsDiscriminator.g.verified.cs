@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("kind")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListTranscriptionResponseItemsDiscriminatorKindJsonConverter))]
         public global::G.ListTranscriptionResponseItemsDiscriminatorKind? Kind { get; set; }
 
         /// <summary>

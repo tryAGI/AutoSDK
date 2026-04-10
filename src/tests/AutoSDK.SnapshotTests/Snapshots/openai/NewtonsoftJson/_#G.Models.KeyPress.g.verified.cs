@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.KeyPressType.Keypress</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.KeyPressTypeJsonConverter))]
         public global::G.KeyPressType Type { get; set; } = global::G.KeyPressType.Keypress;
 
         /// <summary>

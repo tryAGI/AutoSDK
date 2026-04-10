@@ -13,6 +13,7 @@ namespace G
         /// The name of the model to fine-tune.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuneableModelJsonConverter))]
         public global::G.FineTuneableModel Model { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EquationConditionTypeJsonConverter))]
         public global::G.EquationConditionType Type { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EquationConditionOperatorJsonConverter))]
         public global::G.EquationConditionOperator Operator { get; set; } = default!;
 
         /// <summary>

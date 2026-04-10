@@ -37,12 +37,14 @@ namespace G
         /// Field to sort results by.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sort_by")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchRequestLogsRequestSortByJsonConverter))]
         public global::G.SearchRequestLogsRequestSortBy? SortBy { get; set; }
 
         /// <summary>
         /// Sort direction. Must be provided together with sort_by.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sort_order")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchRequestLogsRequestSortOrderJsonConverter))]
         public global::G.SearchRequestLogsRequestSortOrder? SortOrder { get; set; }
 
         /// <summary>

@@ -263,6 +263,62 @@ namespace {endPoint.Settings.Namespace}
         return $"{endPoint.NotAsyncMethodName}AsResponseAsync";
     }
 
+    private static string GetSendExpression(
+        EndPoint endPoint,
+        string requestVariableName,
+        string cancellationTokenVariableName)
+    {
+        var hasOAuth2Authorization = endPoint.Authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
+        var rootClassName = endPoint.Settings.ClassName.Replace(".", string.Empty);
+        var completionOption = $"global::System.Net.Http.HttpCompletionOption.{(endPoint.Stream
+            ? nameof(HttpCompletionOption.ResponseHeadersRead)
+            : nameof(HttpCompletionOption.ResponseContentRead))}";
+
+        return hasOAuth2Authorization
+            ? $@"global::{endPoint.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Helpers.SendAsync(
+                httpClient: HttpClient,
+                request: {requestVariableName},
+                completionOption: {completionOption},
+                authorizations: __authorizations,
+                oAuth2Coordinator: AutoSDKOAuth2State,
+                cancellationToken: {cancellationTokenVariableName})"
+            : $@"HttpClient.SendAsync(
+                request: {requestVariableName},
+                completionOption: {completionOption},
+                cancellationToken: {cancellationTokenVariableName})";
+    }
+
+    private static string GenerateHookInvocation(
+        EndPoint endPoint,
+        string methodName,
+        string helperMethodName,
+        string requestVariableName,
+        string responseExpression,
+        string exceptionExpression,
+        string attemptExpression,
+        string maxAttemptsExpression,
+        string willRetryExpression,
+        string cancellationTokenVariableName)
+    {
+        return $@"await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.{helperMethodName}Async(
+                            clientOptions: Options,
+                            context: global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: {endPoint.Id.ToCSharpStringLiteral()},
+                                methodName: {methodName.ToCSharpStringLiteral()},
+                                pathTemplate: {endPoint.Path.ToCSharpStringLiteral()},
+                                httpMethod: {endPoint.HttpMethod.Method.ToCSharpStringLiteral()},
+                                baseUri: BaseUri,
+                                request: {requestVariableName}!,
+                                response: {responseExpression},
+                                exception: {exceptionExpression},
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: {attemptExpression},
+                                maxAttempts: {maxAttemptsExpression},
+                                willRetry: {willRetryExpression},
+                                cancellationToken: {cancellationTokenVariableName})).ConfigureAwait(false);";
+    }
+
     private static string GetSuccessResponseBodyType(EndPoint endPoint)
     {
         if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
@@ -291,29 +347,14 @@ namespace {endPoint.Settings.Namespace}
                 request: request,")}
 {endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
+                requestOptions: requestOptions,
                 cancellationToken: cancellationToken".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     public static string GenerateMethod(
         EndPoint endPoint, bool isInterface = false, bool returnResponseWrapper = false)
     {
-        var hasOAuth2Authorization = endPoint.Authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
-        var rootClassName = endPoint.Settings.ClassName.Replace(".", string.Empty);
-        var completionOption = $"global::System.Net.Http.HttpCompletionOption.{(endPoint.Stream
-            ? nameof(HttpCompletionOption.ResponseHeadersRead)
-            : nameof(HttpCompletionOption.ResponseContentRead))}";
-        var sendExpression = hasOAuth2Authorization
-            ? $@"global::{endPoint.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Helpers.SendAsync(
-                httpClient: HttpClient,
-                request: __httpRequest,
-                completionOption: {completionOption},
-                authorizations: __authorizations,
-                oAuth2Coordinator: AutoSDKOAuth2State,
-                cancellationToken: cancellationToken)"
-            : $@"HttpClient.SendAsync(
-                request: __httpRequest,
-                completionOption: {completionOption},
-                cancellationToken: cancellationToken)";
+        var sendExpression = GetSendExpression(endPoint, "__httpRequest", "__effectiveCancellationToken");
         var taskType = returnResponseWrapper
             ? $"global::System.Threading.Tasks.Task<{GetResponseWrapperType(endPoint)}>"
             : endPoint.RawStream
@@ -331,11 +372,66 @@ namespace {endPoint.Settings.Namespace}
         var cancellationTokenAttribute = endPoint.EnumerableStream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
+        var beforeRequestHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnBeforeRequest",
+            requestVariableName: "__httpRequest",
+            responseExpression: "null",
+            exceptionExpression: "null",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterSuccessHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterSuccess",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attemptNumber",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterRetryableStatusHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "true",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterErrorStatusHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attemptNumber",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterExceptionHook = GenerateHookInvocation(
+            endPoint,
+            endPoint.MethodName,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "null",
+            exceptionExpression: "__exception",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "__willRetry",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
         var body = isInterface
             ? ";"
             : !returnResponseWrapper && ShouldGenerateResponseWrapperMethod(endPoint)
             ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
-                ? @$"
+            ? @$"
         {{
             await {GetResponseWrapperMethodName(endPoint)}(
 {GenerateMethodInvocationArguments(endPoint)}
@@ -381,83 +477,180 @@ namespace {endPoint.Settings.Namespace}
                 {x.Type.CSharpTypeWithoutNullability}.{y.Property} => ""{y.Value}"",").Inject()}
                 _ => throw new global::System.NotImplementedException(""Enum value not implemented.""),
             }};").Inject() : TrimmedLine)}
-{GeneratePathAndQuery(endPoint, authorizationVariableName: endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations")}
-            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: {GetHttpMethod(endPoint.HttpMethod)},
-                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+            using var __timeoutCancellationTokenSource = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: true);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {{
+{GeneratePathAndQuery(endPoint, authorizationVariableName: endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations").AddIndent(4)}
+                __path = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: {GetHttpMethod(endPoint.HttpMethod)},
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
 {           // Use HTTP/3.0 or HTTP/2.0 if available
             // https://learn.microsoft.com/en-us/dotnet/core/extensions/httpclient-http3#httpclient-settings
     TrimmedLine}
-            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
-            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 {(endPoint.Authorizations.Any(x => x is
     { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Header } or
     { Type: SecuritySchemeType.Http } or
     { Type: SecuritySchemeType.OAuth2 }) ? @$"
-            foreach (var __authorization in {(endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations")})
-            {{
-                if (__authorization.Type == ""{SecuritySchemeType.Http:G}"" ||
-                    __authorization.Type == ""{SecuritySchemeType.OAuth2:G}"")
+                foreach (var __authorization in {(endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations")})
                 {{
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }}
-                else if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
-                         __authorization.Location == ""{ParameterLocation.Header:G}"")
-                {{
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }}
-            }}" : TrimmedLine)}
+                    if (__authorization.Type == ""{SecuritySchemeType.Http:G}"" ||
+                        __authorization.Type == ""{SecuritySchemeType.OAuth2:G}"")
+                    {{
+                        __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                            scheme: __authorization.Name,
+                            parameter: __authorization.Value);
+                    }}
+                    else if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
+                             __authorization.Location == ""{ParameterLocation.Header:G}"")
+                    {{
+                        __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                    }}
+                }}" : TrimmedLine)}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
     .Select(x => $@"
-            __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? ".ToValueString()" : ".ToString()")});").Inject()}
+                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? ".ToValueString()" : ".ToString()")});").Inject()}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false })
     .Select(x => $@"
-            if ({x.ParameterName} != default)
-            {{
-                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
-            }}").Inject()}
+                if ({x.ParameterName} != default)
+                {{
+                    __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
+                }}").Inject()}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
-{GenerateCookieParameterHandling(endPoint)}
+{GenerateCookieParameterHandling(endPoint).AddIndent(4)}
  
-{GenerateRequestData(endPoint)}
+{GenerateRequestData(endPoint).AddIndent(4)}
+                global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
 
-            PrepareRequest(
-                client: HttpClient,
-                request: __httpRequest);
-            Prepare{endPoint.NotAsyncMethodName}Request(
-                httpClient: HttpClient,
-                httpRequestMessage: __httpRequest{endPoint.Parameters
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                Prepare{endPoint.NotAsyncMethodName}Request(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest{endPoint.Parameters
                     .Where(x => x.Location != null)
                     .Select(x => $@",
-                {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
-                request: request")});
+                    {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
+                    request: request")});
 
-            {(endPoint.RawStream ? "" : "using ")}var __response = await {sendExpression}.ConfigureAwait(false);
-{(endPoint.RawStream ? @"
+                return __httpRequest;
+            }}
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
             try
-            {" : TrimmedLine)}
+            {{
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {{
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    {beforeRequestHook}
+                    try
+                    {{
+                        __response = await {sendExpression}.ConfigureAwait(false);
+                    }}
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {{
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        {afterExceptionHook}
+                        if (!__willRetry)
+                        {{
+                            throw;
+                        }}
 
-            ProcessResponse(
-                client: HttpClient,
-                response: __response);
-            Process{endPoint.NotAsyncMethodName}Response(
-                httpClient: HttpClient,
-                httpResponseMessage: __response);
-{GenerateResponse(endPoint, wrapSuccessResponse: returnResponseWrapper)}
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }}
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {{
+                        {afterRetryableStatusHook}
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }}
+
+                    break;
+                }}
+
+                if (__response == null)
+                {{
+                    throw new global::System.InvalidOperationException(""No response received."");
+                }}
 {(endPoint.RawStream ? @"
-            }
-            catch
-            {
-                __response.Dispose();
-                throw;
-            }" : TrimmedLine)}
+                try
+                {" : @"
+                using (__response)
+                {")}
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                Process{endPoint.NotAsyncMethodName}Response(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {{
+                    {afterSuccessHook}
+                }}
+                else
+                {{
+                    {afterErrorStatusHook}
+                }}
+{GenerateResponse(endPoint, wrapSuccessResponse: returnResponseWrapper, cancellationTokenVariableName: "__effectiveCancellationToken", readResponseAsStringExpression: "__effectiveReadResponseAsString").AddIndent(4)}
+{(endPoint.RawStream ? @"
+                }
+                catch
+                {
+                    __response.Dispose();
+                    throw;
+                }" : @"
+                }")}
+            }}
+            finally
+            {{
+                __httpRequest?.Dispose();
+            }}
         }}";
 
         return $@" 
@@ -466,6 +659,7 @@ namespace {endPoint.Settings.Namespace}
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @" 
         /// <param name=""request""></param>")}
+        /// <param name=""requestOptions"">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>{(string.IsNullOrWhiteSpace(endPoint.Remarks) ? "" : $@"
         {endPoint.Remarks.ToXmlDocumentationRemarks(level: 8)}")}
@@ -477,6 +671,7 @@ namespace {endPoint.Settings.Namespace}
             {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
 {endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
+            global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
@@ -1033,21 +1228,23 @@ namespace {endPoint.Settings.Namespace}
     }
 
     private static string GenerateSystemNetHttpJsonReadCall(
-        EndPoint endPoint)
+        EndPoint endPoint,
+        string cancellationTokenVariableName)
     {
         var type = endPoint.SuccessResponse.Type.CSharpTypeWithNullabilityForValueTypes;
 
         if (endPoint.Settings.HasJsonSerializerContext())
         {
-            return $"await global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.ReadFromJsonAsync<{type}>(__response.Content, JsonSerializerContext, cancellationToken).ConfigureAwait(false)";
+            return $"await global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.ReadFromJsonAsync<{type}>(__response.Content, JsonSerializerContext, {cancellationTokenVariableName}).ConfigureAwait(false)";
         }
 
-        return $"await global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.ReadFromJsonAsync<{type}>(__response.Content, JsonSerializerOptions, cancellationToken).ConfigureAwait(false)";
+        return $"await global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.ReadFromJsonAsync<{type}>(__response.Content, JsonSerializerOptions, {cancellationTokenVariableName}).ConfigureAwait(false)";
     }
 
     private static string GenerateUnbufferedSuccessResponseHandling(
         EndPoint endPoint,
-        bool wrapSuccessResponse)
+        bool wrapSuccessResponse,
+        string cancellationTokenVariableName)
     {
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
 
@@ -1065,7 +1262,7 @@ namespace {endPoint.Settings.Namespace}
         {
             if (ShouldUseSystemNetHttpJsonForSuccessResponse(endPoint))
             {
-                var readCall = GenerateSystemNetHttpJsonReadCall(endPoint);
+                var readCall = GenerateSystemNetHttpJsonReadCall(endPoint, cancellationTokenVariableName);
 
                 return wrapSuccessResponse
                     ? $@" 
@@ -1082,7 +1279,7 @@ namespace {endPoint.Settings.Namespace}
                 ? $@" 
                     using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
 
@@ -1092,7 +1289,7 @@ namespace {endPoint.Settings.Namespace}
                 : $@" 
                     using var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
 
@@ -1113,7 +1310,7 @@ namespace {endPoint.Settings.Namespace}
             _ => "ByteArray",
         }}Async(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
 
@@ -1122,7 +1319,9 @@ namespace {endPoint.Settings.Namespace}
 
     public static string GenerateResponse(
         EndPoint endPoint,
-        bool wrapSuccessResponse = false)
+        bool wrapSuccessResponse = false,
+        string cancellationTokenVariableName = "cancellationToken",
+        string readResponseAsStringExpression = "ReadResponseAsString")
     {
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
 
@@ -1140,7 +1339,7 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
                 }}
@@ -1163,12 +1362,12 @@ namespace {endPoint.Settings.Namespace}
 
             using var __stream = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
-                cancellationToken
+                {cancellationTokenVariableName}
 #endif
             ).ConfigureAwait(false);
 
             await foreach (var __sseEvent in global::System.Net.ServerSentEvents.SseParser
-                .Create(__stream).EnumerateAsync(cancellationToken))
+                .Create(__stream).EnumerateAsync({cancellationTokenVariableName}))
             {{
                 var __content = __sseEvent.Data;
 {(!string.IsNullOrEmpty(endPoint.StreamTerminator)
@@ -1204,7 +1403,7 @@ namespace {endPoint.Settings.Namespace}
             var __contentBuilder = new global::System.Text.StringBuilder();
             var __characterBuffer = new char[1];
 
-            while (!cancellationToken.IsCancellationRequested)
+            while (!{cancellationTokenVariableName}.IsCancellationRequested)
             {{
                 var __read = await __reader.ReadAsync(__characterBuffer, 0, 1).ConfigureAwait(false);
                 if (__read == 0)
@@ -1268,7 +1467,7 @@ namespace {endPoint.Settings.Namespace}
                 : $@"
             using var __reader = new global::System.IO.StreamReader(__stream);
 
-            while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)
+            while (!__reader.EndOfStream && !{cancellationTokenVariableName}.IsCancellationRequested)
             {{
                 var __content = await __reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
                 if (global::System.String.IsNullOrWhiteSpace(__content))
@@ -1303,7 +1502,7 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
                 }}
@@ -1326,7 +1525,7 @@ namespace {endPoint.Settings.Namespace}
 
             using var __stream = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
-                cancellationToken
+                {cancellationTokenVariableName}
 #endif
             ).ConfigureAwait(false);
 {streamReadLoop}
@@ -1355,15 +1554,15 @@ namespace {endPoint.Settings.Namespace}
                 {x.Type.CSharpTypeWithoutNullability}? __value_{x.StatusCode} = null;" : TrimmedLine)}
                 try
                 {{
-                    if (ReadResponseAsString)
+                    if ({readResponseAsStringExpression})
                     {{
-                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync({cancellationTokenVariableName}).ConfigureAwait(false);
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
                         __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
                     }}
                     else
                     {{
-                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync({cancellationTokenVariableName}).ConfigureAwait(false);
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@"
                         __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
                     }}
@@ -1400,7 +1599,7 @@ namespace {endPoint.Settings.Namespace}
 
                 var __content = await __response.Content.ReadAsStreamAsync(
 #if NET5_0_OR_GREATER
-                    cancellationToken
+                    {cancellationTokenVariableName}
 #endif
                 ).ConfigureAwait(false);
 
@@ -1418,7 +1617,7 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
-                        cancellationToken
+                        {cancellationTokenVariableName}
 #endif
                     ).ConfigureAwait(false);
                 }}
@@ -1443,7 +1642,7 @@ namespace {endPoint.Settings.Namespace}
 
         return @$"{errors}
 
-            if (ReadResponseAsString)
+            if ({readResponseAsStringExpression})
             {{
                 var __content = await __response.Content.ReadAs{endPoint.ContentType switch
         {
@@ -1452,7 +1651,7 @@ namespace {endPoint.Settings.Namespace}
             _ => "ByteArray",
         }}Async(
 #if NET5_0_OR_GREATER
-                    cancellationToken
+                    {cancellationTokenVariableName}
 #endif
                 ).ConfigureAwait(false);
 
@@ -1505,7 +1704,7 @@ namespace {endPoint.Settings.Namespace}
                 try
                 {{
                     __response.EnsureSuccessStatusCode();
-{GenerateUnbufferedSuccessResponseHandling(endPoint, wrapSuccessResponse)}
+{GenerateUnbufferedSuccessResponseHandling(endPoint, wrapSuccessResponse, cancellationTokenVariableName)}
                 }}
                 catch (global::System.Exception __ex)
                 {{
@@ -1514,7 +1713,7 @@ namespace {endPoint.Settings.Namespace}
                     {{
                         __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
-                            cancellationToken
+                            {cancellationTokenVariableName}
 #endif
                         ).ConfigureAwait(false);
                     }}
@@ -1550,7 +1749,7 @@ namespace {endPoint.Settings.Namespace}
         if (endPoint.IsMultipartFormData)
         {
             return $@" 
-            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
 {endPoint.Parameters.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
 {
     var isBinaryArray = x.Type.IsArray && !x.Type.SubTypes.IsEmpty && x.Type.SubTypes[0].Unbox<TypeData>().IsBinary;
@@ -1758,6 +1957,7 @@ namespace {endPoint.Settings.Namespace}
 {endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
                 request: __request,
+                requestOptions: requestOptions,
                 cancellationToken: cancellationToken){configureAwaitResponse};
 {(endPoint.EnumerableStream ? @"
             
@@ -1773,6 +1973,7 @@ namespace {endPoint.Settings.Namespace}
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {parameters.Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
+        /// <param name=""requestOptions"">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {GenerateEndPointAttributes(endPoint)}
@@ -1785,6 +1986,7 @@ namespace {endPoint.Settings.Namespace}
 {x.DisableDeprecationWarningIfRequired}
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},
 {x.DisableDeprecationWarningIfRequired}".TrimEnd()).Inject()}
+            global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }

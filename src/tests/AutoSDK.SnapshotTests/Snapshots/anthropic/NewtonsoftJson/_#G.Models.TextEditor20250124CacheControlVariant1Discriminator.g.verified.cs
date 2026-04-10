@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextEditor20250124CacheControlVariant1DiscriminatorTypeJsonConverter))]
         public global::G.TextEditor20250124CacheControlVariant1DiscriminatorType? Type { get; set; }
 
         /// <summary>

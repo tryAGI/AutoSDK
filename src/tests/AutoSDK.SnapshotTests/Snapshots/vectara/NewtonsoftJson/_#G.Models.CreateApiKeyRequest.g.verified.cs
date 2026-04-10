@@ -28,6 +28,7 @@ namespace G
         /// A personal API key has all the same permissions as the creator of the API key.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("api_key_role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiKeyRoleJsonConverter))]
         public global::G.ApiKeyRole? ApiKeyRole { get; set; }
 
         /// <summary>

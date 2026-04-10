@@ -31,6 +31,7 @@ namespace G
         /// Can be '#', '*', or an empty array.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delimiters")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.KeypadInputPlanDelimitersJsonConverter))]
         public global::G.KeypadInputPlanDelimiters? Delimiters { get; set; }
 
         /// <summary>

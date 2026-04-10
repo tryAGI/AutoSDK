@@ -13,12 +13,14 @@ namespace G
         /// The id of the conversation you're taking the action on.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> Create3Async(
             string conversationId,
 
             global::G.ConversationFeedbackRequestModel request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Send Conversation Feedback<br/>
@@ -30,11 +32,13 @@ namespace G
         /// <param name="feedback">
         /// Either 'like' or 'dislike' to indicate the feedback for the conversation.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> Create3Async(
             string conversationId,
             global::G.UserFeedbackScore? feedback = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

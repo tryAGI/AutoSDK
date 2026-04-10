@@ -13,12 +13,14 @@ namespace G
         /// This is the type of filter - currently only "oneOf" is supported
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PhoneNumberCallEndingHookFilterTypeJsonConverter))]
         public global::G.PhoneNumberCallEndingHookFilterType Type { get; set; }
 
         /// <summary>
         /// This is the key to filter on - only "call.endedReason" is allowed for phone number call ending hooks
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("key")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PhoneNumberCallEndingHookFilterKeyJsonConverter))]
         public global::G.PhoneNumberCallEndingHookFilterKey Key { get; set; }
 
         /// <summary>

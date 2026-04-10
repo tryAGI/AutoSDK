@@ -21,6 +21,7 @@ namespace G
         /// * `CUSTOM_SCRIPT` - Custom script
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reason", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasonEnumJsonConverter))]
         public global::G.ReasonEnum Reason { get; set; } = default!;
 
         /// <summary>

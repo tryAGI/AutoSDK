@@ -118,6 +118,7 @@ namespace G
         /// - `flex` uses the flex tier, which will succeed or fail quickly.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service_tier")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter))]
         public global::G.CreateChatCompletionRequestServiceTier? ServiceTier { get; set; }
 
         /// <summary>
@@ -136,6 +137,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionRequestReasoningEffortJsonConverter))]
         public global::G.CreateChatCompletionRequestReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
@@ -144,6 +146,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionRequestReasoningFormatJsonConverter))]
         public global::G.CreateChatCompletionRequestReasoningFormat? ReasoningFormat { get; set; }
 
         /// <summary>
@@ -271,6 +274,7 @@ namespace G
         /// Default Value: enabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("citation_options")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionRequestCitationOptionsJsonConverter))]
         public global::G.CreateChatCompletionRequestCitationOptions? CitationOptions { get; set; }
 
         /// <summary>

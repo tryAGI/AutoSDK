@@ -13,12 +13,14 @@ namespace G
         /// 模型的API协议
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("api_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PropertiesModelInfoConfigApiModeJsonConverter))]
         public global::G.PropertiesModelInfoConfigApiMode? ApiMode { get; set; }
 
         /// <summary>
         /// 缓存配置
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PropertiesModelInfoConfigCacheTypeJsonConverter))]
         public global::G.PropertiesModelInfoConfigCacheType? CacheType { get; set; }
 
         /// <summary>

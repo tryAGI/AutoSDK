@@ -13,6 +13,7 @@ namespace G
         /// The type of the input item. Always `input_text`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputTextTypeJsonConverter))]
         public global::G.InputTextType Type { get; set; }
 
         /// <summary>

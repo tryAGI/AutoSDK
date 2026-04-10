@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateExpressiveResponseDtoVariant2ObjectJsonConverter))]
         public global::G.CreateExpressiveResponseDtoVariant2Object Object { get; set; }
 
         /// <summary>

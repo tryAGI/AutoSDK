@@ -13,6 +13,7 @@ namespace G
         /// The visibility of newly created repositories for which the code security configuration will be applied to by default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_for_new_repos")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityDefaultConfigurationDefaultForNewReposJsonConverter))]
         public global::G.CodeSecurityDefaultConfigurationDefaultForNewRepos? DefaultForNewRepos { get; set; }
 
         /// <summary>

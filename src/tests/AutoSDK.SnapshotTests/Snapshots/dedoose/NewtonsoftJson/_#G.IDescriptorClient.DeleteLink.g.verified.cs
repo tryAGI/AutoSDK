@@ -10,11 +10,13 @@ namespace G
         /// DeleteLink
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> DeleteLinkAsync(
 
             global::G.DeleteLinkRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// DeleteLink<br/>
@@ -23,12 +25,14 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="resourceId"></param>
         /// <param name="descriptorId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> DeleteLinkAsync(
             global::System.Guid projectId,
             global::System.Guid resourceId,
             global::System.Guid descriptorId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

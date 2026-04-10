@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>forbidden</example>
         [global::Newtonsoft.Json.JsonProperty("error")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublishedProjectForbiddenErrorErrorJsonConverter))]
         public global::G.PublishedProjectForbiddenErrorError? Error { get; set; }
 
         /// <summary>

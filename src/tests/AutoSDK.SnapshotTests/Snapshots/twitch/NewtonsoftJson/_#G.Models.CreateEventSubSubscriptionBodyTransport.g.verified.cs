@@ -17,6 +17,7 @@ namespace G
         /// * conduit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("method", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEventSubSubscriptionBodyTransportMethodJsonConverter))]
         public global::G.CreateEventSubSubscriptionBodyTransportMethod Method { get; set; } = default!;
 
         /// <summary>

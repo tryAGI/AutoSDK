@@ -13,12 +13,14 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DoDubbingResponseModel> Create3Async(
 
             global::G.BodyDubAVideoOrAnAudioFileV1DubbingPost request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Dub A Video Or An Audio File<br/>
@@ -107,6 +109,7 @@ namespace G
         /// <param name="csvFps">
         /// Frames per second to use when parsing a CSV file for dubbing. If not provided, FPS will be inferred from timecodes.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DoDubbingResponseModel> Create3Async(
@@ -135,6 +138,7 @@ namespace G
             bool? disableVoiceCloning = default,
             global::G.BodyDubAVideoOrAnAudioFileV1DubbingPostMode? mode = default,
             double? csvFps = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

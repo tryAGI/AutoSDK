@@ -28,6 +28,7 @@ namespace G
         /// `tool_calls` if the model called a tool, or `function_call` (deprecated) if the model called a function.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionStreamResponseChoiceFinishReasonJsonConverter))]
         public global::G.CreateChatCompletionStreamResponseChoiceFinishReason? FinishReason { get; set; }
 
         /// <summary>

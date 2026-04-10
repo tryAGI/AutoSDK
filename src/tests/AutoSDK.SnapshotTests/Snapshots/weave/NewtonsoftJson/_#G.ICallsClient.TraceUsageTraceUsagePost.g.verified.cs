@@ -10,11 +10,13 @@ namespace G
         /// Compute per-call usage for a trace, with descendant rollup.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TraceUsageRes> TraceUsageTraceUsagePostAsync(
 
             global::G.TraceUsageReq request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Trace Usage<br/>
@@ -35,6 +37,7 @@ namespace G
         /// Maximum number of calls to process. Acts as a safety limit to prevent unbounded memory usage.<br/>
         /// Default Value: 10000
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TraceUsageRes> TraceUsageTraceUsagePostAsync(
@@ -43,6 +46,7 @@ namespace G
             global::G.Query? query = default,
             bool? includeCosts = default,
             int? limit = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

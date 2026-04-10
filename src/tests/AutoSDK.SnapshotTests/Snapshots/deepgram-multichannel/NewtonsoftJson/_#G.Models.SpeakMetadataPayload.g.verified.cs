@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpeakMetadataPayloadMessageTypeJsonConverter))]
         public global::G.SpeakMetadataPayloadMessageType MessageType { get; set; }
 
         /// <summary>

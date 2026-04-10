@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>=</example>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EventsTableStringConditionOperatorJsonConverter))]
         public global::G.EventsTableStringConditionOperator Operator { get; set; } = default!;
 
         /// <summary>

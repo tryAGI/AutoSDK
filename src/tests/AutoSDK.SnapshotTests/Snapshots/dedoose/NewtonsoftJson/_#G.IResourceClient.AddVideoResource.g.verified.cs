@@ -10,11 +10,13 @@ namespace G
         /// AddVideoResource
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> AddVideoResourceAsync(
 
             global::G.AddVideoResourceRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// AddVideoResource<br/>
@@ -25,6 +27,7 @@ namespace G
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="videoUploadURL"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> AddVideoResourceAsync(
@@ -33,6 +36,7 @@ namespace G
             string title,
             string description,
             string videoUploadURL,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

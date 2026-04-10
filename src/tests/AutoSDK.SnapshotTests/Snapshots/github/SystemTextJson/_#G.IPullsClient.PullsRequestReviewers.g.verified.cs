@@ -14,6 +14,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="pullNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestSimple> PullsRequestReviewersAsync(
@@ -22,6 +23,7 @@ namespace G
             int pullNumber,
 
             global::G.PullsRequestReviewersRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Request reviewers for a pull request<br/>
@@ -37,6 +39,7 @@ namespace G
         /// <param name="teamReviewers">
         /// An array of team `slug`s that will be requested.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestSimple> PullsRequestReviewersAsync(
@@ -45,6 +48,7 @@ namespace G
             int pullNumber,
             global::System.Collections.Generic.IList<string>? reviewers = default,
             global::System.Collections.Generic.IList<string>? teamReviewers = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

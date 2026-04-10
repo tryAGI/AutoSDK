@@ -13,6 +13,7 @@ namespace G
         /// The model to use for translation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranslationRequestModelJsonConverter))]
         public global::G.TranslationRequestModel Model { get; set; }
 
         /// <summary>

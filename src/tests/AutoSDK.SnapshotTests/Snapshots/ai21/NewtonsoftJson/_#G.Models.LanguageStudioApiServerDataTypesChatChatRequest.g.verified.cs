@@ -13,6 +13,7 @@ namespace G
         /// Name of this model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelNameJsonConverter))]
         public global::G.ModelName Model { get; set; } = default!;
 
         /// <summary>

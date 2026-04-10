@@ -13,6 +13,7 @@ namespace G
         /// This is the type of action - must be "say"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SayHookActionTypeJsonConverter))]
         public global::G.SayHookActionType Type { get; set; }
 
         /// <summary>

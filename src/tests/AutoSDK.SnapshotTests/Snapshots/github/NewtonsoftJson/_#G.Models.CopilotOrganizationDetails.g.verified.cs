@@ -19,36 +19,42 @@ namespace G
         /// The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("public_code_suggestions", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CopilotOrganizationDetailsPublicCodeSuggestionsJsonConverter))]
         public global::G.CopilotOrganizationDetailsPublicCodeSuggestions PublicCodeSuggestions { get; set; } = default!;
 
         /// <summary>
         /// The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ide_chat")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CopilotOrganizationDetailsIdeChatJsonConverter))]
         public global::G.CopilotOrganizationDetailsIdeChat? IdeChat { get; set; }
 
         /// <summary>
         /// The organization policy for allowing or disallowing organization members to use Copilot features within github.com.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("platform_chat")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CopilotOrganizationDetailsPlatformChatJsonConverter))]
         public global::G.CopilotOrganizationDetailsPlatformChat? PlatformChat { get; set; }
 
         /// <summary>
         /// The organization policy for allowing or disallowing organization members to use Copilot within their CLI.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cli")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CopilotOrganizationDetailsCliJsonConverter))]
         public global::G.CopilotOrganizationDetailsCli? Cli { get; set; }
 
         /// <summary>
         /// The mode of assigning new seats.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("seat_management_setting", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CopilotOrganizationDetailsSeatManagementSettingJsonConverter))]
         public global::G.CopilotOrganizationDetailsSeatManagementSetting SeatManagementSetting { get; set; } = default!;
 
         /// <summary>
         /// The Copilot plan of the organization, or the parent enterprise, when applicable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("plan_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CopilotOrganizationDetailsPlanTypeJsonConverter))]
         public global::G.CopilotOrganizationDetailsPlanType? PlanType { get; set; }
 
         /// <summary>

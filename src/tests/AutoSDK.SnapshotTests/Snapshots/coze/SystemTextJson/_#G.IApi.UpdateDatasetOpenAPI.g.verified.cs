@@ -15,12 +15,14 @@ namespace G
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateDatasetOpenAPIResponse> UpdateDatasetOpenAPIAsync(
             string datasetId,
 
             global::G.UpdateDatasetOpenAPIRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 修改知识库信息<br/>
@@ -34,6 +36,7 @@ namespace G
         /// <param name="description"></param>
         /// <param name="fileId"></param>
         /// <param name="name"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateDatasetOpenAPIResponse> UpdateDatasetOpenAPIAsync(
@@ -41,6 +44,7 @@ namespace G
             string name,
             string? description = default,
             string? fileId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

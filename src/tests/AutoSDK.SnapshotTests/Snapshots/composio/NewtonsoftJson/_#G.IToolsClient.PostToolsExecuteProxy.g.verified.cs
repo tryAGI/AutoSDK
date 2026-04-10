@@ -12,11 +12,13 @@ namespace G
         /// Proxy an HTTP request to a third-party API using connected account credentials. This endpoint allows making authenticated API calls to external services while abstracting away authentication details.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostToolsExecuteProxyResponse> PostToolsExecuteProxyAsync(
 
             global::G.PostToolsExecuteProxyRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Execute proxy request<br/>
@@ -45,6 +47,7 @@ namespace G
         /// Additional HTTP headers or query parameters to include in the request<br/>
         /// Example: [{"name":"x-api-key","value":"abc123def456","type":"header"}, {"name":"filter","value":"active","type":"query"}]
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostToolsExecuteProxyResponse> PostToolsExecuteProxyAsync(
@@ -54,6 +57,7 @@ namespace G
             object? body = default,
             global::G.AnyOf<global::G.PostToolsExecuteProxyRequestBinaryBodyVariant1, global::G.PostToolsExecuteProxyRequestBinaryBodyVariant2>? binaryBody = default,
             global::System.Collections.Generic.IList<global::G.PostToolsExecuteProxyRequestParameter>? parameters = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

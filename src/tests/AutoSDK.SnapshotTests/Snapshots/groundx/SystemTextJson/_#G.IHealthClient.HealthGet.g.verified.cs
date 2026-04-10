@@ -10,10 +10,12 @@ namespace G
         /// Look up the current health status of a specific service. Statuses update every 5 minutes.
         /// </summary>
         /// <param name="service"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.HealthResponse> HealthGetAsync(
             string service,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

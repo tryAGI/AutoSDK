@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnvironmentsSendModeChangeRequestModeJsonConverter))]
         public global::G.EnvironmentsSendModeChangeRequestMode Mode { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderElevenLabsType2JsonConverter))]
         public global::G.CreateClipRequestScriptVariant1ProviderElevenLabsType2 Type { get; set; }
 
         /// <summary>

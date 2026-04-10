@@ -43,6 +43,7 @@ namespace G
         /// Unit of usage in Langfuse
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("unit")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelUsageUnitJsonConverter))]
         public global::G.ModelUsageUnit? Unit { get; set; }
 
         /// <summary>

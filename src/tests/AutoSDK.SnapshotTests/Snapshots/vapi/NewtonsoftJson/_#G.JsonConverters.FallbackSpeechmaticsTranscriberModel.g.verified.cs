@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.FallbackSpeechmaticsTranscriberModel.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class FallbackSpeechmaticsTranscriberModelJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.FallbackSpeechmaticsTranscriberModel>
+    {
+        /// <inheritdoc />
+        public override global::G.FallbackSpeechmaticsTranscriberModel ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.FallbackSpeechmaticsTranscriberModel existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.FallbackSpeechmaticsTranscriberModelExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.FallbackSpeechmaticsTranscriberModel)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.FallbackSpeechmaticsTranscriberModel);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.FallbackSpeechmaticsTranscriberModel value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.FallbackSpeechmaticsTranscriberModelExtensions.ToValueString(value));
+        }
+    }
+}

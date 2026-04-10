@@ -47,6 +47,7 @@ namespace G
         /// </summary>
         /// <example>running</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassificationStatusJsonConverter))]
         public global::G.ClassificationStatus? Status { get; set; }
 
         /// <summary>

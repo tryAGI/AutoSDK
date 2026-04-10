@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreatePromptResponseObjectJsonConverter))]
         public global::G.CreatePromptResponseObject? Object { get; set; }
 
         /// <summary>

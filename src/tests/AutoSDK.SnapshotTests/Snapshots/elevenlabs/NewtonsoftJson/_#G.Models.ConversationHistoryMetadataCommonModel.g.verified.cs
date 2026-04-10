@@ -49,6 +49,7 @@ namespace G
         /// Default Value: public
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("authorization_method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthorizationMethodJsonConverter))]
         public global::G.AuthorizationMethod? AuthorizationMethod { get; set; }
 
         /// <summary>
@@ -128,6 +129,7 @@ namespace G
         /// Default Value: unknown
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conversation_initiation_source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationInitiationSourceJsonConverter))]
         public global::G.ConversationInitiationSource? ConversationInitiationSource { get; set; }
 
         /// <summary>
@@ -158,12 +160,14 @@ namespace G
         /// Default Value: unknown
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("agent_created_from")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentDefinitionSourceJsonConverter))]
         public global::G.AgentDefinitionSource? AgentCreatedFrom { get; set; }
 
         /// <summary>
         /// Default Value: unknown
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("agent_last_updated_from")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentDefinitionSourceJsonConverter))]
         public global::G.AgentDefinitionSource? AgentLastUpdatedFrom { get; set; }
 
         /// <summary>

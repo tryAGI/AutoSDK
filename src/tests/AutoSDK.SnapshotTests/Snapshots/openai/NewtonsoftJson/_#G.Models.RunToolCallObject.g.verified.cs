@@ -19,6 +19,7 @@ namespace G
         /// The type of tool call the output is required for. For now, this is always `function`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunToolCallObjectTypeJsonConverter))]
         public global::G.RunToolCallObjectType Type { get; set; }
 
         /// <summary>

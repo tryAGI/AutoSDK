@@ -18,6 +18,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="commentId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestReviewComment> PullsUpdateReviewCommentAsync(
@@ -26,6 +27,7 @@ namespace G
             long commentId,
 
             global::G.PullsUpdateReviewCommentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a review comment for a pull request<br/>
@@ -42,6 +44,7 @@ namespace G
         /// <param name="body">
         /// The text of the reply to the review comment.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestReviewComment> PullsUpdateReviewCommentAsync(
@@ -49,6 +52,7 @@ namespace G
             string repo,
             long commentId,
             string body,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

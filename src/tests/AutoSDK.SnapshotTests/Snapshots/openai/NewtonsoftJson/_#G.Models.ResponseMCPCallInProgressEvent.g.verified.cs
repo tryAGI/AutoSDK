@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always 'response.mcp_call.in_progress'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseMCPCallInProgressEventTypeJsonConverter))]
         public global::G.ResponseMCPCallInProgressEventType Type { get; set; }
 
         /// <summary>

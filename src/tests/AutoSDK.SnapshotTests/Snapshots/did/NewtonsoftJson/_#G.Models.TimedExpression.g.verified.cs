@@ -19,6 +19,7 @@ namespace G
         /// The expression to use
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expression", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TimedExpressionExpressionJsonConverter))]
         public global::G.TimedExpressionExpression Expression { get; set; } = default!;
 
         /// <summary>

@@ -22,6 +22,7 @@ namespace G
         /// - `image_generation`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolChoiceTypesTypeJsonConverter))]
         public global::G.ToolChoiceTypesType Type { get; set; } = default!;
 
         /// <summary>

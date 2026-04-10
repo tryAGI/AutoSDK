@@ -12,6 +12,7 @@ namespace G
         /// <param name="nanoid"></param>
         /// <param name="redirectUrl"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostConnectedAccountsByNanoidRefreshResponse> PostConnectedAccountsByNanoidRefreshAsync(
@@ -19,6 +20,7 @@ namespace G
 
             global::G.PostConnectedAccountsByNanoidRefreshRequest request,
             string? redirectUrl = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Refresh authentication for a connected account<br/>
@@ -31,6 +33,7 @@ namespace G
         /// [EXPERIMENTAL] Whether to validate the provided credentials, validates only for API Key Auth scheme<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostConnectedAccountsByNanoidRefreshResponse> PostConnectedAccountsByNanoidRefreshAsync(
@@ -38,6 +41,7 @@ namespace G
             string? redirectUrl = default,
             string? requestRedirectUrl = default,
             bool? validateCredentials = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

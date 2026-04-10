@@ -67,6 +67,7 @@ namespace G
         /// Default Value: workspace
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_scope")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AccessScopeJsonConverter))]
         public global::G.AccessScope? AccessScope { get; set; }
 
         /// <summary>

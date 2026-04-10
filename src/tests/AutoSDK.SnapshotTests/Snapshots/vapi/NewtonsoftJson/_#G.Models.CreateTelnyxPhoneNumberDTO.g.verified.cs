@@ -29,6 +29,7 @@ namespace G
         /// This is to use numbers bought on Telnyx.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTelnyxPhoneNumberDTOProviderJsonConverter))]
         public global::G.CreateTelnyxPhoneNumberDTOProvider Provider { get; set; }
 
         /// <summary>

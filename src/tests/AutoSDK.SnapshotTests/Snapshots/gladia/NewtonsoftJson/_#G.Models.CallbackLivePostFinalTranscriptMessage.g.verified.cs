@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLivePostFinalTranscriptMessageEvent.LivePostFinalTranscript</default>
         /// <example>live.post_final_transcript</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLivePostFinalTranscriptMessageEventJsonConverter))]
         public global::G.CallbackLivePostFinalTranscriptMessageEvent Event { get; set; } = global::G.CallbackLivePostFinalTranscriptMessageEvent.LivePostFinalTranscript;
 
         /// <summary>

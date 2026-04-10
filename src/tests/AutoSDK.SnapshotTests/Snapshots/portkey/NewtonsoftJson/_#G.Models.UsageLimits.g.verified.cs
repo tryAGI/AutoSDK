@@ -20,6 +20,7 @@ namespace G
         /// Type of credit limit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UsageLimitsTypeJsonConverter))]
         public global::G.UsageLimitsType? Type { get; set; }
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace G
         /// Reset the usage periodically.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("periodic_reset")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UsageLimitsPeriodicResetJsonConverter))]
         public global::G.UsageLimitsPeriodicReset? PeriodicReset { get; set; }
 
         /// <summary>

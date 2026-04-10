@@ -13,6 +13,7 @@ namespace G
         /// The STT provider to use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentRequestCustomSttConfigProviderJsonConverter))]
         public global::G.AgentRequestCustomSttConfigProvider Provider { get; set; } = default!;
 
         /// <summary>

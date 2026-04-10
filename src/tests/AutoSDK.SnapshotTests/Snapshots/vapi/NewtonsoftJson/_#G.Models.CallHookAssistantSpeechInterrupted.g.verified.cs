@@ -13,6 +13,7 @@ namespace G
         /// This is the event that triggers this hook
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("on")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallHookAssistantSpeechInterruptedOnJsonConverter))]
         public global::G.CallHookAssistantSpeechInterruptedOn On { get; set; }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_format[container]")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputFormatContainerJsonConverter))]
         public global::G.OutputFormatContainer? OutputFormatContainer { get; set; }
 
         /// <summary>
@@ -43,6 +44,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_format[encoding]")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RawEncodingJsonConverter))]
         public global::G.RawEncoding? OutputFormatEncoding { get; set; }
 
         /// <summary>

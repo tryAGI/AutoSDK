@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleUpdateTypeJsonConverter))]
         public global::G.RepositoryRuleUpdateType Type { get; set; }
 
         /// <summary>

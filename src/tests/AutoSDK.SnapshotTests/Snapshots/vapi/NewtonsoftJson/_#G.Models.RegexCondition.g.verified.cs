@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>regex</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RegexConditionTypeJsonConverter))]
         public global::G.RegexConditionType Type { get; set; }
 
         /// <summary>

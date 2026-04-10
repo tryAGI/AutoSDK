@@ -73,6 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("annotation_state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnnotationQueueItemSchemaAnnotationStateJsonConverter))]
         public global::G.AnnotationQueueItemSchemaAnnotationState AnnotationState { get; set; } = default!;
 
         /// <summary>

@@ -42,6 +42,7 @@ namespace G
         /// </summary>
         /// <example>active</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkflowStateJsonConverter))]
         public global::G.WorkflowState State { get; set; } = default!;
 
         /// <summary>

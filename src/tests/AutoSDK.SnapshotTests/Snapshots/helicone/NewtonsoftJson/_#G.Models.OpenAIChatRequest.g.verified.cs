@@ -79,12 +79,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIChatRequestReasoningEffortJsonConverter))]
         public global::G.OpenAIChatRequestReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verbosity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIChatRequestVerbosityJsonConverter))]
         public global::G.OpenAIChatRequestVerbosity? Verbosity { get; set; }
 
         /// <summary>

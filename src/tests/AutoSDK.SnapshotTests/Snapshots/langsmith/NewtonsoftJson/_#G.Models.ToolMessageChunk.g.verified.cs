@@ -61,6 +61,7 @@ namespace G
         /// Default Value: success
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolMessageChunkStatusJsonConverter))]
         public global::G.ToolMessageChunkStatus? Status { get; set; }
 
         /// <summary>

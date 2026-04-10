@@ -13,6 +13,7 @@ namespace G
         /// Default Value: SUCCESS
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BatchReferenceResponseVariant2ResultStatusJsonConverter))]
         public global::G.BatchReferenceResponseVariant2ResultStatus? Status { get; set; }
 
         /// <summary>

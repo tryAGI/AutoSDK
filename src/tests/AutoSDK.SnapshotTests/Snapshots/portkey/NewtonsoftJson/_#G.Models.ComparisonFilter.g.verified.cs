@@ -21,6 +21,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ComparisonFilterType.Eq</default>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComparisonFilterTypeJsonConverter))]
         public global::G.ComparisonFilterType Type { get; set; } = default!;
 
         /// <summary>

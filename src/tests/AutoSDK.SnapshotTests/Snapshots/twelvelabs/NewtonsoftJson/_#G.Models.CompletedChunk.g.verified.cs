@@ -25,6 +25,7 @@ namespace G
         /// The verification method. Supported value: `etag`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("proof_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompletedChunkProofTypeJsonConverter))]
         public global::G.CompletedChunkProofType ProofType { get; set; }
 
         /// <summary>

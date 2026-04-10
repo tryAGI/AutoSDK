@@ -50,6 +50,20 @@ public static partial class Sources
             Text: GenerateWebhookHttpFile(operations));
     }
 
+    public static FileWithName WebhooksHttpFile(
+        IReadOnlyList<OperationContext> operations,
+        CancellationToken cancellationToken = default)
+    {
+        if (operations == null || operations.Count == 0)
+        {
+            return FileWithName.Empty;
+        }
+
+        return new FileWithName(
+            Name: "webhooks.http",
+            Text: GenerateWebhookHttpFile(operations));
+    }
+
     public static FileWithName Class(
         ModelData modelData,
         CancellationToken cancellationToken = default)
@@ -405,6 +419,15 @@ public static partial class Sources
         return new FileWithName(
             Name: $"{settings.Namespace}.PathBuilder.g.cs",
             Text: GeneratePathBuilder(settings, cancellationToken: cancellationToken));
+    }
+
+    public static FileWithName OptionsSupport(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.OptionsSupport.g.cs",
+            Text: GenerateOptionsSupport(settings, cancellationToken: cancellationToken));
     }
 
     public static FileWithName SecuritySupport(

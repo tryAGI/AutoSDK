@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ModelInfoType.Model</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelInfoTypeJsonConverter))]
         public global::G.ModelInfoType Type { get; set; } = global::G.ModelInfoType.Model;
 
         /// <summary>

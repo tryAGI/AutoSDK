@@ -37,6 +37,7 @@ namespace G
         /// Trigger mode.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("triggerMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModeJsonConverter))]
         public global::G.Mode? TriggerMode { get; set; }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StatusJsonConverter))]
         public global::G.Status? Status { get; set; }
 
         /// <summary>

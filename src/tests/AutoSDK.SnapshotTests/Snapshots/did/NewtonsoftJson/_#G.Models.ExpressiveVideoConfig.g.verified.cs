@@ -21,6 +21,7 @@ namespace G
         /// </summary>
         /// <example>mp4</example>
         [global::Newtonsoft.Json.JsonProperty("result_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExpressiveVideoConfigResultFormatJsonConverter))]
         public global::G.ExpressiveVideoConfigResultFormat? ResultFormat { get; set; }
 
         /// <summary>

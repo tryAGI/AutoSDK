@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>COMPOSIO_MANAGE_CONNECTIONS</example>
         [global::Newtonsoft.Json.JsonProperty("slug", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostToolRouterSessionBySessionIdExecuteMetaRequestSlugJsonConverter))]
         public global::G.PostToolRouterSessionBySessionIdExecuteMetaRequestSlug Slug { get; set; } = default!;
 
         /// <summary>

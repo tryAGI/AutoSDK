@@ -34,6 +34,7 @@ namespace G
         /// </summary>
         /// <example>queued</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferResponseAttributesStatusJsonConverter))]
         public global::G.TransferResponseAttributesStatus? Status { get; set; }
 
         /// <summary>

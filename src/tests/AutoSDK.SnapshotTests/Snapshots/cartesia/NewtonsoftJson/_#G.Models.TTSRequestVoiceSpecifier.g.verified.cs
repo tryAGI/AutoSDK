@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TTSRequestVoiceSpecifierModeJsonConverter))]
         public global::G.TTSRequestVoiceSpecifierMode Mode { get; set; }
 
         /// <summary>

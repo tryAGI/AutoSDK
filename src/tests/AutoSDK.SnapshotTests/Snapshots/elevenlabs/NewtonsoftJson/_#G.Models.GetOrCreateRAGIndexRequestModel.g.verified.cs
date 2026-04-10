@@ -25,6 +25,7 @@ namespace G
         /// Embedding model to use for the RAG index
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingModelEnumJsonConverter))]
         public global::G.EmbeddingModelEnum Model { get; set; } = default!;
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.AuthTokenType.Noscheme</default>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthTokenTypeJsonConverter))]
         public global::G.AuthTokenType Type { get; set; } = default!;
 
         /// <summary>

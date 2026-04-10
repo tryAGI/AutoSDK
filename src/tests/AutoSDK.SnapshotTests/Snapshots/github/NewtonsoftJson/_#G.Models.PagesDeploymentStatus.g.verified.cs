@@ -13,6 +13,7 @@ namespace G
         /// The current status of the deployment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PagesDeploymentStatusStatusJsonConverter))]
         public global::G.PagesDeploymentStatusStatus? Status { get; set; }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("confirmation_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateObjectivesRequestConfirmationModeJsonConverter))]
         public global::G.CreateObjectivesRequestConfirmationMode? ConfirmationMode { get; set; }
 
         /// <summary>

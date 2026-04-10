@@ -19,6 +19,7 @@ namespace G
         /// Default Value: letta-code
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feature")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MetadataSendFeedbackRequestFeatureJsonConverter))]
         public global::G.MetadataSendFeedbackRequestFeature? Feature { get; set; }
 
         /// <summary>

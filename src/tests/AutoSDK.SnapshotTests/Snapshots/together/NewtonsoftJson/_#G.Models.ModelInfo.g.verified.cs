@@ -35,6 +35,7 @@ namespace G
         /// </summary>
         /// <example>chat</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelInfoTypeJsonConverter))]
         public global::G.ModelInfoType Type { get; set; } = default!;
 
         /// <summary>

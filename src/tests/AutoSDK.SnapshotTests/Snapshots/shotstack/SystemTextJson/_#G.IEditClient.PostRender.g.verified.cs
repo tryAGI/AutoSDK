@@ -23,11 +23,13 @@ namespace G
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.QueuedResponse> PostRenderAsync(
 
             global::G.Edit request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Render Asset<br/>
@@ -66,6 +68,7 @@ namespace G
         /// &lt;/ul&gt;<br/>
         /// Default Value: s1
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.QueuedResponse> PostRenderAsync(
@@ -74,6 +77,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.MergeField>? merge = default,
             string? callback = default,
             global::G.EditInstance? instance = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

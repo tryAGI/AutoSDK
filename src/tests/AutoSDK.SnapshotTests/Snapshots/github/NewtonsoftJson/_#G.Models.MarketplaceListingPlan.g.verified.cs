@@ -70,6 +70,7 @@ namespace G
         /// </summary>
         /// <example>FLAT_RATE</example>
         [global::Newtonsoft.Json.JsonProperty("price_model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MarketplaceListingPlanPriceModelJsonConverter))]
         public global::G.MarketplaceListingPlanPriceModel PriceModel { get; set; } = default!;
 
         /// <summary>

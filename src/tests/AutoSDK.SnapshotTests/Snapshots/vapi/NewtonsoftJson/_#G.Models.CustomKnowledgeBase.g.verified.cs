@@ -13,6 +13,7 @@ namespace G
         /// This knowledge base is bring your own knowledge base implementation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomKnowledgeBaseProviderJsonConverter))]
         public global::G.CustomKnowledgeBaseProvider Provider { get; set; }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// The resolution of the output image.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ratio", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextToImageRequestGen4ImageTurboRatioJsonConverter))]
         public global::G.CreateTextToImageRequestGen4ImageTurboRatio Ratio { get; set; } = default!;
 
         /// <summary>

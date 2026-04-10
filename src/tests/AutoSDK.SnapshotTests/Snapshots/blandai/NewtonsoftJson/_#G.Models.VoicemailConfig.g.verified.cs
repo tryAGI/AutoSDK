@@ -19,6 +19,7 @@ namespace G
         /// Action to take on voicemail detection
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoicemailConfigActionJsonConverter))]
         public global::G.VoicemailConfigAction? Action { get; set; }
 
         /// <summary>

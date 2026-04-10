@@ -55,6 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionStatusJsonConverter))]
         public global::G.SessionStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -79,6 +80,7 @@ namespace G
         /// The region where the Session is running.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionRegionJsonConverter))]
         public global::G.SessionRegion Region { get; set; } = default!;
 
         /// <summary>

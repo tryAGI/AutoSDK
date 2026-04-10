@@ -13,6 +13,7 @@ namespace G
         /// This is the type of filter - currently only "oneOf" is supported
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallHookFilterTypeJsonConverter))]
         public global::G.CallHookFilterType Type { get; set; }
 
         /// <summary>

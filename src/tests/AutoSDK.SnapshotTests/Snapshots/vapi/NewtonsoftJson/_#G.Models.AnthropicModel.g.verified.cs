@@ -39,12 +39,14 @@ namespace G
         /// The specific Anthropic/Claude model that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnthropicModelModelJsonConverter))]
         public global::G.AnthropicModelModel Model { get; set; } = default!;
 
         /// <summary>
         /// The provider identifier for Anthropic.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnthropicModelProviderJsonConverter))]
         public global::G.AnthropicModelProvider Provider { get; set; }
 
         /// <summary>

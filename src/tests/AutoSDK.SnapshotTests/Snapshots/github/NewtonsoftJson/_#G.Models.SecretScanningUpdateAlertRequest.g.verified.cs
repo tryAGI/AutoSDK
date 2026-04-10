@@ -13,12 +13,14 @@ namespace G
         /// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretScanningAlertStateJsonConverter))]
         public global::G.SecretScanningAlertState State { get; set; } = default!;
 
         /// <summary>
         /// **Required when the `state` is `resolved`.** The reason for resolving the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretScanningAlertResolutionJsonConverter))]
         public global::G.SecretScanningAlertResolution? Resolution { get; set; }
 
         /// <summary>

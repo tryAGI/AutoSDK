@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("recentTrend", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvaluatorStatsRecentTrendJsonConverter))]
         public global::G.EvaluatorStatsRecentTrend RecentTrend { get; set; } = default!;
 
         /// <summary>

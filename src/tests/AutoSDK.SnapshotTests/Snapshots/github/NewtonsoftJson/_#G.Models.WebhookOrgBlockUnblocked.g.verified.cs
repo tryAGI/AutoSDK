@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookOrgBlockUnblockedActionJsonConverter))]
         public global::G.WebhookOrgBlockUnblockedAction Action { get; set; }
 
         /// <summary>

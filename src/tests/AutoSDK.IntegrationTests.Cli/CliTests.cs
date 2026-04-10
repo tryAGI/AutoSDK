@@ -364,6 +364,64 @@ public class CliTests
     }
 
     [TestMethod]
+    public async Task Generate_WithRequestAndClientOptions_EmitsOptionsSupportAndBuilds()
+    {
+        const string spec = """
+                            openapi: 3.0.3
+                            info:
+                              title: Options
+                              version: 1.0.0
+                            paths:
+                              /search:
+                                get:
+                                  operationId: search
+                                  parameters:
+                                    - in: query
+                                      name: q
+                                      schema:
+                                        type: string
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: object
+                                            properties:
+                                              id:
+                                                type: string
+                            """;
+
+        await GenerateFromContentAsync(
+            fileName: "request-options.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "Generated.Options",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedFiles = Directory.GetFiles(outputDirectory, "*.cs", SearchOption.AllDirectories);
+                generatedFiles.Should().NotBeEmpty();
+
+                var combinedSource = string.Join(
+                    Environment.NewLine,
+                    await Task.WhenAll(generatedFiles.Select(path => File.ReadAllTextAsync(path))));
+
+                combinedSource.Should().Contain("public sealed class AutoSDKClientOptions");
+                combinedSource.Should().Contain("public sealed class AutoSDKRequestOptions");
+                combinedSource.Should().Contain("public interface IAutoSDKHook");
+                combinedSource.Should().Contain("public sealed class AutoSDKHookContext");
+                combinedSource.Should().Contain("global::Generated.Options.AutoSDKClientOptions? options = null");
+                combinedSource.Should().Contain("global::Generated.Options.AutoSDKRequestOptions? requestOptions = default");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.AppendQueryParameters(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.ApplyHeaders(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.GetMaxAttempts(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(");
+                combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.OnAfterErrorAsync(");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_BufModuleInput_ScaffoldsGrpcClientProject()
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());

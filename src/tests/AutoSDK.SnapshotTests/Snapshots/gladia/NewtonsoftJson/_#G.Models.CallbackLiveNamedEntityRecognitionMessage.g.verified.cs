@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLiveNamedEntityRecognitionMessageEvent.LiveNamedEntityRecognition</default>
         /// <example>live.named_entity_recognition</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLiveNamedEntityRecognitionMessageEventJsonConverter))]
         public global::G.CallbackLiveNamedEntityRecognitionMessageEvent Event { get; set; } = global::G.CallbackLiveNamedEntityRecognitionMessageEvent.LiveNamedEntityRecognition;
 
         /// <summary>

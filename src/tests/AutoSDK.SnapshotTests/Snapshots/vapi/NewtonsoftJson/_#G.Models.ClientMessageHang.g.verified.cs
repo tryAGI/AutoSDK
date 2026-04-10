@@ -23,6 +23,7 @@ namespace G
         /// - etc.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageHangTypeJsonConverter))]
         public global::G.ClientMessageHangType Type { get; set; }
 
         /// <summary>

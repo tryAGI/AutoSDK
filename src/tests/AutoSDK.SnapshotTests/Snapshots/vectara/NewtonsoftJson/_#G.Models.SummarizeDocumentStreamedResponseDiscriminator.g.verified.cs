@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummarizeDocumentStreamedResponseDiscriminatorTypeJsonConverter))]
         public global::G.SummarizeDocumentStreamedResponseDiscriminatorType? Type { get; set; }
 
         /// <summary>

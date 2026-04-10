@@ -25,6 +25,7 @@ namespace G
         /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metric", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomChartMetricJsonConverter))]
         public global::G.CustomChartMetric Metric { get; set; } = default!;
 
         /// <summary>

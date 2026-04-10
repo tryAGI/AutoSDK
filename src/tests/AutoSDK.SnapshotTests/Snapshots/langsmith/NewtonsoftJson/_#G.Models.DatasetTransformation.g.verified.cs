@@ -19,6 +19,7 @@ namespace G
         /// Enum for dataset data types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transformation_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetTransformationTypeJsonConverter))]
         public global::G.DatasetTransformationType TransformationType { get; set; } = default!;
 
         /// <summary>

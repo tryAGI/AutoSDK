@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `organization.invite`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InviteObjectJsonConverter))]
         public global::G.InviteObject Object { get; set; }
 
         /// <summary>
@@ -31,30 +32,35 @@ namespace G
         /// `owner` or `reader`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InviteRoleJsonConverter))]
         public global::G.InviteRole Role { get; set; } = default!;
 
         /// <summary>
         /// `accepted`,`expired`, or `pending`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InviteStatusJsonConverter))]
         public global::G.InviteStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite was sent.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("invited_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset InvitedAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite expires.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset ExpiresAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the invite was accepted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accepted_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? AcceptedAt { get; set; }
 
         /// <summary>

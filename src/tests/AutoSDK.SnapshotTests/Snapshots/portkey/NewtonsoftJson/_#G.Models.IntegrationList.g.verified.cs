@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IntegrationListStatusJsonConverter))]
         public global::G.IntegrationListStatus? Status { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IntegrationListObjectJsonConverter))]
         public global::G.IntegrationListObject? Object { get; set; }
 
         /// <summary>

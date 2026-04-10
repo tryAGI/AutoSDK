@@ -13,6 +13,7 @@ namespace G
         /// This is the transcription provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeepgramTranscriberProviderJsonConverter))]
         public global::G.DeepgramTranscriberProvider Provider { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// This is the language that will be set for the transcription. The list of languages Deepgram supports can be found here: https://developers.deepgram.com/docs/models-languages-overview
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeepgramTranscriberLanguageJsonConverter))]
         public global::G.DeepgramTranscriberLanguage? Language { get; set; }
 
         /// <summary>

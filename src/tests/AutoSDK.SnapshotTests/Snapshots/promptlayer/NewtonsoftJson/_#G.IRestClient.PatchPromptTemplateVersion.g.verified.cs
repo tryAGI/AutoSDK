@@ -13,12 +13,14 @@ namespace G
         /// The prompt template name or ID.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreatePromptTemplateResponse> PatchPromptTemplateVersionAsync(
             string identifier,
 
             global::G.PatchPromptTemplateVersion request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Patch Prompt Template Version<br/>
@@ -63,6 +65,7 @@ namespace G
         /// <param name="releaseLabels">
         /// Release labels to create or move to the newly created version (e.g. ['staging', 'production']).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreatePromptTemplateResponse> PatchPromptTemplateVersionAsync(
@@ -79,6 +82,7 @@ namespace G
             object? responseFormat = default,
             string? commitMessage = default,
             global::System.Collections.Generic.IList<string>? releaseLabels = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,7 @@ namespace G
         /// Default Value: mcp_call
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpCallContentTypeJsonConverter))]
         public global::G.McpCallContentType? Type { get; set; }
 
         /// <summary>

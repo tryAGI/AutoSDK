@@ -32,6 +32,7 @@ namespace G
         /// Default Value: python
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModalSandboxConfigLanguageJsonConverter))]
         public global::G.ModalSandboxConfigLanguage? Language { get; set; }
 
         /// <summary>

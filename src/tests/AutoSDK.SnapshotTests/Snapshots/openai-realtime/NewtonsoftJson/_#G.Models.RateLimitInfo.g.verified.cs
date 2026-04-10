@@ -13,6 +13,7 @@ namespace G
         /// The name of the rate limit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RateLimitInfoNameJsonConverter))]
         public global::G.RateLimitInfoName? Name { get; set; }
 
         /// <summary>

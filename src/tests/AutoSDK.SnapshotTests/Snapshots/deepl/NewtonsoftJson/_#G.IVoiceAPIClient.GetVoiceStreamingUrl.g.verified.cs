@@ -9,21 +9,25 @@ namespace G
         /// Get Streaming URL
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.VoiceStreamingResponse> GetVoiceStreamingUrlAsync(
 
             global::G.GetVoiceStreamingUrlRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Streaming URL
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.VoiceStreamingResponse>> GetVoiceStreamingUrlAsResponseAsync(
 
             global::G.GetVoiceStreamingUrlRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Streaming URL
@@ -64,6 +68,7 @@ namespace G
         /// Default Value: default<br/>
         /// Example: formal
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.VoiceStreamingResponse> GetVoiceStreamingUrlAsync(
@@ -73,6 +78,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? targetLanguages = default,
             string? glossaryId = default,
             global::G.VoiceFormality? formality = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

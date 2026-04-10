@@ -14,12 +14,14 @@ namespace G
         /// Example: 2025-04-16
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task TtsSseAsync(
             global::G.TtsSseCartesiaVersion cartesiaVersion,
 
             global::G.TTSSSERequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Text to Speech (SSE)
@@ -58,6 +60,7 @@ namespace G
         /// A unique identifier for the context. You can use any unique identifier, like a UUID or human ID.<br/>
         /// Some customers use unique identifiers from their own systems (such as conversation IDs) as context IDs.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task TtsSseAsync(
@@ -73,6 +76,7 @@ namespace G
             bool? useNormalizedTimestamps = default,
             string? pronunciationDictId = default,
             string? contextId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

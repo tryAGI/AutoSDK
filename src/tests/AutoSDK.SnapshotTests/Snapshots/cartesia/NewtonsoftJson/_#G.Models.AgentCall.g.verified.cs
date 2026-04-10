@@ -55,6 +55,7 @@ namespace G
         /// The status of an agent call.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentCallStatusJsonConverter))]
         public global::G.AgentCallStatus Status { get; set; } = default!;
 
         /// <summary>

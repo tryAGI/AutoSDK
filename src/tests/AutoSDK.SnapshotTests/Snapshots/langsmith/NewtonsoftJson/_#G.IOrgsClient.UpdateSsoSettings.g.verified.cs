@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.SSOProvider> UpdateSsoSettingsAsync(
             global::System.Guid id,
 
             global::G.SSOSettingsUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Sso Settings<br/>
@@ -27,6 +29,7 @@ namespace G
         /// <param name="defaultWorkspaceIds"></param>
         /// <param name="metadataUrl"></param>
         /// <param name="metadataXml"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.SSOProvider> UpdateSsoSettingsAsync(
@@ -35,6 +38,7 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? defaultWorkspaceIds = default,
             string? metadataUrl = default,
             string? metadataXml = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

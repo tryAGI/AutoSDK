@@ -17,6 +17,7 @@ namespace G
         /// Default Value: ai
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateStructuredOutputDTOTypeJsonConverter))]
         public global::G.CreateStructuredOutputDTOType? Type { get; set; }
 
         /// <summary>

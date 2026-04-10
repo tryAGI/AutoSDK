@@ -9,21 +9,25 @@ namespace G
         /// Request text improvement
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RephraseTextResponse> RephraseTextAsync(
 
             global::G.RephraseTextRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Request text improvement
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RephraseTextResponse>> RephraseTextAsResponseAsync(
 
             global::G.RephraseTextRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Request text improvement
@@ -53,6 +57,7 @@ namespace G
         /// Specify the desired tone for your text.<br/>
         /// The `prefer_` prefix allows falling back to the default tone if the language does not yet support tones.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RephraseTextResponse> RephraseTextAsync(
@@ -60,6 +65,7 @@ namespace G
             global::G.TargetLanguageWrite? targetLang = default,
             global::G.WritingStyle? writingStyle = default,
             global::G.WritingTone? tone = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

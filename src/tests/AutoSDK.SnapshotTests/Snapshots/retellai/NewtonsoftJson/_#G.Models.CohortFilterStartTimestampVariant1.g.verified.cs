@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("op")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CohortFilterStartTimestampVariant1OpJsonConverter))]
         public global::G.CohortFilterStartTimestampVariant1Op? Op { get; set; }
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="name"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ActionsUpdateRepoVariableAsync(
@@ -23,6 +24,7 @@ namespace G
             string name,
 
             global::G.ActionsUpdateRepoVariableRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a repository variable<br/>
@@ -39,6 +41,7 @@ namespace G
         /// <param name="value">
         /// The value of the variable.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task ActionsUpdateRepoVariableAsync(
@@ -47,6 +50,7 @@ namespace G
             string name,
             string? requestName = default,
             string? value = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

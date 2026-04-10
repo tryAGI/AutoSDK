@@ -13,6 +13,7 @@ namespace G
         /// Storage backend used for the file. If this is azure, use `x-ms-blob-type` header to set the blob type to `BlockBlob` while uploading the file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("storage_backend", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostFilesUploadRequestResponseMetadataStorageBackendJsonConverter))]
         public global::G.PostFilesUploadRequestResponseMetadataStorageBackend StorageBackend { get; set; } = default!;
 
         /// <summary>

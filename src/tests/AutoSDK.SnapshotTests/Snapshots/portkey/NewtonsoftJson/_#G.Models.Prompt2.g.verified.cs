@@ -61,6 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_version_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptPromptVersionStatusJsonConverter))]
         public global::G.PromptPromptVersionStatus? PromptVersionStatus { get; set; }
 
         /// <summary>

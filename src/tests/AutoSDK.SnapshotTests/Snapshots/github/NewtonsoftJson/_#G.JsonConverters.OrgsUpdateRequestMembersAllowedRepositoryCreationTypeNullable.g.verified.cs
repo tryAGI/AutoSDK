@@ -1,0 +1,73 @@
+﻿//HintName: G.JsonConverters.OrgsUpdateRequestMembersAllowedRepositoryCreationTypeNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class OrgsUpdateRequestMembersAllowedRepositoryCreationTypeNullableJsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.OrgsUpdateRequestMembersAllowedRepositoryCreationType?>
+    {
+        /// <inheritdoc />
+        public override global::G.OrgsUpdateRequestMembersAllowedRepositoryCreationType? ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.OrgsUpdateRequestMembersAllowedRepositoryCreationType? existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.OrgsUpdateRequestMembersAllowedRepositoryCreationTypeExtensions.ToEnum(stringValue);
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.OrgsUpdateRequestMembersAllowedRepositoryCreationType)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.OrgsUpdateRequestMembersAllowedRepositoryCreationType?);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.OrgsUpdateRequestMembersAllowedRepositoryCreationType? value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNull();
+            }
+            else
+            {
+                writer.WriteValue(global::G.OrgsUpdateRequestMembersAllowedRepositoryCreationTypeExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

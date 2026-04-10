@@ -11,6 +11,7 @@ namespace G
         /// </summary>
         /// <param name="graphId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -23,6 +24,7 @@ namespace G
             global::System.Guid graphId,
 
             global::G.UpdateGraphRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update graph<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="urls">
         /// An array of web connector URLs to update for this Knowledge Graph. You can only connect URLs to Knowledge Graphs with the type `web`. To clear the list of URLs, set this field to an empty array.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GraphResponse> UpdateGraphAsync(
@@ -45,6 +48,7 @@ namespace G
             string? name = default,
             string? description = default,
             global::System.Collections.Generic.IList<global::G.UpdateGraphWebUrl>? urls = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

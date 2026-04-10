@@ -23,6 +23,7 @@ namespace G
         /// - `expired`: The upload session has expired after 24 hours, and you must create a new session.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MultipartUploadStatusTypeJsonConverter))]
         public global::G.MultipartUploadStatusType Status { get; set; } = default!;
 
         /// <summary>

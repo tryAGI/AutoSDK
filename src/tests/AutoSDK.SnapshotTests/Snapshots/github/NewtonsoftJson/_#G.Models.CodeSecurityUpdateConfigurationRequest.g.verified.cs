@@ -25,18 +25,21 @@ namespace G
         /// The enablement status of GitHub Advanced Security
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("advanced_security")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestAdvancedSecurityJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestAdvancedSecurity? AdvancedSecurity { get; set; }
 
         /// <summary>
         /// The enablement status of Dependency Graph
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependency_graph")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestDependencyGraphJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestDependencyGraph? DependencyGraph { get; set; }
 
         /// <summary>
         /// The enablement status of Automatic dependency submission
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependency_graph_autosubmit_action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitActionJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitAction? DependencyGraphAutosubmitAction { get; set; }
 
         /// <summary>
@@ -49,54 +52,63 @@ namespace G
         /// The enablement status of Dependabot alerts
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_alerts")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestDependabotAlertsJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestDependabotAlerts? DependabotAlerts { get; set; }
 
         /// <summary>
         /// The enablement status of Dependabot security updates
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_security_updates")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdatesJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestDependabotSecurityUpdates? DependabotSecurityUpdates { get; set; }
 
         /// <summary>
         /// The enablement status of code scanning default setup
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_scanning_default_setup")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetupJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestCodeScanningDefaultSetup? CodeScanningDefaultSetup { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestSecretScanningJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestSecretScanning? SecretScanning { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning push protection
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_push_protection")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestSecretScanningPushProtectionJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestSecretScanningPushProtection? SecretScanningPushProtection { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning validity checks
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_validity_checks")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecksJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestSecretScanningValidityChecks? SecretScanningValidityChecks { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning non-provider patterns
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_non_provider_patterns")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatternsJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestSecretScanningNonProviderPatterns? SecretScanningNonProviderPatterns { get; set; }
 
         /// <summary>
         /// The enablement status of private vulnerability reporting
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private_vulnerability_reporting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReportingJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestPrivateVulnerabilityReporting? PrivateVulnerabilityReporting { get; set; }
 
         /// <summary>
         /// The enforcement status for a security configuration
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enforcement")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityUpdateConfigurationRequestEnforcementJsonConverter))]
         public global::G.CodeSecurityUpdateConfigurationRequestEnforcement? Enforcement { get; set; }
 
         /// <summary>

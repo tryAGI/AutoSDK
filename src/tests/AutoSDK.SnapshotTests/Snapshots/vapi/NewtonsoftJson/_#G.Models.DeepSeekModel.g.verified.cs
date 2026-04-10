@@ -39,12 +39,14 @@ namespace G
         /// This is the name of the model. Ex. cognitivecomputations/dolphin-mixtral-8x7b
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeepSeekModelModelJsonConverter))]
         public global::G.DeepSeekModelModel Model { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeepSeekModelProviderJsonConverter))]
         public global::G.DeepSeekModelProvider Provider { get; set; }
 
         /// <summary>

@@ -81,6 +81,7 @@ namespace G
         /// Type of Livekit stack used for this number.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("livekit_stack", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LivekitStackTypeJsonConverter))]
         public global::G.LivekitStackType LivekitStack { get; set; } = default!;
 
         /// <summary>

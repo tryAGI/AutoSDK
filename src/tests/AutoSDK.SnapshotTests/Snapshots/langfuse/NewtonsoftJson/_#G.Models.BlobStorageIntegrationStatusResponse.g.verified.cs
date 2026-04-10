@@ -33,6 +33,7 @@ namespace G
         /// so `lastSyncAt` will always be at least 30 minutes behind real-time.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("syncStatus", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BlobStorageSyncStatusJsonConverter))]
         public global::G.BlobStorageSyncStatus SyncStatus { get; set; } = default!;
 
         /// <summary>

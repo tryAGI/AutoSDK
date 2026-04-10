@@ -49,6 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatJsonConverter))]
         public global::G.PlaygroundPromptCanvasPayloadTemplateFormat TemplateFormat { get; set; } = default!;
 
         /// <summary>

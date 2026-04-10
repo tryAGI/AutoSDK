@@ -25,12 +25,14 @@ namespace G
         /// AssetContentType specifies the MIME type of a particular asset, and provides some helper methods and properties
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("contentType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssetContentTypeJsonConverter))]
         public global::G.AssetContentType ContentType { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublicApiUserUploadedAssetStatusJsonConverter))]
         public global::G.PublicApiUserUploadedAssetStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -46,6 +48,7 @@ namespace G
         /// </summary>
         /// <example>asset_upload</example>
         [global::Newtonsoft.Json.JsonProperty("errorCode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublicApiUserUploadedAssetErrorCodesJsonConverter))]
         public global::G.PublicApiUserUploadedAssetErrorCodes? ErrorCode { get; set; }
 
         /// <summary>

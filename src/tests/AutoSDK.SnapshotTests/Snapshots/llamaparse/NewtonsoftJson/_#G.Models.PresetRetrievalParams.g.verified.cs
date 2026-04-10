@@ -75,6 +75,7 @@ namespace G
         /// Default Value: chunks
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retrieval_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RetrievalModeJsonConverter))]
         public global::G.RetrievalMode? RetrievalMode { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The role of the messages author. Choice between: system, user, or assistant.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter))]
         public global::G.ChatCompletionRequestMessageRole Role { get; set; } = default!;
 
         /// <summary>

@@ -10,11 +10,13 @@ namespace G
         /// Create prompt
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CreatePromptAsync(
 
             global::G.PromptWrite request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create prompt<br/>
@@ -38,6 +40,7 @@ namespace G
         /// Default Value: text
         /// </param>
         /// <param name="tags"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreatePromptAsync(
@@ -52,6 +55,7 @@ namespace G
             global::G.PromptWriteType? type = default,
             global::G.PromptWriteTemplateStructure? templateStructure = default,
             global::System.Collections.Generic.IList<string>? tags = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

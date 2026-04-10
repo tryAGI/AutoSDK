@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>commit</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretScanningLocationTypeJsonConverter))]
         public global::G.SecretScanningLocationType? Type { get; set; }
 
         /// <summary>

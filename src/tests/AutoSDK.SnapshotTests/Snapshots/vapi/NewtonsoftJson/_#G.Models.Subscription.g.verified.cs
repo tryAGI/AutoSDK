@@ -31,6 +31,7 @@ namespace G
         /// This is the type / tier of the subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SubscriptionTypeJsonConverter))]
         public global::G.SubscriptionType Type { get; set; } = default!;
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace G
         /// with past due payments.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SubscriptionStatusJsonConverter))]
         public global::G.SubscriptionStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -261,6 +263,7 @@ namespace G
         /// This is the minutes_included reset frequency for the subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("minutesIncludedResetFrequency")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SubscriptionMinutesIncludedResetFrequencyJsonConverter))]
         public global::G.SubscriptionMinutesIncludedResetFrequency? MinutesIncludedResetFrequency { get; set; }
 
         /// <summary>

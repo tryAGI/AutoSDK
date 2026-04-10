@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("combinator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentsSearchDeployedAgentsRequestCombinatorJsonConverter))]
         public global::G.AgentsSearchDeployedAgentsRequestCombinator? Combinator { get; set; }
 
         /// <summary>
@@ -43,6 +44,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sortBy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentsSearchDeployedAgentsRequestSortByJsonConverter))]
         public global::G.AgentsSearchDeployedAgentsRequestSortBy? SortBy { get; set; }
 
         /// <summary>

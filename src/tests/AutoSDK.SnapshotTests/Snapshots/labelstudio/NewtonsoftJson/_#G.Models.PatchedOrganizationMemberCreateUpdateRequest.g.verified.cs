@@ -20,6 +20,7 @@ namespace G
         /// * `NO` - Not Activated
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.Role9e7EnumJsonConverter))]
         public global::G.Role9e7Enum? Role { get; set; }
 
         /// <summary>

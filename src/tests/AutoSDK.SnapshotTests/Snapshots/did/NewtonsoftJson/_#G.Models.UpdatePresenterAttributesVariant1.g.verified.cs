@@ -97,6 +97,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("a2e_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdatePresenterAttributesVariant1A2eModelJsonConverter))]
         public global::G.UpdatePresenterAttributesVariant1A2eModel? A2eModel { get; set; }
 
         /// <summary>

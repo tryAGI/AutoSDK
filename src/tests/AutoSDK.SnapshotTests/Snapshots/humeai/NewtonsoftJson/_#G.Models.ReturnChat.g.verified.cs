@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReturnChatStatusJsonConverter))]
         public global::G.ReturnChatStatus? Status { get; set; }
 
         /// <summary>

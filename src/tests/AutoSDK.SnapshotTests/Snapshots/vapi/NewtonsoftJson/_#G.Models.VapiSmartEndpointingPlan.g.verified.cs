@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>vapi</example>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VapiSmartEndpointingPlanProviderJsonConverter))]
         public global::G.VapiSmartEndpointingPlanProvider Provider { get; set; } = default!;
 
         /// <summary>

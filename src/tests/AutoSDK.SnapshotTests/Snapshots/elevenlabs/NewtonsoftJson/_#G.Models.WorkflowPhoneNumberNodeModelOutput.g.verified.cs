@@ -45,6 +45,7 @@ namespace G
         /// </summary>
         /// <default>global::G.TransferTypeEnum.Conference</default>
         [global::Newtonsoft.Json.JsonProperty("transfer_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferTypeEnumJsonConverter))]
         public global::G.TransferTypeEnum TransferType { get; set; } = default!;
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>phone_call</example>
         [global::Newtonsoft.Json.JsonProperty("call_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.V2PhoneCallResponseVariant1CallTypeJsonConverter))]
         public global::G.V2PhoneCallResponseVariant1CallType CallType { get; set; }
 
         /// <summary>
@@ -39,6 +40,7 @@ namespace G
         /// </summary>
         /// <example>inbound</example>
         [global::Newtonsoft.Json.JsonProperty("direction", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.V2PhoneCallResponseVariant1DirectionJsonConverter))]
         public global::G.V2PhoneCallResponseVariant1Direction Direction { get; set; } = default!;
 
         /// <summary>

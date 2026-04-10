@@ -13,6 +13,7 @@ namespace G
         /// The ID of the model to use for transcription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodySpeechToTextV1SpeechToTextPostModelIdJsonConverter))]
         public global::G.BodySpeechToTextV1SpeechToTextPostModelId ModelId { get; set; } = default!;
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// Default Value: word
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("timestamps_granularity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodySpeechToTextV1SpeechToTextPostTimestampsGranularityJsonConverter))]
         public global::G.BodySpeechToTextV1SpeechToTextPostTimestampsGranularity? TimestampsGranularity { get; set; }
 
         /// <summary>
@@ -77,6 +79,7 @@ namespace G
         /// Default Value: other
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodySpeechToTextV1SpeechToTextPostFileFormatJsonConverter))]
         public global::G.BodySpeechToTextV1SpeechToTextPostFileFormat? FileFormat { get; set; }
 
         /// <summary>

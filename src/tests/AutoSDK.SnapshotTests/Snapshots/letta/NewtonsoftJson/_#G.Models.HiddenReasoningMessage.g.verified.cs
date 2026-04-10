@@ -82,6 +82,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HiddenReasoningMessageStateJsonConverter))]
         public global::G.HiddenReasoningMessageState State { get; set; } = default!;
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="branch"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Team>> ReposRemoveTeamAccessRestrictionsAsync(
@@ -22,6 +23,7 @@ namespace G
             string branch,
 
             global::G.OneOf<global::G.ReposRemoveTeamAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>> request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Remove team access restrictions<br/>
@@ -31,12 +33,14 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="branch"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Team>> ReposRemoveTeamAccessRestrictionsAsync(
             string owner,
             string repo,
             string branch,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

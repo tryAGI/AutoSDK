@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.WebSearchPreviewToolType.WebSearchPreview</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchPreviewToolTypeJsonConverter))]
         public global::G.WebSearchPreviewToolType Type { get; set; } = global::G.WebSearchPreviewToolType.WebSearchPreview;
 
         /// <summary>
@@ -27,6 +28,7 @@ namespace G
         /// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search_context_size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchPreviewToolSearchContextSizeJsonConverter))]
         public global::G.WebSearchPreviewToolSearchContextSize? SearchContextSize { get; set; }
 
         /// <summary>

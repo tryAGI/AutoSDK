@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostedLanguageModelModelProviderJsonConverter))]
         public global::G.PostedLanguageModelModelProvider? ModelProvider { get; set; }
 
         /// <summary>

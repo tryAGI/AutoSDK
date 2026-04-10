@@ -31,6 +31,7 @@ namespace G
         /// The merge method to use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_method", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestUnlockedPullRequestAutoMergeMergeMethodJsonConverter))]
         public global::G.WebhookPullRequestUnlockedPullRequestAutoMergeMergeMethod MergeMethod { get; set; } = default!;
 
         /// <summary>

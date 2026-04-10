@@ -19,6 +19,7 @@ namespace G
         /// The status of the job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiJobStatusJsonConverter))]
         public global::G.ApiJobStatus? Status { get; set; }
 
         /// <summary>

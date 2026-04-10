@@ -13,6 +13,7 @@ namespace G
         /// Task type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("task", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AITaskJsonConverter))]
         public global::G.AITask Task { get; set; } = default!;
 
         /// <summary>

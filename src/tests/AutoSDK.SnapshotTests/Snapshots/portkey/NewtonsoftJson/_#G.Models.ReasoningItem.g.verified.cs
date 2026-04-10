@@ -14,6 +14,7 @@ namespace G
         /// The type of the object. Always `reasoning`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningItemTypeJsonConverter))]
         public global::G.ReasoningItemType Type { get; set; }
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace G
         /// `incomplete`. Populated when items are returned via API.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningItemStatusJsonConverter))]
         public global::G.ReasoningItemStatus? Status { get; set; }
 
         /// <summary>

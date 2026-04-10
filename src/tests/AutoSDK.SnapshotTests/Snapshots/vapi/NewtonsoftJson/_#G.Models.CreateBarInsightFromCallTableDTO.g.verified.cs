@@ -20,6 +20,7 @@ namespace G
         /// It is required to be `bar` to create a bar insight.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateBarInsightFromCallTableDTOTypeJsonConverter))]
         public global::G.CreateBarInsightFromCallTableDTOType Type { get; set; }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace G
         /// </summary>
         /// <example>[assistant_id]</example>
         [global::Newtonsoft.Json.JsonProperty("groupBy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateBarInsightFromCallTableDTOGroupByJsonConverter))]
         public global::G.CreateBarInsightFromCallTableDTOGroupBy? GroupBy { get; set; }
 
         /// <summary>

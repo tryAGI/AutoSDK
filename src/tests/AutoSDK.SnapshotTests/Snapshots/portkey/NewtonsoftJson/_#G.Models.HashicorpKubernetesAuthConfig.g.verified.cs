@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vault_auth_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HashicorpKubernetesAuthConfigVaultAuthTypeJsonConverter))]
         public global::G.HashicorpKubernetesAuthConfigVaultAuthType VaultAuthType { get; set; }
 
         /// <summary>

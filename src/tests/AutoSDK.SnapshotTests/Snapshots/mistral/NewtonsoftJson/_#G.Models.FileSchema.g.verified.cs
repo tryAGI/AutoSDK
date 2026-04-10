@@ -31,6 +31,7 @@ namespace G
         /// The UNIX timestamp (in seconds) of the event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -43,12 +44,14 @@ namespace G
         /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilePurposeJsonConverter))]
         public global::G.FilePurpose Purpose { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sample_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SampleTypeJsonConverter))]
         public global::G.SampleType SampleType { get; set; } = default!;
 
         /// <summary>
@@ -61,6 +64,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SourceJsonConverter))]
         public global::G.Source Source { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Which search engine to use. "auto" (default) uses native if the provider supports it, otherwise Exa. "native" forces the provider's built-in search. "exa" forces the Exa search API. "firecrawl" uses Firecrawl (requires BYOK). "parallel" uses the Parallel search API.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("engine")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatWebSearchShorthandParametersEngineJsonConverter))]
         public global::G.ChatWebSearchShorthandParametersEngine? Engine { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// How much context to retrieve per result. Defaults to medium (15000 chars). Only applies when using the Exa engine; ignored with native provider search.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search_context_size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatWebSearchShorthandParametersSearchContextSizeJsonConverter))]
         public global::G.ChatWebSearchShorthandParametersSearchContextSize? SearchContextSize { get; set; }
 
         /// <summary>

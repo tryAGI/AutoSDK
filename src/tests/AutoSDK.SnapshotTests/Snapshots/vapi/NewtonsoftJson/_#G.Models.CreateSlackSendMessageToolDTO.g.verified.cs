@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "slack.message.send" for Slack Send Message tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSlackSendMessageToolDTOTypeJsonConverter))]
         public global::G.CreateSlackSendMessageToolDTOType Type { get; set; }
 
         /// <summary>

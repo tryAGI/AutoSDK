@@ -10,11 +10,13 @@ namespace G
         /// StartExcerptsExport
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> StartExcerptsExportAsync(
 
             global::G.StartExcerptsExportRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// StartExcerptsExport<br/>
@@ -24,6 +26,7 @@ namespace G
         /// <param name="excerptIds"></param>
         /// <param name="options"></param>
         /// <param name="symKeyEncrypted"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> StartExcerptsExportAsync(
@@ -31,6 +34,7 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid> excerptIds,
             global::G.ExcerptExportOptions options,
             string symKeyEncrypted,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

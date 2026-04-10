@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> PutKeysByIdAsync(
             global::System.Guid id,
 
             global::G.UpdateApiKeyObject request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update API Keys<br/>
@@ -24,12 +26,14 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> PutKeysByIdAsResponseAsync(
             global::System.Guid id,
 
             global::G.UpdateApiKeyObject request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update API Keys<br/>
@@ -51,6 +55,7 @@ namespace G
         /// </param>
         /// <param name="defaults"></param>
         /// <param name="alertEmails"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> PutKeysByIdAsync(
@@ -62,6 +67,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? scopes = default,
             global::G.UpdateApiKeyObjectDefaults? defaults = default,
             global::System.Collections.Generic.IList<string>? alertEmails = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -15,6 +15,7 @@ namespace G
         /// Example: 1
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatAgentResponse> UpdateChatAgentAsync(
@@ -22,6 +23,7 @@ namespace G
 
             global::G.ChatAgentRequest request,
             int? version = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an existing chat agent
@@ -100,6 +102,7 @@ namespace G
         /// Whether the agent is public. When set to true, the agent is available for public agent preview link.<br/>
         /// Example: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatAgentResponse> UpdateChatAgentAsync(
@@ -125,6 +128,7 @@ namespace G
             global::G.PIIConfig? piiConfig = default,
             global::G.GuardrailConfig? guardrailConfig = default,
             bool? isPublic = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

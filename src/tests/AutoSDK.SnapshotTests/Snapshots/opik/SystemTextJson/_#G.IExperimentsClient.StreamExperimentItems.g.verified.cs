@@ -10,11 +10,13 @@ namespace G
         /// Stream experiment items
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> StreamExperimentItemsAsync(
 
             global::G.ExperimentItemStreamRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Stream experiment items<br/>
@@ -28,6 +30,7 @@ namespace G
         /// Default Value: true
         /// </param>
         /// <param name="projectName"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<byte[]> StreamExperimentItemsAsync(
@@ -36,6 +39,7 @@ namespace G
             global::System.Guid? lastRetrievedId = default,
             bool? truncate = default,
             string? projectName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

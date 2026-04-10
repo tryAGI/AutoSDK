@@ -19,6 +19,7 @@ namespace G
         /// Status of the summarization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummarizerSearchResultStatusJsonConverter))]
         public global::G.SummarizerSearchResultStatus? Status { get; set; }
 
         /// <summary>

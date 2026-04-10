@@ -23,12 +23,14 @@ namespace G
         /// </summary>
         /// <example>google</example>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.KnowledgeBaseProviderJsonConverter))]
         public global::G.KnowledgeBaseProvider Provider { get; set; }
 
         /// <summary>
         /// The model to use for the knowledge base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.KnowledgeBaseModelJsonConverter))]
         public global::G.KnowledgeBaseModel? Model { get; set; }
 
         /// <summary>

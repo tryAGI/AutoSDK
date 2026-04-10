@@ -17,6 +17,7 @@ namespace G
         /// </summary>
         /// <default>global::G.RichCaptionAssetType.RichCaption</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RichCaptionAssetTypeJsonConverter))]
         public global::G.RichCaptionAssetType Type { get; set; } = global::G.RichCaptionAssetType.RichCaption;
 
         /// <summary>

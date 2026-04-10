@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comparator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MultiVectorComparatorJsonConverter))]
         public global::G.MultiVectorComparator Comparator { get; set; }
 
         /// <summary>

@@ -13,12 +13,14 @@ namespace G
         /// This is the provider of the model (`anthropic`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalAnthropicModelProviderJsonConverter))]
         public global::G.EvalAnthropicModelProvider Provider { get; set; }
 
         /// <summary>
         /// This is the specific model that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalAnthropicModelModelJsonConverter))]
         public global::G.EvalAnthropicModelModel Model { get; set; } = default!;
 
         /// <summary>

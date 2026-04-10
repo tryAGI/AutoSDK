@@ -13,6 +13,7 @@ namespace G
         /// Must be 'error'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ErrorPayloadMessageTypeJsonConverter))]
         public global::G.ErrorPayloadMessageType MessageType { get; set; }
 
         /// <summary>

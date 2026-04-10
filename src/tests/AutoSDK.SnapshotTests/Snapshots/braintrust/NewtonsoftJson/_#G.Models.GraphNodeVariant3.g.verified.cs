@@ -25,6 +25,7 @@ namespace G
         /// The output of the graph
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraphNodeVariant3TypeJsonConverter))]
         public global::G.GraphNodeVariant3Type Type { get; set; }
 
         /// <summary>

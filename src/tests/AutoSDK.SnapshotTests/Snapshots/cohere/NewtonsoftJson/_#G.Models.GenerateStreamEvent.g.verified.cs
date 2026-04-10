@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerateStreamEventEventTypeJsonConverter))]
         public global::G.GenerateStreamEventEventType EventType { get; set; } = default!;
 
         /// <summary>

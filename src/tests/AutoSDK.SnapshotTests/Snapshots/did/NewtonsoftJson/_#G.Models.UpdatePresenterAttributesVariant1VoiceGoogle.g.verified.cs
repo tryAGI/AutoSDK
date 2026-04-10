@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdatePresenterAttributesVariant1VoiceGoogleTypeJsonConverter))]
         public global::G.UpdatePresenterAttributesVariant1VoiceGoogleType Type { get; set; }
 
         /// <summary>

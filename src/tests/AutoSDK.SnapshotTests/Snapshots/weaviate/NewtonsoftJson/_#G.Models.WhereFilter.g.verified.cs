@@ -21,6 +21,7 @@ namespace G
         /// </summary>
         /// <example>GreaterThanEqual</example>
         [global::Newtonsoft.Json.JsonProperty("operator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WhereFilterOperatorJsonConverter))]
         public global::G.WhereFilterOperator? Operator { get; set; }
 
         /// <summary>

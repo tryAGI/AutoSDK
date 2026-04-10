@@ -31,6 +31,7 @@ namespace G
         /// Default Value: inbound
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("direction")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyRegisterATwilioCallAndReturnTwiMLV1ConvaiTwilioRegisterCallPostDirectionJsonConverter))]
         public global::G.BodyRegisterATwilioCallAndReturnTwiMLV1ConvaiTwilioRegisterCallPostDirection? Direction { get; set; }
 
         /// <summary>

@@ -49,6 +49,7 @@ namespace G
         /// The authentication mode used to secure the webhook.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookAuthMethodTypeJsonConverter))]
         public global::G.WebhookAuthMethodType AuthType { get; set; } = default!;
 
         /// <summary>

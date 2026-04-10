@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1ConclusionJsonConverter))]
         public global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Conclusion? Conclusion { get; set; }
 
         /// <summary>
@@ -121,6 +122,7 @@ namespace G
         /// The current status of the job. Can be `queued`, `in_progress`, `waiting`, or `completed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1StatusJsonConverter))]
         public global::G.WebhookWorkflowJobCompletedWorkflowJobWorkflowJob1Status Status { get; set; } = default!;
 
         /// <summary>

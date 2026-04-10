@@ -53,6 +53,7 @@ namespace G
         /// </summary>
         /// <example>assistant-speaks-first</example>
         [global::Newtonsoft.Json.JsonProperty("firstMessageMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssistantFirstMessageModeJsonConverter))]
         public global::G.AssistantFirstMessageMode? FirstMessageMode { get; set; }
 
         /// <summary>

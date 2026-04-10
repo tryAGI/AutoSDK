@@ -14,6 +14,7 @@ namespace G
         /// To learn more about Trieve, visit https://trieve.ai.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TrieveKnowledgeBaseProviderJsonConverter))]
         public global::G.TrieveKnowledgeBaseProvider Provider { get; set; }
 
         /// <summary>

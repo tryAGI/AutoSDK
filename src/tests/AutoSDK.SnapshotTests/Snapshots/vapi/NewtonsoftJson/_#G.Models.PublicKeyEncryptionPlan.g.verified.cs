@@ -13,12 +13,14 @@ namespace G
         /// The type of encryption plan.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublicKeyEncryptionPlanTypeJsonConverter))]
         public global::G.PublicKeyEncryptionPlanType Type { get; set; }
 
         /// <summary>
         /// The encryption algorithm to use.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("algorithm")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PublicKeyEncryptionPlanAlgorithmJsonConverter))]
         public global::G.PublicKeyEncryptionPlanAlgorithm Algorithm { get; set; }
 
         /// <summary>

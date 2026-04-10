@@ -25,6 +25,7 @@ namespace G
         /// File format of the animated result
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TalksConfigResultFormatJsonConverter))]
         public global::G.TalksConfigResultFormat? ResultFormat { get; set; }
 
         /// <summary>

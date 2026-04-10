@@ -37,6 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manager_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSecretReferenceRequestManagerTypeJsonConverter))]
         public global::G.CreateSecretReferenceRequestManagerType ManagerType { get; set; } = default!;
 
         /// <summary>

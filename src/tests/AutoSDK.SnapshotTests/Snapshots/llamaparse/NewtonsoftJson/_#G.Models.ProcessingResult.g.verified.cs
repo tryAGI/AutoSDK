@@ -25,6 +25,7 @@ namespace G
         /// Type of processing performed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("job_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BatchJobTypeJsonConverter))]
         public global::G.BatchJobType JobType { get; set; } = default!;
 
         /// <summary>

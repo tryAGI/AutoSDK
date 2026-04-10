@@ -26,6 +26,7 @@ namespace G
         /// Default Value: V3
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostWebhookSubscriptionsRequestVersionJsonConverter))]
         public global::G.PostWebhookSubscriptionsRequestVersion? Version { get; set; }
 
         /// <summary>

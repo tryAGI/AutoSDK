@@ -13,6 +13,7 @@ namespace G
         /// This is the type of cost, always 'model' for this class.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelCostTypeJsonConverter))]
         public global::G.ModelCostType Type { get; set; }
 
         /// <summary>

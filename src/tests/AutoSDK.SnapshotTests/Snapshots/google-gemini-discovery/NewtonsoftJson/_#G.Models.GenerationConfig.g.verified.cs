@@ -127,6 +127,7 @@ namespace G
         /// Optional. If specified, the media resolution specified will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mediaResolution")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerationConfigMediaResolutionJsonConverter))]
         public global::G.GenerationConfigMediaResolution? MediaResolution { get; set; }
 
         /// <summary>

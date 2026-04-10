@@ -13,6 +13,7 @@ namespace G
         /// The type of the content part. Always `file`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestMessageContentPartFileTypeJsonConverter))]
         public global::G.ChatCompletionRequestMessageContentPartFileType Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// This is the type of action - must be "transfer"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransferHookActionTypeJsonConverter))]
         public global::G.TransferHookActionType Type { get; set; }
 
         /// <summary>

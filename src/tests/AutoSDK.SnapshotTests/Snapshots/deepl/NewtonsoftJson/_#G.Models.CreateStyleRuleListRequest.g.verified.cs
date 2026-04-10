@@ -21,6 +21,7 @@ namespace G
         /// The language that the style rules are applied to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StyleRuleLanguageJsonConverter))]
         public global::G.StyleRuleLanguage Language { get; set; } = default!;
 
         /// <summary>

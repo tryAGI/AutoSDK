@@ -25,6 +25,7 @@ namespace G
         /// The type of the URL citation. Always `url_citation`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UrlCitationTypeJsonConverter))]
         public global::G.UrlCitationType Type { get; set; }
 
         /// <summary>

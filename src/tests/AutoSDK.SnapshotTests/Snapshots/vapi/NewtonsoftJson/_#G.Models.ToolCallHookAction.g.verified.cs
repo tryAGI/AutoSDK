@@ -13,6 +13,7 @@ namespace G
         /// This is the type of action - must be "tool"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolCallHookActionTypeJsonConverter))]
         public global::G.ToolCallHookActionType Type { get; set; }
 
         /// <summary>

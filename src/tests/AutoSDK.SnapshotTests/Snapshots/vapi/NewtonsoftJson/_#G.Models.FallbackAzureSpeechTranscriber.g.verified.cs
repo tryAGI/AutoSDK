@@ -13,18 +13,21 @@ namespace G
         /// This is the transcription provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackAzureSpeechTranscriberProviderJsonConverter))]
         public global::G.FallbackAzureSpeechTranscriberProvider Provider { get; set; }
 
         /// <summary>
         /// This is the language that will be set for the transcription. The list of languages Azure supports can be found here: https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=stt
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackAzureSpeechTranscriberLanguageJsonConverter))]
         public global::G.FallbackAzureSpeechTranscriberLanguage? Language { get; set; }
 
         /// <summary>
         /// Controls how phrase boundaries are detected, enabling either simple time/silence heuristics or more advanced semantic segmentation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segmentationStrategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackAzureSpeechTranscriberSegmentationStrategyJsonConverter))]
         public global::G.FallbackAzureSpeechTranscriberSegmentationStrategy? SegmentationStrategy { get; set; }
 
         /// <summary>

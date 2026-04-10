@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <example>approved</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PagesHttpsCertificateStateJsonConverter))]
         public global::G.PagesHttpsCertificateState State { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The type of the input item. Always `input_image`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputImageTypeJsonConverter))]
         public global::G.InputImageType Type { get; set; }
 
         /// <summary>
@@ -35,6 +36,7 @@ namespace G
         /// </summary>
         /// <default>global::G.InputImageDetail.Auto</default>
         [global::Newtonsoft.Json.JsonProperty("detail", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputImageDetailJsonConverter))]
         public global::G.InputImageDetail Detail { get; set; } = default!;
 
         /// <summary>

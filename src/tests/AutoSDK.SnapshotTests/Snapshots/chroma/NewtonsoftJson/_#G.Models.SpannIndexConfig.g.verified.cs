@@ -67,6 +67,7 @@ namespace G
         /// Quantization implementation for vector search (cloud-only feature)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quantize")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.QuantizationJsonConverter))]
         public global::G.Quantization? Quantize { get; set; }
 
         /// <summary>

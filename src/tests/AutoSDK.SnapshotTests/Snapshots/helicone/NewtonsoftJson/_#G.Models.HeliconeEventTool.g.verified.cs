@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HeliconeEventToolTypeJsonConverter))]
         public global::G.HeliconeEventToolType Type { get; set; }
 
         /// <summary>

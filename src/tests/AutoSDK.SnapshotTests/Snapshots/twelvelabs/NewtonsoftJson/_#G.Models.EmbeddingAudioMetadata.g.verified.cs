@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbeddingAudioMetadataInputTypeJsonConverter))]
         public global::G.EmbeddingAudioMetadataInputType InputType { get; set; }
 
         /// <summary>

@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("field")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentsCountDeployedAgentsSearchItemVariant5FieldJsonConverter))]
         public global::G.AgentsCountDeployedAgentsSearchItemVariant5Field Field { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentsCountDeployedAgentsSearchItemVariant5OperatorJsonConverter))]
         public global::G.AgentsCountDeployedAgentsSearchItemVariant5Operator Operator { get; set; }
 
         /// <summary>

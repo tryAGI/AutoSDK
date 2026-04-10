@@ -19,6 +19,7 @@ namespace G
         /// An identifier of this clip
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateClipResponseObjectJsonConverter))]
         public global::G.CreateClipResponseObject Object { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// The status of the clip
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateClipResponseStatusJsonConverter))]
         public global::G.CreateClipResponseStatus Status { get; set; } = default!;
 
         /// <summary>

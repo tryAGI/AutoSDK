@@ -20,6 +20,7 @@ namespace G
         /// Default Value: FAST
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClassifyModeJsonConverter))]
         public global::G.ClassifyMode? Mode { get; set; }
 
         /// <summary>

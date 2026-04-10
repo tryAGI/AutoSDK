@@ -16,12 +16,14 @@ namespace G
         /// <param name="packageType"></param>
         /// <param name="packageName"></param>
         /// <param name="token"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task PackagesRestorePackageForAuthenticatedUserAsync(
             global::G.PackagesRestorePackageForAuthenticatedUserPackageType packageType,
             string packageName,
             string? token = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

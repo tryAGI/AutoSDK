@@ -37,6 +37,7 @@ namespace G
         /// </summary>
         /// <example>key_and_day</example>
         [global::Newtonsoft.Json.JsonProperty("group_by")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AdminUsageReportDataGroupByJsonConverter))]
         public global::G.AdminUsageReportDataGroupBy? GroupBy { get; set; }
 
         /// <summary>

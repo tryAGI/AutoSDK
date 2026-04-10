@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>agent</example>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageRoleJsonConverter))]
         public global::G.MessageRole Role { get; set; } = default!;
 
         /// <summary>

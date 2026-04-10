@@ -13,6 +13,7 @@ namespace G
         /// Language that should be allowed in content
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PortkeyLanguageParametersLanguageJsonConverter))]
         public global::G.PortkeyLanguageParametersLanguage? Language { get; set; }
 
         /// <summary>

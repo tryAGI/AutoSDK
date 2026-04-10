@@ -13,6 +13,7 @@ namespace G
         /// Type of registry authentication
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GeneralRegistryTypeJsonConverter))]
         public global::G.GeneralRegistryType Type { get; set; }
 
         /// <summary>

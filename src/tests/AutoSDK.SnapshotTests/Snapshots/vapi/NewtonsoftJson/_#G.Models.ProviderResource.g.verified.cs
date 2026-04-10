@@ -37,12 +37,14 @@ namespace G
         /// This is the provider that manages this resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProviderResourceProviderJsonConverter))]
         public global::G.ProviderResourceProvider Provider { get; set; } = default!;
 
         /// <summary>
         /// This is the name/type of the resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resourceName")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProviderResourceResourceNameJsonConverter))]
         public global::G.ProviderResourceResourceName ResourceName { get; set; }
 
         /// <summary>

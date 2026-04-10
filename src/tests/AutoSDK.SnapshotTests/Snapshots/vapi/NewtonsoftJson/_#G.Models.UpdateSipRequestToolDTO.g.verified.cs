@@ -20,6 +20,7 @@ namespace G
         /// The SIP method to send.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verb")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateSipRequestToolDTOVerbJsonConverter))]
         public global::G.UpdateSipRequestToolDTOVerb? Verb { get; set; }
 
         /// <summary>

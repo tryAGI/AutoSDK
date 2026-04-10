@@ -24,6 +24,7 @@ namespace G
         /// <default>global::G.CallbackLiveTranslationMessageEvent.LiveTranslation</default>
         /// <example>live.translation</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CallbackLiveTranslationMessageEventJsonConverter))]
         public global::G.CallbackLiveTranslationMessageEvent Event { get; set; } = global::G.CallbackLiveTranslationMessageEvent.LiveTranslation;
 
         /// <summary>

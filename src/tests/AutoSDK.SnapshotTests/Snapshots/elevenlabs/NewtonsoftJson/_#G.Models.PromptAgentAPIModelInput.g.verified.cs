@@ -22,6 +22,7 @@ namespace G
         /// Default Value: gemini-2.5-flash
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("llm")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LlmJsonConverter))]
         public global::G.Llm? Llm { get; set; }
 
         /// <summary>

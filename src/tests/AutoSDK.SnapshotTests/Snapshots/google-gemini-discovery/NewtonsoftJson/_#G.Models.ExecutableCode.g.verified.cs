@@ -19,6 +19,7 @@ namespace G
         /// Required. Programming language of the `code`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExecutableCodeLanguageJsonConverter))]
         public global::G.ExecutableCodeLanguage? Language { get; set; }
 
         /// <summary>

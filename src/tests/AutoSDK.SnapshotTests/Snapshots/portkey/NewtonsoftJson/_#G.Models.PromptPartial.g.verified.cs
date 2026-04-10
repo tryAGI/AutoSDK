@@ -73,6 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptPartialStatusJsonConverter))]
         public global::G.PromptPartialStatus? Status { get; set; }
 
         /// <summary>

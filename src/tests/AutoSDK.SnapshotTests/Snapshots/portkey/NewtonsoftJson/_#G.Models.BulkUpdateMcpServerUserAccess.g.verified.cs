@@ -19,6 +19,7 @@ namespace G
         /// Server default when user has no explicit override
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_user_access")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BulkUpdateMcpServerUserAccessDefaultUserAccessJsonConverter))]
         public global::G.BulkUpdateMcpServerUserAccessDefaultUserAccess? DefaultUserAccess { get; set; }
 
         /// <summary>

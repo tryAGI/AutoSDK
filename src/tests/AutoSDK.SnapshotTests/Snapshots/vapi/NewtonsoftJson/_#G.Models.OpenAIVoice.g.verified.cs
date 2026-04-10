@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIVoiceProviderJsonConverter))]
         public global::G.OpenAIVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -35,6 +36,7 @@ namespace G
         /// This is the model that will be used for text-to-speech.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIVoiceModelJsonConverter))]
         public global::G.OpenAIVoiceModel? Model { get; set; }
 
         /// <summary>

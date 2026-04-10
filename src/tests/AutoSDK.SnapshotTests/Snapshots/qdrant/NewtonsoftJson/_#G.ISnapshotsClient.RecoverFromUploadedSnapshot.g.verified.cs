@@ -17,6 +17,7 @@ namespace G
         /// </param>
         /// <param name="checksum"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RecoverFromUploadedSnapshotResponse> RecoverFromUploadedSnapshotAsync(
@@ -26,6 +27,7 @@ namespace G
             bool? wait = default,
             global::G.SnapshotPriority? priority = default,
             string? checksum = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Recover from an uploaded snapshot<br/>
@@ -40,6 +42,7 @@ namespace G
         /// <param name="checksum"></param>
         /// <param name="snapshot"></param>
         /// <param name="snapshotname"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RecoverFromUploadedSnapshotResponse> RecoverFromUploadedSnapshotAsync(
@@ -49,6 +52,7 @@ namespace G
             string? checksum = default,
             byte[]? snapshot = default,
             string? snapshotname = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "google.sheets.row.append" for Google Sheets Row Append tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoogleSheetsRowAppendToolWithToolCallTypeJsonConverter))]
         public global::G.GoogleSheetsRowAppendToolWithToolCallType Type { get; set; }
 
         /// <summary>

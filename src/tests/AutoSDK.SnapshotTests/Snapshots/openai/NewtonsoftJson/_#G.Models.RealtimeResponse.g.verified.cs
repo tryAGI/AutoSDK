@@ -19,6 +19,7 @@ namespace G
         /// The object type, must be `realtime.response`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeResponseObjectJsonConverter))]
         public global::G.RealtimeResponseObject? Object { get; set; }
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace G
         /// `incomplete`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeResponseStatusJsonConverter))]
         public global::G.RealtimeResponseStatus? Status { get; set; }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace G
         /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_audio_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeResponseOutputAudioFormatJsonConverter))]
         public global::G.RealtimeResponseOutputAudioFormat? OutputAudioFormat { get; set; }
 
         /// <summary>

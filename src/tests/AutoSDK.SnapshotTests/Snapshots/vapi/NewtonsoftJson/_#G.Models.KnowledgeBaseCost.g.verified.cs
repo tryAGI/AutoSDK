@@ -13,6 +13,7 @@ namespace G
         /// This is the type of cost, always 'knowledge-base' for this class.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.KnowledgeBaseCostTypeJsonConverter))]
         public global::G.KnowledgeBaseCostType Type { get; set; }
 
         /// <summary>

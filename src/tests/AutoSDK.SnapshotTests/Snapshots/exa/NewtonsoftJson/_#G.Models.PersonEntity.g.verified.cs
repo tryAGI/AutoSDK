@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>person</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PersonEntityTypeJsonConverter))]
         public global::G.PersonEntityType Type { get; set; }
 
         /// <summary>

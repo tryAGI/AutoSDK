@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderMicrosoftTypeJsonConverter))]
         public global::G.CreateVideoStreamRequestScriptTextProviderMicrosoftType Type { get; set; }
 
         /// <summary>

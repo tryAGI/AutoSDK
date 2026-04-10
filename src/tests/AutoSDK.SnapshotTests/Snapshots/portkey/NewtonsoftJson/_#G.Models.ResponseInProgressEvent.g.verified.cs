@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `response.in_progress`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseInProgressEventTypeJsonConverter))]
         public global::G.ResponseInProgressEventType Type { get; set; }
 
         /// <summary>

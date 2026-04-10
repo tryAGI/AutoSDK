@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTaskRequestVariant6TypeJsonConverter))]
         public global::G.CreateTaskRequestVariant6Type Type { get; set; }
 
         /// <summary>

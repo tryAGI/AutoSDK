@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ApproximateLocationType.Approximate</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApproximateLocationTypeJsonConverter))]
         public global::G.ApproximateLocationType Type { get; set; } = global::G.ApproximateLocationType.Approximate;
 
         /// <summary>

@@ -10,11 +10,13 @@ namespace G
         /// AddDescriptorField
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DescriptorFieldWithOptions> AddDescriptorFieldAsync(
 
             global::G.AddDescriptorFieldRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// AddDescriptorField<br/>
@@ -27,6 +29,7 @@ namespace G
         /// <param name="isDynamic"></param>
         /// <param name="setId"></param>
         /// <param name="fieldOptions"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DescriptorFieldWithOptions> AddDescriptorFieldAsync(
@@ -37,6 +40,7 @@ namespace G
             bool isDynamic,
             global::System.Guid setId,
             global::System.Collections.Generic.IList<global::G.FieldOptionVO> fieldOptions,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

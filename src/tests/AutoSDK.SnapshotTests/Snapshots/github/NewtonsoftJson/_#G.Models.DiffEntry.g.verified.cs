@@ -28,6 +28,7 @@ namespace G
         /// </summary>
         /// <example>added</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DiffEntryStatusJsonConverter))]
         public global::G.DiffEntryStatus Status { get; set; } = default!;
 
         /// <summary>

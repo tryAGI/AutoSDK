@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestDequeuedActionJsonConverter))]
         public global::G.WebhookPullRequestDequeuedAction Action { get; set; }
 
         /// <summary>
@@ -54,6 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reason", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestDequeuedReasonJsonConverter))]
         public global::G.WebhookPullRequestDequeuedReason Reason { get; set; } = default!;
 
         /// <summary>

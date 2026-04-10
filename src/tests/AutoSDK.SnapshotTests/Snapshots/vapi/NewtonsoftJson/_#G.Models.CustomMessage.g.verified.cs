@@ -23,6 +23,7 @@ namespace G
         /// This is a custom message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomMessageTypeJsonConverter))]
         public global::G.CustomMessageType Type { get; set; }
 
         /// <summary>

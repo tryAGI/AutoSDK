@@ -16,6 +16,7 @@ namespace G
         /// Example: customer_support
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Agent> ReplaceAsync(
@@ -24,6 +25,7 @@ namespace G
             global::G.CreateAgentRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Replace agent<br/>
@@ -94,6 +96,7 @@ namespace G
         /// artifact_read or artifact_grep to access the full content on demand.<br/>
         /// All fields are optional; omitted fields use model-inferred defaults.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Agent> ReplaceAsync(
@@ -113,6 +116,7 @@ namespace G
             bool? enabled = default,
             global::G.CompactionConfig? compaction = default,
             global::G.ToolOutputOffloadingConfiguration? toolOutputOffloading = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

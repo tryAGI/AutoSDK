@@ -40,6 +40,7 @@ namespace G
         /// <default>global::G.TranslationMessageType.Translation</default>
         /// <example>translation</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranslationMessageTypeJsonConverter))]
         public global::G.TranslationMessageType Type { get; set; } = global::G.TranslationMessageType.Translation;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("consensus_thread_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusJsonConverter))]
         public global::G.ConsensusThreadStatusVariant2ConsensusThreadStatus ConsensusThreadStatus { get; set; }
 
         /// <summary>

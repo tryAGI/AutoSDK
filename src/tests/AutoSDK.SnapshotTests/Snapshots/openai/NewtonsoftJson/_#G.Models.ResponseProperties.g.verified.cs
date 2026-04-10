@@ -96,6 +96,7 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponsePropertiesTruncationJsonConverter))]
         public global::G.ResponsePropertiesTruncation? Truncation { get; set; }
 
         /// <summary>

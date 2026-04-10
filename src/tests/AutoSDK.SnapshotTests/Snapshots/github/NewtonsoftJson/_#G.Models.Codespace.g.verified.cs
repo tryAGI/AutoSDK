@@ -108,6 +108,7 @@ namespace G
         /// </summary>
         /// <example>Available</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodespaceStateJsonConverter))]
         public global::G.CodespaceState State { get; set; } = default!;
 
         /// <summary>
@@ -128,6 +129,7 @@ namespace G
         /// </summary>
         /// <example>WestUs2</example>
         [global::Newtonsoft.Json.JsonProperty("location", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodespaceLocationJsonConverter))]
         public global::G.CodespaceLocation Location { get; set; } = default!;
 
         /// <summary>

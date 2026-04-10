@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModifyMessageApiRequestContentTypeJsonConverter))]
         public global::G.ModifyMessageApiRequestContentType? ContentType { get; set; }
 
         /// <summary>

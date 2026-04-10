@@ -56,6 +56,7 @@ namespace G
         /// Default Value: base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SendCallRequestModelJsonConverter))]
         public global::G.SendCallRequestModel? Model { get; set; }
 
         /// <summary>
@@ -140,6 +141,7 @@ namespace G
         /// Background audio track
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("background_track")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SendCallRequestBackgroundTrackJsonConverter))]
         public global::G.SendCallRequestBackgroundTrack? BackgroundTrack { get; set; }
 
         /// <summary>

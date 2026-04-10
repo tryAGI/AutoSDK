@@ -25,6 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EPromptOptimizationJobStatusJsonConverter))]
         public global::G.EPromptOptimizationJobStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("algorithm", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EPromptOptimizationAlgorithmJsonConverter))]
         public global::G.EPromptOptimizationAlgorithm Algorithm { get; set; } = default!;
 
         /// <summary>

@@ -100,6 +100,7 @@ namespace G
         /// The detailed source information of the inference request<br/>
         /// Default Value: external
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.InstanceSegmentationInferenceResponse, global::G.KeypointsDetectionInferenceResponse, global::G.ObjectDetectionInferenceResponse, global::G.ClassificationInferenceResponse, global::G.MultiLabelClassificationInferenceResponse, global::G.SemanticSegmentationInferenceResponse, global::G.StubResponse, object>> LegacyInferFromRequestDatasetIdVersionIdGetAsync(
@@ -125,6 +126,7 @@ namespace G
             string? activeLearningTargetDataset = default,
             string? source = default,
             string? sourceInfo = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

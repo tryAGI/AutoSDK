@@ -25,6 +25,7 @@ namespace G
         /// The type of the property
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IdentityPropertyTypeJsonConverter))]
         public global::G.IdentityPropertyType Type { get; set; } = default!;
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ContentBlockStartEventType.ContentBlockStart</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ContentBlockStartEventTypeJsonConverter))]
         public global::G.ContentBlockStartEventType Type { get; set; } = global::G.ContentBlockStartEventType.ContentBlockStart;
 
         /// <summary>

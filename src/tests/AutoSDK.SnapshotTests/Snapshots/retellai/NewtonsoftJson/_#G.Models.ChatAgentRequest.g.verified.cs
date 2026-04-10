@@ -45,6 +45,7 @@ namespace G
         /// </summary>
         /// <example>en-US</example>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatAgentRequestLanguageJsonConverter))]
         public global::G.ChatAgentRequestLanguage? Language { get; set; }
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace G
         /// </summary>
         /// <example>everything</example>
         [global::Newtonsoft.Json.JsonProperty("data_storage_setting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatAgentRequestDataStorageSettingJsonConverter))]
         public global::G.ChatAgentRequestDataStorageSetting? DataStorageSetting { get; set; }
 
         /// <summary>
@@ -111,6 +113,7 @@ namespace G
         /// Available LLM models for agents.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("post_chat_analysis_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NullableLLMModelJsonConverter))]
         public global::G.NullableLLMModel? PostChatAnalysisModel { get; set; }
 
         /// <summary>

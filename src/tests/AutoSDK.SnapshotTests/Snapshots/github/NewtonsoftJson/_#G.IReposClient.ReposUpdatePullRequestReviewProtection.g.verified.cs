@@ -16,6 +16,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="branch"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProtectedBranchPullRequestReview> ReposUpdatePullRequestReviewProtectionAsync(
@@ -24,6 +25,7 @@ namespace G
             string branch,
 
             global::G.ReposUpdatePullRequestReviewProtectionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update pull request review protection<br/>
@@ -54,6 +56,7 @@ namespace G
         /// <param name="bypassPullRequestAllowances">
         /// Allow specific users, teams, or apps to bypass pull request requirements.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProtectedBranchPullRequestReview> ReposUpdatePullRequestReviewProtectionAsync(
@@ -66,6 +69,7 @@ namespace G
             int? requiredApprovingReviewCount = default,
             bool? requireLastPushApproval = default,
             global::G.ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances? bypassPullRequestAllowances = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

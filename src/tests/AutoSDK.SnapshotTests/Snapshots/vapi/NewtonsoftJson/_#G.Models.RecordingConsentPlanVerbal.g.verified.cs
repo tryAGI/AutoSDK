@@ -30,6 +30,7 @@ namespace G
         /// </summary>
         /// <example>verbal</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RecordingConsentPlanVerbalTypeJsonConverter))]
         public global::G.RecordingConsentPlanVerbalType Type { get; set; }
 
         /// <summary>

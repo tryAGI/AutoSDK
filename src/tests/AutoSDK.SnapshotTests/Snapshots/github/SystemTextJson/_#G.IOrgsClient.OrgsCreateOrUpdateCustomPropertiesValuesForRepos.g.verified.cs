@@ -17,12 +17,14 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task OrgsCreateOrUpdateCustomPropertiesValuesForReposAsync(
             string org,
 
             global::G.OrgsCreateOrUpdateCustomPropertiesValuesForReposRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create or update custom property values for organization repositories<br/>
@@ -41,12 +43,14 @@ namespace G
         /// <param name="properties">
         /// List of custom property names and associated values to apply to the repositories.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task OrgsCreateOrUpdateCustomPropertiesValuesForReposAsync(
             string org,
             global::System.Collections.Generic.IList<string> repositoryNames,
             global::System.Collections.Generic.IList<global::G.CustomPropertyValue> properties,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

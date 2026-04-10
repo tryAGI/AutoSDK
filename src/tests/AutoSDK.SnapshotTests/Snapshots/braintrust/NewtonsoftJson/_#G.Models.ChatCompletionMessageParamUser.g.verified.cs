@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionMessageParamUserRoleJsonConverter))]
         public global::G.ChatCompletionMessageParamUserRole Role { get; set; }
 
         /// <summary>

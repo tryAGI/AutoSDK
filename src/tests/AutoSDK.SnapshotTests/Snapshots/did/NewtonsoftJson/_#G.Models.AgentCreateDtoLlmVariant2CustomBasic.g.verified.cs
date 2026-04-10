@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentCreateDtoLlmVariant2CustomBasicTypeJsonConverter))]
         public global::G.AgentCreateDtoLlmVariant2CustomBasicType Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeleteTestCaseDefinitionResponseStatusJsonConverter))]
         public global::G.DeleteTestCaseDefinitionResponseStatus? Status { get; set; }
 
         /// <summary>

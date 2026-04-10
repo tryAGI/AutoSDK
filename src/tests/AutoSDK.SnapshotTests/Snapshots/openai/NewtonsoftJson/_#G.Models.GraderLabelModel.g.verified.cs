@@ -14,6 +14,7 @@ namespace G
         /// The object type, which is always `label_model`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraderLabelModelTypeJsonConverter))]
         public global::G.GraderLabelModelType Type { get; set; }
 
         /// <summary>

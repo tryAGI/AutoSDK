@@ -12,11 +12,13 @@ namespace G
         /// before configuring it on an agent trigger
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TestWebhookResponseDto> TestWebhookConfigurationAsync(
 
             global::G.TestWebhookConfigurationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Test Webhook<br/>
@@ -33,6 +35,7 @@ namespace G
         /// Authentication configuration for tools and webhooks (processed/stored)
         /// </param>
         /// <param name="headers"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TestWebhookResponseDto> TestWebhookConfigurationAsync(
@@ -40,6 +43,7 @@ namespace G
             global::G.TestWebhookConfigurationRequestEventType eventType = default,
             global::G.TestWebhookConfigurationRequestAuth? auth = default,
             global::System.Collections.Generic.Dictionary<string, string>? headers = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

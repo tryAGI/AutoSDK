@@ -25,6 +25,7 @@ namespace G
         /// Default Value: document_url
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DocumentURLChunkTypeJsonConverter))]
         public global::G.DocumentURLChunkType? Type { get; set; }
 
         /// <summary>

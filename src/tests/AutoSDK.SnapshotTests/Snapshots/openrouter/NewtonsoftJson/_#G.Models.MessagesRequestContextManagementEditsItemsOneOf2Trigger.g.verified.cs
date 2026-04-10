@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf2TriggerTypeJsonConverter))]
         public global::G.MessagesRequestContextManagementEditsItemsOneOf2TriggerType Type { get; set; }
 
         /// <summary>

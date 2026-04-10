@@ -25,6 +25,7 @@ namespace G
         /// Name of the job that failed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("step", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobNameMappingJsonConverter))]
         public global::G.JobNameMapping Step { get; set; } = default!;
 
         /// <summary>

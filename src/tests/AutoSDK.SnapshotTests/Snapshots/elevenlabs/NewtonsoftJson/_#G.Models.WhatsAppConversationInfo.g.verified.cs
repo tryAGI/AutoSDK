@@ -13,6 +13,7 @@ namespace G
         /// Default Value: unknown
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("direction")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WhatsAppConversationInfoDirectionJsonConverter))]
         public global::G.WhatsAppConversationInfoDirection? Direction { get; set; }
 
         /// <summary>

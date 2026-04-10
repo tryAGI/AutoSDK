@@ -14,11 +14,13 @@ namespace G
         /// For new integrations, please use /v2/edit which offers all the same functionalities, plus additional AI features.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> EditImagePost2Async(
 
             global::G.RenderImagePostParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// [LEGACY] Image Editing v1 (Plus plan)<br/>
@@ -36,12 +38,14 @@ namespace G
         /// <param name="imageFilename">
         /// The image file to render
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<byte[]> EditImagePost2Async(
             string templateId,
             byte[]? imageFile = default,
             string? imageFilename = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

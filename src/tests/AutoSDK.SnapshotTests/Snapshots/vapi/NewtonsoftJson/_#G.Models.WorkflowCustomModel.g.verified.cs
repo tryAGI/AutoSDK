@@ -13,6 +13,7 @@ namespace G
         /// This is the provider of the model (`custom-llm`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkflowCustomModelProviderJsonConverter))]
         public global::G.WorkflowCustomModelProvider Provider { get; set; }
 
         /// <summary>
@@ -24,6 +25,7 @@ namespace G
         /// Default is `variable`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadataSendMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkflowCustomModelMetadataSendModeJsonConverter))]
         public global::G.WorkflowCustomModelMetadataSendMode? MetadataSendMode { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// Status of the task.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("task_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TaskDataTaskStatusJsonConverter))]
         public global::G.TaskDataTaskStatus? TaskStatus { get; set; }
 
         /// <summary>

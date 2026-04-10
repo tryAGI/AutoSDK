@@ -61,12 +61,14 @@ namespace G
         /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sdVersion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SdVersionsJsonConverter))]
         public global::G.SdVersions? SdVersion { get; set; }
 
         /// <summary>
         /// The status of the current task.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobStatusJsonConverter))]
         public global::G.JobStatus? Status { get; set; }
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace G
         /// Default Value: GENERAL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CustomModelTypeJsonConverter))]
         public global::G.CustomModelType? Type { get; set; }
 
         /// <summary>

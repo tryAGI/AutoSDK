@@ -14,6 +14,7 @@ namespace G
         /// Namespace type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CheckNamespaceByUIDAdminResponseNamespaceJsonConverter))]
         public global::G.CheckNamespaceByUIDAdminResponseNamespace? Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Must be 'input_audio_chunk'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InputAudioChunkPayloadMessageTypeJsonConverter))]
         public global::G.InputAudioChunkPayloadMessageType MessageType { get; set; }
 
         /// <summary>

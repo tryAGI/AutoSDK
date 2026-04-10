@@ -14,6 +14,7 @@ namespace G
         /// <param name="namespaceId"></param>
         /// <param name="pipelineId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ValidateNamespacePipelineResponse> PipelinePublicServiceValidateNamespacePipelineAsync(
@@ -21,6 +22,7 @@ namespace G
             string pipelineId,
 
             global::G.ValidateNamespacePipelineBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Validate a pipeline<br/>
@@ -30,11 +32,13 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="pipelineId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ValidateNamespacePipelineResponse> PipelinePublicServiceValidateNamespacePipelineAsync(
             string namespaceId,
             string pipelineId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

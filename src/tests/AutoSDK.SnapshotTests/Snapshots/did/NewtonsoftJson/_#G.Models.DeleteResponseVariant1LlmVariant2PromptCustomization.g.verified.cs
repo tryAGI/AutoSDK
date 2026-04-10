@@ -47,6 +47,7 @@ namespace G
         /// (Default: documents)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("knowledge_source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeleteResponseVariant1LlmVariant2PromptCustomizationKnowledgeSourceJsonConverter))]
         public global::G.DeleteResponseVariant1LlmVariant2PromptCustomizationKnowledgeSource? KnowledgeSource { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The mode of the predictor to be used in dynamic retrieval.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DynamicRetrievalConfigModeJsonConverter))]
         public global::G.DynamicRetrievalConfigMode? Mode { get; set; }
 
         /// <summary>

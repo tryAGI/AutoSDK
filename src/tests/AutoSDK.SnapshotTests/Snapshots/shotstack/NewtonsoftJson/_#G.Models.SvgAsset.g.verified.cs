@@ -53,6 +53,7 @@ namespace G
         /// <default>global::G.SvgAssetType.Svg</default>
         /// <example>svg</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgAssetTypeJsonConverter))]
         public global::G.SvgAssetType Type { get; set; } = global::G.SvgAssetType.Svg;
 
         /// <summary>

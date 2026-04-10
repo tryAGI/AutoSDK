@@ -15,6 +15,7 @@ namespace G
         /// user means from user
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IKnowledgeMessageRoleJsonConverter))]
         public global::G.IKnowledgeMessageRole Role { get; set; } = default!;
 
         /// <summary>

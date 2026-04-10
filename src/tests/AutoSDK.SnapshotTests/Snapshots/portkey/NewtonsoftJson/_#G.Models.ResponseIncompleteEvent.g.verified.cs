@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `response.incomplete`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseIncompleteEventTypeJsonConverter))]
         public global::G.ResponseIncompleteEventType Type { get; set; }
 
         /// <summary>

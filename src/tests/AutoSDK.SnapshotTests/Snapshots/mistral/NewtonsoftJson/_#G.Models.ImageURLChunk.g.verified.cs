@@ -19,6 +19,7 @@ namespace G
         /// Default Value: image_url
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ImageURLChunkTypeJsonConverter))]
         public global::G.ImageURLChunkType? Type { get; set; }
 
         /// <summary>

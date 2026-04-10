@@ -35,6 +35,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StreamTextScriptProviderOpenAITypeJsonConverter))]
         public global::G.StreamTextScriptProviderOpenAIType Type { get; set; }
 
         /// <summary>

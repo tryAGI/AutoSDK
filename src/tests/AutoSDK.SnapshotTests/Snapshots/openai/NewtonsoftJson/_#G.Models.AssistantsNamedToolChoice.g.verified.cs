@@ -13,6 +13,7 @@ namespace G
         /// The type of the tool. If type is `function`, the function name must be set
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssistantsNamedToolChoiceTypeJsonConverter))]
         public global::G.AssistantsNamedToolChoiceType Type { get; set; } = default!;
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "transfer-update" is sent whenever a transfer happens.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageTransferUpdateTypeJsonConverter))]
         public global::G.ClientMessageTransferUpdateType Type { get; set; }
 
         /// <summary>

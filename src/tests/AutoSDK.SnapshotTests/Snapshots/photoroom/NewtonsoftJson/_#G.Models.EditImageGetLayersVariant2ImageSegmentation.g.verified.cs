@@ -13,6 +13,7 @@ namespace G
         /// Controls whether or not the salient object should be kept or ignored by the segmentation model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EditImageGetLayersVariant2ImageSegmentationModeJsonConverter))]
         public global::G.EditImageGetLayersVariant2ImageSegmentationMode? Mode { get; set; }
 
         /// <summary>

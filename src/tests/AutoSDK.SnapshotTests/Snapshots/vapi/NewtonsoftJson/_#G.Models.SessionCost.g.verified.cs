@@ -13,6 +13,7 @@ namespace G
         /// This is the type of cost, always 'session' for this class.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionCostTypeJsonConverter))]
         public global::G.SessionCostType Type { get; set; }
 
         /// <summary>

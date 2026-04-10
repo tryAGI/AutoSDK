@@ -21,6 +21,7 @@ namespace G
         /// The role of the messages author, in this case `system`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestSystemMessageRoleJsonConverter))]
         public global::G.ChatCompletionRequestSystemMessageRole Role { get; set; }
 
         /// <summary>

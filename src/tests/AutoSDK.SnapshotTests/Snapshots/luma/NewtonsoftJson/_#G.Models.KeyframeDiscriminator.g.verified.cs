@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.KeyframeDiscriminatorTypeJsonConverter))]
         public global::G.KeyframeDiscriminatorType? Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAgentRequestModelSettingsVariant1DiscriminatorProviderTypeJsonConverter))]
         public global::G.CreateAgentRequestModelSettingsVariant1DiscriminatorProviderType? ProviderType { get; set; }
 
         /// <summary>

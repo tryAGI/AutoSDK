@@ -13,6 +13,7 @@ namespace G
         /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReactionsCreateForIssueCommentRequestContentJsonConverter))]
         public global::G.ReactionsCreateForIssueCommentRequestContent Content { get; set; } = default!;
 
         /// <summary>

@@ -10,11 +10,13 @@ namespace G
         /// SetAccountUserAdminStatus
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> SetAccountUserAdminStatusAsAdminAsync(
 
             global::G.SetAccountUserAdminStatusRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// SetAccountUserAdminStatus<br/>
@@ -23,12 +25,14 @@ namespace G
         /// <param name="accountId"></param>
         /// <param name="userId"></param>
         /// <param name="isAdmin"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> SetAccountUserAdminStatusAsAdminAsync(
             global::System.Guid accountId,
             global::System.Guid userId,
             bool isAdmin,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -25,6 +25,7 @@ namespace G
         /// The kind of annotator used for the evaluation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("annotator_kind", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpsertExperimentEvaluationRequestBodyAnnotatorKindJsonConverter))]
         public global::G.UpsertExperimentEvaluationRequestBodyAnnotatorKind AnnotatorKind { get; set; } = default!;
 
         /// <summary>

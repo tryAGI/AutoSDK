@@ -39,6 +39,7 @@ namespace G
         /// </summary>
         /// <example>trace</example>
         [global::Newtonsoft.Json.JsonProperty("entity_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ManualEvaluationRequestEntityTypeJsonConverter))]
         public global::G.ManualEvaluationRequestEntityType EntityType { get; set; } = default!;
 
         /// <summary>

@@ -13,18 +13,21 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackCartesiaTranscriberProviderJsonConverter))]
         public global::G.FallbackCartesiaTranscriberProvider Provider { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackCartesiaTranscriberModelJsonConverter))]
         public global::G.FallbackCartesiaTranscriberModel? Model { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackCartesiaTranscriberLanguageJsonConverter))]
         public global::G.FallbackCartesiaTranscriberLanguage? Language { get; set; }
 
         /// <summary>

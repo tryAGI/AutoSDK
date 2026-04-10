@@ -25,6 +25,7 @@ namespace G
         /// Scenario category
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("category", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GeneratedScenarioCategoryJsonConverter))]
         public global::G.GeneratedScenarioCategory Category { get; set; } = default!;
 
         /// <summary>

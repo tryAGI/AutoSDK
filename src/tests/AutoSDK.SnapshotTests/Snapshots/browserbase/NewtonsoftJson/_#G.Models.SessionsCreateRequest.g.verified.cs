@@ -50,6 +50,7 @@ namespace G
         /// Default Value: us-west-2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionsCreateRequestRegionJsonConverter))]
         public global::G.SessionsCreateRequestRegion? Region { get; set; }
 
         /// <summary>

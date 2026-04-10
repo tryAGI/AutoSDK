@@ -15,6 +15,7 @@ namespace G
         /// - `down` - Scale down, remove a shard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("direction", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReshardingDirectionJsonConverter))]
         public global::G.ReshardingDirection Direction { get; set; } = default!;
 
         /// <summary>

@@ -21,6 +21,7 @@ namespace G
         /// Default Value: system_default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReRankerTypeJsonConverter))]
         public global::G.ReRankerType? Type { get; set; }
 
         /// <summary>

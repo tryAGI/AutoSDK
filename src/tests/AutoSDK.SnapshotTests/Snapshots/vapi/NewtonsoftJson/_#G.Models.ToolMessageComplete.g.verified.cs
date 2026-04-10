@@ -26,6 +26,7 @@ namespace G
         /// If this message is provided, only this message will be spoken and the model will not be requested to come up with a response. It's an exclusive OR.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolMessageCompleteTypeJsonConverter))]
         public global::G.ToolMessageCompleteType Type { get; set; }
 
         /// <summary>
@@ -46,6 +47,7 @@ namespace G
         /// This is useful when you want to provide a hint to the model about what to say next.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolMessageCompleteRoleJsonConverter))]
         public global::G.ToolMessageCompleteRole? Role { get; set; }
 
         /// <summary>

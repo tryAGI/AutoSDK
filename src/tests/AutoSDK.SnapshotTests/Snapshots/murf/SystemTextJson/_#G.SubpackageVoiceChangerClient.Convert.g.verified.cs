@@ -27,11 +27,13 @@ namespace G
         /// Returns a url to the generated audio file along with other associated properties.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SpeechToSpeechResponse> ConvertAsync(
 
             global::G.ConvertRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -42,440 +44,619 @@ namespace G
                 httpClient: HttpClient,
                 request: request);
 
-            var __pathBuilder = new global::G.PathBuilder(
-                path: "/v1/voice-changer/convert",
-                baseUri: HttpClient.BaseAddress);
-            var __path = __pathBuilder.ToString();
-            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
-                requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: true);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: "/v1/voice-changer/convert",
+                                baseUri: HttpClient.BaseAddress);
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
-            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
-            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
-            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            if (request.AudioDuration != default)
-            {
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            if (request.AudioDuration != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.AudioDuration}"),
-                    name: "\"audio_duration\"");
-            } 
-            if (request.ChannelType != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.AudioDuration}"),
+                                    name: "\"audio_duration\"");
+                            } 
+                            if (request.ChannelType != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ChannelType}"),
-                    name: "\"channel_type\"");
-            } 
-            if (request.EncodeOutputAsBase64 != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.ChannelType}"),
+                                    name: "\"channel_type\"");
+                            } 
+                            if (request.EncodeOutputAsBase64 != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.EncodeOutputAsBase64}"),
-                    name: "\"encode_output_as_base64\"");
-            } 
-            if (request.File != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.EncodeOutputAsBase64}"),
+                                    name: "\"encode_output_as_base64\"");
+                            } 
+                            if (request.File != default)
+                            {
 
-                var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
-                __httpRequestContent.Add(
-                    content: __contentFile,
-                    name: "\"file\"",
-                    fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
-                if (__contentFile.Headers.ContentDisposition != null)
-                {
-                    __contentFile.Headers.ContentDisposition.FileNameStar = null;
-                }
-            } 
-            if (request.FileUrl != default)
-            {
+                                var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                                __httpRequestContent.Add(
+                                    content: __contentFile,
+                                    name: "\"file\"",
+                                    fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+                                if (__contentFile.Headers.ContentDisposition != null)
+                                {
+                                    __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                                }
+                            } 
+                            if (request.FileUrl != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.FileUrl}"),
-                    name: "\"file_url\"");
-            } 
-            if (request.Format != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.FileUrl}"),
+                                    name: "\"file_url\"");
+                            } 
+                            if (request.Format != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Format}"),
-                    name: "\"format\"");
-            } 
-            if (request.MultiNativeLocale != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Format}"),
+                                    name: "\"format\"");
+                            } 
+                            if (request.MultiNativeLocale != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.MultiNativeLocale}"),
-                    name: "\"multi_native_locale\"");
-            } 
-            if (request.Pitch != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.MultiNativeLocale}"),
+                                    name: "\"multi_native_locale\"");
+                            } 
+                            if (request.Pitch != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Pitch}"),
-                    name: "\"pitch\"");
-            } 
-            if (request.PronunciationDictionary != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Pitch}"),
+                                    name: "\"pitch\"");
+                            } 
+                            if (request.PronunciationDictionary != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.PronunciationDictionary}"),
-                    name: "\"pronunciation_dictionary\"");
-            } 
-            if (request.Rate != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.PronunciationDictionary}"),
+                                    name: "\"pronunciation_dictionary\"");
+                            } 
+                            if (request.Rate != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Rate}"),
-                    name: "\"rate\"");
-            } 
-            if (request.RetainAccent != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Rate}"),
+                                    name: "\"rate\"");
+                            } 
+                            if (request.RetainAccent != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.RetainAccent}"),
-                    name: "\"retain_accent\"");
-            } 
-            if (request.RetainProsody != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.RetainAccent}"),
+                                    name: "\"retain_accent\"");
+                            } 
+                            if (request.RetainProsody != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.RetainProsody}"),
-                    name: "\"retain_prosody\"");
-            } 
-            if (request.ReturnTranscription != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.RetainProsody}"),
+                                    name: "\"retain_prosody\"");
+                            } 
+                            if (request.ReturnTranscription != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ReturnTranscription}"),
-                    name: "\"return_transcription\"");
-            } 
-            if (request.SampleRate != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.ReturnTranscription}"),
+                                    name: "\"return_transcription\"");
+                            } 
+                            if (request.SampleRate != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.SampleRate}"),
-                    name: "\"sample_rate\"");
-            } 
-            if (request.Style != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.SampleRate}"),
+                                    name: "\"sample_rate\"");
+                            } 
+                            if (request.Style != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Style}"),
-                    name: "\"style\"");
-            } 
-            if (request.Transcription != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Style}"),
+                                    name: "\"style\"");
+                            } 
+                            if (request.Transcription != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Transcription}"),
-                    name: "\"transcription\"");
-            } 
-            if (request.Variation != default)
-            {
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Transcription}"),
+                                    name: "\"transcription\"");
+                            } 
+                            if (request.Variation != default)
+                            {
 
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Variation}"),
-                    name: "\"variation\"");
-            }
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.VoiceId}"),
-                name: "\"voice_id\"");
-            __httpRequest.Content = __httpRequestContent;
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"{request.Variation}"),
+                                    name: "\"variation\"");
+                            }
+                            __httpRequestContent.Add(
+                                content: new global::System.Net.Http.StringContent($"{request.VoiceId}"),
+                                name: "\"voice_id\"");
+                            __httpRequest.Content = __httpRequestContent;
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
 
-            PrepareRequest(
-                client: HttpClient,
-                request: __httpRequest);
-            PrepareConvertRequest(
-                httpClient: HttpClient,
-                httpRequestMessage: __httpRequest,
-                request: request);
-
-            using var __response = await HttpClient.SendAsync(
-                request: __httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
-
-            ProcessResponse(
-                client: HttpClient,
-                response: __response);
-            ProcessConvertResponse(
-                httpClient: HttpClient,
-                httpResponseMessage: __response);
-            // Bad Request
-            if ((int)__response.StatusCode == 400)
-            {
-                string? __content_400 = null;
-                global::System.Exception? __exception_400 = null;
-                global::G.ConvertResponse? __value_400 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_400 = global::G.ConvertResponse.FromJson(__content_400, JsonSerializerOptions);
-                    }
-                    else
-                    {
-                        __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_400 = global::G.ConvertResponse.FromJson(__content_400, JsonSerializerOptions);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_400 = __ex;
-                }
-
-                throw new global::G.ApiException<global::G.ConvertResponse>(
-                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_400,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_400,
-                    ResponseObject = __value_400,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Expired subscription or character limit exhausted
-            if ((int)__response.StatusCode == 402)
-            {
-                string? __content_402 = null;
-                global::System.Exception? __exception_402 = null;
-                global::G.ConvertResponse2? __value_402 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_402 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_402 = global::G.ConvertResponse2.FromJson(__content_402, JsonSerializerOptions);
-                    }
-                    else
-                    {
-                        __content_402 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_402 = global::G.ConvertResponse2.FromJson(__content_402, JsonSerializerOptions);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_402 = __ex;
-                }
-
-                throw new global::G.ApiException<global::G.ConvertResponse2>(
-                    message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_402,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_402,
-                    ResponseObject = __value_402,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Invalid or expired token/api-key provided
-            if ((int)__response.StatusCode == 403)
-            {
-                string? __content_403 = null;
-                global::System.Exception? __exception_403 = null;
-                global::G.ConvertResponse3? __value_403 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_403 = global::G.ConvertResponse3.FromJson(__content_403, JsonSerializerOptions);
-                    }
-                    else
-                    {
-                        __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_403 = global::G.ConvertResponse3.FromJson(__content_403, JsonSerializerOptions);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_403 = __ex;
-                }
-
-                throw new global::G.ApiException<global::G.ConvertResponse3>(
-                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_403,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_403,
-                    ResponseObject = __value_403,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Internal Server Error
-            if ((int)__response.StatusCode == 500)
-            {
-                string? __content_500 = null;
-                global::System.Exception? __exception_500 = null;
-                global::G.ConvertResponse4? __value_500 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_500 = global::G.ConvertResponse4.FromJson(__content_500, JsonSerializerOptions);
-                    }
-                    else
-                    {
-                        __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_500 = global::G.ConvertResponse4.FromJson(__content_500, JsonSerializerOptions);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_500 = __ex;
-                }
-
-                throw new global::G.ApiException<global::G.ConvertResponse4>(
-                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_500,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_500,
-                    ResponseObject = __value_500,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-            // Service Unavailable
-            if ((int)__response.StatusCode == 503)
-            {
-                string? __content_503 = null;
-                global::System.Exception? __exception_503 = null;
-                global::G.ConvertResponse5? __value_503 = null;
-                try
-                {
-                    if (ReadResponseAsString)
-                    {
-                        __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_503 = global::G.ConvertResponse5.FromJson(__content_503, JsonSerializerOptions);
-                    }
-                    else
-                    {
-                        __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        __value_503 = global::G.ConvertResponse5.FromJson(__content_503, JsonSerializerOptions);
-                    }
-                }
-                catch (global::System.Exception __ex)
-                {
-                    __exception_503 = __ex;
-                }
-
-                throw new global::G.ApiException<global::G.ConvertResponse5>(
-                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_503,
-                    statusCode: __response.StatusCode)
-                {
-                    ResponseBody = __content_503,
-                    ResponseObject = __value_503,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value),
-                };
-            }
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                    cancellationToken
-#endif
-                ).ConfigureAwait(false);
-
-                ProcessResponseContent(
+                PrepareRequest(
                     client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessConvertResponseContent(
+                    request: __httpRequest);
+                PrepareConvertRequest(
                     httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
+                    httpRequestMessage: __httpRequest,
+                    request: request);
 
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-
-                    return
-                        global::G.SpeechToSpeechResponse.FromJson(__content, JsonSerializerOptions) ??
-                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                }
-                catch (global::System.Exception __ex)
-                {
-                    throw new global::G.ApiException(
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
-                }
+                return __httpRequest;
             }
-            else
-            {
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                    using var __content = await __response.Content.ReadAsStreamAsync(
-#if NET5_0_OR_GREATER
-                        cancellationToken
-#endif
-                    ).ConfigureAwait(false);
 
-                    return
-                        await global::G.SpeechToSpeechResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
-                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                }
-                catch (global::System.Exception __ex)
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
                 {
-                    string? __content = null;
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "Convert",
+                                methodName: "ConvertAsync",
+                                pathTemplate: "\"/v1/voice-changer/convert\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
-                        __content = await __response.Content.ReadAsStringAsync(
-#if NET5_0_OR_GREATER
-                            cancellationToken
-#endif
-                        ).ConfigureAwait(false);
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                     }
-                    catch (global::System.Exception)
+                    catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "Convert",
+                                methodName: "ConvertAsync",
+                                pathTemplate: "\"/v1/voice-changer/convert\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
                     }
 
-                    throw new global::G.ApiException(
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "Convert",
+                                methodName: "ConvertAsync",
+                                pathTemplate: "\"/v1/voice-changer/convert\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
                 }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessConvertResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "Convert",
+                                methodName: "ConvertAsync",
+                                pathTemplate: "\"/v1/voice-changer/convert\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "Convert",
+                                methodName: "ConvertAsync",
+                                pathTemplate: "\"/v1/voice-changer/convert\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                            // Bad Request
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::G.ConvertResponse? __value_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::G.ConvertResponse.FromJson(__content_400, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_400 = global::G.ConvertResponse.FromJson(__content_400, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+                                throw new global::G.ApiException<global::G.ConvertResponse>(
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_400,
+                                    ResponseObject = __value_400,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Expired subscription or character limit exhausted
+                            if ((int)__response.StatusCode == 402)
+                            {
+                                string? __content_402 = null;
+                                global::System.Exception? __exception_402 = null;
+                                global::G.ConvertResponse2? __value_402 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_402 = global::G.ConvertResponse2.FromJson(__content_402, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_402 = global::G.ConvertResponse2.FromJson(__content_402, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_402 = __ex;
+                                }
+
+                                throw new global::G.ApiException<global::G.ConvertResponse2>(
+                                    message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_402,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_402,
+                                    ResponseObject = __value_402,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Invalid or expired token/api-key provided
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::G.ConvertResponse3? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::G.ConvertResponse3.FromJson(__content_403, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::G.ConvertResponse3.FromJson(__content_403, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+                                throw new global::G.ApiException<global::G.ConvertResponse3>(
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_403,
+                                    ResponseObject = __value_403,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Internal Server Error
+                            if ((int)__response.StatusCode == 500)
+                            {
+                                string? __content_500 = null;
+                                global::System.Exception? __exception_500 = null;
+                                global::G.ConvertResponse4? __value_500 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::G.ConvertResponse4.FromJson(__content_500, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::G.ConvertResponse4.FromJson(__content_500, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_500 = __ex;
+                                }
+
+                                throw new global::G.ApiException<global::G.ConvertResponse4>(
+                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_500,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_500,
+                                    ResponseObject = __value_500,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+                            // Service Unavailable
+                            if ((int)__response.StatusCode == 503)
+                            {
+                                string? __content_503 = null;
+                                global::System.Exception? __exception_503 = null;
+                                global::G.ConvertResponse5? __value_503 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_503 = global::G.ConvertResponse5.FromJson(__content_503, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_503 = global::G.ConvertResponse5.FromJson(__content_503, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_503 = __ex;
+                                }
+
+                                throw new global::G.ApiException<global::G.ConvertResponse5>(
+                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_503,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_503,
+                                    ResponseObject = __value_503,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+
+                            if (__effectiveReadResponseAsString)
+                            {
+                                var __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                ProcessResponseContent(
+                                    client: HttpClient,
+                                    response: __response,
+                                    content: ref __content);
+                                ProcessConvertResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
+
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+
+                                    return
+                                        global::G.SpeechToSpeechResponse.FromJson(__content, JsonSerializerOptions) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    return
+                                        await global::G.SpeechToSpeechResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    string? __content = null;
+                                    try
+                                    {
+                                        __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                            __effectiveCancellationToken
+                #endif
+                                        ).ConfigureAwait(false);
+                                    }
+                                    catch (global::System.Exception)
+                                    {
+                                    }
+
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
             }
         }
         /// <summary>
@@ -548,6 +729,7 @@ namespace G
         /// <param name="voiceId">
         /// Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SpeechToSpeechResponse> ConvertAsync(
@@ -570,6 +752,7 @@ namespace G
             string? style = default,
             string? transcription = default,
             int? variation = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.ConvertRequest
@@ -597,6 +780,7 @@ namespace G
 
             return await ConvertAsync(
                 request: __request,
+                requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }

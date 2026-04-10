@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RimeAIVoiceProviderJsonConverter))]
         public global::G.RimeAIVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -36,6 +37,7 @@ namespace G
         /// </summary>
         /// <example>arcana</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RimeAIVoiceModelJsonConverter))]
         public global::G.RimeAIVoiceModel? Model { get; set; }
 
         /// <summary>
@@ -84,6 +86,7 @@ namespace G
         /// </summary>
         /// <example>en</example>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RimeAIVoiceLanguageJsonConverter))]
         public global::G.RimeAIVoiceLanguage? Language { get; set; }
 
         /// <summary>

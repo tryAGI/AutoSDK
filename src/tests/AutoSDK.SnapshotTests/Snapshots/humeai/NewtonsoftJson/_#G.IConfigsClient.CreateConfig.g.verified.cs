@@ -9,11 +9,13 @@ namespace G
         /// Create an EVI config
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ReturnConfig> CreateConfigAsync(
 
             global::G.PostedConfig request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an EVI config
@@ -29,6 +31,7 @@ namespace G
         /// <param name="builtinTools"></param>
         /// <param name="eventMessages"></param>
         /// <param name="timeouts"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ReturnConfig> CreateConfigAsync(
@@ -43,6 +46,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.PostedBuiltinTool>? builtinTools = default,
             global::G.PostedEventMessageSpecs? eventMessages = default,
             global::G.PostedTimeoutSpecs? timeouts = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

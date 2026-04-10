@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HMACAuthenticationPlanTypeJsonConverter))]
         public global::G.HMACAuthenticationPlanType Type { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// This is the HMAC algorithm to use for signing.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("algorithm", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HMACAuthenticationPlanAlgorithmJsonConverter))]
         public global::G.HMACAuthenticationPlanAlgorithm Algorithm { get; set; } = default!;
 
         /// <summary>
@@ -67,6 +69,7 @@ namespace G
         /// The encoding format for the signature. Defaults to 'hex'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("signatureEncoding")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HMACAuthenticationPlanSignatureEncodingJsonConverter))]
         public global::G.HMACAuthenticationPlanSignatureEncoding? SignatureEncoding { get; set; }
 
         /// <summary>

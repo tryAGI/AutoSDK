@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaCanceledResultType.Canceled</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaCanceledResultTypeJsonConverter))]
         public global::G.BetaCanceledResultType Type { get; set; } = global::G.BetaCanceledResultType.Canceled;
 
         /// <summary>

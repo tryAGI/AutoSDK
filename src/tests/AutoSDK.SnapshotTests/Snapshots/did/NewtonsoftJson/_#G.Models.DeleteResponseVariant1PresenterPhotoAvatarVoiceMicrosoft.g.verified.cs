@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeleteResponseVariant1PresenterPhotoAvatarVoiceMicrosoftTypeJsonConverter))]
         public global::G.DeleteResponseVariant1PresenterPhotoAvatarVoiceMicrosoftType Type { get; set; }
 
         /// <summary>

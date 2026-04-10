@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExportOptionsDiscriminatorFormatJsonConverter))]
         public global::G.ExportOptionsDiscriminatorFormat? Format { get; set; }
 
         /// <summary>

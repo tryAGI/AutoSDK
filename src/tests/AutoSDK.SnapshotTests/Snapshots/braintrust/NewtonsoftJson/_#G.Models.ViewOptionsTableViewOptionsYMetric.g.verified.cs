@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ViewOptionsTableViewOptionsYMetricTypeJsonConverter))]
         public global::G.ViewOptionsTableViewOptionsYMetricType Type { get; set; } = default!;
 
         /// <summary>

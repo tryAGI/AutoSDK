@@ -10,11 +10,13 @@ namespace G
         /// Submits an image generation task with FLUX.1 [dev].
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.AsyncResponse, global::G.AsyncWebhookResponse>> FluxDevV1FluxDevPostAsync(
 
             global::G.FluxDevInputs request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate an image with FLUX.1 [dev].<br/>
@@ -68,6 +70,7 @@ namespace G
         /// <param name="webhookSecret">
         /// Optional secret for webhook signature verification
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.AsyncResponse, global::G.AsyncWebhookResponse>> FluxDevV1FluxDevPostAsync(
@@ -83,6 +86,7 @@ namespace G
             global::G.OutputFormat? outputFormat = default,
             string? webhookUrl = default,
             string? webhookSecret = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

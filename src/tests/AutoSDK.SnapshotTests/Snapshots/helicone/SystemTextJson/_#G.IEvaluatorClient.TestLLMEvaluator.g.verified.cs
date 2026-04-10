@@ -9,11 +9,13 @@ namespace G
         /// 
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ResultEvaluatorScoreString> TestLLMEvaluatorAsync(
 
             global::G.TestLLMEvaluatorRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
@@ -21,12 +23,14 @@ namespace G
         /// <param name="evaluatorName"></param>
         /// <param name="testInput"></param>
         /// <param name="evaluatorConfig"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ResultEvaluatorScoreString> TestLLMEvaluatorAsync(
             string evaluatorName,
             global::G.TestInput testInput,
             global::G.EvaluatorConfig evaluatorConfig,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

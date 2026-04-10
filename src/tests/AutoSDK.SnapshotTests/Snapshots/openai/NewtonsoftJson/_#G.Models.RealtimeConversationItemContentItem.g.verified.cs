@@ -13,6 +13,7 @@ namespace G
         /// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeConversationItemContentItemTypeJsonConverter))]
         public global::G.RealtimeConversationItemContentItemType? Type { get; set; }
 
         /// <summary>

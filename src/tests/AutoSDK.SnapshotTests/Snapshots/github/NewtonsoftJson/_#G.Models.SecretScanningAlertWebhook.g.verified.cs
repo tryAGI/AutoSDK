@@ -54,6 +54,7 @@ namespace G
         /// The reason for resolving the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretScanningAlertResolutionWebhookJsonConverter))]
         public global::G.SecretScanningAlertResolutionWebhook? Resolution { get; set; }
 
         /// <summary>
@@ -91,6 +92,7 @@ namespace G
         /// The token status as of the latest validity check.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("validity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretScanningAlertWebhookValidityJsonConverter))]
         public global::G.SecretScanningAlertWebhookValidity? Validity { get; set; }
 
         /// <summary>

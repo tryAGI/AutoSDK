@@ -15,6 +15,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.SpeakerCreatedResponse> Create2Async(
@@ -22,6 +23,7 @@ namespace G
 
             global::G.BodyCreateANewSpeakerV1DubbingResourceDubbingIdSpeakerPost request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create A New Speaker
@@ -47,6 +49,7 @@ namespace G
         /// <param name="voiceStyle">
         /// For models that support it, the voice style value to use. This will default to 1.0, with a valid range of [0.0, 1.0].
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.SpeakerCreatedResponse> Create2Async(
@@ -57,6 +60,7 @@ namespace G
             double? voiceStability = default,
             double? voiceSimilarity = default,
             double? voiceStyle = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

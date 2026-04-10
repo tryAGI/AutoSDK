@@ -25,6 +25,7 @@ namespace G
         /// The type of web connector processing for a URL.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebConnectorUrlTypeJsonConverter))]
         public global::G.WebConnectorUrlType Type { get; set; } = default!;
 
         /// <summary>

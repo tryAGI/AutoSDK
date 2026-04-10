@@ -49,6 +49,7 @@ namespace G
         /// Optional. Specifies the function Behavior. Currently only supported by the BidiGenerateContent method.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("behavior")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionDeclarationBehaviorJsonConverter))]
         public global::G.FunctionDeclarationBehavior? Behavior { get; set; }
 
         /// <summary>

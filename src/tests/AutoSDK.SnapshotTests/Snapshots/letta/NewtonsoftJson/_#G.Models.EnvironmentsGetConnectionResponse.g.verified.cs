@@ -85,6 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("currentMode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnvironmentsGetConnectionResponseCurrentModeJsonConverter))]
         public global::G.EnvironmentsGetConnectionResponseCurrentMode? CurrentMode { get; set; }
 
         /// <summary>
