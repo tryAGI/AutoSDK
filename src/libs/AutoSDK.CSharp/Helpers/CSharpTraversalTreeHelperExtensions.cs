@@ -379,7 +379,6 @@ public static class CSharpTraversalTreeHelperExtensions
                 hint: hint, index: null, depth: 0));
         }
     }
-
     private static bool ShouldIgnoreOperation(
         CSharpSettings settings,
         OpenApiOperation operation)
