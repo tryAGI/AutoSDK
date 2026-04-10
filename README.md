@@ -57,7 +57,6 @@ When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSD
 | Runtime behavior | `x-stainless-const` | pagination, retries, globals, server selection, auth/runtime hints, and liblab config-only metadata |
 
 That split is deliberate: AutoSDK consumes metadata that directly improves generated .NET names, docs, deprecations, and enum surfaces today, while broader runtime features stay tracked as separate issues instead of being silently half-implemented.
-
 ## Source generator
 - Install the package
 ```bash
