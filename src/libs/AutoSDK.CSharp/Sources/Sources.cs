@@ -50,20 +50,6 @@ public static partial class Sources
             Text: GenerateWebhookHttpFile(operations));
     }
 
-    public static FileWithName WebhooksHttpFile(
-        IReadOnlyList<OperationContext> operations,
-        CancellationToken cancellationToken = default)
-    {
-        if (operations == null || operations.Count == 0)
-        {
-            return FileWithName.Empty;
-        }
-
-        return new FileWithName(
-            Name: "webhooks.http",
-            Text: GenerateWebhookHttpFile(operations));
-    }
-
     public static FileWithName Class(
         ModelData modelData,
         CancellationToken cancellationToken = default)
