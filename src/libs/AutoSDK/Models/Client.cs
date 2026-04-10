@@ -14,5 +14,6 @@ public record struct Client(
     Settings Settings,
     Settings GlobalSettings,
     ImmutableArray<string> Converters,
-    bool HasOAuth2Support = false
+    bool HasOAuth2Support = false,
+    bool HasMutualTlsSupport = false
 );

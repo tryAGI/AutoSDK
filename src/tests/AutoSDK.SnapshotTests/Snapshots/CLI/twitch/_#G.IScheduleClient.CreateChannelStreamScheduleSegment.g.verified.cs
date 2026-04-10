@@ -13,12 +13,14 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateChannelStreamScheduleSegmentResponse> CreateChannelStreamScheduleSegmentAsync(
             string broadcasterId,
 
             global::G.CreateChannelStreamScheduleSegmentBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Adds a single or recurring broadcast to the broadcaster’s streaming schedule.<br/>
@@ -45,6 +47,7 @@ namespace G
         /// <param name="title">
         /// The broadcast’s title. The title may contain a maximum of 140 characters.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateChannelStreamScheduleSegmentResponse> CreateChannelStreamScheduleSegmentAsync(
@@ -55,6 +58,7 @@ namespace G
             bool? isRecurring = default,
             string? categoryId = default,
             string? title = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

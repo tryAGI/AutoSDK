@@ -530,6 +530,7 @@ public static class Data
             .Values
             .ToArray();
         var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
+        var hasMutualTlsSupport = authorizations.Any(static x => x.Type is SecuritySchemeType.MutualTLS);
 
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
         // Enum converters
@@ -631,7 +632,8 @@ public static class Data
                 Settings: csharpSettings,
                 GlobalSettings: csharpGlobalSettings,
                 Converters: converters,
-                HasOAuth2Support: hasOAuth2Support)] : [];
+                HasOAuth2Support: hasOAuth2Support,
+                HasMutualTlsSupport: hasMutualTlsSupport)] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
             clients = clients.Concat(
@@ -648,7 +650,8 @@ public static class Data
                         Settings: csharpSettings,
                         GlobalSettings: csharpGlobalSettings,
                         Converters: [],
-                        HasOAuth2Support: hasOAuth2Support)))
+                        HasOAuth2Support: hasOAuth2Support,
+                        HasMutualTlsSupport: hasMutualTlsSupport)))
                 .ToArray();
         }
         
@@ -897,6 +900,7 @@ public static class Data
             .Values
             .ToArray();
         var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
+        var hasMutualTlsSupport = authorizations.Any(static x => x.Type is SecuritySchemeType.MutualTLS);
 
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
         foreach (var value in enums)
@@ -997,7 +1001,8 @@ public static class Data
                 Settings: settings,
                 GlobalSettings: globalSettings,
                 Converters: converters,
-                HasOAuth2Support: hasOAuth2Support)]
+                HasOAuth2Support: hasOAuth2Support,
+                HasMutualTlsSupport: hasMutualTlsSupport)]
             : [];
 
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
@@ -1015,7 +1020,8 @@ public static class Data
                         Settings: settings,
                         GlobalSettings: globalSettings,
                         Converters: [],
-                        HasOAuth2Support: hasOAuth2Support)))
+                        HasOAuth2Support: hasOAuth2Support,
+                        HasMutualTlsSupport: hasMutualTlsSupport)))
                 .ToArray();
         }
 

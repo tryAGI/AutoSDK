@@ -6,6 +6,7 @@ namespace G
 {
     public sealed partial class Api
     {
+
         /// <inheritdoc/>
         public void AuthorizeUsingApiKeyInHeader(
             string apiKey)
@@ -26,6 +27,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "ApiKey",
                 Location = "Header",
                 Name = "api-key",
                 Value = apiKey,

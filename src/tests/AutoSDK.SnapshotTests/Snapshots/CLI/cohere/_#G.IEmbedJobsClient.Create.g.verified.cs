@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateEmbedJobResponse> CreateAsync(
 
             global::G.CreateEmbedJobRequest request,
             string? xClientName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an Embed Job<br/>
@@ -24,12 +26,14 @@ namespace G
         /// </summary>
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateEmbedJobResponse>> CreateAsResponseAsync(
 
             global::G.CreateEmbedJobRequest request,
             string? xClientName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an Embed Job<br/>
@@ -71,6 +75,7 @@ namespace G
         /// Passing `START` will discard the start of the input. `END` will discard the end of the input. In both cases, input is discarded until the remaining input is exactly the maximum input token length for the model.<br/>
         /// Default Value: END
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateEmbedJobResponse> CreateAsync(
@@ -81,6 +86,7 @@ namespace G
             string? name = default,
             global::System.Collections.Generic.IList<global::G.EmbeddingType>? embeddingTypes = default,
             global::G.CreateEmbedJobRequestTruncate? truncate = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

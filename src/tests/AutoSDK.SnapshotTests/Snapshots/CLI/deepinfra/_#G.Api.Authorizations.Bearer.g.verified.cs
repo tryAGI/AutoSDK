@@ -6,6 +6,7 @@ namespace G
 {
     public sealed partial class Api
     {
+
         /// <inheritdoc/>
         public void AuthorizeUsingBearer(
             string apiKey)
@@ -25,6 +26,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HTTPBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

@@ -12,6 +12,7 @@ namespace G
         /// <param name="namespaceId"></param>
         /// <param name="catalogId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateCatalogResponse> UpdateCatalogAsync(
@@ -19,6 +20,7 @@ namespace G
             string catalogId,
 
             global::G.UpdateCatalogBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a catalog info<br/>
@@ -32,6 +34,7 @@ namespace G
         /// <param name="tags">
         /// The catalog tags.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateCatalogResponse> UpdateCatalogAsync(
@@ -39,6 +42,7 @@ namespace G
             string catalogId,
             string? description = default,
             global::System.Collections.Generic.IList<string>? tags = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

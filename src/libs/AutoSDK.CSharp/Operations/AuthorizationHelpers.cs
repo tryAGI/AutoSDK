@@ -39,6 +39,7 @@ internal static class AuthorizationHelpers
             SecuritySchemeType.ApiKey => $"{authorization.Type:G}|{authorization.In:G}|{authorization.Name}",
             SecuritySchemeType.OAuth2 => $"{authorization.Type:G}|{authorization.SchemeId}",
             SecuritySchemeType.OpenIdConnect => $"{authorization.Type:G}|{authorization.SchemeId}",
+            SecuritySchemeType.MutualTLS => $"{authorization.Type:G}|{authorization.SchemeId}",
             SecuritySchemeType.Http => $"{authorization.Type:G}|{authorization.Scheme.ToUpperInvariant()}",
             _ => $"{authorization.Type:G}|{authorization.In:G}|{authorization.Name}|{authorization.SchemeId}",
         };
@@ -183,6 +184,7 @@ internal static class AuthorizationHelpers
             SecuritySchemeType.ApiKey => $"{scheme.Type:G}|{scheme.In:G}|{scheme.Name}",
             SecuritySchemeType.OAuth2 => $"{scheme.Type:G}|{scheme.Reference?.Id ?? scheme.Name}",
             SecuritySchemeType.OpenIdConnect => $"{scheme.Type:G}|{scheme.Reference?.Id ?? scheme.Name}",
+            SecuritySchemeType.MutualTLS => $"{scheme.Type:G}|{scheme.Reference?.Id ?? scheme.Name}",
             SecuritySchemeType.Http => $"{scheme.Type:G}|{scheme.Scheme?.ToUpperInvariant()}",
             _ => $"{scheme.Type:G}|{scheme.Reference?.Id ?? scheme.Name ?? scheme.Scheme}",
         };

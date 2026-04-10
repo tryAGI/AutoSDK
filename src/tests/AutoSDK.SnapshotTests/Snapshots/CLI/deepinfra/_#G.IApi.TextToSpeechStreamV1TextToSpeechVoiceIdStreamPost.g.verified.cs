@@ -13,6 +13,7 @@ namespace G
         /// <param name="xDeepinfraSource"></param>
         /// <param name="xiApiKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> TextToSpeechStreamV1TextToSpeechVoiceIdStreamPostAsync(
@@ -22,6 +23,7 @@ namespace G
             string? outputFormat = default,
             string? xDeepinfraSource = default,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Text To Speech Stream
@@ -44,6 +46,7 @@ namespace G
         /// <param name="languageCode">
         /// ISO 639-1, 2 letter language code
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> TextToSpeechStreamV1TextToSpeechVoiceIdStreamPostAsync(
@@ -55,6 +58,7 @@ namespace G
             string? modelId = default,
             global::G.TtsResponseFormat? requestOutputFormat = default,
             string? languageCode = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

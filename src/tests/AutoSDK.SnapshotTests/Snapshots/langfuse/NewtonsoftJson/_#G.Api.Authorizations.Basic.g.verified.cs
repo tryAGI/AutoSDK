@@ -28,6 +28,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "BasicAuth",
                 Location = "Header",
                 Name = "Basic",
                 Value = global::System.Convert.ToBase64String(

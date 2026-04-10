@@ -11,11 +11,13 @@ namespace G
         /// Converts spoken Indian language directly into English text.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.SpeechToTextTranslateResponse> TranslateSpeechAsync(
 
             global::G.TranslateSpeechRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Transcribe and translate speech to English<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="inputAudioCodec">
         /// Required for PCM format files
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.SpeechToTextTranslateResponse> TranslateSpeechAsync(
@@ -46,6 +49,7 @@ namespace G
             global::G.TranslateSpeechRequestModel? model = default,
             global::G.TranslateSpeechRequestLanguageCode? languageCode = default,
             global::G.TranslateSpeechRequestInputAudioCodec? inputAudioCodec = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

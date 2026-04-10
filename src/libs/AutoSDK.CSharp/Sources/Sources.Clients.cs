@@ -30,6 +30,8 @@ namespace {client.Settings.Namespace}
         public const string DefaultBaseUrl = ""{client.BaseUrl}"";
 
         private bool _disposeHttpClient = true;
+{((client.Id == "MainConstructor" && client.HasMutualTlsSupport) ? @"
+        private readonly global::System.Net.Http.HttpClientHandler? _ownedHttpClientHandler;" : TrimmedLine)}
 
         /// <inheritdoc/>
         public global::System.Net.Http.HttpClient HttpClient {{ get; }}
@@ -113,7 +115,18 @@ namespace {client.Settings.Namespace}
             global::{client.Settings.Namespace}.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {{
-            HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
+{((client.Id == "MainConstructor" && client.HasMutualTlsSupport) ? @"
+            if (httpClient is null)
+            {
+                _ownedHttpClientHandler = new global::System.Net.Http.HttpClientHandler();
+                _ownedHttpClientHandler.CheckCertificateRevocationList = true;
+                HttpClient = new global::System.Net.Http.HttpClient(_ownedHttpClientHandler, disposeHandler: true);
+            }
+            else
+            {
+                HttpClient = httpClient;
+            }" : @"
+            HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();")}
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization>();
             Options = options ?? new global::{client.Settings.Namespace}.AutoSDKClientOptions();
