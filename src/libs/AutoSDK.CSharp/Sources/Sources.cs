@@ -408,7 +408,6 @@ public static partial class Sources
     }
 
     public static FileWithName ServerSelectionSupport(
-    public static FileWithName ServerSelectionSupport(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)
     {
