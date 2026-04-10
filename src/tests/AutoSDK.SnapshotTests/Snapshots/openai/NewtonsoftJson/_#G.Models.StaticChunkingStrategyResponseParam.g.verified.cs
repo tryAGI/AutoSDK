@@ -13,6 +13,7 @@ namespace G
         /// Always `static`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StaticChunkingStrategyResponseParamTypeJsonConverter))]
         public global::G.StaticChunkingStrategyResponseParamType Type { get; set; }
 
         /// <summary>

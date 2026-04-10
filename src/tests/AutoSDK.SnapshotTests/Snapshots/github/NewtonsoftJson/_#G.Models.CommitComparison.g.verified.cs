@@ -61,6 +61,7 @@ namespace G
         /// </summary>
         /// <example>ahead</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CommitComparisonStatusJsonConverter))]
         public global::G.CommitComparisonStatus Status { get; set; } = default!;
 
         /// <summary>

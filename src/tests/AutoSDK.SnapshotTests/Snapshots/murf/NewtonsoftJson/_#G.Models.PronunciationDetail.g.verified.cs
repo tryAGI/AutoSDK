@@ -21,6 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PronunciationDetailTypeJsonConverter))]
         public global::G.PronunciationDetailType? Type { get; set; }
 
         /// <summary>

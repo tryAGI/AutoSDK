@@ -27,6 +27,7 @@ namespace G
         /// ---
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.HandoffToolTypeJsonConverter))]
         public global::G.HandoffToolType Type { get; set; }
 
         /// <summary>

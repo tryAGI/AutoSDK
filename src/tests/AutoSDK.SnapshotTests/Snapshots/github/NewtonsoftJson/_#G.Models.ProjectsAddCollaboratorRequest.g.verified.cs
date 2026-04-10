@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <example>write</example>
         [global::Newtonsoft.Json.JsonProperty("permission")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectsAddCollaboratorRequestPermissionJsonConverter))]
         public global::G.ProjectsAddCollaboratorRequestPermission? Permission { get; set; }
 
         /// <summary>

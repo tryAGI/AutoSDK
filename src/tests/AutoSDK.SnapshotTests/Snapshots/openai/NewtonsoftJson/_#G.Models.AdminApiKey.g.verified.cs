@@ -55,6 +55,7 @@ namespace G
         /// </summary>
         /// <example>1711471533</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace G
         /// </summary>
         /// <example>1711471534</example>
         [global::Newtonsoft.Json.JsonProperty("last_used_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? LastUsedAt { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// GraphLinkLabel.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("label", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraphLinkLabelJsonConverter))]
         public global::G.GraphLinkLabel Label { get; set; } = default!;
 
         /// <summary>

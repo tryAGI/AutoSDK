@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTaskRequestVariant3TypeJsonConverter))]
         public global::G.CreateTaskRequestVariant3Type Type { get; set; }
 
         /// <summary>
@@ -25,12 +26,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTaskRequestVariant3ModeJsonConverter))]
         public global::G.CreateTaskRequestVariant3Mode Mode { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_version")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTaskRequestVariant3ModelVersionJsonConverter))]
         public global::G.CreateTaskRequestVariant3ModelVersion? ModelVersion { get; set; }
 
         /// <summary>

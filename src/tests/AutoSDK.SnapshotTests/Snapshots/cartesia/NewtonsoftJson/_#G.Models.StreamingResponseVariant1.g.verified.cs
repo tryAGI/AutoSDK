@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StreamingResponseVariant1TypeJsonConverter))]
         public global::G.StreamingResponseVariant1Type Type { get; set; }
 
         /// <summary>

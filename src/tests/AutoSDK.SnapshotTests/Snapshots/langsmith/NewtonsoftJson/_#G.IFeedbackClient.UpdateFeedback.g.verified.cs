@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="feedbackId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedbackSchema> UpdateFeedbackAsync(
             global::System.Guid feedbackId,
 
             global::G.FeedbackUpdateSchema request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Feedback<br/>
@@ -28,6 +30,7 @@ namespace G
         /// <param name="comment"></param>
         /// <param name="correction"></param>
         /// <param name="feedbackConfig"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedbackSchema> UpdateFeedbackAsync(
@@ -37,6 +40,7 @@ namespace G
             string? comment = default,
             global::G.AnyOf<object, string, object>? correction = default,
             global::G.FeedbackConfig? feedbackConfig = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

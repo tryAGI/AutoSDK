@@ -14,6 +14,7 @@ namespace G
         /// Default Value: rating
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WidgetEndFeedbackTypeJsonConverter))]
         public global::G.WidgetEndFeedbackType? Type { get; set; }
 
         /// <summary>

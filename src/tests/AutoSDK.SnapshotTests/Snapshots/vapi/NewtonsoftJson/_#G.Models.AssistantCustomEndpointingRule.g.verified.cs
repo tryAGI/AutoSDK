@@ -22,6 +22,7 @@ namespace G
         /// - If you have questions where the customer may pause to look up information like "what's my account number?", you can set a longer timeout.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssistantCustomEndpointingRuleTypeJsonConverter))]
         public global::G.AssistantCustomEndpointingRuleType Type { get; set; }
 
         /// <summary>

@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>characters</example>
         [global::Newtonsoft.Json.JsonProperty("billing_unit")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UsageResponseProductBillingUnitJsonConverter))]
         public global::G.UsageResponseProductBillingUnit? BillingUnit { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The type of action to take
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateProjectAutomationConfigVariant1ActionVariant1TypeJsonConverter))]
         public global::G.CreateProjectAutomationConfigVariant1ActionVariant1Type Type { get; set; }
 
         /// <summary>

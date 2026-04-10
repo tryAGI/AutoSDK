@@ -10,11 +10,13 @@ namespace G
         /// Upsert optimization
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task UpsertOptimizationAsync(
 
             global::G.OptimizationWrite request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upsert optimization<br/>
@@ -34,6 +36,7 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="studioConfig"></param>
         /// <param name="lastUpdatedAt"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task UpsertOptimizationAsync(
@@ -47,6 +50,7 @@ namespace G
             global::G.JsonListStringWrite? metadata = default,
             global::G.OptimizationStudioConfigWrite? studioConfig = default,
             global::System.DateTime? lastUpdatedAt = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

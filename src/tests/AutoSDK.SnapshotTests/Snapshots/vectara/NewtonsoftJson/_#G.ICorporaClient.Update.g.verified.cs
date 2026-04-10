@@ -17,6 +17,7 @@ namespace G
         /// Example: my-corpus
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Corpus> UpdateAsync(
@@ -25,6 +26,7 @@ namespace G
             global::G.UpdateCorpusRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a corpus<br/>
@@ -52,6 +54,7 @@ namespace G
         /// <param name="saveHistory">
         /// Indicates whether to save corpus queries to query history by default.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Corpus> UpdateAsync(
@@ -62,6 +65,7 @@ namespace G
             string? name = default,
             string? description = default,
             bool? saveHistory = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

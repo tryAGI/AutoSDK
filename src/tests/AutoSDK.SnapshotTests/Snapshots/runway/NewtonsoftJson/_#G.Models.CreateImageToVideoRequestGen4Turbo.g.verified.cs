@@ -31,6 +31,7 @@ namespace G
         /// The resolution of the output video.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ratio", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateImageToVideoRequestGen4TurboRatioJsonConverter))]
         public global::G.CreateImageToVideoRequestGen4TurboRatio Ratio { get; set; } = default!;
 
         /// <summary>

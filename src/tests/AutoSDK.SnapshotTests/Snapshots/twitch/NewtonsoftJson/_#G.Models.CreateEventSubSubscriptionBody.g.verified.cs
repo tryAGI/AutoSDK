@@ -13,6 +13,7 @@ namespace G
         /// The type of subscription to create. For a list of subscriptions that you can create, see [Subscription Types](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types#subscription-types). Set this field to the value in the **Name** column of the Subscription Types table.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEventSubSubscriptionBodyTypeJsonConverter))]
         public global::G.CreateEventSubSubscriptionBodyType Type { get; set; } = default!;
 
         /// <summary>

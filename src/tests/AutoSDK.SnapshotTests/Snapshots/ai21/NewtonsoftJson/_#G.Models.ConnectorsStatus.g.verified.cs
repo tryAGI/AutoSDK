@@ -19,6 +19,7 @@ namespace G
         /// An enumeration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workflow_status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConnectorsWorkflowStatusJsonConverter))]
         public global::G.ConnectorsWorkflowStatus WorkflowStatus { get; set; } = default!;
 
         /// <summary>

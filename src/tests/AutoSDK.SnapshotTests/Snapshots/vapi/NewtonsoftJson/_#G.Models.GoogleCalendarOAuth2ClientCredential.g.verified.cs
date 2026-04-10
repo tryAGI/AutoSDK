@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoogleCalendarOAuth2ClientCredentialProviderJsonConverter))]
         public global::G.GoogleCalendarOAuth2ClientCredentialProvider Provider { get; set; }
 
         /// <summary>

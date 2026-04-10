@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outcome")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SessionInsightsDtoOutcomeJsonConverter))]
         public global::G.SessionInsightsDtoOutcome? Outcome { get; set; }
 
         /// <summary>

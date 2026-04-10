@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpeechmaticsCredentialProviderJsonConverter))]
         public global::G.SpeechmaticsCredentialProvider Provider { get; set; }
 
         /// <summary>

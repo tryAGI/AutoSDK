@@ -13,6 +13,7 @@ namespace G
         /// Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodespacesSetCodespacesAccessRequestVisibilityJsonConverter))]
         public global::G.CodespacesSetCodespacesAccessRequestVisibility Visibility { get; set; } = default!;
 
         /// <summary>

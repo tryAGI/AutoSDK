@@ -21,6 +21,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ResponseCompletedEventType.ResponseCompleted</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseCompletedEventTypeJsonConverter))]
         public global::G.ResponseCompletedEventType Type { get; set; } = global::G.ResponseCompletedEventType.ResponseCompleted;
 
         /// <summary>

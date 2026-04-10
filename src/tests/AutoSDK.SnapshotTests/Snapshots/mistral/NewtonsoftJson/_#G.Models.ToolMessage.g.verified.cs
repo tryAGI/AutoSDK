@@ -31,6 +31,7 @@ namespace G
         /// Default Value: tool
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolMessageRoleJsonConverter))]
         public global::G.ToolMessageRole? Role { get; set; }
 
         /// <summary>

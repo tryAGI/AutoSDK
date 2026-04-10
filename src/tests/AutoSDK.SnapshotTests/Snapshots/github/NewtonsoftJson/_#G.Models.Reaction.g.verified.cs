@@ -35,6 +35,7 @@ namespace G
         /// </summary>
         /// <example>heart</example>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReactionContentJsonConverter))]
         public global::G.ReactionContent Content { get; set; } = default!;
 
         /// <summary>

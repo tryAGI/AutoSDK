@@ -33,6 +33,7 @@ namespace G
         /// Policy type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateUsageLimitsPolicyRequestTypeJsonConverter))]
         public global::G.CreateUsageLimitsPolicyRequestType Type { get; set; } = default!;
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace G
         /// Reset period. If not provided, limit is cumulative.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("periodic_reset")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateUsageLimitsPolicyRequestPeriodicResetJsonConverter))]
         public global::G.CreateUsageLimitsPolicyRequestPeriodicReset? PeriodicReset { get; set; }
 
         /// <summary>

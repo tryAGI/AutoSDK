@@ -13,6 +13,7 @@ namespace G
         /// Always `refusal`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageContentRefusalObjectTypeJsonConverter))]
         public global::G.MessageContentRefusalObjectType Type { get; set; }
 
         /// <summary>

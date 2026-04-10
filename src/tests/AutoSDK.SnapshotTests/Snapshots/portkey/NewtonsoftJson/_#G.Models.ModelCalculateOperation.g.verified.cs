@@ -13,6 +13,7 @@ namespace G
         /// Operation type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operation")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelCalculateOperationOperationJsonConverter))]
         public global::G.ModelCalculateOperationOperation? Operation { get; set; }
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace G
         /// The new status of the CodeQL variant analysis repository task.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("analysis_status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeScanningVariantAnalysisStatusJsonConverter))]
         public global::G.CodeScanningVariantAnalysisStatus AnalysisStatus { get; set; } = default!;
 
         /// <summary>

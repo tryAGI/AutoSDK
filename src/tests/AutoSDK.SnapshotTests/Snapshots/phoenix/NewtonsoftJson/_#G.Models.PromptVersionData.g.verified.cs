@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelProviderJsonConverter))]
         public global::G.ModelProvider ModelProvider { get; set; } = default!;
 
         /// <summary>
@@ -37,12 +38,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptTemplateTypeJsonConverter))]
         public global::G.PromptTemplateType TemplateType { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_format", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PromptTemplateFormatJsonConverter))]
         public global::G.PromptTemplateFormat TemplateFormat { get; set; } = default!;
 
         /// <summary>

@@ -25,12 +25,14 @@ namespace G
         /// The status of the current task.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobStatusJsonConverter))]
         public global::G.JobStatus? Status { get; set; }
 
         /// <summary>
         /// The type of variation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transformType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VariationTypeJsonConverter))]
         public global::G.VariationType? TransformType { get; set; }
 
         /// <summary>

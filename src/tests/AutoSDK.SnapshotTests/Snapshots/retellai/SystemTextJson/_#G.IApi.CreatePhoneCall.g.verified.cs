@@ -9,11 +9,13 @@ namespace G
         /// Create a new outbound phone call
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.V2PhoneCallResponse> CreatePhoneCallAsync(
 
             global::G.CreatePhoneCallRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a new outbound phone call
@@ -52,6 +54,7 @@ namespace G
         /// If true, the e.164 validation will be ignored for the from_number. This can be useful when you want to dial to internal pseudo numbers. This only applies when you are using custom telephony and does not apply when you are using Retell Telephony. If omitted, the default value is false.<br/>
         /// Example: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.V2PhoneCallResponse> CreatePhoneCallAsync(
@@ -64,6 +67,7 @@ namespace G
             object? retellLlmDynamicVariables = default,
             global::System.Collections.Generic.Dictionary<string, string>? customSipHeaders = default,
             bool? ignoreE164Validation = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

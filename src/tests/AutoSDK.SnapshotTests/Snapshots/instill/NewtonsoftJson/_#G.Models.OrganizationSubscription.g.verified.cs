@@ -14,6 +14,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("plan")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrganizationSubscriptionPlanJsonConverter))]
         public global::G.OrganizationSubscriptionPlan? Plan { get; set; }
 
         /// <summary>

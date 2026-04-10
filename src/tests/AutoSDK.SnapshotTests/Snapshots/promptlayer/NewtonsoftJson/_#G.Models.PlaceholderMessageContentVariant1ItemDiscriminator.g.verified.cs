@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PlaceholderMessageContentVariant1ItemDiscriminatorTypeJsonConverter))]
         public global::G.PlaceholderMessageContentVariant1ItemDiscriminatorType? Type { get; set; }
 
         /// <summary>

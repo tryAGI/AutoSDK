@@ -12,6 +12,7 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateRepoResponse> UpdateRepoAsync(
@@ -19,6 +20,7 @@ namespace G
             string repo,
 
             global::G.UpdateRepoRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Repo<br/>
@@ -31,6 +33,7 @@ namespace G
         /// <param name="tags"></param>
         /// <param name="isPublic"></param>
         /// <param name="isArchived"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateRepoResponse> UpdateRepoAsync(
@@ -41,6 +44,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? tags = default,
             bool? isPublic = default,
             bool? isArchived = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

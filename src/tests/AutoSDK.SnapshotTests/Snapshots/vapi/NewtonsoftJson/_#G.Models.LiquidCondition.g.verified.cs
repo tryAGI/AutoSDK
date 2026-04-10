@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>liquid</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LiquidConditionTypeJsonConverter))]
         public global::G.LiquidConditionType Type { get; set; }
 
         /// <summary>

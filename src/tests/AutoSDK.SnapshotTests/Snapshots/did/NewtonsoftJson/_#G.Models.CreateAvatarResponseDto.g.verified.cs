@@ -19,12 +19,14 @@ namespace G
         /// The status of the avatar
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAvatarResponseDtoStatusJsonConverter))]
         public global::G.CreateAvatarResponseDtoStatus Status { get; set; } = default!;
 
         /// <summary>
         /// An identifier of this avatar
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateAvatarResponseDtoObjectJsonConverter))]
         public global::G.CreateAvatarResponseDtoObject Object { get; set; }
 
         /// <summary>

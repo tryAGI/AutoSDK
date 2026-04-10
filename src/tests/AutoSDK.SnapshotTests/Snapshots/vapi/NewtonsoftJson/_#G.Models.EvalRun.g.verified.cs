@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <example>running</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalRunStatusJsonConverter))]
         public global::G.EvalRunStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -29,6 +30,7 @@ namespace G
         /// </summary>
         /// <example>mockConversation.done</example>
         [global::Newtonsoft.Json.JsonProperty("endedReason", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalRunEndedReasonJsonConverter))]
         public global::G.EvalRunEndedReason EndedReason { get; set; } = default!;
 
         /// <summary>
@@ -111,6 +113,7 @@ namespace G
         /// </summary>
         /// <example>eval</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalRunTypeJsonConverter))]
         public global::G.EvalRunType Type { get; set; }
 
         /// <summary>

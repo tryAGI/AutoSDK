@@ -13,6 +13,7 @@ namespace G
         /// Region ID
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("region_id", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TwilioRegionIdJsonConverter))]
         public global::G.TwilioRegionId RegionId { get; set; } = default!;
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// Edge location for this region
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("edge_location", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TwilioEdgeLocationJsonConverter))]
         public global::G.TwilioEdgeLocation EdgeLocation { get; set; } = default!;
 
         /// <summary>

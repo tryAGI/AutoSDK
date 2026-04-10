@@ -31,6 +31,7 @@ namespace G
         /// The type of the configured score
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("score_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectScoreTypeJsonConverter))]
         public global::G.ProjectScoreType ScoreType { get; set; } = default!;
 
         /// <summary>

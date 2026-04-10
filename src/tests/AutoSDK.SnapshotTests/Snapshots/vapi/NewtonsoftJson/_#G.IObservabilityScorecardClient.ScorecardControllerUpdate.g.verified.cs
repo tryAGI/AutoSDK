@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Scorecard> ScorecardControllerUpdateAsync(
             string id,
 
             global::G.UpdateScorecardDTO request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Scorecard
@@ -35,6 +37,7 @@ namespace G
         /// These are the assistant IDs that this scorecard is linked to.<br/>
         /// When linked to assistants, this scorecard will be available for evaluation during those assistants' calls.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Scorecard> ScorecardControllerUpdateAsync(
@@ -43,6 +46,7 @@ namespace G
             string? description = default,
             global::System.Collections.Generic.IList<global::G.ScorecardMetric>? metrics = default,
             global::System.Collections.Generic.IList<string>? assistantIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

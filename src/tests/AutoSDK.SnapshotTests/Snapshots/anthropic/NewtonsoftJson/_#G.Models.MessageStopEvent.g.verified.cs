@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.MessageStopEventType.MessageStop</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageStopEventTypeJsonConverter))]
         public global::G.MessageStopEventType Type { get; set; } = global::G.MessageStopEventType.MessageStop;
 
         /// <summary>

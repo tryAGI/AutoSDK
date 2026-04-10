@@ -13,18 +13,21 @@ namespace G
         /// This is the transcription provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackElevenLabsTranscriberProviderJsonConverter))]
         public global::G.FallbackElevenLabsTranscriberProvider Provider { get; set; }
 
         /// <summary>
         /// This is the model that will be used for the transcription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackElevenLabsTranscriberModelJsonConverter))]
         public global::G.FallbackElevenLabsTranscriberModel? Model { get; set; }
 
         /// <summary>
         /// This is the language that will be used for the transcription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackElevenLabsTranscriberLanguageJsonConverter))]
         public global::G.FallbackElevenLabsTranscriberLanguage? Language { get; set; }
 
         /// <summary>

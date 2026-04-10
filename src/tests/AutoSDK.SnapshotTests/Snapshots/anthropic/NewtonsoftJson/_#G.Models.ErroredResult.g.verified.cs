@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ErroredResultType.Errored</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ErroredResultTypeJsonConverter))]
         public global::G.ErroredResultType Type { get; set; } = global::G.ErroredResultType.Errored;
 
         /// <summary>

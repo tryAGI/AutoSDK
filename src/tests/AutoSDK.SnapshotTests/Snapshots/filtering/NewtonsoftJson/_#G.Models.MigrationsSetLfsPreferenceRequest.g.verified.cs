@@ -13,6 +13,7 @@ namespace G
         /// Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_lfs", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MigrationsSetLfsPreferenceRequestUseLfsJsonConverter))]
         public global::G.MigrationsSetLfsPreferenceRequestUseLfs UseLfs { get; set; } = default!;
 
         /// <summary>

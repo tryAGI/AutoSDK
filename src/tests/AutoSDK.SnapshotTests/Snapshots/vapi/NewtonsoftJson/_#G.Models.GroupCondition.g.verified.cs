@@ -15,12 +15,14 @@ namespace G
         /// </summary>
         /// <example>group</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GroupConditionTypeJsonConverter))]
         public global::G.GroupConditionType Type { get; set; }
 
         /// <summary>
         /// This is the logical operator for combining conditions in this group
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GroupConditionOperatorJsonConverter))]
         public global::G.GroupConditionOperator Operator { get; set; } = default!;
 
         /// <summary>

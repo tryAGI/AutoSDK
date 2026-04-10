@@ -13,18 +13,21 @@ namespace G
         /// This is the transcription provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackOpenAITranscriberProviderJsonConverter))]
         public global::G.FallbackOpenAITranscriberProvider Provider { get; set; }
 
         /// <summary>
         /// This is the model that will be used for the transcription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackOpenAITranscriberModelJsonConverter))]
         public global::G.FallbackOpenAITranscriberModel Model { get; set; } = default!;
 
         /// <summary>
         /// This is the language that will be set for the transcription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackOpenAITranscriberLanguageJsonConverter))]
         public global::G.FallbackOpenAITranscriberLanguage? Language { get; set; }
 
         /// <summary>

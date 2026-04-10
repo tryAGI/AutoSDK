@@ -32,6 +32,7 @@ namespace G
         /// Default Value: GENERAL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upscalerStyle")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UniversalUpscalerStyleJsonConverter))]
         public global::G.UniversalUpscalerStyle? UpscalerStyle { get; set; }
 
         /// <summary>

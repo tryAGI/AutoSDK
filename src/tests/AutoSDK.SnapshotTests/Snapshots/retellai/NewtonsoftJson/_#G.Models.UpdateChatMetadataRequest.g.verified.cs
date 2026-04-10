@@ -21,6 +21,7 @@ namespace G
         /// </summary>
         /// <example>everything</example>
         [global::Newtonsoft.Json.JsonProperty("data_storage_setting")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateChatMetadataRequestDataStorageSettingJsonConverter))]
         public global::G.UpdateChatMetadataRequestDataStorageSetting? DataStorageSetting { get; set; }
 
         /// <summary>

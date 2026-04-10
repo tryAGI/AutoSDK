@@ -19,6 +19,7 @@ namespace G
         /// This is the type of the message. "user-interrupted" is sent when the user interrupts the assistant.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ClientMessageUserInterruptedTypeJsonConverter))]
         public global::G.ClientMessageUserInterruptedType Type { get; set; }
 
         /// <summary>

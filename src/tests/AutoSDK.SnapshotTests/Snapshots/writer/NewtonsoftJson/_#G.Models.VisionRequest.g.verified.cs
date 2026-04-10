@@ -13,6 +13,7 @@ namespace G
         /// The model to use for image analysis.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VisionRequestModelJsonConverter))]
         public global::G.VisionRequestModel Model { get; set; }
 
         /// <summary>

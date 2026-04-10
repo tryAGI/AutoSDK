@@ -22,6 +22,7 @@ namespace G
         /// The ID of the search rule to update
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponse> UpdateSearchRuleAsync(
@@ -29,6 +30,7 @@ namespace G
             global::System.Guid ruleId,
 
             global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleUpdateParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a search rule<br/>
@@ -52,6 +54,7 @@ namespace G
         /// <param name="rules">
         /// The rules to apply on query matches
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponse> UpdateSearchRuleAsync(
@@ -59,6 +62,7 @@ namespace G
             global::System.Guid ruleId,
             string? query = default,
             global::System.Collections.Generic.IList<global::G.RulesVariant1Item2>? rules = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

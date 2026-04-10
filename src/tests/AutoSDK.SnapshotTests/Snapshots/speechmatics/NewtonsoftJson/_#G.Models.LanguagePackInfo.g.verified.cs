@@ -25,6 +25,7 @@ namespace G
         /// The direction that words in the language should be written and read in.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("writing_direction")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LanguagePackInfoWritingDirectionJsonConverter))]
         public global::G.LanguagePackInfoWritingDirection? WritingDirection { get; set; }
 
         /// <summary>

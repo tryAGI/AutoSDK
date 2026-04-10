@@ -136,6 +136,7 @@ namespace G
         /// Default Value: SUCCESS
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LogRequestStatusJsonConverter))]
         public global::G.LogRequestStatus? Status { get; set; }
 
         /// <summary>

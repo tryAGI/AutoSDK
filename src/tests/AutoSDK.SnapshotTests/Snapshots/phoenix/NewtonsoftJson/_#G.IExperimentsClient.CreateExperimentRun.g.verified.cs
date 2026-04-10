@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="experimentId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateExperimentRunResponseBody> CreateExperimentRunAsync(
             string experimentId,
 
             global::G.CreateExperimentRunRequestBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create run for an experiment
@@ -42,6 +44,7 @@ namespace G
         /// <param name="error">
         /// Optional error message if the experiment run encountered an error
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateExperimentRunResponseBody> CreateExperimentRunAsync(
@@ -53,6 +56,7 @@ namespace G
             global::System.DateTime endTime,
             string? traceId = default,
             string? error = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

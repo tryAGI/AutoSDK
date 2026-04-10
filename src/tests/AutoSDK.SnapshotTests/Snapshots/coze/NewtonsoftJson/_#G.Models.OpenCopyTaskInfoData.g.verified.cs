@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("entity_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TaskEntityTypeJsonConverter))]
         public global::G.TaskEntityType? EntityType { get; set; }
 
         /// <summary>
@@ -49,6 +50,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("task_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TaskStatusJsonConverter))]
         public global::G.TaskStatus? TaskStatus { get; set; }
 
         /// <summary>

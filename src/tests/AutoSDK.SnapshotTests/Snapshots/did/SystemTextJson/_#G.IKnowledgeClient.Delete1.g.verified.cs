@@ -10,10 +10,12 @@ namespace G
         /// Knowledge will be deleted with all documents in it. Knowledge that was deleted will no longer be available for any agent.
         /// </summary>
         /// <param name="knowledgeId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Delete1Response4> Delete1Async(
             string knowledgeId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

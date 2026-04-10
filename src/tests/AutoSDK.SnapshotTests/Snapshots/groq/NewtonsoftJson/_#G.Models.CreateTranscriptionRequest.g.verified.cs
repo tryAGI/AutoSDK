@@ -55,6 +55,7 @@ namespace G
         /// Default Value: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTranscriptionRequestResponseFormatJsonConverter))]
         public global::G.CreateTranscriptionRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>

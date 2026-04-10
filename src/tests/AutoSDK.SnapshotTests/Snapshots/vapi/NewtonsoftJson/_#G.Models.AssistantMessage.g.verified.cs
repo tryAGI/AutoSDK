@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.AssistantMessageRole.Assistant</default>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssistantMessageRoleJsonConverter))]
         public global::G.AssistantMessageRole Role { get; set; } = global::G.AssistantMessageRole.Assistant;
 
         /// <summary>

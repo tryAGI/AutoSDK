@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `vector_store.file_content.page`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreFileContentResponseObjectJsonConverter))]
         public global::G.VectorStoreFileContentResponseObject Object { get; set; }
 
         /// <summary>

@@ -14,6 +14,7 @@ namespace G
         /// The shape type - set to `heart`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgHeartShapeTypeJsonConverter))]
         public global::G.SvgHeartShapeType Type { get; set; }
 
         /// <summary>

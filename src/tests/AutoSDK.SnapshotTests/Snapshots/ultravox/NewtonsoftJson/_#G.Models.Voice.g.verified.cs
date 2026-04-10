@@ -40,6 +40,7 @@ namespace G
         /// </summary>
         /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("ownership")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OwnershipEnumJsonConverter))]
         public global::G.OwnershipEnum Ownership { get; set; } = default!;
 
         /// <summary>

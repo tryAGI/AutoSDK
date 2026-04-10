@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TraceScopeTypeJsonConverter))]
         public global::G.TraceScopeType Type { get; set; }
 
         /// <summary>

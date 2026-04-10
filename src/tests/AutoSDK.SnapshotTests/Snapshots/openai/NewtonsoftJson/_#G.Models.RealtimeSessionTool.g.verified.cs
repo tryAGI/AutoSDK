@@ -13,6 +13,7 @@ namespace G
         /// The type of the tool, i.e. `function`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeSessionToolTypeJsonConverter))]
         public global::G.RealtimeSessionToolType? Type { get; set; }
 
         /// <summary>

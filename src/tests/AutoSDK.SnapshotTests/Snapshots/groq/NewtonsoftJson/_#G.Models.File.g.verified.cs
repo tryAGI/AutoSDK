@@ -25,6 +25,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the file was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? CreatedAt { get; set; }
 
         /// <summary>
@@ -37,12 +38,14 @@ namespace G
         /// The object type, which is always `file`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileObjectJsonConverter))]
         public global::G.FileObject? Object { get; set; }
 
         /// <summary>
         /// The intended purpose of the file. Supported values are `batch`, and `batch_output`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilePurposeJsonConverter))]
         public global::G.FilePurpose? Purpose { get; set; }
 
         /// <summary>

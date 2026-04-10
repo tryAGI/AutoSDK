@@ -30,6 +30,7 @@ namespace G
         /// </summary>
         /// <example>docker</example>
         [global::Newtonsoft.Json.JsonProperty("package_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PackagePackageTypeJsonConverter))]
         public global::G.PackagePackageType PackageType { get; set; } = default!;
 
         /// <summary>
@@ -59,6 +60,7 @@ namespace G
         /// </summary>
         /// <example>private</example>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PackageVisibilityJsonConverter))]
         public global::G.PackageVisibility Visibility { get; set; } = default!;
 
         /// <summary>

@@ -49,6 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookWorkflowRunRequestedWorkflowRunConclusionJsonConverter))]
         public global::G.WebhookWorkflowRunRequestedWorkflowRunConclusion? Conclusion { get; set; }
 
         /// <summary>
@@ -181,6 +182,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookWorkflowRunRequestedWorkflowRunStatusJsonConverter))]
         public global::G.WebhookWorkflowRunRequestedWorkflowRunStatus Status { get; set; } = default!;
 
         /// <summary>

@@ -20,6 +20,7 @@ namespace G
         /// Default Value: general
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topic")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchRequestTopicJsonConverter))]
         public global::G.WebSearchRequestTopic? Topic { get; set; }
 
         /// <summary>
@@ -29,6 +30,7 @@ namespace G
         /// Default Value: basic
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search_depth")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchRequestSearchDepthJsonConverter))]
         public global::G.WebSearchRequestSearchDepth? SearchDepth { get; set; }
 
         /// <summary>
@@ -47,6 +49,7 @@ namespace G
         /// Filters results to content published within the specified time range back from the current date. For example, `week` or `w` returns results from the past 7 days.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("time_range")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchRequestTimeRangeJsonConverter))]
         public global::G.WebSearchRequestTimeRange? TimeRange { get; set; }
 
         /// <summary>
@@ -89,6 +92,7 @@ namespace G
         /// Localizes search results to a specific country. Only applies to general topic searches.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("country")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebSearchRequestCountryJsonConverter))]
         public global::G.WebSearchRequestCountry? Country { get; set; }
 
         /// <summary>

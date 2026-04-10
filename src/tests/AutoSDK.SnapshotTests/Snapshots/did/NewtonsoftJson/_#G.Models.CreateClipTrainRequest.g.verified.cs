@@ -25,6 +25,7 @@ namespace G
         /// The gender of the presenter
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gender", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateClipTrainRequestGenderJsonConverter))]
         public global::G.CreateClipTrainRequestGender Gender { get; set; } = default!;
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// The Unix timestamp (in seconds) of when the completion was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset Created { get; set; } = default!;
 
         /// <summary>
@@ -44,6 +45,7 @@ namespace G
         /// The object type, which is always "text_completion"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateCompletionResponseObjectJsonConverter))]
         public global::G.CreateCompletionResponseObject Object { get; set; }
 
         /// <summary>

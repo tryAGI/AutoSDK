@@ -91,6 +91,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TraceExperimentItemBulkWriteViewSourceJsonConverter))]
         public global::G.TraceExperimentItemBulkWriteViewSource? Source { get; set; }
 
         /// <summary>

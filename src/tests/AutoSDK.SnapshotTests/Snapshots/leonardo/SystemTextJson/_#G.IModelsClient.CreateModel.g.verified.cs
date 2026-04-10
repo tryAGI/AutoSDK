@@ -10,11 +10,13 @@ namespace G
         /// This endpoint will train a new custom model
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateModelResponse> CreateModelAsync(
 
             global::G.CreateModelRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Train a Custom Model<br/>
@@ -51,6 +53,7 @@ namespace G
         /// When training using the PIXEL_ART model type, this influences the training strength.<br/>
         /// Default Value: MEDIUM
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateModelResponse> CreateModelAsync(
@@ -63,6 +66,7 @@ namespace G
             int? resolution = default,
             global::G.SdVersions? sdVersion = default,
             global::G.Strength? strength = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -19,6 +19,7 @@ namespace G
         /// The endpoint to be used for all requests in the batch. Currently /v1/chat/completions, /v1/completions are supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("endpoint", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIBatchesInEndpointJsonConverter))]
         public global::G.OpenAIBatchesInEndpoint Endpoint { get; set; } = default!;
 
         /// <summary>

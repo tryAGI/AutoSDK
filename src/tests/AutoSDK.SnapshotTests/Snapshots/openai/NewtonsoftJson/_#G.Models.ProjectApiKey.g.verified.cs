@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `organization.project.api_key`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectApiKeyObjectJsonConverter))]
         public global::G.ProjectApiKeyObject Object { get; set; }
 
         /// <summary>
@@ -31,12 +32,14 @@ namespace G
         /// The Unix timestamp (in seconds) of when the API key was created
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the API key was last used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_used_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset LastUsedAt { get; set; } = default!;
 
         /// <summary>

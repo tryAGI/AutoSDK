@@ -13,6 +13,7 @@ namespace G
         /// The permission to grant the team on this repository. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TeamsAddOrUpdateRepoPermissionsLegacyRequestPermissionJsonConverter))]
         public global::G.TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission? Permission { get; set; }
 
         /// <summary>

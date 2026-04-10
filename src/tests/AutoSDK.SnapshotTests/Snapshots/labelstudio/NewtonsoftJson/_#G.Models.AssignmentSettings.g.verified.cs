@@ -22,6 +22,7 @@ namespace G
         /// * `assigned_only` - Label Stream shows tasks only to assigned users
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("label_stream_task_distribution")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LabelStreamTaskDistributionEnumJsonConverter))]
         public global::G.LabelStreamTaskDistributionEnum? LabelStreamTaskDistribution { get; set; }
 
         /// <summary>

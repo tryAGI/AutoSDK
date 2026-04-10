@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("active_lock_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewEditedPullRequestActiveLockReasonJsonConverter))]
         public global::G.WebhookPullRequestReviewEditedPullRequestActiveLockReason? ActiveLockReason { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewEditedPullRequestAuthorAssociationJsonConverter))]
         public global::G.WebhookPullRequestReviewEditedPullRequestAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
@@ -193,6 +195,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewEditedPullRequestStateJsonConverter))]
         public global::G.WebhookPullRequestReviewEditedPullRequestState State { get; set; } = default!;
 
         /// <summary>

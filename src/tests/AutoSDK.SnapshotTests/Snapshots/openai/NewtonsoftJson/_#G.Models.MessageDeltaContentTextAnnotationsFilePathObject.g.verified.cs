@@ -19,6 +19,7 @@ namespace G
         /// Always `file_path`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaContentTextAnnotationsFilePathObjectTypeJsonConverter))]
         public global::G.MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>

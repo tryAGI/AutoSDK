@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <example>docker</example>
         [global::Newtonsoft.Json.JsonProperty("package_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PackageVersionMetadataPackageTypeJsonConverter))]
         public global::G.PackageVersionMetadataPackageType PackageType { get; set; } = default!;
 
         /// <summary>

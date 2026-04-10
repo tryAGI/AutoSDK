@@ -25,6 +25,7 @@ namespace G
         /// Optional. Optional task type for which the embeddings will be used. Can only be set for `models/embedding-001` or newer models.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("taskType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbedContentRequestTaskTypeJsonConverter))]
         public global::G.EmbedContentRequestTaskType? TaskType { get; set; }
 
         /// <summary>

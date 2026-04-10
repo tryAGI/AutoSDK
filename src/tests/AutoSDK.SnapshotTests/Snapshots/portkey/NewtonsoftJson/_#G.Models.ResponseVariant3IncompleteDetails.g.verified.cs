@@ -13,6 +13,7 @@ namespace G
         /// The reason why the response is incomplete.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseVariant3IncompleteDetailsReasonJsonConverter))]
         public global::G.ResponseVariant3IncompleteDetailsReason? Reason { get; set; }
 
         /// <summary>

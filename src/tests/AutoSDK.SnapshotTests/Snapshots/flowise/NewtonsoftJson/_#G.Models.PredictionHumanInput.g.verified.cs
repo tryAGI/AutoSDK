@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <example>reject</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PredictionHumanInputTypeJsonConverter))]
         public global::G.PredictionHumanInputType? Type { get; set; }
 
         /// <summary>

@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>text</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FilterAttributeStatTypeJsonConverter))]
         public global::G.FilterAttributeStatType Type { get; set; } = default!;
 
         /// <summary>

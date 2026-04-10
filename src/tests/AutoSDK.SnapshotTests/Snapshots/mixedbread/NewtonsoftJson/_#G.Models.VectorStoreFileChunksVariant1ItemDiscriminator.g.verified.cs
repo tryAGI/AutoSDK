@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreFileChunksVariant1ItemDiscriminatorTypeJsonConverter))]
         public global::G.VectorStoreFileChunksVariant1ItemDiscriminatorType? Type { get; set; }
 
         /// <summary>

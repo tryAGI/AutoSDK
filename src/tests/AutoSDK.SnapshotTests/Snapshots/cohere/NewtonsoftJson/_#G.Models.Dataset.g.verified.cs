@@ -37,12 +37,14 @@ namespace G
         /// The type of the dataset
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetTypeJsonConverter))]
         public global::G.DatasetType DatasetType { get; set; } = default!;
 
         /// <summary>
         /// The validation status of the dataset
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("validation_status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DatasetValidationStatusJsonConverter))]
         public global::G.DatasetValidationStatus ValidationStatus { get; set; } = default!;
 
         /// <summary>

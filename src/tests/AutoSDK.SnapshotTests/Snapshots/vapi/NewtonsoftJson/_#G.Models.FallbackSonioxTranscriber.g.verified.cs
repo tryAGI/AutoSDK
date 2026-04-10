@@ -13,18 +13,21 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackSonioxTranscriberProviderJsonConverter))]
         public global::G.FallbackSonioxTranscriberProvider Provider { get; set; }
 
         /// <summary>
         /// The Soniox model to use for transcription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackSonioxTranscriberModelJsonConverter))]
         public global::G.FallbackSonioxTranscriberModel? Model { get; set; }
 
         /// <summary>
         /// The language for transcription. Uses ISO 639-1 codes. Soniox supports 60+ languages with a single universal model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackSonioxTranscriberLanguageJsonConverter))]
         public global::G.FallbackSonioxTranscriberLanguage? Language { get; set; }
 
         /// <summary>

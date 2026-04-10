@@ -15,6 +15,7 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ActionsSetWorkflowAccessToRepositoryAsync(
@@ -22,6 +23,7 @@ namespace G
             string repo,
 
             global::G.ActionsWorkflowAccessToRepository request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set the level of access for workflows outside of the repository<br/>
@@ -37,12 +39,14 @@ namespace G
         /// repository.<br/>
         /// `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task ActionsSetWorkflowAccessToRepositoryAsync(
             string owner,
             string repo,
             global::G.ActionsWorkflowAccessToRepositoryAccessLevel accessLevel,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

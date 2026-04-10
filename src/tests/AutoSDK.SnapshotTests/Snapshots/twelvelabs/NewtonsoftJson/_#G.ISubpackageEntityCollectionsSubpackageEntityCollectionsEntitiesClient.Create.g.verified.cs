@@ -12,6 +12,7 @@ namespace G
         /// <param name="entityCollectionId"></param>
         /// <param name="xApiKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Entity> CreateAsync(
@@ -19,6 +20,7 @@ namespace G
             string xApiKey,
 
             global::G.CreateRequest6 request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an entity<br/>
@@ -50,6 +52,7 @@ namespace G
         /// <param name="assetIds">
         /// An array of asset IDs to associate with the entity. You must provide at least one value.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Entity> CreateAsync(
@@ -59,6 +62,7 @@ namespace G
             global::System.Collections.Generic.IList<string> assetIds,
             string? description = default,
             global::G.EntityCollectionsEntityCollectionIdEntitiesPostRequestBodyContentApplicationJsonSchemaMetadata? metadata = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

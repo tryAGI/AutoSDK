@@ -33,6 +33,7 @@ namespace G
         /// Example: customer_support
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentSession> CreateAsync(
@@ -41,6 +42,7 @@ namespace G
             global::G.CreateAgentSessionRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create agent session<br/>
@@ -99,6 +101,7 @@ namespace G
         /// <param name="fromSession">
         /// Create a new session by forking an existing one. Compacts the source history into a summary and copies artifacts.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AgentSession> CreateAsync(
@@ -112,6 +115,7 @@ namespace G
             bool? enabled = default,
             long? ttiMinutes = default,
             global::G.CreateAgentSessionRequestFromSession? fromSession = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

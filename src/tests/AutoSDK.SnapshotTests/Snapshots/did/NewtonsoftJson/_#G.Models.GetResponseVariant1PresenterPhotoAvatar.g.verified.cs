@@ -13,6 +13,7 @@ namespace G
         /// Presenter type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetResponseVariant1PresenterPhotoAvatarTypeJsonConverter))]
         public global::G.GetResponseVariant1PresenterPhotoAvatarType Type { get; set; }
 
         /// <summary>

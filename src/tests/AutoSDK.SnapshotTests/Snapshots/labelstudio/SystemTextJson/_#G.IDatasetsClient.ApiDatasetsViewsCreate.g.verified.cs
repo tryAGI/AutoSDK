@@ -10,11 +10,13 @@ namespace G
         /// Create a view for a specific dataset.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetView> ApiDatasetsViewsCreateAsync(
 
             global::G.DatasetViewRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create dataset view<br/>
@@ -39,6 +41,7 @@ namespace G
         /// <param name="user">
         /// User who made this view
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetView> ApiDatasetsViewsCreateAsync(
@@ -49,6 +52,7 @@ namespace G
             object? ordering = default,
             object? selectedItems = default,
             int? user = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

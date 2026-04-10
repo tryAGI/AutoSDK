@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScoreConfigDataTypeJsonConverter))]
         public global::G.ScoreConfigDataType DataType { get; set; } = default!;
 
         /// <summary>

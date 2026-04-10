@@ -57,12 +57,14 @@ namespace G
         /// Model task.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("task", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AITaskJsonConverter))]
         public global::G.AITask Task { get; set; } = default!;
 
         /// <summary>
         /// Model visibility.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelVisibilityJsonConverter))]
         public global::G.ModelVisibility Visibility { get; set; } = default!;
 
         /// <summary>

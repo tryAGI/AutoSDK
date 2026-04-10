@@ -52,6 +52,7 @@ namespace G
         /// </summary>
         /// <example>1280:720</example>
         [global::Newtonsoft.Json.JsonProperty("ratio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateCharacterPerformanceRequestActTwoRatioJsonConverter))]
         public global::G.CreateCharacterPerformanceRequestActTwoRatio? Ratio { get; set; }
 
         /// <summary>

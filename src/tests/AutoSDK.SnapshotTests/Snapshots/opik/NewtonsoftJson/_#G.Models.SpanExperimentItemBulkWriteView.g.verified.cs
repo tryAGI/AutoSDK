@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpanExperimentItemBulkWriteViewTypeJsonConverter))]
         public global::G.SpanExperimentItemBulkWriteViewType? Type { get; set; }
 
         /// <summary>
@@ -121,6 +122,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpanExperimentItemBulkWriteViewSourceJsonConverter))]
         public global::G.SpanExperimentItemBulkWriteViewSource? Source { get; set; }
 
         /// <summary>

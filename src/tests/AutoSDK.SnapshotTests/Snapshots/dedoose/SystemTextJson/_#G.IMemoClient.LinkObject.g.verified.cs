@@ -10,11 +10,13 @@ namespace G
         /// LinkObject
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> LinkObjectAsync(
 
             global::G.LinkObjectRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// LinkObject<br/>
@@ -26,6 +28,7 @@ namespace G
         /// <param name="excerpt"></param>
         /// <param name="descriptor"></param>
         /// <param name="tag"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> LinkObjectAsync(
@@ -35,6 +38,7 @@ namespace G
             global::G.ObjectIdWithPos excerpt,
             global::G.ObjectIdWithPos descriptor,
             global::G.ObjectIdWithPos tag,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

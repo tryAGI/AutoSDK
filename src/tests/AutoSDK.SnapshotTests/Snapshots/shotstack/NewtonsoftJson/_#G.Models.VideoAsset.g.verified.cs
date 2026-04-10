@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.VideoAssetType.Video</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoAssetTypeJsonConverter))]
         public global::G.VideoAssetType Type { get; set; } = global::G.VideoAssetType.Video;
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("volumeEffect")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VideoAssetVolumeEffectJsonConverter))]
         public global::G.VideoAssetVolumeEffect? VolumeEffect { get; set; }
 
         /// <summary>

@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="sectionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
 
             global::G.CustomChartsSectionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Read Single Section<br/>
@@ -36,6 +38,7 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="groupBy"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartsSection> ReadSingleSectionAsync(
@@ -46,6 +49,7 @@ namespace G
             global::G.TimedeltaInput? stride = default,
             bool? omitData = default,
             global::G.RunStatsGroupBy? groupBy = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

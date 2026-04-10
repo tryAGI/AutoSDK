@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "output" for Output tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OutputToolTypeJsonConverter))]
         public global::G.OutputToolType Type { get; set; }
 
         /// <summary>

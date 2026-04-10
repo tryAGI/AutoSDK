@@ -13,6 +13,7 @@ namespace G
         /// The type of input messages. Always `template`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplateTypeJsonConverter))]
         public global::G.CreateEvalResponsesRunDataSourceInputMessagesInputMessagesTemplateType Type { get; set; }
 
         /// <summary>

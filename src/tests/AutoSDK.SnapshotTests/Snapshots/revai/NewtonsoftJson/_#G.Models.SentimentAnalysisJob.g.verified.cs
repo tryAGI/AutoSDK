@@ -19,6 +19,7 @@ namespace G
         /// Current status of the job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SentimentAnalysisJobStatusJsonConverter))]
         public global::G.SentimentAnalysisJobStatus? Status { get; set; }
 
         /// <summary>

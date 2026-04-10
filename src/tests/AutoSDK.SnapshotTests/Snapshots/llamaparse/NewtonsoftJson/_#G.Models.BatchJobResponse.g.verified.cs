@@ -13,6 +13,7 @@ namespace G
         /// Current job status
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BatchJobStatusJsonConverter))]
         public global::G.BatchJobStatus Status { get; set; } = default!;
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace G
         /// Type of processing operation (parse or classify)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("job_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BatchJobTypeJsonConverter))]
         public global::G.BatchJobType JobType { get; set; } = default!;
 
         /// <summary>

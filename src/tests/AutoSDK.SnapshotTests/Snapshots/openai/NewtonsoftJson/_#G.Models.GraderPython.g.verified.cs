@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `python`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraderPythonTypeJsonConverter))]
         public global::G.GraderPythonType Type { get; set; }
 
         /// <summary>

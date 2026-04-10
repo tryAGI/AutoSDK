@@ -40,6 +40,7 @@ namespace G
         /// </summary>
         /// <example>ON</example>
         [global::Newtonsoft.Json.JsonProperty("magic_prompt_option")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MagicPromptOptionJsonConverter))]
         public global::G.MagicPromptOption? MagicPromptOption { get; set; }
 
         /// <summary>

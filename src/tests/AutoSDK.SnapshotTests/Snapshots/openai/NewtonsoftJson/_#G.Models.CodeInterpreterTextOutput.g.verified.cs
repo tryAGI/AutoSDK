@@ -13,6 +13,7 @@ namespace G
         /// The type of the code interpreter text output. Always `logs`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeInterpreterTextOutputTypeJsonConverter))]
         public global::G.CodeInterpreterTextOutputType Type { get; set; }
 
         /// <summary>

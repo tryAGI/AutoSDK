@@ -15,6 +15,7 @@ namespace G
         /// `failed`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeResponseStatusDetailsTypeJsonConverter))]
         public global::G.RealtimeResponseStatusDetailsType? Type { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// (the server-side safety filter activated and cut off the response).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeResponseStatusDetailsReasonJsonConverter))]
         public global::G.RealtimeResponseStatusDetailsReason? Reason { get; set; }
 
         /// <summary>

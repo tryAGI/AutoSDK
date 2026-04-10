@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="runId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateRunAsync(
             global::System.Guid runId,
 
             global::G.UpdateRunRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Run<br/>
@@ -37,6 +39,7 @@ namespace G
         /// <param name="outputAttachments"></param>
         /// <param name="sessionId"></param>
         /// <param name="sessionName"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> UpdateRunAsync(
@@ -55,6 +58,7 @@ namespace G
             object? outputAttachments = default,
             global::G.OneOf<global::System.Guid?, object>? sessionId = default,
             global::G.OneOf<string, object>? sessionName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

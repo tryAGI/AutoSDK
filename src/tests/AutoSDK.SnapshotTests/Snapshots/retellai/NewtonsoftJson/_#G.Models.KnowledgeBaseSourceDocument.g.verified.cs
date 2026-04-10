@@ -13,6 +13,7 @@ namespace G
         /// Type of the knowledge base source.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.KnowledgeBaseSourceDocumentTypeJsonConverter))]
         public global::G.KnowledgeBaseSourceDocumentType Type { get; set; }
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace G
         /// Priority of the job. Allowed values: LOW, NORMAL, HIGH
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("priority")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriorityJsonConverter))]
         public global::G.V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority? Priority { get; set; }
 
         /// <summary>

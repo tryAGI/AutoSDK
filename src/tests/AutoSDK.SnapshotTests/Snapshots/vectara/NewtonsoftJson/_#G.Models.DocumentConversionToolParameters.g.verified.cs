@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>markdown</example>
         [global::Newtonsoft.Json.JsonProperty("output_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DocumentConversionToolParametersOutputFormatJsonConverter))]
         public global::G.DocumentConversionToolParametersOutputFormat? OutputFormat { get; set; }
 
         /// <summary>

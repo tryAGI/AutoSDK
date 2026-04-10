@@ -101,6 +101,7 @@ namespace G
         /// The timestamp of the memory. Format: Unix timestamp
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("timestamp")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? Timestamp { get; set; }
 
         /// <summary>

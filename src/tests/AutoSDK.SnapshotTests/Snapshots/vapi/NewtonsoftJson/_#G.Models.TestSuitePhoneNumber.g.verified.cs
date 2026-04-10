@@ -13,6 +13,7 @@ namespace G
         /// This is the provider of the phone number.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TestSuitePhoneNumberProviderJsonConverter))]
         public global::G.TestSuitePhoneNumberProvider Provider { get; set; }
 
         /// <summary>

@@ -41,6 +41,7 @@ namespace G
         /// Default Value: music_v1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyStreamComposedMusicV1MusicStreamPostModelIdJsonConverter))]
         public global::G.BodyStreamComposedMusicV1MusicStreamPostModelId? ModelId { get; set; }
 
         /// <summary>

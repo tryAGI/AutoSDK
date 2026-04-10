@@ -13,6 +13,7 @@ namespace G
         /// For now, this is always `submit_tool_outputs`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunObjectRequiredActionTypeJsonConverter))]
         public global::G.RunObjectRequiredActionType Type { get; set; }
 
         /// <summary>

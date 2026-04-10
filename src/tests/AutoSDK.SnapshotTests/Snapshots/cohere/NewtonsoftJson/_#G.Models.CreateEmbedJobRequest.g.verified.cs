@@ -35,6 +35,7 @@ namespace G
         /// - `"image"`: Used for embeddings with image input.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EmbedInputTypeJsonConverter))]
         public global::G.EmbedInputType InputType { get; set; } = default!;
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace G
         /// Default Value: END
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncate")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateEmbedJobRequestTruncateJsonConverter))]
         public global::G.CreateEmbedJobRequestTruncate? Truncate { get; set; }
 
         /// <summary>

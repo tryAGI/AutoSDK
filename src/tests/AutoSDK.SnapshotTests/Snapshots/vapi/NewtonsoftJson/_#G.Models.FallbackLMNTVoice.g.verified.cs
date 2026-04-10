@@ -22,6 +22,7 @@ namespace G
         /// This is the voice provider that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackLMNTVoiceProviderJsonConverter))]
         public global::G.FallbackLMNTVoiceProvider Provider { get; set; }
 
         /// <summary>
@@ -44,6 +45,7 @@ namespace G
         /// </summary>
         /// <example>en</example>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FallbackLMNTVoiceLanguageJsonConverter))]
         public global::G.FallbackLMNTVoiceLanguage? Language { get; set; }
 
         /// <summary>

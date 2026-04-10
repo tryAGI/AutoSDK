@@ -37,6 +37,7 @@ namespace G
         /// The theme for the page
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("theme", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EvalStatusPageThemeJsonConverter))]
         public global::G.EvalStatusPageTheme Theme { get; set; } = default!;
 
         /// <summary>

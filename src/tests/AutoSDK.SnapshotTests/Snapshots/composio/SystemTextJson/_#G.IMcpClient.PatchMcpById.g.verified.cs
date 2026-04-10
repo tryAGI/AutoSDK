@@ -14,12 +14,14 @@ namespace G
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PatchMcpByIdResponse> PatchMcpByIdAsync(
             string id,
 
             global::G.PatchMcpByIdRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update MCP server configuration<br/>
@@ -49,6 +51,7 @@ namespace G
         /// List of auth config IDs to use for this MCP server.<br/>
         /// Example: [auth_cfg_abc123def456, auth_cfg_xyz789]
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PatchMcpByIdResponse> PatchMcpByIdAsync(
@@ -58,6 +61,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? allowedTools = default,
             bool? managedAuthViaComposio = default,
             global::System.Collections.Generic.IList<string>? authConfigIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

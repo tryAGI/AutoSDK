@@ -19,6 +19,7 @@ namespace G
         /// Action to apply to the requests.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrgsReviewPatGrantRequestsInBulkRequestActionJsonConverter))]
         public global::G.OrgsReviewPatGrantRequestsInBulkRequestAction Action { get; set; } = default!;
 
         /// <summary>

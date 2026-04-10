@@ -20,6 +20,7 @@ namespace G
         /// Default Value: all
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibilityJsonConverter))]
         public global::G.ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility? Visibility { get; set; }
 
         /// <summary>

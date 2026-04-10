@@ -19,6 +19,7 @@ namespace G
         /// The event type, must be `response.audio.delta`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventResponseAudioDeltaTypeJsonConverter))]
         public global::G.RealtimeServerEventResponseAudioDeltaType Type { get; set; }
 
         /// <summary>

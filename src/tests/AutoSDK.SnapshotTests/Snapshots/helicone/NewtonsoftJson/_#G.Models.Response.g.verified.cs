@@ -85,6 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseTypeJsonConverter))]
         public global::G.ResponseType Type { get; set; } = default!;
 
         /// <summary>
@@ -97,6 +98,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseRoleJsonConverter))]
         public global::G.ResponseRole Role { get; set; } = default!;
 
         /// <summary>
@@ -109,6 +111,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseType2JsonConverter))]
         public global::G.ResponseType2 Type2 { get; set; } = default!;
 
         /// <summary>

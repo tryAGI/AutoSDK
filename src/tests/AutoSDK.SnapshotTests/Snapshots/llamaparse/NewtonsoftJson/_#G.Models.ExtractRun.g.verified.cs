@@ -70,6 +70,7 @@ namespace G
         /// The status of the extraction run
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtractStateJsonConverter))]
         public global::G.ExtractState Status { get; set; } = default!;
 
         /// <summary>

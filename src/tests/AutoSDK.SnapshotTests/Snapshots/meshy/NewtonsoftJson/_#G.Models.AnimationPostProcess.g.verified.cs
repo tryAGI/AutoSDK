@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operation_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnimationPostProcessOperationTypeJsonConverter))]
         public global::G.AnimationPostProcessOperationType OperationType { get; set; } = default!;
 
         /// <summary>

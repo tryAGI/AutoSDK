@@ -13,6 +13,7 @@ namespace G
         /// "assistant" for agent reasoning, "tool" for tool execution results.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningStepRoleJsonConverter))]
         public global::G.ReasoningStepRole? Role { get; set; }
 
         /// <summary>

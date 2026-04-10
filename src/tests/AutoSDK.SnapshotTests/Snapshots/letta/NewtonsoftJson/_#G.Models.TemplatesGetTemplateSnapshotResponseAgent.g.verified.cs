@@ -67,6 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("agentType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TemplatesGetTemplateSnapshotResponseAgentAgentTypeJsonConverter))]
         public global::G.TemplatesGetTemplateSnapshotResponseAgentAgentType AgentType { get; set; } = default!;
 
         /// <summary>

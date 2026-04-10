@@ -13,12 +13,14 @@ namespace G
         /// This is the provider of the model (`anthropic`).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkflowAnthropicModelProviderJsonConverter))]
         public global::G.WorkflowAnthropicModelProvider Provider { get; set; }
 
         /// <summary>
         /// This is the specific model that will be used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkflowAnthropicModelModelJsonConverter))]
         public global::G.WorkflowAnthropicModelModel Model { get; set; } = default!;
 
         /// <summary>

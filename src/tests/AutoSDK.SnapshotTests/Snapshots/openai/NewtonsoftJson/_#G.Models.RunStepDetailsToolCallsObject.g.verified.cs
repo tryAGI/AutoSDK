@@ -13,6 +13,7 @@ namespace G
         /// Always `tool_calls`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RunStepDetailsToolCallsObjectTypeJsonConverter))]
         public global::G.RunStepDetailsToolCallsObjectType Type { get; set; }
 
         /// <summary>

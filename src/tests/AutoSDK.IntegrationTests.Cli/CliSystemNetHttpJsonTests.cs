@@ -62,7 +62,7 @@ components:
                 var content = string.Join("\n\n", generatedContents);
 
                 content.Should().Contain("AutoSdkPolyfills.CreateJsonContent(");
-                content.Should().Contain("AutoSdkPolyfills.ReadFromJsonAsync<bool?>(__response.Content, JsonSerializerContext, cancellationToken)");
+                content.Should().Contain("AutoSdkPolyfills.ReadFromJsonAsync<bool?>(__response.Content, JsonSerializerContext, __effectiveCancellationToken)");
             });
     }
 

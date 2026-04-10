@@ -18,6 +18,7 @@ namespace G
         /// <param name="discussionNumber"></param>
         /// <param name="commentNumber"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Reaction> ReactionsCreateForTeamDiscussionCommentInOrgAsync(
@@ -27,6 +28,7 @@ namespace G
             int commentNumber,
 
             global::G.ReactionsCreateForTeamDiscussionCommentInOrgRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create reaction for a team discussion comment<br/>
@@ -43,6 +45,7 @@ namespace G
         /// <param name="content">
         /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the team discussion comment.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Reaction> ReactionsCreateForTeamDiscussionCommentInOrgAsync(
@@ -51,6 +54,7 @@ namespace G
             int discussionNumber,
             int commentNumber,
             global::G.ReactionsCreateForTeamDiscussionCommentInOrgRequestContent content,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

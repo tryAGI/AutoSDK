@@ -20,6 +20,7 @@ namespace G
         /// The reason why execution stopped.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop_reason", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StopReasonTypeJsonConverter))]
         public global::G.StopReasonType StopReason { get; set; } = default!;
 
         /// <summary>

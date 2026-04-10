@@ -25,12 +25,14 @@ namespace G
         /// The type of no-code application.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApplicationTypeJsonConverter))]
         public global::G.ApplicationType Type { get; set; }
 
         /// <summary>
         /// Current deployment status of the application. Note: currently only `deployed` applications are returned.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApplicationStatusJsonConverter))]
         public global::G.ApplicationStatus Status { get; set; } = default!;
 
         /// <summary>

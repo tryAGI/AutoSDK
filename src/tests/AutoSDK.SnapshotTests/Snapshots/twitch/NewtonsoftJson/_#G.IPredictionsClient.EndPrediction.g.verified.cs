@@ -12,11 +12,13 @@ namespace G
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:predictions** scope.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EndPredictionResponse> EndPredictionAsync(
 
             global::G.EndPredictionBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Locks, resolves, or cancels a Channel Points Prediction.<br/>
@@ -44,6 +46,7 @@ namespace G
         /// <param name="winningOutcomeId">
         /// The ID of the winning outcome. You must set this parameter if you set `status` to RESOLVED.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EndPredictionResponse> EndPredictionAsync(
@@ -51,6 +54,7 @@ namespace G
             string id,
             global::G.EndPredictionBodyStatus status,
             string? winningOutcomeId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

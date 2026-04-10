@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `vector_store.search_results.page`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VectorStoreSearchResultsPageObjectJsonConverter))]
         public global::G.VectorStoreSearchResultsPageObject Object { get; set; }
 
         /// <summary>

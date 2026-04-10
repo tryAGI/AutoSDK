@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTwilioCredentialDTOProviderJsonConverter))]
         public global::G.CreateTwilioCredentialDTOProvider Provider { get; set; }
 
         /// <summary>

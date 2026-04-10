@@ -13,6 +13,7 @@ namespace G
         /// This is the type of cost, always 'voice' for this class.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoiceCostTypeJsonConverter))]
         public global::G.VoiceCostType Type { get; set; }
 
         /// <summary>

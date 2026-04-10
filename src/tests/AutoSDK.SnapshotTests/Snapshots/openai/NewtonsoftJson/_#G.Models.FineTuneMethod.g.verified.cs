@@ -13,6 +13,7 @@ namespace G
         /// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FineTuneMethodTypeJsonConverter))]
         public global::G.FineTuneMethodType Type { get; set; } = default!;
 
         /// <summary>

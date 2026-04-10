@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `response.output_text.done`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseTextDoneEventTypeJsonConverter))]
         public global::G.ResponseTextDoneEventType Type { get; set; }
 
         /// <summary>

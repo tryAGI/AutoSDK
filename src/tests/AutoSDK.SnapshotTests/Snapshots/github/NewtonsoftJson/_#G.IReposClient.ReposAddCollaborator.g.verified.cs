@@ -24,6 +24,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="username"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RepositoryInvitation> ReposAddCollaboratorAsync(
@@ -32,6 +33,7 @@ namespace G
             string username,
 
             global::G.ReposAddCollaboratorRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add a repository collaborator<br/>
@@ -55,6 +57,7 @@ namespace G
         /// The permission to grant the collaborator. **Only valid on organization-owned repositories.** We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any.<br/>
         /// Default Value: push
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RepositoryInvitation> ReposAddCollaboratorAsync(
@@ -62,6 +65,7 @@ namespace G
             string repo,
             string username,
             string? permission = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

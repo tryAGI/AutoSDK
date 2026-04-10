@@ -97,12 +97,14 @@ namespace G
         /// The unix timestamp of the user's creation. 0 if the user was created before the unix timestamp was added.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// The seat type of the user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("seat_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SeatTypeJsonConverter))]
         public global::G.SeatType SeatType { get; set; } = default!;
 
         /// <summary>

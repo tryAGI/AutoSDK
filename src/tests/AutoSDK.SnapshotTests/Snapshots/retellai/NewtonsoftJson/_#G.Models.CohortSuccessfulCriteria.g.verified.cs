@@ -13,6 +13,7 @@ namespace G
         /// Type of the filter
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CohortSuccessfulCriteriaTypeJsonConverter))]
         public global::G.CohortSuccessfulCriteriaType? Type { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("op", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CohortSuccessfulCriteriaOpJsonConverter))]
         public global::G.CohortSuccessfulCriteriaOp Op { get; set; } = default!;
 
         /// <summary>

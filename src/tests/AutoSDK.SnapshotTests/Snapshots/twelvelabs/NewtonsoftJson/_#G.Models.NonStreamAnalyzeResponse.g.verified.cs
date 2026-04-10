@@ -27,6 +27,7 @@ namespace G
         /// - `length`: The generation stopped because the model reached the maximum number of tokens. For JSON responses, this may result in truncated, invalid JSON that fails to parse.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FinishReasonJsonConverter))]
         public global::G.FinishReason? FinishReason { get; set; }
 
         /// <summary>

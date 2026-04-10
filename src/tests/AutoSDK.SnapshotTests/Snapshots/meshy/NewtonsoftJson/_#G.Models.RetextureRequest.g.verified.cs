@@ -37,6 +37,7 @@ namespace G
         /// Default Value: latest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ai_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AiModelJsonConverter))]
         public global::G.AiModel? AiModel { get; set; }
 
         /// <summary>

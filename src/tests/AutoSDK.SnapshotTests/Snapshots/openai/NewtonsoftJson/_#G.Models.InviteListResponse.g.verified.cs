@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `list`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InviteListResponseObjectJsonConverter))]
         public global::G.InviteListResponseObject Object { get; set; }
 
         /// <summary>

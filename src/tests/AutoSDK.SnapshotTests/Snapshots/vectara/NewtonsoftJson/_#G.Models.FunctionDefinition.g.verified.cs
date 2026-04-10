@@ -32,6 +32,7 @@ namespace G
         /// </summary>
         /// <example>python</example>
         [global::Newtonsoft.Json.JsonProperty("language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionDefinitionLanguageJsonConverter))]
         public global::G.FunctionDefinitionLanguage Language { get; set; }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace G
         /// </summary>
         /// <example>valid</example>
         [global::Newtonsoft.Json.JsonProperty("validation_status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionDefinitionValidationStatusJsonConverter))]
         public global::G.FunctionDefinitionValidationStatus? ValidationStatus { get; set; }
 
         /// <summary>

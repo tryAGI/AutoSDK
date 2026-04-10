@@ -19,6 +19,7 @@ namespace G
         /// The object type, which is always "checkpoint.permission".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DeleteFineTuningCheckpointPermissionResponseObjectJsonConverter))]
         public global::G.DeleteFineTuningCheckpointPermissionResponseObject Object { get; set; }
 
         /// <summary>

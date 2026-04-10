@@ -22,6 +22,7 @@ namespace G
         /// <param name="search"></param>
         /// <param name="tags"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ApiProjectsMembersBulkCreateResponse> PostAsync(
@@ -33,6 +34,7 @@ namespace G
             string? role = default,
             string? search = default,
             string? tags = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// ✨ Bulk assign project members<br/>
@@ -62,6 +64,7 @@ namespace G
         /// <param name="roles">
         /// Member roles
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ApiProjectsMembersBulkCreateResponse> PostAsync(
@@ -75,6 +78,7 @@ namespace G
             global::System.Collections.Generic.IList<int>? excluded = default,
             global::System.Collections.Generic.IList<int>? included = default,
             global::System.Collections.Generic.IList<global::G.ProjectMemberBulkAssignRolesRequest>? roles = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

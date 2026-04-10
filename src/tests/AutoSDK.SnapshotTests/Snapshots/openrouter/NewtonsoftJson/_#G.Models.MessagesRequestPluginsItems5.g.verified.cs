@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessagesRequestPluginsItemsOneOf5IdJsonConverter))]
         public global::G.MessagesRequestPluginsItemsOneOf5Id Id { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// The compression engine to use. Defaults to "middle-out".
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("engine")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ContextCompressionEngineJsonConverter))]
         public global::G.ContextCompressionEngine? Engine { get; set; }
 
         /// <summary>

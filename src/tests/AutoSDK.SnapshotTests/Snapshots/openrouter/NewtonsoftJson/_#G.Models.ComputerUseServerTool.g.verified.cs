@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerUseServerToolTypeJsonConverter))]
         public global::G.ComputerUseServerToolType Type { get; set; }
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environment", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerUseServerToolEnvironmentJsonConverter))]
         public global::G.ComputerUseServerToolEnvironment Environment { get; set; } = default!;
 
         /// <summary>

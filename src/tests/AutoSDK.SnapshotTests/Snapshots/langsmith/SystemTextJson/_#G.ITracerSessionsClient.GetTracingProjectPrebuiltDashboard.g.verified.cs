@@ -12,6 +12,7 @@ namespace G
         /// <param name="sessionId"></param>
         /// <param name="accept"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartsSection> GetTracingProjectPrebuiltDashboardAsync(
@@ -19,6 +20,7 @@ namespace G
 
             global::G.CustomChartsSectionRequest request,
             string? accept = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Tracing Project Prebuilt Dashboard<br/>
@@ -39,6 +41,7 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="groupBy"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartsSection> GetTracingProjectPrebuiltDashboardAsync(
@@ -50,6 +53,7 @@ namespace G
             global::G.TimedeltaInput? stride = default,
             bool? omitData = default,
             global::G.RunStatsGroupBy? groupBy = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

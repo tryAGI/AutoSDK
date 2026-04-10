@@ -19,6 +19,7 @@ namespace G
         /// Action taken when the sandbox times out.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("onTimeout", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SandboxOnTimeoutJsonConverter))]
         public global::G.SandboxOnTimeout OnTimeout { get; set; } = default!;
 
         /// <summary>

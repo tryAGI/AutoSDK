@@ -54,6 +54,7 @@ namespace G
         /// * `RE` - Review
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TypeEnumJsonConverter))]
         public global::G.TypeEnum? Type { get; set; }
 
         /// <summary>

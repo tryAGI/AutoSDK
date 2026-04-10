@@ -10,11 +10,13 @@ namespace G
         /// Get trace
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateTraceAsync(
 
             global::G.TraceWrite request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create trace<br/>
@@ -38,6 +40,7 @@ namespace G
         /// </param>
         /// <param name="threadId"></param>
         /// <param name="source"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreateTraceAsync(
@@ -55,6 +58,7 @@ namespace G
             double? ttft = default,
             string? threadId = default,
             global::G.TraceWriteSource? source = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

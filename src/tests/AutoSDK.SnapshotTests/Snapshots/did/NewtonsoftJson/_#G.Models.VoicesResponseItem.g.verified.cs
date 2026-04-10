@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoicesResponseItemAccessJsonConverter))]
         public global::G.VoicesResponseItemAccess Access { get; set; } = default!;
 
         /// <summary>
@@ -49,6 +50,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoicesResponseItemProviderJsonConverter))]
         public global::G.VoicesResponseItemProvider Provider { get; set; } = default!;
 
         /// <summary>
@@ -85,6 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voiceType")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.VoicesResponseItemVoiceTypeJsonConverter))]
         public global::G.VoicesResponseItemVoiceType? VoiceType { get; set; }
 
         /// <summary>

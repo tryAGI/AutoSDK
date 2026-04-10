@@ -10,11 +10,13 @@ namespace G
         /// Get monitoring data for a specific session.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MonitorResponse> MonitorTracerSessionAsync(
 
             global::G.MonitorRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Monitor Tracer Session<br/>
@@ -32,6 +34,7 @@ namespace G
         /// Timedelta input.<br/>
         /// Default Value: {"days":0,"minutes":15,"hours":0}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MonitorResponse> MonitorTracerSessionAsync(
@@ -39,6 +42,7 @@ namespace G
             string? timezone = default,
             global::G.TimedeltaInput? interval = default,
             global::G.TimedeltaInput? stride = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

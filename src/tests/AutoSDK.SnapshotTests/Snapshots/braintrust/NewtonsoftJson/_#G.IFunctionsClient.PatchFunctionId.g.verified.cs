@@ -13,12 +13,14 @@ namespace G
         /// Function id
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Function2> PatchFunctionIdAsync(
             global::System.Guid functionId,
 
             global::G.PatchFunction request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Partially update function<br/>
@@ -40,6 +42,7 @@ namespace G
         /// <param name="tags">
         /// A list of tags for the prompt
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Function2> PatchFunctionIdAsync(
@@ -49,6 +52,7 @@ namespace G
             global::G.PromptDataNullish? promptData = default,
             global::G.FunctionDataNullish? functionData = default,
             global::System.Collections.Generic.IList<string>? tags = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

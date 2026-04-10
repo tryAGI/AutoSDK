@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>boolean</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BooleanAnalysisDataTypeJsonConverter))]
         public global::G.BooleanAnalysisDataType Type { get; set; }
 
         /// <summary>

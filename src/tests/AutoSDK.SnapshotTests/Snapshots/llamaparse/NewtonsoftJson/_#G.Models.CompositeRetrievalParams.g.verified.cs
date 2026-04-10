@@ -16,6 +16,7 @@ namespace G
         /// Default Value: full
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompositeRetrievalModeJsonConverter))]
         public global::G.CompositeRetrievalMode? Mode { get; set; }
 
         /// <summary>

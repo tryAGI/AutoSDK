@@ -15,6 +15,7 @@ namespace G
         /// @default 'exact'
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AssistantMessageJudgePlanExactTypeJsonConverter))]
         public global::G.AssistantMessageJudgePlanExactType Type { get; set; }
 
         /// <summary>

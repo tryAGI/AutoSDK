@@ -14,11 +14,13 @@ namespace G
         /// You can optionally specify a policy to customize which detectors run and their thresholds.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GuardResponse> GuardAsync(
 
             global::G.GuardRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Screen content for threats<br/>
@@ -41,6 +43,7 @@ namespace G
         /// <param name="metadata">
         /// Optional metadata to attach to this screening request for logging/tracking.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GuardResponse> GuardAsync(
@@ -48,6 +51,7 @@ namespace G
             global::G.Policy? policy = default,
             bool? breakdown = default,
             object? metadata = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

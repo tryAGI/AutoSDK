@@ -109,6 +109,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LanguageJsonConverter))]
         public global::G.Language? ResponseLanguage { get; set; }
 
         /// <summary>

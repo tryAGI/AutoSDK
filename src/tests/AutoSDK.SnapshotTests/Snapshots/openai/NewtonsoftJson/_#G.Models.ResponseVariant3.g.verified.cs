@@ -19,6 +19,7 @@ namespace G
         /// The object type of this resource - always set to `response`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseVariant3ObjectJsonConverter))]
         public global::G.ResponseVariant3Object Object { get; set; }
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace G
         /// `in_progress`, `cancelled`, `queued`, or `incomplete`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseVariant3StatusJsonConverter))]
         public global::G.ResponseVariant3Status? Status { get; set; }
 
         /// <summary>

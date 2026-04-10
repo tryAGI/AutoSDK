@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="assetID"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AssetResponse> ExportAvatarAsync(
             global::System.Guid assetID,
 
             global::G.ExportRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Export/download avatar
@@ -27,6 +29,7 @@ namespace G
         /// <param name="animation"></param>
         /// <param name="filename"></param>
         /// <param name="avatarSceneIndex"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AssetResponse> ExportAvatarAsync(
@@ -37,6 +40,7 @@ namespace G
             string? animation = default,
             string? filename = default,
             int? avatarSceneIndex = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -76,6 +76,7 @@ namespace G
         /// Example: my-corpus
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Document> FileAsync(
@@ -84,6 +85,7 @@ namespace G
             global::G.UploadFileRequest request,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload a file to the corpus<br/>
@@ -172,6 +174,7 @@ namespace G
         /// <param name="file">
         /// Binary file contents. The file name of the file will be used as the document ID.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Document> FileAsync(
@@ -183,6 +186,7 @@ namespace G
             global::G.ChunkingStrategy? chunkingStrategy = default,
             global::G.TableExtractionConfig? tableExtractionConfig = default,
             string? filename = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -31,16 +31,269 @@ namespace G
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::G.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
+        public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings
+            {
+                Converters =
+                {
+                    new global::G.JsonConverters.AccessScopeJsonConverter(),
+
+                    new global::G.JsonConverters.AccessScopeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AuthProviderJsonConverter(),
+
+                    new global::G.JsonConverters.AuthProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BulkExportCompressionJsonConverter(),
+
+                    new global::G.JsonConverters.BulkExportCompressionNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BulkExportDestinationTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BulkExportDestinationTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BulkExportFormatJsonConverter(),
+
+                    new global::G.JsonConverters.BulkExportFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BulkExportRunStatusJsonConverter(),
+
+                    new global::G.JsonConverters.BulkExportRunStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BulkExportStatusJsonConverter(),
+
+                    new global::G.JsonConverters.BulkExportStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ChangePaymentPlanReqJsonConverter(),
+
+                    new global::G.JsonConverters.ChangePaymentPlanReqNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ConfiguredByJsonConverter(),
+
+                    new global::G.JsonConverters.ConfiguredByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateEventRequestEventTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateEventRequestEventTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomChartMetricJsonConverter(),
+
+                    new global::G.JsonConverters.CustomChartMetricNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CustomChartTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CustomChartTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DataTypeJsonConverter(),
+
+                    new global::G.JsonConverters.DataTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetTransformationTypeJsonConverter(),
+
+                    new global::G.JsonConverters.DatasetTransformationTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EPromptOptimizationAlgorithmJsonConverter(),
+
+                    new global::G.JsonConverters.EPromptOptimizationAlgorithmNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EPromptOptimizationJobLogTypeJsonConverter(),
+
+                    new global::G.JsonConverters.EPromptOptimizationJobLogTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.EPromptOptimizationJobStatusJsonConverter(),
+
+                    new global::G.JsonConverters.EPromptOptimizationJobStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExampleListOrderJsonConverter(),
+
+                    new global::G.JsonConverters.ExampleListOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ExampleSelectJsonConverter(),
+
+                    new global::G.JsonConverters.ExampleSelectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FeedbackLevelJsonConverter(),
+
+                    new global::G.JsonConverters.FeedbackLevelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FeedbackTypeJsonConverter(),
+
+                    new global::G.JsonConverters.FeedbackTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FilterViewTypeJsonConverter(),
+
+                    new global::G.JsonConverters.FilterViewTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GroupExampleRunsByFieldJsonConverter(),
+
+                    new global::G.JsonConverters.GroupExampleRunsByFieldNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OAuthProviderJsonConverter(),
+
+                    new global::G.JsonConverters.OAuthProviderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OrganizationDashboardColorSchemeJsonConverter(),
+
+                    new global::G.JsonConverters.OrganizationDashboardColorSchemeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.OrganizationDashboardTypeJsonConverter(),
+
+                    new global::G.JsonConverters.OrganizationDashboardTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PagerdutySeverityJsonConverter(),
+
+                    new global::G.JsonConverters.PagerdutySeverityNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PaymentPlanTierJsonConverter(),
+
+                    new global::G.JsonConverters.PaymentPlanTierNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLength2JsonConverter(),
+
+                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLength2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevel2JsonConverter(),
+
+                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevel2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatJsonConverter(),
+
+                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResourceTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResourceTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RuleLogActionOutcomeJsonConverter(),
+
+                    new global::G.JsonConverters.RuleLogActionOutcomeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RunDateOrderJsonConverter(),
+
+                    new global::G.JsonConverters.RunDateOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RunGroupByJsonConverter(),
+
+                    new global::G.JsonConverters.RunGroupByNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RunRulesAlertTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RunRulesAlertTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RunSelectJsonConverter(),
+
+                    new global::G.JsonConverters.RunSelectNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RunStatsGroupByAttributeJsonConverter(),
+
+                    new global::G.JsonConverters.RunStatsGroupByAttributeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseAttributeJsonConverter(),
+
+                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseAttributeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseSetBy2JsonConverter(),
+
+                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseSetBy2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.RunTypeEnumJsonConverter(),
+
+                    new global::G.JsonConverters.RunTypeEnumNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RunsFilterDataSourceTypeEnumJsonConverter(),
+
+                    new global::G.JsonConverters.RunsFilterDataSourceTypeEnumNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RunsGenerateQueryFeedbackKeysJsonConverter(),
+
+                    new global::G.JsonConverters.RunsGenerateQueryFeedbackKeysNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SessionSortableColumnsJsonConverter(),
+
+                    new global::G.JsonConverters.SessionSortableColumnsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SortByComparativeExperimentColumnJsonConverter(),
+
+                    new global::G.JsonConverters.SortByComparativeExperimentColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SortByDatasetColumnJsonConverter(),
+
+                    new global::G.JsonConverters.SortByDatasetColumnNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SortParamsForRunsComparisonViewSortOrderJsonConverter(),
+
+                    new global::G.JsonConverters.SortParamsForRunsComparisonViewSortOrderNullableJsonConverter(),
+
+                    new global::G.JsonConverters.SourceTypeJsonConverter(),
+
+                    new global::G.JsonConverters.SourceTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TenantUsageLimitTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TenantUsageLimitTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageChunkStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ToolMessageChunkStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.TraceTierJsonConverter(),
+
+                    new global::G.JsonConverters.TraceTierNullableJsonConverter(),
+
+                    new global::G.JsonConverters.UsageLimitTypeJsonConverter(),
+
+                    new global::G.JsonConverters.UsageLimitTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateRunRequestRunTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateRunRequestRunTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.BatchIngestRunsRequestPostItemRunTypeJsonConverter(),
+
+                    new global::G.JsonConverters.BatchIngestRunsRequestPostItemRunTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListRulesApiV1RunsRulesGetType2JsonConverter(),
+
+                    new global::G.JsonConverters.ListRulesApiV1RunsRulesGetType2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListReposApiV1ReposGetIsArchived2JsonConverter(),
+
+                    new global::G.JsonConverters.ListReposApiV1ReposGetIsArchived2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListReposApiV1ReposGetIsPublic2JsonConverter(),
+
+                    new global::G.JsonConverters.ListReposApiV1ReposGetIsPublic2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchived2JsonConverter(),
+
+                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchived2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublic2JsonConverter(),
+
+                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublic2NullableJsonConverter(),
+
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
+                }
+            };
 
 
         /// <summary>
         /// 
         /// </summary>
-        public AceClient Ace => new AceClient(HttpClient, authorizations: Authorizations)
+        public AceClient Ace => new AceClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -49,7 +302,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(HttpClient, authorizations: Authorizations)
+        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -58,7 +311,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, authorizations: Authorizations)
+        public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -67,7 +320,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AuthClient Auth => new AuthClient(HttpClient, authorizations: Authorizations)
+        public AuthClient Auth => new AuthClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -76,7 +329,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public BulkExportsClient BulkExports => new BulkExportsClient(HttpClient, authorizations: Authorizations)
+        public BulkExportsClient BulkExports => new BulkExportsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -85,7 +338,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChartsClient Charts => new ChartsClient(HttpClient, authorizations: Authorizations)
+        public ChartsClient Charts => new ChartsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -94,7 +347,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CommentsClient Comments => new CommentsClient(HttpClient, authorizations: Authorizations)
+        public CommentsClient Comments => new CommentsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -103,7 +356,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CommitsClient Commits => new CommitsClient(HttpClient, authorizations: Authorizations)
+        public CommitsClient Commits => new CommitsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -112,7 +365,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -121,7 +374,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public EventsClient Events => new EventsClient(HttpClient, authorizations: Authorizations)
+        public EventsClient Events => new EventsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -130,7 +383,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ExamplesClient Examples => new ExamplesClient(HttpClient, authorizations: Authorizations)
+        public ExamplesClient Examples => new ExamplesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -139,7 +392,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackClient Feedback => new FeedbackClient(HttpClient, authorizations: Authorizations)
+        public FeedbackClient Feedback => new FeedbackClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -148,7 +401,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(HttpClient, authorizations: Authorizations)
+        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -157,7 +410,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public InfoClient Info => new InfoClient(HttpClient, authorizations: Authorizations)
+        public InfoClient Info => new InfoClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -166,7 +419,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LikesClient Likes => new LikesClient(HttpClient, authorizations: Authorizations)
+        public LikesClient Likes => new LikesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -175,7 +428,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(HttpClient, authorizations: Authorizations)
+        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -184,7 +437,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public OptimizationJobsClient OptimizationJobs => new OptimizationJobsClient(HttpClient, authorizations: Authorizations)
+        public OptimizationJobsClient OptimizationJobs => new OptimizationJobsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -193,7 +446,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public OrgsClient Orgs => new OrgsClient(HttpClient, authorizations: Authorizations)
+        public OrgsClient Orgs => new OrgsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -202,7 +455,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(HttpClient, authorizations: Authorizations)
+        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -211,7 +464,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PromptsClient Prompts => new PromptsClient(HttpClient, authorizations: Authorizations)
+        public PromptsClient Prompts => new PromptsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -220,7 +473,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PublicClient Public => new PublicClient(HttpClient, authorizations: Authorizations)
+        public PublicClient Public => new PublicClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -229,7 +482,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ReposClient Repos => new ReposClient(HttpClient, authorizations: Authorizations)
+        public ReposClient Repos => new ReposClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -238,7 +491,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RunClient Run => new RunClient(HttpClient, authorizations: Authorizations)
+        public RunClient Run => new RunClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -247,7 +500,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RunsClient Runs => new RunsClient(HttpClient, authorizations: Authorizations)
+        public RunsClient Runs => new RunsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -256,7 +509,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(HttpClient, authorizations: Authorizations)
+        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -265,7 +518,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SettingsClient Settings => new SettingsClient(HttpClient, authorizations: Authorizations)
+        public SettingsClient Settings => new SettingsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -274,7 +527,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TagsClient Tags => new TagsClient(HttpClient, authorizations: Authorizations)
+        public TagsClient Tags => new TagsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -283,7 +536,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TenantClient Tenant => new TenantClient(HttpClient, authorizations: Authorizations)
+        public TenantClient Tenant => new TenantClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -292,7 +545,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TracerSessionsClient TracerSessions => new TracerSessionsClient(HttpClient, authorizations: Authorizations)
+        public TracerSessionsClient TracerSessions => new TracerSessionsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -301,7 +554,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TtlSettingsClient TtlSettings => new TtlSettingsClient(HttpClient, authorizations: Authorizations)
+        public TtlSettingsClient TtlSettings => new TtlSettingsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -310,7 +563,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UsageLimitsClient UsageLimits => new UsageLimitsClient(HttpClient, authorizations: Authorizations)
+        public UsageLimitsClient UsageLimits => new UsageLimitsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -319,7 +572,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, authorizations: Authorizations)
+        public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -338,11 +591,36 @@ namespace G
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

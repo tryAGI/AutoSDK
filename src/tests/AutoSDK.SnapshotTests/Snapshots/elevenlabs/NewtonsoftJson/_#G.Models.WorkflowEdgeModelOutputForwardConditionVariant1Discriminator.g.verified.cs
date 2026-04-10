@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WorkflowEdgeModelOutputForwardConditionVariant1DiscriminatorTypeJsonConverter))]
         public global::G.WorkflowEdgeModelOutputForwardConditionVariant1DiscriminatorType? Type { get; set; }
 
         /// <summary>

@@ -55,6 +55,7 @@ namespace G
         /// </summary>
         /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("severity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertSecurityAdvisorySeverityJsonConverter))]
         public global::G.DependabotAlertSecurityAdvisorySeverity Severity { get; set; } = default!;
 
         /// <summary>

@@ -49,6 +49,7 @@ namespace G
         /// The severity of the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookCodeScanningAlertClosedByUserAlertRuleSeverityJsonConverter))]
         public global::G.WebhookCodeScanningAlertClosedByUserAlertRuleSeverity? Severity { get; set; }
 
         /// <summary>

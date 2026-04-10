@@ -37,6 +37,7 @@ namespace G
         /// * none — The extension doesn't require configuration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("configuration_location", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtensionConfigurationLocationJsonConverter))]
         public global::G.ExtensionConfigurationLocation ConfigurationLocation { get; set; } = default!;
 
         /// <summary>
@@ -113,6 +114,7 @@ namespace G
         /// * Released
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtensionStateJsonConverter))]
         public global::G.ExtensionState State { get; set; } = default!;
 
         /// <summary>
@@ -122,6 +124,7 @@ namespace G
         /// * optional — The extension can view the user’s subscription level.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subscriptions_support_level", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtensionSubscriptionsSupportLevelJsonConverter))]
         public global::G.ExtensionSubscriptionsSupportLevel SubscriptionsSupportLevel { get; set; } = default!;
 
         /// <summary>

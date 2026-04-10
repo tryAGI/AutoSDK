@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateTextTo3DTaskRequestDiscriminatorModeJsonConverter))]
         public global::G.CreateTextTo3DTaskRequestDiscriminatorMode? Mode { get; set; }
 
         /// <summary>

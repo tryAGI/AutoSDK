@@ -13,6 +13,7 @@ namespace G
         /// Required. The environment being operated.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environment")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ComputerUseEnvironmentJsonConverter))]
         public global::G.ComputerUseEnvironment? Environment { get; set; }
 
         /// <summary>

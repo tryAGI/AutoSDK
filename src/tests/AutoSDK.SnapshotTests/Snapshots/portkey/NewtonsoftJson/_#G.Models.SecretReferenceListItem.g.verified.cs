@@ -31,12 +31,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manager_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretReferenceListItemManagerTypeJsonConverter))]
         public global::G.SecretReferenceListItemManagerType? ManagerType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretReferenceListItemStatusJsonConverter))]
         public global::G.SecretReferenceListItemStatus? Status { get; set; }
 
         /// <summary>
@@ -55,6 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SecretReferenceListItemObjectJsonConverter))]
         public global::G.SecretReferenceListItemObject? Object { get; set; }
 
         /// <summary>

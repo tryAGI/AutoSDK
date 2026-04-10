@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("llm_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LlmTypeJsonConverter))]
         public global::G.LlmType? LlmType { get; set; }
 
         /// <summary>
@@ -97,12 +98,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LLMRequestBodyReasoningEffortJsonConverter))]
         public global::G.LLMRequestBodyReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verbosity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LLMRequestBodyVerbosityJsonConverter))]
         public global::G.LLMRequestBodyVerbosity? Verbosity { get; set; }
 
         /// <summary>

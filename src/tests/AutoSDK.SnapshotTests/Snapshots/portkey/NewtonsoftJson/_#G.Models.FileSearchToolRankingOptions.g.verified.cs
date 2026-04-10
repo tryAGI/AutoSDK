@@ -14,6 +14,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ranker")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileSearchToolRankingOptionsRankerJsonConverter))]
         public global::G.FileSearchToolRankingOptionsRanker? Ranker { get; set; }
 
         /// <summary>

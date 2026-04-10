@@ -13,6 +13,7 @@ namespace G
         /// Default Value: code_execution_result
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeExecutionResultContentTypeJsonConverter))]
         public global::G.CodeExecutionResultContentType? Type { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// Logical conjunction for the filters. This conjunction (either "or" or "and") will be applied to all items in the filters list. It is not possible to combine "or" and "and" within one list of filters. All filters will be either combined with "or" or with "and", but not a mix of both.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conjunction", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ApiDmActionsCreateRequestFiltersConjunctionJsonConverter))]
         public global::G.ApiDmActionsCreateRequestFiltersConjunction Conjunction { get; set; } = default!;
 
         /// <summary>

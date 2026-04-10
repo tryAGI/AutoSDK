@@ -14,12 +14,14 @@ namespace G
         /// Example: trs_LX9uJKBinWWr
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostToolRouterSessionBySessionIdSearchResponse> PostToolRouterSessionBySessionIdSearchAsync(
             string sessionId,
 
             global::G.PostToolRouterSessionBySessionIdSearchRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search for tools using a query<br/>
@@ -37,12 +39,14 @@ namespace G
         /// Optional model hint for search/planning behavior (e.g., "gpt-4o"). Ignored if invalid.<br/>
         /// Example: gpt-4o
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PostToolRouterSessionBySessionIdSearchResponse> PostToolRouterSessionBySessionIdSearchAsync(
             string sessionId,
             global::System.Collections.Generic.IList<global::G.PostToolRouterSessionBySessionIdSearchRequestQuerie> queries,
             string? model = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

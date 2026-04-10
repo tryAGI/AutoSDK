@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>gpu_1x_h100_sxm5</example>
         [global::Newtonsoft.Json.JsonProperty("instance_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateComputeInstanceRequestInstanceTypeJsonConverter))]
         public global::G.CreateComputeInstanceRequestInstanceType InstanceType { get; set; } = default!;
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace G
         /// </summary>
         /// <example>sector_1</example>
         [global::Newtonsoft.Json.JsonProperty("sector")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateComputeInstanceRequestSectorJsonConverter))]
         public global::G.CreateComputeInstanceRequestSector? Sector { get; set; }
 
         /// <summary>

@@ -21,6 +21,7 @@ namespace G
         /// * bits
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ExtensionBitsProductCostTypeJsonConverter))]
         public global::G.ExtensionBitsProductCostType Type { get; set; }
 
         /// <summary>

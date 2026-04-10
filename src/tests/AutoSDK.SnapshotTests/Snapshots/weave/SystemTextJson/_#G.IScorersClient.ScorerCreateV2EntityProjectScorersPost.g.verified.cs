@@ -12,6 +12,7 @@ namespace G
         /// <param name="entity"></param>
         /// <param name="project"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ScorerCreateRes> ScorerCreateV2EntityProjectScorersPostAsync(
@@ -19,6 +20,7 @@ namespace G
             string project,
 
             global::G.ScorerCreateBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Scorer Create<br/>
@@ -35,6 +37,7 @@ namespace G
         /// <param name="opSourceCode">
         /// Complete source code for the Scorer.score op including imports
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ScorerCreateRes> ScorerCreateV2EntityProjectScorersPostAsync(
@@ -43,6 +46,7 @@ namespace G
             string name,
             string opSourceCode,
             string? description = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

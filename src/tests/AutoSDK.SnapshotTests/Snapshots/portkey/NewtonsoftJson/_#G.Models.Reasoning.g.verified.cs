@@ -21,6 +21,7 @@ namespace G
         /// Default Value: medium
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningEffortJsonConverter))]
         public global::G.ReasoningEffort? Effort { get; set; }
 
         /// <summary>
@@ -30,6 +31,7 @@ namespace G
         /// One of `concise` or `detailed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generate_summary")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningGenerateSummaryJsonConverter))]
         public global::G.ReasoningGenerateSummary? GenerateSummary { get; set; }
 
         /// <summary>

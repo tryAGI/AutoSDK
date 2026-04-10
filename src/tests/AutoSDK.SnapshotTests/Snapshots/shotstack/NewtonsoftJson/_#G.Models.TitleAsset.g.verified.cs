@@ -17,6 +17,7 @@ namespace G
         /// </summary>
         /// <default>global::G.TitleAssetType.Title</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TitleAssetTypeJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.TitleAssetType Type { get; set; } = global::G.TitleAssetType.Title;
 
@@ -44,6 +45,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TitleAssetStyleJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.TitleAssetStyle? Style { get; set; }
 
@@ -66,6 +68,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TitleAssetSizeJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.TitleAssetSize? Size { get; set; }
 
@@ -92,6 +95,7 @@ namespace G
         /// &lt;/ul&gt;
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("position")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TitleAssetPositionJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.TitleAssetPosition? Position { get; set; }
 

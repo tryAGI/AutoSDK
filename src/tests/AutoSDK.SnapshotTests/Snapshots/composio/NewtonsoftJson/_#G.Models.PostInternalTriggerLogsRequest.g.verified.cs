@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>5m</example>
         [global::Newtonsoft.Json.JsonProperty("time")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostInternalTriggerLogsRequestTimeJsonConverter))]
         public global::G.PostInternalTriggerLogsRequestTime? Time { get; set; }
 
         /// <summary>
@@ -35,6 +36,7 @@ namespace G
         /// </summary>
         /// <example>success</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostInternalTriggerLogsRequestStatusJsonConverter))]
         public global::G.PostInternalTriggerLogsRequestStatus? Status { get; set; }
 
         /// <summary>

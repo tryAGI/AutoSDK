@@ -26,6 +26,7 @@ namespace G
         /// Conflict resolution strategy for deleted objects
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("objectDeletionConflictResolution")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReplicationConfigObjectDeletionConflictResolutionJsonConverter))]
         public global::G.ReplicationConfigObjectDeletionConflictResolution? ObjectDeletionConflictResolution { get; set; }
 
         /// <summary>

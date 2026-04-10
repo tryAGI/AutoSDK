@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.ScreenshotType.Screenshot</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ScreenshotTypeJsonConverter))]
         public global::G.ScreenshotType Type { get; set; } = global::G.ScreenshotType.Screenshot;
 
         /// <summary>

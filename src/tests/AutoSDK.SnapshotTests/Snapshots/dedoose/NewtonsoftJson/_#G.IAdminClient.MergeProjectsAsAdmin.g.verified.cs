@@ -10,11 +10,13 @@ namespace G
         /// MergeProjects
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> MergeProjectsAsAdminAsync(
 
             global::G.MergeProjectsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// MergeProjects<br/>
@@ -26,6 +28,7 @@ namespace G
         /// <param name="newDescription"></param>
         /// <param name="creatorId"></param>
         /// <param name="mergeCodes"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> MergeProjectsAsAdminAsync(
@@ -35,6 +38,7 @@ namespace G
             string newDescription,
             global::System.Guid creatorId,
             bool mergeCodes,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

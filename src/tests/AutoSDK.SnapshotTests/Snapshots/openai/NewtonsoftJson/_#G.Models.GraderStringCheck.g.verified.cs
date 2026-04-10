@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `string_check`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraderStringCheckTypeJsonConverter))]
         public global::G.GraderStringCheckType Type { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// The string check operation to perform. One of `eq`, `ne`, `like`, or `ilike`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operation", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraderStringCheckOperationJsonConverter))]
         public global::G.GraderStringCheckOperation Operation { get; set; } = default!;
 
         /// <summary>

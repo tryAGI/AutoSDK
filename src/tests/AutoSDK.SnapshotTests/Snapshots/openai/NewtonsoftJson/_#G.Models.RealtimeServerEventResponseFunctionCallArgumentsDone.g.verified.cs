@@ -20,6 +20,7 @@ namespace G
         /// The event type, must be `response.function_call_arguments.done`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventResponseFunctionCallArgumentsDoneTypeJsonConverter))]
         public global::G.RealtimeServerEventResponseFunctionCallArgumentsDoneType Type { get; set; }
 
         /// <summary>

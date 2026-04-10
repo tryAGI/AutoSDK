@@ -29,6 +29,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertDependencyScopeJsonConverter))]
         public global::G.DependabotAlertDependencyScope? Scope { get; set; }
 
         /// <summary>

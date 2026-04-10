@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "endCall" for End Call tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EndCallToolTypeJsonConverter))]
         public global::G.EndCallToolType Type { get; set; }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// The type of the object
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateExportResponseObjectJsonConverter))]
         public global::G.UpdateExportResponseObject Object { get; set; }
 
         /// <summary>

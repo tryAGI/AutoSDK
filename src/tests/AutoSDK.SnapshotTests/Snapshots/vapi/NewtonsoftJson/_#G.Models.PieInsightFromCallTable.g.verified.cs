@@ -20,6 +20,7 @@ namespace G
         /// It is required to be `pie` to create a pie insight.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PieInsightFromCallTableTypeJsonConverter))]
         public global::G.PieInsightFromCallTableType Type { get; set; }
 
         /// <summary>
@@ -54,6 +55,7 @@ namespace G
         /// </summary>
         /// <example>[assistant_id]</example>
         [global::Newtonsoft.Json.JsonProperty("groupBy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PieInsightFromCallTableGroupByJsonConverter))]
         public global::G.PieInsightFromCallTableGroupBy? GroupBy { get; set; }
 
         /// <summary>

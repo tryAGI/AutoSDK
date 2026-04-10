@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LogRequestInputDiscriminatorTypeJsonConverter))]
         public global::G.LogRequestInputDiscriminatorType? Type { get; set; }
 
         /// <summary>

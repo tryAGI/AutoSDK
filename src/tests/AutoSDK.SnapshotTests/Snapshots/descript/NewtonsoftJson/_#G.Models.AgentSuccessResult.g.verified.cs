@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <example>success</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AgentSuccessResultStatusJsonConverter))]
         public global::G.AgentSuccessResultStatus Status { get; set; }
 
         /// <summary>

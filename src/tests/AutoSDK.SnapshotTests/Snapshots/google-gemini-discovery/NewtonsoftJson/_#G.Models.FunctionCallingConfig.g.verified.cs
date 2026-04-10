@@ -13,6 +13,7 @@ namespace G
         /// Optional. Specifies the mode in which function calling should execute. If unspecified, the default value will be set to AUTO.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FunctionCallingConfigModeJsonConverter))]
         public global::G.FunctionCallingConfigMode? Mode { get; set; }
 
         /// <summary>

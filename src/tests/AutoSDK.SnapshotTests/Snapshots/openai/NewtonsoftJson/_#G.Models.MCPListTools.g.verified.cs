@@ -13,6 +13,7 @@ namespace G
         /// The type of the item. Always `mcp_list_tools`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPListToolsTypeJsonConverter))]
         public global::G.MCPListToolsType Type { get; set; }
 
         /// <summary>

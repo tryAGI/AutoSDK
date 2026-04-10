@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenMessageApiContentTypeJsonConverter))]
         public global::G.OpenMessageApiContentType? ContentType { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenMessageApiRoleJsonConverter))]
         public global::G.OpenMessageApiRole? Role { get; set; }
 
         /// <summary>
@@ -79,6 +81,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenMessageApiTypeJsonConverter))]
         public global::G.OpenMessageApiType? Type { get; set; }
 
         /// <summary>

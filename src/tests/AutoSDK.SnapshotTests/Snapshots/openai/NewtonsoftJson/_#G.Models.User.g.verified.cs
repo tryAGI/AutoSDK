@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `organization.user`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UserObjectJsonConverter))]
         public global::G.UserObject Object { get; set; }
 
         /// <summary>
@@ -37,12 +38,14 @@ namespace G
         /// `owner` or `reader`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UserRoleJsonConverter))]
         public global::G.UserRole Role { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the user was added.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("added_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset AddedAt { get; set; } = default!;
 
         /// <summary>

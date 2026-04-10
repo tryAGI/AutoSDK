@@ -14,6 +14,7 @@ namespace G
         /// Default Value: fast
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parsing_strategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StoreFileParsingStrategyJsonConverter))]
         public global::G.StoreFileParsingStrategy? ParsingStrategy { get; set; }
 
         /// <summary>

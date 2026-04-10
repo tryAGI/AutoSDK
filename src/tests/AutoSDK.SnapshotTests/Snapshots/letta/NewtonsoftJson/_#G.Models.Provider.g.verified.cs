@@ -27,12 +27,14 @@ namespace G
         /// The type of the provider
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProviderTypeJsonConverter))]
         public global::G.ProviderType ProviderType { get; set; } = default!;
 
         /// <summary>
         /// The category of the provider (base or byok)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider_category", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProviderCategoryJsonConverter))]
         public global::G.ProviderCategory ProviderCategory { get; set; } = default!;
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// The operator to use for matching.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("operator", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryRuleBranchNamePatternParametersOperatorJsonConverter))]
         public global::G.RepositoryRuleBranchNamePatternParametersOperator Operator { get; set; } = default!;
 
         /// <summary>

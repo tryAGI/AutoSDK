@@ -15,6 +15,7 @@ namespace G
         /// The shape type - set to `polygon`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SvgPolygonShapeTypeJsonConverter))]
         public global::G.SvgPolygonShapeType Type { get; set; }
 
         /// <summary>

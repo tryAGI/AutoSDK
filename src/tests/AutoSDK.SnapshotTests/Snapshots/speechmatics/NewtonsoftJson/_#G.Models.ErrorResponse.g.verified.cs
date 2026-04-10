@@ -19,6 +19,7 @@ namespace G
         /// The error message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ErrorResponseErrorJsonConverter))]
         public global::G.ErrorResponseError Error { get; set; } = default!;
 
         /// <summary>

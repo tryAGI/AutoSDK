@@ -19,6 +19,7 @@ namespace G
         /// Image detail level for vision models
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatContentImageImageUrlDetailJsonConverter))]
         public global::G.ChatContentImageImageUrlDetail? Detail { get; set; }
 
         /// <summary>

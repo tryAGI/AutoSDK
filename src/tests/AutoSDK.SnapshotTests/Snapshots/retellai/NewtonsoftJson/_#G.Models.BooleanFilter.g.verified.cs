@@ -13,12 +13,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BooleanFilterTypeJsonConverter))]
         public global::G.BooleanFilterType Type { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("op")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BooleanFilterOpJsonConverter))]
         public global::G.BooleanFilterOp Op { get; set; }
 
         /// <summary>

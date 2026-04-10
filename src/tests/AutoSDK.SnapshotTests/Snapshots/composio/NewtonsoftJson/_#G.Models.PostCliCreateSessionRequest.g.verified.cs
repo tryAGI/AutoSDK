@@ -14,6 +14,7 @@ namespace G
         /// Default Value: project
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostCliCreateSessionRequestScopeJsonConverter))]
         public global::G.PostCliCreateSessionRequestScope? Scope { get; set; }
 
         /// <summary>

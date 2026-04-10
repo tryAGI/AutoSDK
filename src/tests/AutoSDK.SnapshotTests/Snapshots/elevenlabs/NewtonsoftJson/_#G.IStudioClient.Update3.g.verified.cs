@@ -19,6 +19,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EditChapterResponseModel> Update3Async(
@@ -27,6 +28,7 @@ namespace G
 
             global::G.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPost request,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Chapter<br/>
@@ -47,6 +49,7 @@ namespace G
         /// <param name="content">
         /// The chapter content to use.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EditChapterResponseModel> Update3Async(
@@ -55,6 +58,7 @@ namespace G
             string? xiApiKey = default,
             string? name = default,
             global::G.ChapterContentInputModel? content = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

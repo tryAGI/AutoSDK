@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PostedBuiltinToolNameJsonConverter))]
         public global::G.PostedBuiltinToolName? Name { get; set; }
 
         /// <summary>

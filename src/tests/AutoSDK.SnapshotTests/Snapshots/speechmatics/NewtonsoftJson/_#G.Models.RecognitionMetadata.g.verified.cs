@@ -21,6 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobTypeJsonConverter))]
         public global::G.JobType Type { get; set; } = default!;
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// 必填
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("app_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateApiAppOpenRequestAppTypeJsonConverter))]
         public global::G.CreateApiAppOpenRequestAppType AppType { get; set; } = default!;
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace G
         /// The input to the graph
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GraphNodeVariant2TypeJsonConverter))]
         public global::G.GraphNodeVariant2Type Type { get; set; }
 
         /// <summary>

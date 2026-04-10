@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("confidence")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfidenceJsonConverter))]
         public global::G.Confidence? Confidence { get; set; }
 
         /// <summary>

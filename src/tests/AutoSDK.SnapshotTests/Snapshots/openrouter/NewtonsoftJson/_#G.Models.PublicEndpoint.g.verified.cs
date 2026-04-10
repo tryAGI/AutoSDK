@@ -43,6 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider_name", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProviderNameJsonConverter))]
         public global::G.ProviderName ProviderName { get; set; } = default!;
 
         /// <summary>
@@ -79,6 +80,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EndpointStatusJsonConverter))]
         public global::G.EndpointStatus? Status { get; set; }
 
         /// <summary>

@@ -21,6 +21,7 @@ namespace G
         /// The type of job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobTypeJsonConverter))]
         public global::G.JobType? Type { get; set; }
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace G
         /// Enum representing the possible states of a background job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.JobStateJsonConverter))]
         public global::G.JobState? State { get; set; }
 
         /// <summary>

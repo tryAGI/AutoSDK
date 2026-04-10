@@ -14,6 +14,7 @@ namespace G
         /// description describes the agreed-upon configuration, and is being sent to finalize negotiation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StartConnection1RequestAnswerTypeJsonConverter))]
         public global::G.StartConnection1RequestAnswerType Type { get; set; }
 
         /// <summary>

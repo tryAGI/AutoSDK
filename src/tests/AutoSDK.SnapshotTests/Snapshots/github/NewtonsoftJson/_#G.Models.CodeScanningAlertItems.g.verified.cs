@@ -60,6 +60,7 @@ namespace G
         /// State of a code scanning alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeScanningAlertStateJsonConverter))]
         public global::G.CodeScanningAlertState State { get; set; } = default!;
 
         /// <summary>
@@ -86,6 +87,7 @@ namespace G
         /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeScanningAlertDismissedReasonJsonConverter))]
         public global::G.CodeScanningAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>

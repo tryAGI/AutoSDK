@@ -19,6 +19,7 @@ namespace G
         /// Type of feedback
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SubmitFeedbackResponseFeedbackJsonConverter))]
         public global::G.SubmitFeedbackResponseFeedback? Feedback { get; set; }
 
         /// <summary>

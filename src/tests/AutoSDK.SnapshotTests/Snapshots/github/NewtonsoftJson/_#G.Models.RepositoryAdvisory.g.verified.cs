@@ -55,6 +55,7 @@ namespace G
         /// The severity of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryAdvisorySeverityJsonConverter))]
         public global::G.RepositoryAdvisorySeverity? Severity { get; set; }
 
         /// <summary>
@@ -82,6 +83,7 @@ namespace G
         /// The state of the advisory.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryAdvisoryStateJsonConverter))]
         public global::G.RepositoryAdvisoryState State { get; set; } = default!;
 
         /// <summary>

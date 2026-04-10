@@ -85,6 +85,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("view")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PipelineV1betaViewJsonConverter))]
         public global::G.PipelineV1betaView? View { get; set; }
 
         /// <summary>

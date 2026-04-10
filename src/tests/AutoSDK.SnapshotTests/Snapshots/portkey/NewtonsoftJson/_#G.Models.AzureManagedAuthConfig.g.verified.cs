@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("azure_auth_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AzureManagedAuthConfigAzureAuthModeJsonConverter))]
         public global::G.AzureManagedAuthConfigAzureAuthMode AzureAuthMode { get; set; }
 
         /// <summary>

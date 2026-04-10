@@ -39,12 +39,14 @@ namespace G
         /// The provider identifier for Anthropic via AWS Bedrock.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnthropicBedrockModelProviderJsonConverter))]
         public global::G.AnthropicBedrockModelProvider Provider { get; set; }
 
         /// <summary>
         /// The specific Anthropic/Claude model that will be used via Bedrock.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AnthropicBedrockModelModelJsonConverter))]
         public global::G.AnthropicBedrockModelModel Model { get; set; } = default!;
 
         /// <summary>

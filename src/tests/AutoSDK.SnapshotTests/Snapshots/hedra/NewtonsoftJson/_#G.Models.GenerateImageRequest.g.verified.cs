@@ -37,6 +37,7 @@ namespace G
         /// Default Value: image
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerateImageRequestTypeJsonConverter))]
         public global::G.GenerateImageRequestType? Type { get; set; }
 
         /// <summary>

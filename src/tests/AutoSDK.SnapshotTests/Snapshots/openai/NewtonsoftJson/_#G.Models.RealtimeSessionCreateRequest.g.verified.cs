@@ -20,6 +20,7 @@ namespace G
         /// The Realtime model used for this session.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeSessionCreateRequestModelJsonConverter))]
         public global::G.RealtimeSessionCreateRequestModel? Model { get; set; }
 
         /// <summary>
@@ -43,6 +44,7 @@ namespace G
         /// Default Value: pcm16
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_audio_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeSessionCreateRequestInputAudioFormatJsonConverter))]
         public global::G.RealtimeSessionCreateRequestInputAudioFormat? InputAudioFormat { get; set; }
 
         /// <summary>
@@ -51,6 +53,7 @@ namespace G
         /// Default Value: pcm16
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_audio_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RealtimeSessionCreateRequestOutputAudioFormatJsonConverter))]
         public global::G.RealtimeSessionCreateRequestOutputAudioFormat? OutputAudioFormat { get; set; }
 
         /// <summary>

@@ -41,6 +41,7 @@ namespace G
         /// </summary>
         /// <example>read</example>
         [global::Newtonsoft.Json.JsonProperty("permissions", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RepositoryInvitationPermissionsJsonConverter))]
         public global::G.RepositoryInvitationPermissions Permissions { get; set; } = default!;
 
         /// <summary>

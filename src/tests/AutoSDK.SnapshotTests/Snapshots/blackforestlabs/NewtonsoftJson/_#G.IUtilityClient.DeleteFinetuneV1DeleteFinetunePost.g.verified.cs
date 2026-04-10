@@ -10,11 +10,13 @@ namespace G
         /// Delete a finetune_id that was created by the user
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeleteFinetuneResponse> DeleteFinetuneV1DeleteFinetunePostAsync(
 
             global::G.DeleteFinetuneInputs request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete Finetune<br/>
@@ -24,10 +26,12 @@ namespace G
         /// ID of the fine-tuned model you want to delete.<br/>
         /// Example: my-finetune
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeleteFinetuneResponse> DeleteFinetuneV1DeleteFinetunePostAsync(
             string finetuneId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

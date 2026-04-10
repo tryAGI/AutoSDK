@@ -13,6 +13,7 @@ namespace G
         /// This is the api key for Grok in XAi's console. Get it from here: https://console.x.ai
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateXAiCredentialDTOProviderJsonConverter))]
         public global::G.CreateXAiCredentialDTOProvider Provider { get; set; }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace G
         /// The reasoning effort level of the model. This affects the model's performance and the time it takes to generate a response.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReasoningEffortJsonConverter))]
         public global::G.ReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
@@ -81,6 +82,7 @@ namespace G
         /// **Note**: `command-r7b-12-2024` and newer models only support `"CONTEXTUAL"` and `"STRICT"` modes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("safety_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.Chatv2RequestSafetyModeJsonConverter))]
         public global::G.Chatv2RequestSafetyMode? SafetyMode { get; set; }
 
         /// <summary>
@@ -157,6 +159,7 @@ namespace G
         /// **Note**: The same functionality can be achieved in `/v1/chat` using the `force_single_step` parameter. If `force_single_step=true`, this is equivalent to specifying `REQUIRED`. While if `force_single_step=true` and `tool_results` are passed, this is equivalent to specifying `NONE`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.Chatv2RequestToolChoiceJsonConverter))]
         public global::G.Chatv2RequestToolChoice? ToolChoice { get; set; }
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace G
         /// ```
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ServerMessageVoiceRequestTypeJsonConverter))]
         public global::G.ServerMessageVoiceRequestType Type { get; set; }
 
         /// <summary>

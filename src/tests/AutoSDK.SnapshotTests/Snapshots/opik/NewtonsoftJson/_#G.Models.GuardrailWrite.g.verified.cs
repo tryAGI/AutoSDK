@@ -37,12 +37,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GuardrailWriteNameJsonConverter))]
         public global::G.GuardrailWriteName Name { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GuardrailWriteResultJsonConverter))]
         public global::G.GuardrailWriteResult Result { get; set; } = default!;
 
         /// <summary>

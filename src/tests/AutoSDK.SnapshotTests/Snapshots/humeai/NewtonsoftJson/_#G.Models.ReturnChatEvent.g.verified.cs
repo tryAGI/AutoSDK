@@ -31,12 +31,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReturnChatEventRoleJsonConverter))]
         public global::G.ReturnChatEventRole? Role { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReturnChatEventTypeJsonConverter))]
         public global::G.ReturnChatEventType? Type { get; set; }
 
         /// <summary>

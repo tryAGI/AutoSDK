@@ -16,6 +16,7 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DirectoryFileResponse> AddDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesPostAsync(
@@ -25,6 +26,7 @@ namespace G
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add Directory File<br/>
@@ -45,6 +47,7 @@ namespace G
         /// <param name="displayName">
         /// Display name for the file. If not provided, will use the file's name.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DirectoryFileResponse> AddDirectoryFileApiV1BetaDirectoriesDirectoryIdFilesPostAsync(
@@ -55,6 +58,7 @@ namespace G
             string? session = default,
             string? uniqueId = default,
             string? displayName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

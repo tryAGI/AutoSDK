@@ -19,12 +19,14 @@ namespace G
         /// The tier to change to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("next_tier", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PendingSubscriptionSwitchResponseModelNextTierJsonConverter))]
         public global::G.PendingSubscriptionSwitchResponseModelNextTier NextTier { get; set; } = default!;
 
         /// <summary>
         /// The billing period to change to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("next_billing_period", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BillingPeriodJsonConverter))]
         public global::G.BillingPeriod NextBillingPeriod { get; set; } = default!;
 
         /// <summary>

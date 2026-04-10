@@ -48,6 +48,7 @@ namespace G
         /// </summary>
         /// <example>fine-tune</example>
         [global::Newtonsoft.Json.JsonProperty("purpose")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileResponsePurposeJsonConverter))]
         public global::G.FileResponsePurpose Purpose { get; set; }
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace G
         /// </summary>
         /// <example>jsonl</example>
         [global::Newtonsoft.Json.JsonProperty("FileType", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.FileResponseFileTypeJsonConverter))]
         public global::G.FileResponseFileType FileType { get; set; } = default!;
 
         /// <summary>

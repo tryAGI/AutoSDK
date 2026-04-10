@@ -13,72 +13,84 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_id")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? UserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("active_for")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? ActiveFor { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("first_active")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? FirstActive { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_active")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? LastActive { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_requests")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? TotalRequests { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("average_requests_per_day_active")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? AverageRequestsPerDayActive { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("average_tokens_per_request")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? AverageTokensPerRequest { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_prompt_tokens")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? TotalPromptTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_completion_tokens")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? TotalCompletionTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cost")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? Cost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rate_limited_count")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SortDirectionJsonConverter))]
         public global::G.SortDirection? RateLimitedCount { get; set; }
 
         /// <summary>

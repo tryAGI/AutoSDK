@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sample")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SampleJsonConverter))]
         public global::G.Sample Sample { get; set; }
 
         /// <summary>

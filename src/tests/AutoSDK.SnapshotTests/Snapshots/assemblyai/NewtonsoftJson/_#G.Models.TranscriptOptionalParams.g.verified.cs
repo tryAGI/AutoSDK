@@ -118,6 +118,7 @@ namespace G
         /// How much to boost specified words
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("boost_param")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptBoostParamJsonConverter))]
         public global::G.TranscriptBoostParam? BoostParam { get; set; }
 
         /// <summary>
@@ -147,6 +148,7 @@ namespace G
         /// </summary>
         /// <example>mp3</example>
         [global::Newtonsoft.Json.JsonProperty("redact_pii_audio_quality")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RedactPiiAudioQualityJsonConverter))]
         public global::G.RedactPiiAudioQuality? RedactPiiAudioQuality { get; set; }
 
         /// <summary>
@@ -242,12 +244,14 @@ namespace G
         /// The model to summarize the transcript
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summary_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummaryModelJsonConverter))]
         public global::G.SummaryModel? SummaryModel { get; set; }
 
         /// <summary>
         /// The type of summary
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summary_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SummaryTypeJsonConverter))]
         public global::G.SummaryType? SummaryType { get; set; }
 
         /// <summary>

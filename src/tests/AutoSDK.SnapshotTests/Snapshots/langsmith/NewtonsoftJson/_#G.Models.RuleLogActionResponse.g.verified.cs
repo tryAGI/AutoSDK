@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outcome", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RuleLogActionOutcomeJsonConverter))]
         public global::G.RuleLogActionOutcome Outcome { get; set; } = default!;
 
         /// <summary>

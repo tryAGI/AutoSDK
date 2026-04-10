@@ -31,6 +31,7 @@ namespace G
         /// status of backup process
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BackupListResponseItemStatusJsonConverter))]
         public global::G.BackupListResponseItemStatus? Status { get; set; }
 
         /// <summary>

@@ -22,11 +22,13 @@ namespace G
         /// File](/docs/api-reference/files/create).
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Upload> CreateUploadAsync(
 
             global::G.CreateUploadRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Creates an intermediate [Upload](/docs/api-reference/uploads/object) object<br/>
@@ -58,6 +60,7 @@ namespace G
         /// The MIME type of the file.<br/>
         /// This must fall within the supported MIME types for your file purpose. See the supported MIME types for assistants and vision.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Upload> CreateUploadAsync(
@@ -65,6 +68,7 @@ namespace G
             global::G.CreateUploadRequestPurpose purpose,
             long bytes,
             string mimeType,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

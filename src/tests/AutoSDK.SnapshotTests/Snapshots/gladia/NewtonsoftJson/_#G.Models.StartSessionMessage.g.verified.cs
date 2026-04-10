@@ -32,6 +32,7 @@ namespace G
         /// <default>global::G.StartSessionMessageType.StartSession</default>
         /// <example>start_session</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StartSessionMessageTypeJsonConverter))]
         public global::G.StartSessionMessageType Type { get; set; } = global::G.StartSessionMessageType.StartSession;
 
         /// <summary>

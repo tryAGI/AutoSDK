@@ -40,6 +40,7 @@ namespace G
         /// * `flexible` - Flexible
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requeue_rejected_tasks_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RequeueRejectedTasksModeEnumJsonConverter))]
         public global::G.RequeueRejectedTasksModeEnum? RequeueRejectedTasksMode { get; set; }
 
         /// <summary>
@@ -54,6 +55,7 @@ namespace G
         /// * `one` - Task is reviewed if at least one annotation is reviewed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("review_criteria")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReviewCriteriaEnumJsonConverter))]
         public global::G.ReviewCriteriaEnum? ReviewCriteria { get; set; }
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace G
         /// * `random` - Random
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sampling")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ReviewSettingsSamplingEnumJsonConverter))]
         public global::G.ReviewSettingsSamplingEnum? Sampling { get; set; }
 
         /// <summary>

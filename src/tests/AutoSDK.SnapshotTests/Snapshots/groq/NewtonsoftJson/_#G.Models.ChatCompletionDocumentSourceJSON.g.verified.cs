@@ -13,6 +13,7 @@ namespace G
         /// Identifies this document source as JSON data.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionDocumentSourceJSONTypeJsonConverter))]
         public global::G.ChatCompletionDocumentSourceJSONType Type { get; set; }
 
         /// <summary>

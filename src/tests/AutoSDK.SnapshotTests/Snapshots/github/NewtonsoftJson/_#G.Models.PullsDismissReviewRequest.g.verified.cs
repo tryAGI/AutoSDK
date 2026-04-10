@@ -20,6 +20,7 @@ namespace G
         /// </summary>
         /// <example>"DISMISS"</example>
         [global::Newtonsoft.Json.JsonProperty("event")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PullsDismissReviewRequestEventJsonConverter))]
         public global::G.PullsDismissReviewRequestEvent? Event { get; set; }
 
         /// <summary>

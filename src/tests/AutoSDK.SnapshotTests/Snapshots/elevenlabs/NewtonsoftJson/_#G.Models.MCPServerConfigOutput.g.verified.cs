@@ -14,6 +14,7 @@ namespace G
         /// Default Value: require_approval_all
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("approval_policy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPApprovalPolicyJsonConverter))]
         public global::G.MCPApprovalPolicy? ApprovalPolicy { get; set; }
 
         /// <summary>
@@ -27,6 +28,7 @@ namespace G
         /// Default Value: SSE
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MCPServerTransportJsonConverter))]
         public global::G.MCPServerTransport? Transport { get; set; }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_call_sound_behavior")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolCallSoundBehaviorJsonConverter))]
         public global::G.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
 
         /// <summary>
@@ -97,6 +100,7 @@ namespace G
         /// Default Value: immediate
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ToolExecutionModeJsonConverter))]
         public global::G.ToolExecutionMode? ExecutionMode { get; set; }
 
         /// <summary>

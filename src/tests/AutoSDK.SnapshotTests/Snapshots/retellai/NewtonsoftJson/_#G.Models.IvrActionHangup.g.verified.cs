@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <example>hangup</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.IvrActionHangupTypeJsonConverter))]
         public global::G.IvrActionHangupType Type { get; set; }
 
         /// <summary>

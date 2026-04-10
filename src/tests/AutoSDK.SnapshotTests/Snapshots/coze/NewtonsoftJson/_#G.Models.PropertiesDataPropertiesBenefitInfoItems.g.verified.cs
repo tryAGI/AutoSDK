@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("benefit_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PropertiesDataPropertiesBenefitInfoItemsBenefitTypeJsonConverter))]
         public global::G.PropertiesDataPropertiesBenefitInfoItemsBenefitType? BenefitType { get; set; }
 
         /// <summary>

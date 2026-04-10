@@ -20,6 +20,7 @@ namespace G
         /// Default Value: minimal
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BatchDeleteOutputJsonConverter))]
         public global::G.BatchDeleteOutput? Output { get; set; }
 
         /// <summary>

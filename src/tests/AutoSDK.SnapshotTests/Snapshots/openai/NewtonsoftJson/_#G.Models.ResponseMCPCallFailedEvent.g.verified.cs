@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always 'response.mcp_call.failed'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseMCPCallFailedEventTypeJsonConverter))]
         public global::G.ResponseMCPCallFailedEventType Type { get; set; }
 
         /// <summary>

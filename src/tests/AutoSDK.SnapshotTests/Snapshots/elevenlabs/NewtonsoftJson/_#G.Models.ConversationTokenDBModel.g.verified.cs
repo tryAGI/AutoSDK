@@ -38,6 +38,7 @@ namespace G
         /// Default Value: signed_url
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConversationTokenPurposeJsonConverter))]
         public global::G.ConversationTokenPurpose? Purpose { get; set; }
 
         /// <summary>

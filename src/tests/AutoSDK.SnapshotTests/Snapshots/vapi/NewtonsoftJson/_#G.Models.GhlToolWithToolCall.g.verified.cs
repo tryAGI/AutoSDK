@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "ghl" for GHL tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GhlToolWithToolCallTypeJsonConverter))]
         public global::G.GhlToolWithToolCallType Type { get; set; }
 
         /// <summary>

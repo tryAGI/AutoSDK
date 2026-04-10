@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextTo3DPreviewRequestModeJsonConverter))]
         public global::G.TextTo3DPreviewRequestMode Mode { get; set; }
 
         /// <summary>
@@ -25,24 +26,28 @@ namespace G
         /// Default Value: standard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelTypeJsonConverter))]
         public global::G.ModelType? ModelType { get; set; }
 
         /// <summary>
         /// Deprecated for Meshy-6
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("art_style")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TextTo3DPreviewRequestArtStyleJsonConverter))]
         public global::G.TextTo3DPreviewRequestArtStyle? ArtStyle { get; set; }
 
         /// <summary>
         /// Default Value: latest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ai_model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AiModelJsonConverter))]
         public global::G.AiModel? AiModel { get; set; }
 
         /// <summary>
         /// Default Value: triangle
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topology")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TopologyJsonConverter))]
         public global::G.Topology? Topology { get; set; }
 
         /// <summary>
@@ -61,12 +66,14 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("symmetry_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SymmetryModeJsonConverter))]
         public global::G.SymmetryMode? SymmetryMode { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pose_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PoseModeJsonConverter))]
         public global::G.PoseMode? PoseMode { get; set; }
 
         /// <summary>
@@ -91,6 +98,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("origin_at")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OriginAtJsonConverter))]
         public global::G.OriginAt? OriginAt { get; set; }
 
         /// <summary>

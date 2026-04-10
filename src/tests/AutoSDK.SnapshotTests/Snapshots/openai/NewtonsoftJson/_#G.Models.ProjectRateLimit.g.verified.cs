@@ -13,6 +13,7 @@ namespace G
         /// The object type, which is always `project.rate_limit`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectRateLimitObjectJsonConverter))]
         public global::G.ProjectRateLimitObject Object { get; set; }
 
         /// <summary>

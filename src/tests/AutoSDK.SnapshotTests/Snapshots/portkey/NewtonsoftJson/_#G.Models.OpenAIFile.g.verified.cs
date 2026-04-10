@@ -27,6 +27,7 @@ namespace G
         /// The Unix timestamp (in seconds) for when the file was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -39,18 +40,21 @@ namespace G
         /// The object type, which is always `file`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIFileObjectJsonConverter))]
         public global::G.OpenAIFileObject Object { get; set; }
 
         /// <summary>
         /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIFilePurposeJsonConverter))]
         public global::G.OpenAIFilePurpose Purpose { get; set; } = default!;
 
         /// <summary>
         /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAIFileStatusJsonConverter))]
         public global::G.OpenAIFileStatus Status { get; set; } = default!;
 
         /// <summary>

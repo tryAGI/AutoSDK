@@ -10,11 +10,13 @@ namespace G
         /// Generates a new video using a Replica and either a script or an audio file.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Video> GenerateVideoAsync(
 
             global::G.GenerateVideoRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate Video<br/>
@@ -39,6 +41,7 @@ namespace G
         /// </param>
         /// <param name="transparentBackground"></param>
         /// <param name="properties"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Video> GenerateVideoAsync(
@@ -51,6 +54,7 @@ namespace G
             string? backgroundSourceUrl = default,
             bool? transparentBackground = default,
             global::G.VideoProperties? properties = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

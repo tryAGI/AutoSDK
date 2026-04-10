@@ -20,6 +20,7 @@ namespace G
         /// The type of tool. "query" for Query tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.QueryToolTypeJsonConverter))]
         public global::G.QueryToolType Type { get; set; }
 
         /// <summary>

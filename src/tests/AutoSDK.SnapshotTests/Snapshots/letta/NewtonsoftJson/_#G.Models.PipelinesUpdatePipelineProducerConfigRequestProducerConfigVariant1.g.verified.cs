@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1TypeJsonConverter))]
         public global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1Type Type { get; set; }
 
         /// <summary>

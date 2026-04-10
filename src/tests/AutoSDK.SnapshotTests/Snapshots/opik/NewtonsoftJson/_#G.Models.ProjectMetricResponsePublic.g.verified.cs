@@ -19,12 +19,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metric_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectMetricResponsePublicMetricTypeJsonConverter))]
         public global::G.ProjectMetricResponsePublicMetricType? MetricType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("interval")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ProjectMetricResponsePublicIntervalJsonConverter))]
         public global::G.ProjectMetricResponsePublicInterval? Interval { get; set; }
 
         /// <summary>

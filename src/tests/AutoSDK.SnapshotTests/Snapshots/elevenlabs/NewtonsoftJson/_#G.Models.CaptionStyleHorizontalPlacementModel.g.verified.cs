@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("align", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CaptionStyleHorizontalPlacementModelAlignJsonConverter))]
         public global::G.CaptionStyleHorizontalPlacementModelAlign Align { get; set; } = default!;
 
         /// <summary>

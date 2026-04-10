@@ -28,6 +28,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BaseType.Unspecified</default>
         [global::Newtonsoft.Json.JsonProperty("base_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BaseTypeJsonConverter))]
         public global::G.BaseType BaseType { get; set; } = default!;
 
         /// <summary>
@@ -35,6 +36,7 @@ namespace G
         /// Default Value: STRATEGY_UNSPECIFIED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("strategy")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StrategyJsonConverter))]
         public global::G.Strategy? Strategy { get; set; }
 
         /// <summary>

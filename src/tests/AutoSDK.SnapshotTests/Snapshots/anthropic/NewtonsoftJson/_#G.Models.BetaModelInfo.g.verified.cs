@@ -16,6 +16,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaModelInfoType.Model</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaModelInfoTypeJsonConverter))]
         public global::G.BetaModelInfoType Type { get; set; } = global::G.BetaModelInfoType.Model;
 
         /// <summary>

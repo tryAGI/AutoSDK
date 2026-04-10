@@ -32,6 +32,7 @@ namespace G
         /// The type of the word or sound. 'audio_event' is used for non-word sounds like laughter or footsteps.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SpeechToTextWordResponseModelTypeJsonConverter))]
         public global::G.SpeechToTextWordResponseModelType Type { get; set; } = default!;
 
         /// <summary>

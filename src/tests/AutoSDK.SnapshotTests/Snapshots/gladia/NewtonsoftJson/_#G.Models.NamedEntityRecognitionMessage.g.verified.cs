@@ -40,6 +40,7 @@ namespace G
         /// <default>global::G.NamedEntityRecognitionMessageType.NamedEntityRecognition</default>
         /// <example>named_entity_recognition</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.NamedEntityRecognitionMessageTypeJsonConverter))]
         public global::G.NamedEntityRecognitionMessageType Type { get; set; } = global::G.NamedEntityRecognitionMessageType.NamedEntityRecognition;
 
         /// <summary>

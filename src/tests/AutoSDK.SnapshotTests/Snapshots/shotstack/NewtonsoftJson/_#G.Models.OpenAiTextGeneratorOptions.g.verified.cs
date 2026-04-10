@@ -15,6 +15,7 @@ namespace G
         /// </summary>
         /// <default>global::G.OpenAiTextGeneratorOptionsType.TextGenerator</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAiTextGeneratorOptionsTypeJsonConverter))]
         public global::G.OpenAiTextGeneratorOptionsType Type { get; set; } = global::G.OpenAiTextGeneratorOptionsType.TextGenerator;
 
         /// <summary>
@@ -34,6 +35,7 @@ namespace G
         /// </summary>
         /// <example>gpt-4</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OpenAiTextGeneratorOptionsModelJsonConverter))]
         public global::G.OpenAiTextGeneratorOptionsModel Model { get; set; } = default!;
 
         /// <summary>

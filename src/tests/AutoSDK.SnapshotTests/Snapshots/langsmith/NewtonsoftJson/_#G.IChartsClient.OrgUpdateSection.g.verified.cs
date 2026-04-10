@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="sectionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartsSectionResponse> OrgUpdateSectionAsync(
             global::System.Guid sectionId,
 
             global::G.CustomChartsSectionUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Org Update Section<br/>
@@ -32,6 +34,7 @@ namespace G
         /// <param name="index">
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomChartsSectionResponse> OrgUpdateSectionAsync(
@@ -39,6 +42,7 @@ namespace G
             global::G.AnyOf<string, global::G.Missing>? title = default,
             global::G.AnyOf<string, global::G.Missing, object>? description = default,
             global::G.AnyOf<int?, global::G.Missing>? index = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

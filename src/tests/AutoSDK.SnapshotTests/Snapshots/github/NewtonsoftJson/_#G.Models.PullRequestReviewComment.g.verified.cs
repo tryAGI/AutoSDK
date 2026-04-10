@@ -147,6 +147,7 @@ namespace G
         /// </summary>
         /// <example>OWNER</example>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
@@ -176,6 +177,7 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_side")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PullRequestReviewCommentStartSideJsonConverter))]
         public global::G.PullRequestReviewCommentStartSide? StartSide { get; set; }
 
         /// <summary>
@@ -199,12 +201,14 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("side")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PullRequestReviewCommentSideJsonConverter))]
         public global::G.PullRequestReviewCommentSide? Side { get; set; }
 
         /// <summary>
         /// The level at which the comment is targeted, can be a diff line or a file.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subject_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PullRequestReviewCommentSubjectTypeJsonConverter))]
         public global::G.PullRequestReviewCommentSubjectType? SubjectType { get; set; }
 
         /// <summary>

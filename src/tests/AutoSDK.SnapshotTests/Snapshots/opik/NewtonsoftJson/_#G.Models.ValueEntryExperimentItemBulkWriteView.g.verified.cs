@@ -31,6 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ValueEntryExperimentItemBulkWriteViewSourceJsonConverter))]
         public global::G.ValueEntryExperimentItemBulkWriteViewSource? Source { get; set; }
 
         /// <summary>

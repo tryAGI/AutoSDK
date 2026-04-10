@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LettaSchemasMessageToolReturnInputFuncResponseVariant2ItemDiscriminatorTypeJsonConverter))]
         public global::G.LettaSchemasMessageToolReturnInputFuncResponseVariant2ItemDiscriminatorType? Type { get; set; }
 
         /// <summary>

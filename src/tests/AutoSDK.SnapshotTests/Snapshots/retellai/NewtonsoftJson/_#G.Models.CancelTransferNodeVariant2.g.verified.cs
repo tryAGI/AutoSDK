@@ -13,6 +13,7 @@ namespace G
         /// Type of the node - cancels the warm transfer and ends the transfer agent call
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CancelTransferNodeVariant2TypeJsonConverter))]
         public global::G.CancelTransferNodeVariant2Type Type { get; set; }
 
         /// <summary>

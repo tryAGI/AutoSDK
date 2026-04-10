@@ -25,6 +25,7 @@ namespace G
         /// The type of the tool. Always `custom`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionMessageCustomToolCallTypeJsonConverter))]
         public global::G.ChatCompletionMessageCustomToolCallType Type { get; set; }
 
         /// <summary>

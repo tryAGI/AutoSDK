@@ -25,6 +25,7 @@ namespace G
         /// The type of object being returned
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetAnalyticsGraphsFeedbacksWeightedResponseObjectJsonConverter))]
         public global::G.GetAnalyticsGraphsFeedbacksWeightedResponseObject Object { get; set; }
 
         /// <summary>

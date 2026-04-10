@@ -13,6 +13,7 @@ namespace G
         /// Metric to aggregate. Token metrics are normalized across providers.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metric", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UsageMetricSpecMetricJsonConverter))]
         public global::G.UsageMetricSpecMetric Metric { get; set; } = default!;
 
         /// <summary>

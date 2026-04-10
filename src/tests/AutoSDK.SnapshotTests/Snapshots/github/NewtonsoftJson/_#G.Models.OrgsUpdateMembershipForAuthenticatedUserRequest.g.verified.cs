@@ -13,6 +13,7 @@ namespace G
         /// The state that the membership should be in. Only `"active"` will be accepted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OrgsUpdateMembershipForAuthenticatedUserRequestStateJsonConverter))]
         public global::G.OrgsUpdateMembershipForAuthenticatedUserRequestState State { get; set; }
 
         /// <summary>

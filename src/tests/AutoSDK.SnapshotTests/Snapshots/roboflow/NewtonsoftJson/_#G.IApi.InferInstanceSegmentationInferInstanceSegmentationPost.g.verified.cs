@@ -12,6 +12,7 @@ namespace G
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.InstanceSegmentationInferenceResponse, global::G.StubResponse>> InferInstanceSegmentationInferInstanceSegmentationPostAsync(
@@ -19,6 +20,7 @@ namespace G
             global::G.InstanceSegmentationInferenceRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Instance segmentation infer<br/>
@@ -118,6 +120,7 @@ namespace G
         /// The amount to tradeoff between 0='fast' and 1='accurate'<br/>
         /// Default Value: 0F
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.InstanceSegmentationInferenceResponse, global::G.StubResponse>> InferInstanceSegmentationInferInstanceSegmentationPostAsync(
@@ -151,6 +154,7 @@ namespace G
             string? activeLearningTargetDataset = default,
             string? maskDecodeMode = default,
             double? tradeoffFactor = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

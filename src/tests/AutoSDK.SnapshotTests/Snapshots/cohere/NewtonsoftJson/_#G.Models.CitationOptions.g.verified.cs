@@ -15,6 +15,7 @@ namespace G
         /// **Note**: `command-r7b-12-2024` and `command-a-03-2025` only support `"fast"` and `"off"` modes. The default is `"fast"`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CitationOptionsModeJsonConverter))]
         public global::G.CitationOptionsMode? Mode { get; set; }
 
         /// <summary>

@@ -10,11 +10,13 @@ namespace G
         /// Create a video within your Synthesia account. To get started on this endpoint check the [API Quickstart guide](https://docs.synthesia.io/reference/synthesia-api-quickstart).
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.VideoResponse> CreateVideosAsync(
 
             global::G.CreateVideoRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a video<br/>
@@ -57,6 +59,7 @@ namespace G
         /// Visibility can be changed also once the video is created via Update a video.<br/>
         /// Default Value: private
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.VideoResponse> CreateVideosAsync(
@@ -71,6 +74,7 @@ namespace G
             bool? test = default,
             string? title = default,
             global::G.CreateVideoRequestVisibility? visibility = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

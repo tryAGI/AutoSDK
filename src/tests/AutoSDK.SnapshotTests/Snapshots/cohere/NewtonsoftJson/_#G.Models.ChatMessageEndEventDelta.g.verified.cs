@@ -24,6 +24,7 @@ namespace G
         /// - **error**: The generation failed due to an internal error
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatFinishReasonJsonConverter))]
         public global::G.ChatFinishReason? FinishReason { get; set; }
 
         /// <summary>

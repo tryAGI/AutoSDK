@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gender")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenderJsonConverter))]
         public global::G.Gender? Gender { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modelVersion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelVersionJsonConverter))]
         public global::G.ModelVersion? ModelVersion { get; set; }
 
         /// <summary>

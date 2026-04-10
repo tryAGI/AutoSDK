@@ -9,11 +9,13 @@ namespace recraft
         /// Generate image from prompt
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::recraft.GenerateImageResponse> GenerateImageAsync(
 
             global::recraft.GenerateImageRequest request,
+            global::recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate image from prompt
@@ -28,6 +30,7 @@ namespace recraft
         /// <param name="style"></param>
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::recraft.GenerateImageResponse> GenerateImageAsync(
@@ -41,6 +44,7 @@ namespace recraft
             global::recraft.ImageStyle? style = default,
             global::System.Guid? styleId = default,
             global::recraft.ImageSubStyle? substyle = default,
+            global::recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -137,6 +137,7 @@ namespace G
         /// </summary>
         /// <example>V2</example>
         [global::Newtonsoft.Json.JsonProperty("webhook_version", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetAuthSessionInfoResponseProjectWebhookVersionJsonConverter))]
         public global::G.GetAuthSessionInfoResponseProjectWebhookVersion WebhookVersion { get; set; } = default!;
 
         /// <summary>

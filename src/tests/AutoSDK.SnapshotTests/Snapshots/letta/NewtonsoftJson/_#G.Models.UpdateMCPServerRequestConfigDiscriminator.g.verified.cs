@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mcp_server_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateMCPServerRequestConfigDiscriminatorMcpServerTypeJsonConverter))]
         public global::G.UpdateMCPServerRequestConfigDiscriminatorMcpServerType? McpServerType { get; set; }
 
         /// <summary>

@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always 'response.mcp_call.arguments_delta'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseMCPCallArgumentsDeltaEventTypeJsonConverter))]
         public global::G.ResponseMCPCallArgumentsDeltaEventType Type { get; set; }
 
         /// <summary>

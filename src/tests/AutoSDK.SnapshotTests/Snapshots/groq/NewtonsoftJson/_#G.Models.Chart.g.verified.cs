@@ -13,6 +13,7 @@ namespace G
         /// The type of chart
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChartTypeJsonConverter))]
         public global::G.ChartType Type { get; set; } = default!;
 
         /// <summary>

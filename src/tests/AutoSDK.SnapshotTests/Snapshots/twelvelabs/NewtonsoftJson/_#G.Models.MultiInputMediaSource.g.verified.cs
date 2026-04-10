@@ -21,6 +21,7 @@ namespace G
         /// **Value**: `image`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("media_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MultiInputMediaSourceMediaTypeJsonConverter))]
         public global::G.MultiInputMediaSourceMediaType MediaType { get; set; }
 
         /// <summary>

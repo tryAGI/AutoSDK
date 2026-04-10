@@ -64,6 +64,7 @@ namespace G
         /// * `complete` - Complete
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("onboarding_state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.OnboardingStateEnumJsonConverter))]
         public global::G.OnboardingStateEnum? OnboardingState { get; set; }
 
         /// <summary>
@@ -100,6 +101,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trial_role")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TrialRoleEnumJsonConverter))]
         public global::G.TrialRoleEnum? TrialRole { get; set; }
 
         /// <summary>

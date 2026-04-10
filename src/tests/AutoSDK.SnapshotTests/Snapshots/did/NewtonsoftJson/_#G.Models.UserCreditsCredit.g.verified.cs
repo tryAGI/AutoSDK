@@ -73,6 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("product_billing_interval")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UserCreditsCreditProductBillingIntervalJsonConverter))]
         public global::G.UserCreditsCreditProductBillingInterval? ProductBillingInterval { get; set; }
 
         /// <summary>

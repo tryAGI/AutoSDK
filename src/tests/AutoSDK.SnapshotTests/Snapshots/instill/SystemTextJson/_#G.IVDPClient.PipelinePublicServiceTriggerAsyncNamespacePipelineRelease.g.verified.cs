@@ -19,6 +19,7 @@ namespace G
         /// <param name="releaseId"></param>
         /// <param name="instillRequesterUid"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TriggerAsyncNamespacePipelineReleaseResponse> PipelinePublicServiceTriggerAsyncNamespacePipelineReleaseAsync(
@@ -28,6 +29,7 @@ namespace G
 
             global::G.TriggerAsyncNamespacePipelineReleaseBody request,
             string? instillRequesterUid = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Trigger a pipeline release asynchronously<br/>
@@ -46,6 +48,7 @@ namespace G
         /// Pipeline input parameters, it will be deprecated soon.
         /// </param>
         /// <param name="data"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TriggerAsyncNamespacePipelineReleaseResponse> PipelinePublicServiceTriggerAsyncNamespacePipelineReleaseAsync(
@@ -55,6 +58,7 @@ namespace G
             string? instillRequesterUid = default,
             global::System.Collections.Generic.IList<object>? inputs = default,
             global::System.Collections.Generic.IList<global::G.TriggerData>? data = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

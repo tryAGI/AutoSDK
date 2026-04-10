@@ -13,6 +13,7 @@ namespace G
         /// Default Value: mcp_approval_response
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.McpApprovalResponseContentTypeJsonConverter))]
         public global::G.McpApprovalResponseContentType? Type { get; set; }
 
         /// <summary>

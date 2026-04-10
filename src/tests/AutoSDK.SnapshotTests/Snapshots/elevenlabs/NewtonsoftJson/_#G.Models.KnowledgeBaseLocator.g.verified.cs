@@ -13,6 +13,7 @@ namespace G
         /// The type of the knowledge base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.KnowledgeBaseDocumentTypeJsonConverter))]
         public global::G.KnowledgeBaseDocumentType Type { get; set; } = default!;
 
         /// <summary>
@@ -32,6 +33,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DocumentUsageModeEnumJsonConverter))]
         public global::G.DocumentUsageModeEnum? UsageMode { get; set; }
 
         /// <summary>

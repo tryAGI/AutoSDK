@@ -25,6 +25,7 @@ namespace G
         /// The method used to generate the code challenge
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_challenge_method")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaCodeChallengeMethodJsonConverter))]
         public global::G.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? CodeChallengeMethod { get; set; }
 
         /// <summary>
@@ -49,6 +50,7 @@ namespace G
         /// Optional credit limit reset interval. When set, the credit limit resets on this interval.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage_limit_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitTypeJsonConverter))]
         public global::G.AuthKeysCodePostRequestBodyContentApplicationJsonSchemaUsageLimitType? UsageLimitType { get; set; }
 
         /// <summary>

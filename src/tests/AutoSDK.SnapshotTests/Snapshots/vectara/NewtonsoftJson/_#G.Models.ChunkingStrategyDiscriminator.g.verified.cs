@@ -13,6 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChunkingStrategyDiscriminatorTypeJsonConverter))]
         public global::G.ChunkingStrategyDiscriminatorType? Type { get; set; }
 
         /// <summary>

@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("state")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertStateJsonConverter))]
         public global::G.DependabotAlertState State { get; set; } = default!;
 
         /// <summary>
@@ -98,6 +99,7 @@ namespace G
         /// The reason that the alert was dismissed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_reason")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertDismissedReasonJsonConverter))]
         public global::G.DependabotAlertDismissedReason? DismissedReason { get; set; }
 
         /// <summary>

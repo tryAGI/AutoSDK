@@ -49,6 +49,7 @@ namespace G
         /// @default udp
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outboundProtocol")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SipTrunkGatewayOutboundProtocolJsonConverter))]
         public global::G.SipTrunkGatewayOutboundProtocol? OutboundProtocol { get; set; }
 
         /// <summary>

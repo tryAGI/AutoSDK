@@ -19,12 +19,14 @@ namespace G
         /// Source language code (BCP-47) or "auto"
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_language_code", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransliterateRequestSourceLanguageCodeJsonConverter))]
         public global::G.TransliterateRequestSourceLanguageCode SourceLanguageCode { get; set; } = default!;
 
         /// <summary>
         /// Target language code (BCP-47)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_language_code", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransliterateRequestTargetLanguageCodeJsonConverter))]
         public global::G.TransliterateRequestTargetLanguageCode TargetLanguageCode { get; set; } = default!;
 
         /// <summary>
@@ -32,6 +34,7 @@ namespace G
         /// Default Value: international
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("numerals_format")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransliterateRequestNumeralsFormatJsonConverter))]
         public global::G.TransliterateRequestNumeralsFormat? NumeralsFormat { get; set; }
 
         /// <summary>
@@ -46,6 +49,7 @@ namespace G
         /// Default Value: native
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("spoken_form_numerals_language")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TransliterateRequestSpokenFormNumeralsLanguageJsonConverter))]
         public global::G.TransliterateRequestSpokenFormNumeralsLanguage? SpokenFormNumeralsLanguage { get; set; }
 
         /// <summary>

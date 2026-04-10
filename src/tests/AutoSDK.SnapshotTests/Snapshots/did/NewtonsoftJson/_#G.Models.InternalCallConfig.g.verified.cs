@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inference_mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InternalCallConfigInferenceModeJsonConverter))]
         public global::G.InternalCallConfigInferenceMode? InferenceMode { get; set; }
 
         /// <summary>

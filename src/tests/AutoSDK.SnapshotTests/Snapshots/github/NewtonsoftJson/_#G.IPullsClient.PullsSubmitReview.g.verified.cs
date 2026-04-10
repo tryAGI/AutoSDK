@@ -19,6 +19,7 @@ namespace G
         /// <param name="pullNumber"></param>
         /// <param name="reviewId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestReview> PullsSubmitReviewAsync(
@@ -28,6 +29,7 @@ namespace G
             int reviewId,
 
             global::G.PullsSubmitReviewRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Submit a review for a pull request<br/>
@@ -48,6 +50,7 @@ namespace G
         /// <param name="event">
         /// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PullRequestReview> PullsSubmitReviewAsync(
@@ -57,6 +60,7 @@ namespace G
             int reviewId,
             global::G.PullsSubmitReviewRequestEvent @event,
             string? body = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

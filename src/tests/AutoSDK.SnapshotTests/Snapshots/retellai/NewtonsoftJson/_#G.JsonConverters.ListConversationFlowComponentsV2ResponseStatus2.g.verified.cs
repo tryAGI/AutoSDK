@@ -1,0 +1,66 @@
+﻿//HintName: G.JsonConverters.ListConversationFlowComponentsV2ResponseStatus2.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ListConversationFlowComponentsV2ResponseStatus2JsonConverter : global::Newtonsoft.Json.JsonConverter<global::G.ListConversationFlowComponentsV2ResponseStatus2>
+    {
+        /// <inheritdoc />
+        public override global::G.ListConversationFlowComponentsV2ResponseStatus2 ReadJson(
+            global::Newtonsoft.Json.JsonReader reader,
+            global::System.Type objectType,
+            global::G.ListConversationFlowComponentsV2ResponseStatus2 existingValue,
+            bool hasExistingValue,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            reader = reader ?? throw new global::System.ArgumentNullException(nameof(reader));
+
+            if (hasExistingValue)
+            {
+                return existingValue;
+            }
+
+            switch (reader.TokenType)
+            {
+                case global::Newtonsoft.Json.JsonToken.String:
+                {
+                    var stringValue = reader.Value as string ?? reader.ReadAsString();
+                    if (stringValue != null)
+                    {
+                        return global::G.ListConversationFlowComponentsV2ResponseStatus2Extensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Integer:
+                {
+                    var numValue = reader.ReadAsInt32();
+                    if (numValue != null)
+                    {
+                        return (global::G.ListConversationFlowComponentsV2ResponseStatus2)numValue.Value;
+                    }
+
+                    break;
+                }
+                case global::Newtonsoft.Json.JsonToken.Null:
+                {
+                    return default(global::G.ListConversationFlowComponentsV2ResponseStatus2);
+                }
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void WriteJson(
+            global::Newtonsoft.Json.JsonWriter writer,
+            global::G.ListConversationFlowComponentsV2ResponseStatus2 value,
+            global::Newtonsoft.Json.JsonSerializer serializer)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteValue(global::G.ListConversationFlowComponentsV2ResponseStatus2Extensions.ToValueString(value));
+        }
+    }
+}

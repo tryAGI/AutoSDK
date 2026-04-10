@@ -37,6 +37,7 @@ namespace G
         /// Product type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("product_type", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ConfigurationResponseProductTypeJsonConverter))]
         public global::G.ConfigurationResponseProductType ProductType { get; set; } = default!;
 
         /// <summary>

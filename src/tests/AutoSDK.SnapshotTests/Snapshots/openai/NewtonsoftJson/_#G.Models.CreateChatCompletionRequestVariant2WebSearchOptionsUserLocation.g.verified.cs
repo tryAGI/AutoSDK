@@ -13,6 +13,7 @@ namespace G
         /// The type of location approximation. Always `approximate`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationTypeJsonConverter))]
         public global::G.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType Type { get; set; }
 
         /// <summary>

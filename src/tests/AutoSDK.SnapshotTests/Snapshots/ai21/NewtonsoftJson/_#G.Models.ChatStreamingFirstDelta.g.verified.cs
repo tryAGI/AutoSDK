@@ -22,6 +22,7 @@ namespace G
         ///   charming French accent."
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatStreamingFirstDeltaRoleJsonConverter))]
         public global::G.ChatStreamingFirstDeltaRole Role { get; set; } = default!;
 
         /// <summary>

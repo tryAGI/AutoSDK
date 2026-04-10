@@ -15,6 +15,7 @@ namespace G
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ClipEmbeddingResponse> ClipEmbedTextClipEmbedTextPostAsync(
@@ -23,6 +24,7 @@ namespace G
             string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// CLIP Text Embeddings<br/>
@@ -55,6 +57,7 @@ namespace G
         /// <param name="text">
         /// A string or list of strings
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ClipEmbeddingResponse> ClipEmbedTextClipEmbedTextPostAsync(
@@ -71,6 +74,7 @@ namespace G
             bool? disableModelMonitoring = default,
             string? clipVersionId = default,
             string? modelId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

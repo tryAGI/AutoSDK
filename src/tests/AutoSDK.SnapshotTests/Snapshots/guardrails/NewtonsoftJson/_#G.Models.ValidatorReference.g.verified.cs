@@ -26,6 +26,7 @@ namespace G
         /// Default Value: noop
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("onFail")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ValidatorReferenceOnFailJsonConverter))]
         public global::G.ValidatorReferenceOnFail? OnFail { get; set; }
 
         /// <summary>

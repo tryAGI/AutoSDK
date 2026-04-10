@@ -46,6 +46,7 @@ namespace G
         /// * FULFILLED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fulfillment_status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DropsEntitlementFulfillmentStatusJsonConverter))]
         public global::G.DropsEntitlementFulfillmentStatus FulfillmentStatus { get; set; } = default!;
 
         /// <summary>

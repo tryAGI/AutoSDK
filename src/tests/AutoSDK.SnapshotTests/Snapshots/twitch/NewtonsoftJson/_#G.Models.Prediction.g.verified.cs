@@ -66,6 +66,7 @@ namespace G
         /// * RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PredictionStatusJsonConverter))]
         public global::G.PredictionStatus Status { get; set; } = default!;
 
         /// <summary>

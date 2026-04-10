@@ -18,6 +18,7 @@ namespace G
         /// </summary>
         /// <default>global::G.CompletionResponseType.Completion</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CompletionResponseTypeJsonConverter))]
         public global::G.CompletionResponseType Type { get; set; } = global::G.CompletionResponseType.Completion;
 
         /// <summary>

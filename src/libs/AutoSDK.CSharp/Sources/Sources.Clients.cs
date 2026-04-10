@@ -45,6 +45,9 @@ namespace {client.Settings.Namespace}
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::{client.Settings.Namespace}.AutoSDKClientOptions Options {{ get; }}
 {(client.HasIdempotencySupport ? @"
 
         /// <inheritdoc/>
@@ -65,7 +68,7 @@ namespace {client.Settings.Namespace}
 
 {(client.Clients.Length != 0 ? "\n" + client.Clients.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
-        public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(HttpClient, authorizations: Authorizations)
+        public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(HttpClient, authorizations: Authorizations, options: Options)
         {{
             ReadResponseAsString = ReadResponseAsString,
             {(client.HasIdempotencySupport ? "CreateIdempotencyKey = CreateIdempotencyKey," : TrimmedLine)}
@@ -89,11 +92,36 @@ namespace {client.Settings.Namespace}
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {{
+        }}
+
+        /// <summary>
+        /// Creates a new instance of the {client.ClassName}.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name=""httpClient"">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name=""baseUri"">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name=""authorizations"">The authorizations to use for the requests.</param>
+        /// <param name=""options"">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name=""disposeHttpClient"">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public {client.ClassName}(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization>? authorizations = null,
+            global::{client.Settings.Namespace}.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {{
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization>();
+            Options = options ?? new global::{client.Settings.Namespace}.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);
@@ -164,6 +192,10 @@ namespace {client.Settings.Namespace}
         /// ensuring <see cref=""ApiException.ResponseBody""/> is populated.
         /// </summary>
         public bool ReadResponseAsString {{ get; set; }}
+        /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::{client.Settings.Namespace}.AutoSDKClientOptions Options {{ get; }}
 
 {(client.HasIdempotencySupport ? @"        /// <summary>
         /// Creates idempotency keys for generated idempotent requests when the caller does not provide one.

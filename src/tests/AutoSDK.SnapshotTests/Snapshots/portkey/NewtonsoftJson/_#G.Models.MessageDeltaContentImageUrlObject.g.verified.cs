@@ -19,6 +19,7 @@ namespace G
         /// Always `image_url`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaContentImageUrlObjectTypeJsonConverter))]
         public global::G.MessageDeltaContentImageUrlObjectType Type { get; set; }
 
         /// <summary>

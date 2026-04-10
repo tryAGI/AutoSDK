@@ -12,6 +12,7 @@ namespace G
         /// </summary>
         /// <param name="modelId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -26,6 +27,7 @@ namespace G
             string modelId,
 
             global::G.OcrPredictUrlRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Prediction for Image URLs<br/>
@@ -38,11 +40,13 @@ namespace G
         /// &lt;br /&gt;<br/>
         /// **Format**: PNG, JPEG and/or PDF
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> OcrPredictUrlAsync(
             string modelId,
             string urls,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

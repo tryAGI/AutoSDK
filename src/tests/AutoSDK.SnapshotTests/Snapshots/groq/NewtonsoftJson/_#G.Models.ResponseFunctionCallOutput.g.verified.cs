@@ -13,6 +13,7 @@ namespace G
         /// The type of the function tool call output. Always `function_call_output`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseFunctionCallOutputTypeJsonConverter))]
         public global::G.ResponseFunctionCallOutputType Type { get; set; }
 
         /// <summary>
@@ -37,6 +38,7 @@ namespace G
         /// The status of the item.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseFunctionCallOutputStatusJsonConverter))]
         public global::G.ResponseFunctionCallOutputStatus? Status { get; set; }
 
         /// <summary>

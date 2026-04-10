@@ -21,6 +21,7 @@ namespace G
         /// </param>
         /// <param name="timeout"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.QueryPointsResponse> QueryPointsAsync(
@@ -29,6 +30,7 @@ namespace G
             global::G.QueryRequest request,
             global::G.ReadConsistency? consistency = default,
             int? timeout = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Query points<br/>
@@ -81,6 +83,7 @@ namespace G
         /// The location to use for IDs lookup, if not specified - use the current collection and the 'using' vector Note: the other collection vectors should have the same vector size as the 'using' vector in the current collection<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.QueryPointsResponse> QueryPointsAsync(
@@ -99,6 +102,7 @@ namespace G
             global::G.WithVector? withVector = default,
             global::G.WithPayloadInterface? withPayload = default,
             global::G.LookupLocation? lookupFrom = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

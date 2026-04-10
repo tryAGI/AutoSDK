@@ -29,6 +29,7 @@ namespace G
         /// This is to bring your own phone numbers from your own SIP trunks or Carriers.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ByoPhoneNumberProviderJsonConverter))]
         public global::G.ByoPhoneNumberProvider Provider { get; set; }
 
         /// <summary>
@@ -71,6 +72,7 @@ namespace G
         /// This is the status of the phone number.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ByoPhoneNumberStatusJsonConverter))]
         public global::G.ByoPhoneNumberStatus? Status { get; set; }
 
         /// <summary>

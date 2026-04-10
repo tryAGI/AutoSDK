@@ -13,6 +13,7 @@ namespace G
         /// Default Value: dubbing
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DubbingAssetRequestConfigurationNameJsonConverter))]
         public global::G.DubbingAssetRequestConfigurationName? Name { get; set; }
 
         /// <summary>

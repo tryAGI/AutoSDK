@@ -25,6 +25,7 @@ namespace G
         /// Unix timestamp of creation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset? Created { get; set; }
 
         /// <summary>

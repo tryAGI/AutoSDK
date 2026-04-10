@@ -37,12 +37,14 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auth_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateMcpIntegrationAuthTypeJsonConverter))]
         public global::G.UpdateMcpIntegrationAuthType? AuthType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transport")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateMcpIntegrationTransportJsonConverter))]
         public global::G.UpdateMcpIntegrationTransport? Transport { get; set; }
 
         /// <summary>

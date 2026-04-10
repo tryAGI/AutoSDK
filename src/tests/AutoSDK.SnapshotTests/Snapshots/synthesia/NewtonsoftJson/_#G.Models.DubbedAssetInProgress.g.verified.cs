@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DubbingOutputLanguageJsonConverter))]
         public global::G.DubbingOutputLanguage Language { get; set; } = default!;
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace G
         /// Default Value: in_progress
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.DubbedAssetInProgressStatusJsonConverter))]
         public global::G.DubbedAssetInProgressStatus? Status { get; set; }
 
         /// <summary>

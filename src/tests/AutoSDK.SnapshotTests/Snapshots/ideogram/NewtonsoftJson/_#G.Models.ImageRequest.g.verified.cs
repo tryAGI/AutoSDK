@@ -23,6 +23,7 @@ namespace G
         /// </summary>
         /// <example>ASPECT_10_16</example>
         [global::Newtonsoft.Json.JsonProperty("aspect_ratio")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.AspectRatioJsonConverter))]
         public global::G.AspectRatio? AspectRatio { get; set; }
 
         /// <summary>
@@ -32,6 +33,7 @@ namespace G
         /// </summary>
         /// <example>V_2_TURBO</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelEnumJsonConverter))]
         public global::G.ModelEnum? Model { get; set; }
 
         /// <summary>
@@ -41,6 +43,7 @@ namespace G
         /// </summary>
         /// <example>ON</example>
         [global::Newtonsoft.Json.JsonProperty("magic_prompt_option")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MagicPromptOptionJsonConverter))]
         public global::G.MagicPromptOption? MagicPromptOption { get; set; }
 
         /// <summary>
@@ -56,6 +59,7 @@ namespace G
         /// </summary>
         /// <example>REALISTIC</example>
         [global::Newtonsoft.Json.JsonProperty("style_type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StyleTypeJsonConverter))]
         public global::G.StyleType? StyleType { get; set; }
 
         /// <summary>
@@ -72,6 +76,7 @@ namespace G
         /// </summary>
         /// <example>RESOLUTION_1024_1024</example>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResolutionJsonConverter))]
         public global::G.Resolution? Resolution { get; set; }
 
         /// <summary>

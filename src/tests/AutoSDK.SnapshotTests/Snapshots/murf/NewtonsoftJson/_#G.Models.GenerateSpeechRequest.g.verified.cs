@@ -40,6 +40,7 @@ namespace G
         /// Default Value: GEN2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modelVersion")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerateSpeechRequestModelVersionJsonConverter))]
         public global::G.GenerateSpeechRequestModelVersion? ModelVersion { get; set; }
 
         /// <summary>

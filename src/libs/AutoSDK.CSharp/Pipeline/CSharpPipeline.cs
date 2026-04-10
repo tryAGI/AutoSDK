@@ -154,6 +154,7 @@ public static class CSharpPipeline
                     .Concat([Sources.Polyfills(settings, cancellationToken)])
                     .Concat([Sources.Exceptions(settings, cancellationToken)])
                     .Concat([Sources.PathBuilder(settings, cancellationToken)])
+                    .Concat([Sources.OptionsSupport(settings, cancellationToken)])
                     .Concat(!data.Authorizations.IsEmpty
                         ? [Sources.SecuritySupport(settings, cancellationToken)]
                         : [])

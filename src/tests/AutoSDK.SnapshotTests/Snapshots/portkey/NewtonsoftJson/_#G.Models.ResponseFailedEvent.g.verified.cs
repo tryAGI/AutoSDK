@@ -13,6 +13,7 @@ namespace G
         /// The type of the event. Always `response.failed`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResponseFailedEventTypeJsonConverter))]
         public global::G.ResponseFailedEventType Type { get; set; }
 
         /// <summary>

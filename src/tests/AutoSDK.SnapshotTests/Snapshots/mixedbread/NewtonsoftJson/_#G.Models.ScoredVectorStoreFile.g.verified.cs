@@ -32,6 +32,7 @@ namespace G
         /// Default Value: pending
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.StoreFileStatusJsonConverter))]
         public global::G.StoreFileStatus? Status { get; set; }
 
         /// <summary>

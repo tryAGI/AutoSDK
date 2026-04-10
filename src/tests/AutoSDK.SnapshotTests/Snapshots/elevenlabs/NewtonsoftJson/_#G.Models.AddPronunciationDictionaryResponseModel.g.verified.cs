@@ -31,6 +31,7 @@ namespace G
         /// The creation time of the pronunciation dictionary in Unix timestamp.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creation_time_unix", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreationTimeUnix { get; set; } = default!;
 
         /// <summary>

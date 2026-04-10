@@ -14,6 +14,7 @@ namespace G
         /// </summary>
         /// <default>global::G.BetaNotFoundErrorType.NotFoundError</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BetaNotFoundErrorTypeJsonConverter))]
         public global::G.BetaNotFoundErrorType Type { get; set; } = global::G.BetaNotFoundErrorType.NotFoundError;
 
         /// <summary>

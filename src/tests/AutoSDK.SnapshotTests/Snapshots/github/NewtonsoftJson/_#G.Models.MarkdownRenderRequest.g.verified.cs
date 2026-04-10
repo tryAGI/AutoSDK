@@ -22,6 +22,7 @@ namespace G
         /// </summary>
         /// <example>markdown</example>
         [global::Newtonsoft.Json.JsonProperty("mode")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MarkdownRenderRequestModeJsonConverter))]
         public global::G.MarkdownRenderRequestMode? Mode { get; set; }
 
         /// <summary>

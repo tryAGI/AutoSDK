@@ -9,11 +9,13 @@ namespace G
         /// Create With Project Id
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ApiJobResponse> CreateDubbingJobWithProjectIdAsync(
 
             global::G.CreateDubbingJobWithProjectIdRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create With Project Id
@@ -31,6 +33,7 @@ namespace G
         /// Priority of the job. Allowed values: LOW, NORMAL, HIGH
         /// </param>
         /// <param name="webhookSecret"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ApiJobResponse> CreateDubbingJobWithProjectIdAsync(
@@ -41,6 +44,7 @@ namespace G
             string? fileName = default,
             global::G.V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority? priority = default,
             string? webhookSecret = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

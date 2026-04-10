@@ -13,6 +13,7 @@ namespace G
         /// The type of the script.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateStreamScriptAudioTypeJsonConverter))]
         public global::G.CreateStreamScriptAudioType Type { get; set; }
 
         /// <summary>

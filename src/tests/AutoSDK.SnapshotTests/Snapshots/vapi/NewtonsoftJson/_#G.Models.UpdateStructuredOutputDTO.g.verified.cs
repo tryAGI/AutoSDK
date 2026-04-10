@@ -15,6 +15,7 @@ namespace G
         /// - 'regex': Uses a regex pattern to extract data from the transcript without an LLM.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UpdateStructuredOutputDTOTypeJsonConverter))]
         public global::G.UpdateStructuredOutputDTOType? Type { get; set; }
 
         /// <summary>

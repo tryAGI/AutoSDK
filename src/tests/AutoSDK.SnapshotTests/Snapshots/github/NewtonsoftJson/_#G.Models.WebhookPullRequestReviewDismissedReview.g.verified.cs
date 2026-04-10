@@ -19,6 +19,7 @@ namespace G
         /// How the author is associated with the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewDismissedReviewAuthorAssociationJsonConverter))]
         public global::G.WebhookPullRequestReviewDismissedReviewAuthorAssociation AuthorAssociation { get; set; } = default!;
 
         /// <summary>
@@ -61,6 +62,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestReviewDismissedReviewStateJsonConverter))]
         public global::G.WebhookPullRequestReviewDismissedReviewState State { get; set; } = default!;
 
         /// <summary>

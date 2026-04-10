@@ -19,6 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.LanguageIdentificationResultErrorJsonConverter))]
         public global::G.LanguageIdentificationResultError? Error { get; set; }
 
         /// <summary>

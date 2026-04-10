@@ -19,18 +19,21 @@ namespace G
         /// The object type, which is always `response`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateResponseResponseObjectJsonConverter))]
         public global::G.CreateResponseResponseObject Object { get; set; }
 
         /// <summary>
         /// The status of the response generation. One of `completed`, `failed`, `in_progress`, or `incomplete`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateResponseResponseStatusJsonConverter))]
         public global::G.CreateResponseResponseStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The Unix timestamp (in seconds) of when the response was created.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 
         /// <summary>
@@ -96,6 +99,7 @@ namespace G
         /// The truncation strategy used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncation", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateResponseResponseTruncationJsonConverter))]
         public global::G.CreateResponseResponseTruncation Truncation { get; set; } = default!;
 
         /// <summary>
@@ -126,6 +130,7 @@ namespace G
         /// The service tier used for processing.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service_tier", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateResponseResponseServiceTierJsonConverter))]
         public global::G.CreateResponseResponseServiceTier ServiceTier { get; set; } = default!;
 
         /// <summary>

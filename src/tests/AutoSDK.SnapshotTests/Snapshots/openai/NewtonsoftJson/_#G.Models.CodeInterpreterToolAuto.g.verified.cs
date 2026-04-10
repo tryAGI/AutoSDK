@@ -14,6 +14,7 @@ namespace G
         /// Always `auto`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CodeInterpreterToolAutoTypeJsonConverter))]
         public global::G.CodeInterpreterToolAutoType Type { get; set; }
 
         /// <summary>

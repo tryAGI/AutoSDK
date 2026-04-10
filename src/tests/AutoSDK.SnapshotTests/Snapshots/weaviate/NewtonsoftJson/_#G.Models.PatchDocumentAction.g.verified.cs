@@ -19,6 +19,7 @@ namespace G
         /// The operation to be performed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("op", Required = global::Newtonsoft.Json.Required.Always)]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.PatchDocumentActionOpJsonConverter))]
         public global::G.PatchDocumentActionOp Op { get; set; } = default!;
 
         /// <summary>

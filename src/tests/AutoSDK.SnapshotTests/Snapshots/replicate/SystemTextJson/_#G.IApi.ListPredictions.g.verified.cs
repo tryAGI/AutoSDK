@@ -54,9 +54,11 @@ namespace G
         /// `version` will be the unique ID of model version used to create the prediction.<br/>
         /// `data_removed` will be `true` if the input and output data has been deleted.
         /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ListPredictionsAsync(
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -69,6 +69,7 @@ namespace G
         /// Default Value: standard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quality_preset")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostQualityPresetJsonConverter))]
         public global::G.BodyCreateStudioProjectV1StudioProjectsPostQualityPreset? QualityPreset { get; set; }
 
         /// <summary>

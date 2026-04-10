@@ -13,6 +13,7 @@ namespace G
         /// Tokenizer type used by the model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tokenizer")]
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ModelGroupJsonConverter))]
         public global::G.ModelGroup? Tokenizer { get; set; }
 
         /// <summary>

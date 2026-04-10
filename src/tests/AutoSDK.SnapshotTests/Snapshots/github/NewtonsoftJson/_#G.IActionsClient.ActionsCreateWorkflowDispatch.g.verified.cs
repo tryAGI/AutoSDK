@@ -15,6 +15,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="workflowId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ActionsCreateWorkflowDispatchAsync(
@@ -23,6 +24,7 @@ namespace G
             global::G.OneOf<int?, string> workflowId,
 
             global::G.ActionsCreateWorkflowDispatchRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a workflow dispatch event<br/>
@@ -39,6 +41,7 @@ namespace G
         /// <param name="inputs">
         /// Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task ActionsCreateWorkflowDispatchAsync(
@@ -47,6 +50,7 @@ namespace G
             global::G.OneOf<int?, string> workflowId,
             string @ref,
             object? inputs = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
