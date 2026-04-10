@@ -17,6 +17,8 @@ public class OperationContext(
     
     public IReadOnlyCollection<SchemaContext> Schemas { get; set; } = [];
     public IList<OpenApiSecurityRequirement> GlobalSecurityRequirements { get; set; } = [];
+    public IList<OpenApiServer> Servers { get; set; } = [];
+    public bool HasServerOverride { get; set; }
     
     public HashSet<string> Tags { get; set; } = [];
     public Tag Tag { get; set; } = Tag.Empty;

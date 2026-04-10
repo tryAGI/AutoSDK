@@ -12,6 +12,7 @@ public static partial class Sources
         var serializer = client.Settings.JsonSerializerType.GetSerializer();
         var hasOptions = !client.Settings.HasJsonSerializerContext();
         var rootClassName = client.Settings.ClassName.Replace(".", string.Empty);
+        var hasServerSelection = client.Servers.Length > 1;
         var suppressDeprecatedWarningsForJsonSerializerOptions =
             hasOptions &&
             client.Settings.UsesSystemTextJson() &&
@@ -37,7 +38,7 @@ namespace {client.Settings.Namespace}
         public global::System.Net.Http.HttpClient HttpClient {{ get; }}
 
         /// <inheritdoc/>
-        public System.Uri? BaseUri => HttpClient.BaseAddress;
+        public System.Uri? BaseUri => {(hasServerSelection ? "ResolveDisplayedBaseUri()" : "HttpClient.BaseAddress")};
 
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization> Authorizations {{ get; }}
@@ -53,6 +54,9 @@ namespace {client.Settings.Namespace}
 {(client.HasOAuth2Support ? $@"
 
         internal global::{client.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Coordinator AutoSDKOAuth2State {{ get; set; }} = new global::{client.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Coordinator();" : TrimmedLine)}
+{(client.UsesServerSelectionSupport ? $@"
+
+        internal global::{client.Settings.Namespace}.AutoSDKServerConfiguration AutoSDKServerConfiguration {{ get; set; }} = new global::{client.Settings.Namespace}.AutoSDKServerConfiguration();" : TrimmedLine)}
         
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@" 
@@ -73,8 +77,28 @@ namespace {client.Settings.Namespace}
                 ? "JsonSerializerOptions = JsonSerializerOptions,"
                 : "JsonSerializerContext = JsonSerializerContext,")}
             {(client.HasOAuth2Support ? "AutoSDKOAuth2State = AutoSDKOAuth2State," : TrimmedLine)}
+            {(client.UsesServerSelectionSupport ? "AutoSDKServerConfiguration = AutoSDKServerConfiguration," : TrimmedLine)}
         }};
 ").Inject() : TrimmedLine)}
+{(hasServerSelection ? $@"
+
+        private static readonly global::{client.Settings.Namespace}.AutoSDKServer[] s_availableServers = new global::{client.Settings.Namespace}.AutoSDKServer[]
+        {{{GenerateServerDeclarations(client.Servers, client.Settings.Namespace, 12)}
+        }};
+
+        /// <summary>
+        /// The server options available for this client.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::{client.Settings.Namespace}.AutoSDKServer> AvailableServers => s_availableServers;
+
+        /// <summary>
+        /// The currently selected server for this client, if any.
+        /// </summary>
+        public global::{client.Settings.Namespace}.AutoSDKServer? SelectedServer
+        {{
+            get => ResolveSelectedServer();
+            set => SelectServer(value);
+        }}" : TrimmedLine)}
 
         /// <summary>
         /// Creates a new instance of the {client.ClassName}.
@@ -131,6 +155,8 @@ namespace {client.Settings.Namespace}
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization>();
             Options = options ?? new global::{client.Settings.Namespace}.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
+{(client.UsesServerSelectionSupport ? @"
+            AutoSDKServerConfiguration.ExplicitBaseUri = baseUri ?? httpClient?.BaseAddress;" : TrimmedLine)}
 
             Initialized(HttpClient);
         }}
@@ -158,6 +184,118 @@ namespace {client.Settings.Namespace}
             global::System.Net.Http.HttpClient client,
             global::System.Net.Http.HttpResponseMessage response,
             ref string content);
+{(hasServerSelection ? $@"
+
+        /// <summary>
+        /// Selects one of the generated server options by id.
+        /// </summary>
+        public bool TrySelectServer(string serverId)
+        {{
+            if (string.IsNullOrWhiteSpace(serverId))
+            {{
+                return false;
+            }}
+
+            foreach (var server in s_availableServers)
+            {{
+                if (string.Equals(server.Id, serverId, global::System.StringComparison.OrdinalIgnoreCase))
+                {{
+                    AutoSDKServerConfiguration.SelectedServer = server;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return true;
+                }}
+            }}
+
+            return false;
+        }}
+
+        /// <summary>
+        /// Clears the currently selected server.
+        /// </summary>
+        public void ClearSelectedServer()
+        {{
+            AutoSDKServerConfiguration.SelectedServer = null;
+        }}
+
+        private global::{client.Settings.Namespace}.AutoSDKServer? ResolveSelectedServer()
+        {{
+            var selectedServer = AutoSDKServerConfiguration.SelectedServer;
+            if (selectedServer is null)
+            {{
+                return null;
+            }}
+
+            foreach (var server in s_availableServers)
+            {{
+                if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                {{
+                    return server;
+                }}
+            }}
+
+            return null;
+        }}
+
+        private void SelectServer(global::{client.Settings.Namespace}.AutoSDKServer? server)
+        {{
+            if (server is null)
+            {{
+                AutoSDKServerConfiguration.SelectedServer = null;
+                return;
+            }}
+
+            foreach (var candidate in s_availableServers)
+            {{
+                if (string.Equals(candidate.Id, server.Id, global::System.StringComparison.Ordinal))
+                {{
+                    AutoSDKServerConfiguration.SelectedServer = candidate;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return;
+                }}
+            }}
+
+            throw new global::System.ArgumentException(""The provided server is not available for this client."", nameof(server));
+        }}
+
+        private global::System.Uri? ResolveDisplayedBaseUri()
+        {{
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {{
+                return explicitBaseUri;
+            }}
+
+            return ResolveSelectedServer()?.Uri ?? HttpClient.BaseAddress;
+        }}
+
+        private global::System.Uri? ResolveBaseUri(
+            global::{client.Settings.Namespace}.AutoSDKServer[] servers,
+            string defaultBaseUrl)
+        {{
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {{
+                return explicitBaseUri;
+            }}
+
+            if (AutoSDKServerConfiguration.SelectedServer is global::{client.Settings.Namespace}.AutoSDKServer selectedServer)
+            {{
+                foreach (var server in servers)
+                {{
+                    if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                    {{
+                        return server.Uri;
+                    }}
+                }}
+            }}
+
+            if (servers.Length > 0)
+            {{
+                return servers[0].Uri;
+            }}
+
+            return string.IsNullOrWhiteSpace(defaultBaseUrl)
+                ? HttpClient.BaseAddress
+                : new global::System.Uri(defaultBaseUrl, global::System.UriKind.RelativeOrAbsolute);
+        }}" : TrimmedLine)}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
@@ -168,6 +306,7 @@ namespace {client.Settings.Namespace}
     {
         var serializer = client.Settings.JsonSerializerType.GetSerializer();
         var hasOptions = !client.Settings.HasJsonSerializerContext();
+        var hasServerSelection = client.Servers.Length > 1;
         
         return $@"
 #nullable enable
@@ -186,6 +325,27 @@ namespace {client.Settings.Namespace}
         /// The base URL for the API.
         /// </summary>
         public System.Uri? BaseUri {{ get; }}
+{(hasServerSelection ? $@"
+
+        /// <summary>
+        /// The server options available for this client.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::{client.Settings.Namespace}.AutoSDKServer> AvailableServers {{ get; }}
+
+        /// <summary>
+        /// The currently selected server for this client, if any.
+        /// </summary>
+        public global::{client.Settings.Namespace}.AutoSDKServer? SelectedServer {{ get; set; }}
+
+        /// <summary>
+        /// Selects one of the generated server options by id.
+        /// </summary>
+        public bool TrySelectServer(string serverId);
+
+        /// <summary>
+        /// Clears the currently selected server.
+        /// </summary>
+        public void ClearSelectedServer();" : TrimmedLine)}
 
         /// <summary>
         /// The authorizations to use for the requests.
