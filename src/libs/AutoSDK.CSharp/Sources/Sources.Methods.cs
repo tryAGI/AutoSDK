@@ -35,6 +35,11 @@ public static partial class Sources
         return false;
     }
 
+    private static IEnumerable<MethodParameter> GetIdempotencyParameters(EndPoint endPoint)
+    {
+        return endPoint.Parameters.Where(static x => x.IsIdempotencyHeader);
+    }
+
     public static string GenerateEndPoint(
         EndPoint endPoint,
         CancellationToken cancellationToken = default)
@@ -92,6 +97,7 @@ namespace {endPoint.Settings.Namespace}
 
 {GenerateMethod(endPoint)}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, returnResponseWrapper: true) : TrimmedLine)}
+{GeneratePollingMethods(endPoint)}
 {GenerateExtensionMethod(endPoint)}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
@@ -116,6 +122,7 @@ namespace {endPoint.Settings.Namespace}
     {{
 {GenerateMethod(endPoint, isInterface: true)}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnResponseWrapper: true) : TrimmedLine)}
+{GeneratePollingMethods(endPoint, isInterface: true)}
 {GenerateExtensionMethod(endPoint, isInterface: true)}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
@@ -265,6 +272,170 @@ namespace {endPoint.Settings.Namespace}
     private static string GetResponseWrapperMethodName(EndPoint endPoint)
     {
         return $"{endPoint.NotAsyncMethodName}AsResponseAsync";
+    }
+
+    private static string GetPollingMethodName(
+        EndPoint endPoint,
+        PollingOperation pollingOperation)
+    {
+        return $"{endPoint.NotAsyncMethodName}{pollingOperation.Name.ToPropertyName()}Async";
+    }
+
+    private static bool SupportsPollingOperation(
+        EndPoint endPoint,
+        PollingOperation pollingOperation)
+    {
+        if (string.IsNullOrWhiteSpace(pollingOperation.Name) ||
+            pollingOperation.SuccessCriteria.IsEmpty ||
+            endPoint.RawStream ||
+            endPoint.EnumerableStream)
+        {
+            return false;
+        }
+
+        if (!string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
+        {
+            return true;
+        }
+
+        return !pollingOperation.SuccessCriteria.Any(static x => x.ContextType == PollingCriterionContextType.ResponseBody) &&
+               !pollingOperation.FailureCriteria.Any(static x => x.ContextType == PollingCriterionContextType.ResponseBody);
+    }
+
+    private static string GeneratePollingMethods(
+        EndPoint endPoint,
+        bool isInterface = false)
+    {
+        return endPoint.PollingOperations
+            .Where(x => SupportsPollingOperation(endPoint, x))
+            .Select(x => GeneratePollingMethod(endPoint, x, isInterface))
+            .Inject();
+    }
+
+    private static string GeneratePollingMethod(
+        EndPoint endPoint,
+        PollingOperation pollingOperation,
+        bool isInterface = false)
+    {
+        var methodName = GetPollingMethodName(endPoint, pollingOperation);
+        var hasBody = !string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType);
+        var bodyReturnType = hasBody
+            ? $"global::System.Threading.Tasks.Task<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>"
+            : "global::System.Threading.Tasks.Task";
+        var successExpression = GeneratePollingCriteriaExpression(endPoint, pollingOperation.SuccessCriteria, "__pollingResponse");
+        var failureExpression = GeneratePollingCriteriaExpression(endPoint, pollingOperation.FailureCriteria, "__pollingResponse");
+        var body = isInterface
+            ? ";"
+            : $@"
+        {{
+            var __pollingOptions = global::{endPoint.Settings.Namespace}.AutoSDKPollingSupport.ResolvePollingOptions(
+                pollingOptions: pollingOptions,
+                defaultInitialDelay: global::System.TimeSpan.FromSeconds({pollingOperation.DelaySeconds}),
+                defaultInterval: global::System.TimeSpan.FromSeconds({pollingOperation.IntervalSeconds}),
+                defaultMaxAttempts: {pollingOperation.LimitCount});
+            global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse? __lastResponse = null;
+
+            if (__pollingOptions.InitialDelay > global::System.TimeSpan.Zero)
+            {{
+                await global::{endPoint.Settings.Namespace}.AutoSDKPollingSupport.DelayAsync(
+                    delay: __pollingOptions.InitialDelay,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
+            }}
+
+            for (var __pollAttempt = 1; __pollAttempt <= __pollingOptions.MaxAttempts; __pollAttempt++)
+            {{
+                var __pollingResponse = await {GetResponseWrapperMethodName(endPoint)}(
+{GenerateMethodInvocationArguments(endPoint)}
+                ).ConfigureAwait(false);
+                __lastResponse = __pollingResponse;
+
+{(!pollingOperation.FailureCriteria.IsEmpty ? $@"                if ({failureExpression})
+                {{
+                    throw new global::{endPoint.Settings.Namespace}.AutoSDKPollingException(
+                        message: $""Polling helper '{methodName}' matched a configured failure criterion on attempt {{__pollAttempt}}."",
+                        response: __pollingResponse);
+                }}
+" : TrimmedLine)}
+                if ({successExpression})
+                {{
+{(hasBody ? "                    return __pollingResponse.Body;" : "                    return;")}
+                }}
+
+                if (__pollAttempt == __pollingOptions.MaxAttempts)
+                {{
+                    break;
+                }}
+
+                await global::{endPoint.Settings.Namespace}.AutoSDKPollingSupport.DelayAsync(
+                    delay: __pollingOptions.Interval,
+                    cancellationToken: cancellationToken).ConfigureAwait(false);
+            }}
+
+            throw new global::{endPoint.Settings.Namespace}.AutoSDKPollingException(
+                message: $""Polling helper '{methodName}' did not satisfy its success criteria after {{__pollingOptions.MaxAttempts}} attempts."",
+                response: __lastResponse);
+        }}";
+
+        return $@"
+        {"Polls the endpoint until the configured polling criteria are satisfied.".ToXmlDocumentationSummary(level: 8)}
+{endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @"
+        /// <param name=""request""></param>")}
+        /// <param name=""pollingOptions"">Overrides the generated polling delay, interval, and attempt limit.</param>
+        /// <param name=""requestOptions"">Per-request overrides applied to each poll attempt.</param>
+        /// <param name=""cancellationToken"">The token to cancel the polling operation with</param>
+        /// <exception cref=""global::{endPoint.Settings.Namespace}.AutoSDKPollingException""></exception>
+        {(isInterface ? "" : "public async ")}{bodyReturnType} {methodName}(
+{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName},").Inject()}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : $@"
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
+{endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
+            global::{endPoint.Settings.Namespace}.AutoSDKPollingOptions? pollingOptions = default,
+            global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default){body}
+".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GeneratePollingCriteriaExpression(
+        EndPoint endPoint,
+        EquatableArray<PollingCriterion> criteria,
+        string responseVariableName)
+    {
+        return criteria.IsEmpty
+            ? "false"
+            : string.Join(
+                " && ",
+                criteria.Select(x => GeneratePollingCriterionExpression(endPoint, x, responseVariableName)));
+    }
+
+    private static string GeneratePollingCriterionExpression(
+        EndPoint endPoint,
+        PollingCriterion criterion,
+        string responseVariableName)
+    {
+        return criterion switch
+        {
+            { Type: PollingCriterionType.Simple, ContextType: PollingCriterionContextType.StatusCode } => $@"global::{endPoint.Settings.Namespace}.AutoSDKPollingSupport.MatchesStatusCode(
+                    statusCode: {responseVariableName}.StatusCode,
+                    @operator: {criterion.Operator.ToCSharpStringLiteral()},
+                    expectedValue: {criterion.ExpectedValue.ToCSharpStringLiteral()})",
+            { Type: PollingCriterionType.Regex, ContextType: PollingCriterionContextType.StatusCode } => $@"global::{endPoint.Settings.Namespace}.AutoSDKPollingSupport.MatchesRegexValue(
+                    value: global::{endPoint.Settings.Namespace}.AutoSDKPollingSupport.GetStatusCodeValue({responseVariableName}.StatusCode),
+                    pattern: {criterion.Pattern.ToCSharpStringLiteral()})",
+            { Type: PollingCriterionType.Simple, ContextType: PollingCriterionContextType.ResponseBody } => $@"global::{endPoint.Settings.Namespace}.AutoSDKPollingSupport.MatchesSimpleCondition(
+                    body: {responseVariableName}{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType) ? string.Empty : ".Body")},
+                    jsonPointer: {criterion.JsonPointer.ToCSharpStringLiteral()},
+                    @operator: {criterion.Operator.ToCSharpStringLiteral()},
+                    expectedValue: {criterion.ExpectedValue.ToCSharpStringLiteral()})",
+            { Type: PollingCriterionType.Regex, ContextType: PollingCriterionContextType.ResponseBody } => $@"global::{endPoint.Settings.Namespace}.AutoSDKPollingSupport.MatchesRegexCondition(
+                    body: {responseVariableName}{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType) ? string.Empty : ".Body")},
+                    jsonPointer: {criterion.JsonPointer.ToCSharpStringLiteral()},
+                    pattern: {criterion.Pattern.ToCSharpStringLiteral()})",
+            _ => "false",
+        };
     }
 
     private static string GetSendExpression(
@@ -544,16 +715,17 @@ namespace {endPoint.Settings.Namespace}
             }}" : TrimmedLine)}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
 {endPoint.Parameters
-    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
+    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true, IsIdempotencyHeader: false })
     .Select(x => $@"
                 __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? ".ToValueString()" : ".ToString()")});").Inject()}
 {endPoint.Parameters
-    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false })
+    .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false, IsIdempotencyHeader: false })
     .Select(x => $@"
-                if ({x.ParameterName} != default)
-                {{
-                    __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
-                }}").Inject()}
+            if ({x.ParameterName} != default)
+            {{
+                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
+            }}").Inject()}
+{GenerateIdempotencyHeaderHandling(endPoint)}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
 {GenerateCookieParameterHandling(endPoint).AddIndent(4)}
 {GenerateCookieHeaderHandling(endPoint).AddIndent(4)}
@@ -789,6 +961,24 @@ namespace {endPoint.Settings.Namespace}
             urlEncode: false,
             localNamePrefix: parameter.ParameterName,
             settings: settings);
+    }
+
+    private static string GenerateIdempotencyHeaderHandling(EndPoint endPoint)
+    {
+        var parameters = GetIdempotencyParameters(endPoint).ToArray();
+        if (parameters.Length == 0)
+        {
+            return TrimmedLine;
+        }
+
+        return parameters
+            .Select(x => $@"
+            var __{x.ParameterName} = global::System.String.IsNullOrWhiteSpace({x.ParameterName})
+                ? CreateIdempotencyKey()
+                : {x.ParameterName};
+            __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", __{x.ParameterName});")
+            .Inject()
+            .RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     private static string GenerateQueryStringParameterHandling(

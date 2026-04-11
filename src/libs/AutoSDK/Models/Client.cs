@@ -15,6 +15,7 @@ public record struct Client(
     Settings GlobalSettings,
     ImmutableArray<string> Converters,
     bool HasOAuth2Support = false,
+    bool HasIdempotencySupport = false,
     bool HasMutualTlsSupport = false,
     EquatableArray<ServerOption> Servers = default,
     bool UsesServerSelectionSupport = false

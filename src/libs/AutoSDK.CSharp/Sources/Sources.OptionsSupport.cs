@@ -7,6 +7,7 @@ public static partial class Sources
 {
     public static string GenerateOptionsSupport(
         CSharpSettings settings,
+        bool includePollingSupport = false,
         CancellationToken cancellationToken = default)
     {
         return $@"
@@ -116,6 +117,8 @@ namespace {settings.Namespace}
         /// </summary>
         public global::System.TimeSpan? Delay {{ get; set; }}
     }}
+
+{(includePollingSupport ? GeneratePollingOptionsSurface(settings) : TrimmedLine)}
 
     /// <summary>
     /// Runtime hook interface for generated SDK lifecycle events.
@@ -246,6 +249,8 @@ namespace {settings.Namespace}
         /// </summary>
         public global::System.Threading.CancellationToken CancellationToken {{ get; set; }}
     }}
+
+{(includePollingSupport ? GeneratePollingRuntimeSupport(settings) : TrimmedLine)}
 
     internal static class AutoSDKRequestOptionsSupport
     {{
@@ -469,5 +474,375 @@ namespace {settings.Namespace}
         }}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GeneratePollingOptionsSurface(CSharpSettings settings)
+    {
+        return $@"
+    /// <summary>
+    /// Optional overrides for generated polling helper methods.
+    /// </summary>
+    public sealed class AutoSDKPollingOptions
+    {{
+        /// <summary>
+        /// Optional delay before the first poll attempt.
+        /// </summary>
+        public global::System.TimeSpan? InitialDelay {{ get; set; }}
+
+        /// <summary>
+        /// Optional delay between poll attempts.
+        /// </summary>
+        public global::System.TimeSpan? Interval {{ get; set; }}
+
+        /// <summary>
+        /// Optional maximum number of poll attempts.
+        /// </summary>
+        public int? MaxAttempts {{ get; set; }}
+    }}
+
+    /// <summary>
+    /// Raised when a generated polling helper matches a failure criterion or exhausts its attempts.
+    /// </summary>
+    public sealed class AutoSDKPollingException : global::System.Exception
+    {{
+        /// <summary>
+        /// Initializes a new instance of the <see cref=""AutoSDKPollingException""/> class.
+        /// </summary>
+        public AutoSDKPollingException(
+            string message,
+            global::{settings.Namespace}.AutoSDKHttpResponse? response = null,
+            global::System.Exception? innerException = null)
+            : base(message, innerException)
+        {{
+            Response = response;
+        }}
+
+        /// <summary>
+        /// Gets the last successful HTTP response observed by the polling helper.
+        /// </summary>
+        public global::{settings.Namespace}.AutoSDKHttpResponse? Response {{ get; }}
+    }}";
+    }
+
+    private static string GeneratePollingRuntimeSupport(CSharpSettings settings)
+    {
+        return $@"
+    internal readonly struct AutoSDKResolvedPollingOptions
+    {{
+        public AutoSDKResolvedPollingOptions(
+            global::System.TimeSpan initialDelay,
+            global::System.TimeSpan interval,
+            int maxAttempts)
+        {{
+            InitialDelay = initialDelay;
+            Interval = interval;
+            MaxAttempts = maxAttempts < 1 ? 1 : maxAttempts;
+        }}
+
+        public global::System.TimeSpan InitialDelay {{ get; }}
+
+        public global::System.TimeSpan Interval {{ get; }}
+
+        public int MaxAttempts {{ get; }}
+    }}
+
+    internal static class AutoSDKPollingSupport
+    {{
+        internal static global::{settings.Namespace}.AutoSDKResolvedPollingOptions ResolvePollingOptions(
+            global::{settings.Namespace}.AutoSDKPollingOptions? pollingOptions,
+            global::System.TimeSpan defaultInitialDelay,
+            global::System.TimeSpan defaultInterval,
+            int defaultMaxAttempts)
+        {{
+            var initialDelay = pollingOptions?.InitialDelay ?? defaultInitialDelay;
+            if (initialDelay < global::System.TimeSpan.Zero)
+            {{
+                initialDelay = global::System.TimeSpan.Zero;
+            }}
+
+            var interval = pollingOptions?.Interval ?? defaultInterval;
+            if (interval < global::System.TimeSpan.Zero)
+            {{
+                interval = global::System.TimeSpan.Zero;
+            }}
+
+            var maxAttempts = pollingOptions?.MaxAttempts ?? defaultMaxAttempts;
+            if (maxAttempts < 1)
+            {{
+                maxAttempts = 1;
+            }}
+
+            return new global::{settings.Namespace}.AutoSDKResolvedPollingOptions(
+                initialDelay: initialDelay,
+                interval: interval,
+                maxAttempts: maxAttempts);
+        }}
+
+        internal static global::System.Threading.Tasks.Task DelayAsync(
+            global::System.TimeSpan delay,
+            global::System.Threading.CancellationToken cancellationToken)
+        {{
+            return delay <= global::System.TimeSpan.Zero
+                ? global::System.Threading.Tasks.Task.CompletedTask
+                : global::System.Threading.Tasks.Task.Delay(delay, cancellationToken);
+        }}
+
+        internal static string GetStatusCodeValue(global::System.Net.HttpStatusCode statusCode)
+        {{
+            return ((int)statusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture);
+        }}
+
+        internal static bool MatchesStatusCode(
+            global::System.Net.HttpStatusCode statusCode,
+            string @operator,
+            string expectedValue)
+        {{
+            return CompareValues(GetStatusCodeValue(statusCode), @operator, expectedValue);
+        }}
+
+        internal static bool MatchesSimpleCondition(
+            object? body,
+            string jsonPointer,
+            string @operator,
+            string expectedValue)
+        {{
+            return TryResolveJsonPointerValue(body, jsonPointer, out var actualValue) &&
+                   CompareValues(actualValue, @operator, expectedValue);
+        }}
+
+        internal static bool MatchesRegexCondition(
+            object? body,
+            string jsonPointer,
+            string pattern)
+        {{
+            return TryResolveJsonPointerValue(body, jsonPointer, out var actualValue) &&
+                   MatchesRegexValue(actualValue, pattern);
+        }}
+
+        internal static bool MatchesRegexValue(
+            string? value,
+            string pattern)
+        {{
+            if (value == null || string.IsNullOrWhiteSpace(pattern))
+            {{
+                return false;
+            }}
+
+            try
+            {{
+                return global::System.Text.RegularExpressions.Regex.IsMatch(value, pattern);
+            }}
+            catch (global::System.ArgumentException)
+            {{
+                return false;
+            }}
+        }}
+
+        private static bool CompareValues(
+            string? actualValue,
+            string @operator,
+            string expectedValue)
+        {{
+            var normalizedActual = actualValue ?? ""null"";
+            return @operator switch
+            {{
+                ""=="" => string.Equals(normalizedActual, expectedValue ?? string.Empty, global::System.StringComparison.Ordinal),
+                ""!="" => !string.Equals(normalizedActual, expectedValue ?? string.Empty, global::System.StringComparison.Ordinal),
+                _ => false,
+            }};
+        }}
+
+        private static bool TryResolveJsonPointerValue(
+            object? body,
+            string jsonPointer,
+            out string? value)
+        {{
+            value = null;
+
+            if (body == null)
+            {{
+                if (string.IsNullOrEmpty(jsonPointer))
+                {{
+                    value = ""null"";
+                    return true;
+                }}
+
+                return false;
+            }}
+
+            object? current = body;
+            if (!string.IsNullOrEmpty(jsonPointer))
+            {{
+                var segments = jsonPointer.Split(new[] {{ '/' }}, global::System.StringSplitOptions.RemoveEmptyEntries);
+                foreach (var rawSegment in segments)
+                {{
+                    var segment = rawSegment.Replace(""~1"", ""/"").Replace(""~0"", ""~"");
+                    if (!TryGetJsonPointerSegmentValue(current, segment, out current))
+                    {{
+                        return false;
+                    }}
+                }}
+            }}
+
+            value = ConvertValueToString(current);
+            return true;
+        }}
+
+        private static bool TryGetJsonPointerSegmentValue(
+            object? current,
+            string segment,
+            out object? value)
+        {{
+            value = null;
+            if (current == null)
+            {{
+                return false;
+            }}
+
+            if (current is global::System.Collections.IDictionary dictionary)
+            {{
+                foreach (global::System.Collections.DictionaryEntry entry in dictionary)
+                {{
+                    if (entry.Key is string key &&
+                        string.Equals(key, segment, global::System.StringComparison.OrdinalIgnoreCase))
+                    {{
+                        value = entry.Value;
+                        return true;
+                    }}
+                }}
+            }}
+
+            if (current is global::System.Collections.IList list &&
+                int.TryParse(segment, global::System.Globalization.NumberStyles.Integer, global::System.Globalization.CultureInfo.InvariantCulture, out var index) &&
+                index >= 0 &&
+                index < list.Count)
+            {{
+                value = list[index];
+                return true;
+            }}
+
+            var property = FindMatchingProperty(current.GetType(), segment);
+            if (property == null)
+            {{
+                return false;
+            }}
+
+            value = property.GetValue(current, null);
+            return true;
+        }}
+
+        private static global::System.Reflection.PropertyInfo? FindMatchingProperty(
+            global::System.Type type,
+            string segment)
+        {{
+            var properties = type.GetProperties(global::System.Reflection.BindingFlags.Instance | global::System.Reflection.BindingFlags.Public);
+            foreach (var property in properties)
+            {{
+                if (property.GetIndexParameters().Length != 0)
+                {{
+                    continue;
+                }}
+
+                if (string.Equals(property.Name, segment, global::System.StringComparison.OrdinalIgnoreCase) ||
+                    TryMatchesJsonPropertyName(property, segment))
+                {{
+                    return property;
+                }}
+            }}
+
+            return null;
+        }}
+
+        private static bool TryMatchesJsonPropertyName(
+            global::System.Reflection.PropertyInfo property,
+            string segment)
+        {{
+            foreach (var attribute in property.GetCustomAttributes(inherit: true))
+            {{
+                var attributeType = attribute.GetType();
+                if (!string.Equals(attributeType.FullName, ""System.Text.Json.Serialization.JsonPropertyNameAttribute"", global::System.StringComparison.Ordinal) &&
+                    !string.Equals(attributeType.FullName, ""Newtonsoft.Json.JsonPropertyAttribute"", global::System.StringComparison.Ordinal))
+                {{
+                    continue;
+                }}
+
+                var propertyNameProperty = attributeType.GetProperty(""Name"") ??
+                                           attributeType.GetProperty(""PropertyName"");
+                if (propertyNameProperty?.GetValue(attribute, null) is string propertyName &&
+                    string.Equals(propertyName, segment, global::System.StringComparison.OrdinalIgnoreCase))
+                {{
+                    return true;
+                }}
+            }}
+
+            return false;
+        }}
+
+        private static string? ConvertValueToString(object? value)
+        {{
+            if (value == null)
+            {{
+                return ""null"";
+            }}
+
+            if (value is string stringValue)
+            {{
+                return stringValue;
+            }}
+
+            if (TryGetWireValue(value, out var wireValue))
+            {{
+                return wireValue;
+            }}
+
+            if (value is bool booleanValue)
+            {{
+                return booleanValue ? ""true"" : ""false"";
+            }}
+
+            if (value is global::System.IFormattable formattable)
+            {{
+                return formattable.ToString(null, global::System.Globalization.CultureInfo.InvariantCulture);
+            }}
+
+            return value.ToString();
+        }}
+
+        private static bool TryGetWireValue(object value, out string? wireValue)
+        {{
+            wireValue = null;
+            var type = value.GetType();
+
+            var valueProperty = type.GetProperty(""Value"", global::System.Reflection.BindingFlags.Instance | global::System.Reflection.BindingFlags.Public);
+            if (valueProperty?.PropertyType == typeof(string))
+            {{
+                wireValue = valueProperty.GetValue(value, null) as string;
+                return wireValue != null;
+            }}
+
+            if (!type.IsEnum)
+            {{
+                return false;
+            }}
+
+            var extensionTypeName = string.IsNullOrWhiteSpace(type.Namespace)
+                ? type.Name + ""Extensions""
+                : type.Namespace + ""."" + type.Name + ""Extensions"";
+            var extensionType = type.Assembly.GetType(extensionTypeName, throwOnError: false, ignoreCase: false);
+            var method = extensionType?.GetMethod(
+                ""ToValueString"",
+                global::System.Reflection.BindingFlags.Public | global::System.Reflection.BindingFlags.Static,
+                binder: null,
+                types: new[] {{ type }},
+                modifiers: null);
+            if (method?.ReturnType != typeof(string))
+            {{
+                return false;
+            }}
+
+            wireValue = method.Invoke(null, new[] {{ value }}) as string;
+            return wireValue != null;
+        }}
+    }}";
     }
 }

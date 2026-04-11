@@ -60,7 +60,10 @@ public class SdkGenerator : IIncrementalGenerator
         data
             .Collect()
             .SelectMany(static (x, _) => GetOptionsSupportSettings(x))
-            .SelectAndReportExceptions((x, c) => Sources.OptionsSupport(x, c), context, Id)
+            .SelectAndReportExceptions((x, c) => Sources.OptionsSupport(
+                x.Settings,
+                includePollingSupport: x.IncludePollingSupport,
+                cancellationToken: c), context, Id)
             .AddSource(context);
         supportData
             .SelectAndReportExceptions((x, c) => ShouldGenerateSecuritySupport(x.Right)
@@ -238,14 +241,16 @@ public class SdkGenerator : IIncrementalGenerator
             !x.Clients.IsEmpty);
     }
 
-    private static IEnumerable<CSharpSettings> GetOptionsSupportSettings(ImmutableArray<AutoSDK.Models.Data> data)
+    private static IEnumerable<(CSharpSettings Settings, bool IncludePollingSupport)> GetOptionsSupportSettings(ImmutableArray<AutoSDK.Models.Data> data)
     {
         return data
             .Where(static x =>
                 !x.Methods.IsEmpty ||
                 !x.Clients.IsEmpty)
             .GroupBy(static x => x.Converters.Settings.Namespace, StringComparer.Ordinal)
-            .Select(static x => CSharpSettings.FromSettings(x.First().Converters.Settings));
+            .Select(static x => (
+                Settings: CSharpSettings.FromSettings(x.First().Converters.Settings),
+                IncludePollingSupport: x.Any(static y => y.Methods.Any(static z => !z.PollingOperations.IsEmpty))));
     }
 
     private static bool ShouldGenerateSecuritySupport(ImmutableArray<AutoSDK.Models.Data> data)

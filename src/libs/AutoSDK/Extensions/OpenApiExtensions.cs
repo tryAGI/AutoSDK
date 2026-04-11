@@ -2444,6 +2444,49 @@ info:
         return GetExperimentalStageFromSummary(operation.Summary);
     }
 
+    public static IReadOnlyList<IdempotencyHeader> GetDocumentIdempotencyHeaders(
+        IDictionary<string, IOpenApiExtension>? extensions)
+    {
+        if (!(extensions?.TryGetValue("x-fern-idempotency-headers", out var extension) ?? false) ||
+            TryGetExtensionJsonNode(extension) is not JsonArray headersArray ||
+            headersArray.Count == 0)
+        {
+            return [];
+        }
+
+        var headers = new List<IdempotencyHeader>(headersArray.Count);
+        foreach (var item in headersArray)
+        {
+            switch (item)
+            {
+                case JsonValue value when value.TryGetValue<string>(out var headerValue) &&
+                                          !string.IsNullOrWhiteSpace(headerValue):
+                    headers.Add(new IdempotencyHeader(
+                        headerValue,
+                        headerValue));
+                    break;
+
+                case JsonObject headerObject
+                    when TryGetJsonObjectString(headerObject, out var headerName, "header") &&
+                         !string.IsNullOrWhiteSpace(headerName):
+                    headers.Add(new IdempotencyHeader(
+                        headerName,
+                        TryGetJsonObjectString(headerObject, out var parameterName, "name") &&
+                        !string.IsNullOrWhiteSpace(parameterName)
+                            ? parameterName
+                            : headerName));
+                    break;
+            }
+        }
+
+        return headers;
+    }
+
+    public static bool IsIdempotentOperation(IDictionary<string, IOpenApiExtension>? extensions)
+    {
+        return GetExtensionBooleanValue(extensions, "x-fern-idempotent");
+    }
+
     public static bool TryGetOperationGroupNameOverride(
         IDictionary<string, IOpenApiExtension>? extensions,
         out string value)
@@ -2460,6 +2503,64 @@ info:
 
         value = string.Empty;
         return false;
+    }
+
+    public static EquatableArray<PollingOperation> GetPollingOperations(
+        this OpenApiOperation operation)
+    {
+        operation = operation ?? throw new ArgumentNullException(nameof(operation));
+
+        if (!(operation.Extensions?.TryGetValue("x-speakeasy-polling", out var extension) ?? false))
+        {
+            return ImmutableArray<PollingOperation>.Empty.AsEquatableArray();
+        }
+
+        var node = TryGetExtensionJsonNode(extension);
+        var items = node switch
+        {
+            JsonArray array => array,
+            JsonObject singleObject => new JsonArray(singleObject),
+            _ => null,
+        };
+        if (items == null)
+        {
+            return ImmutableArray<PollingOperation>.Empty.AsEquatableArray();
+        }
+
+        var operations = new List<PollingOperation>();
+
+        foreach (var item in items)
+        {
+            if (item is not JsonObject objectNode ||
+                !TryGetJsonObjectString(objectNode, out var name, "name"))
+            {
+                continue;
+            }
+
+            var successCriteria = ParsePollingCriteria(objectNode, "successCriteria");
+            if (successCriteria.IsEmpty)
+            {
+                continue;
+            }
+
+            operations.Add(PollingOperation.Default with
+            {
+                Name = name,
+                DelaySeconds = TryGetJsonObjectInt(objectNode, out var delaySeconds, "delaySeconds")
+                    ? Math.Max(delaySeconds, 0)
+                    : PollingOperation.Default.DelaySeconds,
+                IntervalSeconds = TryGetJsonObjectInt(objectNode, out var intervalSeconds, "intervalSeconds")
+                    ? Math.Max(intervalSeconds, 0)
+                    : PollingOperation.Default.IntervalSeconds,
+                LimitCount = TryGetJsonObjectInt(objectNode, out var limitCount, "limitCount")
+                    ? Math.Max(limitCount, 1)
+                    : PollingOperation.Default.LimitCount,
+                SuccessCriteria = successCriteria,
+                FailureCriteria = ParsePollingCriteria(objectNode, "failureCriteria"),
+            });
+        }
+
+        return operations.ToImmutableArray().AsEquatableArray();
     }
 
     public static bool TryGetMethodNameOverride(
@@ -2924,6 +3025,61 @@ info:
         return false;
     }
 
+    private static bool TryGetJsonObjectInt(
+        JsonObject jsonObject,
+        out int value,
+        params string[] propertyNames)
+    {
+        value = 0;
+
+        foreach (var propertyName in propertyNames)
+        {
+            if (!TryGetJsonObjectProperty(jsonObject, propertyName, out var node) ||
+                node is not JsonValue jsonValue)
+            {
+                continue;
+            }
+
+            if (jsonValue.TryGetValue<int>(out value))
+            {
+                return true;
+            }
+
+            if (jsonValue.TryGetValue<long>(out var longValue) &&
+                longValue is >= int.MinValue and <= int.MaxValue)
+            {
+                value = (int)longValue;
+                return true;
+            }
+
+            if (jsonValue.TryGetValue<double>(out var doubleValue) &&
+                doubleValue >= int.MinValue &&
+                doubleValue <= int.MaxValue &&
+                Math.Abs(doubleValue % 1d) < double.Epsilon)
+            {
+                value = (int)doubleValue;
+                return true;
+            }
+
+            if (jsonValue.TryGetValue<decimal>(out var decimalValue) &&
+                decimalValue >= int.MinValue &&
+                decimalValue <= int.MaxValue &&
+                decimal.Truncate(decimalValue) == decimalValue)
+            {
+                value = (int)decimalValue;
+                return true;
+            }
+
+            if (jsonValue.TryGetValue<string>(out var stringValue) &&
+                int.TryParse(stringValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out value))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private static bool TryGetJsonObjectProperty(
         JsonObject jsonObject,
         string propertyName,
@@ -2963,6 +3119,179 @@ info:
         }
 
         return false;
+    }
+
+    private static EquatableArray<PollingCriterion> ParsePollingCriteria(
+        JsonObject jsonObject,
+        string propertyName)
+    {
+        if (!TryGetJsonObjectProperty(jsonObject, propertyName, out var node) ||
+            node is not JsonArray criteriaArray)
+        {
+            return ImmutableArray<PollingCriterion>.Empty.AsEquatableArray();
+        }
+
+        var criteria = new List<PollingCriterion>();
+
+        foreach (var item in criteriaArray)
+        {
+            if (item is not JsonObject criterionObject)
+            {
+                continue;
+            }
+
+            var type = TryGetJsonObjectString(criterionObject, out var rawType, "type") &&
+                       string.Equals(rawType, "regex", StringComparison.OrdinalIgnoreCase)
+                ? PollingCriterionType.Regex
+                : PollingCriterionType.Simple;
+
+            if (type == PollingCriterionType.Regex)
+            {
+                if (!TryGetJsonObjectString(criterionObject, out var context, "context") ||
+                    !TryGetJsonObjectString(criterionObject, out var pattern, "condition") ||
+                    !TryParsePollingContext(context, out var contextType, out var jsonPointer))
+                {
+                    continue;
+                }
+
+                criteria.Add(PollingCriterion.Default with
+                {
+                    Type = PollingCriterionType.Regex,
+                    ContextType = contextType,
+                    JsonPointer = jsonPointer,
+                    Pattern = pattern,
+                });
+                continue;
+            }
+
+            if (!TryGetJsonObjectString(criterionObject, out var condition, "condition") ||
+                !TryParseSimplePollingCondition(
+                    condition,
+                    out var simpleContextType,
+                    out var simpleJsonPointer,
+                    out var @operator,
+                    out var expectedValue))
+            {
+                continue;
+            }
+
+            criteria.Add(PollingCriterion.Default with
+            {
+                Type = PollingCriterionType.Simple,
+                ContextType = simpleContextType,
+                JsonPointer = simpleJsonPointer,
+                Operator = @operator,
+                ExpectedValue = expectedValue,
+            });
+        }
+
+        return criteria.ToImmutableArray().AsEquatableArray();
+    }
+
+    private static bool TryParseSimplePollingCondition(
+        string condition,
+        out PollingCriterionContextType contextType,
+        out string jsonPointer,
+        out string @operator,
+        out string expectedValue)
+    {
+        contextType = PollingCriterionContextType.StatusCode;
+        jsonPointer = string.Empty;
+        @operator = string.Empty;
+        expectedValue = string.Empty;
+
+        condition = condition?.Trim() ?? string.Empty;
+        if (string.IsNullOrWhiteSpace(condition))
+        {
+            return false;
+        }
+
+        var operatorIndex = condition.IndexOf("==", StringComparison.Ordinal);
+        if (operatorIndex >= 0)
+        {
+            @operator = "==";
+        }
+        else
+        {
+            operatorIndex = condition.IndexOf("!=", StringComparison.Ordinal);
+            if (operatorIndex >= 0)
+            {
+                @operator = "!=";
+            }
+        }
+
+        if (operatorIndex < 0)
+        {
+            return false;
+        }
+
+        var context = condition.Substring(0, operatorIndex).Trim();
+        var value = condition.Substring(operatorIndex + 2).Trim();
+        return TryParsePollingContext(context, out contextType, out jsonPointer) &&
+               TryNormalizePollingLiteral(value, out expectedValue);
+    }
+
+    private static bool TryParsePollingContext(
+        string context,
+        out PollingCriterionContextType contextType,
+        out string jsonPointer)
+    {
+        contextType = PollingCriterionContextType.StatusCode;
+        jsonPointer = string.Empty;
+
+        context = context?.Trim() ?? string.Empty;
+        if (string.Equals(context, "$statusCode", StringComparison.Ordinal))
+        {
+            contextType = PollingCriterionContextType.StatusCode;
+            return true;
+        }
+
+        if (!context.StartsWith("$response.body#", StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        contextType = PollingCriterionContextType.ResponseBody;
+        jsonPointer = context.Substring("$response.body#".Length);
+        return true;
+    }
+
+    private static bool TryNormalizePollingLiteral(string value, out string normalized)
+    {
+        normalized = string.Empty;
+        value = value?.Trim() ?? string.Empty;
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return false;
+        }
+
+        try
+        {
+            var node = JsonNode.Parse(value);
+            switch (node)
+            {
+                case null:
+                    normalized = "null";
+                    return true;
+                case JsonValue jsonValue when jsonValue.TryGetValue<string>(out var stringValue):
+                    normalized = stringValue;
+                    return true;
+                case JsonValue jsonValue when jsonValue.TryGetValue<bool>(out var boolValue):
+                    normalized = boolValue ? "true" : "false";
+                    return true;
+                case JsonValue:
+                    normalized = node.ToJsonString();
+                    return true;
+                default:
+                    normalized = node.ToJsonString();
+                    return true;
+            }
+        }
+        catch (JsonException)
+        {
+            normalized = value.Trim('"');
+            return !string.IsNullOrWhiteSpace(normalized);
+        }
     }
 
     /// <summary>

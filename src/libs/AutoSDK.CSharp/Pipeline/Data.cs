@@ -603,6 +603,7 @@ public static class Data
             .OrderBy(m => m.Tag.SafeName, StringComparer.Ordinal)
             .ThenBy(m => m.NotAsyncMethodName, StringComparer.Ordinal)
             .ToImmutableArray();
+        var hasIdempotencySupport = methods.Any(static method => method.Parameters.Any(static parameter => parameter.IsIdempotencyHeader));
         var resolvedIncludedTags = activeIncludedTags
             .Select(tag => resolvedIncludedTagsMap[tag.Name!])
             .OrderBy(tag => tag.SafeName, StringComparer.Ordinal)
@@ -640,6 +641,7 @@ public static class Data
                 GlobalSettings: csharpGlobalSettings,
                 Converters: converters,
                 HasOAuth2Support: hasOAuth2Support,
+                HasIdempotencySupport: hasIdempotencySupport,
                 HasMutualTlsSupport: hasMutualTlsSupport,
                 Servers: rootClientServers,
                 UsesServerSelectionSupport: usesServerSelectionSupport)] : [];
@@ -660,6 +662,7 @@ public static class Data
                         GlobalSettings: csharpGlobalSettings,
                         Converters: [],
                         HasOAuth2Support: hasOAuth2Support,
+                        HasIdempotencySupport: hasIdempotencySupport,
                         HasMutualTlsSupport: hasMutualTlsSupport,
                         Servers: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers),
                         UsesServerSelectionSupport: usesServerSelectionSupport)))
@@ -986,6 +989,7 @@ public static class Data
             .Select(tag => resolvedIncludedTagsMap[tag.Name!])
             .OrderBy(tag => tag.SafeName, StringComparer.Ordinal)
             .ToArray();
+        var hasIdempotencySupport = methods.Any(static method => method.Parameters.Any(static parameter => parameter.IsIdempotencyHeader));
         var rootClassName = settings.ClassName.Replace(".", string.Empty);
         var documentServers = CSharpServerFactory.CreateServerOptions(openApiDocument.Servers);
         var clientServersByClass = BuildClientServerMap(methods, rootClassName, documentServers);
@@ -1020,6 +1024,7 @@ public static class Data
                 GlobalSettings: globalSettings,
                 Converters: converters,
                 HasOAuth2Support: hasOAuth2Support,
+                HasIdempotencySupport: hasIdempotencySupport,
                 HasMutualTlsSupport: hasMutualTlsSupport,
                 Servers: rootClientServers,
                 UsesServerSelectionSupport: usesServerSelectionSupport)]
@@ -1041,6 +1046,7 @@ public static class Data
                         GlobalSettings: globalSettings,
                         Converters: [],
                         HasOAuth2Support: hasOAuth2Support,
+                        HasIdempotencySupport: hasIdempotencySupport,
                         HasMutualTlsSupport: hasMutualTlsSupport,
                         Servers: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers),
                         UsesServerSelectionSupport: usesServerSelectionSupport)))

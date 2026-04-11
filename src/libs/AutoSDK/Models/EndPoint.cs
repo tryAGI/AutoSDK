@@ -38,6 +38,7 @@ public record struct EndPoint(
     string StreamTerminator,
     string Remarks,
     bool GenerateResponseWrapper,
+    EquatableArray<PollingOperation> PollingOperations,
     EquatableArray<ServerOption> Servers = default,
     bool HasServerOverride = false,
     bool ClientUsesServerSelectionSupport = false

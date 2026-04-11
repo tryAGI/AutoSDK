@@ -51,6 +51,10 @@ namespace {client.Settings.Namespace}
 
         /// <inheritdoc/>
         public global::{client.Settings.Namespace}.AutoSDKClientOptions Options {{ get; }}
+{(client.HasIdempotencySupport ? @"
+
+        /// <inheritdoc/>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; } = () => global::System.Guid.NewGuid().ToString(""D"");" : TrimmedLine)}
 {(client.HasOAuth2Support ? $@"
 
         internal global::{client.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Coordinator AutoSDKOAuth2State {{ get; set; }} = new global::{client.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Coordinator();" : TrimmedLine)}
@@ -73,6 +77,7 @@ namespace {client.Settings.Namespace}
         public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(HttpClient, authorizations: Authorizations, options: Options)
         {{
             ReadResponseAsString = ReadResponseAsString,
+            {(client.HasIdempotencySupport ? "CreateIdempotencyKey = CreateIdempotencyKey," : TrimmedLine)}
             {(hasOptions
                 ? "JsonSerializerOptions = JsonSerializerOptions,"
                 : "JsonSerializerContext = JsonSerializerContext,")}
@@ -360,11 +365,15 @@ namespace {client.Settings.Namespace}
         /// ensuring <see cref=""ApiException.ResponseBody""/> is populated.
         /// </summary>
         public bool ReadResponseAsString {{ get; set; }}
-
         /// <summary>
         /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
         /// </summary>
         public global::{client.Settings.Namespace}.AutoSDKClientOptions Options {{ get; }}
+
+{(client.HasIdempotencySupport ? @"        /// <summary>
+        /// Creates idempotency keys for generated idempotent requests when the caller does not provide one.
+        /// </summary>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; }" : TrimmedLine)}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions

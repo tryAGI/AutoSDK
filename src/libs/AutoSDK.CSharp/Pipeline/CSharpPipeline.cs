@@ -158,7 +158,10 @@ public static class CSharpPipeline
                             data.Methods.Any(static x => x.ClientUsesServerSelectionSupport)
                         ? [Sources.ServerSelectionSupport(settings, cancellationToken)]
                         : [])
-                    .Concat([Sources.OptionsSupport(settings, cancellationToken)])
+                    .Concat([Sources.OptionsSupport(
+                        settings,
+                        includePollingSupport: data.Methods.Any(static x => !x.PollingOperations.IsEmpty),
+                        cancellationToken: cancellationToken)])
                     .Concat(!data.Authorizations.IsEmpty
                         ? [Sources.SecuritySupport(settings, cancellationToken)]
                         : [])

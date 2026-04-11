@@ -58,6 +58,8 @@ public class RequestOptionsGenerationTests
         supportSource.Should().Contain("public sealed class AutoSDKHookContext");
         supportSource.Should().Contain("public global::System.Collections.Generic.List<global::G.IAutoSDKHook> Hooks { get; }");
         supportSource.Should().Contain("public global::G.AutoSDKClientOptions AddHook(");
+        supportSource.Should().NotContain("public sealed class AutoSDKPollingOptions");
+        supportSource.Should().NotContain("public sealed class AutoSDKPollingException");
     }
 
     [TestMethod]
