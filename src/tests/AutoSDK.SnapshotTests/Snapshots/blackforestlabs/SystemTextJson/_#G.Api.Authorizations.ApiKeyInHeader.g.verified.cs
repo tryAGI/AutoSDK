@@ -27,6 +27,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "APIKeyHeader",
                 Location = "Header",
                 Name = "x-key",
                 Value = apiKey,

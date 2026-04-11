@@ -26,6 +26,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "Bearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

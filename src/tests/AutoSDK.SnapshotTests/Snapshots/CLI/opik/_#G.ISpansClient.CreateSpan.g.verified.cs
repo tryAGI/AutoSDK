@@ -10,11 +10,13 @@ namespace G
         /// Create span
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateSpanAsync(
 
             global::G.SpanWrite request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create span<br/>
@@ -45,6 +47,7 @@ namespace G
         /// Time to first token in milliseconds
         /// </param>
         /// <param name="source"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreateSpanAsync(
@@ -69,6 +72,7 @@ namespace G
             string? totalEstimatedCostVersion = default,
             double? ttft = default,
             global::G.SpanWriteSource? source = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

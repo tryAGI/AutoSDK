@@ -17,6 +17,8 @@ namespace {settings.Namespace}
     {{
         internal string Type {{ get; set; }} = string.Empty;
 
+        internal string SchemeId {{ get; set; }} = string.Empty;
+
         internal string Location {{ get; set; }} = string.Empty;
 
         internal string Name {{ get; set; }} = string.Empty;
@@ -108,7 +110,18 @@ namespace {settings.Namespace}
 
             return requiredAuthorization.Type switch
             {{
-                ""OAuth2"" => true,
+                ""OAuth2"" => string.Equals(
+                    availableAuthorization.SchemeId,
+                    requiredAuthorization.SchemeId,
+                    global::System.StringComparison.Ordinal),
+                ""OpenIdConnect"" => string.Equals(
+                    availableAuthorization.SchemeId,
+                    requiredAuthorization.SchemeId,
+                    global::System.StringComparison.Ordinal),
+                ""MutualTLS"" => string.Equals(
+                    availableAuthorization.SchemeId,
+                    requiredAuthorization.SchemeId,
+                    global::System.StringComparison.Ordinal),
                 ""Http"" => string.Equals(
                     availableAuthorization.Name,
                     requiredAuthorization.Name,
@@ -169,6 +182,7 @@ namespace {settings.Namespace}
                     new global::{endPoint.GlobalSettings.Namespace}.EndPointAuthorizationRequirement
                     {{
                         Type = ""{authorization.Type:G}"",
+                        SchemeId = ""{authorization.SchemeId}"",
                         Location = ""{authorization.In:G}"",
                         Name = ""{GetAuthorizationRuntimeName(authorization)}"",
                         FriendlyName = ""{authorization.FriendlyName}"",

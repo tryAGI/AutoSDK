@@ -27,6 +27,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "XGladiaKey",
                 Location = "Header",
                 Name = "x-gladia-key",
                 Value = apiKey,
