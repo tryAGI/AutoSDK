@@ -17,6 +17,7 @@ public static class CSharpOperationContextFactory
         IList<OpenApiServer> effectiveServers,
         bool hasServerOverride,
         IList<OpenApiSecurityRequirement> globalSecurityRequirements,
+        IReadOnlyList<IdempotencyHeader>? documentIdempotencyHeaders = null,
         IReadOnlyDictionary<string, Tag>? resolvedTags = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
@@ -51,6 +52,7 @@ public static class CSharpOperationContextFactory
             HasServerOverride = hasServerOverride,
             Tags = tags,
             GlobalSecurityRequirements = globalSecurityRequirements,
+            DocumentIdempotencyHeaders = documentIdempotencyHeaders ?? [],
             Tag = GetOperationTag(operation, settings, firstTag, resolvedTags),
         };
         context.MethodName = context.GetMethodName();
