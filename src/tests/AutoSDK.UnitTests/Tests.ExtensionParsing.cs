@@ -1588,4 +1588,68 @@ public class ExtensionParsingTests
         data.Methods.Should().HaveCount(1);
         data.Methods[0].Id.Should().Be("GetVisible");
     }
+
+    [TestMethod]
+    public void XSpeakeasyPolling_ParsesPollingDefinitions()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Polling
+                              version: 1.0.0
+                            paths:
+                              /jobs/{id}:
+                                get:
+                                  operationId: getJob
+                                  parameters:
+                                    - in: path
+                                      name: id
+                                      required: true
+                                      schema:
+                                        type: string
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: object
+                                            required:
+                                              - status
+                                            properties:
+                                              status:
+                                                type: string
+                                  x-speakeasy-polling:
+                                    - name: WaitForCompleted
+                                      delaySeconds: 5
+                                      intervalSeconds: 3
+                                      limitCount: 10
+                                      failureCriteria:
+                                        - condition: $statusCode == 200
+                                        - condition: $response.body#/status == "errored"
+                                      successCriteria:
+                                        - condition: $statusCode == 200
+                                        - condition: $response.body#/status == "completed"
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateSdk = true,
+            TargetFramework = "net8.0",
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+
+        var pollingOperation = data.Methods.Single().PollingOperations.Should().ContainSingle().Subject;
+        pollingOperation.Name.Should().Be("WaitForCompleted");
+        pollingOperation.DelaySeconds.Should().Be(5);
+        pollingOperation.IntervalSeconds.Should().Be(3);
+        pollingOperation.LimitCount.Should().Be(10);
+        pollingOperation.SuccessCriteria.Should().HaveCount(2);
+        pollingOperation.FailureCriteria.Should().HaveCount(2);
+        pollingOperation.SuccessCriteria[0].ContextType.Should().Be(PollingCriterionContextType.StatusCode);
+        pollingOperation.SuccessCriteria[1].ContextType.Should().Be(PollingCriterionContextType.ResponseBody);
+        pollingOperation.SuccessCriteria[1].JsonPointer.Should().Be("/status");
+        pollingOperation.SuccessCriteria[1].ExpectedValue.Should().Be("completed");
+    }
 }
