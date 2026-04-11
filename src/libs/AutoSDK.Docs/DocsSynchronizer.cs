@@ -1,5 +1,7 @@
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
+using AutoSDK.Models;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
@@ -7,6 +9,11 @@ namespace AutoSDK.Docs;
 
 public static class DocsSynchronizer
 {
+    private static readonly JsonSerializerOptions SerializerOptions = new()
+    {
+        PropertyNameCaseInsensitive = true,
+    };
+
     public static async Task<DocsSyncResult> SyncAsync(
         string solutionDirectory,
         string? configPath = null,
@@ -48,6 +55,24 @@ public static class DocsSynchronizer
                     examples.Add(example);
                 }
             }
+            examples = examples
+                .OrderBy(x => x.Order)
+                .ThenBy(x => x.Title, StringComparer.Ordinal)
+                .ToList();
+        }
+
+        var generatedExamples = await LoadGeneratedExamplesAsync(project.GeneratedExamplesPath, cancellationToken).ConfigureAwait(false);
+        if (generatedExamples.Count > 0)
+        {
+            var existingSlugs = new HashSet<string>(examples.Select(static x => x.Slug), StringComparer.Ordinal);
+            foreach (var example in generatedExamples)
+            {
+                if (existingSlugs.Add(example.Slug))
+                {
+                    examples.Add(example);
+                }
+            }
+
             examples = examples
                 .OrderBy(x => x.Order)
                 .ThenBy(x => x.Title, StringComparer.Ordinal)
@@ -112,7 +137,39 @@ public static class DocsSynchronizer
             title,
             slug,
             description,
-            TransformCode(body, clientClassName, apiKeyVariableName, clientReplacements));
+            TransformCode(body, clientClassName, apiKeyVariableName, clientReplacements),
+            "csharp",
+            null);
+    }
+
+    private static async Task<List<MetadataExampleDocument>> LoadGeneratedExamplesAsync(
+        string path,
+        CancellationToken cancellationToken)
+    {
+        if (!File.Exists(path))
+        {
+            return [];
+        }
+
+        var json = await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false);
+        var manifest = JsonSerializer.Deserialize<GeneratedSdkSnippetManifest>(json, SerializerOptions) ??
+                       GeneratedSdkSnippetManifest.Empty;
+
+        return manifest.Examples
+            .Where(static x =>
+                !string.IsNullOrWhiteSpace(x.Title) &&
+                !string.IsNullOrWhiteSpace(x.Slug) &&
+                !string.IsNullOrWhiteSpace(x.Code) &&
+                !string.IsNullOrWhiteSpace(x.Language))
+            .Select(static x => new MetadataExampleDocument(
+                x.Order,
+                x.Title,
+                x.Slug,
+                x.Description,
+                x.Code,
+                x.Language,
+                x.Setup))
+            .ToList();
     }
 
     private static string? TryExtractSingleTestMethodBody(string text)
@@ -226,7 +283,8 @@ public static class DocsSynchronizer
             builder.AppendLine(example.Title);
             builder.AppendLine(example.Description);
             builder.AppendLine();
-            builder.AppendLine("```csharp");
+            builder.Append("```");
+            builder.AppendLine(example.Language);
             builder.AppendLine(example.Code);
             builder.AppendLine("```");
 
@@ -242,14 +300,20 @@ public static class DocsSynchronizer
     private static string BuildExamplePage(MetadataExampleDocument example, string exampleIntro)
     {
         var builder = new StringBuilder();
+        var intro = example.Setup ?? exampleIntro;
         builder.Append("# ");
         builder.AppendLine(example.Title);
         builder.AppendLine();
         builder.AppendLine(example.Description);
+        if (!string.IsNullOrWhiteSpace(intro))
+        {
+            builder.AppendLine();
+            builder.AppendLine(intro);
+        }
+
         builder.AppendLine();
-        builder.AppendLine(exampleIntro);
-        builder.AppendLine();
-        builder.AppendLine("```csharp");
+        builder.Append("```");
+        builder.AppendLine(example.Language);
         builder.AppendLine(example.Code);
         builder.AppendLine("```");
         return builder.ToString().TrimEnd();
@@ -391,7 +455,9 @@ public static class DocsSynchronizer
         string Title,
         string Slug,
         string Description,
-        string Code);
+        string Code,
+        string Language,
+        string? Setup);
 
     internal sealed record ExampleMetadata(int Order, string Title, string Slug, string Description)
     {
@@ -467,6 +533,7 @@ public static class DocsSynchronizer
         string DocsDirectory,
         string ExampleSourceDirectory,
         string OutputDirectory,
+        string GeneratedExamplesPath,
         string Namespace,
         string BrandName,
         string ClientClassName,
@@ -489,6 +556,10 @@ public static class DocsSynchronizer
                 solutionDirectory,
                 config.DocsExamplesDirectory,
                 Path.Combine(docsDirectory, "examples"));
+            var generatedExamplesPath = ResolvePath(
+                solutionDirectory,
+                config.GeneratedExamplesPath,
+                Path.Combine(solutionDirectory, "autosdk.generated-examples.json"));
 
             var namespaceValue = config.Namespace ?? InferNamespace(solutionDirectory);
             var brandName = config.BrandName ?? namespaceValue;
@@ -504,6 +575,7 @@ public static class DocsSynchronizer
                 docsDirectory,
                 exampleSourceDirectory,
                 outputDirectory,
+                generatedExamplesPath,
                 namespaceValue,
                 brandName,
                 clientClassName,

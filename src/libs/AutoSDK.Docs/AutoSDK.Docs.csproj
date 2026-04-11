@@ -8,4 +8,8 @@
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.13.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AutoSDK\AutoSDK.csproj" />
+  </ItemGroup>
+
 </Project>

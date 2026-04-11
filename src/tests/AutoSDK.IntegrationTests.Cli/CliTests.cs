@@ -28,6 +28,110 @@ public class CliTests
     }
 
     [TestMethod]
+    public async Task Generate_WithOpenApiExamples_EmitsGeneratedSnippetManifest()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var specPath = Path.Combine(tempDirectory, "examples.yaml");
+            await File.WriteAllTextAsync(
+                specPath,
+                """
+                openapi: 3.0.1
+                info:
+                  title: Examples
+                  version: 1.0.0
+                paths:
+                  /items/{itemId}:
+                    post:
+                      operationId: createItem
+                      parameters:
+                        - name: itemId
+                          in: path
+                          required: true
+                          schema:
+                            type: string
+                          example: item_123
+                      requestBody:
+                        required: true
+                        content:
+                          application/json:
+                            example:
+                              name: widget
+                            schema:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                      responses:
+                        '201':
+                          description: Created
+                          content:
+                            application/json:
+                              example:
+                                id: item_123
+                              schema:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                  /uploads:
+                    post:
+                      operationId: uploadFile
+                      requestBody:
+                        required: true
+                        content:
+                          multipart/form-data:
+                            example:
+                              file: example.txt
+                            schema:
+                              type: object
+                              properties:
+                                file:
+                                  type: string
+                                  format: binary
+                      responses:
+                        '202':
+                          description: Accepted
+                """);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var outputDirectory = Path.Combine(tempDirectory, "Generated");
+
+            var generateResult = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate", specPath,
+                "--namespace", "G",
+                "--clientClassName", "ExampleClient",
+                "--output", outputDirectory);
+
+            Console.WriteLine(generateResult.StandardOutput);
+            Console.WriteLine(generateResult.StandardError);
+            generateResult.ExitCode.Should().Be(0);
+
+            var manifestPath = Path.Combine(outputDirectory, "autosdk.generated-examples.json");
+            File.Exists(manifestPath).Should().BeTrue();
+
+            var manifest = await File.ReadAllTextAsync(manifestPath);
+            manifest.Should().Contain("\"OperationId\": \"createItem\"");
+            manifest.Should().Contain("\"OperationId\": \"uploadFile\"");
+            manifest.Should().Contain("\"Language\": \"csharp\"");
+            manifest.Should().Contain("\"Language\": \"http\"");
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_ProtoInput_ScaffoldsGrpcClientProject()
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());

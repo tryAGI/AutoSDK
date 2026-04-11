@@ -23,6 +23,8 @@ public sealed record DocsConfig
 
     public string? DocsExamplesDirectory { get; init; }
 
+    public string? GeneratedExamplesPath { get; init; }
+
     public string? ReadmeExamplesStartMarker { get; init; }
 
     public string? ReadmeExamplesEndMarker { get; init; }
