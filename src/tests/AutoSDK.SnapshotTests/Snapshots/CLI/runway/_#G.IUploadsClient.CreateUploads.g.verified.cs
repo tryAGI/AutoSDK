@@ -13,6 +13,7 @@ namespace G
         /// Default Value: 2024-11-06
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -46,6 +47,7 @@ namespace G
 
             global::G.CreateUploadsRequest request,
             string xRunwayVersion = "2024-11-06",
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload a file<br/>
@@ -60,12 +62,14 @@ namespace G
         /// <param name="type">
         /// The type of upload to create
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateUploadsResponse> CreateUploadsAsync(
             string filename,
             string xRunwayVersion = "2024-11-06",
             global::G.CreateUploadsRequestType type = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

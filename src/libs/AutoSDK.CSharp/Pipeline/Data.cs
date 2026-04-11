@@ -530,6 +530,7 @@ public static class Data
             .Values
             .ToArray();
         var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
+        var hasMutualTlsSupport = authorizations.Any(static x => x.Type is SecuritySchemeType.MutualTLS);
 
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
         // Enum converters
@@ -607,12 +608,19 @@ public static class Data
             .Select(tag => resolvedIncludedTagsMap[tag.Name!])
             .OrderBy(tag => tag.SafeName, StringComparer.Ordinal)
             .ToArray();
+        var rootClassName = settings.ClassName.Replace(".", string.Empty);
+        var documentServers = CSharpServerFactory.CreateServerOptions(openApiDocument.Servers);
+        var clientServersByClass = BuildClientServerMap(methods, rootClassName, documentServers);
+        var usesServerSelectionSupport = clientServersByClass.Values.Any(static servers => servers.Length > 1);
+        methods = ApplyClientServerSelectionSupport(methods, clientServersByClass);
+        var rootClientServers = GetClientServers(rootClassName, clientServersByClass, documentServers);
+
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors ? [new Client(
                 Id: "MainConstructor",
-                ClassName: settings.ClassName.Replace(".", string.Empty),
-                FileNameWithoutExtension: $"{settings.Namespace}.{settings.ClassName.Replace(".", string.Empty)}",
-                InterfaceFileNameWithoutExtension: $"{settings.Namespace}.I{settings.ClassName.Replace(".", string.Empty)}",
-                BaseUrl: openApiDocument.Servers!.FirstOrDefault().ExpandServerTemplate(openApiDocument.Self),
+                ClassName: rootClassName,
+                FileNameWithoutExtension: $"{settings.Namespace}.{rootClassName}",
+                InterfaceFileNameWithoutExtension: $"{settings.Namespace}.I{rootClassName}",
+                BaseUrl: rootClientServers.FirstOrDefault().Url ?? string.Empty,
                 Clients: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
                     ? [
                         .. resolvedIncludedTags.Select(tag => (PropertyData.Default with
@@ -628,12 +636,15 @@ public static class Data
                     ]
                     : [],
                 Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
-                BaseUrlSummary: CreateServerSummary(openApiDocument.Servers!.FirstOrDefault()),
+                BaseUrlSummary: rootClientServers.FirstOrDefault().Description?.ClearForXml() ?? string.Empty,
                 Settings: csharpSettings,
                 GlobalSettings: csharpGlobalSettings,
                 Converters: converters,
                 HasOAuth2Support: hasOAuth2Support,
-                HasIdempotencySupport: hasIdempotencySupport)] : [];
+                HasIdempotencySupport: hasIdempotencySupport,
+                HasMutualTlsSupport: hasMutualTlsSupport,
+                Servers: rootClientServers,
+                UsesServerSelectionSupport: usesServerSelectionSupport)] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
             clients = clients.Concat(
@@ -643,15 +654,18 @@ public static class Data
                         ClassName: CSharpClientNameGenerator.Generate(tag),
                         FileNameWithoutExtension: $"{settings.Namespace}.{CSharpClientNameGenerator.Generate(tag)}",
                         InterfaceFileNameWithoutExtension: $"{settings.Namespace}.I{CSharpClientNameGenerator.Generate(tag)}",
-                        BaseUrl: openApiDocument.Servers!.FirstOrDefault().ExpandServerTemplate(openApiDocument.Self),
+                        BaseUrl: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers).FirstOrDefault().Url ?? string.Empty,
                         Clients: [],
-                        Summary: tag.DocumentationSummary.ClearForXml(),
-                        BaseUrlSummary: CreateServerSummary(openApiDocument.Servers!.FirstOrDefault()),
+                        Summary: (!string.IsNullOrWhiteSpace(tag.DisplayName) ? tag.DisplayName : tag.Description)?.ClearForXml() ?? string.Empty,
+                        BaseUrlSummary: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers).FirstOrDefault().Description?.ClearForXml() ?? string.Empty,
                         Settings: csharpSettings,
                         GlobalSettings: csharpGlobalSettings,
                         Converters: [],
                         HasOAuth2Support: hasOAuth2Support,
-                        HasIdempotencySupport: hasIdempotencySupport)))
+                        HasIdempotencySupport: hasIdempotencySupport,
+                        HasMutualTlsSupport: hasMutualTlsSupport,
+                        Servers: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers),
+                        UsesServerSelectionSupport: usesServerSelectionSupport)))
                 .ToArray();
         }
         
@@ -714,7 +728,8 @@ public static class Data
                 BaseUrlSummary: string.Empty,
                 Settings: csharpSettings,
                 GlobalSettings: csharpGlobalSettings,
-                Converters: converters),
+                Converters: converters,
+                UsesServerSelectionSupport: usesServerSelectionSupport),
             Schemas: schemas,
             FilteredSchemas: filteredSchemas,
             Times: new Times(
@@ -900,6 +915,7 @@ public static class Data
             .Values
             .ToArray();
         var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
+        var hasMutualTlsSupport = authorizations.Any(static x => x.Type is SecuritySchemeType.MutualTLS);
 
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
         foreach (var value in enums)
@@ -974,14 +990,20 @@ public static class Data
             .OrderBy(tag => tag.SafeName, StringComparer.Ordinal)
             .ToArray();
         var hasIdempotencySupport = methods.Any(static method => method.Parameters.Any(static parameter => parameter.IsIdempotencyHeader));
+        var rootClassName = settings.ClassName.Replace(".", string.Empty);
+        var documentServers = CSharpServerFactory.CreateServerOptions(openApiDocument.Servers);
+        var clientServersByClass = BuildClientServerMap(methods, rootClassName, documentServers);
+        var usesServerSelectionSupport = clientServersByClass.Values.Any(static servers => servers.Length > 1);
+        methods = ApplyClientServerSelectionSupport(methods, clientServersByClass);
+        var rootClientServers = GetClientServers(rootClassName, clientServersByClass, documentServers);
 
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors
             ? [new Client(
                 Id: "MainConstructor",
-                ClassName: settings.ClassName.Replace(".", string.Empty),
-                FileNameWithoutExtension: $"{settings.Namespace}.{settings.ClassName.Replace(".", string.Empty)}",
-                InterfaceFileNameWithoutExtension: $"{settings.Namespace}.I{settings.ClassName.Replace(".", string.Empty)}",
-                BaseUrl: openApiDocument.Servers!.FirstOrDefault().ExpandServerTemplate(openApiDocument.Self),
+                ClassName: rootClassName,
+                FileNameWithoutExtension: $"{settings.Namespace}.{rootClassName}",
+                InterfaceFileNameWithoutExtension: $"{settings.Namespace}.I{rootClassName}",
+                BaseUrl: rootClientServers.FirstOrDefault().Url ?? string.Empty,
                 Clients: settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors)
                     ? [
                         .. resolvedIncludedTags.Select(tag => (PropertyData.Default with
@@ -997,12 +1019,15 @@ public static class Data
                     ]
                     : [],
                 Summary: openApiDocument.Info?.Description?.ClearForXml() ?? string.Empty,
-                BaseUrlSummary: CreateServerSummary(openApiDocument.Servers!.FirstOrDefault()),
+                BaseUrlSummary: rootClientServers.FirstOrDefault().Description?.ClearForXml() ?? string.Empty,
                 Settings: settings,
                 GlobalSettings: globalSettings,
                 Converters: converters,
                 HasOAuth2Support: hasOAuth2Support,
-                HasIdempotencySupport: hasIdempotencySupport)]
+                HasIdempotencySupport: hasIdempotencySupport,
+                HasMutualTlsSupport: hasMutualTlsSupport,
+                Servers: rootClientServers,
+                UsesServerSelectionSupport: usesServerSelectionSupport)]
             : [];
 
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
@@ -1013,15 +1038,18 @@ public static class Data
                         ClassName: CSharpClientNameGenerator.Generate(tag),
                         FileNameWithoutExtension: $"{settings.Namespace}.{CSharpClientNameGenerator.Generate(tag)}",
                         InterfaceFileNameWithoutExtension: $"{settings.Namespace}.I{CSharpClientNameGenerator.Generate(tag)}",
-                        BaseUrl: openApiDocument.Servers!.FirstOrDefault().ExpandServerTemplate(openApiDocument.Self),
+                        BaseUrl: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers).FirstOrDefault().Url ?? string.Empty,
                         Clients: [],
-                        Summary: tag.DocumentationSummary.ClearForXml(),
-                        BaseUrlSummary: CreateServerSummary(openApiDocument.Servers!.FirstOrDefault()),
+                        Summary: (!string.IsNullOrWhiteSpace(tag.DisplayName) ? tag.DisplayName : tag.Description)?.ClearForXml() ?? string.Empty,
+                        BaseUrlSummary: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers).FirstOrDefault().Description?.ClearForXml() ?? string.Empty,
                         Settings: settings,
                         GlobalSettings: globalSettings,
                         Converters: [],
                         HasOAuth2Support: hasOAuth2Support,
-                        HasIdempotencySupport: hasIdempotencySupport)))
+                        HasIdempotencySupport: hasIdempotencySupport,
+                        HasMutualTlsSupport: hasMutualTlsSupport,
+                        Servers: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers),
+                        UsesServerSelectionSupport: usesServerSelectionSupport)))
                 .ToArray();
         }
 
@@ -1083,7 +1111,8 @@ public static class Data
                 BaseUrlSummary: string.Empty,
                 Settings: settings,
                 GlobalSettings: globalSettings,
-                Converters: converters),
+                Converters: converters,
+                UsesServerSelectionSupport: usesServerSelectionSupport),
             Schemas: schemas,
             FilteredSchemas: filteredSchemas,
             Times: new Times(
@@ -1107,6 +1136,85 @@ public static class Data
                 AllocFilterTags: coreTimes.AllocFilterTags
 #endif
             ));
+    }
+
+    private static Dictionary<string, EquatableArray<ServerOption>> BuildClientServerMap(
+        IReadOnlyList<EndPoint> methods,
+        string rootClassName,
+        EquatableArray<ServerOption> documentServers)
+    {
+        var serversByClass = new Dictionary<string, List<ServerOption>>(StringComparer.Ordinal);
+
+        if (!documentServers.IsEmpty)
+        {
+            AddServers(rootClassName, documentServers);
+        }
+
+        foreach (var method in methods)
+        {
+            var effectiveServers = method.Servers.IsEmpty
+                ? documentServers
+                : method.Servers;
+            if (effectiveServers.IsEmpty)
+            {
+                continue;
+            }
+
+            AddServers(rootClassName, effectiveServers);
+            AddServers(method.ClassName, effectiveServers);
+        }
+
+        return serversByClass.ToDictionary(
+            static pair => pair.Key,
+            static pair => pair.Value.ToImmutableArray().AsEquatableArray(),
+            StringComparer.Ordinal);
+
+        void AddServers(
+            string className,
+            EquatableArray<ServerOption> servers)
+        {
+            if (!serversByClass.TryGetValue(className, out var list))
+            {
+                list = [];
+                serversByClass[className] = list;
+            }
+
+            foreach (var server in servers)
+            {
+                if (list.Any(existing =>
+                        string.Equals(existing.Id, server.Id, StringComparison.Ordinal) ||
+                        string.Equals(existing.Url, server.Url, StringComparison.Ordinal)))
+                {
+                    continue;
+                }
+
+                list.Add(server);
+            }
+        }
+    }
+
+    private static ImmutableArray<EndPoint> ApplyClientServerSelectionSupport(
+        IReadOnlyList<EndPoint> methods,
+        Dictionary<string, EquatableArray<ServerOption>> clientServersByClass)
+    {
+        return methods
+            .Select(method => method with
+            {
+                ClientUsesServerSelectionSupport =
+                    clientServersByClass.TryGetValue(method.ClassName, out var servers) &&
+                    servers.Length > 1,
+            })
+            .ToImmutableArray();
+    }
+
+    private static EquatableArray<ServerOption> GetClientServers(
+        string className,
+        Dictionary<string, EquatableArray<ServerOption>> clientServersByClass,
+        EquatableArray<ServerOption> documentServers)
+    {
+        return clientServersByClass.TryGetValue(className, out var servers) && !servers.IsEmpty
+            ? servers
+            : documentServers;
     }
 
     private static IEnumerable<EndPoint> CreateEndPoints(OperationContext operation)

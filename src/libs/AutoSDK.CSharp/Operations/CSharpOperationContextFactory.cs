@@ -14,6 +14,8 @@ public static class CSharpOperationContextFactory
         string operationPath,
         System.Net.Http.HttpMethod operationType,
         IReadOnlyList<SchemaContext>? operationSchemas,
+        IList<OpenApiServer> effectiveServers,
+        bool hasServerOverride,
         IList<OpenApiSecurityRequirement> globalSecurityRequirements,
         IReadOnlyList<IdempotencyHeader>? documentIdempotencyHeaders = null,
         IReadOnlyDictionary<string, Tag>? resolvedTags = null)
@@ -46,6 +48,8 @@ public static class CSharpOperationContextFactory
         var context = new OperationContext(settings, globalSettings, operation, operationPath, operationType)
         {
             Schemas = operationSchemas ?? (IReadOnlyCollection<SchemaContext>)[],
+            Servers = effectiveServers,
+            HasServerOverride = hasServerOverride,
             Tags = tags,
             GlobalSecurityRequirements = globalSecurityRequirements,
             DocumentIdempotencyHeaders = documentIdempotencyHeaders ?? [],

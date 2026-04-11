@@ -27,6 +27,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "APIKeyCookie",
                 Location = "Cookie",
                 Name = "access-token",
                 Value = apiKey,

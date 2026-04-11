@@ -13,6 +13,7 @@ namespace G
         /// <param name="database"></param>
         /// <param name="collectionId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -24,6 +25,7 @@ namespace G
             string collectionId,
 
             global::G.UpsertCollectionRecordsPayload request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upsert records<br/>
@@ -39,6 +41,7 @@ namespace G
         /// <param name="ids"></param>
         /// <param name="metadatas"></param>
         /// <param name="uris"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpsertCollectionRecordsResponse> CollectionUpsertAsync(
@@ -50,6 +53,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? documents = default,
             global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>? metadatas = default,
             global::System.Collections.Generic.IList<string>? uris = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

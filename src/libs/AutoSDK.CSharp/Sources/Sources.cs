@@ -407,6 +407,15 @@ public static partial class Sources
             Text: GeneratePathBuilder(settings, cancellationToken: cancellationToken));
     }
 
+    public static FileWithName ServerSelectionSupport(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.ServerSelection.g.cs",
+            Text: GenerateServerSelectionSupport(settings));
+    }
+
     public static FileWithName OptionsSupport(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)

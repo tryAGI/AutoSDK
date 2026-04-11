@@ -24,6 +24,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "",
+                SchemeId = "WorkbenchAccessKey",
                 Location = "",
                 Name = "",
                 Value = "",

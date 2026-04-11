@@ -68,6 +68,10 @@ namespace {endPoint.Settings.Namespace}
 {{
     public partial class {endPoint.ClassName}
     {{
+{(endPoint.ClientUsesServerSelectionSupport ? $@"
+        private static readonly global::{endPoint.Settings.Namespace}.AutoSDKServer[] s_{endPoint.NotAsyncMethodName}Servers = new global::{endPoint.Settings.Namespace}.AutoSDKServer[]
+        {{{GenerateServerDeclarations(endPoint.Servers, endPoint.Settings.Namespace, 12)}
+        }};" : TrimmedLine)}
 {(!endPoint.AuthorizationRequirements.IsEmpty ? GenerateSecurityRequirementsField(endPoint) : TrimmedLine)}
         partial void Prepare{endPoint.NotAsyncMethodName}Arguments(
             global::System.Net.Http.HttpClient httpClient{endPoint.Parameters
@@ -1132,10 +1136,18 @@ namespace {endPoint.Settings.Namespace}
         EndPoint endPoint,
         string authorizationVariableName = "Authorizations")
     {
+        var escapedBaseUrl = EscapeCSharpStringLiteral(endPoint.BaseUrl);
+        var baseUriExpression = endPoint.ClientUsesServerSelectionSupport
+            ? $@"ResolveBaseUri(
+                servers: s_{endPoint.NotAsyncMethodName}Servers,
+                defaultBaseUrl: ""{escapedBaseUrl}"")"
+            : endPoint.HasServerOverride && !string.IsNullOrWhiteSpace(endPoint.BaseUrl)
+                ? $@"HttpClient.BaseAddress ?? new global::System.Uri(""{escapedBaseUrl}"", global::System.UriKind.RelativeOrAbsolute)"
+                : "HttpClient.BaseAddress";
         var code = @$" 
             var __pathBuilder = new global::{endPoint.GlobalSettings.Namespace}.PathBuilder(
                 path: {endPoint.Path},
-                baseUri: HttpClient.BaseAddress);";
+                baseUri: {baseUriExpression});";
         if (endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Query }))
         {
             code += $@"

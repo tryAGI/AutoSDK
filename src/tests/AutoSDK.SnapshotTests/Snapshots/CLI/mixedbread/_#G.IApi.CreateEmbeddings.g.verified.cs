@@ -14,11 +14,13 @@ namespace G
         ///     EmbeddingCreateResponse: The response containing the embeddings.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbeddingCreateResponse> CreateEmbeddingsAsync(
 
             global::G.EmbeddingCreateParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create embeddings for text and images<br/>
@@ -48,6 +50,7 @@ namespace G
         /// The encoding format(s) of the embeddings. Can be a single format or a list of formats.<br/>
         /// Default Value: float
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbeddingCreateResponse> CreateEmbeddingsAsync(
@@ -57,6 +60,7 @@ namespace G
             string? prompt = default,
             bool? normalized = default,
             global::G.AnyOf<global::G.EncodingFormat3?, global::System.Collections.Generic.IList<global::G.EncodingFormat3>>? encodingFormat = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

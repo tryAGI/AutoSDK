@@ -25,6 +25,7 @@ public static class OpenApiOperationExtensions
         var schemasByOperation = BuildSchemasByOperation(filteredSchemas);
 
         var globalSecurity = openApiDocument.Security ?? [];
+        var documentServers = openApiDocument.Servers ?? [];
         var documentIdempotencyHeaders = OpenApiExtensions.GetDocumentIdempotencyHeaders(openApiDocument.Extensions);
         var results = new List<OperationContext>();
         foreach (var path in pathItems)
@@ -44,6 +45,15 @@ public static class OpenApiOperationExtensions
 
                 schemasByOperation.TryGetValue(op.Value, out var operationSchemas);
 
+                var effectiveServers = GetEffectiveServers(
+                    documentServers,
+                    path.Value.Servers,
+                    op.Value.Servers);
+                var hasServerOverride = HasServerOverride(
+                    documentServers,
+                    path.Value.Servers,
+                    op.Value.Servers);
+
                 results.Add(CSharpOperationContextFactory.CreateOperationContext(
                     settings: settings,
                     globalSettings: globalSettings,
@@ -51,6 +61,8 @@ public static class OpenApiOperationExtensions
                     operationPath: path.Key,
                     operationType: op.Key,
                     operationSchemas: operationSchemas,
+                    effectiveServers: effectiveServers,
+                    hasServerOverride: hasServerOverride,
                     globalSecurityRequirements: globalSecurity,
                     documentIdempotencyHeaders: documentIdempotencyHeaders,
                     resolvedTags: resolvedTags));
@@ -78,6 +90,7 @@ public static class OpenApiOperationExtensions
 
         var schemasByOperation = BuildSchemasByOperation(filteredSchemas);
         var globalSecurity = openApiDocument.Security ?? [];
+        var documentServers = openApiDocument.Servers ?? [];
         var documentIdempotencyHeaders = OpenApiExtensions.GetDocumentIdempotencyHeaders(openApiDocument.Extensions);
         var results = new List<OperationContext>();
 
@@ -98,6 +111,15 @@ public static class OpenApiOperationExtensions
 
                 schemasByOperation.TryGetValue(op.Value, out var operationSchemas);
 
+                var effectiveServers = GetEffectiveServers(
+                    documentServers,
+                    webhook.Value.Servers,
+                    op.Value.Servers);
+                var hasServerOverride = HasServerOverride(
+                    documentServers,
+                    webhook.Value.Servers,
+                    op.Value.Servers);
+
                 results.Add(CSharpOperationContextFactory.CreateOperationContext(
                     settings: settings,
                     globalSettings: globalSettings,
@@ -105,6 +127,8 @@ public static class OpenApiOperationExtensions
                     operationPath: webhook.Key,
                     operationType: op.Key,
                     operationSchemas: operationSchemas,
+                    effectiveServers: effectiveServers,
+                    hasServerOverride: hasServerOverride,
                     globalSecurityRequirements: globalSecurity,
                     documentIdempotencyHeaders: documentIdempotencyHeaders,
                     resolvedTags: resolvedTags));
@@ -143,5 +167,67 @@ public static class OpenApiOperationExtensions
     {
         return settings.UseExtensionNaming &&
                OpenApiExtensions.ShouldIgnoreOperationForDotNet(operation.Extensions);
+    }
+
+    private static IList<OpenApiServer> GetEffectiveServers(
+        IList<OpenApiServer> documentServers,
+        IList<OpenApiServer>? pathServers,
+        IList<OpenApiServer>? operationServers)
+    {
+        if (operationServers is { Count: > 0 })
+        {
+            return operationServers;
+        }
+
+        if (pathServers is { Count: > 0 })
+        {
+            return pathServers;
+        }
+
+        return documentServers;
+    }
+
+    private static bool HasServerOverride(
+        IList<OpenApiServer> documentServers,
+        IList<OpenApiServer>? pathServers,
+        IList<OpenApiServer>? operationServers)
+    {
+        if (operationServers is { Count: > 0 })
+        {
+            var inheritedServers = pathServers is { Count: > 0 }
+                ? pathServers
+                : documentServers;
+            return !AreEquivalent(operationServers, inheritedServers);
+        }
+
+        return pathServers is { Count: > 0 } &&
+               !AreEquivalent(pathServers, documentServers);
+    }
+
+    private static bool AreEquivalent(
+        IList<OpenApiServer> left,
+        IList<OpenApiServer> right)
+    {
+        if (ReferenceEquals(left, right))
+        {
+            return true;
+        }
+
+        if (left.Count != right.Count)
+        {
+            return false;
+        }
+
+        for (var i = 0; i < left.Count; i++)
+        {
+            var leftUrl = left[i].ExpandServerTemplate();
+            var rightUrl = right[i].ExpandServerTemplate();
+            if (!string.Equals(leftUrl, rightUrl, StringComparison.Ordinal))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

@@ -12,6 +12,7 @@ namespace G
         /// <param name="userAgent"></param>
         /// <param name="xiApiKey"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> OpenaiChatCompletionsV1OpenaiChatCompletionsPostAsync(
@@ -20,6 +21,7 @@ namespace G
             string? xDeepinfraSource = default,
             string? userAgent = default,
             string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Openai Chat Completions
@@ -100,6 +102,7 @@ namespace G
         /// <param name="reasoningEffort">
         /// Constrains effort on reasoning for reasoning models. Currently supported values are none, low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response. Setting to none disables reasoning entirely if the model supports.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> OpenaiChatCompletionsV1OpenaiChatCompletionsPostAsync(
@@ -127,6 +130,7 @@ namespace G
             bool? logprobs = default,
             global::G.StreamOptions? streamOptions = default,
             global::G.OpenAIChatCompletionsInReasoningEffort2? reasoningEffort = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

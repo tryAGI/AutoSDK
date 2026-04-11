@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task AddTraceFeedbackScoreAsync(
             global::System.Guid id,
 
             global::G.FeedbackScore request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add trace feedback score<br/>
@@ -28,6 +30,7 @@ namespace G
         /// <param name="value"></param>
         /// <param name="reason"></param>
         /// <param name="source"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task AddTraceFeedbackScoreAsync(
@@ -37,6 +40,7 @@ namespace G
             global::G.FeedbackScoreSource source,
             string? categoryName = default,
             string? reason = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
