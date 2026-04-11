@@ -10,11 +10,13 @@ namespace G
         /// Submits an image generation task with the FLUX.1 Fill [pro] finetune model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.AsyncResponse, global::G.AsyncWebhookResponse>> FluxPro10FillFinetunedV1FluxPro10FillFinetunedPostAsync(
 
             global::G.FinetuneFluxProFillInputs request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate an image with FLUX.1 Fill [pro] finetune using an input image and mask.<br/>
@@ -69,6 +71,7 @@ namespace G
         /// <param name="webhookSecret">
         /// Optional secret for webhook signature verification
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.AsyncResponse, global::G.AsyncWebhookResponse>> FluxPro10FillFinetunedV1FluxPro10FillFinetunedPostAsync(
@@ -85,6 +88,7 @@ namespace G
             int? safetyTolerance = default,
             string? webhookUrl = default,
             string? webhookSecret = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

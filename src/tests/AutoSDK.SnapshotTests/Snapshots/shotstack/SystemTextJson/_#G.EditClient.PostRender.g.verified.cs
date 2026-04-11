@@ -17,6 +17,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "",
+                        SchemeId = "DeveloperKey",
                         Location = "",
                         Name = "",
                         FriendlyName = "Authorization",

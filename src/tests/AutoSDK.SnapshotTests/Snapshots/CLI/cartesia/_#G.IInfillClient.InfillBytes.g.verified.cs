@@ -22,12 +22,14 @@ namespace G
         /// Example: 2025-04-16
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> InfillBytesAsync(
             global::G.InfillBytesCartesiaVersion cartesiaVersion,
 
             global::G.InfillBytesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Infill (Bytes)<br/>
@@ -62,6 +64,7 @@ namespace G
         /// The ID of the voice to use for generating audio
         /// </param>
         /// <param name="outputFormat"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<byte[]> InfillBytesAsync(
@@ -75,6 +78,7 @@ namespace G
             string? transcript = default,
             string? voiceId = default,
             global::G.OutputFormat? outputFormat = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

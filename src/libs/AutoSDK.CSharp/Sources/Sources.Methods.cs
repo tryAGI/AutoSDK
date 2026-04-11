@@ -63,6 +63,10 @@ namespace {endPoint.Settings.Namespace}
 {{
     public partial class {endPoint.ClassName}
     {{
+{(endPoint.ClientUsesServerSelectionSupport ? $@"
+        private static readonly global::{endPoint.Settings.Namespace}.AutoSDKServer[] s_{endPoint.NotAsyncMethodName}Servers = new global::{endPoint.Settings.Namespace}.AutoSDKServer[]
+        {{{GenerateServerDeclarations(endPoint.Servers, endPoint.Settings.Namespace, 12)}
+        }};" : TrimmedLine)}
 {(!endPoint.AuthorizationRequirements.IsEmpty ? GenerateSecurityRequirementsField(endPoint) : TrimmedLine)}
         partial void Prepare{endPoint.NotAsyncMethodName}Arguments(
             global::System.Net.Http.HttpClient httpClient{endPoint.Parameters
@@ -508,25 +512,36 @@ namespace {endPoint.Settings.Namespace}
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+{(RequiresCookieCollection(endPoint) ? @"
+                var __cookies = new global::System.Collections.Generic.List<string>();" : TrimmedLine)}
 {(endPoint.Authorizations.Any(x => x is
     { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Header } or
+    { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Cookie } or
     { Type: SecuritySchemeType.Http } or
-    { Type: SecuritySchemeType.OAuth2 }) ? @$"
-                foreach (var __authorization in {(endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations")})
+    { Type: SecuritySchemeType.OAuth2 } or
+    { Type: SecuritySchemeType.OpenIdConnect }) ? @$"
+            foreach (var __authorization in {(endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations")})
+            {{
+                if (__authorization.Type == ""{SecuritySchemeType.Http:G}"" ||
+                    __authorization.Type == ""{SecuritySchemeType.OAuth2:G}"" ||
+                    __authorization.Type == ""{SecuritySchemeType.OpenIdConnect:G}"")
                 {{
-                    if (__authorization.Type == ""{SecuritySchemeType.Http:G}"" ||
-                        __authorization.Type == ""{SecuritySchemeType.OAuth2:G}"")
-                    {{
-                        __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                            scheme: __authorization.Name,
-                            parameter: __authorization.Value);
-                    }}
-                    else if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
-                             __authorization.Location == ""{ParameterLocation.Header:G}"")
-                    {{
-                        __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                    }}
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }}
+                else if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
+                         __authorization.Location == ""{ParameterLocation.Header:G}"")
+                {{
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }}{(HasCookieAuthorizations(endPoint) ? @$"
+                else if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
+                         __authorization.Location == ""{ParameterLocation.Cookie:G}"")
+                {{
+                    var __cookieValue = global::System.Uri.EscapeDataString(__authorization.Value);
+                    __cookies.Add($""{{__authorization.Name}}={{__cookieValue}}"");
                 }}" : TrimmedLine)}
+            }}" : TrimmedLine)}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
@@ -541,6 +556,7 @@ namespace {endPoint.Settings.Namespace}
                 }}").Inject()}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
 {GenerateCookieParameterHandling(endPoint).AddIndent(4)}
+{GenerateCookieHeaderHandling(endPoint).AddIndent(4)}
  
 {GenerateRequestData(endPoint).AddIndent(4)}
                 global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.ApplyHeaders(
@@ -712,18 +728,33 @@ namespace {endPoint.Settings.Namespace}
         }
 
         var builder = new System.Text.StringBuilder();
-        builder.AppendLine("            var __cookies = new global::System.Collections.Generic.List<string>();");
         foreach (var parameter in cookieParameters)
         {
             builder.AppendLine(GenerateCookieParameterHandling(parameter, endPoint.Settings));
         }
 
-        builder.AppendLine(@"            if (__cookies.Count > 0)
+        return builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static bool RequiresCookieCollection(EndPoint endPoint)
+    {
+        return endPoint.Parameters.Any(x => x.Location == ParameterLocation.Cookie) ||
+               HasCookieAuthorizations(endPoint);
+    }
+
+    private static bool HasCookieAuthorizations(EndPoint endPoint)
+    {
+        return endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Cookie });
+    }
+
+    private static string GenerateCookieHeaderHandling(EndPoint endPoint)
+    {
+        return RequiresCookieCollection(endPoint)
+            ? @"if (__cookies.Count > 0)
             {
                 __httpRequest.Headers.TryAddWithoutValidation(""Cookie"", string.Join(""; "", __cookies));
-            }");
-
-        return builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces();
+            }"
+            : TrimmedLine;
     }
 
     private static string GenerateCookieParameterHandling(
@@ -1081,10 +1112,18 @@ namespace {endPoint.Settings.Namespace}
         EndPoint endPoint,
         string authorizationVariableName = "Authorizations")
     {
+        var escapedBaseUrl = EscapeCSharpStringLiteral(endPoint.BaseUrl);
+        var baseUriExpression = endPoint.ClientUsesServerSelectionSupport
+            ? $@"ResolveBaseUri(
+                servers: s_{endPoint.NotAsyncMethodName}Servers,
+                defaultBaseUrl: ""{escapedBaseUrl}"")"
+            : endPoint.HasServerOverride && !string.IsNullOrWhiteSpace(endPoint.BaseUrl)
+                ? $@"HttpClient.BaseAddress ?? new global::System.Uri(""{escapedBaseUrl}"", global::System.UriKind.RelativeOrAbsolute)"
+                : "HttpClient.BaseAddress";
         var code = @$" 
             var __pathBuilder = new global::{endPoint.GlobalSettings.Namespace}.PathBuilder(
                 path: {endPoint.Path},
-                baseUri: HttpClient.BaseAddress);";
+                baseUri: {baseUriExpression});";
         if (endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Query }))
         {
             code += $@"

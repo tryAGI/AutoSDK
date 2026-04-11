@@ -30,6 +30,26 @@ paths:
           description: Not authenticated
         '403':
           description: Access token does not have the required scope
+  /identity:
+    get:
+      summary: Gets identity information via OpenID Connect
+      security:
+        - OpenID: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Not authenticated
+  /certificate_status:
+    get:
+      summary: Checks mutual TLS certificate status
+      security:
+        - MutualTlsAuth: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Not authenticated
   /ping:
     get:
       summary: Checks if the server is running
@@ -55,6 +75,8 @@ components:
     OpenID:
       type: openIdConnect
       openIdConnectUrl: https://example.com/.well-known/openid-configuration
+    MutualTlsAuth:
+      type: mutualTLS
     OAuth2:
       type: oauth2
       flows:
@@ -83,6 +105,5 @@ security:
       - read
       - write
       - admin
-  - OpenId:
-      - scopeA
-      - scopeB
+  - OpenID: []
+  - MutualTlsAuth: []

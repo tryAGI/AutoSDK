@@ -20,11 +20,13 @@ namespace G
         /// **Important:** This requires the `source_lang` parameter to be set and the language pair of the glossary has to match the language pair of the request.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TranslateDocumentResponse> TranslateDocumentAsync(
 
             global::G.TranslateDocumentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload and Translate a Document<br/>
@@ -41,11 +43,13 @@ namespace G
         /// **Important:** This requires the `source_lang` parameter to be set and the language pair of the glossary has to match the language pair of the request.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TranslateDocumentResponse>> TranslateDocumentAsResponseAsync(
 
             global::G.TranslateDocumentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload and Translate a Document<br/>
@@ -118,6 +122,7 @@ namespace G
         /// A unique ID assigned to a glossary.<br/>
         /// Example: def3a26b-3e84-45b3-84ae-0c0aaf3525f7
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TranslateDocumentResponse> TranslateDocumentAsync(
@@ -128,6 +133,7 @@ namespace G
             string? outputFormat = default,
             global::G.Formality? formality = default,
             string? glossaryId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

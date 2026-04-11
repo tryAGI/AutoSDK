@@ -10,12 +10,14 @@ namespace G
         /// DEPRECATED: Use POST /stores instead
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.VectorStore> CreateVectorStoreAsync(
 
             global::G.VectorStoreCreateParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// [DEPRECATED] Create a vector store<br/>
@@ -40,6 +42,7 @@ namespace G
         /// <param name="fileIds">
         /// Optional list of file IDs
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
@@ -50,6 +53,7 @@ namespace G
             global::G.ExpiresAfter? expiresAfter = default,
             object? metadata = default,
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

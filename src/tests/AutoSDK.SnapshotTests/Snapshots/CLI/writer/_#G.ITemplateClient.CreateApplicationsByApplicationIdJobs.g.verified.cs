@@ -11,6 +11,7 @@ namespace G
         /// </summary>
         /// <param name="applicationId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         /// <remarks>
@@ -23,6 +24,7 @@ namespace G
             string applicationId,
 
             global::G.GenerateApplicationAsyncRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate from application (async)<br/>
@@ -32,11 +34,13 @@ namespace G
         /// <param name="inputs">
         /// A list of input objects to generate content for.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GenerateApplicationAsyncResponse> CreateApplicationsByApplicationIdJobsAsync(
             string applicationId,
             global::System.Collections.Generic.IList<global::G.GenerateApplicationInput> inputs,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

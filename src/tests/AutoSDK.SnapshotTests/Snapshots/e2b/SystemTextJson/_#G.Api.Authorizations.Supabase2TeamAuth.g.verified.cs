@@ -27,6 +27,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "Supabase2TeamAuth",
                 Location = "Header",
                 Name = "X-Supabase-Team",
                 Value = apiKey,

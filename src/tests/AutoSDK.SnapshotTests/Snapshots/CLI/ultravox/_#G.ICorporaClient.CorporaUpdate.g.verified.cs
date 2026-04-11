@@ -10,12 +10,14 @@ namespace G
         /// </summary>
         /// <param name="corpusId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UltravoxV1Corpus> CorporaUpdateAsync(
             global::System.Guid corpusId,
 
             global::G.UltravoxV1Corpus request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
@@ -36,6 +38,7 @@ namespace G
         /// <param name="stats">
         /// The current stats for this corpus.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UltravoxV1Corpus> CorporaUpdateAsync(
@@ -45,6 +48,7 @@ namespace G
             string? name = default,
             string? description = default,
             global::G.UltravoxV1CorpusStats? stats = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

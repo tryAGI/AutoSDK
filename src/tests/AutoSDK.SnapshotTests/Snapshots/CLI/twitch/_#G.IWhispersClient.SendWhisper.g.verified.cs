@@ -17,6 +17,7 @@ namespace G
         /// <param name="fromUserId"></param>
         /// <param name="toUserId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task SendWhisperAsync(
@@ -24,6 +25,7 @@ namespace G
             string toUserId,
 
             global::G.SendWhisperBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Sends a whisper message to the specified user.<br/>
@@ -46,12 +48,14 @@ namespace G
         ///   <br/>
         /// Messages that exceed the maximum length are truncated.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task SendWhisperAsync(
             string fromUserId,
             string toUserId,
             string message,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

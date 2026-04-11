@@ -37,7 +37,10 @@ public record struct EndPoint(
     bool? ForcedRequestStreamValue,
     string StreamTerminator,
     string Remarks,
-    bool GenerateResponseWrapper
+    bool GenerateResponseWrapper,
+    EquatableArray<ServerOption> Servers = default,
+    bool HasServerOverride = false,
+    bool ClientUsesServerSelectionSupport = false
 )
 {
     public bool Stream => StreamFormat != StreamFormat.None;
