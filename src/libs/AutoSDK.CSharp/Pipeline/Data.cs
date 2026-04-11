@@ -530,6 +530,7 @@ public static class Data
             .Values
             .ToArray();
         var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
+        var hasMutualTlsSupport = authorizations.Any(static x => x.Type is SecuritySchemeType.MutualTLS);
 
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
         // Enum converters
@@ -639,6 +640,7 @@ public static class Data
                 GlobalSettings: csharpGlobalSettings,
                 Converters: converters,
                 HasOAuth2Support: hasOAuth2Support,
+                HasMutualTlsSupport: hasMutualTlsSupport,
                 Servers: rootClientServers,
                 UsesServerSelectionSupport: usesServerSelectionSupport)] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
@@ -658,6 +660,7 @@ public static class Data
                         GlobalSettings: csharpGlobalSettings,
                         Converters: [],
                         HasOAuth2Support: hasOAuth2Support,
+                        HasMutualTlsSupport: hasMutualTlsSupport,
                         Servers: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers),
                         UsesServerSelectionSupport: usesServerSelectionSupport)))
                 .ToArray();
@@ -909,6 +912,7 @@ public static class Data
             .Values
             .ToArray();
         var hasOAuth2Support = authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
+        var hasMutualTlsSupport = authorizations.Any(static x => x.Type is SecuritySchemeType.MutualTLS);
 
         var convertersBuilder = ImmutableArray.CreateBuilder<string>();
         foreach (var value in enums)
@@ -1016,6 +1020,7 @@ public static class Data
                 GlobalSettings: globalSettings,
                 Converters: converters,
                 HasOAuth2Support: hasOAuth2Support,
+                HasMutualTlsSupport: hasMutualTlsSupport,
                 Servers: rootClientServers,
                 UsesServerSelectionSupport: usesServerSelectionSupport)]
             : [];
@@ -1036,6 +1041,7 @@ public static class Data
                         GlobalSettings: globalSettings,
                         Converters: [],
                         HasOAuth2Support: hasOAuth2Support,
+                        HasMutualTlsSupport: hasMutualTlsSupport,
                         Servers: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers),
                         UsesServerSelectionSupport: usesServerSelectionSupport)))
                 .ToArray();
