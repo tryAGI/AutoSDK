@@ -26,6 +26,7 @@ public static class OpenApiOperationExtensions
 
         var globalSecurity = openApiDocument.Security ?? [];
         var documentServers = openApiDocument.Servers ?? [];
+        var documentIdempotencyHeaders = OpenApiExtensions.GetDocumentIdempotencyHeaders(openApiDocument.Extensions);
         var results = new List<OperationContext>();
         foreach (var path in pathItems)
         {
@@ -63,6 +64,7 @@ public static class OpenApiOperationExtensions
                     effectiveServers: effectiveServers,
                     hasServerOverride: hasServerOverride,
                     globalSecurityRequirements: globalSecurity,
+                    documentIdempotencyHeaders: documentIdempotencyHeaders,
                     resolvedTags: resolvedTags));
             }
         }
@@ -89,6 +91,7 @@ public static class OpenApiOperationExtensions
         var schemasByOperation = BuildSchemasByOperation(filteredSchemas);
         var globalSecurity = openApiDocument.Security ?? [];
         var documentServers = openApiDocument.Servers ?? [];
+        var documentIdempotencyHeaders = OpenApiExtensions.GetDocumentIdempotencyHeaders(openApiDocument.Extensions);
         var results = new List<OperationContext>();
 
         foreach (var webhook in webhooks)
@@ -127,6 +130,7 @@ public static class OpenApiOperationExtensions
                     effectiveServers: effectiveServers,
                     hasServerOverride: hasServerOverride,
                     globalSecurityRequirements: globalSecurity,
+                    documentIdempotencyHeaders: documentIdempotencyHeaders,
                     resolvedTags: resolvedTags));
             }
         }

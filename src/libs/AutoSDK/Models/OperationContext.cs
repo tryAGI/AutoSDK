@@ -19,6 +19,7 @@ public class OperationContext(
     public IList<OpenApiSecurityRequirement> GlobalSecurityRequirements { get; set; } = [];
     public IList<OpenApiServer> Servers { get; set; } = [];
     public bool HasServerOverride { get; set; }
+    public IReadOnlyList<IdempotencyHeader> DocumentIdempotencyHeaders { get; set; } = [];
     
     public HashSet<string> Tags { get; set; } = [];
     public Tag Tag { get; set; } = Tag.Empty;
