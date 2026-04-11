@@ -15,6 +15,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "ApiKeyAuth",
                         Location = "Header",
                         Name = "X-API-Key",
                         FriendlyName = "ApiKeyAuth",
@@ -29,6 +30,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "Supabase2TeamAuth",
                         Location = "Header",
                         Name = "X-Supabase-Team",
                         FriendlyName = "Supabase2TeamAuth",
@@ -36,6 +38,7 @@ namespace G
                     new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "ApiKey",
+                        SchemeId = "Supabase1TokenAuth",
                         Location = "Header",
                         Name = "X-Supabase-Token",
                         FriendlyName = "Supabase1TokenAuth",
@@ -136,21 +139,22 @@ namespace G
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                foreach (var __authorization in __authorizations)
+            foreach (var __authorization in __authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
                 {
-                    if (__authorization.Type == "Http" ||
-                        __authorization.Type == "OAuth2")
-                    {
-                        __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                            scheme: __authorization.Name,
-                            parameter: __authorization.Value);
-                    }
-                    else if (__authorization.Type == "ApiKey" &&
-                             __authorization.Location == "Header")
-                    {
-                        __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                    }
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
                 }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                } 
+            }
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,

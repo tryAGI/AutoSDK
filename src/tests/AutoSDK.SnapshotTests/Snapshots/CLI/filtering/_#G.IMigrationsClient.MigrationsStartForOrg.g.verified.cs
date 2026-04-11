@@ -11,12 +11,14 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Migration> MigrationsStartForOrgAsync(
             string org,
 
             global::G.MigrationsStartForOrgRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Start an organization migration<br/>
@@ -62,6 +64,7 @@ namespace G
         /// <param name="exclude">
         /// Exclude related items from being returned in the response in order to improve performance of the request.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Migration> MigrationsStartForOrgAsync(
@@ -75,6 +78,7 @@ namespace G
             bool? excludeOwnerProjects = default,
             bool? orgMetadataOnly = default,
             global::System.Collections.Generic.IList<global::G.MigrationsStartForOrgRequestExcludeItem>? exclude = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

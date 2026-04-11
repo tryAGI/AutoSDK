@@ -9,11 +9,13 @@ namespace G
         /// Search and optionally scrape search results
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.SearchAndScrapeResponse> SearchAndScrapeAsync(
 
             global::G.SearchAndScrapeRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search and optionally scrape search results
@@ -43,6 +45,7 @@ namespace G
         /// Options for scraping search results<br/>
         /// Default Value: {}
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.SearchAndScrapeResponse> SearchAndScrapeAsync(
@@ -53,6 +56,7 @@ namespace G
             int? timeout = default,
             bool? ignoreInvalidURLs = default,
             global::G.SearchAndScrapeRequestScrapeOptions? scrapeOptions = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

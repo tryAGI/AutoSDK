@@ -14,6 +14,8 @@ public static class CSharpOperationContextFactory
         string operationPath,
         System.Net.Http.HttpMethod operationType,
         IReadOnlyList<SchemaContext>? operationSchemas,
+        IList<OpenApiServer> effectiveServers,
+        bool hasServerOverride,
         IList<OpenApiSecurityRequirement> globalSecurityRequirements,
         IReadOnlyDictionary<string, Tag>? resolvedTags = null)
     {
@@ -45,6 +47,8 @@ public static class CSharpOperationContextFactory
         var context = new OperationContext(settings, globalSettings, operation, operationPath, operationType)
         {
             Schemas = operationSchemas ?? (IReadOnlyCollection<SchemaContext>)[],
+            Servers = effectiveServers,
+            HasServerOverride = hasServerOverride,
             Tags = tags,
             GlobalSecurityRequirements = globalSecurityRequirements,
             Tag = GetOperationTag(operation, settings, firstTag, resolvedTags),

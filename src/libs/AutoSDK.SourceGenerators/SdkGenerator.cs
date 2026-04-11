@@ -51,6 +51,13 @@ public class SdkGenerator : IIncrementalGenerator
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         data
+            .SelectAndReportExceptions((x, c) => x.Clients.Any(static y => y.UsesServerSelectionSupport) ||
+                                                x.Methods.Any(static y => y.ClientUsesServerSelectionSupport)
+                ? Sources.ServerSelectionSupport(x.Converters.Settings, c)
+                : FileWithName.Empty
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        data
             .Collect()
             .SelectMany(static (x, _) => GetOptionsSupportSettings(x))
             .SelectAndReportExceptions((x, c) => Sources.OptionsSupport(

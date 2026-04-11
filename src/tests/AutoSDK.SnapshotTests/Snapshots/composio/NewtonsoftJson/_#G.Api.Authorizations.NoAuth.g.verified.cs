@@ -24,6 +24,7 @@ namespace G
             Authorizations.Add(new global::G.EndPointAuthorization
             {
                 Type = "",
+                SchemeId = "NoAuth",
                 Location = "",
                 Name = "",
                 Value = "",

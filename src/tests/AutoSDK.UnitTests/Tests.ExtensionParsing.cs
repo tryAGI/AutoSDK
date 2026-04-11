@@ -836,7 +836,7 @@ public class ExtensionParsingTests
         var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
 
         data.Clients.Should().ContainSingle();
-        data.Clients[0].BaseUrlSummary.Should().Be("Primary API. Production environment");
+        data.Clients[0].BaseUrlSummary.Should().Be("Production environment");
     }
 
     [TestMethod]

@@ -17,6 +17,8 @@ namespace G
 
         private bool _disposeHttpClient = true;
 
+        private readonly global::System.Net.Http.HttpClientHandler? _ownedHttpClientHandler;
+
         /// <inheritdoc/>
         public global::System.Net.Http.HttpClient HttpClient { get; }
 
@@ -92,7 +94,17 @@ namespace G
             global::G.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
-            HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
+
+            if (httpClient is null)
+            {
+                _ownedHttpClientHandler = new global::System.Net.Http.HttpClientHandler();
+                _ownedHttpClientHandler.CheckCertificateRevocationList = true;
+                HttpClient = new global::System.Net.Http.HttpClient(_ownedHttpClientHandler, disposeHandler: true);
+            }
+            else
+            {
+                HttpClient = httpClient;
+            }
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
             Options = options ?? new global::G.AutoSDKClientOptions();

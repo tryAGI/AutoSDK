@@ -11,7 +11,11 @@ public static partial class Sources
     {
         if (authorization.Type is SecuritySchemeType.OpenIdConnect)
         {
-            return string.Empty;
+            return GenerateOpenIdConnectAuthorization(authorization);
+        }
+        if (authorization.Type is SecuritySchemeType.MutualTLS)
+        {
+            return GenerateMutualTlsAuthorization(authorization);
         }
         if (authorization.Type is SecuritySchemeType.OAuth2)
         {
@@ -55,6 +59,7 @@ namespace {authorization.Settings.Namespace}
             Authorizations.Add(new global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization
             {{
                 Type = ""{authorization.Type:G}"",
+                SchemeId = ""{authorization.SchemeId}"",
                 Location = ""{authorization.In:G}"",
                 Name = ""{(authorization.Type, authorization.Scheme.ToUpperInvariant(), authorization.In) switch
                 {
@@ -84,7 +89,11 @@ namespace {authorization.Settings.Namespace}
     {
         if (authorization.Type is SecuritySchemeType.OpenIdConnect)
         {
-            return string.Empty;
+            return GenerateOpenIdConnectAuthorizationInterface(authorization);
+        }
+        if (authorization.Type is SecuritySchemeType.MutualTLS)
+        {
+            return GenerateMutualTlsAuthorizationInterface(authorization);
         }
         if (authorization.Type is SecuritySchemeType.OAuth2)
         {
@@ -177,6 +186,12 @@ namespace {authorization.Settings.Namespace}
 
         return authorization.Type switch
         {
+            SecuritySchemeType.OAuth2 => $@"{typeCondition} &&
+                    {variableName}.SchemeId == ""{authorization.SchemeId}""",
+            SecuritySchemeType.OpenIdConnect => $@"{typeCondition} &&
+                    {variableName}.SchemeId == ""{authorization.SchemeId}""",
+            SecuritySchemeType.MutualTLS => $@"{typeCondition} &&
+                    {variableName}.SchemeId == ""{authorization.SchemeId}""",
             SecuritySchemeType.Http => $@"{typeCondition} &&
                     {variableName}.Name == ""{GetAuthorizationRuntimeName(authorization)}""",
             SecuritySchemeType.ApiKey => $@"{typeCondition} &&
@@ -194,6 +209,8 @@ namespace {authorization.Settings.Namespace}
             (SecuritySchemeType.Http, "BASIC", _) => "Basic",
             (SecuritySchemeType.Http, _, _) => authorization.Scheme,
             (SecuritySchemeType.ApiKey, _, _) => authorization.Name,
+            (SecuritySchemeType.OpenIdConnect, _, _) => "Bearer",
+            (SecuritySchemeType.MutualTLS, _, _) => authorization.SchemeId,
             _ => string.Empty,
         };
     }
@@ -205,6 +222,245 @@ namespace {authorization.Settings.Namespace}
         return authorization.IsDeprecated
             ? $"{new string(' ', indent)}[global::System.Obsolete(\"This security scheme marked as deprecated.\")]"
             : string.Empty;
+    }
+
+    private static string GenerateOpenIdConnectAuthorization(
+        Authorization authorization)
+    {
+        var discoveryPropertyName = $"{authorization.FriendlyName}DiscoveryUrl";
+
+        return $@"
+#nullable enable
+
+namespace {authorization.Settings.Namespace}
+{{
+    public sealed partial class {authorization.Settings.ClassName}
+    {{
+        /// <summary>
+        /// Gets the OpenID Connect discovery document URL for this scheme.
+        /// </summary>
+        public string {discoveryPropertyName} => ""{authorization.OpenIdConnectUrl}"";
+
+        /// <summary>
+        /// Authorize using an OpenID Connect access token.
+        /// </summary>
+        /// <param name=""accessToken""></param>
+        public void {authorization.MethodName}(
+            string accessToken)
+        {{
+            accessToken = accessToken ?? throw new global::System.ArgumentNullException(nameof(accessToken));
+
+            {authorization.MethodName}(accessToken, ""Bearer"");
+        }}
+
+        /// <summary>
+        /// Authorize using an OpenID Connect access token and token type.
+        /// </summary>
+        /// <param name=""accessToken""></param>
+        /// <param name=""tokenType""></param>
+        public void {authorization.MethodName}(
+            string accessToken,
+            string tokenType)
+        {{
+            accessToken = accessToken ?? throw new global::System.ArgumentNullException(nameof(accessToken));
+            tokenType = tokenType ?? throw new global::System.ArgumentNullException(nameof(tokenType));
+
+            if (string.IsNullOrWhiteSpace(tokenType))
+            {{
+                tokenType = ""Bearer"";
+            }}
+
+            for (var i = Authorizations.Count - 1; i >= 0; i--)
+            {{
+                var __authorization = Authorizations[i];
+                if ({GetMatchingAuthorizationCondition(authorization, "__authorization")})
+                {{
+                    Authorizations.RemoveAt(i);
+                }}
+            }}
+
+            Authorizations.Add(new global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization
+            {{
+                Type = ""{SecuritySchemeType.OpenIdConnect:G}"",
+                SchemeId = ""{authorization.SchemeId}"",
+                Location = ""{ParameterLocation.Header:G}"",
+                Name = tokenType,
+                Value = accessToken,
+            }});
+        }}
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateOpenIdConnectAuthorizationInterface(
+        Authorization authorization)
+    {
+        var discoveryPropertyName = $"{authorization.FriendlyName}DiscoveryUrl";
+
+        return $@"
+#nullable enable
+
+namespace {authorization.Settings.Namespace}
+{{
+    public partial interface I{authorization.Settings.ClassName}
+    {{
+        /// <summary>
+        /// Gets the OpenID Connect discovery document URL for this scheme.
+        /// </summary>
+        public string {discoveryPropertyName} {{ get; }}
+
+        /// <summary>
+        /// Authorize using an OpenID Connect access token.
+        /// </summary>
+        /// <param name=""accessToken""></param>
+        public void {authorization.MethodName}(
+            string accessToken);
+
+        /// <summary>
+        /// Authorize using an OpenID Connect access token and token type.
+        /// </summary>
+        /// <param name=""accessToken""></param>
+        /// <param name=""tokenType""></param>
+        public void {authorization.MethodName}(
+            string accessToken,
+            string tokenType);
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateMutualTlsAuthorization(
+        Authorization authorization)
+    {
+        var configureSingleMethodName = $"Configure{authorization.FriendlyName}ClientCertificate";
+        var configureManyMethodName = $"Configure{authorization.FriendlyName}ClientCertificates";
+
+        return $@"
+#nullable enable
+
+namespace {authorization.Settings.Namespace}
+{{
+    public sealed partial class {authorization.Settings.ClassName}
+    {{
+        /// <summary>
+        /// Marks this client as using the configured mutual TLS certificate for the {authorization.SchemeId} scheme.
+        /// If you supplied your own <see cref=""global::System.Net.Http.HttpClient""/>, configure its handler externally before calling this method.
+        /// </summary>
+        public void {authorization.MethodName}()
+        {{
+            for (var i = Authorizations.Count - 1; i >= 0; i--)
+            {{
+                var __authorization = Authorizations[i];
+                if ({GetMatchingAuthorizationCondition(authorization, "__authorization")})
+                {{
+                    Authorizations.RemoveAt(i);
+                }}
+            }}
+
+            Authorizations.Add(new global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization
+            {{
+                Type = ""{SecuritySchemeType.MutualTLS:G}"",
+                SchemeId = ""{authorization.SchemeId}"",
+                Location = """",
+                Name = ""{authorization.SchemeId}"",
+                Value = string.Empty,
+            }});
+        }}
+
+        /// <summary>
+        /// Configures a client certificate for mutual TLS when this client owns the HttpClient instance.
+        /// If you supplied your own HttpClient, configure its handler externally and then call {authorization.MethodName}().
+        /// </summary>
+        /// <param name=""clientCertificate""></param>
+        public void {configureSingleMethodName}(
+            global::System.Security.Cryptography.X509Certificates.X509Certificate2 clientCertificate)
+        {{
+            clientCertificate = clientCertificate ?? throw new global::System.ArgumentNullException(nameof(clientCertificate));
+
+            if (_ownedHttpClientHandler is null)
+            {{
+                throw new global::System.InvalidOperationException(
+                    ""Mutual TLS certificates can only be configured automatically when AutoSDK creates the HttpClient. Configure the handler on your supplied HttpClient and then call {authorization.MethodName}()."");
+            }}
+
+            _ownedHttpClientHandler.ClientCertificateOptions = global::System.Net.Http.ClientCertificateOption.Manual;
+            _ownedHttpClientHandler.ClientCertificates.Add(clientCertificate);
+            {authorization.MethodName}();
+        }}
+
+        /// <summary>
+        /// Configures multiple client certificates for mutual TLS when this client owns the HttpClient instance.
+        /// If you supplied your own HttpClient, configure its handler externally and then call {authorization.MethodName}().
+        /// </summary>
+        /// <param name=""clientCertificates""></param>
+        public void {configureManyMethodName}(
+            global::System.Collections.Generic.IEnumerable<global::System.Security.Cryptography.X509Certificates.X509Certificate2> clientCertificates)
+        {{
+            clientCertificates = clientCertificates ?? throw new global::System.ArgumentNullException(nameof(clientCertificates));
+
+            if (_ownedHttpClientHandler is null)
+            {{
+                throw new global::System.InvalidOperationException(
+                    ""Mutual TLS certificates can only be configured automatically when AutoSDK creates the HttpClient. Configure the handler on your supplied HttpClient and then call {authorization.MethodName}()."");
+            }}
+
+            var addedCertificate = false;
+            _ownedHttpClientHandler.ClientCertificateOptions = global::System.Net.Http.ClientCertificateOption.Manual;
+
+            foreach (var clientCertificate in clientCertificates)
+            {{
+                if (clientCertificate is null)
+                {{
+                    throw new global::System.ArgumentException(""Client certificates cannot contain null values."", nameof(clientCertificates));
+                }}
+
+                _ownedHttpClientHandler.ClientCertificates.Add(clientCertificate);
+                addedCertificate = true;
+            }}
+
+            if (!addedCertificate)
+            {{
+                throw new global::System.ArgumentException(""At least one client certificate must be provided."", nameof(clientCertificates));
+            }}
+
+            {authorization.MethodName}();
+        }}
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateMutualTlsAuthorizationInterface(
+        Authorization authorization)
+    {
+        var configureSingleMethodName = $"Configure{authorization.FriendlyName}ClientCertificate";
+        var configureManyMethodName = $"Configure{authorization.FriendlyName}ClientCertificates";
+
+        return $@"
+#nullable enable
+
+namespace {authorization.Settings.Namespace}
+{{
+    public partial interface I{authorization.Settings.ClassName}
+    {{
+        /// <summary>
+        /// Marks this client as using the configured mutual TLS certificate for the {authorization.SchemeId} scheme.
+        /// </summary>
+        public void {authorization.MethodName}();
+
+        /// <summary>
+        /// Configures a client certificate for mutual TLS when this client owns the HttpClient instance.
+        /// </summary>
+        /// <param name=""clientCertificate""></param>
+        public void {configureSingleMethodName}(
+            global::System.Security.Cryptography.X509Certificates.X509Certificate2 clientCertificate);
+
+        /// <summary>
+        /// Configures multiple client certificates for mutual TLS when this client owns the HttpClient instance.
+        /// </summary>
+        /// <param name=""clientCertificates""></param>
+        public void {configureManyMethodName}(
+            global::System.Collections.Generic.IEnumerable<global::System.Security.Cryptography.X509Certificates.X509Certificate2> clientCertificates);
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     private static string GenerateOAuth2AuthorizationMembers(Authorization authorization)
@@ -1542,7 +1798,8 @@ namespace {authorization.Settings.Namespace}
 
                 for (var i = authorizations.Count - 1; i >= 0; i--)
                 {{
-                    if (authorizations[i].Type == ""{SecuritySchemeType.OAuth2:G}"")
+                    if (authorizations[i].Type == ""{SecuritySchemeType.OAuth2:G}"" &&
+                        authorizations[i].SchemeId == ""{authorization.SchemeId}"")
                     {{
                         authorizations.RemoveAt(i);
                     }}
@@ -1556,6 +1813,7 @@ namespace {authorization.Settings.Namespace}
                 authorizations.Add(new global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization
                 {{
                     Type = ""{SecuritySchemeType.OAuth2:G}"",
+                    SchemeId = ""{authorization.SchemeId}"",
                     Location = ""{ParameterLocation.Header:G}"",
                     Name = string.IsNullOrWhiteSpace(token.TokenType) ? ""Bearer"" : token.TokenType,
                     Value = token.AccessToken,

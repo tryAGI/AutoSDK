@@ -10,11 +10,13 @@ namespace G
         /// Creates an API token for the authenticated user.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTokenResponse> CreateTokenAsync(
 
             global::G.ApiToken request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an API token<br/>
@@ -38,6 +40,7 @@ namespace G
         /// <param name="expireTime">
         /// Expiration time.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTokenResponse> CreateTokenAsync(
@@ -45,6 +48,7 @@ namespace G
             string? id = default,
             int? ttl = default,
             global::System.DateTime? expireTime = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

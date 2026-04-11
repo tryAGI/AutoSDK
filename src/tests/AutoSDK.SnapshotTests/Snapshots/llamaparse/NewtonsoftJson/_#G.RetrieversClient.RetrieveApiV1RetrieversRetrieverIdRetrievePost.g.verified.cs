@@ -17,6 +17,7 @@ namespace G
                 {                    new global::G.EndPointAuthorizationRequirement
                     {
                         Type = "Http",
+                        SchemeId = "HTTPBearer",
                         Location = "Header",
                         Name = "Bearer",
                         FriendlyName = "Bearer",
@@ -127,32 +128,34 @@ namespace G
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                foreach (var __authorization in __authorizations)
+                var __cookies = new global::System.Collections.Generic.List<string>();
+
+            foreach (var __authorization in __authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
                 {
-                    if (__authorization.Type == "Http" ||
-                        __authorization.Type == "OAuth2")
-                    {
-                        __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                            scheme: __authorization.Name,
-                            parameter: __authorization.Value);
-                    }
-                    else if (__authorization.Type == "ApiKey" &&
-                             __authorization.Location == "Header")
-                    {
-                        __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                    }
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
                 }
-                            var __cookies = new global::System.Collections.Generic.List<string>();
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                } 
+            }
                             var __session = session;
                             if (__session is not null)
                             {
                                 __cookies.Add($"session={__session.ToString() ?? string.Empty}");
                             }
-                            if (__cookies.Count > 0)
+
+                if (__cookies.Count > 0)
                             {
                                 __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
                             }
-
                             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
                                 content: __httpRequestContentBody,

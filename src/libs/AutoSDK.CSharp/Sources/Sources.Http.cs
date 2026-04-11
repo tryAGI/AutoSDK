@@ -475,6 +475,8 @@ public static partial class Sources
             (SecuritySchemeType.Http, _, _) => $"Authorization: {scheme.Scheme} {{api_key}}",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) =>
                 scheme.Name + ": {{api_key}}",
+            (SecuritySchemeType.ApiKey, _, ParameterLocation.Cookie) =>
+                "Cookie: " + scheme.Name + "={{api_key}}",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => null, // handled in query string
             (SecuritySchemeType.OAuth2, _, _) => "Authorization: Bearer {{token}}",
             (SecuritySchemeType.OpenIdConnect, _, _) => "Authorization: Bearer {{token}}",
