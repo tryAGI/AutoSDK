@@ -469,6 +469,13 @@ internal sealed class GenerateCommand : Command
             var document = yaml.GetOpenApiDocument(settings);
             var schemas = document.GetSchemas(settings);
             var operations = document.GetOperations(settings, settings, schemas);
+            if (settings.ExcludeDeprecatedOperations)
+            {
+                operations = operations
+                    .Where(static operation => !operation.Operation.IsDeprecated())
+                    .ToArray();
+            }
+
             var snippetManifest = Sources.SnippetManifest(operations, data.Methods.ToArray());
             if (!snippetManifest.IsEmpty)
             {

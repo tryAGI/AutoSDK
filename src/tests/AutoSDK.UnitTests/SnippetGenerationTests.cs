@@ -145,4 +145,68 @@ public sealed class SnippetGenerationTests
         snippet.Code.Should().Contain("POST {{host}}/uploads");
         snippet.Code.Should().Contain("Content-Type: multipart/form-data");
     }
+
+    [TestMethod]
+    public void GenerateSnippetManifest_WhenExcludedDeprecatedOperationHasExamples_FallsBackToHttp()
+    {
+        var yaml = """
+                   openapi: 3.0.1
+                   info:
+                     title: Test
+                     version: 1.0.0
+                   paths:
+                     /legacy:
+                       post:
+                         operationId: createLegacyItem
+                         deprecated: true
+                         summary: Create legacy item
+                         requestBody:
+                           required: true
+                           content:
+                             application/json:
+                               example:
+                                 name: legacy
+                               schema:
+                                 type: object
+                                 properties:
+                                   name:
+                                     type: string
+                         responses:
+                           '201':
+                             description: Created
+                             content:
+                               application/json:
+                                 example:
+                                   id: legacy_123
+                                 schema:
+                                   type: object
+                                   properties:
+                                     id:
+                                       type: string
+                   """;
+
+        var settings = DefaultSettings with
+        {
+            ExcludeDeprecatedOperations = true,
+        };
+
+        var document = yaml.GetOpenApiDocument(settings);
+        var schemas = document.GetSchemas(settings);
+        var operations = document.GetOperations(settings, globalSettings: settings, schemas);
+        var data = CSharpPipeline.PrepareAndEnrich(((yaml, settings), GlobalSettings: settings));
+
+        data.Methods.Should().BeEmpty();
+
+        var manifestJson = Sources.GenerateSnippetManifest(operations, data.Methods.ToArray());
+        var manifest = JsonSerializer.Deserialize<GeneratedSdkSnippetManifest>(manifestJson);
+
+        manifest.Should().NotBeNull();
+        manifest!.Examples.Should().ContainSingle();
+
+        var snippet = manifest.Examples[0];
+        snippet.OperationId.Should().Be("createLegacyItem");
+        snippet.Language.Should().Be("http");
+        snippet.Format.Should().Be("http");
+        snippet.Code.Should().Contain("POST {{host}}/legacy");
+    }
 }

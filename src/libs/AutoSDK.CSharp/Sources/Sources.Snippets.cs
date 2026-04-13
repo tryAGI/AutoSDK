@@ -55,7 +55,9 @@ public static partial class Sources
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            primaryEndPoints.TryGetValue(operation.MethodName, out var endPoint);
+            EndPoint? endPoint = primaryEndPoints.TryGetValue(operation.MethodName, out var matchedEndPoint)
+                ? matchedEndPoint
+                : null;
             var snippet = CreateSnippetDocument(operation, endPoint, snippets.Count + 1);
             if (snippet is not null)
             {
@@ -260,7 +262,15 @@ public static partial class Sources
         out string clientInstantiation,
         out string setup)
     {
-        var rootClientClassName = endPoint.Settings.ClassName.Replace(".", string.Empty);
+        var rootClientClassName = endPoint.Settings.ClassName;
+        if (string.IsNullOrWhiteSpace(rootClientClassName))
+        {
+            clientInstantiation = string.Empty;
+            setup = string.Empty;
+            return false;
+        }
+
+        rootClientClassName = rootClientClassName.Replace(".", string.Empty);
         if (endPoint.Authorizations.IsEmpty)
         {
             clientInstantiation = $"using var client = new {rootClientClassName}();";
