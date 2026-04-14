@@ -168,6 +168,9 @@ public static class CSharpEndPointFactory
         var pollingOperations = streamFormat == StreamFormat.None
             ? operation.Operation.GetPollingOperations()
             : ImmutableArray<PollingOperation>.Empty.AsEquatableArray();
+        var pagination = streamFormat == StreamFormat.None
+            ? PaginationMetadataFactory.TryCreate(operation, requestMediaType, successResponse, parameters)
+            : null;
 
         var endPointId = string.IsNullOrWhiteSpace(methodNameSuffix)
             ? operation.MethodName
@@ -179,6 +182,7 @@ public static class CSharpEndPointFactory
         var generateResponseWrapper =
             responses.Any(x => x.HasHeaders && (x.Is2XX || x.IsDefault)) ||
             !pollingOperations.IsEmpty ||
+            pagination is not null ||
             OpenApiExtensions.GetExtensionBooleanValue(
                 operation.Operation.Extensions,
                 "x-autosdk-response-wrapper");
@@ -236,7 +240,8 @@ public static class CSharpEndPointFactory
             GenerateResponseWrapper: generateResponseWrapper,
             PollingOperations: pollingOperations,
             Servers: servers,
-            HasServerOverride: operation.HasServerOverride);
+            HasServerOverride: operation.HasServerOverride,
+            Pagination: pagination);
     }
 
     private static void DeduplicateMethodParameterNames(List<MethodParameter> parameters)

@@ -99,6 +99,8 @@ namespace {settings.Namespace}
         /// Overrides response buffering for this request when set.
         /// </summary>
         public bool? ReadResponseAsString {{ get; set; }}
+
+        internal global::System.Uri? AbsoluteRequestUriOverride {{ get; set; }}
     }}
 
     /// <summary>
@@ -250,6 +252,7 @@ namespace {settings.Namespace}
         public global::System.Threading.CancellationToken CancellationToken {{ get; set; }}
     }}
 
+{GenerateObjectPathRuntimeSupport(settings)}
 {(includePollingSupport ? GeneratePollingRuntimeSupport(settings) : TrimmedLine)}
 
     internal static class AutoSDKRequestOptionsSupport
@@ -410,6 +413,41 @@ namespace {settings.Namespace}
             ApplyHeadersCore(request, requestHeaders);
         }}
 
+        internal static global::{settings.Namespace}.AutoSDKRequestOptions CloneRequestOptions(
+            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions)
+        {{
+            var clone = new global::{settings.Namespace}.AutoSDKRequestOptions
+            {{
+                Timeout = requestOptions?.Timeout,
+                ReadResponseAsString = requestOptions?.ReadResponseAsString,
+                AbsoluteRequestUriOverride = requestOptions?.AbsoluteRequestUriOverride,
+                Retry = requestOptions?.Retry == null
+                    ? null
+                    : new global::{settings.Namespace}.AutoSDKRetryOptions
+                    {{
+                        MaxAttempts = requestOptions.Retry.MaxAttempts,
+                        Delay = requestOptions.Retry.Delay,
+                    }},
+            }};
+
+            if (requestOptions == null)
+            {{
+                return clone;
+            }}
+
+            foreach (var header in requestOptions.Headers)
+            {{
+                clone.Headers[header.Key] = header.Value;
+            }}
+
+            foreach (var parameter in requestOptions.QueryParameters)
+            {{
+                clone.QueryParameters[parameter.Key] = parameter.Value;
+            }}
+
+            return clone;
+        }}
+
         private static void AppendParameters(
             global::System.Text.StringBuilder builder,
             global::System.Collections.Generic.Dictionary<string, string>? parameters,
@@ -474,6 +512,210 @@ namespace {settings.Namespace}
         }}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateObjectPathRuntimeSupport(CSharpSettings settings)
+    {
+        return $@"
+    internal static class AutoSDKObjectPathSupport
+    {{
+        internal static bool TryResolveValue(
+            object? source,
+            string path,
+            out object? value)
+        {{
+            value = source;
+            if (source == null)
+            {{
+                return string.IsNullOrWhiteSpace(path);
+            }}
+
+            if (string.IsNullOrWhiteSpace(path))
+            {{
+                return true;
+            }}
+
+            foreach (var rawSegment in path.Split(new[] {{ '/' }}, global::System.StringSplitOptions.RemoveEmptyEntries))
+            {{
+                var segment = rawSegment.Replace(""~1"", ""/"").Replace(""~0"", ""~"");
+                if (!TryGetSegmentValue(value, segment, out value))
+                {{
+                    return false;
+                }}
+            }}
+
+            return true;
+        }}
+
+        internal static string? ConvertValueToString(object? value)
+        {{
+            if (value == null)
+            {{
+                return ""null"";
+            }}
+
+            if (value is string stringValue)
+            {{
+                return stringValue;
+            }}
+
+            if (TryGetWireValue(value, out var wireValue))
+            {{
+                return wireValue;
+            }}
+
+            if (value is bool booleanValue)
+            {{
+                return booleanValue ? ""true"" : ""false"";
+            }}
+
+            if (value is global::System.IFormattable formattable)
+            {{
+                return formattable.ToString(null, global::System.Globalization.CultureInfo.InvariantCulture);
+            }}
+
+            return value.ToString();
+        }}
+
+        private static bool TryGetSegmentValue(
+            object? current,
+            string segment,
+            out object? value)
+        {{
+            value = null;
+            if (current == null)
+            {{
+                return false;
+            }}
+
+            if (current is global::System.Collections.IDictionary dictionary)
+            {{
+                foreach (global::System.Collections.DictionaryEntry entry in dictionary)
+                {{
+                    if (entry.Key is string key &&
+                        string.Equals(key, segment, global::System.StringComparison.OrdinalIgnoreCase))
+                    {{
+                        value = entry.Value;
+                        return true;
+                    }}
+                }}
+            }}
+
+            if (current is global::System.Collections.IList list)
+            {{
+                if (segment == ""[-1]"")
+                {{
+                    if (list.Count == 0)
+                    {{
+                        return false;
+                    }}
+
+                    value = list[list.Count - 1];
+                    return true;
+                }}
+
+                if (int.TryParse(segment, global::System.Globalization.NumberStyles.Integer, global::System.Globalization.CultureInfo.InvariantCulture, out var index) &&
+                    index >= 0 &&
+                    index < list.Count)
+                {{
+                    value = list[index];
+                    return true;
+                }}
+            }}
+
+            var property = FindMatchingProperty(current.GetType(), segment);
+            if (property == null)
+            {{
+                return false;
+            }}
+
+            value = property.GetValue(current, null);
+            return true;
+        }}
+
+        private static global::System.Reflection.PropertyInfo? FindMatchingProperty(
+            global::System.Type type,
+            string segment)
+        {{
+            var properties = type.GetProperties(global::System.Reflection.BindingFlags.Instance | global::System.Reflection.BindingFlags.Public);
+            foreach (var property in properties)
+            {{
+                if (property.GetIndexParameters().Length != 0)
+                {{
+                    continue;
+                }}
+
+                if (string.Equals(property.Name, segment, global::System.StringComparison.OrdinalIgnoreCase) ||
+                    TryMatchesJsonPropertyName(property, segment))
+                {{
+                    return property;
+                }}
+            }}
+
+            return null;
+        }}
+
+        private static bool TryMatchesJsonPropertyName(
+            global::System.Reflection.PropertyInfo property,
+            string segment)
+        {{
+            foreach (var attribute in property.GetCustomAttributes(inherit: true))
+            {{
+                var attributeType = attribute.GetType();
+                if (!string.Equals(attributeType.FullName, ""System.Text.Json.Serialization.JsonPropertyNameAttribute"", global::System.StringComparison.Ordinal) &&
+                    !string.Equals(attributeType.FullName, ""Newtonsoft.Json.JsonPropertyAttribute"", global::System.StringComparison.Ordinal))
+                {{
+                    continue;
+                }}
+
+                var propertyNameProperty = attributeType.GetProperty(""Name"") ??
+                                           attributeType.GetProperty(""PropertyName"");
+                if (propertyNameProperty?.GetValue(attribute, null) is string propertyName &&
+                    string.Equals(propertyName, segment, global::System.StringComparison.OrdinalIgnoreCase))
+                {{
+                    return true;
+                }}
+            }}
+
+            return false;
+        }}
+
+        private static bool TryGetWireValue(object value, out string? wireValue)
+        {{
+            wireValue = null;
+            var type = value.GetType();
+
+            var valueProperty = type.GetProperty(""Value"", global::System.Reflection.BindingFlags.Instance | global::System.Reflection.BindingFlags.Public);
+            if (valueProperty?.PropertyType == typeof(string))
+            {{
+                wireValue = valueProperty.GetValue(value, null) as string;
+                return wireValue != null;
+            }}
+
+            if (!type.IsEnum)
+            {{
+                return false;
+            }}
+
+            var extensionTypeName = string.IsNullOrWhiteSpace(type.Namespace)
+                ? type.Name + ""Extensions""
+                : type.Namespace + ""."" + type.Name + ""Extensions"";
+            var extensionType = type.Assembly.GetType(extensionTypeName, throwOnError: false, ignoreCase: false);
+            var method = extensionType?.GetMethod(
+                ""ToValueString"",
+                global::System.Reflection.BindingFlags.Public | global::System.Reflection.BindingFlags.Static,
+                binder: null,
+                types: new[] {{ type }},
+                modifiers: null);
+            if (method?.ReturnType != typeof(string))
+            {{
+                return false;
+            }}
+
+            wireValue = method.Invoke(null, new[] {{ value }}) as string;
+            return wireValue != null;
+        }}
+    }}";
     }
 
     private static string GeneratePollingOptionsSurface(CSharpSettings settings)
@@ -606,8 +848,8 @@ namespace {settings.Namespace}
             string @operator,
             string expectedValue)
         {{
-            return TryResolveJsonPointerValue(body, jsonPointer, out var actualValue) &&
-                   CompareValues(actualValue, @operator, expectedValue);
+            return global::{settings.Namespace}.AutoSDKObjectPathSupport.TryResolveValue(body, jsonPointer, out var resolvedValue) &&
+                   CompareValues(global::{settings.Namespace}.AutoSDKObjectPathSupport.ConvertValueToString(resolvedValue), @operator, expectedValue);
         }}
 
         internal static bool MatchesRegexCondition(
@@ -615,8 +857,8 @@ namespace {settings.Namespace}
             string jsonPointer,
             string pattern)
         {{
-            return TryResolveJsonPointerValue(body, jsonPointer, out var actualValue) &&
-                   MatchesRegexValue(actualValue, pattern);
+            return global::{settings.Namespace}.AutoSDKObjectPathSupport.TryResolveValue(body, jsonPointer, out var resolvedValue) &&
+                   MatchesRegexValue(global::{settings.Namespace}.AutoSDKObjectPathSupport.ConvertValueToString(resolvedValue), pattern);
         }}
 
         internal static bool MatchesRegexValue(
@@ -650,198 +892,6 @@ namespace {settings.Namespace}
                 ""!="" => !string.Equals(normalizedActual, expectedValue ?? string.Empty, global::System.StringComparison.Ordinal),
                 _ => false,
             }};
-        }}
-
-        private static bool TryResolveJsonPointerValue(
-            object? body,
-            string jsonPointer,
-            out string? value)
-        {{
-            value = null;
-
-            if (body == null)
-            {{
-                if (string.IsNullOrEmpty(jsonPointer))
-                {{
-                    value = ""null"";
-                    return true;
-                }}
-
-                return false;
-            }}
-
-            object? current = body;
-            if (!string.IsNullOrEmpty(jsonPointer))
-            {{
-                var segments = jsonPointer.Split(new[] {{ '/' }}, global::System.StringSplitOptions.RemoveEmptyEntries);
-                foreach (var rawSegment in segments)
-                {{
-                    var segment = rawSegment.Replace(""~1"", ""/"").Replace(""~0"", ""~"");
-                    if (!TryGetJsonPointerSegmentValue(current, segment, out current))
-                    {{
-                        return false;
-                    }}
-                }}
-            }}
-
-            value = ConvertValueToString(current);
-            return true;
-        }}
-
-        private static bool TryGetJsonPointerSegmentValue(
-            object? current,
-            string segment,
-            out object? value)
-        {{
-            value = null;
-            if (current == null)
-            {{
-                return false;
-            }}
-
-            if (current is global::System.Collections.IDictionary dictionary)
-            {{
-                foreach (global::System.Collections.DictionaryEntry entry in dictionary)
-                {{
-                    if (entry.Key is string key &&
-                        string.Equals(key, segment, global::System.StringComparison.OrdinalIgnoreCase))
-                    {{
-                        value = entry.Value;
-                        return true;
-                    }}
-                }}
-            }}
-
-            if (current is global::System.Collections.IList list &&
-                int.TryParse(segment, global::System.Globalization.NumberStyles.Integer, global::System.Globalization.CultureInfo.InvariantCulture, out var index) &&
-                index >= 0 &&
-                index < list.Count)
-            {{
-                value = list[index];
-                return true;
-            }}
-
-            var property = FindMatchingProperty(current.GetType(), segment);
-            if (property == null)
-            {{
-                return false;
-            }}
-
-            value = property.GetValue(current, null);
-            return true;
-        }}
-
-        private static global::System.Reflection.PropertyInfo? FindMatchingProperty(
-            global::System.Type type,
-            string segment)
-        {{
-            var properties = type.GetProperties(global::System.Reflection.BindingFlags.Instance | global::System.Reflection.BindingFlags.Public);
-            foreach (var property in properties)
-            {{
-                if (property.GetIndexParameters().Length != 0)
-                {{
-                    continue;
-                }}
-
-                if (string.Equals(property.Name, segment, global::System.StringComparison.OrdinalIgnoreCase) ||
-                    TryMatchesJsonPropertyName(property, segment))
-                {{
-                    return property;
-                }}
-            }}
-
-            return null;
-        }}
-
-        private static bool TryMatchesJsonPropertyName(
-            global::System.Reflection.PropertyInfo property,
-            string segment)
-        {{
-            foreach (var attribute in property.GetCustomAttributes(inherit: true))
-            {{
-                var attributeType = attribute.GetType();
-                if (!string.Equals(attributeType.FullName, ""System.Text.Json.Serialization.JsonPropertyNameAttribute"", global::System.StringComparison.Ordinal) &&
-                    !string.Equals(attributeType.FullName, ""Newtonsoft.Json.JsonPropertyAttribute"", global::System.StringComparison.Ordinal))
-                {{
-                    continue;
-                }}
-
-                var propertyNameProperty = attributeType.GetProperty(""Name"") ??
-                                           attributeType.GetProperty(""PropertyName"");
-                if (propertyNameProperty?.GetValue(attribute, null) is string propertyName &&
-                    string.Equals(propertyName, segment, global::System.StringComparison.OrdinalIgnoreCase))
-                {{
-                    return true;
-                }}
-            }}
-
-            return false;
-        }}
-
-        private static string? ConvertValueToString(object? value)
-        {{
-            if (value == null)
-            {{
-                return ""null"";
-            }}
-
-            if (value is string stringValue)
-            {{
-                return stringValue;
-            }}
-
-            if (TryGetWireValue(value, out var wireValue))
-            {{
-                return wireValue;
-            }}
-
-            if (value is bool booleanValue)
-            {{
-                return booleanValue ? ""true"" : ""false"";
-            }}
-
-            if (value is global::System.IFormattable formattable)
-            {{
-                return formattable.ToString(null, global::System.Globalization.CultureInfo.InvariantCulture);
-            }}
-
-            return value.ToString();
-        }}
-
-        private static bool TryGetWireValue(object value, out string? wireValue)
-        {{
-            wireValue = null;
-            var type = value.GetType();
-
-            var valueProperty = type.GetProperty(""Value"", global::System.Reflection.BindingFlags.Instance | global::System.Reflection.BindingFlags.Public);
-            if (valueProperty?.PropertyType == typeof(string))
-            {{
-                wireValue = valueProperty.GetValue(value, null) as string;
-                return wireValue != null;
-            }}
-
-            if (!type.IsEnum)
-            {{
-                return false;
-            }}
-
-            var extensionTypeName = string.IsNullOrWhiteSpace(type.Namespace)
-                ? type.Name + ""Extensions""
-                : type.Namespace + ""."" + type.Name + ""Extensions"";
-            var extensionType = type.Assembly.GetType(extensionTypeName, throwOnError: false, ignoreCase: false);
-            var method = extensionType?.GetMethod(
-                ""ToValueString"",
-                global::System.Reflection.BindingFlags.Public | global::System.Reflection.BindingFlags.Static,
-                binder: null,
-                types: new[] {{ type }},
-                modifiers: null);
-            if (method?.ReturnType != typeof(string))
-            {{
-                return false;
-            }}
-
-            wireValue = method.Invoke(null, new[] {{ value }}) as string;
-            return wireValue != null;
         }}
     }}";
     }

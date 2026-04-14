@@ -168,6 +168,9 @@ public static class CSharpPipeline
                     .Concat(data.Methods.Any(static x => x.GenerateResponseWrapper && !x.EnumerableStream)
                         ? [Sources.HttpResponse(settings, cancellationToken)]
                         : [])
+                    .Concat(data.Methods.Any(static x => x.HasPagination)
+                        ? [Sources.PaginationSupport(settings, cancellationToken)]
+                        : [])
                     .Concat(data.Methods.Any(static x => x.RawStream)
                         ? [Sources.ResponseStream(data.Converters.Settings, cancellationToken)]
                         : [])

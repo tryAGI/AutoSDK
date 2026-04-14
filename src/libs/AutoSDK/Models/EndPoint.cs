@@ -41,11 +41,13 @@ public record struct EndPoint(
     EquatableArray<PollingOperation> PollingOperations,
     EquatableArray<ServerOption> Servers = default,
     bool HasServerOverride = false,
-    bool ClientUsesServerSelectionSupport = false
+    bool ClientUsesServerSelectionSupport = false,
+    PaginationMetadata? Pagination = null
 )
 {
     public bool Stream => StreamFormat != StreamFormat.None;
     public bool RawStream => StreamFormat == StreamFormat.Binary;
     public bool EnumerableStream => Stream && !RawStream;
     public bool IsMultipartFormData => RequestMediaType == "multipart/form-data";
+    public bool HasPagination => Pagination is { } pagination && !pagination.IsDefault;
 }

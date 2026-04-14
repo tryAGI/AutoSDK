@@ -455,4 +455,13 @@ public static partial class Sources
             Name: $"{settings.Namespace}.AutoSDKHttpResponse.g.cs",
             Text: GenerateHttpResponse(settings));
     }
+
+    public static FileWithName PaginationSupport(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.AutoSDKPagination.g.cs",
+            Text: GeneratePaginationSupport(settings));
+    }
 }

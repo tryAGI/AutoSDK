@@ -97,6 +97,7 @@ namespace {endPoint.Settings.Namespace}
 
 {GenerateMethod(endPoint)}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, returnResponseWrapper: true) : TrimmedLine)}
+{GeneratePaginationMethods(endPoint)}
 {GeneratePollingMethods(endPoint)}
 {GenerateExtensionMethod(endPoint)}
     }}
@@ -122,6 +123,7 @@ namespace {endPoint.Settings.Namespace}
     {{
 {GenerateMethod(endPoint, isInterface: true)}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnResponseWrapper: true) : TrimmedLine)}
+{GeneratePaginationMethods(endPoint, isInterface: true)}
 {GeneratePollingMethods(endPoint, isInterface: true)}
 {GenerateExtensionMethod(endPoint, isInterface: true)}
     }}
@@ -269,9 +271,42 @@ namespace {endPoint.Settings.Namespace}
         return endPoint.GenerateResponseWrapper && !endPoint.EnumerableStream;
     }
 
+    private static bool ShouldGeneratePaginationMethods(EndPoint endPoint)
+    {
+        return endPoint.HasPagination &&
+               ShouldGenerateResponseWrapperMethod(endPoint);
+    }
+
     private static string GetResponseWrapperMethodName(EndPoint endPoint)
     {
         return $"{endPoint.NotAsyncMethodName}AsResponseAsync";
+    }
+
+    private static PaginationMetadata GetPaginationMetadata(EndPoint endPoint)
+    {
+        return endPoint.Pagination is { } pagination && !pagination.IsDefault
+            ? pagination
+            : throw new InvalidOperationException($"Pagination metadata is not available for operation '{endPoint.Id}'.");
+    }
+
+    private static string GetPaginationItemType(EndPoint endPoint)
+    {
+        return GetPaginationMetadata(endPoint).ItemType.CSharpTypeWithoutNullability;
+    }
+
+    private static string GetPaginationPageMethodName(EndPoint endPoint)
+    {
+        return $"{endPoint.NotAsyncMethodName}AsPageAsync";
+    }
+
+    private static string GetPaginationItemsMethodName(EndPoint endPoint)
+    {
+        return $"{endPoint.NotAsyncMethodName}AsItemsAsync";
+    }
+
+    private static string GetPaginationPageType(EndPoint endPoint)
+    {
+        return $"global::{endPoint.Settings.Namespace}.AutoSDKPage<{GetPaginationItemType(endPoint)}, {GetSuccessResponseBodyType(endPoint)}>";
     }
 
     private static string GetPollingMethodName(
@@ -310,6 +345,428 @@ namespace {endPoint.Settings.Namespace}
             .Where(x => SupportsPollingOperation(endPoint, x))
             .Select(x => GeneratePollingMethod(endPoint, x, isInterface))
             .Inject();
+    }
+
+    private static MethodParameter GetPaginationBindingParameter(
+        EndPoint endPoint,
+        PaginationRequestBinding binding)
+    {
+        if (binding.IsDefault)
+        {
+            throw new InvalidOperationException($"Pagination binding is not configured for operation '{endPoint.Id}'.");
+        }
+
+        var parameter = endPoint.Parameters.FirstOrDefault(x =>
+            string.Equals(x.Id, binding.Id, StringComparison.OrdinalIgnoreCase) &&
+            (binding.Target == PaginationRequestBindingTarget.Parameter
+                ? x.Location != null
+                : x.Location == null));
+
+        return string.IsNullOrWhiteSpace(parameter.Id)
+            ? throw new InvalidOperationException($"Pagination binding '{binding.Id}' could not be resolved for operation '{endPoint.Id}'.")
+            : parameter;
+    }
+
+    private static string GetPaginationRequestSourceExpression(
+        EndPoint endPoint,
+        string requestVariableName)
+    {
+        var wrappedRequestType = GetTransparentWrappedRequestType(endPoint);
+        return wrappedRequestType is null
+            ? requestVariableName
+            : $"(({wrappedRequestType.Value.CSharpTypeWithoutNullability}?)({requestVariableName}))!";
+    }
+
+    private static string GetPaginationBindingValueExpression(
+        EndPoint endPoint,
+        PaginationRequestBinding binding,
+        string requestVariableName = "request")
+    {
+        var parameter = GetPaginationBindingParameter(endPoint, binding);
+        if (binding.Target == PaginationRequestBindingTarget.Parameter)
+        {
+            return parameter.ParameterName;
+        }
+
+        return $"{GetPaginationRequestSourceExpression(endPoint, requestVariableName)}.{GetRequestPropertyName(parameter)}";
+    }
+
+    private static string GetPaginationConvertedValueExpression(
+        EndPoint endPoint,
+        PaginationRequestBinding binding,
+        string sourceExpression)
+    {
+        var parameter = GetPaginationBindingParameter(endPoint, binding);
+        return $"global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.CoerceValue<{parameter.Type.CSharpType}>({sourceExpression})";
+    }
+
+    private static string GeneratePaginationRequestClone(
+        EndPoint endPoint,
+        PaginationRequestBinding binding,
+        string sourceExpression,
+        string targetVariableName)
+    {
+        var boundParameter = GetPaginationBindingParameter(endPoint, binding);
+        var requestSourceExpression = GetPaginationRequestSourceExpression(endPoint, "request");
+
+        return GenerateRequestInitialization(
+            endPoint,
+            targetVariableName,
+            x => string.Equals(x.Id, boundParameter.Id, StringComparison.OrdinalIgnoreCase)
+                ? sourceExpression
+                : GetPinnedRequestPropertyValue(endPoint, x, requestSourceExpression));
+    }
+
+    private static string GeneratePaginationStringBindingExpression(
+        EndPoint endPoint,
+        PaginationValueBinding binding,
+        string responseVariableName)
+    {
+        if (binding.IsDefault)
+        {
+            return "null";
+        }
+
+        return binding.Source == PaginationValueSource.Header
+            ? $"global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.GetHeaderString({responseVariableName}, {binding.Value.ToCSharpStringLiteral()})"
+            : $"global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.GetBodyString({responseVariableName}.Body, {binding.Value.ToCSharpStringLiteral()})";
+    }
+
+    private static string GeneratePaginationIntBindingExpression(
+        EndPoint endPoint,
+        PaginationValueBinding binding,
+        string responseVariableName)
+    {
+        if (binding.IsDefault)
+        {
+            return "null";
+        }
+
+        return binding.Source == PaginationValueSource.Header
+            ? $"global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.GetHeaderInt({responseVariableName}, {binding.Value.ToCSharpStringLiteral()})"
+            : $"global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.GetBodyInt({responseVariableName}.Body, {binding.Value.ToCSharpStringLiteral()})";
+    }
+
+    private static string GeneratePaginationUriBindingExpression(
+        EndPoint endPoint,
+        PaginationValueBinding binding,
+        string responseVariableName)
+    {
+        if (binding.IsDefault)
+        {
+            return "null";
+        }
+
+        return binding.Source == PaginationValueSource.Header
+            ? $"global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.GetHeaderUri({responseVariableName}, {binding.Value.ToCSharpStringLiteral()})"
+            : $"global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.GetBodyUri({responseVariableName}.Body, {binding.Value.ToCSharpStringLiteral()})";
+    }
+
+    private static string GeneratePaginationRecursivePageCall(
+        EndPoint endPoint,
+        string pageType,
+        PaginationRequestBinding binding,
+        string nextValueExpression,
+        string requestOptionsExpression,
+        string cancellationTokenExpression)
+    {
+        var convertedValueExpression = GetPaginationConvertedValueExpression(endPoint, binding, nextValueExpression);
+        if (binding.Target == PaginationRequestBindingTarget.Parameter)
+        {
+            var boundParameter = GetPaginationBindingParameter(endPoint, binding);
+
+            return $@"return ({pageType}?)await {GetPaginationPageMethodName(endPoint)}(
+{GenerateMethodInvocationArguments(
+    endPoint,
+    x => string.Equals(x.ParameterName, boundParameter.ParameterName, StringComparison.Ordinal)
+        ? convertedValueExpression
+        : x.ParameterName,
+    requestOptionsExpression: requestOptionsExpression,
+    cancellationTokenExpression: cancellationTokenExpression)}
+                    ).ConfigureAwait(false);".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        return $@"{GeneratePaginationRequestClone(endPoint, binding, convertedValueExpression, "__nextRequest")}
+
+                    return ({pageType}?)await {GetPaginationPageMethodName(endPoint)}(
+{GenerateMethodInvocationArguments(
+    endPoint,
+    requestValueExpression: "__nextRequest",
+    requestOptionsExpression: requestOptionsExpression,
+    cancellationTokenExpression: cancellationTokenExpression)}
+                    ).ConfigureAwait(false);".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GeneratePaginationUrlRecursivePageCall(
+        EndPoint endPoint,
+        string pageType,
+        string nextPageUriExpression,
+        string requestOptionsExpression,
+        string cancellationTokenExpression)
+    {
+        return $@"var __nextRequestOptions = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.CloneRequestOptions({requestOptionsExpression});
+                    __nextRequestOptions.AbsoluteRequestUriOverride = {nextPageUriExpression};
+
+                    return ({pageType}?)await {GetPaginationPageMethodName(endPoint)}(
+{GenerateMethodInvocationArguments(
+    endPoint,
+    requestOptionsExpression: "__nextRequestOptions",
+    cancellationTokenExpression: cancellationTokenExpression)}
+                    ).ConfigureAwait(false);".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GeneratePaginationPageMethodState(
+        EndPoint endPoint,
+        string pageType)
+    {
+        var pagination = GetPaginationMetadata(endPoint);
+
+        return pagination.Scheme switch
+        {
+            PaginationScheme.Cursor => $@"
+            __nextCursor = {GeneratePaginationStringBindingExpression(endPoint, pagination.NextCursorValue, "__response")};
+            if (!string.IsNullOrWhiteSpace(__nextCursor))
+            {{
+                __getNextPageAsync = async __nextPageCancellationToken =>
+                {{
+{GeneratePaginationRecursivePageCall(
+    endPoint,
+    pageType,
+    pagination.NextCursorBinding,
+    "__nextCursor!",
+    "requestOptions",
+    "__nextPageCancellationToken").AddIndent(5)}
+                }};
+            }}".RemoveBlankLinesWhereOnlyWhitespaces(),
+            PaginationScheme.CursorId => $@"
+            __nextCursor = {GeneratePaginationStringBindingExpression(endPoint, pagination.NextCursorValue, "__response")};
+            if (string.IsNullOrWhiteSpace(__nextCursor))
+            {{
+                __nextCursor = __items.Count > 0
+                    ? global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.GetBodyString(
+                        __items[__items.Count - 1],
+                        {pagination.CursorItemIdPath.ToCSharpStringLiteral()})
+                    : null;
+            }}
+
+            if (!string.IsNullOrWhiteSpace(__nextCursor))
+            {{
+                __getNextPageAsync = async __nextPageCancellationToken =>
+                {{
+{GeneratePaginationRecursivePageCall(
+    endPoint,
+    pageType,
+    pagination.NextCursorIdBinding,
+    "__nextCursor!",
+    "requestOptions",
+    "__nextPageCancellationToken").AddIndent(5)}
+                }};
+            }}".RemoveBlankLinesWhereOnlyWhitespaces(),
+            PaginationScheme.Url => $@"
+            __nextPageUri = {GeneratePaginationUriBindingExpression(endPoint, pagination.NextPageUrlValue, "__response")};
+            if (__nextPageUri != null)
+            {{
+                __getNextPageAsync = async __nextPageCancellationToken =>
+                {{
+{GeneratePaginationUrlRecursivePageCall(
+    endPoint,
+    pageType,
+    "__nextPageUri",
+    "requestOptions",
+    "__nextPageCancellationToken").AddIndent(5)}
+                }};
+            }}".RemoveBlankLinesWhereOnlyWhitespaces(),
+            PaginationScheme.PageNumber => $@"
+            __currentPage = {GeneratePaginationIntBindingExpression(endPoint, pagination.CurrentPageValue, "__response")};
+            if (!__currentPage.HasValue)
+            {{
+                __currentPage = global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.ToNullableInt(
+                    {GetPaginationBindingValueExpression(endPoint, pagination.PageNumberBinding)});
+            }}
+
+            var __currentPageNumber = __currentPage ?? 1;
+            __currentPage = __currentPageNumber;
+            __totalPages = {GeneratePaginationIntBindingExpression(endPoint, pagination.TotalPagesValue, "__response")};
+            var __limit = {(pagination.LimitBinding.IsDefault
+                ? "null"
+                : $"global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.ToNullableInt({GetPaginationBindingValueExpression(endPoint, pagination.LimitBinding)})")};
+            int? __nextPageNumber = null;
+
+            if (__totalPages.HasValue)
+            {{
+                if (__currentPageNumber < __totalPages.Value)
+                {{
+                    __nextPageNumber = __currentPageNumber + 1;
+                }}
+            }}
+            else if ((__limit.HasValue && __items.Count >= __limit.Value) ||
+                     (!__limit.HasValue && __items.Count > 0))
+            {{
+                __nextPageNumber = __currentPageNumber + 1;
+            }}
+
+            if (__nextPageNumber.HasValue)
+            {{
+                __getNextPageAsync = async __nextPageCancellationToken =>
+                {{
+{GeneratePaginationRecursivePageCall(
+    endPoint,
+    pageType,
+    pagination.PageNumberBinding,
+    "__nextPageNumber.Value",
+    "requestOptions",
+    "__nextPageCancellationToken").AddIndent(5)}
+                }};
+            }}".RemoveBlankLinesWhereOnlyWhitespaces(),
+            PaginationScheme.Offset => $@"
+            var __currentOffset = global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.ToNullableInt(
+                {GetPaginationBindingValueExpression(endPoint, pagination.OffsetBinding)}) ?? 0;
+            var __limit = {(pagination.LimitBinding.IsDefault
+                ? "null"
+                : $"global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.ToNullableInt({GetPaginationBindingValueExpression(endPoint, pagination.LimitBinding)})")};
+            var __nextOffset = {GeneratePaginationIntBindingExpression(endPoint, pagination.NextOffsetValue, "__response")} ?? (__currentOffset + __items.Count);
+            var __totalCount = {GeneratePaginationIntBindingExpression(endPoint, pagination.TotalCountValue, "__response")};
+            var __hasNextPage = false;
+
+            if (__totalCount.HasValue)
+            {{
+                __hasNextPage = __nextOffset < __totalCount.Value;
+            }}
+            else if (__limit.HasValue)
+            {{
+                __hasNextPage = __items.Count >= __limit.Value;
+            }}
+            else
+            {{
+                __hasNextPage = __items.Count > 0;
+            }}
+
+            if (__hasNextPage)
+            {{
+                __getNextPageAsync = async __nextPageCancellationToken =>
+                {{
+{GeneratePaginationRecursivePageCall(
+    endPoint,
+    pageType,
+    pagination.OffsetBinding,
+    "__nextOffset",
+    "requestOptions",
+    "__nextPageCancellationToken").AddIndent(5)}
+                }};
+            }}".RemoveBlankLinesWhereOnlyWhitespaces(),
+            _ => TrimmedLine,
+        };
+    }
+
+    private static string GeneratePaginationPageMethod(
+        EndPoint endPoint,
+        bool isInterface = false)
+    {
+        var pagination = GetPaginationMetadata(endPoint);
+        var pageType = GetPaginationPageType(endPoint);
+        var body = isInterface
+            ? ";"
+            : $@"
+        {{
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? TrimmedLine : @" 
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+")}
+            var __response = await {GetResponseWrapperMethodName(endPoint)}(
+{GenerateMethodInvocationArguments(endPoint)}
+            ).ConfigureAwait(false);
+            var __items = global::{endPoint.Settings.Namespace}.AutoSDKPaginationSupport.ExtractItems<{pagination.ItemType.CSharpTypeWithoutNullability}>(
+                body: __response.Body,
+                path: {pagination.ItemsPath.ToCSharpStringLiteral()},
+                isTopLevelArray: {(pagination.ItemsAreTopLevelArray ? "true" : "false")});
+            string? __nextCursor = null;
+            global::System.Uri? __nextPageUri = null;
+            int? __currentPage = null;
+            int? __totalPages = null;
+            global::System.Func<global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<{pageType}?>>? __getNextPageAsync = null;
+
+{GeneratePaginationPageMethodState(endPoint, pageType).AddIndent(3)}
+
+            return new {pageType}(
+                statusCode: __response.StatusCode,
+                headers: __response.Headers,
+                body: __response.Body,
+                items: __items,
+                nextCursor: __nextCursor,
+                nextPageUri: __nextPageUri,
+                currentPage: __currentPage,
+                totalPages: __totalPages,
+                getNextPageAsync: __getNextPageAsync);
+        }}";
+
+        return $@"
+        {"Gets a paginated response wrapper for the endpoint.".ToXmlDocumentationSummary(level: 8)}
+{endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @"
+        /// <param name=""request""></param>")}
+        /// <param name=""requestOptions"">Per-request overrides applied to the current page request and any subsequent page traversal.</param>
+        /// <param name=""cancellationToken"">The token to cancel the operation with</param>
+        /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>
+        {(isInterface ? string.Empty : "public async ")}global::System.Threading.Tasks.Task<{pageType}> {GetPaginationPageMethodName(endPoint)}(
+{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName},").Inject()}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : $@"
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
+{endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
+            global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default){body}
+".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GeneratePaginationItemsMethod(
+        EndPoint endPoint,
+        bool isInterface = false)
+    {
+        var itemType = GetPaginationItemType(endPoint);
+        var body = isInterface
+            ? ";"
+            : $@"
+        {{
+            var __page = await {GetPaginationPageMethodName(endPoint)}(
+{GenerateMethodInvocationArguments(endPoint)}
+            ).ConfigureAwait(false);
+
+            await foreach (var __item in __page.AsAsyncEnumerable(cancellationToken))
+            {{
+                yield return __item;
+            }}
+        }}";
+
+        return $@"
+        {"Enumerates all items exposed by the paginated endpoint.".ToXmlDocumentationSummary(level: 8)}
+{endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @"
+        /// <param name=""request""></param>")}
+        /// <param name=""requestOptions"">Per-request overrides applied to every page request.</param>
+        /// <param name=""cancellationToken"">The token to cancel the operation with</param>
+        {(isInterface ? string.Empty : "public async ")}global::System.Collections.Generic.IAsyncEnumerable<{itemType}> {GetPaginationItemsMethodName(endPoint)}(
+{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName},").Inject()}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : $@"
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
+{endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
+            global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
+            {(isInterface ? string.Empty : "[global::System.Runtime.CompilerServices.EnumeratorCancellation] ")}global::System.Threading.CancellationToken cancellationToken = default){body}
+".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GeneratePaginationMethods(
+        EndPoint endPoint,
+        bool isInterface = false)
+    {
+        return ShouldGeneratePaginationMethods(endPoint)
+            ? $@"
+{GeneratePaginationPageMethod(endPoint, isInterface)}
+{GeneratePaginationItemsMethod(endPoint, isInterface)}".RemoveBlankLinesWhereOnlyWhitespaces()
+            : TrimmedLine;
     }
 
     private static string GeneratePollingMethod(
@@ -514,16 +971,56 @@ namespace {endPoint.Settings.Namespace}
             : $"global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse<{bodyType}>";
     }
 
-    private static string GenerateMethodInvocationArguments(EndPoint endPoint)
+    private static string GenerateMethodInvocationArguments(
+        EndPoint endPoint,
+        Func<MethodParameter, string>? parameterValueFactory = null,
+        string requestValueExpression = "request",
+        string requestOptionsExpression = "requestOptions",
+        string cancellationTokenExpression = "cancellationToken")
     {
+        parameterValueFactory ??= static x => x.ParameterName;
+
         return $@"{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
-                {x.ParameterName}: {x.ParameterName},").Inject()}
+                {x.ParameterName}: {parameterValueFactory(x)},").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @"
-                request: request,")}
+                request: " + requestValueExpression + @",")}
 {endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
-                {x.ParameterName}: {x.ParameterName},").Inject()}
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken".RemoveBlankLinesWhereOnlyWhitespaces();
+                {x.ParameterName}: {parameterValueFactory(x)},").Inject()}
+                requestOptions: {requestOptionsExpression},
+                cancellationToken: {cancellationTokenExpression}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateResolvedRequestPath(
+        EndPoint endPoint,
+        string authorizationVariableName)
+    {
+        var queryAuthorizationHandling = endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Query })
+            ? $@"
+                foreach (var __authorization in {authorizationVariableName})
+                {{
+                    if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
+                        __authorization.Location == ""{ParameterLocation.Query:G}"")
+                    {{
+                        __path = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                            path: __path,
+                            clientParameters: new global::System.Collections.Generic.Dictionary<string, string>(global::System.StringComparer.Ordinal)
+                            {{
+                                [__authorization.Name] = __authorization.Value,
+                            }},
+                            requestParameters: null);
+                    }}
+                }}" : TrimmedLine;
+
+        return $@"string __path;
+                if (requestOptions?.AbsoluteRequestUriOverride is global::System.Uri __absoluteRequestUriOverride)
+                {{
+                    __path = __absoluteRequestUriOverride.AbsoluteUri;
+{queryAuthorizationHandling}
+                }}
+                else
+                {{
+{GeneratePathAndQuery(endPoint, authorizationVariableName: authorizationVariableName, declarePathVariable: false).AddIndent(5)}
+                }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     public static string GenerateMethod(
@@ -668,7 +1165,7 @@ namespace {endPoint.Settings.Namespace}
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {{
-{GeneratePathAndQuery(endPoint, authorizationVariableName: endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations").AddIndent(4)}
+{GenerateResolvedRequestPath(endPoint, endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations").AddIndent(4)}
                 __path = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
@@ -1300,7 +1797,8 @@ namespace {endPoint.Settings.Namespace}
 
     public static string GeneratePathAndQuery(
         EndPoint endPoint,
-        string authorizationVariableName = "Authorizations")
+        string authorizationVariableName = "Authorizations",
+        bool declarePathVariable = true)
     {
         var escapedBaseUrl = EscapeCSharpStringLiteral(endPoint.BaseUrl);
         var baseUriExpression = endPoint.ClientUsesServerSelectionSupport
@@ -1365,8 +1863,8 @@ namespace {endPoint.Settings.Namespace}
 
         code += "\n" + GenerateQueryStringParameterHandling(endPoint);
 
-        code += @" 
-            var __path = __pathBuilder.ToString();";
+        code += $@" 
+            {(declarePathVariable ? "var " : string.Empty)}__path = __pathBuilder.ToString();";
 
         return code.RemoveBlankLinesWhereOnlyWhitespaces();
     }
