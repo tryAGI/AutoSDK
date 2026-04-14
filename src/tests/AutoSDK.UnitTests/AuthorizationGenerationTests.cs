@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using AutoSDK.Generation;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
@@ -407,6 +408,43 @@ public class AuthorizationGenerationTests
         interfaceContent.Should().Contain("public global::System.Threading.Tasks.Task<global::G.Api.OAuth2Token> ExchangeOAuth2CodeForTokenAsync(");
         interfaceContent.Should().Contain("public global::System.Threading.Tasks.Task<global::G.Api.OAuth2Token> RefreshOAuth2TokenAsync(");
         interfaceContent.Should().Contain("public global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithAuthorizationCodeAsync(");
+    }
+
+    [TestMethod]
+    public void GenerateMainAuthorizationConstructor_OAuth2_UsesAccessTokenConvenienceConstructor()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: OAuth2 Constructor
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - OAuth2: [read]
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                OAuth2:
+                                  type: oauth2
+                                  flows:
+                                    clientCredentials:
+                                      tokenUrl: https://example.com/oauth/token
+                                      scopes:
+                                        read: Read access
+                            """;
+
+        var authorization = GetSingleAuthorization(yaml);
+        var constructor = Sources.MainAuthorizationConstructor(ImmutableArray.Create(authorization).AsEquatableArray());
+
+        constructor.Name.Should().Be("G.Api.Constructors.OAuth2.g.cs");
+        constructor.Text.Should().Contain("string accessToken,");
+        constructor.Text.Should().Contain("AuthorizeUsingOAuth2(accessToken);");
+        constructor.Text.Should().Contain("ref string accessToken");
     }
 
     [TestMethod]

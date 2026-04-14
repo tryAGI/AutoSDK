@@ -209,4 +209,61 @@ public sealed class SnippetGenerationTests
         snippet.Format.Should().Be("http");
         snippet.Code.Should().Contain("POST {{host}}/legacy");
     }
+
+    [TestMethod]
+    public void GenerateSnippetManifest_WithOAuth2Authorization_EmitsSdkSnippet()
+    {
+        var yaml = """
+                   openapi: 3.0.3
+                   info:
+                     title: OAuth2 Snippet
+                     version: 1.0.0
+                   paths:
+                     /profile:
+                       get:
+                         operationId: getProfile
+                         summary: Get profile
+                         security:
+                           - OAuth2: ['profile:read']
+                         responses:
+                           '200':
+                             description: OK
+                             content:
+                               application/json:
+                                 example:
+                                   id: user_123
+                                 schema:
+                                   type: object
+                                   properties:
+                                     id:
+                                       type: string
+                   components:
+                     securitySchemes:
+                       OAuth2:
+                         type: oauth2
+                         flows:
+                           clientCredentials:
+                             tokenUrl: https://example.com/oauth/token
+                             scopes:
+                               'profile:read': Read profile
+                   """;
+
+        var document = yaml.GetOpenApiDocument(DefaultSettings);
+        var schemas = document.GetSchemas(DefaultSettings);
+        var operations = document.GetOperations(DefaultSettings, globalSettings: DefaultSettings, schemas);
+        var data = CSharpPipeline.PrepareAndEnrich(((yaml, DefaultSettings), GlobalSettings: DefaultSettings));
+
+        var manifestJson = Sources.GenerateSnippetManifest(operations, data.Methods.ToArray());
+        var manifest = JsonSerializer.Deserialize<GeneratedSdkSnippetManifest>(manifestJson);
+
+        manifest.Should().NotBeNull();
+        manifest!.Examples.Should().ContainSingle();
+
+        var snippet = manifest.Examples[0];
+        snippet.Language.Should().Be("csharp");
+        snippet.Format.Should().Be("sdk");
+        snippet.Code.Should().Contain("using var client = new ExampleClient(accessToken);");
+        snippet.Code.Should().Contain("var response = await client.GetProfileAsync();");
+        snippet.Setup.Should().Contain("OAuth2 access token");
+    }
 }

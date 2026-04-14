@@ -223,7 +223,10 @@ components:
         authorizations[0].FriendlyName.Should().Be("OpenIdConnect");
         authorizations[0].MethodName.Should().Be("AuthorizeUsingOpenIdConnect");
         Sources.Authorization(authorizations[0]).Name.Should().Be("Oidc.OidcClient.Authorizations.OpenIdConnect.g.cs");
-        Sources.MainAuthorizationConstructor(authorizations).Name.Should().Be("Oidc.OidcClient.Constructors.OpenIdConnect.g.cs");
+        var constructor = Sources.MainAuthorizationConstructor(authorizations);
+        constructor.Name.Should().Be("Oidc.OidcClient.Constructors.OpenIdConnect.g.cs");
+        constructor.Text.Should().Contain("string accessToken,");
+        constructor.Text.Should().Contain("AuthorizeUsingOpenIdConnect(accessToken);");
     }
 
     [TestMethod]

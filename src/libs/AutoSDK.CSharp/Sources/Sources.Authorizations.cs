@@ -139,7 +139,8 @@ namespace {authorization.Settings.Namespace}
     public static string GenerateMainAuthorizationConstructor(
         Authorization authorization)
     {
-        if (authorization.Parameters.IsEmpty)
+        var constructorParameters = GetMainAuthorizationConstructorParameters(authorization);
+        if (constructorParameters.Length == 0)
         {
             return string.Empty;
         }
@@ -154,23 +155,23 @@ namespace {authorization.Settings.Namespace}
         /// <inheritdoc cref=""{authorization.Settings.ClassName}(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{{global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization}}?, bool)""/>
 {GetAuthorizationObsoleteAttribute(authorization, 8)}
         public {authorization.Settings.ClassName}(
-{string.Join("\n", authorization.Parameters.Select(x => $@" 
+{string.Join("\n", constructorParameters.Select(x => $@" 
             string {x},"))}
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization>? authorizations = null,
             bool disposeHttpClient = true) : this(httpClient, baseUri, authorizations, disposeHttpClient)
         {{
-            Authorizing(HttpClient, {string.Join(", ", authorization.Parameters.Select(x => $"ref {x}"))});
+            Authorizing(HttpClient, {string.Join(", ", constructorParameters.Select(x => $"ref {x}"))});
 
-            {authorization.MethodName}({string.Join(", ", authorization.Parameters.Select(x => $"{x}"))});
+            {GetMainAuthorizationConstructorInvocation(authorization, constructorParameters)}
 
             Authorized(HttpClient);
         }}
 
         partial void Authorizing(
             global::System.Net.Http.HttpClient client,
-{string.Join("\n", authorization.Parameters.Select(x => $@" 
+{string.Join("\n", constructorParameters.Select(x => $@" 
             ref string {x},")).TrimEnd(',')});
         partial void Authorized(
             global::System.Net.Http.HttpClient client);
@@ -222,6 +223,33 @@ namespace {authorization.Settings.Namespace}
         return authorization.IsDeprecated
             ? $"{new string(' ', indent)}[global::System.Obsolete(\"This security scheme marked as deprecated.\")]"
             : string.Empty;
+    }
+
+    private static string[] GetMainAuthorizationConstructorParameters(Authorization authorization)
+    {
+        if (!authorization.Parameters.IsEmpty)
+        {
+            return authorization.Parameters.ToArray();
+        }
+
+        return authorization.Type switch
+        {
+            SecuritySchemeType.OAuth2 => ["accessToken"],
+            SecuritySchemeType.OpenIdConnect => ["accessToken"],
+            _ => [],
+        };
+    }
+
+    private static string GetMainAuthorizationConstructorInvocation(
+        Authorization authorization,
+        IReadOnlyList<string> constructorParameters)
+    {
+        return authorization.Type switch
+        {
+            SecuritySchemeType.OAuth2 => $"{authorization.MethodName}(accessToken);",
+            SecuritySchemeType.OpenIdConnect => $"{authorization.MethodName}(accessToken);",
+            _ => $"{authorization.MethodName}({string.Join(", ", constructorParameters)});",
+        };
     }
 
     private static string GenerateOpenIdConnectAuthorization(

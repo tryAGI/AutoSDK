@@ -279,7 +279,7 @@ public static partial class Sources
         }
 
         if (endPoint.Authorizations.Length != 1 ||
-            endPoint.Authorizations[0].Parameters.IsEmpty)
+            GetMainAuthorizationConstructorParameters(endPoint.Authorizations[0]).Length == 0)
         {
             clientInstantiation = string.Empty;
             setup = string.Empty;
@@ -287,11 +287,13 @@ public static partial class Sources
         }
 
         var authorization = endPoint.Authorizations[0];
-        var parameters = authorization.Parameters.ToArray();
+        var parameters = GetMainAuthorizationConstructorParameters(authorization);
         clientInstantiation = $"using var client = new {rootClientClassName}({string.Join(", ", parameters)});";
-        setup = parameters.Length == 1
-            ? $"This example assumes `using {endPoint.Settings.Namespace};` is in scope and `{parameters[0]}` contains the required credential."
-            : $"This example assumes `using {endPoint.Settings.Namespace};` is in scope and `{string.Join("` / `", parameters)}` contain the required credentials.";
+        setup = parameters.Length == 1 && parameters[0] == "accessToken"
+            ? $"This example assumes `using {endPoint.Settings.Namespace};` is in scope and `accessToken` contains the required {(authorization.Type == SecuritySchemeType.OpenIdConnect ? "OpenID Connect" : "OAuth2")} access token."
+            : parameters.Length == 1
+                ? $"This example assumes `using {endPoint.Settings.Namespace};` is in scope and `{parameters[0]}` contains the required credential."
+                : $"This example assumes `using {endPoint.Settings.Namespace};` is in scope and `{string.Join("` / `", parameters)}` contain the required credentials.";
         return true;
     }
 
