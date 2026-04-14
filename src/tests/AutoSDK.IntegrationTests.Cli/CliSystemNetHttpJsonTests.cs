@@ -66,10 +66,77 @@ components:
             });
     }
 
+    [TestMethod]
+    public async Task Generate_WithSystemNetHttpJsonFlag_OnNetstandard20_WithPackage_Builds()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: HttpJson
+  version: 1.0.0
+paths:
+  /people:
+    post:
+      operationId: createPerson
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+  /flag:
+    get:
+      operationId: getFlag
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: boolean
+components:
+  schemas:
+    Person:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "system-net-http-json-netstandard20.yaml",
+            specContent: spec,
+            targetFramework: "netstandard2.0",
+            packageReferences:
+            [
+                (PackageId: "System.Net.Http.Json", Version: "10.0.0"),
+            ],
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("AutoSdkPolyfills.CreateJsonContent(");
+                content.Should().Contain("global::System.Net.Http.Json.JsonContent.Create(");
+                content.Should().Contain("global::System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync");
+            });
+    }
+
     private static async Task GenerateFromContentAsync(
         string fileName,
         string specContent,
         string targetFramework = "net8.0",
+        IReadOnlyCollection<(string PackageId, string Version)>? packageReferences = null,
         Func<string, Task>? assertGeneratedOutput = null)
     {
         var tempSpecDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -80,7 +147,7 @@ components:
         try
         {
             await File.WriteAllTextAsync(specPath, specContent);
-            await GenerateAsync(specPath, targetFramework, assertGeneratedOutput);
+            await GenerateAsync(specPath, targetFramework, packageReferences, assertGeneratedOutput);
         }
         finally
         {
@@ -91,6 +158,7 @@ components:
     private static async Task GenerateAsync(
         string specPath,
         string targetFramework,
+        IReadOnlyCollection<(string PackageId, string Version)>? packageReferences,
         Func<string, Task>? assertGeneratedOutput)
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -122,6 +190,13 @@ components:
                 await assertGeneratedOutput(tempDirectory);
             }
 
+            var packageReferenceLines = packageReferences is { Count: > 0 }
+                ? string.Join(
+                    Environment.NewLine,
+                    packageReferences.Select(reference =>
+                        $@"    <PackageReference Include=""{reference.PackageId}"" Version=""{reference.Version}"" />"))
+                : string.Empty;
+
             await File.WriteAllTextAsync(Path.Combine(tempDirectory, "Oag.csproj"), $@"<Project Sdk=""Microsoft.NET.Sdk"">
 
   <PropertyGroup>
@@ -138,6 +213,13 @@ components:
     <AnalysisMode>All</AnalysisMode>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
+
+{(string.IsNullOrWhiteSpace(packageReferenceLines)
+    ? string.Empty
+    : $@"  <ItemGroup>
+{packageReferenceLines}
+  </ItemGroup>
+")}
 
 </Project>");
 
