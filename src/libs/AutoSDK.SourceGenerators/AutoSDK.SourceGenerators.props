@@ -48,6 +48,12 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateMethodsAsHttpClientExtensions"/>
     <!-- true/false. Default: false. Not Implemented. -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateMethodsUsingSystemNetHttpJson"/>
+    <!-- true/false. Default: false. Generates opt-in Microsoft.Extensions.DependencyInjection typed HttpClient registration helpers for the root SDK client. Requires Microsoft.Extensions.Http. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateDependencyInjection"/>
+    <!-- true/false. Default: false. Generates opt-in IConfiguration-bound options and DI overloads. Requires AutoSDK_GenerateDependencyInjection=true and Microsoft.Extensions.Options.ConfigurationExtensions. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateConfigurationBinding"/>
+    <!-- true/false. Default: false. Generates opt-in Microsoft.Extensions.Http.Resilience IHttpClientBuilder helpers. Requires the generated SDK project to reference Microsoft.Extensions.Http.Resilience. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateHttpResilienceExtensions"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->

@@ -395,7 +395,7 @@ namespace {settings.Namespace}
             }}
 
             var builder = new global::System.Text.StringBuilder(path ?? string.Empty);
-            var hasQuery = builder.ToString().Contains(""?"", global::System.StringComparison.Ordinal);
+            var hasQuery = builder.ToString().IndexOf(""?"", global::System.StringComparison.Ordinal) >= 0;
             AppendParameters(builder, clientParameters, ref hasQuery);
             AppendParameters(builder, requestParameters, ref hasQuery);
             return builder.ToString();

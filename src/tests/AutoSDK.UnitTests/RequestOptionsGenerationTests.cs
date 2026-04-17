@@ -108,4 +108,120 @@ public class RequestOptionsGenerationTests
         methodSource.Should().Contain("AutoSDKRequestOptionsSupport.CreateHookContext(");
         methodSource.Should().Contain("if (__effectiveReadResponseAsString)");
     }
+
+    [TestMethod]
+    public void GenerateHttpResilienceExtensions_EmitsOptInMicrosoftResilienceBuilderExtension()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateHttpResilienceExtensions = true,
+        };
+
+        var source = Sources.HttpResilienceExtensions(settings).Text;
+
+        source.Should().Contain("public static class AutoSDKHttpResilienceExtensions");
+        source.Should().Contain("AddAutoSDKStandardResilienceHandler(");
+        source.Should().Contain("global::Microsoft.Extensions.DependencyInjection.IHttpClientBuilder");
+        source.Should().Contain("global::Microsoft.Extensions.DependencyInjection.ResilienceHttpClientBuilderExtensions.AddStandardResilienceHandler");
+        source.Should().Contain("#pragma warning disable EXTEXP0001");
+        source.Should().Contain("global::Microsoft.Extensions.Http.Resilience.HttpRetryStrategyOptionsExtensions.DisableForUnsafeHttpMethods(options.Retry);");
+        source.Should().Contain("return builder;");
+    }
+
+    [TestMethod]
+    public void GenerateDependencyInjection_EmitsTypedHttpClientRegistration()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: DependencyInjection
+                              version: 1.0.0
+                            servers:
+                              - url: https://api.example.com
+                            paths:
+                              /charges:
+                                get:
+                                  operationId: listCharges
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: object
+                                            properties:
+                                              id:
+                                                type: string
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            Namespace = "IXSocial",
+            ClassName = "IXSocialClient",
+            GenerateDependencyInjection = true,
+        };
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), settings));
+        var mainClient = data.Clients.Single(x => x.Id == "MainConstructor");
+        var source = Sources.DependencyInjection(mainClient).Text;
+
+        source.Should().Contain("public static class DependencyInjectionExtensions");
+        source.Should().Contain("public static IServiceCollection AddIXSocialClient(");
+        source.Should().Contain("global::System.Uri baseUri");
+        source.Should().Contain("global::System.Action<IHttpClientBuilder>? configureHttpClientBuilder = null");
+        source.Should().Contain("global::System.Action<global::System.IServiceProvider, global::IXSocial.AutoSDKClientOptions>? configureClientOptions = null");
+        source.Should().Contain("services");
+        source.Should().Contain(".AddHttpClient<global::IXSocial.IIXSocialClient, global::IXSocial.IXSocialClient>(");
+        source.Should().Contain("disposeHttpClient: false");
+        source.Should().NotContain(".BindConfiguration(sectionName)");
+        source.Should().NotContain("public sealed partial class IXSocialOptions");
+    }
+
+    [TestMethod]
+    public void GenerateDependencyInjection_WithConfigurationBinding_EmitsOptionsAndValidation()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: DependencyInjection
+                              version: 1.0.0
+                            servers:
+                              - url: https://api.example.com
+                            paths:
+                              /charges:
+                                get:
+                                  operationId: listCharges
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: object
+                                            properties:
+                                              id:
+                                                type: string
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            Namespace = "IXSocial",
+            ClassName = "IXSocialClient",
+            GenerateDependencyInjection = true,
+            GenerateConfigurationBinding = true,
+        };
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), settings));
+        var mainClient = data.Clients.Single(x => x.Id == "MainConstructor");
+        var source = Sources.DependencyInjection(mainClient, includeConfigurationBinding: true).Text;
+
+        source.Should().Contain("public sealed partial class IXSocialOptions");
+        source.Should().Contain("public const string DefaultConfigurationSectionName = \"IXSocial\";");
+        source.Should().Contain("public global::System.Uri? ApiUrl { get; set; }");
+        source.Should().Contain("IConfiguration configuration");
+        source.Should().Contain(".BindConfiguration(sectionName)");
+        source.Should().Contain(".Validate(static options => options.ApiUrl is not null, \"IXSocial:ApiUrl is missing\")");
+        source.Should().Contain("optionsBuilder.ValidateOnStart()");
+        source.Should().Contain(".GetRequiredService<IOptions<global::IXSocial.IXSocialOptions>>()");
+    }
 }

@@ -10,6 +10,13 @@ public class SdkGenerator : IIncrementalGenerator
     #region Constants
 
     private const string Id = "OAG";
+    private static readonly DiagnosticDescriptor ConfigurationBindingRequiresDependencyInjectionDescriptor = new(
+        id: "OAG002",
+        title: "Configuration binding requires dependency injection generation",
+        messageFormat: "AutoSDK_GenerateConfigurationBinding requires AutoSDK_GenerateDependencyInjection=true.",
+        category: "Usage",
+        defaultSeverity: DiagnosticSeverity.Error,
+        isEnabledByDefault: true);
 
     #endregion
 
@@ -18,6 +25,7 @@ public class SdkGenerator : IIncrementalGenerator
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
         var settings = context.DetectSettings();
+        context.RegisterSourceOutput(settings, ReportInvalidSettings);
 
         var data = context.AdditionalTextsProvider
             .Combine(context.AnalyzerConfigOptionsProvider)
@@ -64,6 +72,19 @@ public class SdkGenerator : IIncrementalGenerator
                 x.Settings,
                 includePollingSupport: x.IncludePollingSupport,
                 cancellationToken: c), context, Id)
+            .AddSource(context);
+        data
+            .Collect()
+            .SelectMany(static (x, _) => GetDependencyInjectionSettings(x))
+            .SelectAndReportExceptions((x, c) => Sources.DependencyInjection(
+                x.Client,
+                includeConfigurationBinding: x.IncludeConfigurationBinding,
+                cancellationToken: c), context, Id)
+            .AddSource(context);
+        data
+            .Collect()
+            .SelectMany(static (x, _) => GetHttpResilienceExtensionSettings(x))
+            .SelectAndReportExceptions((x, c) => Sources.HttpResilienceExtensions(x, c), context, Id)
             .AddSource(context);
         supportData
             .SelectAndReportExceptions((x, c) => ShouldGenerateSecuritySupport(x.Right)
@@ -253,6 +274,33 @@ public class SdkGenerator : IIncrementalGenerator
                 IncludePollingSupport: x.Any(static y => y.Methods.Any(static z => !z.PollingOperations.IsEmpty))));
     }
 
+    private static IEnumerable<(Client Client, bool IncludeConfigurationBinding)> GetDependencyInjectionSettings(ImmutableArray<AutoSDK.Models.Data> data)
+    {
+        return data
+            .Where(static x =>
+                x.Converters.Settings.GenerateDependencyInjection &&
+                !x.Clients.IsEmpty)
+            .SelectMany(static x => x.Clients
+                .Where(static client => client.Id == "MainConstructor")
+                .Select(client => (
+                    Client: client,
+                    IncludeConfigurationBinding: x.Converters.Settings.GenerateConfigurationBinding)))
+            .GroupBy(
+                static x => $"{x.Client.Settings.Namespace}\n{x.Client.ClassName}",
+                StringComparer.Ordinal)
+            .Select(static x => x.First());
+    }
+
+    private static IEnumerable<CSharpSettings> GetHttpResilienceExtensionSettings(ImmutableArray<AutoSDK.Models.Data> data)
+    {
+        return data
+            .Where(static x =>
+                x.Converters.Settings.GenerateHttpResilienceExtensions &&
+                (!x.Methods.IsEmpty || !x.Clients.IsEmpty))
+            .GroupBy(static x => x.Converters.Settings.Namespace, StringComparer.Ordinal)
+            .Select(static x => CSharpSettings.FromSettings(x.First().Converters.Settings));
+    }
+
     private static bool ShouldGenerateSecuritySupport(ImmutableArray<AutoSDK.Models.Data> data)
     {
         return data.Any(static x => !x.Authorizations.IsEmpty);
@@ -264,6 +312,17 @@ public class SdkGenerator : IIncrementalGenerator
             x.Converters.Settings.GenerateJsonSerializerContextTypes ||
             (!x.Clients.IsEmpty &&
              x.Clients.Any(client => !client.Settings.HasJsonSerializerContext())));
+    }
+
+    private static void ReportInvalidSettings(SourceProductionContext context, Settings settings)
+    {
+        if (settings.GenerateConfigurationBinding &&
+            !settings.GenerateDependencyInjection)
+        {
+            context.ReportDiagnostic(Diagnostic.Create(
+                ConfigurationBindingRequiresDependencyInjectionDescriptor,
+                Location.None));
+        }
     }
     
     #endregion

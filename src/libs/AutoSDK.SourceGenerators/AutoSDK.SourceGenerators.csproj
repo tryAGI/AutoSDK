@@ -25,6 +25,7 @@
   
   <ItemGroup>
     <None Include="$(AssemblyName).props" Pack="true" PackagePath="build" />
+    <None Include="$(AssemblyName).targets" Pack="true" PackagePath="build" />
     <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(OutputPath)\Microsoft.OpenApi.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(OutputPath)\Microsoft.OpenApi.YamlReader.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />

@@ -48,6 +48,9 @@ public static class OptionsExtensions
             MethodNamingConventionFallback: options.GetEnumGlobalOption(nameof(Settings.MethodNamingConventionFallback), prefix, defaultValue: MethodNamingConvention.MethodAndPath),
             GenerateMethodsAsHttpClientExtensions: options.GetBoolGlobalOption(nameof(Settings.GenerateMethodsAsHttpClientExtensions), prefix, defaultValue: Settings.Default.GenerateMethodsAsHttpClientExtensions),
             GenerateMethodsUsingSystemNetHttpJson: options.GetBoolGlobalOption(nameof(Settings.GenerateMethodsUsingSystemNetHttpJson), prefix, defaultValue: Settings.Default.GenerateMethodsUsingSystemNetHttpJson),
+            GenerateDependencyInjection: options.GetBoolGlobalOption(nameof(Settings.GenerateDependencyInjection), prefix, defaultValue: Settings.Default.GenerateDependencyInjection),
+            GenerateConfigurationBinding: options.GetBoolGlobalOption(nameof(Settings.GenerateConfigurationBinding), prefix, defaultValue: Settings.Default.GenerateConfigurationBinding),
+            GenerateHttpResilienceExtensions: options.GetBoolGlobalOption(nameof(Settings.GenerateHttpResilienceExtensions), prefix, defaultValue: Settings.Default.GenerateHttpResilienceExtensions),
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??

@@ -17,6 +17,8 @@ public partial class Tests : VerifyBase
         Dictionary<string, string>? globalOptions = null,
         Dictionary<string, Dictionary<string, string>>? additionalTextOptions = null,
         IEnumerable<string>? supportSources = null,
+        ReferenceAssemblies? referenceAssemblies = null,
+        IEnumerable<PackageIdentity>? additionalPackages = null,
         CancellationToken cancellationToken = default,
         params IIncrementalGenerator[] additionalGenerators)
         where T : IIncrementalGenerator, new()
@@ -44,7 +46,7 @@ public partial class Tests : VerifyBase
             _ => throw new ArgumentOutOfRangeException(nameof(jsonSerializerType), jsonSerializerType, null)
         });
 
-        var referenceAssemblies = jsonSerializerType switch
+        referenceAssemblies ??= jsonSerializerType switch
         {
             JsonSerializerType.SystemTextJson => LatestReferenceAssemblies.Net80.AddPackages([
                 new PackageIdentity("System.Net.ServerSentEvents", "9.0.0")
@@ -55,6 +57,10 @@ public partial class Tests : VerifyBase
             ]),
             _ => throw new ArgumentOutOfRangeException(nameof(jsonSerializerType), jsonSerializerType, null)
         };
+        if (additionalPackages is not null)
+        {
+            referenceAssemblies = referenceAssemblies.AddPackages([.. additionalPackages]);
+        }
         var references = await referenceAssemblies.ResolveAsync(null, cancellationToken);
         var trees = new List<SyntaxTree>
         {
@@ -109,7 +115,8 @@ public partial class Tests : VerifyBase
             .WithUpdatedAnalyzerConfigOptions(new DictionaryAnalyzerConfigOptionsProvider(globalOptions, additionalTextOptions: additionalTextOptions))
             .RunGeneratorsAndUpdateCompilation(compilation, out compilation, out _, cancellationToken);
         var diagnostics = compilation.GetDiagnostics(cancellationToken)
-            .Where(x => x.Id != "CS0618")
+            .Where(x => x.Id is not ("CS0618" or "CS1701" or "CS1702"))
+            .Where(x => x.Severity != DiagnosticSeverity.Hidden)
             .OrderBy(x => x.Location.GetLineSpan().Path)
             .ThenBy(x => x.Location.GetLineSpan().StartLinePosition.Line)
             .ThenBy(x => x.Id)
@@ -186,7 +193,8 @@ public partial class Tests : VerifyBase
             .WithUpdatedAnalyzerConfigOptions(new DictionaryAnalyzerConfigOptionsProvider(globalOptions, additionalTextOptions: additionalTextOptions))
             .RunGeneratorsAndUpdateCompilation(compilation, out compilation, out _, cancellationToken);
         var diagnostics = compilation.GetDiagnostics(cancellationToken)
-            .Where(x => x.Id != "CS0618")
+            .Where(x => x.Id is not ("CS0618" or "CS1701" or "CS1702"))
+            .Where(x => x.Severity != DiagnosticSeverity.Hidden)
             .OrderBy(x => x.Location.GetLineSpan().Path)
             .ThenBy(x => x.Location.GetLineSpan().StartLinePosition.Line)
             .ThenBy(x => x.Id)

@@ -3118,6 +3118,103 @@ components:
         }
     }
 
+    [TestMethod]
+    public async Task SourceGeneratorsProps_Restore_WithCentralPackageManagement_AddsOptInMicrosoftExtensionsPackages()
+    {
+        await AssertSourceGeneratorsPropsRestoreWithMicrosoftExtensionsPackagesAsync(
+            managePackageVersionsCentrally: true);
+    }
+
+    [TestMethod]
+    public async Task SourceGeneratorsProps_Restore_WithoutCentralPackageManagement_AddsOptInMicrosoftExtensionsPackages()
+    {
+        await AssertSourceGeneratorsPropsRestoreWithMicrosoftExtensionsPackagesAsync(
+            managePackageVersionsCentrally: false);
+    }
+
+    private static async Task AssertSourceGeneratorsPropsRestoreWithMicrosoftExtensionsPackagesAsync(
+        bool managePackageVersionsCentrally)
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var propsPath = Path.Combine(
+                    repositoryDirectory,
+                    "src",
+                    "libs",
+                    "AutoSDK.SourceGenerators",
+                    "AutoSDK.SourceGenerators.props")
+                .Replace('\\', '/');
+            var escapedPropsPath = System.Security.SecurityElement.Escape(propsPath)!;
+            var targetsPath = Path.Combine(
+                    repositoryDirectory,
+                    "src",
+                    "libs",
+                    "AutoSDK.SourceGenerators",
+                    "AutoSDK.SourceGenerators.targets")
+                .Replace('\\', '/');
+            var escapedTargetsPath = System.Security.SecurityElement.Escape(targetsPath)!;
+
+            if (managePackageVersionsCentrally)
+            {
+                await File.WriteAllTextAsync(
+                    Path.Combine(tempDirectory, "Directory.Packages.props"),
+                    """
+                    <Project>
+                      <PropertyGroup>
+                        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+                      </PropertyGroup>
+                    </Project>
+                    """);
+            }
+
+            await File.WriteAllTextAsync(
+                Path.Combine(tempDirectory, "Test.csproj"),
+                $$"""
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <Import Project="{{escapedPropsPath}}" />
+
+                  <PropertyGroup>
+                    <TargetFramework>net10.0</TargetFramework>
+                    <AutoSDK_GenerateDependencyInjection>true</AutoSDK_GenerateDependencyInjection>
+                    <AutoSDK_GenerateConfigurationBinding>true</AutoSDK_GenerateConfigurationBinding>
+                    <AutoSDK_GenerateHttpResilienceExtensions>true</AutoSDK_GenerateHttpResilienceExtensions>
+                  </PropertyGroup>
+
+                  <Import Project="{{escapedTargetsPath}}" />
+                </Project>
+                """);
+
+            var restoreResult = await RunDotnetAsync(
+                tempDirectory,
+                "restore",
+                "--disable-build-servers",
+                Path.Combine(tempDirectory, "Test.csproj"));
+
+            Console.WriteLine(restoreResult.StandardOutput);
+            Console.WriteLine(restoreResult.StandardError);
+
+            restoreResult.ExitCode.Should().Be(0);
+            restoreResult.StandardError.Should().NotContain("NU1008");
+
+            var assetsPath = Path.Combine(tempDirectory, "obj", "project.assets.json");
+            File.Exists(assetsPath).Should().BeTrue();
+
+            var projectAssets = await File.ReadAllTextAsync(assetsPath);
+            projectAssets.Should().Contain("Microsoft.Extensions.Http/10.0.6");
+            projectAssets.Should().Contain("Microsoft.Extensions.Options.ConfigurationExtensions/10.0.6");
+            projectAssets.Should().Contain("Microsoft.Extensions.Http.Resilience/10.5.0");
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
     private static async Task<(int ExitCode, string StandardOutput, string StandardError)> RunDotnetAsync(
         string workingDirectory,
         params string[] arguments)

@@ -1,0 +1,45 @@
+<Project>
+
+  <PropertyGroup>
+    <_AutoSDKRequiresMicrosoftExtensionsHttp Condition="'$(AutoSDK_GenerateDependencyInjection)' == 'true'">true</_AutoSDKRequiresMicrosoftExtensionsHttp>
+    <_AutoSDKRequiresMicrosoftExtensionsOptionsConfiguration Condition="'$(AutoSDK_GenerateDependencyInjection)' == 'true' and '$(AutoSDK_GenerateConfigurationBinding)' == 'true'">true</_AutoSDKRequiresMicrosoftExtensionsOptionsConfiguration>
+    <_AutoSDKRequiresMicrosoftExtensionsHttpResilience Condition="'$(AutoSDK_GenerateHttpResilienceExtensions)' == 'true'">true</_AutoSDKRequiresMicrosoftExtensionsHttpResilience>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresMicrosoftExtensionsHttp)' == 'true' and '$(ManagePackageVersionsCentrally)' == 'true' and '@(PackageVersion->WithMetadataValue('Identity', 'Microsoft.Extensions.Http'))' == ''">
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.6" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresMicrosoftExtensionsHttp)' == 'true' and '$(ManagePackageVersionsCentrally)' == 'true'">
+    <PackageReference Include="Microsoft.Extensions.Http" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresMicrosoftExtensionsHttp)' == 'true' and '$(ManagePackageVersionsCentrally)' != 'true'">
+    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.6" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresMicrosoftExtensionsOptionsConfiguration)' == 'true' and '$(ManagePackageVersionsCentrally)' == 'true' and '@(PackageVersion->WithMetadataValue('Identity', 'Microsoft.Extensions.Options.ConfigurationExtensions'))' == ''">
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.6" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresMicrosoftExtensionsOptionsConfiguration)' == 'true' and '$(ManagePackageVersionsCentrally)' == 'true'">
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresMicrosoftExtensionsOptionsConfiguration)' == 'true' and '$(ManagePackageVersionsCentrally)' != 'true'">
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.6" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresMicrosoftExtensionsHttpResilience)' == 'true' and '$(ManagePackageVersionsCentrally)' == 'true' and '@(PackageVersion->WithMetadataValue('Identity', 'Microsoft.Extensions.Http.Resilience'))' == ''">
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.5.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresMicrosoftExtensionsHttpResilience)' == 'true' and '$(ManagePackageVersionsCentrally)' == 'true'">
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_AutoSDKRequiresMicrosoftExtensionsHttpResilience)' == 'true' and '$(ManagePackageVersionsCentrally)' != 'true'">
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="10.5.0" />
+  </ItemGroup>
+
+</Project>

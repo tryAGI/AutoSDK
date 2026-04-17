@@ -162,6 +162,18 @@ public static class CSharpPipeline
                         settings,
                         includePollingSupport: data.Methods.Any(static x => !x.PollingOperations.IsEmpty),
                         cancellationToken: cancellationToken)])
+                    .Concat(settings.GenerateDependencyInjection
+                        ? data.Clients
+                            .Where(static x => x.Id == "MainConstructor")
+                            .Take(1)
+                            .Select(x => Sources.DependencyInjection(
+                                x,
+                                includeConfigurationBinding: settings.GenerateConfigurationBinding,
+                                cancellationToken: cancellationToken))
+                        : [])
+                    .Concat(settings.GenerateHttpResilienceExtensions
+                        ? [Sources.HttpResilienceExtensions(settings, cancellationToken)]
+                        : [])
                     .Concat(!data.Authorizations.IsEmpty
                         ? [Sources.SecuritySupport(settings, cancellationToken)]
                         : [])

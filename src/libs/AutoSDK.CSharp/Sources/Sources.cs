@@ -429,6 +429,30 @@ public static partial class Sources
                 cancellationToken: cancellationToken));
     }
 
+    public static FileWithName DependencyInjection(
+        Client client,
+        bool includeConfigurationBinding = false,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{client.Settings.Namespace}.{client.ClassName}.DependencyInjection.g.cs",
+            Text: GenerateDependencyInjection(
+                client,
+                includeConfigurationBinding: includeConfigurationBinding,
+                cancellationToken: cancellationToken));
+    }
+
+    public static FileWithName HttpResilienceExtensions(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.HttpResilience.g.cs",
+            Text: GenerateHttpResilienceExtensions(
+                settings,
+                cancellationToken: cancellationToken));
+    }
+
     public static FileWithName SecuritySupport(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)
