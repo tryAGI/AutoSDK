@@ -166,6 +166,92 @@ operations:
     }
 
     [TestMethod]
+    public void AsyncApiNestedEnvelopeServerEvents_GenerateNestedPropertyScoring()
+    {
+        const string yaml = """
+asyncapi: 3.0.0
+info:
+  title: Realtime API
+  version: 1.0.0
+channels:
+  realtime:
+    address: /realtime
+    messages:
+      Transcript:
+        payload:
+          $ref: '#/components/schemas/TranscriptEvent'
+      Usage:
+        payload:
+          $ref: '#/components/schemas/UsageEvent'
+      SpeechStarted:
+        payload:
+          $ref: '#/components/schemas/SpeechStartedEvent'
+operations:
+  receiveUpdates:
+    action: receive
+    channel:
+      $ref: '#/channels/realtime'
+    messages:
+      - $ref: '#/channels/realtime/messages/Transcript'
+      - $ref: '#/channels/realtime/messages/Usage'
+      - $ref: '#/channels/realtime/messages/SpeechStarted'
+components:
+  schemas:
+    TranscriptEvent:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            transcription:
+              type: object
+              properties:
+                text:
+                  type: string
+    UsageEvent:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            usage:
+              type: object
+              properties:
+                input_tokens:
+                  type: integer
+    SpeechStartedEvent:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            speechStarted:
+              type: object
+              properties:
+                offset_ms:
+                  type: integer
+""";
+
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerContext = "G.SourceGenerationContext",
+        };
+
+        var data = AsyncApiData.Prepare(((yaml, settings), GlobalSettings: settings));
+        var anyOf = data.AnyOfs.Should().ContainSingle(x => x.Name == "ServerEvent").Subject;
+        var source = Sources.GenerateAnyOfJsonConverter(anyOf);
+
+        anyOf.Properties.SelectMany(x => x.JsonPropertyNames).Should().Contain("result.transcription");
+        anyOf.Properties.SelectMany(x => x.JsonPropertyNames).Should().Contain("result.usage");
+        anyOf.Properties.SelectMany(x => x.JsonPropertyNames).Should().Contain("result.speechStarted");
+        source.Should().Contain("__jsonProps.Add(__jsonProp.Name + \".\" + __nestedJsonProp.Name);");
+        source.Should().Contain("if (__jsonProps.Contains(\"result.transcription\")) __score0++;");
+        source.Should().Contain("if (__jsonProps.Contains(\"result.usage\")) __score1++;");
+        source.Should().Contain("if (__jsonProps.Contains(\"result.speechStarted\")) __score2++;");
+    }
+
+    [TestMethod]
     public void WebSocketBinaryPayloadHelpers_GenerateDecodedBytesProperty_AndConvenienceSendOverload()
     {
         var settings = Settings.Default with

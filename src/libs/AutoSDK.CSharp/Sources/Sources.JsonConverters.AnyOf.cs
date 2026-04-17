@@ -25,6 +25,7 @@ public static partial class Sources
             : $"global::{anyOfData.Namespace}.{anyOfData.Name}";
         var hasDiscriminator = anyOfData.DiscriminatorType != null && anyOfData.Properties.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue));
         var hasPropertyInfo = anyOfData.Properties.Any(x => !x.JsonPropertyNames.IsEmpty);
+        var hasNestedPropertyInfo = anyOfData.Properties.Any(x => x.JsonPropertyNames.Any(propName => propName.Contains('.')));
 
         string read;
         if (hasDiscriminator)
@@ -77,6 +78,14 @@ public static partial class Sources
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {{
                     __jsonProps.Add(__jsonProp.Name);
+{(hasNestedPropertyInfo ? @"                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + ""."" + __nestedJsonProp.Name);
+                        }
+                    }
+" : string.Empty)}
                 }}
             }}
 

@@ -238,18 +238,7 @@ public static class CSharpSchemaDataFactory
                 name = CSharpPropertyNameGenerator.AvoidObjectMemberNameCollision(name);
                 name = AvoidNamedAnyOfMemberNameCollision(name);
 
-                var resolvedSchema = child.Schema.ResolveIfRequired();
-                var jsonPropertyNames = ImmutableArray<string>.Empty;
-                if (resolvedSchema.Properties is { Count: > 0 } props)
-                {
-                    var jpnBuilder = ImmutableArray.CreateBuilder<string>(props.Count);
-                    foreach (var key in props.Keys.OrderBy(x => x, StringComparer.Ordinal))
-                    {
-                        jpnBuilder.Add(key);
-                    }
-
-                    jsonPropertyNames = jpnBuilder.MoveToImmutable();
-                }
+                var jsonPropertyNames = CollectJsonPropertyNames(child.Schema);
 
                 builder.Add((PropertyData.Default with
                 {
@@ -358,6 +347,34 @@ public static class CSharpSchemaDataFactory
         }
 
         return string.Empty;
+    }
+
+    private static ImmutableArray<string> CollectJsonPropertyNames(IOpenApiSchema schema)
+    {
+        var resolvedSchema = schema.ResolveIfRequired();
+        if (resolvedSchema.Properties is not { Count: > 0 } properties)
+        {
+            return ImmutableArray<string>.Empty;
+        }
+
+        var builder = ImmutableArray.CreateBuilder<string>();
+        foreach (var property in properties.OrderBy(x => x.Key, StringComparer.Ordinal))
+        {
+            builder.Add(property.Key);
+
+            var nestedSchema = property.Value.ResolveIfRequired();
+            if (nestedSchema.Properties is not { Count: > 0 } nestedProperties)
+            {
+                continue;
+            }
+
+            foreach (var nestedProperty in nestedProperties.Keys.OrderBy(x => x, StringComparer.Ordinal))
+            {
+                builder.Add($"{property.Key}.{nestedProperty}");
+            }
+        }
+
+        return builder.ToImmutable();
     }
 
     private static EquatableArray<PropertyData> DeduplicatePropertyNames(
