@@ -215,7 +215,7 @@ Claude Code will use the skill's knowledge of AutoSDK CLI options, project conve
 ### What's included
 
 The skill provides Claude Code with detailed knowledge of:
-- CLI commands and all their options (`generate`, `init`, `http`, `ai spec-from-docs`)
+- CLI commands and all their options (`generate`, `init`, `http`, `docs`, `convert`, `simplify`, `trim`)
 - Standard project structure and the `generate.sh` regeneration pattern
 - AsyncAPI / WebSocket client generation and cross-namespace schema referencing
 - Post-generation customization (partial classes, client hooks, trimming support)

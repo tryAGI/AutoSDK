@@ -128,18 +128,6 @@ Generates `.http` files from an OpenAPI spec for API testing.
 autosdk http openapi.yaml --output Testing
 ```
 
-### `autosdk ai spec-from-docs <url>`
-
-AI-powered command that generates an OpenAPI spec from HTML documentation pages.
-
-```bash
-export FIRECRAWL_API_KEY=your_key
-export OPENAI_API_KEY=your_key
-autosdk ai spec-from-docs https://docs.example.com/api --output generated.yaml
-```
-
-Requires `FIRECRAWL_API_KEY` and `OPENAI_API_KEY` environment variables.
-
 ## Project Structure Convention
 
 AutoSDK-based SDK projects follow a standard layout:

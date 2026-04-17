@@ -1,6 +1,5 @@
 ﻿using System.CommandLine;
 using AutoSDK.CLI.Commands;
-using AutoSDK.CLI.Commands.AI;
 
 var rootCommand = new RootCommand(
     description: "CLI tool to generate .NET SDKs from OpenAPI and AsyncAPI specifications");
@@ -12,6 +11,5 @@ rootCommand.Subcommands.Add(new SimplifyCommand());
 rootCommand.Subcommands.Add(new ConvertCommand());
 rootCommand.Subcommands.Add(new InitializeCommand());
 rootCommand.Subcommands.Add(new TrimCommand());
-rootCommand.Subcommands.Add(new AiCommand());
 
 return await rootCommand.Parse(args).InvokeAsync().ConfigureAwait(false);

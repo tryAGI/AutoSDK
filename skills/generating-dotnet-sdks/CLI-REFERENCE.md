@@ -251,40 +251,6 @@ Generates `.http` files for testing API endpoints.
 autosdk http openapi.yaml --output Testing
 ```
 
----
-
-### `autosdk ai spec-from-docs <url>`
-
-Uses AI to generate an OpenAPI specification from HTML API documentation. Scrapes the given URL using Firecrawl, then uses OpenAI GPT-4o to produce a structured OpenAPI 3.0 spec.
-
-**Arguments:**
-
-| Argument | Type | Description |
-|----------|------|-------------|
-| `url` | URI | URL of the API documentation page |
-
-**Options:**
-
-| Option | Alias | Type | Default | Description |
-|--------|-------|------|---------|-------------|
-| `--output` | `-o` | string | `generated.yaml` | Output file path for the generated spec |
-
-**Required environment variables:**
-
-| Variable | Purpose |
-|----------|---------|
-| `FIRECRAWL_API_KEY` | API key for Firecrawl web scraping service |
-| `OPENAI_API_KEY` | API key for OpenAI GPT-4o |
-
-**Example:**
-
-```bash
-export FIRECRAWL_API_KEY=fc-your-key
-export OPENAI_API_KEY=sk-your-key
-autosdk ai spec-from-docs https://docs.example.com/api \
-  --output example-api.yaml
-```
-
 ## Security Scheme Format
 
 The `--security-scheme` option injects authentication schemes into OpenAPI specs that lack `securitySchemes` definitions. Format: `Type:Location:Name`.
