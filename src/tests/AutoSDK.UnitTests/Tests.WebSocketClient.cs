@@ -227,7 +227,12 @@ components:
         source.Should().Contain("bool useSubprotocolAuth = false");
         source.Should().Contain("ApplyStoredAuthorization(useSubprotocolAuth);");
         source.Should().Contain("if (useSubprotocolAuth || _preferSubprotocolAuth)");
-        source.Should().Contain("var __subProtocol = \"realtime\";");
+        source.Should().Contain("var __subProtocol = ");
+        source.Should().Contain("__subProtocol = \"realtime\";");
+        source.Should().Contain("__subProtocol = \"openai-insecure-api-key.{apiKey}\";");
+        (source.Split("var __subProtocol = ").Length - 1).Should().Be(1);
+        source.Should().NotContain("_subprotocolAuthorizationValues[\"apiKey\"];                    var __subProtocol");
+        source.Should().NotContain("AddSubProtocol(__subProtocol);                    __subProtocol");
         source.Should().Contain("__subProtocol = __subProtocol.Replace(\"{apiKey}\", __apiKey);");
         source.Should().Contain("_storedAuthorizationHeaderName = \"Authorization\";");
     }

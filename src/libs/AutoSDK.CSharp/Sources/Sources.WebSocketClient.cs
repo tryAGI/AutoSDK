@@ -658,9 +658,13 @@ namespace {wsClient.Settings.Namespace}
                     return $@"                    var __{parameterName} = _subprotocolAuthorizationValues[""{parameter}""];
 ";
                 }).Inject(emptyValue: string.Empty);
+                if (parameterReads.Length > 0)
+                {
+                    parameterReads += "\n";
+                }
                 var addProtocols = auth.WebSocketSubProtocols
                     .Distinct(StringComparer.Ordinal)
-                    .Select(template =>
+                    .Select((template, index) =>
                     {
                         var replacements = auth.Parameters.Select(parameter =>
                         {
@@ -668,10 +672,19 @@ namespace {wsClient.Settings.Namespace}
                             return $@"                    __subProtocol = __subProtocol.Replace(""{{{parameter}}}"", __{parameterName});
 ";
                         }).Inject(emptyValue: string.Empty);
-                        return $@"                    var __subProtocol = {template.ToCSharpStringLiteral()};
+                        if (replacements.Length > 0)
+                        {
+                            replacements += "\n";
+                        }
+                        var declaration = index == 0 ? "var " : string.Empty;
+                        return $@"                    {declaration}__subProtocol = {template.ToCSharpStringLiteral()};
 {replacements}                    _clientWebSocket.Options.AddSubProtocol(__subProtocol);
 ";
                     }).Inject(emptyValue: string.Empty);
+                if (addProtocols.Length > 0)
+                {
+                    addProtocols += "\n";
+                }
 
                 return $@"                if ({condition})
                 {{
@@ -679,6 +692,10 @@ namespace {wsClient.Settings.Namespace}
                 }}
 ";
             }).Inject(emptyValue: string.Empty);
+        if (subprotocolBlocks.Length > 0)
+        {
+            subprotocolBlocks += "\n";
+        }
 
         var headerBlock = hasStoredHeaderAuth
             ? @"
