@@ -166,6 +166,73 @@ operations:
     }
 
     [TestMethod]
+    public void AsyncApiSubprotocolAuthentication_GeneratesStoredAuth_AndRuntimeConnectSwitch()
+    {
+        const string yaml = """
+asyncapi: 3.0.0
+info:
+  title: Realtime API
+  version: 1.0.0
+servers:
+  production:
+    host: api.openai.com
+    pathname: /v1/realtime
+    protocol: wss
+channels:
+  realtime:
+    address: /v1/realtime
+    messages:
+      Ping:
+        payload:
+          type: object
+operations:
+  sendPing:
+    action: send
+    channel:
+      $ref: '#/channels/realtime'
+    messages:
+      - $ref: '#/channels/realtime/messages/Ping'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+    subprotocolAuth:
+      type: apiKey
+      in: subprotocol
+      name: openai-insecure-api-key.{apiKey}
+      x-subprotocol-auth:
+        - realtime
+        - openai-insecure-api-key.{apiKey}
+""";
+
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerContext = "G.SourceGenerationContext",
+        };
+
+        var data = AsyncApiData.Prepare(((yaml, settings), GlobalSettings: settings));
+        var client = data.WebSocketClients.Should().ContainSingle().Subject;
+        var source = Sources.WebSocketClient(client).Text;
+        var subprotocolAuth = client.Authorizations.Should().ContainSingle(x => !x.WebSocketSubProtocols.IsEmpty).Subject;
+
+        subprotocolAuth.FriendlyName.Should().Be("Subprotocol");
+        subprotocolAuth.Parameters.Should().ContainSingle().Which.Should().Be("apiKey");
+        subprotocolAuth.WebSocketSubProtocols.Should().Contain("realtime");
+        subprotocolAuth.WebSocketSubProtocols.Should().Contain("openai-insecure-api-key.{apiKey}");
+
+        source.Should().Contain("public void AuthorizeUsingSubprotocol(");
+        source.Should().Contain("_subprotocolAuthorizationValues[\"apiKey\"] = apiKey;");
+        source.Should().Contain("bool useSubprotocolAuth = false");
+        source.Should().Contain("ApplyStoredAuthorization(useSubprotocolAuth);");
+        source.Should().Contain("if (useSubprotocolAuth || _preferSubprotocolAuth)");
+        source.Should().Contain("var __subProtocol = \"realtime\";");
+        source.Should().Contain("__subProtocol = __subProtocol.Replace(\"{apiKey}\", __apiKey);");
+        source.Should().Contain("_storedAuthorizationHeaderName = \"Authorization\";");
+    }
+
+    [TestMethod]
     public void AsyncApiNestedEnvelopeServerEvents_GenerateNestedPropertyScoring()
     {
         const string yaml = """

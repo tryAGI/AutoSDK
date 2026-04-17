@@ -21,4 +21,7 @@ public record struct Authorization(
     public string OAuth2MetadataUrl { get; set; } = string.Empty;
 
     public bool IsDeprecated { get; set; }
+
+    public EquatableArray<string> WebSocketSubProtocols { get; set; } =
+        ImmutableArray<string>.Empty.AsEquatableArray();
 }

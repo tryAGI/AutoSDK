@@ -158,11 +158,40 @@ namespace {wsClient.Settings.Namespace}
     private static string GenerateWebSocketAuthorizationConstructors(WebSocketClient wsClient)
     {
         var result = new System.Text.StringBuilder();
+        var hasStoredHeaderAuth = wsClient.Authorizations.Any(static auth =>
+            auth.Type == SecuritySchemeType.Http &&
+            !string.Equals(auth.Scheme, "basic", StringComparison.OrdinalIgnoreCase) ||
+            auth.Type == SecuritySchemeType.ApiKey &&
+            auth.In == ParameterLocation.Header);
+        var hasSubprotocolAuth = wsClient.Authorizations.Any(static auth => !auth.WebSocketSubProtocols.IsEmpty);
+        var bridgeApiKeyToSubprotocol = hasSubprotocolAuth &&
+                                        wsClient.Authorizations.Any(static auth =>
+                                            !auth.WebSocketSubProtocols.IsEmpty &&
+                                            auth.Parameters.Contains("apiKey"));
+
+        if (hasStoredHeaderAuth)
+        {
+            result.AppendLine(@"
+        private string? _storedAuthorizationHeaderName;
+        private string? _storedAuthorizationHeaderScheme;
+        private string? _storedAuthorizationApiKey;");
+        }
+
+        if (hasSubprotocolAuth)
+        {
+            result.AppendLine(@"
+        private readonly global::System.Collections.Generic.Dictionary<string, string> _subprotocolAuthorizationValues = new global::System.Collections.Generic.Dictionary<string, string>(global::System.StringComparer.Ordinal);
+        private bool _preferSubprotocolAuth;");
+        }
 
         foreach (var auth in wsClient.Authorizations)
         {
-            if (auth.Type == SecuritySchemeType.Http &&
-                !string.Equals(auth.Scheme, "basic", StringComparison.OrdinalIgnoreCase))
+            if (!auth.WebSocketSubProtocols.IsEmpty)
+            {
+                result.AppendLine(GenerateSubprotocolAuthorizationMethod(auth));
+            }
+            else if (auth.Type == SecuritySchemeType.Http &&
+                     !string.Equals(auth.Scheme, "basic", StringComparison.OrdinalIgnoreCase))
             {
                 var friendlyName = string.IsNullOrWhiteSpace(auth.FriendlyName)
                     ? auth.Scheme.ToPropertyName()
@@ -181,8 +210,10 @@ namespace {wsClient.Settings.Namespace}
         {{
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _clientWebSocket.Options.SetRequestHeader(""Authorization"", $""{schemeName} {{apiKey}}"");
-        }}
+            _storedAuthorizationApiKey = apiKey;
+            _storedAuthorizationHeaderName = ""Authorization"";
+            _storedAuthorizationHeaderScheme = ""{schemeName}"";
+{(hasSubprotocolAuth ? "            _preferSubprotocolAuth = false;\n" : string.Empty)}{(bridgeApiKeyToSubprotocol ? "            _subprotocolAuthorizationValues[\"apiKey\"] = apiKey;\n" : string.Empty)}        }}
 
         /// <summary>
         /// Creates a new instance with {schemeName} token authentication.
@@ -214,8 +245,10 @@ namespace {wsClient.Settings.Namespace}
         {{
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _clientWebSocket.Options.SetRequestHeader(""{auth.Name}"", apiKey);
-        }}
+            _storedAuthorizationApiKey = apiKey;
+            _storedAuthorizationHeaderName = ""{auth.Name}"";
+            _storedAuthorizationHeaderScheme = null;
+{(hasSubprotocolAuth ? "            _preferSubprotocolAuth = false;\n" : string.Empty)}{(bridgeApiKeyToSubprotocol ? "            _subprotocolAuthorizationValues[\"apiKey\"] = apiKey;\n" : string.Empty)}        }}
 
         /// <summary>
         /// Creates a new instance with API key header authentication.
@@ -251,7 +284,7 @@ namespace {wsClient.Settings.Namespace}
             // Query parameter auth is handled during ConnectAsync
             _queryApiKey = apiKey;
             _queryApiKeyName = ""{auth.Name}"";
-        }}
+{(bridgeApiKeyToSubprotocol ? "            _subprotocolAuthorizationValues[\"apiKey\"] = apiKey;\n" : string.Empty)}        }}
 
         private string? _queryApiKey;
         private string? _queryApiKeyName;";
@@ -262,6 +295,36 @@ namespace {wsClient.Settings.Namespace}
         return result.ToString();
     }
 
+    private static string GenerateSubprotocolAuthorizationMethod(Authorization auth)
+    {
+        var xmlParams = auth.Parameters.Select(parameter =>
+            $@"        /// <param name=""{parameter.ToParameterName()}""></param>");
+        var parameterDeclarations = auth.Parameters.Select(parameter =>
+            $@"            string {parameter.ToParameterName()}");
+        var assignments = auth.Parameters.Select(parameter =>
+        {
+            var parameterName = parameter.ToParameterName();
+            return $@"            var {parameterName}Value = {parameterName} ?? throw new global::System.ArgumentNullException(nameof({parameterName}));
+            _subprotocolAuthorizationValues[""{parameter}""] = {parameterName}Value;";
+        });
+        var signature = auth.Parameters.Length == 0
+            ? string.Empty
+            : $@"
+{parameterDeclarations.Inject().TrimEnd(',')}
+";
+
+        return $@"
+        /// <summary>
+        /// Authorize using WebSocket subprotocol authentication.
+        /// </summary>
+{xmlParams.Inject(emptyValue: string.Empty)}
+        public void {auth.MethodName}({signature}        )
+        {{
+{assignments.Inject(emptyValue: string.Empty)}
+            _preferSubprotocolAuth = true;
+        }}";
+    }
+
     private static string GenerateConnectAsync(WebSocketClient wsClient)
     {
         var serverVariables = wsClient.ServerVariables.ToArray();
@@ -269,6 +332,12 @@ namespace {wsClient.Settings.Namespace}
         var serializedParams = wsClient.SerializedQueryParameters.ToArray();
         var hasTypedParameters = serverVariables.Length > 0 || signatureParams.Length > 0;
         var hasRequiredParameters = serverVariables.Any(static x => x.IsRequired) || signatureParams.Any(static x => x.IsRequired);
+        var hasSubprotocolAuth = wsClient.Authorizations.Any(static x => !x.WebSocketSubProtocols.IsEmpty);
+        var hasStoredHeaderAuth = wsClient.Authorizations.Any(static x =>
+            x.Type == SecuritySchemeType.Http &&
+            !string.Equals(x.Scheme, "basic", StringComparison.OrdinalIgnoreCase) ||
+            x.Type == SecuritySchemeType.ApiKey &&
+            x.In == ParameterLocation.Header);
         var supportsQueryApiKeyAuth = wsClient.Authorizations.Any(
             static x => x.Type == SecuritySchemeType.ApiKey &&
                         x.In == ParameterLocation.Query);
@@ -279,18 +348,30 @@ namespace {wsClient.Settings.Namespace}
                     __pathBuilder.AddRequiredParameter(_queryApiKeyName, _queryApiKey);
                 }"
             : string.Empty;
+        var applyStoredAuthorization = GenerateStoredWebSocketAuthorization(
+            wsClient,
+            hasStoredHeaderAuth,
+            hasSubprotocolAuth);
+        var connectionOptionsExtraParameter = hasSubprotocolAuth
+            ? ",\n            bool useSubprotocolAuth"
+            : string.Empty;
+        var applyStoredAuthorizationCall = hasStoredHeaderAuth || hasSubprotocolAuth
+            ? $"            ApplyStoredAuthorization({(hasSubprotocolAuth ? "useSubprotocolAuth" : "false")});\n"
+            : string.Empty;
 
         var connectionHelpers = @"
+" + applyStoredAuthorization + @"
         private void ApplyConnectionOptions(
             global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders,
             global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols,
-            global::System.TimeSpan? keepAliveInterval)
+            global::System.TimeSpan? keepAliveInterval" + connectionOptionsExtraParameter + @")
         {
             if (keepAliveInterval is not null)
             {
                 _clientWebSocket.Options.KeepAliveInterval = keepAliveInterval.Value;
             }
 
+" + applyStoredAuthorizationCall + @"
             if (additionalHeaders is not null)
             {
                 foreach (var header in additionalHeaders)
@@ -345,7 +426,7 @@ namespace {wsClient.Settings.Namespace}
             global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null,
             global::System.TimeSpan? keepAliveInterval = null,
             global::System.TimeSpan? connectTimeout = null,
-            global::System.Threading.CancellationToken cancellationToken = default)
+            {(hasSubprotocolAuth ? "bool useSubprotocolAuth = false,\n            " : string.Empty)}global::System.Threading.CancellationToken cancellationToken = default)
         {{
             global::System.Uri __uri;
             if (uri is not null)
@@ -360,7 +441,7 @@ namespace {wsClient.Settings.Namespace}
                 __uri = new global::System.Uri(__pathBuilder.ToString());
             }}
 
-            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval);
+            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval{(hasSubprotocolAuth ? ", useSubprotocolAuth" : string.Empty)});
             await ConnectAsyncCore(__uri, connectTimeout, cancellationToken).ConfigureAwait(false);
         }}";
         }
@@ -449,6 +530,10 @@ namespace {wsClient.Settings.Namespace}
         xmlDoc.AppendLine("        /// <param name=\"additionalSubProtocols\">Additional WebSocket subprotocols applied before connecting.</param>");
         xmlDoc.AppendLine("        /// <param name=\"keepAliveInterval\">Optional keep-alive interval.</param>");
         xmlDoc.AppendLine("        /// <param name=\"connectTimeout\">Optional connect timeout.</param>");
+        if (hasSubprotocolAuth)
+        {
+            xmlDoc.AppendLine("        /// <param name=\"useSubprotocolAuth\">When true, applies stored subprotocol authentication instead of header authentication.</param>");
+        }
         xmlDoc.AppendLine("        /// <param name=\"cancellationToken\">A cancellation token.</param>");
 
         foreach (var param in serializedParams)
@@ -492,7 +577,7 @@ namespace {wsClient.Settings.Namespace}
             global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null,
             global::System.TimeSpan? keepAliveInterval = null,
             global::System.TimeSpan? connectTimeout = null,
-            global::System.Threading.CancellationToken cancellationToken = default)
+            {(hasSubprotocolAuth ? "bool useSubprotocolAuth = false,\n            " : string.Empty)}global::System.Threading.CancellationToken cancellationToken = default)
         {{
             global::System.Uri __uri;
             if (uri is not null)
@@ -507,7 +592,7 @@ namespace {wsClient.Settings.Namespace}
                 __uri = new global::System.Uri(__pathBuilder.ToString());
             }}
 
-            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval);
+            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval{(hasSubprotocolAuth ? ", useSubprotocolAuth" : string.Empty)});
             await ConnectAsyncCore(__uri, connectTimeout, cancellationToken).ConfigureAwait(false);
         }}" : string.Empty;
 
@@ -526,7 +611,7 @@ namespace {wsClient.Settings.Namespace}
             global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null,
             global::System.TimeSpan? keepAliveInterval = null,
             global::System.TimeSpan? connectTimeout = null,
-            global::System.Threading.CancellationToken cancellationToken = default)
+            {(hasSubprotocolAuth ? "bool useSubprotocolAuth = false,\n            " : string.Empty)}global::System.Threading.CancellationToken cancellationToken = default)
         {{
             global::System.Uri __uri;
             if (uri is not null)
@@ -544,8 +629,78 @@ namespace {wsClient.Settings.Namespace}
                 __uri = new global::System.Uri(__pathBuilder.ToString());
             }}
 
-            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval);
+            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval{(hasSubprotocolAuth ? ", useSubprotocolAuth" : string.Empty)});
             await ConnectAsyncCore(__uri, connectTimeout, cancellationToken).ConfigureAwait(false);
+        }}";
+    }
+
+    private static string GenerateStoredWebSocketAuthorization(
+        WebSocketClient wsClient,
+        bool hasStoredHeaderAuth,
+        bool hasSubprotocolAuth)
+    {
+        if (!hasStoredHeaderAuth && !hasSubprotocolAuth)
+        {
+            return string.Empty;
+        }
+
+        var subprotocolBlocks = wsClient.Authorizations
+            .Where(static auth => !auth.WebSocketSubProtocols.IsEmpty)
+            .Select(auth =>
+            {
+                var condition = auth.Parameters.Length == 0
+                    ? "true"
+                    : string.Join(" && ", auth.Parameters.Select(parameter =>
+                        $@"_subprotocolAuthorizationValues.ContainsKey(""{parameter}"")"));
+                var parameterReads = auth.Parameters.Select(parameter =>
+                {
+                    var parameterName = parameter.ToParameterName();
+                    return $@"                    var __{parameterName} = _subprotocolAuthorizationValues[""{parameter}""];
+";
+                }).Inject(emptyValue: string.Empty);
+                var addProtocols = auth.WebSocketSubProtocols
+                    .Distinct(StringComparer.Ordinal)
+                    .Select(template =>
+                    {
+                        var replacements = auth.Parameters.Select(parameter =>
+                        {
+                            var parameterName = parameter.ToParameterName();
+                            return $@"                    __subProtocol = __subProtocol.Replace(""{{{parameter}}}"", __{parameterName});
+";
+                        }).Inject(emptyValue: string.Empty);
+                        return $@"                    var __subProtocol = {template.ToCSharpStringLiteral()};
+{replacements}                    _clientWebSocket.Options.AddSubProtocol(__subProtocol);
+";
+                    }).Inject(emptyValue: string.Empty);
+
+                return $@"                if ({condition})
+                {{
+{parameterReads}{addProtocols}                    return;
+                }}
+";
+            }).Inject(emptyValue: string.Empty);
+
+        var headerBlock = hasStoredHeaderAuth
+            ? @"
+            if (_storedAuthorizationApiKey is not null &&
+                _storedAuthorizationHeaderName is not null)
+            {
+                var __authorizationValue = _storedAuthorizationHeaderScheme is not null
+                    ? $""{_storedAuthorizationHeaderScheme} {_storedAuthorizationApiKey}""
+                    : _storedAuthorizationApiKey;
+                _clientWebSocket.Options.SetRequestHeader(_storedAuthorizationHeaderName, __authorizationValue);
+            }"
+            : string.Empty;
+
+        return $@"
+        private void ApplyStoredAuthorization(
+            bool useSubprotocolAuth)
+        {{
+{(hasSubprotocolAuth ? $@"            if (useSubprotocolAuth || _preferSubprotocolAuth)
+            {{
+{subprotocolBlocks}                return;
+            }}
+" : string.Empty)}{headerBlock}
         }}";
     }
 }

@@ -805,6 +805,21 @@ public static class AsyncApiExtensions
                 var node = kvp.Value;
                 if (node is JsonObject schemeObj)
                 {
+                    var subProtocols = new List<string>();
+                    if (string.Equals(schemeObj["in"]?.GetValue<string>(), "subprotocol", StringComparison.OrdinalIgnoreCase) &&
+                        !string.IsNullOrWhiteSpace(schemeObj["name"]?.GetValue<string>()))
+                    {
+                        subProtocols.Add(schemeObj["name"]!.GetValue<string>());
+                    }
+
+                    AddSubProtocols(subProtocols, schemeObj["x-subprotocol-auth"]);
+                    if (schemeObj["bindings"] is JsonObject bindings &&
+                        bindings["ws"] is JsonObject wsBinding)
+                    {
+                        AddSubProtocols(subProtocols, wsBinding["subprotocols"]);
+                        AddSubProtocols(subProtocols, wsBinding["x-subprotocol-auth"]);
+                    }
+
                     components.SecuritySchemes[name] = new AsyncApiSecurityScheme
                     {
                         Type = schemeObj["type"]?.GetValue<string>() ?? string.Empty,
@@ -812,6 +827,12 @@ public static class AsyncApiExtensions
                         Name = schemeObj["name"]?.GetValue<string>() ?? string.Empty,
                         In = schemeObj["in"]?.GetValue<string>() ?? string.Empty,
                         Description = schemeObj["description"]?.GetValue<string>() ?? string.Empty,
+                        SubProtocols =
+                        [
+                            .. subProtocols
+                                .Where(static x => !string.IsNullOrWhiteSpace(x))
+                                .Distinct(StringComparer.Ordinal),
+                        ],
                     };
                 }
             }
@@ -860,6 +881,39 @@ public static class AsyncApiExtensions
         }
 
         return components;
+    }
+
+    private static void AddSubProtocols(
+        List<string> target,
+        JsonNode? node)
+    {
+        if (node is null)
+        {
+            return;
+        }
+
+        if (node is JsonValue value &&
+            value.TryGetValue<string>(out var stringValue) &&
+            !string.IsNullOrWhiteSpace(stringValue))
+        {
+            target.Add(stringValue);
+            return;
+        }
+
+        if (node is not JsonArray array)
+        {
+            return;
+        }
+
+        foreach (var item in array)
+        {
+            if (item is JsonValue itemValue &&
+                itemValue.TryGetValue<string>(out var subProtocol) &&
+                !string.IsNullOrWhiteSpace(subProtocol))
+            {
+                target.Add(subProtocol);
+            }
+        }
     }
 
     private static JsonNode? ResolveRef(JsonObject root, string refPath)

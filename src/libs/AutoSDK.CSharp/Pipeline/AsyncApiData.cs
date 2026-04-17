@@ -956,8 +956,10 @@ public static class AsyncApiData
             var secScheme = kvp.Value;
             var (friendlyName, parameters, paramLocation, securitySchemeType) =
                 MapSecurityScheme(secScheme);
-
-            authorizations.Add(CSharpAuthorizationFactory.Create(
+            var subProtocolTemplates = secScheme.SubProtocols
+                .Where(static x => !string.IsNullOrWhiteSpace(x))
+                .ToImmutableArray();
+            var authorization = CSharpAuthorizationFactory.Create(
                 friendlyName: friendlyName,
                 schemeId: kvp.Key,
                 type: securitySchemeType,
@@ -970,7 +972,14 @@ public static class AsyncApiData
                 flows: ImmutableArray<OAuthFlow>.Empty.AsEquatableArray(),
                 openIdConnectUrl: string.Empty,
                 oAuth2MetadataUrl: string.Empty,
-                isDeprecated: false));
+                isDeprecated: false);
+
+            if (!subProtocolTemplates.IsEmpty)
+            {
+                authorization.WebSocketSubProtocols = subProtocolTemplates.AsEquatableArray();
+            }
+
+            authorizations.Add(authorization);
         }
 
         return authorizations.ToArray();
@@ -979,6 +988,15 @@ public static class AsyncApiData
     private static (string FriendlyName, string[] Parameters, ParameterLocation? Location,
         SecuritySchemeType? SchemeType) MapSecurityScheme(AsyncApiSecurityScheme scheme)
     {
+        if (scheme.SubProtocols.Count > 0)
+        {
+            return (
+                "Subprotocol",
+                ExtractSubProtocolParameters(scheme.SubProtocols).ToArray(),
+                null,
+                SecuritySchemeType.ApiKey);
+        }
+
         return (scheme.Type.ToLowerInvariant(), scheme.Scheme?.ToUpperInvariant(), scheme.In?.ToLowerInvariant()) switch
         {
             ("http", "BEARER", _) =>
@@ -994,6 +1012,45 @@ public static class AsyncApiData
             _ =>
                 ("Bearer", new[] { "apiKey" }, ParameterLocation.Header, SecuritySchemeType.Http),
         };
+    }
+
+    private static IEnumerable<string> ExtractSubProtocolParameters(
+        IEnumerable<string> templates)
+    {
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+
+        foreach (var template in templates)
+        {
+            if (string.IsNullOrWhiteSpace(template))
+            {
+                continue;
+            }
+
+            var startIndex = 0;
+            while (startIndex < template.Length)
+            {
+                var openBrace = template.IndexOf('{', startIndex);
+                if (openBrace < 0)
+                {
+                    break;
+                }
+
+                var closeBrace = template.IndexOf('}', openBrace + 1);
+                if (closeBrace < 0)
+                {
+                    break;
+                }
+
+                var parameterName = template.Substring(openBrace + 1, closeBrace - openBrace - 1).Trim();
+                if (!string.IsNullOrWhiteSpace(parameterName) &&
+                    seen.Add(parameterName))
+                {
+                    yield return parameterName;
+                }
+
+                startIndex = closeBrace + 1;
+            }
+        }
     }
 
     /// <summary>

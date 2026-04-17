@@ -1,3 +1,5 @@
+using System.Collections.ObjectModel;
+
 namespace AutoSDK.Models.AsyncApi;
 
 /// <summary>
@@ -29,4 +31,10 @@ public sealed class AsyncApiSecurityScheme
     /// Description of the security scheme.
     /// </summary>
     public string Description { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Optional WebSocket subprotocol templates used for browser-compatible authentication.
+    /// Entries may contain placeholders such as <c>{apiKey}</c>.
+    /// </summary>
+    public Collection<string> SubProtocols { get; set; } = [];
 }

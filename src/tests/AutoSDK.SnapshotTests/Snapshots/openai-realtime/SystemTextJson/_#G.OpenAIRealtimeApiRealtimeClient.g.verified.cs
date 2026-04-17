@@ -41,6 +41,10 @@ namespace G
         }
 
 
+        private string? _storedAuthorizationHeaderName;
+        private string? _storedAuthorizationHeaderScheme;
+        private string? _storedAuthorizationApiKey;
+
         /// <summary>
         /// Authorize using bearer authentication.
         /// </summary>
@@ -50,7 +54,9 @@ namespace G
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _clientWebSocket.Options.SetRequestHeader("Authorization", $"bearer {apiKey}");
+            _storedAuthorizationApiKey = apiKey;
+            _storedAuthorizationHeaderName = "Authorization";
+            _storedAuthorizationHeaderScheme = "bearer";
         }
 
         /// <summary>
@@ -72,6 +78,20 @@ namespace G
 
 
 
+
+        private void ApplyStoredAuthorization(
+            bool useSubprotocolAuth)
+        {
+
+            if (_storedAuthorizationApiKey is not null &&
+                _storedAuthorizationHeaderName is not null)
+            {
+                var __authorizationValue = _storedAuthorizationHeaderScheme is not null
+                    ? $"{_storedAuthorizationHeaderScheme} {_storedAuthorizationApiKey}"
+                    : _storedAuthorizationApiKey;
+                _clientWebSocket.Options.SetRequestHeader(_storedAuthorizationHeaderName, __authorizationValue);
+            }
+        }
         private void ApplyConnectionOptions(
             global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders,
             global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols,
@@ -81,6 +101,8 @@ namespace G
             {
                 _clientWebSocket.Options.KeepAliveInterval = keepAliveInterval.Value;
             }
+
+            ApplyStoredAuthorization(false);
 
             if (additionalHeaders is not null)
             {
