@@ -29,36 +29,74 @@ namespace G
                     yield break;
                 }
 
-                global::System.Net.WebSockets.WebSocketReceiveResult result;
+                using var __messageBuffer = new global::System.IO.MemoryStream();
+                var __receivedTextMessage = false;
 
-                try
+                while (true)
                 {
-                    result = await _clientWebSocket.ReceiveAsync(arraySegment, cancellationToken).ConfigureAwait(false);
-                }
-                catch (global::System.Net.WebSockets.WebSocketException)
-                {
-                    yield break;
-                }
-                catch (global::System.OperationCanceledException)
-                {
-                    yield break;
+                    global::System.Net.WebSockets.WebSocketReceiveResult result;
+
+                    try
+                    {
+                        result = await _clientWebSocket.ReceiveAsync(arraySegment, cancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.WebSockets.WebSocketException exception)
+                    {
+                        var rethrow = false;
+                        OnReceiveException(exception, ref rethrow);
+                        if (rethrow)
+                        {
+                            throw;
+                        }
+
+                        yield break;
+                    }
+                    catch (global::System.OperationCanceledException exception)
+                    {
+                        var rethrow = false;
+                        OnReceiveException(exception, ref rethrow);
+                        if (rethrow)
+                        {
+                            throw;
+                        }
+
+                        yield break;
+                    }
+
+                    if (result.MessageType == global::System.Net.WebSockets.WebSocketMessageType.Close)
+                    {
+                        await _clientWebSocket.CloseAsync(
+                            closeStatus: global::System.Net.WebSockets.WebSocketCloseStatus.NormalClosure,
+                            statusDescription: "Closing",
+                            cancellationToken: cancellationToken).ConfigureAwait(false);
+                        yield break;
+                    }
+
+                    if (result.MessageType == global::System.Net.WebSockets.WebSocketMessageType.Text)
+                    {
+                        __receivedTextMessage = true;
+
+                        if (result.Count > 0)
+                        {
+                            __messageBuffer.Write(buffer, 0, result.Count);
+                        }
+                    }
+
+                    if (result.EndOfMessage)
+                    {
+                        break;
+                    }
                 }
 
-                if (result.MessageType == global::System.Net.WebSockets.WebSocketMessageType.Text)
+                if (!__receivedTextMessage)
                 {
-                    string json = global::System.Text.Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    continue;
+                }
+
+                string json = global::System.Text.Encoding.UTF8.GetString(__messageBuffer.ToArray());
                     var @event = (global::G.ServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::G.ServerEvent), JsonSerializerContext)!;
 
                     yield return @event;
-                }
-                else if (result.MessageType == global::System.Net.WebSockets.WebSocketMessageType.Close)
-                {
-                    await _clientWebSocket.CloseAsync(
-                        closeStatus: global::System.Net.WebSockets.WebSocketCloseStatus.NormalClosure,
-                        statusDescription: "Closing",
-                        cancellationToken: cancellationToken).ConfigureAwait(false);
-                    yield break;
-                }
             }
         }
     }

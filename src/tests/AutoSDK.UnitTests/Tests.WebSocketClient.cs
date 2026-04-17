@@ -58,4 +58,49 @@ public partial class Tests
         source.Should().Contain("/// <param name=\"uri\">Optional WebSocket endpoint override.</param>");
         source.Should().Contain("/// <param name=\"cancellationToken\">A cancellation token.</param>");
     }
+
+    [TestMethod]
+    public void WebSocketReceiveMethod_AccumulatesFragments_AndExposesExceptionHook()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerContext = "G.SourceGenerationContext",
+        };
+        var receiveEventType = (TypeData.Default with
+        {
+            CSharpTypeRaw = "ServerEvent",
+            Namespace = "G",
+            GeneratedNamespace = "G",
+        }).WithCSharpComputedValues();
+        var client = new WebSocketClient(
+            Id: "Realtime",
+            ClassName: "RealtimeClient",
+            FileNameWithoutExtension: "G.RealtimeClient",
+            InterfaceFileNameWithoutExtension: "G.IRealtimeClient",
+            BaseUrl: "wss://example.com/realtime",
+            Protocol: string.Empty,
+            SendOperations: ImmutableArray<WebSocketEndPoint>.Empty.AsEquatableArray(),
+            ReceiveOperations: ImmutableArray<WebSocketEndPoint>.Empty.AsEquatableArray(),
+            Authorizations: ImmutableArray<Authorization>.Empty.AsEquatableArray(),
+            QueryParameters: ImmutableArray<MethodParameter>.Empty.AsEquatableArray(),
+            SerializedQueryParameters: ImmutableArray<MethodParameter>.Empty.AsEquatableArray(),
+            Summary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty)
+        {
+            BaseReceiveEventType = receiveEventType,
+        };
+
+        var clientSource = Sources.WebSocketClient(client).Text;
+        var receiveSource = Sources.WebSocketReceiveMethod(client).Text;
+
+        clientSource.Should().Contain("partial void OnReceiveException(");
+        receiveSource.Should().Contain("using var __messageBuffer = new global::System.IO.MemoryStream();");
+        receiveSource.Should().Contain("if (result.EndOfMessage)");
+        receiveSource.Should().Contain("__messageBuffer.Write(buffer, 0, result.Count);");
+        receiveSource.Should().Contain("OnReceiveException(exception, ref rethrow);");
+        receiveSource.Should().Contain("if (!__receivedTextMessage)");
+    }
 }
